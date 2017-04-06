@@ -1,0 +1,14 @@
+---
+title: IntradayDataUpdateNotificationIntradayHistoricalAgentData
+---
+## IntradayDataUpdateNotificationIntradayHistoricalAgentData
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **on_queue_time_seconds** | **float** |  | [optional] |
+| **interacting_time_seconds** | **float** |  | [optional] |
+{: class="table table-striped"}
+
+

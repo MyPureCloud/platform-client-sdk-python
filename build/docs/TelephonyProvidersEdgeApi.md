@@ -1,0 +1,5755 @@
+---
+title: TelephonyProvidersEdgeApi
+---
+
+## PureCloudPlatformClientV2.TelephonyProvidersEdgeApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+|Method | Description|
+|------------- | -------------|
+|[**delete_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edge) | Delete a edge.|
+|[**delete_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edge_logicalinterface) | Delete an edge logical interface|
+|[**delete_telephony_providers_edge_softwareupdate**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edge_softwareupdate) | Cancels any in-progress update for this edge.|
+|[**delete_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_certificateauthority) | Delete a certificate authority.|
+|[**delete_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_didpool) | Delete a DID Pool by ID.|
+|[**delete_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_edgegroup) | Delete an edge group.|
+|[**delete_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_endpoint) | Delete endpoint|
+|[**delete_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_extensionpool) | Delete an extension pool by ID|
+|[**delete_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_outboundroute) | Delete Outbound Route|
+|[**delete_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_phone) | Delete a Phone by ID|
+|[**delete_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_phonebasesetting) | Delete a Phone Base Settings by ID|
+|[**delete_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_site) | Delete a Site by ID|
+|[**delete_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_site_outboundroute) | Delete Outbound Route|
+|[**delete_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_trunkbasesetting) | Delete a Trunk Base Settings object by ID|
+|[**get_configuration_schemas_edges_vnext**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext) | Lists available schema categories (Deprecated)|
+|[**get_configuration_schemas_edges_vnext_schema_category**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category) | List schemas of a specific category (Deprecated)|
+|[**get_configuration_schemas_edges_vnext_schema_category_schema_type**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category_schema_type) | List schemas of a specific category (Deprecated)|
+|[**get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id) | Get a json schema (Deprecated)|
+|[**get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id) | Get metadata for a schema (Deprecated)|
+|[**get_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge) | Get edge.|
+|[**get_telephony_providers_edge_line**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_line) | Get line|
+|[**get_telephony_providers_edge_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_lines) | Get the list of lines.|
+|[**get_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterface) | Get an edge logical interface|
+|[**get_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterfaces) | Get edge logical interfaces.|
+|[**get_telephony_providers_edge_logs_job**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logs_job) | Get an Edge logs job.|
+|[**get_telephony_providers_edge_physicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_physicalinterface) | Get edge physical interface.|
+|[**get_telephony_providers_edge_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_physicalinterfaces) | Retrieve a list of all configured physical interfaces from a specific edge.|
+|[**get_telephony_providers_edge_setuppackage**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_setuppackage) | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.|
+|[**get_telephony_providers_edge_softwareupdate**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_softwareupdate) | Gets software update status information about any edge.|
+|[**get_telephony_providers_edge_softwareversions**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_softwareversions) | Gets all the available software versions for this edge.|
+|[**get_telephony_providers_edges**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges) | Get the list of edges.|
+|[**get_telephony_providers_edges_availablelanguages**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_availablelanguages) | Get the list of available languages.|
+|[**get_telephony_providers_edges_certificateauthorities**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_certificateauthorities) | Get the list of certificate authorities.|
+|[**get_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_certificateauthority) | Get a certificate authority.|
+|[**get_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_did) | Get a DID by ID.|
+|[**get_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpool) | Get a DID Pool by ID.|
+|[**get_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpools) | Get a listing of DID Pools|
+|[**get_telephony_providers_edges_dids**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_dids) | Get a listing of DIDs|
+|[**get_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup) | Get edge group.|
+|[**get_telephony_providers_edges_edgegroup_edgetrunkbasis**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbasis) | Gets the edge trunk base associated with the edge group|
+|[**get_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroups) | Get the list of edge groups.|
+|[**get_telephony_providers_edges_edgeversionreport**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgeversionreport) | Get the edge version report.|
+|[**get_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_endpoint) | Get endpoint|
+|[**get_telephony_providers_edges_endpoints**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_endpoints) | Get endpoints|
+|[**get_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extension) | Get an extension by ID.|
+|[**get_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpool) | Get an extension pool by ID|
+|[**get_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpools) | Get a listing of extension pools|
+|[**get_telephony_providers_edges_extensions**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensions) | Get a listing of extensions|
+|[**get_telephony_providers_edges_line**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_line) | Get a Line by ID|
+|[**get_telephony_providers_edges_linebasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_linebasesetting) | Get a line base settings object by ID|
+|[**get_telephony_providers_edges_linebasesettings**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_linebasesettings) | Get a listing of line base settings objects|
+|[**get_telephony_providers_edges_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines) | Get a list of Lines|
+|[**get_telephony_providers_edges_lines_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines_template) | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance|
+|[**get_telephony_providers_edges_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_logicalinterfaces) | Get edge logical interfaces.|
+|[**get_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroute) | Get outbound route|
+|[**get_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroutes) | Get outbound routes|
+|[**get_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phone) | Get a Phone by ID|
+|[**get_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesetting) | Get a Phone Base Settings object by ID|
+|[**get_telephony_providers_edges_phonebasesettings**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings) | Get a list of Phone Base Settings objects|
+|[**get_telephony_providers_edges_phonebasesettings_availablemetabases**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings_availablemetabases) | Get a list of available makes and models to create a new Phone Base Settings|
+|[**get_telephony_providers_edges_phonebasesettings_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings_template) | Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance|
+|[**get_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones) | Get a list of Phone Instances|
+|[**get_telephony_providers_edges_phones_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones_template) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance|
+|[**get_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site) | Get a Site by ID.|
+|[**get_telephony_providers_edges_site_numberplan**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplan) | Get a Number Plan by ID.|
+|[**get_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans) | Get the list of Number Plans for this Site.|
+|[**get_telephony_providers_edges_site_numberplans_classifications**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans_classifications) | Get a list of Classifications for this Site|
+|[**get_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroute) | Get an outbound route|
+|[**get_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroutes) | Get outbound routes|
+|[**get_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_sites) | Get the list of Sites.|
+|[**get_telephony_providers_edges_timezones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_timezones) | Get a list of Edge-compatible time zones|
+|[**get_telephony_providers_edges_trunk**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunk) | Get a Trunk by ID|
+|[**get_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesetting) | Get a Trunk Base Settings object by ID|
+|[**get_telephony_providers_edges_trunkbasesettings**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings) | Get Trunk Base Settings listing|
+|[**get_telephony_providers_edges_trunkbasesettings_availablemetabases**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings_availablemetabases) | Get a list of available makes and models to create a new Trunk Base Settings|
+|[**get_telephony_providers_edges_trunkbasesettings_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings_template) | Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance|
+|[**get_telephony_providers_edges_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
+|[**get_telephony_providers_edges_trunkswithrecording**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkswithrecording) | Get Counts of trunks that have recording disabled or enabled|
+|[**post_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logicalinterfaces) | Create an edge logical interface.|
+|[**post_telephony_providers_edge_logs_job_upload**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logs_job_upload) | Request that the specified fileIds be uploaded from the Edge.|
+|[**post_telephony_providers_edge_logs_jobs**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logs_jobs) | Create a job to upload a list of Edge logs.|
+|[**post_telephony_providers_edge_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_reboot) | Reboot an Edge|
+|[**post_telephony_providers_edge_softwareupdate**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_softwareupdate) | Starts a software update for this edge.|
+|[**post_telephony_providers_edge_statuscode**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_statuscode) | Take an Edge in or out of service|
+|[**post_telephony_providers_edge_unpair**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_unpair) | Unpair an Edge|
+|[**post_telephony_providers_edges**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges) | Create an edge.|
+|[**post_telephony_providers_edges_addressvalidation**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_addressvalidation) | Validates a street address|
+|[**post_telephony_providers_edges_certificateauthorities**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_certificateauthorities) | Create a certificate authority.|
+|[**post_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_didpools) | Create a new DID pool|
+|[**post_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_edgegroups) | Create an edge group.|
+|[**post_telephony_providers_edges_endpoints**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_endpoints) | Create endpoint|
+|[**post_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_extensionpools) | Create a new extension pool|
+|[**post_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_outboundroutes) | Create outbound rule|
+|[**post_telephony_providers_edges_phone_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phone_reboot) | Reboot a Phone|
+|[**post_telephony_providers_edges_phonebasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phonebasesettings) | Create a new Phone Base Settings object|
+|[**post_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones) | Create a new Phone|
+|[**post_telephony_providers_edges_phones_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones_reboot) | Reboot Multiple Phones|
+|[**post_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_outboundroutes) | Create outbound route|
+|[**post_telephony_providers_edges_site_rebalance**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_rebalance) | Triggers the rebalance operation.|
+|[**post_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_sites) | Create a Site.|
+|[**post_telephony_providers_edges_trunkbasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
+|[**put_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge) | Update a edge.|
+|[**put_telephony_providers_edge_line**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge_line) | Update a line.|
+|[**put_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edge_logicalinterface) | Update an edge logical interface.|
+|[**put_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_certificateauthority) | Update a certificate authority.|
+|[**put_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_did) | Update a DID by ID.|
+|[**put_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_didpool) | Update a DID Pool by ID.|
+|[**put_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup) | Update an edge group.|
+|[**put_telephony_providers_edges_edgegroup_edgetrunkbasis**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup_edgetrunkbasis) | Update the edge trunk base associated with the edge group|
+|[**put_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_endpoint) | Update endpoint|
+|[**put_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extension) | Update an extension by ID.|
+|[**put_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extensionpool) | Update an extension pool by ID|
+|[**put_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_outboundroute) | Update outbound route|
+|[**put_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phone) | Update a Phone by ID|
+|[**put_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phonebasesetting) | Update a Phone Base Settings by ID|
+|[**put_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site) | Update a Site by ID.|
+|[**put_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_numberplans) | Update the list of Number Plans.|
+|[**put_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_outboundroute) | Update outbound route|
+|[**put_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_trunkbasesetting) | Update a Trunk Base Settings object by ID|
+{: class="table table-striped"}
+
+<a name="delete_telephony_providers_edge"></a>
+
+## str**delete_telephony_providers_edge(edge_id)
+
+Delete a edge.
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/{edgeId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Delete a edge.
+    api_response = api_instance.delete_telephony_providers_edge(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edge_logicalinterface"></a>
+
+## delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
+
+Delete an edge logical interface
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+interface_id = 'interface_id_example' # str | Interface ID
+
+try:
+    # Delete an edge logical interface
+    api_instance.delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_logicalinterface: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **interface_id** | **str**| Interface ID | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_telephony_providers_edge_softwareupdate"></a>
+
+## str**delete_telephony_providers_edge_softwareupdate(edge_id)
+
+Cancels any in-progress update for this edge.
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Cancels any in-progress update for this edge.
+    api_response = api_instance.delete_telephony_providers_edge_softwareupdate(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_softwareupdate: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_certificateauthority"></a>
+
+## str**delete_telephony_providers_edges_certificateauthority(certificate_id)
+
+Delete a certificate authority.
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+certificate_id = 'certificate_id_example' # str | Certificate ID
+
+try:
+    # Delete a certificate authority.
+    api_response = api_instance.delete_telephony_providers_edges_certificateauthority(certificate_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_certificateauthority: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **certificate_id** | **str**| Certificate ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_didpool"></a>
+
+## str**delete_telephony_providers_edges_didpool(did_pool_id)
+
+Delete a DID Pool by ID.
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+did_pool_id = 'did_pool_id_example' # str | DID pool ID
+
+try:
+    # Delete a DID Pool by ID.
+    api_response = api_instance.delete_telephony_providers_edges_didpool(did_pool_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_didpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **did_pool_id** | **str**| DID pool ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_edgegroup"></a>
+
+## str**delete_telephony_providers_edges_edgegroup(edge_group_id)
+
+Delete an edge group.
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_group_id = 'edge_group_id_example' # str | Edge group ID
+
+try:
+    # Delete an edge group.
+    api_response = api_instance.delete_telephony_providers_edges_edgegroup(edge_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_edgegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_group_id** | **str**| Edge group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_endpoint"></a>
+
+## str**delete_telephony_providers_edges_endpoint(endpoint_id)
+
+Delete endpoint
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+endpoint_id = 'endpoint_id_example' # str | Endpoint ID
+
+try:
+    # Delete endpoint
+    api_response = api_instance.delete_telephony_providers_edges_endpoint(endpoint_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_endpoint: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **endpoint_id** | **str**| Endpoint ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_extensionpool"></a>
+
+## str**delete_telephony_providers_edges_extensionpool(extension_pool_id)
+
+Delete an extension pool by ID
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+extension_pool_id = 'extension_pool_id_example' # str | Extension pool ID
+
+try:
+    # Delete an extension pool by ID
+    api_response = api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **extension_pool_id** | **str**| Extension pool ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_outboundroute"></a>
+
+## str**delete_telephony_providers_edges_outboundroute(outbound_route_id)
+
+Delete Outbound Route
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+
+try:
+    # Delete Outbound Route
+    api_response = api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outbound_route_id** | **str**| Outbound route ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_phone"></a>
+
+## str**delete_telephony_providers_edges_phone(phone_id)
+
+Delete a Phone by ID
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/phones/{phoneId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_id = 'phone_id_example' # str | Phone ID
+
+try:
+    # Delete a Phone by ID
+    api_response = api_instance.delete_telephony_providers_edges_phone(phone_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phone: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_id** | **str**| Phone ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_phonebasesetting"></a>
+
+## str**delete_telephony_providers_edges_phonebasesetting(phone_base_id)
+
+Delete a Phone Base Settings by ID
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_base_id = 'phone_base_id_example' # str | Phone base ID
+
+try:
+    # Delete a Phone Base Settings by ID
+    api_response = api_instance.delete_telephony_providers_edges_phonebasesetting(phone_base_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phonebasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_base_id** | **str**| Phone base ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_site"></a>
+
+## str**delete_telephony_providers_edges_site(site_id)
+
+Delete a Site by ID
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Delete a Site by ID
+    api_response = api_instance.delete_telephony_providers_edges_site(site_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_site_outboundroute"></a>
+
+## str**delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+
+Delete Outbound Route
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+
+try:
+    # Delete Outbound Route
+    api_response = api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **outbound_route_id** | **str**| Outbound route ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="delete_telephony_providers_edges_trunkbasesetting"></a>
+
+## str**delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
+
+Delete a Trunk Base Settings object by ID
+
+
+
+Wraps DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
+
+try:
+    # Delete a Trunk Base Settings object by ID
+    api_response = api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_base_settings_id** | **str**| Trunk Base ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="get_configuration_schemas_edges_vnext"></a>
+
+## [**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html)get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)
+
+Lists available schema categories (Deprecated)
+
+
+
+Wraps GET /api/v2/configuration/schemas/edges/vnext 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Lists available schema categories (Deprecated)
+    api_response = api_instance.get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html)
+
+<a name="get_configuration_schemas_edges_vnext_schema_category"></a>
+
+## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)
+
+List schemas of a specific category (Deprecated)
+
+
+
+Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+schema_category = 'schema_category_example' # str | Schema category
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # List schemas of a specific category (Deprecated)
+    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_category** | **str**| Schema category | |
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)
+
+<a name="get_configuration_schemas_edges_vnext_schema_category_schema_type"></a>
+
+## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)
+
+List schemas of a specific category (Deprecated)
+
+
+
+Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+schema_category = 'schema_category_example' # str | Schema category
+schema_type = 'schema_type_example' # str | Schema type
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # List schemas of a specific category (Deprecated)
+    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_category** | **str**| Schema category | |
+| **schema_type** | **str**| Schema type | |
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)
+
+<a name="get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id"></a>
+
+## [**Organization**](Organization.html)get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)
+
+Get a json schema (Deprecated)
+
+
+
+Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+schema_category = 'schema_category_example' # str | Schema category
+schema_type = 'schema_type_example' # str | Schema type
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get a json schema (Deprecated)
+    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_category** | **str**| Schema category | |
+| **schema_type** | **str**| Schema type | |
+| **schema_id** | **str**| Schema ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Organization**](Organization.html)
+
+<a name="get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id"></a>
+
+## [**Organization**](Organization.html)get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)
+
+Get metadata for a schema (Deprecated)
+
+
+
+Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+schema_category = 'schema_category_example' # str | Schema category
+schema_type = 'schema_type_example' # str | Schema type
+schema_id = 'schema_id_example' # str | Schema ID
+extension_type = 'extension_type_example' # str | extension
+metadata_id = 'metadata_id_example' # str | Metadata ID
+type = 'type_example' # str | Type (optional)
+
+try:
+    # Get metadata for a schema (Deprecated)
+    api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_category** | **str**| Schema category | |
+| **schema_type** | **str**| Schema type | |
+| **schema_id** | **str**| Schema ID | |
+| **extension_type** | **str**| extension | |
+| **metadata_id** | **str**| Metadata ID | |
+| **type** | **str**| Type | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Organization**](Organization.html)
+
+<a name="get_telephony_providers_edge"></a>
+
+## [**Edge**](Edge.html)get_telephony_providers_edge(edge_id, expand=expand)
+
+Get edge.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
+
+try:
+    # Get edge.
+    api_response = api_instance.get_telephony_providers_edge(edge_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Edge**](Edge.html)
+
+<a name="get_telephony_providers_edge_line"></a>
+
+## [**EdgeLine**](EdgeLine.html)get_telephony_providers_edge_line(edge_id, line_id)
+
+Get line
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+line_id = 'line_id_example' # str | Line ID
+
+try:
+    # Get line
+    api_response = api_instance.get_telephony_providers_edge_line(edge_id, line_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **line_id** | **str**| Line ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeLine**](EdgeLine.html)
+
+<a name="get_telephony_providers_edge_lines"></a>
+
+## [**EdgeLineEntityListing**](EdgeLineEntityListing.html)get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
+
+Get the list of lines.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get the list of lines.
+    api_response = api_instance.get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeLineEntityListing**](EdgeLineEntityListing.html)
+
+<a name="get_telephony_providers_edge_logicalinterface"></a>
+
+## [**DomainLogicalInterface**](DomainLogicalInterface.html)get_telephony_providers_edge_logicalinterface(edge_id, interface_id, expand=expand)
+
+Get an edge logical interface
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+interface_id = 'interface_id_example' # str | Interface ID
+expand = ['expand_example'] # list[str] | Field to expand in the response (optional)
+
+try:
+    # Get an edge logical interface
+    api_response = api_instance.get_telephony_providers_edge_logicalinterface(edge_id, interface_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterface: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **interface_id** | **str**| Interface ID | |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainLogicalInterface**](DomainLogicalInterface.html)
+
+<a name="get_telephony_providers_edge_logicalinterfaces"></a>
+
+## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)get_telephony_providers_edge_logicalinterfaces(edge_id, expand=expand)
+
+Get edge logical interfaces.
+
+Retrieve a list of all configured logical interfaces from a specific edge.
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+expand = ['expand_example'] # list[str] | Field to expand in the response (optional)
+
+try:
+    # Get edge logical interfaces.
+    api_response = api_instance.get_telephony_providers_edge_logicalinterfaces(edge_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterfaces: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+
+<a name="get_telephony_providers_edge_logs_job"></a>
+
+## [**EdgeLogsJob**](EdgeLogsJob.html)get_telephony_providers_edge_logs_job(edge_id, job_id)
+
+Get an Edge logs job.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+job_id = 'job_id_example' # str | Job ID
+
+try:
+    # Get an Edge logs job.
+    api_response = api_instance.get_telephony_providers_edge_logs_job(edge_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logs_job: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **job_id** | **str**| Job ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeLogsJob**](EdgeLogsJob.html)
+
+<a name="get_telephony_providers_edge_physicalinterface"></a>
+
+## [**DomainPhysicalInterface**](DomainPhysicalInterface.html)get_telephony_providers_edge_physicalinterface(edge_id, interface_id)
+
+Get edge physical interface.
+
+Retrieve a physical interface from a specific edge.
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+interface_id = 'interface_id_example' # str | Interface ID
+
+try:
+    # Get edge physical interface.
+    api_response = api_instance.get_telephony_providers_edge_physicalinterface(edge_id, interface_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterface: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **interface_id** | **str**| Interface ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainPhysicalInterface**](DomainPhysicalInterface.html)
+
+<a name="get_telephony_providers_edge_physicalinterfaces"></a>
+
+## [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)get_telephony_providers_edge_physicalinterfaces(edge_id)
+
+Retrieve a list of all configured physical interfaces from a specific edge.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Retrieve a list of all configured physical interfaces from a specific edge.
+    api_response = api_instance.get_telephony_providers_edge_physicalinterfaces(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterfaces: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)
+
+<a name="get_telephony_providers_edge_setuppackage"></a>
+
+## [**VmPairingInfo**](VmPairingInfo.html)get_telephony_providers_edge_setuppackage(edge_id)
+
+Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
+    api_response = api_instance.get_telephony_providers_edge_setuppackage(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_setuppackage: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VmPairingInfo**](VmPairingInfo.html)
+
+<a name="get_telephony_providers_edge_softwareupdate"></a>
+
+## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)get_telephony_providers_edge_softwareupdate(edge_id)
+
+Gets software update status information about any edge.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Gets software update status information about any edge.
+    api_response = api_instance.get_telephony_providers_edge_softwareupdate(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareupdate: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)
+
+<a name="get_telephony_providers_edge_softwareversions"></a>
+
+## [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)get_telephony_providers_edge_softwareversions(edge_id)
+
+Gets all the available software versions for this edge.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+
+try:
+    # Gets all the available software versions for this edge.
+    api_response = api_instance.get_telephony_providers_edge_softwareversions(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareversions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)
+
+<a name="get_telephony_providers_edges"></a>
+
+## [**EdgeEntityListing**](EdgeEntityListing.html)get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
+
+Get the list of edges.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+site_id = 'site_id_example' # str | Filter by site.id (optional)
+edge_group_id = 'edge_group_id_example' # str | Filter by edgeGroup.id (optional)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+managed = true # bool | Filter by managed (optional)
+
+try:
+    # Get the list of edges.
+    api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **site_id** | **str**| Filter by site.id | [optional] |
+| **edge_group_id** | **str**| Filter by edgeGroup.id | [optional] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **managed** | **bool**| Filter by managed | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeEntityListing**](EdgeEntityListing.html)
+
+<a name="get_telephony_providers_edges_availablelanguages"></a>
+
+## [**AvailableLanguageList**](AvailableLanguageList.html)get_telephony_providers_edges_availablelanguages()
+
+Get the list of available languages.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/availablelanguages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+
+try:
+    # Get the list of available languages.
+    api_response = api_instance.get_telephony_providers_edges_availablelanguages()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_availablelanguages: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AvailableLanguageList**](AvailableLanguageList.html)
+
+<a name="get_telephony_providers_edges_certificateauthorities"></a>
+
+## [**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html)get_telephony_providers_edges_certificateauthorities()
+
+Get the list of certificate authorities.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/certificateauthorities 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+
+try:
+    # Get the list of certificate authorities.
+    api_response = api_instance.get_telephony_providers_edges_certificateauthorities()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthorities: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html)
+
+<a name="get_telephony_providers_edges_certificateauthority"></a>
+
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)get_telephony_providers_edges_certificateauthority(certificate_id)
+
+Get a certificate authority.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+certificate_id = 'certificate_id_example' # str | Certificate ID
+
+try:
+    # Get a certificate authority.
+    api_response = api_instance.get_telephony_providers_edges_certificateauthority(certificate_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthority: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **certificate_id** | **str**| Certificate ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+
+<a name="get_telephony_providers_edges_did"></a>
+
+## [**DID**](DID.html)get_telephony_providers_edges_did(did_id)
+
+Get a DID by ID.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/dids/{didId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+did_id = 'did_id_example' # str | DID ID
+
+try:
+    # Get a DID by ID.
+    api_response = api_instance.get_telephony_providers_edges_did(did_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_did: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **did_id** | **str**| DID ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DID**](DID.html)
+
+<a name="get_telephony_providers_edges_didpool"></a>
+
+## [**DIDPool**](DIDPool.html)get_telephony_providers_edges_didpool(did_pool_id)
+
+Get a DID Pool by ID.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/didpools/{didPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+did_pool_id = 'did_pool_id_example' # str | DID pool ID
+
+try:
+    # Get a DID Pool by ID.
+    api_response = api_instance.get_telephony_providers_edges_didpool(did_pool_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **did_pool_id** | **str**| DID pool ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDPool**](DIDPool.html)
+
+<a name="get_telephony_providers_edges_didpools"></a>
+
+## [**DIDPoolEntityListing**](DIDPoolEntityListing.html)get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
+
+Get a listing of DID Pools
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/didpools 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'number' # str | Sort by (optional) (default to number)
+
+try:
+    # Get a listing of DID Pools
+    api_response = api_instance.get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Sort by | [optional] [default to number]|
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDPoolEntityListing**](DIDPoolEntityListing.html)
+
+<a name="get_telephony_providers_edges_dids"></a>
+
+## [**DIDEntityListing**](DIDEntityListing.html)get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
+
+Get a listing of DIDs
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/dids 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'number' # str | Sort by (optional) (default to number)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+phone_number = 'phone_number_example' # str | Filter by phoneNumber (optional)
+
+try:
+    # Get a listing of DIDs
+    api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Sort by | [optional] [default to number]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **phone_number** | **str**| Filter by phoneNumber | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDEntityListing**](DIDEntityListing.html)
+
+<a name="get_telephony_providers_edges_edgegroup"></a>
+
+## [**EdgeGroup**](EdgeGroup.html)get_telephony_providers_edges_edgegroup(edge_group_id, expand=expand)
+
+Get edge group.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_group_id = 'edge_group_id_example' # str | Edge group ID
+expand = ['expand_example'] # list[str] | Fields to expand in the response (optional)
+
+try:
+    # Get edge group.
+    api_response = api_instance.get_telephony_providers_edges_edgegroup(edge_group_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_group_id** | **str**| Edge group ID | |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeGroup**](EdgeGroup.html)
+
+<a name="get_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
+
+## [**EdgeTrunkBase**](EdgeTrunkBase.html)get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
+
+Gets the edge trunk base associated with the edge group
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edgegroup_id = 'edgegroup_id_example' # str | Edge Group ID
+edgetrunkbase_id = 'edgetrunkbase_id_example' # str | Edge Trunk Base ID
+
+try:
+    # Gets the edge trunk base associated with the edge group
+    api_response = api_instance.get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbasis: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edgegroup_id** | **str**| Edge Group ID | |
+| **edgetrunkbase_id** | **str**| Edge Trunk Base ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeTrunkBase**](EdgeTrunkBase.html)
+
+<a name="get_telephony_providers_edges_edgegroups"></a>
+
+## [**EdgeGroupEntityListing**](EdgeGroupEntityListing.html)get_telephony_providers_edges_edgegroups(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, managed=managed)
+
+Get the list of edge groups.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/edgegroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+managed = true # bool | Filter by managed (optional)
+
+try:
+    # Get the list of edge groups.
+    api_response = api_instance.get_telephony_providers_edges_edgegroups(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, managed=managed)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **managed** | **bool**| Filter by managed | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeGroupEntityListing**](EdgeGroupEntityListing.html)
+
+<a name="get_telephony_providers_edges_edgeversionreport"></a>
+
+## [**EdgeVersionReport**](EdgeVersionReport.html)get_telephony_providers_edges_edgeversionreport()
+
+Get the edge version report.
+
+The report will not have consistent data about the edge version(s) until all edges have been reset.
+
+Wraps GET /api/v2/telephony/providers/edges/edgeversionreport 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+
+try:
+    # Get the edge version report.
+    api_response = api_instance.get_telephony_providers_edges_edgeversionreport()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgeversionreport: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeVersionReport**](EdgeVersionReport.html)
+
+<a name="get_telephony_providers_edges_endpoint"></a>
+
+## [**Endpoint**](Endpoint.html)get_telephony_providers_edges_endpoint(endpoint_id)
+
+Get endpoint
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/endpoints/{endpointId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+endpoint_id = 'endpoint_id_example' # str | Endpoint ID
+
+try:
+    # Get endpoint
+    api_response = api_instance.get_telephony_providers_edges_endpoint(endpoint_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoint: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **endpoint_id** | **str**| Endpoint ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Endpoint**](Endpoint.html)
+
+<a name="get_telephony_providers_edges_endpoints"></a>
+
+## [**EndpointEntityListing**](EndpointEntityListing.html)get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+
+Get endpoints
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/endpoints 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+
+try:
+    # Get endpoints
+    api_response = api_instance.get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoints: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+{: class="table table-striped"}
+
+### Return type
+
+[**EndpointEntityListing**](EndpointEntityListing.html)
+
+<a name="get_telephony_providers_edges_extension"></a>
+
+## [**Extension**](Extension.html)get_telephony_providers_edges_extension(extension_id)
+
+Get an extension by ID.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/extensions/{extensionId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+extension_id = 'extension_id_example' # str | Extension ID
+
+try:
+    # Get an extension by ID.
+    api_response = api_instance.get_telephony_providers_edges_extension(extension_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extension: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **extension_id** | **str**| Extension ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Extension**](Extension.html)
+
+<a name="get_telephony_providers_edges_extensionpool"></a>
+
+## [**ExtensionPool**](ExtensionPool.html)get_telephony_providers_edges_extensionpool(extension_pool_id)
+
+Get an extension pool by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+extension_pool_id = 'extension_pool_id_example' # str | Extension pool ID
+
+try:
+    # Get an extension pool by ID
+    api_response = api_instance.get_telephony_providers_edges_extensionpool(extension_pool_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **extension_pool_id** | **str**| Extension pool ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionPool**](ExtensionPool.html)
+
+<a name="get_telephony_providers_edges_extensionpools"></a>
+
+## [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html)get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
+
+Get a listing of extension pools
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/extensionpools 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'startNumber' # str | Sort by (optional) (default to startNumber)
+number = 'number_example' # str | Number (optional)
+
+try:
+    # Get a listing of extension pools
+    api_response = api_instance.get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Sort by | [optional] [default to startNumber]|
+| **number** | **str**| Number | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html)
+
+<a name="get_telephony_providers_edges_extensions"></a>
+
+## [**ExtensionEntityListing**](ExtensionEntityListing.html)get_telephony_providers_edges_extensions(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, number=number)
+
+Get a listing of extensions
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/extensions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'number' # str | Sort by (optional) (default to number)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+number = 'number_example' # str | Filter by number (optional)
+
+try:
+    # Get a listing of extensions
+    api_response = api_instance.get_telephony_providers_edges_extensions(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, number=number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Sort by | [optional] [default to number]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **number** | **str**| Filter by number | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionEntityListing**](ExtensionEntityListing.html)
+
+<a name="get_telephony_providers_edges_line"></a>
+
+## [**Line**](Line.html)get_telephony_providers_edges_line(line_id)
+
+Get a Line by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/lines/{lineId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+line_id = 'line_id_example' # str | Line ID
+
+try:
+    # Get a Line by ID
+    api_response = api_instance.get_telephony_providers_edges_line(line_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_line: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **line_id** | **str**| Line ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Line**](Line.html)
+
+<a name="get_telephony_providers_edges_linebasesetting"></a>
+
+## [**LineBase**](LineBase.html)get_telephony_providers_edges_linebasesetting(line_base_id)
+
+Get a line base settings object by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+line_base_id = 'line_base_id_example' # str | Line base ID
+
+try:
+    # Get a line base settings object by ID
+    api_response = api_instance.get_telephony_providers_edges_linebasesetting(line_base_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **line_base_id** | **str**| Line base ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineBase**](LineBase.html)
+
+<a name="get_telephony_providers_edges_linebasesettings"></a>
+
+## [**LineBaseEntityListing**](LineBaseEntityListing.html)get_telephony_providers_edges_linebasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+Get a listing of line base settings objects
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/linebasesettings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+
+try:
+    # Get a listing of line base settings objects
+    api_response = api_instance.get_telephony_providers_edges_linebasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesettings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+{: class="table table-striped"}
+
+### Return type
+
+[**LineBaseEntityListing**](LineBaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_lines"></a>
+
+## [**LineEntityListing**](LineEntityListing.html)get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)
+
+Get a list of Lines
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/lines 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
+
+try:
+    # Get a list of Lines
+    api_response = api_instance.get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineEntityListing**](LineEntityListing.html)
+
+<a name="get_telephony_providers_edges_lines_template"></a>
+
+## [**Line**](Line.html)get_telephony_providers_edges_lines_template(line_base_settings_id)
+
+Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/lines/template 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+line_base_settings_id = 'line_base_settings_id_example' # str | The id of a Line Base Settings object upon which to base this Line
+
+try:
+    # Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
+    api_response = api_instance.get_telephony_providers_edges_lines_template(line_base_settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines_template: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **line_base_settings_id** | **str**| The id of a Line Base Settings object upon which to base this Line | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Line**](Line.html)
+
+<a name="get_telephony_providers_edges_logicalinterfaces"></a>
+
+## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)
+
+Get edge logical interfaces.
+
+Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
+
+Wraps GET /api/v2/telephony/providers/edges/logicalinterfaces 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's
+expand = ['expand_example'] # list[str] | Field to expand in the response (optional)
+
+try:
+    # Get edge logical interfaces.
+    api_response = api_instance.get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_logicalinterfaces: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s | |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+
+<a name="get_telephony_providers_edges_outboundroute"></a>
+
+## [**OutboundRoute**](OutboundRoute.html)get_telephony_providers_edges_outboundroute(outbound_route_id)
+
+Get outbound route
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+
+try:
+    # Get outbound route
+    api_response = api_instance.get_telephony_providers_edges_outboundroute(outbound_route_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outbound_route_id** | **str**| Outbound route ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRoute**](OutboundRoute.html)
+
+<a name="get_telephony_providers_edges_outboundroutes"></a>
+
+## [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html)get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
+
+Get outbound routes
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/outboundroutes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+site_id = 'site_id_example' # str | Filter by site.id (optional)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+
+try:
+    # Get outbound routes
+    api_response = api_instance.get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroutes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **site_id** | **str**| Filter by site.id | [optional] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRouteEntityListing**](OutboundRouteEntityListing.html)
+
+<a name="get_telephony_providers_edges_phone"></a>
+
+## [**Phone**](Phone.html)get_telephony_providers_edges_phone(phone_id)
+
+Get a Phone by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phones/{phoneId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_id = 'phone_id_example' # str | Phone ID
+
+try:
+    # Get a Phone by ID
+    api_response = api_instance.get_telephony_providers_edges_phone(phone_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phone: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_id** | **str**| Phone ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Phone**](Phone.html)
+
+<a name="get_telephony_providers_edges_phonebasesetting"></a>
+
+## [**PhoneBase**](PhoneBase.html)get_telephony_providers_edges_phonebasesetting(phone_base_id)
+
+Get a Phone Base Settings object by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_base_id = 'phone_base_id_example' # str | Phone base ID
+
+try:
+    # Get a Phone Base Settings object by ID
+    api_response = api_instance.get_telephony_providers_edges_phonebasesetting(phone_base_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_base_id** | **str**| Phone base ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneBase**](PhoneBase.html)
+
+<a name="get_telephony_providers_edges_phonebasesettings"></a>
+
+## [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html)get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+
+Get a list of Phone Base Settings objects
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phonebasesettings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get a list of Phone Base Settings objects
+    api_response = api_instance.get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **name** | **str**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneBaseEntityListing**](PhoneBaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_phonebasesettings_availablemetabases"></a>
+
+## [**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html)get_telephony_providers_edges_phonebasesettings_availablemetabases(page_size=page_size, page_number=page_number)
+
+Get a list of available makes and models to create a new Phone Base Settings
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of available makes and models to create a new Phone Base Settings
+    api_response = api_instance.get_telephony_providers_edges_phonebasesettings_availablemetabases(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_availablemetabases: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_phonebasesettings_template"></a>
+
+## [**PhoneBase**](PhoneBase.html)get_telephony_providers_edges_phonebasesettings_template(phone_metabase_id)
+
+Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/template 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_metabase_id = 'phone_metabase_id_example' # str | The id of a metabase object upon which to base this Phone Base Settings
+
+try:
+    # Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
+    api_response = api_instance.get_telephony_providers_edges_phonebasesettings_template(phone_metabase_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_template: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_metabase_id** | **str**| The id of a metabase object upon which to base this Phone Base Settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneBase**](PhoneBase.html)
+
+<a name="get_telephony_providers_edges_phones"></a>
+
+## [**PhoneEntityListing**](PhoneEntityListing.html)get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, expand=expand, fields=fields)
+
+Get a list of Phone Instances
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phones 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+site_id = 'site_id_example' # str | Filter by site.id (optional)
+web_rtc_user_id = 'web_rtc_user_id_example' # str | Filter by webRtcUser.id (optional)
+phone_base_settings_id = 'phone_base_settings_id_example' # str | Filter by phoneBaseSettings.id (optional)
+lines_logged_in_user_id = 'lines_logged_in_user_id_example' # str | Filter by lines.loggedInUser.id (optional)
+lines_default_for_user_id = 'lines_default_for_user_id_example' # str | Filter by lines.defaultForUser.id (optional)
+phone_hardware_id = 'phone_hardware_id_example' # str | Filter by phone_hardwareId (optional)
+lines_id = 'lines_id_example' # str | Filter by lines.id (optional)
+lines_name = 'lines_name_example' # str | Filter by lines.name (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
+fields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)
+
+try:
+    # Get a list of Phone Instances
+    api_response = api_instance.get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, expand=expand, fields=fields)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **site_id** | **str**| Filter by site.id | [optional] |
+| **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional] |
+| **phone_base_settings_id** | **str**| Filter by phoneBaseSettings.id | [optional] |
+| **lines_logged_in_user_id** | **str**| Filter by lines.loggedInUser.id | [optional] |
+| **lines_default_for_user_id** | **str**| Filter by lines.defaultForUser.id | [optional] |
+| **phone_hardware_id** | **str**| Filter by phone_hardwareId | [optional] |
+| **lines_id** | **str**| Filter by lines.id | [optional] |
+| **lines_name** | **str**| Filter by lines.name | [optional] |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+| **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneEntityListing**](PhoneEntityListing.html)
+
+<a name="get_telephony_providers_edges_phones_template"></a>
+
+## [**Phone**](Phone.html)get_telephony_providers_edges_phones_template(phone_base_settings_id)
+
+Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/phones/template 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_base_settings_id = 'phone_base_settings_id_example' # str | The id of a Phone Base Settings object upon which to base this Phone
+
+try:
+    # Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
+    api_response = api_instance.get_telephony_providers_edges_phones_template(phone_base_settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones_template: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_base_settings_id** | **str**| The id of a Phone Base Settings object upon which to base this Phone | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Phone**](Phone.html)
+
+<a name="get_telephony_providers_edges_site"></a>
+
+## [**Site**](Site.html)get_telephony_providers_edges_site(site_id)
+
+Get a Site by ID.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Get a Site by ID.
+    api_response = api_instance.get_telephony_providers_edges_site(site_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Site**](Site.html)
+
+<a name="get_telephony_providers_edges_site_numberplan"></a>
+
+## [**NumberPlan**](NumberPlan.html)get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
+
+Get a Number Plan by ID.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+number_plan_id = 'number_plan_id_example' # str | Number Plan ID
+
+try:
+    # Get a Number Plan by ID.
+    api_response = api_instance.get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplan: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **number_plan_id** | **str**| Number Plan ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**NumberPlan**](NumberPlan.html)
+
+<a name="get_telephony_providers_edges_site_numberplans"></a>
+
+## [**list[NumberPlan]**](NumberPlan.html)get_telephony_providers_edges_site_numberplans(site_id)
+
+Get the list of Number Plans for this Site.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Get the list of Number Plans for this Site.
+    api_response = api_instance.get_telephony_providers_edges_site_numberplans(site_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[NumberPlan]**](NumberPlan.html)
+
+<a name="get_telephony_providers_edges_site_numberplans_classifications"></a>
+
+## list[str]**get_telephony_providers_edges_site_numberplans_classifications(site_id, classification=classification)
+
+Get a list of Classifications for this Site
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+classification = 'classification_example' # str | Classification (optional)
+
+try:
+    # Get a list of Classifications for this Site
+    api_response = api_instance.get_telephony_providers_edges_site_numberplans_classifications(site_id, classification=classification)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans_classifications: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **classification** | **str**| Classification | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+**list[str]**
+
+<a name="get_telephony_providers_edges_site_outboundroute"></a>
+
+## [**OutboundRouteBase**](OutboundRouteBase.html)get_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+
+Get an outbound route
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+
+try:
+    # Get an outbound route
+    api_response = api_instance.get_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **outbound_route_id** | **str**| Outbound route ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRouteBase**](OutboundRouteBase.html)
+
+<a name="get_telephony_providers_edges_site_outboundroutes"></a>
+
+## [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+
+Get outbound routes
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+
+try:
+    # Get outbound routes
+    api_response = api_instance.get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroutes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **name** | **str**| Name | [optional] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_sites"></a>
+
+## [**SiteEntityListing**](SiteEntityListing.html)get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
+
+Get the list of Sites.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+name = 'name_example' # str | Name (optional)
+location_id = 'location_id_example' # str | Location Id (optional)
+managed = true # bool | Filter by managed (optional)
+
+try:
+    # Get the list of Sites.
+    api_response = api_instance.get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **name** | **str**| Name | [optional] |
+| **location_id** | **str**| Location Id | [optional] |
+| **managed** | **bool**| Filter by managed | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SiteEntityListing**](SiteEntityListing.html)
+
+<a name="get_telephony_providers_edges_timezones"></a>
+
+## [**TimeZoneEntityListing**](TimeZoneEntityListing.html)get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
+
+Get a list of Edge-compatible time zones
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/timezones 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_size = 1000 # int | Page size (optional) (default to 1000)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Edge-compatible time zones
+    api_response = api_instance.get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_timezones: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 1000]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+
+<a name="get_telephony_providers_edges_trunk"></a>
+
+## [**Trunk**](Trunk.html)get_telephony_providers_edges_trunk(trunk_id)
+
+Get a Trunk by ID
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_id = 'trunk_id_example' # str | Trunk ID
+
+try:
+    # Get a Trunk by ID
+    api_response = api_instance.get_telephony_providers_edges_trunk(trunk_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_id** | **str**| Trunk ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Trunk**](Trunk.html)
+
+<a name="get_telephony_providers_edges_trunkbasesetting"></a>
+
+## [**TrunkBase**](TrunkBase.html)get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
+
+Get a Trunk Base Settings object by ID
+
+Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+
+Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
+ignore_hidden = true # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
+
+try:
+    # Get a Trunk Base Settings object by ID
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_base_settings_id** | **str**| Trunk Base ID | |
+| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkBase**](TrunkBase.html)
+
+<a name="get_telephony_providers_edges_trunkbasesettings"></a>
+
+## [**TrunkBaseEntityListing**](TrunkBaseEntityListing.html)get_telephony_providers_edges_trunkbasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, recording_enabled=recording_enabled, ignore_hidden=ignore_hidden, managed=managed, expand=expand, name=name)
+
+Get Trunk Base Settings listing
+
+Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+
+Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+recording_enabled = true # bool | Filter trunks by recording enabled (optional)
+ignore_hidden = true # bool | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
+managed = true # bool | Filter by managed (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
+name = 'name_example' # str | Name of the TrunkBase to filter by (optional)
+
+try:
+    # Get Trunk Base Settings listing
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, recording_enabled=recording_enabled, ignore_hidden=ignore_hidden, managed=managed, expand=expand, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **recording_enabled** | **bool**| Filter trunks by recording enabled | [optional] |
+| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
+| **managed** | **bool**| Filter by managed | [optional] |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+| **name** | **str**| Name of the TrunkBase to filter by | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkBaseEntityListing**](TrunkBaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_trunkbasesettings_availablemetabases"></a>
+
+## [**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html)get_telephony_providers_edges_trunkbasesettings_availablemetabases(type=type, page_size=page_size, page_number=page_number)
+
+Get a list of available makes and models to create a new Trunk Base Settings
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+type = 'type_example' # str |  (optional)
+page_size = 25 # int |  (optional) (default to 25)
+page_number = 1 # int |  (optional) (default to 1)
+
+try:
+    # Get a list of available makes and models to create a new Trunk Base Settings
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesettings_availablemetabases(type=type, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_availablemetabases: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **type** | **str**|  | [optional] |
+| **page_size** | **int**|  | [optional] [default to 25]|
+| **page_number** | **int**|  | [optional] [default to 1]|
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html)
+
+<a name="get_telephony_providers_edges_trunkbasesettings_template"></a>
+
+## [**TrunkBase**](TrunkBase.html)get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
+
+Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/template 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_metabase_id = 'trunk_metabase_id_example' # str | The id of a metabase object upon which to base this Trunk Base Settings
+
+try:
+    # Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_template: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_metabase_id** | **str**| The id of a metabase object upon which to base this Trunk Base Settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkBase**](TrunkBase.html)
+
+<a name="get_telephony_providers_edges_trunks"></a>
+
+## [**TrunkEntityListing**](TrunkEntityListing.html)get_telephony_providers_edges_trunks(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, edge_id=edge_id, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
+
+Get the list of available trunks.
+
+Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+
+Wraps GET /api/v2/telephony/providers/edges/trunks 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+edge_id = 'edge_id_example' # str | Filter by Edge Ids (optional)
+trunk_base_id = 'trunk_base_id_example' # str | Filter by Trunk Base Ids (optional)
+trunk_type = 'trunk_type_example' # str | Filter by a Trunk type (optional)
+
+try:
+    # Get the list of available trunks.
+    api_response = api_instance.get_telephony_providers_edges_trunks(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, edge_id=edge_id, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **edge_id** | **str**| Filter by Edge Ids | [optional] |
+| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional] |
+| **trunk_type** | **str**| Filter by a Trunk type | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkEntityListing**](TrunkEntityListing.html)
+
+<a name="get_telephony_providers_edges_trunkswithrecording"></a>
+
+## [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)get_telephony_providers_edges_trunkswithrecording(trunk_type=trunk_type)
+
+Get Counts of trunks that have recording disabled or enabled
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunkswithrecording 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_type = 'trunk_type_example' # str | The type of this trunk base. (optional)
+
+try:
+    # Get Counts of trunks that have recording disabled or enabled
+    api_response = api_instance.get_telephony_providers_edges_trunkswithrecording(trunk_type=trunk_type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkswithrecording: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_type** | **str**| The type of this trunk base. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
+
+<a name="post_telephony_providers_edge_logicalinterfaces"></a>
+
+## [**DomainLogicalInterface**](DomainLogicalInterface.html)post_telephony_providers_edge_logicalinterfaces(edge_id, body)
+
+Create an edge logical interface.
+
+Create
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.DomainLogicalInterface() # DomainLogicalInterface | Logical interface
+
+try:
+    # Create an edge logical interface.
+    api_response = api_instance.post_telephony_providers_edge_logicalinterfaces(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logicalinterfaces: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainLogicalInterface**](DomainLogicalInterface.html)
+
+<a name="post_telephony_providers_edge_logs_job_upload"></a>
+
+## post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
+
+Request that the specified fileIds be uploaded from the Edge.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+job_id = 'job_id_example' # str | Job ID
+body = PureCloudPlatformClientV2.EdgeLogsJobUploadRequest() # EdgeLogsJobUploadRequest | Log upload request
+
+try:
+    # Request that the specified fileIds be uploaded from the Edge.
+    api_instance.post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_job_upload: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **job_id** | **str**| Job ID | |
+| **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_telephony_providers_edge_logs_jobs"></a>
+
+## [**EdgeLogsJobResponse**](EdgeLogsJobResponse.html)post_telephony_providers_edge_logs_jobs(edge_id, body)
+
+Create a job to upload a list of Edge logs.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.EdgeLogsJobRequest() # EdgeLogsJobRequest | EdgeLogsJobRequest
+
+try:
+    # Create a job to upload a list of Edge logs.
+    api_response = api_instance.post_telephony_providers_edge_logs_jobs(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_jobs: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeLogsJobResponse**](EdgeLogsJobResponse.html)
+
+<a name="post_telephony_providers_edge_reboot"></a>
+
+## str**post_telephony_providers_edge_reboot(edge_id, body=body)
+
+Reboot an Edge
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/reboot 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.EdgeRebootParameters() # EdgeRebootParameters | Parameters for the edge reboot (optional)
+
+try:
+    # Reboot an Edge
+    api_response = api_instance.post_telephony_providers_edge_reboot(edge_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_reboot: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="post_telephony_providers_edge_softwareupdate"></a>
+
+## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)post_telephony_providers_edge_softwareupdate(edge_id, body)
+
+Starts a software update for this edge.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.DomainEdgeSoftwareUpdateDto() # DomainEdgeSoftwareUpdateDto | Software update request
+
+try:
+    # Starts a software update for this edge.
+    api_response = api_instance.post_telephony_providers_edge_softwareupdate(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_softwareupdate: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)
+
+<a name="post_telephony_providers_edge_statuscode"></a>
+
+## str**post_telephony_providers_edge_statuscode(edge_id, body=body)
+
+Take an Edge in or out of service
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/statuscode 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.EdgeServiceStateRequest() # EdgeServiceStateRequest | Edge Service State (optional)
+
+try:
+    # Take an Edge in or out of service
+    api_response = api_instance.post_telephony_providers_edge_statuscode(edge_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_statuscode: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="post_telephony_providers_edge_unpair"></a>
+
+## str**post_telephony_providers_edge_unpair(edge_id)
+
+Unpair an Edge
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/unpair 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Unpair an Edge
+    api_response = api_instance.post_telephony_providers_edge_unpair(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_unpair: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id | |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="post_telephony_providers_edges"></a>
+
+## [**Edge**](Edge.html)post_telephony_providers_edges(body)
+
+Create an edge.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.Edge() # Edge | Edge
+
+try:
+    # Create an edge.
+    api_response = api_instance.post_telephony_providers_edges(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Edge**](Edge.html)| Edge | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Edge**](Edge.html)
+
+<a name="post_telephony_providers_edges_addressvalidation"></a>
+
+## [**ValidateAddressResponse**](ValidateAddressResponse.html)post_telephony_providers_edges_addressvalidation(body)
+
+Validates a street address
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/addressvalidation 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.ValidateAddressRequest() # ValidateAddressRequest | Address
+
+try:
+    # Validates a street address
+    api_response = api_instance.post_telephony_providers_edges_addressvalidation(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_addressvalidation: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ValidateAddressResponse**](ValidateAddressResponse.html)
+
+<a name="post_telephony_providers_edges_certificateauthorities"></a>
+
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)post_telephony_providers_edges_certificateauthorities(body)
+
+Create a certificate authority.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/certificateauthorities 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.DomainCertificateAuthority() # DomainCertificateAuthority | CertificateAuthority
+
+try:
+    # Create a certificate authority.
+    api_response = api_instance.post_telephony_providers_edges_certificateauthorities(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_certificateauthorities: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+
+<a name="post_telephony_providers_edges_didpools"></a>
+
+## [**DIDPool**](DIDPool.html)post_telephony_providers_edges_didpools(body)
+
+Create a new DID pool
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/didpools 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.DIDPool() # DIDPool | DID pool
+
+try:
+    # Create a new DID pool
+    api_response = api_instance.post_telephony_providers_edges_didpools(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_didpools: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDPool**](DIDPool.html)
+
+<a name="post_telephony_providers_edges_edgegroups"></a>
+
+## [**EdgeGroup**](EdgeGroup.html)post_telephony_providers_edges_edgegroups(body)
+
+Create an edge group.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/edgegroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.EdgeGroup() # EdgeGroup | EdgeGroup
+
+try:
+    # Create an edge group.
+    api_response = api_instance.post_telephony_providers_edges_edgegroups(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_edgegroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeGroup**](EdgeGroup.html)
+
+<a name="post_telephony_providers_edges_endpoints"></a>
+
+## [**Endpoint**](Endpoint.html)post_telephony_providers_edges_endpoints(body)
+
+Create endpoint
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/endpoints 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.Endpoint() # Endpoint | EndpointTemplate
+
+try:
+    # Create endpoint
+    api_response = api_instance.post_telephony_providers_edges_endpoints(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_endpoints: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Endpoint**](Endpoint.html)
+
+<a name="post_telephony_providers_edges_extensionpools"></a>
+
+## [**ExtensionPool**](ExtensionPool.html)post_telephony_providers_edges_extensionpools(body)
+
+Create a new extension pool
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/extensionpools 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.ExtensionPool() # ExtensionPool | ExtensionPool
+
+try:
+    # Create a new extension pool
+    api_response = api_instance.post_telephony_providers_edges_extensionpools(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_extensionpools: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionPool**](ExtensionPool.html)
+
+<a name="post_telephony_providers_edges_outboundroutes"></a>
+
+## [**OutboundRoute**](OutboundRoute.html)post_telephony_providers_edges_outboundroutes(body)
+
+Create outbound rule
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/outboundroutes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute
+
+try:
+    # Create outbound rule
+    api_response = api_instance.post_telephony_providers_edges_outboundroutes(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRoute**](OutboundRoute.html)
+
+<a name="post_telephony_providers_edges_phone_reboot"></a>
+
+## post_telephony_providers_edges_phone_reboot(phone_id)
+
+Reboot a Phone
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_id = 'phone_id_example' # str | Phone Id
+
+try:
+    # Reboot a Phone
+    api_instance.post_telephony_providers_edges_phone_reboot(phone_id)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phone_reboot: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_id** | **str**| Phone Id | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_telephony_providers_edges_phonebasesettings"></a>
+
+## [**PhoneBase**](PhoneBase.html)post_telephony_providers_edges_phonebasesettings(body)
+
+Create a new Phone Base Settings object
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/phonebasesettings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.PhoneBase() # PhoneBase | Phone base settings
+
+try:
+    # Create a new Phone Base Settings object
+    api_response = api_instance.post_telephony_providers_edges_phonebasesettings(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phonebasesettings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneBase**](PhoneBase.html)
+
+<a name="post_telephony_providers_edges_phones"></a>
+
+## [**Phone**](Phone.html)post_telephony_providers_edges_phones(body)
+
+Create a new Phone
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/phones 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.Phone() # Phone | Phone
+
+try:
+    # Create a new Phone
+    api_response = api_instance.post_telephony_providers_edges_phones(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Phone**](Phone.html)| Phone | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Phone**](Phone.html)
+
+<a name="post_telephony_providers_edges_phones_reboot"></a>
+
+## post_telephony_providers_edges_phones_reboot(body)
+
+Reboot Multiple Phones
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/phones/reboot 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.PhonesReboot() # PhonesReboot | Phones
+
+try:
+    # Reboot Multiple Phones
+    api_instance.post_telephony_providers_edges_phones_reboot(body)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones_reboot: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PhonesReboot**](PhonesReboot.html)| Phones | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_telephony_providers_edges_site_outboundroutes"></a>
+
+## [**OutboundRouteBase**](OutboundRouteBase.html)post_telephony_providers_edges_site_outboundroutes(site_id, body)
+
+Create outbound route
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+body = PureCloudPlatformClientV2.OutboundRouteBase() # OutboundRouteBase | OutboundRoute
+
+try:
+    # Create outbound route
+    api_response = api_instance.post_telephony_providers_edges_site_outboundroutes(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_outboundroutes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRouteBase**](OutboundRouteBase.html)
+
+<a name="post_telephony_providers_edges_site_rebalance"></a>
+
+## post_telephony_providers_edges_site_rebalance(site_id)
+
+Triggers the rebalance operation.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Triggers the rebalance operation.
+    api_instance.post_telephony_providers_edges_site_rebalance(site_id)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_rebalance: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_telephony_providers_edges_sites"></a>
+
+## [**Site**](Site.html)post_telephony_providers_edges_sites(body)
+
+Create a Site.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/sites 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.Site() # Site | Site
+
+try:
+    # Create a Site.
+    api_response = api_instance.post_telephony_providers_edges_sites(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_sites: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Site**](Site.html)| Site | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Site**](Site.html)
+
+<a name="post_telephony_providers_edges_trunkbasesettings"></a>
+
+## [**TrunkBase**](TrunkBase.html)post_telephony_providers_edges_trunkbasesettings(body)
+
+Create a Trunk Base Settings object
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/trunkbasesettings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.TrunkBase() # TrunkBase | Trunk base settings
+
+try:
+    # Create a Trunk Base Settings object
+    api_response = api_instance.post_telephony_providers_edges_trunkbasesettings(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunkbasesettings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkBase**](TrunkBase.html)
+
+<a name="put_telephony_providers_edge"></a>
+
+## [**Edge**](Edge.html)put_telephony_providers_edge(edge_id, body)
+
+Update a edge.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/{edgeId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+body = PureCloudPlatformClientV2.Edge() # Edge | Edge
+
+try:
+    # Update a edge.
+    api_response = api_instance.put_telephony_providers_edge(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **body** | [**Edge**](Edge.html)| Edge | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Edge**](Edge.html)
+
+<a name="put_telephony_providers_edge_line"></a>
+
+## [**EdgeLine**](EdgeLine.html)put_telephony_providers_edge_line(edge_id, line_id, body)
+
+Update a line.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+line_id = 'line_id_example' # str | Line ID
+body = PureCloudPlatformClientV2.EdgeLine() # EdgeLine | Line
+
+try:
+    # Update a line.
+    api_response = api_instance.put_telephony_providers_edge_line(edge_id, line_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **line_id** | **str**| Line ID | |
+| **body** | [**EdgeLine**](EdgeLine.html)| Line | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeLine**](EdgeLine.html)
+
+<a name="put_telephony_providers_edge_logicalinterface"></a>
+
+## [**DomainLogicalInterface**](DomainLogicalInterface.html)put_telephony_providers_edge_logicalinterface(edge_id, interface_id, body)
+
+Update an edge logical interface.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+interface_id = 'interface_id_example' # str | Interface ID
+body = PureCloudPlatformClientV2.DomainLogicalInterface() # DomainLogicalInterface | Logical interface
+
+try:
+    # Update an edge logical interface.
+    api_response = api_instance.put_telephony_providers_edge_logicalinterface(edge_id, interface_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_logicalinterface: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **interface_id** | **str**| Interface ID | |
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainLogicalInterface**](DomainLogicalInterface.html)
+
+<a name="put_telephony_providers_edges_certificateauthority"></a>
+
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)put_telephony_providers_edges_certificateauthority(certificate_id, body)
+
+Update a certificate authority.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+certificate_id = 'certificate_id_example' # str | Certificate ID
+body = PureCloudPlatformClientV2.DomainCertificateAuthority() # DomainCertificateAuthority | Certificate authority
+
+try:
+    # Update a certificate authority.
+    api_response = api_instance.put_telephony_providers_edges_certificateauthority(certificate_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_certificateauthority: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **certificate_id** | **str**| Certificate ID | |
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+
+<a name="put_telephony_providers_edges_did"></a>
+
+## [**DID**](DID.html)put_telephony_providers_edges_did(did_id, body)
+
+Update a DID by ID.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/dids/{didId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+did_id = 'did_id_example' # str | DID ID
+body = PureCloudPlatformClientV2.DID() # DID | DID
+
+try:
+    # Update a DID by ID.
+    api_response = api_instance.put_telephony_providers_edges_did(did_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_did: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **did_id** | **str**| DID ID | |
+| **body** | [**DID**](DID.html)| DID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DID**](DID.html)
+
+<a name="put_telephony_providers_edges_didpool"></a>
+
+## [**DIDPool**](DIDPool.html)put_telephony_providers_edges_didpool(did_pool_id, body)
+
+Update a DID Pool by ID.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/didpools/{didPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+did_pool_id = 'did_pool_id_example' # str | DID pool ID
+body = PureCloudPlatformClientV2.DIDPool() # DIDPool | DID pool
+
+try:
+    # Update a DID Pool by ID.
+    api_response = api_instance.put_telephony_providers_edges_didpool(did_pool_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_didpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **did_pool_id** | **str**| DID pool ID | |
+| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDPool**](DIDPool.html)
+
+<a name="put_telephony_providers_edges_edgegroup"></a>
+
+## [**EdgeGroup**](EdgeGroup.html)put_telephony_providers_edges_edgegroup(edge_group_id, body)
+
+Update an edge group.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_group_id = 'edge_group_id_example' # str | Edge group ID
+body = PureCloudPlatformClientV2.EdgeGroup() # EdgeGroup | EdgeGroup
+
+try:
+    # Update an edge group.
+    api_response = api_instance.put_telephony_providers_edges_edgegroup(edge_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_group_id** | **str**| Edge group ID | |
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeGroup**](EdgeGroup.html)
+
+<a name="put_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
+
+## [**EdgeTrunkBase**](EdgeTrunkBase.html)put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
+
+Update the edge trunk base associated with the edge group
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edgegroup_id = 'edgegroup_id_example' # str | Edge Group ID
+edgetrunkbase_id = 'edgetrunkbase_id_example' # str | Edge Trunk Base ID
+body = PureCloudPlatformClientV2.EdgeTrunkBase() # EdgeTrunkBase | EdgeTrunkBase
+
+try:
+    # Update the edge trunk base associated with the edge group
+    api_response = api_instance.put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbasis: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edgegroup_id** | **str**| Edge Group ID | |
+| **edgetrunkbase_id** | **str**| Edge Trunk Base ID | |
+| **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeTrunkBase**](EdgeTrunkBase.html)
+
+<a name="put_telephony_providers_edges_endpoint"></a>
+
+## [**Endpoint**](Endpoint.html)put_telephony_providers_edges_endpoint(endpoint_id, body)
+
+Update endpoint
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/endpoints/{endpointId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+endpoint_id = 'endpoint_id_example' # str | Endpoint ID
+body = PureCloudPlatformClientV2.Endpoint() # Endpoint | EndpointTemplate
+
+try:
+    # Update endpoint
+    api_response = api_instance.put_telephony_providers_edges_endpoint(endpoint_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_endpoint: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **endpoint_id** | **str**| Endpoint ID | |
+| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Endpoint**](Endpoint.html)
+
+<a name="put_telephony_providers_edges_extension"></a>
+
+## [**Extension**](Extension.html)put_telephony_providers_edges_extension(extension_id, body)
+
+Update an extension by ID.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/extensions/{extensionId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+extension_id = 'extension_id_example' # str | Extension ID
+body = PureCloudPlatformClientV2.Extension() # Extension | Extension
+
+try:
+    # Update an extension by ID.
+    api_response = api_instance.put_telephony_providers_edges_extension(extension_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extension: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **extension_id** | **str**| Extension ID | |
+| **body** | [**Extension**](Extension.html)| Extension | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Extension**](Extension.html)
+
+<a name="put_telephony_providers_edges_extensionpool"></a>
+
+## [**ExtensionPool**](ExtensionPool.html)put_telephony_providers_edges_extensionpool(extension_pool_id, body)
+
+Update an extension pool by ID
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+extension_pool_id = 'extension_pool_id_example' # str | Extension pool ID
+body = PureCloudPlatformClientV2.ExtensionPool() # ExtensionPool | ExtensionPool
+
+try:
+    # Update an extension pool by ID
+    api_response = api_instance.put_telephony_providers_edges_extensionpool(extension_pool_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extensionpool: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **extension_pool_id** | **str**| Extension pool ID | |
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionPool**](ExtensionPool.html)
+
+<a name="put_telephony_providers_edges_outboundroute"></a>
+
+## [**OutboundRoute**](OutboundRoute.html)put_telephony_providers_edges_outboundroute(outbound_route_id, body)
+
+Update outbound route
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+body = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute
+
+try:
+    # Update outbound route
+    api_response = api_instance.put_telephony_providers_edges_outboundroute(outbound_route_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outbound_route_id** | **str**| Outbound route ID | |
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRoute**](OutboundRoute.html)
+
+<a name="put_telephony_providers_edges_phone"></a>
+
+## [**Phone**](Phone.html)put_telephony_providers_edges_phone(phone_id, body)
+
+Update a Phone by ID
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/phones/{phoneId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_id = 'phone_id_example' # str | Phone ID
+body = PureCloudPlatformClientV2.Phone() # Phone | Phone
+
+try:
+    # Update a Phone by ID
+    api_response = api_instance.put_telephony_providers_edges_phone(phone_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phone: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_id** | **str**| Phone ID | |
+| **body** | [**Phone**](Phone.html)| Phone | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Phone**](Phone.html)
+
+<a name="put_telephony_providers_edges_phonebasesetting"></a>
+
+## [**PhoneBase**](PhoneBase.html)put_telephony_providers_edges_phonebasesetting(phone_base_id, body)
+
+Update a Phone Base Settings by ID
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+phone_base_id = 'phone_base_id_example' # str | Phone base ID
+body = PureCloudPlatformClientV2.PhoneBase() # PhoneBase | Phone base settings
+
+try:
+    # Update a Phone Base Settings by ID
+    api_response = api_instance.put_telephony_providers_edges_phonebasesetting(phone_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phonebasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_base_id** | **str**| Phone base ID | |
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**PhoneBase**](PhoneBase.html)
+
+<a name="put_telephony_providers_edges_site"></a>
+
+## [**Site**](Site.html)put_telephony_providers_edges_site(site_id, body)
+
+Update a Site by ID.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+body = PureCloudPlatformClientV2.Site() # Site | Site
+
+try:
+    # Update a Site by ID.
+    api_response = api_instance.put_telephony_providers_edges_site(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **body** | [**Site**](Site.html)| Site | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Site**](Site.html)
+
+<a name="put_telephony_providers_edges_site_numberplans"></a>
+
+## [**list[NumberPlan]**](NumberPlan.html)put_telephony_providers_edges_site_numberplans(site_id, body)
+
+Update the list of Number Plans.
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+body = [PureCloudPlatformClientV2.NumberPlan()] # list[NumberPlan] | List of number plans
+
+try:
+    # Update the list of Number Plans.
+    api_response = api_instance.put_telephony_providers_edges_site_numberplans(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_numberplans: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **body** | [**list[NumberPlan]**](NumberPlan.html)| List of number plans | |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[NumberPlan]**](NumberPlan.html)
+
+<a name="put_telephony_providers_edges_site_outboundroute"></a>
+
+## [**OutboundRouteBase**](OutboundRouteBase.html)put_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id, body)
+
+Update outbound route
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
+body = PureCloudPlatformClientV2.OutboundRouteBase() # OutboundRouteBase | OutboundRoute
+
+try:
+    # Update outbound route
+    api_response = api_instance.put_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_outboundroute: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID | |
+| **outbound_route_id** | **str**| Outbound route ID | |
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundRouteBase**](OutboundRouteBase.html)
+
+<a name="put_telephony_providers_edges_trunkbasesetting"></a>
+
+## [**TrunkBase**](TrunkBase.html)put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
+
+Update a Trunk Base Settings object by ID
+
+
+
+Wraps PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
+body = PureCloudPlatformClientV2.TrunkBase() # TrunkBase | Trunk base settings
+
+try:
+    # Update a Trunk Base Settings object by ID
+    api_response = api_instance.put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_trunkbasesetting: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_base_settings_id** | **str**| Trunk Base ID | |
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkBase**](TrunkBase.html)
+
