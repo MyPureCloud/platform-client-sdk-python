@@ -45,8 +45,8 @@ class PhoneEntityListing(object):
             'self_uri': 'str',
             'first_uri': 'str',
             'next_uri': 'str',
-            'previous_uri': 'str',
             'last_uri': 'str',
+            'previous_uri': 'str',
             'page_count': 'int'
         }
 
@@ -58,8 +58,8 @@ class PhoneEntityListing(object):
             'self_uri': 'selfUri',
             'first_uri': 'firstUri',
             'next_uri': 'nextUri',
-            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
+            'previous_uri': 'previousUri',
             'page_count': 'pageCount'
         }
 
@@ -70,8 +70,8 @@ class PhoneEntityListing(object):
         self._self_uri = None
         self._first_uri = None
         self._next_uri = None
-        self._previous_uri = None
         self._last_uri = None
+        self._previous_uri = None
         self._page_count = None
 
     @property
@@ -236,29 +236,6 @@ class PhoneEntityListing(object):
         self._next_uri = next_uri
 
     @property
-    def previous_uri(self):
-        """
-        Gets the previous_uri of this PhoneEntityListing.
-
-
-        :return: The previous_uri of this PhoneEntityListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
-        """
-        Sets the previous_uri of this PhoneEntityListing.
-
-
-        :param previous_uri: The previous_uri of this PhoneEntityListing.
-        :type: str
-        """
-        
-        self._previous_uri = previous_uri
-
-    @property
     def last_uri(self):
         """
         Gets the last_uri of this PhoneEntityListing.
@@ -280,6 +257,29 @@ class PhoneEntityListing(object):
         """
         
         self._last_uri = last_uri
+
+    @property
+    def previous_uri(self):
+        """
+        Gets the previous_uri of this PhoneEntityListing.
+
+
+        :return: The previous_uri of this PhoneEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
+        """
+        Sets the previous_uri of this PhoneEntityListing.
+
+
+        :param previous_uri: The previous_uri of this PhoneEntityListing.
+        :type: str
+        """
+        
+        self._previous_uri = previous_uri
 
     @property
     def page_count(self):
