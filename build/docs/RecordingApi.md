@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_conversation_recording_annotation"></a>
 
-## delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
+##  delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
 Delete annotation
 
@@ -93,7 +93,7 @@ void (empty response body)
 
 <a name="delete_orphanrecording"></a>
 
-## [**OrphanRecording**](OrphanRecording.html)delete_orphanrecording(orphan_id)
+## [**OrphanRecording**](OrphanRecording.html) delete_orphanrecording(orphan_id)
 
 Deletes a single orphan recording
 
@@ -138,7 +138,7 @@ except ApiException as e:
 
 <a name="delete_recording_mediaretentionpolicies"></a>
 
-## str**delete_recording_mediaretentionpolicies(ids)
+## str** delete_recording_mediaretentionpolicies(ids)
 
 Delete media retention policies
 
@@ -183,7 +183,7 @@ except ApiException as e:
 
 <a name="delete_recording_mediaretentionpolicy"></a>
 
-## str**delete_recording_mediaretentionpolicy(policy_id)
+## str** delete_recording_mediaretentionpolicy(policy_id)
 
 Delete a media retention policy
 
@@ -228,7 +228,7 @@ except ApiException as e:
 
 <a name="get_conversation_recording"></a>
 
-## [**Recording**](Recording.html)get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name)
+## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name)
 
 Gets a specific recording.
 
@@ -281,7 +281,7 @@ except ApiException as e:
 
 <a name="get_conversation_recording_annotation"></a>
 
-## [**Annotation**](Annotation.html)get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
+## [**Annotation**](Annotation.html) get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
 Get annotation
 
@@ -330,7 +330,7 @@ except ApiException as e:
 
 <a name="get_conversation_recording_annotations"></a>
 
-## [**list[Annotation]**](Annotation.html)get_conversation_recording_annotations(conversation_id, recording_id)
+## [**list[Annotation]**](Annotation.html) get_conversation_recording_annotations(conversation_id, recording_id)
 
 Get annotations for recording
 
@@ -377,7 +377,7 @@ except ApiException as e:
 
 <a name="get_conversation_recordings"></a>
 
-## [**list[Recording]**](Recording.html)get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
+## [**list[Recording]**](Recording.html) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
 
 Get all of a Conversation's Recordings.
 
@@ -426,7 +426,7 @@ except ApiException as e:
 
 <a name="get_orphanrecording"></a>
 
-## [**OrphanRecording**](OrphanRecording.html)get_orphanrecording(orphan_id)
+## [**OrphanRecording**](OrphanRecording.html) get_orphanrecording(orphan_id)
 
 Gets a single orphan recording
 
@@ -471,7 +471,7 @@ except ApiException as e:
 
 <a name="get_orphanrecording_media"></a>
 
-## [**Recording**](Recording.html)get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name)
+## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name)
 
 Gets the media of a single orphan recording
 
@@ -522,7 +522,7 @@ except ApiException as e:
 
 <a name="get_orphanrecordings"></a>
 
-## [**OrphanRecordingListing**](OrphanRecordingListing.html)get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation)
+## [**OrphanRecordingListing**](OrphanRecordingListing.html) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation)
 
 Gets all orphan recordings
 
@@ -579,7 +579,7 @@ except ApiException as e:
 
 <a name="get_recording_localkeys_setting"></a>
 
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)get_recording_localkeys_setting(settings_id)
+## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
 
 Get the local encryption settings
 
@@ -624,7 +624,7 @@ except ApiException as e:
 
 <a name="get_recording_localkeys_settings"></a>
 
-## [**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html)get_recording_localkeys_settings()
+## [**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html) get_recording_localkeys_settings()
 
 gets a list local key settings data
 
@@ -665,7 +665,7 @@ This endpoint does not need any parameter.
 
 <a name="get_recording_mediaretentionpolicies"></a>
 
-## [**PolicyEntityListing**](PolicyEntityListing.html)get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
 
 Gets media retention policy list with query options to filter on name and enabled.
 
@@ -728,7 +728,7 @@ except ApiException as e:
 
 <a name="get_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html)get_recording_mediaretentionpolicy(policy_id)
+## [**Policy**](Policy.html) get_recording_mediaretentionpolicy(policy_id)
 
 Get a media retention policy
 
@@ -773,7 +773,7 @@ except ApiException as e:
 
 <a name="get_recording_recordingkeys"></a>
 
-## [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html)get_recording_recordingkeys(page_size=page_size, page_number=page_number)
+## [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html) get_recording_recordingkeys(page_size=page_size, page_number=page_number)
 
 Get encryption key list
 
@@ -820,7 +820,7 @@ except ApiException as e:
 
 <a name="get_recording_recordingkeys_rotationschedule"></a>
 
-## [**KeyRotationSchedule**](KeyRotationSchedule.html)get_recording_recordingkeys_rotationschedule()
+## [**KeyRotationSchedule**](KeyRotationSchedule.html) get_recording_recordingkeys_rotationschedule()
 
 Get key rotation schedule
 
@@ -861,7 +861,7 @@ This endpoint does not need any parameter.
 
 <a name="get_recording_settings"></a>
 
-## [**RecordingSettings**](RecordingSettings.html)get_recording_settings(create_default=create_default)
+## [**RecordingSettings**](RecordingSettings.html) get_recording_settings(create_default=create_default)
 
 Get the Recording Settings for the Organization
 
@@ -906,7 +906,7 @@ except ApiException as e:
 
 <a name="get_recordings_screensessions"></a>
 
-## [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)get_recordings_screensessions(page_size=page_size, page_number=page_number)
+## [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html) get_recordings_screensessions(page_size=page_size, page_number=page_number)
 
 Retrieves a paged listing of screen recording sessions
 
@@ -953,7 +953,7 @@ except ApiException as e:
 
 <a name="patch_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html)patch_recording_mediaretentionpolicy(policy_id, body)
+## [**Policy**](Policy.html) patch_recording_mediaretentionpolicy(policy_id, body)
 
 Patch a media retention policy
 
@@ -1000,7 +1000,7 @@ except ApiException as e:
 
 <a name="patch_recordings_screensession"></a>
 
-## patch_recordings_screensession(recording_session_id, body=body)
+##  patch_recordings_screensession(recording_session_id, body=body)
 
 Update a screen recording session
 
@@ -1046,7 +1046,7 @@ void (empty response body)
 
 <a name="post_conversation_recording_annotations"></a>
 
-## [**Annotation**](Annotation.html)post_conversation_recording_annotations(conversation_id, recording_id, body)
+## [**Annotation**](Annotation.html) post_conversation_recording_annotations(conversation_id, recording_id, body)
 
 Create annotation
 
@@ -1095,7 +1095,7 @@ except ApiException as e:
 
 <a name="post_recording_localkeys"></a>
 
-## [**EncryptionKey**](EncryptionKey.html)post_recording_localkeys(body)
+## [**EncryptionKey**](EncryptionKey.html) post_recording_localkeys(body)
 
 create a local recording key
 
@@ -1140,7 +1140,7 @@ except ApiException as e:
 
 <a name="post_recording_localkeys_settings"></a>
 
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)post_recording_localkeys_settings(body)
+## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) post_recording_localkeys_settings(body)
 
 create settings for local key creation
 
@@ -1185,7 +1185,7 @@ except ApiException as e:
 
 <a name="post_recording_mediaretentionpolicies"></a>
 
-## [**Policy**](Policy.html)post_recording_mediaretentionpolicies(body)
+## [**Policy**](Policy.html) post_recording_mediaretentionpolicies(body)
 
 Create media retention policy
 
@@ -1230,7 +1230,7 @@ except ApiException as e:
 
 <a name="post_recording_recordingkeys"></a>
 
-## [**EncryptionKey**](EncryptionKey.html)post_recording_recordingkeys()
+## [**EncryptionKey**](EncryptionKey.html) post_recording_recordingkeys()
 
 Create encryption key
 
@@ -1271,7 +1271,7 @@ This endpoint does not need any parameter.
 
 <a name="put_conversation_recording"></a>
 
-## [**Recording**](Recording.html)put_conversation_recording(conversation_id, recording_id, body)
+## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body)
 
 Updates the retention records on a recording.
 
@@ -1320,7 +1320,7 @@ except ApiException as e:
 
 <a name="put_conversation_recording_annotation"></a>
 
-## [**Annotation**](Annotation.html)put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
+## [**Annotation**](Annotation.html) put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
 
 Update annotation
 
@@ -1371,7 +1371,7 @@ except ApiException as e:
 
 <a name="put_orphanrecording"></a>
 
-## [**Recording**](Recording.html)put_orphanrecording(orphan_id, body=body)
+## [**Recording**](Recording.html) put_orphanrecording(orphan_id, body=body)
 
 Updates an orphan recording to a regular recording with retention values
 
@@ -1418,7 +1418,7 @@ except ApiException as e:
 
 <a name="put_recording_localkeys_setting"></a>
 
-## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)put_recording_localkeys_setting(settings_id, body)
+## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) put_recording_localkeys_setting(settings_id, body)
 
 Update the local encryption settings
 
@@ -1465,7 +1465,7 @@ except ApiException as e:
 
 <a name="put_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html)put_recording_mediaretentionpolicy(policy_id, body)
+## [**Policy**](Policy.html) put_recording_mediaretentionpolicy(policy_id, body)
 
 Update a media retention policy
 
@@ -1512,7 +1512,7 @@ except ApiException as e:
 
 <a name="put_recording_recordingkeys_rotationschedule"></a>
 
-## [**KeyRotationSchedule**](KeyRotationSchedule.html)put_recording_recordingkeys_rotationschedule(body)
+## [**KeyRotationSchedule**](KeyRotationSchedule.html) put_recording_recordingkeys_rotationschedule(body)
 
 Update key rotation schedule
 
@@ -1557,7 +1557,7 @@ except ApiException as e:
 
 <a name="put_recording_settings"></a>
 
-## [**RecordingSettings**](RecordingSettings.html)put_recording_settings(body)
+## [**RecordingSettings**](RecordingSettings.html) put_recording_settings(body)
 
 Update the Recording Settings for the Organization
 

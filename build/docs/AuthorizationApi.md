@@ -29,7 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_authorization_role"></a>
 
-## delete_authorization_role(role_id)
+##  delete_authorization_role(role_id)
 
 Delete an organization role.
 
@@ -73,7 +73,7 @@ void (empty response body)
 
 <a name="delete_user_roles"></a>
 
-## delete_user_roles(user_id)
+##  delete_user_roles(user_id)
 
 Removes all the roles from the user.
 
@@ -117,7 +117,7 @@ void (empty response body)
 
 <a name="get_authorization_permissions"></a>
 
-## [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html)get_authorization_permissions(page_size=page_size, page_number=page_number)
+## [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html) get_authorization_permissions(page_size=page_size, page_number=page_number)
 
 Get all permissions.
 
@@ -164,7 +164,7 @@ except ApiException as e:
 
 <a name="get_authorization_products"></a>
 
-## [**OrganizationProductEntityListing**](OrganizationProductEntityListing.html)get_authorization_products()
+## [**OrganizationProductEntityListing**](OrganizationProductEntityListing.html) get_authorization_products()
 
 Get the list of enabled products
 
@@ -205,7 +205,7 @@ This endpoint does not need any parameter.
 
 <a name="get_authorization_role"></a>
 
-## [**DomainOrganizationRole**](DomainOrganizationRole.html)get_authorization_role(role_id)
+## [**DomainOrganizationRole**](DomainOrganizationRole.html) get_authorization_role(role_id)
 
 Get a single organization role.
 
@@ -250,7 +250,7 @@ except ApiException as e:
 
 <a name="get_authorization_role_comparedefault_right_role_id"></a>
 
-## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)get_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id)
+## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) get_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id)
 
 Get an org role to default role comparison comparison
 
@@ -297,7 +297,7 @@ except ApiException as e:
 
 <a name="get_authorization_roles"></a>
 
-## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, permission=permission, user_count=user_count)
+## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, permission=permission, user_count=user_count)
 
 Retrieve a list of all roles defined for the organization
 
@@ -356,7 +356,7 @@ except ApiException as e:
 
 <a name="get_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html)get_user_roles(user_id)
+## [**UserAuthorization**](UserAuthorization.html) get_user_roles(user_id)
 
 Returns a listing of roles and permissions for a user.
 
@@ -401,7 +401,7 @@ except ApiException as e:
 
 <a name="patch_authorization_role"></a>
 
-## [**DomainOrganizationRole**](DomainOrganizationRole.html)patch_authorization_role(role_id, body)
+## [**DomainOrganizationRole**](DomainOrganizationRole.html) patch_authorization_role(role_id, body)
 
 Patch Organization Role for needsUpdate Field
 
@@ -448,7 +448,7 @@ except ApiException as e:
 
 <a name="post_authorization_role_comparedefault_right_role_id"></a>
 
-## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
+## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
 
 Get an unsaved org role to default role comparison
 
@@ -497,7 +497,7 @@ except ApiException as e:
 
 <a name="post_authorization_roles"></a>
 
-## [**DomainOrganizationRole**](DomainOrganizationRole.html)post_authorization_roles(body)
+## [**DomainOrganizationRole**](DomainOrganizationRole.html) post_authorization_roles(body)
 
 Create an organization role.
 
@@ -542,7 +542,7 @@ except ApiException as e:
 
 <a name="post_authorization_roles_default"></a>
 
-## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)post_authorization_roles_default(force=force)
+## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) post_authorization_roles_default(force=force)
 
 Restores all default roles
 
@@ -587,7 +587,7 @@ except ApiException as e:
 
 <a name="put_authorization_role"></a>
 
-## [**DomainOrganizationRole**](DomainOrganizationRole.html)put_authorization_role(role_id, body)
+## [**DomainOrganizationRole**](DomainOrganizationRole.html) put_authorization_role(role_id, body)
 
 Update an organization role.
 
@@ -634,7 +634,7 @@ except ApiException as e:
 
 <a name="put_authorization_role_users_add"></a>
 
-## list[str]**put_authorization_role_users_add(role_id, body)
+## list[str]** put_authorization_role_users_add(role_id, body)
 
 Sets the users for the role
 
@@ -681,7 +681,7 @@ except ApiException as e:
 
 <a name="put_authorization_role_users_remove"></a>
 
-## list[str]**put_authorization_role_users_remove(role_id, body)
+## list[str]** put_authorization_role_users_remove(role_id, body)
 
 Removes the users from the role
 
@@ -728,7 +728,7 @@ except ApiException as e:
 
 <a name="put_authorization_roles_default"></a>
 
-## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)put_authorization_roles_default(body)
+## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) put_authorization_roles_default(body)
 
 Restore specified default roles
 
@@ -773,7 +773,7 @@ except ApiException as e:
 
 <a name="put_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html)put_user_roles(user_id, body)
+## [**UserAuthorization**](UserAuthorization.html) put_user_roles(user_id, body)
 
 Sets the user's roles
 

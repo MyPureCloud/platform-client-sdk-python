@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
 |[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Get activity codes corresponding to a management unit|
+|[**get_workforcemanagement_managementunit_intraday_queues**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_intraday_queues) | Get intraday queues for the given date|
 |[**get_workforcemanagement_managementunit_user_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_user_timeoffrequest) | Get a time off request by id|
 |[**get_workforcemanagement_managementunit_user_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_user_timeoffrequests) | Get a list of time off requests for any user|
 |[**get_workforcemanagement_managementunit_users**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_users) | Get agents in the management unit|
@@ -17,13 +18,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user by id|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Mark a time off request for the current user as read or unread|
+|[**post_workforcemanagement_managementunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_intraday) | Get intraday data for the given date for the requested queueIds|
 |[**post_workforcemanagement_managementunit_schedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_schedules_search) | Get user schedules within the given time range|
 |[**post_workforcemanagement_schedules**](WorkforceManagementApi.html#post_workforcemanagement_schedules) | Get a schedule for the current user|
 {: class="table table-striped"}
 
 <a name="get_workforcemanagement_adherence"></a>
 
-## [**list[UserScheduleAdherence]**](UserScheduleAdherence.html)get_workforcemanagement_adherence(user_id)
+## [**list[UserScheduleAdherence]**](UserScheduleAdherence.html) get_workforcemanagement_adherence(user_id)
 
 Get a list of UserScheduleAdherence records for the requested users
 
@@ -68,7 +70,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_activitycodes"></a>
 
-## [**ActivityCodeContainer**](ActivityCodeContainer.html)get_workforcemanagement_managementunit_activitycodes(mu_id)
+## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(mu_id)
 
 Get activity codes corresponding to a management unit
 
@@ -111,9 +113,56 @@ except ApiException as e:
 
 [**ActivityCodeContainer**](ActivityCodeContainer.html)
 
+<a name="get_workforcemanagement_managementunit_intraday_queues"></a>
+
+## [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html) get_workforcemanagement_managementunit_intraday_queues(mu_id, date)
+
+Get intraday queues for the given date
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+mu_id = 'mu_id_example' # str | The muId of the management unit.
+date = 'date_example' # str | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
+
+try:
+    # Get intraday queues for the given date
+    api_response = api_instance.get_workforcemanagement_managementunit_intraday_queues(mu_id, date)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_intraday_queues: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mu_id** | **str**| The muId of the management unit. | |
+| **date** | **str**| ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 | |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmIntradayQueueListing**](WfmIntradayQueueListing.html)
+
 <a name="get_workforcemanagement_managementunit_user_timeoffrequest"></a>
 
-## [**TimeOffRequest**](TimeOffRequest.html)get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
+## [**TimeOffRequest**](TimeOffRequest.html) get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
 
 Get a time off request by id
 
@@ -162,7 +211,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_user_timeoffrequests"></a>
 
-## [**TimeOffRequestList**](TimeOffRequestList.html)get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
+## [**TimeOffRequestList**](TimeOffRequestList.html) get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
 
 Get a list of time off requests for any user
 
@@ -211,7 +260,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_users"></a>
 
-## [**WfmUserEntityListing**](WfmUserEntityListing.html)get_workforcemanagement_managementunit_users(mu_id)
+## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_users(mu_id)
 
 Get agents in the management unit
 
@@ -256,7 +305,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunits"></a>
 
-## [**list[ManagementUnit]**](ManagementUnit.html)get_workforcemanagement_managementunits(selector=selector, page_size=page_size, page_number=page_number)
+## [**list[ManagementUnit]**](ManagementUnit.html) get_workforcemanagement_managementunits(selector=selector, page_size=page_size, page_number=page_number)
 
 Get management units
 
@@ -305,7 +354,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_timeoffrequest"></a>
 
-## [**TimeOffRequest**](TimeOffRequest.html)get_workforcemanagement_timeoffrequest(time_off_request_id)
+## [**TimeOffRequest**](TimeOffRequest.html) get_workforcemanagement_timeoffrequest(time_off_request_id)
 
 Get a time off request for the current user by id
 
@@ -350,7 +399,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_timeoffrequests"></a>
 
-## [**TimeOffRequestList**](TimeOffRequestList.html)get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
+## [**TimeOffRequestList**](TimeOffRequestList.html) get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
 
 Get a list of time off requests for the current user
 
@@ -395,7 +444,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_timeoffrequest"></a>
 
-## patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)
+##  patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)
 
 Mark a time off request for the current user as read or unread
 
@@ -439,9 +488,56 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_workforcemanagement_managementunit_intraday"></a>
+
+## [**IntradayResponse**](IntradayResponse.html) post_workforcemanagement_managementunit_intraday(mu_id, body=body)
+
+Get intraday data for the given date for the requested queueIds
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/intraday 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+mu_id = 'mu_id_example' # str | The muId of the management unit.
+body = PureCloudPlatformClientV2.IntradayQueryDataCommand() # IntradayQueryDataCommand | body (optional)
+
+try:
+    # Get intraday data for the given date for the requested queueIds
+    api_response = api_instance.post_workforcemanagement_managementunit_intraday(mu_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_intraday: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mu_id** | **str**| The muId of the management unit. | |
+| **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IntradayResponse**](IntradayResponse.html)
+
 <a name="post_workforcemanagement_managementunit_schedules_search"></a>
 
-## [**UserScheduleContainer**](UserScheduleContainer.html)post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
+## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
 
 Get user schedules within the given time range
 
@@ -488,7 +584,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_schedules"></a>
 
-## [**UserScheduleContainer**](UserScheduleContainer.html)post_workforcemanagement_schedules(body=body)
+## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_schedules(body=body)
 
 Get a schedule for the current user
 

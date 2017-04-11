@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_attribute"></a>
 
-## delete_attribute(attribute_id)
+##  delete_attribute(attribute_id)
 
 Delete an existing Attribute.
 
@@ -62,7 +62,7 @@ void (empty response body)
 
 <a name="get_attribute"></a>
 
-## [**Attribute**](Attribute.html)get_attribute(attribute_id)
+## [**Attribute**](Attribute.html) get_attribute(attribute_id)
 
 Get details about an existing attribute.
 
@@ -107,7 +107,7 @@ except ApiException as e:
 
 <a name="get_attributes"></a>
 
-## [**AttributeEntityListing**](AttributeEntityListing.html)get_attributes(page_number=page_number, page_size=page_size)
+## [**AttributeEntityListing**](AttributeEntityListing.html) get_attributes(page_number=page_number, page_size=page_size)
 
 Gets a list of existing attributes.
 
@@ -154,7 +154,7 @@ except ApiException as e:
 
 <a name="post_attributes"></a>
 
-## [**Attribute**](Attribute.html)post_attributes(body)
+## [**Attribute**](Attribute.html) post_attributes(body)
 
 Create an attribute.
 
@@ -199,7 +199,7 @@ except ApiException as e:
 
 <a name="post_attributes_query"></a>
 
-## [**AttributeEntityListing**](AttributeEntityListing.html)post_attributes_query(body)
+## [**AttributeEntityListing**](AttributeEntityListing.html) post_attributes_query(body)
 
 Query attributes
 
@@ -244,7 +244,7 @@ except ApiException as e:
 
 <a name="put_attribute"></a>
 
-## [**Attribute**](Attribute.html)put_attribute(attribute_id, body)
+## [**Attribute**](Attribute.html) put_attribute(attribute_id, body)
 
 Update an existing attribute.
 

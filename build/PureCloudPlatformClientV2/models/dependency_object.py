@@ -44,6 +44,7 @@ class DependencyObject(object):
             'type': 'str',
             'deleted': 'bool',
             'updated': 'bool',
+            'state_unknown': 'bool',
             'consumed_resources': 'list[Dependency]',
             'consuming_resources': 'list[Dependency]',
             'self_uri': 'str'
@@ -56,6 +57,7 @@ class DependencyObject(object):
             'type': 'type',
             'deleted': 'deleted',
             'updated': 'updated',
+            'state_unknown': 'stateUnknown',
             'consumed_resources': 'consumedResources',
             'consuming_resources': 'consumingResources',
             'self_uri': 'selfUri'
@@ -67,6 +69,7 @@ class DependencyObject(object):
         self._type = None
         self._deleted = None
         self._updated = None
+        self._state_unknown = None
         self._consumed_resources = None
         self._consuming_resources = None
         self._self_uri = None
@@ -160,7 +163,7 @@ class DependencyObject(object):
         :param type: The type of this DependencyObject.
         :type: str
         """
-        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "GROUP", "INBOUNDCALLFLOW", "INBOUNDEMAILFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "OUTBOUNDCALLFLOW", "QUEUE", "RESPONSE", "SECUREACTION", "SECURECALLFLOW", "SYSTEMPROMPT", "USER", "USERPROMPT", "VOICEXML", "WORKFLOW"]
+        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "GROUP", "INBOUNDCALLFLOW", "INBOUNDEMAILFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "OUTBOUNDCALLFLOW", "QUEUE", "RESPONSE", "SCHEDULE", "SCHEDULEGROUP", "SECUREACTION", "SECURECALLFLOW", "SYSTEMPROMPT", "USER", "USERPROMPT", "VOICEXML", "WORKFLOW"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -212,6 +215,29 @@ class DependencyObject(object):
         """
         
         self._updated = updated
+
+    @property
+    def state_unknown(self):
+        """
+        Gets the state_unknown of this DependencyObject.
+
+
+        :return: The state_unknown of this DependencyObject.
+        :rtype: bool
+        """
+        return self._state_unknown
+
+    @state_unknown.setter
+    def state_unknown(self, state_unknown):
+        """
+        Sets the state_unknown of this DependencyObject.
+
+
+        :param state_unknown: The state_unknown of this DependencyObject.
+        :type: bool
+        """
+        
+        self._state_unknown = state_unknown
 
     @property
     def consumed_resources(self):

@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_externalcontacts_contact"></a>
 
-## delete_externalcontacts_contact(contact_id)
+##  delete_externalcontacts_contact(contact_id)
 
 Delete an external contact
 
@@ -85,7 +85,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_contact_note"></a>
 
-## delete_externalcontacts_contact_note(contact_id, note_id)
+##  delete_externalcontacts_contact_note(contact_id, note_id)
 
 Delete a note for an external contact
 
@@ -131,7 +131,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_organization"></a>
 
-## delete_externalcontacts_organization(external_organization_id)
+##  delete_externalcontacts_organization(external_organization_id)
 
 Delete an external organization
 
@@ -175,7 +175,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_organization_note"></a>
 
-## delete_externalcontacts_organization_note(external_organization_id, note_id)
+##  delete_externalcontacts_organization_note(external_organization_id, note_id)
 
 Delete a note for an external organization
 
@@ -221,7 +221,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_relationship"></a>
 
-## delete_externalcontacts_relationship(relationship_id)
+##  delete_externalcontacts_relationship(relationship_id)
 
 Delete a relationship
 
@@ -265,7 +265,7 @@ void (empty response body)
 
 <a name="get_externalcontacts_contact"></a>
 
-## [**ExternalContact**](ExternalContact.html)get_externalcontacts_contact(contact_id, expand=expand)
+## [**ExternalContact**](ExternalContact.html) get_externalcontacts_contact(contact_id, expand=expand)
 
 Fetch an external contact
 
@@ -312,7 +312,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_contact_note"></a>
 
-## [**Note**](Note.html)get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
+## [**Note**](Note.html) get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
 
 Fetch a note for an external contact
 
@@ -361,7 +361,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_contact_notes"></a>
 
-## [**NoteListing**](NoteListing.html)get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## [**NoteListing**](NoteListing.html) get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 List notes for an external contact
 
@@ -414,7 +414,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_contacts"></a>
 
-## [**ContactListing**](ContactListing.html)get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## [**ContactListing**](ContactListing.html) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
 Search for external contacts
 
@@ -467,7 +467,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html)get_externalcontacts_organization(external_organization_id, expand=expand)
+## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand)
 
 Fetch an external organization
 
@@ -514,7 +514,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization_contacts"></a>
 
-## [**ContactListing**](ContactListing.html)get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## [**ContactListing**](ContactListing.html) get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
 Search for external contacts in an external organization
 
@@ -569,7 +569,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization_note"></a>
 
-## [**Note**](Note.html)get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
+## [**Note**](Note.html) get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
 
 Fetch a note for an external organization
 
@@ -618,7 +618,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization_notes"></a>
 
-## [**NoteListing**](NoteListing.html)get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## [**NoteListing**](NoteListing.html) get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 List notes for an external organization
 
@@ -671,7 +671,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization_relationships"></a>
 
-## [**RelationshipListing**](RelationshipListing.html)get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
+## [**RelationshipListing**](RelationshipListing.html) get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
 
 Fetch a relationship for an external organization
 
@@ -724,7 +724,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organizations"></a>
 
-## [**ExternalOrganizationListing**](ExternalOrganizationListing.html)get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
 Search for external organizations
 
@@ -777,7 +777,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_relationship"></a>
 
-## [**Relationship**](Relationship.html)get_externalcontacts_relationship(relationship_id, expand=expand)
+## [**Relationship**](Relationship.html) get_externalcontacts_relationship(relationship_id, expand=expand)
 
 Fetch a relationship
 
@@ -824,7 +824,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_reversewhitepageslookup"></a>
 
-## [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html)get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
+## [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
 
 Lookup contacts and externalOrganizations based on an attribute
 
@@ -871,7 +871,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_contact_associateconversation"></a>
 
-## post_externalcontacts_contact_associateconversation(contact_id, body=body)
+##  post_externalcontacts_contact_associateconversation(contact_id, body=body)
 
 Associate an external contact with a conversation
 
@@ -917,7 +917,7 @@ void (empty response body)
 
 <a name="post_externalcontacts_contact_notes"></a>
 
-## [**Note**](Note.html)post_externalcontacts_contact_notes(contact_id, body=body)
+## [**Note**](Note.html) post_externalcontacts_contact_notes(contact_id, body=body)
 
 Create a note for an external contact
 
@@ -964,7 +964,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_contacts"></a>
 
-## [**ExternalContact**](ExternalContact.html)post_externalcontacts_contacts(body=body)
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contacts(body=body)
 
 Create an external contact
 
@@ -1009,7 +1009,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_organization_notes"></a>
 
-## [**Note**](Note.html)post_externalcontacts_organization_notes(external_organization_id, body=body)
+## [**Note**](Note.html) post_externalcontacts_organization_notes(external_organization_id, body=body)
 
 Create a note for an external organization
 
@@ -1056,7 +1056,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_organizations"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html)post_externalcontacts_organizations(body=body)
+## [**ExternalOrganization**](ExternalOrganization.html) post_externalcontacts_organizations(body=body)
 
 Create an external organization
 
@@ -1101,7 +1101,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_relationships"></a>
 
-## [**Relationship**](Relationship.html)post_externalcontacts_relationships(body=body)
+## [**Relationship**](Relationship.html) post_externalcontacts_relationships(body=body)
 
 Create a relationship
 
@@ -1146,7 +1146,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_contact"></a>
 
-## [**ExternalContact**](ExternalContact.html)put_externalcontacts_contact(contact_id, body=body)
+## [**ExternalContact**](ExternalContact.html) put_externalcontacts_contact(contact_id, body=body)
 
 Update an external contact
 
@@ -1193,7 +1193,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_contact_note"></a>
 
-## [**Note**](Note.html)put_externalcontacts_contact_note(contact_id, note_id, body=body)
+## [**Note**](Note.html) put_externalcontacts_contact_note(contact_id, note_id, body=body)
 
 Update a note for an external contact
 
@@ -1242,7 +1242,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_conversation"></a>
 
-## put_externalcontacts_conversation(conversation_id, body=body)
+##  put_externalcontacts_conversation(conversation_id, body=body)
 
 Associate an external contact with a conversation
 
@@ -1288,7 +1288,7 @@ void (empty response body)
 
 <a name="put_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html)put_externalcontacts_organization(external_organization_id, body=body)
+## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization(external_organization_id, body=body)
 
 Update an external organization
 
@@ -1335,7 +1335,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_organization_note"></a>
 
-## [**Note**](Note.html)put_externalcontacts_organization_note(external_organization_id, note_id, body=body)
+## [**Note**](Note.html) put_externalcontacts_organization_note(external_organization_id, note_id, body=body)
 
 Update a note for an external organization
 
@@ -1384,7 +1384,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_relationship"></a>
 
-## [**Relationship**](Relationship.html)put_externalcontacts_relationship(relationship_id, body=body)
+## [**Relationship**](Relationship.html) put_externalcontacts_relationship(relationship_id, body=body)
 
 Update a relationship
 

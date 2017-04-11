@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_fieldconfig"></a>
 
-## [**FieldConfig**](FieldConfig.html)get_fieldconfig(type)
+## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
 
 Fetch field config for an entity type
 
@@ -61,7 +61,7 @@ except ApiException as e:
 
 <a name="get_organizations_me"></a>
 
-## [**Organization**](Organization.html)get_organizations_me()
+## [**Organization**](Organization.html) get_organizations_me()
 
 Get organization.
 
@@ -102,7 +102,7 @@ This endpoint does not need any parameter.
 
 <a name="patch_organizations_feature"></a>
 
-## [**OrganizationFeatures**](OrganizationFeatures.html)patch_organizations_feature(feature_name, enabled)
+## [**OrganizationFeatures**](OrganizationFeatures.html) patch_organizations_feature(feature_name, enabled)
 
 Update organization
 
@@ -149,7 +149,7 @@ except ApiException as e:
 
 <a name="put_organizations_me"></a>
 
-## [**Organization**](Organization.html)put_organizations_me(body=body)
+## [**Organization**](Organization.html) put_organizations_me(body=body)
 
 Update organization.
 

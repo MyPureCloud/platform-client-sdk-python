@@ -89,7 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_conversation_participant_code"></a>
 
-## delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
+##  delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
 
 Delete a code used to add a communication to this participant
 
@@ -137,13 +137,13 @@ void (empty response body)
 
 <a name="delete_conversations_call_participant_consult"></a>
 
-## str**delete_conversations_call_participant_consult(call_id, participant_id)
+## str** delete_conversations_call_participant_consult(conversation_id, participant_id)
 
 Cancel the transfer
 
 
 
-Wraps DELETE /api/v2/conversations/calls/{callId}/participants/{participantId}/consult 
+Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 ### Example
 
@@ -158,12 +158,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Cancel the transfer
-    api_response = api_instance.delete_conversations_call_participant_consult(call_id, participant_id)
+    api_response = api_instance.delete_conversations_call_participant_consult(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->delete_conversations_call_participant_consult: %s\n" % e
@@ -174,7 +174,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -184,13 +184,13 @@ except ApiException as e:
 
 <a name="delete_conversations_email_messages_draft_attachment"></a>
 
-## str**delete_conversations_email_messages_draft_attachment(email_id, attachment_id)
+## str** delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 
 Delete attachment from draft
 
 
 
-Wraps DELETE /api/v2/conversations/emails/{emailId}/messages/draft/attachments/{attachmentId} 
+Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
 
 ### Example
 
@@ -205,12 +205,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 attachment_id = 'attachment_id_example' # str | attachmentId
 
 try:
     # Delete attachment from draft
-    api_response = api_instance.delete_conversations_email_messages_draft_attachment(email_id, attachment_id)
+    api_response = api_instance.delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->delete_conversations_email_messages_draft_attachment: %s\n" % e
@@ -221,7 +221,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **attachment_id** | **str**| attachmentId | |
 {: class="table table-striped"}
 
@@ -231,7 +231,7 @@ except ApiException as e:
 
 <a name="get_analytics_conversation_details"></a>
 
-## [**AnalyticsConversation**](AnalyticsConversation.html)get_analytics_conversation_details(conversation_id)
+## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversation_details(conversation_id)
 
 Get a conversation by id
 
@@ -276,7 +276,7 @@ except ApiException as e:
 
 <a name="get_conversation"></a>
 
-## [**Conversation**](Conversation.html)get_conversation(conversation_id)
+## [**Conversation**](Conversation.html) get_conversation(conversation_id)
 
 Get conversation
 
@@ -321,7 +321,7 @@ except ApiException as e:
 
 <a name="get_conversation_participant_wrapup"></a>
 
-## [**WrapupCode**](WrapupCode.html)get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**WrapupCode**](WrapupCode.html) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
@@ -370,7 +370,7 @@ except ApiException as e:
 
 <a name="get_conversation_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversation_participant_wrapupcodes(conversation_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversation_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
@@ -417,7 +417,7 @@ except ApiException as e:
 
 <a name="get_conversations"></a>
 
-## [**ConversationEntityListing**](ConversationEntityListing.html)get_conversations(communication_type=communication_type)
+## [**ConversationEntityListing**](ConversationEntityListing.html) get_conversations(communication_type=communication_type)
 
 Get conversations
 
@@ -462,13 +462,13 @@ except ApiException as e:
 
 <a name="get_conversations_call"></a>
 
-## [**CallConversation**](CallConversation.html)get_conversations_call(call_id)
+## [**CallConversation**](CallConversation.html) get_conversations_call(conversation_id)
 
 Get call conversation
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId} 
+Wraps GET /api/v2/conversations/calls/{conversationId} 
 
 ### Example
 
@@ -483,11 +483,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get call conversation
-    api_response = api_instance.get_conversations_call(call_id)
+    api_response = api_instance.get_conversations_call(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_call: %s\n" % e
@@ -498,7 +498,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -507,13 +507,13 @@ except ApiException as e:
 
 <a name="get_conversations_call_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html)get_conversations_call_participant_wrapup(call_id, participant_id, provisional=provisional)
+## [**Wrapup**](Wrapup.html) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId}/participants/{participantId}/wrapup 
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup 
 
 ### Example
 
@@ -528,13 +528,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
 
 try:
     # Get the wrap-up for this conversation participant. 
-    api_response = api_instance.get_conversations_call_participant_wrapup(call_id, participant_id, provisional=provisional)
+    api_response = api_instance.get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_call_participant_wrapup: %s\n" % e
@@ -545,7 +545,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
 {: class="table table-striped"}
@@ -556,13 +556,13 @@ except ApiException as e:
 
 <a name="get_conversations_call_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversations_call_participant_wrapupcodes(call_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId}/participants/{participantId}/wrapupcodes 
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes 
 
 ### Example
 
@@ -577,12 +577,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Get list of wrapup codes for this conversation participant
-    api_response = api_instance.get_conversations_call_participant_wrapupcodes(call_id, participant_id)
+    api_response = api_instance.get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_call_participant_wrapupcodes: %s\n" % e
@@ -593,7 +593,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -603,13 +603,13 @@ except ApiException as e:
 
 <a name="get_conversations_callback"></a>
 
-## [**CallbackConversation**](CallbackConversation.html)get_conversations_callback(callback_id)
+## [**CallbackConversation**](CallbackConversation.html) get_conversations_callback(conversation_id)
 
 Get callback conversation
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId} 
+Wraps GET /api/v2/conversations/callbacks/{conversationId} 
 
 ### Example
 
@@ -624,11 +624,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get callback conversation
-    api_response = api_instance.get_conversations_callback(callback_id)
+    api_response = api_instance.get_conversations_callback(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_callback: %s\n" % e
@@ -639,7 +639,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -648,13 +648,13 @@ except ApiException as e:
 
 <a name="get_conversations_callback_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html)get_conversations_callback_participant_wrapup(callback_id, participant_id, provisional=provisional)
+## [**Wrapup**](Wrapup.html) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapup 
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup 
 
 ### Example
 
@@ -669,13 +669,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
 
 try:
     # Get the wrap-up for this conversation participant. 
-    api_response = api_instance.get_conversations_callback_participant_wrapup(callback_id, participant_id, provisional=provisional)
+    api_response = api_instance.get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_callback_participant_wrapup: %s\n" % e
@@ -686,7 +686,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
 {: class="table table-striped"}
@@ -697,13 +697,13 @@ except ApiException as e:
 
 <a name="get_conversations_callback_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversations_callback_participant_wrapupcodes(callback_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapupcodes 
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes 
 
 ### Example
 
@@ -718,12 +718,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Get list of wrapup codes for this conversation participant
-    api_response = api_instance.get_conversations_callback_participant_wrapupcodes(callback_id, participant_id)
+    api_response = api_instance.get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_callback_participant_wrapupcodes: %s\n" % e
@@ -734,7 +734,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -744,7 +744,7 @@ except ApiException as e:
 
 <a name="get_conversations_callbacks"></a>
 
-## [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html)get_conversations_callbacks()
+## [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html) get_conversations_callbacks()
 
 Get callback conversations
 
@@ -785,7 +785,7 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_calls"></a>
 
-## [**CallConversationEntityListing**](CallConversationEntityListing.html)get_conversations_calls()
+## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls()
 
 Get recent conversations
 
@@ -826,7 +826,7 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_calls_history"></a>
 
-## [**CallConversationEntityListing**](CallConversationEntityListing.html)get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
+## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
 
 Get call history
 
@@ -875,7 +875,7 @@ except ApiException as e:
 
 <a name="get_conversations_calls_maximumconferenceparties"></a>
 
-## [**MaxParticipants**](MaxParticipants.html)get_conversations_calls_maximumconferenceparties()
+## [**MaxParticipants**](MaxParticipants.html) get_conversations_calls_maximumconferenceparties()
 
 Get the maximum number of participants that this user can have on a conference
 
@@ -916,13 +916,13 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_chat"></a>
 
-## [**ChatConversation**](ChatConversation.html)get_conversations_chat(chat_id)
+## [**ChatConversation**](ChatConversation.html) get_conversations_chat(conversation_id)
 
 Get chat conversation
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId} 
+Wraps GET /api/v2/conversations/chats/{conversationId} 
 
 ### Example
 
@@ -937,11 +937,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get chat conversation
-    api_response = api_instance.get_conversations_chat(chat_id)
+    api_response = api_instance.get_conversations_chat(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_chat: %s\n" % e
@@ -952,7 +952,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -961,13 +961,13 @@ except ApiException as e:
 
 <a name="get_conversations_chat_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html)get_conversations_chat_participant_wrapup(chat_id, participant_id, provisional=provisional)
+## [**Wrapup**](Wrapup.html) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapup 
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup 
 
 ### Example
 
@@ -982,13 +982,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
 
 try:
     # Get the wrap-up for this conversation participant. 
-    api_response = api_instance.get_conversations_chat_participant_wrapup(chat_id, participant_id, provisional=provisional)
+    api_response = api_instance.get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_chat_participant_wrapup: %s\n" % e
@@ -999,7 +999,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
 {: class="table table-striped"}
@@ -1010,13 +1010,13 @@ except ApiException as e:
 
 <a name="get_conversations_chat_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversations_chat_participant_wrapupcodes(chat_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapupcodes 
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes 
 
 ### Example
 
@@ -1031,12 +1031,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Get list of wrapup codes for this conversation participant
-    api_response = api_instance.get_conversations_chat_participant_wrapupcodes(chat_id, participant_id)
+    api_response = api_instance.get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_chat_participant_wrapupcodes: %s\n" % e
@@ -1047,7 +1047,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -1057,7 +1057,7 @@ except ApiException as e:
 
 <a name="get_conversations_chats"></a>
 
-## [**ChatConversationEntityListing**](ChatConversationEntityListing.html)get_conversations_chats()
+## [**ChatConversationEntityListing**](ChatConversationEntityListing.html) get_conversations_chats()
 
 Get recent chat conversations
 
@@ -1098,13 +1098,13 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_cobrowsesession"></a>
 
-## [**CobrowseConversation**](CobrowseConversation.html)get_conversations_cobrowsesession(cobrowse_id)
+## [**CobrowseConversation**](CobrowseConversation.html) get_conversations_cobrowsesession(conversation_id)
 
 Get cobrowse conversation
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId} 
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId} 
 
 ### Example
 
@@ -1119,11 +1119,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get cobrowse conversation
-    api_response = api_instance.get_conversations_cobrowsesession(cobrowse_id)
+    api_response = api_instance.get_conversations_cobrowsesession(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_cobrowsesession: %s\n" % e
@@ -1134,7 +1134,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1143,13 +1143,13 @@ except ApiException as e:
 
 <a name="get_conversations_cobrowsesession_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html)get_conversations_cobrowsesession_participant_wrapup(cobrowse_id, participant_id, provisional=provisional)
+## [**Wrapup**](Wrapup.html) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapup 
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup 
 
 ### Example
 
@@ -1164,13 +1164,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
 
 try:
     # Get the wrap-up for this conversation participant. 
-    api_response = api_instance.get_conversations_cobrowsesession_participant_wrapup(cobrowse_id, participant_id, provisional=provisional)
+    api_response = api_instance.get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapup: %s\n" % e
@@ -1181,7 +1181,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
 {: class="table table-striped"}
@@ -1192,13 +1192,13 @@ except ApiException as e:
 
 <a name="get_conversations_cobrowsesession_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversations_cobrowsesession_participant_wrapupcodes(cobrowse_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapupcodes 
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes 
 
 ### Example
 
@@ -1213,12 +1213,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Get list of wrapup codes for this conversation participant
-    api_response = api_instance.get_conversations_cobrowsesession_participant_wrapupcodes(cobrowse_id, participant_id)
+    api_response = api_instance.get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapupcodes: %s\n" % e
@@ -1229,7 +1229,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -1239,7 +1239,7 @@ except ApiException as e:
 
 <a name="get_conversations_cobrowsesessions"></a>
 
-## [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html)get_conversations_cobrowsesessions()
+## [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html) get_conversations_cobrowsesessions()
 
 Get recent cobrowse conversations
 
@@ -1280,13 +1280,13 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_email"></a>
 
-## [**EmailConversation**](EmailConversation.html)get_conversations_email(email_id)
+## [**EmailConversation**](EmailConversation.html) get_conversations_email(conversation_id)
 
 Get email conversation
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId} 
+Wraps GET /api/v2/conversations/emails/{conversationId} 
 
 ### Example
 
@@ -1301,11 +1301,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get email conversation
-    api_response = api_instance.get_conversations_email(email_id)
+    api_response = api_instance.get_conversations_email(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email: %s\n" % e
@@ -1316,7 +1316,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1325,13 +1325,13 @@ except ApiException as e:
 
 <a name="get_conversations_email_message"></a>
 
-## [**EmailMessage**](EmailMessage.html)get_conversations_email_message(email_id, message_id)
+## [**EmailMessage**](EmailMessage.html) get_conversations_email_message(conversation_id, message_id)
 
 Get conversation message
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages/{messageId} 
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId} 
 
 ### Example
 
@@ -1346,12 +1346,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 message_id = 'message_id_example' # str | messageId
 
 try:
     # Get conversation message
-    api_response = api_instance.get_conversations_email_message(email_id, message_id)
+    api_response = api_instance.get_conversations_email_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email_message: %s\n" % e
@@ -1362,7 +1362,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **message_id** | **str**| messageId | |
 {: class="table table-striped"}
 
@@ -1372,13 +1372,13 @@ except ApiException as e:
 
 <a name="get_conversations_email_messages"></a>
 
-## [**EmailMessageListing**](EmailMessageListing.html)get_conversations_email_messages(email_id)
+## [**EmailMessageListing**](EmailMessageListing.html) get_conversations_email_messages(conversation_id)
 
 Get conversation messages
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages 
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages 
 
 ### Example
 
@@ -1393,11 +1393,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get conversation messages
-    api_response = api_instance.get_conversations_email_messages(email_id)
+    api_response = api_instance.get_conversations_email_messages(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email_messages: %s\n" % e
@@ -1408,7 +1408,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1417,13 +1417,13 @@ except ApiException as e:
 
 <a name="get_conversations_email_messages_draft"></a>
 
-## [**EmailMessage**](EmailMessage.html)get_conversations_email_messages_draft(email_id)
+## [**EmailMessage**](EmailMessage.html) get_conversations_email_messages_draft(conversation_id)
 
 Get conversation draft reply
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages/draft 
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft 
 
 ### Example
 
@@ -1438,11 +1438,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 
 try:
     # Get conversation draft reply
-    api_response = api_instance.get_conversations_email_messages_draft(email_id)
+    api_response = api_instance.get_conversations_email_messages_draft(conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email_messages_draft: %s\n" % e
@@ -1453,7 +1453,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1462,13 +1462,13 @@ except ApiException as e:
 
 <a name="get_conversations_email_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html)get_conversations_email_participant_wrapup(email_id, participant_id, provisional=provisional)
+## [**Wrapup**](Wrapup.html) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapup 
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup 
 
 ### Example
 
@@ -1483,13 +1483,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
 
 try:
     # Get the wrap-up for this conversation participant. 
-    api_response = api_instance.get_conversations_email_participant_wrapup(email_id, participant_id, provisional=provisional)
+    api_response = api_instance.get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email_participant_wrapup: %s\n" % e
@@ -1500,7 +1500,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
 {: class="table table-striped"}
@@ -1511,13 +1511,13 @@ except ApiException as e:
 
 <a name="get_conversations_email_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)get_conversations_email_participant_wrapupcodes(email_id, participant_id)
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapupcodes 
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes 
 
 ### Example
 
@@ -1532,12 +1532,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Get list of wrapup codes for this conversation participant
-    api_response = api_instance.get_conversations_email_participant_wrapupcodes(email_id, participant_id)
+    api_response = api_instance.get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_email_participant_wrapupcodes: %s\n" % e
@@ -1548,7 +1548,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -1558,7 +1558,7 @@ except ApiException as e:
 
 <a name="get_conversations_emails"></a>
 
-## [**EmailConversationEntityListing**](EmailConversationEntityListing.html)get_conversations_emails()
+## [**EmailConversationEntityListing**](EmailConversationEntityListing.html) get_conversations_emails()
 
 Get recent email conversations
 
@@ -1599,7 +1599,7 @@ This endpoint does not need any parameter.
 
 <a name="patch_conversation_participant"></a>
 
-## patch_conversation_participant(conversation_id, participant_id, body)
+##  patch_conversation_participant(conversation_id, participant_id, body)
 
 Update a participant.
 
@@ -1647,7 +1647,7 @@ void (empty response body)
 
 <a name="patch_conversation_participant_attributes"></a>
 
-## patch_conversation_participant_attributes(conversation_id, participant_id, body)
+##  patch_conversation_participant_attributes(conversation_id, participant_id, body)
 
 Update the attributes on a conversation participant.
 
@@ -1695,13 +1695,13 @@ void (empty response body)
 
 <a name="patch_conversations_call"></a>
 
-## [**Conversation**](Conversation.html)patch_conversations_call(call_id, body)
+## [**Conversation**](Conversation.html) patch_conversations_call(conversation_id, body)
 
 Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId} 
+Wraps PATCH /api/v2/conversations/calls/{conversationId} 
 
 ### Example
 
@@ -1716,12 +1716,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
-    api_response = api_instance.patch_conversations_call(call_id, body)
+    api_response = api_instance.patch_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_call: %s\n" % e
@@ -1732,7 +1732,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -1742,13 +1742,13 @@ except ApiException as e:
 
 <a name="patch_conversations_call_participant"></a>
 
-## patch_conversations_call_participant(call_id, participant_id, body)
+##  patch_conversations_call_participant(conversation_id, participant_id, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId} 
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId} 
 
 ### Example
 
@@ -1763,13 +1763,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant request
 
 try:
     # Update conversation participant
-    api_instance.patch_conversations_call_participant(call_id, participant_id, body)
+    api_instance.patch_conversations_call_participant(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_call_participant: %s\n" % e
 ~~~
@@ -1779,7 +1779,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request | |
 {: class="table table-striped"}
@@ -1790,13 +1790,13 @@ void (empty response body)
 
 <a name="patch_conversations_call_participant_attributes"></a>
 
-## patch_conversations_call_participant_attributes(call_id, participant_id, body)
+##  patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/attributes 
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes 
 
 ### Example
 
@@ -1811,13 +1811,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes | Participant attributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_call_participant_attributes(call_id, participant_id, body)
+    api_instance.patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_call_participant_attributes: %s\n" % e
 ~~~
@@ -1827,7 +1827,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -1838,13 +1838,13 @@ void (empty response body)
 
 <a name="patch_conversations_call_participant_communication"></a>
 
-## [**Empty**](Empty.html)patch_conversations_call_participant_communication(call_id, participant_id, communication_id, body)
+## [**Empty**](Empty.html) patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
 
 Update conversation participant's communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/communications/{communicationId} 
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 ### Example
 
@@ -1859,14 +1859,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant's communication by disconnecting it.
-    api_response = api_instance.patch_conversations_call_participant_communication(call_id, participant_id, communication_id, body)
+    api_response = api_instance.patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_call_participant_communication: %s\n" % e
@@ -1877,7 +1877,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **communication_id** | **str**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -1889,13 +1889,13 @@ except ApiException as e:
 
 <a name="patch_conversations_call_participant_consult"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html)patch_conversations_call_participant_consult(call_id, participant_id, body)
+## [**ConsultTransferResponse**](ConsultTransferResponse.html) patch_conversations_call_participant_consult(conversation_id, participant_id, body)
 
 Change who can speak
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/consult 
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 ### Example
 
@@ -1910,13 +1910,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ConsultTransferUpdate() # ConsultTransferUpdate | new speak to
 
 try:
     # Change who can speak
-    api_response = api_instance.patch_conversations_call_participant_consult(call_id, participant_id, body)
+    api_response = api_instance.patch_conversations_call_participant_consult(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_call_participant_consult: %s\n" % e
@@ -1927,7 +1927,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to | |
 {: class="table table-striped"}
@@ -1938,13 +1938,13 @@ except ApiException as e:
 
 <a name="patch_conversations_callback"></a>
 
-## [**Conversation**](Conversation.html)patch_conversations_callback(callback_id, body)
+## [**Conversation**](Conversation.html) patch_conversations_callback(conversation_id, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId} 
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId} 
 
 ### Example
 
@@ -1959,12 +1959,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Update a conversation by disconnecting all of the participants
-    api_response = api_instance.patch_conversations_callback(callback_id, body)
+    api_response = api_instance.patch_conversations_callback(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_callback: %s\n" % e
@@ -1975,7 +1975,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -1985,13 +1985,13 @@ except ApiException as e:
 
 <a name="patch_conversations_callback_participant"></a>
 
-## patch_conversations_callback_participant(callback_id, participant_id, body)
+##  patch_conversations_callback_participant(conversation_id, participant_id, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId} 
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} 
 
 ### Example
 
@@ -2006,13 +2006,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant
-    api_instance.patch_conversations_callback_participant(callback_id, participant_id, body)
+    api_instance.patch_conversations_callback_participant(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_callback_participant: %s\n" % e
 ~~~
@@ -2022,7 +2022,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
 {: class="table table-striped"}
@@ -2033,13 +2033,13 @@ void (empty response body)
 
 <a name="patch_conversations_callback_participant_attributes"></a>
 
-## patch_conversations_callback_participant_attributes(callback_id, participant_id, body)
+##  patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/attributes 
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes 
 
 ### Example
 
@@ -2054,13 +2054,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes | Attributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_callback_participant_attributes(callback_id, participant_id, body)
+    api_instance.patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_callback_participant_attributes: %s\n" % e
 ~~~
@@ -2070,7 +2070,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes | |
 {: class="table table-striped"}
@@ -2081,13 +2081,13 @@ void (empty response body)
 
 <a name="patch_conversations_callback_participant_communication"></a>
 
-## [**Empty**](Empty.html)patch_conversations_callback_participant_communication(callback_id, participant_id, communication_id, body)
+## [**Empty**](Empty.html) patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
 
 Update conversation participant's communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/communications/{communicationId} 
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 ### Example
 
@@ -2102,14 +2102,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant's communication by disconnecting it.
-    api_response = api_instance.patch_conversations_callback_participant_communication(callback_id, participant_id, communication_id, body)
+    api_response = api_instance.patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_callback_participant_communication: %s\n" % e
@@ -2120,7 +2120,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **communication_id** | **str**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2132,13 +2132,13 @@ except ApiException as e:
 
 <a name="patch_conversations_chat"></a>
 
-## [**Conversation**](Conversation.html)patch_conversations_chat(chat_id, body)
+## [**Conversation**](Conversation.html) patch_conversations_chat(conversation_id, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId} 
+Wraps PATCH /api/v2/conversations/chats/{conversationId} 
 
 ### Example
 
@@ -2153,12 +2153,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Update a conversation by disconnecting all of the participants
-    api_response = api_instance.patch_conversations_chat(chat_id, body)
+    api_response = api_instance.patch_conversations_chat(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_chat: %s\n" % e
@@ -2169,7 +2169,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2179,13 +2179,13 @@ except ApiException as e:
 
 <a name="patch_conversations_chat_participant"></a>
 
-## patch_conversations_chat_participant(chat_id, participant_id, body)
+##  patch_conversations_chat_participant(conversation_id, participant_id, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId} 
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId} 
 
 ### Example
 
@@ -2200,13 +2200,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Update request
 
 try:
     # Update conversation participant
-    api_instance.patch_conversations_chat_participant(chat_id, participant_id, body)
+    api_instance.patch_conversations_chat_participant(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_chat_participant: %s\n" % e
 ~~~
@@ -2216,7 +2216,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
 {: class="table table-striped"}
@@ -2227,13 +2227,13 @@ void (empty response body)
 
 <a name="patch_conversations_chat_participant_attributes"></a>
 
-## patch_conversations_chat_participant_attributes(chat_id, participant_id, body)
+##  patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId}/attributes 
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes 
 
 ### Example
 
@@ -2248,13 +2248,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes | Participant attributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_chat_participant_attributes(chat_id, participant_id, body)
+    api_instance.patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_chat_participant_attributes: %s\n" % e
 ~~~
@@ -2264,7 +2264,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -2275,13 +2275,13 @@ void (empty response body)
 
 <a name="patch_conversations_chat_participant_communication"></a>
 
-## [**Empty**](Empty.html)patch_conversations_chat_participant_communication(chat_id, participant_id, communication_id, body)
+## [**Empty**](Empty.html) patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
 
 Update conversation participant's communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId}/communications/{communicationId} 
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 ### Example
 
@@ -2296,14 +2296,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant's communication by disconnecting it.
-    api_response = api_instance.patch_conversations_chat_participant_communication(chat_id, participant_id, communication_id, body)
+    api_response = api_instance.patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_chat_participant_communication: %s\n" % e
@@ -2314,7 +2314,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **communication_id** | **str**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2326,13 +2326,13 @@ except ApiException as e:
 
 <a name="patch_conversations_cobrowsesession"></a>
 
-## [**Conversation**](Conversation.html)patch_conversations_cobrowsesession(cobrowse_id, body)
+## [**Conversation**](Conversation.html) patch_conversations_cobrowsesession(conversation_id, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId} 
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId} 
 
 ### Example
 
@@ -2347,12 +2347,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Update a conversation by disconnecting all of the participants
-    api_response = api_instance.patch_conversations_cobrowsesession(cobrowse_id, body)
+    api_response = api_instance.patch_conversations_cobrowsesession(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession: %s\n" % e
@@ -2363,7 +2363,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2373,13 +2373,13 @@ except ApiException as e:
 
 <a name="patch_conversations_cobrowsesession_participant"></a>
 
-## patch_conversations_cobrowsesession_participant(cobrowse_id, participant_id, body=body)
+##  patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId} 
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} 
 
 ### Example
 
@@ -2394,13 +2394,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest |  (optional)
 
 try:
     # Update conversation participant
-    api_instance.patch_conversations_cobrowsesession_participant(cobrowse_id, participant_id, body=body)
+    api_instance.patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant: %s\n" % e
 ~~~
@@ -2410,7 +2410,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
 {: class="table table-striped"}
@@ -2421,13 +2421,13 @@ void (empty response body)
 
 <a name="patch_conversations_cobrowsesession_participant_attributes"></a>
 
-## patch_conversations_cobrowsesession_participant_attributes(cobrowse_id, participant_id, body=body)
+##  patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/attributes 
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes 
 
 ### Example
 
@@ -2442,13 +2442,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes |  (optional)
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_cobrowsesession_participant_attributes(cobrowse_id, participant_id, body=body)
+    api_instance.patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_attributes: %s\n" % e
 ~~~
@@ -2458,7 +2458,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
 {: class="table table-striped"}
@@ -2469,13 +2469,13 @@ void (empty response body)
 
 <a name="patch_conversations_cobrowsesession_participant_communication"></a>
 
-## [**Empty**](Empty.html)patch_conversations_cobrowsesession_participant_communication(cobrowse_id, participant_id, communication_id, body)
+## [**Empty**](Empty.html) patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
 
 Update conversation participant's communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/communications/{communicationId} 
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 ### Example
 
@@ -2490,14 +2490,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant's communication by disconnecting it.
-    api_response = api_instance.patch_conversations_cobrowsesession_participant_communication(cobrowse_id, participant_id, communication_id, body)
+    api_response = api_instance.patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_communication: %s\n" % e
@@ -2508,7 +2508,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **communication_id** | **str**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2520,13 +2520,13 @@ except ApiException as e:
 
 <a name="patch_conversations_email"></a>
 
-## [**Conversation**](Conversation.html)patch_conversations_email(email_id, body)
+## [**Conversation**](Conversation.html) patch_conversations_email(conversation_id, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId} 
+Wraps PATCH /api/v2/conversations/emails/{conversationId} 
 
 ### Example
 
@@ -2541,12 +2541,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Update a conversation by disconnecting all of the participants
-    api_response = api_instance.patch_conversations_email(email_id, body)
+    api_response = api_instance.patch_conversations_email(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_email: %s\n" % e
@@ -2557,7 +2557,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2567,13 +2567,13 @@ except ApiException as e:
 
 <a name="patch_conversations_email_participant"></a>
 
-## patch_conversations_email_participant(email_id, participant_id, body)
+##  patch_conversations_email_participant(conversation_id, participant_id, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId} 
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId} 
 
 ### Example
 
@@ -2588,13 +2588,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Update request
 
 try:
     # Update conversation participant
-    api_instance.patch_conversations_email_participant(email_id, participant_id, body)
+    api_instance.patch_conversations_email_participant(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_email_participant: %s\n" % e
 ~~~
@@ -2604,7 +2604,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
 {: class="table table-striped"}
@@ -2615,13 +2615,13 @@ void (empty response body)
 
 <a name="patch_conversations_email_participant_attributes"></a>
 
-## patch_conversations_email_participant_attributes(email_id, participant_id, body)
+##  patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId}/attributes 
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes 
 
 ### Example
 
@@ -2636,13 +2636,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes | Participant attributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_email_participant_attributes(email_id, participant_id, body)
+    api_instance.patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_email_participant_attributes: %s\n" % e
 ~~~
@@ -2652,7 +2652,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -2663,13 +2663,13 @@ void (empty response body)
 
 <a name="patch_conversations_email_participant_communication"></a>
 
-## [**Empty**](Empty.html)patch_conversations_email_participant_communication(email_id, participant_id, communication_id, body)
+## [**Empty**](Empty.html) patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
 
 Update conversation participant's communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId}/communications/{communicationId} 
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 ### Example
 
@@ -2684,14 +2684,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
 
 try:
     # Update conversation participant's communication by disconnecting it.
-    api_response = api_instance.patch_conversations_email_participant_communication(email_id, participant_id, communication_id, body)
+    api_response = api_instance.patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->patch_conversations_email_participant_communication: %s\n" % e
@@ -2702,7 +2702,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **communication_id** | **str**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2714,7 +2714,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversation_details_properties"></a>
 
-## [**PropertyIndexRequest**](PropertyIndexRequest.html)post_analytics_conversation_details_properties(conversation_id, body)
+## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
 
 Index conversation properties
 
@@ -2761,7 +2761,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html)post_analytics_conversations_aggregates_query(body)
+## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
 
 Query for conversation aggregates
 
@@ -2806,7 +2806,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_details_query"></a>
 
-## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)post_analytics_conversations_details_query(body)
+## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) post_analytics_conversations_details_query(body)
 
 Query for conversation details
 
@@ -2851,7 +2851,7 @@ except ApiException as e:
 
 <a name="post_conversation_participant_callbacks"></a>
 
-## post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
+##  post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
 
 Create a new callback for the specified participant on the conversation.
 
@@ -2899,7 +2899,7 @@ void (empty response body)
 
 <a name="post_conversation_participant_replace"></a>
 
-## post_conversation_participant_replace(conversation_id, participant_id, body)
+##  post_conversation_participant_replace(conversation_id, participant_id, body)
 
 Replace this participant with the specified user and/or address
 
@@ -2947,13 +2947,13 @@ void (empty response body)
 
 <a name="post_conversations_call"></a>
 
-## [**Conversation**](Conversation.html)post_conversations_call(call_id, body)
+## [**Conversation**](Conversation.html) post_conversations_call(conversation_id, body)
 
 Add a new call to a conversation
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId} 
+Wraps POST /api/v2/conversations/calls/{conversationId} 
 
 ### Example
 
@@ -2968,12 +2968,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.CallCommand() # CallCommand | Conversation
 
 try:
     # Add a new call to a conversation
-    api_response = api_instance.post_conversations_call(call_id, body)
+    api_response = api_instance.post_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_call: %s\n" % e
@@ -2984,7 +2984,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**CallCommand**](CallCommand.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2994,13 +2994,13 @@ except ApiException as e:
 
 <a name="post_conversations_call_participant_consult"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html)post_conversations_call_participant_consult(call_id, participant_id, body)
+## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
 Initiate and update consult transfer
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/consult 
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 ### Example
 
@@ -3015,13 +3015,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ConsultTransfer() # ConsultTransfer | Destination address & initial speak to
 
 try:
     # Initiate and update consult transfer
-    api_response = api_instance.post_conversations_call_participant_consult(call_id, participant_id, body)
+    api_response = api_instance.post_conversations_call_participant_consult(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_call_participant_consult: %s\n" % e
@@ -3032,7 +3032,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | |
 {: class="table table-striped"}
@@ -3043,13 +3043,13 @@ except ApiException as e:
 
 <a name="post_conversations_call_participant_monitor"></a>
 
-## post_conversations_call_participant_monitor(call_id, participant_id)
+##  post_conversations_call_participant_monitor(conversation_id, participant_id)
 
 Listen in on the conversation from the point of view of a given participant.
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/monitor 
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor 
 
 ### Example
 
@@ -3064,12 +3064,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Listen in on the conversation from the point of view of a given participant.
-    api_instance.post_conversations_call_participant_monitor(call_id, participant_id)
+    api_instance.post_conversations_call_participant_monitor(conversation_id, participant_id)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_call_participant_monitor: %s\n" % e
 ~~~
@@ -3079,7 +3079,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 {: class="table table-striped"}
 
@@ -3089,13 +3089,13 @@ void (empty response body)
 
 <a name="post_conversations_call_participant_replace"></a>
 
-## post_conversations_call_participant_replace(call_id, participant_id, body)
+##  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/replace 
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace 
 
 ### Example
 
@@ -3110,13 +3110,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
 
 try:
     # Replace this participant with the specified user and/or address
-    api_instance.post_conversations_call_participant_replace(call_id, participant_id, body)
+    api_instance.post_conversations_call_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_call_participant_replace: %s\n" % e
 ~~~
@@ -3126,7 +3126,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3137,13 +3137,13 @@ void (empty response body)
 
 <a name="post_conversations_call_participants"></a>
 
-## [**Conversation**](Conversation.html)post_conversations_call_participants(call_id, body)
+## [**Conversation**](Conversation.html) post_conversations_call_participants(conversation_id, body)
 
 Add participants to a conversation
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants 
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants 
 
 ### Example
 
@@ -3158,12 +3158,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-call_id = 'call_id_example' # str | callId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
     # Add participants to a conversation
-    api_response = api_instance.post_conversations_call_participants(call_id, body)
+    api_response = api_instance.post_conversations_call_participants(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_call_participants: %s\n" % e
@@ -3174,7 +3174,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **call_id** | **str**| callId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -3184,13 +3184,13 @@ except ApiException as e:
 
 <a name="post_conversations_callback_participant_replace"></a>
 
-## post_conversations_callback_participant_replace(callback_id, participant_id, body)
+##  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/replace 
+Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace 
 
 ### Example
 
@@ -3205,13 +3205,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-callback_id = 'callback_id_example' # str | callbackId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
 
 try:
     # Replace this participant with the specified user and/or address
-    api_instance.post_conversations_callback_participant_replace(callback_id, participant_id, body)
+    api_instance.post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_callback_participant_replace: %s\n" % e
 ~~~
@@ -3221,7 +3221,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **callback_id** | **str**| callbackId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3232,7 +3232,7 @@ void (empty response body)
 
 <a name="post_conversations_callbacks"></a>
 
-## [**CreateCallbackResponse**](CreateCallbackResponse.html)post_conversations_callbacks(body)
+## [**CreateCallbackResponse**](CreateCallbackResponse.html) post_conversations_callbacks(body)
 
 Create a Callback
 
@@ -3277,7 +3277,7 @@ except ApiException as e:
 
 <a name="post_conversations_calls"></a>
 
-## [**CreateCallResponse**](CreateCallResponse.html)post_conversations_calls(body)
+## [**CreateCallResponse**](CreateCallResponse.html) post_conversations_calls(body)
 
 Create a call conversation
 
@@ -3322,13 +3322,13 @@ except ApiException as e:
 
 <a name="post_conversations_chat_participant_replace"></a>
 
-## post_conversations_chat_participant_replace(chat_id, participant_id, body)
+##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/chats/{chatId}/participants/{participantId}/replace 
+Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace 
 
 ### Example
 
@@ -3343,13 +3343,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-chat_id = 'chat_id_example' # str | chatId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
 
 try:
     # Replace this participant with the specified user and/or address
-    api_instance.post_conversations_chat_participant_replace(chat_id, participant_id, body)
+    api_instance.post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_chat_participant_replace: %s\n" % e
 ~~~
@@ -3359,7 +3359,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **chat_id** | **str**| chatId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3370,7 +3370,7 @@ void (empty response body)
 
 <a name="post_conversations_chats"></a>
 
-## [**ChatConversation**](ChatConversation.html)post_conversations_chats(body)
+## [**ChatConversation**](ChatConversation.html) post_conversations_chats(body)
 
 Create a web chat conversation
 
@@ -3415,13 +3415,13 @@ except ApiException as e:
 
 <a name="post_conversations_cobrowsesession_participant_replace"></a>
 
-## post_conversations_cobrowsesession_participant_replace(cobrowse_id, participant_id, body=body)
+##  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/replace 
+Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace 
 
 ### Example
 
@@ -3436,13 +3436,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-cobrowse_id = 'cobrowse_id_example' # str | cobrowseId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest |  (optional)
 
 try:
     # Replace this participant with the specified user and/or address
-    api_instance.post_conversations_cobrowsesession_participant_replace(cobrowse_id, participant_id, body=body)
+    api_instance.post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_cobrowsesession_participant_replace: %s\n" % e
 ~~~
@@ -3452,7 +3452,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cobrowse_id** | **str**| cobrowseId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)|  | [optional] |
 {: class="table table-striped"}
@@ -3463,13 +3463,13 @@ void (empty response body)
 
 <a name="post_conversations_email_messages"></a>
 
-## [**EmailMessage**](EmailMessage.html)post_conversations_email_messages(email_id, body)
+## [**EmailMessage**](EmailMessage.html) post_conversations_email_messages(conversation_id, body)
 
 Send an email reply
 
 
 
-Wraps POST /api/v2/conversations/emails/{emailId}/messages 
+Wraps POST /api/v2/conversations/emails/{conversationId}/messages 
 
 ### Example
 
@@ -3484,12 +3484,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.EmailMessage() # EmailMessage | Reply
 
 try:
     # Send an email reply
-    api_response = api_instance.post_conversations_email_messages(email_id, body)
+    api_response = api_instance.post_conversations_email_messages(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_email_messages: %s\n" % e
@@ -3500,7 +3500,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**EmailMessage**](EmailMessage.html)| Reply | |
 {: class="table table-striped"}
 
@@ -3510,13 +3510,13 @@ except ApiException as e:
 
 <a name="post_conversations_email_participant_replace"></a>
 
-## post_conversations_email_participant_replace(email_id, participant_id, body)
+##  post_conversations_email_participant_replace(conversation_id, participant_id, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/emails/{emailId}/participants/{participantId}/replace 
+Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace 
 
 ### Example
 
@@ -3531,13 +3531,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
 
 try:
     # Replace this participant with the specified user and/or address
-    api_instance.post_conversations_email_participant_replace(email_id, participant_id, body)
+    api_instance.post_conversations_email_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
     print "Exception when calling ConversationsApi->post_conversations_email_participant_replace: %s\n" % e
 ~~~
@@ -3547,7 +3547,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **participant_id** | **str**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3558,7 +3558,7 @@ void (empty response body)
 
 <a name="post_conversations_emails"></a>
 
-## [**EmailConversation**](EmailConversation.html)post_conversations_emails(body)
+## [**EmailConversation**](EmailConversation.html) post_conversations_emails(body)
 
 Create an email conversation
 
@@ -3603,7 +3603,7 @@ except ApiException as e:
 
 <a name="post_conversations_faxes"></a>
 
-## [**FaxSendResponse**](FaxSendResponse.html)post_conversations_faxes(body)
+## [**FaxSendResponse**](FaxSendResponse.html) post_conversations_faxes(body)
 
 Create Fax Conversation
 
@@ -3648,13 +3648,13 @@ except ApiException as e:
 
 <a name="put_conversations_email_messages_draft"></a>
 
-## [**EmailMessage**](EmailMessage.html)put_conversations_email_messages_draft(email_id, body)
+## [**EmailMessage**](EmailMessage.html) put_conversations_email_messages_draft(conversation_id, body)
 
 Update conversation draft reply
 
 
 
-Wraps PUT /api/v2/conversations/emails/{emailId}/messages/draft 
+Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft 
 
 ### Example
 
@@ -3669,12 +3669,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-email_id = 'email_id_example' # str | emailId
+conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.EmailMessage() # EmailMessage | Draft
 
 try:
     # Update conversation draft reply
-    api_response = api_instance.put_conversations_email_messages_draft(email_id, body)
+    api_response = api_instance.put_conversations_email_messages_draft(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->put_conversations_email_messages_draft: %s\n" % e
@@ -3685,7 +3685,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **email_id** | **str**| emailId | |
+| **conversation_id** | **str**| conversationId | |
 | **body** | [**EmailMessage**](EmailMessage.html)| Draft | |
 {: class="table table-striped"}
 

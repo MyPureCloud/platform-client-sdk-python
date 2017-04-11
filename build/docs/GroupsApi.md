@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_group"></a>
 
-## delete_group(group_id)
+##  delete_group(group_id)
 
 Delete group
 
@@ -67,7 +67,7 @@ void (empty response body)
 
 <a name="delete_group_members"></a>
 
-## [**Empty**](Empty.html)delete_group_members(group_id, ids)
+## [**Empty**](Empty.html) delete_group_members(group_id, ids)
 
 Remove members
 
@@ -114,7 +114,7 @@ except ApiException as e:
 
 <a name="get_fieldconfig"></a>
 
-## [**FieldConfig**](FieldConfig.html)get_fieldconfig(type)
+## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
 
 Fetch field config for an entity type
 
@@ -159,7 +159,7 @@ except ApiException as e:
 
 <a name="get_group"></a>
 
-## [**Group**](Group.html)get_group(group_id)
+## [**Group**](Group.html) get_group(group_id)
 
 Get group
 
@@ -204,7 +204,7 @@ except ApiException as e:
 
 <a name="get_group_members"></a>
 
-## [**UserEntityListing**](UserEntityListing.html)get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## [**UserEntityListing**](UserEntityListing.html) get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 Get group members
 
@@ -257,7 +257,7 @@ except ApiException as e:
 
 <a name="get_groups"></a>
 
-## [**GroupEntityListing**](GroupEntityListing.html)get_groups(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**GroupEntityListing**](GroupEntityListing.html) get_groups(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 Get a group list
 
@@ -306,7 +306,7 @@ except ApiException as e:
 
 <a name="get_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html)get_groups_search(q64, expand=expand)
+## [**GroupsSearchResponse**](GroupsSearchResponse.html) get_groups_search(q64, expand=expand)
 
 Search groups using the q64 value returned from a previous search
 
@@ -353,7 +353,7 @@ except ApiException as e:
 
 <a name="post_group_members"></a>
 
-## [**Empty**](Empty.html)post_group_members(group_id, body)
+## [**Empty**](Empty.html) post_group_members(group_id, body)
 
 Add members
 
@@ -400,7 +400,7 @@ except ApiException as e:
 
 <a name="post_groups"></a>
 
-## [**Group**](Group.html)post_groups(body)
+## [**Group**](Group.html) post_groups(body)
 
 Create a group
 
@@ -445,7 +445,7 @@ except ApiException as e:
 
 <a name="post_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html)post_groups_search(body)
+## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
 
 Search groups
 
@@ -490,7 +490,7 @@ except ApiException as e:
 
 <a name="put_group"></a>
 
-## [**Group**](Group.html)put_group(group_id, body=body)
+## [**Group**](Group.html) put_group(group_id, body=body)
 
 Update group
 

@@ -56,7 +56,8 @@ class CallBasic(object):
             'disconnected_time': 'datetime',
             'disconnect_reasons': 'list[DisconnectReason]',
             'fax_status': 'FaxStatus',
-            'provider': 'str'
+            'provider': 'str',
+            'script_id': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +79,8 @@ class CallBasic(object):
             'disconnected_time': 'disconnectedTime',
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
-            'provider': 'provider'
+            'provider': 'provider',
+            'script_id': 'scriptId'
         }
 
         self._state = None
@@ -100,6 +102,7 @@ class CallBasic(object):
         self._disconnect_reasons = None
         self._fax_status = None
         self._provider = None
+        self._script_id = None
 
     @property
     def state(self):
@@ -553,6 +556,29 @@ class CallBasic(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this CallBasic.
+        The UUID of the script to use.
+
+        :return: The script_id of this CallBasic.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this CallBasic.
+        The UUID of the script to use.
+
+        :param script_id: The script_id of this CallBasic.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     def to_dict(self):
         """

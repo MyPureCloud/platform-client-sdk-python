@@ -474,6 +474,7 @@ from .interaction_stats_alert import InteractionStatsAlert
 from .interaction_stats_alert_container import InteractionStatsAlertContainer
 from .interaction_stats_rule import InteractionStatsRule
 from .interaction_stats_rule_container import InteractionStatsRuleContainer
+from .intraday_data_group import IntradayDataGroup
 from .intraday_data_update_notification import IntradayDataUpdateNotification
 from .intraday_data_update_notification_forecast_data_per_interval import IntradayDataUpdateNotificationForecastDataPerInterval
 from .intraday_data_update_notification_historical_agent_data_per_interval import IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
@@ -491,6 +492,16 @@ from .intraday_data_update_notification_metrics import IntradayDataUpdateNotific
 from .intraday_data_update_notification_performance_prediction_agent_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval
 from .intraday_data_update_notification_performance_prediction_queue_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval
 from .intraday_data_update_notification_schedule_data_per_interval import IntradayDataUpdateNotificationScheduleDataPerInterval
+from .intraday_forecast_data import IntradayForecastData
+from .intraday_historical_agent_data import IntradayHistoricalAgentData
+from .intraday_historical_queue_data import IntradayHistoricalQueueData
+from .intraday_metric import IntradayMetric
+from .intraday_performance_prediction_agent_data import IntradayPerformancePredictionAgentData
+from .intraday_performance_prediction_queue_data import IntradayPerformancePredictionQueueData
+from .intraday_query_data_command import IntradayQueryDataCommand
+from .intraday_queue import IntradayQueue
+from .intraday_response import IntradayResponse
+from .intraday_schedule_data import IntradayScheduleData
 from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
@@ -535,6 +546,7 @@ from .media_result import MediaResult
 from .media_setting import MediaSetting
 from .media_summary import MediaSummary
 from .media_summary_detail import MediaSummaryDetail
+from .media_transcription import MediaTranscription
 from .member_entity import MemberEntity
 from .meta_data import MetaData
 from .metabase import Metabase
@@ -859,6 +871,7 @@ from .voicemail_search_criteria import VoicemailSearchCriteria
 from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
+from .wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .wfm_user_entity_listing import WfmUserEntityListing
 from .workspace import Workspace
 from .workspace_create import WorkspaceCreate

@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_date"></a>
 
-## [**ServerDate**](ServerDate.html)get_date()
+## [**ServerDate**](ServerDate.html) get_date()
 
 Get the current system date/time
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 <a name="get_timezones"></a>
 
-## [**TimeZoneEntityListing**](TimeZoneEntityListing.html)get_timezones(page_size=page_size, page_number=page_number)
+## [**TimeZoneEntityListing**](TimeZoneEntityListing.html) get_timezones(page_size=page_size, page_number=page_number)
 
 Get time zones list
 
@@ -103,7 +103,7 @@ except ApiException as e:
 
 <a name="post_certificate_details"></a>
 
-## [**ParsedCertificate**](ParsedCertificate.html)post_certificate_details(body)
+## [**ParsedCertificate**](ParsedCertificate.html) post_certificate_details(body)
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
 

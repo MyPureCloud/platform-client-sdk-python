@@ -26,6 +26,7 @@ title: Call
 | **disconnect_reasons** | [**list[DisconnectReason]**](DisconnectReason.html) | List of reasons that this call was disconnected. This will be set once the call disconnects. | [optional] |
 | **fax_status** | [**FaxStatus**](FaxStatus.html) | Extra information on fax transmission. | [optional] |
 | **provider** | **str** | The source provider for the call. | [optional] |
+| **script_id** | **str** | The UUID of the script to use. | [optional] |
 {: class="table table-striped"}
 
 

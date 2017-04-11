@@ -5188,6 +5188,84 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_telephony_providers_edges_physicalinterfaces(self, edge_ids, **kwargs):
+        """
+        Get physical interfaces for edges.
+        Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edges_physicalinterfaces(edge_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_ids: Comma separated list of Edge Id's (required)
+        :return: list[DomainPhysicalInterface]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edges_physicalinterfaces" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_ids' is set
+        if ('edge_ids' not in params) or (params['edge_ids'] is None):
+            raise ValueError("Missing the required parameter `edge_ids` when calling `get_telephony_providers_edges_physicalinterfaces`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/physicalinterfaces'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'edge_ids' in params:
+            query_params['edgeIds'] = params['edge_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[DomainPhysicalInterface]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_telephony_providers_edges_site(self, site_id, **kwargs):
         """
         Get a Site by ID.

@@ -56,7 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_routing_email_domain"></a>
 
-## str**delete_routing_email_domain(domain_id)
+## str** delete_routing_email_domain(domain_id)
 
 Delete a domain
 
@@ -101,7 +101,7 @@ except ApiException as e:
 
 <a name="delete_routing_email_domain_route"></a>
 
-## str**delete_routing_email_domain_route(domain_name, route_id)
+## str** delete_routing_email_domain_route(domain_name, route_id)
 
 Delete a route
 
@@ -148,7 +148,7 @@ except ApiException as e:
 
 <a name="delete_routing_queue"></a>
 
-## str**delete_routing_queue(queue_id, force_delete=force_delete)
+## str** delete_routing_queue(queue_id, force_delete=force_delete)
 
 Delete a queue
 
@@ -195,7 +195,7 @@ except ApiException as e:
 
 <a name="delete_routing_queue_user"></a>
 
-## str**delete_routing_queue_user(queue_id, member_id)
+## str** delete_routing_queue_user(queue_id, member_id)
 
 Delete queue member
 
@@ -242,7 +242,7 @@ except ApiException as e:
 
 <a name="delete_routing_queue_wrapupcode"></a>
 
-## str**delete_routing_queue_wrapupcode(queue_id, code_id)
+## str** delete_routing_queue_wrapupcode(queue_id, code_id)
 
 Delete a wrap-up code from a queue
 
@@ -289,7 +289,7 @@ except ApiException as e:
 
 <a name="delete_routing_skill"></a>
 
-## str**delete_routing_skill(skill_id)
+## str** delete_routing_skill(skill_id)
 
 Delete Routing Skill
 
@@ -334,7 +334,7 @@ except ApiException as e:
 
 <a name="delete_routing_utilization"></a>
 
-## str**delete_routing_utilization()
+## str** delete_routing_utilization()
 
 Delete utilization settings and revert to system defaults.
 
@@ -375,7 +375,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_routing_wrapupcode"></a>
 
-## str**delete_routing_wrapupcode(code_id)
+## str** delete_routing_wrapupcode(code_id)
 
 Delete wrap-up code
 
@@ -420,7 +420,7 @@ except ApiException as e:
 
 <a name="delete_user_routingskill"></a>
 
-## str**delete_user_routingskill(user_id, skill_id)
+## str** delete_user_routingskill(user_id, skill_id)
 
 Remove routing skill from user
 
@@ -467,7 +467,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domain"></a>
 
-## [**InboundDomain**](InboundDomain.html)get_routing_email_domain(domain_id)
+## [**InboundDomain**](InboundDomain.html) get_routing_email_domain(domain_id)
 
 Get domain
 
@@ -512,7 +512,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domain_route"></a>
 
-## [**InboundRoute**](InboundRoute.html)get_routing_email_domain_route(domain_name, route_id)
+## [**InboundRoute**](InboundRoute.html) get_routing_email_domain_route(domain_name, route_id)
 
 Get a route
 
@@ -559,7 +559,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domain_routes"></a>
 
-## [**InboundRouteEntityListing**](InboundRouteEntityListing.html)get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
+## [**InboundRouteEntityListing**](InboundRouteEntityListing.html) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
 
 Get routes
 
@@ -610,7 +610,7 @@ except ApiException as e:
 
 <a name="get_routing_email_domains"></a>
 
-## [**InboundDomainEntityListing**](InboundDomainEntityListing.html)get_routing_email_domains()
+## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains()
 
 Get domains
 
@@ -651,7 +651,7 @@ This endpoint does not need any parameter.
 
 <a name="get_routing_email_setup"></a>
 
-## [**EmailSetup**](EmailSetup.html)get_routing_email_setup()
+## [**EmailSetup**](EmailSetup.html) get_routing_email_setup()
 
 Get email setup
 
@@ -692,7 +692,7 @@ This endpoint does not need any parameter.
 
 <a name="get_routing_languages"></a>
 
-## [**LanguageEntityListing**](LanguageEntityListing.html)get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## [**LanguageEntityListing**](LanguageEntityListing.html) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
 Get the list of supported languages.
 
@@ -743,7 +743,7 @@ except ApiException as e:
 
 <a name="get_routing_queue"></a>
 
-## [**Queue**](Queue.html)get_routing_queue(queue_id)
+## [**Queue**](Queue.html) get_routing_queue(queue_id)
 
 Get details about this queue.
 
@@ -788,7 +788,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_estimatedwaittime"></a>
 
-## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
+## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
 
 Get Estimated Wait Time
 
@@ -835,7 +835,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_mediatype_estimatedwaittime"></a>
 
-## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
+## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
 
 Get Estimated Wait Time
 
@@ -882,7 +882,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_users"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html)get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
 
 Get the members of this queue
 
@@ -949,7 +949,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)get_routing_queue_wrapupcodes(queue_id)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_queue_wrapupcodes(queue_id)
 
 Get the wrap-up codes for a queue
 
@@ -994,7 +994,7 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html)get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active)
 
 Get list of queues.
 
@@ -1047,7 +1047,7 @@ except ApiException as e:
 
 <a name="get_routing_skill"></a>
 
-## [**RoutingSkill**](RoutingSkill.html)get_routing_skill(skill_id)
+## [**RoutingSkill**](RoutingSkill.html) get_routing_skill(skill_id)
 
 Get Routing Skill
 
@@ -1092,7 +1092,7 @@ except ApiException as e:
 
 <a name="get_routing_skills"></a>
 
-## [**SkillEntityListing**](SkillEntityListing.html)get_routing_skills(page_size=page_size, page_number=page_number, name=name)
+## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name)
 
 Get the list of routing skills.
 
@@ -1141,7 +1141,7 @@ except ApiException as e:
 
 <a name="get_routing_utilization"></a>
 
-## [**Utilization**](Utilization.html)get_routing_utilization()
+## [**Utilization**](Utilization.html) get_routing_utilization()
 
 Get the utilization settings.
 
@@ -1182,7 +1182,7 @@ This endpoint does not need any parameter.
 
 <a name="get_routing_wrapupcode"></a>
 
-## [**WrapupCode**](WrapupCode.html)get_routing_wrapupcode(code_id)
+## [**WrapupCode**](WrapupCode.html) get_routing_wrapupcode(code_id)
 
 Get details about this wrap-up code.
 
@@ -1227,7 +1227,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by)
 
 Get list of wrapup codes.
 
@@ -1276,7 +1276,7 @@ except ApiException as e:
 
 <a name="get_user_routingskills"></a>
 
-## [**UserSkillEntityListing**](UserSkillEntityListing.html)get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 List routing skills for user
 
@@ -1327,7 +1327,7 @@ except ApiException as e:
 
 <a name="patch_routing_queue_user"></a>
 
-## [**QueueMember**](QueueMember.html)patch_routing_queue_user(queue_id, member_id, body)
+## [**QueueMember**](QueueMember.html) patch_routing_queue_user(queue_id, member_id, body)
 
 Update the ring number of joined status for a User in a Queue
 
@@ -1376,7 +1376,7 @@ except ApiException as e:
 
 <a name="patch_routing_queue_users"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html)patch_routing_queue_users(queue_id, body)
+## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) patch_routing_queue_users(queue_id, body)
 
 Join or unjoin a set of users for a queue
 
@@ -1423,7 +1423,7 @@ except ApiException as e:
 
 <a name="post_analytics_queues_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)post_analytics_queues_observations_query(body)
+## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_queues_observations_query(body)
 
 Query for queue observations
 
@@ -1468,7 +1468,7 @@ except ApiException as e:
 
 <a name="post_routing_email_domain_routes"></a>
 
-## [**InboundRoute**](InboundRoute.html)post_routing_email_domain_routes(domain_name, body)
+## [**InboundRoute**](InboundRoute.html) post_routing_email_domain_routes(domain_name, body)
 
 Create a route
 
@@ -1515,7 +1515,7 @@ except ApiException as e:
 
 <a name="post_routing_email_domains"></a>
 
-## [**InboundDomain**](InboundDomain.html)post_routing_email_domains(body)
+## [**InboundDomain**](InboundDomain.html) post_routing_email_domains(body)
 
 Create a domain
 
@@ -1560,7 +1560,7 @@ except ApiException as e:
 
 <a name="post_routing_languages"></a>
 
-## [**Language**](Language.html)post_routing_languages(body)
+## [**Language**](Language.html) post_routing_languages(body)
 
 Create Language
 
@@ -1605,7 +1605,7 @@ except ApiException as e:
 
 <a name="post_routing_queue_users"></a>
 
-## str**post_routing_queue_users(queue_id, body, delete=delete)
+## str** post_routing_queue_users(queue_id, body, delete=delete)
 
 Bulk add or delete up to 100 queue members
 
@@ -1654,7 +1654,7 @@ except ApiException as e:
 
 <a name="post_routing_queue_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html)post_routing_queue_wrapupcodes(queue_id, body)
+## [**list[WrapupCode]**](WrapupCode.html) post_routing_queue_wrapupcodes(queue_id, body)
 
 Add up to 100 wrap-up codes to a queue
 
@@ -1701,7 +1701,7 @@ except ApiException as e:
 
 <a name="post_routing_queues"></a>
 
-## [**Queue**](Queue.html)post_routing_queues(body)
+## [**Queue**](Queue.html) post_routing_queues(body)
 
 Create queue
 
@@ -1746,7 +1746,7 @@ except ApiException as e:
 
 <a name="post_routing_skills"></a>
 
-## [**RoutingSkill**](RoutingSkill.html)post_routing_skills(body)
+## [**RoutingSkill**](RoutingSkill.html) post_routing_skills(body)
 
 Create Skill
 
@@ -1791,7 +1791,7 @@ except ApiException as e:
 
 <a name="post_routing_wrapupcodes"></a>
 
-## [**WrapupCode**](WrapupCode.html)post_routing_wrapupcodes(body)
+## [**WrapupCode**](WrapupCode.html) post_routing_wrapupcodes(body)
 
 Create a wrap-up code
 
@@ -1836,7 +1836,7 @@ except ApiException as e:
 
 <a name="post_user_routingskills"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html)post_user_routingskills(user_id, body)
+## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
 
 Add routing skill to user
 
@@ -1883,7 +1883,7 @@ except ApiException as e:
 
 <a name="put_routing_email_domain_route"></a>
 
-## [**InboundRoute**](InboundRoute.html)put_routing_email_domain_route(domain_name, route_id, body)
+## [**InboundRoute**](InboundRoute.html) put_routing_email_domain_route(domain_name, route_id, body)
 
 Update a route
 
@@ -1932,7 +1932,7 @@ except ApiException as e:
 
 <a name="put_routing_queue"></a>
 
-## [**Queue**](Queue.html)put_routing_queue(queue_id, body)
+## [**Queue**](Queue.html) put_routing_queue(queue_id, body)
 
 Update a queue
 
@@ -1979,7 +1979,7 @@ except ApiException as e:
 
 <a name="put_routing_utilization"></a>
 
-## [**Utilization**](Utilization.html)put_routing_utilization(body)
+## [**Utilization**](Utilization.html) put_routing_utilization(body)
 
 Update the utilization settings.
 
@@ -2024,7 +2024,7 @@ except ApiException as e:
 
 <a name="put_routing_wrapupcode"></a>
 
-## [**WrapupCode**](WrapupCode.html)put_routing_wrapupcode(code_id, body)
+## [**WrapupCode**](WrapupCode.html) put_routing_wrapupcode(code_id, body)
 
 Update wrap-up code
 
@@ -2071,7 +2071,7 @@ except ApiException as e:
 
 <a name="put_user_routingskill"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html)put_user_routingskill(user_id, skill_id, body)
+## [**UserRoutingSkill**](UserRoutingSkill.html) put_user_routingskill(user_id, skill_id, body)
 
 Update routing skill proficiency or state.
 

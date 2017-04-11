@@ -136,7 +136,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_conversations_call_participant_consult(self, call_id, participant_id, **kwargs):
+    def delete_conversations_call_participant_consult(self, conversation_id, participant_id, **kwargs):
         """
         Cancel the transfer
         
@@ -147,18 +147,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_conversations_call_participant_consult(call_id, participant_id, callback=callback_function)
+        >>> thread = api.delete_conversations_call_participant_consult(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -171,18 +171,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `delete_conversations_call_participant_consult`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `delete_conversations_call_participant_consult`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `delete_conversations_call_participant_consult`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/consult'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -220,7 +220,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_conversations_email_messages_draft_attachment(self, email_id, attachment_id, **kwargs):
+    def delete_conversations_email_messages_draft_attachment(self, conversation_id, attachment_id, **kwargs):
         """
         Delete attachment from draft
         
@@ -231,18 +231,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_conversations_email_messages_draft_attachment(email_id, attachment_id, callback=callback_function)
+        >>> thread = api.delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str attachment_id: attachmentId (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'attachment_id']
+        all_params = ['conversation_id', 'attachment_id']
         all_params.append('callback')
 
         params = locals()
@@ -255,18 +255,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `delete_conversations_email_messages_draft_attachment`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `delete_conversations_email_messages_draft_attachment`")
         # verify the required parameter 'attachment_id' is set
         if ('attachment_id' not in params) or (params['attachment_id'] is None):
             raise ValueError("Missing the required parameter `attachment_id` when calling `delete_conversations_email_messages_draft_attachment`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages/draft/attachments/{attachmentId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'attachment_id' in params:
             path_params['attachmentId'] = params['attachment_id']
 
@@ -706,7 +706,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_call(self, call_id, **kwargs):
+    def get_conversations_call(self, conversation_id, **kwargs):
         """
         Get call conversation
         
@@ -717,17 +717,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_call(call_id, callback=callback_function)
+        >>> thread = api.get_conversations_call(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :return: CallConversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -740,15 +740,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `get_conversations_call`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_call`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -784,7 +784,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_call_participant_wrapup(self, call_id, participant_id, **kwargs):
+    def get_conversations_call_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
         
@@ -795,11 +795,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_call_participant_wrapup(call_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_call_participant_wrapup(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
         :return: Wrapup
@@ -807,7 +807,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'provisional']
+        all_params = ['conversation_id', 'participant_id', 'provisional']
         all_params.append('callback')
 
         params = locals()
@@ -820,18 +820,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `get_conversations_call_participant_wrapup`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_call_participant_wrapup`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_call_participant_wrapup`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -871,7 +871,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_call_participant_wrapupcodes(self, call_id, participant_id, **kwargs):
+    def get_conversations_call_participant_wrapupcodes(self, conversation_id, participant_id, **kwargs):
         """
         Get list of wrapup codes for this conversation participant
         
@@ -882,18 +882,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_call_participant_wrapupcodes(call_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_call_participant_wrapupcodes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -906,18 +906,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `get_conversations_call_participant_wrapupcodes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_call_participant_wrapupcodes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_call_participant_wrapupcodes`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -955,7 +955,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_callback(self, callback_id, **kwargs):
+    def get_conversations_callback(self, conversation_id, **kwargs):
         """
         Get callback conversation
         
@@ -966,17 +966,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_callback(callback_id, callback=callback_function)
+        >>> thread = api.get_conversations_callback(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :return: CallbackConversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['callback_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -989,15 +989,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `get_conversations_callback`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_callback`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -1033,7 +1033,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_callback_participant_wrapup(self, callback_id, participant_id, **kwargs):
+    def get_conversations_callback_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
         
@@ -1044,11 +1044,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_callback_participant_wrapup(callback_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_callback_participant_wrapup(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
         :return: Wrapup
@@ -1056,7 +1056,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id', 'provisional']
+        all_params = ['conversation_id', 'participant_id', 'provisional']
         all_params.append('callback')
 
         params = locals()
@@ -1069,18 +1069,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `get_conversations_callback_participant_wrapup`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_callback_participant_wrapup`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_callback_participant_wrapup`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -1120,7 +1120,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_callback_participant_wrapupcodes(self, callback_id, participant_id, **kwargs):
+    def get_conversations_callback_participant_wrapupcodes(self, conversation_id, participant_id, **kwargs):
         """
         Get list of wrapup codes for this conversation participant
         
@@ -1131,18 +1131,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_callback_participant_wrapupcodes(callback_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -1155,18 +1155,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `get_conversations_callback_participant_wrapupcodes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_callback_participant_wrapupcodes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_callback_participant_wrapupcodes`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -1501,7 +1501,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_chat(self, chat_id, **kwargs):
+    def get_conversations_chat(self, conversation_id, **kwargs):
         """
         Get chat conversation
         
@@ -1512,17 +1512,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_chat(chat_id, callback=callback_function)
+        >>> thread = api.get_conversations_chat(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :return: ChatConversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['chat_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -1535,15 +1535,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `get_conversations_chat`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_chat`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -1579,7 +1579,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_chat_participant_wrapup(self, chat_id, participant_id, **kwargs):
+    def get_conversations_chat_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
         
@@ -1590,11 +1590,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_chat_participant_wrapup(chat_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_chat_participant_wrapup(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
         :return: Wrapup
@@ -1602,7 +1602,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id', 'provisional']
+        all_params = ['conversation_id', 'participant_id', 'provisional']
         all_params.append('callback')
 
         params = locals()
@@ -1615,18 +1615,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `get_conversations_chat_participant_wrapup`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_chat_participant_wrapup`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_chat_participant_wrapup`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -1666,7 +1666,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_chat_participant_wrapupcodes(self, chat_id, participant_id, **kwargs):
+    def get_conversations_chat_participant_wrapupcodes(self, conversation_id, participant_id, **kwargs):
         """
         Get list of wrapup codes for this conversation participant
         
@@ -1677,18 +1677,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_chat_participant_wrapupcodes(chat_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -1701,18 +1701,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `get_conversations_chat_participant_wrapupcodes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_chat_participant_wrapupcodes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_chat_participant_wrapupcodes`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -1822,7 +1822,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_cobrowsesession(self, cobrowse_id, **kwargs):
+    def get_conversations_cobrowsesession(self, conversation_id, **kwargs):
         """
         Get cobrowse conversation
         
@@ -1833,17 +1833,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_cobrowsesession(cobrowse_id, callback=callback_function)
+        >>> thread = api.get_conversations_cobrowsesession(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :return: CobrowseConversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -1856,15 +1856,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `get_conversations_cobrowsesession`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_cobrowsesession`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -1900,7 +1900,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_cobrowsesession_participant_wrapup(self, cobrowse_id, participant_id, **kwargs):
+    def get_conversations_cobrowsesession_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
         
@@ -1911,11 +1911,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_cobrowsesession_participant_wrapup(cobrowse_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
         :return: Wrapup
@@ -1923,7 +1923,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id', 'provisional']
+        all_params = ['conversation_id', 'participant_id', 'provisional']
         all_params.append('callback')
 
         params = locals()
@@ -1936,18 +1936,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `get_conversations_cobrowsesession_participant_wrapup`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_cobrowsesession_participant_wrapup`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_cobrowsesession_participant_wrapup`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -1987,7 +1987,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_cobrowsesession_participant_wrapupcodes(self, cobrowse_id, participant_id, **kwargs):
+    def get_conversations_cobrowsesession_participant_wrapupcodes(self, conversation_id, participant_id, **kwargs):
         """
         Get list of wrapup codes for this conversation participant
         
@@ -1998,18 +1998,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_cobrowsesession_participant_wrapupcodes(cobrowse_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -2022,18 +2022,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `get_conversations_cobrowsesession_participant_wrapupcodes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_cobrowsesession_participant_wrapupcodes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_cobrowsesession_participant_wrapupcodes`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -2143,7 +2143,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email(self, email_id, **kwargs):
+    def get_conversations_email(self, conversation_id, **kwargs):
         """
         Get email conversation
         
@@ -2154,17 +2154,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email(email_id, callback=callback_function)
+        >>> thread = api.get_conversations_email(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :return: EmailConversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -2177,15 +2177,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -2221,7 +2221,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_message(self, email_id, message_id, **kwargs):
+    def get_conversations_email_message(self, conversation_id, message_id, **kwargs):
         """
         Get conversation message
         
@@ -2232,18 +2232,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email_message(email_id, message_id, callback=callback_function)
+        >>> thread = api.get_conversations_email_message(conversation_id, message_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str message_id: messageId (required)
         :return: EmailMessage
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'message_id']
+        all_params = ['conversation_id', 'message_id']
         all_params.append('callback')
 
         params = locals()
@@ -2256,18 +2256,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email_message`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email_message`")
         # verify the required parameter 'message_id' is set
         if ('message_id' not in params) or (params['message_id'] is None):
             raise ValueError("Missing the required parameter `message_id` when calling `get_conversations_email_message`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages/{messageId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages/{messageId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'message_id' in params:
             path_params['messageId'] = params['message_id']
 
@@ -2305,7 +2305,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_messages(self, email_id, **kwargs):
+    def get_conversations_email_messages(self, conversation_id, **kwargs):
         """
         Get conversation messages
         
@@ -2316,17 +2316,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email_messages(email_id, callback=callback_function)
+        >>> thread = api.get_conversations_email_messages(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :return: EmailMessageListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -2339,15 +2339,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email_messages`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email_messages`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -2383,7 +2383,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_messages_draft(self, email_id, **kwargs):
+    def get_conversations_email_messages_draft(self, conversation_id, **kwargs):
         """
         Get conversation draft reply
         
@@ -2394,17 +2394,17 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email_messages_draft(email_id, callback=callback_function)
+        >>> thread = api.get_conversations_email_messages_draft(conversation_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :return: EmailMessage
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id']
+        all_params = ['conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -2417,15 +2417,15 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email_messages_draft`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email_messages_draft`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages/draft'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages/draft'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -2461,7 +2461,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_participant_wrapup(self, email_id, participant_id, **kwargs):
+    def get_conversations_email_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
         
@@ -2472,11 +2472,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email_participant_wrapup(email_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_email_participant_wrapup(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
         :return: Wrapup
@@ -2484,7 +2484,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id', 'provisional']
+        all_params = ['conversation_id', 'participant_id', 'provisional']
         all_params.append('callback')
 
         params = locals()
@@ -2497,18 +2497,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email_participant_wrapup`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email_participant_wrapup`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_email_participant_wrapup`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -2548,7 +2548,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_participant_wrapupcodes(self, email_id, participant_id, **kwargs):
+    def get_conversations_email_participant_wrapupcodes(self, conversation_id, participant_id, **kwargs):
         """
         Get list of wrapup codes for this conversation participant
         
@@ -2559,18 +2559,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_conversations_email_participant_wrapupcodes(email_id, participant_id, callback=callback_function)
+        >>> thread = api.get_conversations_email_participant_wrapupcodes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -2583,18 +2583,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_conversations_email_participant_wrapupcodes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversations_email_participant_wrapupcodes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `get_conversations_email_participant_wrapupcodes`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -2884,7 +2884,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call(self, call_id, body, **kwargs):
+    def patch_conversations_call(self, conversation_id, body, **kwargs):
         """
         Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
         
@@ -2895,18 +2895,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_call(call_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_call(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -2919,18 +2919,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `patch_conversations_call`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -2968,7 +2968,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call_participant(self, call_id, participant_id, body, **kwargs):
+    def patch_conversations_call_participant(self, conversation_id, participant_id, body, **kwargs):
         """
         Update conversation participant
         
@@ -2979,11 +2979,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_call_participant(call_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_call_participant(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: Participant request (required)
         :return: None
@@ -2991,7 +2991,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3004,9 +3004,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `patch_conversations_call_participant`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call_participant`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_call_participant`")
@@ -3015,10 +3015,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call_participant`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3058,7 +3058,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call_participant_attributes(self, call_id, participant_id, body, **kwargs):
+    def patch_conversations_call_participant_attributes(self, conversation_id, participant_id, body, **kwargs):
         """
         Update the attributes on a conversation participant.
         
@@ -3069,11 +3069,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_call_participant_attributes(call_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_call_participant_attributes(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
         :return: None
@@ -3081,7 +3081,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3094,9 +3094,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `patch_conversations_call_participant_attributes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call_participant_attributes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_call_participant_attributes`")
@@ -3105,10 +3105,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call_participant_attributes`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/attributes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3148,7 +3148,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call_participant_communication(self, call_id, participant_id, communication_id, body, **kwargs):
+    def patch_conversations_call_participant_communication(self, conversation_id, participant_id, communication_id, body, **kwargs):
         """
         Update conversation participant's communication by disconnecting it.
         
@@ -3159,11 +3159,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_call_participant_communication(call_id, participant_id, communication_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)
@@ -3172,7 +3172,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'communication_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3185,9 +3185,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `patch_conversations_call_participant_communication`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call_participant_communication`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_call_participant_communication`")
@@ -3199,10 +3199,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call_participant_communication`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
         if 'communication_id' in params:
@@ -3244,7 +3244,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call_participant_consult(self, call_id, participant_id, body, **kwargs):
+    def patch_conversations_call_participant_consult(self, conversation_id, participant_id, body, **kwargs):
         """
         Change who can speak
         
@@ -3255,11 +3255,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_call_participant_consult(call_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_call_participant_consult(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ConsultTransferUpdate body: new speak to (required)
         :return: ConsultTransferResponse
@@ -3267,7 +3267,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3280,9 +3280,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `patch_conversations_call_participant_consult`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call_participant_consult`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_call_participant_consult`")
@@ -3291,10 +3291,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call_participant_consult`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/consult'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3334,7 +3334,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_callback(self, callback_id, body, **kwargs):
+    def patch_conversations_callback(self, conversation_id, body, **kwargs):
         """
         Update a conversation by disconnecting all of the participants
         
@@ -3345,18 +3345,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_callback(callback_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_callback(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3369,18 +3369,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `patch_conversations_callback`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_callback`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_callback`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -3418,7 +3418,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_callback_participant(self, callback_id, participant_id, body, **kwargs):
+    def patch_conversations_callback_participant(self, conversation_id, participant_id, body, **kwargs):
         """
         Update conversation participant
         
@@ -3429,11 +3429,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_callback_participant(callback_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_callback_participant(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: Participant (required)
         :return: None
@@ -3441,7 +3441,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3454,9 +3454,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `patch_conversations_callback_participant`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_callback_participant`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_callback_participant`")
@@ -3465,10 +3465,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_callback_participant`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3508,7 +3508,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_callback_participant_attributes(self, callback_id, participant_id, body, **kwargs):
+    def patch_conversations_callback_participant_attributes(self, conversation_id, participant_id, body, **kwargs):
         """
         Update the attributes on a conversation participant.
         
@@ -3519,11 +3519,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_callback_participant_attributes(callback_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_callback_participant_attributes(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Attributes (required)
         :return: None
@@ -3531,7 +3531,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3544,9 +3544,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `patch_conversations_callback_participant_attributes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_callback_participant_attributes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_callback_participant_attributes`")
@@ -3555,10 +3555,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_callback_participant_attributes`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/attributes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3598,7 +3598,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_callback_participant_communication(self, callback_id, participant_id, communication_id, body, **kwargs):
+    def patch_conversations_callback_participant_communication(self, conversation_id, participant_id, communication_id, body, **kwargs):
         """
         Update conversation participant's communication by disconnecting it.
         
@@ -3609,11 +3609,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_callback_participant_communication(callback_id, participant_id, communication_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)
@@ -3622,7 +3622,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id', 'communication_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3635,9 +3635,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `patch_conversations_callback_participant_communication`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_callback_participant_communication`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_callback_participant_communication`")
@@ -3649,10 +3649,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_callback_participant_communication`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
         if 'communication_id' in params:
@@ -3694,7 +3694,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_chat(self, chat_id, body, **kwargs):
+    def patch_conversations_chat(self, conversation_id, body, **kwargs):
         """
         Update a conversation by disconnecting all of the participants
         
@@ -3705,18 +3705,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_chat(chat_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_chat(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3729,18 +3729,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `patch_conversations_chat`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_chat`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_chat`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -3778,7 +3778,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_chat_participant(self, chat_id, participant_id, body, **kwargs):
+    def patch_conversations_chat_participant(self, conversation_id, participant_id, body, **kwargs):
         """
         Update conversation participant
         
@@ -3789,11 +3789,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_chat_participant(chat_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_chat_participant(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: Update request (required)
         :return: None
@@ -3801,7 +3801,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3814,9 +3814,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `patch_conversations_chat_participant`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_chat_participant`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_chat_participant`")
@@ -3825,10 +3825,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_chat_participant`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3868,7 +3868,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_chat_participant_attributes(self, chat_id, participant_id, body, **kwargs):
+    def patch_conversations_chat_participant_attributes(self, conversation_id, participant_id, body, **kwargs):
         """
         Update the attributes on a conversation participant.
         
@@ -3879,11 +3879,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_chat_participant_attributes(chat_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_chat_participant_attributes(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
         :return: None
@@ -3891,7 +3891,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3904,9 +3904,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `patch_conversations_chat_participant_attributes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_chat_participant_attributes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_chat_participant_attributes`")
@@ -3915,10 +3915,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_chat_participant_attributes`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}/attributes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -3958,7 +3958,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_chat_participant_communication(self, chat_id, participant_id, communication_id, body, **kwargs):
+    def patch_conversations_chat_participant_communication(self, conversation_id, participant_id, communication_id, body, **kwargs):
         """
         Update conversation participant's communication by disconnecting it.
         
@@ -3969,11 +3969,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_chat_participant_communication(chat_id, participant_id, communication_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)
@@ -3982,7 +3982,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id', 'communication_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3995,9 +3995,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `patch_conversations_chat_participant_communication`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_chat_participant_communication`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_chat_participant_communication`")
@@ -4009,10 +4009,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_chat_participant_communication`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
         if 'communication_id' in params:
@@ -4054,7 +4054,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_cobrowsesession(self, cobrowse_id, body, **kwargs):
+    def patch_conversations_cobrowsesession(self, conversation_id, body, **kwargs):
         """
         Update a conversation by disconnecting all of the participants
         
@@ -4065,18 +4065,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_cobrowsesession(cobrowse_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_cobrowsesession(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4089,18 +4089,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `patch_conversations_cobrowsesession`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_cobrowsesession`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_cobrowsesession`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -4138,7 +4138,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_cobrowsesession_participant(self, cobrowse_id, participant_id, **kwargs):
+    def patch_conversations_cobrowsesession_participant(self, conversation_id, participant_id, **kwargs):
         """
         Update conversation participant
         
@@ -4149,11 +4149,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_cobrowsesession_participant(cobrowse_id, participant_id, callback=callback_function)
+        >>> thread = api.patch_conversations_cobrowsesession_participant(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: 
         :return: None
@@ -4161,7 +4161,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4174,18 +4174,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `patch_conversations_cobrowsesession_participant`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_cobrowsesession_participant`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_cobrowsesession_participant`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -4225,7 +4225,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_cobrowsesession_participant_attributes(self, cobrowse_id, participant_id, **kwargs):
+    def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id, participant_id, **kwargs):
         """
         Update the attributes on a conversation participant.
         
@@ -4236,11 +4236,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_cobrowsesession_participant_attributes(cobrowse_id, participant_id, callback=callback_function)
+        >>> thread = api.patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: 
         :return: None
@@ -4248,7 +4248,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4261,18 +4261,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `patch_conversations_cobrowsesession_participant_attributes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_cobrowsesession_participant_attributes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_cobrowsesession_participant_attributes`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/attributes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -4312,7 +4312,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_cobrowsesession_participant_communication(self, cobrowse_id, participant_id, communication_id, body, **kwargs):
+    def patch_conversations_cobrowsesession_participant_communication(self, conversation_id, participant_id, communication_id, body, **kwargs):
         """
         Update conversation participant's communication by disconnecting it.
         
@@ -4323,11 +4323,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_cobrowsesession_participant_communication(cobrowse_id, participant_id, communication_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)
@@ -4336,7 +4336,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id', 'communication_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4349,9 +4349,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `patch_conversations_cobrowsesession_participant_communication`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_cobrowsesession_participant_communication`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_cobrowsesession_participant_communication`")
@@ -4363,10 +4363,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_cobrowsesession_participant_communication`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
         if 'communication_id' in params:
@@ -4408,7 +4408,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_email(self, email_id, body, **kwargs):
+    def patch_conversations_email(self, conversation_id, body, **kwargs):
         """
         Update a conversation by disconnecting all of the participants
         
@@ -4419,18 +4419,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_email(email_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_email(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4443,18 +4443,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `patch_conversations_email`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_email`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_email`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -4492,7 +4492,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_email_participant(self, email_id, participant_id, body, **kwargs):
+    def patch_conversations_email_participant(self, conversation_id, participant_id, body, **kwargs):
         """
         Update conversation participant
         
@@ -4503,11 +4503,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_email_participant(email_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_email_participant(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: Update request (required)
         :return: None
@@ -4515,7 +4515,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4528,9 +4528,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `patch_conversations_email_participant`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_email_participant`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_email_participant`")
@@ -4539,10 +4539,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_email_participant`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -4582,7 +4582,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_email_participant_attributes(self, email_id, participant_id, body, **kwargs):
+    def patch_conversations_email_participant_attributes(self, conversation_id, participant_id, body, **kwargs):
         """
         Update the attributes on a conversation participant.
         
@@ -4593,11 +4593,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_email_participant_attributes(email_id, participant_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_email_participant_attributes(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
         :return: None
@@ -4605,7 +4605,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4618,9 +4618,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `patch_conversations_email_participant_attributes`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_email_participant_attributes`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_email_participant_attributes`")
@@ -4629,10 +4629,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_email_participant_attributes`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}/attributes'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -4672,7 +4672,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_email_participant_communication(self, email_id, participant_id, communication_id, body, **kwargs):
+    def patch_conversations_email_participant_communication(self, conversation_id, participant_id, communication_id, body, **kwargs):
         """
         Update conversation participant's communication by disconnecting it.
         
@@ -4683,11 +4683,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_conversations_email_participant_communication(email_id, participant_id, communication_id, body, callback=callback_function)
+        >>> thread = api.patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)
@@ -4696,7 +4696,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id', 'communication_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -4709,9 +4709,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `patch_conversations_email_participant_communication`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_email_participant_communication`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_email_participant_communication`")
@@ -4723,10 +4723,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `patch_conversations_email_participant_communication`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
         if 'communication_id' in params:
@@ -5185,7 +5185,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_call(self, call_id, body, **kwargs):
+    def post_conversations_call(self, conversation_id, body, **kwargs):
         """
         Add a new call to a conversation
         
@@ -5196,18 +5196,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_call(call_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_call(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param CallCommand body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5220,18 +5220,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `post_conversations_call`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_call`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -5269,7 +5269,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_call_participant_consult(self, call_id, participant_id, body, **kwargs):
+    def post_conversations_call_participant_consult(self, conversation_id, participant_id, body, **kwargs):
         """
         Initiate and update consult transfer
         
@@ -5280,11 +5280,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_call_participant_consult(call_id, participant_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_call_participant_consult(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ConsultTransfer body: Destination address & initial speak to (required)
         :return: ConsultTransferResponse
@@ -5292,7 +5292,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5305,9 +5305,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `post_conversations_call_participant_consult`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call_participant_consult`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_call_participant_consult`")
@@ -5316,10 +5316,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_call_participant_consult`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/consult'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -5359,7 +5359,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_call_participant_monitor(self, call_id, participant_id, **kwargs):
+    def post_conversations_call_participant_monitor(self, conversation_id, participant_id, **kwargs):
         """
         Listen in on the conversation from the point of view of a given participant.
         
@@ -5370,18 +5370,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_call_participant_monitor(call_id, participant_id, callback=callback_function)
+        >>> thread = api.post_conversations_call_participant_monitor(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id']
+        all_params = ['conversation_id', 'participant_id']
         all_params.append('callback')
 
         params = locals()
@@ -5394,18 +5394,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `post_conversations_call_participant_monitor`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call_participant_monitor`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_call_participant_monitor`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/monitor'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -5443,7 +5443,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_call_participant_replace(self, call_id, participant_id, body, **kwargs):
+    def post_conversations_call_participant_replace(self, conversation_id, participant_id, body, **kwargs):
         """
         Replace this participant with the specified user and/or address
         
@@ -5454,11 +5454,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_call_participant_replace(call_id, participant_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_call_participant_replace(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param TransferRequest body: Transfer request (required)
         :return: None
@@ -5466,7 +5466,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5479,9 +5479,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `post_conversations_call_participant_replace`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call_participant_replace`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_call_participant_replace`")
@@ -5490,10 +5490,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_call_participant_replace`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants/{participantId}/replace'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -5533,7 +5533,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_call_participants(self, call_id, body, **kwargs):
+    def post_conversations_call_participants(self, conversation_id, body, **kwargs):
         """
         Add participants to a conversation
         
@@ -5544,18 +5544,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_call_participants(call_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_call_participants(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: callId (required)
+        :param str conversation_id: conversationId (required)
         :param Conversation body: Conversation (required)
         :return: Conversation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5568,18 +5568,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'call_id' is set
-        if ('call_id' not in params) or (params['call_id'] is None):
-            raise ValueError("Missing the required parameter `call_id` when calling `post_conversations_call_participants`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call_participants`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_call_participants`")
 
 
-        resource_path = '/api/v2/conversations/calls/{callId}/participants'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants'.replace('{format}', 'json')
         path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -5617,7 +5617,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_callback_participant_replace(self, callback_id, participant_id, body, **kwargs):
+    def post_conversations_callback_participant_replace(self, conversation_id, participant_id, body, **kwargs):
         """
         Replace this participant with the specified user and/or address
         
@@ -5628,11 +5628,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_callback_participant_replace(callback_id, participant_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_callback_participant_replace(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str callback_id: callbackId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param TransferRequest body: Transfer request (required)
         :return: None
@@ -5640,7 +5640,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['callback_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5653,9 +5653,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'callback_id' is set
-        if ('callback_id' not in params) or (params['callback_id'] is None):
-            raise ValueError("Missing the required parameter `callback_id` when calling `post_conversations_callback_participant_replace`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_callback_participant_replace`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_callback_participant_replace`")
@@ -5664,10 +5664,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_callback_participant_replace`")
 
 
-        resource_path = '/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/replace'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace'.replace('{format}', 'json')
         path_params = {}
-        if 'callback_id' in params:
-            path_params['callbackId'] = params['callback_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -5863,7 +5863,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_chat_participant_replace(self, chat_id, participant_id, body, **kwargs):
+    def post_conversations_chat_participant_replace(self, conversation_id, participant_id, body, **kwargs):
         """
         Replace this participant with the specified user and/or address
         
@@ -5874,11 +5874,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_chat_participant_replace(chat_id, participant_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_chat_participant_replace(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str chat_id: chatId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param TransferRequest body: Transfer request (required)
         :return: None
@@ -5886,7 +5886,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['chat_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5899,9 +5899,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'chat_id' is set
-        if ('chat_id' not in params) or (params['chat_id'] is None):
-            raise ValueError("Missing the required parameter `chat_id` when calling `post_conversations_chat_participant_replace`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_chat_participant_replace`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_chat_participant_replace`")
@@ -5910,10 +5910,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_chat_participant_replace`")
 
 
-        resource_path = '/api/v2/conversations/chats/{chatId}/participants/{participantId}/replace'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace'.replace('{format}', 'json')
         path_params = {}
-        if 'chat_id' in params:
-            path_params['chatId'] = params['chat_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -6031,7 +6031,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_cobrowsesession_participant_replace(self, cobrowse_id, participant_id, **kwargs):
+    def post_conversations_cobrowsesession_participant_replace(self, conversation_id, participant_id, **kwargs):
         """
         Replace this participant with the specified user and/or address
         
@@ -6042,11 +6042,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_cobrowsesession_participant_replace(cobrowse_id, participant_id, callback=callback_function)
+        >>> thread = api.post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str cobrowse_id: cobrowseId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param TransferRequest body: 
         :return: None
@@ -6054,7 +6054,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['cobrowse_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6067,18 +6067,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'cobrowse_id' is set
-        if ('cobrowse_id' not in params) or (params['cobrowse_id'] is None):
-            raise ValueError("Missing the required parameter `cobrowse_id` when calling `post_conversations_cobrowsesession_participant_replace`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_cobrowsesession_participant_replace`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_cobrowsesession_participant_replace`")
 
 
-        resource_path = '/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/replace'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace'.replace('{format}', 'json')
         path_params = {}
-        if 'cobrowse_id' in params:
-            path_params['cobrowseId'] = params['cobrowse_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -6118,7 +6118,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_email_messages(self, email_id, body, **kwargs):
+    def post_conversations_email_messages(self, conversation_id, body, **kwargs):
         """
         Send an email reply
         
@@ -6129,18 +6129,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_email_messages(email_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_email_messages(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param EmailMessage body: Reply (required)
         :return: EmailMessage
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6153,18 +6153,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `post_conversations_email_messages`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_email_messages`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_email_messages`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 
@@ -6202,7 +6202,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_email_participant_replace(self, email_id, participant_id, body, **kwargs):
+    def post_conversations_email_participant_replace(self, conversation_id, participant_id, body, **kwargs):
         """
         Replace this participant with the specified user and/or address
         
@@ -6213,11 +6213,11 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_conversations_email_participant_replace(email_id, participant_id, body, callback=callback_function)
+        >>> thread = api.post_conversations_email_participant_replace(conversation_id, participant_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param TransferRequest body: Transfer request (required)
         :return: None
@@ -6225,7 +6225,7 @@ class ConversationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'participant_id', 'body']
+        all_params = ['conversation_id', 'participant_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6238,9 +6238,9 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `post_conversations_email_participant_replace`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_email_participant_replace`")
         # verify the required parameter 'participant_id' is set
         if ('participant_id' not in params) or (params['participant_id'] is None):
             raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_email_participant_replace`")
@@ -6249,10 +6249,10 @@ class ConversationsApi(object):
             raise ValueError("Missing the required parameter `body` when calling `post_conversations_email_participant_replace`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/participants/{participantId}/replace'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
         if 'participant_id' in params:
             path_params['participantId'] = params['participant_id']
 
@@ -6448,7 +6448,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_email_messages_draft(self, email_id, body, **kwargs):
+    def put_conversations_email_messages_draft(self, conversation_id, body, **kwargs):
         """
         Update conversation draft reply
         
@@ -6459,18 +6459,18 @@ class ConversationsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_conversations_email_messages_draft(email_id, body, callback=callback_function)
+        >>> thread = api.put_conversations_email_messages_draft(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str email_id: emailId (required)
+        :param str conversation_id: conversationId (required)
         :param EmailMessage body: Draft (required)
         :return: EmailMessage
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email_id', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6483,18 +6483,18 @@ class ConversationsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'email_id' is set
-        if ('email_id' not in params) or (params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `put_conversations_email_messages_draft`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `put_conversations_email_messages_draft`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_conversations_email_messages_draft`")
 
 
-        resource_path = '/api/v2/conversations/emails/{emailId}/messages/draft'.replace('{format}', 'json')
+        resource_path = '/api/v2/conversations/emails/{conversationId}/messages/draft'.replace('{format}', 'json')
         path_params = {}
-        if 'email_id' in params:
-            path_params['emailId'] = params['email_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
 

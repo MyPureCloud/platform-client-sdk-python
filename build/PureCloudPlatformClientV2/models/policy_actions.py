@@ -45,7 +45,8 @@ class PolicyActions(object):
             'assign_metered_evaluations': 'list[MeteredEvaluationAssignment]',
             'assign_calibrations': 'list[CalibrationAssignment]',
             'retention_duration': 'RetentionDuration',
-            'initiate_screen_recording': 'InitiateScreenRecording'
+            'initiate_screen_recording': 'InitiateScreenRecording',
+            'media_transcriptions': 'list[MediaTranscription]'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class PolicyActions(object):
             'assign_metered_evaluations': 'assignMeteredEvaluations',
             'assign_calibrations': 'assignCalibrations',
             'retention_duration': 'retentionDuration',
-            'initiate_screen_recording': 'initiateScreenRecording'
+            'initiate_screen_recording': 'initiateScreenRecording',
+            'media_transcriptions': 'mediaTranscriptions'
         }
 
         self._retain_recording = None
@@ -67,6 +69,7 @@ class PolicyActions(object):
         self._assign_calibrations = None
         self._retention_duration = None
         self._initiate_screen_recording = None
+        self._media_transcriptions = None
 
     @property
     def retain_recording(self):
@@ -251,6 +254,29 @@ class PolicyActions(object):
         """
         
         self._initiate_screen_recording = initiate_screen_recording
+
+    @property
+    def media_transcriptions(self):
+        """
+        Gets the media_transcriptions of this PolicyActions.
+
+
+        :return: The media_transcriptions of this PolicyActions.
+        :rtype: list[MediaTranscription]
+        """
+        return self._media_transcriptions
+
+    @media_transcriptions.setter
+    def media_transcriptions(self, media_transcriptions):
+        """
+        Sets the media_transcriptions of this PolicyActions.
+
+
+        :param media_transcriptions: The media_transcriptions of this PolicyActions.
+        :type: list[MediaTranscription]
+        """
+        
+        self._media_transcriptions = media_transcriptions
 
     def to_dict(self):
         """

@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_geolocations_settings"></a>
 
-## [**GeolocationSettings**](GeolocationSettings.html)get_geolocations_settings()
+## [**GeolocationSettings**](GeolocationSettings.html) get_geolocations_settings()
 
 Get a organization's GeolocationSettings
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 <a name="get_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html)get_user_geolocation(user_id, client_id)
+## [**Geolocation**](Geolocation.html) get_user_geolocation(user_id, client_id)
 
 Get a user's Geolocation
 
@@ -104,7 +104,7 @@ except ApiException as e:
 
 <a name="patch_geolocations_settings"></a>
 
-## [**GeolocationSettings**](GeolocationSettings.html)patch_geolocations_settings(body)
+## [**GeolocationSettings**](GeolocationSettings.html) patch_geolocations_settings(body)
 
 Patch a organization's GeolocationSettings
 
@@ -149,7 +149,7 @@ except ApiException as e:
 
 <a name="patch_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html)patch_user_geolocation(user_id, client_id, body)
+## [**Geolocation**](Geolocation.html) patch_user_geolocation(user_id, client_id, body)
 
 Patch a user's Geolocation
 

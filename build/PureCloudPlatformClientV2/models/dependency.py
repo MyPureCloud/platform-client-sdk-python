@@ -44,6 +44,7 @@ class Dependency(object):
             'type': 'str',
             'deleted': 'bool',
             'updated': 'bool',
+            'state_unknown': 'bool',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class Dependency(object):
             'type': 'type',
             'deleted': 'deleted',
             'updated': 'updated',
+            'state_unknown': 'stateUnknown',
             'self_uri': 'selfUri'
         }
 
@@ -63,6 +65,7 @@ class Dependency(object):
         self._type = None
         self._deleted = None
         self._updated = None
+        self._state_unknown = None
         self._self_uri = None
 
     @property
@@ -154,7 +157,7 @@ class Dependency(object):
         :param type: The type of this Dependency.
         :type: str
         """
-        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "GROUP", "INBOUNDCALLFLOW", "INBOUNDEMAILFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "OUTBOUNDCALLFLOW", "QUEUE", "RESPONSE", "SECUREACTION", "SECURECALLFLOW", "SYSTEMPROMPT", "USER", "USERPROMPT", "VOICEXML", "WORKFLOW"]
+        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "GROUP", "INBOUNDCALLFLOW", "INBOUNDEMAILFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "OUTBOUNDCALLFLOW", "QUEUE", "RESPONSE", "SCHEDULE", "SCHEDULEGROUP", "SECUREACTION", "SECURECALLFLOW", "SYSTEMPROMPT", "USER", "USERPROMPT", "VOICEXML", "WORKFLOW"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -206,6 +209,29 @@ class Dependency(object):
         """
         
         self._updated = updated
+
+    @property
+    def state_unknown(self):
+        """
+        Gets the state_unknown of this Dependency.
+
+
+        :return: The state_unknown of this Dependency.
+        :rtype: bool
+        """
+        return self._state_unknown
+
+    @state_unknown.setter
+    def state_unknown(self, state_unknown):
+        """
+        Sets the state_unknown of this Dependency.
+
+
+        :param state_unknown: The state_unknown of this Dependency.
+        :type: bool
+        """
+        
+        self._state_unknown = state_unknown
 
     @property
     def self_uri(self):

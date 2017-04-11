@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_analytics_reporting_schedule"></a>
 
-## str**delete_analytics_reporting_schedule(schedule_id)
+## str** delete_analytics_reporting_schedule(schedule_id)
 
 Delete a scheduled report job.
 
@@ -79,7 +79,7 @@ except ApiException as e:
 
 <a name="get_analytics_conversation_details"></a>
 
-## [**AnalyticsConversation**](AnalyticsConversation.html)get_analytics_conversation_details(conversation_id)
+## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversation_details(conversation_id)
 
 Get a conversation by id
 
@@ -124,7 +124,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_metadata"></a>
 
-## [**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html)get_analytics_reporting_metadata(page_number=page_number, page_size=page_size, locale=locale)
+## [**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html) get_analytics_reporting_metadata(page_number=page_number, page_size=page_size, locale=locale)
 
 Get list of reporting metadata.
 
@@ -173,7 +173,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_report_id_metadata"></a>
 
-## [**ReportMetaData**](ReportMetaData.html)get_analytics_reporting_report_id_metadata(report_id, locale=locale)
+## [**ReportMetaData**](ReportMetaData.html) get_analytics_reporting_report_id_metadata(report_id, locale=locale)
 
 Get a reporting metadata.
 
@@ -220,7 +220,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_reportformats"></a>
 
-## list[str]**get_analytics_reporting_reportformats()
+## list[str]** get_analytics_reporting_reportformats()
 
 Get a list of report formats
 
@@ -261,7 +261,7 @@ This endpoint does not need any parameter.
 
 <a name="get_analytics_reporting_schedule"></a>
 
-## [**ReportSchedule**](ReportSchedule.html)get_analytics_reporting_schedule(schedule_id)
+## [**ReportSchedule**](ReportSchedule.html) get_analytics_reporting_schedule(schedule_id)
 
 Get a scheduled report job.
 
@@ -306,7 +306,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_schedule_history"></a>
 
-## [**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html)get_analytics_reporting_schedule_history(schedule_id, page_number=page_number, page_size=page_size)
+## [**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html) get_analytics_reporting_schedule_history(schedule_id, page_number=page_number, page_size=page_size)
 
 Get list of completed scheduled report jobs.
 
@@ -355,7 +355,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_schedule_history_latest"></a>
 
-## [**ReportRunEntry**](ReportRunEntry.html)get_analytics_reporting_schedule_history_latest(schedule_id)
+## [**ReportRunEntry**](ReportRunEntry.html) get_analytics_reporting_schedule_history_latest(schedule_id)
 
 Get most recently completed scheduled report job.
 
@@ -400,7 +400,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_schedule_history_run_id"></a>
 
-## [**ReportRunEntry**](ReportRunEntry.html)get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)
+## [**ReportRunEntry**](ReportRunEntry.html) get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)
 
 A completed scheduled report job
 
@@ -447,7 +447,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_schedules"></a>
 
-## [**ReportScheduleEntityListing**](ReportScheduleEntityListing.html)get_analytics_reporting_schedules(page_number=page_number, page_size=page_size)
+## [**ReportScheduleEntityListing**](ReportScheduleEntityListing.html) get_analytics_reporting_schedules(page_number=page_number, page_size=page_size)
 
 Get a list of scheduled report jobs
 
@@ -494,7 +494,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_timeperiods"></a>
 
-## list[str]**get_analytics_reporting_timeperiods()
+## list[str]** get_analytics_reporting_timeperiods()
 
 Get a list of report time periods.
 
@@ -535,7 +535,7 @@ This endpoint does not need any parameter.
 
 <a name="post_analytics_conversation_details_properties"></a>
 
-## [**PropertyIndexRequest**](PropertyIndexRequest.html)post_analytics_conversation_details_properties(conversation_id, body)
+## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
 
 Index conversation properties
 
@@ -582,7 +582,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html)post_analytics_conversations_aggregates_query(body)
+## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
 
 Query for conversation aggregates
 
@@ -627,7 +627,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_details_query"></a>
 
-## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)post_analytics_conversations_details_query(body)
+## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) post_analytics_conversations_details_query(body)
 
 Query for conversation details
 
@@ -672,7 +672,7 @@ except ApiException as e:
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html)post_analytics_evaluations_aggregates_query(body)
+## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
 
 Query for evaluation aggregates
 
@@ -717,7 +717,7 @@ except ApiException as e:
 
 <a name="post_analytics_queues_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)post_analytics_queues_observations_query(body)
+## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_queues_observations_query(body)
 
 Query for queue observations
 
@@ -762,7 +762,7 @@ except ApiException as e:
 
 <a name="post_analytics_reporting_schedule_runreport"></a>
 
-## [**RunNowResponse**](RunNowResponse.html)post_analytics_reporting_schedule_runreport(schedule_id)
+## [**RunNowResponse**](RunNowResponse.html) post_analytics_reporting_schedule_runreport(schedule_id)
 
 Place a scheduled report immediately into the reporting queue
 
@@ -807,7 +807,7 @@ except ApiException as e:
 
 <a name="post_analytics_reporting_schedules"></a>
 
-## [**ReportSchedule**](ReportSchedule.html)post_analytics_reporting_schedules(body)
+## [**ReportSchedule**](ReportSchedule.html) post_analytics_reporting_schedules(body)
 
 Create a scheduled report job
 
@@ -852,7 +852,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_aggregates_query"></a>
 
-## [**PresenceQueryResponse**](PresenceQueryResponse.html)post_analytics_users_aggregates_query(body)
+## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
 
 Query for user aggregates
 
@@ -897,7 +897,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_details_query"></a>
 
-## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)post_analytics_users_details_query(body)
+## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) post_analytics_users_details_query(body)
 
 Query for user details
 
@@ -942,7 +942,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_observations_query"></a>
 
-## [**ObservationQueryResponse**](ObservationQueryResponse.html)post_analytics_users_observations_query(body)
+## [**ObservationQueryResponse**](ObservationQueryResponse.html) post_analytics_users_observations_query(body)
 
 Query for user observations
 
@@ -987,7 +987,7 @@ except ApiException as e:
 
 <a name="put_analytics_reporting_schedule"></a>
 
-## [**ReportSchedule**](ReportSchedule.html)put_analytics_reporting_schedule(schedule_id, body)
+## [**ReportSchedule**](ReportSchedule.html) put_analytics_reporting_schedule(schedule_id, body)
 
 Update a scheduled report job.
 

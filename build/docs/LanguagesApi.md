@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_language"></a>
 
-## delete_language(language_id)
+##  delete_language(language_id)
 
 Delete Language (Deprecated)
 
@@ -66,7 +66,7 @@ void (empty response body)
 
 <a name="delete_routing_language"></a>
 
-## delete_routing_language(language_id)
+##  delete_routing_language(language_id)
 
 Delete Language
 
@@ -110,7 +110,7 @@ void (empty response body)
 
 <a name="get_language"></a>
 
-## [**Language**](Language.html)get_language(language_id)
+## [**Language**](Language.html) get_language(language_id)
 
 Get language (Deprecated)
 
@@ -155,7 +155,7 @@ except ApiException as e:
 
 <a name="get_languages"></a>
 
-## [**LanguageEntityListing**](LanguageEntityListing.html)get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## [**LanguageEntityListing**](LanguageEntityListing.html) get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
 Get the list of supported languages. (Deprecated)
 
@@ -206,7 +206,7 @@ except ApiException as e:
 
 <a name="get_languages_translations"></a>
 
-## [**AvailableTranslations**](AvailableTranslations.html)get_languages_translations()
+## [**AvailableTranslations**](AvailableTranslations.html) get_languages_translations()
 
 Get all available languages for translation
 
@@ -247,7 +247,7 @@ This endpoint does not need any parameter.
 
 <a name="get_languages_translations_builtin"></a>
 
-## [**dict(str, object)**](dict.html)get_languages_translations_builtin(language)
+## [**dict(str, object)**](dict.html) get_languages_translations_builtin(language)
 
 Get the builtin translation for a language
 
@@ -292,7 +292,7 @@ except ApiException as e:
 
 <a name="get_languages_translations_organization"></a>
 
-## [**dict(str, object)**](dict.html)get_languages_translations_organization(language)
+## [**dict(str, object)**](dict.html) get_languages_translations_organization(language)
 
 Get effective translation for an organization by language
 
@@ -337,7 +337,7 @@ except ApiException as e:
 
 <a name="get_languages_translations_user"></a>
 
-## [**dict(str, object)**](dict.html)get_languages_translations_user(user_id)
+## [**dict(str, object)**](dict.html) get_languages_translations_user(user_id)
 
 Get effective language translation for a user
 
@@ -382,7 +382,7 @@ except ApiException as e:
 
 <a name="get_routing_language"></a>
 
-## [**Language**](Language.html)get_routing_language(language_id)
+## [**Language**](Language.html) get_routing_language(language_id)
 
 Get language
 
@@ -427,7 +427,7 @@ except ApiException as e:
 
 <a name="post_languages"></a>
 
-## [**Language**](Language.html)post_languages(body)
+## [**Language**](Language.html) post_languages(body)
 
 Create Language (Deprecated)
 

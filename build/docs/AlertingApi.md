@@ -46,7 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_alerting_heartbeat_alert"></a>
 
-## delete_alerting_heartbeat_alert(alert_id)
+##  delete_alerting_heartbeat_alert(alert_id)
 
 Delete a heart beat alert
 
@@ -90,7 +90,7 @@ void (empty response body)
 
 <a name="delete_alerting_heartbeat_rule"></a>
 
-## delete_alerting_heartbeat_rule(rule_id)
+##  delete_alerting_heartbeat_rule(rule_id)
 
 Delete a heart beat rule.
 
@@ -134,7 +134,7 @@ void (empty response body)
 
 <a name="delete_alerting_interactionstats_alert"></a>
 
-## delete_alerting_interactionstats_alert(alert_id)
+##  delete_alerting_interactionstats_alert(alert_id)
 
 Delete an interaction stats alert
 
@@ -178,7 +178,7 @@ void (empty response body)
 
 <a name="delete_alerting_interactionstats_rule"></a>
 
-## delete_alerting_interactionstats_rule(rule_id)
+##  delete_alerting_interactionstats_rule(rule_id)
 
 Delete an interaction stats rule.
 
@@ -222,7 +222,7 @@ void (empty response body)
 
 <a name="delete_alerting_routingstatus_alert"></a>
 
-## delete_alerting_routingstatus_alert(alert_id)
+##  delete_alerting_routingstatus_alert(alert_id)
 
 Delete a routing status alert
 
@@ -266,7 +266,7 @@ void (empty response body)
 
 <a name="delete_alerting_routingstatus_rule"></a>
 
-## delete_alerting_routingstatus_rule(rule_id)
+##  delete_alerting_routingstatus_rule(rule_id)
 
 Delete a routing status rule.
 
@@ -310,7 +310,7 @@ void (empty response body)
 
 <a name="delete_alerting_userpresence_alert"></a>
 
-## delete_alerting_userpresence_alert(alert_id)
+##  delete_alerting_userpresence_alert(alert_id)
 
 Delete a user presence alert
 
@@ -354,7 +354,7 @@ void (empty response body)
 
 <a name="delete_alerting_userpresence_rule"></a>
 
-## delete_alerting_userpresence_rule(rule_id)
+##  delete_alerting_userpresence_rule(rule_id)
 
 Delete a user presence rule.
 
@@ -398,7 +398,7 @@ void (empty response body)
 
 <a name="get_alerting_heartbeat_alert"></a>
 
-## [**HeartBeatAlert**](HeartBeatAlert.html)get_alerting_heartbeat_alert(alert_id, expand=expand)
+## [**HeartBeatAlert**](HeartBeatAlert.html) get_alerting_heartbeat_alert(alert_id, expand=expand)
 
 Get a heart beat alert
 
@@ -445,7 +445,7 @@ except ApiException as e:
 
 <a name="get_alerting_heartbeat_alerts"></a>
 
-## [**HeartBeatAlertContainer**](HeartBeatAlertContainer.html)get_alerting_heartbeat_alerts(expand=expand)
+## [**HeartBeatAlertContainer**](HeartBeatAlertContainer.html) get_alerting_heartbeat_alerts(expand=expand)
 
 Get heart beat alert list.
 
@@ -490,7 +490,7 @@ except ApiException as e:
 
 <a name="get_alerting_heartbeat_rule"></a>
 
-## [**HeartBeatRule**](HeartBeatRule.html)get_alerting_heartbeat_rule(rule_id, expand=expand)
+## [**HeartBeatRule**](HeartBeatRule.html) get_alerting_heartbeat_rule(rule_id, expand=expand)
 
 Get a heart beat rule.
 
@@ -537,7 +537,7 @@ except ApiException as e:
 
 <a name="get_alerting_heartbeat_rules"></a>
 
-## [**HeartBeatRuleContainer**](HeartBeatRuleContainer.html)get_alerting_heartbeat_rules(expand=expand)
+## [**HeartBeatRuleContainer**](HeartBeatRuleContainer.html) get_alerting_heartbeat_rules(expand=expand)
 
 Get a heart beat rule list.
 
@@ -582,7 +582,7 @@ except ApiException as e:
 
 <a name="get_alerting_interactionstats_alert"></a>
 
-## [**InteractionStatsAlert**](InteractionStatsAlert.html)get_alerting_interactionstats_alert(alert_id, expand=expand)
+## [**InteractionStatsAlert**](InteractionStatsAlert.html) get_alerting_interactionstats_alert(alert_id, expand=expand)
 
 Get an interaction stats alert
 
@@ -629,7 +629,7 @@ except ApiException as e:
 
 <a name="get_alerting_interactionstats_alerts"></a>
 
-## [**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html)get_alerting_interactionstats_alerts(expand=expand)
+## [**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html) get_alerting_interactionstats_alerts(expand=expand)
 
 Get interaction stats alert list.
 
@@ -674,7 +674,7 @@ except ApiException as e:
 
 <a name="get_alerting_interactionstats_alerts_unread"></a>
 
-## [**UnreadMetric**](UnreadMetric.html)get_alerting_interactionstats_alerts_unread()
+## [**UnreadMetric**](UnreadMetric.html) get_alerting_interactionstats_alerts_unread()
 
 Gets user unread count of interaction stats alerts.
 
@@ -715,7 +715,7 @@ This endpoint does not need any parameter.
 
 <a name="get_alerting_interactionstats_rule"></a>
 
-## [**InteractionStatsRule**](InteractionStatsRule.html)get_alerting_interactionstats_rule(rule_id, expand=expand)
+## [**InteractionStatsRule**](InteractionStatsRule.html) get_alerting_interactionstats_rule(rule_id, expand=expand)
 
 Get an interaction stats rule.
 
@@ -762,7 +762,7 @@ except ApiException as e:
 
 <a name="get_alerting_interactionstats_rules"></a>
 
-## [**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html)get_alerting_interactionstats_rules(expand=expand)
+## [**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html) get_alerting_interactionstats_rules(expand=expand)
 
 Get an interaction stats rule list.
 
@@ -807,7 +807,7 @@ except ApiException as e:
 
 <a name="get_alerting_routingstatus_alert"></a>
 
-## [**RoutingStatusAlert**](RoutingStatusAlert.html)get_alerting_routingstatus_alert(alert_id, expand=expand)
+## [**RoutingStatusAlert**](RoutingStatusAlert.html) get_alerting_routingstatus_alert(alert_id, expand=expand)
 
 Get a routing status alert
 
@@ -854,7 +854,7 @@ except ApiException as e:
 
 <a name="get_alerting_routingstatus_alerts"></a>
 
-## [**RoutingStatusAlertContainer**](RoutingStatusAlertContainer.html)get_alerting_routingstatus_alerts(expand=expand)
+## [**RoutingStatusAlertContainer**](RoutingStatusAlertContainer.html) get_alerting_routingstatus_alerts(expand=expand)
 
 Get routing status alert list.
 
@@ -899,7 +899,7 @@ except ApiException as e:
 
 <a name="get_alerting_routingstatus_rule"></a>
 
-## [**RoutingStatusRule**](RoutingStatusRule.html)get_alerting_routingstatus_rule(rule_id, expand=expand)
+## [**RoutingStatusRule**](RoutingStatusRule.html) get_alerting_routingstatus_rule(rule_id, expand=expand)
 
 Get a routing status rule.
 
@@ -946,7 +946,7 @@ except ApiException as e:
 
 <a name="get_alerting_routingstatus_rules"></a>
 
-## [**RoutingStatusRuleContainer**](RoutingStatusRuleContainer.html)get_alerting_routingstatus_rules(expand=expand)
+## [**RoutingStatusRuleContainer**](RoutingStatusRuleContainer.html) get_alerting_routingstatus_rules(expand=expand)
 
 Get a routing status rule list.
 
@@ -991,7 +991,7 @@ except ApiException as e:
 
 <a name="get_alerting_userpresence_alert"></a>
 
-## [**UserPresenceAlert**](UserPresenceAlert.html)get_alerting_userpresence_alert(alert_id, expand=expand)
+## [**UserPresenceAlert**](UserPresenceAlert.html) get_alerting_userpresence_alert(alert_id, expand=expand)
 
 Get a user presence alert
 
@@ -1038,7 +1038,7 @@ except ApiException as e:
 
 <a name="get_alerting_userpresence_alerts"></a>
 
-## [**UserPresenceAlertContainer**](UserPresenceAlertContainer.html)get_alerting_userpresence_alerts(expand=expand)
+## [**UserPresenceAlertContainer**](UserPresenceAlertContainer.html) get_alerting_userpresence_alerts(expand=expand)
 
 Get user presence alert list.
 
@@ -1083,7 +1083,7 @@ except ApiException as e:
 
 <a name="get_alerting_userpresence_rule"></a>
 
-## [**UserPresenceRule**](UserPresenceRule.html)get_alerting_userpresence_rule(rule_id, expand=expand)
+## [**UserPresenceRule**](UserPresenceRule.html) get_alerting_userpresence_rule(rule_id, expand=expand)
 
 Get a user presence rule.
 
@@ -1130,7 +1130,7 @@ except ApiException as e:
 
 <a name="get_alerting_userpresence_rules"></a>
 
-## [**UserPresenceRuleContainer**](UserPresenceRuleContainer.html)get_alerting_userpresence_rules(expand=expand)
+## [**UserPresenceRuleContainer**](UserPresenceRuleContainer.html) get_alerting_userpresence_rules(expand=expand)
 
 Get a user presence rule list.
 
@@ -1175,7 +1175,7 @@ except ApiException as e:
 
 <a name="post_alerting_heartbeat_rules"></a>
 
-## [**HeartBeatRule**](HeartBeatRule.html)post_alerting_heartbeat_rules(body, expand=expand)
+## [**HeartBeatRule**](HeartBeatRule.html) post_alerting_heartbeat_rules(body, expand=expand)
 
 Create a heart beat rule.
 
@@ -1222,7 +1222,7 @@ except ApiException as e:
 
 <a name="post_alerting_interactionstats_rules"></a>
 
-## [**InteractionStatsRule**](InteractionStatsRule.html)post_alerting_interactionstats_rules(body, expand=expand)
+## [**InteractionStatsRule**](InteractionStatsRule.html) post_alerting_interactionstats_rules(body, expand=expand)
 
 Create an interaction stats rule.
 
@@ -1269,7 +1269,7 @@ except ApiException as e:
 
 <a name="post_alerting_routingstatus_rules"></a>
 
-## [**RoutingStatusRule**](RoutingStatusRule.html)post_alerting_routingstatus_rules(body, expand=expand)
+## [**RoutingStatusRule**](RoutingStatusRule.html) post_alerting_routingstatus_rules(body, expand=expand)
 
 Create a routing status rule.
 
@@ -1316,7 +1316,7 @@ except ApiException as e:
 
 <a name="post_alerting_userpresence_rules"></a>
 
-## [**UserPresenceRule**](UserPresenceRule.html)post_alerting_userpresence_rules(body, expand=expand)
+## [**UserPresenceRule**](UserPresenceRule.html) post_alerting_userpresence_rules(body, expand=expand)
 
 Create a user presence rule.
 
@@ -1363,7 +1363,7 @@ except ApiException as e:
 
 <a name="put_alerting_heartbeat_rule"></a>
 
-## [**HeartBeatRule**](HeartBeatRule.html)put_alerting_heartbeat_rule(rule_id, body, expand=expand)
+## [**HeartBeatRule**](HeartBeatRule.html) put_alerting_heartbeat_rule(rule_id, body, expand=expand)
 
 Update a heart beat rule
 
@@ -1412,7 +1412,7 @@ except ApiException as e:
 
 <a name="put_alerting_interactionstats_alert"></a>
 
-## [**UnreadStatus**](UnreadStatus.html)put_alerting_interactionstats_alert(alert_id, body, expand=expand)
+## [**UnreadStatus**](UnreadStatus.html) put_alerting_interactionstats_alert(alert_id, body, expand=expand)
 
 Update an interaction stats alert read status
 
@@ -1461,7 +1461,7 @@ except ApiException as e:
 
 <a name="put_alerting_interactionstats_rule"></a>
 
-## [**InteractionStatsRule**](InteractionStatsRule.html)put_alerting_interactionstats_rule(rule_id, body, expand=expand)
+## [**InteractionStatsRule**](InteractionStatsRule.html) put_alerting_interactionstats_rule(rule_id, body, expand=expand)
 
 Update an interaction stats rule
 
@@ -1510,7 +1510,7 @@ except ApiException as e:
 
 <a name="put_alerting_routingstatus_rule"></a>
 
-## [**RoutingStatusRule**](RoutingStatusRule.html)put_alerting_routingstatus_rule(rule_id, body, expand=expand)
+## [**RoutingStatusRule**](RoutingStatusRule.html) put_alerting_routingstatus_rule(rule_id, body, expand=expand)
 
 Update a routing status rule
 
@@ -1559,7 +1559,7 @@ except ApiException as e:
 
 <a name="put_alerting_userpresence_rule"></a>
 
-## [**UserPresenceRule**](UserPresenceRule.html)put_alerting_userpresence_rule(rule_id, body, expand=expand)
+## [**UserPresenceRule**](UserPresenceRule.html) put_alerting_userpresence_rule(rule_id, body, expand=expand)
 
 Update a user presence rule
 

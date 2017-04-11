@@ -57,7 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_architect_prompt"></a>
 
-## delete_architect_prompt(prompt_id, all_resources=all_resources)
+##  delete_architect_prompt(prompt_id, all_resources=all_resources)
 
 Delete specified user prompt
 
@@ -103,7 +103,7 @@ void (empty response body)
 
 <a name="delete_architect_prompt_resource"></a>
 
-## delete_architect_prompt_resource(prompt_id, language_code)
+##  delete_architect_prompt_resource(prompt_id, language_code)
 
 Delete specified user prompt resource
 
@@ -149,7 +149,7 @@ void (empty response body)
 
 <a name="delete_architect_prompts"></a>
 
-## [**Operation**](Operation.html)delete_architect_prompts(id)
+## [**Operation**](Operation.html) delete_architect_prompts(id)
 
 Batch-delete a list of prompts asynchronously
 
@@ -194,7 +194,7 @@ except ApiException as e:
 
 <a name="delete_architect_systemprompt_resource"></a>
 
-## str**delete_architect_systemprompt_resource(prompt_id, language_code)
+## str** delete_architect_systemprompt_resource(prompt_id, language_code)
 
 Delete a system prompt resource override.
 
@@ -241,7 +241,7 @@ except ApiException as e:
 
 <a name="delete_flow"></a>
 
-## delete_flow(flow_id)
+##  delete_flow(flow_id)
 
 Delete flow
 
@@ -285,7 +285,7 @@ void (empty response body)
 
 <a name="delete_flows"></a>
 
-## [**Operation**](Operation.html)delete_flows(id)
+## [**Operation**](Operation.html) delete_flows(id)
 
 Batch-delete a list of flows asynchronously
 
@@ -330,7 +330,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking"></a>
 
-## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)get_architect_dependencytracking(name, page_number=page_number, page_size=page_size, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
+## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking(name, page_number=page_number, page_size=page_size, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
 
 Get Dependency Tracking objects that have a given display name
 
@@ -389,7 +389,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_build"></a>
 
-## [**DependencyStatus**](DependencyStatus.html)get_architect_dependencytracking_build()
+## [**DependencyStatus**](DependencyStatus.html) get_architect_dependencytracking_build()
 
 Get Dependency Tracking build status for an organization
 
@@ -430,7 +430,7 @@ This endpoint does not need any parameter.
 
 <a name="get_architect_dependencytracking_consumedresources"></a>
 
-## [**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html)get_architect_dependencytracking_consumedresources(id, version, object_type, resource_type=resource_type)
+## [**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html) get_architect_dependencytracking_consumedresources(id, version, object_type, resource_type=resource_type)
 
 Get resources that are consumed by a given Dependency Tracking object
 
@@ -481,7 +481,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_consumingresources"></a>
 
-## [**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html)get_architect_dependencytracking_consumingresources(id, object_type, resource_type=resource_type)
+## [**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html) get_architect_dependencytracking_consumingresources(id, object_type, resource_type=resource_type)
 
 Get resources that consume a given Dependency Tracking object
 
@@ -530,7 +530,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_deletedresourceconsumers"></a>
 
-## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)get_architect_dependencytracking_deletedresourceconsumers(name=name, object_type=object_type, flow_filter=flow_filter, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
+## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking_deletedresourceconsumers(name=name, object_type=object_type, flow_filter=flow_filter, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
 
 Get Dependency Tracking objects that consume deleted resources
 
@@ -587,7 +587,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_object"></a>
 
-## [**DependencyObject**](DependencyObject.html)get_architect_dependencytracking_object(id, version=version, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
+## [**DependencyObject**](DependencyObject.html) get_architect_dependencytracking_object(id, version=version, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
 
 Get a Dependency Tracking object
 
@@ -644,7 +644,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_type"></a>
 
-## [**DependencyType**](DependencyType.html)get_architect_dependencytracking_type(type_id)
+## [**DependencyType**](DependencyType.html) get_architect_dependencytracking_type(type_id)
 
 Get a Dependency Tracking type.
 
@@ -689,7 +689,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_types"></a>
 
-## [**DependencyTypeEntityListing**](DependencyTypeEntityListing.html)get_architect_dependencytracking_types(page_number=page_number, page_size=page_size)
+## [**DependencyTypeEntityListing**](DependencyTypeEntityListing.html) get_architect_dependencytracking_types(page_number=page_number, page_size=page_size)
 
 Get Dependency Tracking types.
 
@@ -736,7 +736,7 @@ except ApiException as e:
 
 <a name="get_architect_dependencytracking_updatedresourceconsumers"></a>
 
-## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)get_architect_dependencytracking_updatedresourceconsumers(name=name, object_type=object_type, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
+## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking_updatedresourceconsumers(name=name, object_type=object_type, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
 
 Get Dependency Tracking objects that depend on updated resources
 
@@ -791,7 +791,7 @@ except ApiException as e:
 
 <a name="get_architect_prompt"></a>
 
-## [**Prompt**](Prompt.html)get_architect_prompt(prompt_id)
+## [**Prompt**](Prompt.html) get_architect_prompt(prompt_id)
 
 Get specified user prompt
 
@@ -836,7 +836,7 @@ except ApiException as e:
 
 <a name="get_architect_prompt_resource"></a>
 
-## [**PromptAsset**](PromptAsset.html)get_architect_prompt_resource(prompt_id, language_code)
+## [**PromptAsset**](PromptAsset.html) get_architect_prompt_resource(prompt_id, language_code)
 
 Get specified user prompt resource
 
@@ -883,7 +883,7 @@ except ApiException as e:
 
 <a name="get_architect_prompt_resources"></a>
 
-## [**PromptAssetEntityListing**](PromptAssetEntityListing.html)get_architect_prompt_resources(prompt_id, page_number=page_number, page_size=page_size)
+## [**PromptAssetEntityListing**](PromptAssetEntityListing.html) get_architect_prompt_resources(prompt_id, page_number=page_number, page_size=page_size)
 
 Get a pageable list of user prompt resources
 
@@ -932,7 +932,7 @@ except ApiException as e:
 
 <a name="get_architect_prompts"></a>
 
-## [**PromptEntityListing**](PromptEntityListing.html)get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description)
+## [**PromptEntityListing**](PromptEntityListing.html) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description)
 
 Get a pageable list of user prompts
 
@@ -985,7 +985,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompt"></a>
 
-## [**SystemPrompt**](SystemPrompt.html)get_architect_systemprompt(prompt_id)
+## [**SystemPrompt**](SystemPrompt.html) get_architect_systemprompt(prompt_id)
 
 Get a system prompt
 
@@ -1030,7 +1030,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompt_resource"></a>
 
-## [**SystemPromptAsset**](SystemPromptAsset.html)get_architect_systemprompt_resource(prompt_id, language_code)
+## [**SystemPromptAsset**](SystemPromptAsset.html) get_architect_systemprompt_resource(prompt_id, language_code)
 
 Get a system prompt resource.
 
@@ -1077,7 +1077,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompt_resources"></a>
 
-## [**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html)get_architect_systemprompt_resources(prompt_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+## [**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html) get_architect_systemprompt_resources(prompt_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
 
 Get system prompt resources.
 
@@ -1130,7 +1130,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompts"></a>
 
-## [**SystemPromptEntityListing**](SystemPromptEntityListing.html)get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
+## [**SystemPromptEntityListing**](SystemPromptEntityListing.html) get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
 
 Get System Prompts
 
@@ -1187,7 +1187,7 @@ except ApiException as e:
 
 <a name="get_flow"></a>
 
-## [**Flow**](Flow.html)get_flow(flow_id, deleted=deleted)
+## [**Flow**](Flow.html) get_flow(flow_id, deleted=deleted)
 
 Get flow
 
@@ -1234,7 +1234,7 @@ except ApiException as e:
 
 <a name="get_flow_latestconfiguration"></a>
 
-## object**get_flow_latestconfiguration(flow_id, deleted=deleted)
+## object** get_flow_latestconfiguration(flow_id, deleted=deleted)
 
 Get the latest configuration for flow
 
@@ -1281,7 +1281,7 @@ except ApiException as e:
 
 <a name="get_flow_version"></a>
 
-## [**FlowVersion**](FlowVersion.html)get_flow_version(flow_id, version_id, deleted=deleted)
+## [**FlowVersion**](FlowVersion.html) get_flow_version(flow_id, version_id, deleted=deleted)
 
 Get flow version
 
@@ -1330,7 +1330,7 @@ except ApiException as e:
 
 <a name="get_flow_version_configuration"></a>
 
-## object**get_flow_version_configuration(flow_id, version_id, deleted=deleted)
+## object** get_flow_version_configuration(flow_id, version_id, deleted=deleted)
 
 Create flow version configuration
 
@@ -1379,7 +1379,7 @@ except ApiException as e:
 
 <a name="get_flow_versions"></a>
 
-## [**FlowVersionEntityListing**](FlowVersionEntityListing.html)get_flow_versions(flow_id, page_number=page_number, page_size=page_size, deleted=deleted)
+## [**FlowVersionEntityListing**](FlowVersionEntityListing.html) get_flow_versions(flow_id, page_number=page_number, page_size=page_size, deleted=deleted)
 
 Get flow version list
 
@@ -1430,7 +1430,7 @@ except ApiException as e:
 
 <a name="get_flows"></a>
 
-## [**FlowEntityListing**](FlowEntityListing.html)get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas)
+## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas)
 
 Get a pageable list of flows, filtered by query parameters
 
@@ -1503,7 +1503,7 @@ except ApiException as e:
 
 <a name="post_architect_dependencytracking_build"></a>
 
-## post_architect_dependencytracking_build()
+##  post_architect_dependencytracking_build()
 
 Rebuild Dependency Tracking data for an organization
 
@@ -1543,7 +1543,7 @@ void (empty response body)
 
 <a name="post_architect_prompt_resources"></a>
 
-## [**PromptAsset**](PromptAsset.html)post_architect_prompt_resources(prompt_id, body=body)
+## [**PromptAsset**](PromptAsset.html) post_architect_prompt_resources(prompt_id, body=body)
 
 Create a new user prompt resource
 
@@ -1590,7 +1590,7 @@ except ApiException as e:
 
 <a name="post_architect_prompts"></a>
 
-## [**Prompt**](Prompt.html)post_architect_prompts(body=body)
+## [**Prompt**](Prompt.html) post_architect_prompts(body=body)
 
 Create a new user prompt
 
@@ -1635,7 +1635,7 @@ except ApiException as e:
 
 <a name="post_architect_systemprompt_resources"></a>
 
-## [**SystemPromptAsset**](SystemPromptAsset.html)post_architect_systemprompt_resources(prompt_id, body=body)
+## [**SystemPromptAsset**](SystemPromptAsset.html) post_architect_systemprompt_resources(prompt_id, body=body)
 
 Create system prompt resource override.
 
@@ -1682,7 +1682,7 @@ except ApiException as e:
 
 <a name="post_flow_versions"></a>
 
-## [**FlowVersion**](FlowVersion.html)post_flow_versions(flow_id, body=body)
+## [**FlowVersion**](FlowVersion.html) post_flow_versions(flow_id, body=body)
 
 Create flow version
 
@@ -1729,7 +1729,7 @@ except ApiException as e:
 
 <a name="post_flows"></a>
 
-## [**Flow**](Flow.html)post_flows(body=body)
+## [**Flow**](Flow.html) post_flows(body=body)
 
 Create flow
 
@@ -1774,7 +1774,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_checkin"></a>
 
-## [**Flow**](Flow.html)post_flows_actions_checkin(flow)
+## [**Flow**](Flow.html) post_flows_actions_checkin(flow)
 
 Check-in flow
 
@@ -1819,7 +1819,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_checkout"></a>
 
-## [**Flow**](Flow.html)post_flows_actions_checkout(flow)
+## [**Flow**](Flow.html) post_flows_actions_checkout(flow)
 
 Check-out flow
 
@@ -1864,7 +1864,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_deactivate"></a>
 
-## [**Flow**](Flow.html)post_flows_actions_deactivate(flow)
+## [**Flow**](Flow.html) post_flows_actions_deactivate(flow)
 
 Deactivate flow
 
@@ -1909,7 +1909,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_publish"></a>
 
-## [**Operation**](Operation.html)post_flows_actions_publish(flow, version=version)
+## [**Operation**](Operation.html) post_flows_actions_publish(flow, version=version)
 
 Publish flow
 
@@ -1956,7 +1956,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_revert"></a>
 
-## [**Flow**](Flow.html)post_flows_actions_revert(flow)
+## [**Flow**](Flow.html) post_flows_actions_revert(flow)
 
 Revert flow
 
@@ -2001,7 +2001,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_unlock"></a>
 
-## [**Flow**](Flow.html)post_flows_actions_unlock(flow)
+## [**Flow**](Flow.html) post_flows_actions_unlock(flow)
 
 Unlock flow
 
@@ -2046,7 +2046,7 @@ except ApiException as e:
 
 <a name="put_architect_prompt"></a>
 
-## [**Prompt**](Prompt.html)put_architect_prompt(prompt_id, body=body)
+## [**Prompt**](Prompt.html) put_architect_prompt(prompt_id, body=body)
 
 Update specified user prompt
 
@@ -2093,7 +2093,7 @@ except ApiException as e:
 
 <a name="put_architect_prompt_resource"></a>
 
-## [**PromptAsset**](PromptAsset.html)put_architect_prompt_resource(prompt_id, language_code, body=body)
+## [**PromptAsset**](PromptAsset.html) put_architect_prompt_resource(prompt_id, language_code, body=body)
 
 Update specified user prompt resource
 
@@ -2142,7 +2142,7 @@ except ApiException as e:
 
 <a name="put_architect_systemprompt_resource"></a>
 
-## [**SystemPromptAsset**](SystemPromptAsset.html)put_architect_systemprompt_resource(prompt_id, language_code, body=body)
+## [**SystemPromptAsset**](SystemPromptAsset.html) put_architect_systemprompt_resource(prompt_id, language_code, body=body)
 
 Updates a system prompt resource override.
 
@@ -2191,7 +2191,7 @@ except ApiException as e:
 
 <a name="put_flow"></a>
 
-## [**Flow**](Flow.html)put_flow(flow_id, body=body)
+## [**Flow**](Flow.html) put_flow(flow_id, body=body)
 
 Update flow
 

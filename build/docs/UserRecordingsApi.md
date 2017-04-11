@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_userrecording"></a>
 
-## delete_userrecording(recording_id)
+##  delete_userrecording(recording_id)
 
 Delete a user recording.
 
@@ -62,7 +62,7 @@ void (empty response body)
 
 <a name="get_userrecording"></a>
 
-## [**UserRecording**](UserRecording.html)get_userrecording(recording_id, expand=expand)
+## [**UserRecording**](UserRecording.html) get_userrecording(recording_id, expand=expand)
 
 Get a user recording.
 
@@ -109,7 +109,7 @@ except ApiException as e:
 
 <a name="get_userrecording_media"></a>
 
-## [**DownloadResponse**](DownloadResponse.html)get_userrecording_media(recording_id, format_id=format_id)
+## [**DownloadResponse**](DownloadResponse.html) get_userrecording_media(recording_id, format_id=format_id)
 
 Download a user recording.
 
@@ -156,7 +156,7 @@ except ApiException as e:
 
 <a name="get_userrecordings"></a>
 
-## [**UserRecordingEntityListing**](UserRecordingEntityListing.html)get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
+## [**UserRecordingEntityListing**](UserRecordingEntityListing.html) get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
 
 Get a list of user recordings.
 
@@ -205,7 +205,7 @@ except ApiException as e:
 
 <a name="get_userrecordings_summary"></a>
 
-## [**FaxSummary**](FaxSummary.html)get_userrecordings_summary()
+## [**FaxSummary**](FaxSummary.html) get_userrecordings_summary()
 
 Get user recording summary
 
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 <a name="put_userrecording"></a>
 
-## [**UserRecording**](UserRecording.html)put_userrecording(recording_id, body, expand=expand)
+## [**UserRecording**](UserRecording.html) put_userrecording(recording_id, body, expand=expand)
 
 Update a user recording.
 

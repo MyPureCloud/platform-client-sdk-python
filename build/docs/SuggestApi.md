@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_search"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)get_search(q64, expand=expand, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search(q64, expand=expand, profile=profile)
 
 Search using the q64 value returned from a previous search.
 
@@ -65,7 +65,7 @@ except ApiException as e:
 
 <a name="get_search_suggest"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)get_search_suggest(q64, expand=expand, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search_suggest(q64, expand=expand, profile=profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
@@ -114,7 +114,7 @@ except ApiException as e:
 
 <a name="post_search"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)post_search(body, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search(body, profile=profile)
 
 Search resources.
 
@@ -161,7 +161,7 @@ except ApiException as e:
 
 <a name="post_search_suggest"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)post_search_suggest(body, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search_suggest(body, profile=profile)
 
 Suggest resources.
 

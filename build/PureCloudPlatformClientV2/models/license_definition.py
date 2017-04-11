@@ -42,6 +42,7 @@ class LicenseDefinition(object):
             'description': 'str',
             'permissions': 'Permissions',
             'prerequisites': 'list[AddressableLicenseDefinition]',
+            'comprises': 'list[LicenseDefinition]',
             'self_uri': 'str'
         }
 
@@ -50,6 +51,7 @@ class LicenseDefinition(object):
             'description': 'description',
             'permissions': 'permissions',
             'prerequisites': 'prerequisites',
+            'comprises': 'comprises',
             'self_uri': 'selfUri'
         }
 
@@ -57,6 +59,7 @@ class LicenseDefinition(object):
         self._description = None
         self._permissions = None
         self._prerequisites = None
+        self._comprises = None
         self._self_uri = None
 
     @property
@@ -150,6 +153,29 @@ class LicenseDefinition(object):
         """
         
         self._prerequisites = prerequisites
+
+    @property
+    def comprises(self):
+        """
+        Gets the comprises of this LicenseDefinition.
+
+
+        :return: The comprises of this LicenseDefinition.
+        :rtype: list[LicenseDefinition]
+        """
+        return self._comprises
+
+    @comprises.setter
+    def comprises(self, comprises):
+        """
+        Sets the comprises of this LicenseDefinition.
+
+
+        :param comprises: The comprises of this LicenseDefinition.
+        :type: list[LicenseDefinition]
+        """
+        
+        self._comprises = comprises
 
     @property
     def self_uri(self):

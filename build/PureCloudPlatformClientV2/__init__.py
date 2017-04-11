@@ -474,6 +474,7 @@ from .models.interaction_stats_alert import InteractionStatsAlert
 from .models.interaction_stats_alert_container import InteractionStatsAlertContainer
 from .models.interaction_stats_rule import InteractionStatsRule
 from .models.interaction_stats_rule_container import InteractionStatsRuleContainer
+from .models.intraday_data_group import IntradayDataGroup
 from .models.intraday_data_update_notification import IntradayDataUpdateNotification
 from .models.intraday_data_update_notification_forecast_data_per_interval import IntradayDataUpdateNotificationForecastDataPerInterval
 from .models.intraday_data_update_notification_historical_agent_data_per_interval import IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
@@ -491,6 +492,16 @@ from .models.intraday_data_update_notification_metrics import IntradayDataUpdate
 from .models.intraday_data_update_notification_performance_prediction_agent_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval
 from .models.intraday_data_update_notification_performance_prediction_queue_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval
 from .models.intraday_data_update_notification_schedule_data_per_interval import IntradayDataUpdateNotificationScheduleDataPerInterval
+from .models.intraday_forecast_data import IntradayForecastData
+from .models.intraday_historical_agent_data import IntradayHistoricalAgentData
+from .models.intraday_historical_queue_data import IntradayHistoricalQueueData
+from .models.intraday_metric import IntradayMetric
+from .models.intraday_performance_prediction_agent_data import IntradayPerformancePredictionAgentData
+from .models.intraday_performance_prediction_queue_data import IntradayPerformancePredictionQueueData
+from .models.intraday_query_data_command import IntradayQueryDataCommand
+from .models.intraday_queue import IntradayQueue
+from .models.intraday_response import IntradayResponse
+from .models.intraday_schedule_data import IntradayScheduleData
 from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
@@ -535,6 +546,7 @@ from .models.media_result import MediaResult
 from .models.media_setting import MediaSetting
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
+from .models.media_transcription import MediaTranscription
 from .models.member_entity import MemberEntity
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
@@ -859,6 +871,7 @@ from .models.voicemail_search_criteria import VoicemailSearchCriteria
 from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
+from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.workspace import Workspace
 from .models.workspace_create import WorkspaceCreate

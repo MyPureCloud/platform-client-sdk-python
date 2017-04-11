@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_fax_document"></a>
 
-## delete_fax_document(document_id)
+##  delete_fax_document(document_id)
 
 Delete a fax document.
 
@@ -62,7 +62,7 @@ void (empty response body)
 
 <a name="get_fax_document"></a>
 
-## [**FaxDocument**](FaxDocument.html)get_fax_document(document_id)
+## [**FaxDocument**](FaxDocument.html) get_fax_document(document_id)
 
 Get a document.
 
@@ -107,7 +107,7 @@ except ApiException as e:
 
 <a name="get_fax_document_content"></a>
 
-## [**DownloadResponse**](DownloadResponse.html)get_fax_document_content(document_id)
+## [**DownloadResponse**](DownloadResponse.html) get_fax_document_content(document_id)
 
 Download a fax document.
 
@@ -152,7 +152,7 @@ except ApiException as e:
 
 <a name="get_fax_documents"></a>
 
-## [**FaxDocumentEntityListing**](FaxDocumentEntityListing.html)get_fax_documents(page_size=page_size, page_number=page_number)
+## [**FaxDocumentEntityListing**](FaxDocumentEntityListing.html) get_fax_documents(page_size=page_size, page_number=page_number)
 
 Get a list of fax documents.
 
@@ -199,7 +199,7 @@ except ApiException as e:
 
 <a name="get_fax_summary"></a>
 
-## [**FaxSummary**](FaxSummary.html)get_fax_summary()
+## [**FaxSummary**](FaxSummary.html) get_fax_summary()
 
 Get fax summary
 
@@ -240,7 +240,7 @@ This endpoint does not need any parameter.
 
 <a name="put_fax_document"></a>
 
-## [**FaxDocument**](FaxDocument.html)put_fax_document(document_id, body)
+## [**FaxDocument**](FaxDocument.html) put_fax_document(document_id, body)
 
 Update a fax document.
 

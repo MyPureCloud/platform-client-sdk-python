@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_documentation_search"></a>
 
-## [**DocumentationSearchResponse**](DocumentationSearchResponse.html)get_documentation_search(q64)
+## [**DocumentationSearchResponse**](DocumentationSearchResponse.html) get_documentation_search(q64)
 
 Search documentation using the q64 value returned from a previous search
 
@@ -71,7 +71,7 @@ except ApiException as e:
 
 <a name="get_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html)get_groups_search(q64, expand=expand)
+## [**GroupsSearchResponse**](GroupsSearchResponse.html) get_groups_search(q64, expand=expand)
 
 Search groups using the q64 value returned from a previous search
 
@@ -118,7 +118,7 @@ except ApiException as e:
 
 <a name="get_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html)get_locations_search(q64, expand=expand)
+## [**LocationsSearchResponse**](LocationsSearchResponse.html) get_locations_search(q64, expand=expand)
 
 Search locations using the q64 value returned from a previous search
 
@@ -165,7 +165,7 @@ except ApiException as e:
 
 <a name="get_search"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)get_search(q64, expand=expand, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search(q64, expand=expand, profile=profile)
 
 Search using the q64 value returned from a previous search.
 
@@ -214,7 +214,7 @@ except ApiException as e:
 
 <a name="get_search_suggest"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)get_search_suggest(q64, expand=expand, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search_suggest(q64, expand=expand, profile=profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
@@ -263,7 +263,7 @@ except ApiException as e:
 
 <a name="get_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html)get_users_search(q64, expand=expand)
+## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
 
 Search users using the q64 value returned from a previous search
 
@@ -310,7 +310,7 @@ except ApiException as e:
 
 <a name="get_voicemail_search"></a>
 
-## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)get_voicemail_search(q64, expand=expand)
+## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) get_voicemail_search(q64, expand=expand)
 
 Search voicemails using the q64 value returned from a previous search
 
@@ -357,7 +357,7 @@ except ApiException as e:
 
 <a name="post_documentation_search"></a>
 
-## [**DocumentationSearchResponse**](DocumentationSearchResponse.html)post_documentation_search(body)
+## [**DocumentationSearchResponse**](DocumentationSearchResponse.html) post_documentation_search(body)
 
 Search documentation
 
@@ -402,7 +402,7 @@ except ApiException as e:
 
 <a name="post_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html)post_groups_search(body)
+## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
 
 Search groups
 
@@ -447,7 +447,7 @@ except ApiException as e:
 
 <a name="post_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html)post_locations_search(body)
+## [**LocationsSearchResponse**](LocationsSearchResponse.html) post_locations_search(body)
 
 Search locations
 
@@ -492,7 +492,7 @@ except ApiException as e:
 
 <a name="post_search"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)post_search(body, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search(body, profile=profile)
 
 Search resources.
 
@@ -539,7 +539,7 @@ except ApiException as e:
 
 <a name="post_search_suggest"></a>
 
-## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)post_search_suggest(body, profile=profile)
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search_suggest(body, profile=profile)
 
 Suggest resources.
 
@@ -586,7 +586,7 @@ except ApiException as e:
 
 <a name="post_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html)post_users_search(body)
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search(body)
 
 Search users
 
@@ -631,7 +631,7 @@ except ApiException as e:
 
 <a name="post_voicemail_search"></a>
 
-## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)post_voicemail_search(body)
+## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) post_voicemail_search(body)
 
 Search voicemails
 

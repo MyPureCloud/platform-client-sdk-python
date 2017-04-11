@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_script"></a>
 
-## [**Script**](Script.html)get_script(script_id)
+## [**Script**](Script.html) get_script(script_id)
 
 Get a script
 
@@ -66,7 +66,7 @@ except ApiException as e:
 
 <a name="get_script_page"></a>
 
-## [**Page**](Page.html)get_script_page(script_id, page_id)
+## [**Page**](Page.html) get_script_page(script_id, page_id)
 
 Get a page
 
@@ -113,7 +113,7 @@ except ApiException as e:
 
 <a name="get_script_pages"></a>
 
-## [**list[Page]**](Page.html)get_script_pages(script_id)
+## [**list[Page]**](Page.html) get_script_pages(script_id)
 
 Get the list of pages
 
@@ -158,7 +158,7 @@ except ApiException as e:
 
 <a name="get_scripts"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html)get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order)
+## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order)
 
 Get the list of scripts
 
@@ -217,7 +217,7 @@ except ApiException as e:
 
 <a name="get_scripts_published"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html)get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id)
+## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id)
 
 Get the published scripts.
 
@@ -272,7 +272,7 @@ except ApiException as e:
 
 <a name="get_scripts_published_script_id"></a>
 
-## [**Script**](Script.html)get_scripts_published_script_id(script_id)
+## [**Script**](Script.html) get_scripts_published_script_id(script_id)
 
 Get the published script.
 
@@ -317,7 +317,7 @@ except ApiException as e:
 
 <a name="get_scripts_published_script_id_page"></a>
 
-## [**Page**](Page.html)get_scripts_published_script_id_page(script_id, page_id)
+## [**Page**](Page.html) get_scripts_published_script_id_page(script_id, page_id)
 
 Get the published page.
 
@@ -364,7 +364,7 @@ except ApiException as e:
 
 <a name="get_scripts_published_script_id_pages"></a>
 
-## [**list[Page]**](Page.html)get_scripts_published_script_id_pages(script_id)
+## [**list[Page]**](Page.html) get_scripts_published_script_id_pages(script_id)
 
 Get the list of published pages
 
@@ -409,7 +409,7 @@ except ApiException as e:
 
 <a name="get_scripts_published_script_id_variables"></a>
 
-## object**get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type)
+## object** get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type)
 
 Get the published variables
 

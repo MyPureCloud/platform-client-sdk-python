@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_oauth_client"></a>
 
-## delete_oauth_client(client_id)
+##  delete_oauth_client(client_id)
 
 Delete OAuth Client
 
@@ -62,7 +62,7 @@ void (empty response body)
 
 <a name="get_oauth_client"></a>
 
-## [**OAuthClient**](OAuthClient.html)get_oauth_client(client_id)
+## [**OAuthClient**](OAuthClient.html) get_oauth_client(client_id)
 
 Get OAuth Client
 
@@ -107,7 +107,7 @@ except ApiException as e:
 
 <a name="get_oauth_clients"></a>
 
-## [**OAuthClientEntityListing**](OAuthClientEntityListing.html)get_oauth_clients()
+## [**OAuthClientEntityListing**](OAuthClientEntityListing.html) get_oauth_clients()
 
 The list of OAuth clients
 
@@ -148,7 +148,7 @@ This endpoint does not need any parameter.
 
 <a name="post_oauth_client_secret"></a>
 
-## [**OAuthClient**](OAuthClient.html)post_oauth_client_secret(client_id)
+## [**OAuthClient**](OAuthClient.html) post_oauth_client_secret(client_id)
 
 Regenerate Client Secret
 
@@ -193,7 +193,7 @@ except ApiException as e:
 
 <a name="post_oauth_clients"></a>
 
-## [**OAuthClient**](OAuthClient.html)post_oauth_clients(body)
+## [**OAuthClient**](OAuthClient.html) post_oauth_clients(body)
 
 Create OAuth client
 
@@ -238,7 +238,7 @@ except ApiException as e:
 
 <a name="put_oauth_client"></a>
 
-## [**OAuthClient**](OAuthClient.html)put_oauth_client(client_id, body)
+## [**OAuthClient**](OAuthClient.html) put_oauth_client(client_id, body)
 
 Update OAuth Client
 

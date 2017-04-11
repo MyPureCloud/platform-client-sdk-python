@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_notifications_channel_subscriptions"></a>
 
-## delete_notifications_channel_subscriptions(channel_id)
+##  delete_notifications_channel_subscriptions(channel_id)
 
 Remove all subscriptions
 
@@ -63,7 +63,7 @@ void (empty response body)
 
 <a name="get_notifications_availabletopics"></a>
 
-## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html)get_notifications_availabletopics(expand=expand)
+## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) get_notifications_availabletopics(expand=expand)
 
 Get available notification topics.
 
@@ -108,7 +108,7 @@ except ApiException as e:
 
 <a name="get_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)get_notifications_channel_subscriptions(channel_id)
+## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) get_notifications_channel_subscriptions(channel_id)
 
 The list of all subscriptions for this channel
 
@@ -153,7 +153,7 @@ except ApiException as e:
 
 <a name="get_notifications_channels"></a>
 
-## [**ChannelEntityListing**](ChannelEntityListing.html)get_notifications_channels()
+## [**ChannelEntityListing**](ChannelEntityListing.html) get_notifications_channels()
 
 The list of existing channels
 
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 
 <a name="post_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)post_notifications_channel_subscriptions(channel_id, body)
+## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) post_notifications_channel_subscriptions(channel_id, body)
 
 Add a list of subscriptions to the existing list of subscriptions
 
@@ -241,7 +241,7 @@ except ApiException as e:
 
 <a name="post_notifications_channels"></a>
 
-## [**Channel**](Channel.html)post_notifications_channels()
+## [**Channel**](Channel.html) post_notifications_channels()
 
 Create a new channel
 
@@ -282,7 +282,7 @@ This endpoint does not need any parameter.
 
 <a name="put_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)put_notifications_channel_subscriptions(channel_id, body)
+## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) put_notifications_channel_subscriptions(channel_id, body)
 
 Replace the current list of subscriptions with a new list.
 

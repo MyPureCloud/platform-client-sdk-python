@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_location"></a>
 
-## [**LocationDefinition**](LocationDefinition.html)get_location(location_id)
+## [**LocationDefinition**](LocationDefinition.html) get_location(location_id)
 
 Get Location by ID.
 
@@ -61,7 +61,7 @@ except ApiException as e:
 
 <a name="get_locations"></a>
 
-## [**list[LocationDefinition]**](LocationDefinition.html)get_locations(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**list[LocationDefinition]**](LocationDefinition.html) get_locations(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 Get a list of all locations.
 
@@ -110,7 +110,7 @@ except ApiException as e:
 
 <a name="get_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html)get_locations_search(q64, expand=expand)
+## [**LocationsSearchResponse**](LocationsSearchResponse.html) get_locations_search(q64, expand=expand)
 
 Search locations using the q64 value returned from a previous search
 
@@ -157,7 +157,7 @@ except ApiException as e:
 
 <a name="post_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html)post_locations_search(body)
+## [**LocationsSearchResponse**](LocationsSearchResponse.html) post_locations_search(body)
 
 Search locations
 

@@ -43,7 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html)delete_quality_calibration(calibration_id, calibrator_id)
+## [**Calibration**](Calibration.html) delete_quality_calibration(calibration_id, calibrator_id)
 
 Delete a calibration by id.
 
@@ -90,7 +90,7 @@ except ApiException as e:
 
 <a name="delete_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html)delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## [**Evaluation**](Evaluation.html) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 Delete an evaluation
 
@@ -139,7 +139,7 @@ except ApiException as e:
 
 <a name="delete_quality_form"></a>
 
-## str**delete_quality_form(form_id)
+## str** delete_quality_form(form_id)
 
 Delete an evaluation form.
 
@@ -184,7 +184,7 @@ except ApiException as e:
 
 <a name="delete_quality_keywordset"></a>
 
-## delete_quality_keywordset(keyword_set_id)
+##  delete_quality_keywordset(keyword_set_id)
 
 Delete a keywordSet by id.
 
@@ -228,7 +228,7 @@ void (empty response body)
 
 <a name="delete_quality_keywordsets"></a>
 
-## str**delete_quality_keywordsets(ids)
+## str** delete_quality_keywordsets(ids)
 
 Delete keyword sets
 
@@ -273,7 +273,7 @@ except ApiException as e:
 
 <a name="get_quality_agents_activity"></a>
 
-## [**AgentActivityEntityListing**](AgentActivityEntityListing.html)get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group)
+## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group)
 
 Gets a list of Agent Activities
 
@@ -340,7 +340,7 @@ except ApiException as e:
 
 <a name="get_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html)get_quality_calibration(calibration_id, calibrator_id)
+## [**Calibration**](Calibration.html) get_quality_calibration(calibration_id, calibrator_id)
 
 Get a calibration by id.
 
@@ -387,7 +387,7 @@ except ApiException as e:
 
 <a name="get_quality_calibrations"></a>
 
-## [**CalibrationEntityListing**](CalibrationEntityListing.html)get_quality_calibrations(calibrator_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, start_time=start_time, end_time=end_time)
+## [**CalibrationEntityListing**](CalibrationEntityListing.html) get_quality_calibrations(calibrator_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, start_time=start_time, end_time=end_time)
 
 Get the list of calibrations
 
@@ -450,7 +450,7 @@ except ApiException as e:
 
 <a name="get_quality_conversation_audits"></a>
 
-## [**QualityAuditPage**](QualityAuditPage.html)get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
+## [**QualityAuditPage**](QualityAuditPage.html) get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
 
 Get audits for conversation or recording
 
@@ -511,7 +511,7 @@ except ApiException as e:
 
 <a name="get_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html)get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## [**Evaluation**](Evaluation.html) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 Get an evaluation
 
@@ -560,7 +560,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html)get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum)
+## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum)
 
 Queries Evaluations and returns a paged list
 
@@ -637,7 +637,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluators_activity"></a>
 
-## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html)get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)
+## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)
 
 Get an evaluator activity
 
@@ -702,7 +702,7 @@ except ApiException as e:
 
 <a name="get_quality_form"></a>
 
-## [**EvaluationForm**](EvaluationForm.html)get_quality_form(form_id)
+## [**EvaluationForm**](EvaluationForm.html) get_quality_form(form_id)
 
 Get an evaluation form
 
@@ -747,7 +747,7 @@ except ApiException as e:
 
 <a name="get_quality_form_versions"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
 
 Gets all the revisions for a specific evaluation.
 
@@ -796,7 +796,7 @@ except ApiException as e:
 
 <a name="get_quality_forms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
 
 Get the list of evaluation forms
 
@@ -853,7 +853,7 @@ except ApiException as e:
 
 <a name="get_quality_keywordset"></a>
 
-## [**KeywordSet**](KeywordSet.html)get_quality_keywordset(keyword_set_id)
+## [**KeywordSet**](KeywordSet.html) get_quality_keywordset(keyword_set_id)
 
 Get a keywordSet by id.
 
@@ -898,7 +898,7 @@ except ApiException as e:
 
 <a name="get_quality_keywordsets"></a>
 
-## [**KeywordSetEntityListing**](KeywordSetEntityListing.html)get_quality_keywordsets(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, queue_id=queue_id, agent_id=agent_id, operator=operator)
+## [**KeywordSetEntityListing**](KeywordSetEntityListing.html) get_quality_keywordsets(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, queue_id=queue_id, agent_id=agent_id, operator=operator)
 
 Get the list of keyword sets
 
@@ -961,7 +961,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedform"></a>
 
-## [**EvaluationForm**](EvaluationForm.html)get_quality_publishedform(form_id)
+## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedform(form_id)
 
 Get the published evaluation forms.
 
@@ -1006,7 +1006,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedforms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name)
 
 Get the published evaluation forms.
 
@@ -1055,7 +1055,7 @@ except ApiException as e:
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html)post_analytics_evaluations_aggregates_query(body)
+## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
 
 Query for evaluation aggregates
 
@@ -1100,7 +1100,7 @@ except ApiException as e:
 
 <a name="post_quality_calibrations"></a>
 
-## [**Calibration**](Calibration.html)post_quality_calibrations(body, expand=expand)
+## [**Calibration**](Calibration.html) post_quality_calibrations(body, expand=expand)
 
 Create a calibration
 
@@ -1147,7 +1147,7 @@ except ApiException as e:
 
 <a name="post_quality_conversation_evaluations"></a>
 
-## [**Evaluation**](Evaluation.html)post_quality_conversation_evaluations(conversation_id, body, expand=expand)
+## [**Evaluation**](Evaluation.html) post_quality_conversation_evaluations(conversation_id, body, expand=expand)
 
 Create an evaluation
 
@@ -1196,7 +1196,7 @@ except ApiException as e:
 
 <a name="post_quality_evaluations_scoring"></a>
 
-## [**EvaluationScoringSet**](EvaluationScoringSet.html)post_quality_evaluations_scoring(body)
+## [**EvaluationScoringSet**](EvaluationScoringSet.html) post_quality_evaluations_scoring(body)
 
 Score evaluation
 
@@ -1241,7 +1241,7 @@ except ApiException as e:
 
 <a name="post_quality_forms"></a>
 
-## [**EvaluationForm**](EvaluationForm.html)post_quality_forms(body)
+## [**EvaluationForm**](EvaluationForm.html) post_quality_forms(body)
 
 Create an evaluation form.
 
@@ -1286,7 +1286,7 @@ except ApiException as e:
 
 <a name="post_quality_keywordsets"></a>
 
-## [**KeywordSet**](KeywordSet.html)post_quality_keywordsets(body, expand=expand)
+## [**KeywordSet**](KeywordSet.html) post_quality_keywordsets(body, expand=expand)
 
 Create a Keyword Set
 
@@ -1333,7 +1333,7 @@ except ApiException as e:
 
 <a name="post_quality_publishedforms"></a>
 
-## [**EvaluationForm**](EvaluationForm.html)post_quality_publishedforms(body)
+## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms(body)
 
 Publish an evaluation form.
 
@@ -1378,7 +1378,7 @@ except ApiException as e:
 
 <a name="post_quality_spotability"></a>
 
-## [**KeywordSet**](KeywordSet.html)post_quality_spotability(body=body)
+## [**KeywordSet**](KeywordSet.html) post_quality_spotability(body=body)
 
 Retrieve the spotability statistic
 
@@ -1423,7 +1423,7 @@ except ApiException as e:
 
 <a name="put_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html)put_quality_calibration(calibration_id, body)
+## [**Calibration**](Calibration.html) put_quality_calibration(calibration_id, body)
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 
@@ -1470,7 +1470,7 @@ except ApiException as e:
 
 <a name="put_quality_conversation_evaluation"></a>
 
-## [**Evaluation**](Evaluation.html)put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
+## [**Evaluation**](Evaluation.html) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
 
 Update an evaluation
 
@@ -1521,7 +1521,7 @@ except ApiException as e:
 
 <a name="put_quality_form"></a>
 
-## [**EvaluationForm**](EvaluationForm.html)put_quality_form(form_id, body)
+## [**EvaluationForm**](EvaluationForm.html) put_quality_form(form_id, body)
 
 Update an evaluation form.
 
@@ -1568,7 +1568,7 @@ except ApiException as e:
 
 <a name="put_quality_keywordset"></a>
 
-## [**KeywordSet**](KeywordSet.html)put_quality_keywordset(keyword_set_id, body)
+## [**KeywordSet**](KeywordSet.html) put_quality_keywordset(keyword_set_id, body)
 
 Update a keywordSet to the specified keywordSet via PUT.
 

@@ -202,6 +202,90 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_managementunit_intraday_queues(self, mu_id, date, **kwargs):
+        """
+        Get intraday queues for the given date
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_managementunit_intraday_queues(mu_id, date, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The muId of the management unit. (required)
+        :param str date: ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
+        :return: WfmIntradayQueueListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'date']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_managementunit_intraday_queues" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_intraday_queues`")
+        # verify the required parameter 'date' is set
+        if ('date' not in params) or (params['date'] is None):
+            raise ValueError("Missing the required parameter `date` when calling `get_workforcemanagement_managementunit_intraday_queues`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+
+        query_params = {}
+        if 'date' in params:
+            query_params['date'] = params['date']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmIntradayQueueListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_managementunit_user_timeoffrequest(self, mu_id, user_id, time_off_request_id, **kwargs):
         """
         Get a time off request by id
@@ -768,6 +852,87 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_intraday(self, mu_id, **kwargs):
+        """
+        Get intraday data for the given date for the requested queueIds
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_intraday(mu_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The muId of the management unit. (required)
+        :param IntradayQueryDataCommand body: body
+        :return: IntradayResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_intraday" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_intraday`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/intraday'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntradayResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

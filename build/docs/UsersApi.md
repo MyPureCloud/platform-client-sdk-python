@@ -54,7 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_user"></a>
 
-## [**Empty**](Empty.html)delete_user(user_id)
+## [**Empty**](Empty.html) delete_user(user_id)
 
 Delete user
 
@@ -99,7 +99,7 @@ except ApiException as e:
 
 <a name="delete_user_roles"></a>
 
-## delete_user_roles(user_id)
+##  delete_user_roles(user_id)
 
 Removes all the roles from the user.
 
@@ -143,7 +143,7 @@ void (empty response body)
 
 <a name="delete_user_routingskill"></a>
 
-## str**delete_user_routingskill(user_id, skill_id)
+## str** delete_user_routingskill(user_id, skill_id)
 
 Remove routing skill from user
 
@@ -190,7 +190,7 @@ except ApiException as e:
 
 <a name="delete_user_station_associatedstation"></a>
 
-## delete_user_station_associatedstation(user_id)
+##  delete_user_station_associatedstation(user_id)
 
 Clear associated station
 
@@ -234,7 +234,7 @@ void (empty response body)
 
 <a name="delete_user_station_defaultstation"></a>
 
-## delete_user_station_defaultstation(user_id)
+##  delete_user_station_defaultstation(user_id)
 
 Clear default station
 
@@ -278,7 +278,7 @@ void (empty response body)
 
 <a name="get_fieldconfig"></a>
 
-## [**FieldConfig**](FieldConfig.html)get_fieldconfig(type)
+## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
 
 Fetch field config for an entity type
 
@@ -323,7 +323,7 @@ except ApiException as e:
 
 <a name="get_user"></a>
 
-## [**User**](User.html)get_user(user_id, expand=expand)
+## [**User**](User.html) get_user(user_id, expand=expand)
 
 Get user.
 
@@ -370,7 +370,7 @@ except ApiException as e:
 
 <a name="get_user_adjacents"></a>
 
-## [**Adjacents**](Adjacents.html)get_user_adjacents(user_id, expand=expand)
+## [**Adjacents**](Adjacents.html) get_user_adjacents(user_id, expand=expand)
 
 Get adjacents
 
@@ -417,7 +417,7 @@ except ApiException as e:
 
 <a name="get_user_callforwarding"></a>
 
-## [**CallForwarding**](CallForwarding.html)get_user_callforwarding(user_id)
+## [**CallForwarding**](CallForwarding.html) get_user_callforwarding(user_id)
 
 Get a user's CallForwarding
 
@@ -462,7 +462,7 @@ except ApiException as e:
 
 <a name="get_user_directreports"></a>
 
-## [**list[User]**](User.html)get_user_directreports(user_id, expand=expand)
+## [**list[User]**](User.html) get_user_directreports(user_id, expand=expand)
 
 Get direct reports
 
@@ -509,7 +509,7 @@ except ApiException as e:
 
 <a name="get_user_favorites"></a>
 
-## [**UserEntityListing**](UserEntityListing.html)get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## [**UserEntityListing**](UserEntityListing.html) get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 Get favorites
 
@@ -562,7 +562,7 @@ except ApiException as e:
 
 <a name="get_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html)get_user_geolocation(user_id, client_id)
+## [**Geolocation**](Geolocation.html) get_user_geolocation(user_id, client_id)
 
 Get a user's Geolocation
 
@@ -609,7 +609,7 @@ except ApiException as e:
 
 <a name="get_user_outofoffice"></a>
 
-## [**OutOfOffice**](OutOfOffice.html)get_user_outofoffice(user_id)
+## [**OutOfOffice**](OutOfOffice.html) get_user_outofoffice(user_id)
 
 Get a OutOfOffice
 
@@ -654,7 +654,7 @@ except ApiException as e:
 
 <a name="get_user_profileskills"></a>
 
-## list[str]**get_user_profileskills(user_id)
+## list[str]** get_user_profileskills(user_id)
 
 List profile skills for a user
 
@@ -699,7 +699,7 @@ except ApiException as e:
 
 <a name="get_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html)get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined)
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined)
 
 Get queues for user
 
@@ -750,7 +750,7 @@ except ApiException as e:
 
 <a name="get_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html)get_user_roles(user_id)
+## [**UserAuthorization**](UserAuthorization.html) get_user_roles(user_id)
 
 Returns a listing of roles and permissions for a user.
 
@@ -795,7 +795,7 @@ except ApiException as e:
 
 <a name="get_user_routingskills"></a>
 
-## [**UserSkillEntityListing**](UserSkillEntityListing.html)get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 List routing skills for user
 
@@ -846,7 +846,7 @@ except ApiException as e:
 
 <a name="get_user_routingstatus"></a>
 
-## [**RoutingStatus**](RoutingStatus.html)get_user_routingstatus(user_id)
+## [**RoutingStatus**](RoutingStatus.html) get_user_routingstatus(user_id)
 
 Fetch the routing status of a user
 
@@ -891,7 +891,7 @@ except ApiException as e:
 
 <a name="get_user_station"></a>
 
-## [**UserStations**](UserStations.html)get_user_station(user_id)
+## [**UserStations**](UserStations.html) get_user_station(user_id)
 
 Get station information for user
 
@@ -936,7 +936,7 @@ except ApiException as e:
 
 <a name="get_user_superiors"></a>
 
-## [**list[User]**](User.html)get_user_superiors(user_id, expand=expand)
+## [**list[User]**](User.html) get_user_superiors(user_id, expand=expand)
 
 Get superiors
 
@@ -983,7 +983,7 @@ except ApiException as e:
 
 <a name="get_users"></a>
 
-## [**UserEntityListing**](UserEntityListing.html)get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand)
+## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand)
 
 Get the list of available users.
 
@@ -1036,7 +1036,7 @@ except ApiException as e:
 
 <a name="get_users_me"></a>
 
-## [**UserMe**](UserMe.html)get_users_me(expand=expand)
+## [**UserMe**](UserMe.html) get_users_me(expand=expand)
 
 Get current user details.
 
@@ -1081,7 +1081,7 @@ except ApiException as e:
 
 <a name="get_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html)get_users_search(q64, expand=expand)
+## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
 
 Search users using the q64 value returned from a previous search
 
@@ -1128,7 +1128,7 @@ except ApiException as e:
 
 <a name="patch_user"></a>
 
-## [**User**](User.html)patch_user(user_id, body)
+## [**User**](User.html) patch_user(user_id, body)
 
 Update user
 
@@ -1175,7 +1175,7 @@ except ApiException as e:
 
 <a name="patch_user_callforwarding"></a>
 
-## [**CallForwarding**](CallForwarding.html)patch_user_callforwarding(user_id, body)
+## [**CallForwarding**](CallForwarding.html) patch_user_callforwarding(user_id, body)
 
 Patch a user's CallForwarding
 
@@ -1222,7 +1222,7 @@ except ApiException as e:
 
 <a name="patch_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html)patch_user_geolocation(user_id, client_id, body)
+## [**Geolocation**](Geolocation.html) patch_user_geolocation(user_id, client_id, body)
 
 Patch a user's Geolocation
 
@@ -1271,7 +1271,7 @@ except ApiException as e:
 
 <a name="patch_user_queue"></a>
 
-## [**UserQueue**](UserQueue.html)patch_user_queue(queue_id, user_id, body)
+## [**UserQueue**](UserQueue.html) patch_user_queue(queue_id, user_id, body)
 
 Join or unjoin a queue for a user
 
@@ -1320,7 +1320,7 @@ except ApiException as e:
 
 <a name="patch_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html)patch_user_queues(user_id, body)
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) patch_user_queues(user_id, body)
 
 Join or unjoin a set of queues for a user
 
@@ -1367,7 +1367,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_aggregates_query"></a>
 
-## [**PresenceQueryResponse**](PresenceQueryResponse.html)post_analytics_users_aggregates_query(body)
+## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
 
 Query for user aggregates
 
@@ -1412,7 +1412,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_details_query"></a>
 
-## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)post_analytics_users_details_query(body)
+## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) post_analytics_users_details_query(body)
 
 Query for user details
 
@@ -1457,7 +1457,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_observations_query"></a>
 
-## [**ObservationQueryResponse**](ObservationQueryResponse.html)post_analytics_users_observations_query(body)
+## [**ObservationQueryResponse**](ObservationQueryResponse.html) post_analytics_users_observations_query(body)
 
 Query for user observations
 
@@ -1502,7 +1502,7 @@ except ApiException as e:
 
 <a name="post_user_routingskills"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html)post_user_routingskills(user_id, body)
+## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
 
 Add routing skill to user
 
@@ -1549,7 +1549,7 @@ except ApiException as e:
 
 <a name="post_users"></a>
 
-## [**User**](User.html)post_users(body)
+## [**User**](User.html) post_users(body)
 
 Create user
 
@@ -1594,7 +1594,7 @@ except ApiException as e:
 
 <a name="post_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html)post_users_search(body)
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search(body)
 
 Search users
 
@@ -1639,7 +1639,7 @@ except ApiException as e:
 
 <a name="put_user_callforwarding"></a>
 
-## [**CallForwarding**](CallForwarding.html)put_user_callforwarding(user_id, body)
+## [**CallForwarding**](CallForwarding.html) put_user_callforwarding(user_id, body)
 
 Update a user's CallForwarding
 
@@ -1686,7 +1686,7 @@ except ApiException as e:
 
 <a name="put_user_outofoffice"></a>
 
-## [**OutOfOffice**](OutOfOffice.html)put_user_outofoffice(user_id, body)
+## [**OutOfOffice**](OutOfOffice.html) put_user_outofoffice(user_id, body)
 
 Update an OutOfOffice
 
@@ -1733,7 +1733,7 @@ except ApiException as e:
 
 <a name="put_user_profileskills"></a>
 
-## list[str]**put_user_profileskills(user_id, body=body)
+## list[str]** put_user_profileskills(user_id, body=body)
 
 Update profile skills for a user
 
@@ -1780,7 +1780,7 @@ except ApiException as e:
 
 <a name="put_user_roles"></a>
 
-## [**UserAuthorization**](UserAuthorization.html)put_user_roles(user_id, body)
+## [**UserAuthorization**](UserAuthorization.html) put_user_roles(user_id, body)
 
 Sets the user's roles
 
@@ -1827,7 +1827,7 @@ except ApiException as e:
 
 <a name="put_user_routingskill"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html)put_user_routingskill(user_id, skill_id, body)
+## [**UserRoutingSkill**](UserRoutingSkill.html) put_user_routingskill(user_id, skill_id, body)
 
 Update routing skill proficiency or state.
 
@@ -1876,7 +1876,7 @@ except ApiException as e:
 
 <a name="put_user_routingstatus"></a>
 
-## [**RoutingStatus**](RoutingStatus.html)put_user_routingstatus(user_id, body)
+## [**RoutingStatus**](RoutingStatus.html) put_user_routingstatus(user_id, body)
 
 Update the routing status of a user
 
@@ -1923,7 +1923,7 @@ except ApiException as e:
 
 <a name="put_user_station_associatedstation_station_id"></a>
 
-## put_user_station_associatedstation_station_id(user_id, station_id)
+##  put_user_station_associatedstation_station_id(user_id, station_id)
 
 Set associated station
 
@@ -1969,7 +1969,7 @@ void (empty response body)
 
 <a name="put_user_station_defaultstation_station_id"></a>
 
-## put_user_station_defaultstation_station_id(user_id, station_id)
+##  put_user_station_defaultstation_station_id(user_id, station_id)
 
 Set default station
 

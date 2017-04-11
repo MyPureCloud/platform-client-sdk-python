@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_voicemail_message"></a>
 
-## str**delete_voicemail_message(message_id)
+## str** delete_voicemail_message(message_id)
 
 Delete a message.
 
@@ -79,7 +79,7 @@ except ApiException as e:
 
 <a name="delete_voicemail_messages"></a>
 
-## str**delete_voicemail_messages()
+## str** delete_voicemail_messages()
 
 Delete all voicemail messages
 
@@ -120,7 +120,7 @@ This endpoint does not need any parameter.
 
 <a name="get_voicemail_group_mailbox"></a>
 
-## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)get_voicemail_group_mailbox(group_id)
+## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) get_voicemail_group_mailbox(group_id)
 
 Get the group's mailbox information
 
@@ -165,7 +165,7 @@ except ApiException as e:
 
 <a name="get_voicemail_group_messages"></a>
 
-## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)get_voicemail_group_messages(group_id, page_size=page_size, page_number=page_number)
+## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) get_voicemail_group_messages(group_id, page_size=page_size, page_number=page_number)
 
 List voicemail messages
 
@@ -214,7 +214,7 @@ except ApiException as e:
 
 <a name="get_voicemail_group_policy"></a>
 
-## [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)get_voicemail_group_policy(group_id)
+## [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html) get_voicemail_group_policy(group_id)
 
 Get a group's voicemail policy
 
@@ -259,7 +259,7 @@ except ApiException as e:
 
 <a name="get_voicemail_mailbox"></a>
 
-## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)get_voicemail_mailbox()
+## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) get_voicemail_mailbox()
 
 Get the current user's mailbox information
 
@@ -300,7 +300,7 @@ This endpoint does not need any parameter.
 
 <a name="get_voicemail_me_mailbox"></a>
 
-## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)get_voicemail_me_mailbox()
+## [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) get_voicemail_me_mailbox()
 
 Get the current user's mailbox information
 
@@ -341,7 +341,7 @@ This endpoint does not need any parameter.
 
 <a name="get_voicemail_me_messages"></a>
 
-## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)get_voicemail_me_messages(page_size=page_size, page_number=page_number)
+## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) get_voicemail_me_messages(page_size=page_size, page_number=page_number)
 
 List voicemail messages
 
@@ -388,7 +388,7 @@ except ApiException as e:
 
 <a name="get_voicemail_me_policy"></a>
 
-## [**VoicemailUserPolicy**](VoicemailUserPolicy.html)get_voicemail_me_policy()
+## [**VoicemailUserPolicy**](VoicemailUserPolicy.html) get_voicemail_me_policy()
 
 Get the current user's voicemail policy
 
@@ -429,7 +429,7 @@ This endpoint does not need any parameter.
 
 <a name="get_voicemail_message"></a>
 
-## [**VoicemailMessage**](VoicemailMessage.html)get_voicemail_message(message_id, expand=expand)
+## [**VoicemailMessage**](VoicemailMessage.html) get_voicemail_message(message_id, expand=expand)
 
 Get message.
 
@@ -476,7 +476,7 @@ except ApiException as e:
 
 <a name="get_voicemail_message_media"></a>
 
-## [**VoicemailMediaInfo**](VoicemailMediaInfo.html)get_voicemail_message_media(message_id, format_id=format_id)
+## [**VoicemailMediaInfo**](VoicemailMediaInfo.html) get_voicemail_message_media(message_id, format_id=format_id)
 
 Get media playback URI for this message
 
@@ -523,7 +523,7 @@ except ApiException as e:
 
 <a name="get_voicemail_messages"></a>
 
-## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)get_voicemail_messages(ids=ids, expand=expand)
+## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) get_voicemail_messages(ids=ids, expand=expand)
 
 List voicemail messages
 
@@ -570,7 +570,7 @@ except ApiException as e:
 
 <a name="get_voicemail_policy"></a>
 
-## [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)get_voicemail_policy()
+## [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html) get_voicemail_policy()
 
 Get a policy
 
@@ -611,7 +611,7 @@ This endpoint does not need any parameter.
 
 <a name="get_voicemail_search"></a>
 
-## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)get_voicemail_search(q64, expand=expand)
+## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) get_voicemail_search(q64, expand=expand)
 
 Search voicemails using the q64 value returned from a previous search
 
@@ -658,7 +658,7 @@ except ApiException as e:
 
 <a name="get_voicemail_userpolicy"></a>
 
-## [**VoicemailUserPolicy**](VoicemailUserPolicy.html)get_voicemail_userpolicy(user_id)
+## [**VoicemailUserPolicy**](VoicemailUserPolicy.html) get_voicemail_userpolicy(user_id)
 
 Get a user's voicemail policy
 
@@ -703,7 +703,7 @@ except ApiException as e:
 
 <a name="patch_voicemail_group_policy"></a>
 
-## [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)patch_voicemail_group_policy(group_id, body)
+## [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html) patch_voicemail_group_policy(group_id, body)
 
 Update a group's voicemail policy
 
@@ -750,7 +750,7 @@ except ApiException as e:
 
 <a name="patch_voicemail_me_policy"></a>
 
-## [**VoicemailUserPolicy**](VoicemailUserPolicy.html)patch_voicemail_me_policy(body)
+## [**VoicemailUserPolicy**](VoicemailUserPolicy.html) patch_voicemail_me_policy(body)
 
 Update the current user's voicemail policy
 
@@ -795,7 +795,7 @@ except ApiException as e:
 
 <a name="patch_voicemail_userpolicy"></a>
 
-## [**VoicemailUserPolicy**](VoicemailUserPolicy.html)patch_voicemail_userpolicy(user_id, body)
+## [**VoicemailUserPolicy**](VoicemailUserPolicy.html) patch_voicemail_userpolicy(user_id, body)
 
 Update a user's voicemail policy
 
@@ -842,7 +842,7 @@ except ApiException as e:
 
 <a name="post_voicemail_messages"></a>
 
-## [**VoicemailMessage**](VoicemailMessage.html)post_voicemail_messages(body=body)
+## [**VoicemailMessage**](VoicemailMessage.html) post_voicemail_messages(body=body)
 
 Copy a voicemail message to a user or group
 
@@ -887,7 +887,7 @@ except ApiException as e:
 
 <a name="post_voicemail_search"></a>
 
-## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)post_voicemail_search(body)
+## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) post_voicemail_search(body)
 
 Search voicemails
 
@@ -932,7 +932,7 @@ except ApiException as e:
 
 <a name="put_voicemail_message"></a>
 
-## [**VoicemailMessage**](VoicemailMessage.html)put_voicemail_message(message_id, body)
+## [**VoicemailMessage**](VoicemailMessage.html) put_voicemail_message(message_id, body)
 
 Update a message.
 
@@ -979,7 +979,7 @@ except ApiException as e:
 
 <a name="put_voicemail_policy"></a>
 
-## [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)put_voicemail_policy(body)
+## [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html) put_voicemail_policy(body)
 
 Update a policy
 

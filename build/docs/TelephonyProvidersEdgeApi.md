@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_phonebasesettings_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings_template) | Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance|
 |[**get_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones) | Get a list of Phone Instances|
 |[**get_telephony_providers_edges_phones_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones_template) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance|
+|[**get_telephony_providers_edges_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_physicalinterfaces) | Get physical interfaces for edges.|
 |[**get_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site) | Get a Site by ID.|
 |[**get_telephony_providers_edges_site_numberplan**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplan) | Get a Number Plan by ID.|
 |[**get_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans) | Get the list of Number Plans for this Site.|
@@ -131,7 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_telephony_providers_edge"></a>
 
-## str**delete_telephony_providers_edge(edge_id)
+## str** delete_telephony_providers_edge(edge_id)
 
 Delete a edge.
 
@@ -176,7 +177,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edge_logicalinterface"></a>
 
-## delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
+##  delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
 
 Delete an edge logical interface
 
@@ -222,7 +223,7 @@ void (empty response body)
 
 <a name="delete_telephony_providers_edge_softwareupdate"></a>
 
-## str**delete_telephony_providers_edge_softwareupdate(edge_id)
+## str** delete_telephony_providers_edge_softwareupdate(edge_id)
 
 Cancels any in-progress update for this edge.
 
@@ -267,7 +268,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_certificateauthority"></a>
 
-## str**delete_telephony_providers_edges_certificateauthority(certificate_id)
+## str** delete_telephony_providers_edges_certificateauthority(certificate_id)
 
 Delete a certificate authority.
 
@@ -312,7 +313,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_didpool"></a>
 
-## str**delete_telephony_providers_edges_didpool(did_pool_id)
+## str** delete_telephony_providers_edges_didpool(did_pool_id)
 
 Delete a DID Pool by ID.
 
@@ -357,7 +358,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_edgegroup"></a>
 
-## str**delete_telephony_providers_edges_edgegroup(edge_group_id)
+## str** delete_telephony_providers_edges_edgegroup(edge_group_id)
 
 Delete an edge group.
 
@@ -402,7 +403,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_endpoint"></a>
 
-## str**delete_telephony_providers_edges_endpoint(endpoint_id)
+## str** delete_telephony_providers_edges_endpoint(endpoint_id)
 
 Delete endpoint
 
@@ -447,7 +448,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_extensionpool"></a>
 
-## str**delete_telephony_providers_edges_extensionpool(extension_pool_id)
+## str** delete_telephony_providers_edges_extensionpool(extension_pool_id)
 
 Delete an extension pool by ID
 
@@ -492,7 +493,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_outboundroute"></a>
 
-## str**delete_telephony_providers_edges_outboundroute(outbound_route_id)
+## str** delete_telephony_providers_edges_outboundroute(outbound_route_id)
 
 Delete Outbound Route
 
@@ -537,7 +538,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_phone"></a>
 
-## str**delete_telephony_providers_edges_phone(phone_id)
+## str** delete_telephony_providers_edges_phone(phone_id)
 
 Delete a Phone by ID
 
@@ -582,7 +583,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_phonebasesetting"></a>
 
-## str**delete_telephony_providers_edges_phonebasesetting(phone_base_id)
+## str** delete_telephony_providers_edges_phonebasesetting(phone_base_id)
 
 Delete a Phone Base Settings by ID
 
@@ -627,7 +628,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_site"></a>
 
-## str**delete_telephony_providers_edges_site(site_id)
+## str** delete_telephony_providers_edges_site(site_id)
 
 Delete a Site by ID
 
@@ -672,7 +673,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_site_outboundroute"></a>
 
-## str**delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+## str** delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 
 Delete Outbound Route
 
@@ -719,7 +720,7 @@ except ApiException as e:
 
 <a name="delete_telephony_providers_edges_trunkbasesetting"></a>
 
-## str**delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
+## str** delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
 
 Delete a Trunk Base Settings object by ID
 
@@ -764,7 +765,7 @@ except ApiException as e:
 
 <a name="get_configuration_schemas_edges_vnext"></a>
 
-## [**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html)get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)
+## [**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html) get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)
 
 Lists available schema categories (Deprecated)
 
@@ -811,7 +812,7 @@ except ApiException as e:
 
 <a name="get_configuration_schemas_edges_vnext_schema_category"></a>
 
-## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)
+## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html) get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)
 
 List schemas of a specific category (Deprecated)
 
@@ -860,7 +861,7 @@ except ApiException as e:
 
 <a name="get_configuration_schemas_edges_vnext_schema_category_schema_type"></a>
 
-## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)
+## [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html) get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)
 
 List schemas of a specific category (Deprecated)
 
@@ -911,7 +912,7 @@ except ApiException as e:
 
 <a name="get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id"></a>
 
-## [**Organization**](Organization.html)get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)
+## [**Organization**](Organization.html) get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)
 
 Get a json schema (Deprecated)
 
@@ -960,7 +961,7 @@ except ApiException as e:
 
 <a name="get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id"></a>
 
-## [**Organization**](Organization.html)get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)
+## [**Organization**](Organization.html) get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)
 
 Get metadata for a schema (Deprecated)
 
@@ -1015,7 +1016,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge"></a>
 
-## [**Edge**](Edge.html)get_telephony_providers_edge(edge_id, expand=expand)
+## [**Edge**](Edge.html) get_telephony_providers_edge(edge_id, expand=expand)
 
 Get edge.
 
@@ -1062,7 +1063,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_line"></a>
 
-## [**EdgeLine**](EdgeLine.html)get_telephony_providers_edge_line(edge_id, line_id)
+## [**EdgeLine**](EdgeLine.html) get_telephony_providers_edge_line(edge_id, line_id)
 
 Get line
 
@@ -1109,7 +1110,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_lines"></a>
 
-## [**EdgeLineEntityListing**](EdgeLineEntityListing.html)get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
+## [**EdgeLineEntityListing**](EdgeLineEntityListing.html) get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
 
 Get the list of lines.
 
@@ -1158,7 +1159,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_logicalinterface"></a>
 
-## [**DomainLogicalInterface**](DomainLogicalInterface.html)get_telephony_providers_edge_logicalinterface(edge_id, interface_id, expand=expand)
+## [**DomainLogicalInterface**](DomainLogicalInterface.html) get_telephony_providers_edge_logicalinterface(edge_id, interface_id, expand=expand)
 
 Get an edge logical interface
 
@@ -1207,7 +1208,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_logicalinterfaces"></a>
 
-## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)get_telephony_providers_edge_logicalinterfaces(edge_id, expand=expand)
+## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html) get_telephony_providers_edge_logicalinterfaces(edge_id, expand=expand)
 
 Get edge logical interfaces.
 
@@ -1254,7 +1255,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_logs_job"></a>
 
-## [**EdgeLogsJob**](EdgeLogsJob.html)get_telephony_providers_edge_logs_job(edge_id, job_id)
+## [**EdgeLogsJob**](EdgeLogsJob.html) get_telephony_providers_edge_logs_job(edge_id, job_id)
 
 Get an Edge logs job.
 
@@ -1301,7 +1302,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_physicalinterface"></a>
 
-## [**DomainPhysicalInterface**](DomainPhysicalInterface.html)get_telephony_providers_edge_physicalinterface(edge_id, interface_id)
+## [**DomainPhysicalInterface**](DomainPhysicalInterface.html) get_telephony_providers_edge_physicalinterface(edge_id, interface_id)
 
 Get edge physical interface.
 
@@ -1348,7 +1349,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_physicalinterfaces"></a>
 
-## [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)get_telephony_providers_edge_physicalinterfaces(edge_id)
+## [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html) get_telephony_providers_edge_physicalinterfaces(edge_id)
 
 Retrieve a list of all configured physical interfaces from a specific edge.
 
@@ -1393,7 +1394,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_setuppackage"></a>
 
-## [**VmPairingInfo**](VmPairingInfo.html)get_telephony_providers_edge_setuppackage(edge_id)
+## [**VmPairingInfo**](VmPairingInfo.html) get_telephony_providers_edge_setuppackage(edge_id)
 
 Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
 
@@ -1438,7 +1439,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_softwareupdate"></a>
 
-## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)get_telephony_providers_edge_softwareupdate(edge_id)
+## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html) get_telephony_providers_edge_softwareupdate(edge_id)
 
 Gets software update status information about any edge.
 
@@ -1483,7 +1484,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edge_softwareversions"></a>
 
-## [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)get_telephony_providers_edge_softwareversions(edge_id)
+## [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html) get_telephony_providers_edge_softwareversions(edge_id)
 
 Gets all the available software versions for this edge.
 
@@ -1528,7 +1529,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges"></a>
 
-## [**EdgeEntityListing**](EdgeEntityListing.html)get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
+## [**EdgeEntityListing**](EdgeEntityListing.html) get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
 
 Get the list of edges.
 
@@ -1585,7 +1586,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_availablelanguages"></a>
 
-## [**AvailableLanguageList**](AvailableLanguageList.html)get_telephony_providers_edges_availablelanguages()
+## [**AvailableLanguageList**](AvailableLanguageList.html) get_telephony_providers_edges_availablelanguages()
 
 Get the list of available languages.
 
@@ -1626,7 +1627,7 @@ This endpoint does not need any parameter.
 
 <a name="get_telephony_providers_edges_certificateauthorities"></a>
 
-## [**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html)get_telephony_providers_edges_certificateauthorities()
+## [**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html) get_telephony_providers_edges_certificateauthorities()
 
 Get the list of certificate authorities.
 
@@ -1667,7 +1668,7 @@ This endpoint does not need any parameter.
 
 <a name="get_telephony_providers_edges_certificateauthority"></a>
 
-## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)get_telephony_providers_edges_certificateauthority(certificate_id)
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html) get_telephony_providers_edges_certificateauthority(certificate_id)
 
 Get a certificate authority.
 
@@ -1712,7 +1713,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_did"></a>
 
-## [**DID**](DID.html)get_telephony_providers_edges_did(did_id)
+## [**DID**](DID.html) get_telephony_providers_edges_did(did_id)
 
 Get a DID by ID.
 
@@ -1757,7 +1758,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_didpool"></a>
 
-## [**DIDPool**](DIDPool.html)get_telephony_providers_edges_didpool(did_pool_id)
+## [**DIDPool**](DIDPool.html) get_telephony_providers_edges_didpool(did_pool_id)
 
 Get a DID Pool by ID.
 
@@ -1802,7 +1803,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_didpools"></a>
 
-## [**DIDPoolEntityListing**](DIDPoolEntityListing.html)get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
+## [**DIDPoolEntityListing**](DIDPoolEntityListing.html) get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
 
 Get a listing of DID Pools
 
@@ -1851,7 +1852,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_dids"></a>
 
-## [**DIDEntityListing**](DIDEntityListing.html)get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
+## [**DIDEntityListing**](DIDEntityListing.html) get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
 
 Get a listing of DIDs
 
@@ -1904,7 +1905,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_edgegroup"></a>
 
-## [**EdgeGroup**](EdgeGroup.html)get_telephony_providers_edges_edgegroup(edge_group_id, expand=expand)
+## [**EdgeGroup**](EdgeGroup.html) get_telephony_providers_edges_edgegroup(edge_group_id, expand=expand)
 
 Get edge group.
 
@@ -1951,7 +1952,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
 
-## [**EdgeTrunkBase**](EdgeTrunkBase.html)get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
+## [**EdgeTrunkBase**](EdgeTrunkBase.html) get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
 
 Gets the edge trunk base associated with the edge group
 
@@ -1998,7 +1999,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_edgegroups"></a>
 
-## [**EdgeGroupEntityListing**](EdgeGroupEntityListing.html)get_telephony_providers_edges_edgegroups(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, managed=managed)
+## [**EdgeGroupEntityListing**](EdgeGroupEntityListing.html) get_telephony_providers_edges_edgegroups(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, managed=managed)
 
 Get the list of edge groups.
 
@@ -2051,7 +2052,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_edgeversionreport"></a>
 
-## [**EdgeVersionReport**](EdgeVersionReport.html)get_telephony_providers_edges_edgeversionreport()
+## [**EdgeVersionReport**](EdgeVersionReport.html) get_telephony_providers_edges_edgeversionreport()
 
 Get the edge version report.
 
@@ -2092,7 +2093,7 @@ This endpoint does not need any parameter.
 
 <a name="get_telephony_providers_edges_endpoint"></a>
 
-## [**Endpoint**](Endpoint.html)get_telephony_providers_edges_endpoint(endpoint_id)
+## [**Endpoint**](Endpoint.html) get_telephony_providers_edges_endpoint(endpoint_id)
 
 Get endpoint
 
@@ -2137,7 +2138,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_endpoints"></a>
 
-## [**EndpointEntityListing**](EndpointEntityListing.html)get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+## [**EndpointEntityListing**](EndpointEntityListing.html) get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
 
 Get endpoints
 
@@ -2188,7 +2189,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_extension"></a>
 
-## [**Extension**](Extension.html)get_telephony_providers_edges_extension(extension_id)
+## [**Extension**](Extension.html) get_telephony_providers_edges_extension(extension_id)
 
 Get an extension by ID.
 
@@ -2233,7 +2234,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_extensionpool"></a>
 
-## [**ExtensionPool**](ExtensionPool.html)get_telephony_providers_edges_extensionpool(extension_pool_id)
+## [**ExtensionPool**](ExtensionPool.html) get_telephony_providers_edges_extensionpool(extension_pool_id)
 
 Get an extension pool by ID
 
@@ -2278,7 +2279,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_extensionpools"></a>
 
-## [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html)get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
+## [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html) get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
 
 Get a listing of extension pools
 
@@ -2329,7 +2330,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_extensions"></a>
 
-## [**ExtensionEntityListing**](ExtensionEntityListing.html)get_telephony_providers_edges_extensions(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, number=number)
+## [**ExtensionEntityListing**](ExtensionEntityListing.html) get_telephony_providers_edges_extensions(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, number=number)
 
 Get a listing of extensions
 
@@ -2382,7 +2383,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_line"></a>
 
-## [**Line**](Line.html)get_telephony_providers_edges_line(line_id)
+## [**Line**](Line.html) get_telephony_providers_edges_line(line_id)
 
 Get a Line by ID
 
@@ -2427,7 +2428,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_linebasesetting"></a>
 
-## [**LineBase**](LineBase.html)get_telephony_providers_edges_linebasesetting(line_base_id)
+## [**LineBase**](LineBase.html) get_telephony_providers_edges_linebasesetting(line_base_id)
 
 Get a line base settings object by ID
 
@@ -2472,7 +2473,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_linebasesettings"></a>
 
-## [**LineBaseEntityListing**](LineBaseEntityListing.html)get_telephony_providers_edges_linebasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+## [**LineBaseEntityListing**](LineBaseEntityListing.html) get_telephony_providers_edges_linebasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
 
 Get a listing of line base settings objects
 
@@ -2523,7 +2524,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_lines"></a>
 
-## [**LineEntityListing**](LineEntityListing.html)get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)
+## [**LineEntityListing**](LineEntityListing.html) get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)
 
 Get a list of Lines
 
@@ -2576,7 +2577,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_lines_template"></a>
 
-## [**Line**](Line.html)get_telephony_providers_edges_lines_template(line_base_settings_id)
+## [**Line**](Line.html) get_telephony_providers_edges_lines_template(line_base_settings_id)
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 
@@ -2621,7 +2622,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_logicalinterfaces"></a>
 
-## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)
+## [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html) get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)
 
 Get edge logical interfaces.
 
@@ -2668,7 +2669,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_outboundroute"></a>
 
-## [**OutboundRoute**](OutboundRoute.html)get_telephony_providers_edges_outboundroute(outbound_route_id)
+## [**OutboundRoute**](OutboundRoute.html) get_telephony_providers_edges_outboundroute(outbound_route_id)
 
 Get outbound route
 
@@ -2713,7 +2714,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_outboundroutes"></a>
 
-## [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html)get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
+## [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html) get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
 
 Get outbound routes
 
@@ -2766,7 +2767,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phone"></a>
 
-## [**Phone**](Phone.html)get_telephony_providers_edges_phone(phone_id)
+## [**Phone**](Phone.html) get_telephony_providers_edges_phone(phone_id)
 
 Get a Phone by ID
 
@@ -2811,7 +2812,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phonebasesetting"></a>
 
-## [**PhoneBase**](PhoneBase.html)get_telephony_providers_edges_phonebasesetting(phone_base_id)
+## [**PhoneBase**](PhoneBase.html) get_telephony_providers_edges_phonebasesetting(phone_base_id)
 
 Get a Phone Base Settings object by ID
 
@@ -2856,7 +2857,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phonebasesettings"></a>
 
-## [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html)get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+## [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html) get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
 
 Get a list of Phone Base Settings objects
 
@@ -2909,7 +2910,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phonebasesettings_availablemetabases"></a>
 
-## [**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html)get_telephony_providers_edges_phonebasesettings_availablemetabases(page_size=page_size, page_number=page_number)
+## [**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html) get_telephony_providers_edges_phonebasesettings_availablemetabases(page_size=page_size, page_number=page_number)
 
 Get a list of available makes and models to create a new Phone Base Settings
 
@@ -2956,7 +2957,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phonebasesettings_template"></a>
 
-## [**PhoneBase**](PhoneBase.html)get_telephony_providers_edges_phonebasesettings_template(phone_metabase_id)
+## [**PhoneBase**](PhoneBase.html) get_telephony_providers_edges_phonebasesettings_template(phone_metabase_id)
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
 
@@ -3001,7 +3002,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phones"></a>
 
-## [**PhoneEntityListing**](PhoneEntityListing.html)get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, expand=expand, fields=fields)
+## [**PhoneEntityListing**](PhoneEntityListing.html) get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, expand=expand, fields=fields)
 
 Get a list of Phone Instances
 
@@ -3072,7 +3073,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phones_template"></a>
 
-## [**Phone**](Phone.html)get_telephony_providers_edges_phones_template(phone_base_settings_id)
+## [**Phone**](Phone.html) get_telephony_providers_edges_phones_template(phone_base_settings_id)
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
 
@@ -3115,9 +3116,54 @@ except ApiException as e:
 
 [**Phone**](Phone.html)
 
+<a name="get_telephony_providers_edges_physicalinterfaces"></a>
+
+## [**list[DomainPhysicalInterface]**](DomainPhysicalInterface.html) get_telephony_providers_edges_physicalinterfaces(edge_ids)
+
+Get physical interfaces for edges.
+
+Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+
+Wraps GET /api/v2/telephony/providers/edges/physicalinterfaces 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's
+
+try:
+    # Get physical interfaces for edges.
+    api_response = api_instance.get_telephony_providers_edges_physicalinterfaces(edge_ids)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_physicalinterfaces: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s | |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[DomainPhysicalInterface]**](DomainPhysicalInterface.html)
+
 <a name="get_telephony_providers_edges_site"></a>
 
-## [**Site**](Site.html)get_telephony_providers_edges_site(site_id)
+## [**Site**](Site.html) get_telephony_providers_edges_site(site_id)
 
 Get a Site by ID.
 
@@ -3162,7 +3208,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_numberplan"></a>
 
-## [**NumberPlan**](NumberPlan.html)get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
+## [**NumberPlan**](NumberPlan.html) get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
 
 Get a Number Plan by ID.
 
@@ -3209,7 +3255,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_numberplans"></a>
 
-## [**list[NumberPlan]**](NumberPlan.html)get_telephony_providers_edges_site_numberplans(site_id)
+## [**list[NumberPlan]**](NumberPlan.html) get_telephony_providers_edges_site_numberplans(site_id)
 
 Get the list of Number Plans for this Site.
 
@@ -3254,7 +3300,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_numberplans_classifications"></a>
 
-## list[str]**get_telephony_providers_edges_site_numberplans_classifications(site_id, classification=classification)
+## list[str]** get_telephony_providers_edges_site_numberplans_classifications(site_id, classification=classification)
 
 Get a list of Classifications for this Site
 
@@ -3301,7 +3347,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_outboundroute"></a>
 
-## [**OutboundRouteBase**](OutboundRouteBase.html)get_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+## [**OutboundRouteBase**](OutboundRouteBase.html) get_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 
 Get an outbound route
 
@@ -3348,7 +3394,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_outboundroutes"></a>
 
-## [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+## [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html) get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
 
 Get outbound routes
 
@@ -3401,7 +3447,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_sites"></a>
 
-## [**SiteEntityListing**](SiteEntityListing.html)get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
+## [**SiteEntityListing**](SiteEntityListing.html) get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
 
 Get the list of Sites.
 
@@ -3458,7 +3504,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_timezones"></a>
 
-## [**TimeZoneEntityListing**](TimeZoneEntityListing.html)get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
+## [**TimeZoneEntityListing**](TimeZoneEntityListing.html) get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
 
 Get a list of Edge-compatible time zones
 
@@ -3505,7 +3551,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunk"></a>
 
-## [**Trunk**](Trunk.html)get_telephony_providers_edges_trunk(trunk_id)
+## [**Trunk**](Trunk.html) get_telephony_providers_edges_trunk(trunk_id)
 
 Get a Trunk by ID
 
@@ -3550,7 +3596,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunkbasesetting"></a>
 
-## [**TrunkBase**](TrunkBase.html)get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
+## [**TrunkBase**](TrunkBase.html) get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
 
 Get a Trunk Base Settings object by ID
 
@@ -3597,7 +3643,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunkbasesettings"></a>
 
-## [**TrunkBaseEntityListing**](TrunkBaseEntityListing.html)get_telephony_providers_edges_trunkbasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, recording_enabled=recording_enabled, ignore_hidden=ignore_hidden, managed=managed, expand=expand, name=name)
+## [**TrunkBaseEntityListing**](TrunkBaseEntityListing.html) get_telephony_providers_edges_trunkbasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, recording_enabled=recording_enabled, ignore_hidden=ignore_hidden, managed=managed, expand=expand, name=name)
 
 Get Trunk Base Settings listing
 
@@ -3658,7 +3704,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunkbasesettings_availablemetabases"></a>
 
-## [**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html)get_telephony_providers_edges_trunkbasesettings_availablemetabases(type=type, page_size=page_size, page_number=page_number)
+## [**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html) get_telephony_providers_edges_trunkbasesettings_availablemetabases(type=type, page_size=page_size, page_number=page_number)
 
 Get a list of available makes and models to create a new Trunk Base Settings
 
@@ -3707,7 +3753,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunkbasesettings_template"></a>
 
-## [**TrunkBase**](TrunkBase.html)get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
+## [**TrunkBase**](TrunkBase.html) get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 
@@ -3752,7 +3798,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunks"></a>
 
-## [**TrunkEntityListing**](TrunkEntityListing.html)get_telephony_providers_edges_trunks(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, edge_id=edge_id, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
+## [**TrunkEntityListing**](TrunkEntityListing.html) get_telephony_providers_edges_trunks(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, edge_id=edge_id, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
 
 Get the list of available trunks.
 
@@ -3809,7 +3855,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_trunkswithrecording"></a>
 
-## [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)get_telephony_providers_edges_trunkswithrecording(trunk_type=trunk_type)
+## [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html) get_telephony_providers_edges_trunkswithrecording(trunk_type=trunk_type)
 
 Get Counts of trunks that have recording disabled or enabled
 
@@ -3854,7 +3900,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_logicalinterfaces"></a>
 
-## [**DomainLogicalInterface**](DomainLogicalInterface.html)post_telephony_providers_edge_logicalinterfaces(edge_id, body)
+## [**DomainLogicalInterface**](DomainLogicalInterface.html) post_telephony_providers_edge_logicalinterfaces(edge_id, body)
 
 Create an edge logical interface.
 
@@ -3901,7 +3947,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_logs_job_upload"></a>
 
-## post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
+##  post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
 
 Request that the specified fileIds be uploaded from the Edge.
 
@@ -3949,7 +3995,7 @@ void (empty response body)
 
 <a name="post_telephony_providers_edge_logs_jobs"></a>
 
-## [**EdgeLogsJobResponse**](EdgeLogsJobResponse.html)post_telephony_providers_edge_logs_jobs(edge_id, body)
+## [**EdgeLogsJobResponse**](EdgeLogsJobResponse.html) post_telephony_providers_edge_logs_jobs(edge_id, body)
 
 Create a job to upload a list of Edge logs.
 
@@ -3996,7 +4042,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_reboot"></a>
 
-## str**post_telephony_providers_edge_reboot(edge_id, body=body)
+## str** post_telephony_providers_edge_reboot(edge_id, body=body)
 
 Reboot an Edge
 
@@ -4043,7 +4089,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_softwareupdate"></a>
 
-## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)post_telephony_providers_edge_softwareupdate(edge_id, body)
+## [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html) post_telephony_providers_edge_softwareupdate(edge_id, body)
 
 Starts a software update for this edge.
 
@@ -4090,7 +4136,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_statuscode"></a>
 
-## str**post_telephony_providers_edge_statuscode(edge_id, body=body)
+## str** post_telephony_providers_edge_statuscode(edge_id, body=body)
 
 Take an Edge in or out of service
 
@@ -4137,7 +4183,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edge_unpair"></a>
 
-## str**post_telephony_providers_edge_unpair(edge_id)
+## str** post_telephony_providers_edge_unpair(edge_id)
 
 Unpair an Edge
 
@@ -4182,7 +4228,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges"></a>
 
-## [**Edge**](Edge.html)post_telephony_providers_edges(body)
+## [**Edge**](Edge.html) post_telephony_providers_edges(body)
 
 Create an edge.
 
@@ -4227,7 +4273,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_addressvalidation"></a>
 
-## [**ValidateAddressResponse**](ValidateAddressResponse.html)post_telephony_providers_edges_addressvalidation(body)
+## [**ValidateAddressResponse**](ValidateAddressResponse.html) post_telephony_providers_edges_addressvalidation(body)
 
 Validates a street address
 
@@ -4272,7 +4318,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_certificateauthorities"></a>
 
-## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)post_telephony_providers_edges_certificateauthorities(body)
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html) post_telephony_providers_edges_certificateauthorities(body)
 
 Create a certificate authority.
 
@@ -4317,7 +4363,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_didpools"></a>
 
-## [**DIDPool**](DIDPool.html)post_telephony_providers_edges_didpools(body)
+## [**DIDPool**](DIDPool.html) post_telephony_providers_edges_didpools(body)
 
 Create a new DID pool
 
@@ -4362,7 +4408,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_edgegroups"></a>
 
-## [**EdgeGroup**](EdgeGroup.html)post_telephony_providers_edges_edgegroups(body)
+## [**EdgeGroup**](EdgeGroup.html) post_telephony_providers_edges_edgegroups(body)
 
 Create an edge group.
 
@@ -4407,7 +4453,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_endpoints"></a>
 
-## [**Endpoint**](Endpoint.html)post_telephony_providers_edges_endpoints(body)
+## [**Endpoint**](Endpoint.html) post_telephony_providers_edges_endpoints(body)
 
 Create endpoint
 
@@ -4452,7 +4498,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_extensionpools"></a>
 
-## [**ExtensionPool**](ExtensionPool.html)post_telephony_providers_edges_extensionpools(body)
+## [**ExtensionPool**](ExtensionPool.html) post_telephony_providers_edges_extensionpools(body)
 
 Create a new extension pool
 
@@ -4497,7 +4543,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_outboundroutes"></a>
 
-## [**OutboundRoute**](OutboundRoute.html)post_telephony_providers_edges_outboundroutes(body)
+## [**OutboundRoute**](OutboundRoute.html) post_telephony_providers_edges_outboundroutes(body)
 
 Create outbound rule
 
@@ -4542,7 +4588,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_phone_reboot"></a>
 
-## post_telephony_providers_edges_phone_reboot(phone_id)
+##  post_telephony_providers_edges_phone_reboot(phone_id)
 
 Reboot a Phone
 
@@ -4586,7 +4632,7 @@ void (empty response body)
 
 <a name="post_telephony_providers_edges_phonebasesettings"></a>
 
-## [**PhoneBase**](PhoneBase.html)post_telephony_providers_edges_phonebasesettings(body)
+## [**PhoneBase**](PhoneBase.html) post_telephony_providers_edges_phonebasesettings(body)
 
 Create a new Phone Base Settings object
 
@@ -4631,7 +4677,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_phones"></a>
 
-## [**Phone**](Phone.html)post_telephony_providers_edges_phones(body)
+## [**Phone**](Phone.html) post_telephony_providers_edges_phones(body)
 
 Create a new Phone
 
@@ -4676,7 +4722,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_phones_reboot"></a>
 
-## post_telephony_providers_edges_phones_reboot(body)
+##  post_telephony_providers_edges_phones_reboot(body)
 
 Reboot Multiple Phones
 
@@ -4720,7 +4766,7 @@ void (empty response body)
 
 <a name="post_telephony_providers_edges_site_outboundroutes"></a>
 
-## [**OutboundRouteBase**](OutboundRouteBase.html)post_telephony_providers_edges_site_outboundroutes(site_id, body)
+## [**OutboundRouteBase**](OutboundRouteBase.html) post_telephony_providers_edges_site_outboundroutes(site_id, body)
 
 Create outbound route
 
@@ -4767,7 +4813,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_site_rebalance"></a>
 
-## post_telephony_providers_edges_site_rebalance(site_id)
+##  post_telephony_providers_edges_site_rebalance(site_id)
 
 Triggers the rebalance operation.
 
@@ -4811,7 +4857,7 @@ void (empty response body)
 
 <a name="post_telephony_providers_edges_sites"></a>
 
-## [**Site**](Site.html)post_telephony_providers_edges_sites(body)
+## [**Site**](Site.html) post_telephony_providers_edges_sites(body)
 
 Create a Site.
 
@@ -4856,7 +4902,7 @@ except ApiException as e:
 
 <a name="post_telephony_providers_edges_trunkbasesettings"></a>
 
-## [**TrunkBase**](TrunkBase.html)post_telephony_providers_edges_trunkbasesettings(body)
+## [**TrunkBase**](TrunkBase.html) post_telephony_providers_edges_trunkbasesettings(body)
 
 Create a Trunk Base Settings object
 
@@ -4901,7 +4947,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edge"></a>
 
-## [**Edge**](Edge.html)put_telephony_providers_edge(edge_id, body)
+## [**Edge**](Edge.html) put_telephony_providers_edge(edge_id, body)
 
 Update a edge.
 
@@ -4948,7 +4994,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edge_line"></a>
 
-## [**EdgeLine**](EdgeLine.html)put_telephony_providers_edge_line(edge_id, line_id, body)
+## [**EdgeLine**](EdgeLine.html) put_telephony_providers_edge_line(edge_id, line_id, body)
 
 Update a line.
 
@@ -4997,7 +5043,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edge_logicalinterface"></a>
 
-## [**DomainLogicalInterface**](DomainLogicalInterface.html)put_telephony_providers_edge_logicalinterface(edge_id, interface_id, body)
+## [**DomainLogicalInterface**](DomainLogicalInterface.html) put_telephony_providers_edge_logicalinterface(edge_id, interface_id, body)
 
 Update an edge logical interface.
 
@@ -5046,7 +5092,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_certificateauthority"></a>
 
-## [**DomainCertificateAuthority**](DomainCertificateAuthority.html)put_telephony_providers_edges_certificateauthority(certificate_id, body)
+## [**DomainCertificateAuthority**](DomainCertificateAuthority.html) put_telephony_providers_edges_certificateauthority(certificate_id, body)
 
 Update a certificate authority.
 
@@ -5093,7 +5139,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_did"></a>
 
-## [**DID**](DID.html)put_telephony_providers_edges_did(did_id, body)
+## [**DID**](DID.html) put_telephony_providers_edges_did(did_id, body)
 
 Update a DID by ID.
 
@@ -5140,7 +5186,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_didpool"></a>
 
-## [**DIDPool**](DIDPool.html)put_telephony_providers_edges_didpool(did_pool_id, body)
+## [**DIDPool**](DIDPool.html) put_telephony_providers_edges_didpool(did_pool_id, body)
 
 Update a DID Pool by ID.
 
@@ -5187,7 +5233,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_edgegroup"></a>
 
-## [**EdgeGroup**](EdgeGroup.html)put_telephony_providers_edges_edgegroup(edge_group_id, body)
+## [**EdgeGroup**](EdgeGroup.html) put_telephony_providers_edges_edgegroup(edge_group_id, body)
 
 Update an edge group.
 
@@ -5234,7 +5280,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
 
-## [**EdgeTrunkBase**](EdgeTrunkBase.html)put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
+## [**EdgeTrunkBase**](EdgeTrunkBase.html) put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
 
 Update the edge trunk base associated with the edge group
 
@@ -5283,7 +5329,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_endpoint"></a>
 
-## [**Endpoint**](Endpoint.html)put_telephony_providers_edges_endpoint(endpoint_id, body)
+## [**Endpoint**](Endpoint.html) put_telephony_providers_edges_endpoint(endpoint_id, body)
 
 Update endpoint
 
@@ -5330,7 +5376,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_extension"></a>
 
-## [**Extension**](Extension.html)put_telephony_providers_edges_extension(extension_id, body)
+## [**Extension**](Extension.html) put_telephony_providers_edges_extension(extension_id, body)
 
 Update an extension by ID.
 
@@ -5377,7 +5423,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_extensionpool"></a>
 
-## [**ExtensionPool**](ExtensionPool.html)put_telephony_providers_edges_extensionpool(extension_pool_id, body)
+## [**ExtensionPool**](ExtensionPool.html) put_telephony_providers_edges_extensionpool(extension_pool_id, body)
 
 Update an extension pool by ID
 
@@ -5424,7 +5470,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_outboundroute"></a>
 
-## [**OutboundRoute**](OutboundRoute.html)put_telephony_providers_edges_outboundroute(outbound_route_id, body)
+## [**OutboundRoute**](OutboundRoute.html) put_telephony_providers_edges_outboundroute(outbound_route_id, body)
 
 Update outbound route
 
@@ -5471,7 +5517,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_phone"></a>
 
-## [**Phone**](Phone.html)put_telephony_providers_edges_phone(phone_id, body)
+## [**Phone**](Phone.html) put_telephony_providers_edges_phone(phone_id, body)
 
 Update a Phone by ID
 
@@ -5518,7 +5564,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_phonebasesetting"></a>
 
-## [**PhoneBase**](PhoneBase.html)put_telephony_providers_edges_phonebasesetting(phone_base_id, body)
+## [**PhoneBase**](PhoneBase.html) put_telephony_providers_edges_phonebasesetting(phone_base_id, body)
 
 Update a Phone Base Settings by ID
 
@@ -5565,7 +5611,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_site"></a>
 
-## [**Site**](Site.html)put_telephony_providers_edges_site(site_id, body)
+## [**Site**](Site.html) put_telephony_providers_edges_site(site_id, body)
 
 Update a Site by ID.
 
@@ -5612,7 +5658,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_site_numberplans"></a>
 
-## [**list[NumberPlan]**](NumberPlan.html)put_telephony_providers_edges_site_numberplans(site_id, body)
+## [**list[NumberPlan]**](NumberPlan.html) put_telephony_providers_edges_site_numberplans(site_id, body)
 
 Update the list of Number Plans.
 
@@ -5659,7 +5705,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_site_outboundroute"></a>
 
-## [**OutboundRouteBase**](OutboundRouteBase.html)put_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id, body)
+## [**OutboundRouteBase**](OutboundRouteBase.html) put_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id, body)
 
 Update outbound route
 
@@ -5708,7 +5754,7 @@ except ApiException as e:
 
 <a name="put_telephony_providers_edges_trunkbasesetting"></a>
 
-## [**TrunkBase**](TrunkBase.html)put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
+## [**TrunkBase**](TrunkBase.html) put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
 
 Update a Trunk Base Settings object by ID
 

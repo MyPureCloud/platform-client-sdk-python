@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="get_license_definition"></a>
 
-## [**LicenseDefinition**](LicenseDefinition.html)get_license_definition(license_id)
+## [**LicenseDefinition**](LicenseDefinition.html) get_license_definition(license_id)
 
 Get PureCloud license definition.
 
@@ -63,7 +63,7 @@ except ApiException as e:
 
 <a name="get_license_definitions"></a>
 
-## [**LicenseDefinitionListing**](LicenseDefinitionListing.html)get_license_definitions()
+## [**LicenseDefinitionListing**](LicenseDefinitionListing.html) get_license_definitions()
 
 Get all PureCloud license definitions available for the organization.
 
@@ -104,7 +104,7 @@ This endpoint does not need any parameter.
 
 <a name="get_license_organization"></a>
 
-## [**LicenseOrganization**](LicenseOrganization.html)get_license_organization()
+## [**LicenseOrganization**](LicenseOrganization.html) get_license_organization()
 
 Get license assignments for the organization.
 
@@ -145,7 +145,7 @@ This endpoint does not need any parameter.
 
 <a name="get_license_user"></a>
 
-## [**LicenseUser**](LicenseUser.html)get_license_user(user_id)
+## [**LicenseUser**](LicenseUser.html) get_license_user(user_id)
 
 Get licenses for specified user.
 
@@ -190,7 +190,7 @@ except ApiException as e:
 
 <a name="post_license_organization"></a>
 
-## [**LicenseUpdateResponse**](LicenseUpdateResponse.html)post_license_organization(body=body)
+## [**LicenseUpdateResponse**](LicenseUpdateResponse.html) post_license_organization(body=body)
 
 Update the organization's license assignments in a batch.
 
@@ -235,7 +235,7 @@ except ApiException as e:
 
 <a name="post_license_users"></a>
 
-## [**dict(str, object)**](dict.html)post_license_users(body=body)
+## [**dict(str, object)**](dict.html) post_license_users(body=body)
 
 Fetch user licenses in a batch.
 

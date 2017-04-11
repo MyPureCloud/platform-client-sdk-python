@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_station_associateduser"></a>
 
-## str**delete_station_associateduser(station_id)
+## str** delete_station_associateduser(station_id)
 
 Unassigns the user assigned to this station
 
@@ -60,7 +60,7 @@ except ApiException as e:
 
 <a name="get_station"></a>
 
-## [**Station**](Station.html)get_station(station_id)
+## [**Station**](Station.html) get_station(station_id)
 
 Get station.
 
@@ -105,7 +105,7 @@ except ApiException as e:
 
 <a name="get_stations"></a>
 
-## [**StationEntityListing**](StationEntityListing.html)get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, line_appearance_id=line_appearance_id)
+## [**StationEntityListing**](StationEntityListing.html) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, line_appearance_id=line_appearance_id)
 
 Get the list of available stations.
 

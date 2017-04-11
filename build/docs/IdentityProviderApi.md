@@ -40,7 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_identityproviders_adfs"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_adfs()
+## [**Empty**](Empty.html) delete_identityproviders_adfs()
 
 Delete ADFS Identity Provider
 
@@ -81,7 +81,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_cic"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_cic()
+## [**Empty**](Empty.html) delete_identityproviders_cic()
 
 Delete Customer Interaction Center (CIC) Identity Provider
 
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_gsuite"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_gsuite()
+## [**Empty**](Empty.html) delete_identityproviders_gsuite()
 
 Delete G Suite Identity Provider
 
@@ -163,7 +163,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_identitynow"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_identitynow()
+## [**Empty**](Empty.html) delete_identityproviders_identitynow()
 
 Delete IdentityNow Provider
 
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_okta"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_okta()
+## [**Empty**](Empty.html) delete_identityproviders_okta()
 
 Delete Okta Identity Provider
 
@@ -245,7 +245,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_onelogin"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_onelogin()
+## [**Empty**](Empty.html) delete_identityproviders_onelogin()
 
 Delete OneLogin Identity Provider
 
@@ -286,7 +286,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_ping"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_ping()
+## [**Empty**](Empty.html) delete_identityproviders_ping()
 
 Delete Ping Identity Provider
 
@@ -327,7 +327,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_purecloud"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_purecloud()
+## [**Empty**](Empty.html) delete_identityproviders_purecloud()
 
 Delete PureCloud Identity Provider
 
@@ -368,7 +368,7 @@ This endpoint does not need any parameter.
 
 <a name="delete_identityproviders_salesforce"></a>
 
-## [**Empty**](Empty.html)delete_identityproviders_salesforce()
+## [**Empty**](Empty.html) delete_identityproviders_salesforce()
 
 Delete Salesforce Identity Provider
 
@@ -409,7 +409,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders"></a>
 
-## [**OAuthProviderEntityListing**](OAuthProviderEntityListing.html)get_identityproviders()
+## [**OAuthProviderEntityListing**](OAuthProviderEntityListing.html) get_identityproviders()
 
 The list of identity providers
 
@@ -450,7 +450,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_adfs"></a>
 
-## [**ADFS**](ADFS.html)get_identityproviders_adfs()
+## [**ADFS**](ADFS.html) get_identityproviders_adfs()
 
 Get ADFS Identity Provider
 
@@ -491,7 +491,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_cic"></a>
 
-## [**CustomerInteractionCenter**](CustomerInteractionCenter.html)get_identityproviders_cic()
+## [**CustomerInteractionCenter**](CustomerInteractionCenter.html) get_identityproviders_cic()
 
 Get Customer Interaction Center (CIC) Identity Provider
 
@@ -532,7 +532,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_gsuite"></a>
 
-## [**GSuite**](GSuite.html)get_identityproviders_gsuite()
+## [**GSuite**](GSuite.html) get_identityproviders_gsuite()
 
 Get G Suite Identity Provider
 
@@ -573,7 +573,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_identitynow"></a>
 
-## [**IdentityNow**](IdentityNow.html)get_identityproviders_identitynow()
+## [**IdentityNow**](IdentityNow.html) get_identityproviders_identitynow()
 
 Get IdentityNow Provider
 
@@ -614,7 +614,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_okta"></a>
 
-## [**Okta**](Okta.html)get_identityproviders_okta()
+## [**Okta**](Okta.html) get_identityproviders_okta()
 
 Get Okta Identity Provider
 
@@ -655,7 +655,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_onelogin"></a>
 
-## [**OneLogin**](OneLogin.html)get_identityproviders_onelogin()
+## [**OneLogin**](OneLogin.html) get_identityproviders_onelogin()
 
 Get OneLogin Identity Provider
 
@@ -696,7 +696,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_ping"></a>
 
-## [**PingIdentity**](PingIdentity.html)get_identityproviders_ping()
+## [**PingIdentity**](PingIdentity.html) get_identityproviders_ping()
 
 Get Ping Identity Provider
 
@@ -737,7 +737,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_purecloud"></a>
 
-## [**PureCloud**](PureCloud.html)get_identityproviders_purecloud()
+## [**PureCloud**](PureCloud.html) get_identityproviders_purecloud()
 
 Get PureCloud Identity Provider
 
@@ -778,7 +778,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_salesforce"></a>
 
-## [**Salesforce**](Salesforce.html)get_identityproviders_salesforce()
+## [**Salesforce**](Salesforce.html) get_identityproviders_salesforce()
 
 Get Salesforce Identity Provider
 
@@ -819,7 +819,7 @@ This endpoint does not need any parameter.
 
 <a name="put_identityproviders_adfs"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_adfs(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_adfs(body)
 
 Update/Create ADFS Identity Provider
 
@@ -864,7 +864,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_cic"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_cic(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_cic(body)
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
@@ -909,7 +909,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_gsuite"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_gsuite(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_gsuite(body)
 
 Update/Create G Suite Identity Provider
 
@@ -954,7 +954,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_identitynow"></a>
 
-## [**IdentityNow**](IdentityNow.html)put_identityproviders_identitynow(body)
+## [**IdentityNow**](IdentityNow.html) put_identityproviders_identitynow(body)
 
 Update/Create IdentityNow Provider
 
@@ -999,7 +999,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_okta"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_okta(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_okta(body)
 
 Update/Create Okta Identity Provider
 
@@ -1044,7 +1044,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_onelogin"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_onelogin(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_onelogin(body)
 
 Update/Create OneLogin Identity Provider
 
@@ -1089,7 +1089,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_ping"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_ping(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_ping(body)
 
 Update/Create Ping Identity Provider
 
@@ -1134,7 +1134,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_purecloud"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_purecloud(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_purecloud(body)
 
 Update/Create PureCloud Identity Provider
 
@@ -1179,7 +1179,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_salesforce"></a>
 
-## [**OAuthProvider**](OAuthProvider.html)put_identityproviders_salesforce(body)
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_salesforce(body)
 
 Update/Create Salesforce Identity Provider
 

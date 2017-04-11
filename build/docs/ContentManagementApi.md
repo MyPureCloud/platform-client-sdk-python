@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_contentmanagement_document"></a>
 
-## delete_contentmanagement_document(document_id, override=override)
+##  delete_contentmanagement_document(document_id, override=override)
 
 Delete a document.
 
@@ -96,7 +96,7 @@ void (empty response body)
 
 <a name="delete_contentmanagement_share"></a>
 
-## delete_contentmanagement_share(share_id)
+##  delete_contentmanagement_share(share_id)
 
 Deletes an existing share.
 
@@ -140,7 +140,7 @@ void (empty response body)
 
 <a name="delete_contentmanagement_status_status_id"></a>
 
-## delete_contentmanagement_status_status_id(status_id)
+##  delete_contentmanagement_status_status_id(status_id)
 
 Cancel the command for this status
 
@@ -184,7 +184,7 @@ void (empty response body)
 
 <a name="delete_contentmanagement_workspace"></a>
 
-## delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
+##  delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
 
 Delete a workspace
 
@@ -230,7 +230,7 @@ void (empty response body)
 
 <a name="delete_contentmanagement_workspace_member"></a>
 
-## delete_contentmanagement_workspace_member(workspace_id, member_id)
+##  delete_contentmanagement_workspace_member(workspace_id, member_id)
 
 Delete a member from a workspace
 
@@ -276,7 +276,7 @@ void (empty response body)
 
 <a name="delete_contentmanagement_workspace_tagvalue"></a>
 
-## delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
+##  delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
 
 Delete workspace tag
 
@@ -322,7 +322,7 @@ void (empty response body)
 
 <a name="get_contentmanagement_document"></a>
 
-## [**Document**](Document.html)get_contentmanagement_document(document_id, expand=expand)
+## [**Document**](Document.html) get_contentmanagement_document(document_id, expand=expand)
 
 Get a document.
 
@@ -369,7 +369,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_document_audits"></a>
 
-## [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html)get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
+## [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html) get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
 
 Get a list of audits for a document.
 
@@ -426,7 +426,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_document_content"></a>
 
-## [**DownloadResponse**](DownloadResponse.html)get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
+## [**DownloadResponse**](DownloadResponse.html) get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
 
 Download a document.
 
@@ -475,7 +475,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_documents"></a>
 
-## [**DocumentEntityListing**](DocumentEntityListing.html)get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 Get a list of documents.
 
@@ -532,7 +532,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_query"></a>
 
-## [**QueryResults**](QueryResults.html)get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
+## [**QueryResults**](QueryResults.html) get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
 
 Query content
 
@@ -587,7 +587,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_securityprofile"></a>
 
-## [**SecurityProfile**](SecurityProfile.html)get_contentmanagement_securityprofile(security_profile_id)
+## [**SecurityProfile**](SecurityProfile.html) get_contentmanagement_securityprofile(security_profile_id)
 
 Get a Security Profile
 
@@ -632,7 +632,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_securityprofiles"></a>
 
-## [**SecurityProfileEntityListing**](SecurityProfileEntityListing.html)get_contentmanagement_securityprofiles()
+## [**SecurityProfileEntityListing**](SecurityProfileEntityListing.html) get_contentmanagement_securityprofiles()
 
 Get a List of Security Profiles
 
@@ -673,7 +673,7 @@ This endpoint does not need any parameter.
 
 <a name="get_contentmanagement_share"></a>
 
-## [**Share**](Share.html)get_contentmanagement_share(share_id, expand=expand)
+## [**Share**](Share.html) get_contentmanagement_share(share_id, expand=expand)
 
 Retrieve details about an existing share.
 
@@ -720,7 +720,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_shared_shared_id"></a>
 
-## [**SharedResponse**](SharedResponse.html)get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
+## [**SharedResponse**](SharedResponse.html) get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
 
 Get shared documents. Securely download a shared document.
 
@@ -773,7 +773,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_shares"></a>
 
-## [**ShareEntityListing**](ShareEntityListing.html)get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
+## [**ShareEntityListing**](ShareEntityListing.html) get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
 
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 
@@ -824,7 +824,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_status"></a>
 
-## [**CommandStatusEntityListing**](CommandStatusEntityListing.html)get_contentmanagement_status(page_size=page_size, page_number=page_number)
+## [**CommandStatusEntityListing**](CommandStatusEntityListing.html) get_contentmanagement_status(page_size=page_size, page_number=page_number)
 
 Get a list of statuses for pending operations
 
@@ -871,7 +871,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_status_status_id"></a>
 
-## [**CommandStatus**](CommandStatus.html)get_contentmanagement_status_status_id(status_id)
+## [**CommandStatus**](CommandStatus.html) get_contentmanagement_status_status_id(status_id)
 
 Get a status.
 
@@ -916,7 +916,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_usage"></a>
 
-## [**Usage**](Usage.html)get_contentmanagement_usage()
+## [**Usage**](Usage.html) get_contentmanagement_usage()
 
 Get usage details.
 
@@ -957,7 +957,7 @@ This endpoint does not need any parameter.
 
 <a name="get_contentmanagement_workspace"></a>
 
-## [**Workspace**](Workspace.html)get_contentmanagement_workspace(workspace_id, expand=expand)
+## [**Workspace**](Workspace.html) get_contentmanagement_workspace(workspace_id, expand=expand)
 
 Get a workspace.
 
@@ -1004,7 +1004,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspace_documents"></a>
 
-## [**DocumentEntityListing**](DocumentEntityListing.html)get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 Get a list of documents.
 
@@ -1059,7 +1059,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspace_member"></a>
 
-## [**WorkspaceMember**](WorkspaceMember.html)get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
+## [**WorkspaceMember**](WorkspaceMember.html) get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
 
 Get a workspace member
 
@@ -1108,7 +1108,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspace_members"></a>
 
-## [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html)get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
+## [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html) get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
 
 Get a list workspace members
 
@@ -1159,7 +1159,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspace_tagvalue"></a>
 
-## [**TagValue**](TagValue.html)get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
+## [**TagValue**](TagValue.html) get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
 
 Get a workspace tag
 
@@ -1208,7 +1208,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspace_tagvalues"></a>
 
-## [**TagValueEntityListing**](TagValueEntityListing.html)get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
+## [**TagValueEntityListing**](TagValueEntityListing.html) get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
 
 Get a list of workspace tags
 
@@ -1261,7 +1261,7 @@ except ApiException as e:
 
 <a name="get_contentmanagement_workspaces"></a>
 
-## [**WorkspaceEntityListing**](WorkspaceEntityListing.html)get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
+## [**WorkspaceEntityListing**](WorkspaceEntityListing.html) get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
 
 Get a list of workspaces.
 
@@ -1312,7 +1312,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_auditquery"></a>
 
-## [**QueryResults**](QueryResults.html)post_contentmanagement_auditquery(body)
+## [**QueryResults**](QueryResults.html) post_contentmanagement_auditquery(body)
 
 Query audits
 
@@ -1357,7 +1357,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_document"></a>
 
-## [**Document**](Document.html)post_contentmanagement_document(document_id, body, expand=expand, override=override)
+## [**Document**](Document.html) post_contentmanagement_document(document_id, body, expand=expand, override=override)
 
 Update a document.
 
@@ -1408,7 +1408,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_document_content"></a>
 
-## [**ReplaceResponse**](ReplaceResponse.html)post_contentmanagement_document_content(document_id, body, override=override)
+## [**ReplaceResponse**](ReplaceResponse.html) post_contentmanagement_document_content(document_id, body, override=override)
 
 Replace the contents of a document.
 
@@ -1457,7 +1457,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_documents"></a>
 
-## [**Document**](Document.html)post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
+## [**Document**](Document.html) post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
 
 Add a document.
 
@@ -1508,7 +1508,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_query"></a>
 
-## [**QueryResults**](QueryResults.html)post_contentmanagement_query(body, expand=expand)
+## [**QueryResults**](QueryResults.html) post_contentmanagement_query(body, expand=expand)
 
 Query content
 
@@ -1555,7 +1555,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_shares"></a>
 
-## [**CreateShareResponse**](CreateShareResponse.html)post_contentmanagement_shares(body)
+## [**CreateShareResponse**](CreateShareResponse.html) post_contentmanagement_shares(body)
 
 Creates a new share or updates an existing share if the entity has already been shared
 
@@ -1600,7 +1600,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_workspace_tagvalues"></a>
 
-## [**TagValue**](TagValue.html)post_contentmanagement_workspace_tagvalues(workspace_id, body)
+## [**TagValue**](TagValue.html) post_contentmanagement_workspace_tagvalues(workspace_id, body)
 
 Create a workspace tag
 
@@ -1647,7 +1647,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_workspace_tagvalues_query"></a>
 
-## [**TagValueEntityListing**](TagValueEntityListing.html)post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
+## [**TagValueEntityListing**](TagValueEntityListing.html) post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
 
 Perform a prefix query on tags in the workspace
 
@@ -1696,7 +1696,7 @@ except ApiException as e:
 
 <a name="post_contentmanagement_workspaces"></a>
 
-## [**Workspace**](Workspace.html)post_contentmanagement_workspaces(body)
+## [**Workspace**](Workspace.html) post_contentmanagement_workspaces(body)
 
 Create a group workspace
 
@@ -1741,7 +1741,7 @@ except ApiException as e:
 
 <a name="put_contentmanagement_workspace"></a>
 
-## [**Workspace**](Workspace.html)put_contentmanagement_workspace(workspace_id, body)
+## [**Workspace**](Workspace.html) put_contentmanagement_workspace(workspace_id, body)
 
 Update a workspace
 
@@ -1788,7 +1788,7 @@ except ApiException as e:
 
 <a name="put_contentmanagement_workspace_member"></a>
 
-## [**WorkspaceMember**](WorkspaceMember.html)put_contentmanagement_workspace_member(workspace_id, member_id, body)
+## [**WorkspaceMember**](WorkspaceMember.html) put_contentmanagement_workspace_member(workspace_id, member_id, body)
 
 Add a member to a workspace
 
@@ -1837,7 +1837,7 @@ except ApiException as e:
 
 <a name="put_contentmanagement_workspace_tagvalue"></a>
 
-## [**TagValue**](TagValue.html)put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
+## [**TagValue**](TagValue.html) put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
 
 Update a workspace tag. Will update all documents with the new tag value.
 

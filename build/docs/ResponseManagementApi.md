@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_responsemanagement_library"></a>
 
-## delete_responsemanagement_library(library_id)
+##  delete_responsemanagement_library(library_id)
 
 Delete an existing response library.
 
@@ -67,7 +67,7 @@ void (empty response body)
 
 <a name="delete_responsemanagement_response"></a>
 
-## delete_responsemanagement_response(response_id)
+##  delete_responsemanagement_response(response_id)
 
 Delete an existing response.
 
@@ -111,7 +111,7 @@ void (empty response body)
 
 <a name="get_responsemanagement_libraries"></a>
 
-## [**LibraryEntityListing**](LibraryEntityListing.html)get_responsemanagement_libraries(page_number=page_number, page_size=page_size)
+## [**LibraryEntityListing**](LibraryEntityListing.html) get_responsemanagement_libraries(page_number=page_number, page_size=page_size)
 
 Gets a list of existing response libraries.
 
@@ -158,7 +158,7 @@ except ApiException as e:
 
 <a name="get_responsemanagement_library"></a>
 
-## [**Library**](Library.html)get_responsemanagement_library(library_id)
+## [**Library**](Library.html) get_responsemanagement_library(library_id)
 
 Get details about an existing response library.
 
@@ -203,7 +203,7 @@ except ApiException as e:
 
 <a name="get_responsemanagement_response"></a>
 
-## [**Response**](Response.html)get_responsemanagement_response(response_id, expand=expand)
+## [**Response**](Response.html) get_responsemanagement_response(response_id, expand=expand)
 
 Get details about an existing response.
 
@@ -250,7 +250,7 @@ except ApiException as e:
 
 <a name="get_responsemanagement_responses"></a>
 
-## [**ResponseEntityListing**](ResponseEntityListing.html)get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
+## [**ResponseEntityListing**](ResponseEntityListing.html) get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
 
 Gets a list of existing responses.
 
@@ -301,7 +301,7 @@ except ApiException as e:
 
 <a name="post_responsemanagement_libraries"></a>
 
-## [**Library**](Library.html)post_responsemanagement_libraries(body)
+## [**Library**](Library.html) post_responsemanagement_libraries(body)
 
 Create a response library.
 
@@ -346,7 +346,7 @@ except ApiException as e:
 
 <a name="post_responsemanagement_responses"></a>
 
-## [**Response**](Response.html)post_responsemanagement_responses(body, expand=expand)
+## [**Response**](Response.html) post_responsemanagement_responses(body, expand=expand)
 
 Create a response.
 
@@ -393,7 +393,7 @@ except ApiException as e:
 
 <a name="post_responsemanagement_responses_query"></a>
 
-## [**ResponseQueryResults**](ResponseQueryResults.html)post_responsemanagement_responses_query(body)
+## [**ResponseQueryResults**](ResponseQueryResults.html) post_responsemanagement_responses_query(body)
 
 Query responses
 
@@ -438,7 +438,7 @@ except ApiException as e:
 
 <a name="put_responsemanagement_library"></a>
 
-## [**Library**](Library.html)put_responsemanagement_library(library_id, body)
+## [**Library**](Library.html) put_responsemanagement_library(library_id, body)
 
 Update an existing response library.
 
@@ -485,7 +485,7 @@ except ApiException as e:
 
 <a name="put_responsemanagement_response"></a>
 
-## [**Response**](Response.html)put_responsemanagement_response(response_id, body, expand=expand)
+## [**Response**](Response.html) put_responsemanagement_response(response_id, body, expand=expand)
 
 Update an existing response.
 

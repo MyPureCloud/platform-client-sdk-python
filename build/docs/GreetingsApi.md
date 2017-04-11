@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_greeting"></a>
 
-## delete_greeting(greeting_id)
+##  delete_greeting(greeting_id)
 
 Deletes a Greeting with the given GreetingId
 
@@ -72,7 +72,7 @@ void (empty response body)
 
 <a name="get_greeting"></a>
 
-## [**Greeting**](Greeting.html)get_greeting(greeting_id)
+## [**Greeting**](Greeting.html) get_greeting(greeting_id)
 
 Get a Greeting with the given GreetingId
 
@@ -117,7 +117,7 @@ except ApiException as e:
 
 <a name="get_greeting_media"></a>
 
-## [**GreetingMediaInfo**](GreetingMediaInfo.html)get_greeting_media(greeting_id, format_id=format_id)
+## [**GreetingMediaInfo**](GreetingMediaInfo.html) get_greeting_media(greeting_id, format_id=format_id)
 
 Get media playback URI for this greeting
 
@@ -164,7 +164,7 @@ except ApiException as e:
 
 <a name="get_greetings"></a>
 
-## [**DomainEntityListing**](DomainEntityListing.html)get_greetings(page_size=page_size, page_number=page_number)
+## [**DomainEntityListing**](DomainEntityListing.html) get_greetings(page_size=page_size, page_number=page_number)
 
 Gets an Organization's Greetings
 
@@ -211,7 +211,7 @@ except ApiException as e:
 
 <a name="get_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)get_greetings_defaults()
+## [**DefaultGreetingList**](DefaultGreetingList.html) get_greetings_defaults()
 
 Get an Organization's DefaultGreetingList
 
@@ -252,7 +252,7 @@ This endpoint does not need any parameter.
 
 <a name="get_group_greetings"></a>
 
-## [**GreetingListing**](GreetingListing.html)get_group_greetings(group_id, page_size=page_size, page_number=page_number)
+## [**GreetingListing**](GreetingListing.html) get_group_greetings(group_id, page_size=page_size, page_number=page_number)
 
 Get a list of the Group's Greetings
 
@@ -301,7 +301,7 @@ except ApiException as e:
 
 <a name="get_group_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)get_group_greetings_defaults(group_id)
+## [**DefaultGreetingList**](DefaultGreetingList.html) get_group_greetings_defaults(group_id)
 
 Grabs the list of Default Greetings given a Group's ID
 
@@ -346,7 +346,7 @@ except ApiException as e:
 
 <a name="get_user_greetings"></a>
 
-## [**DomainEntityListing**](DomainEntityListing.html)get_user_greetings(user_id, page_size=page_size, page_number=page_number)
+## [**DomainEntityListing**](DomainEntityListing.html) get_user_greetings(user_id, page_size=page_size, page_number=page_number)
 
 Get a list of the User's Greetings
 
@@ -395,7 +395,7 @@ except ApiException as e:
 
 <a name="get_user_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)get_user_greetings_defaults(user_id)
+## [**DefaultGreetingList**](DefaultGreetingList.html) get_user_greetings_defaults(user_id)
 
 Grabs the list of Default Greetings given a User's ID
 
@@ -440,7 +440,7 @@ except ApiException as e:
 
 <a name="post_greetings"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)post_greetings(body)
+## [**DefaultGreetingList**](DefaultGreetingList.html) post_greetings(body)
 
 Create a Greeting for an Organization
 
@@ -485,7 +485,7 @@ except ApiException as e:
 
 <a name="post_group_greetings"></a>
 
-## [**Greeting**](Greeting.html)post_group_greetings(group_id, body)
+## [**Greeting**](Greeting.html) post_group_greetings(group_id, body)
 
 Creates a Greeting for a Group
 
@@ -532,7 +532,7 @@ except ApiException as e:
 
 <a name="post_user_greetings"></a>
 
-## [**Greeting**](Greeting.html)post_user_greetings(user_id, body)
+## [**Greeting**](Greeting.html) post_user_greetings(user_id, body)
 
 Creates a Greeting for a User
 
@@ -579,7 +579,7 @@ except ApiException as e:
 
 <a name="put_greeting"></a>
 
-## [**Greeting**](Greeting.html)put_greeting(greeting_id, body)
+## [**Greeting**](Greeting.html) put_greeting(greeting_id, body)
 
 Updates the Greeting with the given GreetingId
 
@@ -626,7 +626,7 @@ except ApiException as e:
 
 <a name="put_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)put_greetings_defaults(body)
+## [**DefaultGreetingList**](DefaultGreetingList.html) put_greetings_defaults(body)
 
 Update an Organization's DefaultGreetingList
 
@@ -671,7 +671,7 @@ except ApiException as e:
 
 <a name="put_group_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)put_group_greetings_defaults(group_id, body)
+## [**DefaultGreetingList**](DefaultGreetingList.html) put_group_greetings_defaults(group_id, body)
 
 Updates the DefaultGreetingList of the specified Group
 
@@ -718,7 +718,7 @@ except ApiException as e:
 
 <a name="put_user_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html)put_user_greetings_defaults(user_id, body)
+## [**DefaultGreetingList**](DefaultGreetingList.html) put_user_greetings_defaults(user_id, body)
 
 Updates the DefaultGreetingList of the specified User
 

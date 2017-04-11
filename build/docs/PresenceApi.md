@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_presencedefinition"></a>
 
-## delete_presencedefinition(presence_id)
+##  delete_presencedefinition(presence_id)
 
 Delete a Presence Definition
 
@@ -64,7 +64,7 @@ void (empty response body)
 
 <a name="get_presencedefinition"></a>
 
-## [**OrganizationPresence**](OrganizationPresence.html)get_presencedefinition(presence_id, locale_code=locale_code)
+## [**OrganizationPresence**](OrganizationPresence.html) get_presencedefinition(presence_id, locale_code=locale_code)
 
 Get a Presence Definition
 
@@ -111,7 +111,7 @@ except ApiException as e:
 
 <a name="get_presencedefinitions"></a>
 
-## [**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html)get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
+## [**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html) get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
 
 Get an Organization's list of Presence Definitions
 
@@ -162,7 +162,7 @@ except ApiException as e:
 
 <a name="get_systempresences"></a>
 
-## [**list[SystemPresence]**](SystemPresence.html)get_systempresences()
+## [**list[SystemPresence]**](SystemPresence.html) get_systempresences()
 
 Get the list of SystemPresences
 
@@ -203,7 +203,7 @@ This endpoint does not need any parameter.
 
 <a name="get_user_presence"></a>
 
-## [**UserPresence**](UserPresence.html)get_user_presence(user_id, source_id)
+## [**UserPresence**](UserPresence.html) get_user_presence(user_id, source_id)
 
 Get a user's Presence
 
@@ -250,7 +250,7 @@ except ApiException as e:
 
 <a name="patch_user_presence"></a>
 
-## [**UserPresence**](UserPresence.html)patch_user_presence(user_id, source_id, body)
+## [**UserPresence**](UserPresence.html) patch_user_presence(user_id, source_id, body)
 
 Patch a user's Presence
 
@@ -299,7 +299,7 @@ except ApiException as e:
 
 <a name="post_presencedefinitions"></a>
 
-## [**OrganizationPresence**](OrganizationPresence.html)post_presencedefinitions(body)
+## [**OrganizationPresence**](OrganizationPresence.html) post_presencedefinitions(body)
 
 Create a Presence Definition
 
@@ -344,7 +344,7 @@ except ApiException as e:
 
 <a name="put_presencedefinition"></a>
 
-## [**OrganizationPresence**](OrganizationPresence.html)put_presencedefinition(presence_id, body)
+## [**OrganizationPresence**](OrganizationPresence.html) put_presencedefinition(presence_id, body)
 
 Update a Presence Definition
 
