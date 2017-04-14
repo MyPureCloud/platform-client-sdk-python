@@ -41,20 +41,23 @@ class UserPresenceNotification(object):
             'source': 'str',
             'presence_definition': 'UserPresenceNotificationPresenceDefinition',
             'primary': 'bool',
-            'message': 'str'
+            'message': 'str',
+            'modified_date': 'datetime'
         }
 
         self.attribute_map = {
             'source': 'source',
             'presence_definition': 'presenceDefinition',
             'primary': 'primary',
-            'message': 'message'
+            'message': 'message',
+            'modified_date': 'modifiedDate'
         }
 
         self._source = None
         self._presence_definition = None
         self._primary = None
         self._message = None
+        self._modified_date = None
 
     @property
     def source(self):
@@ -147,6 +150,29 @@ class UserPresenceNotification(object):
         """
         
         self._message = message
+
+    @property
+    def modified_date(self):
+        """
+        Gets the modified_date of this UserPresenceNotification.
+
+
+        :return: The modified_date of this UserPresenceNotification.
+        :rtype: datetime
+        """
+        return self._modified_date
+
+    @modified_date.setter
+    def modified_date(self, modified_date):
+        """
+        Sets the modified_date of this UserPresenceNotification.
+
+
+        :param modified_date: The modified_date of this UserPresenceNotification.
+        :type: datetime
+        """
+        
+        self._modified_date = modified_date
 
     def to_dict(self):
         """

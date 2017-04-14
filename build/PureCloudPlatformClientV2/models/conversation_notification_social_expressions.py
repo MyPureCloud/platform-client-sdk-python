@@ -47,6 +47,7 @@ class ConversationNotificationSocialExpressions(object):
             'recording_id': 'str',
             'held': 'bool',
             'provider': 'str',
+            'script_id': 'str',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'connected_time': 'datetime',
@@ -64,6 +65,7 @@ class ConversationNotificationSocialExpressions(object):
             'recording_id': 'recordingId',
             'held': 'held',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
             'connected_time': 'connectedTime',
@@ -80,6 +82,7 @@ class ConversationNotificationSocialExpressions(object):
         self._recording_id = None
         self._held = None
         self._provider = None
+        self._script_id = None
         self._disconnect_type = None
         self._start_hold_time = None
         self._connected_time = None
@@ -296,6 +299,29 @@ class ConversationNotificationSocialExpressions(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationSocialExpressions.
+
+
+        :return: The script_id of this ConversationNotificationSocialExpressions.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationSocialExpressions.
+
+
+        :param script_id: The script_id of this ConversationNotificationSocialExpressions.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def disconnect_type(self):

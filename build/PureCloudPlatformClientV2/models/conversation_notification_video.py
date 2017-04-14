@@ -46,6 +46,7 @@ class ConversationNotificationVideo(object):
             'video_muted': 'bool',
             'sharing_screen': 'bool',
             'provider': 'str',
+            'script_id': 'str',
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -61,6 +62,7 @@ class ConversationNotificationVideo(object):
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
@@ -75,6 +77,7 @@ class ConversationNotificationVideo(object):
         self._video_muted = None
         self._sharing_screen = None
         self._provider = None
+        self._script_id = None
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
@@ -267,6 +270,29 @@ class ConversationNotificationVideo(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationVideo.
+
+
+        :return: The script_id of this ConversationNotificationVideo.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationVideo.
+
+
+        :param script_id: The script_id of this ConversationNotificationVideo.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def disconnect_type(self):

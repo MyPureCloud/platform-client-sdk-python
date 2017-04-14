@@ -17,6 +17,7 @@ title: ConversationNotificationCobrowse
 | **controlling** | **list[str]** |  | [optional] |
 | **viewer_url** | **str** |  | [optional] |
 | **provider** | **str** |  | [optional] |
+| **script_id** | **str** |  | [optional] |
 | **provider_event_time** | **datetime** |  | [optional] |
 | **connected_time** | **datetime** |  | [optional] |
 | **disconnected_time** | **datetime** |  | [optional] |

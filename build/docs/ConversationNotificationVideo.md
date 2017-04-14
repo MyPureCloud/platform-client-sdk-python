@@ -15,6 +15,7 @@ title: ConversationNotificationVideo
 | **video_muted** | **bool** |  | [optional] |
 | **sharing_screen** | **bool** |  | [optional] |
 | **provider** | **str** |  | [optional] |
+| **script_id** | **str** |  | [optional] |
 | **disconnect_type** | **str** |  | [optional] |
 | **connected_time** | **datetime** |  | [optional] |
 | **disconnected_time** | **datetime** |  | [optional] |

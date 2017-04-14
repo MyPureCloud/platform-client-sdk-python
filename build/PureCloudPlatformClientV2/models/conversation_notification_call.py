@@ -53,6 +53,7 @@ class ConversationNotificationCall(object):
             'pcSelf': 'ConversationNotificationSelf',
             'other': 'ConversationNotificationAddress',
             'provider': 'str',
+            'script_id': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'disconnect_reasons': 'list[ConversationNotificationDisconnectReasons]',
@@ -76,6 +77,7 @@ class ConversationNotificationCall(object):
             'pcSelf': 'self',
             'other': 'other',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'disconnect_reasons': 'disconnectReasons',
@@ -98,6 +100,7 @@ class ConversationNotificationCall(object):
         self._pcSelf = None
         self._other = None
         self._provider = None
+        self._script_id = None
         self._connected_time = None
         self._disconnected_time = None
         self._disconnect_reasons = None
@@ -464,6 +467,29 @@ class ConversationNotificationCall(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationCall.
+
+
+        :return: The script_id of this ConversationNotificationCall.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationCall.
+
+
+        :param script_id: The script_id of this ConversationNotificationCall.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def connected_time(self):

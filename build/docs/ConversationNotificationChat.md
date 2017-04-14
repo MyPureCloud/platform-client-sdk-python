@@ -10,6 +10,7 @@ title: ConversationNotificationChat
 | **state** | **str** |  | [optional] |
 | **id** | **str** |  | [optional] |
 | **provider** | **str** |  | [optional] |
+| **script_id** | **str** |  | [optional] |
 | **room_id** | **str** |  | [optional] |
 | **held** | **bool** |  | [optional] |
 | **disconnect_type** | **str** |  | [optional] |

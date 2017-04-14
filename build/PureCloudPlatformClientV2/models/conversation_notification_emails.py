@@ -43,6 +43,7 @@ class ConversationNotificationEmails(object):
             'held': 'bool',
             'subject': 'str',
             'provider': 'str',
+            'script_id': 'str',
             'messages_sent': 'int',
             'error_info': 'ConversationNotificationErrorDetails',
             'disconnect_type': 'str',
@@ -58,6 +59,7 @@ class ConversationNotificationEmails(object):
             'held': 'held',
             'subject': 'subject',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'messages_sent': 'messagesSent',
             'error_info': 'errorInfo',
             'disconnect_type': 'disconnectType',
@@ -72,6 +74,7 @@ class ConversationNotificationEmails(object):
         self._held = None
         self._subject = None
         self._provider = None
+        self._script_id = None
         self._messages_sent = None
         self._error_info = None
         self._disconnect_type = None
@@ -198,6 +201,29 @@ class ConversationNotificationEmails(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationEmails.
+
+
+        :return: The script_id of this ConversationNotificationEmails.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationEmails.
+
+
+        :param script_id: The script_id of this ConversationNotificationEmails.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def messages_sent(self):

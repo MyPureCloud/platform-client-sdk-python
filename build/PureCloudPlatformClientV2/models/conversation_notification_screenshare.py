@@ -44,6 +44,7 @@ class ConversationNotificationScreenshare(object):
             'context': 'str',
             'sharing': 'bool',
             'provider': 'str',
+            'script_id': 'str',
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -57,6 +58,7 @@ class ConversationNotificationScreenshare(object):
             'context': 'context',
             'sharing': 'sharing',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
@@ -69,6 +71,7 @@ class ConversationNotificationScreenshare(object):
         self._context = None
         self._sharing = None
         self._provider = None
+        self._script_id = None
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
@@ -215,6 +218,29 @@ class ConversationNotificationScreenshare(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationScreenshare.
+
+
+        :return: The script_id of this ConversationNotificationScreenshare.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationScreenshare.
+
+
+        :param script_id: The script_id of this ConversationNotificationScreenshare.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def disconnect_type(self):

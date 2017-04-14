@@ -41,6 +41,7 @@ class ConversationNotificationChat(object):
             'state': 'str',
             'id': 'str',
             'provider': 'str',
+            'script_id': 'str',
             'room_id': 'str',
             'held': 'bool',
             'disconnect_type': 'str',
@@ -54,6 +55,7 @@ class ConversationNotificationChat(object):
             'state': 'state',
             'id': 'id',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'room_id': 'roomId',
             'held': 'held',
             'disconnect_type': 'disconnectType',
@@ -66,6 +68,7 @@ class ConversationNotificationChat(object):
         self._state = None
         self._id = None
         self._provider = None
+        self._script_id = None
         self._room_id = None
         self._held = None
         self._disconnect_type = None
@@ -146,6 +149,29 @@ class ConversationNotificationChat(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationNotificationChat.
+
+
+        :return: The script_id of this ConversationNotificationChat.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationNotificationChat.
+
+
+        :param script_id: The script_id of this ConversationNotificationChat.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def room_id(self):
