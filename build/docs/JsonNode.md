@@ -14,7 +14,11 @@ title: JsonNode
 | **boolean** | **bool** |  | [optional] |
 | **number** | **bool** |  | [optional] |
 | **object** | **bool** |  | [optional] |
+| **value_node** | **bool** |  | [optional] |
+| **container_node** | **bool** |  | [optional] |
+| **missing_node** | **bool** |  | [optional] |
 | **integral_number** | **bool** |  | [optional] |
+| **floating_point_number** | **bool** |  | [optional] |
 | **short** | **bool** |  | [optional] |
 | **int** | **bool** |  | [optional] |
 | **long** | **bool** |  | [optional] |
@@ -24,10 +28,6 @@ title: JsonNode
 | **textual** | **bool** |  | [optional] |
 | **binary** | **bool** |  | [optional] |
 | **pojo** | **bool** |  | [optional] |
-| **floating_point_number** | **bool** |  | [optional] |
-| **value_node** | **bool** |  | [optional] |
-| **container_node** | **bool** |  | [optional] |
-| **missing_node** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 
