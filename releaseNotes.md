@@ -1,5 +1,5 @@
 
-# SDK changes
+# SDK Changes
 
 * Documentation updates
 

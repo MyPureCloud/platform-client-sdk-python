@@ -42,11 +42,11 @@ class LineEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'self_uri': 'str',
             'first_uri': 'str',
+            'self_uri': 'str',
+            'last_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
-            'last_uri': 'str',
             'page_count': 'int'
         }
 
@@ -55,11 +55,11 @@ class LineEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'self_uri': 'selfUri',
             'first_uri': 'firstUri',
+            'self_uri': 'selfUri',
+            'last_uri': 'lastUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
-            'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
 
@@ -67,11 +67,11 @@ class LineEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._self_uri = None
         self._first_uri = None
+        self._self_uri = None
+        self._last_uri = None
         self._previous_uri = None
         self._next_uri = None
-        self._last_uri = None
         self._page_count = None
 
     @property
@@ -167,6 +167,29 @@ class LineEntityListing(object):
         self._total = total
 
     @property
+    def first_uri(self):
+        """
+        Gets the first_uri of this LineEntityListing.
+
+
+        :return: The first_uri of this LineEntityListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri):
+        """
+        Sets the first_uri of this LineEntityListing.
+
+
+        :param first_uri: The first_uri of this LineEntityListing.
+        :type: str
+        """
+        
+        self._first_uri = first_uri
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this LineEntityListing.
@@ -190,27 +213,27 @@ class LineEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def first_uri(self):
+    def last_uri(self):
         """
-        Gets the first_uri of this LineEntityListing.
+        Gets the last_uri of this LineEntityListing.
 
 
-        :return: The first_uri of this LineEntityListing.
+        :return: The last_uri of this LineEntityListing.
         :rtype: str
         """
-        return self._first_uri
+        return self._last_uri
 
-    @first_uri.setter
-    def first_uri(self, first_uri):
+    @last_uri.setter
+    def last_uri(self, last_uri):
         """
-        Sets the first_uri of this LineEntityListing.
+        Sets the last_uri of this LineEntityListing.
 
 
-        :param first_uri: The first_uri of this LineEntityListing.
+        :param last_uri: The last_uri of this LineEntityListing.
         :type: str
         """
         
-        self._first_uri = first_uri
+        self._last_uri = last_uri
 
     @property
     def previous_uri(self):
@@ -257,29 +280,6 @@ class LineEntityListing(object):
         """
         
         self._next_uri = next_uri
-
-    @property
-    def last_uri(self):
-        """
-        Gets the last_uri of this LineEntityListing.
-
-
-        :return: The last_uri of this LineEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri):
-        """
-        Sets the last_uri of this LineEntityListing.
-
-
-        :param last_uri: The last_uri of this LineEntityListing.
-        :type: str
-        """
-        
-        self._last_uri = last_uri
 
     @property
     def page_count(self):
