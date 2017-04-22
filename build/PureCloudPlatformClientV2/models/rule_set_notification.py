@@ -43,7 +43,7 @@ class RuleSetNotification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'DocumentDataV2NotificationCreatedBy',
+            'contact_list': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'RuleSetNotificationUriReference',
             'rules': 'list[RuleSetNotificationRules]',
             'additional_properties': 'object'
@@ -193,7 +193,7 @@ class RuleSetNotification(object):
 
 
         :return: The contact_list of this RuleSetNotification.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._contact_list
 
@@ -204,7 +204,7 @@ class RuleSetNotification(object):
 
 
         :param contact_list: The contact_list of this RuleSetNotification.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._contact_list = contact_list

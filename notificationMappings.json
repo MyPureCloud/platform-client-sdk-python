@@ -1,12 +1,36 @@
 {
   "notifications": [
     {
+      "topic": "v2.architect.dependencytracking.build",
+      "class": "DependencyTrackingBuildNotificationNotification"
+    },
+    {
+      "topic": "v2.architect.flows.{id}.generation.{id}",
+      "class": "PublishFlowNotificationNotification"
+    },
+    {
+      "topic": "v2.architect.prompts.{id}",
+      "class": "PromptNotificationNotification"
+    },
+    {
+      "topic": "v2.architect.prompts.{id}.resources.{id}",
+      "class": "PromptResourceNotificationNotification"
+    },
+    {
+      "topic": "v2.architect.systemprompts.{id}.resources.{id}",
+      "class": "SystemPromptResourceNotificationNotification"
+    },
+    {
       "topic": "v2.contentmanagement.documents.{id}",
       "class": "DocumentDataV2Notification"
     },
     {
       "topic": "v2.contentmanagement.workspaces.{id}.documents",
       "class": "DocumentDataV2Notification"
+    },
+    {
+      "topic": "v2.flows.{id}",
+      "class": "FlowNotificationNotification"
     },
     {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",
@@ -31,6 +55,10 @@
     {
       "topic": "v2.outbound.campaigns.{id}.progress",
       "class": "CampaignProgressNotification"
+    },
+    {
+      "topic": "v2.outbound.contactlistfilters.{id}",
+      "class": "ContactListFilterNotification"
     },
     {
       "topic": "v2.outbound.contactlists.{id}",

@@ -18,7 +18,7 @@ title: ContactListNotification
 | **preview_mode_column_name** | **str** |  | [optional] |
 | **preview_mode_accepted_values** | **list[str]** |  | [optional] |
 | **size** | **int** |  | [optional] |
-| **attempt_limits** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
+| **attempt_limits** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

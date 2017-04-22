@@ -137,7 +137,7 @@ void (empty response body)
 
 <a name="delete_conversations_call_participant_consult"></a>
 
-## str** delete_conversations_call_participant_consult(conversation_id, participant_id)
+##  delete_conversations_call_participant_consult(conversation_id, participant_id)
 
 Cancel the transfer
 
@@ -163,8 +163,7 @@ participant_id = 'participant_id_example' # str | participantId
 
 try:
     # Cancel the transfer
-    api_response = api_instance.delete_conversations_call_participant_consult(conversation_id, participant_id)
-    pprint(api_response)
+    api_instance.delete_conversations_call_participant_consult(conversation_id, participant_id)
 except ApiException as e:
     print "Exception when calling ConversationsApi->delete_conversations_call_participant_consult: %s\n" % e
 ~~~
@@ -180,11 +179,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_conversations_email_messages_draft_attachment"></a>
 
-## str** delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
+##  delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 
 Delete attachment from draft
 
@@ -210,8 +209,7 @@ attachment_id = 'attachment_id_example' # str | attachmentId
 
 try:
     # Delete attachment from draft
-    api_response = api_instance.delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
-    pprint(api_response)
+    api_instance.delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 except ApiException as e:
     print "Exception when calling ConversationsApi->delete_conversations_email_messages_draft_attachment: %s\n" % e
 ~~~
@@ -227,7 +225,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_analytics_conversation_details"></a>
 

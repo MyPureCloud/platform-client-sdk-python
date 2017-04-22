@@ -45,7 +45,7 @@ class CampaignScheduleNotification(object):
             'version': 'int',
             'intervals': 'list[CampaignScheduleNotificationIntervals]',
             'time_zone': 'str',
-            'campaign': 'DocumentDataV2NotificationCreatedBy',
+            'campaign': 'DependencyTrackingBuildNotificationNotificationUser',
             'additional_properties': 'object'
         }
 
@@ -239,7 +239,7 @@ class CampaignScheduleNotification(object):
 
 
         :return: The campaign of this CampaignScheduleNotification.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._campaign
 
@@ -250,7 +250,7 @@ class CampaignScheduleNotification(object):
 
 
         :param campaign: The campaign of this CampaignScheduleNotification.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._campaign = campaign

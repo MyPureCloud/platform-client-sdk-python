@@ -139,7 +139,7 @@ except ApiException as e:
 
 <a name="delete_quality_form"></a>
 
-## str** delete_quality_form(form_id)
+##  delete_quality_form(form_id)
 
 Delete an evaluation form.
 
@@ -164,8 +164,7 @@ form_id = 'form_id_example' # str | Form ID
 
 try:
     # Delete an evaluation form.
-    api_response = api_instance.delete_quality_form(form_id)
-    pprint(api_response)
+    api_instance.delete_quality_form(form_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_form: %s\n" % e
 ~~~
@@ -180,7 +179,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_quality_keywordset"></a>
 
@@ -228,7 +227,7 @@ void (empty response body)
 
 <a name="delete_quality_keywordsets"></a>
 
-## str** delete_quality_keywordsets(ids)
+##  delete_quality_keywordsets(ids)
 
 Delete keyword sets
 
@@ -253,8 +252,7 @@ ids = 'ids_example' # str | A comma-delimited list of valid KeywordSet ids
 
 try:
     # Delete keyword sets
-    api_response = api_instance.delete_quality_keywordsets(ids)
-    pprint(api_response)
+    api_instance.delete_quality_keywordsets(ids)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_keywordsets: %s\n" % e
 ~~~
@@ -269,7 +267,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_quality_agents_activity"></a>
 
@@ -479,7 +477,7 @@ expand = NULL # list[object] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 recording_id = 'recording_id_example' # str | id of the recording (optional)
-entity_type = 'RECORDING' # str | entity type options: Recording, Calibration, Evaluation, Annotation (optional) (default to RECORDING)
+entity_type = 'RECORDING' # str | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional) (default to RECORDING)
 
 try:
     # Get audits for conversation or recording
@@ -502,7 +500,7 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional] |
 | **previous_page** | **str**| Previous page token | [optional] |
 | **recording_id** | **str**| id of the recording | [optional] |
-| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation | [optional] [default to RECORDING]|
+| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING]|
 {: class="table table-striped"}
 
 ### Return type

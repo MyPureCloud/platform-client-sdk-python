@@ -43,7 +43,7 @@ class CampaignNotification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'DocumentDataV2NotificationCreatedBy',
+            'contact_list': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'CampaignNotificationUriReference',
             'dialing_mode': 'str',
             'script': 'CampaignNotificationUriReference',
@@ -259,7 +259,7 @@ class CampaignNotification(object):
 
 
         :return: The contact_list of this CampaignNotification.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._contact_list
 
@@ -270,7 +270,7 @@ class CampaignNotification(object):
 
 
         :param contact_list: The contact_list of this CampaignNotification.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._contact_list = contact_list

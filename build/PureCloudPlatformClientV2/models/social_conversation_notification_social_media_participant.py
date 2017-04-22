@@ -52,7 +52,7 @@ class SocialConversationNotificationSocialMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DocumentDataV2NotificationCreatedBy',
+            'user': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'SocialConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'SocialConversationNotificationErrorInfo',
@@ -472,7 +472,7 @@ class SocialConversationNotificationSocialMediaParticipant(object):
 
 
         :return: The user of this SocialConversationNotificationSocialMediaParticipant.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._user
 
@@ -483,7 +483,7 @@ class SocialConversationNotificationSocialMediaParticipant(object):
 
 
         :param user: The user of this SocialConversationNotificationSocialMediaParticipant.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._user = user

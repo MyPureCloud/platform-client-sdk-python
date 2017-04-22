@@ -14,7 +14,7 @@ title: CampaignScheduleNotification
 | **version** | **int** |  | [optional] |
 | **intervals** | [**list[CampaignScheduleNotificationIntervals]**](CampaignScheduleNotificationIntervals.html) |  | [optional] |
 | **time_zone** | **str** |  | [optional] |
-| **campaign** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
+| **campaign** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

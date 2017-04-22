@@ -62,7 +62,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str attempt_limits_id: Attempt limits ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -140,7 +140,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str callable_time_set_id: Callable Time Set ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -197,7 +197,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -218,7 +218,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_analysis_set_id: Call Analysis Response Set ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -275,7 +275,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -452,7 +452,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str campaign_rule_id: Campaign Rule ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -509,7 +509,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -530,7 +530,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_list_id: ContactList ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -587,7 +587,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -609,7 +609,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param str contact_list_id: Contact List ID (required)
         :param str contact_id: Contact ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -671,7 +671,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -692,7 +692,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str dnc_list_id: DncList ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -749,7 +749,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -770,7 +770,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str rule_set_id: Rule Set ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -827,7 +827,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -848,7 +848,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str campaign_id: Campaign ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -905,7 +905,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -926,7 +926,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str sequence_id: Sequence ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -983,7 +983,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1004,7 +1004,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str sequence_id: Campaign Sequence ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1061,7 +1061,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

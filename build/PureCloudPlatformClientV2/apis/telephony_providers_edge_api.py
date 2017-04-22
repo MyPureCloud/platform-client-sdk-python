@@ -62,7 +62,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str edge_id: Edge ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -224,7 +224,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str edge_id: Edge ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,7 +281,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -302,7 +302,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str certificate_id: Certificate ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -359,7 +359,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -380,7 +380,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str did_pool_id: DID pool ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -437,7 +437,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -458,7 +458,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str edge_group_id: Edge group ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -515,7 +515,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -536,7 +536,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str endpoint_id: Endpoint ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -593,7 +593,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -614,7 +614,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str extension_pool_id: Extension pool ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -671,7 +671,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -692,7 +692,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str outbound_route_id: Outbound route ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -749,7 +749,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -770,7 +770,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str phone_id: Phone ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -827,7 +827,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -848,7 +848,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str phone_base_id: Phone base ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -905,7 +905,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -926,7 +926,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str site_id: Site ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -983,7 +983,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1005,7 +1005,7 @@ class TelephonyProvidersEdgeApi(object):
             for asynchronous request. (optional)
         :param str site_id: Site ID (required)
         :param str outbound_route_id: Outbound route ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1067,7 +1067,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1088,7 +1088,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str trunk_base_settings_id: Trunk Base ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1145,7 +1145,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5204,7 +5204,7 @@ class TelephonyProvidersEdgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str edge_ids: Comma separated list of Edge Id's (required)
-        :return: list[DomainPhysicalInterface]
+        :return: PhysicalInterfaceEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5261,7 +5261,7 @@ class TelephonyProvidersEdgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[DomainPhysicalInterface]',
+                                            response_type='PhysicalInterfaceEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

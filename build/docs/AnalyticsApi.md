@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_analytics_reporting_schedule"></a>
 
-## str** delete_analytics_reporting_schedule(schedule_id)
+##  delete_analytics_reporting_schedule(schedule_id)
 
 Delete a scheduled report job.
 
@@ -59,8 +59,7 @@ schedule_id = 'schedule_id_example' # str | Schedule ID
 
 try:
     # Delete a scheduled report job.
-    api_response = api_instance.delete_analytics_reporting_schedule(schedule_id)
-    pprint(api_response)
+    api_instance.delete_analytics_reporting_schedule(schedule_id)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->delete_analytics_reporting_schedule: %s\n" % e
 ~~~
@@ -75,7 +74,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_analytics_conversation_details"></a>
 

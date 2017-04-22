@@ -52,7 +52,7 @@ class EmailConversationNotificationEmailMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DocumentDataV2NotificationCreatedBy',
+            'user': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'EmailConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'EmailConversationNotificationErrorInfo',
@@ -466,7 +466,7 @@ class EmailConversationNotificationEmailMediaParticipant(object):
 
 
         :return: The user of this EmailConversationNotificationEmailMediaParticipant.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._user
 
@@ -477,7 +477,7 @@ class EmailConversationNotificationEmailMediaParticipant(object):
 
 
         :param user: The user of this EmailConversationNotificationEmailMediaParticipant.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._user = user

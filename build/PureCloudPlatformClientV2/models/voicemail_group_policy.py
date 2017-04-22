@@ -43,7 +43,9 @@ class VoicemailGroupPolicy(object):
             'enabled': 'bool',
             'send_email_notifications': 'bool',
             'rotate_calls_secs': 'int',
-            'stop_ringing_after_rotations': 'int'
+            'stop_ringing_after_rotations': 'int',
+            'overflow_group_id': 'str',
+            'group_alert_type': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +54,9 @@ class VoicemailGroupPolicy(object):
             'enabled': 'enabled',
             'send_email_notifications': 'sendEmailNotifications',
             'rotate_calls_secs': 'rotateCallsSecs',
-            'stop_ringing_after_rotations': 'stopRingingAfterRotations'
+            'stop_ringing_after_rotations': 'stopRingingAfterRotations',
+            'overflow_group_id': 'overflowGroupId',
+            'group_alert_type': 'groupAlertType'
         }
 
         self._name = None
@@ -61,6 +65,8 @@ class VoicemailGroupPolicy(object):
         self._send_email_notifications = None
         self._rotate_calls_secs = None
         self._stop_ringing_after_rotations = None
+        self._overflow_group_id = None
+        self._group_alert_type = None
 
     @property
     def name(self):
@@ -199,6 +205,56 @@ class VoicemailGroupPolicy(object):
         """
         
         self._stop_ringing_after_rotations = stop_ringing_after_rotations
+
+    @property
+    def overflow_group_id(self):
+        """
+        Gets the overflow_group_id of this VoicemailGroupPolicy.
+         A fallback group to contact when all of the members in this group did not answer the call.
+
+        :return: The overflow_group_id of this VoicemailGroupPolicy.
+        :rtype: str
+        """
+        return self._overflow_group_id
+
+    @overflow_group_id.setter
+    def overflow_group_id(self, overflow_group_id):
+        """
+        Sets the overflow_group_id of this VoicemailGroupPolicy.
+         A fallback group to contact when all of the members in this group did not answer the call.
+
+        :param overflow_group_id: The overflow_group_id of this VoicemailGroupPolicy.
+        :type: str
+        """
+        
+        self._overflow_group_id = overflow_group_id
+
+    @property
+    def group_alert_type(self):
+        """
+        Gets the group_alert_type of this VoicemailGroupPolicy.
+        Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
+
+        :return: The group_alert_type of this VoicemailGroupPolicy.
+        :rtype: str
+        """
+        return self._group_alert_type
+
+    @group_alert_type.setter
+    def group_alert_type(self, group_alert_type):
+        """
+        Sets the group_alert_type of this VoicemailGroupPolicy.
+        Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
+
+        :param group_alert_type: The group_alert_type of this VoicemailGroupPolicy.
+        :type: str
+        """
+        allowed_values = ["RANDOM", "ROUND_ROBIN", "SEQUENTIAL"]
+        if group_alert_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for group_alert_type -> " + group_alert_type
+            self._group_alert_type = "outdated_sdk_version"
+        else:
+            self._group_alert_type = group_alert_type.lower()
 
     def to_dict(self):
         """

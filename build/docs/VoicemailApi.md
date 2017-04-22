@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_voicemail_message"></a>
 
-## str** delete_voicemail_message(message_id)
+##  delete_voicemail_message(message_id)
 
 Delete a message.
 
@@ -59,8 +59,7 @@ message_id = 'message_id_example' # str | Message ID
 
 try:
     # Delete a message.
-    api_response = api_instance.delete_voicemail_message(message_id)
-    pprint(api_response)
+    api_instance.delete_voicemail_message(message_id)
 except ApiException as e:
     print "Exception when calling VoicemailApi->delete_voicemail_message: %s\n" % e
 ~~~
@@ -75,11 +74,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_voicemail_messages"></a>
 
-## str** delete_voicemail_messages()
+##  delete_voicemail_messages()
 
 Delete all voicemail messages
 
@@ -103,8 +102,7 @@ api_instance = PureCloudPlatformClientV2.VoicemailApi()
 
 try:
     # Delete all voicemail messages
-    api_response = api_instance.delete_voicemail_messages()
-    pprint(api_response)
+    api_instance.delete_voicemail_messages()
 except ApiException as e:
     print "Exception when calling VoicemailApi->delete_voicemail_messages: %s\n" % e
 ~~~
@@ -116,7 +114,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_voicemail_group_mailbox"></a>
 

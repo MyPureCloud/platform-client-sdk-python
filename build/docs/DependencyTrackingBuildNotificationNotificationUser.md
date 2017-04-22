@@ -1,7 +1,7 @@
 ---
-title: DocumentDataV2NotificationCreatedBy
+title: DependencyTrackingBuildNotificationNotificationUser
 ---
-## DocumentDataV2NotificationCreatedBy
+## DependencyTrackingBuildNotificationNotificationUser
 
 ## Properties
 

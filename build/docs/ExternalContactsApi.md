@@ -17,15 +17,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contact_note**](ExternalContactsApi.html#get_externalcontacts_contact_note) | Fetch a note for an external contact|
 |[**get_externalcontacts_contact_notes**](ExternalContactsApi.html#get_externalcontacts_contact_notes) | List notes for an external contact|
 |[**get_externalcontacts_contacts**](ExternalContactsApi.html#get_externalcontacts_contacts) | Search for external contacts|
+|[**get_externalcontacts_contacts_schema**](ExternalContactsApi.html#get_externalcontacts_contacts_schema) | Get a schema|
 |[**get_externalcontacts_organization**](ExternalContactsApi.html#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](ExternalContactsApi.html#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
 |[**get_externalcontacts_organization_note**](ExternalContactsApi.html#get_externalcontacts_organization_note) | Fetch a note for an external organization|
 |[**get_externalcontacts_organization_notes**](ExternalContactsApi.html#get_externalcontacts_organization_notes) | List notes for an external organization|
 |[**get_externalcontacts_organization_relationships**](ExternalContactsApi.html#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
 |[**get_externalcontacts_organizations**](ExternalContactsApi.html#get_externalcontacts_organizations) | Search for external organizations|
+|[**get_externalcontacts_organizations_schema**](ExternalContactsApi.html#get_externalcontacts_organizations_schema) | Get a schema|
 |[**get_externalcontacts_relationship**](ExternalContactsApi.html#get_externalcontacts_relationship) | Fetch a relationship|
 |[**get_externalcontacts_reversewhitepageslookup**](ExternalContactsApi.html#get_externalcontacts_reversewhitepageslookup) | Lookup contacts and externalOrganizations based on an attribute|
-|[**post_externalcontacts_contact_associateconversation**](ExternalContactsApi.html#post_externalcontacts_contact_associateconversation) | Associate an external contact with a conversation|
 |[**post_externalcontacts_contact_notes**](ExternalContactsApi.html#post_externalcontacts_contact_notes) | Create a note for an external contact|
 |[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
 |[**post_externalcontacts_organization_notes**](ExternalContactsApi.html#post_externalcontacts_organization_notes) | Create a note for an external organization|
@@ -33,9 +34,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_relationships**](ExternalContactsApi.html#post_externalcontacts_relationships) | Create a relationship|
 |[**put_externalcontacts_contact**](ExternalContactsApi.html#put_externalcontacts_contact) | Update an external contact|
 |[**put_externalcontacts_contact_note**](ExternalContactsApi.html#put_externalcontacts_contact_note) | Update a note for an external contact|
+|[**put_externalcontacts_contacts_schema**](ExternalContactsApi.html#put_externalcontacts_contacts_schema) | Update a schema|
 |[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate an external contact with a conversation|
 |[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
+|[**put_externalcontacts_organizations_schema**](ExternalContactsApi.html#put_externalcontacts_organizations_schema) | Update a schema|
 |[**put_externalcontacts_relationship**](ExternalContactsApi.html#put_externalcontacts_relationship) | Update a relationship|
 {: class="table table-striped"}
 
@@ -465,6 +468,53 @@ except ApiException as e:
 
 [**ContactListing**](ContactListing.html)
 
+<a name="get_externalcontacts_contacts_schema"></a>
+
+## [**DataSchema**](DataSchema.html) get_externalcontacts_contacts_schema(schema_id, expand=expand)
+
+Get a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Expand 'jsonSchema.definitions' to get a readonly schema for data validation. (optional)
+
+try:
+    # Get a schema
+    api_response = api_instance.get_externalcontacts_contacts_schema(schema_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID | |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. Expand &#39;jsonSchema.definitions&#39; to get a readonly schema for data validation. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
 <a name="get_externalcontacts_organization"></a>
 
 ## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand)
@@ -775,6 +825,53 @@ except ApiException as e:
 
 [**ExternalOrganizationListing**](ExternalOrganizationListing.html)
 
+<a name="get_externalcontacts_organizations_schema"></a>
+
+## [**DataSchema**](DataSchema.html) get_externalcontacts_organizations_schema(schema_id, expand=expand)
+
+Get a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Expand 'jsonSchema.definitions' to get a readonly schema for data validation. (optional)
+
+try:
+    # Get a schema
+    api_response = api_instance.get_externalcontacts_organizations_schema(schema_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID | |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. Expand &#39;jsonSchema.definitions&#39; to get a readonly schema for data validation. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
 <a name="get_externalcontacts_relationship"></a>
 
 ## [**Relationship**](Relationship.html) get_externalcontacts_relationship(relationship_id, expand=expand)
@@ -868,52 +965,6 @@ except ApiException as e:
 ### Return type
 
 [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html)
-
-<a name="post_externalcontacts_contact_associateconversation"></a>
-
-##  post_externalcontacts_contact_associateconversation(contact_id, body=body)
-
-Associate an external contact with a conversation
-
-
-
-Wraps POST /api/v2/externalcontacts/contacts/{contactId}/associateconversation 
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-contact_id = 'contact_id_example' # str | ExternalContact ID
-body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation (optional)
-
-try:
-    # Associate an external contact with a conversation
-    api_instance.post_externalcontacts_contact_associateconversation(contact_id, body=body)
-except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_contact_associateconversation: %s\n" % e
-~~~
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact ID | |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional] |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="post_externalcontacts_contact_notes"></a>
 
@@ -1240,6 +1291,53 @@ except ApiException as e:
 
 [**Note**](Note.html)
 
+<a name="put_externalcontacts_contacts_schema"></a>
+
+## [**DataSchema**](DataSchema.html) put_externalcontacts_contacts_schema(schema_id, body)
+
+Update a schema
+
+
+
+Wraps PUT /api/v2/externalcontacts/contacts/schemas/{schemaId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Data Schema
+
+try:
+    # Update a schema
+    api_response = api_instance.put_externalcontacts_contacts_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->put_externalcontacts_contacts_schema: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID | |
+| **body** | [**DataSchema**](DataSchema.html)| Data Schema | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
 <a name="put_externalcontacts_conversation"></a>
 
 ##  put_externalcontacts_conversation(conversation_id, body=body)
@@ -1381,6 +1479,53 @@ except ApiException as e:
 ### Return type
 
 [**Note**](Note.html)
+
+<a name="put_externalcontacts_organizations_schema"></a>
+
+## [**DataSchema**](DataSchema.html) put_externalcontacts_organizations_schema(schema_id, body)
+
+Update a schema
+
+
+
+Wraps PUT /api/v2/externalcontacts/organizations/schemas/{schemaId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Data Schema
+
+try:
+    # Update a schema
+    api_response = api_instance.put_externalcontacts_organizations_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->put_externalcontacts_organizations_schema: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID | |
+| **body** | [**DataSchema**](DataSchema.html)| Data Schema | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
 
 <a name="put_externalcontacts_relationship"></a>
 

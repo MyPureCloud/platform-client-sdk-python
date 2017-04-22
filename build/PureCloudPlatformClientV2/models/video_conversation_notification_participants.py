@@ -52,7 +52,7 @@ class VideoConversationNotificationParticipants(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DocumentDataV2NotificationCreatedBy',
+            'user': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'VideoConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'VideoConversationNotificationErrorInfo',
@@ -475,7 +475,7 @@ class VideoConversationNotificationParticipants(object):
 
 
         :return: The user of this VideoConversationNotificationParticipants.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._user
 
@@ -486,7 +486,7 @@ class VideoConversationNotificationParticipants(object):
 
 
         :param user: The user of this VideoConversationNotificationParticipants.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._user = user

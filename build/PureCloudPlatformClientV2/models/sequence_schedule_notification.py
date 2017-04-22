@@ -45,7 +45,7 @@ class SequenceScheduleNotification(object):
             'version': 'int',
             'intervals': 'list[CampaignScheduleNotificationIntervals]',
             'time_zone': 'str',
-            'sequence': 'DocumentDataV2NotificationCreatedBy',
+            'sequence': 'DependencyTrackingBuildNotificationNotificationUser',
             'additional_properties': 'object'
         }
 
@@ -239,7 +239,7 @@ class SequenceScheduleNotification(object):
 
 
         :return: The sequence of this SequenceScheduleNotification.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._sequence
 
@@ -250,7 +250,7 @@ class SequenceScheduleNotification(object):
 
 
         :param sequence: The sequence of this SequenceScheduleNotification.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._sequence = sequence

@@ -38,20 +38,46 @@ class ConversationAssociation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'external_contact_id': 'str',
             'conversation_id': 'str',
             'communication_id': 'str',
             'media_type': 'str'
         }
 
         self.attribute_map = {
+            'external_contact_id': 'externalContactId',
             'conversation_id': 'conversationId',
             'communication_id': 'communicationId',
             'media_type': 'mediaType'
         }
 
+        self._external_contact_id = None
         self._conversation_id = None
         self._communication_id = None
         self._media_type = None
+
+    @property
+    def external_contact_id(self):
+        """
+        Gets the external_contact_id of this ConversationAssociation.
+        External Contact ID; populated from url
+
+        :return: The external_contact_id of this ConversationAssociation.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id):
+        """
+        Sets the external_contact_id of this ConversationAssociation.
+        External Contact ID; populated from url
+
+        :param external_contact_id: The external_contact_id of this ConversationAssociation.
+        :type: str
+        """
+        
+        self._external_contact_id = external_contact_id
 
     @property
     def conversation_id(self):

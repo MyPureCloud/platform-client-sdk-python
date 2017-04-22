@@ -153,7 +153,7 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -215,7 +215,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -237,7 +237,7 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str attachment_id: attachmentId (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -299,7 +299,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

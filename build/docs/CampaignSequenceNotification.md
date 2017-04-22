@@ -12,7 +12,7 @@ title: CampaignSequenceNotification
 | **date_created** | **datetime** |  | [optional] |
 | **date_modified** | **datetime** |  | [optional] |
 | **version** | **int** |  | [optional] |
-| **campaigns** | [**list[DocumentDataV2NotificationCreatedBy]**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
+| **campaigns** | [**list[DependencyTrackingBuildNotificationNotificationUser]**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
 | **current_campaign** | **int** |  | [optional] |
 | **status** | **str** |  | [optional] |
 | **stop_message** | **str** |  | [optional] |

@@ -213,8 +213,8 @@ class ArchitectApi(object):
 
     def delete_architect_prompts(self, id, **kwargs):
         """
-        Batch-delete a list of prompts asynchronously
-        Multiple IDs can be specified, in which case all specified prompts will be deleted.
+        Batch-delete a list of prompts
+        Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -306,7 +306,7 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
         :param str language_code: Language (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -368,7 +368,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -453,8 +453,8 @@ class ArchitectApi(object):
 
     def delete_flows(self, id, **kwargs):
         """
-        Batch-delete a list of flows asynchronously
-        Multiple IDs can be specified, in which case all specified flows will be deleted.
+        Batch-delete a list of flows
+        Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2539,7 +2539,7 @@ class ArchitectApi(object):
     def post_architect_dependencytracking_build(self, **kwargs):
         """
         Rebuild Dependency Tracking data for an organization
-        
+        Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3004,7 +3004,7 @@ class ArchitectApi(object):
     def post_flows_actions_checkin(self, flow, **kwargs):
         """
         Check-in flow
-        
+        Asynchronous.  Notification topic: v2.flows.{flowId}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3238,7 +3238,7 @@ class ArchitectApi(object):
     def post_flows_actions_publish(self, flow, **kwargs):
         """
         Publish flow
-        
+        Asynchronous.  Notification topic: v2.flows.{flowId}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

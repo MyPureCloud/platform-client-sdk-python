@@ -21,7 +21,7 @@ title: VideoConversationNotificationParticipants
 | **held** | **bool** |  | [optional] |
 | **wrapup_required** | **bool** |  | [optional] |
 | **wrapup_prompt** | **str** |  | [optional] |
-| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
+| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
 | **queue** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  | [optional] |
 | **attributes** | **dict(str, str)** |  | [optional] |
 | **error_info** | [**VideoConversationNotificationErrorInfo**](VideoConversationNotificationErrorInfo.html) |  | [optional] |

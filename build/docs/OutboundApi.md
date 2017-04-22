@@ -88,7 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_outbound_attemptlimit"></a>
 
-## str** delete_outbound_attemptlimit(attempt_limits_id)
+##  delete_outbound_attemptlimit(attempt_limits_id)
 
 Delete attempt limits
 
@@ -113,8 +113,7 @@ attempt_limits_id = 'attempt_limits_id_example' # str | Attempt limits ID
 
 try:
     # Delete attempt limits
-    api_response = api_instance.delete_outbound_attemptlimit(attempt_limits_id)
-    pprint(api_response)
+    api_instance.delete_outbound_attemptlimit(attempt_limits_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_attemptlimit: %s\n" % e
 ~~~
@@ -129,11 +128,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_callabletimeset"></a>
 
-## str** delete_outbound_callabletimeset(callable_time_set_id)
+##  delete_outbound_callabletimeset(callable_time_set_id)
 
 Delete callable time set
 
@@ -158,8 +157,7 @@ callable_time_set_id = 'callable_time_set_id_example' # str | Callable Time Set 
 
 try:
     # Delete callable time set
-    api_response = api_instance.delete_outbound_callabletimeset(callable_time_set_id)
-    pprint(api_response)
+    api_instance.delete_outbound_callabletimeset(callable_time_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_callabletimeset: %s\n" % e
 ~~~
@@ -174,11 +172,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_callanalysisresponseset"></a>
 
-## str** delete_outbound_callanalysisresponseset(call_analysis_set_id)
+##  delete_outbound_callanalysisresponseset(call_analysis_set_id)
 
 Delete a dialer call analysis response set.
 
@@ -203,8 +201,7 @@ call_analysis_set_id = 'call_analysis_set_id_example' # str | Call Analysis Resp
 
 try:
     # Delete a dialer call analysis response set.
-    api_response = api_instance.delete_outbound_callanalysisresponseset(call_analysis_set_id)
-    pprint(api_response)
+    api_instance.delete_outbound_callanalysisresponseset(call_analysis_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_callanalysisresponseset: %s\n" % e
 ~~~
@@ -219,7 +216,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_campaign"></a>
 
@@ -312,7 +309,7 @@ void (empty response body)
 
 <a name="delete_outbound_campaignrule"></a>
 
-## str** delete_outbound_campaignrule(campaign_rule_id)
+##  delete_outbound_campaignrule(campaign_rule_id)
 
 Delete Campaign Rule
 
@@ -337,8 +334,7 @@ campaign_rule_id = 'campaign_rule_id_example' # str | Campaign Rule ID
 
 try:
     # Delete Campaign Rule
-    api_response = api_instance.delete_outbound_campaignrule(campaign_rule_id)
-    pprint(api_response)
+    api_instance.delete_outbound_campaignrule(campaign_rule_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_campaignrule: %s\n" % e
 ~~~
@@ -353,11 +349,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_contactlist"></a>
 
-## str** delete_outbound_contactlist(contact_list_id)
+##  delete_outbound_contactlist(contact_list_id)
 
 Delete a contact list.
 
@@ -382,8 +378,7 @@ contact_list_id = 'contact_list_id_example' # str | ContactList ID
 
 try:
     # Delete a contact list.
-    api_response = api_instance.delete_outbound_contactlist(contact_list_id)
-    pprint(api_response)
+    api_instance.delete_outbound_contactlist(contact_list_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlist: %s\n" % e
 ~~~
@@ -398,11 +393,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_contactlist_contact"></a>
 
-## str** delete_outbound_contactlist_contact(contact_list_id, contact_id)
+##  delete_outbound_contactlist_contact(contact_list_id, contact_id)
 
 Delete a contact.
 
@@ -428,8 +423,7 @@ contact_id = 'contact_id_example' # str | Contact ID
 
 try:
     # Delete a contact.
-    api_response = api_instance.delete_outbound_contactlist_contact(contact_list_id, contact_id)
-    pprint(api_response)
+    api_instance.delete_outbound_contactlist_contact(contact_list_id, contact_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlist_contact: %s\n" % e
 ~~~
@@ -445,11 +439,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_dnclist"></a>
 
-## str** delete_outbound_dnclist(dnc_list_id)
+##  delete_outbound_dnclist(dnc_list_id)
 
 Delete dialer DNC list
 
@@ -474,8 +468,7 @@ dnc_list_id = 'dnc_list_id_example' # str | DncList ID
 
 try:
     # Delete dialer DNC list
-    api_response = api_instance.delete_outbound_dnclist(dnc_list_id)
-    pprint(api_response)
+    api_instance.delete_outbound_dnclist(dnc_list_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_dnclist: %s\n" % e
 ~~~
@@ -490,11 +483,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_ruleset"></a>
 
-## str** delete_outbound_ruleset(rule_set_id)
+##  delete_outbound_ruleset(rule_set_id)
 
 Delete a Rule set.
 
@@ -519,8 +512,7 @@ rule_set_id = 'rule_set_id_example' # str | Rule Set ID
 
 try:
     # Delete a Rule set.
-    api_response = api_instance.delete_outbound_ruleset(rule_set_id)
-    pprint(api_response)
+    api_instance.delete_outbound_ruleset(rule_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_ruleset: %s\n" % e
 ~~~
@@ -535,11 +527,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_schedules_campaign"></a>
 
-## str** delete_outbound_schedules_campaign(campaign_id)
+##  delete_outbound_schedules_campaign(campaign_id)
 
 Delete a dialer campaign schedule.
 
@@ -564,8 +556,7 @@ campaign_id = 'campaign_id_example' # str | Campaign ID
 
 try:
     # Delete a dialer campaign schedule.
-    api_response = api_instance.delete_outbound_schedules_campaign(campaign_id)
-    pprint(api_response)
+    api_instance.delete_outbound_schedules_campaign(campaign_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_schedules_campaign: %s\n" % e
 ~~~
@@ -580,11 +571,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_schedules_sequence"></a>
 
-## str** delete_outbound_schedules_sequence(sequence_id)
+##  delete_outbound_schedules_sequence(sequence_id)
 
 Delete a dialer sequence schedule.
 
@@ -609,8 +600,7 @@ sequence_id = 'sequence_id_example' # str | Sequence ID
 
 try:
     # Delete a dialer sequence schedule.
-    api_response = api_instance.delete_outbound_schedules_sequence(sequence_id)
-    pprint(api_response)
+    api_instance.delete_outbound_schedules_sequence(sequence_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_schedules_sequence: %s\n" % e
 ~~~
@@ -625,11 +615,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_outbound_sequence"></a>
 
-## str** delete_outbound_sequence(sequence_id)
+##  delete_outbound_sequence(sequence_id)
 
 Delete a dialer campaign sequence.
 
@@ -654,8 +644,7 @@ sequence_id = 'sequence_id_example' # str | Campaign Sequence ID
 
 try:
     # Delete a dialer campaign sequence.
-    api_response = api_instance.delete_outbound_sequence(sequence_id)
-    pprint(api_response)
+    api_instance.delete_outbound_sequence(sequence_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_sequence: %s\n" % e
 ~~~
@@ -670,7 +659,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_outbound_attemptlimit"></a>
 

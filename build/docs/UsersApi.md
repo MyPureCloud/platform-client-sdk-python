@@ -143,7 +143,7 @@ void (empty response body)
 
 <a name="delete_user_routingskill"></a>
 
-## str** delete_user_routingskill(user_id, skill_id)
+##  delete_user_routingskill(user_id, skill_id)
 
 Remove routing skill from user
 
@@ -169,8 +169,7 @@ skill_id = 'skill_id_example' # str | skillId
 
 try:
     # Remove routing skill from user
-    api_response = api_instance.delete_user_routingskill(user_id, skill_id)
-    pprint(api_response)
+    api_instance.delete_user_routingskill(user_id, skill_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_routingskill: %s\n" % e
 ~~~
@@ -186,7 +185,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_user_station_associatedstation"></a>
 
@@ -1150,7 +1149,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
-body = PureCloudPlatformClientV2.User() # User | User
+body = PureCloudPlatformClientV2.UpdateUser() # UpdateUser | User
 
 try:
     # Update user
@@ -1166,7 +1165,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID | |
-| **body** | [**User**](User.html)| User | |
+| **body** | [**UpdateUser**](UpdateUser.html)| User | |
 {: class="table table-striped"}
 
 ### Return type

@@ -138,7 +138,7 @@ except ApiException as e:
 
 <a name="delete_recording_mediaretentionpolicies"></a>
 
-## str** delete_recording_mediaretentionpolicies(ids)
+##  delete_recording_mediaretentionpolicies(ids)
 
 Delete media retention policies
 
@@ -163,8 +163,7 @@ ids = 'ids_example' # str |
 
 try:
     # Delete media retention policies
-    api_response = api_instance.delete_recording_mediaretentionpolicies(ids)
-    pprint(api_response)
+    api_instance.delete_recording_mediaretentionpolicies(ids)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicies: %s\n" % e
 ~~~
@@ -179,11 +178,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_recording_mediaretentionpolicy"></a>
 
-## str** delete_recording_mediaretentionpolicy(policy_id)
+##  delete_recording_mediaretentionpolicy(policy_id)
 
 Delete a media retention policy
 
@@ -208,8 +207,7 @@ policy_id = 'policy_id_example' # str | Policy ID
 
 try:
     # Delete a media retention policy
-    api_response = api_instance.delete_recording_mediaretentionpolicy(policy_id)
-    pprint(api_response)
+    api_instance.delete_recording_mediaretentionpolicy(policy_id)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicy: %s\n" % e
 ~~~
@@ -224,7 +222,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_conversation_recording"></a>
 

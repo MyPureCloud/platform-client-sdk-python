@@ -52,7 +52,7 @@ class ScreenShareConversationNotificationParticipants(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DocumentDataV2NotificationCreatedBy',
+            'user': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'ScreenShareConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ScreenShareConversationNotificationErrorInfo',
@@ -469,7 +469,7 @@ class ScreenShareConversationNotificationParticipants(object):
 
 
         :return: The user of this ScreenShareConversationNotificationParticipants.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._user
 
@@ -480,7 +480,7 @@ class ScreenShareConversationNotificationParticipants(object):
 
 
         :param user: The user of this ScreenShareConversationNotificationParticipants.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._user = user

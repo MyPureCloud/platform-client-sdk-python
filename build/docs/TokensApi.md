@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_tokens_me"></a>
 
-## str** delete_tokens_me()
+##  delete_tokens_me()
 
 Delete  auth token used to make the request.
 
@@ -37,8 +37,7 @@ api_instance = PureCloudPlatformClientV2.TokensApi()
 
 try:
     # Delete  auth token used to make the request.
-    api_response = api_instance.delete_tokens_me()
-    pprint(api_response)
+    api_instance.delete_tokens_me()
 except ApiException as e:
     print "Exception when calling TokensApi->delete_tokens_me: %s\n" % e
 ~~~
@@ -50,5 +49,5 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+void (empty response body)
 

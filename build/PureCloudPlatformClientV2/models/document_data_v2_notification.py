@@ -43,7 +43,7 @@ class DocumentDataV2Notification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'workspace': 'DocumentDataV2NotificationWorkspace',
-            'created_by': 'DocumentDataV2NotificationCreatedBy',
+            'created_by': 'DependencyTrackingBuildNotificationNotificationUser',
             'content_type': 'str',
             'content_length': 'int',
             'filename': 'str',
@@ -208,7 +208,7 @@ class DocumentDataV2Notification(object):
 
 
         :return: The created_by of this DocumentDataV2Notification.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._created_by
 
@@ -219,7 +219,7 @@ class DocumentDataV2Notification(object):
 
 
         :param created_by: The created_by of this DocumentDataV2Notification.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._created_by = created_by

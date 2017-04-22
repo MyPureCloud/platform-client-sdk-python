@@ -38,11 +38,13 @@ class JsonNode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'array': 'bool',
+            'null': 'bool',
             'node_type': 'str',
-            'float': 'bool',
-            'object': 'bool',
             'boolean': 'bool',
             'number': 'bool',
+            'object': 'bool',
+            'float': 'bool',
             'value_node': 'bool',
             'container_node': 'bool',
             'missing_node': 'bool',
@@ -56,17 +58,17 @@ class JsonNode(object):
             'big_decimal': 'bool',
             'big_integer': 'bool',
             'textual': 'bool',
-            'binary': 'bool',
-            'array': 'bool',
-            'null': 'bool'
+            'binary': 'bool'
         }
 
         self.attribute_map = {
+            'array': 'array',
+            'null': 'null',
             'node_type': 'nodeType',
-            'float': 'float',
-            'object': 'object',
             'boolean': 'boolean',
             'number': 'number',
+            'object': 'object',
+            'float': 'float',
             'value_node': 'valueNode',
             'container_node': 'containerNode',
             'missing_node': 'missingNode',
@@ -80,16 +82,16 @@ class JsonNode(object):
             'big_decimal': 'bigDecimal',
             'big_integer': 'bigInteger',
             'textual': 'textual',
-            'binary': 'binary',
-            'array': 'array',
-            'null': 'null'
+            'binary': 'binary'
         }
 
+        self._array = None
+        self._null = None
         self._node_type = None
-        self._float = None
-        self._object = None
         self._boolean = None
         self._number = None
+        self._object = None
+        self._float = None
         self._value_node = None
         self._container_node = None
         self._missing_node = None
@@ -104,8 +106,52 @@ class JsonNode(object):
         self._big_integer = None
         self._textual = None
         self._binary = None
-        self._array = None
-        self._null = None
+
+    @property
+    def array(self):
+        """
+        Gets the array of this JsonNode.
+
+
+        :return: The array of this JsonNode.
+        :rtype: bool
+        """
+        return self._array
+
+    @array.setter
+    def array(self, array):
+        """
+        Sets the array of this JsonNode.
+
+
+        :param array: The array of this JsonNode.
+        :type: bool
+        """
+        
+        self._array = array
+
+    @property
+    def null(self):
+        """
+        Gets the null of this JsonNode.
+
+
+        :return: The null of this JsonNode.
+        :rtype: bool
+        """
+        return self._null
+
+    @null.setter
+    def null(self, null):
+        """
+        Sets the null of this JsonNode.
+
+
+        :param null: The null of this JsonNode.
+        :type: bool
+        """
+        
+        self._null = null
 
     @property
     def node_type(self):
@@ -133,52 +179,6 @@ class JsonNode(object):
             self._node_type = "outdated_sdk_version"
         else:
             self._node_type = node_type.lower()
-
-    @property
-    def float(self):
-        """
-        Gets the float of this JsonNode.
-
-
-        :return: The float of this JsonNode.
-        :rtype: bool
-        """
-        return self._float
-
-    @float.setter
-    def float(self, float):
-        """
-        Sets the float of this JsonNode.
-
-
-        :param float: The float of this JsonNode.
-        :type: bool
-        """
-        
-        self._float = float
-
-    @property
-    def object(self):
-        """
-        Gets the object of this JsonNode.
-
-
-        :return: The object of this JsonNode.
-        :rtype: bool
-        """
-        return self._object
-
-    @object.setter
-    def object(self, object):
-        """
-        Sets the object of this JsonNode.
-
-
-        :param object: The object of this JsonNode.
-        :type: bool
-        """
-        
-        self._object = object
 
     @property
     def boolean(self):
@@ -225,6 +225,52 @@ class JsonNode(object):
         """
         
         self._number = number
+
+    @property
+    def object(self):
+        """
+        Gets the object of this JsonNode.
+
+
+        :return: The object of this JsonNode.
+        :rtype: bool
+        """
+        return self._object
+
+    @object.setter
+    def object(self, object):
+        """
+        Sets the object of this JsonNode.
+
+
+        :param object: The object of this JsonNode.
+        :type: bool
+        """
+        
+        self._object = object
+
+    @property
+    def float(self):
+        """
+        Gets the float of this JsonNode.
+
+
+        :return: The float of this JsonNode.
+        :rtype: bool
+        """
+        return self._float
+
+    @float.setter
+    def float(self, float):
+        """
+        Sets the float of this JsonNode.
+
+
+        :param float: The float of this JsonNode.
+        :type: bool
+        """
+        
+        self._float = float
 
     @property
     def value_node(self):
@@ -547,52 +593,6 @@ class JsonNode(object):
         """
         
         self._binary = binary
-
-    @property
-    def array(self):
-        """
-        Gets the array of this JsonNode.
-
-
-        :return: The array of this JsonNode.
-        :rtype: bool
-        """
-        return self._array
-
-    @array.setter
-    def array(self, array):
-        """
-        Sets the array of this JsonNode.
-
-
-        :param array: The array of this JsonNode.
-        :type: bool
-        """
-        
-        self._array = array
-
-    @property
-    def null(self):
-        """
-        Gets the null of this JsonNode.
-
-
-        :return: The null of this JsonNode.
-        :rtype: bool
-        """
-        return self._null
-
-    @null.setter
-    def null(self, null):
-        """
-        Sets the null of this JsonNode.
-
-
-        :param null: The null of this JsonNode.
-        :type: bool
-        """
-        
-        self._null = null
 
     def to_dict(self):
         """

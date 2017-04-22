@@ -56,7 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_routing_email_domain"></a>
 
-## str** delete_routing_email_domain(domain_id)
+##  delete_routing_email_domain(domain_id)
 
 Delete a domain
 
@@ -81,8 +81,7 @@ domain_id = 'domain_id_example' # str | domain ID
 
 try:
     # Delete a domain
-    api_response = api_instance.delete_routing_email_domain(domain_id)
-    pprint(api_response)
+    api_instance.delete_routing_email_domain(domain_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_email_domain: %s\n" % e
 ~~~
@@ -97,11 +96,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_email_domain_route"></a>
 
-## str** delete_routing_email_domain_route(domain_name, route_id)
+##  delete_routing_email_domain_route(domain_name, route_id)
 
 Delete a route
 
@@ -127,8 +126,7 @@ route_id = 'route_id_example' # str | route ID
 
 try:
     # Delete a route
-    api_response = api_instance.delete_routing_email_domain_route(domain_name, route_id)
-    pprint(api_response)
+    api_instance.delete_routing_email_domain_route(domain_name, route_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_email_domain_route: %s\n" % e
 ~~~
@@ -144,11 +142,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_queue"></a>
 
-## str** delete_routing_queue(queue_id, force_delete=force_delete)
+##  delete_routing_queue(queue_id, force_delete=force_delete)
 
 Delete a queue
 
@@ -174,8 +172,7 @@ force_delete = true # bool | forceDelete (optional)
 
 try:
     # Delete a queue
-    api_response = api_instance.delete_routing_queue(queue_id, force_delete=force_delete)
-    pprint(api_response)
+    api_instance.delete_routing_queue(queue_id, force_delete=force_delete)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_queue: %s\n" % e
 ~~~
@@ -191,11 +188,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_queue_user"></a>
 
-## str** delete_routing_queue_user(queue_id, member_id)
+##  delete_routing_queue_user(queue_id, member_id)
 
 Delete queue member
 
@@ -221,8 +218,7 @@ member_id = 'member_id_example' # str | Member ID
 
 try:
     # Delete queue member
-    api_response = api_instance.delete_routing_queue_user(queue_id, member_id)
-    pprint(api_response)
+    api_instance.delete_routing_queue_user(queue_id, member_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_queue_user: %s\n" % e
 ~~~
@@ -238,11 +234,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_queue_wrapupcode"></a>
 
-## str** delete_routing_queue_wrapupcode(queue_id, code_id)
+##  delete_routing_queue_wrapupcode(queue_id, code_id)
 
 Delete a wrap-up code from a queue
 
@@ -268,8 +264,7 @@ code_id = 'code_id_example' # str | Code ID
 
 try:
     # Delete a wrap-up code from a queue
-    api_response = api_instance.delete_routing_queue_wrapupcode(queue_id, code_id)
-    pprint(api_response)
+    api_instance.delete_routing_queue_wrapupcode(queue_id, code_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_queue_wrapupcode: %s\n" % e
 ~~~
@@ -285,11 +280,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_skill"></a>
 
-## str** delete_routing_skill(skill_id)
+##  delete_routing_skill(skill_id)
 
 Delete Routing Skill
 
@@ -314,8 +309,7 @@ skill_id = 'skill_id_example' # str | Skill ID
 
 try:
     # Delete Routing Skill
-    api_response = api_instance.delete_routing_skill(skill_id)
-    pprint(api_response)
+    api_instance.delete_routing_skill(skill_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_skill: %s\n" % e
 ~~~
@@ -330,11 +324,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_utilization"></a>
 
-## str** delete_routing_utilization()
+##  delete_routing_utilization()
 
 Delete utilization settings and revert to system defaults.
 
@@ -358,8 +352,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 
 try:
     # Delete utilization settings and revert to system defaults.
-    api_response = api_instance.delete_routing_utilization()
-    pprint(api_response)
+    api_instance.delete_routing_utilization()
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_utilization: %s\n" % e
 ~~~
@@ -371,11 +364,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_routing_wrapupcode"></a>
 
-## str** delete_routing_wrapupcode(code_id)
+##  delete_routing_wrapupcode(code_id)
 
 Delete wrap-up code
 
@@ -400,8 +393,7 @@ code_id = 'code_id_example' # str | Wrapup Code ID
 
 try:
     # Delete wrap-up code
-    api_response = api_instance.delete_routing_wrapupcode(code_id)
-    pprint(api_response)
+    api_instance.delete_routing_wrapupcode(code_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_wrapupcode: %s\n" % e
 ~~~
@@ -416,11 +408,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_user_routingskill"></a>
 
-## str** delete_user_routingskill(user_id, skill_id)
+##  delete_user_routingskill(user_id, skill_id)
 
 Remove routing skill from user
 
@@ -446,8 +438,7 @@ skill_id = 'skill_id_example' # str | skillId
 
 try:
     # Remove routing skill from user
-    api_response = api_instance.delete_user_routingskill(user_id, skill_id)
-    pprint(api_response)
+    api_instance.delete_user_routingskill(user_id, skill_id)
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_user_routingskill: %s\n" % e
 ~~~
@@ -463,7 +454,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_routing_email_domain"></a>
 

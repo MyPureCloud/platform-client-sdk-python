@@ -10,10 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_architect_prompt**](ArchitectApi.html#delete_architect_prompt) | Delete specified user prompt|
 |[**delete_architect_prompt_resource**](ArchitectApi.html#delete_architect_prompt_resource) | Delete specified user prompt resource|
-|[**delete_architect_prompts**](ArchitectApi.html#delete_architect_prompts) | Batch-delete a list of prompts asynchronously|
+|[**delete_architect_prompts**](ArchitectApi.html#delete_architect_prompts) | Batch-delete a list of prompts|
 |[**delete_architect_systemprompt_resource**](ArchitectApi.html#delete_architect_systemprompt_resource) | Delete a system prompt resource override.|
 |[**delete_flow**](ArchitectApi.html#delete_flow) | Delete flow|
-|[**delete_flows**](ArchitectApi.html#delete_flows) | Batch-delete a list of flows asynchronously|
+|[**delete_flows**](ArchitectApi.html#delete_flows) | Batch-delete a list of flows|
 |[**get_architect_dependencytracking**](ArchitectApi.html#get_architect_dependencytracking) | Get Dependency Tracking objects that have a given display name|
 |[**get_architect_dependencytracking_build**](ArchitectApi.html#get_architect_dependencytracking_build) | Get Dependency Tracking build status for an organization|
 |[**get_architect_dependencytracking_consumedresources**](ArchitectApi.html#get_architect_dependencytracking_consumedresources) | Get resources that are consumed by a given Dependency Tracking object|
@@ -151,9 +151,9 @@ void (empty response body)
 
 ## [**Operation**](Operation.html) delete_architect_prompts(id)
 
-Batch-delete a list of prompts asynchronously
+Batch-delete a list of prompts
 
-Multiple IDs can be specified, in which case all specified prompts will be deleted.
+Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps DELETE /api/v2/architect/prompts 
 
@@ -173,7 +173,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 id = ['id_example'] # list[str] | List of Prompt IDs
 
 try:
-    # Batch-delete a list of prompts asynchronously
+    # Batch-delete a list of prompts
     api_response = api_instance.delete_architect_prompts(id)
     pprint(api_response)
 except ApiException as e:
@@ -194,7 +194,7 @@ except ApiException as e:
 
 <a name="delete_architect_systemprompt_resource"></a>
 
-## str** delete_architect_systemprompt_resource(prompt_id, language_code)
+##  delete_architect_systemprompt_resource(prompt_id, language_code)
 
 Delete a system prompt resource override.
 
@@ -220,8 +220,7 @@ language_code = 'language_code_example' # str | Language
 
 try:
     # Delete a system prompt resource override.
-    api_response = api_instance.delete_architect_systemprompt_resource(prompt_id, language_code)
-    pprint(api_response)
+    api_instance.delete_architect_systemprompt_resource(prompt_id, language_code)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_systemprompt_resource: %s\n" % e
 ~~~
@@ -237,7 +236,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_flow"></a>
 
@@ -287,9 +286,9 @@ void (empty response body)
 
 ## [**Operation**](Operation.html) delete_flows(id)
 
-Batch-delete a list of flows asynchronously
+Batch-delete a list of flows
 
-Multiple IDs can be specified, in which case all specified flows will be deleted.
+Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps DELETE /api/v2/flows 
 
@@ -309,7 +308,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 id = ['id_example'] # list[str] | List of Flow IDs
 
 try:
-    # Batch-delete a list of flows asynchronously
+    # Batch-delete a list of flows
     api_response = api_instance.delete_flows(id)
     pprint(api_response)
 except ApiException as e:
@@ -1507,7 +1506,7 @@ except ApiException as e:
 
 Rebuild Dependency Tracking data for an organization
 
-
+Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
 Wraps POST /api/v2/architect/dependencytracking/build 
 
@@ -1778,7 +1777,7 @@ except ApiException as e:
 
 Check-in flow
 
-
+Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/checkin 
 
@@ -1913,7 +1912,7 @@ except ApiException as e:
 
 Publish flow
 
-
+Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/publish 
 

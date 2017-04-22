@@ -21,7 +21,7 @@ title: ScreenShareConversationNotificationScreenShareMediaParticipant
 | **held** | **bool** |  | [optional] |
 | **wrapup_required** | **bool** |  | [optional] |
 | **wrapup_prompt** | **str** |  | [optional] |
-| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
+| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
 | **queue** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  | [optional] |
 | **attributes** | **dict(str, str)** |  | [optional] |
 | **error_info** | [**ScreenShareConversationNotificationErrorInfo**](ScreenShareConversationNotificationErrorInfo.html) |  | [optional] |

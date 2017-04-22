@@ -132,7 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_telephony_providers_edge"></a>
 
-## str** delete_telephony_providers_edge(edge_id)
+##  delete_telephony_providers_edge(edge_id)
 
 Delete a edge.
 
@@ -157,8 +157,7 @@ edge_id = 'edge_id_example' # str | Edge ID
 
 try:
     # Delete a edge.
-    api_response = api_instance.delete_telephony_providers_edge(edge_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edge(edge_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge: %s\n" % e
 ~~~
@@ -173,7 +172,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edge_logicalinterface"></a>
 
@@ -223,7 +222,7 @@ void (empty response body)
 
 <a name="delete_telephony_providers_edge_softwareupdate"></a>
 
-## str** delete_telephony_providers_edge_softwareupdate(edge_id)
+##  delete_telephony_providers_edge_softwareupdate(edge_id)
 
 Cancels any in-progress update for this edge.
 
@@ -248,8 +247,7 @@ edge_id = 'edge_id_example' # str | Edge ID
 
 try:
     # Cancels any in-progress update for this edge.
-    api_response = api_instance.delete_telephony_providers_edge_softwareupdate(edge_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edge_softwareupdate(edge_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_softwareupdate: %s\n" % e
 ~~~
@@ -264,11 +262,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_certificateauthority"></a>
 
-## str** delete_telephony_providers_edges_certificateauthority(certificate_id)
+##  delete_telephony_providers_edges_certificateauthority(certificate_id)
 
 Delete a certificate authority.
 
@@ -293,8 +291,7 @@ certificate_id = 'certificate_id_example' # str | Certificate ID
 
 try:
     # Delete a certificate authority.
-    api_response = api_instance.delete_telephony_providers_edges_certificateauthority(certificate_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_certificateauthority(certificate_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_certificateauthority: %s\n" % e
 ~~~
@@ -309,11 +306,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_didpool"></a>
 
-## str** delete_telephony_providers_edges_didpool(did_pool_id)
+##  delete_telephony_providers_edges_didpool(did_pool_id)
 
 Delete a DID Pool by ID.
 
@@ -338,8 +335,7 @@ did_pool_id = 'did_pool_id_example' # str | DID pool ID
 
 try:
     # Delete a DID Pool by ID.
-    api_response = api_instance.delete_telephony_providers_edges_didpool(did_pool_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_didpool(did_pool_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_didpool: %s\n" % e
 ~~~
@@ -354,11 +350,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_edgegroup"></a>
 
-## str** delete_telephony_providers_edges_edgegroup(edge_group_id)
+##  delete_telephony_providers_edges_edgegroup(edge_group_id)
 
 Delete an edge group.
 
@@ -383,8 +379,7 @@ edge_group_id = 'edge_group_id_example' # str | Edge group ID
 
 try:
     # Delete an edge group.
-    api_response = api_instance.delete_telephony_providers_edges_edgegroup(edge_group_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_edgegroup(edge_group_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_edgegroup: %s\n" % e
 ~~~
@@ -399,11 +394,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_endpoint"></a>
 
-## str** delete_telephony_providers_edges_endpoint(endpoint_id)
+##  delete_telephony_providers_edges_endpoint(endpoint_id)
 
 Delete endpoint
 
@@ -428,8 +423,7 @@ endpoint_id = 'endpoint_id_example' # str | Endpoint ID
 
 try:
     # Delete endpoint
-    api_response = api_instance.delete_telephony_providers_edges_endpoint(endpoint_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_endpoint(endpoint_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_endpoint: %s\n" % e
 ~~~
@@ -444,11 +438,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_extensionpool"></a>
 
-## str** delete_telephony_providers_edges_extensionpool(extension_pool_id)
+##  delete_telephony_providers_edges_extensionpool(extension_pool_id)
 
 Delete an extension pool by ID
 
@@ -473,8 +467,7 @@ extension_pool_id = 'extension_pool_id_example' # str | Extension pool ID
 
 try:
     # Delete an extension pool by ID
-    api_response = api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\n" % e
 ~~~
@@ -489,11 +482,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_outboundroute"></a>
 
-## str** delete_telephony_providers_edges_outboundroute(outbound_route_id)
+##  delete_telephony_providers_edges_outboundroute(outbound_route_id)
 
 Delete Outbound Route
 
@@ -518,8 +511,7 @@ outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
 
 try:
     # Delete Outbound Route
-    api_response = api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e
 ~~~
@@ -534,11 +526,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_phone"></a>
 
-## str** delete_telephony_providers_edges_phone(phone_id)
+##  delete_telephony_providers_edges_phone(phone_id)
 
 Delete a Phone by ID
 
@@ -563,8 +555,7 @@ phone_id = 'phone_id_example' # str | Phone ID
 
 try:
     # Delete a Phone by ID
-    api_response = api_instance.delete_telephony_providers_edges_phone(phone_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_phone(phone_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phone: %s\n" % e
 ~~~
@@ -579,11 +570,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_phonebasesetting"></a>
 
-## str** delete_telephony_providers_edges_phonebasesetting(phone_base_id)
+##  delete_telephony_providers_edges_phonebasesetting(phone_base_id)
 
 Delete a Phone Base Settings by ID
 
@@ -608,8 +599,7 @@ phone_base_id = 'phone_base_id_example' # str | Phone base ID
 
 try:
     # Delete a Phone Base Settings by ID
-    api_response = api_instance.delete_telephony_providers_edges_phonebasesetting(phone_base_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_phonebasesetting(phone_base_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phonebasesetting: %s\n" % e
 ~~~
@@ -624,11 +614,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_site"></a>
 
-## str** delete_telephony_providers_edges_site(site_id)
+##  delete_telephony_providers_edges_site(site_id)
 
 Delete a Site by ID
 
@@ -653,8 +643,7 @@ site_id = 'site_id_example' # str | Site ID
 
 try:
     # Delete a Site by ID
-    api_response = api_instance.delete_telephony_providers_edges_site(site_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_site(site_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site: %s\n" % e
 ~~~
@@ -669,11 +658,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_site_outboundroute"></a>
 
-## str** delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
+##  delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 
 Delete Outbound Route
 
@@ -699,8 +688,7 @@ outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
 
 try:
     # Delete Outbound Route
-    api_response = api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site_outboundroute: %s\n" % e
 ~~~
@@ -716,11 +704,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="delete_telephony_providers_edges_trunkbasesetting"></a>
 
-## str** delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
+##  delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
 
 Delete a Trunk Base Settings object by ID
 
@@ -745,8 +733,7 @@ trunk_base_settings_id = 'trunk_base_settings_id_example' # str | Trunk Base ID
 
 try:
     # Delete a Trunk Base Settings object by ID
-    api_response = api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
-    pprint(api_response)
+    api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\n" % e
 ~~~
@@ -761,7 +748,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="get_configuration_schemas_edges_vnext"></a>
 
@@ -3118,7 +3105,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_physicalinterfaces"></a>
 
-## [**list[DomainPhysicalInterface]**](DomainPhysicalInterface.html) get_telephony_providers_edges_physicalinterfaces(edge_ids)
+## [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html) get_telephony_providers_edges_physicalinterfaces(edge_ids)
 
 Get physical interfaces for edges.
 
@@ -3159,7 +3146,7 @@ except ApiException as e:
 
 ### Return type
 
-[**list[DomainPhysicalInterface]**](DomainPhysicalInterface.html)
+[**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)
 
 <a name="get_telephony_providers_edges_site"></a>
 

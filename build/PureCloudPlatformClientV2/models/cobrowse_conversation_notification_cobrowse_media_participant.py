@@ -52,7 +52,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DocumentDataV2NotificationCreatedBy',
+            'user': 'DependencyTrackingBuildNotificationNotificationUser',
             'queue': 'CobrowseConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'CobrowseConversationNotificationErrorInfo',
@@ -475,7 +475,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
 
 
         :return: The user of this CobrowseConversationNotificationCobrowseMediaParticipant.
-        :rtype: DocumentDataV2NotificationCreatedBy
+        :rtype: DependencyTrackingBuildNotificationNotificationUser
         """
         return self._user
 
@@ -486,7 +486,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
 
 
         :param user: The user of this CobrowseConversationNotificationCobrowseMediaParticipant.
-        :type: DocumentDataV2NotificationCreatedBy
+        :type: DependencyTrackingBuildNotificationNotificationUser
         """
         
         self._user = user

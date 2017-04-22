@@ -536,13 +536,14 @@ class AuthorizationApi(object):
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param list[object] permission: 
+        :param list[object] default_role_id: 
         :param bool user_count: 
         :return: OrganizationRoleEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'permission', 'user_count']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'permission', 'default_role_id', 'user_count']
         all_params.append('callback')
 
         params = locals()
@@ -575,6 +576,8 @@ class AuthorizationApi(object):
             query_params['previousPage'] = params['previous_page']
         if 'permission' in params:
             query_params['permission'] = params['permission']
+        if 'default_role_id' in params:
+            query_params['defaultRoleId'] = params['default_role_id']
         if 'user_count' in params:
             query_params['userCount'] = params['user_count']
 

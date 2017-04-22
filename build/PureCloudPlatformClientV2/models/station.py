@@ -43,6 +43,7 @@ class Station(object):
             'description': 'str',
             'status': 'str',
             'user_id': 'str',
+            'web_rtc_user_id': 'str',
             'primary_edge': 'UriReference',
             'secondary_edge': 'UriReference',
             'type': 'str',
@@ -56,6 +57,7 @@ class Station(object):
             'description': 'description',
             'status': 'status',
             'user_id': 'userId',
+            'web_rtc_user_id': 'webRtcUserId',
             'primary_edge': 'primaryEdge',
             'secondary_edge': 'secondaryEdge',
             'type': 'type',
@@ -68,6 +70,7 @@ class Station(object):
         self._description = None
         self._status = None
         self._user_id = None
+        self._web_rtc_user_id = None
         self._primary_edge = None
         self._secondary_edge = None
         self._type = None
@@ -174,7 +177,7 @@ class Station(object):
     def user_id(self):
         """
         Gets the user_id of this Station.
-
+        The Id of the user currently logged in and associated with the station.
 
         :return: The user_id of this Station.
         :rtype: str
@@ -185,13 +188,36 @@ class Station(object):
     def user_id(self, user_id):
         """
         Sets the user_id of this Station.
-
+        The Id of the user currently logged in and associated with the station.
 
         :param user_id: The user_id of this Station.
         :type: str
         """
         
         self._user_id = user_id
+
+    @property
+    def web_rtc_user_id(self):
+        """
+        Gets the web_rtc_user_id of this Station.
+        The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
+
+        :return: The web_rtc_user_id of this Station.
+        :rtype: str
+        """
+        return self._web_rtc_user_id
+
+    @web_rtc_user_id.setter
+    def web_rtc_user_id(self, web_rtc_user_id):
+        """
+        Sets the web_rtc_user_id of this Station.
+        The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
+
+        :param web_rtc_user_id: The web_rtc_user_id of this Station.
+        :type: str
+        """
+        
+        self._web_rtc_user_id = web_rtc_user_id
 
     @property
     def primary_edge(self):

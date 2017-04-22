@@ -62,7 +62,7 @@ class StationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str station_id: Station ID (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class StationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='str',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -221,6 +221,7 @@ class StationsApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str name: Name
+        :param str web_rtc_user_id: Filter for the webRtc station of the webRtcUserId
         :param str id: Comma separated list of stationIds
         :param str line_appearance_id: lineAppearanceId
         :return: StationEntityListing
@@ -228,7 +229,7 @@ class StationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'id', 'line_appearance_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'web_rtc_user_id', 'id', 'line_appearance_id']
         all_params.append('callback')
 
         params = locals()
@@ -255,6 +256,8 @@ class StationsApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'web_rtc_user_id' in params:
+            query_params['webRtcUserId'] = params['web_rtc_user_id']
         if 'id' in params:
             query_params['id'] = params['id']
         if 'line_appearance_id' in params:
