@@ -231,7 +231,7 @@ class ConversationQuery(object):
             # print "Invalid value for order -> " + order
             self._order = "outdated_sdk_version"
         else:
-            self._order = order.lower()
+            self._order = order
 
     @property
     def order_by(self):
@@ -258,7 +258,7 @@ class ConversationQuery(object):
             # print "Invalid value for order_by -> " + order_by
             self._order_by = "outdated_sdk_version"
         else:
-            self._order_by = order_by.lower()
+            self._order_by = order_by
 
     def to_dict(self):
         """

@@ -150,7 +150,7 @@ class ConversationAssociation(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     def to_dict(self):
         """

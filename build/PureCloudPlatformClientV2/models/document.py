@@ -438,7 +438,7 @@ class Document(object):
             # print "Invalid value for system_type -> " + system_type
             self._system_type = "outdated_sdk_version"
         else:
-            self._system_type = system_type.lower()
+            self._system_type = system_type
 
     @property
     def filename(self):
@@ -718,7 +718,7 @@ class Document(object):
             # print "Invalid value for upload_method -> " + upload_method
             self._upload_method = "outdated_sdk_version"
         else:
-            self._upload_method = upload_method.lower()
+            self._upload_method = upload_method
 
     @property
     def lock_info(self):
@@ -791,7 +791,7 @@ class Document(object):
             # print "Invalid value for sharing_status -> " + sharing_status
             self._sharing_status = "outdated_sdk_version"
         else:
-            self._sharing_status = sharing_status.lower()
+            self._sharing_status = sharing_status
 
     @property
     def sharing_uri(self):

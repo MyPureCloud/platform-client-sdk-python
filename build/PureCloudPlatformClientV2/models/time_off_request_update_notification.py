@@ -232,7 +232,7 @@ class TimeOffRequestUpdateNotification(object):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
         else:
-            self._status = status.lower()
+            self._status = status
 
     @property
     def partial_day_start_date_times(self):

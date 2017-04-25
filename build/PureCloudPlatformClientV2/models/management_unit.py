@@ -133,7 +133,7 @@ class ManagementUnit(object):
             # print "Invalid value for start_day_of_week -> " + start_day_of_week
             self._start_day_of_week = "outdated_sdk_version"
         else:
-            self._start_day_of_week = start_day_of_week.lower()
+            self._start_day_of_week = start_day_of_week
 
     @property
     def timezone(self):

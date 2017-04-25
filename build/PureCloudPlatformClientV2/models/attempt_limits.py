@@ -283,7 +283,7 @@ class AttemptLimits(object):
             # print "Invalid value for reset_period -> " + reset_period
             self._reset_period = "outdated_sdk_version"
         else:
-            self._reset_period = reset_period.lower()
+            self._reset_period = reset_period
 
     @property
     def self_uri(self):

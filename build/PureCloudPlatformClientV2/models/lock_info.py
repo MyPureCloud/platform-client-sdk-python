@@ -150,7 +150,7 @@ class LockInfo(object):
             # print "Invalid value for action -> " + action
             self._action = "outdated_sdk_version"
         else:
-            self._action = action.lower()
+            self._action = action
 
     def to_dict(self):
         """

@@ -166,7 +166,7 @@ class InteractionStatsAlert(object):
             # print "Invalid value for dimension -> " + dimension
             self._dimension = "outdated_sdk_version"
         else:
-            self._dimension = dimension.lower()
+            self._dimension = dimension
 
     @property
     def dimension_value(self):
@@ -216,7 +216,7 @@ class InteractionStatsAlert(object):
             # print "Invalid value for metric -> " + metric
             self._metric = "outdated_sdk_version"
         else:
-            self._metric = metric.lower()
+            self._metric = metric
 
     @property
     def media_type(self):
@@ -243,7 +243,7 @@ class InteractionStatsAlert(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     @property
     def numeric_range(self):
@@ -270,7 +270,7 @@ class InteractionStatsAlert(object):
             # print "Invalid value for numeric_range -> " + numeric_range
             self._numeric_range = "outdated_sdk_version"
         else:
-            self._numeric_range = numeric_range.lower()
+            self._numeric_range = numeric_range
 
     @property
     def statistic(self):
@@ -297,7 +297,7 @@ class InteractionStatsAlert(object):
             # print "Invalid value for statistic -> " + statistic
             self._statistic = "outdated_sdk_version"
         else:
-            self._statistic = statistic.lower()
+            self._statistic = statistic
 
     @property
     def value(self):

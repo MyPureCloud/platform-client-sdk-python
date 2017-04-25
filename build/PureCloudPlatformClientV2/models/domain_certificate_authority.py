@@ -301,7 +301,7 @@ class DomainCertificateAuthority(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -397,7 +397,7 @@ class DomainCertificateAuthority(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def services(self):

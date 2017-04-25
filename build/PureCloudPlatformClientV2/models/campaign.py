@@ -317,7 +317,7 @@ class Campaign(object):
             # print "Invalid value for dialing_mode -> " + dialing_mode
             self._dialing_mode = "outdated_sdk_version"
         else:
-            self._dialing_mode = dialing_mode.lower()
+            self._dialing_mode = dialing_mode
 
     @property
     def script(self):

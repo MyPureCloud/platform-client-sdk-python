@@ -127,7 +127,7 @@ class AnalyticsView(object):
             # print "Invalid value for function -> " + function
             self._function = "outdated_sdk_version"
         else:
-            self._function = function.lower()
+            self._function = function
 
     @property
     def range(self):

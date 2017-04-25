@@ -301,7 +301,7 @@ class Extension(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -443,7 +443,7 @@ class Extension(object):
             # print "Invalid value for owner_type -> " + owner_type
             self._owner_type = "outdated_sdk_version"
         else:
-            self._owner_type = owner_type.lower()
+            self._owner_type = owner_type
 
     @property
     def self_uri(self):

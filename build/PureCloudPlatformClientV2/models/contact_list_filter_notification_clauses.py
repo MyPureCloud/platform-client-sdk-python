@@ -78,7 +78,7 @@ class ContactListFilterNotificationClauses(object):
             # print "Invalid value for filter_type -> " + filter_type
             self._filter_type = "outdated_sdk_version"
         else:
-            self._filter_type = filter_type.lower()
+            self._filter_type = filter_type
 
     @property
     def predicates(self):

@@ -431,7 +431,7 @@ class CampaignInteraction(object):
             # print "Invalid value for disposition -> " + disposition
             self._disposition = "outdated_sdk_version"
         else:
-            self._disposition = disposition.lower()
+            self._disposition = disposition
 
     @property
     def caller_name(self):

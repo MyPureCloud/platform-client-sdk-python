@@ -153,7 +153,7 @@ class FaxSendResponse(object):
             # print "Invalid value for upload_method_type -> " + upload_method_type
             self._upload_method_type = "outdated_sdk_version"
         else:
-            self._upload_method_type = upload_method_type.lower()
+            self._upload_method_type = upload_method_type
 
     @property
     def self_uri(self):

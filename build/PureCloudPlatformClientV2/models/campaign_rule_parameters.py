@@ -81,7 +81,7 @@ class CampaignRuleParameters(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def value(self):
@@ -131,7 +131,7 @@ class CampaignRuleParameters(object):
             # print "Invalid value for priority -> " + priority
             self._priority = "outdated_sdk_version"
         else:
-            self._priority = priority.lower()
+            self._priority = priority
 
     @property
     def dialing_mode(self):
@@ -158,7 +158,7 @@ class CampaignRuleParameters(object):
             # print "Invalid value for dialing_mode -> " + dialing_mode
             self._dialing_mode = "outdated_sdk_version"
         else:
-            self._dialing_mode = dialing_mode.lower()
+            self._dialing_mode = dialing_mode
 
     def to_dict(self):
         """

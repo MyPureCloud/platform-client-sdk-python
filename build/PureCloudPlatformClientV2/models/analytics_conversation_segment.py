@@ -302,7 +302,7 @@ class AnalyticsConversationSegment(object):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"
         else:
-            self._disconnect_type = disconnect_type.lower()
+            self._disconnect_type = disconnect_type
 
     @property
     def segment_type(self):
@@ -329,7 +329,7 @@ class AnalyticsConversationSegment(object):
             # print "Invalid value for segment_type -> " + segment_type
             self._segment_type = "outdated_sdk_version"
         else:
-            self._segment_type = segment_type.lower()
+            self._segment_type = segment_type
 
     @property
     def requested_routing_user_ids(self):

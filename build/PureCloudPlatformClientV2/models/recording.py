@@ -365,7 +365,7 @@ class Recording(object):
             # print "Invalid value for file_state -> " + file_state
             self._file_state = "outdated_sdk_version"
         else:
-            self._file_state = file_state.lower()
+            self._file_state = file_state
 
     @property
     def restore_expiration_time(self):
@@ -507,7 +507,7 @@ class Recording(object):
             # print "Invalid value for archive_medium -> " + archive_medium
             self._archive_medium = "outdated_sdk_version"
         else:
-            self._archive_medium = archive_medium.lower()
+            self._archive_medium = archive_medium
 
     @property
     def delete_date(self):

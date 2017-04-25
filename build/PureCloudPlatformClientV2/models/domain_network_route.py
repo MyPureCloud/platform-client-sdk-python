@@ -176,7 +176,7 @@ class DomainNetworkRoute(object):
             # print "Invalid value for family -> " + family
             self._family = "outdated_sdk_version"
         else:
-            self._family = family.lower()
+            self._family = family
 
     def to_dict(self):
         """

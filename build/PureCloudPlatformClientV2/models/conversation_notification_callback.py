@@ -123,7 +123,7 @@ class ConversationNotificationCallback(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def id(self):
@@ -173,7 +173,7 @@ class ConversationNotificationCallback(object):
             # print "Invalid value for direction -> " + direction
             self._direction = "outdated_sdk_version"
         else:
-            self._direction = direction.lower()
+            self._direction = direction
 
     @property
     def held(self):
@@ -223,7 +223,7 @@ class ConversationNotificationCallback(object):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"
         else:
-            self._disconnect_type = disconnect_type.lower()
+            self._disconnect_type = disconnect_type
 
     @property
     def start_hold_time(self):

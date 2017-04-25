@@ -660,7 +660,7 @@ class Participant(object):
             # print "Invalid value for wrapup_prompt -> " + wrapup_prompt
             self._wrapup_prompt = "outdated_sdk_version"
         else:
-            self._wrapup_prompt = wrapup_prompt.lower()
+            self._wrapup_prompt = wrapup_prompt
 
     @property
     def wrapup_timeout_ms(self):

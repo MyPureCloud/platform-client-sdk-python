@@ -202,7 +202,7 @@ class ReplaceResponse(object):
             # print "Invalid value for upload_method -> " + upload_method
             self._upload_method = "outdated_sdk_version"
         else:
-            self._upload_method = upload_method.lower()
+            self._upload_method = upload_method
 
     def to_dict(self):
         """

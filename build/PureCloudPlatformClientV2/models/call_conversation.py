@@ -179,7 +179,7 @@ class CallConversation(object):
             # print "Invalid value for recording_state -> " + recording_state
             self._recording_state = "outdated_sdk_version"
         else:
-            self._recording_state = recording_state.lower()
+            self._recording_state = recording_state
 
     @property
     def self_uri(self):

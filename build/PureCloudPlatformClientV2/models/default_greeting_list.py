@@ -168,7 +168,7 @@ class DefaultGreetingList(object):
             # print "Invalid value for owner_type -> " + owner_type
             self._owner_type = "outdated_sdk_version"
         else:
-            self._owner_type = owner_type.lower()
+            self._owner_type = owner_type
 
     @property
     def greetings(self):

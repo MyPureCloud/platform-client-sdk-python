@@ -124,7 +124,7 @@ class Reaction(object):
             # print "Invalid value for reaction_type -> " + reaction_type
             self._reaction_type = "outdated_sdk_version"
         else:
-            self._reaction_type = reaction_type.lower()
+            self._reaction_type = reaction_type
 
     def to_dict(self):
         """

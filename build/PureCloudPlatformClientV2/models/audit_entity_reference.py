@@ -153,7 +153,7 @@ class AuditEntityReference(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def action(self):

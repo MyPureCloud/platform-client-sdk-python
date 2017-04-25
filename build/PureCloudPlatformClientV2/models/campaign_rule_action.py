@@ -127,7 +127,7 @@ class CampaignRuleAction(object):
             # print "Invalid value for action_type -> " + action_type
             self._action_type = "outdated_sdk_version"
         else:
-            self._action_type = action_type.lower()
+            self._action_type = action_type
 
     @property
     def campaign_rule_action_entities(self):

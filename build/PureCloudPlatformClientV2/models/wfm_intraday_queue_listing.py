@@ -98,7 +98,7 @@ class WfmIntradayQueueListing(object):
             # print "Invalid value for no_data_reason -> " + no_data_reason
             self._no_data_reason = "outdated_sdk_version"
         else:
-            self._no_data_reason = no_data_reason.lower()
+            self._no_data_reason = no_data_reason
 
     def to_dict(self):
         """

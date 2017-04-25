@@ -78,7 +78,7 @@ class PredictionResults(object):
             # print "Invalid value for intent -> " + intent
             self._intent = "outdated_sdk_version"
         else:
-            self._intent = intent.lower()
+            self._intent = intent
 
     @property
     def formula(self):
@@ -105,7 +105,7 @@ class PredictionResults(object):
             # print "Invalid value for formula -> " + formula
             self._formula = "outdated_sdk_version"
         else:
-            self._formula = formula.lower()
+            self._formula = formula
 
     @property
     def estimated_wait_time_seconds(self):

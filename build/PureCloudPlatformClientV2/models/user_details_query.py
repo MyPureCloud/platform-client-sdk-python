@@ -254,7 +254,7 @@ class UserDetailsQuery(object):
             # print "Invalid value for order -> " + order
             self._order = "outdated_sdk_version"
         else:
-            self._order = order.lower()
+            self._order = order
 
     def to_dict(self):
         """

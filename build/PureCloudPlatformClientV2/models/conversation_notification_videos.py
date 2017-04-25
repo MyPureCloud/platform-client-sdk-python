@@ -108,7 +108,7 @@ class ConversationNotificationVideos(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def pcSelf(self):
@@ -319,7 +319,7 @@ class ConversationNotificationVideos(object):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"
         else:
-            self._disconnect_type = disconnect_type.lower()
+            self._disconnect_type = disconnect_type
 
     @property
     def connected_time(self):

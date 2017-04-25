@@ -90,7 +90,7 @@ class Condition(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def inverted(self):
@@ -186,7 +186,7 @@ class Condition(object):
             # print "Invalid value for value_type -> " + value_type
             self._value_type = "outdated_sdk_version"
         else:
-            self._value_type = value_type.lower()
+            self._value_type = value_type
 
     @property
     def operator(self):
@@ -213,7 +213,7 @@ class Condition(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def codes(self):

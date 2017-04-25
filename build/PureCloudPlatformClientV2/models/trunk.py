@@ -310,7 +310,7 @@ class Trunk(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -383,7 +383,7 @@ class Trunk(object):
             # print "Invalid value for trunk_type -> " + trunk_type
             self._trunk_type = "outdated_sdk_version"
         else:
-            self._trunk_type = trunk_type.lower()
+            self._trunk_type = trunk_type
 
     @property
     def edge(self):

@@ -101,7 +101,7 @@ class ContentAttributeFilterItem(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def values(self):

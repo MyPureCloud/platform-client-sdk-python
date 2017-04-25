@@ -352,7 +352,7 @@ class DomainLogicalInterface(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -586,7 +586,7 @@ class DomainLogicalInterface(object):
             # print "Invalid value for interface_type -> " + interface_type
             self._interface_type = "outdated_sdk_version"
         else:
-            self._interface_type = interface_type.lower()
+            self._interface_type = interface_type
 
     @property
     def routes(self):
@@ -705,7 +705,7 @@ class DomainLogicalInterface(object):
             # print "Invalid value for current_state -> " + current_state
             self._current_state = "outdated_sdk_version"
         else:
-            self._current_state = current_state.lower()
+            self._current_state = current_state
 
     @property
     def last_modified_user_id(self):

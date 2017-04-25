@@ -75,7 +75,7 @@ class CreateShareRequestMember(object):
             # print "Invalid value for member_type -> " + member_type
             self._member_type = "outdated_sdk_version"
         else:
-            self._member_type = member_type.lower()
+            self._member_type = member_type
 
     @property
     def member(self):

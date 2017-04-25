@@ -151,7 +151,7 @@ class Greeting(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def owner_type(self):
@@ -178,7 +178,7 @@ class Greeting(object):
             # print "Invalid value for owner_type -> " + owner_type
             self._owner_type = "outdated_sdk_version"
         else:
-            self._owner_type = owner_type.lower()
+            self._owner_type = owner_type
 
     @property
     def owner(self):

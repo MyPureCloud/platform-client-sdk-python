@@ -90,7 +90,7 @@ class IntradayDataGroup(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     @property
     def forecast_data_per_interval(self):

@@ -87,7 +87,7 @@ class ContactListNotificationImportStatus(object):
             # print "Invalid value for import_state -> " + import_state
             self._import_state = "outdated_sdk_version"
         else:
-            self._import_state = import_state.lower()
+            self._import_state = import_state
 
     @property
     def total_records(self):

@@ -266,7 +266,7 @@ class DncListNotification(object):
             # print "Invalid value for dnc_source_type -> " + dnc_source_type
             self._dnc_source_type = "outdated_sdk_version"
         else:
-            self._dnc_source_type = dnc_source_type.lower()
+            self._dnc_source_type = dnc_source_type
 
     @property
     def login_id(self):

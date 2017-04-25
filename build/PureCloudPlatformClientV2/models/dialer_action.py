@@ -81,7 +81,7 @@ class DialerAction(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def action_type_name(self):
@@ -108,7 +108,7 @@ class DialerAction(object):
             # print "Invalid value for action_type_name -> " + action_type_name
             self._action_type_name = "outdated_sdk_version"
         else:
-            self._action_type_name = action_type_name.lower()
+            self._action_type_name = action_type_name
 
     @property
     def update_option(self):
@@ -135,7 +135,7 @@ class DialerAction(object):
             # print "Invalid value for update_option -> " + update_option
             self._update_option = "outdated_sdk_version"
         else:
-            self._update_option = update_option.lower()
+            self._update_option = update_option
 
     @property
     def properties(self):

@@ -203,7 +203,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for scheduled_activity_category -> " + scheduled_activity_category
             self._scheduled_activity_category = "outdated_sdk_version"
         else:
-            self._scheduled_activity_category = scheduled_activity_category.lower()
+            self._scheduled_activity_category = scheduled_activity_category
 
     @property
     def system_presence(self):
@@ -230,7 +230,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for system_presence -> " + system_presence
             self._system_presence = "outdated_sdk_version"
         else:
-            self._system_presence = system_presence.lower()
+            self._system_presence = system_presence
 
     @property
     def organization_secondary_presence_id(self):
@@ -280,7 +280,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for routing_status -> " + routing_status
             self._routing_status = "outdated_sdk_version"
         else:
-            self._routing_status = routing_status.lower()
+            self._routing_status = routing_status
 
     @property
     def actual_activity_category(self):
@@ -307,7 +307,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for actual_activity_category -> " + actual_activity_category
             self._actual_activity_category = "outdated_sdk_version"
         else:
-            self._actual_activity_category = actual_activity_category.lower()
+            self._actual_activity_category = actual_activity_category
 
     @property
     def is_out_of_office(self):
@@ -357,7 +357,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for adherence_state -> " + adherence_state
             self._adherence_state = "outdated_sdk_version"
         else:
-            self._adherence_state = adherence_state.lower()
+            self._adherence_state = adherence_state
 
     @property
     def impact(self):
@@ -384,7 +384,7 @@ class UserScheduleAdherence(object):
             # print "Invalid value for impact -> " + impact
             self._impact = "outdated_sdk_version"
         else:
-            self._impact = impact.lower()
+            self._impact = impact
 
     @property
     def time_of_adherence_change(self):

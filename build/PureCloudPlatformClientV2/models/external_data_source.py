@@ -75,7 +75,7 @@ class ExternalDataSource(object):
             # print "Invalid value for platform -> " + platform
             self._platform = "outdated_sdk_version"
         else:
-            self._platform = platform.lower()
+            self._platform = platform
 
     @property
     def url(self):

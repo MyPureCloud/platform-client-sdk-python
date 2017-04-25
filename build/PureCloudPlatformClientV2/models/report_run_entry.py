@@ -194,7 +194,7 @@ class ReportRunEntry(object):
             # print "Invalid value for run_status -> " + run_status
             self._run_status = "outdated_sdk_version"
         else:
-            self._run_status = run_status.lower()
+            self._run_status = run_status
 
     @property
     def error_message(self):

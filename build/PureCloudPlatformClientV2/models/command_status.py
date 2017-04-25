@@ -185,7 +185,7 @@ class CommandStatus(object):
             # print "Invalid value for status_code -> " + status_code
             self._status_code = "outdated_sdk_version"
         else:
-            self._status_code = status_code.lower()
+            self._status_code = status_code
 
     @property
     def command_type(self):
@@ -212,7 +212,7 @@ class CommandStatus(object):
             # print "Invalid value for command_type -> " + command_type
             self._command_type = "outdated_sdk_version"
         else:
-            self._command_type = command_type.lower()
+            self._command_type = command_type
 
     @property
     def document(self):

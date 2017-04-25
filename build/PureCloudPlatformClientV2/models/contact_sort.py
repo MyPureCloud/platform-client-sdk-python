@@ -101,7 +101,7 @@ class ContactSort(object):
             # print "Invalid value for direction -> " + direction
             self._direction = "outdated_sdk_version"
         else:
-            self._direction = direction.lower()
+            self._direction = direction
 
     @property
     def numeric(self):

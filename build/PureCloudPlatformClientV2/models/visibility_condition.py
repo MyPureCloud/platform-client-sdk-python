@@ -75,7 +75,7 @@ class VisibilityCondition(object):
             # print "Invalid value for combining_operation -> " + combining_operation
             self._combining_operation = "outdated_sdk_version"
         else:
-            self._combining_operation = combining_operation.lower()
+            self._combining_operation = combining_operation
 
     @property
     def predicates(self):

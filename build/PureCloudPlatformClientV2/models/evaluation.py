@@ -290,7 +290,7 @@ class Evaluation(object):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
         else:
-            self._status = status.lower()
+            self._status = status
 
     @property
     def answers(self):
@@ -501,7 +501,7 @@ class Evaluation(object):
             # print "Invalid value for resource_type -> " + resource_type
             self._resource_type = "outdated_sdk_version"
         else:
-            self._resource_type = resource_type.lower()
+            self._resource_type = resource_type
 
     @property
     def redacted(self):

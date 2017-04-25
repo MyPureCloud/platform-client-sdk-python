@@ -78,7 +78,7 @@ class AnalyticsProperty(object):
             # print "Invalid value for property_type -> " + property_type
             self._property_type = "outdated_sdk_version"
         else:
-            self._property_type = property_type.lower()
+            self._property_type = property_type
 
     @property
     def pcProperty(self):

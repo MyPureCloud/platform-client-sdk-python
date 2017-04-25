@@ -124,7 +124,7 @@ class CampaignRuleCondition(object):
             # print "Invalid value for condition_type -> " + condition_type
             self._condition_type = "outdated_sdk_version"
         else:
-            self._condition_type = condition_type.lower()
+            self._condition_type = condition_type
 
     def to_dict(self):
         """

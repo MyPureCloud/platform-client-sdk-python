@@ -127,7 +127,7 @@ class KeyRotationSchedule(object):
             # print "Invalid value for period -> " + period
             self._period = "outdated_sdk_version"
         else:
-            self._period = period.lower()
+            self._period = period
 
     @property
     def self_uri(self):

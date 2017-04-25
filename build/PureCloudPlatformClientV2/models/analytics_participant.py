@@ -159,7 +159,7 @@ class AnalyticsParticipant(object):
             # print "Invalid value for purpose -> " + purpose
             self._purpose = "outdated_sdk_version"
         else:
-            self._purpose = purpose.lower()
+            self._purpose = purpose
 
     @property
     def external_contact_id(self):

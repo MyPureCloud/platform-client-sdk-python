@@ -361,7 +361,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def direction(self):
@@ -388,7 +388,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             # print "Invalid value for direction -> " + direction
             self._direction = "outdated_sdk_version"
         else:
-            self._direction = direction.lower()
+            self._direction = direction
 
     @property
     def disconnect_type(self):
@@ -415,7 +415,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"
         else:
-            self._disconnect_type = disconnect_type.lower()
+            self._disconnect_type = disconnect_type
 
     @property
     def held(self):
@@ -833,7 +833,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             # print "Invalid value for recording_state -> " + recording_state
             self._recording_state = "outdated_sdk_version"
         else:
-            self._recording_state = recording_state.lower()
+            self._recording_state = recording_state
 
     @property
     def group(self):

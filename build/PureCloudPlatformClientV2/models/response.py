@@ -263,7 +263,7 @@ class Response(object):
             # print "Invalid value for interaction_type -> " + interaction_type
             self._interaction_type = "outdated_sdk_version"
         else:
-            self._interaction_type = interaction_type.lower()
+            self._interaction_type = interaction_type
 
     @property
     def substitutions(self):

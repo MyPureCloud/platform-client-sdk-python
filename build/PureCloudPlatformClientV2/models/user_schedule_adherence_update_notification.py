@@ -191,7 +191,7 @@ class UserScheduleAdherenceUpdateNotification(object):
             # print "Invalid value for routing_status -> " + routing_status
             self._routing_status = "outdated_sdk_version"
         else:
-            self._routing_status = routing_status.lower()
+            self._routing_status = routing_status
 
     @property
     def actual_activity_category(self):

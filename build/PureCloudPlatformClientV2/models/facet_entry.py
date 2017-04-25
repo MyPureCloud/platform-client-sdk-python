@@ -231,7 +231,7 @@ class FacetEntry(object):
             # print "Invalid value for term_type -> " + term_type
             self._term_type = "outdated_sdk_version"
         else:
-            self._term_type = term_type.lower()
+            self._term_type = term_type
 
     @property
     def terms(self):

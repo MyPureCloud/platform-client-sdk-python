@@ -93,7 +93,7 @@ class AnalyticsQueryPredicate(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def dimension(self):
@@ -120,7 +120,7 @@ class AnalyticsQueryPredicate(object):
             # print "Invalid value for dimension -> " + dimension
             self._dimension = "outdated_sdk_version"
         else:
-            self._dimension = dimension.lower()
+            self._dimension = dimension
 
     @property
     def property_type(self):
@@ -147,7 +147,7 @@ class AnalyticsQueryPredicate(object):
             # print "Invalid value for property_type -> " + property_type
             self._property_type = "outdated_sdk_version"
         else:
-            self._property_type = property_type.lower()
+            self._property_type = property_type
 
     @property
     def pcProperty(self):
@@ -197,7 +197,7 @@ class AnalyticsQueryPredicate(object):
             # print "Invalid value for metric -> " + metric
             self._metric = "outdated_sdk_version"
         else:
-            self._metric = metric.lower()
+            self._metric = metric
 
     @property
     def operator(self):
@@ -224,7 +224,7 @@ class AnalyticsQueryPredicate(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def value(self):

@@ -78,7 +78,7 @@ class DurationCondition(object):
             # print "Invalid value for duration_target -> " + duration_target
             self._duration_target = "outdated_sdk_version"
         else:
-            self._duration_target = duration_target.lower()
+            self._duration_target = duration_target
 
     @property
     def duration_operator(self):

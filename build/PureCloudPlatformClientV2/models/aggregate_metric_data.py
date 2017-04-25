@@ -78,7 +78,7 @@ class AggregateMetricData(object):
             # print "Invalid value for metric -> " + metric
             self._metric = "outdated_sdk_version"
         else:
-            self._metric = metric.lower()
+            self._metric = metric
 
     @property
     def qualifier(self):

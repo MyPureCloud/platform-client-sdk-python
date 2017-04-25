@@ -145,7 +145,7 @@ class PhoneStatus(object):
             # print "Invalid value for operational_status -> " + operational_status
             self._operational_status = "outdated_sdk_version"
         else:
-            self._operational_status = operational_status.lower()
+            self._operational_status = operational_status
 
     @property
     def edges_status(self):
@@ -172,7 +172,7 @@ class PhoneStatus(object):
             # print "Invalid value for edges_status -> " + edges_status
             self._edges_status = "outdated_sdk_version"
         else:
-            self._edges_status = edges_status.lower()
+            self._edges_status = edges_status
 
     @property
     def event_creation_time(self):
@@ -268,7 +268,7 @@ class PhoneStatus(object):
             # print "Invalid value for phone_assignment_to_edge_type -> " + phone_assignment_to_edge_type
             self._phone_assignment_to_edge_type = "outdated_sdk_version"
         else:
-            self._phone_assignment_to_edge_type = phone_assignment_to_edge_type.lower()
+            self._phone_assignment_to_edge_type = phone_assignment_to_edge_type
 
     @property
     def edge(self):

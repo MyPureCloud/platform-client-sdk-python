@@ -101,7 +101,7 @@ class MediaTranscription(object):
             # print "Invalid value for transcription_provider -> " + transcription_provider
             self._transcription_provider = "outdated_sdk_version"
         else:
-            self._transcription_provider = transcription_provider.lower()
+            self._transcription_provider = transcription_provider
 
     @property
     def integration_id(self):

@@ -177,7 +177,7 @@ class UserPresenceAlert(object):
             # print "Invalid value for presence_type -> " + presence_type
             self._presence_type = "outdated_sdk_version"
         else:
-            self._presence_type = presence_type.lower()
+            self._presence_type = presence_type
 
     @property
     def presence_value(self):

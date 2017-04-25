@@ -98,7 +98,7 @@ class ArchiveRetention(object):
             # print "Invalid value for storage_medium -> " + storage_medium
             self._storage_medium = "outdated_sdk_version"
         else:
-            self._storage_medium = storage_medium.lower()
+            self._storage_medium = storage_medium
 
     def to_dict(self):
         """

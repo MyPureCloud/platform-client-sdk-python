@@ -307,7 +307,7 @@ class EdgeLogsJobFile(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -449,7 +449,7 @@ class EdgeLogsJobFile(object):
             # print "Invalid value for upload_status -> " + upload_status
             self._upload_status = "outdated_sdk_version"
         else:
-            self._upload_status = upload_status.lower()
+            self._upload_status = upload_status
 
     @property
     def edge_path(self):

@@ -139,7 +139,7 @@ class FieldConfig(object):
             # print "Invalid value for entity_type -> " + entity_type
             self._entity_type = "outdated_sdk_version"
         else:
-            self._entity_type = entity_type.lower()
+            self._entity_type = entity_type
 
     @property
     def state(self):

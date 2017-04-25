@@ -301,7 +301,7 @@ class OutboundRouteBase(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -420,7 +420,7 @@ class OutboundRouteBase(object):
             # print "Invalid value for distribution -> " + distribution
             self._distribution = "outdated_sdk_version"
         else:
-            self._distribution = distribution.lower()
+            self._distribution = distribution
 
     @property
     def external_trunk_bases(self):

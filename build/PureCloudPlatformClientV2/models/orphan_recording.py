@@ -197,7 +197,7 @@ class OrphanRecording(object):
             # print "Invalid value for provider_type -> " + provider_type
             self._provider_type = "outdated_sdk_version"
         else:
-            self._provider_type = provider_type.lower()
+            self._provider_type = provider_type
 
     @property
     def media_size_bytes(self):
@@ -247,7 +247,7 @@ class OrphanRecording(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     @property
     def file_state(self):
@@ -274,7 +274,7 @@ class OrphanRecording(object):
             # print "Invalid value for file_state -> " + file_state
             self._file_state = "outdated_sdk_version"
         else:
-            self._file_state = file_state.lower()
+            self._file_state = file_state
 
     @property
     def provider_endpoint(self):
@@ -347,7 +347,7 @@ class OrphanRecording(object):
             # print "Invalid value for orphan_status -> " + orphan_status
             self._orphan_status = "outdated_sdk_version"
         else:
-            self._orphan_status = orphan_status.lower()
+            self._orphan_status = orphan_status
 
     @property
     def self_uri(self):

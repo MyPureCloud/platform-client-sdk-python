@@ -104,7 +104,7 @@ class Parameter(object):
             # print "Invalid value for parameter_type -> " + parameter_type
             self._parameter_type = "outdated_sdk_version"
         else:
-            self._parameter_type = parameter_type.lower()
+            self._parameter_type = parameter_type
 
     @property
     def domain(self):
@@ -131,7 +131,7 @@ class Parameter(object):
             # print "Invalid value for domain -> " + domain
             self._domain = "outdated_sdk_version"
         else:
-            self._domain = domain.lower()
+            self._domain = domain
 
     @property
     def required(self):

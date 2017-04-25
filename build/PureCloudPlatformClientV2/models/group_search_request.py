@@ -84,7 +84,7 @@ class GroupSearchRequest(object):
             # print "Invalid value for sort_order -> " + sort_order
             self._sort_order = "outdated_sdk_version"
         else:
-            self._sort_order = sort_order.lower()
+            self._sort_order = sort_order
 
     @property
     def sort_by(self):

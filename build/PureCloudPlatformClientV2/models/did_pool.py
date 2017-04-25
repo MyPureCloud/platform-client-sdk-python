@@ -301,7 +301,7 @@ class DIDPool(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -443,7 +443,7 @@ class DIDPool(object):
             # print "Invalid value for provider -> " + provider
             self._provider = "outdated_sdk_version"
         else:
-            self._provider = provider.lower()
+            self._provider = provider
 
     @property
     def self_uri(self):

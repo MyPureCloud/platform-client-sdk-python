@@ -223,7 +223,7 @@ class Group(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def version(self):
@@ -273,7 +273,7 @@ class Group(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def images(self):
@@ -369,7 +369,7 @@ class Group(object):
             # print "Invalid value for visibility -> " + visibility
             self._visibility = "outdated_sdk_version"
         else:
-            self._visibility = visibility.lower()
+            self._visibility = visibility
 
     @property
     def self_uri(self):

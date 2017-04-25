@@ -301,7 +301,7 @@ class DocumentAudit(object):
             # print "Invalid value for level -> " + level
             self._level = "outdated_sdk_version"
         else:
-            self._level = level.lower()
+            self._level = level
 
     @property
     def timestamp(self):
@@ -351,7 +351,7 @@ class DocumentAudit(object):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
         else:
-            self._status = status.lower()
+            self._status = status
 
     @property
     def action_context(self):
@@ -378,7 +378,7 @@ class DocumentAudit(object):
             # print "Invalid value for action_context -> " + action_context
             self._action_context = "outdated_sdk_version"
         else:
-            self._action_context = action_context.lower()
+            self._action_context = action_context
 
     @property
     def action(self):
@@ -405,7 +405,7 @@ class DocumentAudit(object):
             # print "Invalid value for action -> " + action
             self._action = "outdated_sdk_version"
         else:
-            self._action = action.lower()
+            self._action = action
 
     @property
     def entity(self):

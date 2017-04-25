@@ -165,7 +165,7 @@ class AnalyticsSession(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     @property
     def session_id(self):
@@ -284,7 +284,7 @@ class AnalyticsSession(object):
             # print "Invalid value for direction -> " + direction
             self._direction = "outdated_sdk_version"
         else:
-            self._direction = direction.lower()
+            self._direction = direction
 
     @property
     def dnis(self):

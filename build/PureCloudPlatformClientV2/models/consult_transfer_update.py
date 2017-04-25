@@ -72,7 +72,7 @@ class ConsultTransferUpdate(object):
             # print "Invalid value for speak_to -> " + speak_to
             self._speak_to = "outdated_sdk_version"
         else:
-            self._speak_to = speak_to.lower()
+            self._speak_to = speak_to
 
     def to_dict(self):
         """

@@ -107,7 +107,7 @@ class DomainResourceConditionNode(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def operands(self):
@@ -157,7 +157,7 @@ class DomainResourceConditionNode(object):
             # print "Invalid value for conjunction -> " + conjunction
             self._conjunction = "outdated_sdk_version"
         else:
-            self._conjunction = conjunction.lower()
+            self._conjunction = conjunction
 
     @property
     def terms(self):

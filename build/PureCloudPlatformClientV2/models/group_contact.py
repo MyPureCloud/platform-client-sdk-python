@@ -127,7 +127,7 @@ class GroupContact(object):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
         else:
-            self._type = type.lower()
+            self._type = type
 
     @property
     def media_type(self):
@@ -154,7 +154,7 @@ class GroupContact(object):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
         else:
-            self._media_type = media_type.lower()
+            self._media_type = media_type
 
     def to_dict(self):
         """

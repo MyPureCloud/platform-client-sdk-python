@@ -257,7 +257,7 @@ class OAuthClient(object):
             # print "Invalid value for authorized_grant_type -> " + authorized_grant_type
             self._authorized_grant_type = "outdated_sdk_version"
         else:
-            self._authorized_grant_type = authorized_grant_type.lower()
+            self._authorized_grant_type = authorized_grant_type
 
     @property
     def self_uri(self):

@@ -188,7 +188,7 @@ class FaxSendRequest(object):
             # print "Invalid value for content_type -> " + content_type
             self._content_type = "outdated_sdk_version"
         else:
-            self._content_type = content_type.lower()
+            self._content_type = content_type
 
     @property
     def workspace(self):

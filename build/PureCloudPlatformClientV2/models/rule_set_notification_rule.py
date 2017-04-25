@@ -159,7 +159,7 @@ class RuleSetNotificationRule(object):
             # print "Invalid value for category -> " + category
             self._category = "outdated_sdk_version"
         else:
-            self._category = category.lower()
+            self._category = category
 
     @property
     def conditions(self):

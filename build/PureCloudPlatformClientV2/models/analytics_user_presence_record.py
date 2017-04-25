@@ -130,7 +130,7 @@ class AnalyticsUserPresenceRecord(object):
             # print "Invalid value for system_presence -> " + system_presence
             self._system_presence = "outdated_sdk_version"
         else:
-            self._system_presence = system_presence.lower()
+            self._system_presence = system_presence
 
     @property
     def organization_presence_id(self):

@@ -306,7 +306,7 @@ class HeartBeatAlertNotification(object):
             # print "Invalid value for rule_type -> " + rule_type
             self._rule_type = "outdated_sdk_version"
         else:
-            self._rule_type = rule_type.lower()
+            self._rule_type = rule_type
 
     def to_dict(self):
         """

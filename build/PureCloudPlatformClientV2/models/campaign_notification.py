@@ -323,7 +323,7 @@ class CampaignNotification(object):
             # print "Invalid value for dialing_mode -> " + dialing_mode
             self._dialing_mode = "outdated_sdk_version"
         else:
-            self._dialing_mode = dialing_mode.lower()
+            self._dialing_mode = dialing_mode
 
     @property
     def script(self):
@@ -396,7 +396,7 @@ class CampaignNotification(object):
             # print "Invalid value for campaign_status -> " + campaign_status
             self._campaign_status = "outdated_sdk_version"
         else:
-            self._campaign_status = campaign_status.lower()
+            self._campaign_status = campaign_status
 
     @property
     def phone_columns(self):

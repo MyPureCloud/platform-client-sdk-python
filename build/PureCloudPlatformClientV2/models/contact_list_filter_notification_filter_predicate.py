@@ -110,7 +110,7 @@ class ContactListFilterNotificationFilterPredicate(object):
             # print "Invalid value for column_type -> " + column_type
             self._column_type = "outdated_sdk_version"
         else:
-            self._column_type = column_type.lower()
+            self._column_type = column_type
 
     @property
     def operator(self):
@@ -137,7 +137,7 @@ class ContactListFilterNotificationFilterPredicate(object):
             # print "Invalid value for operator -> " + operator
             self._operator = "outdated_sdk_version"
         else:
-            self._operator = operator.lower()
+            self._operator = operator
 
     @property
     def value(self):

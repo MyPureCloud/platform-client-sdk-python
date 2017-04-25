@@ -165,7 +165,7 @@ class FlowNotificationNotificationArchitectOperation(object):
             # print "Invalid value for action_name -> " + action_name
             self._action_name = "outdated_sdk_version"
         else:
-            self._action_name = action_name.lower()
+            self._action_name = action_name
 
     @property
     def action_status(self):
@@ -192,7 +192,7 @@ class FlowNotificationNotificationArchitectOperation(object):
             # print "Invalid value for action_status -> " + action_status
             self._action_status = "outdated_sdk_version"
         else:
-            self._action_status = action_status.lower()
+            self._action_status = action_status
 
     @property
     def error_message(self):

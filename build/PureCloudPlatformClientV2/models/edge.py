@@ -367,7 +367,7 @@ class Edge(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -785,7 +785,7 @@ class Edge(object):
             # print "Invalid value for status_code -> " + status_code
             self._status_code = "outdated_sdk_version"
         else:
-            self._status_code = status_code.lower()
+            self._status_code = status_code
 
     @property
     def edge_group(self):
@@ -881,7 +881,7 @@ class Edge(object):
             # print "Invalid value for online_status -> " + online_status
             self._online_status = "outdated_sdk_version"
         else:
-            self._online_status = online_status.lower()
+            self._online_status = online_status
 
     @property
     def serial_number(self):
@@ -977,7 +977,7 @@ class Edge(object):
             # print "Invalid value for edge_deployment_type -> " + edge_deployment_type
             self._edge_deployment_type = "outdated_sdk_version"
         else:
-            self._edge_deployment_type = edge_deployment_type.lower()
+            self._edge_deployment_type = edge_deployment_type
 
     @property
     def call_draining_state(self):
@@ -1004,7 +1004,7 @@ class Edge(object):
             # print "Invalid value for call_draining_state -> " + call_draining_state
             self._call_draining_state = "outdated_sdk_version"
         else:
-            self._call_draining_state = call_draining_state.lower()
+            self._call_draining_state = call_draining_state
 
     @property
     def conversation_count(self):

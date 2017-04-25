@@ -322,7 +322,7 @@ class UserQueue(object):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
         else:
-            self._state = state.lower()
+            self._state = state
 
     @property
     def modified_by_app(self):
@@ -464,7 +464,7 @@ class UserQueue(object):
             # print "Invalid value for skill_evaluation_method -> " + skill_evaluation_method
             self._skill_evaluation_method = "outdated_sdk_version"
         else:
-            self._skill_evaluation_method = skill_evaluation_method.lower()
+            self._skill_evaluation_method = skill_evaluation_method
 
     @property
     def queue_flow(self):
