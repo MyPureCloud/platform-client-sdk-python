@@ -1,7 +1,7 @@
 
 # SDK Changes
 
-* API-2452 don't make enum values lowercase
+* API-2437 Don't send body for DELETE requests
 
 # Major Changes (0 changes)
 
