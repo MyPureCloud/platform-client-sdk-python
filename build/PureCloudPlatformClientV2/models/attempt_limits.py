@@ -47,6 +47,7 @@ class AttemptLimits(object):
             'max_attempts_per_number': 'int',
             'time_zone_id': 'str',
             'reset_period': 'str',
+            'recall_entries': 'dict(str, RecallEntry)',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class AttemptLimits(object):
             'max_attempts_per_number': 'maxAttemptsPerNumber',
             'time_zone_id': 'timeZoneId',
             'reset_period': 'resetPeriod',
+            'recall_entries': 'recallEntries',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +74,7 @@ class AttemptLimits(object):
         self._max_attempts_per_number = None
         self._time_zone_id = None
         self._reset_period = None
+        self._recall_entries = None
         self._self_uri = None
 
     @property
@@ -284,6 +287,29 @@ class AttemptLimits(object):
             self._reset_period = "outdated_sdk_version"
         else:
             self._reset_period = reset_period
+
+    @property
+    def recall_entries(self):
+        """
+        Gets the recall_entries of this AttemptLimits.
+        Configuration for recall attempts
+
+        :return: The recall_entries of this AttemptLimits.
+        :rtype: dict(str, RecallEntry)
+        """
+        return self._recall_entries
+
+    @recall_entries.setter
+    def recall_entries(self, recall_entries):
+        """
+        Sets the recall_entries of this AttemptLimits.
+        Configuration for recall attempts
+
+        :param recall_entries: The recall_entries of this AttemptLimits.
+        :type: dict(str, RecallEntry)
+        """
+        
+        self._recall_entries = recall_entries
 
     @property
     def self_uri(self):

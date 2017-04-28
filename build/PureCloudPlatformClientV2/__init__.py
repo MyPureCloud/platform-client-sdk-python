@@ -294,6 +294,7 @@ from .models.detail import Detail
 from .models.dialer_action import DialerAction
 from .models.dialer_audit_request import DialerAuditRequest
 from .models.dialer_contact import DialerContact
+from .models.dialer_event_entity_listing import DialerEventEntityListing
 from .models.dialer_preview import DialerPreview
 from .models.dialer_rule import DialerRule
 from .models.digit_length import DigitLength
@@ -405,6 +406,8 @@ from .models.evaluation_form_entity_listing import EvaluationFormEntityListing
 from .models.evaluation_scoring_set import EvaluationScoringSet
 from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
+from .models.event_log import EventLog
+from .models.event_message import EventMessage
 from .models.expansion_criterium import ExpansionCriterium
 from .models.export_uri import ExportUri
 from .models.export_uri_notification import ExportUriNotification

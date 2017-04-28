@@ -4772,13 +4772,14 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_number: Page number
         :param str sort_by: Value by which to sort
         :param str sort_order: Sort order
+        :param list[str] expand: Fields to expand in the response, comma-separated
         :param str name: Name
         :return: PhoneBaseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'expand', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -4805,6 +4806,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
         if 'name' in params:
             query_params['name'] = params['name']
 

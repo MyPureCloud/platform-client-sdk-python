@@ -2844,7 +2844,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phonebasesettings"></a>
 
-## [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html) get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+## [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html) get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand, name=name)
 
 Get a list of Phone Base Settings objects
 
@@ -2869,11 +2869,12 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Value by which to sort (optional) (default to name)
 sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 name = 'name_example' # str | Name (optional)
 
 try:
     # Get a list of Phone Base Settings objects
-    api_response = api_instance.get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
+    api_response = api_instance.get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand, name=name)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings: %s\n" % e
@@ -2888,6 +2889,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1]|
 | **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
 | **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
 | **name** | **str**| Name | [optional] |
 {: class="table table-striped"}
 

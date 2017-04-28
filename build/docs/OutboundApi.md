@@ -44,6 +44,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_dnclist_export**](OutboundApi.html#get_outbound_dnclist_export) | Get the URI of a DNC list export.|
 |[**get_outbound_dnclist_importstatus**](OutboundApi.html#get_outbound_dnclist_importstatus) | Get dialer dncList import status.|
 |[**get_outbound_dnclists**](OutboundApi.html#get_outbound_dnclists) | Query dialer DNC lists|
+|[**get_outbound_event**](OutboundApi.html#get_outbound_event) | Get Dialer Event|
+|[**get_outbound_events**](OutboundApi.html#get_outbound_events) | Query Event Logs|
 |[**get_outbound_ruleset**](OutboundApi.html#get_outbound_ruleset) | Get a Rule Set by ID.|
 |[**get_outbound_rulesets**](OutboundApi.html#get_outbound_rulesets) | Query a list of Rule Sets.|
 |[**get_outbound_schedules_campaign**](OutboundApi.html#get_outbound_schedules_campaign) | Get a dialer campaign schedule.|
@@ -1797,6 +1799,108 @@ except ApiException as e:
 ### Return type
 
 [**DncListEntityListing**](DncListEntityListing.html)
+
+<a name="get_outbound_event"></a>
+
+## [**EventLog**](EventLog.html) get_outbound_event(event_id)
+
+Get Dialer Event
+
+
+
+Wraps GET /api/v2/outbound/events/{eventId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+event_id = 'event_id_example' # str | Event Log ID
+
+try:
+    # Get Dialer Event
+    api_response = api_instance.get_outbound_event(event_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_event: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **event_id** | **str**| Event Log ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EventLog**](EventLog.html)
+
+<a name="get_outbound_events"></a>
+
+## [**DialerEventEntityListing**](DialerEventEntityListing.html) get_outbound_events(page_size=page_size, page_number=page_number, filter_type=filter_type, category=category, level=level, sort_by=sort_by, sort_order=sort_order)
+
+Query Event Logs
+
+
+
+Wraps GET /api/v2/outbound/events 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+category = 'category_example' # str | Category (optional)
+level = 'level_example' # str | Level (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = 'a' # str | Sort order (optional) (default to a)
+
+try:
+    # Query Event Logs
+    api_response = api_instance.get_outbound_events(page_size=page_size, page_number=page_number, filter_type=filter_type, category=category, level=level, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_events: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **filter_type** | **str**| Filter type | [optional] [default to Prefix]|
+| **category** | **str**| Category | [optional] |
+| **level** | **str**| Level | [optional] |
+| **sort_by** | **str**| Sort by | [optional] |
+| **sort_order** | **str**| Sort order | [optional] [default to a]|
+{: class="table table-striped"}
+
+### Return type
+
+[**DialerEventEntityListing**](DialerEventEntityListing.html)
 
 <a name="get_outbound_ruleset"></a>
 
