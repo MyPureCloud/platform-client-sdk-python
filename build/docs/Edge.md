@@ -44,6 +44,7 @@ title: Edge
 | **edge_deployment_type** | **str** |  | [optional] |
 | **call_draining_state** | **str** |  | [optional] |
 | **conversation_count** | **int** |  | [optional] |
+| **proxy** | **str** | Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

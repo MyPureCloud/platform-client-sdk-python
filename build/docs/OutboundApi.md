@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_campaignrule**](OutboundApi.html#delete_outbound_campaignrule) | Delete Campaign Rule|
 |[**delete_outbound_contactlist**](OutboundApi.html#delete_outbound_contactlist) | Delete a contact list.|
 |[**delete_outbound_contactlist_contact**](OutboundApi.html#delete_outbound_contactlist_contact) | Delete a contact.|
+|[**delete_outbound_contactlist_contacts**](OutboundApi.html#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
@@ -437,6 +438,52 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID | |
 | **contact_id** | **str**| Contact ID | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_contactlist_contacts"></a>
+
+##  delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
+
+Delete contacts from a contact list.
+
+
+
+Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+contact_ids = ['contact_ids_example'] # list[str] | ContactIds to delete.
+
+try:
+    # Delete contacts from a contact list.
+    api_instance.delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
+except ApiException as e:
+    print "Exception when calling OutboundApi->delete_outbound_contactlist_contacts: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID | |
+| **contact_ids** | [**list[str]**](str.html)| ContactIds to delete. | |
 {: class="table table-striped"}
 
 ### Return type

@@ -676,6 +676,90 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_outbound_contactlist_contacts(self, contact_list_id, contact_ids, **kwargs):
+        """
+        Delete contacts from a contact list.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_contactlist_contacts(contact_list_id, contact_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :param list[str] contact_ids: ContactIds to delete. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'contact_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_contactlist_contacts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `delete_outbound_contactlist_contacts`")
+        # verify the required parameter 'contact_ids' is set
+        if ('contact_ids' not in params) or (params['contact_ids'] is None):
+            raise ValueError("Missing the required parameter `contact_ids` when calling `delete_outbound_contactlist_contacts`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+        if 'contact_ids' in params:
+            query_params['contactIds'] = params['contact_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_outbound_dnclist(self, dnc_list_id, **kwargs):
         """
         Delete dialer DNC list

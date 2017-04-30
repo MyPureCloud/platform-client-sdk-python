@@ -75,6 +75,7 @@ class Edge(object):
             'edge_deployment_type': 'str',
             'call_draining_state': 'str',
             'conversation_count': 'int',
+            'proxy': 'str',
             'self_uri': 'str'
         }
 
@@ -116,6 +117,7 @@ class Edge(object):
             'edge_deployment_type': 'edgeDeploymentType',
             'call_draining_state': 'callDrainingState',
             'conversation_count': 'conversationCount',
+            'proxy': 'proxy',
             'self_uri': 'selfUri'
         }
 
@@ -156,6 +158,7 @@ class Edge(object):
         self._edge_deployment_type = None
         self._call_draining_state = None
         self._conversation_count = None
+        self._proxy = None
         self._self_uri = None
 
     @property
@@ -1028,6 +1031,29 @@ class Edge(object):
         """
         
         self._conversation_count = conversation_count
+
+    @property
+    def proxy(self):
+        """
+        Gets the proxy of this Edge.
+        Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
+
+        :return: The proxy of this Edge.
+        :rtype: str
+        """
+        return self._proxy
+
+    @proxy.setter
+    def proxy(self, proxy):
+        """
+        Sets the proxy of this Edge.
+        Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
+
+        :param proxy: The proxy of this Edge.
+        :type: str
+        """
+        
+        self._proxy = proxy
 
     @property
     def self_uri(self):
