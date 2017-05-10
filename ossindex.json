@@ -1,0 +1,16 @@
+{
+  "author": "Genesys Developer Evangelists",
+  "title": "Platform Client SDK - Python",
+  "logo_url": "https://raw.githubusercontent.com/MyPureCloud/platform-client-sdk-python/master/genesys_64.png",
+  "categories": [
+    "sdk"
+  ],
+  "tags": [
+  ],
+  "apis": [
+    "platform"
+  ],
+  "sdks": [
+    "python"
+  ]
+}
