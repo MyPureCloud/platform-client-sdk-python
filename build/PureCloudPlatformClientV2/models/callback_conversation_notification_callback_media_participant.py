@@ -64,6 +64,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
             'external_organization': 'CallbackConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'outbound_preview': 'ConversationNotificationDialerPreview',
+            'voicemail': 'DocumentDataV2NotificationWorkspace',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'skip_enabled': 'bool',
@@ -99,6 +100,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'outbound_preview': 'outboundPreview',
+            'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'skip_enabled': 'skipEnabled',
@@ -133,6 +135,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._outbound_preview = None
+        self._voicemail = None
         self._callback_numbers = None
         self._callback_user_name = None
         self._skip_enabled = None
@@ -749,6 +752,29 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
         """
         
         self._outbound_preview = outbound_preview
+
+    @property
+    def voicemail(self):
+        """
+        Gets the voicemail of this CallbackConversationNotificationCallbackMediaParticipant.
+
+
+        :return: The voicemail of this CallbackConversationNotificationCallbackMediaParticipant.
+        :rtype: DocumentDataV2NotificationWorkspace
+        """
+        return self._voicemail
+
+    @voicemail.setter
+    def voicemail(self, voicemail):
+        """
+        Sets the voicemail of this CallbackConversationNotificationCallbackMediaParticipant.
+
+
+        :param voicemail: The voicemail of this CallbackConversationNotificationCallbackMediaParticipant.
+        :type: DocumentDataV2NotificationWorkspace
+        """
+        
+        self._voicemail = voicemail
 
     @property
     def callback_numbers(self):

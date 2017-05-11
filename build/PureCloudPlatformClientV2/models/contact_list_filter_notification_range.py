@@ -38,121 +38,121 @@ class ContactListFilterNotificationRange(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'gt': 'str',
-            'gte': 'str',
-            'lt': 'str',
-            'lte': 'str',
+            'min': 'str',
+            'max': 'str',
+            'min_inclusive': 'bool',
+            'max_inclusive': 'bool',
             'in_set': 'list[str]',
             'additional_properties': 'object'
         }
 
         self.attribute_map = {
-            'gt': 'gt',
-            'gte': 'gte',
-            'lt': 'lt',
-            'lte': 'lte',
+            'min': 'min',
+            'max': 'max',
+            'min_inclusive': 'minInclusive',
+            'max_inclusive': 'maxInclusive',
             'in_set': 'inSet',
             'additional_properties': 'additionalProperties'
         }
 
-        self._gt = None
-        self._gte = None
-        self._lt = None
-        self._lte = None
+        self._min = None
+        self._max = None
+        self._min_inclusive = None
+        self._max_inclusive = None
         self._in_set = None
         self._additional_properties = None
 
     @property
-    def gt(self):
+    def min(self):
         """
-        Gets the gt of this ContactListFilterNotificationRange.
+        Gets the min of this ContactListFilterNotificationRange.
 
 
-        :return: The gt of this ContactListFilterNotificationRange.
+        :return: The min of this ContactListFilterNotificationRange.
         :rtype: str
         """
-        return self._gt
+        return self._min
 
-    @gt.setter
-    def gt(self, gt):
+    @min.setter
+    def min(self, min):
         """
-        Sets the gt of this ContactListFilterNotificationRange.
+        Sets the min of this ContactListFilterNotificationRange.
 
 
-        :param gt: The gt of this ContactListFilterNotificationRange.
+        :param min: The min of this ContactListFilterNotificationRange.
         :type: str
         """
         
-        self._gt = gt
+        self._min = min
 
     @property
-    def gte(self):
+    def max(self):
         """
-        Gets the gte of this ContactListFilterNotificationRange.
+        Gets the max of this ContactListFilterNotificationRange.
 
 
-        :return: The gte of this ContactListFilterNotificationRange.
+        :return: The max of this ContactListFilterNotificationRange.
         :rtype: str
         """
-        return self._gte
+        return self._max
 
-    @gte.setter
-    def gte(self, gte):
+    @max.setter
+    def max(self, max):
         """
-        Sets the gte of this ContactListFilterNotificationRange.
+        Sets the max of this ContactListFilterNotificationRange.
 
 
-        :param gte: The gte of this ContactListFilterNotificationRange.
+        :param max: The max of this ContactListFilterNotificationRange.
         :type: str
         """
         
-        self._gte = gte
+        self._max = max
 
     @property
-    def lt(self):
+    def min_inclusive(self):
         """
-        Gets the lt of this ContactListFilterNotificationRange.
+        Gets the min_inclusive of this ContactListFilterNotificationRange.
 
 
-        :return: The lt of this ContactListFilterNotificationRange.
-        :rtype: str
+        :return: The min_inclusive of this ContactListFilterNotificationRange.
+        :rtype: bool
         """
-        return self._lt
+        return self._min_inclusive
 
-    @lt.setter
-    def lt(self, lt):
+    @min_inclusive.setter
+    def min_inclusive(self, min_inclusive):
         """
-        Sets the lt of this ContactListFilterNotificationRange.
+        Sets the min_inclusive of this ContactListFilterNotificationRange.
 
 
-        :param lt: The lt of this ContactListFilterNotificationRange.
-        :type: str
+        :param min_inclusive: The min_inclusive of this ContactListFilterNotificationRange.
+        :type: bool
         """
         
-        self._lt = lt
+        self._min_inclusive = min_inclusive
 
     @property
-    def lte(self):
+    def max_inclusive(self):
         """
-        Gets the lte of this ContactListFilterNotificationRange.
+        Gets the max_inclusive of this ContactListFilterNotificationRange.
 
 
-        :return: The lte of this ContactListFilterNotificationRange.
-        :rtype: str
+        :return: The max_inclusive of this ContactListFilterNotificationRange.
+        :rtype: bool
         """
-        return self._lte
+        return self._max_inclusive
 
-    @lte.setter
-    def lte(self, lte):
+    @max_inclusive.setter
+    def max_inclusive(self, max_inclusive):
         """
-        Sets the lte of this ContactListFilterNotificationRange.
+        Sets the max_inclusive of this ContactListFilterNotificationRange.
 
 
-        :param lte: The lte of this ContactListFilterNotificationRange.
-        :type: str
+        :param max_inclusive: The max_inclusive of this ContactListFilterNotificationRange.
+        :type: bool
         """
         
-        self._lte = lte
+        self._max_inclusive = max_inclusive
 
     @property
     def in_set(self):

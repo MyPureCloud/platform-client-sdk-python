@@ -45,6 +45,7 @@ class ConversationNotificationCallbacks(object):
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'dialer_preview': 'ConversationNotificationDialerPreview',
+            'voicemail': 'DocumentDataV2NotificationWorkspace',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'script_id': 'str',
@@ -66,6 +67,7 @@ class ConversationNotificationCallbacks(object):
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
             'dialer_preview': 'dialerPreview',
+            'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'script_id': 'scriptId',
@@ -86,6 +88,7 @@ class ConversationNotificationCallbacks(object):
         self._disconnect_type = None
         self._start_hold_time = None
         self._dialer_preview = None
+        self._voicemail = None
         self._callback_numbers = None
         self._callback_user_name = None
         self._script_id = None
@@ -270,6 +273,29 @@ class ConversationNotificationCallbacks(object):
         """
         
         self._dialer_preview = dialer_preview
+
+    @property
+    def voicemail(self):
+        """
+        Gets the voicemail of this ConversationNotificationCallbacks.
+
+
+        :return: The voicemail of this ConversationNotificationCallbacks.
+        :rtype: DocumentDataV2NotificationWorkspace
+        """
+        return self._voicemail
+
+    @voicemail.setter
+    def voicemail(self, voicemail):
+        """
+        Sets the voicemail of this ConversationNotificationCallbacks.
+
+
+        :param voicemail: The voicemail of this ConversationNotificationCallbacks.
+        :type: DocumentDataV2NotificationWorkspace
+        """
+        
+        self._voicemail = voicemail
 
     @property
     def callback_numbers(self):

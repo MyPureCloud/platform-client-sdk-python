@@ -14,20 +14,20 @@ title: JsonNode
 | **object** | **bool** |  | [optional] |
 | **boolean** | **bool** |  | [optional] |
 | **number** | **bool** |  | [optional] |
-| **value_node** | **bool** |  | [optional] |
-| **container_node** | **bool** |  | [optional] |
-| **missing_node** | **bool** |  | [optional] |
-| **pojo** | **bool** |  | [optional] |
-| **integral_number** | **bool** |  | [optional] |
-| **floating_point_number** | **bool** |  | [optional] |
-| **short** | **bool** |  | [optional] |
-| **int** | **bool** |  | [optional] |
-| **long** | **bool** |  | [optional] |
-| **double** | **bool** |  | [optional] |
 | **big_decimal** | **bool** |  | [optional] |
+| **double** | **bool** |  | [optional] |
+| **short** | **bool** |  | [optional] |
+| **integral_number** | **bool** |  | [optional] |
+| **long** | **bool** |  | [optional] |
+| **int** | **bool** |  | [optional] |
+| **floating_point_number** | **bool** |  | [optional] |
 | **big_integer** | **bool** |  | [optional] |
 | **textual** | **bool** |  | [optional] |
+| **container_node** | **bool** |  | [optional] |
+| **missing_node** | **bool** |  | [optional] |
+| **value_node** | **bool** |  | [optional] |
 | **binary** | **bool** |  | [optional] |
+| **pojo** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 
