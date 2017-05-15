@@ -48,6 +48,8 @@ class Station(object):
             'secondary_edge': 'UriReference',
             'type': 'str',
             'line_appearance_id': 'str',
+            'web_rtc_media_dscp': 'int',
+            'web_rtc_persistent_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -62,6 +64,8 @@ class Station(object):
             'secondary_edge': 'secondaryEdge',
             'type': 'type',
             'line_appearance_id': 'lineAppearanceId',
+            'web_rtc_media_dscp': 'webRtcMediaDscp',
+            'web_rtc_persistent_enabled': 'webRtcPersistentEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +79,8 @@ class Station(object):
         self._secondary_edge = None
         self._type = None
         self._line_appearance_id = None
+        self._web_rtc_media_dscp = None
+        self._web_rtc_persistent_enabled = None
         self._self_uri = None
 
     @property
@@ -310,6 +316,52 @@ class Station(object):
         """
         
         self._line_appearance_id = line_appearance_id
+
+    @property
+    def web_rtc_media_dscp(self):
+        """
+        Gets the web_rtc_media_dscp of this Station.
+        The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.
+
+        :return: The web_rtc_media_dscp of this Station.
+        :rtype: int
+        """
+        return self._web_rtc_media_dscp
+
+    @web_rtc_media_dscp.setter
+    def web_rtc_media_dscp(self, web_rtc_media_dscp):
+        """
+        Sets the web_rtc_media_dscp of this Station.
+        The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.
+
+        :param web_rtc_media_dscp: The web_rtc_media_dscp of this Station.
+        :type: int
+        """
+        
+        self._web_rtc_media_dscp = web_rtc_media_dscp
+
+    @property
+    def web_rtc_persistent_enabled(self):
+        """
+        Gets the web_rtc_persistent_enabled of this Station.
+        The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.
+
+        :return: The web_rtc_persistent_enabled of this Station.
+        :rtype: bool
+        """
+        return self._web_rtc_persistent_enabled
+
+    @web_rtc_persistent_enabled.setter
+    def web_rtc_persistent_enabled(self, web_rtc_persistent_enabled):
+        """
+        Sets the web_rtc_persistent_enabled of this Station.
+        The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.
+
+        :param web_rtc_persistent_enabled: The web_rtc_persistent_enabled of this Station.
+        :type: bool
+        """
+        
+        self._web_rtc_persistent_enabled = web_rtc_persistent_enabled
 
     @property
     def self_uri(self):

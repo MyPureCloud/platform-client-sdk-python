@@ -520,7 +520,7 @@ except ApiException as e:
 
 <a name="get_orphanrecordings"></a>
 
-## [**OrphanRecordingListing**](OrphanRecordingListing.html) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation)
+## [**OrphanRecordingListing**](OrphanRecordingListing.html) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
 
 Gets all orphan recordings
 
@@ -548,10 +548,11 @@ expand = NULL # list[object] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 has_conversation = false # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to false)
+media = 'media_example' # str | Filter resulting orphans based on their media type (optional)
 
 try:
     # Gets all orphan recordings
-    api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation)
+    api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecordings: %s\n" % e
@@ -569,6 +570,7 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional] |
 | **previous_page** | **str**| Previous page token | [optional] |
 | **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false]|
+| **media** | **str**| Filter resulting orphans based on their media type | [optional] |
 {: class="table table-striped"}
 
 ### Return type

@@ -280,7 +280,6 @@ from .models.did import DID
 from .models.did_entity_listing import DIDEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
-from .models.data_schema import DataSchema
 from .models.default_greeting_list import DefaultGreetingList
 from .models.delete_retention import DeleteRetention
 from .models.dependency import Dependency
@@ -395,6 +394,7 @@ from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
 from .models.endpoint_entity_listing import EndpointEntityListing
+from .models.entity import Entity
 from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails
@@ -588,6 +588,7 @@ from .models.okta import Okta
 from .models.one_login import OneLogin
 from .models.operation import Operation
 from .models.org_media_utilization import OrgMediaUtilization
+from .models.org_o_auth_client import OrgOAuthClient
 from .models.organization import Organization
 from .models.organization_features import OrganizationFeatures
 from .models.organization_presence import OrganizationPresence
@@ -813,6 +814,7 @@ from .models.time_off_request_update_notification_user import TimeOffRequestUpda
 from .models.time_slot import TimeSlot
 from .models.time_zone import TimeZone
 from .models.time_zone_entity_listing import TimeZoneEntityListing
+from .models.token_info import TokenInfo
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase

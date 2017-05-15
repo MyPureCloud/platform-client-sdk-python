@@ -20,6 +20,7 @@ title: Email
 | **start_hold_time** | **datetime** | The timestamp the email was placed on hold in the cloud clock if the email is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **connected_time** | **datetime** | The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **disconnected_time** | **datetime** | The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **auto_generated** | **bool** | Indicates that the email was auto-generated like an Out of Office reply. | [optional] |
 | **provider** | **str** | The source provider for the email. | [optional] |
 {: class="table table-striped"}
 

@@ -10,7 +10,7 @@ title: CreateEmailRequest
 | **queue_id** | **str** | The ID of the queue to use for routing the chat conversation. | |
 | **provider** | **str** | The name of the provider that is sourcing the web chat. | |
 | **skill_ids** | **list[str]** | The list of skill ID&#39;s to use for routing. | [optional] |
-| **language_id** | **str** | The ID of the langauge to use for routing. | [optional] |
+| **language_id** | **str** | The ID of the language to use for routing. | [optional] |
 | **priority** | **int** | The priority to assign to the conversation for routing. | [optional] |
 | **attributes** | **dict(str, str)** | The list of attributes to associate with the customer participant. | [optional] |
 | **to_address** | **str** | The email address of the recipient of the email. | [optional] |

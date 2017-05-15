@@ -192,7 +192,7 @@ class OrphanRecording(object):
         :param provider_type: The provider_type of this OrphanRecording.
         :type: str
         """
-        allowed_values = ["EDGE", "CHAT", "EMAIL"]
+        allowed_values = ["EDGE", "CHAT", "EMAIL", "SCREEN_RECORDING"]
         if provider_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for provider_type -> " + provider_type
             self._provider_type = "outdated_sdk_version"
@@ -242,7 +242,7 @@ class OrphanRecording(object):
         :param media_type: The media_type of this OrphanRecording.
         :type: str
         """
-        allowed_values = ["CALL", "CHAT", "EMAIL"]
+        allowed_values = ["CALL", "CHAT", "EMAIL", "SCREEN"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"

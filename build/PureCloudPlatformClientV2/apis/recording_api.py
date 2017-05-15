@@ -908,12 +908,13 @@ class RecordingApi(object):
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param bool has_conversation: Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
+        :param str media: Filter resulting orphans based on their media type
         :return: OrphanRecordingListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'has_conversation']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'has_conversation', 'media']
         all_params.append('callback')
 
         params = locals()
@@ -946,6 +947,8 @@ class RecordingApi(object):
             query_params['previousPage'] = params['previous_page']
         if 'has_conversation' in params:
             query_params['hasConversation'] = params['has_conversation']
+        if 'media' in params:
+            query_params['media'] = params['media']
 
         header_params = {}
 

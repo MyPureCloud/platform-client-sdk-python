@@ -153,7 +153,7 @@ class CreateEmailRequest(object):
     def language_id(self):
         """
         Gets the language_id of this CreateEmailRequest.
-        The ID of the langauge to use for routing.
+        The ID of the language to use for routing.
 
         :return: The language_id of this CreateEmailRequest.
         :rtype: str
@@ -164,7 +164,7 @@ class CreateEmailRequest(object):
     def language_id(self, language_id):
         """
         Sets the language_id of this CreateEmailRequest.
-        The ID of the langauge to use for routing.
+        The ID of the language to use for routing.
 
         :param language_id: The language_id of this CreateEmailRequest.
         :type: str

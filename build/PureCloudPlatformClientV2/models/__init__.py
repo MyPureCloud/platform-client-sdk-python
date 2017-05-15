@@ -280,7 +280,6 @@ from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
-from .data_schema import DataSchema
 from .default_greeting_list import DefaultGreetingList
 from .delete_retention import DeleteRetention
 from .dependency import Dependency
@@ -395,6 +394,7 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .endpoint_entity_listing import EndpointEntityListing
+from .entity import Entity
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
@@ -588,6 +588,7 @@ from .okta import Okta
 from .one_login import OneLogin
 from .operation import Operation
 from .org_media_utilization import OrgMediaUtilization
+from .org_o_auth_client import OrgOAuthClient
 from .organization import Organization
 from .organization_features import OrganizationFeatures
 from .organization_presence import OrganizationPresence
@@ -813,6 +814,7 @@ from .time_off_request_update_notification_user import TimeOffRequestUpdateNotif
 from .time_slot import TimeSlot
 from .time_zone import TimeZone
 from .time_zone_entity_listing import TimeZoneEntityListing
+from .token_info import TokenInfo
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase

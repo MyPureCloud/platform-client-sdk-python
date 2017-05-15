@@ -52,6 +52,7 @@ class VoicemailMessage(object):
             'note': 'str',
             'user': 'User',
             'group': 'Group',
+            'queue': 'Queue',
             'copied_from': 'VoicemailCopyRecord',
             'copied_to': 'list[VoicemailCopyRecord]',
             'self_uri': 'str'
@@ -72,6 +73,7 @@ class VoicemailMessage(object):
             'note': 'note',
             'user': 'user',
             'group': 'group',
+            'queue': 'queue',
             'copied_from': 'copiedFrom',
             'copied_to': 'copiedTo',
             'self_uri': 'selfUri'
@@ -91,6 +93,7 @@ class VoicemailMessage(object):
         self._note = None
         self._user = None
         self._group = None
+        self._queue = None
         self._copied_from = None
         self._copied_to = None
         self._self_uri = None
@@ -375,7 +378,7 @@ class VoicemailMessage(object):
     def user(self):
         """
         Gets the user of this VoicemailMessage.
-        The user that the voicemail message belongs to or null which means the voicemail message belongs to a group
+        The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
 
         :return: The user of this VoicemailMessage.
         :rtype: User
@@ -386,7 +389,7 @@ class VoicemailMessage(object):
     def user(self, user):
         """
         Sets the user of this VoicemailMessage.
-        The user that the voicemail message belongs to or null which means the voicemail message belongs to a group
+        The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
 
         :param user: The user of this VoicemailMessage.
         :type: User
@@ -398,7 +401,7 @@ class VoicemailMessage(object):
     def group(self):
         """
         Gets the group of this VoicemailMessage.
-        The group that the voicemail message belongs to or null which means the voicemail message belongs to a user
+        The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
 
         :return: The group of this VoicemailMessage.
         :rtype: Group
@@ -409,13 +412,36 @@ class VoicemailMessage(object):
     def group(self, group):
         """
         Sets the group of this VoicemailMessage.
-        The group that the voicemail message belongs to or null which means the voicemail message belongs to a user
+        The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
 
         :param group: The group of this VoicemailMessage.
         :type: Group
         """
         
         self._group = group
+
+    @property
+    def queue(self):
+        """
+        Gets the queue of this VoicemailMessage.
+        The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
+
+        :return: The queue of this VoicemailMessage.
+        :rtype: Queue
+        """
+        return self._queue
+
+    @queue.setter
+    def queue(self, queue):
+        """
+        Sets the queue of this VoicemailMessage.
+        The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
+
+        :param queue: The queue of this VoicemailMessage.
+        :type: Queue
+        """
+        
+        self._queue = queue
 
     @property
     def copied_from(self):

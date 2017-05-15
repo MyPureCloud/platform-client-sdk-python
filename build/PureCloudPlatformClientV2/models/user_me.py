@@ -73,6 +73,7 @@ class UserMe(object):
             'adjacents': 'Adjacents',
             'routing_skills': 'list[RoutingSkill]',
             'field_configs': 'FieldConfigs',
+            'token': 'TokenInfo',
             'self_uri': 'str'
         }
 
@@ -112,6 +113,7 @@ class UserMe(object):
             'adjacents': 'adjacents',
             'routing_skills': 'routingSkills',
             'field_configs': 'fieldConfigs',
+            'token': 'token',
             'self_uri': 'selfUri'
         }
 
@@ -150,6 +152,7 @@ class UserMe(object):
         self._adjacents = None
         self._routing_skills = None
         self._field_configs = None
+        self._token = None
         self._self_uri = None
 
     @property
@@ -960,6 +963,29 @@ class UserMe(object):
         """
         
         self._field_configs = field_configs
+
+    @property
+    def token(self):
+        """
+        Gets the token of this UserMe.
+        Information about the current token
+
+        :return: The token of this UserMe.
+        :rtype: TokenInfo
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """
+        Sets the token of this UserMe.
+        Information about the current token
+
+        :param token: The token of this UserMe.
+        :type: TokenInfo
+        """
+        
+        self._token = token
 
     @property
     def self_uri(self):
