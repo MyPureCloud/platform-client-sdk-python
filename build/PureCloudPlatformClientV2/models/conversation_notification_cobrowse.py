@@ -49,6 +49,7 @@ class ConversationNotificationCobrowse(object):
             'viewer_url': 'str',
             'provider': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'provider_event_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -67,6 +68,7 @@ class ConversationNotificationCobrowse(object):
             'viewer_url': 'viewerUrl',
             'provider': 'provider',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'provider_event_time': 'providerEventTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
@@ -84,6 +86,7 @@ class ConversationNotificationCobrowse(object):
         self._viewer_url = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
         self._provider_event_time = None
         self._connected_time = None
         self._disconnected_time = None
@@ -349,6 +352,29 @@ class ConversationNotificationCobrowse(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationCobrowse.
+
+
+        :return: The peer_id of this ConversationNotificationCobrowse.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationCobrowse.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationCobrowse.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def provider_event_time(self):

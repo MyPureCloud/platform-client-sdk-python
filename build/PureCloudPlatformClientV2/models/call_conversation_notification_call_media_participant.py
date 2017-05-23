@@ -63,6 +63,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'external_contact': 'CallConversationNotificationUriReference',
             'external_organization': 'CallConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -102,6 +103,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -140,6 +142,7 @@ class CallConversationNotificationCallMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -738,6 +741,29 @@ class CallConversationNotificationCallMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this CallConversationNotificationCallMediaParticipant.
+
+
+        :return: The peer of this CallConversationNotificationCallMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CallConversationNotificationCallMediaParticipant.
+
+
+        :param peer: The peer of this CallConversationNotificationCallMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def muted(self):

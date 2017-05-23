@@ -43,6 +43,7 @@ class ContactListFilterNotificationPredicates(object):
             'operator': 'str',
             'value': 'str',
             'range': 'ContactListFilterNotificationRange',
+            'inverted': 'bool',
             'additional_properties': 'object'
         }
 
@@ -52,6 +53,7 @@ class ContactListFilterNotificationPredicates(object):
             'operator': 'operator',
             'value': 'value',
             'range': 'range',
+            'inverted': 'inverted',
             'additional_properties': 'additionalProperties'
         }
 
@@ -60,6 +62,7 @@ class ContactListFilterNotificationPredicates(object):
         self._operator = None
         self._value = None
         self._range = None
+        self._inverted = None
         self._additional_properties = None
 
     @property
@@ -184,6 +187,29 @@ class ContactListFilterNotificationPredicates(object):
         """
         
         self._range = range
+
+    @property
+    def inverted(self):
+        """
+        Gets the inverted of this ContactListFilterNotificationPredicates.
+
+
+        :return: The inverted of this ContactListFilterNotificationPredicates.
+        :rtype: bool
+        """
+        return self._inverted
+
+    @inverted.setter
+    def inverted(self, inverted):
+        """
+        Sets the inverted of this ContactListFilterNotificationPredicates.
+
+
+        :param inverted: The inverted of this ContactListFilterNotificationPredicates.
+        :type: bool
+        """
+        
+        self._inverted = inverted
 
     @property
     def additional_properties(self):

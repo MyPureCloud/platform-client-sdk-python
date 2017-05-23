@@ -61,7 +61,7 @@ except ApiException as e:
 
 <a name="get_locations"></a>
 
-## [**list[LocationDefinition]**](LocationDefinition.html) get_locations(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**LocationEntityListing**](LocationEntityListing.html) get_locations(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 Get a list of all locations.
 
@@ -106,7 +106,7 @@ except ApiException as e:
 
 ### Return type
 
-[**list[LocationDefinition]**](LocationDefinition.html)
+[**LocationEntityListing**](LocationEntityListing.html)
 
 <a name="get_locations_search"></a>
 

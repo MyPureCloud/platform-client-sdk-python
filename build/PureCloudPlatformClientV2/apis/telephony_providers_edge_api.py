@@ -2494,6 +2494,102 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_telephony_providers_edge_trunks(self, edge_id, **kwargs):
+        """
+        Get the list of available trunks for the given Edge.
+        Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edge_trunks(edge_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge ID (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Value by which to sort
+        :param str sort_order: Sort order
+        :param str trunk_base_id: Filter by Trunk Base Ids
+        :param str trunk_type: Filter by a Trunk type
+        :return: TrunkEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'page_number', 'page_size', 'sort_by', 'sort_order', 'trunk_base_id', 'trunk_type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edge_trunks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_trunks`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/trunks'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'trunk_base_id' in params:
+            query_params['trunkBase.id'] = params['trunk_base_id']
+        if 'trunk_type' in params:
+            query_params['trunkType'] = params['trunk_type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrunkEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_telephony_providers_edges(self, **kwargs):
         """
         Get the list of edges.

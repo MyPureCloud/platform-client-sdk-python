@@ -63,7 +63,9 @@ class CallbackMediaParticipant(object):
             'external_contact': 'UriReference',
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
+            'peer': 'str',
             'outbound_preview': 'DialerPreview',
+            'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'skip_enabled': 'bool',
@@ -98,7 +100,9 @@ class CallbackMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'outbound_preview': 'outboundPreview',
+            'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'skip_enabled': 'skipEnabled',
@@ -132,7 +136,9 @@ class CallbackMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._outbound_preview = None
+        self._voicemail = None
         self._callback_numbers = None
         self._callback_user_name = None
         self._skip_enabled = None
@@ -728,6 +734,29 @@ class CallbackMediaParticipant(object):
         self._wrapup = wrapup
 
     @property
+    def peer(self):
+        """
+        Gets the peer of this CallbackMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer of this CallbackMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CallbackMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :param peer: The peer of this CallbackMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
+
+    @property
     def outbound_preview(self):
         """
         Gets the outbound_preview of this CallbackMediaParticipant.
@@ -749,6 +778,29 @@ class CallbackMediaParticipant(object):
         """
         
         self._outbound_preview = outbound_preview
+
+    @property
+    def voicemail(self):
+        """
+        Gets the voicemail of this CallbackMediaParticipant.
+        The voicemail associated with this callback.
+
+        :return: The voicemail of this CallbackMediaParticipant.
+        :rtype: Voicemail
+        """
+        return self._voicemail
+
+    @voicemail.setter
+    def voicemail(self, voicemail):
+        """
+        Sets the voicemail of this CallbackMediaParticipant.
+        The voicemail associated with this callback.
+
+        :param voicemail: The voicemail of this CallbackMediaParticipant.
+        :type: Voicemail
+        """
+        
+        self._voicemail = voicemail
 
     @property
     def callback_numbers(self):

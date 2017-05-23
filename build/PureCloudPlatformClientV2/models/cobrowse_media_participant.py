@@ -63,6 +63,7 @@ class CobrowseMediaParticipant(object):
             'external_contact': 'UriReference',
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
+            'peer': 'str',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'controlling': 'list[str]',
@@ -96,6 +97,7 @@ class CobrowseMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'controlling': 'controlling',
@@ -128,6 +130,7 @@ class CobrowseMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._controlling = None
@@ -720,6 +723,29 @@ class CobrowseMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this CobrowseMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer of this CobrowseMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CobrowseMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :param peer: The peer of this CobrowseMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def cobrowse_session_id(self):

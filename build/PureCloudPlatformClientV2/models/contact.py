@@ -41,20 +41,23 @@ class Contact(object):
             'address': 'str',
             'display': 'str',
             'media_type': 'str',
-            'type': 'str'
+            'type': 'str',
+            'extension': 'str'
         }
 
         self.attribute_map = {
             'address': 'address',
             'display': 'display',
             'media_type': 'mediaType',
-            'type': 'type'
+            'type': 'type',
+            'extension': 'extension'
         }
 
         self._address = None
         self._display = None
         self._media_type = None
         self._type = None
+        self._extension = None
 
     @property
     def address(self):
@@ -155,6 +158,29 @@ class Contact(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def extension(self):
+        """
+        Gets the extension of this Contact.
+        Use extension instead of address for setting internal extensions
+
+        :return: The extension of this Contact.
+        :rtype: str
+        """
+        return self._extension
+
+    @extension.setter
+    def extension(self, extension):
+        """
+        Sets the extension of this Contact.
+        Use extension instead of address for setting internal extensions
+
+        :param extension: The extension of this Contact.
+        :type: str
+        """
+        
+        self._extension = extension
 
     def to_dict(self):
         """

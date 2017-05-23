@@ -142,7 +142,7 @@ class LocationsApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Sort order
-        :return: list[LocationDefinition]
+        :return: LocationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -200,7 +200,7 @@ class LocationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[LocationDefinition]',
+                                            response_type='LocationEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -63,6 +63,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'external_contact': 'CobrowseConversationNotificationUriReference',
             'external_organization': 'CobrowseConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -96,6 +97,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -128,6 +130,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -720,6 +723,29 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :return: The peer of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :param peer: The peer of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def cobrowse_session_id(self):

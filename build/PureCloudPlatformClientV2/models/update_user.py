@@ -53,6 +53,7 @@ class UpdateUser(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'state': 'str',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class UpdateUser(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'state': 'state',
             'self_uri': 'selfUri'
         }
 
@@ -90,6 +92,7 @@ class UpdateUser(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._state = None
         self._self_uri = None
 
     @property
@@ -349,7 +352,7 @@ class UpdateUser(object):
     def version(self):
         """
         Gets the version of this UpdateUser.
-        Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
+        This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH.
 
         :return: The version of this UpdateUser.
         :rtype: int
@@ -360,7 +363,7 @@ class UpdateUser(object):
     def version(self, version):
         """
         Sets the version of this UpdateUser.
-        Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
+        This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH.
 
         :param version: The version of this UpdateUser.
         :type: int
@@ -436,6 +439,33 @@ class UpdateUser(object):
         """
         
         self._groups = groups
+
+    @property
+    def state(self):
+        """
+        Gets the state of this UpdateUser.
+        The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.
+
+        :return: The state of this UpdateUser.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this UpdateUser.
+        The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.
+
+        :param state: The state of this UpdateUser.
+        :type: str
+        """
+        allowed_values = ["active", "inactive", "deleted"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for state -> " + state
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     @property
     def self_uri(self):

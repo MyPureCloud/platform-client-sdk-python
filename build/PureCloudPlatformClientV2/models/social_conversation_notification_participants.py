@@ -63,6 +63,7 @@ class SocialConversationNotificationParticipants(object):
             'external_contact': 'SocialConversationNotificationUriReference',
             'external_organization': 'SocialConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'social_media_id': 'str',
             'social_media_hub': 'str',
             'social_user_name': 'str',
@@ -95,6 +96,7 @@ class SocialConversationNotificationParticipants(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'social_media_id': 'socialMediaId',
             'social_media_hub': 'socialMediaHub',
             'social_user_name': 'socialUserName',
@@ -126,6 +128,7 @@ class SocialConversationNotificationParticipants(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._social_media_id = None
         self._social_media_hub = None
         self._social_user_name = None
@@ -717,6 +720,29 @@ class SocialConversationNotificationParticipants(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this SocialConversationNotificationParticipants.
+
+
+        :return: The peer of this SocialConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this SocialConversationNotificationParticipants.
+
+
+        :param peer: The peer of this SocialConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def social_media_id(self):

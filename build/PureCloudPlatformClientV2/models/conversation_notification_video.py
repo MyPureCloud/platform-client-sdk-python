@@ -47,6 +47,7 @@ class ConversationNotificationVideo(object):
             'sharing_screen': 'bool',
             'provider': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
@@ -63,6 +64,7 @@ class ConversationNotificationVideo(object):
             'sharing_screen': 'sharingScreen',
             'provider': 'provider',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
@@ -78,6 +80,7 @@ class ConversationNotificationVideo(object):
         self._sharing_screen = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
@@ -293,6 +296,29 @@ class ConversationNotificationVideo(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationVideo.
+
+
+        :return: The peer_id of this ConversationNotificationVideo.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationVideo.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationVideo.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def disconnect_type(self):

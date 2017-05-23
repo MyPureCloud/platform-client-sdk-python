@@ -43,6 +43,7 @@ class EncryptionKey(object):
             'create_date': 'datetime',
             'keydata_summary': 'str',
             'user': 'User',
+            'local_encryption_configuration': 'LocalEncryptionConfiguration',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class EncryptionKey(object):
             'create_date': 'createDate',
             'keydata_summary': 'keydataSummary',
             'user': 'user',
+            'local_encryption_configuration': 'localEncryptionConfiguration',
             'self_uri': 'selfUri'
         }
 
@@ -60,6 +62,7 @@ class EncryptionKey(object):
         self._create_date = None
         self._keydata_summary = None
         self._user = None
+        self._local_encryption_configuration = None
         self._self_uri = None
 
     @property
@@ -176,6 +179,29 @@ class EncryptionKey(object):
         """
         
         self._user = user
+
+    @property
+    def local_encryption_configuration(self):
+        """
+        Gets the local_encryption_configuration of this EncryptionKey.
+        Local configuration
+
+        :return: The local_encryption_configuration of this EncryptionKey.
+        :rtype: LocalEncryptionConfiguration
+        """
+        return self._local_encryption_configuration
+
+    @local_encryption_configuration.setter
+    def local_encryption_configuration(self, local_encryption_configuration):
+        """
+        Sets the local_encryption_configuration of this EncryptionKey.
+        Local configuration
+
+        :param local_encryption_configuration: The local_encryption_configuration of this EncryptionKey.
+        :type: LocalEncryptionConfiguration
+        """
+        
+        self._local_encryption_configuration = local_encryption_configuration
 
     @property
     def self_uri(self):

@@ -57,7 +57,8 @@ class CallBasic(object):
             'disconnect_reasons': 'list[DisconnectReason]',
             'fax_status': 'FaxStatus',
             'provider': 'str',
-            'script_id': 'str'
+            'script_id': 'str',
+            'peer_id': 'str'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class CallBasic(object):
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
             'provider': 'provider',
-            'script_id': 'scriptId'
+            'script_id': 'scriptId',
+            'peer_id': 'peerId'
         }
 
         self._state = None
@@ -103,6 +105,7 @@ class CallBasic(object):
         self._fax_status = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
 
     @property
     def state(self):
@@ -579,6 +582,29 @@ class CallBasic(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this CallBasic.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer_id of this CallBasic.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this CallBasic.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :param peer_id: The peer_id of this CallBasic.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     def to_dict(self):
         """

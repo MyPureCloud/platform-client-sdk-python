@@ -63,6 +63,7 @@ class CallbackConversationNotificationParticipants(object):
             'external_contact': 'CallbackConversationNotificationUriReference',
             'external_organization': 'CallbackConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'outbound_preview': 'ConversationNotificationDialerPreview',
             'voicemail': 'DocumentDataV2NotificationWorkspace',
             'callback_numbers': 'list[str]',
@@ -99,6 +100,7 @@ class CallbackConversationNotificationParticipants(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -134,6 +136,7 @@ class CallbackConversationNotificationParticipants(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -729,6 +732,29 @@ class CallbackConversationNotificationParticipants(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this CallbackConversationNotificationParticipants.
+
+
+        :return: The peer of this CallbackConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CallbackConversationNotificationParticipants.
+
+
+        :param peer: The peer of this CallbackConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def outbound_preview(self):

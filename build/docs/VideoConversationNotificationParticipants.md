@@ -32,6 +32,7 @@ title: VideoConversationNotificationParticipants
 | **external_contact** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  | [optional] |
 | **external_organization** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
+| **peer** | **str** |  | [optional] |
 | **audio_muted** | **bool** |  | [optional] |
 | **video_muted** | **bool** |  | [optional] |
 | **sharing_screen** | **bool** |  | [optional] |

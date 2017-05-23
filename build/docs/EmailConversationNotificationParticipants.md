@@ -32,8 +32,10 @@ title: EmailConversationNotificationParticipants
 | **external_contact** | [**EmailConversationNotificationUriReference**](EmailConversationNotificationUriReference.html) |  | [optional] |
 | **external_organization** | [**EmailConversationNotificationUriReference**](EmailConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
+| **peer** | **str** |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
+| **auto_generated** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

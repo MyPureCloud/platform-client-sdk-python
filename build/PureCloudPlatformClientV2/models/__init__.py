@@ -553,6 +553,7 @@ from .location import Location
 from .location_address import LocationAddress
 from .location_definition import LocationDefinition
 from .location_emergency_number import LocationEmergencyNumber
+from .location_entity_listing import LocationEntityListing
 from .location_search_criteria import LocationSearchCriteria
 from .location_search_request import LocationSearchRequest
 from .locations_search_response import LocationsSearchResponse
@@ -899,6 +900,7 @@ from .video_conversation_notification_video_media_participant import VideoConver
 from .video_conversation_notification_wrapup import VideoConversationNotificationWrapup
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo
+from .voicemail import Voicemail
 from .voicemail_copy_record import VoicemailCopyRecord
 from .voicemail_group_policy import VoicemailGroupPolicy
 from .voicemail_mailbox_info import VoicemailMailboxInfo

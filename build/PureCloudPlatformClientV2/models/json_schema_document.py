@@ -39,31 +39,31 @@ class JsonSchemaDocument(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'schema': 'str',
             'title': 'str',
             'description': 'str',
             'type': 'str',
             'required': 'list[str]',
-            'properties': 'dict(str, object)',
-            'schema': 'str'
+            'properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'schema': '$schema',
             'title': 'title',
             'description': 'description',
             'type': 'type',
             'required': 'required',
-            'properties': 'properties',
-            'schema': '$schema'
+            'properties': 'properties'
         }
 
         self._id = None
+        self._schema = None
         self._title = None
         self._description = None
         self._type = None
         self._required = None
         self._properties = None
-        self._schema = None
 
     @property
     def id(self):
@@ -87,6 +87,29 @@ class JsonSchemaDocument(object):
         """
         
         self._id = id
+
+    @property
+    def schema(self):
+        """
+        Gets the schema of this JsonSchemaDocument.
+
+
+        :return: The schema of this JsonSchemaDocument.
+        :rtype: str
+        """
+        return self._schema
+
+    @schema.setter
+    def schema(self, schema):
+        """
+        Sets the schema of this JsonSchemaDocument.
+
+
+        :param schema: The schema of this JsonSchemaDocument.
+        :type: str
+        """
+        
+        self._schema = schema
 
     @property
     def title(self):
@@ -202,29 +225,6 @@ class JsonSchemaDocument(object):
         """
         
         self._properties = properties
-
-    @property
-    def schema(self):
-        """
-        Gets the schema of this JsonSchemaDocument.
-
-
-        :return: The schema of this JsonSchemaDocument.
-        :rtype: str
-        """
-        return self._schema
-
-    @schema.setter
-    def schema(self, schema):
-        """
-        Sets the schema of this JsonSchemaDocument.
-
-
-        :param schema: The schema of this JsonSchemaDocument.
-        :type: str
-        """
-        
-        self._schema = schema
 
     def to_dict(self):
         """

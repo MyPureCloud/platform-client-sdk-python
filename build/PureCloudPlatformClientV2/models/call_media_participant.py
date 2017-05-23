@@ -63,6 +63,7 @@ class CallMediaParticipant(object):
             'external_contact': 'UriReference',
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
+            'peer': 'str',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -102,6 +103,7 @@ class CallMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -140,6 +142,7 @@ class CallMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -738,6 +741,29 @@ class CallMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this CallMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this CallMediaParticipant.
+        The peer communication corresponding to a matching leg for this communication.
+
+        :param peer: The peer of this CallMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def muted(self):

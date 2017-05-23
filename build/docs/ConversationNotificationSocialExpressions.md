@@ -17,6 +17,7 @@ title: ConversationNotificationSocialExpressions
 | **held** | **bool** |  | [optional] |
 | **provider** | **str** |  | [optional] |
 | **script_id** | **str** |  | [optional] |
+| **peer_id** | **str** |  | [optional] |
 | **disconnect_type** | **str** |  | [optional] |
 | **start_hold_time** | **datetime** |  | [optional] |
 | **connected_time** | **datetime** |  | [optional] |

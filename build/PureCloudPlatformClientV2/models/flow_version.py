@@ -44,7 +44,7 @@ class FlowVersion(object):
             'configuration_version': 'str',
             'type': 'str',
             'secure': 'bool',
-            'created_by': 'UriReference',
+            'created_by': 'User',
             'configuration_uri': 'str',
             'date_created': 'int',
             'generation_id': 'str',
@@ -229,7 +229,7 @@ class FlowVersion(object):
 
 
         :return: The created_by of this FlowVersion.
-        :rtype: UriReference
+        :rtype: User
         """
         return self._created_by
 
@@ -240,7 +240,7 @@ class FlowVersion(object):
 
 
         :param created_by: The created_by of this FlowVersion.
-        :type: UriReference
+        :type: User
         """
         
         self._created_by = created_by

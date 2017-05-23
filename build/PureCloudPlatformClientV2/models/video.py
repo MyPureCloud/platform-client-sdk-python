@@ -48,7 +48,8 @@ class Video(object):
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
-            'provider': 'str'
+            'provider': 'str',
+            'peer_id': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class Video(object):
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
-            'provider': 'provider'
+            'provider': 'provider',
+            'peer_id': 'peerId'
         }
 
         self._state = None
@@ -76,6 +78,7 @@ class Video(object):
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
+        self._peer_id = None
 
     @property
     def state(self):
@@ -337,6 +340,29 @@ class Video(object):
         """
         
         self._provider = provider
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this Video.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer_id of this Video.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this Video.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :param peer_id: The peer_id of this Video.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     def to_dict(self):
         """

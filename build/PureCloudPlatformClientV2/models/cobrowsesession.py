@@ -50,6 +50,7 @@ class Cobrowsesession(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
+            'peer_id': 'str',
             'segments': 'list[Segment]'
         }
 
@@ -66,6 +67,7 @@ class Cobrowsesession(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
+            'peer_id': 'peerId',
             'segments': 'segments'
         }
 
@@ -81,6 +83,7 @@ class Cobrowsesession(object):
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
+        self._peer_id = None
         self._segments = None
 
     @property
@@ -366,6 +369,29 @@ class Cobrowsesession(object):
         """
         
         self._provider = provider
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this Cobrowsesession.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer_id of this Cobrowsesession.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this Cobrowsesession.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :param peer_id: The peer_id of this Cobrowsesession.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def segments(self):

@@ -13,7 +13,7 @@ title: FlowVersion
 | **configuration_version** | **str** |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **secure** | **bool** |  | [optional] |
-| **created_by** | [**UriReference**](UriReference.html) |  | [optional] |
+| **created_by** | [**User**](User.html) |  | [optional] |
 | **configuration_uri** | **str** |  | [optional] |
 | **date_created** | **int** |  | [optional] |
 | **generation_id** | **str** |  | [optional] |

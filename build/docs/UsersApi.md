@@ -982,7 +982,7 @@ except ApiException as e:
 
 <a name="get_users"></a>
 
-## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand)
+## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand, state=state)
 
 Get the list of available users.
 
@@ -1008,10 +1008,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 id = ['id_example'] # list[str] | id (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+state = 'active' # str | Only list users of this state (optional) (default to active)
 
 try:
     # Get the list of available users.
-    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand)
+    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand, state=state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users: %s\n" % e
@@ -1027,6 +1028,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str.html)| id | [optional] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **state** | **str**| Only list users of this state | [optional] [default to active]|
 {: class="table table-striped"}
 
 ### Return type

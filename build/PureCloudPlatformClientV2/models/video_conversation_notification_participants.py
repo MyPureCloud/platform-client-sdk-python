@@ -63,6 +63,7 @@ class VideoConversationNotificationParticipants(object):
             'external_contact': 'VideoConversationNotificationUriReference',
             'external_organization': 'VideoConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
@@ -96,6 +97,7 @@ class VideoConversationNotificationParticipants(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
@@ -128,6 +130,7 @@ class VideoConversationNotificationParticipants(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
@@ -720,6 +723,29 @@ class VideoConversationNotificationParticipants(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this VideoConversationNotificationParticipants.
+
+
+        :return: The peer of this VideoConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this VideoConversationNotificationParticipants.
+
+
+        :param peer: The peer of this VideoConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def audio_muted(self):

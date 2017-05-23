@@ -48,6 +48,7 @@ class ConversationNotificationSocialExpressions(object):
             'held': 'bool',
             'provider': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'connected_time': 'datetime',
@@ -66,6 +67,7 @@ class ConversationNotificationSocialExpressions(object):
             'held': 'held',
             'provider': 'provider',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
             'connected_time': 'connectedTime',
@@ -83,6 +85,7 @@ class ConversationNotificationSocialExpressions(object):
         self._held = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
         self._disconnect_type = None
         self._start_hold_time = None
         self._connected_time = None
@@ -322,6 +325,29 @@ class ConversationNotificationSocialExpressions(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationSocialExpressions.
+
+
+        :return: The peer_id of this ConversationNotificationSocialExpressions.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationSocialExpressions.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationSocialExpressions.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def disconnect_type(self):

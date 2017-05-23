@@ -553,6 +553,7 @@ from .models.location import Location
 from .models.location_address import LocationAddress
 from .models.location_definition import LocationDefinition
 from .models.location_emergency_number import LocationEmergencyNumber
+from .models.location_entity_listing import LocationEntityListing
 from .models.location_search_criteria import LocationSearchCriteria
 from .models.location_search_request import LocationSearchRequest
 from .models.locations_search_response import LocationsSearchResponse
@@ -899,6 +900,7 @@ from .models.video_conversation_notification_video_media_participant import Vide
 from .models.video_conversation_notification_wrapup import VideoConversationNotificationWrapup
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo
+from .models.voicemail import Voicemail
 from .models.voicemail_copy_record import VoicemailCopyRecord
 from .models.voicemail_group_policy import VoicemailGroupPolicy
 from .models.voicemail_mailbox_info import VoicemailMailboxInfo

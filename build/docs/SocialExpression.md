@@ -21,6 +21,7 @@ title: SocialExpression
 | **connected_time** | **datetime** | The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **disconnected_time** | **datetime** | The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **provider** | **str** | The source provider for the social expression. | [optional] |
+| **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
 {: class="table table-striped"}
 
 

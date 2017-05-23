@@ -54,6 +54,7 @@ class ConversationNotificationCalls(object):
             'other': 'ConversationNotificationAddress',
             'provider': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'disconnect_reasons': 'list[ConversationNotificationDisconnectReasons]',
@@ -78,6 +79,7 @@ class ConversationNotificationCalls(object):
             'other': 'other',
             'provider': 'provider',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'disconnect_reasons': 'disconnectReasons',
@@ -101,6 +103,7 @@ class ConversationNotificationCalls(object):
         self._other = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
         self._connected_time = None
         self._disconnected_time = None
         self._disconnect_reasons = None
@@ -490,6 +493,29 @@ class ConversationNotificationCalls(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationCalls.
+
+
+        :return: The peer_id of this ConversationNotificationCalls.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationCalls.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationCalls.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def connected_time(self):

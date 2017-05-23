@@ -63,6 +63,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
             'external_contact': 'ChatConversationNotificationUriReference',
             'external_organization': 'ChatConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'room_id': 'str'
         }
 
@@ -92,6 +93,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'room_id': 'roomId'
         }
 
@@ -120,6 +122,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._room_id = None
 
     @property
@@ -708,6 +711,29 @@ class ChatConversationNotificationChatMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this ChatConversationNotificationChatMediaParticipant.
+
+
+        :return: The peer of this ChatConversationNotificationChatMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this ChatConversationNotificationChatMediaParticipant.
+
+
+        :param peer: The peer of this ChatConversationNotificationChatMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def room_id(self):

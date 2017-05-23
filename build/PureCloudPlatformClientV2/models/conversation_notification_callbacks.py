@@ -49,6 +49,7 @@ class ConversationNotificationCallbacks(object):
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'skip_enabled': 'bool',
             'provider': 'str',
             'timeout_seconds': 'int',
@@ -71,6 +72,7 @@ class ConversationNotificationCallbacks(object):
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'skip_enabled': 'skipEnabled',
             'provider': 'provider',
             'timeout_seconds': 'timeoutSeconds',
@@ -92,6 +94,7 @@ class ConversationNotificationCallbacks(object):
         self._callback_numbers = None
         self._callback_user_name = None
         self._script_id = None
+        self._peer_id = None
         self._skip_enabled = None
         self._provider = None
         self._timeout_seconds = None
@@ -365,6 +368,29 @@ class ConversationNotificationCallbacks(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationCallbacks.
+
+
+        :return: The peer_id of this ConversationNotificationCallbacks.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationCallbacks.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationCallbacks.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def skip_enabled(self):

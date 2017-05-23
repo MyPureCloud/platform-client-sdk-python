@@ -27,6 +27,7 @@ title: CallBasic
 | **fax_status** | [**FaxStatus**](FaxStatus.html) | Extra information on fax transmission. | [optional] |
 | **provider** | **str** | The source provider for the call. | [optional] |
 | **script_id** | **str** | The UUID of the script to use. | [optional] |
+| **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
 {: class="table table-striped"}
 
 

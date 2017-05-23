@@ -46,6 +46,7 @@ class Callback(object):
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'dialer_preview': 'DialerPreview',
+            'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'script_id': 'str',
@@ -55,7 +56,8 @@ class Callback(object):
             'disconnected_time': 'datetime',
             'callback_scheduled_time': 'datetime',
             'automated_callback_config_id': 'str',
-            'provider': 'str'
+            'provider': 'str',
+            'peer_id': 'str'
         }
 
         self.attribute_map = {
@@ -67,6 +69,7 @@ class Callback(object):
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
             'dialer_preview': 'dialerPreview',
+            'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'script_id': 'scriptId',
@@ -76,7 +79,8 @@ class Callback(object):
             'disconnected_time': 'disconnectedTime',
             'callback_scheduled_time': 'callbackScheduledTime',
             'automated_callback_config_id': 'automatedCallbackConfigId',
-            'provider': 'provider'
+            'provider': 'provider',
+            'peer_id': 'peerId'
         }
 
         self._state = None
@@ -87,6 +91,7 @@ class Callback(object):
         self._disconnect_type = None
         self._start_hold_time = None
         self._dialer_preview = None
+        self._voicemail = None
         self._callback_numbers = None
         self._callback_user_name = None
         self._script_id = None
@@ -97,6 +102,7 @@ class Callback(object):
         self._callback_scheduled_time = None
         self._automated_callback_config_id = None
         self._provider = None
+        self._peer_id = None
 
     @property
     def state(self):
@@ -293,6 +299,29 @@ class Callback(object):
         """
         
         self._dialer_preview = dialer_preview
+
+    @property
+    def voicemail(self):
+        """
+        Gets the voicemail of this Callback.
+        The voicemail data to be used when this callback is an ACD voicemail.
+
+        :return: The voicemail of this Callback.
+        :rtype: Voicemail
+        """
+        return self._voicemail
+
+    @voicemail.setter
+    def voicemail(self, voicemail):
+        """
+        Sets the voicemail of this Callback.
+        The voicemail data to be used when this callback is an ACD voicemail.
+
+        :param voicemail: The voicemail of this Callback.
+        :type: Voicemail
+        """
+        
+        self._voicemail = voicemail
 
     @property
     def callback_numbers(self):
@@ -523,6 +552,29 @@ class Callback(object):
         """
         
         self._provider = provider
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this Callback.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :return: The peer_id of this Callback.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this Callback.
+        The id of the peer communication corresponding to a matching leg for this communication.
+
+        :param peer_id: The peer_id of this Callback.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     def to_dict(self):
         """

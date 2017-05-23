@@ -63,6 +63,7 @@ class ScreenShareConversationNotificationScreenShareMediaParticipant(object):
             'external_contact': 'ScreenShareConversationNotificationUriReference',
             'external_organization': 'ScreenShareConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
+            'peer': 'str',
             'context': 'str',
             'peer_count': 'int',
             'sharing': 'bool'
@@ -94,6 +95,7 @@ class ScreenShareConversationNotificationScreenShareMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'peer': 'peer',
             'context': 'context',
             'peer_count': 'peerCount',
             'sharing': 'sharing'
@@ -124,6 +126,7 @@ class ScreenShareConversationNotificationScreenShareMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._peer = None
         self._context = None
         self._peer_count = None
         self._sharing = None
@@ -714,6 +717,29 @@ class ScreenShareConversationNotificationScreenShareMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def peer(self):
+        """
+        Gets the peer of this ScreenShareConversationNotificationScreenShareMediaParticipant.
+
+
+        :return: The peer of this ScreenShareConversationNotificationScreenShareMediaParticipant.
+        :rtype: str
+        """
+        return self._peer
+
+    @peer.setter
+    def peer(self, peer):
+        """
+        Sets the peer of this ScreenShareConversationNotificationScreenShareMediaParticipant.
+
+
+        :param peer: The peer of this ScreenShareConversationNotificationScreenShareMediaParticipant.
+        :type: str
+        """
+        
+        self._peer = peer
 
     @property
     def context(self):

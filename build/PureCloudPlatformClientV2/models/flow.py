@@ -42,7 +42,7 @@ class Flow(object):
             'name': 'str',
             'description': 'str',
             'type': 'str',
-            'locked_user': 'UriReference',
+            'locked_user': 'User',
             'active': 'bool',
             'system': 'bool',
             'deleted': 'bool',
@@ -51,7 +51,7 @@ class Flow(object):
             'input_schema': 'object',
             'output_schema': 'object',
             'checked_in_version': 'FlowVersion',
-            'published_by': 'UriReference',
+            'published_by': 'User',
             'current_operation': 'Operation',
             'self_uri': 'str'
         }
@@ -195,7 +195,7 @@ class Flow(object):
 
 
         :return: The locked_user of this Flow.
-        :rtype: UriReference
+        :rtype: User
         """
         return self._locked_user
 
@@ -206,7 +206,7 @@ class Flow(object):
 
 
         :param locked_user: The locked_user of this Flow.
-        :type: UriReference
+        :type: User
         """
         
         self._locked_user = locked_user
@@ -402,7 +402,7 @@ class Flow(object):
 
 
         :return: The published_by of this Flow.
-        :rtype: UriReference
+        :rtype: User
         """
         return self._published_by
 
@@ -413,7 +413,7 @@ class Flow(object):
 
 
         :param published_by: The published_by of this Flow.
-        :type: UriReference
+        :type: User
         """
         
         self._published_by = published_by

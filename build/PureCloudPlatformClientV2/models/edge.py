@@ -422,7 +422,7 @@ class Edge(object):
     def interfaces(self):
         """
         Gets the interfaces of this Edge.
-
+        The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
 
         :return: The interfaces of this Edge.
         :rtype: list[EdgeInterface]
@@ -433,7 +433,7 @@ class Edge(object):
     def interfaces(self, interfaces):
         """
         Sets the interfaces of this Edge.
-
+        The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
 
         :param interfaces: The interfaces of this Edge.
         :type: list[EdgeInterface]

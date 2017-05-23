@@ -18,7 +18,7 @@ title: Edge
 | **state** | **str** |  | [optional] |
 | **modified_by_app** | **str** |  | [optional] |
 | **created_by_app** | **str** |  | [optional] |
-| **interfaces** | [**list[EdgeInterface]**](EdgeInterface.html) |  | [optional] |
+| **interfaces** | [**list[EdgeInterface]**](EdgeInterface.html) | The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead | [optional] |
 | **make** | **str** |  | [optional] |
 | **model** | **str** |  | [optional] |
 | **api_version** | **str** |  | [optional] |

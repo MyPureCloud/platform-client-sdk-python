@@ -43,6 +43,7 @@ class ManagementUnit(object):
             'start_day_of_week': 'str',
             'timezone': 'str',
             'version': 'int',
+            'date_modified': 'datetime',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class ManagementUnit(object):
             'start_day_of_week': 'startDayOfWeek',
             'timezone': 'timezone',
             'version': 'version',
+            'date_modified': 'dateModified',
             'self_uri': 'selfUri'
         }
 
@@ -60,6 +62,7 @@ class ManagementUnit(object):
         self._start_day_of_week = None
         self._timezone = None
         self._version = None
+        self._date_modified = None
         self._self_uri = None
 
     @property
@@ -180,6 +183,29 @@ class ManagementUnit(object):
         """
         
         self._version = version
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this ManagementUnit.
+        The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_modified of this ManagementUnit.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this ManagementUnit.
+        The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_modified: The date_modified of this ManagementUnit.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
 
     @property
     def self_uri(self):

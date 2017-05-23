@@ -42,6 +42,7 @@ class ConversationNotificationChat(object):
             'id': 'str',
             'provider': 'str',
             'script_id': 'str',
+            'peer_id': 'str',
             'room_id': 'str',
             'held': 'bool',
             'disconnect_type': 'str',
@@ -56,6 +57,7 @@ class ConversationNotificationChat(object):
             'id': 'id',
             'provider': 'provider',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'room_id': 'roomId',
             'held': 'held',
             'disconnect_type': 'disconnectType',
@@ -69,6 +71,7 @@ class ConversationNotificationChat(object):
         self._id = None
         self._provider = None
         self._script_id = None
+        self._peer_id = None
         self._room_id = None
         self._held = None
         self._disconnect_type = None
@@ -172,6 +175,29 @@ class ConversationNotificationChat(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this ConversationNotificationChat.
+
+
+        :return: The peer_id of this ConversationNotificationChat.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this ConversationNotificationChat.
+
+
+        :param peer_id: The peer_id of this ConversationNotificationChat.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def room_id(self):

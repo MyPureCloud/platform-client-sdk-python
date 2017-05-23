@@ -32,6 +32,7 @@ title: CobrowseMediaParticipant
 | **external_contact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. | [optional] |
 | **external_organization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. | [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. | [optional] |
+| **peer** | **str** | The peer communication corresponding to a matching leg for this communication. | [optional] |
 | **cobrowse_session_id** | **str** | The co-browse session ID. | [optional] |
 | **cobrowse_role** | **str** | This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer). | [optional] |
 | **controlling** | **list[str]** | ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages). | [optional] |

@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edge_setuppackage**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_setuppackage) | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.|
 |[**get_telephony_providers_edge_softwareupdate**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_softwareupdate) | Gets software update status information about any edge.|
 |[**get_telephony_providers_edge_softwareversions**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_softwareversions) | Gets all the available software versions for this edge.|
+|[**get_telephony_providers_edge_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_trunks) | Get the list of available trunks for the given Edge.|
 |[**get_telephony_providers_edges**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges) | Get the list of edges.|
 |[**get_telephony_providers_edges_availablelanguages**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_availablelanguages) | Get the list of available languages.|
 |[**get_telephony_providers_edges_certificateauthorities**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_certificateauthorities) | Get the list of certificate authorities.|
@@ -1513,6 +1514,63 @@ except ApiException as e:
 ### Return type
 
 [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)
+
+<a name="get_telephony_providers_edge_trunks"></a>
+
+## [**TrunkEntityListing**](TrunkEntityListing.html) get_telephony_providers_edge_trunks(edge_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
+
+Get the list of available trunks for the given Edge.
+
+Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/trunks 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+trunk_base_id = 'trunk_base_id_example' # str | Filter by Trunk Base Ids (optional)
+trunk_type = 'trunk_type_example' # str | Filter by a Trunk type (optional)
+
+try:
+    # Get the list of available trunks for the given Edge.
+    api_response = api_instance.get_telephony_providers_edge_trunks(edge_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_trunks: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge ID | |
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
+| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional] |
+| **trunk_type** | **str**| Filter by a Trunk type | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkEntityListing**](TrunkEntityListing.html)
 
 <a name="get_telephony_providers_edges"></a>
 
