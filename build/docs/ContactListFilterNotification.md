@@ -12,7 +12,7 @@ title: ContactListFilterNotification
 | **date_created** | **datetime** |  | [optional] |
 | **date_modified** | **datetime** |  | [optional] |
 | **version** | **int** |  | [optional] |
-| **contact_list** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
+| **contact_list** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **contact_list_columns** | **list[str]** |  | [optional] |
 | **clauses** | [**list[ContactListFilterNotificationClauses]**](ContactListFilterNotificationClauses.html) |  | [optional] |
 | **filter_type** | **str** |  | [optional] |

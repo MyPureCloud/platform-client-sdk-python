@@ -48,6 +48,7 @@ class Organization(object):
             'version': 'int',
             'state': 'str',
             'default_site_id': 'str',
+            'support_uri': 'str',
             'voicemail_enabled': 'bool',
             'self_uri': 'str',
             'features': 'dict(str, bool)'
@@ -64,6 +65,7 @@ class Organization(object):
             'version': 'version',
             'state': 'state',
             'default_site_id': 'defaultSiteId',
+            'support_uri': 'supportURI',
             'voicemail_enabled': 'voicemailEnabled',
             'self_uri': 'selfUri',
             'features': 'features'
@@ -79,6 +81,7 @@ class Organization(object):
         self._version = None
         self._state = None
         self._default_site_id = None
+        self._support_uri = None
         self._voicemail_enabled = None
         self._self_uri = None
         self._features = None
@@ -316,6 +319,29 @@ class Organization(object):
         """
         
         self._default_site_id = default_site_id
+
+    @property
+    def support_uri(self):
+        """
+        Gets the support_uri of this Organization.
+        Email address where support tickets are sent to.
+
+        :return: The support_uri of this Organization.
+        :rtype: str
+        """
+        return self._support_uri
+
+    @support_uri.setter
+    def support_uri(self, support_uri):
+        """
+        Sets the support_uri of this Organization.
+        Email address where support tickets are sent to.
+
+        :param support_uri: The support_uri of this Organization.
+        :type: str
+        """
+        
+        self._support_uri = support_uri
 
     @property
     def voicemail_enabled(self):

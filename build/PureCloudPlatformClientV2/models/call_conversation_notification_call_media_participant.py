@@ -52,7 +52,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DependencyTrackingBuildNotificationNotificationUser',
+            'user': 'DocumentDataV2NotificationCreatedBy',
             'queue': 'CallConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'CallConversationNotificationErrorInfo',
@@ -496,7 +496,7 @@ class CallConversationNotificationCallMediaParticipant(object):
 
 
         :return: The user of this CallConversationNotificationCallMediaParticipant.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._user
 
@@ -507,7 +507,7 @@ class CallConversationNotificationCallMediaParticipant(object):
 
 
         :param user: The user of this CallConversationNotificationCallMediaParticipant.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._user = user

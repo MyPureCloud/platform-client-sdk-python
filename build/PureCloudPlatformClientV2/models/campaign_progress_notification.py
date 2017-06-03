@@ -38,7 +38,7 @@ class CampaignProgressNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaign': 'DependencyTrackingBuildNotificationNotificationUser',
+            'campaign': 'DocumentDataV2NotificationCreatedBy',
             'number_of_contacts_called': 'float',
             'total_number_of_contacts': 'float',
             'percentage': 'int',
@@ -66,7 +66,7 @@ class CampaignProgressNotification(object):
 
 
         :return: The campaign of this CampaignProgressNotification.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._campaign
 
@@ -77,7 +77,7 @@ class CampaignProgressNotification(object):
 
 
         :param campaign: The campaign of this CampaignProgressNotification.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._campaign = campaign

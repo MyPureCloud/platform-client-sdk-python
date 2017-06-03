@@ -21,7 +21,7 @@ title: EmailConversationNotificationEmailMediaParticipant
 | **held** | **bool** |  | [optional] |
 | **wrapup_required** | **bool** |  | [optional] |
 | **wrapup_prompt** | **str** |  | [optional] |
-| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
+| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **queue** | [**EmailConversationNotificationUriReference**](EmailConversationNotificationUriReference.html) |  | [optional] |
 | **attributes** | **dict(str, str)** |  | [optional] |
 | **error_info** | [**EmailConversationNotificationErrorInfo**](EmailConversationNotificationErrorInfo.html) |  | [optional] |

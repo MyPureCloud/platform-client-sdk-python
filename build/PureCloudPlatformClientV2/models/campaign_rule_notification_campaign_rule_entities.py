@@ -38,7 +38,7 @@ class CampaignRuleNotificationCampaignRuleEntities(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaigns': 'list[DependencyTrackingBuildNotificationNotificationUser]',
+            'campaigns': 'list[DocumentDataV2NotificationCreatedBy]',
             'sequences': 'list[CampaignRuleNotificationUriReference]'
         }
 
@@ -57,7 +57,7 @@ class CampaignRuleNotificationCampaignRuleEntities(object):
 
 
         :return: The campaigns of this CampaignRuleNotificationCampaignRuleEntities.
-        :rtype: list[DependencyTrackingBuildNotificationNotificationUser]
+        :rtype: list[DocumentDataV2NotificationCreatedBy]
         """
         return self._campaigns
 
@@ -68,7 +68,7 @@ class CampaignRuleNotificationCampaignRuleEntities(object):
 
 
         :param campaigns: The campaigns of this CampaignRuleNotificationCampaignRuleEntities.
-        :type: list[DependencyTrackingBuildNotificationNotificationUser]
+        :type: list[DocumentDataV2NotificationCreatedBy]
         """
         
         self._campaigns = campaigns

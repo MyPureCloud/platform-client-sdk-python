@@ -39,16 +39,19 @@ class PromptNotificationNotificationUser(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str'
+            'name': 'str',
+            'home_org': 'DependencyTrackingBuildNotificationNotificationUserHomeOrg'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name'
+            'name': 'name',
+            'home_org': 'homeOrg'
         }
 
         self._id = None
         self._name = None
+        self._home_org = None
 
     @property
     def id(self):
@@ -95,6 +98,29 @@ class PromptNotificationNotificationUser(object):
         """
         
         self._name = name
+
+    @property
+    def home_org(self):
+        """
+        Gets the home_org of this PromptNotificationNotificationUser.
+
+
+        :return: The home_org of this PromptNotificationNotificationUser.
+        :rtype: DependencyTrackingBuildNotificationNotificationUserHomeOrg
+        """
+        return self._home_org
+
+    @home_org.setter
+    def home_org(self, home_org):
+        """
+        Sets the home_org of this PromptNotificationNotificationUser.
+
+
+        :param home_org: The home_org of this PromptNotificationNotificationUser.
+        :type: DependencyTrackingBuildNotificationNotificationUserHomeOrg
+        """
+        
+        self._home_org = home_org
 
     def to_dict(self):
         """

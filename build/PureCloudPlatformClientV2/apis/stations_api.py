@@ -221,6 +221,7 @@ class StationsApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str name: Name
+        :param str user_selectable: True for stations that the user can select otherwise false
         :param str web_rtc_user_id: Filter for the webRtc station of the webRtcUserId
         :param str id: Comma separated list of stationIds
         :param str line_appearance_id: lineAppearanceId
@@ -229,7 +230,7 @@ class StationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'web_rtc_user_id', 'id', 'line_appearance_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'user_selectable', 'web_rtc_user_id', 'id', 'line_appearance_id']
         all_params.append('callback')
 
         params = locals()
@@ -256,6 +257,8 @@ class StationsApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'user_selectable' in params:
+            query_params['userSelectable'] = params['user_selectable']
         if 'web_rtc_user_id' in params:
             query_params['webRtcUserId'] = params['web_rtc_user_id']
         if 'id' in params:

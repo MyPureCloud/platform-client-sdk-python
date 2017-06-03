@@ -12,7 +12,7 @@ title: RuleSetNotification
 | **date_created** | **datetime** |  | [optional] |
 | **date_modified** | **datetime** |  | [optional] |
 | **version** | **int** |  | [optional] |
-| **contact_list** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
+| **contact_list** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **queue** | [**RuleSetNotificationUriReference**](RuleSetNotificationUriReference.html) |  | [optional] |
 | **rules** | [**list[RuleSetNotificationRules]**](RuleSetNotificationRules.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |

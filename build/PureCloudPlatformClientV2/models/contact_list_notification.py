@@ -49,7 +49,7 @@ class ContactListNotification(object):
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
             'size': 'int',
-            'attempt_limits': 'DependencyTrackingBuildNotificationNotificationUser',
+            'attempt_limits': 'DocumentDataV2NotificationCreatedBy',
             'additional_properties': 'object'
         }
 
@@ -343,7 +343,7 @@ class ContactListNotification(object):
 
 
         :return: The attempt_limits of this ContactListNotification.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._attempt_limits
 
@@ -354,7 +354,7 @@ class ContactListNotification(object):
 
 
         :param attempt_limits: The attempt_limits of this ContactListNotification.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._attempt_limits = attempt_limits

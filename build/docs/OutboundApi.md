@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlist**](OutboundApi.html#delete_outbound_contactlist) | Delete a contact list.|
 |[**delete_outbound_contactlist_contact**](OutboundApi.html#delete_outbound_contactlist_contact) | Delete a contact.|
 |[**delete_outbound_contactlist_contacts**](OutboundApi.html#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
+|[**delete_outbound_contactlistfilter**](OutboundApi.html#delete_outbound_contactlistfilter) | Delete Contact List Filter|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
@@ -40,6 +41,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_contactlist_contact**](OutboundApi.html#get_outbound_contactlist_contact) | Get a contact.|
 |[**get_outbound_contactlist_export**](OutboundApi.html#get_outbound_contactlist_export) | Get the URI of a contact list export.|
 |[**get_outbound_contactlist_importstatus**](OutboundApi.html#get_outbound_contactlist_importstatus) | Get dialer contactList import status.|
+|[**get_outbound_contactlistfilter**](OutboundApi.html#get_outbound_contactlistfilter) | Get Contact list filter|
+|[**get_outbound_contactlistfilters**](OutboundApi.html#get_outbound_contactlistfilters) | Query Contact list filters|
 |[**get_outbound_contactlists**](OutboundApi.html#get_outbound_contactlists) | Query a list of contact lists.|
 |[**get_outbound_dnclist**](OutboundApi.html#get_outbound_dnclist) | Get dialer DNC list|
 |[**get_outbound_dnclist_export**](OutboundApi.html#get_outbound_dnclist_export) | Get the URI of a DNC list export.|
@@ -66,6 +69,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_campaigns_progress**](OutboundApi.html#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
 |[**post_outbound_contactlist_contacts**](OutboundApi.html#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
+|[**post_outbound_contactlistfilters**](OutboundApi.html#post_outbound_contactlistfilters) | Create Contact List Filter|
+|[**post_outbound_contactlistfilters_preview**](OutboundApi.html#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
@@ -81,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_campaignrule**](OutboundApi.html#put_outbound_campaignrule) | Update Campaign Rule|
 |[**put_outbound_contactlist**](OutboundApi.html#put_outbound_contactlist) | Update a contact list.|
 |[**put_outbound_contactlist_contact**](OutboundApi.html#put_outbound_contactlist_contact) | Update a contact.|
+|[**put_outbound_contactlistfilter**](OutboundApi.html#put_outbound_contactlistfilter) | Update Contact List Filter|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a RuleSet.|
 |[**put_outbound_schedules_campaign**](OutboundApi.html#put_outbound_schedules_campaign) | Update a new campaign schedule.|
@@ -484,6 +490,50 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID | |
 | **contact_ids** | [**list[str]**](str.html)| ContactIds to delete. | |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_contactlistfilter"></a>
+
+##  delete_outbound_contactlistfilter(contact_list_filter_id)
+
+Delete Contact List Filter
+
+
+
+Wraps DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_filter_id = 'contact_list_filter_id_example' # str | Contact List Filter ID
+
+try:
+    # Delete Contact List Filter
+    api_instance.delete_outbound_contactlistfilter(contact_list_filter_id)
+except ApiException as e:
+    print "Exception when calling OutboundApi->delete_outbound_contactlistfilter: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_filter_id** | **str**| Contact List Filter ID | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1587,6 +1637,108 @@ except ApiException as e:
 ### Return type
 
 [**ImportStatus**](ImportStatus.html)
+
+<a name="get_outbound_contactlistfilter"></a>
+
+## [**ContactListFilter**](ContactListFilter.html) get_outbound_contactlistfilter(contact_list_filter_id)
+
+Get Contact list filter
+
+
+
+Wraps GET /api/v2/outbound/contactlistfilters/{contactListFilterId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_filter_id = 'contact_list_filter_id_example' # str | Contact List Filter ID
+
+try:
+    # Get Contact list filter
+    api_response = api_instance.get_outbound_contactlistfilter(contact_list_filter_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_contactlistfilter: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_filter_id** | **str**| Contact List Filter ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
+
+<a name="get_outbound_contactlistfilters"></a>
+
+## [**ContactListFilterEntityListing**](ContactListFilterEntityListing.html) get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
+
+Query Contact list filters
+
+
+
+Wraps GET /api/v2/outbound/contactlistfilters 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+name = 'name_example' # str | Name (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = 'a' # str | Sort order (optional) (default to a)
+contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
+
+try:
+    # Query Contact list filters
+    api_response = api_instance.get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_contactlistfilters: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **filter_type** | **str**| Filter type | [optional] [default to Prefix]|
+| **name** | **str**| Name | [optional] |
+| **sort_by** | **str**| Sort by | [optional] |
+| **sort_order** | **str**| Sort order | [optional] [default to a]|
+| **contact_list_id** | **str**| Contact List ID | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
 
 <a name="get_outbound_contactlists"></a>
 
@@ -2830,6 +2982,96 @@ except ApiException as e:
 
 [**UriReference**](UriReference.html)
 
+<a name="post_outbound_contactlistfilters"></a>
+
+## [**ContactListFilter**](ContactListFilter.html) post_outbound_contactlistfilters(body)
+
+Create Contact List Filter
+
+
+
+Wraps POST /api/v2/outbound/contactlistfilters 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListFilter() # ContactListFilter | ContactListFilter
+
+try:
+    # Create Contact List Filter
+    api_response = api_instance.post_outbound_contactlistfilters(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_contactlistfilters: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
+
+<a name="post_outbound_contactlistfilters_preview"></a>
+
+## [**FilterPreviewResponse**](FilterPreviewResponse.html) post_outbound_contactlistfilters_preview(body)
+
+Get a preview of the output of a contact list filter
+
+
+
+Wraps POST /api/v2/outbound/contactlistfilters/preview 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListFilter() # ContactListFilter | ContactListFilter
+
+try:
+    # Get a preview of the output of a contact list filter
+    api_response = api_instance.post_outbound_contactlistfilters_preview(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_contactlistfilters_preview: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**FilterPreviewResponse**](FilterPreviewResponse.html)
+
 <a name="post_outbound_contactlists"></a>
 
 ## [**ContactList**](ContactList.html) post_outbound_contactlists(body)
@@ -3524,6 +3766,53 @@ except ApiException as e:
 ### Return type
 
 [**DialerContact**](DialerContact.html)
+
+<a name="put_outbound_contactlistfilter"></a>
+
+## [**ContactListFilter**](ContactListFilter.html) put_outbound_contactlistfilter(contact_list_filter_id, body)
+
+Update Contact List Filter
+
+
+
+Wraps PUT /api/v2/outbound/contactlistfilters/{contactListFilterId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_filter_id = 'contact_list_filter_id_example' # str | Contact List Filter ID
+body = PureCloudPlatformClientV2.ContactListFilter() # ContactListFilter | ContactListFilter
+
+try:
+    # Update Contact List Filter
+    api_response = api_instance.put_outbound_contactlistfilter(contact_list_filter_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->put_outbound_contactlistfilter: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_filter_id** | **str**| Contact List Filter ID | |
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
 
 <a name="put_outbound_dnclist"></a>
 

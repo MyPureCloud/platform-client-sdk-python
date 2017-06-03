@@ -43,7 +43,7 @@ class RecordingDataV2Notification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'workspace': 'DocumentDataV2NotificationWorkspace',
-            'created_by': 'DependencyTrackingBuildNotificationNotificationUser',
+            'created_by': 'DocumentDataV2NotificationCreatedBy',
             'content_type': 'str',
             'content_length': 'int',
             'filename': 'str',
@@ -217,7 +217,7 @@ class RecordingDataV2Notification(object):
 
 
         :return: The created_by of this RecordingDataV2Notification.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._created_by
 
@@ -228,7 +228,7 @@ class RecordingDataV2Notification(object):
 
 
         :param created_by: The created_by of this RecordingDataV2Notification.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._created_by = created_by

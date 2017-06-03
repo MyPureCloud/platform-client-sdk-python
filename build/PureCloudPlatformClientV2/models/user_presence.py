@@ -42,7 +42,7 @@ class UserPresence(object):
             'name': 'str',
             'source': 'str',
             'primary': 'bool',
-            'presence_definition': 'OrganizationPresence',
+            'presence_definition': 'PresenceDefinition',
             'message': 'str',
             'modified_date': 'datetime',
             'self_uri': 'str'
@@ -167,7 +167,7 @@ class UserPresence(object):
 
 
         :return: The presence_definition of this UserPresence.
-        :rtype: OrganizationPresence
+        :rtype: PresenceDefinition
         """
         return self._presence_definition
 
@@ -178,7 +178,7 @@ class UserPresence(object):
 
 
         :param presence_definition: The presence_definition of this UserPresence.
-        :type: OrganizationPresence
+        :type: PresenceDefinition
         """
         
         self._presence_definition = presence_definition

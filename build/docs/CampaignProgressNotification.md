@@ -7,7 +7,7 @@ title: CampaignProgressNotification
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **campaign** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
+| **campaign** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **number_of_contacts_called** | **float** |  | [optional] |
 | **total_number_of_contacts** | **float** |  | [optional] |
 | **percentage** | **int** |  | [optional] |

@@ -52,7 +52,7 @@ class ChatConversationNotificationParticipants(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DependencyTrackingBuildNotificationNotificationUser',
+            'user': 'DocumentDataV2NotificationCreatedBy',
             'queue': 'ChatConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ChatConversationNotificationErrorInfo',
@@ -466,7 +466,7 @@ class ChatConversationNotificationParticipants(object):
 
 
         :return: The user of this ChatConversationNotificationParticipants.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._user
 
@@ -477,7 +477,7 @@ class ChatConversationNotificationParticipants(object):
 
 
         :param user: The user of this ChatConversationNotificationParticipants.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._user = user

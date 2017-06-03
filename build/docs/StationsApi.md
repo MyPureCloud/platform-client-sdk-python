@@ -104,7 +104,7 @@ except ApiException as e:
 
 <a name="get_stations"></a>
 
-## [**StationEntityListing**](StationEntityListing.html) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
+## [**StationEntityListing**](StationEntityListing.html) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
 
 Get the list of available stations.
 
@@ -129,13 +129,14 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 name = 'name_example' # str | Name (optional)
+user_selectable = 'user_selectable_example' # str | True for stations that the user can select otherwise false (optional)
 web_rtc_user_id = 'web_rtc_user_id_example' # str | Filter for the webRtc station of the webRtcUserId (optional)
 id = 'id_example' # str | Comma separated list of stationIds (optional)
 line_appearance_id = 'line_appearance_id_example' # str | lineAppearanceId (optional)
 
 try:
     # Get the list of available stations.
-    api_response = api_instance.get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
+    api_response = api_instance.get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling StationsApi->get_stations: %s\n" % e
@@ -150,6 +151,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1]|
 | **sort_by** | **str**| Sort by | [optional] [default to name]|
 | **name** | **str**| Name | [optional] |
+| **user_selectable** | **str**| True for stations that the user can select otherwise false | [optional] |
 | **web_rtc_user_id** | **str**| Filter for the webRtc station of the webRtcUserId | [optional] |
 | **id** | **str**| Comma separated list of stationIds | [optional] |
 | **line_appearance_id** | **str**| lineAppearanceId | [optional] |

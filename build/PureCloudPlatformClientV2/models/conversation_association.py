@@ -60,7 +60,7 @@ class ConversationAssociation(object):
     def external_contact_id(self):
         """
         Gets the external_contact_id of this ConversationAssociation.
-        External Contact ID; populated from url
+        External Contact ID
 
         :return: The external_contact_id of this ConversationAssociation.
         :rtype: str
@@ -71,7 +71,7 @@ class ConversationAssociation(object):
     def external_contact_id(self, external_contact_id):
         """
         Sets the external_contact_id of this ConversationAssociation.
-        External Contact ID; populated from url
+        External Contact ID
 
         :param external_contact_id: The external_contact_id of this ConversationAssociation.
         :type: str

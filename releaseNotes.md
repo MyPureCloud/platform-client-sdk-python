@@ -1,149 +1,70 @@
 
-# Major Changes (5 changes)
+# Major Changes (2 changes)
 
-**GET /api/v2/locations** (1 change)
+**GET /api/v2/stations** (1 change)
 
-* Response 200 type was changed from LocationDefinition[] to LocationEntityListing
+* Parameter userSelectable was added
 
-**GET /api/v2/users** (1 change)
+**UserPresence** (1 change)
 
-* Parameter state was added
-
-**Flow** (2 changes)
-
-* Property lockedUser was changed from UriReference to User
-* Property publishedBy was changed from UriReference to User
-
-**FlowVersion** (1 change)
-
-* Property createdBy was changed from UriReference to User
+* Property presenceDefinition was changed from OrganizationPresence to PresenceDefinition
 
 
-# Minor Changes (27 changes)
+# Minor Changes (18 changes)
 
-**/api/v2/telephony/providers/edges/{edgeId}/trunks** (2 changes)
+**/api/v2/outbound/contactlistfilters/preview** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/outbound/contactlistfilters/{contactListFilterId}** (4 changes)
 
 * Path was added
 * Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
 
-**Call** (1 change)
+**/api/v2/outbound/contactlistfilters** (3 changes)
 
-* Optional property peerId was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**CallBasic** (1 change)
-
-* Optional property peerId was added
-
-**Callback** (2 changes)
-
-* Optional property voicemail was added
-* Optional property peerId was added
-
-**CallbackBasic** (2 changes)
-
-* Optional property voicemail was added
-* Optional property peerId was added
-
-**Cobrowsesession** (1 change)
-
-* Optional property peerId was added
-
-**Contact** (1 change)
-
-* Optional property extension was added
-
-**ConversationChat** (1 change)
-
-* Optional property peerId was added
-
-**Email** (1 change)
-
-* Optional property peerId was added
-
-**Screenshare** (1 change)
-
-* Optional property peerId was added
-
-**SocialExpression** (1 change)
-
-* Optional property peerId was added
-
-**Video** (1 change)
-
-* Optional property peerId was added
-
-**Voicemail** (1 change)
+**PresenceDefinition** (1 change)
 
 * Model was added
 
-**VoicemailMediaInfo** (1 change)
+**Organization** (1 change)
 
-* Optional property waveformData was added
+* Optional property supportURI was added
 
-**EncryptionKey** (1 change)
+**Campaign** (1 change)
 
-* Optional property localEncryptionConfiguration was added
+* Optional property contactListFilters was added
 
-**ManagementUnit** (1 change)
-
-* Optional property dateModified was added
-
-**CallMediaParticipant** (1 change)
-
-* Optional property peer was added
-
-**EmailMediaParticipant** (1 change)
-
-* Optional property peer was added
-
-**LocationEntityListing** (1 change)
+**FilterPreviewResponse** (1 change)
 
 * Model was added
 
-**CobrowseMediaParticipant** (1 change)
+**ContactListFilter** (1 change)
 
-* Optional property peer was added
+* Model was added
 
-**ChatMediaParticipant** (1 change)
+**ContactListFilterClause** (1 change)
 
-* Optional property peer was added
+* Model was added
 
-**UpdateUser** (1 change)
+**ContactListFilterPredicate** (1 change)
 
-* Optional property state was added
+* Model was added
 
-**CallbackMediaParticipant** (2 changes)
+**ContactListFilterRange** (1 change)
 
-* Optional property peer was added
-* Optional property voicemail was added
+* Model was added
+
+**ContactListFilterEntityListing** (1 change)
+
+* Model was added
 
 
-# Point Changes (7 changes)
-
-**GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues** (1 change)
-
-* Description was changed for parameter muId
-
-**POST /api/v2/workforcemanagement/managementunits/{muId}/intraday** (1 change)
-
-* Description was changed for parameter muId
-
-**GET /api/v2/workforcemanagement/managementunits/{muId}/users** (1 change)
-
-* Description was changed for parameter muId
-
-**GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes** (1 change)
-
-* Description was changed for parameter muId
-
-**POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search** (1 change)
-
-* Description was changed for parameter muId
-
-**GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}** (1 change)
-
-* Description was changed for parameter muId
-
-**GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests** (1 change)
-
-* Description was changed for parameter muId
+# Point Changes (0 changes)

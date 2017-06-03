@@ -43,7 +43,7 @@ class ContactListFilterNotification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'DependencyTrackingBuildNotificationNotificationUser',
+            'contact_list': 'DocumentDataV2NotificationCreatedBy',
             'contact_list_columns': 'list[str]',
             'clauses': 'list[ContactListFilterNotificationClauses]',
             'filter_type': 'str',
@@ -196,7 +196,7 @@ class ContactListFilterNotification(object):
 
 
         :return: The contact_list of this ContactListFilterNotification.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._contact_list
 
@@ -207,7 +207,7 @@ class ContactListFilterNotification(object):
 
 
         :param contact_list: The contact_list of this ContactListFilterNotification.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._contact_list = contact_list

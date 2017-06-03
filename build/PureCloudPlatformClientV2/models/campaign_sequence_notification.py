@@ -43,7 +43,7 @@ class CampaignSequenceNotification(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'campaigns': 'list[DependencyTrackingBuildNotificationNotificationUser]',
+            'campaigns': 'list[DocumentDataV2NotificationCreatedBy]',
             'current_campaign': 'int',
             'status': 'str',
             'stop_message': 'str',
@@ -199,7 +199,7 @@ class CampaignSequenceNotification(object):
 
 
         :return: The campaigns of this CampaignSequenceNotification.
-        :rtype: list[DependencyTrackingBuildNotificationNotificationUser]
+        :rtype: list[DocumentDataV2NotificationCreatedBy]
         """
         return self._campaigns
 
@@ -210,7 +210,7 @@ class CampaignSequenceNotification(object):
 
 
         :param campaigns: The campaigns of this CampaignSequenceNotification.
-        :type: list[DependencyTrackingBuildNotificationNotificationUser]
+        :type: list[DocumentDataV2NotificationCreatedBy]
         """
         
         self._campaigns = campaigns

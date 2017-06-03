@@ -52,7 +52,7 @@ class CallbackConversationNotificationParticipants(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'DependencyTrackingBuildNotificationNotificationUser',
+            'user': 'DocumentDataV2NotificationCreatedBy',
             'queue': 'CallbackConversationNotificationUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'CallbackConversationNotificationErrorInfo',
@@ -487,7 +487,7 @@ class CallbackConversationNotificationParticipants(object):
 
 
         :return: The user of this CallbackConversationNotificationParticipants.
-        :rtype: DependencyTrackingBuildNotificationNotificationUser
+        :rtype: DocumentDataV2NotificationCreatedBy
         """
         return self._user
 
@@ -498,7 +498,7 @@ class CallbackConversationNotificationParticipants(object):
 
 
         :param user: The user of this CallbackConversationNotificationParticipants.
-        :type: DependencyTrackingBuildNotificationNotificationUser
+        :type: DocumentDataV2NotificationCreatedBy
         """
         
         self._user = user

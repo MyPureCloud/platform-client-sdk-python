@@ -12,7 +12,7 @@ title: FaxDataV2Notification
 | **date_created** | **datetime** |  | [optional] |
 | **date_modified** | **datetime** |  | [optional] |
 | **workspace** | [**DocumentDataV2NotificationWorkspace**](DocumentDataV2NotificationWorkspace.html) |  | [optional] |
-| **created_by** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  | [optional] |
+| **created_by** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **content_type** | **str** |  | [optional] |
 | **content_length** | **int** |  | [optional] |
 | **filename** | **str** |  | [optional] |

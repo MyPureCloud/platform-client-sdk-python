@@ -41,23 +41,20 @@ class OutOfOfficeNotification(object):
             'user': 'DocumentDataV2NotificationWorkspace',
             'active': 'bool',
             'start_date': 'datetime',
-            'end_date': 'datetime',
-            'modified_date': 'datetime'
+            'end_date': 'datetime'
         }
 
         self.attribute_map = {
             'user': 'user',
             'active': 'active',
             'start_date': 'startDate',
-            'end_date': 'endDate',
-            'modified_date': 'modifiedDate'
+            'end_date': 'endDate'
         }
 
         self._user = None
         self._active = None
         self._start_date = None
         self._end_date = None
-        self._modified_date = None
 
     @property
     def user(self):
@@ -150,29 +147,6 @@ class OutOfOfficeNotification(object):
         """
         
         self._end_date = end_date
-
-    @property
-    def modified_date(self):
-        """
-        Gets the modified_date of this OutOfOfficeNotification.
-
-
-        :return: The modified_date of this OutOfOfficeNotification.
-        :rtype: datetime
-        """
-        return self._modified_date
-
-    @modified_date.setter
-    def modified_date(self, modified_date):
-        """
-        Sets the modified_date of this OutOfOfficeNotification.
-
-
-        :param modified_date: The modified_date of this OutOfOfficeNotification.
-        :type: datetime
-        """
-        
-        self._modified_date = modified_date
 
     def to_dict(self):
         """

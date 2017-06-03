@@ -66,6 +66,7 @@ class Campaign(object):
             'no_answer_timeout': 'int',
             'call_analysis_language': 'str',
             'priority': 'int',
+            'contact_list_filters': 'list[UriReference]',
             'self_uri': 'str'
         }
 
@@ -98,6 +99,7 @@ class Campaign(object):
             'no_answer_timeout': 'noAnswerTimeout',
             'call_analysis_language': 'callAnalysisLanguage',
             'priority': 'priority',
+            'contact_list_filters': 'contactListFilters',
             'self_uri': 'selfUri'
         }
 
@@ -129,6 +131,7 @@ class Campaign(object):
         self._no_answer_timeout = None
         self._call_analysis_language = None
         self._priority = None
+        self._contact_list_filters = None
         self._self_uri = None
 
     @property
@@ -778,6 +781,29 @@ class Campaign(object):
         """
         
         self._priority = priority
+
+    @property
+    def contact_list_filters(self):
+        """
+        Gets the contact_list_filters of this Campaign.
+        Filter defining a subset of contacts from the contact list to be dialed
+
+        :return: The contact_list_filters of this Campaign.
+        :rtype: list[UriReference]
+        """
+        return self._contact_list_filters
+
+    @contact_list_filters.setter
+    def contact_list_filters(self, contact_list_filters):
+        """
+        Sets the contact_list_filters of this Campaign.
+        Filter defining a subset of contacts from the contact list to be dialed
+
+        :param contact_list_filters: The contact_list_filters of this Campaign.
+        :type: list[UriReference]
+        """
+        
+        self._contact_list_filters = contact_list_filters
 
     @property
     def self_uri(self):
