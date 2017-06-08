@@ -43,7 +43,8 @@ class PhoneCapabilities(object):
             'dual_registers': 'bool',
             'hardware_id_type': 'str',
             'allow_reboot': 'bool',
-            'no_rebalance': 'bool'
+            'no_rebalance': 'bool',
+            'no_cloud_provisioning': 'bool'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class PhoneCapabilities(object):
             'dual_registers': 'dualRegisters',
             'hardware_id_type': 'hardwareIdType',
             'allow_reboot': 'allowReboot',
-            'no_rebalance': 'noRebalance'
+            'no_rebalance': 'noRebalance',
+            'no_cloud_provisioning': 'noCloudProvisioning'
         }
 
         self._provisions = None
@@ -61,6 +63,7 @@ class PhoneCapabilities(object):
         self._hardware_id_type = None
         self._allow_reboot = None
         self._no_rebalance = None
+        self._no_cloud_provisioning = None
 
     @property
     def provisions(self):
@@ -199,6 +202,29 @@ class PhoneCapabilities(object):
         """
         
         self._no_rebalance = no_rebalance
+
+    @property
+    def no_cloud_provisioning(self):
+        """
+        Gets the no_cloud_provisioning of this PhoneCapabilities.
+
+
+        :return: The no_cloud_provisioning of this PhoneCapabilities.
+        :rtype: bool
+        """
+        return self._no_cloud_provisioning
+
+    @no_cloud_provisioning.setter
+    def no_cloud_provisioning(self, no_cloud_provisioning):
+        """
+        Sets the no_cloud_provisioning of this PhoneCapabilities.
+
+
+        :param no_cloud_provisioning: The no_cloud_provisioning of this PhoneCapabilities.
+        :type: bool
+        """
+        
+        self._no_cloud_provisioning = no_cloud_provisioning
 
     def to_dict(self):
         """

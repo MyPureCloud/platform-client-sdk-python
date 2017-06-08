@@ -82,9 +82,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **annotation_id** | **str**| Annotation ID | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **annotation_id** | **str**| Annotation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -129,7 +129,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **orphan_id** | **str**| Orphan ID | |
+| **orphan_id** | **str**| Orphan ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -173,7 +173,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **ids** | **str**|  | |
+| **ids** | **str**|  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -217,7 +217,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **policy_id** | **str**| Policy ID | |
+| **policy_id** | **str**| Policy ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -266,11 +266,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]|
-| **download** | **bool**| requesting a download format of the recording | [optional] [default to false]|
-| **file_name** | **str**| the name of the downloaded fileName | [optional] |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+| **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
+| **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -317,9 +317,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **annotation_id** | **str**| Annotation ID | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **annotation_id** | **str**| Annotation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -365,8 +365,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -413,9 +413,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000]|
-| **format_id** | **str**| The desired media format | [optional] [default to WEBM]|
+| **conversation_id** | **str**| Conversation ID |  |
+| **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
+| **format_id** | **str**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -460,7 +460,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **orphan_id** | **str**| Orphan ID | |
+| **orphan_id** | **str**| Orphan ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -508,10 +508,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **orphan_id** | **str**| Orphan ID | |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]|
-| **download** | **bool**| requesting a download format of the recording | [optional] [default to false]|
-| **file_name** | **str**| the name of the downloaded fileName | [optional] |
+| **orphan_id** | **str**| Orphan ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+| **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
+| **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -563,14 +563,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false]|
-| **media** | **str**| Filter resulting orphans based on their media type | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
+| **media** | **str**| Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
 {: class="table table-striped"}
 
 ### Return type
@@ -615,7 +615,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **settings_id** | **str**| Settings Id | |
+| **settings_id** | **str**| Settings Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -710,16 +710,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **name** | **str**| the policy name - used for filtering results in searches. | [optional] |
-| **enabled** | **bool**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional] |
-| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false]|
-| **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
+| **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
+| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
+| **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -764,7 +764,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **policy_id** | **str**| Policy ID | |
+| **policy_id** | **str**| Policy ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -810,8 +810,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -897,7 +897,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **create_default** | **bool**| If no settings are found, a new one is created with default values | [optional] [default to false]|
+| **create_default** | **bool**| If no settings are found, a new one is created with default values | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -943,8 +943,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -990,8 +990,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **policy_id** | **str**| Policy ID | |
-| **body** | [**Policy**](Policy.html)| Policy | |
+| **policy_id** | **str**| Policy ID |  |
+| **body** | [**Policy**](Policy.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1036,8 +1036,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recording_session_id** | **str**| Screen recording session ID | |
-| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional] |
+| **recording_session_id** | **str**| Screen recording session ID |  |
+| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1084,9 +1084,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **body** | [**Annotation**](Annotation.html)| annotation | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **body** | [**Annotation**](Annotation.html)| annotation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1131,7 +1131,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body | |
+| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1176,7 +1176,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration | |
+| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1221,7 +1221,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PolicyCreate**](PolicyCreate.html)| Policy | |
+| **body** | [**PolicyCreate**](PolicyCreate.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1309,9 +1309,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **body** | [**Recording**](Recording.html)| recording | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **body** | [**Recording**](Recording.html)| recording |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1359,10 +1359,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **recording_id** | **str**| Recording ID | |
-| **annotation_id** | **str**| Annotation ID | |
-| **body** | [**Annotation**](Annotation.html)| annotation | |
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+| **annotation_id** | **str**| Annotation ID |  |
+| **body** | [**Annotation**](Annotation.html)| annotation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1408,8 +1408,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **orphan_id** | **str**| Orphan ID | |
-| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional] |
+| **orphan_id** | **str**| Orphan ID |  |
+| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1455,8 +1455,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **settings_id** | **str**| Settings Id | |
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata | |
+| **settings_id** | **str**| Settings Id |  |
+| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1502,8 +1502,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **policy_id** | **str**| Policy ID | |
-| **body** | [**Policy**](Policy.html)| Policy | |
+| **policy_id** | **str**| Policy ID |  |
+| **body** | [**Policy**](Policy.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1548,7 +1548,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule | |
+| **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1593,7 +1593,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings | |
+| **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings |  |
 {: class="table table-striped"}
 
 ### Return type

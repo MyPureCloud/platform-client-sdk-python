@@ -50,7 +50,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **station_id** | **str**| Station ID | |
+| **station_id** | **str**| Station ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -95,7 +95,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **station_id** | **str**| Station ID | |
+| **station_id** | **str**| Station ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -147,14 +147,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **name** | **str**| Name | [optional] |
-| **user_selectable** | **str**| True for stations that the user can select otherwise false | [optional] |
-| **web_rtc_user_id** | **str**| Filter for the webRtc station of the webRtcUserId | [optional] |
-| **id** | **str**| Comma separated list of stationIds | [optional] |
-| **line_appearance_id** | **str**| lineAppearanceId | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **name** | **str**| Name | [optional]  |
+| **user_selectable** | **str**| True for stations that the user can select otherwise false | [optional]  |
+| **web_rtc_user_id** | **str**| Filter for the webRtc station of the webRtcUserId | [optional]  |
+| **id** | **str**| Comma separated list of stationIds | [optional]  |
+| **line_appearance_id** | **str**| lineAppearanceId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

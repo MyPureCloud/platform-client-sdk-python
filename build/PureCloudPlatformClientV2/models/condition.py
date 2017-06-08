@@ -44,7 +44,9 @@ class Condition(object):
             'value': 'str',
             'value_type': 'str',
             'operator': 'str',
-            'codes': 'list[str]'
+            'codes': 'list[str]',
+            'property_type': 'str',
+            'pcProperty': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +56,9 @@ class Condition(object):
             'value': 'value',
             'value_type': 'valueType',
             'operator': 'operator',
-            'codes': 'codes'
+            'codes': 'codes',
+            'property_type': 'propertyType',
+            'pcProperty': 'property'
         }
 
         self._type = None
@@ -64,6 +68,8 @@ class Condition(object):
         self._value_type = None
         self._operator = None
         self._codes = None
+        self._property_type = None
+        self._pcProperty = None
 
     @property
     def type(self):
@@ -237,6 +243,56 @@ class Condition(object):
         """
         
         self._codes = codes
+
+    @property
+    def property_type(self):
+        """
+        Gets the property_type of this Condition.
+        Determines the type of the property associated with the condition
+
+        :return: The property_type of this Condition.
+        :rtype: str
+        """
+        return self._property_type
+
+    @property_type.setter
+    def property_type(self, property_type):
+        """
+        Sets the property_type of this Condition.
+        Determines the type of the property associated with the condition
+
+        :param property_type: The property_type of this Condition.
+        :type: str
+        """
+        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL"]
+        if property_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for property_type -> " + property_type
+            self._property_type = "outdated_sdk_version"
+        else:
+            self._property_type = property_type
+
+    @property
+    def pcProperty(self):
+        """
+        Gets the pcProperty of this Condition.
+        A value associated with the property type of this condition
+
+        :return: The pcProperty of this Condition.
+        :rtype: str
+        """
+        return self._pcProperty
+
+    @pcProperty.setter
+    def pcProperty(self, pcProperty):
+        """
+        Sets the pcProperty of this Condition.
+        A value associated with the property type of this condition
+
+        :param pcProperty: The pcProperty of this Condition.
+        :type: str
+        """
+        
+        self._pcProperty = pcProperty
 
     def to_dict(self):
         """

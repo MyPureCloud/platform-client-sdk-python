@@ -58,7 +58,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
+| **group_id** | **str**| Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -104,8 +104,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **ids** | **str**| Comma separated list of userIds to remove | |
+| **group_id** | **str**| Group ID |  |
+| **ids** | **str**| Comma separated list of userIds to remove |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -150,7 +150,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Field type | |
+| **type** | **str**| Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
@@ -195,7 +195,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
+| **group_id** | **str**| Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -244,11 +244,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **group_id** | **str**| Group ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -295,9 +295,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -343,8 +343,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -390,8 +390,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members | |
+| **group_id** | **str**| Group ID |  |
+| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -436,7 +436,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Group**](Group.html)| Group | |
+| **body** | [**Group**](Group.html)| Group |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -481,7 +481,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | |
+| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -527,8 +527,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional] |
+| **group_id** | **str**| Group ID |  |
+| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -64,7 +64,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
+| **role_id** | **str**| Role ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -108,7 +108,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -154,8 +154,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -241,7 +241,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
+| **role_id** | **str**| Role ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -287,8 +287,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **left_role_id** | **str**| Left Role ID | |
-| **right_role_id** | **str**| Right Role id | |
+| **left_role_id** | **str**| Left Role ID |  |
+| **right_role_id** | **str**| Right Role id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -341,15 +341,15 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **permission** | [**list[object]**](object.html)|  | [optional] |
-| **default_role_id** | [**list[object]**](object.html)|  | [optional] |
-| **user_count** | **bool**|  | [optional] [default to true]|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **permission** | [**list[object]**](object.html)|  | [optional]  |
+| **default_role_id** | [**list[object]**](object.html)|  | [optional]  |
+| **user_count** | **bool**|  | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -394,7 +394,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -440,8 +440,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | |
+| **role_id** | **str**| Role ID |  |
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -488,9 +488,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **left_role_id** | **str**| Left Role ID | |
-| **right_role_id** | **str**| Right Role id | |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | |
+| **left_role_id** | **str**| Left Role ID |  |
+| **right_role_id** | **str**| Right Role id |  |
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -535,7 +535,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role | |
+| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -580,7 +580,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **force** | **bool**| Restore default roles | [optional] [default to false]|
+| **force** | **bool**| Restore default roles | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -626,8 +626,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
-| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role | |
+| **role_id** | **str**| Role ID |  |
+| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -673,8 +673,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
-| **body** | **list[str]**| List of user IDs | |
+| **role_id** | **str**| Role ID |  |
+| **body** | **list[str]**| List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -720,8 +720,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **role_id** | **str**| Role ID | |
-| **body** | **list[str]**| List of user IDs | |
+| **role_id** | **str**| Role ID |  |
+| **body** | **list[str]**| List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -766,7 +766,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[DomainOrganizationRole]**](DomainOrganizationRole.html)| Organization roles list | |
+| **body** | [**list[DomainOrganizationRole]**](DomainOrganizationRole.html)| Organization roles list |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -812,8 +812,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | **list[str]**| List of roles | |
+| **user_id** | **str**| User ID |  |
+| **body** | **list[str]**| List of roles |  |
 {: class="table table-striped"}
 
 ### Return type

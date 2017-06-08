@@ -1,70 +1,25 @@
 
-# Major Changes (2 changes)
+# Major Changes (1 change)
 
-**GET /api/v2/stations** (1 change)
+**GET /api/v2/users/{userId}** (1 change)
 
-* Parameter userSelectable was added
-
-**UserPresence** (1 change)
-
-* Property presenceDefinition was changed from OrganizationPresence to PresenceDefinition
+* Parameter state was added
 
 
-# Minor Changes (18 changes)
+# Minor Changes (4 changes)
 
-**/api/v2/outbound/contactlistfilters/preview** (2 changes)
+**Edge** (1 change)
 
-* Path was added
-* Operation POST was added
+* Optional property osName was added
 
-**/api/v2/outbound/contactlistfilters/{contactListFilterId}** (4 changes)
+**Condition** (2 changes)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
+* Optional property propertyType was added
+* Optional property property was added
 
-**/api/v2/outbound/contactlistfilters** (3 changes)
+**PhoneCapabilities** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**PresenceDefinition** (1 change)
-
-* Model was added
-
-**Organization** (1 change)
-
-* Optional property supportURI was added
-
-**Campaign** (1 change)
-
-* Optional property contactListFilters was added
-
-**FilterPreviewResponse** (1 change)
-
-* Model was added
-
-**ContactListFilter** (1 change)
-
-* Model was added
-
-**ContactListFilterClause** (1 change)
-
-* Model was added
-
-**ContactListFilterPredicate** (1 change)
-
-* Model was added
-
-**ContactListFilterRange** (1 change)
-
-* Model was added
-
-**ContactListFilterEntityListing** (1 change)
-
-* Model was added
+* Optional property noCloudProvisioning was added
 
 
 # Point Changes (0 changes)

@@ -58,7 +58,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **library_id** | **str**| Library ID | |
+| **library_id** | **str**| Library ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -102,7 +102,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **response_id** | **str**| Response ID | |
+| **response_id** | **str**| Response ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -148,8 +148,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -194,7 +194,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **library_id** | **str**| Library ID | |
+| **library_id** | **str**| Library ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -240,8 +240,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **response_id** | **str**| Response ID | |
-| **expand** | **str**| Expand instructions for the return value. | [optional] |
+| **response_id** | **str**| Response ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -289,10 +289,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **library_id** | **str**| Library ID | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **expand** | **str**| Expand instructions for the return value. | [optional] |
+| **library_id** | **str**| Library ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -337,7 +337,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Library**](Library.html)| Library | |
+| **body** | [**Library**](Library.html)| Library |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -383,8 +383,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Response**](Response.html)| Response | |
-| **expand** | **str**| Expand instructions for the return value. | [optional] |
+| **body** | [**Response**](Response.html)| Response |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -429,7 +429,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response | |
+| **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -475,8 +475,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **library_id** | **str**| Library ID | |
-| **body** | [**Library**](Library.html)| Library | |
+| **library_id** | **str**| Library ID |  |
+| **body** | [**Library**](Library.html)| Library |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -523,9 +523,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **response_id** | **str**| Response ID | |
-| **body** | [**Response**](Response.html)| Response | |
-| **expand** | **str**| Expand instructions for the return value. | [optional] |
+| **response_id** | **str**| Response ID |  |
+| **body** | [**Response**](Response.html)| Response |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type

@@ -537,12 +537,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
         :param list[str] expand: Which fields, if any, to expand
+        :param str state: Search for a user with this state
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'expand']
+        all_params = ['user_id', 'expand', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -568,6 +569,8 @@ class UsersApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'state' in params:
+            query_params['state'] = params['state']
 
         header_params = {}
 

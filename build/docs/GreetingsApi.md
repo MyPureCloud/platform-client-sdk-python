@@ -63,7 +63,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **greeting_id** | **str**| Greeting ID | |
+| **greeting_id** | **str**| Greeting ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -108,7 +108,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **greeting_id** | **str**| Greeting ID | |
+| **greeting_id** | **str**| Greeting ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -154,8 +154,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **greeting_id** | **str**| Greeting ID | |
-| **format_id** | **str**| The desired media format. | [optional] [default to WAV]|
+| **greeting_id** | **str**| Greeting ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -201,8 +201,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -290,9 +290,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **group_id** | **str**| Group ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -337,7 +337,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
+| **group_id** | **str**| Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -384,9 +384,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -431,7 +431,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -476,7 +476,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -522,8 +522,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
+| **group_id** | **str**| Group ID |  |
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -569,8 +569,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -616,8 +616,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **greeting_id** | **str**| Greeting ID | |
-| **body** | [**Greeting**](Greeting.html)| The updated Greeting | |
+| **greeting_id** | **str**| Greeting ID |  |
+| **body** | [**Greeting**](Greeting.html)| The updated Greeting |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -662,7 +662,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -708,8 +708,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
+| **group_id** | **str**| Group ID |  |
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -755,8 +755,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type

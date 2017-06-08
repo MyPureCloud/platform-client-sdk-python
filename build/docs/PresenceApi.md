@@ -55,7 +55,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **presence_id** | **str**| Organization Presence ID | |
+| **presence_id** | **str**| Organization Presence ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -101,8 +101,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **presence_id** | **str**| Organization Presence ID | |
-| **locale_code** | **str**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] |
+| **presence_id** | **str**| Organization Presence ID |  |
+| **locale_code** | **str**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -150,10 +150,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **deleted** | **str**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false]|
-| **locale_code** | **str**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **deleted** | **str**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
+| **locale_code** | **str**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -240,8 +240,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **source_id** | **str**| Source | |
+| **user_id** | **str**| user Id |  |
+| **source_id** | **str**| Source |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -288,9 +288,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **source_id** | **str**| Source | |
-| **body** | [**UserPresence**](UserPresence.html)| User presence | |
+| **user_id** | **str**| user Id |  |
+| **source_id** | **str**| Source |  |
+| **body** | [**UserPresence**](UserPresence.html)| User presence |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -335,7 +335,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create | |
+| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -381,8 +381,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **presence_id** | **str**| Organization Presence ID | |
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update | |
+| **presence_id** | **str**| Organization Presence ID |  |
+| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -69,7 +69,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
+| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -114,7 +114,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -161,9 +161,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **locale** | **str**| Locale | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **locale** | **str**| Locale | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -209,8 +209,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **report_id** | **str**| Report ID | |
-| **locale** | **str**| Locale | [optional] |
+| **report_id** | **str**| Report ID |  |
+| **locale** | **str**| Locale | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -296,7 +296,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
+| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -343,9 +343,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
-| **page_number** | **int**|  | [optional] [default to 1]|
-| **page_size** | **int**|  | [optional] [default to 25]|
+| **schedule_id** | **str**| Schedule ID |  |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -390,7 +390,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
+| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -436,8 +436,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **run_id** | **str**| Run ID | |
-| **schedule_id** | **str**| Schedule ID | |
+| **run_id** | **str**| Run ID |  |
+| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -483,8 +483,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -571,8 +571,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -617,7 +617,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -662,7 +662,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query | |
+| **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -707,7 +707,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -752,7 +752,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -797,7 +797,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
+| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -842,7 +842,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | |
+| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -887,7 +887,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -932,7 +932,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | |
+| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -977,7 +977,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1023,8 +1023,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID | |
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | |
+| **schedule_id** | **str**| Schedule ID |  |
+| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type

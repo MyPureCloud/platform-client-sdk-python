@@ -52,7 +52,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Field type | |
+| **type** | **str**| Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
@@ -139,8 +139,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature_name** | **str**| Organization feature | |
-| **enabled** | [**FeatureState**](FeatureState.html)| New state of feature | |
+| **feature_name** | **str**| Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
+| **enabled** | [**FeatureState**](FeatureState.html)| New state of feature |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -185,7 +185,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Organization**](Organization.html)| Organization | [optional] |
+| **body** | [**Organization**](Organization.html)| Organization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

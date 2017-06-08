@@ -53,7 +53,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recording_id** | **str**| User Recording ID | |
+| **recording_id** | **str**| User Recording ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -99,8 +99,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recording_id** | **str**| User Recording ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] |
+| **recording_id** | **str**| User Recording ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
@@ -146,8 +146,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recording_id** | **str**| User Recording ID | |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]|
+| **recording_id** | **str**| User Recording ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -194,9 +194,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
@@ -284,9 +284,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **recording_id** | **str**| User Recording ID | |
-| **body** | [**UserRecording**](UserRecording.html)| UserRecording | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] |
+| **recording_id** | **str**| User Recording ID |  |
+| **body** | [**UserRecording**](UserRecording.html)| UserRecording |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type

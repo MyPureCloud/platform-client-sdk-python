@@ -81,7 +81,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
+| **alert_id** | **str**| Alert ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -125,7 +125,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
+| **rule_id** | **str**| Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -169,7 +169,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
+| **alert_id** | **str**| Alert ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -213,7 +213,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
+| **rule_id** | **str**| Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -257,7 +257,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
+| **alert_id** | **str**| Alert ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -301,7 +301,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
+| **rule_id** | **str**| Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -345,7 +345,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
+| **alert_id** | **str**| Alert ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -389,7 +389,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
+| **rule_id** | **str**| Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -435,8 +435,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **alert_id** | **str**| Alert ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -481,7 +481,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -527,8 +527,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -573,7 +573,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -619,8 +619,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **alert_id** | **str**| Alert ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -665,7 +665,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -752,8 +752,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -798,7 +798,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -844,8 +844,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **alert_id** | **str**| Alert ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -890,7 +890,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -936,8 +936,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -982,7 +982,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1028,8 +1028,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **alert_id** | **str**| Alert ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1074,7 +1074,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1120,8 +1120,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1166,7 +1166,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1212,8 +1212,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1259,8 +1259,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1306,8 +1306,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1353,8 +1353,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1401,9 +1401,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1450,9 +1450,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **alert_id** | **str**| Alert ID | |
-| **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **alert_id** | **str**| Alert ID |  |
+| **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1499,9 +1499,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1548,9 +1548,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1597,9 +1597,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_id** | **str**| Rule ID | |
-| **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **rule_id** | **str**| Rule ID |  |
+| **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type

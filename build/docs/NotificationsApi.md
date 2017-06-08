@@ -54,7 +54,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **channel_id** | **str**| Channel ID | |
+| **channel_id** | **str**| Channel ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -99,7 +99,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema |
 {: class="table table-striped"}
 
 ### Return type
@@ -144,7 +144,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **channel_id** | **str**| Channel ID | |
+| **channel_id** | **str**| Channel ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -231,8 +231,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **channel_id** | **str**| Channel ID | |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body | |
+| **channel_id** | **str**| Channel ID |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -319,8 +319,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **channel_id** | **str**| Channel ID | |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body | |
+| **channel_id** | **str**| Channel ID |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -91,7 +91,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_id** | **str**| domain ID | |
+| **domain_id** | **str**| domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -136,8 +136,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_name** | **str**| email domain | |
-| **route_id** | **str**| route ID | |
+| **domain_name** | **str**| email domain |  |
+| **route_id** | **str**| route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -182,8 +182,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **force_delete** | **bool**| forceDelete | [optional] |
+| **queue_id** | **str**| Queue ID |  |
+| **force_delete** | **bool**| forceDelete | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -228,8 +228,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **member_id** | **str**| Member ID | |
+| **queue_id** | **str**| Queue ID |  |
+| **member_id** | **str**| Member ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -274,8 +274,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **code_id** | **str**| Code ID | |
+| **queue_id** | **str**| Queue ID |  |
+| **code_id** | **str**| Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -319,7 +319,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **skill_id** | **str**| Skill ID | |
+| **skill_id** | **str**| Skill ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -403,7 +403,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **code_id** | **str**| Wrapup Code ID | |
+| **code_id** | **str**| Wrapup Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -448,8 +448,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **skill_id** | **str**| skillId | |
+| **user_id** | **str**| User ID |  |
+| **skill_id** | **str**| skillId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -494,7 +494,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_id** | **str**| domain ID | |
+| **domain_id** | **str**| domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -540,8 +540,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_name** | **str**| email domain | |
-| **route_id** | **str**| route ID | |
+| **domain_name** | **str**| email domain |  |
+| **route_id** | **str**| route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -589,10 +589,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_name** | **str**| email domain | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **pattern** | **str**| Filter routes by the route&#39;s pattern property | [optional] |
+| **domain_name** | **str**| email domain |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **pattern** | **str**| Filter routes by the route&#39;s pattern property | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -722,10 +722,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
-| **name** | **str**| Name | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -770,7 +770,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
+| **queue_id** | **str**| Queue ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -816,8 +816,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| queueId | |
-| **conversation_id** | **str**| conversationId | [optional] |
+| **queue_id** | **str**| queueId |  |
+| **conversation_id** | **str**| conversationId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -863,8 +863,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| queueId | |
-| **media_type** | **str**| mediaType | |
+| **queue_id** | **str**| queueId |  |
+| **media_type** | **str**| mediaType |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -920,18 +920,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] |
-| **joined** | **bool**| Filter by joined status | [optional] |
-| **name** | **str**| Filter by queue member name | [optional] |
-| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional] |
-| **skills** | [**list[str]**](str.html)| Filter by skill | [optional] |
-| **languages** | [**list[str]**](str.html)| Filter by language | [optional] |
-| **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional] |
-| **presence** | [**list[str]**](str.html)| Filter by presence | [optional] |
+| **queue_id** | **str**| Queue ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token |
+| **joined** | **bool**| Filter by joined status | [optional]  |
+| **name** | **str**| Filter by queue member name | [optional]  |
+| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
+| **skills** | [**list[str]**](str.html)| Filter by skill | [optional]  |
+| **languages** | [**list[str]**](str.html)| Filter by language | [optional]  |
+| **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
+| **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -976,7 +976,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
+| **queue_id** | **str**| Queue ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1025,11 +1025,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **name** | **str**| Name | [optional] |
-| **active** | **bool**| Active | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **name** | **str**| Name | [optional]  |
+| **active** | **bool**| Active | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1074,7 +1074,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **skill_id** | **str**| Skill ID | |
+| **skill_id** | **str**| Skill ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1121,9 +1121,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Filter for results that start with this value | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Filter for results that start with this value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1209,7 +1209,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **code_id** | **str**| Wrapup Code ID | |
+| **code_id** | **str**| Wrapup Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1256,9 +1256,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1306,10 +1306,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1356,9 +1356,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **member_id** | **str**| Member ID | |
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member | |
+| **queue_id** | **str**| Queue ID |  |
+| **member_id** | **str**| Member ID |  |
+| **body** | [**QueueMember**](QueueMember.html)| Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1404,8 +1404,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members | |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1450,7 +1450,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1496,8 +1496,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_name** | **str**| email domain | |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | |
+| **domain_name** | **str**| email domain |  |
+| **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1542,7 +1542,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InboundDomain**](InboundDomain.html)| Domain | |
+| **body** | [**InboundDomain**](InboundDomain.html)| Domain |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1587,7 +1587,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Language**](Language.html)| Language | |
+| **body** | [**Language**](Language.html)| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1634,9 +1634,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members | |
-| **delete** | **bool**| True to delete queue members | [optional] [default to false]|
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members |  |
+| **delete** | **bool**| True to delete queue members | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1682,8 +1682,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **body** | [**list[WrapupCode]**](WrapupCode.html)| List of wrapup codes | |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**list[WrapupCode]**](WrapupCode.html)| List of wrapup codes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1728,7 +1728,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue | |
+| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1773,7 +1773,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill | |
+| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1818,7 +1818,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | |
+| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1864,8 +1864,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1912,9 +1912,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain_name** | **str**| email domain | |
-| **route_id** | **str**| route ID | |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | |
+| **domain_name** | **str**| email domain |  |
+| **route_id** | **str**| route ID |  |
+| **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1960,8 +1960,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **body** | [**Queue**](Queue.html)| Queue | |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**Queue**](Queue.html)| Queue |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2006,7 +2006,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Utilization**](Utilization.html)| utilization | |
+| **body** | [**Utilization**](Utilization.html)| utilization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2052,8 +2052,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **code_id** | **str**| Wrapup Code ID | |
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | |
+| **code_id** | **str**| Wrapup Code ID |  |
+| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2100,9 +2100,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **skill_id** | **str**| skillId | |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | |
+| **user_id** | **str**| User ID |  |
+| **skill_id** | **str**| skillId |  |
+| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
 {: class="table table-striped"}
 
 ### Return type

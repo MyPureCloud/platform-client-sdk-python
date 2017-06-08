@@ -52,7 +52,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **location_id** | **str**| Location ID | |
+| **location_id** | **str**| Location ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -99,9 +99,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Sort order | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -147,8 +147,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -193,7 +193,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | |
+| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type

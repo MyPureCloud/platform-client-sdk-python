@@ -54,7 +54,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **license_id** | **str**| ID | |
+| **license_id** | **str**| ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -181,7 +181,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| ID | |
+| **user_id** | **str**| ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -226,7 +226,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional] |
+| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -271,7 +271,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **list[str]**| The user IDs to fetch. | [optional] |
+| **body** | **list[str]**| The user IDs to fetch. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

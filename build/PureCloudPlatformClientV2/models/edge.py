@@ -76,6 +76,7 @@ class Edge(object):
             'call_draining_state': 'str',
             'conversation_count': 'int',
             'proxy': 'str',
+            'os_name': 'str',
             'self_uri': 'str'
         }
 
@@ -118,6 +119,7 @@ class Edge(object):
             'call_draining_state': 'callDrainingState',
             'conversation_count': 'conversationCount',
             'proxy': 'proxy',
+            'os_name': 'osName',
             'self_uri': 'selfUri'
         }
 
@@ -159,6 +161,7 @@ class Edge(object):
         self._call_draining_state = None
         self._conversation_count = None
         self._proxy = None
+        self._os_name = None
         self._self_uri = None
 
     @property
@@ -1054,6 +1057,29 @@ class Edge(object):
         """
         
         self._proxy = proxy
+
+    @property
+    def os_name(self):
+        """
+        Gets the os_name of this Edge.
+        The name provided by the operating system of the Edge.
+
+        :return: The os_name of this Edge.
+        :rtype: str
+        """
+        return self._os_name
+
+    @os_name.setter
+    def os_name(self, os_name):
+        """
+        Sets the os_name of this Edge.
+        The name provided by the operating system of the Edge.
+
+        :param os_name: The os_name of this Edge.
+        :type: str
+        """
+        
+        self._os_name = os_name
 
     @property
     def self_uri(self):

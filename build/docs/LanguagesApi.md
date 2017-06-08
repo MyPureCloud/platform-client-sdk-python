@@ -57,7 +57,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID | |
+| **language_id** | **str**| Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -101,7 +101,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID | |
+| **language_id** | **str**| Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -146,7 +146,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID | |
+| **language_id** | **str**| Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -194,10 +194,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
-| **name** | **str**| Name | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -283,7 +283,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language** | **str**| The language of the builtin translation to retrieve | |
+| **language** | **str**| The language of the builtin translation to retrieve |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -328,7 +328,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language** | **str**| The language of the translation to retrieve for the organization | |
+| **language** | **str**| The language of the translation to retrieve for the organization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -373,7 +373,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| The user id | |
+| **user_id** | **str**| The user id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -418,7 +418,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language_id** | **str**| Language ID | |
+| **language_id** | **str**| Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -463,7 +463,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Language**](Language.html)| Language | |
+| **body** | [**Language**](Language.html)| Language |  |
 {: class="table table-striped"}
 
 ### Return type

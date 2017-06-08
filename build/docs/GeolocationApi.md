@@ -94,8 +94,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **client_id** | **str**| client Id | |
+| **user_id** | **str**| user Id |  |
+| **client_id** | **str**| client Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -140,7 +140,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings | |
+| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -187,9 +187,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **client_id** | **str**| client Id | |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation | |
+| **user_id** | **str**| user Id |  |
+| **client_id** | **str**| client Id |  |
+| **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type

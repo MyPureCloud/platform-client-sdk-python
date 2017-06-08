@@ -90,7 +90,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -134,7 +134,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -179,8 +179,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **skill_id** | **str**| skillId | |
+| **user_id** | **str**| User ID |  |
+| **skill_id** | **str**| skillId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -224,7 +224,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -268,7 +268,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -313,7 +313,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Field type | |
+| **type** | **str**| Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
@@ -322,7 +322,7 @@ except ApiException as e:
 
 <a name="get_user"></a>
 
-## [**User**](User.html) get_user(user_id, expand=expand)
+## [**User**](User.html) get_user(user_id, expand=expand, state=state)
 
 Get user.
 
@@ -345,10 +345,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+state = 'active' # str | Search for a user with this state (optional) (default to active)
 
 try:
     # Get user.
-    api_response = api_instance.get_user(user_id, expand=expand)
+    api_response = api_instance.get_user(user_id, expand=expand, state=state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user: %s\n" % e
@@ -359,8 +360,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **user_id** | **str**| User ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **state** | **str**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -406,8 +408,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **user_id** | **str**| User ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -452,7 +454,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -498,8 +500,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **user_id** | **str**| User ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -548,11 +550,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -598,8 +600,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **client_id** | **str**| client Id | |
+| **user_id** | **str**| user Id |  |
+| **client_id** | **str**| client Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -644,7 +646,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -689,7 +691,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -737,10 +739,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **joined** | **bool**| Is joined to the queue | [optional] [default to true]|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **joined** | **bool**| Is joined to the queue | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -785,7 +787,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -833,10 +835,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -881,7 +883,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -926,7 +928,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -972,8 +974,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
+| **user_id** | **str**| User ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -1023,12 +1025,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **id** | [**list[str]**](str.html)| id | [optional] |
-| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
-| **state** | **str**| Only list users of this state | [optional] [default to active]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -1073,7 +1075,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token |
 {: class="table table-striped"}
 
 ### Return type
@@ -1119,8 +1121,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1166,8 +1168,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**UpdateUser**](UpdateUser.html)| User | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**UpdateUser**](UpdateUser.html)| User |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1213,8 +1215,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1261,9 +1263,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id | |
-| **client_id** | **str**| client Id | |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation | |
+| **user_id** | **str**| user Id |  |
+| **client_id** | **str**| client Id |  |
+| **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1310,9 +1312,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **queue_id** | **str**| Queue ID | |
-| **user_id** | **str**| User ID | |
-| **body** | [**UserQueue**](UserQueue.html)| Queue Member | |
+| **queue_id** | **str**| Queue ID |  |
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1358,8 +1360,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**list[UserQueue]**](UserQueue.html)| User Queues | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserQueue]**](UserQueue.html)| User Queues |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1404,7 +1406,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1449,7 +1451,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | |
+| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1494,7 +1496,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1540,8 +1542,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1586,7 +1588,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUser**](CreateUser.html)| User | |
+| **body** | [**CreateUser**](CreateUser.html)| User |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1631,7 +1633,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1677,8 +1679,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1724,8 +1726,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated UserPresence | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated UserPresence |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1771,8 +1773,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | **list[str]**| Skills | [optional] |
+| **user_id** | **str**| User ID |  |
+| **body** | **list[str]**| Skills | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1818,8 +1820,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | **list[str]**| List of roles | |
+| **user_id** | **str**| User ID |  |
+| **body** | **list[str]**| List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1866,9 +1868,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **skill_id** | **str**| skillId | |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | |
+| **user_id** | **str**| User ID |  |
+| **skill_id** | **str**| skillId |  |
+| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1914,8 +1916,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1960,8 +1962,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **station_id** | **str**| stationId | |
+| **user_id** | **str**| User ID |  |
+| **station_id** | **str**| stationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2006,8 +2008,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **station_id** | **str**| stationId | |
+| **user_id** | **str**| User ID |  |
+| **station_id** | **str**| stationId |  |
 {: class="table table-striped"}
 
 ### Return type

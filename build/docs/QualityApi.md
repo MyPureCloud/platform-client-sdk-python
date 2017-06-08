@@ -80,8 +80,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **calibration_id** | **str**| Calibration ID | |
-| **calibrator_id** | **str**| calibratorId | |
+| **calibration_id** | **str**| Calibration ID |  |
+| **calibrator_id** | **str**| calibratorId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -128,9 +128,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **evaluation_id** | **str**| evaluationId | |
-| **expand** | **str**| evaluatorId | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **evaluation_id** | **str**| evaluationId |  |
+| **expand** | **str**| evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -174,7 +174,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **form_id** | **str**| Form ID | |
+| **form_id** | **str**| Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -218,7 +218,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID | |
+| **keyword_set_id** | **str**| KeywordSet ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -262,7 +262,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **ids** | **str**| A comma-delimited list of valid KeywordSet ids | |
+| **ids** | **str**| A comma-delimited list of valid KeywordSet ids |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -318,18 +318,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **start_time** | **datetime**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **end_time** | **datetime**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **agent_user_id** | [**list[object]**](object.html)| user id of agent requested | [optional] |
-| **evaluator_user_id** | **str**| user id of the evaluator | [optional] |
-| **name** | **str**| name | [optional] |
-| **group** | **str**| group id | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **start_time** | **datetime**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+| **end_time** | **datetime**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+| **agent_user_id** | [**list[object]**](object.html)| user id of agent requested | [optional]  |
+| **evaluator_user_id** | **str**| user id of the evaluator | [optional]  |
+| **name** | **str**| name | [optional]  |
+| **group** | **str**| group id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -375,8 +375,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **calibration_id** | **str**| Calibration ID | |
-| **calibrator_id** | **str**| calibratorId | |
+| **calibration_id** | **str**| Calibration ID |  |
+| **calibrator_id** | **str**| calibratorId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -430,16 +430,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **calibrator_id** | **str**| user id of calibrator | |
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **conversation_id** | **str**| conversation id | [optional] |
-| **start_time** | **datetime**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **end_time** | **datetime**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **calibrator_id** | **str**| user id of calibrator |  |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **conversation_id** | **str**| conversation id | [optional]  |
+| **start_time** | **datetime**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+| **end_time** | **datetime**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -492,15 +492,15 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **recording_id** | **str**| id of the recording | [optional] |
-| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING]|
+| **conversation_id** | **str**| Conversation ID |  |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **recording_id** | **str**| id of the recording | [optional]  |
+| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
 {: class="table table-striped"}
 
 ### Return type
@@ -547,9 +547,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **evaluation_id** | **str**| evaluationId | |
-| **expand** | **str**| agent, evaluator, evaluationForm | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **evaluation_id** | **str**| evaluationId |  |
+| **expand** | **str**| agent, evaluator, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -610,23 +610,23 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **conversation_id** | **str**| conversationId specified | [optional] |
-| **agent_user_id** | **str**| user id of the agent | [optional] |
-| **evaluator_user_id** | **str**| evaluator user id | [optional] |
-| **queue_id** | **str**| queue id | [optional] |
-| **start_time** | **str**| start time of the evaluation query | [optional] |
-| **end_time** | **str**| end time of the evaluation query | [optional] |
-| **evaluation_state** | [**list[object]**](object.html)| evaluation state options: Pending, InProgress, Finished | [optional] |
-| **is_released** | **bool**| the evaluation has been released | [optional] |
-| **agent_has_read** | **bool**| agent has the evaluation | [optional] |
-| **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional] |
-| **maximum** | **int**| maximum | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **conversation_id** | **str**| conversationId specified | [optional]  |
+| **agent_user_id** | **str**| user id of the agent | [optional]  |
+| **evaluator_user_id** | **str**| evaluator user id | [optional]  |
+| **queue_id** | **str**| queue id | [optional]  |
+| **start_time** | **str**| start time of the evaluation query | [optional]  |
+| **end_time** | **str**| end time of the evaluation query | [optional]  |
+| **evaluation_state** | [**list[object]**](object.html)| evaluation state options: Pending, InProgress, Finished | [optional]  |
+| **is_released** | **bool**| the evaluation has been released | [optional]  |
+| **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
+| **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |
+| **maximum** | **int**| maximum | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -681,17 +681,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **start_time** | **datetime**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **end_time** | **datetime**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **name** | **str**| Evaluator name | [optional] |
-| **permission** | [**list[object]**](object.html)| permission strings | [optional] |
-| **group** | **str**| group id | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **start_time** | **datetime**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+| **end_time** | **datetime**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+| **name** | **str**| Evaluator name | [optional]  |
+| **permission** | [**list[object]**](object.html)| permission strings | [optional]  |
+| **group** | **str**| group id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -736,7 +736,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **form_id** | **str**| Form ID | |
+| **form_id** | **str**| Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -783,9 +783,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **form_id** | **str**| Form ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **form_id** | **str**| Form ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -836,13 +836,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **expand** | **str**| Expand | [optional] |
-| **name** | **str**| Name | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **expand** | **str**| Expand | [optional]  |
+| **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -887,7 +887,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID | |
+| **keyword_set_id** | **str**| KeywordSet ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -941,16 +941,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The total page size requested | [optional] [default to 25]|
-| **page_number** | **int**| The page number requested | [optional] [default to 1]|
-| **sort_by** | **str**| variable name requested to sort by | [optional] |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional] |
-| **next_page** | **str**| next page token | [optional] |
-| **previous_page** | **str**| Previous page token | [optional] |
-| **name** | **str**| the keyword set name - used for filtering results in searches. | [optional] |
-| **queue_id** | **str**| the queue id - used for filtering results in searches. | [optional] |
-| **agent_id** | **str**| the agent id - used for filtering results in searches. | [optional] |
-| **operator** | **str**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] |
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **name** | **str**| the keyword set name - used for filtering results in searches. | [optional]  |
+| **queue_id** | **str**| the queue id - used for filtering results in searches. | [optional]  |
+| **agent_id** | **str**| the agent id - used for filtering results in searches. | [optional]  |
+| **operator** | **str**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] <br />**Values**: AND, OR |
 {: class="table table-striped"}
 
 ### Return type
@@ -995,7 +995,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **form_id** | **str**| Form ID | |
+| **form_id** | **str**| Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1042,9 +1042,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1089,7 +1089,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1135,8 +1135,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration | |
-| **expand** | **str**| calibratorId | [optional] |
+| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration |  |
+| **expand** | **str**| calibratorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1183,9 +1183,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
-| **expand** | **str**| evaluatorId | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
+| **expand** | **str**| evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1230,7 +1230,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet | |
+| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1275,7 +1275,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1321,8 +1321,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
-| **expand** | **str**| queueId | [optional] |
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
+| **expand** | **str**| queueId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1367,7 +1367,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1412,7 +1412,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional] |
+| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1458,8 +1458,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **calibration_id** | **str**| Calibration ID | |
-| **body** | [**Calibration**](Calibration.html)| Calibration | |
+| **calibration_id** | **str**| Calibration ID |  |
+| **body** | [**Calibration**](Calibration.html)| Calibration |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1507,10 +1507,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **evaluation_id** | **str**| evaluationId | |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
-| **expand** | **str**| evaluatorId | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **evaluation_id** | **str**| evaluationId |  |
+| **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
+| **expand** | **str**| evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1556,8 +1556,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **form_id** | **str**| Form ID | |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+| **form_id** | **str**| Form ID |  |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1603,8 +1603,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **keyword_set_id** | **str**| KeywordSet ID | |
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
+| **keyword_set_id** | **str**| KeywordSet ID |  |
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
 {: class="table table-striped"}
 
 ### Return type

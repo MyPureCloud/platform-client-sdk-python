@@ -69,7 +69,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **message_id** | **str**| Message ID | |
+| **message_id** | **str**| Message ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -154,7 +154,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| groupId | |
+| **group_id** | **str**| groupId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -201,9 +201,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **group_id** | **str**| Group ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -248,7 +248,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
+| **group_id** | **str**| Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -376,8 +376,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -464,8 +464,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **message_id** | **str**| Message ID | |
-| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] |
+| **message_id** | **str**| Message ID |  |
+| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 {: class="table table-striped"}
 
 ### Return type
@@ -511,8 +511,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **message_id** | **str**| Message ID | |
-| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]|
+| **message_id** | **str**| Message ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -558,8 +558,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **ids** | **str**| An optional comma separated list of VoicemailMessage ids | [optional] |
-| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] |
+| **ids** | **str**| An optional comma separated list of VoicemailMessage ids | [optional]  |
+| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 {: class="table table-striped"}
 
 ### Return type
@@ -646,8 +646,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -692,7 +692,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -738,8 +738,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| Group ID | |
-| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy | |
+| **group_id** | **str**| Group ID |  |
+| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -784,7 +784,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -830,8 +830,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID | |
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
+| **user_id** | **str**| User ID |  |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -876,7 +876,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional] |
+| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -921,7 +921,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | |
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -967,8 +967,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **message_id** | **str**| Message ID | |
-| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | |
+| **message_id** | **str**| Message ID |  |
+| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1013,7 +1013,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy | |
+| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy |  |
 {: class="table table-striped"}
 
 ### Return type

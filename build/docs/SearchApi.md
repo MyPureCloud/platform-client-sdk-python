@@ -62,7 +62,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
+| **q64** | **str**| q64 |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -108,8 +108,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -155,8 +155,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -203,9 +203,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
-| **profile** | **bool**| profile | [optional] [default to true]|
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -252,9 +252,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] |
-| **profile** | **bool**| profile | [optional] [default to true]|
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -300,8 +300,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -347,8 +347,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q64** | **str**| q64 | |
-| **expand** | [**list[str]**](str.html)| expand | [optional] |
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -393,7 +393,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options | |
+| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -438,7 +438,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | |
+| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -483,7 +483,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | |
+| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -529,8 +529,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | |
-| **profile** | **bool**| profile | [optional] [default to true]|
+| **body** | [**SearchRequest**](SearchRequest.html)| Search request options |  |
+| **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -576,8 +576,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | |
-| **profile** | **bool**| profile | [optional] [default to true]|
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options |  |
+| **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
@@ -622,7 +622,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -667,7 +667,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | |
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
 {: class="table table-striped"}
 
 ### Return type

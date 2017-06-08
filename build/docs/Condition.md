@@ -14,6 +14,8 @@ title: Condition
 | **value_type** | **str** | Determines the type of the value associated with the condition | [optional] |
 | **operator** | **str** | An operation type for condition evaluation | [optional] |
 | **codes** | **list[str]** | List of wrap-up code identifiers (used only in conditions of type &#39;wrapupCondition&#39;) | [optional] |
+| **property_type** | **str** | Determines the type of the property associated with the condition | [optional] |
+| **pcProperty** | **str** | A value associated with the property type of this condition | [optional] |
 {: class="table table-striped"}
 
 

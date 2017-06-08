@@ -126,9 +126,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **add_communication_code** | **str**| addCommunicationCode | |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **add_communication_code** | **str**| addCommunicationCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -173,8 +173,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -219,8 +219,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **attachment_id** | **str**| attachmentId | |
+| **conversation_id** | **str**| conversationId |  |
+| **attachment_id** | **str**| attachmentId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -265,7 +265,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -310,7 +310,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
+| **conversation_id** | **str**| conversation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -357,9 +357,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -405,8 +405,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -451,7 +451,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **communication_type** | **str**| Call or Chat communication filtering | [optional] |
+| **communication_type** | **str**| Call or Chat communication filtering | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -496,7 +496,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -543,9 +543,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -591,8 +591,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -637,7 +637,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -684,9 +684,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -732,8 +732,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -862,9 +862,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -950,7 +950,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -997,9 +997,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1045,8 +1045,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1132,7 +1132,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1179,9 +1179,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1227,8 +1227,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1314,7 +1314,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1360,8 +1360,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **message_id** | **str**| messageId | |
+| **conversation_id** | **str**| conversationId |  |
+| **message_id** | **str**| messageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1406,7 +1406,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1451,7 +1451,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1498,9 +1498,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false]|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1546,8 +1546,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1634,9 +1634,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1682,9 +1682,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1730,8 +1730,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1777,9 +1777,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1825,9 +1825,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1875,10 +1875,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **communication_id** | **str**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1925,9 +1925,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1973,8 +1973,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2020,9 +2020,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2068,9 +2068,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2118,10 +2118,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **communication_id** | **str**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2167,8 +2167,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2214,9 +2214,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2262,9 +2262,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2312,10 +2312,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **communication_id** | **str**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2361,8 +2361,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2408,9 +2408,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2456,9 +2456,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2506,10 +2506,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **communication_id** | **str**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2555,8 +2555,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2602,9 +2602,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2650,9 +2650,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2700,10 +2700,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **communication_id** | **str**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2749,8 +2749,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2795,7 +2795,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2840,7 +2840,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query | |
+| **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2886,9 +2886,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)|  | [optional] |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2934,9 +2934,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversation ID | |
-| **participant_id** | **str**| participant ID | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2982,8 +2982,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**CallCommand**](CallCommand.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**CallCommand**](CallCommand.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3030,9 +3030,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3077,8 +3077,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3124,9 +3124,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3172,8 +3172,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3219,9 +3219,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3266,7 +3266,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback | |
+| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3311,7 +3311,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request | |
+| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3357,9 +3357,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3404,7 +3404,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request | |
+| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3450,9 +3450,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional] |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3498,8 +3498,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**EmailMessage**](EmailMessage.html)| Reply | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**EmailMessage**](EmailMessage.html)| Reply |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3545,9 +3545,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **participant_id** | **str**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3592,7 +3592,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request | |
+| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3637,7 +3637,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax | |
+| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3683,8 +3683,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId | |
-| **body** | [**EmailMessage**](EmailMessage.html)| Draft | |
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**EmailMessage**](EmailMessage.html)| Draft |  |
 {: class="table table-striped"}
 
 ### Return type

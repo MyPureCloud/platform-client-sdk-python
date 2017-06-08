@@ -75,7 +75,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact ID | |
+| **contact_id** | **str**| ExternalContact ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -120,8 +120,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact Id | |
-| **note_id** | **str**| Note Id | |
+| **contact_id** | **str**| ExternalContact Id |  |
+| **note_id** | **str**| Note Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -165,7 +165,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization ID | |
+| **external_organization_id** | **str**| External Organization ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -210,8 +210,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization Id | |
-| **note_id** | **str**| Note Id | |
+| **external_organization_id** | **str**| External Organization Id |  |
+| **note_id** | **str**| Note Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -255,7 +255,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **relationship_id** | **str**| Relationship Id | |
+| **relationship_id** | **str**| Relationship Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -301,8 +301,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact ID | |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] |
+| **contact_id** | **str**| ExternalContact ID |  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -349,9 +349,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact Id | |
-| **note_id** | **str**| Note Id | |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] |
+| **contact_id** | **str**| ExternalContact Id |  |
+| **note_id** | **str**| Note Id |  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -400,11 +400,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact Id | |
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Sort order | [optional] |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] |
+| **contact_id** | **str**| ExternalContact Id |  |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional]  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -453,11 +453,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional] |
-| **sort_order** | **str**| Sort order | [optional] |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
+| **sort_order** | **str**| Sort order | [optional]  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -503,8 +503,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization ID | |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalDataSources) | [optional] |
+| **external_organization_id** | **str**| External Organization ID |  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -554,12 +554,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization ID | |
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional] |
-| **sort_order** | **str**| Sort order | [optional] |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization) | [optional] |
+| **external_organization_id** | **str**| External Organization ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
+| **sort_order** | **str**| Sort order | [optional]  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization) | [optional] <br />**Values**: externalOrganization |
 {: class="table table-striped"}
 
 ### Return type
@@ -606,9 +606,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization Id | |
-| **note_id** | **str**| Note Id | |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] |
+| **external_organization_id** | **str**| External Organization Id |  |
+| **note_id** | **str**| Note Id |  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -657,11 +657,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization Id | |
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_order** | **str**| Sort order | [optional] |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] |
+| **external_organization_id** | **str**| External Organization Id |  |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional]  |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -710,11 +710,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization ID | |
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **expand** | **str**| which fields, if any, to expand | [optional] |
-| **sort_order** | **str**| Sort order | [optional] |
+| **external_organization_id** | **str**| External Organization ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **sort_order** | **str**| Sort order | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -763,11 +763,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 20]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **q** | **str**| Search query | [optional] |
-| **sort_order** | **str**| Sort order | [optional] |
-| **expand** | **str**| which fields, if any, to expand | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **q** | **str**| Search query | [optional]  |
+| **sort_order** | **str**| Sort order | [optional]  |
+| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -813,8 +813,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **relationship_id** | **str**| Relationship Id | |
-| **expand** | **str**| which fields, if any, to expand | [optional] |
+| **relationship_id** | **str**| Relationship Id |  |
+| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -860,8 +860,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | |
-| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] |
+| **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
+| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -907,8 +907,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional] |
+| **contact_id** | **str**| ExternalContact Id |  |
+| **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -953,7 +953,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional] |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -999,8 +999,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional] |
+| **external_organization_id** | **str**| External Organization Id |  |
+| **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1045,7 +1045,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional] |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1090,7 +1090,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional] |
+| **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1136,8 +1136,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact ID | |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional] |
+| **contact_id** | **str**| ExternalContact ID |  |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1184,9 +1184,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contact_id** | **str**| ExternalContact Id | |
-| **note_id** | **str**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | [optional] |
+| **contact_id** | **str**| ExternalContact Id |  |
+| **note_id** | **str**| Note Id |  |
+| **body** | [**Note**](Note.html)| Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1231,8 +1231,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Conversation ID | |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional] |
+| **conversation_id** | **str**| Conversation ID |  |
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1278,8 +1278,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization ID | |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional] |
+| **external_organization_id** | **str**| External Organization ID |  |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1326,9 +1326,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_organization_id** | **str**| External Organization Id | |
-| **note_id** | **str**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | [optional] |
+| **external_organization_id** | **str**| External Organization Id |  |
+| **note_id** | **str**| Note Id |  |
+| **body** | [**Note**](Note.html)| Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1374,8 +1374,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **relationship_id** | **str**| Relationship Id | |
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional] |
+| **relationship_id** | **str**| Relationship Id |  |
+| **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

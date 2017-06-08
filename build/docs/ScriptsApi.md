@@ -57,7 +57,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
+| **script_id** | **str**| Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -103,8 +103,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
-| **page_id** | **str**| Page ID | |
+| **script_id** | **str**| Script ID |  |
+| **page_id** | **str**| Page ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -149,7 +149,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
+| **script_id** | **str**| Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -201,14 +201,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **expand** | **str**| Expand | [optional] |
-| **name** | **str**| Name filter | [optional] |
-| **feature** | **str**| Feature filter | [optional] |
-| **flow_id** | **str**| Secure flow id filter | [optional] |
-| **sort_by** | **str**| SortBy | [optional] |
-| **sort_order** | **str**| SortOrder | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand | [optional]  |
+| **name** | **str**| Name filter | [optional]  |
+| **feature** | **str**| Feature filter | [optional]  |
+| **flow_id** | **str**| Secure flow id filter | [optional]  |
+| **sort_by** | **str**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+| **sort_order** | **str**| SortOrder | [optional] <br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -258,12 +258,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **expand** | **str**| Expand | [optional] |
-| **name** | **str**| Name filter | [optional] |
-| **feature** | **str**| Feature filter | [optional] |
-| **flow_id** | **str**| Secure flow id filter | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand | [optional]  |
+| **name** | **str**| Name filter | [optional]  |
+| **feature** | **str**| Feature filter | [optional]  |
+| **flow_id** | **str**| Secure flow id filter | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -308,7 +308,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
+| **script_id** | **str**| Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -354,8 +354,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
-| **page_id** | **str**| Page ID | |
+| **script_id** | **str**| Script ID |  |
+| **page_id** | **str**| Page ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -400,7 +400,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
+| **script_id** | **str**| Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -448,10 +448,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID | |
-| **input** | **str**| input | [optional] |
-| **output** | **str**| output | [optional] |
-| **type** | **str**| type | [optional] |
+| **script_id** | **str**| Script ID |  |
+| **input** | **str**| input | [optional]  |
+| **output** | **str**| output | [optional]  |
+| **type** | **str**| type | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

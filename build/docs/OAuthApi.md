@@ -53,7 +53,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **client_id** | **str**| Client ID | |
+| **client_id** | **str**| Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -98,7 +98,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **client_id** | **str**| Client ID | |
+| **client_id** | **str**| Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -184,7 +184,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **client_id** | **str**| Client ID | |
+| **client_id** | **str**| Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -229,7 +229,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | |
+| **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -275,8 +275,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **client_id** | **str**| Client ID | |
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | |
+| **client_id** | **str**| Client ID |  |
+| **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
 {: class="table table-striped"}
 
 ### Return type

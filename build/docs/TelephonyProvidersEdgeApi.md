@@ -168,7 +168,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -213,8 +213,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **interface_id** | **str**| Interface ID | |
+| **edge_id** | **str**| Edge ID |  |
+| **interface_id** | **str**| Interface ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -258,7 +258,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -302,7 +302,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **certificate_id** | **str**| Certificate ID | |
+| **certificate_id** | **str**| Certificate ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -346,7 +346,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **did_pool_id** | **str**| DID pool ID | |
+| **did_pool_id** | **str**| DID pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -390,7 +390,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_group_id** | **str**| Edge group ID | |
+| **edge_group_id** | **str**| Edge group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -434,7 +434,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID | |
+| **endpoint_id** | **str**| Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -478,7 +478,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **extension_pool_id** | **str**| Extension pool ID | |
+| **extension_pool_id** | **str**| Extension pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -522,7 +522,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID | |
+| **outbound_route_id** | **str**| Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -566,7 +566,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_id** | **str**| Phone ID | |
+| **phone_id** | **str**| Phone ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -610,7 +610,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_base_id** | **str**| Phone base ID | |
+| **phone_base_id** | **str**| Phone base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -654,7 +654,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
+| **site_id** | **str**| Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -699,8 +699,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **outbound_route_id** | **str**| Outbound route ID | |
+| **site_id** | **str**| Site ID |  |
+| **outbound_route_id** | **str**| Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -744,7 +744,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_base_settings_id** | **str**| Trunk Base ID | |
+| **trunk_base_settings_id** | **str**| Trunk Base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -790,8 +790,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -838,9 +838,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schema_category** | **str**| Schema category | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **schema_category** | **str**| Schema category |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -888,10 +888,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schema_category** | **str**| Schema category | |
-| **schema_type** | **str**| Schema type | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **schema_category** | **str**| Schema category |  |
+| **schema_type** | **str**| Schema type |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -938,9 +938,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schema_category** | **str**| Schema category | |
-| **schema_type** | **str**| Schema type | |
-| **schema_id** | **str**| Schema ID | |
+| **schema_category** | **str**| Schema category |  |
+| **schema_type** | **str**| Schema type |  |
+| **schema_id** | **str**| Schema ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -990,12 +990,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **schema_category** | **str**| Schema category | |
-| **schema_type** | **str**| Schema type | |
-| **schema_id** | **str**| Schema ID | |
-| **extension_type** | **str**| extension | |
-| **metadata_id** | **str**| Metadata ID | |
-| **type** | **str**| Type | [optional] |
+| **schema_category** | **str**| Schema category |  |
+| **schema_type** | **str**| Schema type |  |
+| **schema_id** | **str**| Schema ID |  |
+| **extension_type** | **str**| extension |  |
+| **metadata_id** | **str**| Metadata ID |  |
+| **type** | **str**| Type | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1041,8 +1041,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: site |
 {: class="table table-striped"}
 
 ### Return type
@@ -1088,8 +1088,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **line_id** | **str**| Line ID | |
+| **edge_id** | **str**| Edge ID |  |
+| **line_id** | **str**| Line ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1136,9 +1136,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **edge_id** | **str**| Edge ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1185,9 +1185,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **interface_id** | **str**| Interface ID | |
-| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **interface_id** | **str**| Interface ID |  |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -1233,8 +1233,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -1280,8 +1280,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **job_id** | **str**| Job ID | |
+| **edge_id** | **str**| Edge ID |  |
+| **job_id** | **str**| Job ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1327,8 +1327,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **interface_id** | **str**| Interface ID | |
+| **edge_id** | **str**| Edge ID |  |
+| **interface_id** | **str**| Interface ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1373,7 +1373,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1418,7 +1418,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1463,7 +1463,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1508,7 +1508,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
+| **edge_id** | **str**| Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1559,13 +1559,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional] |
-| **trunk_type** | **str**| Filter by a Trunk type | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional]  |
+| **trunk_type** | **str**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
@@ -1616,13 +1616,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **site_id** | **str**| Filter by site.id | [optional] |
-| **edge_group_id** | **str**| Filter by edgeGroup.id | [optional] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **managed** | **bool**| Filter by managed | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **site_id** | **str**| Filter by site.id | [optional]  |
+| **edge_group_id** | **str**| Filter by edgeGroup.id | [optional]  |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **managed** | **bool**| Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1749,7 +1749,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **certificate_id** | **str**| Certificate ID | |
+| **certificate_id** | **str**| Certificate ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1794,7 +1794,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **did_id** | **str**| DID ID | |
+| **did_id** | **str**| DID ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1839,7 +1839,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **did_pool_id** | **str**| DID pool ID | |
+| **did_pool_id** | **str**| DID pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1886,9 +1886,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to number]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to number] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1937,11 +1937,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to number]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **phone_number** | **str**| Filter by phoneNumber | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to number] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **phone_number** | **str**| Filter by phoneNumber | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1987,8 +1987,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_group_id** | **str**| Edge group ID | |
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response | [optional] |
+| **edge_group_id** | **str**| Edge group ID |  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response | [optional] <br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
 {: class="table table-striped"}
 
 ### Return type
@@ -2034,8 +2034,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edgegroup_id** | **str**| Edge Group ID | |
-| **edgetrunkbase_id** | **str**| Edge Trunk Base ID | |
+| **edgegroup_id** | **str**| Edge Group ID |  |
+| **edgetrunkbase_id** | **str**| Edge Trunk Base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2084,11 +2084,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **managed** | **bool**| Filter by managed | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **managed** | **bool**| Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2174,7 +2174,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID | |
+| **endpoint_id** | **str**| Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2222,10 +2222,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2270,7 +2270,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **extension_id** | **str**| Extension ID | |
+| **extension_id** | **str**| Extension ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2315,7 +2315,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **extension_pool_id** | **str**| Extension pool ID | |
+| **extension_pool_id** | **str**| Extension pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2363,10 +2363,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to startNumber]|
-| **number** | **str**| Number | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to startNumber] |
+| **number** | **str**| Number | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2415,11 +2415,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to number]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **number** | **str**| Filter by number | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to number] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **number** | **str**| Filter by number | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2464,7 +2464,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **line_id** | **str**| Line ID | |
+| **line_id** | **str**| Line ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2509,7 +2509,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **line_base_id** | **str**| Line base ID | |
+| **line_base_id** | **str**| Line base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2557,10 +2557,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2609,11 +2609,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -2658,7 +2658,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **line_base_settings_id** | **str**| The id of a Line Base Settings object upon which to base this Line | |
+| **line_base_settings_id** | **str**| The id of a Line Base Settings object upon which to base this Line |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2704,8 +2704,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s | |
-| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] |
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s |  |
+| **expand** | [**list[str]**](str.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -2750,7 +2750,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID | |
+| **outbound_route_id** | **str**| Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2799,11 +2799,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **site_id** | **str**| Filter by site.id | [optional] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **site_id** | **str**| Filter by site.id | [optional]  |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2848,7 +2848,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_id** | **str**| Phone ID | |
+| **phone_id** | **str**| Phone ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2893,7 +2893,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_base_id** | **str**| Phone base ID | |
+| **phone_base_id** | **str**| Phone base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2943,12 +2943,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
-| **name** | **str**| Name | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, lines |
+| **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2994,8 +2994,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3040,7 +3040,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_metabase_id** | **str**| The id of a metabase object upon which to base this Phone Base Settings | |
+| **phone_metabase_id** | **str**| The id of a metabase object upon which to base this Phone Base Settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3098,20 +3098,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **site_id** | **str**| Filter by site.id | [optional] |
-| **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional] |
-| **phone_base_settings_id** | **str**| Filter by phoneBaseSettings.id | [optional] |
-| **lines_logged_in_user_id** | **str**| Filter by lines.loggedInUser.id | [optional] |
-| **lines_default_for_user_id** | **str**| Filter by lines.defaultForUser.id | [optional] |
-| **phone_hardware_id** | **str**| Filter by phone_hardwareId | [optional] |
-| **lines_id** | **str**| Filter by lines.id | [optional] |
-| **lines_name** | **str**| Filter by lines.name | [optional] |
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
-| **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **site_id** | **str**| Filter by site.id | [optional]  |
+| **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional]  |
+| **phone_base_settings_id** | **str**| Filter by phoneBaseSettings.id | [optional]  |
+| **lines_logged_in_user_id** | **str**| Filter by lines.loggedInUser.id | [optional]  |
+| **lines_default_for_user_id** | **str**| Filter by lines.defaultForUser.id | [optional]  |
+| **phone_hardware_id** | **str**| Filter by phone_hardwareId | [optional]  |
+| **lines_id** | **str**| Filter by lines.id | [optional]  |
+| **lines_name** | **str**| Filter by lines.name | [optional]  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
+| **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -3156,7 +3156,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_base_settings_id** | **str**| The id of a Phone Base Settings object upon which to base this Phone | |
+| **phone_base_settings_id** | **str**| The id of a Phone Base Settings object upon which to base this Phone |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3201,7 +3201,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s | |
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3246,7 +3246,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
+| **site_id** | **str**| Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3292,8 +3292,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **number_plan_id** | **str**| Number Plan ID | |
+| **site_id** | **str**| Site ID |  |
+| **number_plan_id** | **str**| Number Plan ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3338,7 +3338,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
+| **site_id** | **str**| Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3384,8 +3384,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **classification** | **str**| Classification | [optional] |
+| **site_id** | **str**| Site ID |  |
+| **classification** | **str**| Classification | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3431,8 +3431,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **outbound_route_id** | **str**| Outbound route ID | |
+| **site_id** | **str**| Site ID |  |
+| **outbound_route_id** | **str**| Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3481,11 +3481,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **name** | **str**| Name | [optional] |
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
+| **site_id** | **str**| Site ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3536,13 +3536,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **sort_by** | **str**| Sort by | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **name** | **str**| Name | [optional] |
-| **location_id** | **str**| Location Id | [optional] |
-| **managed** | **bool**| Filter by managed | [optional] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **name** | **str**| Name | [optional]  |
+| **location_id** | **str**| Location Id | [optional]  |
+| **managed** | **bool**| Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3588,8 +3588,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 1000]|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
+| **page_size** | **int**| Page size | [optional] [default to 1000] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3634,7 +3634,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_id** | **str**| Trunk ID | |
+| **trunk_id** | **str**| Trunk ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3680,8 +3680,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_base_settings_id** | **str**| Trunk Base ID | |
-| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
+| **trunk_base_settings_id** | **str**| Trunk Base ID |  |
+| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3734,15 +3734,15 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **recording_enabled** | **bool**| Filter trunks by recording enabled | [optional] |
-| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
-| **managed** | **bool**| Filter by managed | [optional] |
-| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] |
-| **name** | **str**| Name of the TrunkBase to filter by | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **recording_enabled** | **bool**| Filter trunks by recording enabled | [optional]  |
+| **ignore_hidden** | **bool**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
+| **managed** | **bool**| Filter by managed | [optional]  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
+| **name** | **str**| Name of the TrunkBase to filter by | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3789,9 +3789,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**|  | [optional] |
-| **page_size** | **int**|  | [optional] [default to 25]|
-| **page_number** | **int**|  | [optional] [default to 1]|
+| **type** | **str**|  | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **page_number** | **int**|  | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
@@ -3836,7 +3836,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_metabase_id** | **str**| The id of a metabase object upon which to base this Trunk Base Settings | |
+| **trunk_metabase_id** | **str**| The id of a metabase object upon which to base this Trunk Base Settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3887,13 +3887,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name]|
-| **sort_order** | **str**| Sort order | [optional] [default to ASC]|
-| **edge_id** | **str**| Filter by Edge Ids | [optional] |
-| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional] |
-| **trunk_type** | **str**| Filter by a Trunk type | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **edge_id** | **str**| Filter by Edge Ids | [optional]  |
+| **trunk_base_id** | **str**| Filter by Trunk Base Ids | [optional]  |
+| **trunk_type** | **str**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
@@ -3938,7 +3938,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_type** | **str**| The type of this trunk base. | [optional] |
+| **trunk_type** | **str**| The type of this trunk base. | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
@@ -3984,8 +3984,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4031,9 +4031,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **job_id** | **str**| Job ID | |
-| **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request | |
+| **edge_id** | **str**| Edge ID |  |
+| **job_id** | **str**| Job ID |  |
+| **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4079,8 +4079,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest | |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4126,8 +4126,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4173,8 +4173,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request | |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4220,8 +4220,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional] |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4266,7 +4266,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge Id | |
+| **edge_id** | **str**| Edge Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4311,7 +4311,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Edge**](Edge.html)| Edge | |
+| **body** | [**Edge**](Edge.html)| Edge |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4356,7 +4356,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address | |
+| **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4401,7 +4401,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority | |
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4446,7 +4446,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
+| **body** | [**DIDPool**](DIDPool.html)| DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4491,7 +4491,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4536,7 +4536,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
+| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4581,7 +4581,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4626,7 +4626,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4670,7 +4670,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_id** | **str**| Phone Id | |
+| **phone_id** | **str**| Phone Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4715,7 +4715,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4760,7 +4760,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Phone**](Phone.html)| Phone | |
+| **body** | [**Phone**](Phone.html)| Phone |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4804,7 +4804,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PhonesReboot**](PhonesReboot.html)| Phones | |
+| **body** | [**PhonesReboot**](PhonesReboot.html)| Phones |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4850,8 +4850,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
+| **site_id** | **str**| Site ID |  |
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4895,7 +4895,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
+| **site_id** | **str**| Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4940,7 +4940,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Site**](Site.html)| Site | |
+| **body** | [**Site**](Site.html)| Site |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4985,7 +4985,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5031,8 +5031,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **body** | [**Edge**](Edge.html)| Edge | |
+| **edge_id** | **str**| Edge ID |  |
+| **body** | [**Edge**](Edge.html)| Edge |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5079,9 +5079,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **line_id** | **str**| Line ID | |
-| **body** | [**EdgeLine**](EdgeLine.html)| Line | |
+| **edge_id** | **str**| Edge ID |  |
+| **line_id** | **str**| Line ID |  |
+| **body** | [**EdgeLine**](EdgeLine.html)| Line |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5128,9 +5128,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_id** | **str**| Edge ID | |
-| **interface_id** | **str**| Interface ID | |
-| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
+| **edge_id** | **str**| Edge ID |  |
+| **interface_id** | **str**| Interface ID |  |
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5176,8 +5176,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **certificate_id** | **str**| Certificate ID | |
-| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority | |
+| **certificate_id** | **str**| Certificate ID |  |
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5223,8 +5223,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **did_id** | **str**| DID ID | |
-| **body** | [**DID**](DID.html)| DID | |
+| **did_id** | **str**| DID ID |  |
+| **body** | [**DID**](DID.html)| DID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5270,8 +5270,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **did_pool_id** | **str**| DID pool ID | |
-| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
+| **did_pool_id** | **str**| DID pool ID |  |
+| **body** | [**DIDPool**](DIDPool.html)| DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5317,8 +5317,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_group_id** | **str**| Edge group ID | |
-| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
+| **edge_group_id** | **str**| Edge group ID |  |
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5365,9 +5365,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edgegroup_id** | **str**| Edge Group ID | |
-| **edgetrunkbase_id** | **str**| Edge Trunk Base ID | |
-| **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase | |
+| **edgegroup_id** | **str**| Edge Group ID |  |
+| **edgetrunkbase_id** | **str**| Edge Trunk Base ID |  |
+| **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5413,8 +5413,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID | |
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
+| **endpoint_id** | **str**| Endpoint ID |  |
+| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5460,8 +5460,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **extension_id** | **str**| Extension ID | |
-| **body** | [**Extension**](Extension.html)| Extension | |
+| **extension_id** | **str**| Extension ID |  |
+| **body** | [**Extension**](Extension.html)| Extension |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5507,8 +5507,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **extension_pool_id** | **str**| Extension pool ID | |
-| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
+| **extension_pool_id** | **str**| Extension pool ID |  |
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5554,8 +5554,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID | |
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
+| **outbound_route_id** | **str**| Outbound route ID |  |
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5601,8 +5601,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_id** | **str**| Phone ID | |
-| **body** | [**Phone**](Phone.html)| Phone | |
+| **phone_id** | **str**| Phone ID |  |
+| **body** | [**Phone**](Phone.html)| Phone |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5648,8 +5648,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **phone_base_id** | **str**| Phone base ID | |
-| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
+| **phone_base_id** | **str**| Phone base ID |  |
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5695,8 +5695,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **body** | [**Site**](Site.html)| Site | |
+| **site_id** | **str**| Site ID |  |
+| **body** | [**Site**](Site.html)| Site |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5742,8 +5742,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **body** | [**list[NumberPlan]**](NumberPlan.html)| List of number plans | |
+| **site_id** | **str**| Site ID |  |
+| **body** | [**list[NumberPlan]**](NumberPlan.html)| List of number plans |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5790,9 +5790,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **site_id** | **str**| Site ID | |
-| **outbound_route_id** | **str**| Outbound route ID | |
-| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
+| **site_id** | **str**| Site ID |  |
+| **outbound_route_id** | **str**| Outbound route ID |  |
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5838,8 +5838,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **trunk_base_settings_id** | **str**| Trunk Base ID | |
-| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
+| **trunk_base_settings_id** | **str**| Trunk Base ID |  |
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type

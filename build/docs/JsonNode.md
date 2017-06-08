@@ -7,15 +7,13 @@ title: JsonNode
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **array** | **bool** |  | [optional] |
+| **null** | **bool** |  | [optional] |
 | **node_type** | **str** |  | [optional] |
 | **float** | **bool** |  | [optional] |
 | **object** | **bool** |  | [optional] |
 | **boolean** | **bool** |  | [optional] |
 | **number** | **bool** |  | [optional] |
-| **value_node** | **bool** |  | [optional] |
-| **pojo** | **bool** |  | [optional] |
-| **integral_number** | **bool** |  | [optional] |
-| **floating_point_number** | **bool** |  | [optional] |
 | **short** | **bool** |  | [optional] |
 | **int** | **bool** |  | [optional] |
 | **long** | **bool** |  | [optional] |
@@ -24,10 +22,12 @@ title: JsonNode
 | **big_integer** | **bool** |  | [optional] |
 | **textual** | **bool** |  | [optional] |
 | **binary** | **bool** |  | [optional] |
+| **value_node** | **bool** |  | [optional] |
 | **container_node** | **bool** |  | [optional] |
 | **missing_node** | **bool** |  | [optional] |
-| **array** | **bool** |  | [optional] |
-| **null** | **bool** |  | [optional] |
+| **pojo** | **bool** |  | [optional] |
+| **integral_number** | **bool** |  | [optional] |
+| **floating_point_number** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

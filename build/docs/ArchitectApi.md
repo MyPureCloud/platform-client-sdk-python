@@ -93,8 +93,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **all_resources** | **bool**| Whether or not to delete all the prompt resources | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **all_resources** | **bool**| Whether or not to delete all the prompt resources | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -139,8 +139,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -185,7 +185,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| List of Prompt IDs | |
+| **id** | [**list[str]**](str.html)| List of Prompt IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -230,8 +230,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -275,7 +275,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
+| **flow_id** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -320,7 +320,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| List of Flow IDs | |
+| **id** | [**list[str]**](str.html)| List of Flow IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -372,14 +372,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **name** | **str**| Object name to search for | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] |
-| **consumed_resources** | **bool**| Include resources each result item consumes | [optional] |
-| **consuming_resources** | **bool**| Include resources that consume each result item | [optional] |
-| **consumed_resource_type** | [**list[str]**](str.html)| Types of consumed resources to return, if consumed resources are requested | [optional] |
-| **consuming_resource_type** | [**list[str]**](str.html)| Types of consuming resources to return, if consuming resources are requested | [optional] |
+| **name** | **str**| Object name to search for |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumed_resources** | **bool**| Include resources each result item consumes | [optional]  |
+| **consuming_resources** | **bool**| Include resources that consume each result item | [optional]  |
+| **consumed_resource_type** | [**list[str]**](str.html)| Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consuming_resource_type** | [**list[str]**](str.html)| Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -468,10 +468,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | **str**| Consuming object ID | |
-| **version** | **str**| Consuming object version | |
-| **object_type** | **str**| Consuming object type | |
-| **resource_type** | [**list[str]**](str.html)| Types of consumed resources to show | [optional] |
+| **id** | **str**| Consuming object ID |  |
+| **version** | **str**| Consuming object version |  |
+| **object_type** | **str**| Consuming object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **resource_type** | [**list[str]**](str.html)| Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -518,9 +518,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | **str**| Consumed object ID | |
-| **object_type** | **str**| Consumed object type (only versioned object types are valid) | |
-| **resource_type** | [**list[str]**](str.html)| Types of consuming resources to show | [optional] |
+| **id** | **str**| Consumed object ID |  |
+| **object_type** | **str**| Consumed object type (only versioned object types are valid) | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **resource_type** | [**list[str]**](str.html)| Types of consuming resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -571,13 +571,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **name** | **str**| Name to search for | [optional] |
-| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] |
-| **flow_filter** | **str**| Show only checkedIn or published flows | [optional] |
-| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false]|
-| **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **name** | **str**| Name to search for | [optional]  |
+| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **flow_filter** | **str**| Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
+| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false] |
+| **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -628,13 +628,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | **str**| Object ID | |
-| **version** | **str**| Object version | [optional] |
-| **object_type** | **str**| Object type | [optional] |
-| **consumed_resources** | **bool**| Include resources this item consumes | [optional] |
-| **consuming_resources** | **bool**| Include resources that consume this item | [optional] |
-| **consumed_resource_type** | [**list[str]**](str.html)| Types of consumed resources to return, if consumed resources are requested | [optional] |
-| **consuming_resource_type** | [**list[str]**](str.html)| Types of consuming resources to return, if consuming resources are requested | [optional] |
+| **id** | **str**| Object ID |  |
+| **version** | **str**| Object version | [optional]  |
+| **object_type** | **str**| Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumed_resources** | **bool**| Include resources this item consumes | [optional]  |
+| **consuming_resources** | **bool**| Include resources that consume this item | [optional]  |
+| **consumed_resource_type** | [**list[str]**](str.html)| Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consuming_resource_type** | [**list[str]**](str.html)| Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -679,7 +679,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type_id** | **str**| Type ID | |
+| **type_id** | **str**| Type ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -725,8 +725,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -776,12 +776,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **name** | **str**| Name to search for | [optional] |
-| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] |
-| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false]|
-| **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **name** | **str**| Name to search for | [optional]  |
+| **object_type** | [**list[str]**](str.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumed_resources** | **bool**| Return consumed resources? | [optional] [default to false] |
+| **consumed_resource_type** | [**list[str]**](str.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -826,7 +826,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
+| **prompt_id** | **str**| Prompt ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -872,8 +872,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -920,9 +920,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **prompt_id** | **str**| Prompt ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -971,11 +971,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **name** | **str**| Name | [optional] |
-| **description** | **str**| Description | [optional] |
-| **name_or_description** | **str**| Name or description | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Name | [optional]  |
+| **description** | **str**| Description | [optional]  |
+| **name_or_description** | **str**| Name or description | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1020,7 +1020,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| promptId | |
+| **prompt_id** | **str**| promptId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1066,8 +1066,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1116,11 +1116,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Sort by | [optional] [default to id]|
-| **sort_order** | **str**| Sort order | [optional] [default to asc]|
+| **prompt_id** | **str**| Prompt ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1171,13 +1171,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Sort by | [optional] [default to id]|
-| **sort_order** | **str**| Sort order | [optional] [default to asc]|
-| **name** | **str**| Name | [optional] |
-| **description** | **str**| Description | [optional] |
-| **name_or_description** | **str**| Name or description | [optional] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **name** | **str**| Name | [optional]  |
+| **description** | **str**| Description | [optional]  |
+| **name_or_description** | **str**| Name or description | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1223,8 +1223,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **deleted** | **bool**| Include deleted flows | [optional] [default to false]|
+| **flow_id** | **str**| Flow ID |  |
+| **deleted** | **bool**| Include deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1270,8 +1270,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **deleted** | **bool**| Include deleted flows | [optional] [default to false]|
+| **flow_id** | **str**| Flow ID |  |
+| **deleted** | **bool**| Include deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1318,9 +1318,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **version_id** | **str**| Version ID | |
-| **deleted** | **str**| Include deleted flows | [optional] |
+| **flow_id** | **str**| Flow ID |  |
+| **version_id** | **str**| Version ID |  |
+| **deleted** | **str**| Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1367,9 +1367,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **version_id** | **str**| Version ID | |
-| **deleted** | **str**| Include deleted flows | [optional] |
+| **flow_id** | **str**| Flow ID |  |
+| **version_id** | **str**| Version ID |  |
+| **deleted** | **str**| Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1417,10 +1417,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **deleted** | **bool**| Include deleted flows | [optional] |
+| **flow_id** | **str**| Flow ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **deleted** | **bool**| Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1479,21 +1479,21 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Type | |
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
-| **sort_by** | **str**| Sort by | [optional] [default to id]|
-| **sort_order** | **str**| Sort order | [optional] [default to asc]|
-| **id** | [**list[str]**](str.html)| ID | [optional] |
-| **name** | **str**| Name | [optional] |
-| **description** | **str**| Description | [optional] |
-| **name_or_description** | **str**| Name or description | [optional] |
-| **publish_version_id** | **str**| Publish version ID | [optional] |
-| **editable_by** | **str**| Editable by | [optional] |
-| **locked_by** | **str**| Locked by | [optional] |
-| **secure** | **str**| Secure | [optional] |
-| **deleted** | **bool**| Include deleted | [optional] [default to false]|
-| **include_schemas** | **bool**| Include variable schemas | [optional] [default to false]|
+| **type** | **str**| Type |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **id** | [**list[str]**](str.html)| ID | [optional]  |
+| **name** | **str**| Name | [optional]  |
+| **description** | **str**| Description | [optional]  |
+| **name_or_description** | **str**| Name or description | [optional]  |
+| **publish_version_id** | **str**| Publish version ID | [optional]  |
+| **editable_by** | **str**| Editable by | [optional]  |
+| **locked_by** | **str**| Locked by | [optional]  |
+| **secure** | **str**| Secure | [optional] <br />**Values**: any, checkedin, published |
+| **deleted** | **bool**| Include deleted | [optional] [default to false] |
+| **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1579,8 +1579,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1625,7 +1625,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Prompt**](Prompt.html)|  | [optional] |
+| **body** | [**Prompt**](Prompt.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1671,8 +1671,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1718,8 +1718,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **body** | **object**|  | [optional] |
+| **flow_id** | **str**| Flow ID |  |
+| **body** | **object**|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1764,7 +1764,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Flow**](Flow.html)|  | [optional] |
+| **body** | [**Flow**](Flow.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1809,7 +1809,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
+| **flow** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1854,7 +1854,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
+| **flow** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1899,7 +1899,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
+| **flow** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1945,8 +1945,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
-| **version** | **str**| version | [optional] |
+| **flow** | **str**| Flow ID |  |
+| **version** | **str**| version | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1991,7 +1991,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
+| **flow** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2036,7 +2036,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow** | **str**| Flow ID | |
+| **flow** | **str**| Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2082,8 +2082,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **body** | [**Prompt**](Prompt.html)|  | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **body** | [**Prompt**](Prompt.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2130,9 +2130,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
-| **body** | [**PromptAsset**](PromptAsset.html)|  | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
+| **body** | [**PromptAsset**](PromptAsset.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2179,9 +2179,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **prompt_id** | **str**| Prompt ID | |
-| **language_code** | **str**| Language | |
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional] |
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
+| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2227,8 +2227,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **flow_id** | **str**| Flow ID | |
-| **body** | [**Flow**](Flow.html)|  | [optional] |
+| **flow_id** | **str**| Flow ID |  |
+| **body** | [**Flow**](Flow.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

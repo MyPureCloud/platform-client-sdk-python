@@ -53,7 +53,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **attribute_id** | **str**| Attribute ID | |
+| **attribute_id** | **str**| Attribute ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -98,7 +98,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **attribute_id** | **str**| Attribute ID | |
+| **attribute_id** | **str**| Attribute ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -144,8 +144,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1]|
-| **page_size** | **int**| Page size | [optional] [default to 25]|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -190,7 +190,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Attribute**](Attribute.html)| Attribute | |
+| **body** | [**Attribute**](Attribute.html)| Attribute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -235,7 +235,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AttributeQueryRequest**](AttributeQueryRequest.html)| query | |
+| **body** | [**AttributeQueryRequest**](AttributeQueryRequest.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -281,8 +281,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **attribute_id** | **str**| Attribute ID | |
-| **body** | [**Attribute**](Attribute.html)| Attribute | |
+| **attribute_id** | **str**| Attribute ID |  |
+| **body** | [**Attribute**](Attribute.html)| Attribute |  |
 {: class="table table-striped"}
 
 ### Return type
