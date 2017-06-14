@@ -549,9 +549,7 @@ from .library_entity_listing import LibraryEntityListing
 from .license_assignment_request import LicenseAssignmentRequest
 from .license_batch_assignment_request import LicenseBatchAssignmentRequest
 from .license_definition import LicenseDefinition
-from .license_definition_listing import LicenseDefinitionListing
 from .license_organization import LicenseOrganization
-from .license_update_response import LicenseUpdateResponse
 from .license_update_status import LicenseUpdateStatus
 from .license_user import LicenseUser
 from .line import Line
@@ -603,6 +601,7 @@ from .one_login import OneLogin
 from .operation import Operation
 from .org_media_utilization import OrgMediaUtilization
 from .org_o_auth_client import OrgOAuthClient
+from .org_user import OrgUser
 from .organization import Organization
 from .organization_features import OrganizationFeatures
 from .organization_presence import OrganizationPresence
@@ -845,6 +844,7 @@ from .trunk_metrics_network_type_ip import TrunkMetricsNetworkTypeIp
 from .trunk_metrics_options import TrunkMetricsOptions
 from .trunk_metrics_registers import TrunkMetricsRegisters
 from .trunk_recording_enabled_count import TrunkRecordingEnabledCount
+from .trustor import Trustor
 from .twitter_id import TwitterId
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus

@@ -1,25 +1,56 @@
 
-# Major Changes (1 change)
+# Major Changes (8 changes)
 
-**GET /api/v2/users/{userId}** (1 change)
+**GET /api/v2/externalcontacts/organizations** (2 changes)
 
-* Parameter state was added
+* Parameter expand was changed from string to array
+* Parameter includeTrustors was added
+
+**POST /api/v2/license/organization** (1 change)
+
+* Response 200 type was changed from LicenseUpdateResponse to LicenseUpdateStatus[]
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}** (2 changes)
+
+* Parameter expand was changed from array to string
+* Parameter includeTrustors was added
+
+**GET /api/v2/license/definitions** (1 change)
+
+* Response 200 type was changed from LicenseDefinitionListing to LicenseDefinition[]
+
+**LicenseUpdateResponse** (1 change)
+
+* Model LicenseUpdateResponse was removed
+
+**LicenseDefinitionListing** (1 change)
+
+* Model LicenseDefinitionListing was removed
 
 
-# Minor Changes (4 changes)
+# Minor Changes (7 changes)
 
-**Edge** (1 change)
+**/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}** (2 changes)
 
-* Optional property osName was added
+* Path was added
+* Operation PUT was added
 
-**Condition** (2 changes)
+**/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor** (2 changes)
 
-* Optional property propertyType was added
-* Optional property property was added
+* Path was added
+* Operation DELETE was added
 
-**PhoneCapabilities** (1 change)
+**OrgUser** (1 change)
 
-* Optional property noCloudProvisioning was added
+* Model was added
+
+**Trustor** (1 change)
+
+* Model was added
+
+**ExternalOrganization** (1 change)
+
+* Optional property trustor was added
 
 
 # Point Changes (0 changes)

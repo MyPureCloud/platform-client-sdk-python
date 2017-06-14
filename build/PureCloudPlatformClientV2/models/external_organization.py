@@ -54,6 +54,7 @@ class ExternalOrganization(object):
             'twitter_id': 'TwitterId',
             'modify_date': 'datetime',
             'create_date': 'datetime',
+            'trustor': 'Trustor',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -75,6 +76,7 @@ class ExternalOrganization(object):
             'twitter_id': 'twitterId',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
+            'trustor': 'trustor',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -95,6 +97,7 @@ class ExternalOrganization(object):
         self._twitter_id = None
         self._modify_date = None
         self._create_date = None
+        self._trustor = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -465,6 +468,29 @@ class ExternalOrganization(object):
         """
         
         self._create_date = create_date
+
+    @property
+    def trustor(self):
+        """
+        Gets the trustor of this ExternalOrganization.
+
+
+        :return: The trustor of this ExternalOrganization.
+        :rtype: Trustor
+        """
+        return self._trustor
+
+    @trustor.setter
+    def trustor(self, trustor):
+        """
+        Sets the trustor of this ExternalOrganization.
+
+
+        :param trustor: The trustor of this ExternalOrganization.
+        :type: Trustor
+        """
+        
+        self._trustor = trustor
 
     @property
     def external_data_sources(self):

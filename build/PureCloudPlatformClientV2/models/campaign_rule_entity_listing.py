@@ -42,10 +42,10 @@ class CampaignRuleEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'self_uri': 'str',
             'first_uri': 'str',
-            'next_uri': 'str',
+            'self_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'page_count': 'int'
         }
@@ -55,10 +55,10 @@ class CampaignRuleEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'self_uri': 'selfUri',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
+            'self_uri': 'selfUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
@@ -67,10 +67,10 @@ class CampaignRuleEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._self_uri = None
         self._first_uri = None
-        self._next_uri = None
+        self._self_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._page_count = None
 
@@ -167,29 +167,6 @@ class CampaignRuleEntityListing(object):
         self._total = total
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this CampaignRuleEntityListing.
-
-
-        :return: The self_uri of this CampaignRuleEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this CampaignRuleEntityListing.
-
-
-        :param self_uri: The self_uri of this CampaignRuleEntityListing.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
-
-    @property
     def first_uri(self):
         """
         Gets the first_uri of this CampaignRuleEntityListing.
@@ -213,27 +190,27 @@ class CampaignRuleEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self):
+    def self_uri(self):
         """
-        Gets the next_uri of this CampaignRuleEntityListing.
+        Gets the self_uri of this CampaignRuleEntityListing.
 
 
-        :return: The next_uri of this CampaignRuleEntityListing.
+        :return: The self_uri of this CampaignRuleEntityListing.
         :rtype: str
         """
-        return self._next_uri
+        return self._self_uri
 
-    @next_uri.setter
-    def next_uri(self, next_uri):
+    @self_uri.setter
+    def self_uri(self, self_uri):
         """
-        Sets the next_uri of this CampaignRuleEntityListing.
+        Sets the self_uri of this CampaignRuleEntityListing.
 
 
-        :param next_uri: The next_uri of this CampaignRuleEntityListing.
+        :param self_uri: The self_uri of this CampaignRuleEntityListing.
         :type: str
         """
         
-        self._next_uri = next_uri
+        self._self_uri = self_uri
 
     @property
     def previous_uri(self):
@@ -257,6 +234,29 @@ class CampaignRuleEntityListing(object):
         """
         
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this CampaignRuleEntityListing.
+
+
+        :return: The next_uri of this CampaignRuleEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this CampaignRuleEntityListing.
+
+
+        :param next_uri: The next_uri of this CampaignRuleEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def last_uri(self):

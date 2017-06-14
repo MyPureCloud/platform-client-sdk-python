@@ -370,6 +370,84 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_externalcontacts_organization_trustor(self, external_organization_id, **kwargs):
+        """
+        Unlink the Trustor for this External Organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_externalcontacts_organization_trustor(external_organization_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_externalcontacts_organization_trustor" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `delete_externalcontacts_organization_trustor`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_externalcontacts_relationship(self, relationship_id, **kwargs):
         """
         Delete a relationship
@@ -809,13 +887,14 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalDataSources)
+        :param str expand: which fields, if any, to expand (externalDataSources)
+        :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
         :return: ExternalOrganization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['external_organization_id', 'expand']
+        all_params = ['external_organization_id', 'expand', 'include_trustors']
         all_params.append('callback')
 
         params = locals()
@@ -841,6 +920,8 @@ class ExternalContactsApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'include_trustors' in params:
+            query_params['includeTrustors'] = params['include_trustors']
 
         header_params = {}
 
@@ -1253,13 +1334,14 @@ class ExternalContactsApi(object):
         :param int page_number: Page number
         :param str q: Search query
         :param str sort_order: Sort order
-        :param str expand: which fields, if any, to expand
+        :param list[str] expand: which fields, if any, to expand
+        :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
         :return: ExternalOrganizationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'q', 'sort_order', 'expand']
+        all_params = ['page_size', 'page_number', 'q', 'sort_order', 'expand', 'include_trustors']
         all_params.append('callback')
 
         params = locals()
@@ -1288,6 +1370,8 @@ class ExternalContactsApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'include_trustors' in params:
+            query_params['includeTrustors'] = params['include_trustors']
 
         header_params = {}
 
@@ -2283,6 +2367,90 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Note',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_organization_trustor_trustor_id(self, external_organization_id, trustor_id, **kwargs):
+        """
+        Links a Trustor with an Extenral Organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization ID (required)
+        :param str trustor_id: Trustor ID (required)
+        :return: ExternalOrganization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id', 'trustor_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_organization_trustor_trustor_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `put_externalcontacts_organization_trustor_trustor_id`")
+        # verify the required parameter 'trustor_id' is set
+        if ('trustor_id' not in params) or (params['trustor_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_id` when calling `put_externalcontacts_organization_trustor_trustor_id`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+        if 'trustor_id' in params:
+            path_params['trustorId'] = params['trustor_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

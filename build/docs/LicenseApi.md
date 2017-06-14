@@ -63,7 +63,7 @@ except ApiException as e:
 
 <a name="get_license_definitions"></a>
 
-## [**LicenseDefinitionListing**](LicenseDefinitionListing.html) get_license_definitions()
+## [**list[LicenseDefinition]**](LicenseDefinition.html) get_license_definitions()
 
 Get all PureCloud license definitions available for the organization.
 
@@ -100,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LicenseDefinitionListing**](LicenseDefinitionListing.html)
+[**list[LicenseDefinition]**](LicenseDefinition.html)
 
 <a name="get_license_organization"></a>
 
@@ -190,7 +190,7 @@ except ApiException as e:
 
 <a name="post_license_organization"></a>
 
-## [**LicenseUpdateResponse**](LicenseUpdateResponse.html) post_license_organization(body=body)
+## [**list[LicenseUpdateStatus]**](LicenseUpdateStatus.html) post_license_organization(body=body)
 
 Update the organization's license assignments in a batch.
 
@@ -231,7 +231,7 @@ except ApiException as e:
 
 ### Return type
 
-[**LicenseUpdateResponse**](LicenseUpdateResponse.html)
+[**list[LicenseUpdateStatus]**](LicenseUpdateStatus.html)
 
 <a name="post_license_users"></a>
 

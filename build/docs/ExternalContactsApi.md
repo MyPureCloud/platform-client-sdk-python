@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_contact_note**](ExternalContactsApi.html#delete_externalcontacts_contact_note) | Delete a note for an external contact|
 |[**delete_externalcontacts_organization**](ExternalContactsApi.html#delete_externalcontacts_organization) | Delete an external organization|
 |[**delete_externalcontacts_organization_note**](ExternalContactsApi.html#delete_externalcontacts_organization_note) | Delete a note for an external organization|
+|[**delete_externalcontacts_organization_trustor**](ExternalContactsApi.html#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
 |[**delete_externalcontacts_relationship**](ExternalContactsApi.html#delete_externalcontacts_relationship) | Delete a relationship|
 |[**get_externalcontacts_contact**](ExternalContactsApi.html#get_externalcontacts_contact) | Fetch an external contact|
 |[**get_externalcontacts_contact_note**](ExternalContactsApi.html#get_externalcontacts_contact_note) | Fetch a note for an external contact|
@@ -35,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate an external contact with a conversation|
 |[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
+|[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an Extenral Organization|
 |[**put_externalcontacts_relationship**](ExternalContactsApi.html#put_externalcontacts_relationship) | Update a relationship|
 {: class="table table-striped"}
 
@@ -212,6 +214,50 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_externalcontacts_organization_trustor"></a>
+
+##  delete_externalcontacts_organization_trustor(external_organization_id)
+
+Unlink the Trustor for this External Organization
+
+
+
+Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+
+try:
+    # Unlink the Trustor for this External Organization
+    api_instance.delete_externalcontacts_organization_trustor(external_organization_id)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_trustor: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -466,7 +512,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand)
+## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
 
 Fetch an external organization
 
@@ -488,11 +534,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalDataSources) (optional)
+expand = 'expand_example' # str | which fields, if any, to expand (externalDataSources) (optional)
+include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
     # Fetch an external organization
-    api_response = api_instance.get_externalcontacts_organization(external_organization_id, expand=expand)
+    api_response = api_instance.get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization: %s\n" % e
@@ -504,7 +551,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+| **expand** | **str**| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+| **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -723,7 +771,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organizations"></a>
 
-## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
 
 Search for external organizations
 
@@ -748,11 +796,12 @@ page_size = 20 # int | Page size (optional) (default to 20)
 page_number = 1 # int | Page number (optional) (default to 1)
 q = 'q_example' # str | Search query (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
-expand = 'expand_example' # str | which fields, if any, to expand (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
     # Search for external organizations
-    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e
@@ -767,7 +816,8 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
-| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1334,6 +1384,53 @@ except ApiException as e:
 ### Return type
 
 [**Note**](Note.html)
+
+<a name="put_externalcontacts_organization_trustor_trustor_id"></a>
+
+## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
+
+Links a Trustor with an Extenral Organization
+
+
+
+Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+trustor_id = 'trustor_id_example' # str | Trustor ID
+
+try:
+    # Links a Trustor with an Extenral Organization
+    api_response = api_instance.put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_trustor_trustor_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization ID |  |
+| **trustor_id** | **str**| Trustor ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization.html)
 
 <a name="put_externalcontacts_relationship"></a>
 
