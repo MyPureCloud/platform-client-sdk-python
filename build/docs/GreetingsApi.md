@@ -155,7 +155,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+| **format_id** | **str**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -440,7 +440,7 @@ except ApiException as e:
 
 <a name="post_greetings"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) post_greetings(body)
+## [**Greeting**](Greeting.html) post_greetings(body)
 
 Create a Greeting for an Organization
 
@@ -481,7 +481,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**Greeting**](Greeting.html)
 
 <a name="post_group_greetings"></a>
 

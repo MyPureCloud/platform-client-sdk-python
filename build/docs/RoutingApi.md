@@ -1218,7 +1218,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
 
 Get list of wrapup codes.
 
@@ -1241,11 +1241,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 
 try:
     # Get list of wrapup codes.
-    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by)
+    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e
@@ -1258,6 +1259,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 

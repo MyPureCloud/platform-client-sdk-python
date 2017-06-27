@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
+|[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_routingskills**](UsersApi.html#post_user_routingskills) | Add routing skill to user|
 |[**post_users**](UsersApi.html#post_users) | Create user|
 |[**post_users_search**](UsersApi.html#post_users_search) | Search users|
@@ -1502,6 +1503,52 @@ except ApiException as e:
 ### Return type
 
 [**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="post_user_invite"></a>
+
+##  post_user_invite(user_id, force=force)
+
+Send an activation email to the user
+
+
+
+Wraps POST /api/v2/users/{userId}/invite 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+force = false # bool | Resend the invitation even if one is already outstanding (optional) (default to false)
+
+try:
+    # Send an activation email to the user
+    api_instance.post_user_invite(user_id, force=force)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_user_invite: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **force** | **bool**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_user_routingskills"></a>
 

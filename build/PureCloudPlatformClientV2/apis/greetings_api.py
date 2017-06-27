@@ -773,7 +773,7 @@ class GreetingsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Greeting body: The Greeting to create (required)
-        :return: DefaultGreetingList
+        :return: Greeting
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -830,7 +830,7 @@ class GreetingsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DefaultGreetingList',
+                                            response_type='Greeting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
