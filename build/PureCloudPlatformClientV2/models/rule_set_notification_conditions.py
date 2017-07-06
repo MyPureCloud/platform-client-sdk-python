@@ -45,6 +45,8 @@ class RuleSetNotificationConditions(object):
             'value_type': 'str',
             'operator': 'str',
             'codes': 'list[str]',
+            'property_type': 'str',
+            'pcProperty': 'str',
             'additional_properties': 'object'
         }
 
@@ -56,6 +58,8 @@ class RuleSetNotificationConditions(object):
             'value_type': 'valueType',
             'operator': 'operator',
             'codes': 'codes',
+            'property_type': 'propertyType',
+            'pcProperty': 'property',
             'additional_properties': 'additionalProperties'
         }
 
@@ -66,6 +70,8 @@ class RuleSetNotificationConditions(object):
         self._value_type = None
         self._operator = None
         self._codes = None
+        self._property_type = None
+        self._pcProperty = None
         self._additional_properties = None
 
     @property
@@ -236,6 +242,56 @@ class RuleSetNotificationConditions(object):
         """
         
         self._codes = codes
+
+    @property
+    def property_type(self):
+        """
+        Gets the property_type of this RuleSetNotificationConditions.
+
+
+        :return: The property_type of this RuleSetNotificationConditions.
+        :rtype: str
+        """
+        return self._property_type
+
+    @property_type.setter
+    def property_type(self, property_type):
+        """
+        Sets the property_type of this RuleSetNotificationConditions.
+
+
+        :param property_type: The property_type of this RuleSetNotificationConditions.
+        :type: str
+        """
+        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_RESULT_BY_COLUMN", "LAST_RESULT_OVERALL"]
+        if property_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for property_type -> " + property_type
+            self._property_type = "outdated_sdk_version"
+        else:
+            self._property_type = property_type
+
+    @property
+    def pcProperty(self):
+        """
+        Gets the pcProperty of this RuleSetNotificationConditions.
+
+
+        :return: The pcProperty of this RuleSetNotificationConditions.
+        :rtype: str
+        """
+        return self._pcProperty
+
+    @pcProperty.setter
+    def pcProperty(self, pcProperty):
+        """
+        Sets the pcProperty of this RuleSetNotificationConditions.
+
+
+        :param pcProperty: The pcProperty of this RuleSetNotificationConditions.
+        :type: str
+        """
+        
+        self._pcProperty = pcProperty
 
     @property
     def additional_properties(self):

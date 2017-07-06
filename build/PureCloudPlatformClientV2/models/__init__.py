@@ -804,6 +804,11 @@ from .station import Station
 from .station_entity_listing import StationEntityListing
 from .statistical_response import StatisticalResponse
 from .statistical_summary import StatisticalSummary
+from .stats_notification_notification import StatsNotificationNotification
+from .stats_notification_notification_data import StatsNotificationNotificationData
+from .stats_notification_notification_datum import StatsNotificationNotificationDatum
+from .stats_notification_notification_metric import StatsNotificationNotificationMetric
+from .stats_notification_notification_metrics import StatsNotificationNotificationMetrics
 from .street_address import StreetAddress
 from .subscriber_response import SubscriberResponse
 from .suggest_search_criteria import SuggestSearchCriteria
@@ -928,6 +933,7 @@ from .voicemail_search_criteria import VoicemailSearchCriteria
 from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
+from .wfm_historical_adherence_calculations_complete_notice_notification import WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
 from .wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .wfm_user_entity_listing import WfmUserEntityListing
 from .workspace import Workspace

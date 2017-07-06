@@ -38,14 +38,17 @@ class CallbackConversationNotificationVoicemail(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'upload_status': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'upload_status': 'uploadStatus'
         }
 
         self._id = None
+        self._upload_status = None
 
     @property
     def id(self):
@@ -69,6 +72,33 @@ class CallbackConversationNotificationVoicemail(object):
         """
         
         self._id = id
+
+    @property
+    def upload_status(self):
+        """
+        Gets the upload_status of this CallbackConversationNotificationVoicemail.
+
+
+        :return: The upload_status of this CallbackConversationNotificationVoicemail.
+        :rtype: str
+        """
+        return self._upload_status
+
+    @upload_status.setter
+    def upload_status(self, upload_status):
+        """
+        Sets the upload_status of this CallbackConversationNotificationVoicemail.
+
+
+        :param upload_status: The upload_status of this CallbackConversationNotificationVoicemail.
+        :type: str
+        """
+        allowed_values = ["PENDING", "COMPLETE", "FAILED", "TIMEOUT"]
+        if upload_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for upload_status -> " + upload_status
+            self._upload_status = "outdated_sdk_version"
+        else:
+            self._upload_status = upload_status
 
     def to_dict(self):
         """

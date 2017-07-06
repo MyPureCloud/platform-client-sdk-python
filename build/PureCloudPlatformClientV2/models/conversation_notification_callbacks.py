@@ -45,7 +45,7 @@ class ConversationNotificationCallbacks(object):
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'dialer_preview': 'ConversationNotificationDialerPreview',
-            'voicemail': 'DocumentDataV2NotificationWorkspace',
+            'voicemail': 'ConversationNotificationVoicemail',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'script_id': 'str',
@@ -124,7 +124,7 @@ class ConversationNotificationCallbacks(object):
         :param state: The state of this ConversationNotificationCallbacks.
         :type: str
         """
-        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "SCHEDULED", "NONE"]
+        allowed_values = ["ALERTING", "DIALING", "CONTACTING", "OFFERING", "CONNECTED", "DISCONNECTED", "TERMINATED", "SCHEDULED", "UPLOADING", "NONE"]
         if state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"
@@ -284,7 +284,7 @@ class ConversationNotificationCallbacks(object):
 
 
         :return: The voicemail of this ConversationNotificationCallbacks.
-        :rtype: DocumentDataV2NotificationWorkspace
+        :rtype: ConversationNotificationVoicemail
         """
         return self._voicemail
 
@@ -295,7 +295,7 @@ class ConversationNotificationCallbacks(object):
 
 
         :param voicemail: The voicemail of this ConversationNotificationCallbacks.
-        :type: DocumentDataV2NotificationWorkspace
+        :type: ConversationNotificationVoicemail
         """
         
         self._voicemail = voicemail

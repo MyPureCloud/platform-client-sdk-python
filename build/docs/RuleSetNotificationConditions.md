@@ -14,6 +14,8 @@ title: RuleSetNotificationConditions
 | **value_type** | **str** |  | [optional] |
 | **operator** | **str** |  | [optional] |
 | **codes** | **list[str]** |  | [optional] |
+| **property_type** | **str** |  | [optional] |
+| **pcProperty** | **str** |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

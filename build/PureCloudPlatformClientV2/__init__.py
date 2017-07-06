@@ -804,6 +804,11 @@ from .models.station import Station
 from .models.station_entity_listing import StationEntityListing
 from .models.statistical_response import StatisticalResponse
 from .models.statistical_summary import StatisticalSummary
+from .models.stats_notification_notification import StatsNotificationNotification
+from .models.stats_notification_notification_data import StatsNotificationNotificationData
+from .models.stats_notification_notification_datum import StatsNotificationNotificationDatum
+from .models.stats_notification_notification_metric import StatsNotificationNotificationMetric
+from .models.stats_notification_notification_metrics import StatsNotificationNotificationMetrics
 from .models.street_address import StreetAddress
 from .models.subscriber_response import SubscriberResponse
 from .models.suggest_search_criteria import SuggestSearchCriteria
@@ -928,6 +933,7 @@ from .models.voicemail_search_criteria import VoicemailSearchCriteria
 from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
+from .models.wfm_historical_adherence_calculations_complete_notice_notification import WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
 from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.workspace import Workspace

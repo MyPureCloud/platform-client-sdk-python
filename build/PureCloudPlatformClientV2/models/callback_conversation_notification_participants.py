@@ -65,7 +65,7 @@ class CallbackConversationNotificationParticipants(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'outbound_preview': 'ConversationNotificationDialerPreview',
-            'voicemail': 'DocumentDataV2NotificationWorkspace',
+            'voicemail': 'ConversationNotificationVoicemail',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'skip_enabled': 'bool',
@@ -786,7 +786,7 @@ class CallbackConversationNotificationParticipants(object):
 
 
         :return: The voicemail of this CallbackConversationNotificationParticipants.
-        :rtype: DocumentDataV2NotificationWorkspace
+        :rtype: ConversationNotificationVoicemail
         """
         return self._voicemail
 
@@ -797,7 +797,7 @@ class CallbackConversationNotificationParticipants(object):
 
 
         :param voicemail: The voicemail of this CallbackConversationNotificationParticipants.
-        :type: DocumentDataV2NotificationWorkspace
+        :type: ConversationNotificationVoicemail
         """
         
         self._voicemail = voicemail
