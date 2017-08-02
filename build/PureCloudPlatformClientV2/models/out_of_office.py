@@ -44,6 +44,7 @@ class OutOfOffice(object):
             'start_date': 'datetime',
             'end_date': 'datetime',
             'active': 'bool',
+            'indefinite': 'bool',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class OutOfOffice(object):
             'start_date': 'startDate',
             'end_date': 'endDate',
             'active': 'active',
+            'indefinite': 'indefinite',
             'self_uri': 'selfUri'
         }
 
@@ -63,6 +65,7 @@ class OutOfOffice(object):
         self._start_date = None
         self._end_date = None
         self._active = None
+        self._indefinite = None
         self._self_uri = None
 
     @property
@@ -202,6 +205,29 @@ class OutOfOffice(object):
         """
         
         self._active = active
+
+    @property
+    def indefinite(self):
+        """
+        Gets the indefinite of this OutOfOffice.
+
+
+        :return: The indefinite of this OutOfOffice.
+        :rtype: bool
+        """
+        return self._indefinite
+
+    @indefinite.setter
+    def indefinite(self, indefinite):
+        """
+        Sets the indefinite of this OutOfOffice.
+
+
+        :param indefinite: The indefinite of this OutOfOffice.
+        :type: bool
+        """
+        
+        self._indefinite = indefinite
 
     @property
     def self_uri(self):

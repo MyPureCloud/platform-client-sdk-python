@@ -264,7 +264,7 @@ class Condition(object):
         :param property_type: The property_type of this Condition.
         :type: str
         """
-        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL"]
+        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_RESULT_BY_COLUMN", "LAST_RESULT_OVERALL"]
         if property_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for property_type -> " + property_type
             self._property_type = "outdated_sdk_version"

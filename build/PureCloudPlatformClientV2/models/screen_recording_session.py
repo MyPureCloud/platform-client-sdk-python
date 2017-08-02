@@ -41,7 +41,7 @@ class ScreenRecordingSession(object):
             'id': 'str',
             'name': 'str',
             'user': 'User',
-            'participant_id': 'str',
+            'communication_id': 'str',
             'conversation': 'Conversation',
             'start_time': 'datetime',
             'self_uri': 'str'
@@ -51,7 +51,7 @@ class ScreenRecordingSession(object):
             'id': 'id',
             'name': 'name',
             'user': 'user',
-            'participant_id': 'participantId',
+            'communication_id': 'communicationId',
             'conversation': 'conversation',
             'start_time': 'startTime',
             'self_uri': 'selfUri'
@@ -60,7 +60,7 @@ class ScreenRecordingSession(object):
         self._id = None
         self._name = None
         self._user = None
-        self._participant_id = None
+        self._communication_id = None
         self._conversation = None
         self._start_time = None
         self._self_uri = None
@@ -135,27 +135,27 @@ class ScreenRecordingSession(object):
         self._user = user
 
     @property
-    def participant_id(self):
+    def communication_id(self):
         """
-        Gets the participant_id of this ScreenRecordingSession.
-        The id of the participant whose screen is being recorded on the conversation
+        Gets the communication_id of this ScreenRecordingSession.
+        The id of the communication that is being recorded on the conversation
 
-        :return: The participant_id of this ScreenRecordingSession.
+        :return: The communication_id of this ScreenRecordingSession.
         :rtype: str
         """
-        return self._participant_id
+        return self._communication_id
 
-    @participant_id.setter
-    def participant_id(self, participant_id):
+    @communication_id.setter
+    def communication_id(self, communication_id):
         """
-        Sets the participant_id of this ScreenRecordingSession.
-        The id of the participant whose screen is being recorded on the conversation
+        Sets the communication_id of this ScreenRecordingSession.
+        The id of the communication that is being recorded on the conversation
 
-        :param participant_id: The participant_id of this ScreenRecordingSession.
+        :param communication_id: The communication_id of this ScreenRecordingSession.
         :type: str
         """
         
-        self._participant_id = participant_id
+        self._communication_id = communication_id
 
     @property
     def conversation(self):

@@ -2996,7 +2996,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :param OutOfOffice body: The updated UserPresence (required)
+        :param OutOfOffice body: The updated OutOffOffice (required)
         :return: OutOfOffice
                  If the method is called asynchronously,
                  returns the request thread.

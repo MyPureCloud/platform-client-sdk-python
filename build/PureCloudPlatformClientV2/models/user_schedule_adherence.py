@@ -198,7 +198,7 @@ class UserScheduleAdherence(object):
         :param scheduled_activity_category: The scheduled_activity_category of this UserScheduleAdherence.
         :type: str
         """
-        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable"]
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if scheduled_activity_category.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for scheduled_activity_category -> " + scheduled_activity_category
             self._scheduled_activity_category = "outdated_sdk_version"
@@ -302,7 +302,7 @@ class UserScheduleAdherence(object):
         :param actual_activity_category: The actual_activity_category of this UserScheduleAdherence.
         :type: str
         """
-        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable"]
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if actual_activity_category.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for actual_activity_category -> " + actual_activity_category
             self._actual_activity_category = "outdated_sdk_version"

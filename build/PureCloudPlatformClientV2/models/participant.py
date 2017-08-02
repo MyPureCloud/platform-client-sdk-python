@@ -73,7 +73,8 @@ class Participant(object):
             'screenshares': 'list[Screenshare]',
             'social_expressions': 'list[SocialExpression]',
             'videos': 'list[Video]',
-            'evaluations': 'list[Evaluation]'
+            'evaluations': 'list[Evaluation]',
+            'screen_recording_state': 'str'
         }
 
         self.attribute_map = {
@@ -112,7 +113,8 @@ class Participant(object):
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
-            'evaluations': 'evaluations'
+            'evaluations': 'evaluations',
+            'screen_recording_state': 'screenRecordingState'
         }
 
         self._id = None
@@ -151,6 +153,7 @@ class Participant(object):
         self._social_expressions = None
         self._videos = None
         self._evaluations = None
+        self._screen_recording_state = None
 
     @property
     def id(self):
@@ -983,6 +986,33 @@ class Participant(object):
         """
         
         self._evaluations = evaluations
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this Participant.
+        The current screen recording state for this participant.
+
+        :return: The screen_recording_state of this Participant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this Participant.
+        The current screen recording state for this participant.
+
+        :param screen_recording_state: The screen_recording_state of this Participant.
+        :type: str
+        """
+        allowed_values = ["requested", "active", "paused", "stopped", "error"]
+        if screen_recording_state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for screen_recording_state -> " + screen_recording_state
+            self._screen_recording_state = "outdated_sdk_version"
+        else:
+            self._screen_recording_state = screen_recording_state
 
     def to_dict(self):
         """

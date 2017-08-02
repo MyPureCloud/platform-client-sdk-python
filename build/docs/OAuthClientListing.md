@@ -14,6 +14,10 @@ title: OAuthClientListing
 | **registered_redirect_uri** | **list[str]** | List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback | [optional] |
 | **secret** | **str** | System created secret assigned to this client. Secrets are required for code authorization and client credential grants. | [optional] |
 | **role_ids** | **list[str]** | Roles assigned to this client. Roles only apply to clients using the client_credential grant | [optional] |
+| **date_created** | **datetime** | Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_modified** | **datetime** | Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **created_by** | [**UriReference**](UriReference.html) | User that created this client | [optional] |
+| **modified_by** | [**UriReference**](UriReference.html) | User that last modified this client | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

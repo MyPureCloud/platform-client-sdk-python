@@ -50,6 +50,7 @@ class ConversationChat(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
+            'script_id': 'str',
             'peer_id': 'str'
         }
 
@@ -66,6 +67,7 @@ class ConversationChat(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
+            'script_id': 'scriptId',
             'peer_id': 'peerId'
         }
 
@@ -81,6 +83,7 @@ class ConversationChat(object):
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
+        self._script_id = None
         self._peer_id = None
 
     @property
@@ -370,6 +373,29 @@ class ConversationChat(object):
         """
         
         self._provider = provider
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this ConversationChat.
+        The UUID of the script to use.
+
+        :return: The script_id of this ConversationChat.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ConversationChat.
+        The UUID of the script to use.
+
+        :param script_id: The script_id of this ConversationChat.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def peer_id(self):

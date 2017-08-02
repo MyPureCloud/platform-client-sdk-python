@@ -74,6 +74,7 @@ class UserMe(object):
             'routing_skills': 'list[RoutingSkill]',
             'field_configs': 'FieldConfigs',
             'token': 'TokenInfo',
+            'trustors': 'list[Trustor]',
             'self_uri': 'str'
         }
 
@@ -114,6 +115,7 @@ class UserMe(object):
             'routing_skills': 'routingSkills',
             'field_configs': 'fieldConfigs',
             'token': 'token',
+            'trustors': 'trustors',
             'self_uri': 'selfUri'
         }
 
@@ -153,6 +155,7 @@ class UserMe(object):
         self._routing_skills = None
         self._field_configs = None
         self._token = None
+        self._trustors = None
         self._self_uri = None
 
     @property
@@ -986,6 +989,29 @@ class UserMe(object):
         """
         
         self._token = token
+
+    @property
+    def trustors(self):
+        """
+        Gets the trustors of this UserMe.
+        Organizations having this user as a trustee
+
+        :return: The trustors of this UserMe.
+        :rtype: list[Trustor]
+        """
+        return self._trustors
+
+    @trustors.setter
+    def trustors(self, trustors):
+        """
+        Sets the trustors of this UserMe.
+        Organizations having this user as a trustee
+
+        :param trustors: The trustors of this UserMe.
+        :type: list[Trustor]
+        """
+        
+        self._trustors = trustors
 
     @property
     def self_uri(self):

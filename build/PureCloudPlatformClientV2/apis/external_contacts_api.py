@@ -975,7 +975,7 @@ class ExternalContactsApi(object):
         :param int page_number: Page number
         :param str q: User supplied search keywords (no special syntax is currently supported)
         :param str sort_order: Sort order
-        :param list[str] expand: which fields, if any, to expand (externalOrganization)
+        :param list[str] expand: which fields, if any, to expand
         :return: ContactListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1333,6 +1333,7 @@ class ExternalContactsApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str q: Search query
+        :param list[str] trustor_id: Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
         :param str sort_order: Sort order
         :param list[str] expand: which fields, if any, to expand
         :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
@@ -1341,7 +1342,7 @@ class ExternalContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'q', 'sort_order', 'expand', 'include_trustors']
+        all_params = ['page_size', 'page_number', 'q', 'trustor_id', 'sort_order', 'expand', 'include_trustors']
         all_params.append('callback')
 
         params = locals()
@@ -1366,6 +1367,8 @@ class ExternalContactsApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'q' in params:
             query_params['q'] = params['q']
+        if 'trustor_id' in params:
+            query_params['trustorId'] = params['trustor_id']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:

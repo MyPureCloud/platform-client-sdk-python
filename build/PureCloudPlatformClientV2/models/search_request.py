@@ -42,6 +42,7 @@ class SearchRequest(object):
             'sort_by': 'str',
             'page_size': 'int',
             'page_number': 'int',
+            'sort': 'list[SearchSort]',
             'return_fields': 'list[str]',
             'expand': 'list[str]',
             'types': 'list[str]',
@@ -54,6 +55,7 @@ class SearchRequest(object):
             'sort_by': 'sortBy',
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
+            'sort': 'sort',
             'return_fields': 'returnFields',
             'expand': 'expand',
             'types': 'types',
@@ -65,6 +67,7 @@ class SearchRequest(object):
         self._sort_by = None
         self._page_size = None
         self._page_number = None
+        self._sort = None
         self._return_fields = None
         self._expand = None
         self._types = None
@@ -166,6 +169,29 @@ class SearchRequest(object):
         """
         
         self._page_number = page_number
+
+    @property
+    def sort(self):
+        """
+        Gets the sort of this SearchRequest.
+        Multi-value sort order, list of multiple sort values
+
+        :return: The sort of this SearchRequest.
+        :rtype: list[SearchSort]
+        """
+        return self._sort
+
+    @sort.setter
+    def sort(self, sort):
+        """
+        Sets the sort of this SearchRequest.
+        Multi-value sort order, list of multiple sort values
+
+        :param sort: The sort of this SearchRequest.
+        :type: list[SearchSort]
+        """
+        
+        self._sort = sort
 
     @property
     def return_fields(self):

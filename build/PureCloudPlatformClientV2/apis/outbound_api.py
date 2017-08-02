@@ -4869,7 +4869,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param str contact_list_id: Contact List ID (required)
         :param list[DialerContact] body: Contact (required)
-        :param bool priority: Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end.
+        :param bool priority: Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
         :param bool clear_system_data: Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won't.
         :return: list[DialerContact]
                  If the method is called asynchronously,

@@ -40,6 +40,10 @@ class OrgOAuthClient(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'created_by': 'UriReference',
+            'modified_by': 'UriReference',
             'authorized_grant_type': 'str',
             'organization': 'Entity'
         }
@@ -47,12 +51,20 @@ class OrgOAuthClient(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'created_by': 'createdBy',
+            'modified_by': 'modifiedBy',
             'authorized_grant_type': 'authorizedGrantType',
             'organization': 'organization'
         }
 
         self._id = None
         self._name = None
+        self._date_created = None
+        self._date_modified = None
+        self._created_by = None
+        self._modified_by = None
         self._authorized_grant_type = None
         self._organization = None
 
@@ -101,6 +113,98 @@ class OrgOAuthClient(object):
         """
         
         self._name = name
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this OrgOAuthClient.
+        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_created of this OrgOAuthClient.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this OrgOAuthClient.
+        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_created: The date_created of this OrgOAuthClient.
+        :type: datetime
+        """
+        
+        self._date_created = date_created
+
+    @property
+    def date_modified(self):
+        """
+        Gets the date_modified of this OrgOAuthClient.
+        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_modified of this OrgOAuthClient.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """
+        Sets the date_modified of this OrgOAuthClient.
+        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_modified: The date_modified of this OrgOAuthClient.
+        :type: datetime
+        """
+        
+        self._date_modified = date_modified
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this OrgOAuthClient.
+        User that created this client
+
+        :return: The created_by of this OrgOAuthClient.
+        :rtype: UriReference
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this OrgOAuthClient.
+        User that created this client
+
+        :param created_by: The created_by of this OrgOAuthClient.
+        :type: UriReference
+        """
+        
+        self._created_by = created_by
+
+    @property
+    def modified_by(self):
+        """
+        Gets the modified_by of this OrgOAuthClient.
+        User that last modified this client
+
+        :return: The modified_by of this OrgOAuthClient.
+        :rtype: UriReference
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by):
+        """
+        Sets the modified_by of this OrgOAuthClient.
+        User that last modified this client
+
+        :param modified_by: The modified_by of this OrgOAuthClient.
+        :type: UriReference
+        """
+        
+        self._modified_by = modified_by
 
     @property
     def authorized_grant_type(self):

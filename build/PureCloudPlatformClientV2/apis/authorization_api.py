@@ -535,6 +535,7 @@ class AuthorizationApi(object):
         :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param str name: 
         :param list[object] permission: 
         :param list[object] default_role_id: 
         :param bool user_count: 
@@ -543,7 +544,7 @@ class AuthorizationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'permission', 'default_role_id', 'user_count']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'permission', 'default_role_id', 'user_count']
         all_params.append('callback')
 
         params = locals()
@@ -574,6 +575,8 @@ class AuthorizationApi(object):
             query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
+        if 'name' in params:
+            query_params['name'] = params['name']
         if 'permission' in params:
             query_params['permission'] = params['permission']
         if 'default_role_id' in params:

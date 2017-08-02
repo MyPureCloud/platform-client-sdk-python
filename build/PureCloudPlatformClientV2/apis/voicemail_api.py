@@ -48,8 +48,8 @@ class VoicemailApi(object):
 
     def delete_voicemail_message(self, message_id, **kwargs):
         """
-        Delete a message.
-        
+        Delete a voicemail message.
+        A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -732,7 +732,7 @@ class VoicemailApi(object):
 
     def get_voicemail_message(self, message_id, **kwargs):
         """
-        Get message.
+        Get a voicemail message
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -813,7 +813,7 @@ class VoicemailApi(object):
 
     def get_voicemail_message_media(self, message_id, **kwargs):
         """
-        Get media playback URI for this message
+        Get media playback URI for this voicemail message
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1363,6 +1363,90 @@ class VoicemailApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_voicemail_message(self, message_id, body, **kwargs):
+        """
+        Update a voicemail message
+        A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_voicemail_message(message_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_id: Message ID (required)
+        :param VoicemailMessage body: VoicemailMessage (required)
+        :return: VoicemailMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_voicemail_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `patch_voicemail_message`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_voicemail_message`")
+
+
+        resource_path = '/api/v2/voicemail/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='VoicemailMessage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_voicemail_userpolicy(self, user_id, body, **kwargs):
         """
         Update a user's voicemail policy
@@ -1602,8 +1686,8 @@ class VoicemailApi(object):
 
     def put_voicemail_message(self, message_id, body, **kwargs):
         """
-        Update a message.
-        
+        Update a voicemail message
+        A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

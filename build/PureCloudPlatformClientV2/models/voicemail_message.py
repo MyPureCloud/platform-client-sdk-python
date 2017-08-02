@@ -55,6 +55,7 @@ class VoicemailMessage(object):
             'queue': 'Queue',
             'copied_from': 'VoicemailCopyRecord',
             'copied_to': 'list[VoicemailCopyRecord]',
+            'retention_policy': 'VoicemailRetentionPolicy',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class VoicemailMessage(object):
             'queue': 'queue',
             'copied_from': 'copiedFrom',
             'copied_to': 'copiedTo',
+            'retention_policy': 'retentionPolicy',
             'self_uri': 'selfUri'
         }
 
@@ -96,6 +98,7 @@ class VoicemailMessage(object):
         self._queue = None
         self._copied_from = None
         self._copied_to = None
+        self._retention_policy = None
         self._self_uri = None
 
     @property
@@ -488,6 +491,29 @@ class VoicemailMessage(object):
         """
         
         self._copied_to = copied_to
+
+    @property
+    def retention_policy(self):
+        """
+        Gets the retention_policy of this VoicemailMessage.
+        The retention policy for this voicemail
+
+        :return: The retention_policy of this VoicemailMessage.
+        :rtype: VoicemailRetentionPolicy
+        """
+        return self._retention_policy
+
+    @retention_policy.setter
+    def retention_policy(self, retention_policy):
+        """
+        Sets the retention_policy of this VoicemailMessage.
+        The retention policy for this voicemail
+
+        :param retention_policy: The retention_policy of this VoicemailMessage.
+        :type: VoicemailRetentionPolicy
+        """
+        
+        self._retention_policy = retention_policy
 
     @property
     def self_uri(self):

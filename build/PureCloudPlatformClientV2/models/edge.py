@@ -76,6 +76,7 @@ class Edge(object):
             'call_draining_state': 'str',
             'conversation_count': 'int',
             'proxy': 'str',
+            'offline_config_called': 'bool',
             'os_name': 'str',
             'self_uri': 'str'
         }
@@ -119,6 +120,7 @@ class Edge(object):
             'call_draining_state': 'callDrainingState',
             'conversation_count': 'conversationCount',
             'proxy': 'proxy',
+            'offline_config_called': 'offlineConfigCalled',
             'os_name': 'osName',
             'self_uri': 'selfUri'
         }
@@ -161,6 +163,7 @@ class Edge(object):
         self._call_draining_state = None
         self._conversation_count = None
         self._proxy = None
+        self._offline_config_called = None
         self._os_name = None
         self._self_uri = None
 
@@ -1057,6 +1060,29 @@ class Edge(object):
         """
         
         self._proxy = proxy
+
+    @property
+    def offline_config_called(self):
+        """
+        Gets the offline_config_called of this Edge.
+        True if the offline edge configuration endpoint has been called for this edge.
+
+        :return: The offline_config_called of this Edge.
+        :rtype: bool
+        """
+        return self._offline_config_called
+
+    @offline_config_called.setter
+    def offline_config_called(self, offline_config_called):
+        """
+        Sets the offline_config_called of this Edge.
+        True if the offline edge configuration endpoint has been called for this edge.
+
+        :param offline_config_called: The offline_config_called of this Edge.
+        :type: bool
+        """
+        
+        self._offline_config_called = offline_config_called
 
     @property
     def os_name(self):

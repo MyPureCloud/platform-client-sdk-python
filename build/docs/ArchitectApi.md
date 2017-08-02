@@ -8,9 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_architect_ivr**](ArchitectApi.html#delete_architect_ivr) | Delete an IVR Config.|
 |[**delete_architect_prompt**](ArchitectApi.html#delete_architect_prompt) | Delete specified user prompt|
 |[**delete_architect_prompt_resource**](ArchitectApi.html#delete_architect_prompt_resource) | Delete specified user prompt resource|
 |[**delete_architect_prompts**](ArchitectApi.html#delete_architect_prompts) | Batch-delete a list of prompts|
+|[**delete_architect_schedule**](ArchitectApi.html#delete_architect_schedule) | Delete a schedule by id|
+|[**delete_architect_schedulegroup**](ArchitectApi.html#delete_architect_schedulegroup) | Deletes a schedule group by ID|
 |[**delete_architect_systemprompt_resource**](ArchitectApi.html#delete_architect_systemprompt_resource) | Delete a system prompt resource override.|
 |[**delete_flow**](ArchitectApi.html#delete_flow) | Delete flow|
 |[**delete_flows**](ArchitectApi.html#delete_flows) | Batch-delete a list of flows|
@@ -23,23 +26,33 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_dependencytracking_type**](ArchitectApi.html#get_architect_dependencytracking_type) | Get a Dependency Tracking type.|
 |[**get_architect_dependencytracking_types**](ArchitectApi.html#get_architect_dependencytracking_types) | Get Dependency Tracking types.|
 |[**get_architect_dependencytracking_updatedresourceconsumers**](ArchitectApi.html#get_architect_dependencytracking_updatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources|
+|[**get_architect_ivr**](ArchitectApi.html#get_architect_ivr) | Get an IVR config.|
+|[**get_architect_ivrs**](ArchitectApi.html#get_architect_ivrs) | Get IVR configs.|
 |[**get_architect_prompt**](ArchitectApi.html#get_architect_prompt) | Get specified user prompt|
 |[**get_architect_prompt_resource**](ArchitectApi.html#get_architect_prompt_resource) | Get specified user prompt resource|
 |[**get_architect_prompt_resources**](ArchitectApi.html#get_architect_prompt_resources) | Get a pageable list of user prompt resources|
 |[**get_architect_prompts**](ArchitectApi.html#get_architect_prompts) | Get a pageable list of user prompts|
+|[**get_architect_schedule**](ArchitectApi.html#get_architect_schedule) | Get a schedule by ID|
+|[**get_architect_schedulegroup**](ArchitectApi.html#get_architect_schedulegroup) | Gets a schedule group by ID|
+|[**get_architect_schedulegroups**](ArchitectApi.html#get_architect_schedulegroups) | Get a list of schedule groups.|
+|[**get_architect_schedules**](ArchitectApi.html#get_architect_schedules) | Get a list of schedules.|
 |[**get_architect_systemprompt**](ArchitectApi.html#get_architect_systemprompt) | Get a system prompt|
 |[**get_architect_systemprompt_resource**](ArchitectApi.html#get_architect_systemprompt_resource) | Get a system prompt resource.|
 |[**get_architect_systemprompt_resources**](ArchitectApi.html#get_architect_systemprompt_resources) | Get system prompt resources.|
 |[**get_architect_systemprompts**](ArchitectApi.html#get_architect_systemprompts) | Get System Prompts|
 |[**get_flow**](ArchitectApi.html#get_flow) | Get flow|
+|[**get_flow_history_history_id**](ArchitectApi.html#get_flow_history_history_id) | Get generated flow history|
 |[**get_flow_latestconfiguration**](ArchitectApi.html#get_flow_latestconfiguration) | Get the latest configuration for flow|
 |[**get_flow_version**](ArchitectApi.html#get_flow_version) | Get flow version|
 |[**get_flow_version_configuration**](ArchitectApi.html#get_flow_version_configuration) | Create flow version configuration|
 |[**get_flow_versions**](ArchitectApi.html#get_flow_versions) | Get flow version list|
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
+|[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
 |[**post_architect_prompt_resources**](ArchitectApi.html#post_architect_prompt_resources) | Create a new user prompt resource|
 |[**post_architect_prompts**](ArchitectApi.html#post_architect_prompts) | Create a new user prompt|
+|[**post_architect_schedulegroups**](ArchitectApi.html#post_architect_schedulegroups) | Creates a new schedule group|
+|[**post_architect_schedules**](ArchitectApi.html#post_architect_schedules) | Create a new schedule.|
 |[**post_architect_systemprompt_resources**](ArchitectApi.html#post_architect_systemprompt_resources) | Create system prompt resource override.|
 |[**post_flow_versions**](ArchitectApi.html#post_flow_versions) | Create flow version|
 |[**post_flows**](ArchitectApi.html#post_flows) | Create flow|
@@ -49,11 +62,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_actions_publish**](ArchitectApi.html#post_flows_actions_publish) | Publish flow|
 |[**post_flows_actions_revert**](ArchitectApi.html#post_flows_actions_revert) | Revert flow|
 |[**post_flows_actions_unlock**](ArchitectApi.html#post_flows_actions_unlock) | Unlock flow|
+|[**put_architect_ivr**](ArchitectApi.html#put_architect_ivr) | Update an IVR Config.|
 |[**put_architect_prompt**](ArchitectApi.html#put_architect_prompt) | Update specified user prompt|
 |[**put_architect_prompt_resource**](ArchitectApi.html#put_architect_prompt_resource) | Update specified user prompt resource|
+|[**put_architect_schedule**](ArchitectApi.html#put_architect_schedule) | Update schedule by ID|
+|[**put_architect_schedulegroup**](ArchitectApi.html#put_architect_schedulegroup) | Updates a schedule group by ID|
 |[**put_architect_systemprompt_resource**](ArchitectApi.html#put_architect_systemprompt_resource) | Updates a system prompt resource override.|
 |[**put_flow**](ArchitectApi.html#put_flow) | Update flow|
 {: class="table table-striped"}
+
+<a name="delete_architect_ivr"></a>
+
+##  delete_architect_ivr(ivr_id)
+
+Delete an IVR Config.
+
+
+
+Wraps DELETE /api/v2/architect/ivrs/{ivrId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+ivr_id = 'ivr_id_example' # str | IVR id
+
+try:
+    # Delete an IVR Config.
+    api_instance.delete_architect_ivr(ivr_id)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->delete_architect_ivr: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ivr_id** | **str**| IVR id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_architect_prompt"></a>
 
@@ -191,6 +251,94 @@ except ApiException as e:
 ### Return type
 
 [**Operation**](Operation.html)
+
+<a name="delete_architect_schedule"></a>
+
+##  delete_architect_schedule(schedule_id)
+
+Delete a schedule by id
+
+
+
+Wraps DELETE /api/v2/architect/schedules/{scheduleId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_id = 'schedule_id_example' # str | Schedule ID
+
+try:
+    # Delete a schedule by id
+    api_instance.delete_architect_schedule(schedule_id)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->delete_architect_schedule: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_id** | **str**| Schedule ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_architect_schedulegroup"></a>
+
+##  delete_architect_schedulegroup(schedule_group_id)
+
+Deletes a schedule group by ID
+
+
+
+Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_group_id = 'schedule_group_id_example' # str | Schedule group ID
+
+try:
+    # Deletes a schedule group by ID
+    api_instance.delete_architect_schedulegroup(schedule_group_id)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->delete_architect_schedulegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_group_id** | **str**| Schedule group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_architect_systemprompt_resource"></a>
 
@@ -788,6 +936,102 @@ except ApiException as e:
 
 [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
 
+<a name="get_architect_ivr"></a>
+
+## [**IVR**](IVR.html) get_architect_ivr(ivr_id)
+
+Get an IVR config.
+
+
+
+Wraps GET /api/v2/architect/ivrs/{ivrId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+ivr_id = 'ivr_id_example' # str | IVR id
+
+try:
+    # Get an IVR config.
+    api_response = api_instance.get_architect_ivr(ivr_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_ivr: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ivr_id** | **str**| IVR id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
+<a name="get_architect_ivrs"></a>
+
+## [**IVREntityListing**](IVREntityListing.html) get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+Get IVR configs.
+
+
+
+Wraps GET /api/v2/architect/ivrs 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+
+try:
+    # Get IVR configs.
+    api_response = api_instance.get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_ivrs: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVREntityListing**](IVREntityListing.html)
+
 <a name="get_architect_prompt"></a>
 
 ## [**Prompt**](Prompt.html) get_architect_prompt(prompt_id)
@@ -981,6 +1225,198 @@ except ApiException as e:
 ### Return type
 
 [**PromptEntityListing**](PromptEntityListing.html)
+
+<a name="get_architect_schedule"></a>
+
+## [**Schedule**](Schedule.html) get_architect_schedule(schedule_id)
+
+Get a schedule by ID
+
+
+
+Wraps GET /api/v2/architect/schedules/{scheduleId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_id = 'schedule_id_example' # str | Schedule ID
+
+try:
+    # Get a schedule by ID
+    api_response = api_instance.get_architect_schedule(schedule_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_schedule: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_id** | **str**| Schedule ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="get_architect_schedulegroup"></a>
+
+## [**ScheduleGroup**](ScheduleGroup.html) get_architect_schedulegroup(schedule_group_id)
+
+Gets a schedule group by ID
+
+
+
+Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_group_id = 'schedule_group_id_example' # str | Schedule group ID
+
+try:
+    # Gets a schedule group by ID
+    api_response = api_instance.get_architect_schedulegroup(schedule_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_schedulegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_group_id** | **str**| Schedule group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="get_architect_schedulegroups"></a>
+
+## [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html) get_architect_schedulegroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+Get a list of schedule groups.
+
+
+
+Wraps GET /api/v2/architect/schedulegroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+
+try:
+    # Get a list of schedule groups.
+    api_response = api_instance.get_architect_schedulegroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_schedulegroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
+
+<a name="get_architect_schedules"></a>
+
+## [**ScheduleEntityListing**](ScheduleEntityListing.html) get_architect_schedules(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+Get a list of schedules.
+
+
+
+Wraps GET /api/v2/architect/schedules 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+
+try:
+    # Get a list of schedules.
+    api_response = api_instance.get_architect_schedules(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_schedules: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleEntityListing**](ScheduleEntityListing.html)
 
 <a name="get_architect_systemprompt"></a>
 
@@ -1230,6 +1666,63 @@ except ApiException as e:
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="get_flow_history_history_id"></a>
+
+## [**HistoryListing**](HistoryListing.html) get_flow_history_history_id(flow_id, history_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, action=action)
+
+Get generated flow history
+
+
+
+Wraps GET /api/v2/flows/{flowId}/history/{historyId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_id = 'flow_id_example' # str | Flow ID
+history_id = 'history_id_example' # str | History ID (generated history)
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+sort_order = 'desc' # str | Sort order (optional) (default to desc)
+action = ['action_example'] # list[str] | Flow actions (optional)
+
+try:
+    # Get generated flow history
+    api_response = api_instance.get_flow_history_history_id(flow_id, history_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, action=action)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flow_history_history_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_id** | **str**| Flow ID |  |
+| **history_id** | **str**| History ID (generated history) |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **sort_order** | **str**| Sort order | [optional] [default to desc] |
+| **action** | [**list[str]**](str.html)| Flow actions | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
 
 <a name="get_flow_latestconfiguration"></a>
 
@@ -1540,6 +2033,51 @@ This endpoint does not need any parameter.
 
 void (empty response body)
 
+<a name="post_architect_ivrs"></a>
+
+## [**IVR**](IVR.html) post_architect_ivrs(body=body)
+
+Create IVR config.
+
+
+
+Wraps POST /api/v2/architect/ivrs 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.IVR() # IVR |  (optional)
+
+try:
+    # Create IVR config.
+    api_response = api_instance.post_architect_ivrs(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_ivrs: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**IVR**](IVR.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="post_architect_prompt_resources"></a>
 
 ## [**PromptAsset**](PromptAsset.html) post_architect_prompt_resources(prompt_id, body=body)
@@ -1631,6 +2169,96 @@ except ApiException as e:
 ### Return type
 
 [**Prompt**](Prompt.html)
+
+<a name="post_architect_schedulegroups"></a>
+
+## [**ScheduleGroup**](ScheduleGroup.html) post_architect_schedulegroups(body=body)
+
+Creates a new schedule group
+
+
+
+Wraps POST /api/v2/architect/schedulegroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.ScheduleGroup() # ScheduleGroup |  (optional)
+
+try:
+    # Creates a new schedule group
+    api_response = api_instance.post_architect_schedulegroups(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_schedulegroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="post_architect_schedules"></a>
+
+## [**Schedule**](Schedule.html) post_architect_schedules(body=body)
+
+Create a new schedule.
+
+
+
+Wraps POST /api/v2/architect/schedules 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.Schedule() # Schedule |  (optional)
+
+try:
+    # Create a new schedule.
+    api_response = api_instance.post_architect_schedules(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_schedules: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
 
 <a name="post_architect_systemprompt_resources"></a>
 
@@ -2043,6 +2671,53 @@ except ApiException as e:
 
 [**Flow**](Flow.html)
 
+<a name="put_architect_ivr"></a>
+
+## [**IVR**](IVR.html) put_architect_ivr(ivr_id, body=body)
+
+Update an IVR Config.
+
+
+
+Wraps PUT /api/v2/architect/ivrs/{ivrId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+ivr_id = 'ivr_id_example' # str | IVR id
+body = PureCloudPlatformClientV2.IVR() # IVR |  (optional)
+
+try:
+    # Update an IVR Config.
+    api_response = api_instance.put_architect_ivr(ivr_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->put_architect_ivr: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ivr_id** | **str**| IVR id |  |
+| **body** | [**IVR**](IVR.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="put_architect_prompt"></a>
 
 ## [**Prompt**](Prompt.html) put_architect_prompt(prompt_id, body=body)
@@ -2138,6 +2813,100 @@ except ApiException as e:
 ### Return type
 
 [**PromptAsset**](PromptAsset.html)
+
+<a name="put_architect_schedule"></a>
+
+## [**Schedule**](Schedule.html) put_architect_schedule(schedule_id, body=body)
+
+Update schedule by ID
+
+
+
+Wraps PUT /api/v2/architect/schedules/{scheduleId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_id = 'schedule_id_example' # str | Schedule ID
+body = PureCloudPlatformClientV2.Schedule() # Schedule |  (optional)
+
+try:
+    # Update schedule by ID
+    api_response = api_instance.put_architect_schedule(schedule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->put_architect_schedule: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_id** | **str**| Schedule ID |  |
+| **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="put_architect_schedulegroup"></a>
+
+## [**ScheduleGroup**](ScheduleGroup.html) put_architect_schedulegroup(schedule_group_id, body=body)
+
+Updates a schedule group by ID
+
+
+
+Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+schedule_group_id = 'schedule_group_id_example' # str | Schedule group ID
+body = PureCloudPlatformClientV2.ScheduleGroup() # ScheduleGroup |  (optional)
+
+try:
+    # Updates a schedule group by ID
+    api_response = api_instance.put_architect_schedulegroup(schedule_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->put_architect_schedulegroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schedule_group_id** | **str**| Schedule group ID |  |
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
 
 <a name="put_architect_systemprompt_resource"></a>
 

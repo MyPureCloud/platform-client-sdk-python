@@ -63,7 +63,7 @@ class InboundDomain(object):
     def id(self):
         """
         Gets the id of this InboundDomain.
-        The globally unique identifier for the object.
+        Unique Id of the domain such as: example.com
 
         :return: The id of this InboundDomain.
         :rtype: str
@@ -74,7 +74,7 @@ class InboundDomain(object):
     def id(self, id):
         """
         Sets the id of this InboundDomain.
-        The globally unique identifier for the object.
+        Unique Id of the domain such as: example.com
 
         :param id: The id of this InboundDomain.
         :type: str

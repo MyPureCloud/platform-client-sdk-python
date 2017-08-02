@@ -297,7 +297,7 @@ except ApiException as e:
 
 <a name="get_authorization_roles"></a>
 
-## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, permission=permission, default_role_id=default_role_id, user_count=user_count)
+## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count)
 
 Retrieve a list of all roles defined for the organization
 
@@ -324,13 +324,14 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = NULL # list[object] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
+name = 'name_example' # str |  (optional)
 permission = NULL # list[object] |  (optional)
 default_role_id = NULL # list[object] |  (optional)
 user_count = true # bool |  (optional) (default to true)
 
 try:
     # Retrieve a list of all roles defined for the organization
-    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, permission=permission, default_role_id=default_role_id, user_count=user_count)
+    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_roles: %s\n" % e
@@ -347,6 +348,7 @@ except ApiException as e:
 | **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
+| **name** | **str**|  | [optional]  |
 | **permission** | [**list[object]**](object.html)|  | [optional]  |
 | **default_role_id** | [**list[object]**](object.html)|  | [optional]  |
 | **user_count** | **bool**|  | [optional] [default to true] |

@@ -388,8 +388,12 @@ class Campaign(object):
         :param campaign_status: The campaign_status of this Campaign.
         :type: str
         """
-        
-        self._campaign_status = campaign_status
+        allowed_values = ["on", "stopping", "off", "complete", "invalid"]
+        if campaign_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for campaign_status -> " + campaign_status
+            self._campaign_status = "outdated_sdk_version"
+        else:
+            self._campaign_status = campaign_status
 
     @property
     def phone_columns(self):

@@ -253,7 +253,7 @@ class DocumentationSearchCriteria(object):
         :param type: The type of this DocumentationSearchCriteria.
         :type: str
         """
-        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "TERM", "TERMS", "MATCH_ALL", "SIMPLE", "QUERY_STRING"]
+        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "TERM", "TERMS", "MATCH_ALL", "SIMPLE", "QUERY_STRING", "MULTI_MATCH"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

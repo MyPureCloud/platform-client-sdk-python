@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
+|[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 {: class="table table-striped"}
 
@@ -2872,7 +2873,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversation ID
 participant_id = 'participant_id_example' # str | participant ID
-body = PureCloudPlatformClientV2.CreateCallbackCommand() # CreateCallbackCommand |  (optional)
+body = PureCloudPlatformClientV2.CreateCallbackOnConversationCommand() # CreateCallbackOnConversationCommand |  (optional)
 
 try:
     # Create a new callback for the specified participant on the conversation.
@@ -2888,7 +2889,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)|  | [optional]  |
+| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3643,6 +3644,57 @@ except ApiException as e:
 ### Return type
 
 [**FaxSendResponse**](FaxSendResponse.html)
+
+<a name="put_conversations_call_participant_communication_uuidata"></a>
+
+## [**Empty**](Empty.html) put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+
+Set uuiData to be sent on future commands.
+
+
+
+Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.SetUuiDataRequest() # SetUuiDataRequest | UUIData Request
+
+try:
+    # Set uuiData to be sent on future commands.
+    api_response = api_instance.put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->put_conversations_call_participant_communication_uuidata: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
 
 <a name="put_conversations_email_messages_draft"></a>
 

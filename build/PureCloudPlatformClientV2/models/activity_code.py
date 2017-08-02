@@ -157,7 +157,7 @@ class ActivityCode(object):
         :param category: The category of this ActivityCode.
         :type: str
         """
-        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable"]
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if category.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for category -> " + category
             self._category = "outdated_sdk_version"

@@ -587,7 +587,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 page_number = 1 # int | Page number (optional) (default to 1)
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
     # Search for external contacts in an external organization
@@ -607,7 +607,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization) | [optional] <br />**Values**: externalOrganization |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -771,7 +771,7 @@ except ApiException as e:
 
 <a name="get_externalcontacts_organizations"></a>
 
-## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
+## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
 
 Search for external organizations
 
@@ -795,13 +795,14 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 page_size = 20 # int | Page size (optional) (default to 20)
 page_number = 1 # int | Page number (optional) (default to 1)
 q = 'q_example' # str | Search query (optional)
+trustor_id = ['trustor_id_example'] # list[str] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 include_trustors = true # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
     # Search for external organizations
-    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
+    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e
@@ -815,6 +816,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 20] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
+| **trustor_id** | [**list[str]**](str.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |

@@ -38,14 +38,17 @@ class Voicemail(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'upload_status': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'upload_status': 'uploadStatus'
         }
 
         self._id = None
+        self._upload_status = None
 
     @property
     def id(self):
@@ -69,6 +72,33 @@ class Voicemail(object):
         """
         
         self._id = id
+
+    @property
+    def upload_status(self):
+        """
+        Gets the upload_status of this Voicemail.
+        current state of the voicemail upload
+
+        :return: The upload_status of this Voicemail.
+        :rtype: str
+        """
+        return self._upload_status
+
+    @upload_status.setter
+    def upload_status(self, upload_status):
+        """
+        Sets the upload_status of this Voicemail.
+        current state of the voicemail upload
+
+        :param upload_status: The upload_status of this Voicemail.
+        :type: str
+        """
+        allowed_values = ["pending", "complete", "failed", "timeout"]
+        if upload_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for upload_status -> " + upload_status
+            self._upload_status = "outdated_sdk_version"
+        else:
+            self._upload_status = upload_status
 
     def to_dict(self):
         """

@@ -58,7 +58,8 @@ class Call(object):
             'fax_status': 'FaxStatus',
             'provider': 'str',
             'script_id': 'str',
-            'peer_id': 'str'
+            'peer_id': 'str',
+            'uui_data': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +83,8 @@ class Call(object):
             'fax_status': 'faxStatus',
             'provider': 'provider',
             'script_id': 'scriptId',
-            'peer_id': 'peerId'
+            'peer_id': 'peerId',
+            'uui_data': 'uuiData'
         }
 
         self._state = None
@@ -106,6 +108,7 @@ class Call(object):
         self._provider = None
         self._script_id = None
         self._peer_id = None
+        self._uui_data = None
 
     @property
     def state(self):
@@ -605,6 +608,29 @@ class Call(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def uui_data(self):
+        """
+        Gets the uui_data of this Call.
+        User to User Information (UUI) data managed by SIP session application.
+
+        :return: The uui_data of this Call.
+        :rtype: str
+        """
+        return self._uui_data
+
+    @uui_data.setter
+    def uui_data(self, uui_data):
+        """
+        Sets the uui_data of this Call.
+        User to User Information (UUI) data managed by SIP session application.
+
+        :param uui_data: The uui_data of this Call.
+        :type: str
+        """
+        
+        self._uui_data = uui_data
 
     def to_dict(self):
         """
