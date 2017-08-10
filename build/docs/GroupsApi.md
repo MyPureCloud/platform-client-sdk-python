@@ -257,7 +257,7 @@ except ApiException as e:
 
 <a name="get_groups"></a>
 
-## [**GroupEntityListing**](GroupEntityListing.html) get_groups(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**GroupEntityListing**](GroupEntityListing.html) get_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
 
 Get a group list
 
@@ -280,11 +280,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.GroupsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+id = ['id_example'] # list[str] | id (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 
 try:
     # Get a group list
-    api_response = api_instance.get_groups(page_size=page_size, page_number=page_number, sort_order=sort_order)
+    api_response = api_instance.get_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GroupsApi->get_groups: %s\n" % e
@@ -297,6 +298,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 

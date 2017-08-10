@@ -59,6 +59,7 @@ class Recording(object):
             'max_allowed_restorations_for_org': 'int',
             'remaining_restorations_allowed_for_org': 'int',
             'session_id': 'str',
+            'users': 'list[User]',
             'self_uri': 'str'
         }
 
@@ -84,6 +85,7 @@ class Recording(object):
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
             'remaining_restorations_allowed_for_org': 'remainingRestorationsAllowedForOrg',
             'session_id': 'sessionId',
+            'users': 'users',
             'self_uri': 'selfUri'
         }
 
@@ -108,6 +110,7 @@ class Recording(object):
         self._max_allowed_restorations_for_org = None
         self._remaining_restorations_allowed_for_org = None
         self._session_id = None
+        self._users = None
         self._self_uri = None
 
     @property
@@ -600,6 +603,29 @@ class Recording(object):
         """
         
         self._session_id = session_id
+
+    @property
+    def users(self):
+        """
+        Gets the users of this Recording.
+        The users participating in the conversation
+
+        :return: The users of this Recording.
+        :rtype: list[User]
+        """
+        return self._users
+
+    @users.setter
+    def users(self, users):
+        """
+        Sets the users of this Recording.
+        The users participating in the conversation
+
+        :param users: The users of this Recording.
+        :type: list[User]
+        """
+        
+        self._users = users
 
     @property
     def self_uri(self):

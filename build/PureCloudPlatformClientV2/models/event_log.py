@@ -236,7 +236,7 @@ class EventLog(object):
         :param category: The category of this EventLog.
         :type: str
         """
-        allowed_values = ["CAMPAIGN", "CAMPAIGN_RULE", "IMPORT_ERROR", "CALLBACK", "CONTACT_LIST_FILTER", "SCHEDULE", "CALL_RESTRICTION", "CALL_RULE", "ORGANIZATION_CONFIGURATION"]
+        allowed_values = ["CALLBACK", "CALL_RESTRICTION", "CALL_RULE", "CAMPAIGN", "CAMPAIGN_RULE", "CONTACT_LIST_FILTER", "ENTITY_LIMIT", "IMPORT_ERROR", "ORGANIZATION_CONFIGURATION", "SCHEDULE"]
         if category.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for category -> " + category
             self._category = "outdated_sdk_version"

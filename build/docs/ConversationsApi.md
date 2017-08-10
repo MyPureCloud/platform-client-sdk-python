@@ -80,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_chat_participant_replace**](ConversationsApi.html#post_conversations_chat_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_chats**](ConversationsApi.html#post_conversations_chats) | Create a web chat conversation|
 |[**post_conversations_cobrowsesession_participant_replace**](ConversationsApi.html#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_email_inboundmessages**](ConversationsApi.html#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
 |[**post_conversations_email_messages**](ConversationsApi.html#post_conversations_email_messages) | Send an email reply|
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
@@ -3459,6 +3460,53 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_conversations_email_inboundmessages"></a>
+
+## [**EmailConversation**](EmailConversation.html) post_conversations_email_inboundmessages(conversation_id, body)
+
+Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+
+
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.InboundMessageRequest() # InboundMessageRequest | Send external email reply
+
+try:
+    # Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+    api_response = api_instance.post_conversations_email_inboundmessages(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_email_inboundmessages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailConversation**](EmailConversation.html)
 
 <a name="post_conversations_email_messages"></a>
 

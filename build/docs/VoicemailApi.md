@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_voicemail_message_media**](VoicemailApi.html#get_voicemail_message_media) | Get media playback URI for this voicemail message|
 |[**get_voicemail_messages**](VoicemailApi.html#get_voicemail_messages) | List voicemail messages|
 |[**get_voicemail_policy**](VoicemailApi.html#get_voicemail_policy) | Get a policy|
+|[**get_voicemail_queue_messages**](VoicemailApi.html#get_voicemail_queue_messages) | List voicemail messages|
 |[**get_voicemail_search**](VoicemailApi.html#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
 |[**get_voicemail_userpolicy**](VoicemailApi.html#get_voicemail_userpolicy) | Get a user&#39;s voicemail policy|
 |[**patch_voicemail_group_policy**](VoicemailApi.html#patch_voicemail_group_policy) | Update a group&#39;s voicemail policy|
@@ -607,6 +608,55 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+
+<a name="get_voicemail_queue_messages"></a>
+
+## [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) get_voicemail_queue_messages(queue_id, page_size=page_size, page_number=page_number)
+
+List voicemail messages
+
+
+
+Wraps GET /api/v2/voicemail/queues/{queueId}/messages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.VoicemailApi()
+queue_id = 'queue_id_example' # str | Queue ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # List voicemail messages
+    api_response = api_instance.get_voicemail_queue_messages(queue_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling VoicemailApi->get_voicemail_queue_messages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
 
 <a name="get_voicemail_search"></a>
 

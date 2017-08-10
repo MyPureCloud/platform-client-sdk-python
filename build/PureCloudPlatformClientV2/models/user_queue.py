@@ -374,7 +374,7 @@ class UserQueue(object):
     def media_settings(self):
         """
         Gets the media_settings of this UserQueue.
-        The media settings for the queue.
+        The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
 
         :return: The media_settings of this UserQueue.
         :rtype: dict(str, MediaSetting)
@@ -385,7 +385,7 @@ class UserQueue(object):
     def media_settings(self, media_settings):
         """
         Sets the media_settings of this UserQueue.
-        The media settings for the queue.
+        The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
 
         :param media_settings: The media_settings of this UserQueue.
         :type: dict(str, MediaSetting)

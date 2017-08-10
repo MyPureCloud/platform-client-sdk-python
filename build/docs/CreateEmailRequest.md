@@ -7,7 +7,8 @@ title: CreateEmailRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **queue_id** | **str** | The ID of the queue to use for routing the chat conversation. | |
+| **queue_id** | **str** | The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId | [optional] |
+| **flow_id** | **str** | The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId | [optional] |
 | **provider** | **str** | The name of the provider that is sourcing the web chat. | |
 | **skill_ids** | **list[str]** | The list of skill ID&#39;s to use for routing. | [optional] |
 | **language_id** | **str** | The ID of the language to use for routing. | [optional] |

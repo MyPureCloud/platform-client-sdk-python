@@ -45,6 +45,7 @@ class VoicemailMessage(object):
             'audio_recording_size_bytes': 'int',
             'created_date': 'datetime',
             'modified_date': 'datetime',
+            'deleted_date': 'datetime',
             'caller_address': 'str',
             'caller_name': 'str',
             'caller_user': 'User',
@@ -55,7 +56,7 @@ class VoicemailMessage(object):
             'queue': 'Queue',
             'copied_from': 'VoicemailCopyRecord',
             'copied_to': 'list[VoicemailCopyRecord]',
-            'retention_policy': 'VoicemailRetentionPolicy',
+            'delete_retention_policy': 'VoicemailRetentionPolicy',
             'self_uri': 'str'
         }
 
@@ -67,6 +68,7 @@ class VoicemailMessage(object):
             'audio_recording_size_bytes': 'audioRecordingSizeBytes',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate',
+            'deleted_date': 'deletedDate',
             'caller_address': 'callerAddress',
             'caller_name': 'callerName',
             'caller_user': 'callerUser',
@@ -77,7 +79,7 @@ class VoicemailMessage(object):
             'queue': 'queue',
             'copied_from': 'copiedFrom',
             'copied_to': 'copiedTo',
-            'retention_policy': 'retentionPolicy',
+            'delete_retention_policy': 'deleteRetentionPolicy',
             'self_uri': 'selfUri'
         }
 
@@ -88,6 +90,7 @@ class VoicemailMessage(object):
         self._audio_recording_size_bytes = None
         self._created_date = None
         self._modified_date = None
+        self._deleted_date = None
         self._caller_address = None
         self._caller_name = None
         self._caller_user = None
@@ -98,7 +101,7 @@ class VoicemailMessage(object):
         self._queue = None
         self._copied_from = None
         self._copied_to = None
-        self._retention_policy = None
+        self._delete_retention_policy = None
         self._self_uri = None
 
     @property
@@ -261,6 +264,29 @@ class VoicemailMessage(object):
         """
         
         self._modified_date = modified_date
+
+    @property
+    def deleted_date(self):
+        """
+        Gets the deleted_date of this VoicemailMessage.
+        The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The deleted_date of this VoicemailMessage.
+        :rtype: datetime
+        """
+        return self._deleted_date
+
+    @deleted_date.setter
+    def deleted_date(self, deleted_date):
+        """
+        Sets the deleted_date of this VoicemailMessage.
+        The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param deleted_date: The deleted_date of this VoicemailMessage.
+        :type: datetime
+        """
+        
+        self._deleted_date = deleted_date
 
     @property
     def caller_address(self):
@@ -493,27 +519,27 @@ class VoicemailMessage(object):
         self._copied_to = copied_to
 
     @property
-    def retention_policy(self):
+    def delete_retention_policy(self):
         """
-        Gets the retention_policy of this VoicemailMessage.
-        The retention policy for this voicemail
+        Gets the delete_retention_policy of this VoicemailMessage.
+        The retention policy for this voicemail when deleted is set to true
 
-        :return: The retention_policy of this VoicemailMessage.
+        :return: The delete_retention_policy of this VoicemailMessage.
         :rtype: VoicemailRetentionPolicy
         """
-        return self._retention_policy
+        return self._delete_retention_policy
 
-    @retention_policy.setter
-    def retention_policy(self, retention_policy):
+    @delete_retention_policy.setter
+    def delete_retention_policy(self, delete_retention_policy):
         """
-        Sets the retention_policy of this VoicemailMessage.
-        The retention policy for this voicemail
+        Sets the delete_retention_policy of this VoicemailMessage.
+        The retention policy for this voicemail when deleted is set to true
 
-        :param retention_policy: The retention_policy of this VoicemailMessage.
+        :param delete_retention_policy: The delete_retention_policy of this VoicemailMessage.
         :type: VoicemailRetentionPolicy
         """
         
-        self._retention_policy = retention_policy
+        self._delete_retention_policy = delete_retention_policy
 
     @property
     def self_uri(self):

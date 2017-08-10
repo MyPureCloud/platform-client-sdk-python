@@ -39,6 +39,7 @@ class CreateEmailRequest(object):
         """
         self.swagger_types = {
             'queue_id': 'str',
+            'flow_id': 'str',
             'provider': 'str',
             'skill_ids': 'list[str]',
             'language_id': 'str',
@@ -54,6 +55,7 @@ class CreateEmailRequest(object):
 
         self.attribute_map = {
             'queue_id': 'queueId',
+            'flow_id': 'flowId',
             'provider': 'provider',
             'skill_ids': 'skillIds',
             'language_id': 'languageId',
@@ -68,6 +70,7 @@ class CreateEmailRequest(object):
         }
 
         self._queue_id = None
+        self._flow_id = None
         self._provider = None
         self._skill_ids = None
         self._language_id = None
@@ -84,7 +87,7 @@ class CreateEmailRequest(object):
     def queue_id(self):
         """
         Gets the queue_id of this CreateEmailRequest.
-        The ID of the queue to use for routing the chat conversation.
+        The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
 
         :return: The queue_id of this CreateEmailRequest.
         :rtype: str
@@ -95,13 +98,36 @@ class CreateEmailRequest(object):
     def queue_id(self, queue_id):
         """
         Sets the queue_id of this CreateEmailRequest.
-        The ID of the queue to use for routing the chat conversation.
+        The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
 
         :param queue_id: The queue_id of this CreateEmailRequest.
         :type: str
         """
         
         self._queue_id = queue_id
+
+    @property
+    def flow_id(self):
+        """
+        Gets the flow_id of this CreateEmailRequest.
+        The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+
+        :return: The flow_id of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._flow_id
+
+    @flow_id.setter
+    def flow_id(self, flow_id):
+        """
+        Sets the flow_id of this CreateEmailRequest.
+        The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+
+        :param flow_id: The flow_id of this CreateEmailRequest.
+        :type: str
+        """
+        
+        self._flow_id = flow_id
 
     @property
     def provider(self):

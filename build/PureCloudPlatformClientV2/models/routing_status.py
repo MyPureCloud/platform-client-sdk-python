@@ -80,7 +80,7 @@ class RoutingStatus(object):
     def status(self):
         """
         Gets the status of this RoutingStatus.
-        Indicates the Routing State of the agent.
+        Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.
 
         :return: The status of this RoutingStatus.
         :rtype: str
@@ -91,7 +91,7 @@ class RoutingStatus(object):
     def status(self, status):
         """
         Sets the status of this RoutingStatus.
-        Indicates the Routing State of the agent.
+        Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.
 
         :param status: The status of this RoutingStatus.
         :type: str

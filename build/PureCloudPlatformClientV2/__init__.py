@@ -499,6 +499,7 @@ from .models.import_status import ImportStatus
 from .models.import_status_notification import ImportStatusNotification
 from .models.inbound_domain import InboundDomain
 from .models.inbound_domain_entity_listing import InboundDomainEntityListing
+from .models.inbound_message_request import InboundMessageRequest
 from .models.inbound_route import InboundRoute
 from .models.inbound_route_entity_listing import InboundRouteEntityListing
 from .models.initiate_screen_recording import InitiateScreenRecording
@@ -949,6 +950,8 @@ from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
 from .models.wfm_historical_adherence_calculations_complete_notice_notification import WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
+from .models.wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
+from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.workspace import Workspace

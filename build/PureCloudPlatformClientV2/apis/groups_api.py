@@ -471,13 +471,14 @@ class GroupsApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param list[str] id: id
         :param str sort_order: Ascending or descending sort order
         :return: GroupEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_order']
+        all_params = ['page_size', 'page_number', 'id', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -500,6 +501,8 @@ class GroupsApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
 
