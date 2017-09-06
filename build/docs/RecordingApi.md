@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_recording**](RecordingApi.html#get_conversation_recording) | Gets a specific recording.|
 |[**get_conversation_recording_annotation**](RecordingApi.html#get_conversation_recording_annotation) | Get annotation|
 |[**get_conversation_recording_annotations**](RecordingApi.html#get_conversation_recording_annotations) | Get annotations for recording|
+|[**get_conversation_recordingmetadata**](RecordingApi.html#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media.|
+|[**get_conversation_recordingmetadata_recording_id**](RecordingApi.html#get_conversation_recordingmetadata_recording_id) | Get metadata for a specific recording. Does not return playable media.|
 |[**get_conversation_recordings**](RecordingApi.html#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
 |[**get_orphanrecording**](RecordingApi.html#get_orphanrecording) | Gets a single orphan recording|
 |[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
@@ -372,6 +374,98 @@ except ApiException as e:
 ### Return type
 
 [**list[Annotation]**](Annotation.html)
+
+<a name="get_conversation_recordingmetadata"></a>
+
+## [**list[Recording]**](Recording.html) get_conversation_recordingmetadata(conversation_id)
+
+Get recording metadata for a conversation. Does not return playable media.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+
+try:
+    # Get recording metadata for a conversation. Does not return playable media.
+    api_response = api_instance.get_conversation_recordingmetadata(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[Recording]**](Recording.html)
+
+<a name="get_conversation_recordingmetadata_recording_id"></a>
+
+## [**Recording**](Recording.html) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
+
+Get metadata for a specific recording. Does not return playable media.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+recording_id = 'recording_id_example' # str | Recording ID
+
+try:
+    # Get metadata for a specific recording. Does not return playable media.
+    api_response = api_instance.get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->get_conversation_recordingmetadata_recording_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **recording_id** | **str**| Recording ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Recording**](Recording.html)
 
 <a name="get_conversation_recordings"></a>
 

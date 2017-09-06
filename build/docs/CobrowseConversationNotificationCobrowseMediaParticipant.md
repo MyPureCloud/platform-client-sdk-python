@@ -33,6 +33,7 @@ title: CobrowseConversationNotificationCobrowseMediaParticipant
 | **external_organization** | [**CobrowseConversationNotificationUriReference**](CobrowseConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
+| **screen_recording_state** | **str** |  | [optional] |
 | **cobrowse_session_id** | **str** |  | [optional] |
 | **cobrowse_role** | **str** |  | [optional] |
 | **viewer_url** | **str** |  | [optional] |

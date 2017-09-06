@@ -41,7 +41,7 @@ class ManagementUnit(object):
             'id': 'str',
             'name': 'str',
             'start_day_of_week': 'str',
-            'timezone': 'str',
+            'time_zone': 'str',
             'version': 'int',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -51,7 +51,7 @@ class ManagementUnit(object):
             'id': 'id',
             'name': 'name',
             'start_day_of_week': 'startDayOfWeek',
-            'timezone': 'timezone',
+            'time_zone': 'timeZone',
             'version': 'version',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -60,7 +60,7 @@ class ManagementUnit(object):
         self._id = None
         self._name = None
         self._start_day_of_week = None
-        self._timezone = None
+        self._time_zone = None
         self._version = None
         self._date_modified = None
         self._self_uri = None
@@ -139,27 +139,27 @@ class ManagementUnit(object):
             self._start_day_of_week = start_day_of_week
 
     @property
-    def timezone(self):
+    def time_zone(self):
         """
-        Gets the timezone of this ManagementUnit.
+        Gets the time_zone of this ManagementUnit.
         The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
 
-        :return: The timezone of this ManagementUnit.
+        :return: The time_zone of this ManagementUnit.
         :rtype: str
         """
-        return self._timezone
+        return self._time_zone
 
-    @timezone.setter
-    def timezone(self, timezone):
+    @time_zone.setter
+    def time_zone(self, time_zone):
         """
-        Sets the timezone of this ManagementUnit.
+        Sets the time_zone of this ManagementUnit.
         The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
 
-        :param timezone: The timezone of this ManagementUnit.
+        :param time_zone: The time_zone of this ManagementUnit.
         :type: str
         """
         
-        self._timezone = timezone
+        self._time_zone = time_zone
 
     @property
     def version(self):

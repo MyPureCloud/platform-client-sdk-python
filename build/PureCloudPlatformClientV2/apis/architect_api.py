@@ -951,7 +951,7 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param str id: Consuming object ID (required)
         :param str version: Consuming object version (required)
-        :param str object_type: Consuming object type (required)
+        :param str object_type: Consuming object type.  Only versioned types are allowed here. (required)
         :param list[str] resource_type: Types of consumed resources to show
         :return: ConsumedResourcesEntityListing
                  If the method is called asynchronously,
@@ -1043,8 +1043,8 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str id: Consumed object ID (required)
-        :param str object_type: Consumed object type (only versioned object types are valid) (required)
-        :param list[str] resource_type: Types of consuming resources to show
+        :param str object_type: Consumed object type (required)
+        :param list[str] resource_type: Types of consuming resources to show.  Only versioned types are allowed here.
         :return: ConsumingResourcesEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1646,12 +1646,13 @@ class ArchitectApi(object):
         :param int page_size: Page size
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param str name: Name of the IVR to filter by.
         :return: IVREntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -1678,6 +1679,8 @@ class ArchitectApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
@@ -2219,12 +2222,13 @@ class ArchitectApi(object):
         :param int page_size: Page size
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param str name: Name of the Schedule Group to filter by.
         :return: ScheduleGroupEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -2251,6 +2255,8 @@ class ArchitectApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
@@ -2303,12 +2309,13 @@ class ArchitectApi(object):
         :param int page_size: Page size
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param str name: Name of the Schedule to filter by.
         :return: ScheduleEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -2335,6 +2342,8 @@ class ArchitectApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
@@ -2813,15 +2822,15 @@ class ArchitectApi(object):
         :param str history_id: History ID (generated history) (required)
         :param int page_number: Page number
         :param int page_size: Page size
-        :param str sort_by: Sort by
         :param str sort_order: Sort order
-        :param list[str] action: Flow actions
+        :param str sort_by: Sort by
+        :param list[str] action: Flow actions to include (omit to include all)
         :return: HistoryListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['flow_id', 'history_id', 'page_number', 'page_size', 'sort_by', 'sort_order', 'action']
+        all_params = ['flow_id', 'history_id', 'page_number', 'page_size', 'sort_order', 'sort_by', 'action']
         all_params.append('callback')
 
         params = locals()
@@ -2854,10 +2863,10 @@ class ArchitectApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
         if 'action' in params:
             query_params['action'] = params['action']
 

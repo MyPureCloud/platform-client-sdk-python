@@ -69,7 +69,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Add a new call to a conversation|
+|[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
 |[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](ConversationsApi.html#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
@@ -2949,7 +2949,7 @@ void (empty response body)
 
 ## [**Conversation**](Conversation.html) post_conversations_call(conversation_id, body)
 
-Add a new call to a conversation
+Place a new call as part of a callback conversation.
 
 
 
@@ -2972,7 +2972,7 @@ conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.CallCommand() # CallCommand | Conversation
 
 try:
-    # Add a new call to a conversation
+    # Place a new call as part of a callback conversation.
     api_response = api_instance.post_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:

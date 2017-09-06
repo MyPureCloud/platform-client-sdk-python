@@ -33,6 +33,7 @@ title: ChatConversationNotificationParticipants
 | **external_organization** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
+| **screen_recording_state** | **str** |  | [optional] |
 | **room_id** | **str** |  | [optional] |
 {: class="table table-striped"}
 

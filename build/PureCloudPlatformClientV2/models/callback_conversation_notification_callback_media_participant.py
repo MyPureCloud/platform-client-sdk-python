@@ -64,6 +64,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
             'external_organization': 'CallbackConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'outbound_preview': 'ConversationNotificationDialerPreview',
             'voicemail': 'ConversationNotificationVoicemail',
             'callback_numbers': 'list[str]',
@@ -101,6 +102,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -137,6 +139,7 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -755,6 +758,29 @@ class CallbackConversationNotificationCallbackMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this CallbackConversationNotificationCallbackMediaParticipant.
+
+
+        :return: The screen_recording_state of this CallbackConversationNotificationCallbackMediaParticipant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this CallbackConversationNotificationCallbackMediaParticipant.
+
+
+        :param screen_recording_state: The screen_recording_state of this CallbackConversationNotificationCallbackMediaParticipant.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def outbound_preview(self):

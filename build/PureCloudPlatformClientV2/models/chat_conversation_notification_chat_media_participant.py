@@ -64,6 +64,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
             'external_organization': 'ChatConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'room_id': 'str'
         }
 
@@ -94,6 +95,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'room_id': 'roomId'
         }
 
@@ -123,6 +125,7 @@ class ChatConversationNotificationChatMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._room_id = None
 
     @property
@@ -734,6 +737,29 @@ class ChatConversationNotificationChatMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this ChatConversationNotificationChatMediaParticipant.
+
+
+        :return: The screen_recording_state of this ChatConversationNotificationChatMediaParticipant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this ChatConversationNotificationChatMediaParticipant.
+
+
+        :param screen_recording_state: The screen_recording_state of this ChatConversationNotificationChatMediaParticipant.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def room_id(self):

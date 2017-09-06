@@ -33,9 +33,11 @@ title: EmailConversationNotificationEmailMediaParticipant
 | **external_organization** | [**EmailConversationNotificationUriReference**](EmailConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
+| **screen_recording_state** | **str** |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |
+| **message_id** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

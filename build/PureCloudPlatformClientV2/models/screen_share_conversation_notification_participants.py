@@ -64,6 +64,7 @@ class ScreenShareConversationNotificationParticipants(object):
             'external_organization': 'ScreenShareConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'context': 'str',
             'peer_count': 'int',
             'sharing': 'bool'
@@ -96,6 +97,7 @@ class ScreenShareConversationNotificationParticipants(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'context': 'context',
             'peer_count': 'peerCount',
             'sharing': 'sharing'
@@ -127,6 +129,7 @@ class ScreenShareConversationNotificationParticipants(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._context = None
         self._peer_count = None
         self._sharing = None
@@ -740,6 +743,29 @@ class ScreenShareConversationNotificationParticipants(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this ScreenShareConversationNotificationParticipants.
+
+
+        :return: The screen_recording_state of this ScreenShareConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this ScreenShareConversationNotificationParticipants.
+
+
+        :param screen_recording_state: The screen_recording_state of this ScreenShareConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def context(self):

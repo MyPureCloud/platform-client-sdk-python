@@ -64,6 +64,7 @@ class VideoConversationNotificationParticipants(object):
             'external_organization': 'VideoConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
@@ -98,6 +99,7 @@ class VideoConversationNotificationParticipants(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
@@ -131,6 +133,7 @@ class VideoConversationNotificationParticipants(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
@@ -746,6 +749,29 @@ class VideoConversationNotificationParticipants(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this VideoConversationNotificationParticipants.
+
+
+        :return: The screen_recording_state of this VideoConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this VideoConversationNotificationParticipants.
+
+
+        :param screen_recording_state: The screen_recording_state of this VideoConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def audio_muted(self):

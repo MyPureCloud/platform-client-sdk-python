@@ -52,6 +52,7 @@ class ConversationNotificationEmail(object):
             'start_hold_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
+            'message_id': 'str',
             'additional_properties': 'object'
         }
 
@@ -70,6 +71,7 @@ class ConversationNotificationEmail(object):
             'start_hold_time': 'startHoldTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
+            'message_id': 'messageId',
             'additional_properties': 'additionalProperties'
         }
 
@@ -87,6 +89,7 @@ class ConversationNotificationEmail(object):
         self._start_hold_time = None
         self._connected_time = None
         self._disconnected_time = None
+        self._message_id = None
         self._additional_properties = None
 
     @property
@@ -418,6 +421,29 @@ class ConversationNotificationEmail(object):
         """
         
         self._disconnected_time = disconnected_time
+
+    @property
+    def message_id(self):
+        """
+        Gets the message_id of this ConversationNotificationEmail.
+
+
+        :return: The message_id of this ConversationNotificationEmail.
+        :rtype: str
+        """
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        """
+        Sets the message_id of this ConversationNotificationEmail.
+
+
+        :param message_id: The message_id of this ConversationNotificationEmail.
+        :type: str
+        """
+        
+        self._message_id = message_id
 
     @property
     def additional_properties(self):

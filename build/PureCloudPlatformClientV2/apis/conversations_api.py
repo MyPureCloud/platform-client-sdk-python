@@ -5187,7 +5187,7 @@ class ConversationsApi(object):
 
     def post_conversations_call(self, conversation_id, body, **kwargs):
         """
-        Add a new call to a conversation
+        Place a new call as part of a callback conversation.
         
 
         This method makes a synchronous HTTP request by default. To make an

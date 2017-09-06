@@ -556,15 +556,14 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str selector: Selector
         :param int page_size: 
         :param int page_number: 
-        :return: list[ManagementUnit]
+        :return: ManagementUnitListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['selector', 'page_size', 'page_number']
+        all_params = ['page_size', 'page_number']
         all_params.append('callback')
 
         params = locals()
@@ -583,8 +582,6 @@ class WorkforceManagementApi(object):
         path_params = {}
 
         query_params = {}
-        if 'selector' in params:
-            query_params['selector'] = params['selector']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
@@ -617,7 +614,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[ManagementUnit]',
+                                            response_type='ManagementUnitListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

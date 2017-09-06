@@ -64,6 +64,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'external_organization': 'CallConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -104,6 +105,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -143,6 +145,7 @@ class CallConversationNotificationCallMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -764,6 +767,29 @@ class CallConversationNotificationCallMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this CallConversationNotificationCallMediaParticipant.
+
+
+        :return: The screen_recording_state of this CallConversationNotificationCallMediaParticipant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this CallConversationNotificationCallMediaParticipant.
+
+
+        :param screen_recording_state: The screen_recording_state of this CallConversationNotificationCallMediaParticipant.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def muted(self):

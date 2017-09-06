@@ -1,90 +1,260 @@
-Platform API version: 1410
+Platform API version: 1464
 
 
-# Major Changes (4 changes)
+# Major Changes (6 changes)
 
-**GET /api/v2/groups** (1 change)
+**GET /api/v2/workforcemanagement/managementunits** (2 changes)
 
-* Parameter id was added
+* Parameter selector was removed
+* Response 200 type was changed from ManagementUnit[] to ManagementUnitListing
 
-**VoicemailMessage** (1 change)
+**GET /api/v2/architect/ivrs** (1 change)
 
-* Property retentionPolicy was removed
+* Parameter name was added
 
-**Condition** (2 changes)
+**GET /api/v2/architect/schedules** (1 change)
 
-* Enum value LAST_RESULT_BY_COLUMN was removed from property propertyType
-* Enum value LAST_RESULT_OVERALL was removed from property propertyType
+* Parameter name was added
+
+**GET /api/v2/architect/schedulegroups** (1 change)
+
+* Parameter name was added
+
+**ManagementUnit** (1 change)
+
+* Property timezone was removed
 
 
-# Minor Changes (22 changes)
+# Minor Changes (71 changes)
 
-**/api/v2/voicemail/queues/{queueId}/messages** (2 changes)
+**/api/v2/outbound/contactlists** (1 change)
+
+* Operation delete was added. Summary: Delete multiple contact lists.
+
+**/api/v2/integrations/actions/{actionId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/integrations/actions/{actionId}/test** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/actions/{actionId}/schemas/{fileName}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/conversations/emails/{conversationId}/inboundmessages** (2 changes)
+**/api/v2/integrations/actions/{actionId}/templates/{fileName}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/{actionId}/execute** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery** (2 changes)
+**/api/v2/integrations/actions** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/conversations/{conversationId}/recordingmetadata** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/categories** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/{actionId}/draft** (5 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/{actionId}/draft/templates/{fileName}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/{actionId}/draft/publish** (2 changes)
 
 * Path was added
 * Operation POST was added
+
+**/api/v2/integrations/actions/{actionId}/draft/validation** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/actions/{actionId}/draft/test** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/actions/drafts** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/alerting/alerts/active** (2 changes)
+
+* Path was added
+* Operation GET was added
 
 **Flow** (1 change)
 
-* Enum value SURVEYINVITE was added to property type
+* Enum value INBOUNDSHORTMESSAGE was added to property type
 
-**VoicemailMessage** (2 changes)
-
-* Optional property deletedDate was added
-* Optional property deleteRetentionPolicy was added
-
-**Recording** (1 change)
-
-* Optional property users was added
-
-**Condition** (2 changes)
-
-* Enum value LAST_WRAPUP_BY_COLUMN was added to property propertyType
-* Enum value LAST_WRAPUP_OVERALL was added to property propertyType
-
-**Dependency** (2 changes)
-
-* Enum value EMAILROUTE was added to property type
-* Enum value SURVEYINVITEFLOW was added to property type
-
-**DependencyObject** (2 changes)
-
-* Enum value EMAILROUTE was added to property type
-* Enum value SURVEYINVITEFLOW was added to property type
-
-**EventLog** (1 change)
-
-* Enum value ENTITY_LIMIT was added to property category
-
-**EventMessage** (1 change)
-
-* Enum value APPROACHING_ENTITY_LIMIT was added to property code
-
-**InboundMessageRequest** (1 change)
+**Action** (1 change)
 
 * Model was added
 
-**CreateEmailRequest** (1 change)
-
-* Optional property flowId was added
-
-**WfmHistoricalAdherenceResponse** (1 change)
+**ActionConfig** (1 change)
 
 * Model was added
 
-**WfmHistoricalAdherenceQuery** (1 change)
+**ActionContract** (1 change)
+
+* Model was added
+
+**ActionInput** (1 change)
+
+* Model was added
+
+**ActionOutput** (1 change)
+
+* Model was added
+
+**RequestConfig** (1 change)
+
+* Model was added
+
+**ResponseConfig** (1 change)
+
+* Model was added
+
+**TestExecutionOperationResult** (1 change)
+
+* Model was added
+
+**TestExecutionResult** (1 change)
+
+* Model was added
+
+**UpdateActionInput** (1 change)
+
+* Model was added
+
+**ActionContractInput** (1 change)
+
+* Model was added
+
+**PostActionInput** (1 change)
+
+* Model was added
+
+**PostInputContract** (1 change)
+
+* Model was added
+
+**PostOutputContract** (1 change)
+
+* Model was added
+
+**ActionEntityListing** (1 change)
+
+* Model was added
+
+**InteractionStatsAlert** (1 change)
+
+* Enum value callback was added to property mediaType
+
+**Condition** (1 change)
+
+* Enum value IN was added to property operator
+
+**Dependency** (1 change)
+
+* Enum value INBOUNDSHORTMESSAGE was added to property type
+
+**ManagementUnit** (1 change)
+
+* Optional property timeZone was added
+
+**ManagementUnitListing** (1 change)
+
+* Model was added
+
+**InteractionStatsRule** (1 change)
+
+* Enum value callback was added to property mediaType
+
+**DependencyObject** (1 change)
+
+* Enum value INBOUNDSHORTMESSAGE was added to property type
+
+**Category** (1 change)
+
+* Model was added
+
+**CategoryEntityListing** (1 change)
+
+* Model was added
+
+**PublishDraftInput** (1 change)
+
+* Model was added
+
+**UpdateDraftInput** (1 change)
+
+* Model was added
+
+**DraftValidationResult** (1 change)
+
+* Model was added
+
+**ActiveAlertCount** (1 change)
 
 * Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (5 changes)
+
+**GET /api/v2/architect/dependencytracking/consumedresources** (1 change)
+
+* Description was changed for parameter objectType
+
+**GET /api/v2/architect/dependencytracking/consumingresources** (2 changes)
+
+* Description was changed for parameter objectType
+* Description was changed for parameter resourceType
+
+**POST /api/v2/conversations/calls/{conversationId}** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/flows/{flowId}/history/{historyId}** (1 change)
+
+* Description was changed for parameter action

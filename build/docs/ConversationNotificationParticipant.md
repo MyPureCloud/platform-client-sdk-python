@@ -25,6 +25,7 @@ title: ConversationNotificationParticipant
 | **wrapup_timeout_ms** | **int** |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **monitored_participant_id** | **str** |  | [optional] |
+| **screen_recording_state** | **str** |  | [optional] |
 | **attributes** | **dict(str, str)** |  | [optional] |
 | **calls** | [**list[ConversationNotificationCalls]**](ConversationNotificationCalls.html) |  | [optional] |
 | **callbacks** | [**list[ConversationNotificationCallbacks]**](ConversationNotificationCallbacks.html) |  | [optional] |

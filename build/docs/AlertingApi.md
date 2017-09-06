@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_alerting_interactionstats_alert**](AlertingApi.html#delete_alerting_interactionstats_alert) | Delete an interaction stats alert|
 |[**delete_alerting_interactionstats_rule**](AlertingApi.html#delete_alerting_interactionstats_rule) | Delete an interaction stats rule.|
+|[**get_alerting_alerts_active**](AlertingApi.html#get_alerting_alerts_active) | Gets active alert count for a user.|
 |[**get_alerting_interactionstats_alert**](AlertingApi.html#get_alerting_interactionstats_alert) | Get an interaction stats alert|
 |[**get_alerting_interactionstats_alerts**](AlertingApi.html#get_alerting_interactionstats_alerts) | Get interaction stats alert list.|
 |[**get_alerting_interactionstats_alerts_unread**](AlertingApi.html#get_alerting_interactionstats_alerts_unread) | Gets user unread count of interaction stats alerts.|
@@ -107,6 +108,47 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_alerting_alerts_active"></a>
+
+## [**ActiveAlertCount**](ActiveAlertCount.html) get_alerting_alerts_active()
+
+Gets active alert count for a user.
+
+
+
+Wraps GET /api/v2/alerting/alerts/active 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AlertingApi()
+
+try:
+    # Gets active alert count for a user.
+    api_response = api_instance.get_alerting_alerts_active()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AlertingApi->get_alerting_alerts_active: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**ActiveAlertCount**](ActiveAlertCount.html)
 
 <a name="get_alerting_interactionstats_alert"></a>
 

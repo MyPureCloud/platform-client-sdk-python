@@ -59,6 +59,7 @@ class ConversationNotificationCalls(object):
             'disconnected_time': 'datetime',
             'disconnect_reasons': 'list[ConversationNotificationDisconnectReasons]',
             'fax_status': 'ConversationNotificationFaxStatus',
+            'uui_data': 'str',
             'additional_properties': 'object'
         }
 
@@ -84,6 +85,7 @@ class ConversationNotificationCalls(object):
             'disconnected_time': 'disconnectedTime',
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
+            'uui_data': 'uuiData',
             'additional_properties': 'additionalProperties'
         }
 
@@ -108,6 +110,7 @@ class ConversationNotificationCalls(object):
         self._disconnected_time = None
         self._disconnect_reasons = None
         self._fax_status = None
+        self._uui_data = None
         self._additional_properties = None
 
     @property
@@ -608,6 +611,29 @@ class ConversationNotificationCalls(object):
         """
         
         self._fax_status = fax_status
+
+    @property
+    def uui_data(self):
+        """
+        Gets the uui_data of this ConversationNotificationCalls.
+
+
+        :return: The uui_data of this ConversationNotificationCalls.
+        :rtype: str
+        """
+        return self._uui_data
+
+    @uui_data.setter
+    def uui_data(self, uui_data):
+        """
+        Sets the uui_data of this ConversationNotificationCalls.
+
+
+        :param uui_data: The uui_data of this ConversationNotificationCalls.
+        :type: str
+        """
+        
+        self._uui_data = uui_data
 
     @property
     def additional_properties(self):

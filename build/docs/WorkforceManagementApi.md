@@ -306,7 +306,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunits"></a>
 
-## [**list[ManagementUnit]**](ManagementUnit.html) get_workforcemanagement_managementunits(selector=selector, page_size=page_size, page_number=page_number)
+## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number)
 
 Get management units
 
@@ -327,13 +327,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-selector = 'selector_example' # str | Selector (optional)
 page_size = 25 # int |  (optional) (default to 25)
 page_number = 1 # int |  (optional) (default to 1)
 
 try:
     # Get management units
-    api_response = api_instance.get_workforcemanagement_managementunits(selector=selector, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits: %s\n" % e
@@ -344,14 +343,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **selector** | **str**| Selector | [optional]  |
 | **page_size** | **int**|  | [optional] [default to 25] |
 | **page_number** | **int**|  | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**list[ManagementUnit]**](ManagementUnit.html)
+[**ManagementUnitListing**](ManagementUnitListing.html)
 
 <a name="get_workforcemanagement_timeoffrequest"></a>
 

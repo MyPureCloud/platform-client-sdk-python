@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlist_contact**](OutboundApi.html#delete_outbound_contactlist_contact) | Delete a contact.|
 |[**delete_outbound_contactlist_contacts**](OutboundApi.html#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
 |[**delete_outbound_contactlistfilter**](OutboundApi.html#delete_outbound_contactlistfilter) | Delete Contact List Filter|
+|[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
@@ -534,6 +535,50 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_filter_id** | **str**| Contact List Filter ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_contactlists"></a>
+
+##  delete_outbound_contactlists(id)
+
+Delete multiple contact lists.
+
+
+
+Wraps DELETE /api/v2/outbound/contactlists 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+id = ['id_example'] # list[str] | contact list id(s) to delete
+
+try:
+    # Delete multiple contact lists.
+    api_instance.delete_outbound_contactlists(id)
+except ApiException as e:
+    print "Exception when calling OutboundApi->delete_outbound_contactlists: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| contact list id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type

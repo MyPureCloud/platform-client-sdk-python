@@ -56,6 +56,7 @@ class ConversationNotificationParticipant(object):
             'wrapup_timeout_ms': 'int',
             'wrapup': 'ConversationNotificationWrapup',
             'monitored_participant_id': 'str',
+            'screen_recording_state': 'str',
             'attributes': 'dict(str, str)',
             'calls': 'list[ConversationNotificationCalls]',
             'callbacks': 'list[ConversationNotificationCallbacks]',
@@ -87,6 +88,7 @@ class ConversationNotificationParticipant(object):
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup': 'wrapup',
             'monitored_participant_id': 'monitoredParticipantId',
+            'screen_recording_state': 'screenRecordingState',
             'attributes': 'attributes',
             'calls': 'calls',
             'callbacks': 'callbacks',
@@ -117,6 +119,7 @@ class ConversationNotificationParticipant(object):
         self._wrapup_timeout_ms = None
         self._wrapup = None
         self._monitored_participant_id = None
+        self._screen_recording_state = None
         self._attributes = None
         self._calls = None
         self._callbacks = None
@@ -541,6 +544,33 @@ class ConversationNotificationParticipant(object):
         """
         
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this ConversationNotificationParticipant.
+
+
+        :return: The screen_recording_state of this ConversationNotificationParticipant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this ConversationNotificationParticipant.
+
+
+        :param screen_recording_state: The screen_recording_state of this ConversationNotificationParticipant.
+        :type: str
+        """
+        allowed_values = ["REQUESTED", "ACTIVE", "PAUSED", "STOPPED", "ERROR"]
+        if screen_recording_state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for screen_recording_state -> " + screen_recording_state
+            self._screen_recording_state = "outdated_sdk_version"
+        else:
+            self._screen_recording_state = screen_recording_state
 
     @property
     def attributes(self):

@@ -118,7 +118,7 @@ class AggregationQuery(object):
     def time_zone(self):
         """
         Gets the time_zone of this AggregationQuery.
-        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
+        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone of this AggregationQuery.
         :rtype: str
@@ -129,7 +129,7 @@ class AggregationQuery(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this AggregationQuery.
-        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
+        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone: The time_zone of this AggregationQuery.
         :type: str

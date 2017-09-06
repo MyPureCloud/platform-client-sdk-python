@@ -64,6 +64,7 @@ class SocialConversationNotificationParticipants(object):
             'external_organization': 'SocialConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'social_media_id': 'str',
             'social_media_hub': 'str',
             'social_user_name': 'str',
@@ -97,6 +98,7 @@ class SocialConversationNotificationParticipants(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'social_media_id': 'socialMediaId',
             'social_media_hub': 'socialMediaHub',
             'social_user_name': 'socialUserName',
@@ -129,6 +131,7 @@ class SocialConversationNotificationParticipants(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._social_media_id = None
         self._social_media_hub = None
         self._social_user_name = None
@@ -743,6 +746,29 @@ class SocialConversationNotificationParticipants(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this SocialConversationNotificationParticipants.
+
+
+        :return: The screen_recording_state of this SocialConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this SocialConversationNotificationParticipants.
+
+
+        :param screen_recording_state: The screen_recording_state of this SocialConversationNotificationParticipants.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def social_media_id(self):

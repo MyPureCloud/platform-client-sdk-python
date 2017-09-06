@@ -33,6 +33,7 @@ title: ScreenShareConversationNotificationScreenShareMediaParticipant
 | **external_organization** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
+| **screen_recording_state** | **str** |  | [optional] |
 | **context** | **str** |  | [optional] |
 | **peer_count** | **int** |  | [optional] |
 | **sharing** | **bool** |  | [optional] |

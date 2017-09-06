@@ -64,6 +64,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'external_organization': 'CobrowseConversationNotificationUriReference',
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
+            'screen_recording_state': 'str',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -98,6 +99,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'screen_recording_state': 'screenRecordingState',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -131,6 +133,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._screen_recording_state = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -746,6 +749,29 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def screen_recording_state(self):
+        """
+        Gets the screen_recording_state of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :return: The screen_recording_state of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :rtype: str
+        """
+        return self._screen_recording_state
+
+    @screen_recording_state.setter
+    def screen_recording_state(self, screen_recording_state):
+        """
+        Sets the screen_recording_state of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :param screen_recording_state: The screen_recording_state of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :type: str
+        """
+        
+        self._screen_recording_state = screen_recording_state
 
     @property
     def cobrowse_session_id(self):
