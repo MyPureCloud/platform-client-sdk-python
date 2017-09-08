@@ -38,14 +38,17 @@ class UserRoutingStatusNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'routing_status': 'UserRoutingStatusNotificationRoutingStatus'
+            'routing_status': 'UserRoutingStatusNotificationRoutingStatus',
+            'error_info': 'UserRoutingStatusNotificationErrorInfo'
         }
 
         self.attribute_map = {
-            'routing_status': 'routingStatus'
+            'routing_status': 'routingStatus',
+            'error_info': 'errorInfo'
         }
 
         self._routing_status = None
+        self._error_info = None
 
     @property
     def routing_status(self):
@@ -69,6 +72,29 @@ class UserRoutingStatusNotification(object):
         """
         
         self._routing_status = routing_status
+
+    @property
+    def error_info(self):
+        """
+        Gets the error_info of this UserRoutingStatusNotification.
+
+
+        :return: The error_info of this UserRoutingStatusNotification.
+        :rtype: UserRoutingStatusNotificationErrorInfo
+        """
+        return self._error_info
+
+    @error_info.setter
+    def error_info(self, error_info):
+        """
+        Sets the error_info of this UserRoutingStatusNotification.
+
+
+        :param error_info: The error_info of this UserRoutingStatusNotification.
+        :type: UserRoutingStatusNotificationErrorInfo
+        """
+        
+        self._error_info = error_info
 
     def to_dict(self):
         """

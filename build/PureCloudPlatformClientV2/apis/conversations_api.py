@@ -1366,7 +1366,7 @@ class ConversationsApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str interval: Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
-        :return: CallConversationEntityListing
+        :return: CallHistoryConversationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1424,7 +1424,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='CallConversationEntityListing',
+                                            response_type='CallHistoryConversationEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

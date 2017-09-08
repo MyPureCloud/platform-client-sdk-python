@@ -826,7 +826,7 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_calls_history"></a>
 
-## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
+## [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
 
 Get call history
 
@@ -871,7 +871,7 @@ except ApiException as e:
 
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html)
 
 <a name="get_conversations_calls_maximumconferenceparties"></a>
 
