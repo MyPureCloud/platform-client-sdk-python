@@ -6,6 +6,7 @@ from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
 from .attributes_api import AttributesApi
 from .authorization_api import AuthorizationApi
+from .billing_api import BillingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .external_contacts_api import ExternalContactsApi
@@ -18,6 +19,7 @@ from .integrations_api import IntegrationsApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
+from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
 from .organization_api import OrganizationApi

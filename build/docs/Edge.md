@@ -9,15 +9,15 @@ title: Edge
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the entity. | |
-| **description** | **str** |  | [optional] |
-| **version** | **int** |  | [optional] |
-| **date_created** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **date_modified** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **modified_by** | **str** |  | [optional] |
-| **created_by** | **str** |  | [optional] |
-| **state** | **str** |  | [optional] |
-| **modified_by_app** | **str** |  | [optional] |
-| **created_by_app** | **str** |  | [optional] |
+| **description** | **str** | The resource&#39;s description. | [optional] |
+| **version** | **int** | The current version of the resource. | [optional] |
+| **date_created** | **datetime** | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_modified** | **datetime** | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **modified_by** | **str** | The ID of the user that last modified the resource. | [optional] |
+| **created_by** | **str** | The ID of the user that created the resource. | [optional] |
+| **state** | **str** | Indicates if the resource is active, inactive, or deleted. | [optional] |
+| **modified_by_app** | **str** | The application that last modified the resource. | [optional] |
+| **created_by_app** | **str** | The application that created the resource. | [optional] |
 | **interfaces** | [**list[EdgeInterface]**](EdgeInterface.html) | The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead | [optional] |
 | **make** | **str** |  | [optional] |
 | **model** | **str** |  | [optional] |
@@ -33,7 +33,7 @@ title: Edge
 | **current_version** | **str** |  | [optional] |
 | **staged_version** | **str** |  | [optional] |
 | **patch** | **str** |  | [optional] |
-| **status_code** | **str** |  | [optional] |
+| **status_code** | **str** | The current status of the Edge. | [optional] |
 | **edge_group** | [**EdgeGroup**](EdgeGroup.html) |  | [optional] |
 | **site** | [**Site**](Site.html) | The Site to which the Edge is assigned. | [optional] |
 | **software_status** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html) |  | [optional] |

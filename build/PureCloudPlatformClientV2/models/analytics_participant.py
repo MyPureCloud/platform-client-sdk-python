@@ -69,7 +69,7 @@ class AnalyticsParticipant(object):
     def participant_id(self):
         """
         Gets the participant_id of this AnalyticsParticipant.
-
+        Unique identifier for the participant
 
         :return: The participant_id of this AnalyticsParticipant.
         :rtype: str
@@ -80,7 +80,7 @@ class AnalyticsParticipant(object):
     def participant_id(self, participant_id):
         """
         Sets the participant_id of this AnalyticsParticipant.
-
+        Unique identifier for the participant
 
         :param participant_id: The participant_id of this AnalyticsParticipant.
         :type: str
@@ -92,7 +92,7 @@ class AnalyticsParticipant(object):
     def participant_name(self):
         """
         Gets the participant_name of this AnalyticsParticipant.
-
+        A human readable name identifying the participant
 
         :return: The participant_name of this AnalyticsParticipant.
         :rtype: str
@@ -103,7 +103,7 @@ class AnalyticsParticipant(object):
     def participant_name(self, participant_name):
         """
         Sets the participant_name of this AnalyticsParticipant.
-
+        A human readable name identifying the participant
 
         :param participant_name: The participant_name of this AnalyticsParticipant.
         :type: str
@@ -115,7 +115,7 @@ class AnalyticsParticipant(object):
     def user_id(self):
         """
         Gets the user_id of this AnalyticsParticipant.
-
+        If a user, then this will be the unique identifier for the user
 
         :return: The user_id of this AnalyticsParticipant.
         :rtype: str
@@ -126,7 +126,7 @@ class AnalyticsParticipant(object):
     def user_id(self, user_id):
         """
         Sets the user_id of this AnalyticsParticipant.
-
+        If a user, then this will be the unique identifier for the user
 
         :param user_id: The user_id of this AnalyticsParticipant.
         :type: str
@@ -138,7 +138,7 @@ class AnalyticsParticipant(object):
     def purpose(self):
         """
         Gets the purpose of this AnalyticsParticipant.
-
+        The participant's purpose
 
         :return: The purpose of this AnalyticsParticipant.
         :rtype: str
@@ -149,7 +149,7 @@ class AnalyticsParticipant(object):
     def purpose(self, purpose):
         """
         Sets the purpose of this AnalyticsParticipant.
-
+        The participant's purpose
 
         :param purpose: The purpose of this AnalyticsParticipant.
         :type: str
@@ -165,7 +165,7 @@ class AnalyticsParticipant(object):
     def external_contact_id(self):
         """
         Gets the external_contact_id of this AnalyticsParticipant.
-
+        External Contact Identifier
 
         :return: The external_contact_id of this AnalyticsParticipant.
         :rtype: str
@@ -176,7 +176,7 @@ class AnalyticsParticipant(object):
     def external_contact_id(self, external_contact_id):
         """
         Sets the external_contact_id of this AnalyticsParticipant.
-
+        External Contact Identifier
 
         :param external_contact_id: The external_contact_id of this AnalyticsParticipant.
         :type: str
@@ -188,7 +188,7 @@ class AnalyticsParticipant(object):
     def external_organization_id(self):
         """
         Gets the external_organization_id of this AnalyticsParticipant.
-
+        External Organization Identifier
 
         :return: The external_organization_id of this AnalyticsParticipant.
         :rtype: str
@@ -199,7 +199,7 @@ class AnalyticsParticipant(object):
     def external_organization_id(self, external_organization_id):
         """
         Sets the external_organization_id of this AnalyticsParticipant.
-
+        External Organization Identifier
 
         :param external_organization_id: The external_organization_id of this AnalyticsParticipant.
         :type: str
@@ -211,7 +211,7 @@ class AnalyticsParticipant(object):
     def sessions(self):
         """
         Gets the sessions of this AnalyticsParticipant.
-
+        List of sessions associated to this participant
 
         :return: The sessions of this AnalyticsParticipant.
         :rtype: list[AnalyticsSession]
@@ -222,7 +222,7 @@ class AnalyticsParticipant(object):
     def sessions(self, sessions):
         """
         Sets the sessions of this AnalyticsParticipant.
-
+        List of sessions associated to this participant
 
         :param sessions: The sessions of this AnalyticsParticipant.
         :type: list[AnalyticsSession]

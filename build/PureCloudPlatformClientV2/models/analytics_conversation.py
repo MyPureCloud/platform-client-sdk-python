@@ -63,7 +63,7 @@ class AnalyticsConversation(object):
     def conversation_id(self):
         """
         Gets the conversation_id of this AnalyticsConversation.
-
+        Unique identifier for the conversation
 
         :return: The conversation_id of this AnalyticsConversation.
         :rtype: str
@@ -74,7 +74,7 @@ class AnalyticsConversation(object):
     def conversation_id(self, conversation_id):
         """
         Sets the conversation_id of this AnalyticsConversation.
-
+        Unique identifier for the conversation
 
         :param conversation_id: The conversation_id of this AnalyticsConversation.
         :type: str
@@ -86,7 +86,7 @@ class AnalyticsConversation(object):
     def conversation_start(self):
         """
         Gets the conversation_start of this AnalyticsConversation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The conversation_start of this AnalyticsConversation.
         :rtype: datetime
@@ -97,7 +97,7 @@ class AnalyticsConversation(object):
     def conversation_start(self, conversation_start):
         """
         Sets the conversation_start of this AnalyticsConversation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param conversation_start: The conversation_start of this AnalyticsConversation.
         :type: datetime
@@ -109,7 +109,7 @@ class AnalyticsConversation(object):
     def conversation_end(self):
         """
         Gets the conversation_end of this AnalyticsConversation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The conversation_end of this AnalyticsConversation.
         :rtype: datetime
@@ -120,7 +120,7 @@ class AnalyticsConversation(object):
     def conversation_end(self, conversation_end):
         """
         Sets the conversation_end of this AnalyticsConversation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param conversation_end: The conversation_end of this AnalyticsConversation.
         :type: datetime
@@ -132,7 +132,7 @@ class AnalyticsConversation(object):
     def participants(self):
         """
         Gets the participants of this AnalyticsConversation.
-
+        Participants in the conversation
 
         :return: The participants of this AnalyticsConversation.
         :rtype: list[AnalyticsParticipant]
@@ -143,7 +143,7 @@ class AnalyticsConversation(object):
     def participants(self, participants):
         """
         Sets the participants of this AnalyticsConversation.
-
+        Participants in the conversation
 
         :param participants: The participants of this AnalyticsConversation.
         :type: list[AnalyticsParticipant]
@@ -155,7 +155,7 @@ class AnalyticsConversation(object):
     def evaluations(self):
         """
         Gets the evaluations of this AnalyticsConversation.
-
+        Evaluations tied to this conersation
 
         :return: The evaluations of this AnalyticsConversation.
         :rtype: list[AnalyticsEvaluation]
@@ -166,7 +166,7 @@ class AnalyticsConversation(object):
     def evaluations(self, evaluations):
         """
         Sets the evaluations of this AnalyticsConversation.
-
+        Evaluations tied to this conersation
 
         :param evaluations: The evaluations of this AnalyticsConversation.
         :type: list[AnalyticsEvaluation]

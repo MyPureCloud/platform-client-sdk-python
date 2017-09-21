@@ -116,7 +116,7 @@ class ScheduleGroup(object):
     def name(self):
         """
         Gets the name of this ScheduleGroup.
-
+        The name of the entity.
 
         :return: The name of this ScheduleGroup.
         :rtype: str
@@ -127,7 +127,7 @@ class ScheduleGroup(object):
     def name(self, name):
         """
         Sets the name of this ScheduleGroup.
-
+        The name of the entity.
 
         :param name: The name of this ScheduleGroup.
         :type: str
@@ -139,7 +139,7 @@ class ScheduleGroup(object):
     def description(self):
         """
         Gets the description of this ScheduleGroup.
-
+        The resource's description.
 
         :return: The description of this ScheduleGroup.
         :rtype: str
@@ -150,7 +150,7 @@ class ScheduleGroup(object):
     def description(self, description):
         """
         Sets the description of this ScheduleGroup.
-
+        The resource's description.
 
         :param description: The description of this ScheduleGroup.
         :type: str
@@ -162,7 +162,7 @@ class ScheduleGroup(object):
     def version(self):
         """
         Gets the version of this ScheduleGroup.
-
+        The current version of the resource.
 
         :return: The version of this ScheduleGroup.
         :rtype: int
@@ -173,7 +173,7 @@ class ScheduleGroup(object):
     def version(self, version):
         """
         Sets the version of this ScheduleGroup.
-
+        The current version of the resource.
 
         :param version: The version of this ScheduleGroup.
         :type: int
@@ -185,7 +185,7 @@ class ScheduleGroup(object):
     def date_created(self):
         """
         Gets the date_created of this ScheduleGroup.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_created of this ScheduleGroup.
         :rtype: datetime
@@ -196,7 +196,7 @@ class ScheduleGroup(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this ScheduleGroup.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_created: The date_created of this ScheduleGroup.
         :type: datetime
@@ -208,7 +208,7 @@ class ScheduleGroup(object):
     def date_modified(self):
         """
         Gets the date_modified of this ScheduleGroup.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this ScheduleGroup.
         :rtype: datetime
@@ -219,7 +219,7 @@ class ScheduleGroup(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ScheduleGroup.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this ScheduleGroup.
         :type: datetime
@@ -231,7 +231,7 @@ class ScheduleGroup(object):
     def modified_by(self):
         """
         Gets the modified_by of this ScheduleGroup.
-
+        The ID of the user that last modified the resource.
 
         :return: The modified_by of this ScheduleGroup.
         :rtype: str
@@ -242,7 +242,7 @@ class ScheduleGroup(object):
     def modified_by(self, modified_by):
         """
         Sets the modified_by of this ScheduleGroup.
-
+        The ID of the user that last modified the resource.
 
         :param modified_by: The modified_by of this ScheduleGroup.
         :type: str
@@ -254,7 +254,7 @@ class ScheduleGroup(object):
     def created_by(self):
         """
         Gets the created_by of this ScheduleGroup.
-
+        The ID of the user that created the resource.
 
         :return: The created_by of this ScheduleGroup.
         :rtype: str
@@ -265,7 +265,7 @@ class ScheduleGroup(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this ScheduleGroup.
-
+        The ID of the user that created the resource.
 
         :param created_by: The created_by of this ScheduleGroup.
         :type: str
@@ -277,7 +277,7 @@ class ScheduleGroup(object):
     def state(self):
         """
         Gets the state of this ScheduleGroup.
-
+        Indicates if the resource is active, inactive, or deleted.
 
         :return: The state of this ScheduleGroup.
         :rtype: str
@@ -288,7 +288,7 @@ class ScheduleGroup(object):
     def state(self, state):
         """
         Sets the state of this ScheduleGroup.
-
+        Indicates if the resource is active, inactive, or deleted.
 
         :param state: The state of this ScheduleGroup.
         :type: str
@@ -304,7 +304,7 @@ class ScheduleGroup(object):
     def modified_by_app(self):
         """
         Gets the modified_by_app of this ScheduleGroup.
-
+        The application that last modified the resource.
 
         :return: The modified_by_app of this ScheduleGroup.
         :rtype: str
@@ -315,7 +315,7 @@ class ScheduleGroup(object):
     def modified_by_app(self, modified_by_app):
         """
         Sets the modified_by_app of this ScheduleGroup.
-
+        The application that last modified the resource.
 
         :param modified_by_app: The modified_by_app of this ScheduleGroup.
         :type: str
@@ -327,7 +327,7 @@ class ScheduleGroup(object):
     def created_by_app(self):
         """
         Gets the created_by_app of this ScheduleGroup.
-
+        The application that created the resource.
 
         :return: The created_by_app of this ScheduleGroup.
         :rtype: str
@@ -338,7 +338,7 @@ class ScheduleGroup(object):
     def created_by_app(self, created_by_app):
         """
         Sets the created_by_app of this ScheduleGroup.
-
+        The application that created the resource.
 
         :param created_by_app: The created_by_app of this ScheduleGroup.
         :type: str

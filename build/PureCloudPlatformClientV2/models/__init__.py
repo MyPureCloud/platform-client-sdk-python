@@ -72,6 +72,9 @@ from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .billing_usage import BillingUsage
+from .billing_usage_report import BillingUsageReport
+from .billing_usage_resource import BillingUsageResource
 from .bullseye import Bullseye
 from .calibration import Calibration
 from .calibration_assignment import CalibrationAssignment
@@ -321,6 +324,7 @@ from .dialer_event_entity_listing import DialerEventEntityListing
 from .dialer_preview import DialerPreview
 from .dialer_rule import DialerRule
 from .digit_length import DigitLength
+from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disconnect_reason import DisconnectReason
 from .dnc_list import DncList
 from .dnc_list_create import DncListCreate
@@ -638,6 +642,7 @@ from .outbound_route import OutboundRoute
 from .outbound_route_base import OutboundRouteBase
 from .outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
 from .outbound_route_entity_listing import OutboundRouteEntityListing
+from .outbound_settings import OutboundSettings
 from .pin_configuration import PINConfiguration
 from .page import Page
 from .paging_spec import PagingSpec
@@ -910,6 +915,7 @@ from .user_conversation_summary_notification_call_contact_center import UserConv
 from .user_conversation_summary_notification_media_summary import UserConversationSummaryNotificationMediaSummary
 from .user_conversation_summary_notification_media_summary_detail import UserConversationSummaryNotificationMediaSummaryDetail
 from .user_details_query import UserDetailsQuery
+from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing
 from .user_image import UserImage
 from .user_list_schedule_request_body import UserListScheduleRequestBody

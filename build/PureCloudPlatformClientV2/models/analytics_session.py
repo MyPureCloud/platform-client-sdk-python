@@ -144,7 +144,7 @@ class AnalyticsSession(object):
     def media_type(self):
         """
         Gets the media_type of this AnalyticsSession.
-
+        The session media type
 
         :return: The media_type of this AnalyticsSession.
         :rtype: str
@@ -155,7 +155,7 @@ class AnalyticsSession(object):
     def media_type(self, media_type):
         """
         Sets the media_type of this AnalyticsSession.
-
+        The session media type
 
         :param media_type: The media_type of this AnalyticsSession.
         :type: str
@@ -171,7 +171,7 @@ class AnalyticsSession(object):
     def session_id(self):
         """
         Gets the session_id of this AnalyticsSession.
-
+        The unique identifier of this session
 
         :return: The session_id of this AnalyticsSession.
         :rtype: str
@@ -182,7 +182,7 @@ class AnalyticsSession(object):
     def session_id(self, session_id):
         """
         Sets the session_id of this AnalyticsSession.
-
+        The unique identifier of this session
 
         :param session_id: The session_id of this AnalyticsSession.
         :type: str
@@ -240,7 +240,7 @@ class AnalyticsSession(object):
     def ani(self):
         """
         Gets the ani of this AnalyticsSession.
-
+        Automatic Number Identification (caller's number)
 
         :return: The ani of this AnalyticsSession.
         :rtype: str
@@ -251,7 +251,7 @@ class AnalyticsSession(object):
     def ani(self, ani):
         """
         Sets the ani of this AnalyticsSession.
-
+        Automatic Number Identification (caller's number)
 
         :param ani: The ani of this AnalyticsSession.
         :type: str
@@ -263,7 +263,7 @@ class AnalyticsSession(object):
     def direction(self):
         """
         Gets the direction of this AnalyticsSession.
-
+        Direction
 
         :return: The direction of this AnalyticsSession.
         :rtype: str
@@ -274,7 +274,7 @@ class AnalyticsSession(object):
     def direction(self, direction):
         """
         Sets the direction of this AnalyticsSession.
-
+        Direction
 
         :param direction: The direction of this AnalyticsSession.
         :type: str
@@ -290,7 +290,7 @@ class AnalyticsSession(object):
     def dnis(self):
         """
         Gets the dnis of this AnalyticsSession.
-
+        Automatic Number Identification (caller's number)
 
         :return: The dnis of this AnalyticsSession.
         :rtype: str
@@ -301,7 +301,7 @@ class AnalyticsSession(object):
     def dnis(self, dnis):
         """
         Sets the dnis of this AnalyticsSession.
-
+        Automatic Number Identification (caller's number)
 
         :param dnis: The dnis of this AnalyticsSession.
         :type: str
@@ -313,7 +313,7 @@ class AnalyticsSession(object):
     def outbound_campaign_id(self):
         """
         Gets the outbound_campaign_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the outbound campaign
 
         :return: The outbound_campaign_id of this AnalyticsSession.
         :rtype: str
@@ -324,7 +324,7 @@ class AnalyticsSession(object):
     def outbound_campaign_id(self, outbound_campaign_id):
         """
         Sets the outbound_campaign_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the outbound campaign
 
         :param outbound_campaign_id: The outbound_campaign_id of this AnalyticsSession.
         :type: str
@@ -336,7 +336,7 @@ class AnalyticsSession(object):
     def outbound_contact_id(self):
         """
         Gets the outbound_contact_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact
 
         :return: The outbound_contact_id of this AnalyticsSession.
         :rtype: str
@@ -347,7 +347,7 @@ class AnalyticsSession(object):
     def outbound_contact_id(self, outbound_contact_id):
         """
         Sets the outbound_contact_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact
 
         :param outbound_contact_id: The outbound_contact_id of this AnalyticsSession.
         :type: str
@@ -359,7 +359,7 @@ class AnalyticsSession(object):
     def outbound_contact_list_id(self):
         """
         Gets the outbound_contact_list_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact list that this contact belongs to
 
         :return: The outbound_contact_list_id of this AnalyticsSession.
         :rtype: str
@@ -370,7 +370,7 @@ class AnalyticsSession(object):
     def outbound_contact_list_id(self, outbound_contact_list_id):
         """
         Sets the outbound_contact_list_id of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact list that this contact belongs to
 
         :param outbound_contact_list_id: The outbound_contact_list_id of this AnalyticsSession.
         :type: str
@@ -382,7 +382,7 @@ class AnalyticsSession(object):
     def disposition_analyzer(self):
         """
         Gets the disposition_analyzer of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact list that this contact belongs to
 
         :return: The disposition_analyzer of this AnalyticsSession.
         :rtype: str
@@ -393,7 +393,7 @@ class AnalyticsSession(object):
     def disposition_analyzer(self, disposition_analyzer):
         """
         Sets the disposition_analyzer of this AnalyticsSession.
-
+        (Dialer) Unique identifier of the contact list that this contact belongs to
 
         :param disposition_analyzer: The disposition_analyzer of this AnalyticsSession.
         :type: str
@@ -405,7 +405,7 @@ class AnalyticsSession(object):
     def disposition_name(self):
         """
         Gets the disposition_name of this AnalyticsSession.
-
+        (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
 
         :return: The disposition_name of this AnalyticsSession.
         :rtype: str
@@ -416,19 +416,23 @@ class AnalyticsSession(object):
     def disposition_name(self, disposition_name):
         """
         Sets the disposition_name of this AnalyticsSession.
-
+        (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
 
         :param disposition_name: The disposition_name of this AnalyticsSession.
         :type: str
         """
-        
-        self._disposition_name = disposition_name
+        allowed_values = ["disconnect", "person", "busy", "machine", "noanswer", "fax", "sit"]
+        if disposition_name.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for disposition_name -> " + disposition_name
+            self._disposition_name = "outdated_sdk_version"
+        else:
+            self._disposition_name = disposition_name
 
     @property
     def edge_id(self):
         """
         Gets the edge_id of this AnalyticsSession.
-
+        Unique identifier of the edge device
 
         :return: The edge_id of this AnalyticsSession.
         :rtype: str
@@ -439,7 +443,7 @@ class AnalyticsSession(object):
     def edge_id(self, edge_id):
         """
         Sets the edge_id of this AnalyticsSession.
-
+        Unique identifier of the edge device
 
         :param edge_id: The edge_id of this AnalyticsSession.
         :type: str
@@ -474,7 +478,7 @@ class AnalyticsSession(object):
     def room_id(self):
         """
         Gets the room_id of this AnalyticsSession.
-
+        Unique identifier for the room
 
         :return: The room_id of this AnalyticsSession.
         :rtype: str
@@ -485,7 +489,7 @@ class AnalyticsSession(object):
     def room_id(self, room_id):
         """
         Sets the room_id of this AnalyticsSession.
-
+        Unique identifier for the room
 
         :param room_id: The room_id of this AnalyticsSession.
         :type: str
@@ -497,7 +501,7 @@ class AnalyticsSession(object):
     def monitored_session_id(self):
         """
         Gets the monitored_session_id of this AnalyticsSession.
-
+        The sessionID being monitored
 
         :return: The monitored_session_id of this AnalyticsSession.
         :rtype: str
@@ -508,7 +512,7 @@ class AnalyticsSession(object):
     def monitored_session_id(self, monitored_session_id):
         """
         Sets the monitored_session_id of this AnalyticsSession.
-
+        The sessionID being monitored
 
         :param monitored_session_id: The monitored_session_id of this AnalyticsSession.
         :type: str
@@ -543,7 +547,7 @@ class AnalyticsSession(object):
     def callback_user_name(self):
         """
         Gets the callback_user_name of this AnalyticsSession.
-
+        The name of the user requesting a call back
 
         :return: The callback_user_name of this AnalyticsSession.
         :rtype: str
@@ -554,7 +558,7 @@ class AnalyticsSession(object):
     def callback_user_name(self, callback_user_name):
         """
         Sets the callback_user_name of this AnalyticsSession.
-
+        The name of the user requesting a call back
 
         :param callback_user_name: The callback_user_name of this AnalyticsSession.
         :type: str
@@ -566,7 +570,7 @@ class AnalyticsSession(object):
     def callback_numbers(self):
         """
         Gets the callback_numbers of this AnalyticsSession.
-
+        List of numbers to callback
 
         :return: The callback_numbers of this AnalyticsSession.
         :rtype: list[str]
@@ -577,7 +581,7 @@ class AnalyticsSession(object):
     def callback_numbers(self, callback_numbers):
         """
         Sets the callback_numbers of this AnalyticsSession.
-
+        List of numbers to callback
 
         :param callback_numbers: The callback_numbers of this AnalyticsSession.
         :type: list[str]
@@ -589,7 +593,7 @@ class AnalyticsSession(object):
     def callback_scheduled_time(self):
         """
         Gets the callback_scheduled_time of this AnalyticsSession.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The callback_scheduled_time of this AnalyticsSession.
         :rtype: datetime
@@ -600,7 +604,7 @@ class AnalyticsSession(object):
     def callback_scheduled_time(self, callback_scheduled_time):
         """
         Sets the callback_scheduled_time of this AnalyticsSession.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param callback_scheduled_time: The callback_scheduled_time of this AnalyticsSession.
         :type: datetime
@@ -612,7 +616,7 @@ class AnalyticsSession(object):
     def script_id(self):
         """
         Gets the script_id of this AnalyticsSession.
-
+        Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
 
         :return: The script_id of this AnalyticsSession.
         :rtype: str
@@ -623,7 +627,7 @@ class AnalyticsSession(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this AnalyticsSession.
-
+        Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
 
         :param script_id: The script_id of this AnalyticsSession.
         :type: str
@@ -635,7 +639,7 @@ class AnalyticsSession(object):
     def skip_enabled(self):
         """
         Gets the skip_enabled of this AnalyticsSession.
-
+        (Dialer) Whether the agent can skip the dialer contact
 
         :return: The skip_enabled of this AnalyticsSession.
         :rtype: bool
@@ -646,7 +650,7 @@ class AnalyticsSession(object):
     def skip_enabled(self, skip_enabled):
         """
         Sets the skip_enabled of this AnalyticsSession.
-
+        (Dialer) Whether the agent can skip the dialer contact
 
         :param skip_enabled: The skip_enabled of this AnalyticsSession.
         :type: bool
@@ -658,7 +662,7 @@ class AnalyticsSession(object):
     def timeout_seconds(self):
         """
         Gets the timeout_seconds of this AnalyticsSession.
-
+        The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling
 
         :return: The timeout_seconds of this AnalyticsSession.
         :rtype: int
@@ -669,7 +673,7 @@ class AnalyticsSession(object):
     def timeout_seconds(self, timeout_seconds):
         """
         Sets the timeout_seconds of this AnalyticsSession.
-
+        The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling
 
         :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
         :type: int
@@ -681,7 +685,7 @@ class AnalyticsSession(object):
     def cobrowse_role(self):
         """
         Gets the cobrowse_role of this AnalyticsSession.
-
+        Describe side of the cobrowse (sharer or viewer)
 
         :return: The cobrowse_role of this AnalyticsSession.
         :rtype: str
@@ -692,7 +696,7 @@ class AnalyticsSession(object):
     def cobrowse_role(self, cobrowse_role):
         """
         Sets the cobrowse_role of this AnalyticsSession.
-
+        Describe side of the cobrowse (sharer or viewer)
 
         :param cobrowse_role: The cobrowse_role of this AnalyticsSession.
         :type: str
@@ -704,7 +708,7 @@ class AnalyticsSession(object):
     def cobrowse_room_id(self):
         """
         Gets the cobrowse_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud Cobrowse room.
 
         :return: The cobrowse_room_id of this AnalyticsSession.
         :rtype: str
@@ -715,7 +719,7 @@ class AnalyticsSession(object):
     def cobrowse_room_id(self, cobrowse_room_id):
         """
         Sets the cobrowse_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud Cobrowse room.
 
         :param cobrowse_room_id: The cobrowse_room_id of this AnalyticsSession.
         :type: str
@@ -750,7 +754,7 @@ class AnalyticsSession(object):
     def screen_share_address_self(self):
         """
         Gets the screen_share_address_self of this AnalyticsSession.
-
+        Direct ScreenShare address
 
         :return: The screen_share_address_self of this AnalyticsSession.
         :rtype: str
@@ -761,7 +765,7 @@ class AnalyticsSession(object):
     def screen_share_address_self(self, screen_share_address_self):
         """
         Sets the screen_share_address_self of this AnalyticsSession.
-
+        Direct ScreenShare address
 
         :param screen_share_address_self: The screen_share_address_self of this AnalyticsSession.
         :type: str
@@ -773,7 +777,7 @@ class AnalyticsSession(object):
     def sharing_screen(self):
         """
         Gets the sharing_screen of this AnalyticsSession.
-
+        Flag determining if screenShare is started or not (true/false)
 
         :return: The sharing_screen of this AnalyticsSession.
         :rtype: bool
@@ -784,7 +788,7 @@ class AnalyticsSession(object):
     def sharing_screen(self, sharing_screen):
         """
         Sets the sharing_screen of this AnalyticsSession.
-
+        Flag determining if screenShare is started or not (true/false)
 
         :param sharing_screen: The sharing_screen of this AnalyticsSession.
         :type: bool
@@ -796,7 +800,7 @@ class AnalyticsSession(object):
     def screen_share_room_id(self):
         """
         Gets the screen_share_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud ScreenShare room.
 
         :return: The screen_share_room_id of this AnalyticsSession.
         :rtype: str
@@ -807,7 +811,7 @@ class AnalyticsSession(object):
     def screen_share_room_id(self, screen_share_room_id):
         """
         Sets the screen_share_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud ScreenShare room.
 
         :param screen_share_room_id: The screen_share_room_id of this AnalyticsSession.
         :type: str
@@ -819,7 +823,7 @@ class AnalyticsSession(object):
     def video_room_id(self):
         """
         Gets the video_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud video room.
 
         :return: The video_room_id of this AnalyticsSession.
         :rtype: str
@@ -830,7 +834,7 @@ class AnalyticsSession(object):
     def video_room_id(self, video_room_id):
         """
         Sets the video_room_id of this AnalyticsSession.
-
+        A unique identifier for a PureCloud video room.
 
         :param video_room_id: The video_room_id of this AnalyticsSession.
         :type: str
@@ -842,7 +846,7 @@ class AnalyticsSession(object):
     def video_address_self(self):
         """
         Gets the video_address_self of this AnalyticsSession.
-
+        Direct Video address
 
         :return: The video_address_self of this AnalyticsSession.
         :rtype: str
@@ -853,7 +857,7 @@ class AnalyticsSession(object):
     def video_address_self(self, video_address_self):
         """
         Sets the video_address_self of this AnalyticsSession.
-
+        Direct Video address
 
         :param video_address_self: The video_address_self of this AnalyticsSession.
         :type: str
@@ -865,7 +869,7 @@ class AnalyticsSession(object):
     def segments(self):
         """
         Gets the segments of this AnalyticsSession.
-
+        List of segments for this session
 
         :return: The segments of this AnalyticsSession.
         :rtype: list[AnalyticsConversationSegment]
@@ -876,7 +880,7 @@ class AnalyticsSession(object):
     def segments(self, segments):
         """
         Sets the segments of this AnalyticsSession.
-
+        List of segments for this session
 
         :param segments: The segments of this AnalyticsSession.
         :type: list[AnalyticsConversationSegment]

@@ -72,6 +72,9 @@ from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.billing_usage import BillingUsage
+from .models.billing_usage_report import BillingUsageReport
+from .models.billing_usage_resource import BillingUsageResource
 from .models.bullseye import Bullseye
 from .models.calibration import Calibration
 from .models.calibration_assignment import CalibrationAssignment
@@ -321,6 +324,7 @@ from .models.dialer_event_entity_listing import DialerEventEntityListing
 from .models.dialer_preview import DialerPreview
 from .models.dialer_rule import DialerRule
 from .models.digit_length import DigitLength
+from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disconnect_reason import DisconnectReason
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate
@@ -638,6 +642,7 @@ from .models.outbound_route import OutboundRoute
 from .models.outbound_route_base import OutboundRouteBase
 from .models.outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
 from .models.outbound_route_entity_listing import OutboundRouteEntityListing
+from .models.outbound_settings import OutboundSettings
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
 from .models.paging_spec import PagingSpec
@@ -910,6 +915,7 @@ from .models.user_conversation_summary_notification_call_contact_center import U
 from .models.user_conversation_summary_notification_media_summary import UserConversationSummaryNotificationMediaSummary
 from .models.user_conversation_summary_notification_media_summary_detail import UserConversationSummaryNotificationMediaSummaryDetail
 from .models.user_details_query import UserDetailsQuery
+from .models.user_device import UserDevice
 from .models.user_entity_listing import UserEntityListing
 from .models.user_image import UserImage
 from .models.user_list_schedule_request_body import UserListScheduleRequestBody
@@ -999,6 +1005,7 @@ from .apis.analytics_api import AnalyticsApi
 from .apis.architect_api import ArchitectApi
 from .apis.attributes_api import AttributesApi
 from .apis.authorization_api import AuthorizationApi
+from .apis.billing_api import BillingApi
 from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.external_contacts_api import ExternalContactsApi
@@ -1011,6 +1018,7 @@ from .apis.integrations_api import IntegrationsApi
 from .apis.languages_api import LanguagesApi
 from .apis.license_api import LicenseApi
 from .apis.locations_api import LocationsApi
+from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi
 from .apis.organization_api import OrganizationApi

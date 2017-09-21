@@ -363,7 +363,7 @@ class Recording(object):
         :param file_state: The file_state of this Recording.
         :type: str
         """
-        allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING"]
+        allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING", "ERROR"]
         if file_state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for file_state -> " + file_state
             self._file_state = "outdated_sdk_version"

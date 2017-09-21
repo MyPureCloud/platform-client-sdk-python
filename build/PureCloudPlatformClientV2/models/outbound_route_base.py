@@ -142,7 +142,7 @@ class OutboundRouteBase(object):
     def description(self):
         """
         Gets the description of this OutboundRouteBase.
-
+        The resource's description.
 
         :return: The description of this OutboundRouteBase.
         :rtype: str
@@ -153,7 +153,7 @@ class OutboundRouteBase(object):
     def description(self, description):
         """
         Sets the description of this OutboundRouteBase.
-
+        The resource's description.
 
         :param description: The description of this OutboundRouteBase.
         :type: str
@@ -165,7 +165,7 @@ class OutboundRouteBase(object):
     def version(self):
         """
         Gets the version of this OutboundRouteBase.
-
+        The current version of the resource.
 
         :return: The version of this OutboundRouteBase.
         :rtype: int
@@ -176,7 +176,7 @@ class OutboundRouteBase(object):
     def version(self, version):
         """
         Sets the version of this OutboundRouteBase.
-
+        The current version of the resource.
 
         :param version: The version of this OutboundRouteBase.
         :type: int
@@ -188,7 +188,7 @@ class OutboundRouteBase(object):
     def date_created(self):
         """
         Gets the date_created of this OutboundRouteBase.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_created of this OutboundRouteBase.
         :rtype: datetime
@@ -199,7 +199,7 @@ class OutboundRouteBase(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this OutboundRouteBase.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_created: The date_created of this OutboundRouteBase.
         :type: datetime
@@ -211,7 +211,7 @@ class OutboundRouteBase(object):
     def date_modified(self):
         """
         Gets the date_modified of this OutboundRouteBase.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this OutboundRouteBase.
         :rtype: datetime
@@ -222,7 +222,7 @@ class OutboundRouteBase(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this OutboundRouteBase.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this OutboundRouteBase.
         :type: datetime
@@ -234,7 +234,7 @@ class OutboundRouteBase(object):
     def modified_by(self):
         """
         Gets the modified_by of this OutboundRouteBase.
-
+        The ID of the user that last modified the resource.
 
         :return: The modified_by of this OutboundRouteBase.
         :rtype: str
@@ -245,7 +245,7 @@ class OutboundRouteBase(object):
     def modified_by(self, modified_by):
         """
         Sets the modified_by of this OutboundRouteBase.
-
+        The ID of the user that last modified the resource.
 
         :param modified_by: The modified_by of this OutboundRouteBase.
         :type: str
@@ -257,7 +257,7 @@ class OutboundRouteBase(object):
     def created_by(self):
         """
         Gets the created_by of this OutboundRouteBase.
-
+        The ID of the user that created the resource.
 
         :return: The created_by of this OutboundRouteBase.
         :rtype: str
@@ -268,7 +268,7 @@ class OutboundRouteBase(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this OutboundRouteBase.
-
+        The ID of the user that created the resource.
 
         :param created_by: The created_by of this OutboundRouteBase.
         :type: str
@@ -280,7 +280,7 @@ class OutboundRouteBase(object):
     def state(self):
         """
         Gets the state of this OutboundRouteBase.
-
+        Indicates if the resource is active, inactive, or deleted.
 
         :return: The state of this OutboundRouteBase.
         :rtype: str
@@ -291,7 +291,7 @@ class OutboundRouteBase(object):
     def state(self, state):
         """
         Sets the state of this OutboundRouteBase.
-
+        Indicates if the resource is active, inactive, or deleted.
 
         :param state: The state of this OutboundRouteBase.
         :type: str
@@ -307,7 +307,7 @@ class OutboundRouteBase(object):
     def modified_by_app(self):
         """
         Gets the modified_by_app of this OutboundRouteBase.
-
+        The application that last modified the resource.
 
         :return: The modified_by_app of this OutboundRouteBase.
         :rtype: str
@@ -318,7 +318,7 @@ class OutboundRouteBase(object):
     def modified_by_app(self, modified_by_app):
         """
         Sets the modified_by_app of this OutboundRouteBase.
-
+        The application that last modified the resource.
 
         :param modified_by_app: The modified_by_app of this OutboundRouteBase.
         :type: str
@@ -330,7 +330,7 @@ class OutboundRouteBase(object):
     def created_by_app(self):
         """
         Gets the created_by_app of this OutboundRouteBase.
-
+        The application that created the resource.
 
         :return: The created_by_app of this OutboundRouteBase.
         :rtype: str
@@ -341,7 +341,7 @@ class OutboundRouteBase(object):
     def created_by_app(self, created_by_app):
         """
         Sets the created_by_app of this OutboundRouteBase.
-
+        The application that created the resource.
 
         :param created_by_app: The created_by_app of this OutboundRouteBase.
         :type: str

@@ -120,7 +120,7 @@ class AnalyticsConversationSegment(object):
     def segment_start(self):
         """
         Gets the segment_start of this AnalyticsConversationSegment.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The segment_start of this AnalyticsConversationSegment.
         :rtype: datetime
@@ -131,7 +131,7 @@ class AnalyticsConversationSegment(object):
     def segment_start(self, segment_start):
         """
         Sets the segment_start of this AnalyticsConversationSegment.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param segment_start: The segment_start of this AnalyticsConversationSegment.
         :type: datetime
@@ -143,7 +143,7 @@ class AnalyticsConversationSegment(object):
     def segment_end(self):
         """
         Gets the segment_end of this AnalyticsConversationSegment.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The segment_end of this AnalyticsConversationSegment.
         :rtype: datetime
@@ -154,7 +154,7 @@ class AnalyticsConversationSegment(object):
     def segment_end(self, segment_end):
         """
         Sets the segment_end of this AnalyticsConversationSegment.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param segment_end: The segment_end of this AnalyticsConversationSegment.
         :type: datetime
@@ -166,7 +166,7 @@ class AnalyticsConversationSegment(object):
     def queue_id(self):
         """
         Gets the queue_id of this AnalyticsConversationSegment.
-
+        Queue identifier
 
         :return: The queue_id of this AnalyticsConversationSegment.
         :rtype: str
@@ -177,7 +177,7 @@ class AnalyticsConversationSegment(object):
     def queue_id(self, queue_id):
         """
         Sets the queue_id of this AnalyticsConversationSegment.
-
+        Queue identifier
 
         :param queue_id: The queue_id of this AnalyticsConversationSegment.
         :type: str
@@ -189,7 +189,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_code(self):
         """
         Gets the wrap_up_code of this AnalyticsConversationSegment.
-
+        Wrapup Code id
 
         :return: The wrap_up_code of this AnalyticsConversationSegment.
         :rtype: str
@@ -200,7 +200,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_code(self, wrap_up_code):
         """
         Sets the wrap_up_code of this AnalyticsConversationSegment.
-
+        Wrapup Code id
 
         :param wrap_up_code: The wrap_up_code of this AnalyticsConversationSegment.
         :type: str
@@ -212,7 +212,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_note(self):
         """
         Gets the wrap_up_note of this AnalyticsConversationSegment.
-
+        Note entered by an agent during after-call work
 
         :return: The wrap_up_note of this AnalyticsConversationSegment.
         :rtype: str
@@ -223,7 +223,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_note(self, wrap_up_note):
         """
         Sets the wrap_up_note of this AnalyticsConversationSegment.
-
+        Note entered by an agent during after-call work
 
         :param wrap_up_note: The wrap_up_note of this AnalyticsConversationSegment.
         :type: str
@@ -281,7 +281,7 @@ class AnalyticsConversationSegment(object):
     def disconnect_type(self):
         """
         Gets the disconnect_type of this AnalyticsConversationSegment.
-
+        A description of the event that disconnected the segment
 
         :return: The disconnect_type of this AnalyticsConversationSegment.
         :rtype: str
@@ -292,7 +292,7 @@ class AnalyticsConversationSegment(object):
     def disconnect_type(self, disconnect_type):
         """
         Sets the disconnect_type of this AnalyticsConversationSegment.
-
+        A description of the event that disconnected the segment
 
         :param disconnect_type: The disconnect_type of this AnalyticsConversationSegment.
         :type: str
@@ -308,7 +308,7 @@ class AnalyticsConversationSegment(object):
     def segment_type(self):
         """
         Gets the segment_type of this AnalyticsConversationSegment.
-
+        The activity taking place for the participant in the segment
 
         :return: The segment_type of this AnalyticsConversationSegment.
         :rtype: str
@@ -319,7 +319,7 @@ class AnalyticsConversationSegment(object):
     def segment_type(self, segment_type):
         """
         Sets the segment_type of this AnalyticsConversationSegment.
-
+        The activity taking place for the participant in the segment
 
         :param segment_type: The segment_type of this AnalyticsConversationSegment.
         :type: str
@@ -381,7 +381,7 @@ class AnalyticsConversationSegment(object):
     def requested_language_id(self):
         """
         Gets the requested_language_id of this AnalyticsConversationSegment.
-
+        A unique identifier for the language requested for an interaction.
 
         :return: The requested_language_id of this AnalyticsConversationSegment.
         :rtype: str
@@ -392,7 +392,7 @@ class AnalyticsConversationSegment(object):
     def requested_language_id(self, requested_language_id):
         """
         Sets the requested_language_id of this AnalyticsConversationSegment.
-
+        A unique identifier for the language requested for an interaction.
 
         :param requested_language_id: The requested_language_id of this AnalyticsConversationSegment.
         :type: str
@@ -565,7 +565,7 @@ class AnalyticsConversationSegment(object):
     def conference(self):
         """
         Gets the conference of this AnalyticsConversationSegment.
-
+        Indicates whether the segment was a conference
 
         :return: The conference of this AnalyticsConversationSegment.
         :rtype: bool
@@ -576,7 +576,7 @@ class AnalyticsConversationSegment(object):
     def conference(self, conference):
         """
         Sets the conference of this AnalyticsConversationSegment.
-
+        Indicates whether the segment was a conference
 
         :param conference: The conference of this AnalyticsConversationSegment.
         :type: bool

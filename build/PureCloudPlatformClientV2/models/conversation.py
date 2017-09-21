@@ -292,7 +292,7 @@ class Conversation(object):
     def state(self):
         """
         Gets the state of this Conversation.
-        The conversation's state.  Values can be: 'disconnected'
+        The conversation's state
 
         :return: The state of this Conversation.
         :rtype: str
@@ -303,7 +303,7 @@ class Conversation(object):
     def state(self, state):
         """
         Sets the state of this Conversation.
-        The conversation's state.  Values can be: 'disconnected'
+        The conversation's state
 
         :param state: The state of this Conversation.
         :type: str

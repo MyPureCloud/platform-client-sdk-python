@@ -38,14 +38,17 @@ class CallCommand(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'call_number': 'str'
+            'call_number': 'str',
+            'phone_column': 'str'
         }
 
         self.attribute_map = {
-            'call_number': 'callNumber'
+            'call_number': 'callNumber',
+            'phone_column': 'phoneColumn'
         }
 
         self._call_number = None
+        self._phone_column = None
 
     @property
     def call_number(self):
@@ -69,6 +72,29 @@ class CallCommand(object):
         """
         
         self._call_number = call_number
+
+    @property
+    def phone_column(self):
+        """
+        Gets the phone_column of this CallCommand.
+        For a dialer preview or scheduled callback, the phone column associated with the phone number
+
+        :return: The phone_column of this CallCommand.
+        :rtype: str
+        """
+        return self._phone_column
+
+    @phone_column.setter
+    def phone_column(self, phone_column):
+        """
+        Sets the phone_column of this CallCommand.
+        For a dialer preview or scheduled callback, the phone column associated with the phone number
+
+        :param phone_column: The phone_column of this CallCommand.
+        :type: str
+        """
+        
+        self._phone_column = phone_column
 
     def to_dict(self):
         """

@@ -78,7 +78,7 @@ class AnalyticsEvaluation(object):
     def evaluation_id(self):
         """
         Gets the evaluation_id of this AnalyticsEvaluation.
-
+        Unique identifier for the evaluation
 
         :return: The evaluation_id of this AnalyticsEvaluation.
         :rtype: str
@@ -89,7 +89,7 @@ class AnalyticsEvaluation(object):
     def evaluation_id(self, evaluation_id):
         """
         Sets the evaluation_id of this AnalyticsEvaluation.
-
+        Unique identifier for the evaluation
 
         :param evaluation_id: The evaluation_id of this AnalyticsEvaluation.
         :type: str
@@ -101,7 +101,7 @@ class AnalyticsEvaluation(object):
     def evaluator_id(self):
         """
         Gets the evaluator_id of this AnalyticsEvaluation.
-
+        A unique identifier of the PureCloud user who evaluated the interaction
 
         :return: The evaluator_id of this AnalyticsEvaluation.
         :rtype: str
@@ -112,7 +112,7 @@ class AnalyticsEvaluation(object):
     def evaluator_id(self, evaluator_id):
         """
         Sets the evaluator_id of this AnalyticsEvaluation.
-
+        A unique identifier of the PureCloud user who evaluated the interaction
 
         :param evaluator_id: The evaluator_id of this AnalyticsEvaluation.
         :type: str
@@ -124,7 +124,7 @@ class AnalyticsEvaluation(object):
     def user_id(self):
         """
         Gets the user_id of this AnalyticsEvaluation.
-
+        Unique identifier for the user being evaluated
 
         :return: The user_id of this AnalyticsEvaluation.
         :rtype: str
@@ -135,7 +135,7 @@ class AnalyticsEvaluation(object):
     def user_id(self, user_id):
         """
         Sets the user_id of this AnalyticsEvaluation.
-
+        Unique identifier for the user being evaluated
 
         :param user_id: The user_id of this AnalyticsEvaluation.
         :type: str
@@ -147,7 +147,7 @@ class AnalyticsEvaluation(object):
     def event_time(self):
         """
         Gets the event_time of this AnalyticsEvaluation.
-
+        Specifies when an evaluation occurred
 
         :return: The event_time of this AnalyticsEvaluation.
         :rtype: str
@@ -158,7 +158,7 @@ class AnalyticsEvaluation(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this AnalyticsEvaluation.
-
+        Specifies when an evaluation occurred
 
         :param event_time: The event_time of this AnalyticsEvaluation.
         :type: str
@@ -170,7 +170,7 @@ class AnalyticsEvaluation(object):
     def queue_id(self):
         """
         Gets the queue_id of this AnalyticsEvaluation.
-
+        Unique identifier for the queue the conversation was on
 
         :return: The queue_id of this AnalyticsEvaluation.
         :rtype: str
@@ -181,7 +181,7 @@ class AnalyticsEvaluation(object):
     def queue_id(self, queue_id):
         """
         Sets the queue_id of this AnalyticsEvaluation.
-
+        Unique identifier for the queue the conversation was on
 
         :param queue_id: The queue_id of this AnalyticsEvaluation.
         :type: str
@@ -193,7 +193,7 @@ class AnalyticsEvaluation(object):
     def form_id(self):
         """
         Gets the form_id of this AnalyticsEvaluation.
-
+        Unique identifier for the form used to evaluate the conversation/agent
 
         :return: The form_id of this AnalyticsEvaluation.
         :rtype: str
@@ -204,7 +204,7 @@ class AnalyticsEvaluation(object):
     def form_id(self, form_id):
         """
         Sets the form_id of this AnalyticsEvaluation.
-
+        Unique identifier for the form used to evaluate the conversation/agent
 
         :param form_id: The form_id of this AnalyticsEvaluation.
         :type: str
@@ -216,7 +216,7 @@ class AnalyticsEvaluation(object):
     def context_id(self):
         """
         Gets the context_id of this AnalyticsEvaluation.
-
+        A unique identifier for an evaluation form, regardless of version
 
         :return: The context_id of this AnalyticsEvaluation.
         :rtype: str
@@ -227,7 +227,7 @@ class AnalyticsEvaluation(object):
     def context_id(self, context_id):
         """
         Sets the context_id of this AnalyticsEvaluation.
-
+        A unique identifier for an evaluation form, regardless of version
 
         :param context_id: The context_id of this AnalyticsEvaluation.
         :type: str
@@ -239,7 +239,7 @@ class AnalyticsEvaluation(object):
     def form_name(self):
         """
         Gets the form_name of this AnalyticsEvaluation.
-
+        Name of the evaluation form
 
         :return: The form_name of this AnalyticsEvaluation.
         :rtype: str
@@ -250,7 +250,7 @@ class AnalyticsEvaluation(object):
     def form_name(self, form_name):
         """
         Sets the form_name of this AnalyticsEvaluation.
-
+        Name of the evaluation form
 
         :param form_name: The form_name of this AnalyticsEvaluation.
         :type: str
@@ -262,7 +262,7 @@ class AnalyticsEvaluation(object):
     def geto_total_score(self):
         """
         Gets the geto_total_score of this AnalyticsEvaluation.
-
+        The total evaluation for interactions
 
         :return: The geto_total_score of this AnalyticsEvaluation.
         :rtype: int
@@ -273,7 +273,7 @@ class AnalyticsEvaluation(object):
     def geto_total_score(self, geto_total_score):
         """
         Sets the geto_total_score of this AnalyticsEvaluation.
-
+        The total evaluation for interactions
 
         :param geto_total_score: The geto_total_score of this AnalyticsEvaluation.
         :type: int
@@ -285,7 +285,7 @@ class AnalyticsEvaluation(object):
     def geto_total_critical_score(self):
         """
         Gets the geto_total_critical_score of this AnalyticsEvaluation.
-
+        The score for critical evaluation questions
 
         :return: The geto_total_critical_score of this AnalyticsEvaluation.
         :rtype: int
@@ -296,7 +296,7 @@ class AnalyticsEvaluation(object):
     def geto_total_critical_score(self, geto_total_critical_score):
         """
         Sets the geto_total_critical_score of this AnalyticsEvaluation.
-
+        The score for critical evaluation questions
 
         :param geto_total_critical_score: The geto_total_critical_score of this AnalyticsEvaluation.
         :type: int

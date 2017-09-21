@@ -59,7 +59,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_schedules_sequences**](OutboundApi.html#get_outbound_schedules_sequences) | Query for a list of dialer sequence schedules.|
 |[**get_outbound_sequence**](OutboundApi.html#get_outbound_sequence) | Get a dialer campaign sequence.|
 |[**get_outbound_sequences**](OutboundApi.html#get_outbound_sequences) | Query a list of dialer campaign sequences.|
+|[**get_outbound_settings**](OutboundApi.html#get_outbound_settings) | Get the outbound settings for this organization|
 |[**get_outbound_wrapupcodemappings**](OutboundApi.html#get_outbound_wrapupcodemappings) | Get the Dialer wrap up code mapping.|
+|[**patch_outbound_settings**](OutboundApi.html#patch_outbound_settings) | Update the outbound settings for this organization|
 |[**post_outbound_attemptlimits**](OutboundApi.html#post_outbound_attemptlimits) | Create attempt limits|
 |[**post_outbound_audits**](OutboundApi.html#post_outbound_audits) | Retrieves audits for dialer.|
 |[**post_outbound_callabletimesets**](OutboundApi.html#post_outbound_callabletimesets) | Create callable time set|
@@ -2518,6 +2520,47 @@ except ApiException as e:
 
 [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html)
 
+<a name="get_outbound_settings"></a>
+
+## [**OutboundSettings**](OutboundSettings.html) get_outbound_settings()
+
+Get the outbound settings for this organization
+
+
+
+Wraps GET /api/v2/outbound/settings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+
+try:
+    # Get the outbound settings for this organization
+    api_response = api_instance.get_outbound_settings()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_settings: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundSettings**](OutboundSettings.html)
+
 <a name="get_outbound_wrapupcodemappings"></a>
 
 ## [**WrapUpCodeMapping**](WrapUpCodeMapping.html) get_outbound_wrapupcodemappings()
@@ -2558,6 +2601,50 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+
+<a name="patch_outbound_settings"></a>
+
+##  patch_outbound_settings(body)
+
+Update the outbound settings for this organization
+
+
+
+Wraps PATCH /api/v2/outbound/settings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.OutboundSettings() # OutboundSettings | outboundSettings
+
+try:
+    # Update the outbound settings for this organization
+    api_instance.patch_outbound_settings(body)
+except ApiException as e:
+    print "Exception when calling OutboundApi->patch_outbound_settings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutboundSettings**](OutboundSettings.html)| outboundSettings |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_outbound_attemptlimits"></a>
 
