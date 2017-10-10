@@ -60,7 +60,7 @@ class CampaignRuleParameters(object):
     def operator(self):
         """
         Gets the operator of this CampaignRuleParameters.
-        The operator for comparison. Required for all campaign rule conditions
+        The operator for comparison. Required for a CampaignRuleCondition.
 
         :return: The operator of this CampaignRuleParameters.
         :rtype: str
@@ -71,7 +71,7 @@ class CampaignRuleParameters(object):
     def operator(self, operator):
         """
         Sets the operator of this CampaignRuleParameters.
-        The operator for comparison. Required for all campaign rule conditions
+        The operator for comparison. Required for a CampaignRuleCondition.
 
         :param operator: The operator of this CampaignRuleParameters.
         :type: str
@@ -87,7 +87,7 @@ class CampaignRuleParameters(object):
     def value(self):
         """
         Gets the value of this CampaignRuleParameters.
-        The value for comparison. Required for all campaign rule conditions
+        The value for comparison. Required for a CampaignRuleCondition.
 
         :return: The value of this CampaignRuleParameters.
         :rtype: str
@@ -98,7 +98,7 @@ class CampaignRuleParameters(object):
     def value(self, value):
         """
         Sets the value of this CampaignRuleParameters.
-        The value for comparison. Required for all campaign rule conditions
+        The value for comparison. Required for a CampaignRuleCondition.
 
         :param value: The value of this CampaignRuleParameters.
         :type: str
@@ -110,7 +110,7 @@ class CampaignRuleParameters(object):
     def priority(self):
         """
         Gets the priority of this CampaignRuleParameters.
-        The priority to set the campaign to. Required for 'set campaign priority' actions
+        The priority to set a campaign to. Required for the 'setCampaignPriority' action.
 
         :return: The priority of this CampaignRuleParameters.
         :rtype: str
@@ -121,7 +121,7 @@ class CampaignRuleParameters(object):
     def priority(self, priority):
         """
         Sets the priority of this CampaignRuleParameters.
-        The priority to set the campaign to. Required for 'set campaign priority' actions
+        The priority to set a campaign to. Required for the 'setCampaignPriority' action.
 
         :param priority: The priority of this CampaignRuleParameters.
         :type: str
@@ -137,7 +137,7 @@ class CampaignRuleParameters(object):
     def dialing_mode(self):
         """
         Gets the dialing_mode of this CampaignRuleParameters.
-        The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions
+        The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
 
         :return: The dialing_mode of this CampaignRuleParameters.
         :rtype: str
@@ -148,7 +148,7 @@ class CampaignRuleParameters(object):
     def dialing_mode(self, dialing_mode):
         """
         Sets the dialing_mode of this CampaignRuleParameters.
-        The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions
+        The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
 
         :param dialing_mode: The dialing_mode of this CampaignRuleParameters.
         :type: str

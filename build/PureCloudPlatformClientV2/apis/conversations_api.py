@@ -1363,15 +1363,16 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size, maximum 50
         :param int page_number: Page number
         :param str interval: Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+        :param list[str] expand: Which fields, if any, to expand.
         :return: CallHistoryConversationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'interval']
+        all_params = ['page_size', 'page_number', 'interval', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1396,6 +1397,8 @@ class ConversationsApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'interval' in params:
             query_params['interval'] = params['interval']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -5053,6 +5056,93 @@ class ConversationsApi(object):
 
 
         resource_path = '/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversation_participant_digits(self, conversation_id, participant_id, **kwargs):
+        """
+        Sends DTMF to the participant
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_participant_digits(conversation_id, participant_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str participant_id: participant ID (required)
+        :param Digits body: Digits
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_participant_digits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_participant_digits`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `post_conversation_participant_digits`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/participants/{participantId}/digits'.replace('{format}', 'json')
         path_params = {}
         if 'conversation_id' in params:
             path_params['conversationId'] = params['conversation_id']

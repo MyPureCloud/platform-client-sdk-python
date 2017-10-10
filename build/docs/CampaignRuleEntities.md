@@ -7,8 +7,8 @@ title: CampaignRuleEntities
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **campaigns** | [**list[UriReference]**](UriReference.html) |  | [optional] |
-| **sequences** | [**list[UriReference]**](UriReference.html) |  | [optional] |
+| **campaigns** | [**list[UriReference]**](UriReference.html) | The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign. | [optional] |
+| **sequences** | [**list[UriReference]**](UriReference.html) | The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence. | [optional] |
 {: class="table table-striped"}
 
 

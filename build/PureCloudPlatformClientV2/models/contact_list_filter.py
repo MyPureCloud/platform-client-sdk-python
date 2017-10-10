@@ -98,7 +98,7 @@ class ContactListFilter(object):
     def name(self):
         """
         Gets the name of this ContactListFilter.
-
+        The name of the list.
 
         :return: The name of this ContactListFilter.
         :rtype: str
@@ -109,7 +109,7 @@ class ContactListFilter(object):
     def name(self, name):
         """
         Sets the name of this ContactListFilter.
-
+        The name of the list.
 
         :param name: The name of this ContactListFilter.
         :type: str
@@ -190,7 +190,7 @@ class ContactListFilter(object):
     def contact_list(self):
         """
         Gets the contact_list of this ContactListFilter.
-        The contact list the filter is based on
+        The contact list the filter is based on.
 
         :return: The contact_list of this ContactListFilter.
         :rtype: UriReference
@@ -201,7 +201,7 @@ class ContactListFilter(object):
     def contact_list(self, contact_list):
         """
         Sets the contact_list of this ContactListFilter.
-        The contact list the filter is based on
+        The contact list the filter is based on.
 
         :param contact_list: The contact_list of this ContactListFilter.
         :type: UriReference
@@ -213,7 +213,7 @@ class ContactListFilter(object):
     def clauses(self):
         """
         Gets the clauses of this ContactListFilter.
-
+        Groups of conditions to filter the contacts by.
 
         :return: The clauses of this ContactListFilter.
         :rtype: list[ContactListFilterClause]
@@ -224,7 +224,7 @@ class ContactListFilter(object):
     def clauses(self, clauses):
         """
         Sets the clauses of this ContactListFilter.
-
+        Groups of conditions to filter the contacts by.
 
         :param clauses: The clauses of this ContactListFilter.
         :type: list[ContactListFilterClause]
@@ -236,7 +236,7 @@ class ContactListFilter(object):
     def filter_type(self):
         """
         Gets the filter_type of this ContactListFilter.
-        The filter type tells the api how to compare between clauses
+        How to join clauses together.
 
         :return: The filter_type of this ContactListFilter.
         :rtype: str
@@ -247,7 +247,7 @@ class ContactListFilter(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this ContactListFilter.
-        The filter type tells the api how to compare between clauses
+        How to join clauses together.
 
         :param filter_type: The filter_type of this ContactListFilter.
         :type: str

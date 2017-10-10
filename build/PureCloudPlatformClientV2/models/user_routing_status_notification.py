@@ -38,7 +38,7 @@ class UserRoutingStatusNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'routing_status': 'UserRoutingStatusNotificationRoutingStatus',
+            'routing_status': 'AgentActivityNotificationRoutingStatus',
             'error_info': 'UserRoutingStatusNotificationErrorInfo'
         }
 
@@ -57,7 +57,7 @@ class UserRoutingStatusNotification(object):
 
 
         :return: The routing_status of this UserRoutingStatusNotification.
-        :rtype: UserRoutingStatusNotificationRoutingStatus
+        :rtype: AgentActivityNotificationRoutingStatus
         """
         return self._routing_status
 
@@ -68,7 +68,7 @@ class UserRoutingStatusNotification(object):
 
 
         :param routing_status: The routing_status of this UserRoutingStatusNotification.
-        :type: UserRoutingStatusNotificationRoutingStatus
+        :type: AgentActivityNotificationRoutingStatus
         """
         
         self._routing_status = routing_status

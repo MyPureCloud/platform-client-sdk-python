@@ -45,8 +45,8 @@ class Condition(object):
             'value_type': 'str',
             'operator': 'str',
             'codes': 'list[str]',
-            'property_type': 'str',
-            'pcProperty': 'str'
+            'pcProperty': 'str',
+            'property_type': 'str'
         }
 
         self.attribute_map = {
@@ -57,8 +57,8 @@ class Condition(object):
             'value_type': 'valueType',
             'operator': 'operator',
             'codes': 'codes',
-            'property_type': 'propertyType',
-            'pcProperty': 'property'
+            'pcProperty': 'property',
+            'property_type': 'propertyType'
         }
 
         self._type = None
@@ -68,14 +68,14 @@ class Condition(object):
         self._value_type = None
         self._operator = None
         self._codes = None
-        self._property_type = None
         self._pcProperty = None
+        self._property_type = None
 
     @property
     def type(self):
         """
         Gets the type of this Condition.
-        The type of the condition
+        The type of the condition.
 
         :return: The type of this Condition.
         :rtype: str
@@ -86,7 +86,7 @@ class Condition(object):
     def type(self, type):
         """
         Sets the type of this Condition.
-        The type of the condition
+        The type of the condition.
 
         :param type: The type of this Condition.
         :type: str
@@ -102,7 +102,7 @@ class Condition(object):
     def inverted(self):
         """
         Gets the inverted of this Condition.
-        Indicates whether to evaluate for the opposite of the stated condition; default is false
+        If true, inverts the result of evaluating this Condition. Default is false.
 
         :return: The inverted of this Condition.
         :rtype: bool
@@ -113,7 +113,7 @@ class Condition(object):
     def inverted(self, inverted):
         """
         Sets the inverted of this Condition.
-        Indicates whether to evaluate for the opposite of the stated condition; default is false
+        If true, inverts the result of evaluating this Condition. Default is false.
 
         :param inverted: The inverted of this Condition.
         :type: bool
@@ -125,7 +125,7 @@ class Condition(object):
     def attribute_name(self):
         """
         Gets the attribute_name of this Condition.
-        An attribute name associated with the condition (applies only to certain rule conditions)
+        An attribute name associated with this Condition. Required for a contactAttributeCondition.
 
         :return: The attribute_name of this Condition.
         :rtype: str
@@ -136,7 +136,7 @@ class Condition(object):
     def attribute_name(self, attribute_name):
         """
         Sets the attribute_name of this Condition.
-        An attribute name associated with the condition (applies only to certain rule conditions)
+        An attribute name associated with this Condition. Required for a contactAttributeCondition.
 
         :param attribute_name: The attribute_name of this Condition.
         :type: str
@@ -148,7 +148,7 @@ class Condition(object):
     def value(self):
         """
         Gets the value of this Condition.
-        A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
 
         :return: The value of this Condition.
         :rtype: str
@@ -159,7 +159,7 @@ class Condition(object):
     def value(self, value):
         """
         Sets the value of this Condition.
-        A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
 
         :param value: The value of this Condition.
         :type: str
@@ -171,7 +171,7 @@ class Condition(object):
     def value_type(self):
         """
         Gets the value_type of this Condition.
-        Determines the type of the value associated with the condition
+        The type of the value associated with this Condition.
 
         :return: The value_type of this Condition.
         :rtype: str
@@ -182,7 +182,7 @@ class Condition(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this Condition.
-        Determines the type of the value associated with the condition
+        The type of the value associated with this Condition.
 
         :param value_type: The value_type of this Condition.
         :type: str
@@ -198,7 +198,7 @@ class Condition(object):
     def operator(self):
         """
         Gets the operator of this Condition.
-        An operation type for condition evaluation
+        An operation with which to evaluate the Condition.
 
         :return: The operator of this Condition.
         :rtype: str
@@ -209,7 +209,7 @@ class Condition(object):
     def operator(self, operator):
         """
         Sets the operator of this Condition.
-        An operation type for condition evaluation
+        An operation with which to evaluate the Condition.
 
         :param operator: The operator of this Condition.
         :type: str
@@ -225,7 +225,7 @@ class Condition(object):
     def codes(self):
         """
         Gets the codes of this Condition.
-        List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
+        List of wrap-up code identifiers. Required for a wrapupCondition.
 
         :return: The codes of this Condition.
         :rtype: list[str]
@@ -236,7 +236,7 @@ class Condition(object):
     def codes(self, codes):
         """
         Sets the codes of this Condition.
-        List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
+        List of wrap-up code identifiers. Required for a wrapupCondition.
 
         :param codes: The codes of this Condition.
         :type: list[str]
@@ -245,37 +245,10 @@ class Condition(object):
         self._codes = codes
 
     @property
-    def property_type(self):
-        """
-        Gets the property_type of this Condition.
-        Determines the type of the property associated with the condition
-
-        :return: The property_type of this Condition.
-        :rtype: str
-        """
-        return self._property_type
-
-    @property_type.setter
-    def property_type(self, property_type):
-        """
-        Sets the property_type of this Condition.
-        Determines the type of the property associated with the condition
-
-        :param property_type: The property_type of this Condition.
-        :type: str
-        """
-        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_WRAPUP_BY_COLUMN", "LAST_WRAPUP_OVERALL"]
-        if property_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for property_type -> " + property_type
-            self._property_type = "outdated_sdk_version"
-        else:
-            self._property_type = property_type
-
-    @property
     def pcProperty(self):
         """
         Gets the pcProperty of this Condition.
-        A value associated with the property type of this condition
+        A value associated with the property type of this Condition. Required for a contactPropertyCondition.
 
         :return: The pcProperty of this Condition.
         :rtype: str
@@ -286,13 +259,40 @@ class Condition(object):
     def pcProperty(self, pcProperty):
         """
         Sets the pcProperty of this Condition.
-        A value associated with the property type of this condition
+        A value associated with the property type of this Condition. Required for a contactPropertyCondition.
 
         :param pcProperty: The pcProperty of this Condition.
         :type: str
         """
         
         self._pcProperty = pcProperty
+
+    @property
+    def property_type(self):
+        """
+        Gets the property_type of this Condition.
+        The type of the property associated with this Condition.
+
+        :return: The property_type of this Condition.
+        :rtype: str
+        """
+        return self._property_type
+
+    @property_type.setter
+    def property_type(self, property_type):
+        """
+        Sets the property_type of this Condition.
+        The type of the property associated with this Condition.
+
+        :param property_type: The property_type of this Condition.
+        :type: str
+        """
+        allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_WRAPUP_BY_COLUMN", "LAST_WRAPUP_OVERALL"]
+        if property_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for property_type -> " + property_type
+            self._property_type = "outdated_sdk_version"
+        else:
+            self._property_type = property_type
 
     def to_dict(self):
         """

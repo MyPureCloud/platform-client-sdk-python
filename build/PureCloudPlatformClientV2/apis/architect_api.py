@@ -3274,12 +3274,14 @@ class ArchitectApi(object):
         :param str secure: Secure
         :param bool deleted: Include deleted
         :param bool include_schemas: Include variable schemas
+        :param str published_after: Published after
+        :param str published_before: Published before
         :return: FlowEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'secure', 'deleted', 'include_schemas']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before']
         all_params.append('callback')
 
         params = locals()
@@ -3331,6 +3333,10 @@ class ArchitectApi(object):
             query_params['deleted'] = params['deleted']
         if 'include_schemas' in params:
             query_params['includeSchemas'] = params['include_schemas']
+        if 'published_after' in params:
+            query_params['publishedAfter'] = params['published_after']
+        if 'published_before' in params:
+            query_params['publishedBefore'] = params['published_before']
 
         header_params = {}
 

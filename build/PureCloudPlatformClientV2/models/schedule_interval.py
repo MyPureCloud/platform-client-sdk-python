@@ -54,7 +54,7 @@ class ScheduleInterval(object):
     def start(self):
         """
         Gets the start of this ScheduleInterval.
-        scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+        The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The start of this ScheduleInterval.
         :rtype: str
@@ -65,7 +65,7 @@ class ScheduleInterval(object):
     def start(self, start):
         """
         Sets the start of this ScheduleInterval.
-        scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+        The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param start: The start of this ScheduleInterval.
         :type: str
@@ -77,7 +77,7 @@ class ScheduleInterval(object):
     def end(self):
         """
         Gets the end of this ScheduleInterval.
-        scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+        The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The end of this ScheduleInterval.
         :rtype: str
@@ -88,7 +88,7 @@ class ScheduleInterval(object):
     def end(self, end):
         """
         Sets the end of this ScheduleInterval.
-        scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+        The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param end: The end of this ScheduleInterval.
         :type: str

@@ -7,8 +7,8 @@ title: CallableTime
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **time_slots** | [**list[CampaignTimeSlot]**](CampaignTimeSlot.html) | intervals for which it is acceptable to place outbound calls | [optional] |
-| **time_zone_id** | **str** | time zone identifier to be applied to the time slots; for example Africa/Abidjan | |
+| **time_slots** | [**list[CampaignTimeSlot]**](CampaignTimeSlot.html) | The time intervals for which it is acceptable to place outbound calls. | |
+| **time_zone_id** | **str** | The time zone for the time slots; for example, Africa/Abidjan | |
 {: class="table table-striped"}
 
 

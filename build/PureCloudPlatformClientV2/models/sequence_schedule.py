@@ -190,7 +190,7 @@ class SequenceSchedule(object):
     def intervals(self):
         """
         Gets the intervals of this SequenceSchedule.
-        a list of start and end times
+        A list of intervals during which to run the associated CampaignSequence.
 
         :return: The intervals of this SequenceSchedule.
         :rtype: list[ScheduleInterval]
@@ -201,7 +201,7 @@ class SequenceSchedule(object):
     def intervals(self, intervals):
         """
         Sets the intervals of this SequenceSchedule.
-        a list of start and end times
+        A list of intervals during which to run the associated CampaignSequence.
 
         :param intervals: The intervals of this SequenceSchedule.
         :type: list[ScheduleInterval]
@@ -213,7 +213,7 @@ class SequenceSchedule(object):
     def time_zone(self):
         """
         Gets the time_zone of this SequenceSchedule.
-        time zone identifier to be applied to the intervals; for example Africa/Abidjan
+        The time zone for this SequenceSchedule. For example, Africa/Abidjan.
 
         :return: The time_zone of this SequenceSchedule.
         :rtype: str
@@ -224,7 +224,7 @@ class SequenceSchedule(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this SequenceSchedule.
-        time zone identifier to be applied to the intervals; for example Africa/Abidjan
+        The time zone for this SequenceSchedule. For example, Africa/Abidjan.
 
         :param time_zone: The time_zone of this SequenceSchedule.
         :type: str
@@ -236,7 +236,7 @@ class SequenceSchedule(object):
     def sequence(self):
         """
         Gets the sequence of this SequenceSchedule.
-        identifier of the sequence to be scheduled
+        The CampaignSequence that this SequenceSchedule is for.
 
         :return: The sequence of this SequenceSchedule.
         :rtype: UriReference
@@ -247,7 +247,7 @@ class SequenceSchedule(object):
     def sequence(self, sequence):
         """
         Sets the sequence of this SequenceSchedule.
-        identifier of the sequence to be scheduled
+        The CampaignSequence that this SequenceSchedule is for.
 
         :param sequence: The sequence of this SequenceSchedule.
         :type: UriReference

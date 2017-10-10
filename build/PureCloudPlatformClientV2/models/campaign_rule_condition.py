@@ -80,7 +80,7 @@ class CampaignRuleCondition(object):
     def parameters(self):
         """
         Gets the parameters of this CampaignRuleCondition.
-
+        The parameters for the CampaignRuleCondition.
 
         :return: The parameters of this CampaignRuleCondition.
         :rtype: CampaignRuleParameters
@@ -91,7 +91,7 @@ class CampaignRuleCondition(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this CampaignRuleCondition.
-
+        The parameters for the CampaignRuleCondition.
 
         :param parameters: The parameters of this CampaignRuleCondition.
         :type: CampaignRuleParameters
@@ -103,7 +103,7 @@ class CampaignRuleCondition(object):
     def condition_type(self):
         """
         Gets the condition_type of this CampaignRuleCondition.
-
+        The type of condition to evaluate.
 
         :return: The condition_type of this CampaignRuleCondition.
         :rtype: str
@@ -114,7 +114,7 @@ class CampaignRuleCondition(object):
     def condition_type(self, condition_type):
         """
         Sets the condition_type of this CampaignRuleCondition.
-
+        The type of condition to evaluate.
 
         :param condition_type: The condition_type of this CampaignRuleCondition.
         :type: str

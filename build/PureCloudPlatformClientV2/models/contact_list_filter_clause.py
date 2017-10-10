@@ -54,7 +54,7 @@ class ContactListFilterClause(object):
     def filter_type(self):
         """
         Gets the filter_type of this ContactListFilterClause.
-        The filter type tells the api how to compare between predicates
+        How to join predicates together.
 
         :return: The filter_type of this ContactListFilterClause.
         :rtype: str
@@ -65,7 +65,7 @@ class ContactListFilterClause(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this ContactListFilterClause.
-        The filter type tells the api how to compare between predicates
+        How to join predicates together.
 
         :param filter_type: The filter_type of this ContactListFilterClause.
         :type: str
@@ -81,7 +81,7 @@ class ContactListFilterClause(object):
     def predicates(self):
         """
         Gets the predicates of this ContactListFilterClause.
-
+        Conditions to filter the contacts by.
 
         :return: The predicates of this ContactListFilterClause.
         :rtype: list[ContactListFilterPredicate]
@@ -92,7 +92,7 @@ class ContactListFilterClause(object):
     def predicates(self, predicates):
         """
         Sets the predicates of this ContactListFilterClause.
-
+        Conditions to filter the contacts by.
 
         :param predicates: The predicates of this ContactListFilterClause.
         :type: list[ContactListFilterPredicate]

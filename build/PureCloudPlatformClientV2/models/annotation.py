@@ -43,6 +43,10 @@ class Annotation(object):
             'type': 'str',
             'location': 'int',
             'duration_ms': 'int',
+            'absolute_location': 'int',
+            'absolute_duration_ms': 'int',
+            'recording_location': 'int',
+            'recording_duration_ms': 'int',
             'user': 'User',
             'description': 'str',
             'keyword_name': 'str',
@@ -64,6 +68,10 @@ class Annotation(object):
             'type': 'type',
             'location': 'location',
             'duration_ms': 'durationMs',
+            'absolute_location': 'absoluteLocation',
+            'absolute_duration_ms': 'absoluteDurationMs',
+            'recording_location': 'recordingLocation',
+            'recording_duration_ms': 'recordingDurationMs',
             'user': 'user',
             'description': 'description',
             'keyword_name': 'keywordName',
@@ -84,6 +92,10 @@ class Annotation(object):
         self._type = None
         self._location = None
         self._duration_ms = None
+        self._absolute_location = None
+        self._absolute_duration_ms = None
+        self._recording_location = None
+        self._recording_duration_ms = None
         self._user = None
         self._description = None
         self._keyword_name = None
@@ -212,6 +224,98 @@ class Annotation(object):
         """
         
         self._duration_ms = duration_ms
+
+    @property
+    def absolute_location(self):
+        """
+        Gets the absolute_location of this Annotation.
+        Offset of annotation (milliseconds) from start of recording.
+
+        :return: The absolute_location of this Annotation.
+        :rtype: int
+        """
+        return self._absolute_location
+
+    @absolute_location.setter
+    def absolute_location(self, absolute_location):
+        """
+        Sets the absolute_location of this Annotation.
+        Offset of annotation (milliseconds) from start of recording.
+
+        :param absolute_location: The absolute_location of this Annotation.
+        :type: int
+        """
+        
+        self._absolute_location = absolute_location
+
+    @property
+    def absolute_duration_ms(self):
+        """
+        Gets the absolute_duration_ms of this Annotation.
+        Duration of annotation (milliseconds).
+
+        :return: The absolute_duration_ms of this Annotation.
+        :rtype: int
+        """
+        return self._absolute_duration_ms
+
+    @absolute_duration_ms.setter
+    def absolute_duration_ms(self, absolute_duration_ms):
+        """
+        Sets the absolute_duration_ms of this Annotation.
+        Duration of annotation (milliseconds).
+
+        :param absolute_duration_ms: The absolute_duration_ms of this Annotation.
+        :type: int
+        """
+        
+        self._absolute_duration_ms = absolute_duration_ms
+
+    @property
+    def recording_location(self):
+        """
+        Gets the recording_location of this Annotation.
+        Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts
+
+        :return: The recording_location of this Annotation.
+        :rtype: int
+        """
+        return self._recording_location
+
+    @recording_location.setter
+    def recording_location(self, recording_location):
+        """
+        Sets the recording_location of this Annotation.
+        Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts
+
+        :param recording_location: The recording_location of this Annotation.
+        :type: int
+        """
+        
+        self._recording_location = recording_location
+
+    @property
+    def recording_duration_ms(self):
+        """
+        Gets the recording_duration_ms of this Annotation.
+        Duration of annotation (milliseconds), adjusted for any recording cuts.
+
+        :return: The recording_duration_ms of this Annotation.
+        :rtype: int
+        """
+        return self._recording_duration_ms
+
+    @recording_duration_ms.setter
+    def recording_duration_ms(self, recording_duration_ms):
+        """
+        Sets the recording_duration_ms of this Annotation.
+        Duration of annotation (milliseconds), adjusted for any recording cuts.
+
+        :param recording_duration_ms: The recording_duration_ms of this Annotation.
+        :type: int
+        """
+        
+        self._recording_duration_ms = recording_duration_ms
 
     @property
     def user(self):

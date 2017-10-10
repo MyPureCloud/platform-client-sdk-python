@@ -51,7 +51,7 @@ class PhoneNumberStatus(object):
     def callable(self):
         """
         Gets the callable of this PhoneNumberStatus.
-        false if the phone number is not callable
+        Indicates whether or not a phone number is callable.
 
         :return: The callable of this PhoneNumberStatus.
         :rtype: bool
@@ -62,7 +62,7 @@ class PhoneNumberStatus(object):
     def callable(self, callable):
         """
         Sets the callable of this PhoneNumberStatus.
-        false if the phone number is not callable
+        Indicates whether or not a phone number is callable.
 
         :param callable: The callable of this PhoneNumberStatus.
         :type: bool

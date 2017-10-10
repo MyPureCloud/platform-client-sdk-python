@@ -60,7 +60,7 @@ class DialerAction(object):
     def type(self):
         """
         Gets the type of this DialerAction.
-        Type of the action
+        The type of this DialerAction.
 
         :return: The type of this DialerAction.
         :rtype: str
@@ -71,7 +71,7 @@ class DialerAction(object):
     def type(self, type):
         """
         Sets the type of this DialerAction.
-        Type of the action
+        The type of this DialerAction.
 
         :param type: The type of this DialerAction.
         :type: str
@@ -87,7 +87,7 @@ class DialerAction(object):
     def action_type_name(self):
         """
         Gets the action_type_name of this DialerAction.
-        Identifier of the action
+        Additional type specification for this DialerAction.
 
         :return: The action_type_name of this DialerAction.
         :rtype: str
@@ -98,7 +98,7 @@ class DialerAction(object):
     def action_type_name(self, action_type_name):
         """
         Sets the action_type_name of this DialerAction.
-        Identifier of the action
+        Additional type specification for this DialerAction.
 
         :param action_type_name: The action_type_name of this DialerAction.
         :type: str
@@ -114,7 +114,7 @@ class DialerAction(object):
     def update_option(self):
         """
         Gets the update_option of this DialerAction.
-        Indicator of the type of update action (applicable only to certain types of actions)
+        Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
 
         :return: The update_option of this DialerAction.
         :rtype: str
@@ -125,7 +125,7 @@ class DialerAction(object):
     def update_option(self, update_option):
         """
         Sets the update_option of this DialerAction.
-        Indicator of the type of update action (applicable only to certain types of actions)
+        Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
 
         :param update_option: The update_option of this DialerAction.
         :type: str
@@ -141,7 +141,7 @@ class DialerAction(object):
     def properties(self):
         """
         Gets the properties of this DialerAction.
-        Map of key-value pairs pertinent to the action (different actions require different properties)
+        A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key 'callbackOffset' that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: 'callerAddress', which should be the caller id phone number, and 'callerName'. For either key, you can also specify a column on the contact to get the value from. To do this, specify 'contact.Column', where 'Column' is the name of the contact column from which to get the value. SET_SKILLS takes a key 'skills' with an array of skill ids.
 
         :return: The properties of this DialerAction.
         :rtype: dict(str, str)
@@ -152,7 +152,7 @@ class DialerAction(object):
     def properties(self, properties):
         """
         Sets the properties of this DialerAction.
-        Map of key-value pairs pertinent to the action (different actions require different properties)
+        A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key 'callbackOffset' that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: 'callerAddress', which should be the caller id phone number, and 'callerName'. For either key, you can also specify a column on the contact to get the value from. To do this, specify 'contact.Column', where 'Column' is the name of the contact column from which to get the value. SET_SKILLS takes a key 'skills' with an array of skill ids.
 
         :param properties: The properties of this DialerAction.
         :type: dict(str, str)

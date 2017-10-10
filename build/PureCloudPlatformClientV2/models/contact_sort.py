@@ -80,7 +80,7 @@ class ContactSort(object):
     def direction(self):
         """
         Gets the direction of this ContactSort.
-        The sort direction
+        The direction in which to sort contacts.
 
         :return: The direction of this ContactSort.
         :rtype: str
@@ -91,7 +91,7 @@ class ContactSort(object):
     def direction(self, direction):
         """
         Sets the direction of this ContactSort.
-        The sort direction
+        The direction in which to sort contacts.
 
         :param direction: The direction of this ContactSort.
         :type: str
@@ -107,7 +107,7 @@ class ContactSort(object):
     def numeric(self):
         """
         Gets the numeric of this ContactSort.
-        Whether that column contains numeric data
+        Whether or not the column contains numeric data.
 
         :return: The numeric of this ContactSort.
         :rtype: bool
@@ -118,7 +118,7 @@ class ContactSort(object):
     def numeric(self, numeric):
         """
         Sets the numeric of this ContactSort.
-        Whether that column contains numeric data
+        Whether or not the column contains numeric data.
 
         :param numeric: The numeric of this ContactSort.
         :type: bool

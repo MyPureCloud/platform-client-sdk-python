@@ -202,7 +202,7 @@ class ContactList(object):
     def column_names(self):
         """
         Gets the column_names of this ContactList.
-        the contact column names
+        The names of the contact data columns.
 
         :return: The column_names of this ContactList.
         :rtype: list[str]
@@ -213,7 +213,7 @@ class ContactList(object):
     def column_names(self, column_names):
         """
         Sets the column_names of this ContactList.
-        the contact column names
+        The names of the contact data columns.
 
         :param column_names: The column_names of this ContactList.
         :type: list[str]
@@ -225,7 +225,7 @@ class ContactList(object):
     def phone_columns(self):
         """
         Gets the phone_columns of this ContactList.
-        the columns containing phone numbers
+        Indicates which columns are phone numbers.
 
         :return: The phone_columns of this ContactList.
         :rtype: list[ContactPhoneNumberColumn]
@@ -236,7 +236,7 @@ class ContactList(object):
     def phone_columns(self, phone_columns):
         """
         Sets the phone_columns of this ContactList.
-        the columns containing phone numbers
+        Indicates which columns are phone numbers.
 
         :param phone_columns: The phone_columns of this ContactList.
         :type: list[ContactPhoneNumberColumn]
@@ -248,7 +248,7 @@ class ContactList(object):
     def import_status(self):
         """
         Gets the import_status of this ContactList.
-        the status of the import process
+        The status of the import process.
 
         :return: The import_status of this ContactList.
         :rtype: ImportStatus
@@ -259,7 +259,7 @@ class ContactList(object):
     def import_status(self, import_status):
         """
         Sets the import_status of this ContactList.
-        the status of the import process
+        The status of the import process.
 
         :param import_status: The import_status of this ContactList.
         :type: ImportStatus
@@ -271,7 +271,7 @@ class ContactList(object):
     def preview_mode_column_name(self):
         """
         Gets the preview_mode_column_name of this ContactList.
-        the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
+        A column to check if a contact should always be dialed in preview mode.
 
         :return: The preview_mode_column_name of this ContactList.
         :rtype: str
@@ -282,7 +282,7 @@ class ContactList(object):
     def preview_mode_column_name(self, preview_mode_column_name):
         """
         Sets the preview_mode_column_name of this ContactList.
-        the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
+        A column to check if a contact should always be dialed in preview mode.
 
         :param preview_mode_column_name: The preview_mode_column_name of this ContactList.
         :type: str
@@ -294,7 +294,7 @@ class ContactList(object):
     def preview_mode_accepted_values(self):
         """
         Gets the preview_mode_accepted_values of this ContactList.
-        list of user-defined values indicating the contact is to be dialed in preview mode only
+        The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.
 
         :return: The preview_mode_accepted_values of this ContactList.
         :rtype: list[str]
@@ -305,7 +305,7 @@ class ContactList(object):
     def preview_mode_accepted_values(self, preview_mode_accepted_values):
         """
         Sets the preview_mode_accepted_values of this ContactList.
-        list of user-defined values indicating the contact is to be dialed in preview mode only
+        The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.
 
         :param preview_mode_accepted_values: The preview_mode_accepted_values of this ContactList.
         :type: list[str]
@@ -317,7 +317,7 @@ class ContactList(object):
     def size(self):
         """
         Gets the size of this ContactList.
-        the number of contacts in the contact list
+        The number of contacts in the ContactList.
 
         :return: The size of this ContactList.
         :rtype: int
@@ -328,7 +328,7 @@ class ContactList(object):
     def size(self, size):
         """
         Sets the size of this ContactList.
-        the number of contacts in the contact list
+        The number of contacts in the ContactList.
 
         :param size: The size of this ContactList.
         :type: int
@@ -340,7 +340,7 @@ class ContactList(object):
     def attempt_limits(self):
         """
         Gets the attempt_limits of this ContactList.
-        the associated AttemptLimits
+        AttemptLimits for this ContactList
 
         :return: The attempt_limits of this ContactList.
         :rtype: UriReference
@@ -351,7 +351,7 @@ class ContactList(object):
     def attempt_limits(self, attempt_limits):
         """
         Sets the attempt_limits of this ContactList.
-        the associated AttemptLimits
+        AttemptLimits for this ContactList
 
         :param attempt_limits: The attempt_limits of this ContactList.
         :type: UriReference

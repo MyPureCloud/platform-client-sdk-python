@@ -92,7 +92,7 @@ class CallableTimeSet(object):
     def name(self):
         """
         Gets the name of this CallableTimeSet.
-
+        The name of the CallableTimeSet.
 
         :return: The name of this CallableTimeSet.
         :rtype: str
@@ -103,7 +103,7 @@ class CallableTimeSet(object):
     def name(self, name):
         """
         Sets the name of this CallableTimeSet.
-
+        The name of the CallableTimeSet.
 
         :param name: The name of this CallableTimeSet.
         :type: str
@@ -184,7 +184,7 @@ class CallableTimeSet(object):
     def callable_times(self):
         """
         Gets the callable_times of this CallableTimeSet.
-        list of time/timezone groupings for which it is acceptable to place outbound calls
+        The list of CallableTimes for which it is acceptable to place outbound calls.
 
         :return: The callable_times of this CallableTimeSet.
         :rtype: list[CallableTime]
@@ -195,7 +195,7 @@ class CallableTimeSet(object):
     def callable_times(self, callable_times):
         """
         Sets the callable_times of this CallableTimeSet.
-        list of time/timezone groupings for which it is acceptable to place outbound calls
+        The list of CallableTimes for which it is acceptable to place outbound calls.
 
         :param callable_times: The callable_times of this CallableTimeSet.
         :type: list[CallableTime]

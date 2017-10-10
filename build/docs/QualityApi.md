@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_quality_keywordset**](QualityApi.html#delete_quality_keywordset) | Delete a keywordSet by id.|
 |[**delete_quality_keywordsets**](QualityApi.html#delete_quality_keywordsets) | Delete keyword sets|
 |[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
-|[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.|
+|[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
 |[**get_quality_calibrations**](QualityApi.html#get_quality_calibrations) | Get the list of calibrations|
 |[**get_quality_conversation_audits**](QualityApi.html#get_quality_conversation_audits) | Get audits for conversation or recording|
 |[**get_quality_conversation_evaluation**](QualityApi.html#get_quality_conversation_evaluation) | Get an evaluation|
@@ -338,9 +338,9 @@ except ApiException as e:
 
 <a name="get_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html) get_quality_calibration(calibration_id, calibrator_id)
+## [**Calibration**](Calibration.html) get_quality_calibration(calibration_id, calibrator_id=calibrator_id, conversation_id=conversation_id)
 
-Get a calibration by id.
+Get a calibration by id.  Requires either calibrator id or conversation id
 
 
 
@@ -360,11 +360,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
 calibration_id = 'calibration_id_example' # str | Calibration ID
-calibrator_id = 'calibrator_id_example' # str | calibratorId
+calibrator_id = 'calibrator_id_example' # str | calibratorId (optional)
+conversation_id = 'conversation_id_example' # str | conversationId (optional)
 
 try:
-    # Get a calibration by id.
-    api_response = api_instance.get_quality_calibration(calibration_id, calibrator_id)
+    # Get a calibration by id.  Requires either calibrator id or conversation id
+    api_response = api_instance.get_quality_calibration(calibration_id, calibrator_id=calibrator_id, conversation_id=conversation_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_calibration: %s\n" % e
@@ -376,7 +377,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **calibration_id** | **str**| Calibration ID |  |
-| **calibrator_id** | **str**| calibratorId |  |
+| **calibrator_id** | **str**| calibratorId | [optional]  |
+| **conversation_id** | **str**| conversationId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

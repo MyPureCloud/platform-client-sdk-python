@@ -118,7 +118,7 @@ class DialerContact(object):
     def contact_list_id(self):
         """
         Gets the contact_list_id of this DialerContact.
-        Identifier of the contact list containing this contact
+        The identifier of the contact list containing this contact.
 
         :return: The contact_list_id of this DialerContact.
         :rtype: str
@@ -129,7 +129,7 @@ class DialerContact(object):
     def contact_list_id(self, contact_list_id):
         """
         Sets the contact_list_id of this DialerContact.
-        Identifier of the contact list containing this contact
+        The identifier of the contact list containing this contact.
 
         :param contact_list_id: The contact_list_id of this DialerContact.
         :type: str
@@ -141,7 +141,7 @@ class DialerContact(object):
     def data(self):
         """
         Gets the data of this DialerContact.
-        An ordered map of the contact's data attributes and values
+        An ordered map of the contact's columns and corresponding values.
 
         :return: The data of this DialerContact.
         :rtype: dict(str, object)
@@ -152,7 +152,7 @@ class DialerContact(object):
     def data(self, data):
         """
         Sets the data of this DialerContact.
-        An ordered map of the contact's data attributes and values
+        An ordered map of the contact's columns and corresponding values.
 
         :param data: The data of this DialerContact.
         :type: dict(str, object)
@@ -164,7 +164,7 @@ class DialerContact(object):
     def call_records(self):
         """
         Gets the call_records of this DialerContact.
-        A map of call records for the contact phone columns
+        A map of call records for the contact phone columns.
 
         :return: The call_records of this DialerContact.
         :rtype: dict(str, CallRecord)
@@ -175,7 +175,7 @@ class DialerContact(object):
     def call_records(self, call_records):
         """
         Sets the call_records of this DialerContact.
-        A map of call records for the contact phone columns
+        A map of call records for the contact phone columns.
 
         :param call_records: The call_records of this DialerContact.
         :type: dict(str, CallRecord)
@@ -187,7 +187,7 @@ class DialerContact(object):
     def callable(self):
         """
         Gets the callable of this DialerContact.
-        false if the contact is not to be called
+        Indicates whether or not the contact can be called.
 
         :return: The callable of this DialerContact.
         :rtype: bool
@@ -198,7 +198,7 @@ class DialerContact(object):
     def callable(self, callable):
         """
         Sets the callable of this DialerContact.
-        false if the contact is not to be called
+        Indicates whether or not the contact can be called.
 
         :param callable: The callable of this DialerContact.
         :type: bool
@@ -210,7 +210,7 @@ class DialerContact(object):
     def phone_number_status(self):
         """
         Gets the phone_number_status of this DialerContact.
-        A map of statuses for the contact phone columns
+        A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
 
         :return: The phone_number_status of this DialerContact.
         :rtype: dict(str, PhoneNumberStatus)
@@ -221,7 +221,7 @@ class DialerContact(object):
     def phone_number_status(self, phone_number_status):
         """
         Sets the phone_number_status of this DialerContact.
-        A map of statuses for the contact phone columns
+        A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
 
         :param phone_number_status: The phone_number_status of this DialerContact.
         :type: dict(str, PhoneNumberStatus)

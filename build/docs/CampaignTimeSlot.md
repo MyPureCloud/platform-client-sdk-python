@@ -7,9 +7,9 @@ title: CampaignTimeSlot
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **start_time** | **str** | interval start time as an ISO-8601 string. For example: HH:mm:ss | [optional] |
-| **stop_time** | **str** | interval stop time as an ISO-8601 string. For example: HH:mm:ss | [optional] |
-| **day** | **int** | must be within [1-7], representing Monday through Sunday | |
+| **start_time** | **str** | The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss | |
+| **stop_time** | **str** | The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss | |
+| **day** | **int** | The day of the interval. Valid values: [1-7], representing Monday through Sunday | |
 {: class="table table-striped"}
 
 

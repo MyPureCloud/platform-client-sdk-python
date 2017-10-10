@@ -57,7 +57,7 @@ class ContactPhoneNumberColumn(object):
     def column_name(self):
         """
         Gets the column_name of this ContactPhoneNumberColumn.
-        name of the phone column
+        The name of the phone column.
 
         :return: The column_name of this ContactPhoneNumberColumn.
         :rtype: str
@@ -68,7 +68,7 @@ class ContactPhoneNumberColumn(object):
     def column_name(self, column_name):
         """
         Sets the column_name of this ContactPhoneNumberColumn.
-        name of the phone column
+        The name of the phone column.
 
         :param column_name: The column_name of this ContactPhoneNumberColumn.
         :type: str
@@ -80,7 +80,7 @@ class ContactPhoneNumberColumn(object):
     def type(self):
         """
         Gets the type of this ContactPhoneNumberColumn.
-        type of the phone column, for example, 'cell' or 'home'
+        Indicates the type of the phone column. For example, 'cell' or 'home'.
 
         :return: The type of this ContactPhoneNumberColumn.
         :rtype: str
@@ -91,7 +91,7 @@ class ContactPhoneNumberColumn(object):
     def type(self, type):
         """
         Sets the type of this ContactPhoneNumberColumn.
-        type of the phone column, for example, 'cell' or 'home'
+        Indicates the type of the phone column. For example, 'cell' or 'home'.
 
         :param type: The type of this ContactPhoneNumberColumn.
         :type: str
@@ -103,7 +103,7 @@ class ContactPhoneNumberColumn(object):
     def callable_time_column(self):
         """
         Gets the callable_time_column of this ContactPhoneNumberColumn.
-        name of the column indicating the timezone to be considered for determining callable times
+        A column that indicates the timezone to use for a given contact when checking callable times.
 
         :return: The callable_time_column of this ContactPhoneNumberColumn.
         :rtype: str
@@ -114,7 +114,7 @@ class ContactPhoneNumberColumn(object):
     def callable_time_column(self, callable_time_column):
         """
         Sets the callable_time_column of this ContactPhoneNumberColumn.
-        name of the column indicating the timezone to be considered for determining callable times
+        A column that indicates the timezone to use for a given contact when checking callable times.
 
         :param callable_time_column: The callable_time_column of this ContactPhoneNumberColumn.
         :type: str

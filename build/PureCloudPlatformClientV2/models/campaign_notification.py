@@ -48,6 +48,7 @@ class CampaignNotification(object):
             'dialing_mode': 'str',
             'script': 'CampaignNotificationUriReference',
             'edge_group': 'CampaignNotificationUriReference',
+            'site': 'CampaignNotificationUriReference',
             'campaign_status': 'str',
             'phone_columns': 'list[CampaignNotificationPhoneColumns]',
             'abandon_rate': 'float',
@@ -82,6 +83,7 @@ class CampaignNotification(object):
             'dialing_mode': 'dialingMode',
             'script': 'script',
             'edge_group': 'edgeGroup',
+            'site': 'site',
             'campaign_status': 'campaignStatus',
             'phone_columns': 'phoneColumns',
             'abandon_rate': 'abandonRate',
@@ -115,6 +117,7 @@ class CampaignNotification(object):
         self._dialing_mode = None
         self._script = None
         self._edge_group = None
+        self._site = None
         self._campaign_status = None
         self._phone_columns = None
         self._abandon_rate = None
@@ -370,6 +373,29 @@ class CampaignNotification(object):
         """
         
         self._edge_group = edge_group
+
+    @property
+    def site(self):
+        """
+        Gets the site of this CampaignNotification.
+
+
+        :return: The site of this CampaignNotification.
+        :rtype: CampaignNotificationUriReference
+        """
+        return self._site
+
+    @site.setter
+    def site(self, site):
+        """
+        Sets the site of this CampaignNotification.
+
+
+        :param site: The site of this CampaignNotification.
+        :type: CampaignNotificationUriReference
+        """
+        
+        self._site = site
 
     @property
     def campaign_status(self):

@@ -104,7 +104,7 @@ class CampaignRule(object):
     def name(self):
         """
         Gets the name of this CampaignRule.
-
+        The name of the CampaignRule.
 
         :return: The name of this CampaignRule.
         :rtype: str
@@ -115,7 +115,7 @@ class CampaignRule(object):
     def name(self, name):
         """
         Sets the name of this CampaignRule.
-
+        The name of the CampaignRule.
 
         :param name: The name of this CampaignRule.
         :type: str
@@ -196,7 +196,7 @@ class CampaignRule(object):
     def campaign_rule_entities(self):
         """
         Gets the campaign_rule_entities of this CampaignRule.
-        the list of entities the rule monitors
+        The list of entities that this CampaignRule monitors.
 
         :return: The campaign_rule_entities of this CampaignRule.
         :rtype: CampaignRuleEntities
@@ -207,7 +207,7 @@ class CampaignRule(object):
     def campaign_rule_entities(self, campaign_rule_entities):
         """
         Sets the campaign_rule_entities of this CampaignRule.
-        the list of entities the rule monitors
+        The list of entities that this CampaignRule monitors.
 
         :param campaign_rule_entities: The campaign_rule_entities of this CampaignRule.
         :type: CampaignRuleEntities
@@ -219,7 +219,7 @@ class CampaignRule(object):
     def campaign_rule_conditions(self):
         """
         Gets the campaign_rule_conditions of this CampaignRule.
-        the list of conditions the are evaluated
+        The list of conditions that are evaluated on the entities.
 
         :return: The campaign_rule_conditions of this CampaignRule.
         :rtype: list[CampaignRuleCondition]
@@ -230,7 +230,7 @@ class CampaignRule(object):
     def campaign_rule_conditions(self, campaign_rule_conditions):
         """
         Sets the campaign_rule_conditions of this CampaignRule.
-        the list of conditions the are evaluated
+        The list of conditions that are evaluated on the entities.
 
         :param campaign_rule_conditions: The campaign_rule_conditions of this CampaignRule.
         :type: list[CampaignRuleCondition]
@@ -242,7 +242,7 @@ class CampaignRule(object):
     def campaign_rule_actions(self):
         """
         Gets the campaign_rule_actions of this CampaignRule.
-        the list of actions that are executed if the conditions are satisfied
+        The list of actions that are executed if the conditions are satisfied.
 
         :return: The campaign_rule_actions of this CampaignRule.
         :rtype: list[CampaignRuleAction]
@@ -253,7 +253,7 @@ class CampaignRule(object):
     def campaign_rule_actions(self, campaign_rule_actions):
         """
         Sets the campaign_rule_actions of this CampaignRule.
-        the list of actions that are executed if the conditions are satisfied
+        The list of actions that are executed if the conditions are satisfied.
 
         :param campaign_rule_actions: The campaign_rule_actions of this CampaignRule.
         :type: list[CampaignRuleAction]
@@ -288,7 +288,7 @@ class CampaignRule(object):
     def enabled(self):
         """
         Gets the enabled of this CampaignRule.
-
+        Whether or not this CampaignRule is currently enabled. Required on updates.
 
         :return: The enabled of this CampaignRule.
         :rtype: bool
@@ -299,7 +299,7 @@ class CampaignRule(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this CampaignRule.
-
+        Whether or not this CampaignRule is currently enabled. Required on updates.
 
         :param enabled: The enabled of this CampaignRule.
         :type: bool

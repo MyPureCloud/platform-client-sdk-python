@@ -196,7 +196,7 @@ class CampaignSequence(object):
     def campaigns(self):
         """
         Gets the campaigns of this CampaignSequence.
-        the ordered list of campaign identifiers
+        The ordered list of Campaigns that this CampaignSequence will run.
 
         :return: The campaigns of this CampaignSequence.
         :rtype: list[UriReference]
@@ -207,7 +207,7 @@ class CampaignSequence(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this CampaignSequence.
-        the ordered list of campaign identifiers
+        The ordered list of Campaigns that this CampaignSequence will run.
 
         :param campaigns: The campaigns of this CampaignSequence.
         :type: list[UriReference]
@@ -219,7 +219,7 @@ class CampaignSequence(object):
     def current_campaign(self):
         """
         Gets the current_campaign of this CampaignSequence.
-        the zero-based index of the current campaign in the campaigns list
+        A zero-based index indicating which Campaign this CampaignSequence is currently on.
 
         :return: The current_campaign of this CampaignSequence.
         :rtype: int
@@ -230,7 +230,7 @@ class CampaignSequence(object):
     def current_campaign(self, current_campaign):
         """
         Sets the current_campaign of this CampaignSequence.
-        the zero-based index of the current campaign in the campaigns list
+        A zero-based index indicating which Campaign this CampaignSequence is currently on.
 
         :param current_campaign: The current_campaign of this CampaignSequence.
         :type: int
@@ -242,7 +242,7 @@ class CampaignSequence(object):
     def status(self):
         """
         Gets the status of this CampaignSequence.
-        status of the sequence
+        The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
 
         :return: The status of this CampaignSequence.
         :rtype: str
@@ -253,7 +253,7 @@ class CampaignSequence(object):
     def status(self, status):
         """
         Sets the status of this CampaignSequence.
-        status of the sequence
+        The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
 
         :param status: The status of this CampaignSequence.
         :type: str
@@ -269,7 +269,7 @@ class CampaignSequence(object):
     def stop_message(self):
         """
         Gets the stop_message of this CampaignSequence.
-        if a sequence has unexpectedly stopped, this message provides the reason
+        A message indicating if and why a CampaignSequence has stopped unexpectedly.
 
         :return: The stop_message of this CampaignSequence.
         :rtype: str
@@ -280,7 +280,7 @@ class CampaignSequence(object):
     def stop_message(self, stop_message):
         """
         Sets the stop_message of this CampaignSequence.
-        if a sequence has unexpectedly stopped, this message provides the reason
+        A message indicating if and why a CampaignSequence has stopped unexpectedly.
 
         :param stop_message: The stop_message of this CampaignSequence.
         :type: str
@@ -292,7 +292,7 @@ class CampaignSequence(object):
     def repeat(self):
         """
         Gets the repeat of this CampaignSequence.
-        indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
+        Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
 
         :return: The repeat of this CampaignSequence.
         :rtype: bool
@@ -303,7 +303,7 @@ class CampaignSequence(object):
     def repeat(self, repeat):
         """
         Sets the repeat of this CampaignSequence.
-        indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
+        Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
 
         :param repeat: The repeat of this CampaignSequence.
         :type: bool

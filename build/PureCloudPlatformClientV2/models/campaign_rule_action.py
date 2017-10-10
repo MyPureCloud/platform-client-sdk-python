@@ -83,7 +83,7 @@ class CampaignRuleAction(object):
     def parameters(self):
         """
         Gets the parameters of this CampaignRuleAction.
-
+        The parameters for the CampaignRuleAction. Required for certain actionTypes.
 
         :return: The parameters of this CampaignRuleAction.
         :rtype: CampaignRuleParameters
@@ -94,7 +94,7 @@ class CampaignRuleAction(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this CampaignRuleAction.
-
+        The parameters for the CampaignRuleAction. Required for certain actionTypes.
 
         :param parameters: The parameters of this CampaignRuleAction.
         :type: CampaignRuleParameters
@@ -106,7 +106,7 @@ class CampaignRuleAction(object):
     def action_type(self):
         """
         Gets the action_type of this CampaignRuleAction.
-
+        The action to take on the campaignRuleActionEntities.
 
         :return: The action_type of this CampaignRuleAction.
         :rtype: str
@@ -117,7 +117,7 @@ class CampaignRuleAction(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this CampaignRuleAction.
-
+        The action to take on the campaignRuleActionEntities.
 
         :param action_type: The action_type of this CampaignRuleAction.
         :type: str
@@ -133,7 +133,7 @@ class CampaignRuleAction(object):
     def campaign_rule_action_entities(self):
         """
         Gets the campaign_rule_action_entities of this CampaignRuleAction.
-
+        The list of entities that this action will apply to.
 
         :return: The campaign_rule_action_entities of this CampaignRuleAction.
         :rtype: CampaignRuleActionEntities
@@ -144,7 +144,7 @@ class CampaignRuleAction(object):
     def campaign_rule_action_entities(self, campaign_rule_action_entities):
         """
         Sets the campaign_rule_action_entities of this CampaignRuleAction.
-
+        The list of entities that this action will apply to.
 
         :param campaign_rule_action_entities: The campaign_rule_action_entities of this CampaignRuleAction.
         :type: CampaignRuleActionEntities

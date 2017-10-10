@@ -57,7 +57,7 @@ class CampaignTimeSlot(object):
     def start_time(self):
         """
         Gets the start_time of this CampaignTimeSlot.
-        interval start time as an ISO-8601 string. For example: HH:mm:ss
+        The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss
 
         :return: The start_time of this CampaignTimeSlot.
         :rtype: str
@@ -68,7 +68,7 @@ class CampaignTimeSlot(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this CampaignTimeSlot.
-        interval start time as an ISO-8601 string. For example: HH:mm:ss
+        The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss
 
         :param start_time: The start_time of this CampaignTimeSlot.
         :type: str
@@ -80,7 +80,7 @@ class CampaignTimeSlot(object):
     def stop_time(self):
         """
         Gets the stop_time of this CampaignTimeSlot.
-        interval stop time as an ISO-8601 string. For example: HH:mm:ss
+        The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss
 
         :return: The stop_time of this CampaignTimeSlot.
         :rtype: str
@@ -91,7 +91,7 @@ class CampaignTimeSlot(object):
     def stop_time(self, stop_time):
         """
         Sets the stop_time of this CampaignTimeSlot.
-        interval stop time as an ISO-8601 string. For example: HH:mm:ss
+        The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss
 
         :param stop_time: The stop_time of this CampaignTimeSlot.
         :type: str
@@ -103,7 +103,7 @@ class CampaignTimeSlot(object):
     def day(self):
         """
         Gets the day of this CampaignTimeSlot.
-        must be within [1-7], representing Monday through Sunday
+        The day of the interval. Valid values: [1-7], representing Monday through Sunday
 
         :return: The day of this CampaignTimeSlot.
         :rtype: int
@@ -114,7 +114,7 @@ class CampaignTimeSlot(object):
     def day(self, day):
         """
         Sets the day of this CampaignTimeSlot.
-        must be within [1-7], representing Monday through Sunday
+        The day of the interval. Valid values: [1-7], representing Monday through Sunday
 
         :param day: The day of this CampaignTimeSlot.
         :type: int

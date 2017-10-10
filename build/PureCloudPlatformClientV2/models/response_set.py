@@ -92,7 +92,7 @@ class ResponseSet(object):
     def name(self):
         """
         Gets the name of this ResponseSet.
-
+        The name of the ResponseSet.
 
         :return: The name of this ResponseSet.
         :rtype: str
@@ -103,7 +103,7 @@ class ResponseSet(object):
     def name(self, name):
         """
         Sets the name of this ResponseSet.
-
+        The name of the ResponseSet.
 
         :param name: The name of this ResponseSet.
         :type: str
@@ -184,7 +184,7 @@ class ResponseSet(object):
     def responses(self):
         """
         Gets the responses of this ResponseSet.
-        Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}
+        Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}.
 
         :return: The responses of this ResponseSet.
         :rtype: dict(str, Reaction)
@@ -195,7 +195,7 @@ class ResponseSet(object):
     def responses(self, responses):
         """
         Sets the responses of this ResponseSet.
-        Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}
+        Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}.
 
         :param responses: The responses of this ResponseSet.
         :type: dict(str, Reaction)

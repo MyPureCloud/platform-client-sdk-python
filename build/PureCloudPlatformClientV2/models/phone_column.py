@@ -54,7 +54,7 @@ class PhoneColumn(object):
     def column_name(self):
         """
         Gets the column_name of this PhoneColumn.
-        name of the phone column
+        The name of the phone column.
 
         :return: The column_name of this PhoneColumn.
         :rtype: str
@@ -65,7 +65,7 @@ class PhoneColumn(object):
     def column_name(self, column_name):
         """
         Sets the column_name of this PhoneColumn.
-        name of the phone column
+        The name of the phone column.
 
         :param column_name: The column_name of this PhoneColumn.
         :type: str
@@ -77,7 +77,7 @@ class PhoneColumn(object):
     def type(self):
         """
         Gets the type of this PhoneColumn.
-        type of the phone column, for example, 'cell' or 'home'
+        The type of the phone column. For example, 'cell' or 'home'.
 
         :return: The type of this PhoneColumn.
         :rtype: str
@@ -88,7 +88,7 @@ class PhoneColumn(object):
     def type(self, type):
         """
         Sets the type of this PhoneColumn.
-        type of the phone column, for example, 'cell' or 'home'
+        The type of the phone column. For example, 'cell' or 'home'.
 
         :param type: The type of this PhoneColumn.
         :type: str

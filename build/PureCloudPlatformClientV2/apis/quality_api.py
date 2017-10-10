@@ -559,9 +559,9 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_calibration(self, calibration_id, calibrator_id, **kwargs):
+    def get_quality_calibration(self, calibration_id, **kwargs):
         """
-        Get a calibration by id.
+        Get a calibration by id.  Requires either calibrator id or conversation id
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -570,18 +570,19 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_quality_calibration(calibration_id, calibrator_id, callback=callback_function)
+        >>> thread = api.get_quality_calibration(calibration_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str calibration_id: Calibration ID (required)
-        :param str calibrator_id: calibratorId (required)
+        :param str calibrator_id: calibratorId
+        :param str conversation_id: conversationId
         :return: Calibration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['calibration_id', 'calibrator_id']
+        all_params = ['calibration_id', 'calibrator_id', 'conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -597,9 +598,6 @@ class QualityApi(object):
         # verify the required parameter 'calibration_id' is set
         if ('calibration_id' not in params) or (params['calibration_id'] is None):
             raise ValueError("Missing the required parameter `calibration_id` when calling `get_quality_calibration`")
-        # verify the required parameter 'calibrator_id' is set
-        if ('calibrator_id' not in params) or (params['calibrator_id'] is None):
-            raise ValueError("Missing the required parameter `calibrator_id` when calling `get_quality_calibration`")
 
 
         resource_path = '/api/v2/quality/calibrations/{calibrationId}'.replace('{format}', 'json')
@@ -610,6 +608,8 @@ class QualityApi(object):
         query_params = {}
         if 'calibrator_id' in params:
             query_params['calibratorId'] = params['calibrator_id']
+        if 'conversation_id' in params:
+            query_params['conversationId'] = params['conversation_id']
 
         header_params = {}
 

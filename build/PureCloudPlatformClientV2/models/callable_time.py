@@ -54,7 +54,7 @@ class CallableTime(object):
     def time_slots(self):
         """
         Gets the time_slots of this CallableTime.
-        intervals for which it is acceptable to place outbound calls
+        The time intervals for which it is acceptable to place outbound calls.
 
         :return: The time_slots of this CallableTime.
         :rtype: list[CampaignTimeSlot]
@@ -65,7 +65,7 @@ class CallableTime(object):
     def time_slots(self, time_slots):
         """
         Sets the time_slots of this CallableTime.
-        intervals for which it is acceptable to place outbound calls
+        The time intervals for which it is acceptable to place outbound calls.
 
         :param time_slots: The time_slots of this CallableTime.
         :type: list[CampaignTimeSlot]
@@ -77,7 +77,7 @@ class CallableTime(object):
     def time_zone_id(self):
         """
         Gets the time_zone_id of this CallableTime.
-        time zone identifier to be applied to the time slots; for example Africa/Abidjan
+        The time zone for the time slots; for example, Africa/Abidjan
 
         :return: The time_zone_id of this CallableTime.
         :rtype: str
@@ -88,7 +88,7 @@ class CallableTime(object):
     def time_zone_id(self, time_zone_id):
         """
         Sets the time_zone_id of this CallableTime.
-        time zone identifier to be applied to the time slots; for example Africa/Abidjan
+        The time zone for the time slots; for example, Africa/Abidjan
 
         :param time_zone_id: The time_zone_id of this CallableTime.
         :type: str

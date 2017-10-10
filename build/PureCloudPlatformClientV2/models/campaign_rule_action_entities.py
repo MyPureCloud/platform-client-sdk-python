@@ -57,7 +57,7 @@ class CampaignRuleActionEntities(object):
     def campaigns(self):
         """
         Gets the campaigns of this CampaignRuleActionEntities.
-
+        The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :return: The campaigns of this CampaignRuleActionEntities.
         :rtype: list[UriReference]
@@ -68,7 +68,7 @@ class CampaignRuleActionEntities(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this CampaignRuleActionEntities.
-
+        The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :param campaigns: The campaigns of this CampaignRuleActionEntities.
         :type: list[UriReference]
@@ -80,7 +80,7 @@ class CampaignRuleActionEntities(object):
     def sequences(self):
         """
         Gets the sequences of this CampaignRuleActionEntities.
-
+        The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :return: The sequences of this CampaignRuleActionEntities.
         :rtype: list[UriReference]
@@ -91,7 +91,7 @@ class CampaignRuleActionEntities(object):
     def sequences(self, sequences):
         """
         Sets the sequences of this CampaignRuleActionEntities.
-
+        The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :param sequences: The sequences of this CampaignRuleActionEntities.
         :type: list[UriReference]
@@ -103,7 +103,7 @@ class CampaignRuleActionEntities(object):
     def use_triggering_entity(self):
         """
         Gets the use_triggering_entity of this CampaignRuleActionEntities.
-
+        If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
 
         :return: The use_triggering_entity of this CampaignRuleActionEntities.
         :rtype: bool
@@ -114,7 +114,7 @@ class CampaignRuleActionEntities(object):
     def use_triggering_entity(self, use_triggering_entity):
         """
         Sets the use_triggering_entity of this CampaignRuleActionEntities.
-
+        If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
 
         :param use_triggering_entity: The use_triggering_entity of this CampaignRuleActionEntities.
         :type: bool

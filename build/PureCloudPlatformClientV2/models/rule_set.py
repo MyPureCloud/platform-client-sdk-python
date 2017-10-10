@@ -98,7 +98,7 @@ class RuleSet(object):
     def name(self):
         """
         Gets the name of this RuleSet.
-
+        The name of the RuleSet.
 
         :return: The name of this RuleSet.
         :rtype: str
@@ -109,7 +109,7 @@ class RuleSet(object):
     def name(self, name):
         """
         Sets the name of this RuleSet.
-
+        The name of the RuleSet.
 
         :param name: The name of this RuleSet.
         :type: str
@@ -190,7 +190,7 @@ class RuleSet(object):
     def contact_list(self):
         """
         Gets the contact_list of this RuleSet.
-        The identifier of an example contact list that provides user-interface suggestions for contact-based conditions and actions
+        A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
 
         :return: The contact_list of this RuleSet.
         :rtype: UriReference
@@ -201,7 +201,7 @@ class RuleSet(object):
     def contact_list(self, contact_list):
         """
         Sets the contact_list of this RuleSet.
-        The identifier of an example contact list that provides user-interface suggestions for contact-based conditions and actions
+        A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
 
         :param contact_list: The contact_list of this RuleSet.
         :type: UriReference
@@ -213,7 +213,7 @@ class RuleSet(object):
     def queue(self):
         """
         Gets the queue of this RuleSet.
-        The identifier of an example queue that provides user-interface suggestions for wrap-up associated conditions
+        A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
 
         :return: The queue of this RuleSet.
         :rtype: UriReference
@@ -224,7 +224,7 @@ class RuleSet(object):
     def queue(self, queue):
         """
         Sets the queue of this RuleSet.
-        The identifier of an example queue that provides user-interface suggestions for wrap-up associated conditions
+        A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
 
         :param queue: The queue of this RuleSet.
         :type: UriReference
@@ -236,7 +236,7 @@ class RuleSet(object):
     def rules(self):
         """
         Gets the rules of this RuleSet.
-        The list of rules
+        The list of rules.
 
         :return: The rules of this RuleSet.
         :rtype: list[DialerRule]
@@ -247,7 +247,7 @@ class RuleSet(object):
     def rules(self, rules):
         """
         Sets the rules of this RuleSet.
-        The list of rules
+        The list of rules.
 
         :param rules: The rules of this RuleSet.
         :type: list[DialerRule]

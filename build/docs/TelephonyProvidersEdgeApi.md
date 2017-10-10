@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterface) | Get an edge logical interface|
 |[**get_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterfaces) | Get edge logical interfaces.|
 |[**get_telephony_providers_edge_logs_job**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logs_job) | Get an Edge logs job.|
+|[**get_telephony_providers_edge_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_metrics) | Get the edge metrics.|
 |[**get_telephony_providers_edge_physicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_physicalinterface) | Get edge physical interface.|
 |[**get_telephony_providers_edge_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_physicalinterfaces) | Retrieve a list of all configured physical interfaces from a specific edge.|
 |[**get_telephony_providers_edge_setuppackage**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_setuppackage) | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.|
@@ -63,6 +64,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines) | Get a list of Lines|
 |[**get_telephony_providers_edges_lines_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines_template) | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance|
 |[**get_telephony_providers_edges_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_logicalinterfaces) | Get edge logical interfaces.|
+|[**get_telephony_providers_edges_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_metrics) | Get the metrics for a list of edges.|
 |[**get_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroute) | Get outbound route|
 |[**get_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroutes) | Get outbound routes|
 |[**get_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phone) | Get a Phone by ID|
@@ -74,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_phones_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones_template) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance|
 |[**get_telephony_providers_edges_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_physicalinterfaces) | Get physical interfaces for edges.|
 |[**get_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site) | Get a Site by ID.|
+|[**get_telephony_providers_edges_site_autoscalinggroups**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_autoscalinggroups) | Gets the basic information about an asg in a specified site|
 |[**get_telephony_providers_edges_site_numberplan**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplan) | Get a Number Plan by ID.|
 |[**get_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans) | Get the list of Number Plans for this Site.|
 |[**get_telephony_providers_edges_site_numberplans_classifications**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans_classifications) | Get a list of Classifications for this Site|
@@ -82,11 +85,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_sites) | Get the list of Sites.|
 |[**get_telephony_providers_edges_timezones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_timezones) | Get a list of Edge-compatible time zones|
 |[**get_telephony_providers_edges_trunk**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunk) | Get a Trunk by ID|
+|[**get_telephony_providers_edges_trunk_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunk_metrics) | Get the trunk metrics.|
 |[**get_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesetting) | Get a Trunk Base Settings object by ID|
 |[**get_telephony_providers_edges_trunkbasesettings**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings) | Get Trunk Base Settings listing|
 |[**get_telephony_providers_edges_trunkbasesettings_availablemetabases**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings_availablemetabases) | Get a list of available makes and models to create a new Trunk Base Settings|
 |[**get_telephony_providers_edges_trunkbasesettings_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkbasesettings_template) | Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance|
 |[**get_telephony_providers_edges_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
+|[**get_telephony_providers_edges_trunks_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks_metrics) | Get the metrics for a list of trunks.|
 |[**get_telephony_providers_edges_trunkswithrecording**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkswithrecording) | Get Counts of trunks that have recording disabled or enabled|
 |[**post_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logicalinterfaces) | Create an edge logical interface.|
 |[**post_telephony_providers_edge_logs_job_upload**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logs_job_upload) | Request that the specified fileIds be uploaded from the Edge.|
@@ -107,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_phonebasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phonebasesettings) | Create a new Phone Base Settings object|
 |[**post_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones) | Create a new Phone|
 |[**post_telephony_providers_edges_phones_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones_reboot) | Reboot Multiple Phones|
+|[**post_telephony_providers_edges_site_autoscalinggroups**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_autoscalinggroups) | Creates an ASG for the specified site|
 |[**post_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_outboundroutes) | Create outbound route|
 |[**post_telephony_providers_edges_site_rebalance**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_site_rebalance) | Triggers the rebalance operation.|
 |[**post_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_sites) | Create a Site.|
@@ -1287,6 +1293,51 @@ except ApiException as e:
 ### Return type
 
 [**EdgeLogsJob**](EdgeLogsJob.html)
+
+<a name="get_telephony_providers_edge_metrics"></a>
+
+## [**EdgeMetrics**](EdgeMetrics.html) get_telephony_providers_edge_metrics(edge_id)
+
+Get the edge metrics.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/metrics 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get the edge metrics.
+    api_response = api_instance.get_telephony_providers_edge_metrics(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_metrics: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeMetrics**](EdgeMetrics.html)
 
 <a name="get_telephony_providers_edge_physicalinterface"></a>
 
@@ -2712,6 +2763,51 @@ except ApiException as e:
 
 [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
 
+<a name="get_telephony_providers_edges_metrics"></a>
+
+## [**list[EdgeMetrics]**](EdgeMetrics.html) get_telephony_providers_edges_metrics(edge_ids)
+
+Get the metrics for a list of edges.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/metrics 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's
+
+try:
+    # Get the metrics for a list of edges.
+    api_response = api_instance.get_telephony_providers_edges_metrics(edge_ids)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_metrics: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[EdgeMetrics]**](EdgeMetrics.html)
+
 <a name="get_telephony_providers_edges_outboundroute"></a>
 
 ## [**OutboundRoute**](OutboundRoute.html) get_telephony_providers_edges_outboundroute(outbound_route_id)
@@ -3253,6 +3349,51 @@ except ApiException as e:
 
 [**Site**](Site.html)
 
+<a name="get_telephony_providers_edges_site_autoscalinggroups"></a>
+
+## [**AsgInfoResponse**](AsgInfoResponse.html) get_telephony_providers_edges_site_autoscalinggroups(site_id)
+
+Gets the basic information about an asg in a specified site
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site id associated with the asg
+
+try:
+    # Gets the basic information about an asg in a specified site
+    api_response = api_instance.get_telephony_providers_edges_site_autoscalinggroups(site_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_autoscalinggroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site id associated with the asg |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsgInfoResponse**](AsgInfoResponse.html)
+
 <a name="get_telephony_providers_edges_site_numberplan"></a>
 
 ## [**NumberPlan**](NumberPlan.html) get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
@@ -3641,6 +3782,51 @@ except ApiException as e:
 
 [**Trunk**](Trunk.html)
 
+<a name="get_telephony_providers_edges_trunk_metrics"></a>
+
+## [**TrunkMetrics**](TrunkMetrics.html) get_telephony_providers_edges_trunk_metrics(trunk_id)
+
+Get the trunk metrics.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_id = 'trunk_id_example' # str | Trunk Id
+
+try:
+    # Get the trunk metrics.
+    api_response = api_instance.get_telephony_providers_edges_trunk_metrics(trunk_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk_metrics: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_id** | **str**| Trunk Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkMetrics**](TrunkMetrics.html)
+
 <a name="get_telephony_providers_edges_trunkbasesetting"></a>
 
 ## [**TrunkBase**](TrunkBase.html) get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
@@ -3899,6 +4085,51 @@ except ApiException as e:
 ### Return type
 
 [**TrunkEntityListing**](TrunkEntityListing.html)
+
+<a name="get_telephony_providers_edges_trunks_metrics"></a>
+
+## [**list[TrunkMetrics]**](TrunkMetrics.html) get_telephony_providers_edges_trunks_metrics(trunk_ids)
+
+Get the metrics for a list of trunks.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunks/metrics 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+trunk_ids = 'trunk_ids_example' # str | Comma separated list of Trunk Id's
+
+try:
+    # Get the metrics for a list of trunks.
+    api_response = api_instance.get_telephony_providers_edges_trunks_metrics(trunk_ids)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks_metrics: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trunk_ids** | **str**| Comma separated list of Trunk Id&#39;s |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[TrunkMetrics]**](TrunkMetrics.html)
 
 <a name="get_telephony_providers_edges_trunkswithrecording"></a>
 
@@ -4810,6 +5041,53 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_telephony_providers_edges_site_autoscalinggroups"></a>
+
+## str** post_telephony_providers_edges_site_autoscalinggroups(site_id, body)
+
+Creates an ASG for the specified site
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site that will be associated with the asg
+body = PureCloudPlatformClientV2.CreateAsgRequest() # CreateAsgRequest | CreateAsgRequest
+
+try:
+    # Creates an ASG for the specified site
+    api_response = api_instance.post_telephony_providers_edges_site_autoscalinggroups(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_autoscalinggroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site that will be associated with the asg |  |
+| **body** | [**CreateAsgRequest**](CreateAsgRequest.html)| CreateAsgRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 
 <a name="post_telephony_providers_edges_site_outboundroutes"></a>
 

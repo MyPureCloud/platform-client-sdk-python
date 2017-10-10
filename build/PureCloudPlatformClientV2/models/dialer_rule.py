@@ -66,7 +66,7 @@ class DialerRule(object):
     def id(self):
         """
         Gets the id of this DialerRule.
-        The identifier of the rule
+        The identifier of the rule.
 
         :return: The id of this DialerRule.
         :rtype: str
@@ -77,7 +77,7 @@ class DialerRule(object):
     def id(self, id):
         """
         Sets the id of this DialerRule.
-        The identifier of the rule
+        The identifier of the rule.
 
         :param id: The id of this DialerRule.
         :type: str
@@ -89,7 +89,7 @@ class DialerRule(object):
     def name(self):
         """
         Gets the name of this DialerRule.
-        The name of the rule
+        The name of the rule.
 
         :return: The name of this DialerRule.
         :rtype: str
@@ -100,7 +100,7 @@ class DialerRule(object):
     def name(self, name):
         """
         Sets the name of this DialerRule.
-        The name of the rule
+        The name of the rule.
 
         :param name: The name of this DialerRule.
         :type: str
@@ -112,7 +112,7 @@ class DialerRule(object):
     def order(self):
         """
         Gets the order of this DialerRule.
-        The ranked order of the rule; rules are processed from lowest number to highest
+        The ranked order of the rule. Rules are processed from lowest number to highest.
 
         :return: The order of this DialerRule.
         :rtype: int
@@ -123,7 +123,7 @@ class DialerRule(object):
     def order(self, order):
         """
         Sets the order of this DialerRule.
-        The ranked order of the rule; rules are processed from lowest number to highest
+        The ranked order of the rule. Rules are processed from lowest number to highest.
 
         :param order: The order of this DialerRule.
         :type: int
@@ -135,7 +135,7 @@ class DialerRule(object):
     def category(self):
         """
         Gets the category of this DialerRule.
-        The category of the rule
+        The category of the rule.
 
         :return: The category of this DialerRule.
         :rtype: str
@@ -146,7 +146,7 @@ class DialerRule(object):
     def category(self, category):
         """
         Sets the category of this DialerRule.
-        The category of the rule
+        The category of the rule.
 
         :param category: The category of this DialerRule.
         :type: str
@@ -162,7 +162,7 @@ class DialerRule(object):
     def conditions(self):
         """
         Gets the conditions of this DialerRule.
-        The list of rule conditions; all must evaluate to true to trigger the rule actions
+        A list of Conditions. All of the Conditions must evaluate to true to trigger the actions.
 
         :return: The conditions of this DialerRule.
         :rtype: list[Condition]
@@ -173,7 +173,7 @@ class DialerRule(object):
     def conditions(self, conditions):
         """
         Sets the conditions of this DialerRule.
-        The list of rule conditions; all must evaluate to true to trigger the rule actions
+        A list of Conditions. All of the Conditions must evaluate to true to trigger the actions.
 
         :param conditions: The conditions of this DialerRule.
         :type: list[Condition]
@@ -185,7 +185,7 @@ class DialerRule(object):
     def actions(self):
         """
         Gets the actions of this DialerRule.
-        The list of rule actions to be taken if the conditions are true
+        The list of actions to be taken if the conditions are true.
 
         :return: The actions of this DialerRule.
         :rtype: list[DialerAction]
@@ -196,7 +196,7 @@ class DialerRule(object):
     def actions(self, actions):
         """
         Sets the actions of this DialerRule.
-        The list of rule actions to be taken if the conditions are true
+        The list of actions to be taken if the conditions are true.
 
         :param actions: The actions of this DialerRule.
         :type: list[DialerAction]

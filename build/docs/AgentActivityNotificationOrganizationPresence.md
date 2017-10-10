@@ -1,7 +1,7 @@
 ---
-title: UserPresenceNotificationPresenceDefinition
+title: AgentActivityNotificationOrganizationPresence
 ---
-## UserPresenceNotificationPresenceDefinition
+## AgentActivityNotificationOrganizationPresence
 
 ## Properties
 

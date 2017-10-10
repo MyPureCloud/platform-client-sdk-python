@@ -68,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
+|[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
 |[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
@@ -826,7 +827,7 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_calls_history"></a>
 
-## [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
+## [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
 
 Get call history
 
@@ -847,13 +848,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size, maximum 50 (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 interval = 'interval_example' # str | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
     # Get call history
-    api_response = api_instance.get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval)
+    api_response = api_instance.get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ConversationsApi->get_conversations_calls_history: %s\n" % e
@@ -864,9 +866,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size, maximum 50 | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
 {: class="table table-striped"}
 
 ### Return type
@@ -2891,6 +2894,54 @@ except ApiException as e:
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
 | **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversation_participant_digits"></a>
+
+##  post_conversation_participant_digits(conversation_id, participant_id, body=body)
+
+Sends DTMF to the participant
+
+
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.Digits() # Digits | Digits (optional)
+
+try:
+    # Sends DTMF to the participant
+    api_instance.post_conversation_participant_digits(conversation_id, participant_id, body=body)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversation_participant_digits: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**Digits**](Digits.html)| Digits | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

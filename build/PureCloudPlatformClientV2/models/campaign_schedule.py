@@ -190,7 +190,7 @@ class CampaignSchedule(object):
     def intervals(self):
         """
         Gets the intervals of this CampaignSchedule.
-        a list of start and end times
+        A list of intervals during which to run the associated Campaign.
 
         :return: The intervals of this CampaignSchedule.
         :rtype: list[ScheduleInterval]
@@ -201,7 +201,7 @@ class CampaignSchedule(object):
     def intervals(self, intervals):
         """
         Sets the intervals of this CampaignSchedule.
-        a list of start and end times
+        A list of intervals during which to run the associated Campaign.
 
         :param intervals: The intervals of this CampaignSchedule.
         :type: list[ScheduleInterval]
@@ -213,7 +213,7 @@ class CampaignSchedule(object):
     def time_zone(self):
         """
         Gets the time_zone of this CampaignSchedule.
-        time zone identifier to be applied to the intervals; for example Africa/Abidjan
+        The time zone for this CampaignSchedule. For example, Africa/Abidjan.
 
         :return: The time_zone of this CampaignSchedule.
         :rtype: str
@@ -224,7 +224,7 @@ class CampaignSchedule(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this CampaignSchedule.
-        time zone identifier to be applied to the intervals; for example Africa/Abidjan
+        The time zone for this CampaignSchedule. For example, Africa/Abidjan.
 
         :param time_zone: The time_zone of this CampaignSchedule.
         :type: str
@@ -236,7 +236,7 @@ class CampaignSchedule(object):
     def campaign(self):
         """
         Gets the campaign of this CampaignSchedule.
-        identifier of the campaign to be scheduled
+        The Campaign that this CampaignSchedule is for.
 
         :return: The campaign of this CampaignSchedule.
         :rtype: UriReference
@@ -247,7 +247,7 @@ class CampaignSchedule(object):
     def campaign(self, campaign):
         """
         Sets the campaign of this CampaignSchedule.
-        identifier of the campaign to be scheduled
+        The Campaign that this CampaignSchedule is for.
 
         :param campaign: The campaign of this CampaignSchedule.
         :type: UriReference

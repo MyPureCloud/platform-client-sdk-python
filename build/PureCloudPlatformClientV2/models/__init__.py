@@ -21,6 +21,12 @@ from .adjacents import Adjacents
 from .agent import Agent
 from .agent_activity import AgentActivity
 from .agent_activity_entity_listing import AgentActivityEntityListing
+from .agent_activity_notification import AgentActivityNotification
+from .agent_activity_notification_organization_presence import AgentActivityNotificationOrganizationPresence
+from .agent_activity_notification_out_of_office import AgentActivityNotificationOutOfOffice
+from .agent_activity_notification_presence import AgentActivityNotificationPresence
+from .agent_activity_notification_presence_presence_definition import AgentActivityNotificationPresencePresenceDefinition
+from .agent_activity_notification_routing_status import AgentActivityNotificationRoutingStatus
 from .agent_evaluator_activity import AgentEvaluatorActivity
 from .aggregate_data_container import AggregateDataContainer
 from .aggregate_metric_data import AggregateMetricData
@@ -49,6 +55,7 @@ from .analytics_view import AnalyticsView
 from .annotation import Annotation
 from .answer_option import AnswerOption
 from .archive_retention import ArchiveRetention
+from .asg_info_response import AsgInfoResponse
 from .attachment import Attachment
 from .attempt_limits import AttemptLimits
 from .attempt_limits_entity_listing import AttemptLimitsEntityListing
@@ -285,6 +292,7 @@ from .conversation_notification_wrapup import ConversationNotificationWrapup
 from .conversation_query import ConversationQuery
 from .copy_voicemail_message import CopyVoicemailMessage
 from .cover_sheet import CoverSheet
+from .create_asg_request import CreateAsgRequest
 from .create_call_request import CreateCallRequest
 from .create_call_response import CreateCallResponse
 from .create_callback_command import CreateCallbackCommand
@@ -324,6 +332,7 @@ from .dialer_event_entity_listing import DialerEventEntityListing
 from .dialer_preview import DialerPreview
 from .dialer_rule import DialerRule
 from .digit_length import DigitLength
+from .digits import Digits
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disconnect_reason import DisconnectReason
 from .dnc_list import DncList
@@ -393,6 +402,12 @@ from .edge_logs_job_file import EdgeLogsJobFile
 from .edge_logs_job_request import EdgeLogsJobRequest
 from .edge_logs_job_response import EdgeLogsJobResponse
 from .edge_logs_job_upload_request import EdgeLogsJobUploadRequest
+from .edge_metrics import EdgeMetrics
+from .edge_metrics_disk import EdgeMetricsDisk
+from .edge_metrics_memory import EdgeMetricsMemory
+from .edge_metrics_network import EdgeMetricsNetwork
+from .edge_metrics_processor import EdgeMetricsProcessor
+from .edge_metrics_subsystem import EdgeMetricsSubsystem
 from .edge_reboot_parameters import EdgeRebootParameters
 from .edge_service_state_request import EdgeServiceStateRequest
 from .edge_trunk_base import EdgeTrunkBase
@@ -521,6 +536,7 @@ from .inbound_message_request import InboundMessageRequest
 from .inbound_route import InboundRoute
 from .inbound_route_entity_listing import InboundRouteEntityListing
 from .initiate_screen_recording import InitiateScreenRecording
+from .instance_info import InstanceInfo
 from .interaction_stat_alert_notification import InteractionStatAlertNotification
 from .interaction_stat_alert_notification_notification_user import InteractionStatAlertNotificationNotificationUser
 from .interaction_stat_rule_notification import InteractionStatRuleNotification
@@ -643,6 +659,7 @@ from .outbound_route_base import OutboundRouteBase
 from .outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
 from .outbound_route_entity_listing import OutboundRouteEntityListing
 from .outbound_settings import OutboundSettings
+from .outbound_settings_notification import OutboundSettingsNotification
 from .pin_configuration import PINConfiguration
 from .page import Page
 from .paging_spec import PagingSpec
@@ -879,8 +896,11 @@ from .trunk_entity_listing import TrunkEntityListing
 from .trunk_error_info import TrunkErrorInfo
 from .trunk_error_info_details import TrunkErrorInfoDetails
 from .trunk_metabase_entity_listing import TrunkMetabaseEntityListing
+from .trunk_metrics import TrunkMetrics
+from .trunk_metrics_calls import TrunkMetricsCalls
 from .trunk_metrics_network_type_ip import TrunkMetricsNetworkTypeIp
 from .trunk_metrics_options import TrunkMetricsOptions
+from .trunk_metrics_qo_s import TrunkMetricsQoS
 from .trunk_metrics_registers import TrunkMetricsRegisters
 from .trunk_recording_enabled_count import TrunkRecordingEnabledCount
 from .trust_create import TrustCreate
@@ -924,7 +944,6 @@ from .user_param import UserParam
 from .user_presence import UserPresence
 from .user_presence_notification import UserPresenceNotification
 from .user_presence_notification_organization_presence import UserPresenceNotificationOrganizationPresence
-from .user_presence_notification_presence_definition import UserPresenceNotificationPresenceDefinition
 from .user_queue import UserQueue
 from .user_queue_entity_listing import UserQueueEntityListing
 from .user_recording import UserRecording

@@ -43,11 +43,12 @@ class JsonNode(object):
             'object': 'bool',
             'boolean': 'bool',
             'number': 'bool',
-            'floating_point_number': 'bool',
+            'value_node': 'bool',
             'container_node': 'bool',
             'missing_node': 'bool',
             'pojo': 'bool',
             'integral_number': 'bool',
+            'floating_point_number': 'bool',
             'short': 'bool',
             'int': 'bool',
             'long': 'bool',
@@ -56,7 +57,6 @@ class JsonNode(object):
             'big_integer': 'bool',
             'textual': 'bool',
             'binary': 'bool',
-            'value_node': 'bool',
             'array': 'bool',
             'null': 'bool'
         }
@@ -67,11 +67,12 @@ class JsonNode(object):
             'object': 'object',
             'boolean': 'boolean',
             'number': 'number',
-            'floating_point_number': 'floatingPointNumber',
+            'value_node': 'valueNode',
             'container_node': 'containerNode',
             'missing_node': 'missingNode',
             'pojo': 'pojo',
             'integral_number': 'integralNumber',
+            'floating_point_number': 'floatingPointNumber',
             'short': 'short',
             'int': 'int',
             'long': 'long',
@@ -80,7 +81,6 @@ class JsonNode(object):
             'big_integer': 'bigInteger',
             'textual': 'textual',
             'binary': 'binary',
-            'value_node': 'valueNode',
             'array': 'array',
             'null': 'null'
         }
@@ -90,11 +90,12 @@ class JsonNode(object):
         self._object = None
         self._boolean = None
         self._number = None
-        self._floating_point_number = None
+        self._value_node = None
         self._container_node = None
         self._missing_node = None
         self._pojo = None
         self._integral_number = None
+        self._floating_point_number = None
         self._short = None
         self._int = None
         self._long = None
@@ -103,7 +104,6 @@ class JsonNode(object):
         self._big_integer = None
         self._textual = None
         self._binary = None
-        self._value_node = None
         self._array = None
         self._null = None
 
@@ -227,27 +227,27 @@ class JsonNode(object):
         self._number = number
 
     @property
-    def floating_point_number(self):
+    def value_node(self):
         """
-        Gets the floating_point_number of this JsonNode.
+        Gets the value_node of this JsonNode.
 
 
-        :return: The floating_point_number of this JsonNode.
+        :return: The value_node of this JsonNode.
         :rtype: bool
         """
-        return self._floating_point_number
+        return self._value_node
 
-    @floating_point_number.setter
-    def floating_point_number(self, floating_point_number):
+    @value_node.setter
+    def value_node(self, value_node):
         """
-        Sets the floating_point_number of this JsonNode.
+        Sets the value_node of this JsonNode.
 
 
-        :param floating_point_number: The floating_point_number of this JsonNode.
+        :param value_node: The value_node of this JsonNode.
         :type: bool
         """
         
-        self._floating_point_number = floating_point_number
+        self._value_node = value_node
 
     @property
     def container_node(self):
@@ -340,6 +340,29 @@ class JsonNode(object):
         """
         
         self._integral_number = integral_number
+
+    @property
+    def floating_point_number(self):
+        """
+        Gets the floating_point_number of this JsonNode.
+
+
+        :return: The floating_point_number of this JsonNode.
+        :rtype: bool
+        """
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        """
+        Sets the floating_point_number of this JsonNode.
+
+
+        :param floating_point_number: The floating_point_number of this JsonNode.
+        :type: bool
+        """
+        
+        self._floating_point_number = floating_point_number
 
     @property
     def short(self):
@@ -524,29 +547,6 @@ class JsonNode(object):
         """
         
         self._binary = binary
-
-    @property
-    def value_node(self):
-        """
-        Gets the value_node of this JsonNode.
-
-
-        :return: The value_node of this JsonNode.
-        :rtype: bool
-        """
-        return self._value_node
-
-    @value_node.setter
-    def value_node(self, value_node):
-        """
-        Sets the value_node of this JsonNode.
-
-
-        :param value_node: The value_node of this JsonNode.
-        :type: bool
-        """
-        
-        self._value_node = value_node
 
     @property
     def array(self):

@@ -47,12 +47,12 @@ class CallHistoryParticipant(object):
             'direction': 'str',
             'ani': 'str',
             'dnis': 'str',
-            'user': 'UriReference',
-            'queue': 'UriReference',
-            'group': 'UriReference',
+            'user': 'User',
+            'queue': 'Queue',
+            'group': 'Group',
             'disconnect_type': 'str',
-            'external_contact': 'UriReference',
-            'external_organization': 'UriReference'
+            'external_contact': 'ExternalContact',
+            'external_organization': 'ExternalOrganization'
         }
 
         self.attribute_map = {
@@ -307,7 +307,7 @@ class CallHistoryParticipant(object):
         The PureCloud user for this participant.
 
         :return: The user of this CallHistoryParticipant.
-        :rtype: UriReference
+        :rtype: User
         """
         return self._user
 
@@ -318,7 +318,7 @@ class CallHistoryParticipant(object):
         The PureCloud user for this participant.
 
         :param user: The user of this CallHistoryParticipant.
-        :type: UriReference
+        :type: User
         """
         
         self._user = user
@@ -330,7 +330,7 @@ class CallHistoryParticipant(object):
         The PureCloud queue for this participant.
 
         :return: The queue of this CallHistoryParticipant.
-        :rtype: UriReference
+        :rtype: Queue
         """
         return self._queue
 
@@ -341,7 +341,7 @@ class CallHistoryParticipant(object):
         The PureCloud queue for this participant.
 
         :param queue: The queue of this CallHistoryParticipant.
-        :type: UriReference
+        :type: Queue
         """
         
         self._queue = queue
@@ -353,7 +353,7 @@ class CallHistoryParticipant(object):
         The group involved in the group ring call.
 
         :return: The group of this CallHistoryParticipant.
-        :rtype: UriReference
+        :rtype: Group
         """
         return self._group
 
@@ -364,7 +364,7 @@ class CallHistoryParticipant(object):
         The group involved in the group ring call.
 
         :param group: The group of this CallHistoryParticipant.
-        :type: UriReference
+        :type: Group
         """
         
         self._group = group
@@ -403,7 +403,7 @@ class CallHistoryParticipant(object):
         The PureCloud external contact
 
         :return: The external_contact of this CallHistoryParticipant.
-        :rtype: UriReference
+        :rtype: ExternalContact
         """
         return self._external_contact
 
@@ -414,7 +414,7 @@ class CallHistoryParticipant(object):
         The PureCloud external contact
 
         :param external_contact: The external_contact of this CallHistoryParticipant.
-        :type: UriReference
+        :type: ExternalContact
         """
         
         self._external_contact = external_contact
@@ -426,7 +426,7 @@ class CallHistoryParticipant(object):
         The PureCloud external organization
 
         :return: The external_organization of this CallHistoryParticipant.
-        :rtype: UriReference
+        :rtype: ExternalOrganization
         """
         return self._external_organization
 
@@ -437,7 +437,7 @@ class CallHistoryParticipant(object):
         The PureCloud external organization
 
         :param external_organization: The external_organization of this CallHistoryParticipant.
-        :type: UriReference
+        :type: ExternalOrganization
         """
         
         self._external_organization = external_organization

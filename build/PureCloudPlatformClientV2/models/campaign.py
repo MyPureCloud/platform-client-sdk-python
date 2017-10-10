@@ -61,6 +61,7 @@ class Campaign(object):
             'rule_sets': 'list[UriReference]',
             'skip_preview_disabled': 'bool',
             'preview_time_out_seconds': 'int',
+            'always_running': 'bool',
             'contact_sort': 'ContactSort',
             'contact_sorts': 'list[ContactSort]',
             'no_answer_timeout': 'int',
@@ -94,6 +95,7 @@ class Campaign(object):
             'rule_sets': 'ruleSets',
             'skip_preview_disabled': 'skipPreviewDisabled',
             'preview_time_out_seconds': 'previewTimeOutSeconds',
+            'always_running': 'alwaysRunning',
             'contact_sort': 'contactSort',
             'contact_sorts': 'contactSorts',
             'no_answer_timeout': 'noAnswerTimeout',
@@ -126,6 +128,7 @@ class Campaign(object):
         self._rule_sets = None
         self._skip_preview_disabled = None
         self._preview_time_out_seconds = None
+        self._always_running = None
         self._contact_sort = None
         self._contact_sorts = None
         self._no_answer_timeout = None
@@ -161,7 +164,7 @@ class Campaign(object):
     def name(self):
         """
         Gets the name of this Campaign.
-
+        The name of the Campaign.
 
         :return: The name of this Campaign.
         :rtype: str
@@ -172,7 +175,7 @@ class Campaign(object):
     def name(self, name):
         """
         Sets the name of this Campaign.
-
+        The name of the Campaign.
 
         :param name: The name of this Campaign.
         :type: str
@@ -253,7 +256,7 @@ class Campaign(object):
     def contact_list(self):
         """
         Gets the contact_list of this Campaign.
-        identifier of the contact list for the campaign
+        The ContactList for this Campaign to dial.
 
         :return: The contact_list of this Campaign.
         :rtype: UriReference
@@ -264,7 +267,7 @@ class Campaign(object):
     def contact_list(self, contact_list):
         """
         Sets the contact_list of this Campaign.
-        identifier of the contact list for the campaign
+        The ContactList for this Campaign to dial.
 
         :param contact_list: The contact_list of this Campaign.
         :type: UriReference
@@ -276,7 +279,7 @@ class Campaign(object):
     def queue(self):
         """
         Gets the queue of this Campaign.
-        identifier of the agent assignment queue, required for all dialing modes other than agentless
+        The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
 
         :return: The queue of this Campaign.
         :rtype: UriReference
@@ -287,7 +290,7 @@ class Campaign(object):
     def queue(self, queue):
         """
         Sets the queue of this Campaign.
-        identifier of the agent assignment queue, required for all dialing modes other than agentless
+        The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
 
         :param queue: The queue of this Campaign.
         :type: UriReference
@@ -299,7 +302,7 @@ class Campaign(object):
     def dialing_mode(self):
         """
         Gets the dialing_mode of this Campaign.
-        dialing mode of the campaign
+        The strategy this Campaign will use for dialing.
 
         :return: The dialing_mode of this Campaign.
         :rtype: str
@@ -310,7 +313,7 @@ class Campaign(object):
     def dialing_mode(self, dialing_mode):
         """
         Sets the dialing_mode of this Campaign.
-        dialing mode of the campaign
+        The strategy this Campaign will use for dialing.
 
         :param dialing_mode: The dialing_mode of this Campaign.
         :type: str
@@ -326,7 +329,7 @@ class Campaign(object):
     def script(self):
         """
         Gets the script of this Campaign.
-        identifier of the campaign script, required for all dialing modes other than agentless
+        The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
 
         :return: The script of this Campaign.
         :rtype: UriReference
@@ -337,7 +340,7 @@ class Campaign(object):
     def script(self, script):
         """
         Sets the script of this Campaign.
-        identifier of the campaign script, required for all dialing modes other than agentless
+        The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
 
         :param script: The script of this Campaign.
         :type: UriReference
@@ -349,7 +352,7 @@ class Campaign(object):
     def edge_group(self):
         """
         Gets the edge_group of this Campaign.
-        identifier of the edge group, required for all dialing modes other than preview
+        The EdgeGroup that will place the calls. Required for all dialing modes except preview.
 
         :return: The edge_group of this Campaign.
         :rtype: UriReference
@@ -360,7 +363,7 @@ class Campaign(object):
     def edge_group(self, edge_group):
         """
         Sets the edge_group of this Campaign.
-        identifier of the edge group, required for all dialing modes other than preview
+        The EdgeGroup that will place the calls. Required for all dialing modes except preview.
 
         :param edge_group: The edge_group of this Campaign.
         :type: UriReference
@@ -372,7 +375,7 @@ class Campaign(object):
     def campaign_status(self):
         """
         Gets the campaign_status of this Campaign.
-        status of the campaign; can be set to 'on' or 'off'
+        The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
 
         :return: The campaign_status of this Campaign.
         :rtype: str
@@ -383,7 +386,7 @@ class Campaign(object):
     def campaign_status(self, campaign_status):
         """
         Sets the campaign_status of this Campaign.
-        status of the campaign; can be set to 'on' or 'off'
+        The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
 
         :param campaign_status: The campaign_status of this Campaign.
         :type: str
@@ -399,7 +402,7 @@ class Campaign(object):
     def phone_columns(self):
         """
         Gets the phone_columns of this Campaign.
-        the contact list phone columns to be called for the campaign
+        The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
 
         :return: The phone_columns of this Campaign.
         :rtype: list[PhoneColumn]
@@ -410,7 +413,7 @@ class Campaign(object):
     def phone_columns(self, phone_columns):
         """
         Sets the phone_columns of this Campaign.
-        the contact list phone columns to be called for the campaign
+        The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
 
         :param phone_columns: The phone_columns of this Campaign.
         :type: list[PhoneColumn]
@@ -422,7 +425,7 @@ class Campaign(object):
     def abandon_rate(self):
         """
         Gets the abandon_rate of this Campaign.
-        the targeted abandon rate percentage
+        The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
 
         :return: The abandon_rate of this Campaign.
         :rtype: float
@@ -433,7 +436,7 @@ class Campaign(object):
     def abandon_rate(self, abandon_rate):
         """
         Sets the abandon_rate of this Campaign.
-        the targeted abandon rate percentage
+        The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
 
         :param abandon_rate: The abandon_rate of this Campaign.
         :type: float
@@ -445,7 +448,7 @@ class Campaign(object):
     def dnc_lists(self):
         """
         Gets the dnc_lists of this Campaign.
-        identifiers of the do not call lists
+        DncLists for this Campaign to check before placing a call.
 
         :return: The dnc_lists of this Campaign.
         :rtype: list[UriReference]
@@ -456,7 +459,7 @@ class Campaign(object):
     def dnc_lists(self, dnc_lists):
         """
         Sets the dnc_lists of this Campaign.
-        identifiers of the do not call lists
+        DncLists for this Campaign to check before placing a call.
 
         :param dnc_lists: The dnc_lists of this Campaign.
         :type: list[UriReference]
@@ -468,7 +471,7 @@ class Campaign(object):
     def callable_time_set(self):
         """
         Gets the callable_time_set of this Campaign.
-        the identifier of the callable time set
+        The callable time set for this campaign to check before placing a call.
 
         :return: The callable_time_set of this Campaign.
         :rtype: UriReference
@@ -479,7 +482,7 @@ class Campaign(object):
     def callable_time_set(self, callable_time_set):
         """
         Sets the callable_time_set of this Campaign.
-        the identifier of the callable time set
+        The callable time set for this campaign to check before placing a call.
 
         :param callable_time_set: The callable_time_set of this Campaign.
         :type: UriReference
@@ -491,7 +494,7 @@ class Campaign(object):
     def call_analysis_response_set(self):
         """
         Gets the call_analysis_response_set of this Campaign.
-        the identifier of the call analysis response set, required for all dialing modes other than preview
+        The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
 
         :return: The call_analysis_response_set of this Campaign.
         :rtype: UriReference
@@ -502,7 +505,7 @@ class Campaign(object):
     def call_analysis_response_set(self, call_analysis_response_set):
         """
         Sets the call_analysis_response_set of this Campaign.
-        the identifier of the call analysis response set, required for all dialing modes other than preview
+        The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
 
         :param call_analysis_response_set: The call_analysis_response_set of this Campaign.
         :type: UriReference
@@ -514,7 +517,7 @@ class Campaign(object):
     def errors(self):
         """
         Gets the errors of this Campaign.
-        a list of current error conditions associated with the campaign
+        A list of current error conditions associated with the campaign.
 
         :return: The errors of this Campaign.
         :rtype: list[RestErrorDetail]
@@ -525,7 +528,7 @@ class Campaign(object):
     def errors(self, errors):
         """
         Sets the errors of this Campaign.
-        a list of current error conditions associated with the campaign
+        A list of current error conditions associated with the campaign.
 
         :param errors: The errors of this Campaign.
         :type: list[RestErrorDetail]
@@ -537,7 +540,7 @@ class Campaign(object):
     def caller_name(self):
         """
         Gets the caller_name of this Campaign.
-        caller id name to be displayed on the outbound call
+        The caller id name to be displayed on the outbound call.
 
         :return: The caller_name of this Campaign.
         :rtype: str
@@ -548,7 +551,7 @@ class Campaign(object):
     def caller_name(self, caller_name):
         """
         Sets the caller_name of this Campaign.
-        caller id name to be displayed on the outbound call
+        The caller id name to be displayed on the outbound call.
 
         :param caller_name: The caller_name of this Campaign.
         :type: str
@@ -560,7 +563,7 @@ class Campaign(object):
     def caller_address(self):
         """
         Gets the caller_address of this Campaign.
-        caller id phone number to be displayed on the outbound call
+        The caller id phone number to be displayed on the outbound call.
 
         :return: The caller_address of this Campaign.
         :rtype: str
@@ -571,7 +574,7 @@ class Campaign(object):
     def caller_address(self, caller_address):
         """
         Sets the caller_address of this Campaign.
-        caller id phone number to be displayed on the outbound call
+        The caller id phone number to be displayed on the outbound call.
 
         :param caller_address: The caller_address of this Campaign.
         :type: str
@@ -583,7 +586,7 @@ class Campaign(object):
     def outbound_line_count(self):
         """
         Gets the outbound_line_count of this Campaign.
-        for agentless campaigns, the number of outbound lines to be concurrently dialed
+        The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
 
         :return: The outbound_line_count of this Campaign.
         :rtype: int
@@ -594,7 +597,7 @@ class Campaign(object):
     def outbound_line_count(self, outbound_line_count):
         """
         Sets the outbound_line_count of this Campaign.
-        for agentless campaigns, the number of outbound lines to be concurrently dialed
+        The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
 
         :param outbound_line_count: The outbound_line_count of this Campaign.
         :type: int
@@ -606,7 +609,7 @@ class Campaign(object):
     def rule_sets(self):
         """
         Gets the rule_sets of this Campaign.
-        identifiers of the rule sets
+        Rule sets to be applied while this campaign is dialing.
 
         :return: The rule_sets of this Campaign.
         :rtype: list[UriReference]
@@ -617,7 +620,7 @@ class Campaign(object):
     def rule_sets(self, rule_sets):
         """
         Sets the rule_sets of this Campaign.
-        identifiers of the rule sets
+        Rule sets to be applied while this campaign is dialing.
 
         :param rule_sets: The rule_sets of this Campaign.
         :type: list[UriReference]
@@ -629,7 +632,7 @@ class Campaign(object):
     def skip_preview_disabled(self):
         """
         Gets the skip_preview_disabled of this Campaign.
-        for preview campaigns, indicator of whether the agent can skip a preview without placing a call
+        Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
 
         :return: The skip_preview_disabled of this Campaign.
         :rtype: bool
@@ -640,7 +643,7 @@ class Campaign(object):
     def skip_preview_disabled(self, skip_preview_disabled):
         """
         Sets the skip_preview_disabled of this Campaign.
-        for preview campaigns, indicator of whether the agent can skip a preview without placing a call
+        Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
 
         :param skip_preview_disabled: The skip_preview_disabled of this Campaign.
         :type: bool
@@ -652,7 +655,7 @@ class Campaign(object):
     def preview_time_out_seconds(self):
         """
         Gets the preview_time_out_seconds of this Campaign.
-        for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
+        The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
 
         :return: The preview_time_out_seconds of this Campaign.
         :rtype: int
@@ -663,7 +666,7 @@ class Campaign(object):
     def preview_time_out_seconds(self, preview_time_out_seconds):
         """
         Sets the preview_time_out_seconds of this Campaign.
-        for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
+        The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
 
         :param preview_time_out_seconds: The preview_time_out_seconds of this Campaign.
         :type: int
@@ -672,10 +675,33 @@ class Campaign(object):
         self._preview_time_out_seconds = preview_time_out_seconds
 
     @property
+    def always_running(self):
+        """
+        Gets the always_running of this Campaign.
+        Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
+
+        :return: The always_running of this Campaign.
+        :rtype: bool
+        """
+        return self._always_running
+
+    @always_running.setter
+    def always_running(self, always_running):
+        """
+        Sets the always_running of this Campaign.
+        Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
+
+        :param always_running: The always_running of this Campaign.
+        :type: bool
+        """
+        
+        self._always_running = always_running
+
+    @property
     def contact_sort(self):
         """
         Gets the contact_sort of this Campaign.
-        information determining the order in which the contacts will be dialed
+        The order in which to sort contacts for dialing, based on a column.
 
         :return: The contact_sort of this Campaign.
         :rtype: ContactSort
@@ -686,7 +712,7 @@ class Campaign(object):
     def contact_sort(self, contact_sort):
         """
         Sets the contact_sort of this Campaign.
-        information determining the order in which the contacts will be dialed
+        The order in which to sort contacts for dialing, based on a column.
 
         :param contact_sort: The contact_sort of this Campaign.
         :type: ContactSort
@@ -698,7 +724,7 @@ class Campaign(object):
     def contact_sorts(self):
         """
         Gets the contact_sorts of this Campaign.
-        column prioritized information determining the order in which the contacts will be dialed
+        The order in which to sort contacts for dialing, based on up to four columns.
 
         :return: The contact_sorts of this Campaign.
         :rtype: list[ContactSort]
@@ -709,7 +735,7 @@ class Campaign(object):
     def contact_sorts(self, contact_sorts):
         """
         Sets the contact_sorts of this Campaign.
-        column prioritized information determining the order in which the contacts will be dialed
+        The order in which to sort contacts for dialing, based on up to four columns.
 
         :param contact_sorts: The contact_sorts of this Campaign.
         :type: list[ContactSort]
@@ -721,7 +747,7 @@ class Campaign(object):
     def no_answer_timeout(self):
         """
         Gets the no_answer_timeout of this Campaign.
-        for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
+        How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns.
 
         :return: The no_answer_timeout of this Campaign.
         :rtype: int
@@ -732,7 +758,7 @@ class Campaign(object):
     def no_answer_timeout(self, no_answer_timeout):
         """
         Sets the no_answer_timeout of this Campaign.
-        for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
+        How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns.
 
         :param no_answer_timeout: The no_answer_timeout of this Campaign.
         :type: int
@@ -744,7 +770,7 @@ class Campaign(object):
     def call_analysis_language(self):
         """
         Gets the call_analysis_language of this Campaign.
-        The language the edge will use to analyse the call
+        The language the edge will use to analyze the call.
 
         :return: The call_analysis_language of this Campaign.
         :rtype: str
@@ -755,7 +781,7 @@ class Campaign(object):
     def call_analysis_language(self, call_analysis_language):
         """
         Sets the call_analysis_language of this Campaign.
-        The language the edge will use to analyse the call
+        The language the edge will use to analyze the call.
 
         :param call_analysis_language: The call_analysis_language of this Campaign.
         :type: str
@@ -767,7 +793,7 @@ class Campaign(object):
     def priority(self):
         """
         Gets the priority of this Campaign.
-        The priority of this campaign relative to other campaigns
+        The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
 
         :return: The priority of this Campaign.
         :rtype: int
@@ -778,7 +804,7 @@ class Campaign(object):
     def priority(self, priority):
         """
         Sets the priority of this Campaign.
-        The priority of this campaign relative to other campaigns
+        The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
 
         :param priority: The priority of this Campaign.
         :type: int
@@ -790,7 +816,7 @@ class Campaign(object):
     def contact_list_filters(self):
         """
         Gets the contact_list_filters of this Campaign.
-        Filter defining a subset of contacts from the contact list to be dialed
+        Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
 
         :return: The contact_list_filters of this Campaign.
         :rtype: list[UriReference]
@@ -801,7 +827,7 @@ class Campaign(object):
     def contact_list_filters(self, contact_list_filters):
         """
         Sets the contact_list_filters of this Campaign.
-        Filter defining a subset of contacts from the contact list to be dialed
+        Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
 
         :param contact_list_filters: The contact_list_filters of this Campaign.
         :type: list[UriReference]

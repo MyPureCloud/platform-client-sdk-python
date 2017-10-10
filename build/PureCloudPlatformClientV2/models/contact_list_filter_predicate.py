@@ -66,7 +66,7 @@ class ContactListFilterPredicate(object):
     def column(self):
         """
         Gets the column of this ContactListFilterPredicate.
-        Contact List column that must match a contact list column in the ContactListFilter's contactList object
+        Contact list column from the ContactListFilter's contactList.
 
         :return: The column of this ContactListFilterPredicate.
         :rtype: str
@@ -77,7 +77,7 @@ class ContactListFilterPredicate(object):
     def column(self, column):
         """
         Sets the column of this ContactListFilterPredicate.
-        Contact List column that must match a contact list column in the ContactListFilter's contactList object
+        Contact list column from the ContactListFilter's contactList.
 
         :param column: The column of this ContactListFilterPredicate.
         :type: str
@@ -89,7 +89,7 @@ class ContactListFilterPredicate(object):
     def column_type(self):
         """
         Gets the column_type of this ContactListFilterPredicate.
-        Whether the contact column contains numeric or alphabetic data
+        The type of data in the contact column.
 
         :return: The column_type of this ContactListFilterPredicate.
         :rtype: str
@@ -100,7 +100,7 @@ class ContactListFilterPredicate(object):
     def column_type(self, column_type):
         """
         Sets the column_type of this ContactListFilterPredicate.
-        Whether the contact column contains numeric or alphabetic data
+        The type of data in the contact column.
 
         :param column_type: The column_type of this ContactListFilterPredicate.
         :type: str
@@ -116,7 +116,7 @@ class ContactListFilterPredicate(object):
     def operator(self):
         """
         Gets the operator of this ContactListFilterPredicate.
-
+        The operator for this ContactListFilterPredicate.
 
         :return: The operator of this ContactListFilterPredicate.
         :rtype: str
@@ -127,7 +127,7 @@ class ContactListFilterPredicate(object):
     def operator(self, operator):
         """
         Sets the operator of this ContactListFilterPredicate.
-
+        The operator for this ContactListFilterPredicate.
 
         :param operator: The operator of this ContactListFilterPredicate.
         :type: str
@@ -143,7 +143,7 @@ class ContactListFilterPredicate(object):
     def value(self):
         """
         Gets the value of this ContactListFilterPredicate.
-        Contact List value to operate on. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        Value with which to compare the contact's data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
 
         :return: The value of this ContactListFilterPredicate.
         :rtype: str
@@ -154,7 +154,7 @@ class ContactListFilterPredicate(object):
     def value(self, value):
         """
         Sets the value of this ContactListFilterPredicate.
-        Contact List value to operate on. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        Value with which to compare the contact's data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
 
         :param value: The value of this ContactListFilterPredicate.
         :type: str
@@ -166,7 +166,7 @@ class ContactListFilterPredicate(object):
     def range(self):
         """
         Gets the range of this ContactListFilterPredicate.
-        Range is only required for ContactListFilterComparisonOperator's BETWEEN and IN
+        A range of values. Required for operators BETWEEN and IN.
 
         :return: The range of this ContactListFilterPredicate.
         :rtype: ContactListFilterRange
@@ -177,7 +177,7 @@ class ContactListFilterPredicate(object):
     def range(self, range):
         """
         Sets the range of this ContactListFilterPredicate.
-        Range is only required for ContactListFilterComparisonOperator's BETWEEN and IN
+        A range of values. Required for operators BETWEEN and IN.
 
         :param range: The range of this ContactListFilterPredicate.
         :type: ContactListFilterRange

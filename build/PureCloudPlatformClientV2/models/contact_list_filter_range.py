@@ -63,7 +63,7 @@ class ContactListFilterRange(object):
     def min(self):
         """
         Gets the min of this ContactListFilterRange.
-
+        The minimum value of the range. Required for the operator BETWEEN.
 
         :return: The min of this ContactListFilterRange.
         :rtype: str
@@ -74,7 +74,7 @@ class ContactListFilterRange(object):
     def min(self, min):
         """
         Sets the min of this ContactListFilterRange.
-
+        The minimum value of the range. Required for the operator BETWEEN.
 
         :param min: The min of this ContactListFilterRange.
         :type: str
@@ -86,7 +86,7 @@ class ContactListFilterRange(object):
     def max(self):
         """
         Gets the max of this ContactListFilterRange.
-
+        The maximum value of the range. Required for the operator BETWEEN.
 
         :return: The max of this ContactListFilterRange.
         :rtype: str
@@ -97,7 +97,7 @@ class ContactListFilterRange(object):
     def max(self, max):
         """
         Sets the max of this ContactListFilterRange.
-
+        The maximum value of the range. Required for the operator BETWEEN.
 
         :param max: The max of this ContactListFilterRange.
         :type: str
@@ -109,7 +109,7 @@ class ContactListFilterRange(object):
     def min_inclusive(self):
         """
         Gets the min_inclusive of this ContactListFilterRange.
-
+        Whether or not to include the minimum in the range.
 
         :return: The min_inclusive of this ContactListFilterRange.
         :rtype: bool
@@ -120,7 +120,7 @@ class ContactListFilterRange(object):
     def min_inclusive(self, min_inclusive):
         """
         Sets the min_inclusive of this ContactListFilterRange.
-
+        Whether or not to include the minimum in the range.
 
         :param min_inclusive: The min_inclusive of this ContactListFilterRange.
         :type: bool
@@ -132,7 +132,7 @@ class ContactListFilterRange(object):
     def max_inclusive(self):
         """
         Gets the max_inclusive of this ContactListFilterRange.
-
+        Whether or not to include the maximum in the range.
 
         :return: The max_inclusive of this ContactListFilterRange.
         :rtype: bool
@@ -143,7 +143,7 @@ class ContactListFilterRange(object):
     def max_inclusive(self, max_inclusive):
         """
         Sets the max_inclusive of this ContactListFilterRange.
-
+        Whether or not to include the maximum in the range.
 
         :param max_inclusive: The max_inclusive of this ContactListFilterRange.
         :type: bool
@@ -155,7 +155,7 @@ class ContactListFilterRange(object):
     def in_set(self):
         """
         Gets the in_set of this ContactListFilterRange.
-
+        A set of values that the contact data should be in. Required for the IN operator.
 
         :return: The in_set of this ContactListFilterRange.
         :rtype: list[str]
@@ -166,7 +166,7 @@ class ContactListFilterRange(object):
     def in_set(self, in_set):
         """
         Sets the in_set of this ContactListFilterRange.
-
+        A set of values that the contact data should be in. Required for the IN operator.
 
         :param in_set: The in_set of this ContactListFilterRange.
         :type: list[str]

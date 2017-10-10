@@ -8,16 +8,16 @@ title: DncList
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
-| **name** | **str** | The name of the list. | |
+| **name** | **str** | The name of the DncList. | |
 | **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
-| **import_status** | [**ImportStatus**](ImportStatus.html) | the status of the import process | [optional] |
-| **size** | **int** | the number of phone numbers in the do not call list | [optional] |
-| **dnc_source_type** | **str** | the type of dnc list being created, rds (csv file), gryphon, or dnc.com | [optional] |
-| **login_id** | **str** | the loginId if the dncSourceType is dnc.com | [optional] |
-| **dnc_codes** | **list[str]** | the list of dnc.com codes to be treated as DNC | [optional] |
-| **license_id** | **str** | the license number if the dncSourceType is gryphon | [optional] |
+| **import_status** | [**ImportStatus**](ImportStatus.html) | The status of the import process | [optional] |
+| **size** | **int** | The total number of phone numbers in the DncList. | [optional] |
+| **dnc_source_type** | **str** | The type of the DncList. | |
+| **login_id** | **str** | A dnc.com loginId. Required if the dncSourceType is dnc.com. | [optional] |
+| **dnc_codes** | **list[str]** | The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com. | [optional] |
+| **license_id** | **str** | A gryphon license number. Required if the dncSourceType is gryphon. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

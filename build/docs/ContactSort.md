@@ -8,8 +8,8 @@ title: ContactSort
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **field_name** | **str** |  | [optional] |
-| **direction** | **str** | The sort direction | [optional] |
-| **numeric** | **bool** | Whether that column contains numeric data | [optional] |
+| **direction** | **str** | The direction in which to sort contacts. | [optional] |
+| **numeric** | **bool** | Whether or not the column contains numeric data. | [optional] |
 {: class="table table-striped"}
 
 

@@ -187,7 +187,7 @@ class WrapUpCodeMapping(object):
     def default_set(self):
         """
         Gets the default_set of this WrapUpCodeMapping.
-        The default set of wrapup values
+        The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.
 
         :return: The default_set of this WrapUpCodeMapping.
         :rtype: list[str]
@@ -198,7 +198,7 @@ class WrapUpCodeMapping(object):
     def default_set(self, default_set):
         """
         Sets the default_set of this WrapUpCodeMapping.
-        The default set of wrapup values
+        The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.
 
         :param default_set: The default_set of this WrapUpCodeMapping.
         :type: list[str]
@@ -210,7 +210,7 @@ class WrapUpCodeMapping(object):
     def mapping(self):
         """
         Gets the mapping of this WrapUpCodeMapping.
-        A map from wrapup code identifiers to a set of wrapup values
+        A map from wrap-up code identifiers to a set of wrap-up flags.
 
         :return: The mapping of this WrapUpCodeMapping.
         :rtype: dict(str, list[str])
@@ -221,7 +221,7 @@ class WrapUpCodeMapping(object):
     def mapping(self, mapping):
         """
         Sets the mapping of this WrapUpCodeMapping.
-        A map from wrapup code identifiers to a set of wrapup values
+        A map from wrap-up code identifiers to a set of wrap-up flags.
 
         :param mapping: The mapping of this WrapUpCodeMapping.
         :type: dict(str, list[str])

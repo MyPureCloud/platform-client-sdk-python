@@ -39,7 +39,7 @@ class UserPresenceNotification(object):
         """
         self.swagger_types = {
             'source': 'str',
-            'presence_definition': 'UserPresenceNotificationPresenceDefinition',
+            'presence_definition': 'AgentActivityNotificationPresencePresenceDefinition',
             'primary': 'bool',
             'message': 'str',
             'modified_date': 'datetime'
@@ -89,7 +89,7 @@ class UserPresenceNotification(object):
 
 
         :return: The presence_definition of this UserPresenceNotification.
-        :rtype: UserPresenceNotificationPresenceDefinition
+        :rtype: AgentActivityNotificationPresencePresenceDefinition
         """
         return self._presence_definition
 
@@ -100,7 +100,7 @@ class UserPresenceNotification(object):
 
 
         :param presence_definition: The presence_definition of this UserPresenceNotification.
-        :type: UserPresenceNotificationPresenceDefinition
+        :type: AgentActivityNotificationPresencePresenceDefinition
         """
         
         self._presence_definition = presence_definition

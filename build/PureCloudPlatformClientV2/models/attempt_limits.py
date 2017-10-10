@@ -196,7 +196,7 @@ class AttemptLimits(object):
     def max_attempts_per_contact(self):
         """
         Gets the max_attempts_per_contact of this AttemptLimits.
-
+        The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.
 
         :return: The max_attempts_per_contact of this AttemptLimits.
         :rtype: int
@@ -207,7 +207,7 @@ class AttemptLimits(object):
     def max_attempts_per_contact(self, max_attempts_per_contact):
         """
         Sets the max_attempts_per_contact of this AttemptLimits.
-
+        The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.
 
         :param max_attempts_per_contact: The max_attempts_per_contact of this AttemptLimits.
         :type: int
@@ -219,7 +219,7 @@ class AttemptLimits(object):
     def max_attempts_per_number(self):
         """
         Gets the max_attempts_per_number of this AttemptLimits.
-
+        The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.
 
         :return: The max_attempts_per_number of this AttemptLimits.
         :rtype: int
@@ -230,7 +230,7 @@ class AttemptLimits(object):
     def max_attempts_per_number(self, max_attempts_per_number):
         """
         Sets the max_attempts_per_number of this AttemptLimits.
-
+        The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.
 
         :param max_attempts_per_number: The max_attempts_per_number of this AttemptLimits.
         :type: int
@@ -242,7 +242,7 @@ class AttemptLimits(object):
     def time_zone_id(self):
         """
         Gets the time_zone_id of this AttemptLimits.
-        The timezone is necessary to define when \"today\" starts and ends
+        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
 
         :return: The time_zone_id of this AttemptLimits.
         :rtype: str
@@ -253,7 +253,7 @@ class AttemptLimits(object):
     def time_zone_id(self, time_zone_id):
         """
         Sets the time_zone_id of this AttemptLimits.
-        The timezone is necessary to define when \"today\" starts and ends
+        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
 
         :param time_zone_id: The time_zone_id of this AttemptLimits.
         :type: str
@@ -265,7 +265,7 @@ class AttemptLimits(object):
     def reset_period(self):
         """
         Gets the reset_period of this AttemptLimits.
-        After how long the number of attempts will be set back to 0
+        After how long the number of attempts will be set back to 0. Defaults to NEVER.
 
         :return: The reset_period of this AttemptLimits.
         :rtype: str
@@ -276,7 +276,7 @@ class AttemptLimits(object):
     def reset_period(self, reset_period):
         """
         Sets the reset_period of this AttemptLimits.
-        After how long the number of attempts will be set back to 0
+        After how long the number of attempts will be set back to 0. Defaults to NEVER.
 
         :param reset_period: The reset_period of this AttemptLimits.
         :type: str
@@ -292,7 +292,7 @@ class AttemptLimits(object):
     def recall_entries(self):
         """
         Gets the recall_entries of this AttemptLimits.
-        Configuration for recall attempts
+        Configuration for recall attempts.
 
         :return: The recall_entries of this AttemptLimits.
         :rtype: dict(str, RecallEntry)
@@ -303,7 +303,7 @@ class AttemptLimits(object):
     def recall_entries(self, recall_entries):
         """
         Sets the recall_entries of this AttemptLimits.
-        Configuration for recall attempts
+        Configuration for recall attempts.
 
         :param recall_entries: The recall_entries of this AttemptLimits.
         :type: dict(str, RecallEntry)

@@ -17,6 +17,7 @@ title: CampaignNotification
 | **dialing_mode** | **str** |  | [optional] |
 | **script** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  | [optional] |
 | **edge_group** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  | [optional] |
+| **site** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  | [optional] |
 | **campaign_status** | **str** |  | [optional] |
 | **phone_columns** | [**list[CampaignNotificationPhoneColumns]**](CampaignNotificationPhoneColumns.html) |  | [optional] |
 | **abandon_rate** | **float** |  | [optional] |

@@ -57,7 +57,7 @@ class Reaction(object):
     def data(self):
         """
         Gets the data of this Reaction.
-
+        Parameter for this reaction. For transfer_flow, this would be the outbound flow id.
 
         :return: The data of this Reaction.
         :rtype: str
@@ -68,7 +68,7 @@ class Reaction(object):
     def data(self, data):
         """
         Sets the data of this Reaction.
-
+        Parameter for this reaction. For transfer_flow, this would be the outbound flow id.
 
         :param data: The data of this Reaction.
         :type: str
@@ -80,7 +80,7 @@ class Reaction(object):
     def name(self):
         """
         Gets the name of this Reaction.
-
+        Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.
 
         :return: The name of this Reaction.
         :rtype: str
@@ -91,7 +91,7 @@ class Reaction(object):
     def name(self, name):
         """
         Sets the name of this Reaction.
-
+        Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.
 
         :param name: The name of this Reaction.
         :type: str
@@ -103,7 +103,7 @@ class Reaction(object):
     def reaction_type(self):
         """
         Gets the reaction_type of this Reaction.
-
+        The reaction to take for a given call analysis result.
 
         :return: The reaction_type of this Reaction.
         :rtype: str
@@ -114,7 +114,7 @@ class Reaction(object):
     def reaction_type(self, reaction_type):
         """
         Sets the reaction_type of this Reaction.
-
+        The reaction to take for a given call analysis result.
 
         :param reaction_type: The reaction_type of this Reaction.
         :type: str

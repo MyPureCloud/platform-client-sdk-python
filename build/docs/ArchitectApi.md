@@ -1928,7 +1928,7 @@ except ApiException as e:
 
 <a name="get_flows"></a>
 
-## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas)
+## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before)
 
 Get a pageable list of flows, filtered by query parameters
 
@@ -1964,10 +1964,12 @@ locked_by = 'locked_by_example' # str | Locked by (optional)
 secure = 'secure_example' # str | Secure (optional)
 deleted = false # bool | Include deleted (optional) (default to false)
 include_schemas = false # bool | Include variable schemas (optional) (default to false)
+published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
+published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
 
 try:
     # Get a pageable list of flows, filtered by query parameters
-    api_response = api_instance.get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas)
+    api_response = api_instance.get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows: %s\n" % e
@@ -1993,6 +1995,8 @@ except ApiException as e:
 | **secure** | **str**| Secure | [optional] <br />**Values**: any, checkedin, published |
 | **deleted** | **bool**| Include deleted | [optional] [default to false] |
 | **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
+| **published_after** | **str**| Published after | [optional]  |
+| **published_before** | **str**| Published before | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

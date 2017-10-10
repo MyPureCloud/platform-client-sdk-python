@@ -7,7 +7,7 @@ title: UserRoutingStatusNotification
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **routing_status** | [**UserRoutingStatusNotificationRoutingStatus**](UserRoutingStatusNotificationRoutingStatus.html) |  | [optional] |
+| **routing_status** | [**AgentActivityNotificationRoutingStatus**](AgentActivityNotificationRoutingStatus.html) |  | [optional] |
 | **error_info** | [**UserRoutingStatusNotificationErrorInfo**](UserRoutingStatusNotificationErrorInfo.html) |  | [optional] |
 {: class="table table-striped"}
 

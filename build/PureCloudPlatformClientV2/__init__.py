@@ -21,6 +21,12 @@ from .models.adjacents import Adjacents
 from .models.agent import Agent
 from .models.agent_activity import AgentActivity
 from .models.agent_activity_entity_listing import AgentActivityEntityListing
+from .models.agent_activity_notification import AgentActivityNotification
+from .models.agent_activity_notification_organization_presence import AgentActivityNotificationOrganizationPresence
+from .models.agent_activity_notification_out_of_office import AgentActivityNotificationOutOfOffice
+from .models.agent_activity_notification_presence import AgentActivityNotificationPresence
+from .models.agent_activity_notification_presence_presence_definition import AgentActivityNotificationPresencePresenceDefinition
+from .models.agent_activity_notification_routing_status import AgentActivityNotificationRoutingStatus
 from .models.agent_evaluator_activity import AgentEvaluatorActivity
 from .models.aggregate_data_container import AggregateDataContainer
 from .models.aggregate_metric_data import AggregateMetricData
@@ -49,6 +55,7 @@ from .models.analytics_view import AnalyticsView
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
 from .models.archive_retention import ArchiveRetention
+from .models.asg_info_response import AsgInfoResponse
 from .models.attachment import Attachment
 from .models.attempt_limits import AttemptLimits
 from .models.attempt_limits_entity_listing import AttemptLimitsEntityListing
@@ -285,6 +292,7 @@ from .models.conversation_notification_wrapup import ConversationNotificationWra
 from .models.conversation_query import ConversationQuery
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.cover_sheet import CoverSheet
+from .models.create_asg_request import CreateAsgRequest
 from .models.create_call_request import CreateCallRequest
 from .models.create_call_response import CreateCallResponse
 from .models.create_callback_command import CreateCallbackCommand
@@ -324,6 +332,7 @@ from .models.dialer_event_entity_listing import DialerEventEntityListing
 from .models.dialer_preview import DialerPreview
 from .models.dialer_rule import DialerRule
 from .models.digit_length import DigitLength
+from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disconnect_reason import DisconnectReason
 from .models.dnc_list import DncList
@@ -393,6 +402,12 @@ from .models.edge_logs_job_file import EdgeLogsJobFile
 from .models.edge_logs_job_request import EdgeLogsJobRequest
 from .models.edge_logs_job_response import EdgeLogsJobResponse
 from .models.edge_logs_job_upload_request import EdgeLogsJobUploadRequest
+from .models.edge_metrics import EdgeMetrics
+from .models.edge_metrics_disk import EdgeMetricsDisk
+from .models.edge_metrics_memory import EdgeMetricsMemory
+from .models.edge_metrics_network import EdgeMetricsNetwork
+from .models.edge_metrics_processor import EdgeMetricsProcessor
+from .models.edge_metrics_subsystem import EdgeMetricsSubsystem
 from .models.edge_reboot_parameters import EdgeRebootParameters
 from .models.edge_service_state_request import EdgeServiceStateRequest
 from .models.edge_trunk_base import EdgeTrunkBase
@@ -521,6 +536,7 @@ from .models.inbound_message_request import InboundMessageRequest
 from .models.inbound_route import InboundRoute
 from .models.inbound_route_entity_listing import InboundRouteEntityListing
 from .models.initiate_screen_recording import InitiateScreenRecording
+from .models.instance_info import InstanceInfo
 from .models.interaction_stat_alert_notification import InteractionStatAlertNotification
 from .models.interaction_stat_alert_notification_notification_user import InteractionStatAlertNotificationNotificationUser
 from .models.interaction_stat_rule_notification import InteractionStatRuleNotification
@@ -643,6 +659,7 @@ from .models.outbound_route_base import OutboundRouteBase
 from .models.outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
 from .models.outbound_route_entity_listing import OutboundRouteEntityListing
 from .models.outbound_settings import OutboundSettings
+from .models.outbound_settings_notification import OutboundSettingsNotification
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
 from .models.paging_spec import PagingSpec
@@ -879,8 +896,11 @@ from .models.trunk_entity_listing import TrunkEntityListing
 from .models.trunk_error_info import TrunkErrorInfo
 from .models.trunk_error_info_details import TrunkErrorInfoDetails
 from .models.trunk_metabase_entity_listing import TrunkMetabaseEntityListing
+from .models.trunk_metrics import TrunkMetrics
+from .models.trunk_metrics_calls import TrunkMetricsCalls
 from .models.trunk_metrics_network_type_ip import TrunkMetricsNetworkTypeIp
 from .models.trunk_metrics_options import TrunkMetricsOptions
+from .models.trunk_metrics_qo_s import TrunkMetricsQoS
 from .models.trunk_metrics_registers import TrunkMetricsRegisters
 from .models.trunk_recording_enabled_count import TrunkRecordingEnabledCount
 from .models.trust_create import TrustCreate
@@ -924,7 +944,6 @@ from .models.user_param import UserParam
 from .models.user_presence import UserPresence
 from .models.user_presence_notification import UserPresenceNotification
 from .models.user_presence_notification_organization_presence import UserPresenceNotificationOrganizationPresence
-from .models.user_presence_notification_presence_definition import UserPresenceNotificationPresenceDefinition
 from .models.user_queue import UserQueue
 from .models.user_queue_entity_listing import UserQueueEntityListing
 from .models.user_recording import UserRecording

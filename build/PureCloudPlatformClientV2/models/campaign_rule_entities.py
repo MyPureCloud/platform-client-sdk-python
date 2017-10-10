@@ -54,7 +54,7 @@ class CampaignRuleEntities(object):
     def campaigns(self):
         """
         Gets the campaigns of this CampaignRuleEntities.
-
+        The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :return: The campaigns of this CampaignRuleEntities.
         :rtype: list[UriReference]
@@ -65,7 +65,7 @@ class CampaignRuleEntities(object):
     def campaigns(self, campaigns):
         """
         Sets the campaigns of this CampaignRuleEntities.
-
+        The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :param campaigns: The campaigns of this CampaignRuleEntities.
         :type: list[UriReference]
@@ -77,7 +77,7 @@ class CampaignRuleEntities(object):
     def sequences(self):
         """
         Gets the sequences of this CampaignRuleEntities.
-
+        The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :return: The sequences of this CampaignRuleEntities.
         :rtype: list[UriReference]
@@ -88,7 +88,7 @@ class CampaignRuleEntities(object):
     def sequences(self, sequences):
         """
         Sets the sequences of this CampaignRuleEntities.
-
+        The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :param sequences: The sequences of this CampaignRuleEntities.
         :type: list[UriReference]
