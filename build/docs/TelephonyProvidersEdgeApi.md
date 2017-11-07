@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpools) | Get a listing of DID Pools|
 |[**get_telephony_providers_edges_dids**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_dids) | Get a listing of DIDs|
 |[**get_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup) | Get edge group.|
-|[**get_telephony_providers_edges_edgegroup_edgetrunkbasis**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbasis) | Gets the edge trunk base associated with the edge group|
+|[**get_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbase) | Gets the edge trunk base associated with the edge group|
 |[**get_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroups) | Get the list of edge groups.|
 |[**get_telephony_providers_edges_edgeversionreport**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgeversionreport) | Get the edge version report.|
 |[**get_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_endpoint) | Get endpoint|
@@ -124,7 +124,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_did) | Update a DID by ID.|
 |[**put_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_didpool) | Update a DID Pool by ID.|
 |[**put_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup) | Update an edge group.|
-|[**put_telephony_providers_edges_edgegroup_edgetrunkbasis**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup_edgetrunkbasis) | Update the edge trunk base associated with the edge group|
+|[**put_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup_edgetrunkbase) | Update the edge trunk base associated with the edge group|
 |[**put_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_endpoint) | Update endpoint|
 |[**put_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extension) | Update an extension by ID.|
 |[**put_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extensionpool) | Update an extension pool by ID|
@@ -2046,9 +2046,9 @@ except ApiException as e:
 
 [**EdgeGroup**](EdgeGroup.html)
 
-<a name="get_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
+<a name="get_telephony_providers_edges_edgegroup_edgetrunkbase"></a>
 
-## [**EdgeTrunkBase**](EdgeTrunkBase.html) get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
+## [**EdgeTrunkBase**](EdgeTrunkBase.html) get_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id)
 
 Gets the edge trunk base associated with the edge group
 
@@ -2074,10 +2074,10 @@ edgetrunkbase_id = 'edgetrunkbase_id_example' # str | Edge Trunk Base ID
 
 try:
     # Gets the edge trunk base associated with the edge group
-    api_response = api_instance.get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id)
+    api_response = api_instance.get_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbasis: %s\n" % e
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
 ~~~
 
 ### Parameters
@@ -5603,9 +5603,9 @@ except ApiException as e:
 
 [**EdgeGroup**](EdgeGroup.html)
 
-<a name="put_telephony_providers_edges_edgegroup_edgetrunkbasis"></a>
+<a name="put_telephony_providers_edges_edgegroup_edgetrunkbase"></a>
 
-## [**EdgeTrunkBase**](EdgeTrunkBase.html) put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
+## [**EdgeTrunkBase**](EdgeTrunkBase.html) put_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, body)
 
 Update the edge trunk base associated with the edge group
 
@@ -5632,10 +5632,10 @@ body = PureCloudPlatformClientV2.EdgeTrunkBase() # EdgeTrunkBase | EdgeTrunkBase
 
 try:
     # Update the edge trunk base associated with the edge group
-    api_response = api_instance.put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body)
+    api_response = api_instance.put_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbasis: %s\n" % e
+    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
 ~~~
 
 ### Parameters

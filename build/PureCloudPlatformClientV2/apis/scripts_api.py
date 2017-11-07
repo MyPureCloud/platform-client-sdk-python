@@ -141,12 +141,13 @@ class ScriptsApi(object):
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
         :param str page_id: Page ID (required)
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: Page
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id', 'page_id']
+        all_params = ['script_id', 'page_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -175,6 +176,8 @@ class ScriptsApi(object):
             path_params['pageId'] = params['page_id']
 
         query_params = {}
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -224,12 +227,13 @@ class ScriptsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: list[Page]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id']
+        all_params = ['script_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -253,6 +257,8 @@ class ScriptsApi(object):
             path_params['scriptId'] = params['script_id']
 
         query_params = {}
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -309,12 +315,13 @@ class ScriptsApi(object):
         :param str flow_id: Secure flow id filter
         :param str sort_by: SortBy
         :param str sort_order: SortOrder
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: ScriptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'sort_by', 'sort_order', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -349,6 +356,8 @@ class ScriptsApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -382,7 +391,7 @@ class ScriptsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scripts_published(self, **kwargs):
+    def get_scripts_published(self, script_id, **kwargs):
         """
         Get the published scripts.
         
@@ -393,22 +402,24 @@ class ScriptsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_scripts_published(callback=callback_function)
+        >>> thread = api.get_scripts_published(script_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str script_id: Script ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
         :param str expand: Expand
         :param str name: Name filter
         :param str feature: Feature filter
         :param str flow_id: Secure flow id filter
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: ScriptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id']
+        all_params = ['script_id', 'page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -421,10 +432,15 @@ class ScriptsApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'script_id' is set
+        if ('script_id' not in params) or (params['script_id'] is None):
+            raise ValueError("Missing the required parameter `script_id` when calling `get_scripts_published`")
 
 
         resource_path = '/api/v2/scripts/published'.replace('{format}', 'json')
         path_params = {}
+        if 'script_id' in params:
+            path_params['scriptId'] = params['script_id']
 
         query_params = {}
         if 'page_size' in params:
@@ -439,6 +455,8 @@ class ScriptsApi(object):
             query_params['feature'] = params['feature']
         if 'flow_id' in params:
             query_params['flowId'] = params['flow_id']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -488,12 +506,13 @@ class ScriptsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: Script
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id']
+        all_params = ['script_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -517,6 +536,8 @@ class ScriptsApi(object):
             path_params['scriptId'] = params['script_id']
 
         query_params = {}
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -567,12 +588,13 @@ class ScriptsApi(object):
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
         :param str page_id: Page ID (required)
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: Page
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id', 'page_id']
+        all_params = ['script_id', 'page_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -601,6 +623,8 @@ class ScriptsApi(object):
             path_params['pageId'] = params['page_id']
 
         query_params = {}
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -650,12 +674,14 @@ class ScriptsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
+        :param int foo: 
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: list[Page]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id']
+        all_params = ['script_id', 'foo', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -679,6 +705,10 @@ class ScriptsApi(object):
             path_params['scriptId'] = params['script_id']
 
         query_params = {}
+        if 'foo' in params:
+            query_params['foo'] = params['foo']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 
@@ -731,12 +761,13 @@ class ScriptsApi(object):
         :param str input: input
         :param str output: output
         :param str type: type
+        :param str script_data_version: Advanced usage - controls the data version of the script
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id', 'input', 'output', 'type']
+        all_params = ['script_id', 'input', 'output', 'type', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -766,6 +797,8 @@ class ScriptsApi(object):
             query_params['output'] = params['output']
         if 'type' in params:
             query_params['type'] = params['type']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
 
         header_params = {}
 

@@ -1792,6 +1792,105 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_architect_prompt_history_history_id(self, prompt_id, history_id, **kwargs):
+        """
+        Get generated prompt history
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_prompt_history_history_id(prompt_id, history_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: Prompt ID (required)
+        :param str history_id: History request ID (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_order: Sort order
+        :param str sort_by: Sort by
+        :param list[str] action: Flow actions to include (omit to include all)
+        :return: HistoryListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id', 'history_id', 'page_number', 'page_size', 'sort_order', 'sort_by', 'action']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_prompt_history_history_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `get_architect_prompt_history_history_id`")
+        # verify the required parameter 'history_id' is set
+        if ('history_id' not in params) or (params['history_id'] is None):
+            raise ValueError("Missing the required parameter `history_id` when calling `get_architect_prompt_history_history_id`")
+
+
+        resource_path = '/api/v2/architect/prompts/{promptId}/history/{historyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+        if 'history_id' in params:
+            path_params['historyId'] = params['history_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'action' in params:
+            query_params['action'] = params['action']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HistoryListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_architect_prompt_resource(self, prompt_id, language_code, **kwargs):
         """
         Get specified user prompt resource
@@ -2455,6 +2554,105 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_architect_systemprompt_history_history_id(self, prompt_id, history_id, **kwargs):
+        """
+        Get generated prompt history
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_systemprompt_history_history_id(prompt_id, history_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: promptId (required)
+        :param str history_id: History request ID (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_order: Sort order
+        :param str sort_by: Sort by
+        :param list[str] action: Flow actions to include (omit to include all)
+        :return: HistoryListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id', 'history_id', 'page_number', 'page_size', 'sort_order', 'sort_by', 'action']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_systemprompt_history_history_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `get_architect_systemprompt_history_history_id`")
+        # verify the required parameter 'history_id' is set
+        if ('history_id' not in params) or (params['history_id'] is None):
+            raise ValueError("Missing the required parameter `history_id` when calling `get_architect_systemprompt_history_history_id`")
+
+
+        resource_path = '/api/v2/architect/systemprompts/{promptId}/history/{historyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+        if 'history_id' in params:
+            path_params['historyId'] = params['history_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'action' in params:
+            query_params['action'] = params['action']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HistoryListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_architect_systemprompt_resource(self, prompt_id, language_code, **kwargs):
         """
         Get a system prompt resource.
@@ -2819,7 +3017,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
-        :param str history_id: History ID (generated history) (required)
+        :param str history_id: History request ID (required)
         :param int page_number: Page number
         :param int page_size: Page size
         :param str sort_order: Sort order
@@ -3517,6 +3715,84 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_architect_prompt_history(self, prompt_id, **kwargs):
+        """
+        Generate prompt history
+        Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_architect_prompt_history(prompt_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: Prompt ID (required)
+        :return: Operation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_architect_prompt_history" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_prompt_history`")
+
+
+        resource_path = '/api/v2/architect/prompts/{promptId}/history'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Operation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_prompt_resources(self, prompt_id, **kwargs):
         """
         Create a new user prompt resource
@@ -3819,6 +4095,84 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Schedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_architect_systemprompt_history(self, prompt_id, **kwargs):
+        """
+        Generate system prompt history
+        Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_architect_systemprompt_history(prompt_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: promptId (required)
+        :return: Operation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_architect_systemprompt_history" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_systemprompt_history`")
+
+
+        resource_path = '/api/v2/architect/systemprompts/{promptId}/history'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Operation',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

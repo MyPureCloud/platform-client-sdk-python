@@ -52,7 +52,9 @@ class CallHistoryParticipant(object):
             'group': 'Group',
             'disconnect_type': 'str',
             'external_contact': 'ExternalContact',
-            'external_organization': 'ExternalOrganization'
+            'external_organization': 'ExternalOrganization',
+            'did_interact': 'bool',
+            'sip_response_codes': 'list[int]'
         }
 
         self.attribute_map = {
@@ -70,7 +72,9 @@ class CallHistoryParticipant(object):
             'group': 'group',
             'disconnect_type': 'disconnectType',
             'external_contact': 'externalContact',
-            'external_organization': 'externalOrganization'
+            'external_organization': 'externalOrganization',
+            'did_interact': 'didInteract',
+            'sip_response_codes': 'sipResponseCodes'
         }
 
         self._id = None
@@ -88,6 +92,8 @@ class CallHistoryParticipant(object):
         self._disconnect_type = None
         self._external_contact = None
         self._external_organization = None
+        self._did_interact = None
+        self._sip_response_codes = None
 
     @property
     def id(self):
@@ -441,6 +447,52 @@ class CallHistoryParticipant(object):
         """
         
         self._external_organization = external_organization
+
+    @property
+    def did_interact(self):
+        """
+        Gets the did_interact of this CallHistoryParticipant.
+        Indicates whether the contact ever connected
+
+        :return: The did_interact of this CallHistoryParticipant.
+        :rtype: bool
+        """
+        return self._did_interact
+
+    @did_interact.setter
+    def did_interact(self, did_interact):
+        """
+        Sets the did_interact of this CallHistoryParticipant.
+        Indicates whether the contact ever connected
+
+        :param did_interact: The did_interact of this CallHistoryParticipant.
+        :type: bool
+        """
+        
+        self._did_interact = did_interact
+
+    @property
+    def sip_response_codes(self):
+        """
+        Gets the sip_response_codes of this CallHistoryParticipant.
+        Indicates SIP Response codes associated with the participant
+
+        :return: The sip_response_codes of this CallHistoryParticipant.
+        :rtype: list[int]
+        """
+        return self._sip_response_codes
+
+    @sip_response_codes.setter
+    def sip_response_codes(self, sip_response_codes):
+        """
+        Sets the sip_response_codes of this CallHistoryParticipant.
+        Indicates SIP Response codes associated with the participant
+
+        :param sip_response_codes: The sip_response_codes of this CallHistoryParticipant.
+        :type: list[int]
+        """
+        
+        self._sip_response_codes = sip_response_codes
 
     def to_dict(self):
         """

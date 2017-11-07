@@ -42,6 +42,8 @@ class AnalyticsSession(object):
             'session_id': 'str',
             'address_other': 'str',
             'address_self': 'str',
+            'address_from': 'str',
+            'address_to': 'str',
             'ani': 'str',
             'direction': 'str',
             'dnis': 'str',
@@ -59,6 +61,7 @@ class AnalyticsSession(object):
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
             'script_id': 'str',
+            'peer_id': 'str',
             'skip_enabled': 'bool',
             'timeout_seconds': 'int',
             'cobrowse_role': 'str',
@@ -77,6 +80,8 @@ class AnalyticsSession(object):
             'session_id': 'sessionId',
             'address_other': 'addressOther',
             'address_self': 'addressSelf',
+            'address_from': 'addressFrom',
+            'address_to': 'addressTo',
             'ani': 'ani',
             'direction': 'direction',
             'dnis': 'dnis',
@@ -94,6 +99,7 @@ class AnalyticsSession(object):
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'script_id': 'scriptId',
+            'peer_id': 'peerId',
             'skip_enabled': 'skipEnabled',
             'timeout_seconds': 'timeoutSeconds',
             'cobrowse_role': 'cobrowseRole',
@@ -111,6 +117,8 @@ class AnalyticsSession(object):
         self._session_id = None
         self._address_other = None
         self._address_self = None
+        self._address_from = None
+        self._address_to = None
         self._ani = None
         self._direction = None
         self._dnis = None
@@ -128,6 +136,7 @@ class AnalyticsSession(object):
         self._callback_numbers = None
         self._callback_scheduled_time = None
         self._script_id = None
+        self._peer_id = None
         self._skip_enabled = None
         self._timeout_seconds = None
         self._cobrowse_role = None
@@ -160,7 +169,7 @@ class AnalyticsSession(object):
         :param media_type: The media_type of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["voice", "chat", "email", "callback", "cobrowse", "video", "screenshare"]
+        allowed_values = ["voice", "chat", "email", "callback", "cobrowse", "video", "screenshare", "message"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"
@@ -235,6 +244,52 @@ class AnalyticsSession(object):
         """
         
         self._address_self = address_self
+
+    @property
+    def address_from(self):
+        """
+        Gets the address_from of this AnalyticsSession.
+
+
+        :return: The address_from of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._address_from
+
+    @address_from.setter
+    def address_from(self, address_from):
+        """
+        Sets the address_from of this AnalyticsSession.
+
+
+        :param address_from: The address_from of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._address_from = address_from
+
+    @property
+    def address_to(self):
+        """
+        Gets the address_to of this AnalyticsSession.
+
+
+        :return: The address_to of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._address_to
+
+    @address_to.setter
+    def address_to(self, address_to):
+        """
+        Sets the address_to of this AnalyticsSession.
+
+
+        :param address_to: The address_to of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._address_to = address_to
 
     @property
     def ani(self):
@@ -634,6 +689,29 @@ class AnalyticsSession(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def peer_id(self):
+        """
+        Gets the peer_id of this AnalyticsSession.
+        A unique identifier for a peer
+
+        :return: The peer_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this AnalyticsSession.
+        A unique identifier for a peer
+
+        :param peer_id: The peer_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._peer_id = peer_id
 
     @property
     def skip_enabled(self):

@@ -154,7 +154,7 @@ class AnalyticsParticipant(object):
         :param purpose: The purpose of this AnalyticsParticipant.
         :type: str
         """
-        allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external"]
+        allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external", "fax", "workflow"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for purpose -> " + purpose
             self._purpose = "outdated_sdk_version"

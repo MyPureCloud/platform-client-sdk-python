@@ -63,6 +63,7 @@ class ConversationNotificationParticipants(object):
             'chats': 'list[ConversationNotificationChats]',
             'cobrowsesessions': 'list[ConversationNotificationCobrowsesessions]',
             'emails': 'list[ConversationNotificationEmails]',
+            'messages': 'list[ConversationNotificationMessages1]',
             'screenshares': 'list[ConversationNotificationScreenshares]',
             'social_expressions': 'list[ConversationNotificationSocialExpressions]',
             'videos': 'list[ConversationNotificationVideos]',
@@ -95,6 +96,7 @@ class ConversationNotificationParticipants(object):
             'chats': 'chats',
             'cobrowsesessions': 'cobrowsesessions',
             'emails': 'emails',
+            'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -126,6 +128,7 @@ class ConversationNotificationParticipants(object):
         self._chats = None
         self._cobrowsesessions = None
         self._emails = None
+        self._messages = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -565,7 +568,7 @@ class ConversationNotificationParticipants(object):
         :param screen_recording_state: The screen_recording_state of this ConversationNotificationParticipants.
         :type: str
         """
-        allowed_values = ["REQUESTED", "ACTIVE", "PAUSED", "STOPPED", "ERROR"]
+        allowed_values = ["REQUESTED", "ACTIVE", "PAUSED", "STOPPED", "ERROR", "TIMEOUT"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for screen_recording_state -> " + screen_recording_state
             self._screen_recording_state = "outdated_sdk_version"
@@ -709,6 +712,29 @@ class ConversationNotificationParticipants(object):
         """
         
         self._emails = emails
+
+    @property
+    def messages(self):
+        """
+        Gets the messages of this ConversationNotificationParticipants.
+
+
+        :return: The messages of this ConversationNotificationParticipants.
+        :rtype: list[ConversationNotificationMessages1]
+        """
+        return self._messages
+
+    @messages.setter
+    def messages(self, messages):
+        """
+        Sets the messages of this ConversationNotificationParticipants.
+
+
+        :param messages: The messages of this ConversationNotificationParticipants.
+        :type: list[ConversationNotificationMessages1]
+        """
+        
+        self._messages = messages
 
     @property
     def screenshares(self):

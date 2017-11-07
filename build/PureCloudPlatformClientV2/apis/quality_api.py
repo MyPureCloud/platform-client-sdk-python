@@ -964,7 +964,7 @@ class QualityApi(object):
         :param str queue_id: queue id
         :param str start_time: start time of the evaluation query
         :param str end_time: end time of the evaluation query
-        :param list[object] evaluation_state: evaluation state options: Pending, InProgress, Finished
+        :param list[object] evaluation_state: 
         :param bool is_released: the evaluation has been released
         :param bool agent_has_read: agent has the evaluation
         :param bool expand_answer_total_scores: get the total scores for evaluations

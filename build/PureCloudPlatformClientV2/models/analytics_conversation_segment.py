@@ -297,7 +297,7 @@ class AnalyticsConversationSegment(object):
         :param disconnect_type: The disconnect_type of this AnalyticsConversationSegment.
         :type: str
         """
-        allowed_values = ["endpoint", "client", "system", "transfer", "error", "peer", "other", "spam", "transportFailure", "conferenceTransfer", "consultTransfer", "forwardTransfer", "timeout", "noAnswerTransfer", "notAvailableTransfer"]
+        allowed_values = ["endpoint", "client", "system", "transfer", "error", "peer", "other", "spam", "transportFailure", "conferenceTransfer", "consultTransfer", "forwardTransfer", "timeout", "noAnswerTransfer", "notAvailableTransfer", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"

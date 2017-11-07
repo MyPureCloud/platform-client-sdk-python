@@ -801,6 +801,7 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str category: Filter by category name
         :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
@@ -812,7 +813,7 @@ class IntegrationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['category', 'secure', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['category', 'secure', 'include_auth_actions', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
         all_params.append('callback')
 
         params = locals()
@@ -835,6 +836,8 @@ class IntegrationsApi(object):
             query_params['category'] = params['category']
         if 'secure' in params:
             query_params['secure'] = params['secure']
+        if 'include_auth_actions' in params:
+            query_params['includeAuthActions'] = params['include_auth_actions']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
@@ -990,6 +993,7 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str category: Filter by category name
         :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
@@ -1001,7 +1005,7 @@ class IntegrationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['category', 'secure', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['category', 'secure', 'include_auth_actions', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
         all_params.append('callback')
 
         params = locals()
@@ -1024,6 +1028,8 @@ class IntegrationsApi(object):
             query_params['category'] = params['category']
         if 'secure' in params:
             query_params['secure'] = params['secure']
+        if 'include_auth_actions' in params:
+            query_params['includeAuthActions'] = params['include_auth_actions']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:

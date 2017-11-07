@@ -593,7 +593,7 @@ evaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optio
 queue_id = 'queue_id_example' # str | queue id (optional)
 start_time = 'start_time_example' # str | start time of the evaluation query (optional)
 end_time = 'end_time_example' # str | end time of the evaluation query (optional)
-evaluation_state = NULL # list[object] | evaluation state options: Pending, InProgress, Finished (optional)
+evaluation_state = NULL # list[object] |  (optional)
 is_released = true # bool | the evaluation has been released (optional)
 agent_has_read = true # bool | agent has the evaluation (optional)
 expand_answer_total_scores = true # bool | get the total scores for evaluations (optional)
@@ -624,7 +624,7 @@ except ApiException as e:
 | **queue_id** | **str**| queue id | [optional]  |
 | **start_time** | **str**| start time of the evaluation query | [optional]  |
 | **end_time** | **str**| end time of the evaluation query | [optional]  |
-| **evaluation_state** | [**list[object]**](object.html)| evaluation state options: Pending, InProgress, Finished | [optional]  |
+| **evaluation_state** | [**list[object]**](object.html)|  | [optional]  |
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |

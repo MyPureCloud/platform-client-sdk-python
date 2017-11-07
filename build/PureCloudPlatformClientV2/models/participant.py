@@ -70,6 +70,7 @@ class Participant(object):
             'chats': 'list[ConversationChat]',
             'cobrowsesessions': 'list[Cobrowsesession]',
             'emails': 'list[Email]',
+            'messages': 'list[Message]',
             'screenshares': 'list[Screenshare]',
             'social_expressions': 'list[SocialExpression]',
             'videos': 'list[Video]',
@@ -110,6 +111,7 @@ class Participant(object):
             'chats': 'chats',
             'cobrowsesessions': 'cobrowsesessions',
             'emails': 'emails',
+            'messages': 'messages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -149,6 +151,7 @@ class Participant(object):
         self._chats = None
         self._cobrowsesessions = None
         self._emails = None
+        self._messages = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -894,6 +897,29 @@ class Participant(object):
         """
         
         self._emails = emails
+
+    @property
+    def messages(self):
+        """
+        Gets the messages of this Participant.
+
+
+        :return: The messages of this Participant.
+        :rtype: list[Message]
+        """
+        return self._messages
+
+    @messages.setter
+    def messages(self, messages):
+        """
+        Sets the messages of this Participant.
+
+
+        :param messages: The messages of this Participant.
+        :type: list[Message]
+        """
+        
+        self._messages = messages
 
     @property
     def screenshares(self):

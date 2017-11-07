@@ -3388,7 +3388,7 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_telephony_providers_edges_edgegroup_edgetrunkbasis(self, edgegroup_id, edgetrunkbase_id, **kwargs):
+    def get_telephony_providers_edges_edgegroup_edgetrunkbase(self, edgegroup_id, edgetrunkbase_id, **kwargs):
         """
         Gets the edge trunk base associated with the edge group
         
@@ -3399,7 +3399,7 @@ class TelephonyProvidersEdgeApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, callback=callback_function)
+        >>> thread = api.get_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -3418,17 +3418,17 @@ class TelephonyProvidersEdgeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_telephony_providers_edges_edgegroup_edgetrunkbasis" % key
+                    " to method get_telephony_providers_edges_edgegroup_edgetrunkbase" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'edgegroup_id' is set
         if ('edgegroup_id' not in params) or (params['edgegroup_id'] is None):
-            raise ValueError("Missing the required parameter `edgegroup_id` when calling `get_telephony_providers_edges_edgegroup_edgetrunkbasis`")
+            raise ValueError("Missing the required parameter `edgegroup_id` when calling `get_telephony_providers_edges_edgegroup_edgetrunkbase`")
         # verify the required parameter 'edgetrunkbase_id' is set
         if ('edgetrunkbase_id' not in params) or (params['edgetrunkbase_id'] is None):
-            raise ValueError("Missing the required parameter `edgetrunkbase_id` when calling `get_telephony_providers_edges_edgegroup_edgetrunkbasis`")
+            raise ValueError("Missing the required parameter `edgetrunkbase_id` when calling `get_telephony_providers_edges_edgegroup_edgetrunkbase`")
 
 
         resource_path = '/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}'.replace('{format}', 'json')
@@ -9526,7 +9526,7 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_telephony_providers_edges_edgegroup_edgetrunkbasis(self, edgegroup_id, edgetrunkbase_id, body, **kwargs):
+    def put_telephony_providers_edges_edgegroup_edgetrunkbase(self, edgegroup_id, edgetrunkbase_id, body, **kwargs):
         """
         Update the edge trunk base associated with the edge group
         
@@ -9537,7 +9537,7 @@ class TelephonyProvidersEdgeApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_telephony_providers_edges_edgegroup_edgetrunkbasis(edgegroup_id, edgetrunkbase_id, body, callback=callback_function)
+        >>> thread = api.put_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -9557,20 +9557,20 @@ class TelephonyProvidersEdgeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_telephony_providers_edges_edgegroup_edgetrunkbasis" % key
+                    " to method put_telephony_providers_edges_edgegroup_edgetrunkbase" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'edgegroup_id' is set
         if ('edgegroup_id' not in params) or (params['edgegroup_id'] is None):
-            raise ValueError("Missing the required parameter `edgegroup_id` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbasis`")
+            raise ValueError("Missing the required parameter `edgegroup_id` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbase`")
         # verify the required parameter 'edgetrunkbase_id' is set
         if ('edgetrunkbase_id' not in params) or (params['edgetrunkbase_id'] is None):
-            raise ValueError("Missing the required parameter `edgetrunkbase_id` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbasis`")
+            raise ValueError("Missing the required parameter `edgetrunkbase_id` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbase`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbasis`")
+            raise ValueError("Missing the required parameter `body` when calling `put_telephony_providers_edges_edgegroup_edgetrunkbase`")
 
 
         resource_path = '/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}'.replace('{format}', 'json')

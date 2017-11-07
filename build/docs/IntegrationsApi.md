@@ -452,7 +452,7 @@ except ApiException as e:
 
 <a name="get_integrations_actions"></a>
 
-## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions(category=category, secure=secure, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
 Retrieves all actions associated with filters passed in via query param.
 
@@ -475,6 +475,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 category = 'category_example' # str | Filter by category name (optional)
 secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
+include_auth_actions = 'include_auth_actions_example' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional)
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
@@ -484,7 +485,7 @@ previous_page = 'previous_page_example' # str | Previous page token (optional)
 
 try:
     # Retrieves all actions associated with filters passed in via query param.
-    api_response = api_instance.get_integrations_actions(category=category, secure=secure, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    api_response = api_instance.get_integrations_actions(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e
@@ -497,6 +498,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category** | **str**| Filter by category name | [optional]  |
 | **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
@@ -568,7 +570,7 @@ except ApiException as e:
 
 <a name="get_integrations_actions_drafts"></a>
 
-## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions_drafts(category=category, secure=secure, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions_drafts(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
@@ -591,6 +593,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 category = 'category_example' # str | Filter by category name (optional)
 secure = 'secure_example' # str | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
+include_auth_actions = 'include_auth_actions_example' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional)
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
@@ -600,7 +603,7 @@ previous_page = 'previous_page_example' # str | Previous page token (optional)
 
 try:
     # Retrieves all action drafts associated with the filters passed in via query param.
-    api_response = api_instance.get_integrations_actions_drafts(category=category, secure=secure, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    api_response = api_instance.get_integrations_actions_drafts(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e
@@ -613,6 +616,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category** | **str**| Filter by category name | [optional]  |
 | **secure** | **str**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+| **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |

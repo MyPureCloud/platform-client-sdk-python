@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_ivr**](ArchitectApi.html#get_architect_ivr) | Get an IVR config.|
 |[**get_architect_ivrs**](ArchitectApi.html#get_architect_ivrs) | Get IVR configs.|
 |[**get_architect_prompt**](ArchitectApi.html#get_architect_prompt) | Get specified user prompt|
+|[**get_architect_prompt_history_history_id**](ArchitectApi.html#get_architect_prompt_history_history_id) | Get generated prompt history|
 |[**get_architect_prompt_resource**](ArchitectApi.html#get_architect_prompt_resource) | Get specified user prompt resource|
 |[**get_architect_prompt_resources**](ArchitectApi.html#get_architect_prompt_resources) | Get a pageable list of user prompt resources|
 |[**get_architect_prompts**](ArchitectApi.html#get_architect_prompts) | Get a pageable list of user prompts|
@@ -37,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_schedulegroups**](ArchitectApi.html#get_architect_schedulegroups) | Get a list of schedule groups.|
 |[**get_architect_schedules**](ArchitectApi.html#get_architect_schedules) | Get a list of schedules.|
 |[**get_architect_systemprompt**](ArchitectApi.html#get_architect_systemprompt) | Get a system prompt|
+|[**get_architect_systemprompt_history_history_id**](ArchitectApi.html#get_architect_systemprompt_history_history_id) | Get generated prompt history|
 |[**get_architect_systemprompt_resource**](ArchitectApi.html#get_architect_systemprompt_resource) | Get a system prompt resource.|
 |[**get_architect_systemprompt_resources**](ArchitectApi.html#get_architect_systemprompt_resources) | Get system prompt resources.|
 |[**get_architect_systemprompts**](ArchitectApi.html#get_architect_systemprompts) | Get System Prompts|
@@ -49,10 +51,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
 |[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
+|[**post_architect_prompt_history**](ArchitectApi.html#post_architect_prompt_history) | Generate prompt history|
 |[**post_architect_prompt_resources**](ArchitectApi.html#post_architect_prompt_resources) | Create a new user prompt resource|
 |[**post_architect_prompts**](ArchitectApi.html#post_architect_prompts) | Create a new user prompt|
 |[**post_architect_schedulegroups**](ArchitectApi.html#post_architect_schedulegroups) | Creates a new schedule group|
 |[**post_architect_schedules**](ArchitectApi.html#post_architect_schedules) | Create a new schedule.|
+|[**post_architect_systemprompt_history**](ArchitectApi.html#post_architect_systemprompt_history) | Generate system prompt history|
 |[**post_architect_systemprompt_resources**](ArchitectApi.html#post_architect_systemprompt_resources) | Create system prompt resource override.|
 |[**post_flow_versions**](ArchitectApi.html#post_flow_versions) | Create flow version|
 |[**post_flows**](ArchitectApi.html#post_flows) | Create flow|
@@ -1079,6 +1083,63 @@ except ApiException as e:
 
 [**Prompt**](Prompt.html)
 
+<a name="get_architect_prompt_history_history_id"></a>
+
+## [**HistoryListing**](HistoryListing.html) get_architect_prompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
+
+Get generated prompt history
+
+
+
+Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+history_id = 'history_id_example' # str | History request ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = 'desc' # str | Sort order (optional) (default to desc)
+sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+action = ['action_example'] # list[str] | Flow actions to include (omit to include all) (optional)
+
+try:
+    # Get generated prompt history
+    api_response = api_instance.get_architect_prompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_prompt_history_history_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| Prompt ID |  |
+| **history_id** | **str**| History request ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_order** | **str**| Sort order | [optional] [default to desc] |
+| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **action** | [**list[str]**](str.html)| Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
+
 <a name="get_architect_prompt_resource"></a>
 
 ## [**PromptAsset**](PromptAsset.html) get_architect_prompt_resource(prompt_id, language_code)
@@ -1469,6 +1530,63 @@ except ApiException as e:
 
 [**SystemPrompt**](SystemPrompt.html)
 
+<a name="get_architect_systemprompt_history_history_id"></a>
+
+## [**HistoryListing**](HistoryListing.html) get_architect_systemprompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
+
+Get generated prompt history
+
+
+
+Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | promptId
+history_id = 'history_id_example' # str | History request ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = 'desc' # str | Sort order (optional) (default to desc)
+sort_by = 'timestamp' # str | Sort by (optional) (default to timestamp)
+action = ['action_example'] # list[str] | Flow actions to include (omit to include all) (optional)
+
+try:
+    # Get generated prompt history
+    api_response = api_instance.get_architect_systemprompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_systemprompt_history_history_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| promptId |  |
+| **history_id** | **str**| History request ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_order** | **str**| Sort order | [optional] [default to desc] |
+| **sort_by** | **str**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **action** | [**list[str]**](str.html)| Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
+
 <a name="get_architect_systemprompt_resource"></a>
 
 ## [**SystemPromptAsset**](SystemPromptAsset.html) get_architect_systemprompt_resource(prompt_id, language_code)
@@ -1697,7 +1815,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
-history_id = 'history_id_example' # str | History ID (generated history)
+history_id = 'history_id_example' # str | History request ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_order = 'desc' # str | Sort order (optional) (default to desc)
@@ -1718,7 +1836,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **history_id** | **str**| History ID (generated history) |  |
+| **history_id** | **str**| History request ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_order** | **str**| Sort order | [optional] [default to desc] |
@@ -2088,6 +2206,51 @@ except ApiException as e:
 
 [**IVR**](IVR.html)
 
+<a name="post_architect_prompt_history"></a>
+
+## [**Operation**](Operation.html) post_architect_prompt_history(prompt_id)
+
+Generate prompt history
+
+Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+Wraps POST /api/v2/architect/prompts/{promptId}/history 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+
+try:
+    # Generate prompt history
+    api_response = api_instance.post_architect_prompt_history(prompt_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_prompt_history: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| Prompt ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
+
 <a name="post_architect_prompt_resources"></a>
 
 ## [**PromptAsset**](PromptAsset.html) post_architect_prompt_resources(prompt_id, body=body)
@@ -2269,6 +2432,51 @@ except ApiException as e:
 ### Return type
 
 [**Schedule**](Schedule.html)
+
+<a name="post_architect_systemprompt_history"></a>
+
+## [**Operation**](Operation.html) post_architect_systemprompt_history(prompt_id)
+
+Generate system prompt history
+
+Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+
+Wraps POST /api/v2/architect/systemprompts/{promptId}/history 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | promptId
+
+try:
+    # Generate system prompt history
+    api_response = api_instance.post_architect_systemprompt_history(prompt_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_systemprompt_history: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| promptId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
 
 <a name="post_architect_systemprompt_resources"></a>
 

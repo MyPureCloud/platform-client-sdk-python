@@ -53,6 +53,7 @@ class ConversationNotificationEmails(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'message_id': 'str',
+            'direction': 'str',
             'additional_properties': 'object'
         }
 
@@ -72,6 +73,7 @@ class ConversationNotificationEmails(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'message_id': 'messageId',
+            'direction': 'direction',
             'additional_properties': 'additionalProperties'
         }
 
@@ -90,6 +92,7 @@ class ConversationNotificationEmails(object):
         self._connected_time = None
         self._disconnected_time = None
         self._message_id = None
+        self._direction = None
         self._additional_properties = None
 
     @property
@@ -444,6 +447,33 @@ class ConversationNotificationEmails(object):
         """
         
         self._message_id = message_id
+
+    @property
+    def direction(self):
+        """
+        Gets the direction of this ConversationNotificationEmails.
+
+
+        :return: The direction of this ConversationNotificationEmails.
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """
+        Sets the direction of this ConversationNotificationEmails.
+
+
+        :param direction: The direction of this ConversationNotificationEmails.
+        :type: str
+        """
+        allowed_values = ["OUTBOUND", "INBOUND"]
+        if direction.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for direction -> " + direction
+            self._direction = "outdated_sdk_version"
+        else:
+            self._direction = direction
 
     @property
     def additional_properties(self):
