@@ -13,6 +13,7 @@ title: AnalyticsSession
 | **address_self** | **str** |  | [optional] |
 | **address_from** | **str** |  | [optional] |
 | **address_to** | **str** |  | [optional] |
+| **message_type** | **str** | Message type for messaging services such as sms | [optional] |
 | **ani** | **str** | Automatic Number Identification (caller&#39;s number) | [optional] |
 | **direction** | **str** | Direction | [optional] |
 | **dnis** | **str** | Automatic Number Identification (caller&#39;s number) | [optional] |

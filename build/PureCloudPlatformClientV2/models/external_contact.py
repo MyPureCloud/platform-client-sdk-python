@@ -56,6 +56,7 @@ class ExternalContact(object):
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'external_organization': 'ExternalOrganization',
+            'survey_opt_out': 'bool',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -79,6 +80,7 @@ class ExternalContact(object):
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'external_organization': 'externalOrganization',
+            'survey_opt_out': 'surveyOptOut',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -101,6 +103,7 @@ class ExternalContact(object):
         self._modify_date = None
         self._create_date = None
         self._external_organization = None
+        self._survey_opt_out = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -517,6 +520,29 @@ class ExternalContact(object):
         """
         
         self._external_organization = external_organization
+
+    @property
+    def survey_opt_out(self):
+        """
+        Gets the survey_opt_out of this ExternalContact.
+
+
+        :return: The survey_opt_out of this ExternalContact.
+        :rtype: bool
+        """
+        return self._survey_opt_out
+
+    @survey_opt_out.setter
+    def survey_opt_out(self, survey_opt_out):
+        """
+        Sets the survey_opt_out of this ExternalContact.
+
+
+        :param survey_opt_out: The survey_opt_out of this ExternalContact.
+        :type: bool
+        """
+        
+        self._survey_opt_out = survey_opt_out
 
     @property
     def external_data_sources(self):

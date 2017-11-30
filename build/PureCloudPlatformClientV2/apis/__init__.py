@@ -32,6 +32,7 @@ from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
+from .signed_data_api import SignedDataApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi

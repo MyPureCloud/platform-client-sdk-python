@@ -42,6 +42,7 @@ class UserConversationSummaryNotification(object):
             'call': 'UserConversationSummaryNotificationCall',
             'callback': 'UserConversationSummaryNotificationMediaSummary',
             'email': 'UserConversationSummaryNotificationMediaSummary',
+            'message': 'UserConversationSummaryNotificationMediaSummary',
             'chat': 'UserConversationSummaryNotificationMediaSummary',
             'social_expression': 'UserConversationSummaryNotificationMediaSummary',
             'video': 'UserConversationSummaryNotificationMediaSummary'
@@ -52,6 +53,7 @@ class UserConversationSummaryNotification(object):
             'call': 'call',
             'callback': 'callback',
             'email': 'email',
+            'message': 'message',
             'chat': 'chat',
             'social_expression': 'socialExpression',
             'video': 'video'
@@ -61,6 +63,7 @@ class UserConversationSummaryNotification(object):
         self._call = None
         self._callback = None
         self._email = None
+        self._message = None
         self._chat = None
         self._social_expression = None
         self._video = None
@@ -156,6 +159,29 @@ class UserConversationSummaryNotification(object):
         """
         
         self._email = email
+
+    @property
+    def message(self):
+        """
+        Gets the message of this UserConversationSummaryNotification.
+
+
+        :return: The message of this UserConversationSummaryNotification.
+        :rtype: UserConversationSummaryNotificationMediaSummary
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """
+        Sets the message of this UserConversationSummaryNotification.
+
+
+        :param message: The message of this UserConversationSummaryNotification.
+        :type: UserConversationSummaryNotificationMediaSummary
+        """
+        
+        self._message = message
 
     @property
     def chat(self):

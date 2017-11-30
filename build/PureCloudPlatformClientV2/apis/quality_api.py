@@ -969,12 +969,13 @@ class QualityApi(object):
         :param bool agent_has_read: agent has the evaluation
         :param bool expand_answer_total_scores: get the total scores for evaluations
         :param int maximum: maximum
+        :param str sort_order: sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
         :return: EvaluationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'queue_id', 'start_time', 'end_time', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'queue_id', 'start_time', 'end_time', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1027,6 +1028,8 @@ class QualityApi(object):
             query_params['expandAnswerTotalScores'] = params['expand_answer_total_scores']
         if 'maximum' in params:
             query_params['maximum'] = params['maximum']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 

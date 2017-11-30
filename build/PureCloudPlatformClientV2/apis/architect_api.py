@@ -2079,12 +2079,14 @@ class ArchitectApi(object):
         :param str name: Name
         :param str description: Description
         :param str name_or_description: Name or description
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
         :return: PromptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description']
+        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2113,6 +2115,10 @@ class ArchitectApi(object):
             query_params['description'] = params['description']
         if 'name_or_description' in params:
             query_params['nameOrDescription'] = params['name_or_description']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 

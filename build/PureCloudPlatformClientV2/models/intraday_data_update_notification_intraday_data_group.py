@@ -85,7 +85,7 @@ class IntradayDataUpdateNotificationIntradayDataGroup(object):
         :param media_type: The media_type of this IntradayDataUpdateNotificationIntradayDataGroup.
         :type: str
         """
-        allowed_values = ["VOICE", "CHAT", "EMAIL", "CALLBACK"]
+        allowed_values = ["VOICE", "CHAT", "EMAIL", "CALLBACK", "MESSAGE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for media_type -> " + media_type
             self._media_type = "outdated_sdk_version"

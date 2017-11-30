@@ -50,7 +50,9 @@ class CreateEmailRequest(object):
             'from_address': 'str',
             'from_name': 'str',
             'subject': 'str',
-            'direction': 'str'
+            'direction': 'str',
+            'html_body': 'str',
+            'text_body': 'str'
         }
 
         self.attribute_map = {
@@ -66,7 +68,9 @@ class CreateEmailRequest(object):
             'from_address': 'fromAddress',
             'from_name': 'fromName',
             'subject': 'subject',
-            'direction': 'direction'
+            'direction': 'direction',
+            'html_body': 'htmlBody',
+            'text_body': 'textBody'
         }
 
         self._queue_id = None
@@ -82,6 +86,8 @@ class CreateEmailRequest(object):
         self._from_name = None
         self._subject = None
         self._direction = None
+        self._html_body = None
+        self._text_body = None
 
     @property
     def queue_id(self):
@@ -385,6 +391,52 @@ class CreateEmailRequest(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def html_body(self):
+        """
+        Gets the html_body of this CreateEmailRequest.
+        An HTML body content of the email.
+
+        :return: The html_body of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._html_body
+
+    @html_body.setter
+    def html_body(self, html_body):
+        """
+        Sets the html_body of this CreateEmailRequest.
+        An HTML body content of the email.
+
+        :param html_body: The html_body of this CreateEmailRequest.
+        :type: str
+        """
+        
+        self._html_body = html_body
+
+    @property
+    def text_body(self):
+        """
+        Gets the text_body of this CreateEmailRequest.
+        A text body content of the email.
+
+        :return: The text_body of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._text_body
+
+    @text_body.setter
+    def text_body(self, text_body):
+        """
+        Sets the text_body of this CreateEmailRequest.
+        A text body content of the email.
+
+        :param text_body: The text_body of this CreateEmailRequest.
+        :type: str
+        """
+        
+        self._text_body = text_body
 
     def to_dict(self):
         """

@@ -40,17 +40,23 @@ class MessageDetails(object):
         self.swagger_types = {
             'message_id': 'str',
             'message_uri': 'str',
+            'message_status': 'str',
+            'message_segment_count': 'int',
             'message_time': 'datetime'
         }
 
         self.attribute_map = {
             'message_id': 'messageId',
             'message_uri': 'messageURI',
+            'message_status': 'messageStatus',
+            'message_segment_count': 'messageSegmentCount',
             'message_time': 'messageTime'
         }
 
         self._message_id = None
         self._message_uri = None
+        self._message_status = None
+        self._message_segment_count = None
         self._message_time = None
 
     @property
@@ -98,6 +104,56 @@ class MessageDetails(object):
         """
         
         self._message_uri = message_uri
+
+    @property
+    def message_status(self):
+        """
+        Gets the message_status of this MessageDetails.
+        Indicates the delivery status of the message.
+
+        :return: The message_status of this MessageDetails.
+        :rtype: str
+        """
+        return self._message_status
+
+    @message_status.setter
+    def message_status(self, message_status):
+        """
+        Sets the message_status of this MessageDetails.
+        Indicates the delivery status of the message.
+
+        :param message_status: The message_status of this MessageDetails.
+        :type: str
+        """
+        allowed_values = ["queued", "sent", "failed", "received"]
+        if message_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for message_status -> " + message_status
+            self._message_status = "outdated_sdk_version"
+        else:
+            self._message_status = message_status
+
+    @property
+    def message_segment_count(self):
+        """
+        Gets the message_segment_count of this MessageDetails.
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
+
+        :return: The message_segment_count of this MessageDetails.
+        :rtype: int
+        """
+        return self._message_segment_count
+
+    @message_segment_count.setter
+    def message_segment_count(self, message_segment_count):
+        """
+        Sets the message_segment_count of this MessageDetails.
+        The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
+
+        :param message_segment_count: The message_segment_count of this MessageDetails.
+        :type: int
+        """
+        
+        self._message_segment_count = message_segment_count
 
     @property
     def message_time(self):

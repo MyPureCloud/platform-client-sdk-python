@@ -17,6 +17,7 @@ from .acw_settings import AcwSettings
 from .address import Address
 from .addressable_entity_user import AddressableEntityUser
 from .addressable_license_definition import AddressableLicenseDefinition
+from .adherence_settings import AdherenceSettings
 from .adjacents import Adjacents
 from .agent import Agent
 from .agent_activity import AgentActivity
@@ -28,6 +29,7 @@ from .agent_activity_notification_presence import AgentActivityNotificationPrese
 from .agent_activity_notification_presence_presence_definition import AgentActivityNotificationPresencePresenceDefinition
 from .agent_activity_notification_routing_status import AgentActivityNotificationRoutingStatus
 from .agent_evaluator_activity import AgentEvaluatorActivity
+from .agent_management_unit_reference import AgentManagementUnitReference
 from .aggregate_data_container import AggregateDataContainer
 from .aggregate_metric_data import AggregateMetricData
 from .aggregate_query_response import AggregateQueryResponse
@@ -109,6 +111,8 @@ from .call_media_participant import CallMediaParticipant
 from .call_media_policy import CallMediaPolicy
 from .call_media_policy_conditions import CallMediaPolicyConditions
 from .call_record import CallRecord
+from .call_route import CallRoute
+from .call_target import CallTarget
 from .callable_contacts_diagnostic import CallableContactsDiagnostic
 from .callable_time import CallableTime
 from .callable_time_set import CallableTimeSet
@@ -304,6 +308,7 @@ from .create_callback_on_conversation_command import CreateCallbackOnConversatio
 from .create_callback_response import CreateCallbackResponse
 from .create_email_request import CreateEmailRequest
 from .create_queue_request import CreateQueueRequest
+from .create_secure_session import CreateSecureSession
 from .create_share_request import CreateShareRequest
 from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
@@ -532,6 +537,7 @@ from .history_listing import HistoryListing
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
 from .identity_now import IdentityNow
+from .import_script_status_response import ImportScriptStatusResponse
 from .import_status import ImportStatus
 from .import_status_notification import ImportStatusNotification
 from .inbound_domain import InboundDomain
@@ -615,6 +621,8 @@ from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
+from .management_unit_reference import ManagementUnitReference
+from .management_unit_settings import ManagementUnitSettings
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
@@ -814,6 +822,7 @@ from .schedule_entity_listing import ScheduleEntityListing
 from .schedule_group import ScheduleGroup
 from .schedule_group_entity_listing import ScheduleGroupEntityListing
 from .schedule_interval import ScheduleInterval
+from .scheduling_settings import SchedulingSettings
 from .schema_category import SchemaCategory
 from .schema_category_entity_listing import SchemaCategoryEntityListing
 from .schema_reference_entity_listing import SchemaReferenceEntityListing
@@ -836,6 +845,8 @@ from .search_criteria import SearchCriteria
 from .search_request import SearchRequest
 from .search_sort import SearchSort
 from .section import Section
+from .secure_session import SecureSession
+from .secure_session_entity_listing import SecureSessionEntityListing
 from .security_profile import SecurityProfile
 from .security_profile_entity_listing import SecurityProfileEntityListing
 from .segment import Segment
@@ -851,6 +862,8 @@ from .share import Share
 from .share_entity_listing import ShareEntityListing
 from .shared_entity import SharedEntity
 from .shared_response import SharedResponse
+from .short_term_forecasting_settings import ShortTermForecastingSettings
+from .signed_data import SignedData
 from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
@@ -896,6 +909,7 @@ from .time_interval import TimeInterval
 from .time_off_request import TimeOffRequest
 from .time_off_request_list import TimeOffRequestList
 from .time_off_request_patch import TimeOffRequestPatch
+from .time_off_request_settings import TimeOffRequestSettings
 from .time_off_request_update_notification import TimeOffRequestUpdateNotification
 from .time_off_request_update_notification_user import TimeOffRequestUpdateNotificationUser
 from .time_slot import TimeSlot
@@ -964,6 +978,7 @@ from .user_queue import UserQueue
 from .user_queue_entity_listing import UserQueueEntityListing
 from .user_recording import UserRecording
 from .user_recording_entity_listing import UserRecordingEntityListing
+from .user_reference import UserReference
 from .user_routing_skill import UserRoutingSkill
 from .user_routing_skill_post import UserRoutingSkillPost
 from .user_routing_status_notification import UserRoutingStatusNotification

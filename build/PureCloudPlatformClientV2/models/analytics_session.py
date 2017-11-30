@@ -44,6 +44,7 @@ class AnalyticsSession(object):
             'address_self': 'str',
             'address_from': 'str',
             'address_to': 'str',
+            'message_type': 'str',
             'ani': 'str',
             'direction': 'str',
             'dnis': 'str',
@@ -82,6 +83,7 @@ class AnalyticsSession(object):
             'address_self': 'addressSelf',
             'address_from': 'addressFrom',
             'address_to': 'addressTo',
+            'message_type': 'messageType',
             'ani': 'ani',
             'direction': 'direction',
             'dnis': 'dnis',
@@ -119,6 +121,7 @@ class AnalyticsSession(object):
         self._address_self = None
         self._address_from = None
         self._address_to = None
+        self._message_type = None
         self._ani = None
         self._direction = None
         self._dnis = None
@@ -290,6 +293,33 @@ class AnalyticsSession(object):
         """
         
         self._address_to = address_to
+
+    @property
+    def message_type(self):
+        """
+        Gets the message_type of this AnalyticsSession.
+        Message type for messaging services such as sms
+
+        :return: The message_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type):
+        """
+        Sets the message_type of this AnalyticsSession.
+        Message type for messaging services such as sms
+
+        :param message_type: The message_type of this AnalyticsSession.
+        :type: str
+        """
+        allowed_values = ["sms"]
+        if message_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for message_type -> " + message_type
+            self._message_type = "outdated_sdk_version"
+        else:
+            self._message_type = message_type
 
     @property
     def ani(self):

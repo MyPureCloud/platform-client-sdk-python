@@ -39,16 +39,22 @@ class ConversationNotificationMessageDetails(object):
         """
         self.swagger_types = {
             'message_id': 'str',
-            'message_time': 'datetime'
+            'message_time': 'datetime',
+            'message_status': 'str',
+            'message_segment_count': 'int'
         }
 
         self.attribute_map = {
             'message_id': 'messageId',
-            'message_time': 'messageTime'
+            'message_time': 'messageTime',
+            'message_status': 'messageStatus',
+            'message_segment_count': 'messageSegmentCount'
         }
 
         self._message_id = None
         self._message_time = None
+        self._message_status = None
+        self._message_segment_count = None
 
     @property
     def message_id(self):
@@ -95,6 +101,56 @@ class ConversationNotificationMessageDetails(object):
         """
         
         self._message_time = message_time
+
+    @property
+    def message_status(self):
+        """
+        Gets the message_status of this ConversationNotificationMessageDetails.
+
+
+        :return: The message_status of this ConversationNotificationMessageDetails.
+        :rtype: str
+        """
+        return self._message_status
+
+    @message_status.setter
+    def message_status(self, message_status):
+        """
+        Sets the message_status of this ConversationNotificationMessageDetails.
+
+
+        :param message_status: The message_status of this ConversationNotificationMessageDetails.
+        :type: str
+        """
+        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED"]
+        if message_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for message_status -> " + message_status
+            self._message_status = "outdated_sdk_version"
+        else:
+            self._message_status = message_status
+
+    @property
+    def message_segment_count(self):
+        """
+        Gets the message_segment_count of this ConversationNotificationMessageDetails.
+
+
+        :return: The message_segment_count of this ConversationNotificationMessageDetails.
+        :rtype: int
+        """
+        return self._message_segment_count
+
+    @message_segment_count.setter
+    def message_segment_count(self, message_segment_count):
+        """
+        Sets the message_segment_count of this ConversationNotificationMessageDetails.
+
+
+        :param message_segment_count: The message_segment_count of this ConversationNotificationMessageDetails.
+        :type: int
+        """
+        
+        self._message_segment_count = message_segment_count
 
     def to_dict(self):
         """

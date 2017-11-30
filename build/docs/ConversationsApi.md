@@ -13,6 +13,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
+|[**get_conversation_participant_secureivrsession**](ConversationsApi.html#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
+|[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
 |[**get_conversation_participant_wrapup**](ConversationsApi.html#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversation_participant_wrapupcodes**](ConversationsApi.html#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations**](ConversationsApi.html#get_conversations) | Get conversations|
@@ -70,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
 |[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
 |[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
@@ -319,6 +322,102 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="get_conversation_participant_secureivrsession"></a>
+
+## [**SecureSession**](SecureSession.html) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
+
+Fetch info on a secure session
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+secure_session_id = 'secure_session_id_example' # str | secure IVR session ID
+
+try:
+    # Fetch info on a secure session
+    api_response = api_instance.get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversation_participant_secureivrsession: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **secure_session_id** | **str**| secure IVR session ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSession**](SecureSession.html)
+
+<a name="get_conversation_participant_secureivrsessions"></a>
+
+## [**SecureSessionEntityListing**](SecureSessionEntityListing.html) get_conversation_participant_secureivrsessions(conversation_id, participant_id)
+
+Get a list of secure sessions for this participant.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+
+try:
+    # Get a list of secure sessions for this participant.
+    api_response = api_instance.get_conversation_participant_secureivrsessions(conversation_id, participant_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversation_participant_secureivrsessions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSessionEntityListing**](SecureSessionEntityListing.html)
 
 <a name="get_conversation_participant_wrapup"></a>
 
@@ -2995,6 +3094,55 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_conversation_participant_secureivrsessions"></a>
+
+## [**SecureSession**](SecureSession.html) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
+
+Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+
+
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.CreateSecureSession() # CreateSecureSession |  (optional)
+
+try:
+    # Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+    api_response = api_instance.post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversation_participant_secureivrsessions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSession**](SecureSession.html)
 
 <a name="post_conversations_call"></a>
 

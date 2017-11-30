@@ -43,6 +43,8 @@ class CallForwarding(object):
             'user': 'User',
             'enabled': 'bool',
             'phone_number': 'str',
+            'calls': 'list[CallRoute]',
+            'voicemail': 'str',
             'modified_date': 'datetime',
             'self_uri': 'str'
         }
@@ -53,6 +55,8 @@ class CallForwarding(object):
             'user': 'user',
             'enabled': 'enabled',
             'phone_number': 'phoneNumber',
+            'calls': 'calls',
+            'voicemail': 'voicemail',
             'modified_date': 'modifiedDate',
             'self_uri': 'selfUri'
         }
@@ -62,6 +66,8 @@ class CallForwarding(object):
         self._user = None
         self._enabled = None
         self._phone_number = None
+        self._calls = None
+        self._voicemail = None
         self._modified_date = None
         self._self_uri = None
 
@@ -138,7 +144,7 @@ class CallForwarding(object):
     def enabled(self):
         """
         Gets the enabled of this CallForwarding.
-
+        Whether or not CallForwarding is enabled
 
         :return: The enabled of this CallForwarding.
         :rtype: bool
@@ -149,7 +155,7 @@ class CallForwarding(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this CallForwarding.
-
+        Whether or not CallForwarding is enabled
 
         :param enabled: The enabled of this CallForwarding.
         :type: bool
@@ -161,7 +167,7 @@ class CallForwarding(object):
     def phone_number(self):
         """
         Gets the phone_number of this CallForwarding.
-
+        This property is deprecated. Please use the calls property
 
         :return: The phone_number of this CallForwarding.
         :rtype: str
@@ -172,13 +178,63 @@ class CallForwarding(object):
     def phone_number(self, phone_number):
         """
         Sets the phone_number of this CallForwarding.
-
+        This property is deprecated. Please use the calls property
 
         :param phone_number: The phone_number of this CallForwarding.
         :type: str
         """
         
         self._phone_number = phone_number
+
+    @property
+    def calls(self):
+        """
+        Gets the calls of this CallForwarding.
+        An ordered list of CallRoutes to be executed when CallForwarding is enabled
+
+        :return: The calls of this CallForwarding.
+        :rtype: list[CallRoute]
+        """
+        return self._calls
+
+    @calls.setter
+    def calls(self, calls):
+        """
+        Sets the calls of this CallForwarding.
+        An ordered list of CallRoutes to be executed when CallForwarding is enabled
+
+        :param calls: The calls of this CallForwarding.
+        :type: list[CallRoute]
+        """
+        
+        self._calls = calls
+
+    @property
+    def voicemail(self):
+        """
+        Gets the voicemail of this CallForwarding.
+        The type of voicemail to use with the callForwarding configuration
+
+        :return: The voicemail of this CallForwarding.
+        :rtype: str
+        """
+        return self._voicemail
+
+    @voicemail.setter
+    def voicemail(self, voicemail):
+        """
+        Sets the voicemail of this CallForwarding.
+        The type of voicemail to use with the callForwarding configuration
+
+        :param voicemail: The voicemail of this CallForwarding.
+        :type: str
+        """
+        allowed_values = ["PURECLOUD", "LASTCALL", "NONE"]
+        if voicemail.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for voicemail -> " + voicemail
+            self._voicemail = "outdated_sdk_version"
+        else:
+            self._voicemail = voicemail
 
     @property
     def modified_date(self):

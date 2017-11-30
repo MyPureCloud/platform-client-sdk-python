@@ -54,6 +54,8 @@ class Queue(object):
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
             'queue_flow': 'UriReference',
+            'whisper': 'UriReference',
+            'auto_answer_only': 'bool',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -79,6 +81,8 @@ class Queue(object):
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
             'queue_flow': 'queueFlow',
+            'whisper': 'whisper',
+            'auto_answer_only': 'autoAnswerOnly',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -103,6 +107,8 @@ class Queue(object):
         self._acw_settings = None
         self._skill_evaluation_method = None
         self._queue_flow = None
+        self._whisper = None
+        self._auto_answer_only = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -485,6 +491,52 @@ class Queue(object):
         """
         
         self._queue_flow = queue_flow
+
+    @property
+    def whisper(self):
+        """
+        Gets the whisper of this Queue.
+        The prompt used for whisper audio on the queue, if configured.
+
+        :return: The whisper of this Queue.
+        :rtype: UriReference
+        """
+        return self._whisper
+
+    @whisper.setter
+    def whisper(self, whisper):
+        """
+        Sets the whisper of this Queue.
+        The prompt used for whisper audio on the queue, if configured.
+
+        :param whisper: The whisper of this Queue.
+        :type: UriReference
+        """
+        
+        self._whisper = whisper
+
+    @property
+    def auto_answer_only(self):
+        """
+        Gets the auto_answer_only of this Queue.
+        Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+
+        :return: The auto_answer_only of this Queue.
+        :rtype: bool
+        """
+        return self._auto_answer_only
+
+    @auto_answer_only.setter
+    def auto_answer_only(self, auto_answer_only):
+        """
+        Sets the auto_answer_only of this Queue.
+        Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+
+        :param auto_answer_only: The auto_answer_only of this Queue.
+        :type: bool
+        """
+        
+        self._auto_answer_only = auto_answer_only
 
     @property
     def calling_party_name(self):

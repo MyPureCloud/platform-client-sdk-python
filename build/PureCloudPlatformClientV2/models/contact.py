@@ -163,7 +163,7 @@ class Contact(object):
     def extension(self):
         """
         Gets the extension of this Contact.
-        Use extension instead of address for setting internal extensions
+        Use internal extension instead of address. Mutually exclusive with the address field.
 
         :return: The extension of this Contact.
         :rtype: str
@@ -174,7 +174,7 @@ class Contact(object):
     def extension(self, extension):
         """
         Sets the extension of this Contact.
-        Use extension instead of address for setting internal extensions
+        Use internal extension instead of address. Mutually exclusive with the address field.
 
         :param extension: The extension of this Contact.
         :type: str

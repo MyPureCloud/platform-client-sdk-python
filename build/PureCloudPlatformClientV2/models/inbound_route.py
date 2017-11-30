@@ -48,6 +48,7 @@ class InboundRoute(object):
             'from_name': 'str',
             'from_email': 'str',
             'flow': 'UriReference',
+            'reply_route': 'UriReference',
             'self_uri': 'str'
         }
 
@@ -62,6 +63,7 @@ class InboundRoute(object):
             'from_name': 'fromName',
             'from_email': 'fromEmail',
             'flow': 'flow',
+            'reply_route': 'replyRoute',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +77,7 @@ class InboundRoute(object):
         self._from_name = None
         self._from_email = None
         self._flow = None
+        self._reply_route = None
         self._self_uri = None
 
     @property
@@ -306,6 +309,29 @@ class InboundRoute(object):
         """
         
         self._flow = flow
+
+    @property
+    def reply_route(self):
+        """
+        Gets the reply_route of this InboundRoute.
+        The route to use for email replies.
+
+        :return: The reply_route of this InboundRoute.
+        :rtype: UriReference
+        """
+        return self._reply_route
+
+    @reply_route.setter
+    def reply_route(self, reply_route):
+        """
+        Sets the reply_route of this InboundRoute.
+        The route to use for email replies.
+
+        :param reply_route: The reply_route of this InboundRoute.
+        :type: UriReference
+        """
+        
+        self._reply_route = reply_route
 
     @property
     def self_uri(self):

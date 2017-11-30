@@ -11,7 +11,7 @@ title: Contact
 | **display** | **str** | Formatted version of the address property | [optional] |
 | **media_type** | **str** |  | [optional] |
 | **type** | **str** |  | [optional] |
-| **extension** | **str** | Use extension instead of address for setting internal extensions | [optional] |
+| **extension** | **str** | Use internal extension instead of address. Mutually exclusive with the address field. | [optional] |
 {: class="table table-striped"}
 
 

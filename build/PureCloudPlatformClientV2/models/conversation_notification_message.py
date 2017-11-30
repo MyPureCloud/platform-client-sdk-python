@@ -52,6 +52,9 @@ class ConversationNotificationMessage(object):
             'from_address': 'ConversationNotificationAddress',
             'messages': 'list[ConversationNotificationMessages]',
             'messages_transcript_uri': 'str',
+            'type': 'str',
+            'recipient_country': 'str',
+            'recipient_type': 'str',
             'additional_properties': 'object'
         }
 
@@ -70,6 +73,9 @@ class ConversationNotificationMessage(object):
             'from_address': 'fromAddress',
             'messages': 'messages',
             'messages_transcript_uri': 'messagesTranscriptUri',
+            'type': 'type',
+            'recipient_country': 'recipientCountry',
+            'recipient_type': 'recipientType',
             'additional_properties': 'additionalProperties'
         }
 
@@ -87,6 +93,9 @@ class ConversationNotificationMessage(object):
         self._from_address = None
         self._messages = None
         self._messages_transcript_uri = None
+        self._type = None
+        self._recipient_country = None
+        self._recipient_type = None
         self._additional_properties = None
 
     @property
@@ -418,6 +427,79 @@ class ConversationNotificationMessage(object):
         """
         
         self._messages_transcript_uri = messages_transcript_uri
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ConversationNotificationMessage.
+
+
+        :return: The type of this ConversationNotificationMessage.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ConversationNotificationMessage.
+
+
+        :param type: The type of this ConversationNotificationMessage.
+        :type: str
+        """
+        allowed_values = ["SMS"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for type -> " + type
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def recipient_country(self):
+        """
+        Gets the recipient_country of this ConversationNotificationMessage.
+
+
+        :return: The recipient_country of this ConversationNotificationMessage.
+        :rtype: str
+        """
+        return self._recipient_country
+
+    @recipient_country.setter
+    def recipient_country(self, recipient_country):
+        """
+        Sets the recipient_country of this ConversationNotificationMessage.
+
+
+        :param recipient_country: The recipient_country of this ConversationNotificationMessage.
+        :type: str
+        """
+        
+        self._recipient_country = recipient_country
+
+    @property
+    def recipient_type(self):
+        """
+        Gets the recipient_type of this ConversationNotificationMessage.
+
+
+        :return: The recipient_type of this ConversationNotificationMessage.
+        :rtype: str
+        """
+        return self._recipient_type
+
+    @recipient_type.setter
+    def recipient_type(self, recipient_type):
+        """
+        Sets the recipient_type of this ConversationNotificationMessage.
+
+
+        :param recipient_type: The recipient_type of this ConversationNotificationMessage.
+        :type: str
+        """
+        
+        self._recipient_type = recipient_type
 
     @property
     def additional_properties(self):

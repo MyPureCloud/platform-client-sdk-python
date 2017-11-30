@@ -214,7 +214,7 @@ class UpdateUser(object):
     def primary_contact_info(self):
         """
         Gets the primary_contact_info of this UpdateUser.
-
+        The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.
 
         :return: The primary_contact_info of this UpdateUser.
         :rtype: list[Contact]
@@ -225,7 +225,7 @@ class UpdateUser(object):
     def primary_contact_info(self, primary_contact_info):
         """
         Sets the primary_contact_info of this UpdateUser.
-
+        The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.
 
         :param primary_contact_info: The primary_contact_info of this UpdateUser.
         :type: list[Contact]
@@ -237,7 +237,7 @@ class UpdateUser(object):
     def addresses(self):
         """
         Gets the addresses of this UpdateUser.
-        Email addresses and phone numbers for this user
+        Email address, phone number, and/or extension for this user. One entry is allowed per media type
 
         :return: The addresses of this UpdateUser.
         :rtype: list[Contact]
@@ -248,7 +248,7 @@ class UpdateUser(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this UpdateUser.
-        Email addresses and phone numbers for this user
+        Email address, phone number, and/or extension for this user. One entry is allowed per media type
 
         :param addresses: The addresses of this UpdateUser.
         :type: list[Contact]

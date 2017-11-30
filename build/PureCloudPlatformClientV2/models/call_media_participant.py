@@ -74,7 +74,8 @@ class CallMediaParticipant(object):
             'document_id': 'str',
             'fax_status': 'FaxStatus',
             'monitored_participant_id': 'str',
-            'consult_participant_id': 'str'
+            'consult_participant_id': 'str',
+            'uui_data': 'str'
         }
 
         self.attribute_map = {
@@ -114,7 +115,8 @@ class CallMediaParticipant(object):
             'document_id': 'documentId',
             'fax_status': 'faxStatus',
             'monitored_participant_id': 'monitoredParticipantId',
-            'consult_participant_id': 'consultParticipantId'
+            'consult_participant_id': 'consultParticipantId',
+            'uui_data': 'uuiData'
         }
 
         self._id = None
@@ -154,6 +156,7 @@ class CallMediaParticipant(object):
         self._fax_status = None
         self._monitored_participant_id = None
         self._consult_participant_id = None
+        self._uui_data = None
 
     @property
     def id(self):
@@ -1021,6 +1024,29 @@ class CallMediaParticipant(object):
         """
         
         self._consult_participant_id = consult_participant_id
+
+    @property
+    def uui_data(self):
+        """
+        Gets the uui_data of this CallMediaParticipant.
+        User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.
+
+        :return: The uui_data of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._uui_data
+
+    @uui_data.setter
+    def uui_data(self, uui_data):
+        """
+        Sets the uui_data of this CallMediaParticipant.
+        User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.
+
+        :param uui_data: The uui_data of this CallMediaParticipant.
+        :type: str
+        """
+        
+        self._uui_data = uui_data
 
     def to_dict(self):
         """

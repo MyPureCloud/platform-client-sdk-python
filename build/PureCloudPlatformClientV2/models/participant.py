@@ -1033,7 +1033,7 @@ class Participant(object):
         :param screen_recording_state: The screen_recording_state of this Participant.
         :type: str
         """
-        allowed_values = ["requested", "active", "paused", "stopped", "error"]
+        allowed_values = ["requested", "active", "paused", "stopped", "error", "timeout"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for screen_recording_state -> " + screen_recording_state
             self._screen_recording_state = "outdated_sdk_version"

@@ -65,7 +65,10 @@ class MessageConversationNotificationMessageMediaParticipant(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
-            'messages': 'list[MessageConversationNotificationMessages]'
+            'messages': 'list[MessageConversationNotificationMessages]',
+            'type': 'str',
+            'recipient_country': 'str',
+            'recipient_type': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +99,10 @@ class MessageConversationNotificationMessageMediaParticipant(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
-            'messages': 'messages'
+            'messages': 'messages',
+            'type': 'type',
+            'recipient_country': 'recipientCountry',
+            'recipient_type': 'recipientType'
         }
 
         self._id = None
@@ -127,6 +133,9 @@ class MessageConversationNotificationMessageMediaParticipant(object):
         self._peer = None
         self._screen_recording_state = None
         self._messages = None
+        self._type = None
+        self._recipient_country = None
+        self._recipient_type = None
 
     @property
     def id(self):
@@ -783,6 +792,79 @@ class MessageConversationNotificationMessageMediaParticipant(object):
         """
         
         self._messages = messages
+
+    @property
+    def type(self):
+        """
+        Gets the type of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :return: The type of this MessageConversationNotificationMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :param type: The type of this MessageConversationNotificationMessageMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["SMS"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for type -> " + type
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def recipient_country(self):
+        """
+        Gets the recipient_country of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :return: The recipient_country of this MessageConversationNotificationMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._recipient_country
+
+    @recipient_country.setter
+    def recipient_country(self, recipient_country):
+        """
+        Sets the recipient_country of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :param recipient_country: The recipient_country of this MessageConversationNotificationMessageMediaParticipant.
+        :type: str
+        """
+        
+        self._recipient_country = recipient_country
+
+    @property
+    def recipient_type(self):
+        """
+        Gets the recipient_type of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :return: The recipient_type of this MessageConversationNotificationMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._recipient_type
+
+    @recipient_type.setter
+    def recipient_type(self, recipient_type):
+        """
+        Sets the recipient_type of this MessageConversationNotificationMessageMediaParticipant.
+
+
+        :param recipient_type: The recipient_type of this MessageConversationNotificationMessageMediaParticipant.
+        :type: str
+        """
+        
+        self._recipient_type = recipient_type
 
     def to_dict(self):
         """

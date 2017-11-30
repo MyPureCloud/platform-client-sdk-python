@@ -44,6 +44,7 @@ title: CallMediaParticipant
 | **fax_status** | [**FaxStatus**](FaxStatus.html) | Extra fax information if the call is a fax. | [optional] |
 | **monitored_participant_id** | **str** | The ID of the participant being monitored when performing a call monitor. | [optional] |
 | **consult_participant_id** | **str** | The ID of the consult transfer target participant when performing a consult transfer. | [optional] |
+| **uui_data** | **str** | User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567. | [optional] |
 {: class="table table-striped"}
 
 

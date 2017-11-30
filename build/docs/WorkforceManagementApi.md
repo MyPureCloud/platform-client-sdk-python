@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user by id|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Mark a time off request for the current user as read or unread|
+|[**post_workforcemanagement_agents_managementunits**](WorkforceManagementApi.html#post_workforcemanagement_agents_managementunits) | Get the management units to which the agents belong|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_intraday) | Get intraday data for the given date for the requested queueIds|
 |[**post_workforcemanagement_managementunit_schedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_schedules_search) | Get user schedules within the given time range|
@@ -486,6 +487,51 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_workforcemanagement_agents_managementunits"></a>
+
+## [**list[AgentManagementUnitReference]**](AgentManagementUnitReference.html) post_workforcemanagement_agents_managementunits(body=body)
+
+Get the management units to which the agents belong
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents/managementunits 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | body (optional)
+
+try:
+    # Get the management units to which the agents belong
+    api_response = api_instance.post_workforcemanagement_agents_managementunits(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_managementunits: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **list[str]**| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AgentManagementUnitReference]**](AgentManagementUnitReference.html)
 
 <a name="post_workforcemanagement_managementunit_historicaladherencequery"></a>
 

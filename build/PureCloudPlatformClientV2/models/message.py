@@ -50,6 +50,9 @@ class Message(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
+            'type': 'str',
+            'recipient_country': 'str',
+            'recipient_type': 'str',
             'script_id': 'str',
             'peer_id': 'str',
             'to_address': 'Address',
@@ -70,6 +73,9 @@ class Message(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
+            'type': 'type',
+            'recipient_country': 'recipientCountry',
+            'recipient_type': 'recipientType',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
             'to_address': 'toAddress',
@@ -89,6 +95,9 @@ class Message(object):
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
+        self._type = None
+        self._recipient_country = None
+        self._recipient_type = None
         self._script_id = None
         self._peer_id = None
         self._to_address = None
@@ -382,6 +391,79 @@ class Message(object):
         """
         
         self._provider = provider
+
+    @property
+    def type(self):
+        """
+        Gets the type of this Message.
+        Indicates the type of message platform from which the message originated.
+
+        :return: The type of this Message.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this Message.
+        Indicates the type of message platform from which the message originated.
+
+        :param type: The type of this Message.
+        :type: str
+        """
+        allowed_values = ["sms"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for type -> " + type
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def recipient_country(self):
+        """
+        Gets the recipient_country of this Message.
+        Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
+
+        :return: The recipient_country of this Message.
+        :rtype: str
+        """
+        return self._recipient_country
+
+    @recipient_country.setter
+    def recipient_country(self, recipient_country):
+        """
+        Sets the recipient_country of this Message.
+        Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
+
+        :param recipient_country: The recipient_country of this Message.
+        :type: str
+        """
+        
+        self._recipient_country = recipient_country
+
+    @property
+    def recipient_type(self):
+        """
+        Gets the recipient_type of this Message.
+        The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
+
+        :return: The recipient_type of this Message.
+        :rtype: str
+        """
+        return self._recipient_type
+
+    @recipient_type.setter
+    def recipient_type(self, recipient_type):
+        """
+        Sets the recipient_type of this Message.
+        The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
+
+        :param recipient_type: The recipient_type of this Message.
+        :type: str
+        """
+        
+        self._recipient_type = recipient_type
 
     @property
     def script_id(self):

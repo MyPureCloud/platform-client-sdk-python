@@ -11,6 +11,7 @@ title: UserConversationSummaryNotification
 | **call** | [**UserConversationSummaryNotificationCall**](UserConversationSummaryNotificationCall.html) |  | [optional] |
 | **callback** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |
 | **email** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |
+| **message** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |
 | **chat** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |
 | **social_expression** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |
 | **video** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  | [optional] |

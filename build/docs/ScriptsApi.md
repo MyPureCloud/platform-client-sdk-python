@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_scripts_published_script_id_page**](ScriptsApi.html#get_scripts_published_script_id_page) | Get the published page.|
 |[**get_scripts_published_script_id_pages**](ScriptsApi.html#get_scripts_published_script_id_pages) | Get the list of published pages|
 |[**get_scripts_published_script_id_variables**](ScriptsApi.html#get_scripts_published_script_id_variables) | Get the published variables|
+|[**get_scripts_upload_status**](ScriptsApi.html#get_scripts_upload_status) | Get the upload status of an imported script|
 {: class="table table-striped"}
 
 <a name="get_script"></a>
@@ -477,4 +478,51 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+<a name="get_scripts_upload_status"></a>
+
+## [**ImportScriptStatusResponse**](ImportScriptStatusResponse.html) get_scripts_upload_status(upload_id, long_poll=long_poll)
+
+Get the upload status of an imported script
+
+
+
+Wraps GET /api/v2/scripts/uploads/{uploadId}/status 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ScriptsApi()
+upload_id = 'upload_id_example' # str | Upload ID
+long_poll = false # bool | Enable longPolling endpoint (optional) (default to false)
+
+try:
+    # Get the upload status of an imported script
+    api_response = api_instance.get_scripts_upload_status(upload_id, long_poll=long_poll)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ScriptsApi->get_scripts_upload_status: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **upload_id** | **str**| Upload ID |  |
+| **long_poll** | **bool**| Enable longPolling endpoint | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportScriptStatusResponse**](ImportScriptStatusResponse.html)
 

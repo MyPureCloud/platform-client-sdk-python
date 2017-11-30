@@ -60,7 +60,7 @@ class AnalyticsView(object):
     def target(self):
         """
         Gets the target of this AnalyticsView.
-        Target metric name
+        CallTarget metric name
 
         :return: The target of this AnalyticsView.
         :rtype: str
@@ -71,7 +71,7 @@ class AnalyticsView(object):
     def target(self, target):
         """
         Sets the target of this AnalyticsView.
-        Target metric name
+        CallTarget metric name
 
         :param target: The target of this AnalyticsView.
         :type: str

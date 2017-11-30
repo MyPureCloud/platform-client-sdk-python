@@ -39,16 +39,22 @@ class MessageConversationNotificationMessages(object):
         """
         self.swagger_types = {
             'message': 'MessageConversationNotificationUriReference',
-            'message_time': 'datetime'
+            'message_time': 'datetime',
+            'message_segment_count': 'int',
+            'message_status': 'str'
         }
 
         self.attribute_map = {
             'message': 'message',
-            'message_time': 'messageTime'
+            'message_time': 'messageTime',
+            'message_segment_count': 'messageSegmentCount',
+            'message_status': 'messageStatus'
         }
 
         self._message = None
         self._message_time = None
+        self._message_segment_count = None
+        self._message_status = None
 
     @property
     def message(self):
@@ -95,6 +101,56 @@ class MessageConversationNotificationMessages(object):
         """
         
         self._message_time = message_time
+
+    @property
+    def message_segment_count(self):
+        """
+        Gets the message_segment_count of this MessageConversationNotificationMessages.
+
+
+        :return: The message_segment_count of this MessageConversationNotificationMessages.
+        :rtype: int
+        """
+        return self._message_segment_count
+
+    @message_segment_count.setter
+    def message_segment_count(self, message_segment_count):
+        """
+        Sets the message_segment_count of this MessageConversationNotificationMessages.
+
+
+        :param message_segment_count: The message_segment_count of this MessageConversationNotificationMessages.
+        :type: int
+        """
+        
+        self._message_segment_count = message_segment_count
+
+    @property
+    def message_status(self):
+        """
+        Gets the message_status of this MessageConversationNotificationMessages.
+
+
+        :return: The message_status of this MessageConversationNotificationMessages.
+        :rtype: str
+        """
+        return self._message_status
+
+    @message_status.setter
+    def message_status(self, message_status):
+        """
+        Sets the message_status of this MessageConversationNotificationMessages.
+
+
+        :param message_status: The message_status of this MessageConversationNotificationMessages.
+        :type: str
+        """
+        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED"]
+        if message_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for message_status -> " + message_status
+            self._message_status = "outdated_sdk_version"
+        else:
+            self._message_status = message_status
 
     def to_dict(self):
         """

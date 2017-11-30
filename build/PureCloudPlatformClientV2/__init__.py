@@ -17,6 +17,7 @@ from .models.acw_settings import AcwSettings
 from .models.address import Address
 from .models.addressable_entity_user import AddressableEntityUser
 from .models.addressable_license_definition import AddressableLicenseDefinition
+from .models.adherence_settings import AdherenceSettings
 from .models.adjacents import Adjacents
 from .models.agent import Agent
 from .models.agent_activity import AgentActivity
@@ -28,6 +29,7 @@ from .models.agent_activity_notification_presence import AgentActivityNotificati
 from .models.agent_activity_notification_presence_presence_definition import AgentActivityNotificationPresencePresenceDefinition
 from .models.agent_activity_notification_routing_status import AgentActivityNotificationRoutingStatus
 from .models.agent_evaluator_activity import AgentEvaluatorActivity
+from .models.agent_management_unit_reference import AgentManagementUnitReference
 from .models.aggregate_data_container import AggregateDataContainer
 from .models.aggregate_metric_data import AggregateMetricData
 from .models.aggregate_query_response import AggregateQueryResponse
@@ -109,6 +111,8 @@ from .models.call_media_participant import CallMediaParticipant
 from .models.call_media_policy import CallMediaPolicy
 from .models.call_media_policy_conditions import CallMediaPolicyConditions
 from .models.call_record import CallRecord
+from .models.call_route import CallRoute
+from .models.call_target import CallTarget
 from .models.callable_contacts_diagnostic import CallableContactsDiagnostic
 from .models.callable_time import CallableTime
 from .models.callable_time_set import CallableTimeSet
@@ -304,6 +308,7 @@ from .models.create_callback_on_conversation_command import CreateCallbackOnConv
 from .models.create_callback_response import CreateCallbackResponse
 from .models.create_email_request import CreateEmailRequest
 from .models.create_queue_request import CreateQueueRequest
+from .models.create_secure_session import CreateSecureSession
 from .models.create_share_request import CreateShareRequest
 from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
@@ -532,6 +537,7 @@ from .models.history_listing import HistoryListing
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
 from .models.identity_now import IdentityNow
+from .models.import_script_status_response import ImportScriptStatusResponse
 from .models.import_status import ImportStatus
 from .models.import_status_notification import ImportStatusNotification
 from .models.inbound_domain import InboundDomain
@@ -615,6 +621,8 @@ from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
+from .models.management_unit_reference import ManagementUnitReference
+from .models.management_unit_settings import ManagementUnitSettings
 from .models.max_participants import MaxParticipants
 from .models.media_participant_request import MediaParticipantRequest
 from .models.media_policies import MediaPolicies
@@ -814,6 +822,7 @@ from .models.schedule_entity_listing import ScheduleEntityListing
 from .models.schedule_group import ScheduleGroup
 from .models.schedule_group_entity_listing import ScheduleGroupEntityListing
 from .models.schedule_interval import ScheduleInterval
+from .models.scheduling_settings import SchedulingSettings
 from .models.schema_category import SchemaCategory
 from .models.schema_category_entity_listing import SchemaCategoryEntityListing
 from .models.schema_reference_entity_listing import SchemaReferenceEntityListing
@@ -836,6 +845,8 @@ from .models.search_criteria import SearchCriteria
 from .models.search_request import SearchRequest
 from .models.search_sort import SearchSort
 from .models.section import Section
+from .models.secure_session import SecureSession
+from .models.secure_session_entity_listing import SecureSessionEntityListing
 from .models.security_profile import SecurityProfile
 from .models.security_profile_entity_listing import SecurityProfileEntityListing
 from .models.segment import Segment
@@ -851,6 +862,8 @@ from .models.share import Share
 from .models.share_entity_listing import ShareEntityListing
 from .models.shared_entity import SharedEntity
 from .models.shared_response import SharedResponse
+from .models.short_term_forecasting_settings import ShortTermForecastingSettings
+from .models.signed_data import SignedData
 from .models.site import Site
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
@@ -896,6 +909,7 @@ from .models.time_interval import TimeInterval
 from .models.time_off_request import TimeOffRequest
 from .models.time_off_request_list import TimeOffRequestList
 from .models.time_off_request_patch import TimeOffRequestPatch
+from .models.time_off_request_settings import TimeOffRequestSettings
 from .models.time_off_request_update_notification import TimeOffRequestUpdateNotification
 from .models.time_off_request_update_notification_user import TimeOffRequestUpdateNotificationUser
 from .models.time_slot import TimeSlot
@@ -964,6 +978,7 @@ from .models.user_queue import UserQueue
 from .models.user_queue_entity_listing import UserQueueEntityListing
 from .models.user_recording import UserRecording
 from .models.user_recording_entity_listing import UserRecordingEntityListing
+from .models.user_reference import UserReference
 from .models.user_routing_skill import UserRoutingSkill
 from .models.user_routing_skill_post import UserRoutingSkillPost
 from .models.user_routing_status_notification import UserRoutingStatusNotification
@@ -1066,6 +1081,7 @@ from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
+from .apis.signed_data_api import SignedDataApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
 from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi

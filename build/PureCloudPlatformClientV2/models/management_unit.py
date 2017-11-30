@@ -42,8 +42,10 @@ class ManagementUnit(object):
             'name': 'str',
             'start_day_of_week': 'str',
             'time_zone': 'str',
+            'settings': 'ManagementUnitSettings',
             'version': 'int',
             'date_modified': 'datetime',
+            'modified_by': 'User',
             'self_uri': 'str'
         }
 
@@ -52,8 +54,10 @@ class ManagementUnit(object):
             'name': 'name',
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
+            'settings': 'settings',
             'version': 'version',
             'date_modified': 'dateModified',
+            'modified_by': 'modifiedBy',
             'self_uri': 'selfUri'
         }
 
@@ -61,8 +65,10 @@ class ManagementUnit(object):
         self._name = None
         self._start_day_of_week = None
         self._time_zone = None
+        self._settings = None
         self._version = None
         self._date_modified = None
+        self._modified_by = None
         self._self_uri = None
 
     @property
@@ -115,7 +121,7 @@ class ManagementUnit(object):
     def start_day_of_week(self):
         """
         Gets the start_day_of_week of this ManagementUnit.
-        Start day of week for workforce management planning purposes
+        Start day of week for scheduling and forecasting purposes
 
         :return: The start_day_of_week of this ManagementUnit.
         :rtype: str
@@ -126,12 +132,12 @@ class ManagementUnit(object):
     def start_day_of_week(self, start_day_of_week):
         """
         Sets the start_day_of_week of this ManagementUnit.
-        Start day of week for workforce management planning purposes
+        Start day of week for scheduling and forecasting purposes
 
         :param start_day_of_week: The start_day_of_week of this ManagementUnit.
         :type: str
         """
-        allowed_values = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
         if start_day_of_week.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for start_day_of_week -> " + start_day_of_week
             self._start_day_of_week = "outdated_sdk_version"
@@ -162,10 +168,33 @@ class ManagementUnit(object):
         self._time_zone = time_zone
 
     @property
+    def settings(self):
+        """
+        Gets the settings of this ManagementUnit.
+        The configuration settings for this management unit
+
+        :return: The settings of this ManagementUnit.
+        :rtype: ManagementUnitSettings
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """
+        Sets the settings of this ManagementUnit.
+        The configuration settings for this management unit
+
+        :param settings: The settings of this ManagementUnit.
+        :type: ManagementUnitSettings
+        """
+        
+        self._settings = settings
+
+    @property
     def version(self):
         """
         Gets the version of this ManagementUnit.
-        The version of the underlying ManagementUnit object. Useful for handling eventual consistency issues.  User must submit the current version they of the ManagementUnit in any write requests
+        The version of the underlying entity
 
         :return: The version of this ManagementUnit.
         :rtype: int
@@ -176,7 +205,7 @@ class ManagementUnit(object):
     def version(self, version):
         """
         Sets the version of this ManagementUnit.
-        The version of the underlying ManagementUnit object. Useful for handling eventual consistency issues.  User must submit the current version they of the ManagementUnit in any write requests
+        The version of the underlying entity
 
         :param version: The version of this ManagementUnit.
         :type: int
@@ -188,7 +217,7 @@ class ManagementUnit(object):
     def date_modified(self):
         """
         Gets the date_modified of this ManagementUnit.
-        The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this ManagementUnit.
         :rtype: datetime
@@ -199,13 +228,36 @@ class ManagementUnit(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ManagementUnit.
-        The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this ManagementUnit.
         :type: datetime
         """
         
         self._date_modified = date_modified
+
+    @property
+    def modified_by(self):
+        """
+        Gets the modified_by of this ManagementUnit.
+        The user who last modified this entity
+
+        :return: The modified_by of this ManagementUnit.
+        :rtype: User
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by):
+        """
+        Sets the modified_by of this ManagementUnit.
+        The user who last modified this entity
+
+        :param modified_by: The modified_by of this ManagementUnit.
+        :type: User
+        """
+        
+        self._modified_by = modified_by
 
     @property
     def self_uri(self):

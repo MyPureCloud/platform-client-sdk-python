@@ -460,6 +460,180 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversation_participant_secureivrsession(self, conversation_id, participant_id, secure_session_id, **kwargs):
+        """
+        Fetch info on a secure session
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str participant_id: participant ID (required)
+        :param str secure_session_id: secure IVR session ID (required)
+        :return: SecureSession
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'secure_session_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_participant_secureivrsession" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_participant_secureivrsession`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `get_conversation_participant_secureivrsession`")
+        # verify the required parameter 'secure_session_id' is set
+        if ('secure_session_id' not in params) or (params['secure_session_id'] is None):
+            raise ValueError("Missing the required parameter `secure_session_id` when calling `get_conversation_participant_secureivrsession`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+        if 'secure_session_id' in params:
+            path_params['secureSessionId'] = params['secure_session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SecureSession',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_participant_secureivrsessions(self, conversation_id, participant_id, **kwargs):
+        """
+        Get a list of secure sessions for this participant.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_participant_secureivrsessions(conversation_id, participant_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str participant_id: participant ID (required)
+        :return: SecureSessionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_participant_secureivrsessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_participant_secureivrsessions`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `get_conversation_participant_secureivrsessions`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SecureSessionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversation_participant_wrapup(self, conversation_id, participant_id, **kwargs):
         """
         Get the wrap-up for this conversation participant. 
@@ -5271,6 +5445,93 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversation_participant_secureivrsessions(self, conversation_id, participant_id, **kwargs):
+        """
+        Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_participant_secureivrsessions(conversation_id, participant_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str participant_id: participant ID (required)
+        :param CreateSecureSession body: 
+        :return: SecureSession
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_participant_secureivrsessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_participant_secureivrsessions`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `post_conversation_participant_secureivrsessions`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SecureSession',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
