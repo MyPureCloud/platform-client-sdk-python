@@ -42,6 +42,7 @@ class UserConversationSummary(object):
             'call': 'MediaSummary',
             'callback': 'MediaSummary',
             'email': 'MediaSummary',
+            'message': 'MediaSummary',
             'chat': 'MediaSummary',
             'social_expression': 'MediaSummary',
             'video': 'MediaSummary'
@@ -52,6 +53,7 @@ class UserConversationSummary(object):
             'call': 'call',
             'callback': 'callback',
             'email': 'email',
+            'message': 'message',
             'chat': 'chat',
             'social_expression': 'socialExpression',
             'video': 'video'
@@ -61,6 +63,7 @@ class UserConversationSummary(object):
         self._call = None
         self._callback = None
         self._email = None
+        self._message = None
         self._chat = None
         self._social_expression = None
         self._video = None
@@ -156,6 +159,29 @@ class UserConversationSummary(object):
         """
         
         self._email = email
+
+    @property
+    def message(self):
+        """
+        Gets the message of this UserConversationSummary.
+
+
+        :return: The message of this UserConversationSummary.
+        :rtype: MediaSummary
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """
+        Sets the message of this UserConversationSummary.
+
+
+        :param message: The message of this UserConversationSummary.
+        :type: MediaSummary
+        """
+        
+        self._message = message
 
     @property
     def chat(self):

@@ -40,18 +40,21 @@ class MediaPolicies(object):
         self.swagger_types = {
             'call_policy': 'CallMediaPolicy',
             'chat_policy': 'ChatMediaPolicy',
-            'email_policy': 'EmailMediaPolicy'
+            'email_policy': 'EmailMediaPolicy',
+            'message_policy': 'MessageMediaPolicy'
         }
 
         self.attribute_map = {
             'call_policy': 'callPolicy',
             'chat_policy': 'chatPolicy',
-            'email_policy': 'emailPolicy'
+            'email_policy': 'emailPolicy',
+            'message_policy': 'messagePolicy'
         }
 
         self._call_policy = None
         self._chat_policy = None
         self._email_policy = None
+        self._message_policy = None
 
     @property
     def call_policy(self):
@@ -121,6 +124,29 @@ class MediaPolicies(object):
         """
         
         self._email_policy = email_policy
+
+    @property
+    def message_policy(self):
+        """
+        Gets the message_policy of this MediaPolicies.
+        Conditions and actions for messages
+
+        :return: The message_policy of this MediaPolicies.
+        :rtype: MessageMediaPolicy
+        """
+        return self._message_policy
+
+    @message_policy.setter
+    def message_policy(self, message_policy):
+        """
+        Sets the message_policy of this MediaPolicies.
+        Conditions and actions for messages
+
+        :param message_policy: The message_policy of this MediaPolicies.
+        :type: MessageMediaPolicy
+        """
+        
+        self._message_policy = message_policy
 
     def to_dict(self):
         """

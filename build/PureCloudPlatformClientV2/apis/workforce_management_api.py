@@ -558,12 +558,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param int page_size: 
         :param int page_number: 
+        :param str expand: 
         :return: ManagementUnitListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number']
+        all_params = ['page_size', 'page_number', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -586,6 +587,8 @@ class WorkforceManagementApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

@@ -45,7 +45,7 @@ class OrgOAuthClient(object):
             'created_by': 'UriReference',
             'modified_by': 'UriReference',
             'authorized_grant_type': 'str',
-            'organization': 'Entity'
+            'organization': 'NamedEntity'
         }
 
         self.attribute_map = {
@@ -240,7 +240,7 @@ class OrgOAuthClient(object):
         The  oauth client's organization.
 
         :return: The organization of this OrgOAuthClient.
-        :rtype: Entity
+        :rtype: NamedEntity
         """
         return self._organization
 
@@ -251,7 +251,7 @@ class OrgOAuthClient(object):
         The  oauth client's organization.
 
         :param organization: The organization of this OrgOAuthClient.
-        :type: Entity
+        :type: NamedEntity
         """
         
         self._organization = organization

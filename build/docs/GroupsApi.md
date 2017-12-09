@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_fieldconfig**](GroupsApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_group**](GroupsApi.html#get_group) | Get group|
 |[**get_group_members**](GroupsApi.html#get_group_members) | Get group members|
+|[**get_group_profile**](GroupsApi.html#get_group_profile) | Get group profile|
 |[**get_groups**](GroupsApi.html#get_groups) | Get a group list|
 |[**get_groups_search**](GroupsApi.html#get_groups_search) | Search groups using the q64 value returned from a previous search|
 |[**post_group_members**](GroupsApi.html#post_group_members) | Add members|
@@ -254,6 +255,51 @@ except ApiException as e:
 ### Return type
 
 [**UserEntityListing**](UserEntityListing.html)
+
+<a name="get_group_profile"></a>
+
+## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id)
+
+Get group profile
+
+
+
+Wraps GET /api/v2/groups/{groupId}/profile 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+group_id = 'group_id_example' # str | groupId
+
+try:
+    # Get group profile
+    api_response = api_instance.get_group_profile(group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling GroupsApi->get_group_profile: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **group_id** | **str**| groupId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GroupProfile**](GroupProfile.html)
 
 <a name="get_groups"></a>
 

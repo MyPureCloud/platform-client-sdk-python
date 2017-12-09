@@ -1669,7 +1669,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-body = [PureCloudPlatformClientV2.WrapupCode()] # list[WrapupCode] | List of wrapup codes
+body = [PureCloudPlatformClientV2.Entity()] # list[Entity] | List of wrapup codes
 
 try:
     # Add up to 100 wrap-up codes to a queue
@@ -1685,7 +1685,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[WrapupCode]**](WrapupCode.html)| List of wrapup codes |  |
+| **body** | [**list[Entity]**](Entity.html)| List of wrapup codes |  |
 {: class="table table-striped"}
 
 ### Return type

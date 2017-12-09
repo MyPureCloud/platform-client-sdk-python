@@ -524,6 +524,7 @@ from .group import Group
 from .group_contact import GroupContact
 from .group_entity_listing import GroupEntityListing
 from .group_members_update import GroupMembersUpdate
+from .group_profile import GroupProfile
 from .group_search_criteria import GroupSearchCriteria
 from .group_search_request import GroupSearchRequest
 from .group_update import GroupUpdate
@@ -644,9 +645,12 @@ from .message_conversation_notification_participants import MessageConversationN
 from .message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .message_details import MessageDetails
+from .message_media_policy import MessageMediaPolicy
+from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
+from .named_entity import NamedEntity
 from .note import Note
 from .note_listing import NoteListing
 from .number import Number
@@ -967,6 +971,7 @@ from .user_conversation_summary_notification_media_summary_detail import UserCon
 from .user_details_query import UserDetailsQuery
 from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing
+from .user_expands import UserExpands
 from .user_image import UserImage
 from .user_list_schedule_request_body import UserListScheduleRequestBody
 from .user_me import UserMe
@@ -974,6 +979,8 @@ from .user_param import UserParam
 from .user_presence import UserPresence
 from .user_presence_notification import UserPresenceNotification
 from .user_presence_notification_organization_presence import UserPresenceNotificationOrganizationPresence
+from .user_profile import UserProfile
+from .user_profile_entity_listing import UserProfileEntityListing
 from .user_queue import UserQueue
 from .user_queue_entity_listing import UserQueueEntityListing
 from .user_recording import UserRecording

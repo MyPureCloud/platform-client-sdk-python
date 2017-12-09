@@ -48,7 +48,7 @@ class InboundRoute(object):
             'from_name': 'str',
             'from_email': 'str',
             'flow': 'UriReference',
-            'reply_route': 'UriReference',
+            'reply_email_address': 'QueueEmailAddress',
             'self_uri': 'str'
         }
 
@@ -63,7 +63,7 @@ class InboundRoute(object):
             'from_name': 'fromName',
             'from_email': 'fromEmail',
             'flow': 'flow',
-            'reply_route': 'replyRoute',
+            'reply_email_address': 'replyEmailAddress',
             'self_uri': 'selfUri'
         }
 
@@ -77,7 +77,7 @@ class InboundRoute(object):
         self._from_name = None
         self._from_email = None
         self._flow = None
-        self._reply_route = None
+        self._reply_email_address = None
         self._self_uri = None
 
     @property
@@ -311,27 +311,27 @@ class InboundRoute(object):
         self._flow = flow
 
     @property
-    def reply_route(self):
+    def reply_email_address(self):
         """
-        Gets the reply_route of this InboundRoute.
+        Gets the reply_email_address of this InboundRoute.
         The route to use for email replies.
 
-        :return: The reply_route of this InboundRoute.
-        :rtype: UriReference
+        :return: The reply_email_address of this InboundRoute.
+        :rtype: QueueEmailAddress
         """
-        return self._reply_route
+        return self._reply_email_address
 
-    @reply_route.setter
-    def reply_route(self, reply_route):
+    @reply_email_address.setter
+    def reply_email_address(self, reply_email_address):
         """
-        Sets the reply_route of this InboundRoute.
+        Sets the reply_email_address of this InboundRoute.
         The route to use for email replies.
 
-        :param reply_route: The reply_route of this InboundRoute.
-        :type: UriReference
+        :param reply_email_address: The reply_email_address of this InboundRoute.
+        :type: QueueEmailAddress
         """
         
-        self._reply_route = reply_route
+        self._reply_email_address = reply_email_address
 
     @property
     def self_uri(self):

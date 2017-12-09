@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
 |[**get_fieldconfig**](UsersApi.html#get_fieldconfig) | Fetch field config for an entity type|
+|[**get_profiles_users**](UsersApi.html#get_profiles_users) | Get a user profile listing|
 |[**get_user**](UsersApi.html#get_user) | Get user.|
 |[**get_user_adjacents**](UsersApi.html#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](UsersApi.html#get_user_callforwarding) | Get a user&#39;s CallForwarding|
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_favorites**](UsersApi.html#get_user_favorites) | Get favorites|
 |[**get_user_geolocation**](UsersApi.html#get_user_geolocation) | Get a user&#39;s Geolocation|
 |[**get_user_outofoffice**](UsersApi.html#get_user_outofoffice) | Get a OutOfOffice|
+|[**get_user_profile**](UsersApi.html#get_user_profile) | Get user profile|
 |[**get_user_profileskills**](UsersApi.html#get_user_profileskills) | List profile skills for a user|
 |[**get_user_queues**](UsersApi.html#get_user_queues) | Get queues for user|
 |[**get_user_roles**](UsersApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
@@ -320,6 +322,63 @@ except ApiException as e:
 ### Return type
 
 [**FieldConfig**](FieldConfig.html)
+
+<a name="get_profiles_users"></a>
+
+## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, state=state)
+
+Get a user profile listing
+
+
+
+Wraps GET /api/v2/profiles/users 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+id = ['id_example'] # list[str] | id (optional)
+jid = ['jid_example'] # list[str] | jid (optional)
+sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+state = 'active' # str | Only list users of this state (optional) (default to active)
+
+try:
+    # Get a user profile listing
+    api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_profiles_users: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **jid** | [**list[str]**](str.html)| jid | [optional]  |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
+| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfileEntityListing**](UserProfileEntityListing.html)
 
 <a name="get_user"></a>
 
@@ -653,6 +712,53 @@ except ApiException as e:
 ### Return type
 
 [**OutOfOffice**](OutOfOffice.html)
+
+<a name="get_user_profile"></a>
+
+## [**UserProfile**](UserProfile.html) get_user_profile(user_id, expand=expand)
+
+Get user profile
+
+
+
+Wraps GET /api/v2/users/{userId}/profile 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | userId
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Get user profile
+    api_response = api_instance.get_user_profile(user_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_user_profile: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfile**](UserProfile.html)
 
 <a name="get_user_profileskills"></a>
 

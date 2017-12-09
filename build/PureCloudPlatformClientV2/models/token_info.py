@@ -38,8 +38,8 @@ class TokenInfo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'organization': 'Entity',
-            'home_organization': 'Entity',
+            'organization': 'NamedEntity',
+            'home_organization': 'NamedEntity',
             'o_auth_client': 'OrgOAuthClient'
         }
 
@@ -60,7 +60,7 @@ class TokenInfo(object):
         The current organization
 
         :return: The organization of this TokenInfo.
-        :rtype: Entity
+        :rtype: NamedEntity
         """
         return self._organization
 
@@ -71,7 +71,7 @@ class TokenInfo(object):
         The current organization
 
         :param organization: The organization of this TokenInfo.
-        :type: Entity
+        :type: NamedEntity
         """
         
         self._organization = organization
@@ -83,7 +83,7 @@ class TokenInfo(object):
         The token's home organization
 
         :return: The home_organization of this TokenInfo.
-        :rtype: Entity
+        :rtype: NamedEntity
         """
         return self._home_organization
 
@@ -94,7 +94,7 @@ class TokenInfo(object):
         The token's home organization
 
         :param home_organization: The home_organization of this TokenInfo.
-        :type: Entity
+        :type: NamedEntity
         """
         
         self._home_organization = home_organization

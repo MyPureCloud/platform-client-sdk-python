@@ -524,6 +524,7 @@ from .models.group import Group
 from .models.group_contact import GroupContact
 from .models.group_entity_listing import GroupEntityListing
 from .models.group_members_update import GroupMembersUpdate
+from .models.group_profile import GroupProfile
 from .models.group_search_criteria import GroupSearchCriteria
 from .models.group_search_request import GroupSearchRequest
 from .models.group_update import GroupUpdate
@@ -644,9 +645,12 @@ from .models.message_conversation_notification_participants import MessageConver
 from .models.message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .models.message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .models.message_details import MessageDetails
+from .models.message_media_policy import MessageMediaPolicy
+from .models.message_media_policy_conditions import MessageMediaPolicyConditions
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment
+from .models.named_entity import NamedEntity
 from .models.note import Note
 from .models.note_listing import NoteListing
 from .models.number import Number
@@ -967,6 +971,7 @@ from .models.user_conversation_summary_notification_media_summary_detail import 
 from .models.user_details_query import UserDetailsQuery
 from .models.user_device import UserDevice
 from .models.user_entity_listing import UserEntityListing
+from .models.user_expands import UserExpands
 from .models.user_image import UserImage
 from .models.user_list_schedule_request_body import UserListScheduleRequestBody
 from .models.user_me import UserMe
@@ -974,6 +979,8 @@ from .models.user_param import UserParam
 from .models.user_presence import UserPresence
 from .models.user_presence_notification import UserPresenceNotification
 from .models.user_presence_notification_organization_presence import UserPresenceNotificationOrganizationPresence
+from .models.user_profile import UserProfile
+from .models.user_profile_entity_listing import UserProfileEntityListing
 from .models.user_queue import UserQueue
 from .models.user_queue_entity_listing import UserQueueEntityListing
 from .models.user_recording import UserRecording

@@ -2840,7 +2840,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param list[WrapupCode] body: List of wrapup codes (required)
+        :param list[Entity] body: List of wrapup codes (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
                  returns the request thread.
