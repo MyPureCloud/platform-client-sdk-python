@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
-|[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Get activity codes corresponding to a management unit|
+|[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Get activity codes|
 |[**get_workforcemanagement_managementunit_intraday_queues**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_intraday_queues) | Get intraday queues for the given date|
 |[**get_workforcemanagement_managementunit_user_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_user_timeoffrequest) | Get a time off request by id|
 |[**get_workforcemanagement_managementunit_user_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_user_timeoffrequests) | Get a list of time off requests for any user|
@@ -18,7 +18,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user by id|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Mark a time off request for the current user as read or unread|
+|[**post_workforcemanagement_agents**](WorkforceManagementApi.html#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_managementunits**](WorkforceManagementApi.html#post_workforcemanagement_agents_managementunits) | Get the management units to which the agents belong|
+|[**post_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_activitycodes) | Create a new activity code|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_intraday) | Get intraday data for the given date for the requested queueIds|
 |[**post_workforcemanagement_managementunit_schedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_schedules_search) | Get user schedules within the given time range|
@@ -74,7 +76,7 @@ except ApiException as e:
 
 ## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(mu_id)
 
-Get activity codes corresponding to a management unit
+Get activity codes
 
 
 
@@ -96,7 +98,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
-    # Get activity codes corresponding to a management unit
+    # Get activity codes
     api_response = api_instance.get_workforcemanagement_managementunit_activitycodes(mu_id)
     pprint(api_response)
 except ApiException as e:
@@ -490,6 +492,51 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_workforcemanagement_agents"></a>
+
+## [**MoveAgentsResponse**](MoveAgentsResponse.html) post_workforcemanagement_agents(body=body)
+
+Move agents in and out of management unit
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.MoveAgentsRequest() # MoveAgentsRequest | body (optional)
+
+try:
+    # Move agents in and out of management unit
+    api_response = api_instance.post_workforcemanagement_agents(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_agents: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MoveAgentsResponse**](MoveAgentsResponse.html)
+
 <a name="post_workforcemanagement_agents_managementunits"></a>
 
 ## [**list[AgentManagementUnitReference]**](AgentManagementUnitReference.html) post_workforcemanagement_agents_managementunits(body=body)
@@ -534,6 +581,53 @@ except ApiException as e:
 ### Return type
 
 [**list[AgentManagementUnitReference]**](AgentManagementUnitReference.html)
+
+<a name="post_workforcemanagement_managementunit_activitycodes"></a>
+
+## [**ActivityCode**](ActivityCode.html) post_workforcemanagement_managementunit_activitycodes(mu_id, body=body)
+
+Create a new activity code
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/activitycodes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.CreateActivityCodeRequest() # CreateActivityCodeRequest | body (optional)
+
+try:
+    # Create a new activity code
+    api_response = api_instance.post_workforcemanagement_managementunit_activitycodes(mu_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_activitycodes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityCode**](ActivityCode.html)
 
 <a name="post_workforcemanagement_managementunit_historicaladherencequery"></a>
 

@@ -796,7 +796,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
 trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
-body = PureCloudPlatformClientV2.TrustUserCreate() # TrustUserCreate | Trust
+body = PureCloudPlatformClientV2.TrustMemberCreate() # TrustMemberCreate | Trust
 
 try:
     # Add a user to the trust.
@@ -812,7 +812,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
-| **body** | [**TrustUserCreate**](TrustUserCreate.html)| Trust |  |
+| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust |  |
 {: class="table table-striped"}
 
 ### Return type

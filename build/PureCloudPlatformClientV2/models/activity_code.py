@@ -38,6 +38,7 @@ class ActivityCode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'name': 'str',
             'is_active': 'bool',
             'is_default': 'bool',
@@ -45,10 +46,13 @@ class ActivityCode(object):
             'length_in_minutes': 'int',
             'counts_as_paid_time': 'bool',
             'counts_as_work_time': 'bool',
-            'is_agent_time_off_selectable': 'bool'
+            'agent_time_off_selectable': 'bool',
+            'metadata': 'WfmVersionedEntityMetadata',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'name': 'name',
             'is_active': 'isActive',
             'is_default': 'isDefault',
@@ -56,9 +60,12 @@ class ActivityCode(object):
             'length_in_minutes': 'lengthInMinutes',
             'counts_as_paid_time': 'countsAsPaidTime',
             'counts_as_work_time': 'countsAsWorkTime',
-            'is_agent_time_off_selectable': 'isAgentTimeOffSelectable'
+            'agent_time_off_selectable': 'agentTimeOffSelectable',
+            'metadata': 'metadata',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
         self._name = None
         self._is_active = None
         self._is_default = None
@@ -66,13 +73,38 @@ class ActivityCode(object):
         self._length_in_minutes = None
         self._counts_as_paid_time = None
         self._counts_as_work_time = None
-        self._is_agent_time_off_selectable = None
+        self._agent_time_off_selectable = None
+        self._metadata = None
+        self._self_uri = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this ActivityCode.
+        The globally unique identifier for the object.
+
+        :return: The id of this ActivityCode.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this ActivityCode.
+        The globally unique identifier for the object.
+
+        :param id: The id of this ActivityCode.
+        :type: str
+        """
+        
+        self._id = id
 
     @property
     def name(self):
         """
         Gets the name of this ActivityCode.
-        The activity code's name
+        The name of the activity code. Default activity codes will be created with an empty name
 
         :return: The name of this ActivityCode.
         :rtype: str
@@ -83,7 +115,7 @@ class ActivityCode(object):
     def name(self, name):
         """
         Sets the name of this ActivityCode.
-        The activity code's name
+        The name of the activity code. Default activity codes will be created with an empty name
 
         :param name: The name of this ActivityCode.
         :type: str
@@ -95,7 +127,7 @@ class ActivityCode(object):
     def is_active(self):
         """
         Gets the is_active of this ActivityCode.
-        Whether this activity code is active or only used for historical schedules
+        Whether this activity code is active or has been deleted
 
         :return: The is_active of this ActivityCode.
         :rtype: bool
@@ -106,7 +138,7 @@ class ActivityCode(object):
     def is_active(self, is_active):
         """
         Sets the is_active of this ActivityCode.
-        Whether this activity code is active or only used for historical schedules
+        Whether this activity code is active or has been deleted
 
         :param is_active: The is_active of this ActivityCode.
         :type: bool
@@ -141,7 +173,7 @@ class ActivityCode(object):
     def category(self):
         """
         Gets the category of this ActivityCode.
-        The activity code's category
+        The activity code's category.
 
         :return: The category of this ActivityCode.
         :rtype: str
@@ -152,7 +184,7 @@ class ActivityCode(object):
     def category(self, category):
         """
         Sets the category of this ActivityCode.
-        The activity code's category
+        The activity code's category.
 
         :param category: The category of this ActivityCode.
         :type: str
@@ -214,7 +246,7 @@ class ActivityCode(object):
     def counts_as_work_time(self):
         """
         Gets the counts_as_work_time of this ActivityCode.
-        Indicates whether or not the activity should be counted as work time
+        Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
 
         :return: The counts_as_work_time of this ActivityCode.
         :rtype: bool
@@ -225,7 +257,7 @@ class ActivityCode(object):
     def counts_as_work_time(self, counts_as_work_time):
         """
         Sets the counts_as_work_time of this ActivityCode.
-        Indicates whether or not the activity should be counted as work time
+        Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
 
         :param counts_as_work_time: The counts_as_work_time of this ActivityCode.
         :type: bool
@@ -234,27 +266,73 @@ class ActivityCode(object):
         self._counts_as_work_time = counts_as_work_time
 
     @property
-    def is_agent_time_off_selectable(self):
+    def agent_time_off_selectable(self):
         """
-        Gets the is_agent_time_off_selectable of this ActivityCode.
-        Whether an agent can select this activity code when creating or editing a time off request
+        Gets the agent_time_off_selectable of this ActivityCode.
+        Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off.
 
-        :return: The is_agent_time_off_selectable of this ActivityCode.
+        :return: The agent_time_off_selectable of this ActivityCode.
         :rtype: bool
         """
-        return self._is_agent_time_off_selectable
+        return self._agent_time_off_selectable
 
-    @is_agent_time_off_selectable.setter
-    def is_agent_time_off_selectable(self, is_agent_time_off_selectable):
+    @agent_time_off_selectable.setter
+    def agent_time_off_selectable(self, agent_time_off_selectable):
         """
-        Sets the is_agent_time_off_selectable of this ActivityCode.
-        Whether an agent can select this activity code when creating or editing a time off request
+        Sets the agent_time_off_selectable of this ActivityCode.
+        Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off.
 
-        :param is_agent_time_off_selectable: The is_agent_time_off_selectable of this ActivityCode.
+        :param agent_time_off_selectable: The agent_time_off_selectable of this ActivityCode.
         :type: bool
         """
         
-        self._is_agent_time_off_selectable = is_agent_time_off_selectable
+        self._agent_time_off_selectable = agent_time_off_selectable
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this ActivityCode.
+        Version metadata for the associated management unit's list of activity codes
+
+        :return: The metadata of this ActivityCode.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this ActivityCode.
+        Version metadata for the associated management unit's list of activity codes
+
+        :param metadata: The metadata of this ActivityCode.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ActivityCode.
+        The URI for this object
+
+        :return: The self_uri of this ActivityCode.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ActivityCode.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ActivityCode.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

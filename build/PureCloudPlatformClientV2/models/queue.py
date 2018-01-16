@@ -42,6 +42,7 @@ class Queue(object):
             'name': 'str',
             'description': 'str',
             'version': 'int',
+            'division': 'UriReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'modified_by': 'str',
@@ -69,6 +70,7 @@ class Queue(object):
             'name': 'name',
             'description': 'description',
             'version': 'version',
+            'division': 'division',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
@@ -95,6 +97,7 @@ class Queue(object):
         self._name = None
         self._description = None
         self._version = None
+        self._division = None
         self._date_created = None
         self._date_modified = None
         self._modified_by = None
@@ -166,7 +169,7 @@ class Queue(object):
     def description(self):
         """
         Gets the description of this Queue.
-        The resource's description.
+        The queue description.
 
         :return: The description of this Queue.
         :rtype: str
@@ -177,7 +180,7 @@ class Queue(object):
     def description(self, description):
         """
         Sets the description of this Queue.
-        The resource's description.
+        The queue description.
 
         :param description: The description of this Queue.
         :type: str
@@ -189,7 +192,7 @@ class Queue(object):
     def version(self):
         """
         Gets the version of this Queue.
-        The current version of the resource.
+        The current version of the queue.
 
         :return: The version of this Queue.
         :rtype: int
@@ -200,7 +203,7 @@ class Queue(object):
     def version(self, version):
         """
         Sets the version of this Queue.
-        The current version of the resource.
+        The current version of the queue.
 
         :param version: The version of this Queue.
         :type: int
@@ -209,10 +212,33 @@ class Queue(object):
         self._version = version
 
     @property
+    def division(self):
+        """
+        Gets the division of this Queue.
+        The division to which this queue belongs.
+
+        :return: The division of this Queue.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Queue.
+        The division to which this queue belongs.
+
+        :param division: The division of this Queue.
+        :type: UriReference
+        """
+        
+        self._division = division
+
+    @property
     def date_created(self):
         """
         Gets the date_created of this Queue.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_created of this Queue.
         :rtype: datetime
@@ -223,7 +249,7 @@ class Queue(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Queue.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_created: The date_created of this Queue.
         :type: datetime
@@ -235,7 +261,7 @@ class Queue(object):
     def date_modified(self):
         """
         Gets the date_modified of this Queue.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this Queue.
         :rtype: datetime
@@ -246,7 +272,7 @@ class Queue(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this Queue.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this Queue.
         :type: datetime
@@ -258,7 +284,7 @@ class Queue(object):
     def modified_by(self):
         """
         Gets the modified_by of this Queue.
-        The ID of the user that last modified the resource.
+        The ID of the user that last modified the queue.
 
         :return: The modified_by of this Queue.
         :rtype: str
@@ -269,7 +295,7 @@ class Queue(object):
     def modified_by(self, modified_by):
         """
         Sets the modified_by of this Queue.
-        The ID of the user that last modified the resource.
+        The ID of the user that last modified the queue.
 
         :param modified_by: The modified_by of this Queue.
         :type: str
@@ -281,7 +307,7 @@ class Queue(object):
     def created_by(self):
         """
         Gets the created_by of this Queue.
-        The ID of the user that created the resource.
+        The ID of the user that created the queue.
 
         :return: The created_by of this Queue.
         :rtype: str
@@ -292,7 +318,7 @@ class Queue(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Queue.
-        The ID of the user that created the resource.
+        The ID of the user that created the queue.
 
         :param created_by: The created_by of this Queue.
         :type: str
@@ -304,7 +330,7 @@ class Queue(object):
     def state(self):
         """
         Gets the state of this Queue.
-        Indicates if the resource is active, inactive, or deleted.
+        Indicates if the queue is active, inactive, or deleted.
 
         :return: The state of this Queue.
         :rtype: str
@@ -315,7 +341,7 @@ class Queue(object):
     def state(self, state):
         """
         Sets the state of this Queue.
-        Indicates if the resource is active, inactive, or deleted.
+        Indicates if the queue is active, inactive, or deleted.
 
         :param state: The state of this Queue.
         :type: str
@@ -331,7 +357,7 @@ class Queue(object):
     def modified_by_app(self):
         """
         Gets the modified_by_app of this Queue.
-        The application that last modified the resource.
+        The application that last modified the queue.
 
         :return: The modified_by_app of this Queue.
         :rtype: str
@@ -342,7 +368,7 @@ class Queue(object):
     def modified_by_app(self, modified_by_app):
         """
         Sets the modified_by_app of this Queue.
-        The application that last modified the resource.
+        The application that last modified the queue.
 
         :param modified_by_app: The modified_by_app of this Queue.
         :type: str
@@ -354,7 +380,7 @@ class Queue(object):
     def created_by_app(self):
         """
         Gets the created_by_app of this Queue.
-        The application that created the resource.
+        The application that created the queue.
 
         :return: The created_by_app of this Queue.
         :rtype: str
@@ -365,7 +391,7 @@ class Queue(object):
     def created_by_app(self, created_by_app):
         """
         Sets the created_by_app of this Queue.
-        The application that created the resource.
+        The application that created the queue.
 
         :param created_by_app: The created_by_app of this Queue.
         :type: str
@@ -496,7 +522,7 @@ class Queue(object):
     def whisper(self):
         """
         Gets the whisper of this Queue.
-        The prompt used for whisper audio on the queue, if configured.
+        ID of the whisper configured for this queue, if any.
 
         :return: The whisper of this Queue.
         :rtype: UriReference
@@ -507,7 +533,7 @@ class Queue(object):
     def whisper(self, whisper):
         """
         Sets the whisper of this Queue.
-        The prompt used for whisper audio on the queue, if configured.
+        ID of the whisper configured for this queue, if any.
 
         :param whisper: The whisper of this Queue.
         :type: UriReference
@@ -519,7 +545,7 @@ class Queue(object):
     def auto_answer_only(self):
         """
         Gets the auto_answer_only of this Queue.
-        Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+        Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
 
         :return: The auto_answer_only of this Queue.
         :rtype: bool
@@ -530,7 +556,7 @@ class Queue(object):
     def auto_answer_only(self, auto_answer_only):
         """
         Sets the auto_answer_only of this Queue.
-        Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+        Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
 
         :param auto_answer_only: The auto_answer_only of this Queue.
         :type: bool

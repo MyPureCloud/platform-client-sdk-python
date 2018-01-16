@@ -43,7 +43,7 @@ class AdherenceSettings(object):
             'adherence_exception_threshold_seconds': 'int',
             'non_on_queue_activities_equivalent': 'bool',
             'track_on_queue_activity': 'bool',
-            'ignored_activity_categories': 'list[str]'
+            'ignored_activity_categories': 'IgnoredActivityCategories'
         }
 
         self.attribute_map = {
@@ -184,7 +184,7 @@ class AdherenceSettings(object):
         Activity categories that should be ignored for adherence purposes
 
         :return: The ignored_activity_categories of this AdherenceSettings.
-        :rtype: list[str]
+        :rtype: IgnoredActivityCategories
         """
         return self._ignored_activity_categories
 
@@ -195,7 +195,7 @@ class AdherenceSettings(object):
         Activity categories that should be ignored for adherence purposes
 
         :param ignored_activity_categories: The ignored_activity_categories of this AdherenceSettings.
-        :type: list[str]
+        :type: IgnoredActivityCategories
         """
         
         self._ignored_activity_categories = ignored_activity_categories

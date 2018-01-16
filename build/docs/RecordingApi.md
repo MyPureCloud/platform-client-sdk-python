@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orphanrecording**](RecordingApi.html#get_orphanrecording) | Gets a single orphan recording|
 |[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
 |[**get_orphanrecordings**](RecordingApi.html#get_orphanrecordings) | Gets all orphan recordings|
+|[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results|
 |[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings|
 |[**get_recording_localkeys_settings**](RecordingApi.html#get_recording_localkeys_settings) | gets a list local key settings data|
 |[**get_recording_mediaretentionpolicies**](RecordingApi.html#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
@@ -32,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_recording_mediaretentionpolicy**](RecordingApi.html#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recordings_screensession**](RecordingApi.html#patch_recordings_screensession) | Update a screen recording session|
 |[**post_conversation_recording_annotations**](RecordingApi.html#post_conversation_recording_annotations) | Create annotation|
+|[**post_recording_batchrequests**](RecordingApi.html#post_recording_batchrequests) | Submit a batch download request|
 |[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local recording key|
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
@@ -671,6 +673,51 @@ except ApiException as e:
 
 [**OrphanRecordingListing**](OrphanRecordingListing.html)
 
+<a name="get_recording_batchrequest"></a>
+
+## [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html) get_recording_batchrequest(job_id)
+
+Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+
+
+
+Wraps GET /api/v2/recording/batchrequests/{jobId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+    api_response = api_instance.get_recording_batchrequest(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->get_recording_batchrequest: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
+
 <a name="get_recording_localkeys_setting"></a>
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
@@ -1186,6 +1233,51 @@ except ApiException as e:
 ### Return type
 
 [**Annotation**](Annotation.html)
+
+<a name="post_recording_batchrequests"></a>
+
+## [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html) post_recording_batchrequests(body)
+
+Submit a batch download request
+
+
+
+Wraps POST /api/v2/recording/batchrequests 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.BatchDownloadJobSubmission() # BatchDownloadJobSubmission | Job submission criteria
+
+try:
+    # Submit a batch download request
+    api_response = api_instance.post_recording_batchrequests(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->post_recording_batchrequests: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission.html)| Job submission criteria |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
 
 <a name="post_recording_localkeys"></a>
 

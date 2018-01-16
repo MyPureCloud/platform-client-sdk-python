@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_campaigns**](OutboundApi.html#post_outbound_campaigns) | Create a campaign.|
 |[**post_outbound_campaigns_progress**](OutboundApi.html#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
 |[**post_outbound_contactlist_contacts**](OutboundApi.html#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
+|[**post_outbound_contactlist_contacts_bulk**](OutboundApi.html#post_outbound_contactlist_contacts_bulk) | Get contacts from a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
 |[**post_outbound_contactlistfilters**](OutboundApi.html#post_outbound_contactlistfilters) | Create Contact List Filter|
 |[**post_outbound_contactlistfilters_preview**](OutboundApi.html#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
@@ -3063,6 +3064,53 @@ except ApiException as e:
 | **body** | [**list[DialerContact]**](DialerContact.html)| Contact |  |
 | **priority** | **bool**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
 | **clear_system_data** | **bool**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[DialerContact]**](DialerContact.html)
+
+<a name="post_outbound_contactlist_contacts_bulk"></a>
+
+## [**list[DialerContact]**](DialerContact.html) post_outbound_contactlist_contacts_bulk(contact_list_id, body)
+
+Get contacts from a contact list.
+
+
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | ContactIds to get.
+
+try:
+    # Get contacts from a contact list.
+    api_response = api_instance.post_outbound_contactlist_contacts_bulk(contact_list_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+| **body** | **list[str]**| ContactIds to get. |  |
 {: class="table table-striped"}
 
 ### Return type

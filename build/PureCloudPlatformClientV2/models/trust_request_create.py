@@ -38,20 +38,23 @@ class TrustRequestCreate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'user_ids': 'list[str]'
+            'user_ids': 'list[str]',
+            'group_ids': 'list[str]'
         }
 
         self.attribute_map = {
-            'user_ids': 'userIds'
+            'user_ids': 'userIds',
+            'group_ids': 'groupIds'
         }
 
         self._user_ids = None
+        self._group_ids = None
 
     @property
     def user_ids(self):
         """
         Gets the user_ids of this TrustRequestCreate.
-        The list of trustee users that are requesting access.
+        The list of trustee users that are requesting access. If no users are specified, at least one group is required.
 
         :return: The user_ids of this TrustRequestCreate.
         :rtype: list[str]
@@ -62,13 +65,36 @@ class TrustRequestCreate(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this TrustRequestCreate.
-        The list of trustee users that are requesting access.
+        The list of trustee users that are requesting access. If no users are specified, at least one group is required.
 
         :param user_ids: The user_ids of this TrustRequestCreate.
         :type: list[str]
         """
         
         self._user_ids = user_ids
+
+    @property
+    def group_ids(self):
+        """
+        Gets the group_ids of this TrustRequestCreate.
+        The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.
+
+        :return: The group_ids of this TrustRequestCreate.
+        :rtype: list[str]
+        """
+        return self._group_ids
+
+    @group_ids.setter
+    def group_ids(self, group_ids):
+        """
+        Sets the group_ids of this TrustRequestCreate.
+        The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.
+
+        :param group_ids: The group_ids of this TrustRequestCreate.
+        :type: list[str]
+        """
+        
+        self._group_ids = group_ids
 
     def to_dict(self):
         """

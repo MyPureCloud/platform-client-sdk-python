@@ -48,6 +48,7 @@ class Recording(object):
             'annotations': 'list[Annotation]',
             'transcript': 'list[ChatMessage]',
             'email_transcript': 'list[RecordingEmailMessage]',
+            'messaging_transcript': 'list[RecordingMessagingMessage]',
             'file_state': 'str',
             'restore_expiration_time': 'datetime',
             'media_uris': 'dict(str, MediaResult)',
@@ -74,6 +75,7 @@ class Recording(object):
             'annotations': 'annotations',
             'transcript': 'transcript',
             'email_transcript': 'emailTranscript',
+            'messaging_transcript': 'messagingTranscript',
             'file_state': 'fileState',
             'restore_expiration_time': 'restoreExpirationTime',
             'media_uris': 'mediaUris',
@@ -99,6 +101,7 @@ class Recording(object):
         self._annotations = None
         self._transcript = None
         self._email_transcript = None
+        self._messaging_transcript = None
         self._file_state = None
         self._restore_expiration_time = None
         self._media_uris = None
@@ -342,6 +345,29 @@ class Recording(object):
         """
         
         self._email_transcript = email_transcript
+
+    @property
+    def messaging_transcript(self):
+        """
+        Gets the messaging_transcript of this Recording.
+        Represents a messaging transcript
+
+        :return: The messaging_transcript of this Recording.
+        :rtype: list[RecordingMessagingMessage]
+        """
+        return self._messaging_transcript
+
+    @messaging_transcript.setter
+    def messaging_transcript(self, messaging_transcript):
+        """
+        Sets the messaging_transcript of this Recording.
+        Represents a messaging transcript
+
+        :param messaging_transcript: The messaging_transcript of this Recording.
+        :type: list[RecordingMessagingMessage]
+        """
+        
+        self._messaging_transcript = messaging_transcript
 
     @property
     def file_state(self):

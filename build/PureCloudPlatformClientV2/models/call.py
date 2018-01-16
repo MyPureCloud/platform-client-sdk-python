@@ -59,7 +59,9 @@ class Call(object):
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
-            'uui_data': 'str'
+            'uui_data': 'str',
+            'pcSelf': 'Address',
+            'other': 'Address'
         }
 
         self.attribute_map = {
@@ -84,7 +86,9 @@ class Call(object):
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
-            'uui_data': 'uuiData'
+            'uui_data': 'uuiData',
+            'pcSelf': 'self',
+            'other': 'other'
         }
 
         self._state = None
@@ -109,6 +113,8 @@ class Call(object):
         self._script_id = None
         self._peer_id = None
         self._uui_data = None
+        self._pcSelf = None
+        self._other = None
 
     @property
     def state(self):
@@ -631,6 +637,52 @@ class Call(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def pcSelf(self):
+        """
+        Gets the pcSelf of this Call.
+        Address and name data for a call endpoint.
+
+        :return: The pcSelf of this Call.
+        :rtype: Address
+        """
+        return self._pcSelf
+
+    @pcSelf.setter
+    def pcSelf(self, pcSelf):
+        """
+        Sets the pcSelf of this Call.
+        Address and name data for a call endpoint.
+
+        :param pcSelf: The pcSelf of this Call.
+        :type: Address
+        """
+        
+        self._pcSelf = pcSelf
+
+    @property
+    def other(self):
+        """
+        Gets the other of this Call.
+        Address and name data for a call endpoint.
+
+        :return: The other of this Call.
+        :rtype: Address
+        """
+        return self._other
+
+    @other.setter
+    def other(self, other):
+        """
+        Sets the other of this Call.
+        Address and name data for a call endpoint.
+
+        :param other: The other of this Call.
+        :type: Address
+        """
+        
+        self._other = other
 
     def to_dict(self):
         """

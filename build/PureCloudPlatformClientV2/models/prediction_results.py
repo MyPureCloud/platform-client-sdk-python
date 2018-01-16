@@ -73,7 +73,7 @@ class PredictionResults(object):
         :param intent: The intent of this PredictionResults.
         :type: str
         """
-        allowed_values = ["ALL", "CALL", "CALLBACK", "CHAT", "EMAIL", "SOCIALEXPRESSION", "VIDEOCOMM"]
+        allowed_values = ["ALL", "CALL", "CALLBACK", "CHAT", "EMAIL", "SOCIALEXPRESSION", "VIDEOCOMM", "MESSAGE"]
         if intent.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for intent -> " + intent
             self._intent = "outdated_sdk_version"

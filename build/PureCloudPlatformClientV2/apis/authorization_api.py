@@ -539,12 +539,13 @@ class AuthorizationApi(object):
         :param list[object] permission: 
         :param list[object] default_role_id: 
         :param bool user_count: 
+        :param list[str] id: id
         :return: OrganizationRoleEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'permission', 'default_role_id', 'user_count']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'permission', 'default_role_id', 'user_count', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -583,6 +584,8 @@ class AuthorizationApi(object):
             query_params['defaultRoleId'] = params['default_role_id']
         if 'user_count' in params:
             query_params['userCount'] = params['user_count']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 

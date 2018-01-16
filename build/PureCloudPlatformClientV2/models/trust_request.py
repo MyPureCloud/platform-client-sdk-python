@@ -43,6 +43,7 @@ class TrustRequest(object):
             'date_created': 'datetime',
             'trustee': 'Organization',
             'users': 'list[OrgUser]',
+            'groups': 'list[TrustGroup]',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class TrustRequest(object):
             'date_created': 'dateCreated',
             'trustee': 'trustee',
             'users': 'users',
+            'groups': 'groups',
             'self_uri': 'selfUri'
         }
 
@@ -60,6 +62,7 @@ class TrustRequest(object):
         self._date_created = None
         self._trustee = None
         self._users = None
+        self._groups = None
         self._self_uri = None
 
     @property
@@ -176,6 +179,29 @@ class TrustRequest(object):
         """
         
         self._users = users
+
+    @property
+    def groups(self):
+        """
+        Gets the groups of this TrustRequest.
+        The list of trustee groups that are requesting access.
+
+        :return: The groups of this TrustRequest.
+        :rtype: list[TrustGroup]
+        """
+        return self._groups
+
+    @groups.setter
+    def groups(self, groups):
+        """
+        Sets the groups of this TrustRequest.
+        The list of trustee groups that are requesting access.
+
+        :param groups: The groups of this TrustRequest.
+        :type: list[TrustGroup]
+        """
+        
+        self._groups = groups
 
     @property
     def self_uri(self):

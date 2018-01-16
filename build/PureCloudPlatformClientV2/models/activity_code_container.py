@@ -38,14 +38,17 @@ class ActivityCodeContainer(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'activity_codes': 'dict(str, ActivityCode)'
+            'activity_codes': 'dict(str, ActivityCode)',
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
-            'activity_codes': 'activityCodes'
+            'activity_codes': 'activityCodes',
+            'metadata': 'metadata'
         }
 
         self._activity_codes = None
+        self._metadata = None
 
     @property
     def activity_codes(self):
@@ -69,6 +72,29 @@ class ActivityCodeContainer(object):
         """
         
         self._activity_codes = activity_codes
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this ActivityCodeContainer.
+        Version metadata for the associated management unit's list of activity codes
+
+        :return: The metadata of this ActivityCodeContainer.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this ActivityCodeContainer.
+        Version metadata for the associated management unit's list of activity codes
+
+        :param metadata: The metadata of this ActivityCodeContainer.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
 
     def to_dict(self):
         """

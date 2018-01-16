@@ -45,7 +45,8 @@ class ManagementUnit(object):
             'settings': 'ManagementUnitSettings',
             'version': 'int',
             'date_modified': 'datetime',
-            'modified_by': 'User',
+            'modified_by': 'UserReference',
+            'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class ManagementUnit(object):
             'version': 'version',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
+            'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
 
@@ -69,6 +71,7 @@ class ManagementUnit(object):
         self._version = None
         self._date_modified = None
         self._modified_by = None
+        self._metadata = None
         self._self_uri = None
 
     @property
@@ -194,7 +197,7 @@ class ManagementUnit(object):
     def version(self):
         """
         Gets the version of this ManagementUnit.
-        The version of the underlying entity
+        The version of the underlying entity.  Deprecated, use metadata field instead
 
         :return: The version of this ManagementUnit.
         :rtype: int
@@ -205,7 +208,7 @@ class ManagementUnit(object):
     def version(self, version):
         """
         Sets the version of this ManagementUnit.
-        The version of the underlying entity
+        The version of the underlying entity.  Deprecated, use metadata field instead
 
         :param version: The version of this ManagementUnit.
         :type: int
@@ -217,7 +220,7 @@ class ManagementUnit(object):
     def date_modified(self):
         """
         Gets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this ManagementUnit.
         :rtype: datetime
@@ -228,7 +231,7 @@ class ManagementUnit(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this ManagementUnit.
         :type: datetime
@@ -240,10 +243,10 @@ class ManagementUnit(object):
     def modified_by(self):
         """
         Gets the modified_by of this ManagementUnit.
-        The user who last modified this entity
+        The user who last modified this entity.  Deprecated, use metadata field instead
 
         :return: The modified_by of this ManagementUnit.
-        :rtype: User
+        :rtype: UserReference
         """
         return self._modified_by
 
@@ -251,13 +254,36 @@ class ManagementUnit(object):
     def modified_by(self, modified_by):
         """
         Sets the modified_by of this ManagementUnit.
-        The user who last modified this entity
+        The user who last modified this entity.  Deprecated, use metadata field instead
 
         :param modified_by: The modified_by of this ManagementUnit.
-        :type: User
+        :type: UserReference
         """
         
         self._modified_by = modified_by
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this ManagementUnit.
+        Version info metadata for this management unit
+
+        :return: The metadata of this ManagementUnit.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this ManagementUnit.
+        Version info metadata for this management unit
+
+        :param metadata: The metadata of this ManagementUnit.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
 
     @property
     def self_uri(self):

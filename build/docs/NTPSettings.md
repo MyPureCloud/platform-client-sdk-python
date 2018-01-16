@@ -1,13 +1,13 @@
 ---
-title: SignedData
+title: NTPSettings
 ---
-## SignedData
+## NTPSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **jwt** | **str** |  | [optional] |
+| **servers** | **list[str]** | List of NTP servers, in priority order | [optional] |
 {: class="table table-striped"}
 
 

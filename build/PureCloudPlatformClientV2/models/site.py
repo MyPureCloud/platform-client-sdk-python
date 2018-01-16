@@ -58,6 +58,7 @@ class Site(object):
             'edge_auto_update_config': 'EdgeAutoUpdateConfig',
             'location': 'LocationDefinition',
             'managed': 'bool',
+            'ntp_settings': 'NTPSettings',
             'self_uri': 'str'
         }
 
@@ -82,6 +83,7 @@ class Site(object):
             'edge_auto_update_config': 'edgeAutoUpdateConfig',
             'location': 'location',
             'managed': 'managed',
+            'ntp_settings': 'ntpSettings',
             'self_uri': 'selfUri'
         }
 
@@ -105,6 +107,7 @@ class Site(object):
         self._edge_auto_update_config = None
         self._location = None
         self._managed = None
+        self._ntp_settings = None
         self._self_uri = None
 
     @property
@@ -570,6 +573,29 @@ class Site(object):
         """
         
         self._managed = managed
+
+    @property
+    def ntp_settings(self):
+        """
+        Gets the ntp_settings of this Site.
+        Network Time Protocol settings for the site
+
+        :return: The ntp_settings of this Site.
+        :rtype: NTPSettings
+        """
+        return self._ntp_settings
+
+    @ntp_settings.setter
+    def ntp_settings(self, ntp_settings):
+        """
+        Sets the ntp_settings of this Site.
+        Network Time Protocol settings for the site
+
+        :param ntp_settings: The ntp_settings of this Site.
+        :type: NTPSettings
+        """
+        
+        self._ntp_settings = ntp_settings
 
     @property
     def self_uri(self):

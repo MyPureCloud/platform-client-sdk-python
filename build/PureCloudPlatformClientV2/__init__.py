@@ -81,6 +81,11 @@ from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.batch_download_job_result import BatchDownloadJobResult
+from .models.batch_download_job_status_result import BatchDownloadJobStatusResult
+from .models.batch_download_job_submission import BatchDownloadJobSubmission
+from .models.batch_download_job_submission_result import BatchDownloadJobSubmissionResult
+from .models.batch_download_request import BatchDownloadRequest
 from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
@@ -104,6 +109,12 @@ from .models.call_conversation_notification_participants import CallConversation
 from .models.call_conversation_notification_uri_reference import CallConversationNotificationUriReference
 from .models.call_conversation_notification_wrapup import CallConversationNotificationWrapup
 from .models.call_forwarding import CallForwarding
+from .models.call_forwarding_notification import CallForwardingNotification
+from .models.call_forwarding_notification_call import CallForwardingNotificationCall
+from .models.call_forwarding_notification_calls import CallForwardingNotificationCalls
+from .models.call_forwarding_notification_target import CallForwardingNotificationTarget
+from .models.call_forwarding_notification_targets import CallForwardingNotificationTargets
+from .models.call_forwarding_notification_user import CallForwardingNotificationUser
 from .models.call_history_conversation import CallHistoryConversation
 from .models.call_history_conversation_entity_listing import CallHistoryConversationEntityListing
 from .models.call_history_participant import CallHistoryParticipant
@@ -231,6 +242,7 @@ from .models.consuming_resources_entity_listing import ConsumingResourcesEntityL
 from .models.contact import Contact
 from .models.contact_address import ContactAddress
 from .models.contact_callback_request import ContactCallbackRequest
+from .models.contact_column_time_zone import ContactColumnTimeZone
 from .models.contact_list import ContactList
 from .models.contact_list_entity_listing import ContactListEntityListing
 from .models.contact_list_filter import ContactListFilter
@@ -300,6 +312,7 @@ from .models.conversation_notification_wrapup import ConversationNotificationWra
 from .models.conversation_query import ConversationQuery
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.cover_sheet import CoverSheet
+from .models.create_activity_code_request import CreateActivityCodeRequest
 from .models.create_asg_request import CreateAsgRequest
 from .models.create_call_request import CreateCallRequest
 from .models.create_call_response import CreateCallResponse
@@ -446,7 +459,6 @@ from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
 from .models.endpoint_entity_listing import EndpointEntityListing
-from .models.entity import Entity
 from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails
@@ -538,6 +550,7 @@ from .models.history_listing import HistoryListing
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
 from .models.identity_now import IdentityNow
+from .models.ignored_activity_categories import IgnoredActivityCategories
 from .models.import_script_status_response import ImportScriptStatusResponse
 from .models.import_status import ImportStatus
 from .models.import_status_notification import ImportStatusNotification
@@ -645,11 +658,16 @@ from .models.message_conversation_notification_participants import MessageConver
 from .models.message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .models.message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .models.message_details import MessageDetails
+from .models.message_media import MessageMedia
 from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment
+from .models.move_agent_response import MoveAgentResponse
+from .models.move_agents_request import MoveAgentsRequest
+from .models.move_agents_response import MoveAgentsResponse
+from .models.ntp_settings import NTPSettings
 from .models.named_entity import NamedEntity
 from .models.note import Note
 from .models.note_listing import NoteListing
@@ -772,6 +790,7 @@ from .models.recording_data_v2_notification_lock_info import RecordingDataV2Noti
 from .models.recording_data_v2_notification_user_data import RecordingDataV2NotificationUserData
 from .models.recording_data_v2_notification_workspace_data import RecordingDataV2NotificationWorkspaceData
 from .models.recording_email_message import RecordingEmailMessage
+from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_settings import RecordingSettings
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
@@ -867,7 +886,8 @@ from .models.share_entity_listing import ShareEntityListing
 from .models.shared_entity import SharedEntity
 from .models.shared_response import SharedResponse
 from .models.short_term_forecasting_settings import ShortTermForecastingSettings
-from .models.signed_data import SignedData
+from .models.shrinkage_override import ShrinkageOverride
+from .models.shrinkage_overrides import ShrinkageOverrides
 from .models.site import Site
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
@@ -939,10 +959,11 @@ from .models.trunk_metrics_registers import TrunkMetricsRegisters
 from .models.trunk_recording_enabled_count import TrunkRecordingEnabledCount
 from .models.trust_create import TrustCreate
 from .models.trust_entity_listing import TrustEntityListing
+from .models.trust_group import TrustGroup
+from .models.trust_member_create import TrustMemberCreate
 from .models.trust_request import TrustRequest
 from .models.trust_request_create import TrustRequestCreate
 from .models.trust_user import TrustUser
-from .models.trust_user_create import TrustUserCreate
 from .models.trust_user_details import TrustUserDetails
 from .models.trust_user_entity_listing import TrustUserEntityListing
 from .models.trustee import Trustee
@@ -1044,6 +1065,7 @@ from .models.wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .models.wfm_user_entity_listing import WfmUserEntityListing
+from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.workspace import Workspace
 from .models.workspace_create import WorkspaceCreate
 from .models.workspace_entity_listing import WorkspaceEntityListing
@@ -1052,6 +1074,7 @@ from .models.workspace_member_entity_listing import WorkspaceMemberEntityListing
 from .models.workspace_summary import WorkspaceSummary
 from .models.wrap_up_code_mapping import WrapUpCodeMapping
 from .models.wrap_up_code_mapping_notification import WrapUpCodeMappingNotification
+from .models.wrap_up_code_reference import WrapUpCodeReference
 from .models.wrapup import Wrapup
 from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
@@ -1088,7 +1111,6 @@ from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
-from .apis.signed_data_api import SignedDataApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
 from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi

@@ -39,16 +39,19 @@ class SchedulingSettings(object):
         """
         self.swagger_types = {
             'max_occupancy_percent_for_deferred_work': 'int',
-            'default_shrinkage_percent': 'float'
+            'default_shrinkage_percent': 'float',
+            'shrinkage_overrides': 'ShrinkageOverrides'
         }
 
         self.attribute_map = {
             'max_occupancy_percent_for_deferred_work': 'maxOccupancyPercentForDeferredWork',
-            'default_shrinkage_percent': 'defaultShrinkagePercent'
+            'default_shrinkage_percent': 'defaultShrinkagePercent',
+            'shrinkage_overrides': 'shrinkageOverrides'
         }
 
         self._max_occupancy_percent_for_deferred_work = None
         self._default_shrinkage_percent = None
+        self._shrinkage_overrides = None
 
     @property
     def max_occupancy_percent_for_deferred_work(self):
@@ -95,6 +98,29 @@ class SchedulingSettings(object):
         """
         
         self._default_shrinkage_percent = default_shrinkage_percent
+
+    @property
+    def shrinkage_overrides(self):
+        """
+        Gets the shrinkage_overrides of this SchedulingSettings.
+        Shrinkage overrides for scheduling
+
+        :return: The shrinkage_overrides of this SchedulingSettings.
+        :rtype: ShrinkageOverrides
+        """
+        return self._shrinkage_overrides
+
+    @shrinkage_overrides.setter
+    def shrinkage_overrides(self, shrinkage_overrides):
+        """
+        Sets the shrinkage_overrides of this SchedulingSettings.
+        Shrinkage overrides for scheduling
+
+        :param shrinkage_overrides: The shrinkage_overrides of this SchedulingSettings.
+        :type: ShrinkageOverrides
+        """
+        
+        self._shrinkage_overrides = shrinkage_overrides
 
     def to_dict(self):
         """

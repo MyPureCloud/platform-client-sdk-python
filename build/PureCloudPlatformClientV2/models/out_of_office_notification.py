@@ -40,6 +40,7 @@ class OutOfOfficeNotification(object):
         self.swagger_types = {
             'user': 'DocumentDataV2NotificationWorkspace',
             'active': 'bool',
+            'indefinite': 'bool',
             'start_date': 'datetime',
             'end_date': 'datetime'
         }
@@ -47,12 +48,14 @@ class OutOfOfficeNotification(object):
         self.attribute_map = {
             'user': 'user',
             'active': 'active',
+            'indefinite': 'indefinite',
             'start_date': 'startDate',
             'end_date': 'endDate'
         }
 
         self._user = None
         self._active = None
+        self._indefinite = None
         self._start_date = None
         self._end_date = None
 
@@ -101,6 +104,29 @@ class OutOfOfficeNotification(object):
         """
         
         self._active = active
+
+    @property
+    def indefinite(self):
+        """
+        Gets the indefinite of this OutOfOfficeNotification.
+
+
+        :return: The indefinite of this OutOfOfficeNotification.
+        :rtype: bool
+        """
+        return self._indefinite
+
+    @indefinite.setter
+    def indefinite(self, indefinite):
+        """
+        Sets the indefinite of this OutOfOfficeNotification.
+
+
+        :param indefinite: The indefinite of this OutOfOfficeNotification.
+        :type: bool
+        """
+        
+        self._indefinite = indefinite
 
     @property
     def start_date(self):

@@ -297,7 +297,7 @@ except ApiException as e:
 
 <a name="get_authorization_roles"></a>
 
-## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count)
+## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
 
 Retrieve a list of all roles defined for the organization
 
@@ -328,10 +328,11 @@ name = 'name_example' # str |  (optional)
 permission = NULL # list[object] |  (optional)
 default_role_id = NULL # list[object] |  (optional)
 user_count = true # bool |  (optional) (default to true)
+id = ['id_example'] # list[str] | id (optional)
 
 try:
     # Retrieve a list of all roles defined for the organization
-    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count)
+    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_roles: %s\n" % e
@@ -352,6 +353,7 @@ except ApiException as e:
 | **permission** | [**list[object]**](object.html)|  | [optional]  |
 | **default_role_id** | [**list[object]**](object.html)|  | [optional]  |
 | **user_count** | **bool**|  | [optional] [default to true] |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

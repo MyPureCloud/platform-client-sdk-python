@@ -42,7 +42,8 @@ class MessageDetails(object):
             'message_uri': 'str',
             'message_status': 'str',
             'message_segment_count': 'int',
-            'message_time': 'datetime'
+            'message_time': 'datetime',
+            'media': 'list[MessageMedia]'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class MessageDetails(object):
             'message_uri': 'messageURI',
             'message_status': 'messageStatus',
             'message_segment_count': 'messageSegmentCount',
-            'message_time': 'messageTime'
+            'message_time': 'messageTime',
+            'media': 'media'
         }
 
         self._message_id = None
@@ -58,6 +60,7 @@ class MessageDetails(object):
         self._message_status = None
         self._message_segment_count = None
         self._message_time = None
+        self._media = None
 
     @property
     def message_id(self):
@@ -177,6 +180,29 @@ class MessageDetails(object):
         """
         
         self._message_time = message_time
+
+    @property
+    def media(self):
+        """
+        Gets the media of this MessageDetails.
+        The media (images, files, etc) associated with this message, if any
+
+        :return: The media of this MessageDetails.
+        :rtype: list[MessageMedia]
+        """
+        return self._media
+
+    @media.setter
+    def media(self, media):
+        """
+        Sets the media of this MessageDetails.
+        The media (images, files, etc) associated with this message, if any
+
+        :param media: The media of this MessageDetails.
+        :type: list[MessageMedia]
+        """
+        
+        self._media = media
 
     def to_dict(self):
         """

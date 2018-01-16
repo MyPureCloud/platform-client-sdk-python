@@ -38,17 +38,14 @@ class CallRoute(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'targets': 'list[CallTarget]',
-            'timeout_milliseconds': 'int'
+            'targets': 'list[CallTarget]'
         }
 
         self.attribute_map = {
-            'targets': 'targets',
-            'timeout_milliseconds': 'timeoutMilliseconds'
+            'targets': 'targets'
         }
 
         self._targets = None
-        self._timeout_milliseconds = None
 
     @property
     def targets(self):
@@ -72,29 +69,6 @@ class CallRoute(object):
         """
         
         self._targets = targets
-
-    @property
-    def timeout_milliseconds(self):
-        """
-        Gets the timeout_milliseconds of this CallRoute.
-        The amount of time until the call times out
-
-        :return: The timeout_milliseconds of this CallRoute.
-        :rtype: int
-        """
-        return self._timeout_milliseconds
-
-    @timeout_milliseconds.setter
-    def timeout_milliseconds(self, timeout_milliseconds):
-        """
-        Sets the timeout_milliseconds of this CallRoute.
-        The amount of time until the call times out
-
-        :param timeout_milliseconds: The timeout_milliseconds of this CallRoute.
-        :type: int
-        """
-        
-        self._timeout_milliseconds = timeout_milliseconds
 
     def to_dict(self):
         """

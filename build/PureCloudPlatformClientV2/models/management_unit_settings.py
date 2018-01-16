@@ -42,9 +42,7 @@ class ManagementUnitSettings(object):
             'short_term_forecasting': 'ShortTermForecastingSettings',
             'time_off': 'TimeOffRequestSettings',
             'scheduling': 'SchedulingSettings',
-            'version': 'int',
-            'date_modified': 'datetime',
-            'modified_by': 'User'
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
@@ -52,18 +50,14 @@ class ManagementUnitSettings(object):
             'short_term_forecasting': 'shortTermForecasting',
             'time_off': 'timeOff',
             'scheduling': 'scheduling',
-            'version': 'version',
-            'date_modified': 'dateModified',
-            'modified_by': 'modifiedBy'
+            'metadata': 'metadata'
         }
 
         self._adherence = None
         self._short_term_forecasting = None
         self._time_off = None
         self._scheduling = None
-        self._version = None
-        self._date_modified = None
-        self._modified_by = None
+        self._metadata = None
 
     @property
     def adherence(self):
@@ -158,73 +152,27 @@ class ManagementUnitSettings(object):
         self._scheduling = scheduling
 
     @property
-    def version(self):
+    def metadata(self):
         """
-        Gets the version of this ManagementUnitSettings.
-        The version of the underlying entity
+        Gets the metadata of this ManagementUnitSettings.
+        Version info metadata for the associated management unit
 
-        :return: The version of this ManagementUnitSettings.
-        :rtype: int
+        :return: The metadata of this ManagementUnitSettings.
+        :rtype: WfmVersionedEntityMetadata
         """
-        return self._version
+        return self._metadata
 
-    @version.setter
-    def version(self, version):
+    @metadata.setter
+    def metadata(self, metadata):
         """
-        Sets the version of this ManagementUnitSettings.
-        The version of the underlying entity
+        Sets the metadata of this ManagementUnitSettings.
+        Version info metadata for the associated management unit
 
-        :param version: The version of this ManagementUnitSettings.
-        :type: int
+        :param metadata: The metadata of this ManagementUnitSettings.
+        :type: WfmVersionedEntityMetadata
         """
         
-        self._version = version
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this ManagementUnitSettings.
-        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-
-        :return: The date_modified of this ManagementUnitSettings.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this ManagementUnitSettings.
-        The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-
-        :param date_modified: The date_modified of this ManagementUnitSettings.
-        :type: datetime
-        """
-        
-        self._date_modified = date_modified
-
-    @property
-    def modified_by(self):
-        """
-        Gets the modified_by of this ManagementUnitSettings.
-        The user who last modified this entity
-
-        :return: The modified_by of this ManagementUnitSettings.
-        :rtype: User
-        """
-        return self._modified_by
-
-    @modified_by.setter
-    def modified_by(self, modified_by):
-        """
-        Sets the modified_by of this ManagementUnitSettings.
-        The user who last modified this entity
-
-        :param modified_by: The modified_by of this ManagementUnitSettings.
-        :type: User
-        """
-        
-        self._modified_by = modified_by
+        self._metadata = metadata
 
     def to_dict(self):
         """

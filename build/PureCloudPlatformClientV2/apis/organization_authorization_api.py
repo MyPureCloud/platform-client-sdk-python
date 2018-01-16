@@ -1358,7 +1358,7 @@ class OrganizationAuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str trustee_org_id: Trustee Organization Id (required)
-        :param TrustUserCreate body: Trust (required)
+        :param TrustMemberCreate body: Trust (required)
         :return: TrustUser
                  If the method is called asynchronously,
                  returns the request thread.

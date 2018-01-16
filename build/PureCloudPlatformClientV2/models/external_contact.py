@@ -57,6 +57,7 @@ class ExternalContact(object):
             'create_date': 'datetime',
             'external_organization': 'ExternalOrganization',
             'survey_opt_out': 'bool',
+            'external_system_url': 'str',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -81,6 +82,7 @@ class ExternalContact(object):
             'create_date': 'createDate',
             'external_organization': 'externalOrganization',
             'survey_opt_out': 'surveyOptOut',
+            'external_system_url': 'externalSystemUrl',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -104,6 +106,7 @@ class ExternalContact(object):
         self._create_date = None
         self._external_organization = None
         self._survey_opt_out = None
+        self._external_system_url = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -543,6 +546,29 @@ class ExternalContact(object):
         """
         
         self._survey_opt_out = survey_opt_out
+
+    @property
+    def external_system_url(self):
+        """
+        Gets the external_system_url of this ExternalContact.
+
+
+        :return: The external_system_url of this ExternalContact.
+        :rtype: str
+        """
+        return self._external_system_url
+
+    @external_system_url.setter
+    def external_system_url(self, external_system_url):
+        """
+        Sets the external_system_url of this ExternalContact.
+
+
+        :param external_system_url: The external_system_url of this ExternalContact.
+        :type: str
+        """
+        
+        self._external_system_url = external_system_url
 
     @property
     def external_data_sources(self):

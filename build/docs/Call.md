@@ -29,6 +29,8 @@ title: Call
 | **script_id** | **str** | The UUID of the script to use. | [optional] |
 | **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
 | **uui_data** | **str** | User to User Information (UUI) data managed by SIP session application. | [optional] |
+| **pcSelf** | [**Address**](Address.html) | Address and name data for a call endpoint. | [optional] |
+| **other** | [**Address**](Address.html) | Address and name data for a call endpoint. | [optional] |
 {: class="table table-striped"}
 
 

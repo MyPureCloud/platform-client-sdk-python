@@ -126,7 +126,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_activitycodes(self, mu_id, **kwargs):
         """
-        Get activity codes corresponding to a management unit
+        Get activity codes
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -856,6 +856,81 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_agents(self, **kwargs):
+        """
+        Move agents in and out of management unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param MoveAgentsRequest body: body
+        :return: MoveAgentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/agents'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MoveAgentsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_agents_managementunits(self, **kwargs):
         """
         Get the management units to which the agents belong
@@ -927,6 +1002,87 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[AgentManagementUnitReference]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_activitycodes(self, mu_id, **kwargs):
+        """
+        Create a new activity code
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_activitycodes(mu_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param CreateActivityCodeRequest body: body
+        :return: ActivityCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_activitycodes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_activitycodes`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/activitycodes'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -40,18 +40,21 @@ class TrustCreate(object):
         self.swagger_types = {
             'pairing_id': 'str',
             'enabled': 'bool',
-            'users': 'list[TrustUserCreate]'
+            'users': 'list[TrustMemberCreate]',
+            'groups': 'list[TrustMemberCreate]'
         }
 
         self.attribute_map = {
             'pairing_id': 'pairingId',
             'enabled': 'enabled',
-            'users': 'users'
+            'users': 'users',
+            'groups': 'groups'
         }
 
         self._pairing_id = None
         self._enabled = None
         self._users = None
+        self._groups = None
 
     @property
     def pairing_id(self):
@@ -103,10 +106,10 @@ class TrustCreate(object):
     def users(self):
         """
         Gets the users of this TrustCreate.
-        The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor.
+        The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.
 
         :return: The users of this TrustCreate.
-        :rtype: list[TrustUserCreate]
+        :rtype: list[TrustMemberCreate]
         """
         return self._users
 
@@ -114,13 +117,36 @@ class TrustCreate(object):
     def users(self, users):
         """
         Sets the users of this TrustCreate.
-        The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor.
+        The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.
 
         :param users: The users of this TrustCreate.
-        :type: list[TrustUserCreate]
+        :type: list[TrustMemberCreate]
         """
         
         self._users = users
+
+    @property
+    def groups(self):
+        """
+        Gets the groups of this TrustCreate.
+        The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.
+
+        :return: The groups of this TrustCreate.
+        :rtype: list[TrustMemberCreate]
+        """
+        return self._groups
+
+    @groups.setter
+    def groups(self, groups):
+        """
+        Sets the groups of this TrustCreate.
+        The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.
+
+        :param groups: The groups of this TrustCreate.
+        :type: list[TrustMemberCreate]
+        """
+        
+        self._groups = groups
 
     def to_dict(self):
         """

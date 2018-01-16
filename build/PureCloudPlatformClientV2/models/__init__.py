@@ -81,6 +81,11 @@ from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .batch_download_job_result import BatchDownloadJobResult
+from .batch_download_job_status_result import BatchDownloadJobStatusResult
+from .batch_download_job_submission import BatchDownloadJobSubmission
+from .batch_download_job_submission_result import BatchDownloadJobSubmissionResult
+from .batch_download_request import BatchDownloadRequest
 from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
@@ -104,6 +109,12 @@ from .call_conversation_notification_participants import CallConversationNotific
 from .call_conversation_notification_uri_reference import CallConversationNotificationUriReference
 from .call_conversation_notification_wrapup import CallConversationNotificationWrapup
 from .call_forwarding import CallForwarding
+from .call_forwarding_notification import CallForwardingNotification
+from .call_forwarding_notification_call import CallForwardingNotificationCall
+from .call_forwarding_notification_calls import CallForwardingNotificationCalls
+from .call_forwarding_notification_target import CallForwardingNotificationTarget
+from .call_forwarding_notification_targets import CallForwardingNotificationTargets
+from .call_forwarding_notification_user import CallForwardingNotificationUser
 from .call_history_conversation import CallHistoryConversation
 from .call_history_conversation_entity_listing import CallHistoryConversationEntityListing
 from .call_history_participant import CallHistoryParticipant
@@ -231,6 +242,7 @@ from .consuming_resources_entity_listing import ConsumingResourcesEntityListing
 from .contact import Contact
 from .contact_address import ContactAddress
 from .contact_callback_request import ContactCallbackRequest
+from .contact_column_time_zone import ContactColumnTimeZone
 from .contact_list import ContactList
 from .contact_list_entity_listing import ContactListEntityListing
 from .contact_list_filter import ContactListFilter
@@ -300,6 +312,7 @@ from .conversation_notification_wrapup import ConversationNotificationWrapup
 from .conversation_query import ConversationQuery
 from .copy_voicemail_message import CopyVoicemailMessage
 from .cover_sheet import CoverSheet
+from .create_activity_code_request import CreateActivityCodeRequest
 from .create_asg_request import CreateAsgRequest
 from .create_call_request import CreateCallRequest
 from .create_call_response import CreateCallResponse
@@ -446,7 +459,6 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .endpoint_entity_listing import EndpointEntityListing
-from .entity import Entity
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
@@ -538,6 +550,7 @@ from .history_listing import HistoryListing
 from .ivr import IVR
 from .ivr_entity_listing import IVREntityListing
 from .identity_now import IdentityNow
+from .ignored_activity_categories import IgnoredActivityCategories
 from .import_script_status_response import ImportScriptStatusResponse
 from .import_status import ImportStatus
 from .import_status_notification import ImportStatusNotification
@@ -645,11 +658,16 @@ from .message_conversation_notification_participants import MessageConversationN
 from .message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .message_details import MessageDetails
+from .message_media import MessageMedia
 from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
+from .move_agent_response import MoveAgentResponse
+from .move_agents_request import MoveAgentsRequest
+from .move_agents_response import MoveAgentsResponse
+from .ntp_settings import NTPSettings
 from .named_entity import NamedEntity
 from .note import Note
 from .note_listing import NoteListing
@@ -772,6 +790,7 @@ from .recording_data_v2_notification_lock_info import RecordingDataV2Notificatio
 from .recording_data_v2_notification_user_data import RecordingDataV2NotificationUserData
 from .recording_data_v2_notification_workspace_data import RecordingDataV2NotificationWorkspaceData
 from .recording_email_message import RecordingEmailMessage
+from .recording_messaging_message import RecordingMessagingMessage
 from .recording_settings import RecordingSettings
 from .relationship import Relationship
 from .relationship_listing import RelationshipListing
@@ -867,7 +886,8 @@ from .share_entity_listing import ShareEntityListing
 from .shared_entity import SharedEntity
 from .shared_response import SharedResponse
 from .short_term_forecasting_settings import ShortTermForecastingSettings
-from .signed_data import SignedData
+from .shrinkage_override import ShrinkageOverride
+from .shrinkage_overrides import ShrinkageOverrides
 from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
@@ -939,10 +959,11 @@ from .trunk_metrics_registers import TrunkMetricsRegisters
 from .trunk_recording_enabled_count import TrunkRecordingEnabledCount
 from .trust_create import TrustCreate
 from .trust_entity_listing import TrustEntityListing
+from .trust_group import TrustGroup
+from .trust_member_create import TrustMemberCreate
 from .trust_request import TrustRequest
 from .trust_request_create import TrustRequestCreate
 from .trust_user import TrustUser
-from .trust_user_create import TrustUserCreate
 from .trust_user_details import TrustUserDetails
 from .trust_user_entity_listing import TrustUserEntityListing
 from .trustee import Trustee
@@ -1044,6 +1065,7 @@ from .wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .wfm_user_entity_listing import WfmUserEntityListing
+from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .workspace import Workspace
 from .workspace_create import WorkspaceCreate
 from .workspace_entity_listing import WorkspaceEntityListing
@@ -1052,6 +1074,7 @@ from .workspace_member_entity_listing import WorkspaceMemberEntityListing
 from .workspace_summary import WorkspaceSummary
 from .wrap_up_code_mapping import WrapUpCodeMapping
 from .wrap_up_code_mapping_notification import WrapUpCodeMappingNotification
+from .wrap_up_code_reference import WrapUpCodeReference
 from .wrapup import Wrapup
 from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
