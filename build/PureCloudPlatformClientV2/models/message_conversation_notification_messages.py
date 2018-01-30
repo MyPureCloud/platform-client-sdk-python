@@ -41,20 +41,23 @@ class MessageConversationNotificationMessages(object):
             'message': 'MessageConversationNotificationUriReference',
             'message_time': 'datetime',
             'message_segment_count': 'int',
-            'message_status': 'str'
+            'message_status': 'str',
+            'media': 'list[ConversationNotificationMedia]'
         }
 
         self.attribute_map = {
             'message': 'message',
             'message_time': 'messageTime',
             'message_segment_count': 'messageSegmentCount',
-            'message_status': 'messageStatus'
+            'message_status': 'messageStatus',
+            'media': 'media'
         }
 
         self._message = None
         self._message_time = None
         self._message_segment_count = None
         self._message_status = None
+        self._media = None
 
     @property
     def message(self):
@@ -151,6 +154,29 @@ class MessageConversationNotificationMessages(object):
             self._message_status = "outdated_sdk_version"
         else:
             self._message_status = message_status
+
+    @property
+    def media(self):
+        """
+        Gets the media of this MessageConversationNotificationMessages.
+
+
+        :return: The media of this MessageConversationNotificationMessages.
+        :rtype: list[ConversationNotificationMedia]
+        """
+        return self._media
+
+    @media.setter
+    def media(self, media):
+        """
+        Sets the media of this MessageConversationNotificationMessages.
+
+
+        :param media: The media of this MessageConversationNotificationMessages.
+        :type: list[ConversationNotificationMedia]
+        """
+        
+        self._media = media
 
     def to_dict(self):
         """

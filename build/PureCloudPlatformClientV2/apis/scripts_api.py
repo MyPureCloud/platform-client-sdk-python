@@ -674,14 +674,13 @@ class ScriptsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str script_id: Script ID (required)
-        :param int foo: 
         :param str script_data_version: Advanced usage - controls the data version of the script
         :return: list[Page]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['script_id', 'foo', 'script_data_version']
+        all_params = ['script_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -705,8 +704,6 @@ class ScriptsApi(object):
             path_params['scriptId'] = params['script_id']
 
         query_params = {}
-        if 'foo' in params:
-            query_params['foo'] = params['foo']
         if 'script_data_version' in params:
             query_params['scriptDataVersion'] = params['script_data_version']
 
@@ -909,6 +906,87 @@ class ScriptsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ImportScriptStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_script_export(self, script_id, **kwargs):
+        """
+        Export a script via download service.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_script_export(script_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str script_id: Script ID (required)
+        :param ExportScriptRequest body: 
+        :return: ExportScriptResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['script_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_script_export" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'script_id' is set
+        if ('script_id' not in params) or (params['script_id'] is None):
+            raise ValueError("Missing the required parameter `script_id` when calling `post_script_export`")
+
+
+        resource_path = '/api/v2/scripts/{scriptId}/export'.replace('{format}', 'json')
+        path_params = {}
+        if 'script_id' in params:
+            path_params['scriptId'] = params['script_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExportScriptResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

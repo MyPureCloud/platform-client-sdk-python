@@ -42,7 +42,8 @@ class AnalyticsConversation(object):
             'conversation_start': 'datetime',
             'conversation_end': 'datetime',
             'participants': 'list[AnalyticsParticipant]',
-            'evaluations': 'list[AnalyticsEvaluation]'
+            'evaluations': 'list[AnalyticsEvaluation]',
+            'division_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class AnalyticsConversation(object):
             'conversation_start': 'conversationStart',
             'conversation_end': 'conversationEnd',
             'participants': 'participants',
-            'evaluations': 'evaluations'
+            'evaluations': 'evaluations',
+            'division_ids': 'divisionIds'
         }
 
         self._conversation_id = None
@@ -58,6 +60,7 @@ class AnalyticsConversation(object):
         self._conversation_end = None
         self._participants = None
         self._evaluations = None
+        self._division_ids = None
 
     @property
     def conversation_id(self):
@@ -155,7 +158,7 @@ class AnalyticsConversation(object):
     def evaluations(self):
         """
         Gets the evaluations of this AnalyticsConversation.
-        Evaluations tied to this conersation
+        Evaluations tied to this conversation
 
         :return: The evaluations of this AnalyticsConversation.
         :rtype: list[AnalyticsEvaluation]
@@ -166,13 +169,36 @@ class AnalyticsConversation(object):
     def evaluations(self, evaluations):
         """
         Sets the evaluations of this AnalyticsConversation.
-        Evaluations tied to this conersation
+        Evaluations tied to this conversation
 
         :param evaluations: The evaluations of this AnalyticsConversation.
         :type: list[AnalyticsEvaluation]
         """
         
         self._evaluations = evaluations
+
+    @property
+    def division_ids(self):
+        """
+        Gets the division_ids of this AnalyticsConversation.
+        Identifiers of divisions associated with this conversation
+
+        :return: The division_ids of this AnalyticsConversation.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids):
+        """
+        Sets the division_ids of this AnalyticsConversation.
+        Identifiers of divisions associated with this conversation
+
+        :param division_ids: The division_ids of this AnalyticsConversation.
+        :type: list[str]
+        """
+        
+        self._division_ids = division_ids
 
     def to_dict(self):
         """

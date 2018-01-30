@@ -51,7 +51,7 @@ class BatchDownloadJobSubmission(object):
     def batch_download_request_list(self):
         """
         Gets the batch_download_request_list of this BatchDownloadJobSubmission.
-        List of items requested
+        List of up to 100 items requested
 
         :return: The batch_download_request_list of this BatchDownloadJobSubmission.
         :rtype: list[BatchDownloadRequest]
@@ -62,7 +62,7 @@ class BatchDownloadJobSubmission(object):
     def batch_download_request_list(self, batch_download_request_list):
         """
         Sets the batch_download_request_list of this BatchDownloadJobSubmission.
-        List of items requested
+        List of up to 100 items requested
 
         :param batch_download_request_list: The batch_download_request_list of this BatchDownloadJobSubmission.
         :type: list[BatchDownloadRequest]

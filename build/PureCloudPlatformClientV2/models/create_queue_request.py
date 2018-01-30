@@ -55,7 +55,7 @@ class CreateQueueRequest(object):
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
             'queue_flow': 'UriReference',
-            'whisper': 'UriReference',
+            'whisper_prompt': 'UriReference',
             'auto_answer_only': 'bool',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
@@ -84,7 +84,7 @@ class CreateQueueRequest(object):
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
             'queue_flow': 'queueFlow',
-            'whisper': 'whisper',
+            'whisper_prompt': 'whisperPrompt',
             'auto_answer_only': 'autoAnswerOnly',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
@@ -112,7 +112,7 @@ class CreateQueueRequest(object):
         self._acw_settings = None
         self._skill_evaluation_method = None
         self._queue_flow = None
-        self._whisper = None
+        self._whisper_prompt = None
         self._auto_answer_only = None
         self._calling_party_name = None
         self._calling_party_number = None
@@ -522,27 +522,27 @@ class CreateQueueRequest(object):
         self._queue_flow = queue_flow
 
     @property
-    def whisper(self):
+    def whisper_prompt(self):
         """
-        Gets the whisper of this CreateQueueRequest.
-        ID of the whisper configured for this queue, if any.
+        Gets the whisper_prompt of this CreateQueueRequest.
+        The prompt used for whisper on the queue, if configured.
 
-        :return: The whisper of this CreateQueueRequest.
+        :return: The whisper_prompt of this CreateQueueRequest.
         :rtype: UriReference
         """
-        return self._whisper
+        return self._whisper_prompt
 
-    @whisper.setter
-    def whisper(self, whisper):
+    @whisper_prompt.setter
+    def whisper_prompt(self, whisper_prompt):
         """
-        Sets the whisper of this CreateQueueRequest.
-        ID of the whisper configured for this queue, if any.
+        Sets the whisper_prompt of this CreateQueueRequest.
+        The prompt used for whisper on the queue, if configured.
 
-        :param whisper: The whisper of this CreateQueueRequest.
+        :param whisper_prompt: The whisper_prompt of this CreateQueueRequest.
         :type: UriReference
         """
         
-        self._whisper = whisper
+        self._whisper_prompt = whisper_prompt
 
     @property
     def auto_answer_only(self):

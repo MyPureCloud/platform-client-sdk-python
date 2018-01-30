@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_scripts_published_script_id_pages**](ScriptsApi.html#get_scripts_published_script_id_pages) | Get the list of published pages|
 |[**get_scripts_published_script_id_variables**](ScriptsApi.html#get_scripts_published_script_id_variables) | Get the published variables|
 |[**get_scripts_upload_status**](ScriptsApi.html#get_scripts_upload_status) | Get the upload status of an imported script|
+|[**post_script_export**](ScriptsApi.html#post_script_export) | Export a script via download service.|
 {: class="table table-striped"}
 
 <a name="get_script"></a>
@@ -379,7 +380,7 @@ except ApiException as e:
 
 <a name="get_scripts_published_script_id_pages"></a>
 
-## [**list[Page]**](Page.html) get_scripts_published_script_id_pages(script_id, foo=foo, script_data_version=script_data_version)
+## [**list[Page]**](Page.html) get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
 
 Get the list of published pages
 
@@ -401,12 +402,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ScriptsApi()
 script_id = 'script_id_example' # str | Script ID
-foo = 25 # int |  (optional) (default to 25)
 script_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)
 
 try:
     # Get the list of published pages
-    api_response = api_instance.get_scripts_published_script_id_pages(script_id, foo=foo, script_data_version=script_data_version)
+    api_response = api_instance.get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ScriptsApi->get_scripts_published_script_id_pages: %s\n" % e
@@ -418,7 +418,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
-| **foo** | **int**|  | [optional] [default to 25] |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
@@ -525,4 +524,51 @@ except ApiException as e:
 ### Return type
 
 [**ImportScriptStatusResponse**](ImportScriptStatusResponse.html)
+
+<a name="post_script_export"></a>
+
+## [**ExportScriptResponse**](ExportScriptResponse.html) post_script_export(script_id, body=body)
+
+Export a script via download service.
+
+
+
+Wraps POST /api/v2/scripts/{scriptId}/export 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ScriptsApi()
+script_id = 'script_id_example' # str | Script ID
+body = PureCloudPlatformClientV2.ExportScriptRequest() # ExportScriptRequest |  (optional)
+
+try:
+    # Export a script via download service.
+    api_response = api_instance.post_script_export(script_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ScriptsApi->post_script_export: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **script_id** | **str**| Script ID |  |
+| **body** | [**ExportScriptRequest**](ExportScriptRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExportScriptResponse**](ExportScriptResponse.html)
 

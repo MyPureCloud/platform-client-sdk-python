@@ -41,20 +41,23 @@ class ConversationNotificationMessageDetails(object):
             'message_id': 'str',
             'message_time': 'datetime',
             'message_status': 'str',
-            'message_segment_count': 'int'
+            'message_segment_count': 'int',
+            'media': 'list[ConversationNotificationMedia]'
         }
 
         self.attribute_map = {
             'message_id': 'messageId',
             'message_time': 'messageTime',
             'message_status': 'messageStatus',
-            'message_segment_count': 'messageSegmentCount'
+            'message_segment_count': 'messageSegmentCount',
+            'media': 'media'
         }
 
         self._message_id = None
         self._message_time = None
         self._message_status = None
         self._message_segment_count = None
+        self._media = None
 
     @property
     def message_id(self):
@@ -151,6 +154,29 @@ class ConversationNotificationMessageDetails(object):
         """
         
         self._message_segment_count = message_segment_count
+
+    @property
+    def media(self):
+        """
+        Gets the media of this ConversationNotificationMessageDetails.
+
+
+        :return: The media of this ConversationNotificationMessageDetails.
+        :rtype: list[ConversationNotificationMedia]
+        """
+        return self._media
+
+    @media.setter
+    def media(self, media):
+        """
+        Sets the media of this ConversationNotificationMessageDetails.
+
+
+        :param media: The media of this ConversationNotificationMessageDetails.
+        :type: list[ConversationNotificationMedia]
+        """
+        
+        self._media = media
 
     def to_dict(self):
         """
