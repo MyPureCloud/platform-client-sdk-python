@@ -6471,7 +6471,7 @@ class ConversationsApi(object):
 
     def post_conversations_email_inboundmessages(self, conversation_id, body, **kwargs):
         """
-        Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+        Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6730,7 +6730,7 @@ class ConversationsApi(object):
     def post_conversations_emails(self, body, **kwargs):
         """
         Create an email conversation
-        
+        If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

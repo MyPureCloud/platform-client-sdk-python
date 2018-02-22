@@ -3021,7 +3021,7 @@ except ApiException as e:
 
 <a name="post_outbound_contactlist_contacts"></a>
 
-## [**list[DialerContact]**](DialerContact.html) post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data)
+## [**list[DialerContact]**](DialerContact.html) post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data, do_not_queue=do_not_queue)
 
 Add contacts to a contact list.
 
@@ -3044,12 +3044,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | Contact List ID
 body = [PureCloudPlatformClientV2.DialerContact()] # list[DialerContact] | Contact
-priority = true # bool | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. (optional)
-clear_system_data = true # bool | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won't. (optional)
+priority = true # bool | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
+clear_system_data = true # bool | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
+do_not_queue = true # bool | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the 'priority' parameter. (optional)
 
 try:
     # Add contacts to a contact list.
-    api_response = api_instance.post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data)
+    api_response = api_instance.post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data, do_not_queue=do_not_queue)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlist_contacts: %s\n" % e
@@ -3062,8 +3063,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
 | **body** | [**list[DialerContact]**](DialerContact.html)| Contact |  |
-| **priority** | **bool**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
-| **clear_system_data** | **bool**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
+| **priority** | **bool**| Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional]  |
+| **clear_system_data** | **bool**| Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. | [optional]  |
+| **do_not_queue** | **bool**| Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

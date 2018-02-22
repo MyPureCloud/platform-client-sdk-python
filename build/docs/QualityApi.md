@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_quality_calibration**](QualityApi.html#delete_quality_calibration) | Delete a calibration by id.|
 |[**delete_quality_conversation_evaluation**](QualityApi.html#delete_quality_conversation_evaluation) | Delete an evaluation|
 |[**delete_quality_form**](QualityApi.html#delete_quality_form) | Delete an evaluation form.|
+|[**delete_quality_forms_evaluation**](QualityApi.html#delete_quality_forms_evaluation) | Delete an evaluation form.|
+|[**delete_quality_forms_survey**](QualityApi.html#delete_quality_forms_survey) | Delete a survey form.|
 |[**delete_quality_keywordset**](QualityApi.html#delete_quality_keywordset) | Delete a keywordSet by id.|
 |[**delete_quality_keywordsets**](QualityApi.html#delete_quality_keywordsets) | Delete keyword sets|
 |[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
@@ -23,21 +25,38 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_form**](QualityApi.html#get_quality_form) | Get an evaluation form|
 |[**get_quality_form_versions**](QualityApi.html#get_quality_form_versions) | Gets all the revisions for a specific evaluation.|
 |[**get_quality_forms**](QualityApi.html#get_quality_forms) | Get the list of evaluation forms|
+|[**get_quality_forms_evaluation**](QualityApi.html#get_quality_forms_evaluation) | Get an evaluation form|
+|[**get_quality_forms_evaluation_versions**](QualityApi.html#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
+|[**get_quality_forms_evaluations**](QualityApi.html#get_quality_forms_evaluations) | Get the list of evaluation forms|
+|[**get_quality_forms_survey**](QualityApi.html#get_quality_forms_survey) | Get a survey form|
+|[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
+|[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
 |[**get_quality_keywordset**](QualityApi.html#get_quality_keywordset) | Get a keywordSet by id.|
 |[**get_quality_keywordsets**](QualityApi.html#get_quality_keywordsets) | Get the list of keyword sets|
 |[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
 |[**get_quality_publishedforms**](QualityApi.html#get_quality_publishedforms) | Get the published evaluation forms.|
+|[**get_quality_publishedforms_evaluation**](QualityApi.html#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
+|[**get_quality_publishedforms_evaluations**](QualityApi.html#get_quality_publishedforms_evaluations) | Get the published evaluation forms.|
+|[**get_quality_publishedforms_survey**](QualityApi.html#get_quality_publishedforms_survey) | Get the most recent published version of a survey form.|
+|[**get_quality_publishedforms_surveys**](QualityApi.html#get_quality_publishedforms_surveys) | Get the published survey forms.|
+|[**patch_quality_forms_survey**](QualityApi.html#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
 |[**post_analytics_evaluations_aggregates_query**](QualityApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
 |[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
 |[**post_quality_evaluations_scoring**](QualityApi.html#post_quality_evaluations_scoring) | Score evaluation|
 |[**post_quality_forms**](QualityApi.html#post_quality_forms) | Create an evaluation form.|
+|[**post_quality_forms_evaluations**](QualityApi.html#post_quality_forms_evaluations) | Create an evaluation form.|
+|[**post_quality_forms_surveys**](QualityApi.html#post_quality_forms_surveys) | Create a survey form.|
 |[**post_quality_keywordsets**](QualityApi.html#post_quality_keywordsets) | Create a Keyword Set|
 |[**post_quality_publishedforms**](QualityApi.html#post_quality_publishedforms) | Publish an evaluation form.|
+|[**post_quality_publishedforms_evaluations**](QualityApi.html#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
+|[**post_quality_publishedforms_surveys**](QualityApi.html#post_quality_publishedforms_surveys) | Publish a survey form.|
 |[**post_quality_spotability**](QualityApi.html#post_quality_spotability) | Retrieve the spotability statistic|
 |[**put_quality_calibration**](QualityApi.html#put_quality_calibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex|
 |[**put_quality_conversation_evaluation**](QualityApi.html#put_quality_conversation_evaluation) | Update an evaluation|
 |[**put_quality_form**](QualityApi.html#put_quality_form) | Update an evaluation form.|
+|[**put_quality_forms_evaluation**](QualityApi.html#put_quality_forms_evaluation) | Update an evaluation form.|
+|[**put_quality_forms_survey**](QualityApi.html#put_quality_forms_survey) | Update a survey form.|
 |[**put_quality_keywordset**](QualityApi.html#put_quality_keywordset) | Update a keywordSet to the specified keywordSet via PUT.|
 {: class="table table-striped"}
 
@@ -167,6 +186,94 @@ try:
     api_instance.delete_quality_form(form_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_form: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_quality_forms_evaluation"></a>
+
+##  delete_quality_forms_evaluation(form_id)
+
+Delete an evaluation form.
+
+
+
+Wraps DELETE /api/v2/quality/forms/evaluations/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Delete an evaluation form.
+    api_instance.delete_quality_forms_evaluation(form_id)
+except ApiException as e:
+    print "Exception when calling QualityApi->delete_quality_forms_evaluation: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_quality_forms_survey"></a>
+
+##  delete_quality_forms_survey(form_id)
+
+Delete a survey form.
+
+
+
+Wraps DELETE /api/v2/quality/forms/surveys/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Delete a survey form.
+    api_instance.delete_quality_forms_survey(form_id)
+except ApiException as e:
+    print "Exception when calling QualityApi->delete_quality_forms_survey: %s\n" % e
 ~~~
 
 ### Parameters
@@ -853,6 +960,308 @@ except ApiException as e:
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
 
+<a name="get_quality_forms_evaluation"></a>
+
+## [**EvaluationForm**](EvaluationForm.html) get_quality_forms_evaluation(form_id)
+
+Get an evaluation form
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Get an evaluation form
+    api_response = api_instance.get_quality_forms_evaluation(form_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_evaluation: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="get_quality_forms_evaluation_versions"></a>
+
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number)
+
+Gets all the revisions for a specific evaluation.
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/{formId}/versions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Gets all the revisions for a specific evaluation.
+    api_response = api_instance.get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_evaluation_versions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="get_quality_forms_evaluations"></a>
+
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+
+Get the list of evaluation forms
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+expand = 'expand_example' # str | Expand (optional)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the list of evaluation forms
+    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_evaluations: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **expand** | **str**| Expand | [optional]  |
+| **name** | **str**| Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="get_quality_forms_survey"></a>
+
+## [**SurveyForm**](SurveyForm.html) get_quality_forms_survey(form_id)
+
+Get a survey form
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Get a survey form
+    api_response = api_instance.get_quality_forms_survey(form_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_survey: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
+<a name="get_quality_forms_survey_versions"></a>
+
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_survey_versions(form_id, page_size=page_size, page_number=page_number)
+
+Gets all the revisions for a specific survey.
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/{formId}/versions 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Gets all the revisions for a specific survey.
+    api_response = api_instance.get_quality_forms_survey_versions(form_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_survey_versions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="get_quality_forms_surveys"></a>
+
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+
+Get the list of survey forms
+
+
+
+Wraps GET /api/v2/quality/forms/surveys 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+expand = 'expand_example' # str | Expand (optional)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the list of survey forms
+    api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_surveys: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **expand** | **str**| Expand | [optional]  |
+| **name** | **str**| Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
 <a name="get_quality_keywordset"></a>
 
 ## [**KeywordSet**](KeywordSet.html) get_quality_keywordset(keyword_set_id)
@@ -1054,6 +1463,241 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="get_quality_publishedforms_evaluation"></a>
+
+## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedforms_evaluation(form_id)
+
+Get the most recent published version of an evaluation form.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Get the most recent published version of an evaluation form.
+    api_response = api_instance.get_quality_publishedforms_evaluation(form_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_publishedforms_evaluation: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="get_quality_publishedforms_evaluations"></a>
+
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name)
+
+Get the published evaluation forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/evaluations 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the published evaluation forms.
+    api_response = api_instance.get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_publishedforms_evaluations: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="get_quality_publishedforms_survey"></a>
+
+## [**SurveyForm**](SurveyForm.html) get_quality_publishedforms_survey(form_id)
+
+Get the most recent published version of a survey form.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/surveys/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+
+try:
+    # Get the most recent published version of a survey form.
+    api_response = api_instance.get_quality_publishedforms_survey(form_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_publishedforms_survey: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
+<a name="get_quality_publishedforms_surveys"></a>
+
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name)
+
+Get the published survey forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/surveys 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the published survey forms.
+    api_response = api_instance.get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_publishedforms_surveys: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="patch_quality_forms_survey"></a>
+
+## [**SurveyForm**](SurveyForm.html) patch_quality_forms_survey(form_id, body)
+
+Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+
+
+
+Wraps PATCH /api/v2/quality/forms/surveys/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+body = PureCloudPlatformClientV2.SurveyForm() # SurveyForm | Survey form
+
+try:
+    # Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+    api_response = api_instance.patch_quality_forms_survey(form_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->patch_quality_forms_survey: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
@@ -1286,6 +1930,96 @@ except ApiException as e:
 
 [**EvaluationForm**](EvaluationForm.html)
 
+<a name="post_quality_forms_evaluations"></a>
+
+## [**EvaluationForm**](EvaluationForm.html) post_quality_forms_evaluations(body)
+
+Create an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/forms/evaluations 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.EvaluationForm() # EvaluationForm | Evaluation form
+
+try:
+    # Create an evaluation form.
+    api_response = api_instance.post_quality_forms_evaluations(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->post_quality_forms_evaluations: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="post_quality_forms_surveys"></a>
+
+## [**SurveyForm**](SurveyForm.html) post_quality_forms_surveys(body)
+
+Create a survey form.
+
+
+
+Wraps POST /api/v2/quality/forms/surveys 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.SurveyForm() # SurveyForm | Survey form
+
+try:
+    # Create a survey form.
+    api_response = api_instance.post_quality_forms_surveys(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->post_quality_forms_surveys: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
 <a name="post_quality_keywordsets"></a>
 
 ## [**KeywordSet**](KeywordSet.html) post_quality_keywordsets(body, expand=expand)
@@ -1377,6 +2111,96 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationForm**](EvaluationForm.html)
+
+<a name="post_quality_publishedforms_evaluations"></a>
+
+## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms_evaluations(body)
+
+Publish an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/publishedforms/evaluations 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.PublishForm() # PublishForm | Evaluation form
+
+try:
+    # Publish an evaluation form.
+    api_response = api_instance.post_quality_publishedforms_evaluations(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->post_quality_publishedforms_evaluations: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PublishForm**](PublishForm.html)| Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="post_quality_publishedforms_surveys"></a>
+
+## [**SurveyForm**](SurveyForm.html) post_quality_publishedforms_surveys(body)
+
+Publish a survey form.
+
+
+
+Wraps POST /api/v2/quality/publishedforms/surveys 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.PublishForm() # PublishForm | Survey form
+
+try:
+    # Publish a survey form.
+    api_response = api_instance.post_quality_publishedforms_surveys(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->post_quality_publishedforms_surveys: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**PublishForm**](PublishForm.html)| Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="post_quality_spotability"></a>
 
@@ -1567,6 +2391,100 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationForm**](EvaluationForm.html)
+
+<a name="put_quality_forms_evaluation"></a>
+
+## [**EvaluationForm**](EvaluationForm.html) put_quality_forms_evaluation(form_id, body)
+
+Update an evaluation form.
+
+
+
+Wraps PUT /api/v2/quality/forms/evaluations/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+body = PureCloudPlatformClientV2.EvaluationForm() # EvaluationForm | Evaluation form
+
+try:
+    # Update an evaluation form.
+    api_response = api_instance.put_quality_forms_evaluation(form_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->put_quality_forms_evaluation: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="put_quality_forms_survey"></a>
+
+## [**SurveyForm**](SurveyForm.html) put_quality_forms_survey(form_id, body)
+
+Update a survey form.
+
+
+
+Wraps PUT /api/v2/quality/forms/surveys/{formId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+body = PureCloudPlatformClientV2.SurveyForm() # SurveyForm | Survey form
+
+try:
+    # Update a survey form.
+    api_response = api_instance.put_quality_forms_survey(form_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->put_quality_forms_survey: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="put_quality_keywordset"></a>
 

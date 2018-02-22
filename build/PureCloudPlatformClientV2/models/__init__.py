@@ -50,6 +50,7 @@ from .analytics_query_filter import AnalyticsQueryFilter
 from .analytics_query_predicate import AnalyticsQueryPredicate
 from .analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .analytics_session import AnalyticsSession
+from .analytics_session_metric import AnalyticsSessionMetric
 from .analytics_user_detail import AnalyticsUserDetail
 from .analytics_user_details_query_response import AnalyticsUserDetailsQueryResponse
 from .analytics_user_presence_record import AnalyticsUserPresenceRecord
@@ -395,6 +396,7 @@ from .domain_entity import DomainEntity
 from .domain_entity_listing import DomainEntityListing
 from .domain_entity_listing_evaluation_form import DomainEntityListingEvaluationForm
 from .domain_entity_listing_query_result import DomainEntityListingQueryResult
+from .domain_entity_listing_survey_form import DomainEntityListingSurveyForm
 from .domain_logical_interface import DomainLogicalInterface
 from .domain_network_address import DomainNetworkAddress
 from .domain_network_command_response import DomainNetworkCommandResponse
@@ -769,6 +771,7 @@ from .prompt_resource_notification_notification import PromptResourceNotificatio
 from .property_index_request import PropertyIndexRequest
 from .provision_info import ProvisionInfo
 from .publish_draft_input import PublishDraftInput
+from .publish_form import PublishForm
 from .pure_cloud import PureCloud
 from .qualifier_mapping_observation_query_response import QualifierMappingObservationQueryResponse
 from .quality_audit import QualityAudit
@@ -923,6 +926,8 @@ from .street_address import StreetAddress
 from .subscriber_response import SubscriberResponse
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .survey_form import SurveyForm
+from .survey_form_entity_listing import SurveyFormEntityListing
 from .system_presence import SystemPresence
 from .system_prompt import SystemPrompt
 from .system_prompt_asset import SystemPromptAsset
@@ -1068,10 +1073,19 @@ from .voicemail_search_criteria import VoicemailSearchCriteria
 from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
+from .web_chat_deployment import WebChatDeployment
+from .web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
+from .web_chat_settings import WebChatSettings
 from .wfm_historical_adherence_calculations_complete_notice_notification import WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
 from .wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .wfm_intraday_queue_listing import WfmIntradayQueueListing
+from .wfm_move_agents_complete_notification import WfmMoveAgentsCompleteNotification
+from .wfm_move_agents_complete_notification_management_unit import WfmMoveAgentsCompleteNotificationManagementUnit
+from .wfm_move_agents_complete_notification_move_agent_results import WfmMoveAgentsCompleteNotificationMoveAgentResults
+from .wfm_move_agents_complete_notification_user import WfmMoveAgentsCompleteNotificationUser
+from .wfm_move_agents_complete_notification_wfm_move_agent_data import WfmMoveAgentsCompleteNotificationWfmMoveAgentData
+from .wfm_update_agent_details_complete_notification import WfmUpdateAgentDetailsCompleteNotification
 from .wfm_user_entity_listing import WfmUserEntityListing
 from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .workspace import Workspace

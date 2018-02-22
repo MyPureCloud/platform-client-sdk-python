@@ -73,7 +73,8 @@ class AnalyticsSession(object):
             'screen_share_room_id': 'str',
             'video_room_id': 'str',
             'video_address_self': 'str',
-            'segments': 'list[AnalyticsConversationSegment]'
+            'segments': 'list[AnalyticsConversationSegment]',
+            'metrics': 'list[AnalyticsSessionMetric]'
         }
 
         self.attribute_map = {
@@ -112,7 +113,8 @@ class AnalyticsSession(object):
             'screen_share_room_id': 'screenShareRoomId',
             'video_room_id': 'videoRoomId',
             'video_address_self': 'videoAddressSelf',
-            'segments': 'segments'
+            'segments': 'segments',
+            'metrics': 'metrics'
         }
 
         self._media_type = None
@@ -151,6 +153,7 @@ class AnalyticsSession(object):
         self._video_room_id = None
         self._video_address_self = None
         self._segments = None
+        self._metrics = None
 
     @property
     def media_type(self):
@@ -995,6 +998,29 @@ class AnalyticsSession(object):
         """
         
         self._segments = segments
+
+    @property
+    def metrics(self):
+        """
+        Gets the metrics of this AnalyticsSession.
+        List of metrics for this session
+
+        :return: The metrics of this AnalyticsSession.
+        :rtype: list[AnalyticsSessionMetric]
+        """
+        return self._metrics
+
+    @metrics.setter
+    def metrics(self, metrics):
+        """
+        Sets the metrics of this AnalyticsSession.
+        List of metrics for this session
+
+        :param metrics: The metrics of this AnalyticsSession.
+        :type: list[AnalyticsSessionMetric]
+        """
+        
+        self._metrics = metrics
 
     def to_dict(self):
         """

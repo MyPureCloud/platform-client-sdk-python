@@ -93,7 +93,7 @@ class CreateEmailRequest(object):
     def queue_id(self):
         """
         Gets the queue_id of this CreateEmailRequest.
-        The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
+        The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
 
         :return: The queue_id of this CreateEmailRequest.
         :rtype: str
@@ -104,7 +104,7 @@ class CreateEmailRequest(object):
     def queue_id(self, queue_id):
         """
         Sets the queue_id of this CreateEmailRequest.
-        The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
+        The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
 
         :param queue_id: The queue_id of this CreateEmailRequest.
         :type: str
@@ -116,7 +116,7 @@ class CreateEmailRequest(object):
     def flow_id(self):
         """
         Gets the flow_id of this CreateEmailRequest.
-        The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+        The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
 
         :return: The flow_id of this CreateEmailRequest.
         :rtype: str
@@ -127,7 +127,7 @@ class CreateEmailRequest(object):
     def flow_id(self, flow_id):
         """
         Sets the flow_id of this CreateEmailRequest.
-        The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+        The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
 
         :param flow_id: The flow_id of this CreateEmailRequest.
         :type: str
@@ -139,7 +139,7 @@ class CreateEmailRequest(object):
     def provider(self):
         """
         Gets the provider of this CreateEmailRequest.
-        The name of the provider that is sourcing the web chat.
+        The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails.
 
         :return: The provider of this CreateEmailRequest.
         :rtype: str
@@ -150,7 +150,7 @@ class CreateEmailRequest(object):
     def provider(self, provider):
         """
         Sets the provider of this CreateEmailRequest.
-        The name of the provider that is sourcing the web chat.
+        The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails.
 
         :param provider: The provider of this CreateEmailRequest.
         :type: str
@@ -369,7 +369,7 @@ class CreateEmailRequest(object):
     def direction(self):
         """
         Gets the direction of this CreateEmailRequest.
-        Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.
+        Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
 
         :return: The direction of this CreateEmailRequest.
         :rtype: str
@@ -380,7 +380,7 @@ class CreateEmailRequest(object):
     def direction(self, direction):
         """
         Sets the direction of this CreateEmailRequest.
-        Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.
+        Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
 
         :param direction: The direction of this CreateEmailRequest.
         :type: str

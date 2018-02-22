@@ -42,14 +42,14 @@ class Question(object):
             'text': 'str',
             'help_text': 'str',
             'type': 'str',
-            'weight': 'float',
-            'na_required': 'bool',
-            'comments_required': 'bool',
-            'is_kill': 'bool',
-            'is_critical': 'bool',
             'na_enabled': 'bool',
+            'comments_required': 'bool',
             'visibility_condition': 'VisibilityCondition',
-            'answer_options': 'list[AnswerOption]'
+            'answer_options': 'list[AnswerOption]',
+            'max_response_characters': 'int',
+            'explanation_prompt': 'str',
+            'is_kill': 'bool',
+            'is_critical': 'bool'
         }
 
         self.attribute_map = {
@@ -57,28 +57,28 @@ class Question(object):
             'text': 'text',
             'help_text': 'helpText',
             'type': 'type',
-            'weight': 'weight',
-            'na_required': 'naRequired',
-            'comments_required': 'commentsRequired',
-            'is_kill': 'isKill',
-            'is_critical': 'isCritical',
             'na_enabled': 'naEnabled',
+            'comments_required': 'commentsRequired',
             'visibility_condition': 'visibilityCondition',
-            'answer_options': 'answerOptions'
+            'answer_options': 'answerOptions',
+            'max_response_characters': 'maxResponseCharacters',
+            'explanation_prompt': 'explanationPrompt',
+            'is_kill': 'isKill',
+            'is_critical': 'isCritical'
         }
 
         self._id = None
         self._text = None
         self._help_text = None
         self._type = None
-        self._weight = None
-        self._na_required = None
-        self._comments_required = None
-        self._is_kill = None
-        self._is_critical = None
         self._na_enabled = None
+        self._comments_required = None
         self._visibility_condition = None
         self._answer_options = None
+        self._max_response_characters = None
+        self._explanation_prompt = None
+        self._is_kill = None
+        self._is_critical = None
 
     @property
     def id(self):
@@ -169,54 +169,35 @@ class Question(object):
         :param type: The type of this Question.
         :type: str
         """
-        
-        self._type = type
+        allowed_values = ["multipleChoiceQuestion", "freeTextQuestion", "npsQuestion", "readOnlyTextBlockQuestion"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for type -> " + type
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     @property
-    def weight(self):
+    def na_enabled(self):
         """
-        Gets the weight of this Question.
+        Gets the na_enabled of this Question.
 
 
-        :return: The weight of this Question.
-        :rtype: float
-        """
-        return self._weight
-
-    @weight.setter
-    def weight(self, weight):
-        """
-        Sets the weight of this Question.
-
-
-        :param weight: The weight of this Question.
-        :type: float
-        """
-        
-        self._weight = weight
-
-    @property
-    def na_required(self):
-        """
-        Gets the na_required of this Question.
-
-
-        :return: The na_required of this Question.
+        :return: The na_enabled of this Question.
         :rtype: bool
         """
-        return self._na_required
+        return self._na_enabled
 
-    @na_required.setter
-    def na_required(self, na_required):
+    @na_enabled.setter
+    def na_enabled(self, na_enabled):
         """
-        Sets the na_required of this Question.
+        Sets the na_enabled of this Question.
 
 
-        :param na_required: The na_required of this Question.
+        :param na_enabled: The na_enabled of this Question.
         :type: bool
         """
         
-        self._na_required = na_required
+        self._na_enabled = na_enabled
 
     @property
     def comments_required(self):
@@ -240,6 +221,98 @@ class Question(object):
         """
         
         self._comments_required = comments_required
+
+    @property
+    def visibility_condition(self):
+        """
+        Gets the visibility_condition of this Question.
+
+
+        :return: The visibility_condition of this Question.
+        :rtype: VisibilityCondition
+        """
+        return self._visibility_condition
+
+    @visibility_condition.setter
+    def visibility_condition(self, visibility_condition):
+        """
+        Sets the visibility_condition of this Question.
+
+
+        :param visibility_condition: The visibility_condition of this Question.
+        :type: VisibilityCondition
+        """
+        
+        self._visibility_condition = visibility_condition
+
+    @property
+    def answer_options(self):
+        """
+        Gets the answer_options of this Question.
+        Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
+
+        :return: The answer_options of this Question.
+        :rtype: list[AnswerOption]
+        """
+        return self._answer_options
+
+    @answer_options.setter
+    def answer_options(self, answer_options):
+        """
+        Sets the answer_options of this Question.
+        Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
+
+        :param answer_options: The answer_options of this Question.
+        :type: list[AnswerOption]
+        """
+        
+        self._answer_options = answer_options
+
+    @property
+    def max_response_characters(self):
+        """
+        Gets the max_response_characters of this Question.
+        How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.
+
+        :return: The max_response_characters of this Question.
+        :rtype: int
+        """
+        return self._max_response_characters
+
+    @max_response_characters.setter
+    def max_response_characters(self, max_response_characters):
+        """
+        Sets the max_response_characters of this Question.
+        How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.
+
+        :param max_response_characters: The max_response_characters of this Question.
+        :type: int
+        """
+        
+        self._max_response_characters = max_response_characters
+
+    @property
+    def explanation_prompt(self):
+        """
+        Gets the explanation_prompt of this Question.
+        Prompt for details explaining the chosen NPS score. Used by NPS questions.
+
+        :return: The explanation_prompt of this Question.
+        :rtype: str
+        """
+        return self._explanation_prompt
+
+    @explanation_prompt.setter
+    def explanation_prompt(self, explanation_prompt):
+        """
+        Sets the explanation_prompt of this Question.
+        Prompt for details explaining the chosen NPS score. Used by NPS questions.
+
+        :param explanation_prompt: The explanation_prompt of this Question.
+        :type: str
+        """
+        
+        self._explanation_prompt = explanation_prompt
 
     @property
     def is_kill(self):
@@ -286,75 +359,6 @@ class Question(object):
         """
         
         self._is_critical = is_critical
-
-    @property
-    def na_enabled(self):
-        """
-        Gets the na_enabled of this Question.
-
-
-        :return: The na_enabled of this Question.
-        :rtype: bool
-        """
-        return self._na_enabled
-
-    @na_enabled.setter
-    def na_enabled(self, na_enabled):
-        """
-        Sets the na_enabled of this Question.
-
-
-        :param na_enabled: The na_enabled of this Question.
-        :type: bool
-        """
-        
-        self._na_enabled = na_enabled
-
-    @property
-    def visibility_condition(self):
-        """
-        Gets the visibility_condition of this Question.
-
-
-        :return: The visibility_condition of this Question.
-        :rtype: VisibilityCondition
-        """
-        return self._visibility_condition
-
-    @visibility_condition.setter
-    def visibility_condition(self, visibility_condition):
-        """
-        Sets the visibility_condition of this Question.
-
-
-        :param visibility_condition: The visibility_condition of this Question.
-        :type: VisibilityCondition
-        """
-        
-        self._visibility_condition = visibility_condition
-
-    @property
-    def answer_options(self):
-        """
-        Gets the answer_options of this Question.
-
-
-        :return: The answer_options of this Question.
-        :rtype: list[AnswerOption]
-        """
-        return self._answer_options
-
-    @answer_options.setter
-    def answer_options(self, answer_options):
-        """
-        Sets the answer_options of this Question.
-
-
-        :param answer_options: The answer_options of this Question.
-        :type: list[AnswerOption]
-        """
-        
-        self._answer_options = answer_options
 
     def to_dict(self):
         """

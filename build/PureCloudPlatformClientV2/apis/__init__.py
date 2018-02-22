@@ -40,4 +40,5 @@ from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
 from .utilities_api import UtilitiesApi
 from .voicemail_api import VoicemailApi
+from .web_chat_api import WebChatApi
 from .workforce_management_api import WorkforceManagementApi

@@ -50,6 +50,7 @@ from .models.analytics_query_filter import AnalyticsQueryFilter
 from .models.analytics_query_predicate import AnalyticsQueryPredicate
 from .models.analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .models.analytics_session import AnalyticsSession
+from .models.analytics_session_metric import AnalyticsSessionMetric
 from .models.analytics_user_detail import AnalyticsUserDetail
 from .models.analytics_user_details_query_response import AnalyticsUserDetailsQueryResponse
 from .models.analytics_user_presence_record import AnalyticsUserPresenceRecord
@@ -395,6 +396,7 @@ from .models.domain_entity import DomainEntity
 from .models.domain_entity_listing import DomainEntityListing
 from .models.domain_entity_listing_evaluation_form import DomainEntityListingEvaluationForm
 from .models.domain_entity_listing_query_result import DomainEntityListingQueryResult
+from .models.domain_entity_listing_survey_form import DomainEntityListingSurveyForm
 from .models.domain_logical_interface import DomainLogicalInterface
 from .models.domain_network_address import DomainNetworkAddress
 from .models.domain_network_command_response import DomainNetworkCommandResponse
@@ -769,6 +771,7 @@ from .models.prompt_resource_notification_notification import PromptResourceNoti
 from .models.property_index_request import PropertyIndexRequest
 from .models.provision_info import ProvisionInfo
 from .models.publish_draft_input import PublishDraftInput
+from .models.publish_form import PublishForm
 from .models.pure_cloud import PureCloud
 from .models.qualifier_mapping_observation_query_response import QualifierMappingObservationQueryResponse
 from .models.quality_audit import QualityAudit
@@ -923,6 +926,8 @@ from .models.street_address import StreetAddress
 from .models.subscriber_response import SubscriberResponse
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.survey_form import SurveyForm
+from .models.survey_form_entity_listing import SurveyFormEntityListing
 from .models.system_presence import SystemPresence
 from .models.system_prompt import SystemPrompt
 from .models.system_prompt_asset import SystemPromptAsset
@@ -1068,10 +1073,19 @@ from .models.voicemail_search_criteria import VoicemailSearchCriteria
 from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
+from .models.web_chat_deployment import WebChatDeployment
+from .models.web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
+from .models.web_chat_settings import WebChatSettings
 from .models.wfm_historical_adherence_calculations_complete_notice_notification import WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
 from .models.wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
+from .models.wfm_move_agents_complete_notification import WfmMoveAgentsCompleteNotification
+from .models.wfm_move_agents_complete_notification_management_unit import WfmMoveAgentsCompleteNotificationManagementUnit
+from .models.wfm_move_agents_complete_notification_move_agent_results import WfmMoveAgentsCompleteNotificationMoveAgentResults
+from .models.wfm_move_agents_complete_notification_user import WfmMoveAgentsCompleteNotificationUser
+from .models.wfm_move_agents_complete_notification_wfm_move_agent_data import WfmMoveAgentsCompleteNotificationWfmMoveAgentData
+from .models.wfm_update_agent_details_complete_notification import WfmUpdateAgentDetailsCompleteNotification
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.workspace import Workspace
@@ -1127,6 +1141,7 @@ from .apis.user_recordings_api import UserRecordingsApi
 from .apis.users_api import UsersApi
 from .apis.utilities_api import UtilitiesApi
 from .apis.voicemail_api import VoicemailApi
+from .apis.web_chat_api import WebChatApi
 from .apis.workforce_management_api import WorkforceManagementApi
 
 # import ApiClient

@@ -138,7 +138,7 @@ class ConversationNotificationEmails(object):
         :param state: The state of this ConversationNotificationEmails.
         :type: str
         """
-        allowed_values = ["ALERTING", "CONNECTED", "DISCONNECTED", "NONE"]
+        allowed_values = ["ALERTING", "CONNECTED", "DISCONNECTED", "NONE", "TRANSMITTING"]
         if state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"

@@ -43,6 +43,12 @@ class AgentActivity(object):
             'agent': 'User',
             'num_evaluations': 'int',
             'average_evaluation_score': 'int',
+            'num_critical_evaluations': 'int',
+            'average_critical_score': 'float',
+            'highest_evaluation_score': 'float',
+            'lowest_evaluation_score': 'float',
+            'highest_critical_score': 'float',
+            'lowest_critical_score': 'float',
             'agent_evaluator_activity_list': 'list[AgentEvaluatorActivity]',
             'self_uri': 'str'
         }
@@ -53,6 +59,12 @@ class AgentActivity(object):
             'agent': 'agent',
             'num_evaluations': 'numEvaluations',
             'average_evaluation_score': 'averageEvaluationScore',
+            'num_critical_evaluations': 'numCriticalEvaluations',
+            'average_critical_score': 'averageCriticalScore',
+            'highest_evaluation_score': 'highestEvaluationScore',
+            'lowest_evaluation_score': 'lowestEvaluationScore',
+            'highest_critical_score': 'highestCriticalScore',
+            'lowest_critical_score': 'lowestCriticalScore',
             'agent_evaluator_activity_list': 'agentEvaluatorActivityList',
             'self_uri': 'selfUri'
         }
@@ -62,6 +74,12 @@ class AgentActivity(object):
         self._agent = None
         self._num_evaluations = None
         self._average_evaluation_score = None
+        self._num_critical_evaluations = None
+        self._average_critical_score = None
+        self._highest_evaluation_score = None
+        self._lowest_evaluation_score = None
+        self._highest_critical_score = None
+        self._lowest_critical_score = None
         self._agent_evaluator_activity_list = None
         self._self_uri = None
 
@@ -179,6 +197,144 @@ class AgentActivity(object):
         """
         
         self._average_evaluation_score = average_evaluation_score
+
+    @property
+    def num_critical_evaluations(self):
+        """
+        Gets the num_critical_evaluations of this AgentActivity.
+
+
+        :return: The num_critical_evaluations of this AgentActivity.
+        :rtype: int
+        """
+        return self._num_critical_evaluations
+
+    @num_critical_evaluations.setter
+    def num_critical_evaluations(self, num_critical_evaluations):
+        """
+        Sets the num_critical_evaluations of this AgentActivity.
+
+
+        :param num_critical_evaluations: The num_critical_evaluations of this AgentActivity.
+        :type: int
+        """
+        
+        self._num_critical_evaluations = num_critical_evaluations
+
+    @property
+    def average_critical_score(self):
+        """
+        Gets the average_critical_score of this AgentActivity.
+
+
+        :return: The average_critical_score of this AgentActivity.
+        :rtype: float
+        """
+        return self._average_critical_score
+
+    @average_critical_score.setter
+    def average_critical_score(self, average_critical_score):
+        """
+        Sets the average_critical_score of this AgentActivity.
+
+
+        :param average_critical_score: The average_critical_score of this AgentActivity.
+        :type: float
+        """
+        
+        self._average_critical_score = average_critical_score
+
+    @property
+    def highest_evaluation_score(self):
+        """
+        Gets the highest_evaluation_score of this AgentActivity.
+
+
+        :return: The highest_evaluation_score of this AgentActivity.
+        :rtype: float
+        """
+        return self._highest_evaluation_score
+
+    @highest_evaluation_score.setter
+    def highest_evaluation_score(self, highest_evaluation_score):
+        """
+        Sets the highest_evaluation_score of this AgentActivity.
+
+
+        :param highest_evaluation_score: The highest_evaluation_score of this AgentActivity.
+        :type: float
+        """
+        
+        self._highest_evaluation_score = highest_evaluation_score
+
+    @property
+    def lowest_evaluation_score(self):
+        """
+        Gets the lowest_evaluation_score of this AgentActivity.
+
+
+        :return: The lowest_evaluation_score of this AgentActivity.
+        :rtype: float
+        """
+        return self._lowest_evaluation_score
+
+    @lowest_evaluation_score.setter
+    def lowest_evaluation_score(self, lowest_evaluation_score):
+        """
+        Sets the lowest_evaluation_score of this AgentActivity.
+
+
+        :param lowest_evaluation_score: The lowest_evaluation_score of this AgentActivity.
+        :type: float
+        """
+        
+        self._lowest_evaluation_score = lowest_evaluation_score
+
+    @property
+    def highest_critical_score(self):
+        """
+        Gets the highest_critical_score of this AgentActivity.
+
+
+        :return: The highest_critical_score of this AgentActivity.
+        :rtype: float
+        """
+        return self._highest_critical_score
+
+    @highest_critical_score.setter
+    def highest_critical_score(self, highest_critical_score):
+        """
+        Sets the highest_critical_score of this AgentActivity.
+
+
+        :param highest_critical_score: The highest_critical_score of this AgentActivity.
+        :type: float
+        """
+        
+        self._highest_critical_score = highest_critical_score
+
+    @property
+    def lowest_critical_score(self):
+        """
+        Gets the lowest_critical_score of this AgentActivity.
+
+
+        :return: The lowest_critical_score of this AgentActivity.
+        :rtype: float
+        """
+        return self._lowest_critical_score
+
+    @lowest_critical_score.setter
+    def lowest_critical_score(self, lowest_critical_score):
+        """
+        Sets the lowest_critical_score of this AgentActivity.
+
+
+        :param lowest_critical_score: The lowest_critical_score of this AgentActivity.
+        :type: float
+        """
+        
+        self._lowest_critical_score = lowest_critical_score
 
     @property
     def agent_evaluator_activity_list(self):

@@ -40,7 +40,6 @@ class EvaluationForm(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'type': 'str',
             'modified_date': 'datetime',
             'published': 'bool',
             'context_id': 'str',
@@ -52,7 +51,6 @@ class EvaluationForm(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'type': 'type',
             'modified_date': 'modifiedDate',
             'published': 'published',
             'context_id': 'contextId',
@@ -63,7 +61,6 @@ class EvaluationForm(object):
 
         self._id = None
         self._name = None
-        self._type = None
         self._modified_date = None
         self._published = None
         self._context_id = None
@@ -116,29 +113,6 @@ class EvaluationForm(object):
         """
         
         self._name = name
-
-    @property
-    def type(self):
-        """
-        Gets the type of this EvaluationForm.
-        The form type (evaluation)
-
-        :return: The type of this EvaluationForm.
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """
-        Sets the type of this EvaluationForm.
-        The form type (evaluation)
-
-        :param type: The type of this EvaluationForm.
-        :type: str
-        """
-        
-        self._type = type
 
     @property
     def modified_date(self):

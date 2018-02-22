@@ -13,7 +13,6 @@ title: JsonNode
 | **boolean** | **bool** |  | [optional] |
 | **number** | **bool** |  | [optional] |
 | **container_node** | **bool** |  | [optional] |
-| **value_node** | **bool** |  | [optional] |
 | **missing_node** | **bool** |  | [optional] |
 | **pojo** | **bool** |  | [optional] |
 | **integral_number** | **bool** |  | [optional] |
@@ -26,6 +25,7 @@ title: JsonNode
 | **big_integer** | **bool** |  | [optional] |
 | **textual** | **bool** |  | [optional] |
 | **binary** | **bool** |  | [optional] |
+| **value_node** | **bool** |  | [optional] |
 | **array** | **bool** |  | [optional] |
 | **null** | **bool** |  | [optional] |
 {: class="table table-striped"}

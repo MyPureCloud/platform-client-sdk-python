@@ -44,7 +44,6 @@ class JsonNode(object):
             'boolean': 'bool',
             'number': 'bool',
             'container_node': 'bool',
-            'value_node': 'bool',
             'missing_node': 'bool',
             'pojo': 'bool',
             'integral_number': 'bool',
@@ -57,6 +56,7 @@ class JsonNode(object):
             'big_integer': 'bool',
             'textual': 'bool',
             'binary': 'bool',
+            'value_node': 'bool',
             'array': 'bool',
             'null': 'bool'
         }
@@ -68,7 +68,6 @@ class JsonNode(object):
             'boolean': 'boolean',
             'number': 'number',
             'container_node': 'containerNode',
-            'value_node': 'valueNode',
             'missing_node': 'missingNode',
             'pojo': 'pojo',
             'integral_number': 'integralNumber',
@@ -81,6 +80,7 @@ class JsonNode(object):
             'big_integer': 'bigInteger',
             'textual': 'textual',
             'binary': 'binary',
+            'value_node': 'valueNode',
             'array': 'array',
             'null': 'null'
         }
@@ -91,7 +91,6 @@ class JsonNode(object):
         self._boolean = None
         self._number = None
         self._container_node = None
-        self._value_node = None
         self._missing_node = None
         self._pojo = None
         self._integral_number = None
@@ -104,6 +103,7 @@ class JsonNode(object):
         self._big_integer = None
         self._textual = None
         self._binary = None
+        self._value_node = None
         self._array = None
         self._null = None
 
@@ -248,29 +248,6 @@ class JsonNode(object):
         """
         
         self._container_node = container_node
-
-    @property
-    def value_node(self):
-        """
-        Gets the value_node of this JsonNode.
-
-
-        :return: The value_node of this JsonNode.
-        :rtype: bool
-        """
-        return self._value_node
-
-    @value_node.setter
-    def value_node(self, value_node):
-        """
-        Sets the value_node of this JsonNode.
-
-
-        :param value_node: The value_node of this JsonNode.
-        :type: bool
-        """
-        
-        self._value_node = value_node
 
     @property
     def missing_node(self):
@@ -547,6 +524,29 @@ class JsonNode(object):
         """
         
         self._binary = binary
+
+    @property
+    def value_node(self):
+        """
+        Gets the value_node of this JsonNode.
+
+
+        :return: The value_node of this JsonNode.
+        :rtype: bool
+        """
+        return self._value_node
+
+    @value_node.setter
+    def value_node(self, value_node):
+        """
+        Sets the value_node of this JsonNode.
+
+
+        :param value_node: The value_node of this JsonNode.
+        :type: bool
+        """
+        
+        self._value_node = value_node
 
     @property
     def array(self):
