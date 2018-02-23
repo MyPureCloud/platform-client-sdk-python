@@ -2090,7 +2090,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.EvaluationForm() # EvaluationForm | Evaluation form
+body = PureCloudPlatformClientV2.PublishForm() # PublishForm | Publish request containing id of form to publish
 
 try:
     # Publish an evaluation form.
@@ -2105,7 +2105,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2135,7 +2135,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.PublishForm() # PublishForm | Evaluation form
+body = PureCloudPlatformClientV2.PublishForm() # PublishForm | Publish request containing id of form to publish
 
 try:
     # Publish an evaluation form.
@@ -2150,7 +2150,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PublishForm**](PublishForm.html)| Evaluation form |  |
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish |  |
 {: class="table table-striped"}
 
 ### Return type

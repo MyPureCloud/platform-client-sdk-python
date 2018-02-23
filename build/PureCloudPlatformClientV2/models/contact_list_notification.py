@@ -50,6 +50,8 @@ class ContactListNotification(object):
             'preview_mode_accepted_values': 'list[str]',
             'size': 'int',
             'attempt_limits': 'DocumentDataV2NotificationCreatedBy',
+            'automatic_time_zone_mapping': 'bool',
+            'zip_code_column_name': 'str',
             'additional_properties': 'object'
         }
 
@@ -66,6 +68,8 @@ class ContactListNotification(object):
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
             'size': 'size',
             'attempt_limits': 'attemptLimits',
+            'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
+            'zip_code_column_name': 'zipCodeColumnName',
             'additional_properties': 'additionalProperties'
         }
 
@@ -81,6 +85,8 @@ class ContactListNotification(object):
         self._preview_mode_accepted_values = None
         self._size = None
         self._attempt_limits = None
+        self._automatic_time_zone_mapping = None
+        self._zip_code_column_name = None
         self._additional_properties = None
 
     @property
@@ -358,6 +364,52 @@ class ContactListNotification(object):
         """
         
         self._attempt_limits = attempt_limits
+
+    @property
+    def automatic_time_zone_mapping(self):
+        """
+        Gets the automatic_time_zone_mapping of this ContactListNotification.
+
+
+        :return: The automatic_time_zone_mapping of this ContactListNotification.
+        :rtype: bool
+        """
+        return self._automatic_time_zone_mapping
+
+    @automatic_time_zone_mapping.setter
+    def automatic_time_zone_mapping(self, automatic_time_zone_mapping):
+        """
+        Sets the automatic_time_zone_mapping of this ContactListNotification.
+
+
+        :param automatic_time_zone_mapping: The automatic_time_zone_mapping of this ContactListNotification.
+        :type: bool
+        """
+        
+        self._automatic_time_zone_mapping = automatic_time_zone_mapping
+
+    @property
+    def zip_code_column_name(self):
+        """
+        Gets the zip_code_column_name of this ContactListNotification.
+
+
+        :return: The zip_code_column_name of this ContactListNotification.
+        :rtype: str
+        """
+        return self._zip_code_column_name
+
+    @zip_code_column_name.setter
+    def zip_code_column_name(self, zip_code_column_name):
+        """
+        Sets the zip_code_column_name of this ContactListNotification.
+
+
+        :param zip_code_column_name: The zip_code_column_name of this ContactListNotification.
+        :type: str
+        """
+        
+        self._zip_code_column_name = zip_code_column_name
 
     @property
     def additional_properties(self):

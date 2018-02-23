@@ -52,6 +52,7 @@ class ExternalOrganization(object):
             'websites': 'list[str]',
             'tickers': 'list[Ticker]',
             'twitter_id': 'TwitterId',
+            'external_system_url': 'str',
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'trustor': 'Trustor',
@@ -74,6 +75,7 @@ class ExternalOrganization(object):
             'websites': 'websites',
             'tickers': 'tickers',
             'twitter_id': 'twitterId',
+            'external_system_url': 'externalSystemUrl',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'trustor': 'trustor',
@@ -95,6 +97,7 @@ class ExternalOrganization(object):
         self._websites = None
         self._tickers = None
         self._twitter_id = None
+        self._external_system_url = None
         self._modify_date = None
         self._create_date = None
         self._trustor = None
@@ -422,6 +425,29 @@ class ExternalOrganization(object):
         """
         
         self._twitter_id = twitter_id
+
+    @property
+    def external_system_url(self):
+        """
+        Gets the external_system_url of this ExternalOrganization.
+        Identifies an external system-of-record resource that may have more detailed information on the organization
+
+        :return: The external_system_url of this ExternalOrganization.
+        :rtype: str
+        """
+        return self._external_system_url
+
+    @external_system_url.setter
+    def external_system_url(self, external_system_url):
+        """
+        Sets the external_system_url of this ExternalOrganization.
+        Identifies an external system-of-record resource that may have more detailed information on the organization
+
+        :param external_system_url: The external_system_url of this ExternalOrganization.
+        :type: str
+        """
+        
+        self._external_system_url = external_system_url
 
     @property
     def modify_date(self):

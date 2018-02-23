@@ -199,6 +199,8 @@ from .certificate import Certificate
 from .certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .certificate_details import CertificateDetails
 from .change import Change
+from .change_my_password_request import ChangeMyPasswordRequest
+from .change_password_request import ChangePasswordRequest
 from .channel import Channel
 from .channel_entity_listing import ChannelEntityListing
 from .channel_topic import ChannelTopic
@@ -926,8 +928,10 @@ from .street_address import StreetAddress
 from .subscriber_response import SubscriberResponse
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .survey_assignment import SurveyAssignment
 from .survey_form import SurveyForm
 from .survey_form_entity_listing import SurveyFormEntityListing
+from .survey_form_uri_reference import SurveyFormUriReference
 from .system_presence import SystemPresence
 from .system_prompt import SystemPrompt
 from .system_prompt_asset import SystemPromptAsset

@@ -7,7 +7,7 @@ title: WfmUpdateAgentDetailsCompleteNotification
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **result** | **str** |  | [optional] |
+| **status** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

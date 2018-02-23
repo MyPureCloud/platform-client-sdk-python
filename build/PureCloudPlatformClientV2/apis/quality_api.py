@@ -3484,7 +3484,7 @@ class QualityApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param EvaluationForm body: Evaluation form (required)
+        :param PublishForm body: Publish request containing id of form to publish (required)
         :return: EvaluationForm
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3562,7 +3562,7 @@ class QualityApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param PublishForm body: Evaluation form (required)
+        :param PublishForm body: Publish request containing id of form to publish (required)
         :return: EvaluationForm
                  If the method is called asynchronously,
                  returns the request thread.

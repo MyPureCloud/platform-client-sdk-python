@@ -46,6 +46,9 @@ class CallHistoryConversation(object):
             'missed_call': 'bool',
             'start_time': 'datetime',
             'was_conference': 'bool',
+            'was_callback': 'bool',
+            'had_screen_share': 'bool',
+            'had_cobrowse': 'bool',
             'self_uri': 'str'
         }
 
@@ -58,6 +61,9 @@ class CallHistoryConversation(object):
             'missed_call': 'missedCall',
             'start_time': 'startTime',
             'was_conference': 'wasConference',
+            'was_callback': 'wasCallback',
+            'had_screen_share': 'hadScreenShare',
+            'had_cobrowse': 'hadCobrowse',
             'self_uri': 'selfUri'
         }
 
@@ -69,6 +75,9 @@ class CallHistoryConversation(object):
         self._missed_call = None
         self._start_time = None
         self._was_conference = None
+        self._was_callback = None
+        self._had_screen_share = None
+        self._had_cobrowse = None
         self._self_uri = None
 
     @property
@@ -258,6 +267,75 @@ class CallHistoryConversation(object):
         """
         
         self._was_conference = was_conference
+
+    @property
+    def was_callback(self):
+        """
+        Gets the was_callback of this CallHistoryConversation.
+        Was this conversation a callback
+
+        :return: The was_callback of this CallHistoryConversation.
+        :rtype: bool
+        """
+        return self._was_callback
+
+    @was_callback.setter
+    def was_callback(self, was_callback):
+        """
+        Sets the was_callback of this CallHistoryConversation.
+        Was this conversation a callback
+
+        :param was_callback: The was_callback of this CallHistoryConversation.
+        :type: bool
+        """
+        
+        self._was_callback = was_callback
+
+    @property
+    def had_screen_share(self):
+        """
+        Gets the had_screen_share of this CallHistoryConversation.
+        Did this conversation have a screen share session
+
+        :return: The had_screen_share of this CallHistoryConversation.
+        :rtype: bool
+        """
+        return self._had_screen_share
+
+    @had_screen_share.setter
+    def had_screen_share(self, had_screen_share):
+        """
+        Sets the had_screen_share of this CallHistoryConversation.
+        Did this conversation have a screen share session
+
+        :param had_screen_share: The had_screen_share of this CallHistoryConversation.
+        :type: bool
+        """
+        
+        self._had_screen_share = had_screen_share
+
+    @property
+    def had_cobrowse(self):
+        """
+        Gets the had_cobrowse of this CallHistoryConversation.
+        Did this conversation have a cobrowse session
+
+        :return: The had_cobrowse of this CallHistoryConversation.
+        :rtype: bool
+        """
+        return self._had_cobrowse
+
+    @had_cobrowse.setter
+    def had_cobrowse(self, had_cobrowse):
+        """
+        Sets the had_cobrowse of this CallHistoryConversation.
+        Did this conversation have a cobrowse session
+
+        :param had_cobrowse: The had_cobrowse of this CallHistoryConversation.
+        :type: bool
+        """
+        
+        self._had_cobrowse = had_cobrowse
 
     @property
     def self_uri(self):

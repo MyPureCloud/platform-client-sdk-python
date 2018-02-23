@@ -763,6 +763,168 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_flows_datatable(self, datatable_id, **kwargs):
+        """
+        deletes a specific datatable by id
+        deletes an entire datatable (including schema and data) with a given datatableId)
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_flows_datatable(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_flows_datatable" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `delete_flows_datatable`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+        """
+        Delete a row entry
+        Deletes a row with a given rowId.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_flows_datatable_row(datatable_id, row_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str row_id: the key for the row (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'row_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_flows_datatable_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `delete_flows_datatable_row`")
+        # verify the required parameter 'row_id' is set
+        if ('row_id' not in params) or (params['row_id'] is None):
+            raise ValueError("Missing the required parameter `row_id` when calling `delete_flows_datatable_row`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/rows/{rowId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+        if 'row_id' in params:
+            path_params['rowId'] = params['row_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_architect_dependencytracking(self, name, **kwargs):
         """
         Get Dependency Tracking objects that have a given display name
@@ -3574,6 +3736,330 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_datatable(self, datatable_id, **kwargs):
+        """
+        Returns a specific datatable by datatableId
+        Given a datableid returns the schema associated with it.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param bool showbrief: If true returns a shortened version of the schema including the name, id and description]
+        :return: JsonSchemaDocument
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'showbrief']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+        if 'showbrief' in params:
+            query_params['showbrief'] = params['showbrief']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonSchemaDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+        """
+        Returns a specific row for the datatable
+        Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable_row(datatable_id, row_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str row_id: The key for the row (required)
+        :param bool showbrief: if true returns just the key field for the row
+        :return: dict(str, object)
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'row_id', 'showbrief']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable_row`")
+        # verify the required parameter 'row_id' is set
+        if ('row_id' not in params) or (params['row_id'] is None):
+            raise ValueError("Missing the required parameter `row_id` when calling `get_flows_datatable_row`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/rows/{rowId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+        if 'row_id' in params:
+            path_params['rowId'] = params['row_id']
+
+        query_params = {}
+        if 'showbrief' in params:
+            query_params['showbrief'] = params['showbrief']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='dict(str, object)',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatable_rows(self, datatable_id, **kwargs):
+        """
+        Returns the rows for the datatable
+        Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable_rows(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param bool showbrief: If true returns just the key value of the row
+        :return: list[dict(str, object)]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'showbrief']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable_rows" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable_rows`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/rows'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+        if 'showbrief' in params:
+            query_params['showbrief'] = params['showbrief']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[dict(str, object)]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatables(self, **kwargs):
+        """
+        Retrieve a list of datatables for the org
+        Returns a metadata list of the datatables associated with this org, including ID, name and description.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatables(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool showbrief: If true, returns a shortened version of the schema including the name, id and description
+        :return: list[JsonSchemaDocument]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['showbrief']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatables" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/datatables'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'showbrief' in params:
+            query_params['showbrief'] = params['showbrief']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[JsonSchemaDocument]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_dependencytracking_build(self, **kwargs):
         """
         Rebuild Dependency Tracking data for an organization
@@ -4891,6 +5377,168 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flows_datatable_rows(self, datatable_id, data_table_row, **kwargs):
+        """
+        Create a new row entry
+        Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_datatable_rows(datatable_id, data_table_row, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param object data_table_row:  (required)
+        :return: dict(str, object)
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'data_table_row']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_datatable_rows" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `post_flows_datatable_rows`")
+        # verify the required parameter 'data_table_row' is set
+        if ('data_table_row' not in params) or (params['data_table_row'] is None):
+            raise ValueError("Missing the required parameter `data_table_row` when calling `post_flows_datatable_rows`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/rows'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'data_table_row' in params:
+            body_params = params['data_table_row']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='dict(str, object)',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_flows_datatables(self, body, **kwargs):
+        """
+        Create a new datatable with the specified json-schema definition
+        This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_datatables(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param JsonSchemaDocument body: datatable json-schema (required)
+        :return: JsonSchemaDocument
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_datatables" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows_datatables`")
+
+
+        resource_path = '/api/v2/flows/datatables'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonSchemaDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_architect_ivr(self, ivr_id, **kwargs):
         """
         Update an IVR Config.
@@ -5466,6 +6114,177 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Flow',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_flows_datatable(self, datatable_id, **kwargs):
+        """
+        Updates a specific datatable by datatableId
+        Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_flows_datatable(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param bool showbrief: If true returns a shortened version of the schema including the name, id and description
+        :param JsonSchemaDocument body: datatable json-schema
+        :return: JsonSchemaDocument
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'showbrief', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_flows_datatable" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `put_flows_datatable`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+        if 'showbrief' in params:
+            query_params['showbrief'] = params['showbrief']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonSchemaDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_flows_datatable_row(self, datatable_id, row_id, **kwargs):
+        """
+        Update a row entry
+        Updates a row with the given to the new values.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_flows_datatable_row(datatable_id, row_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str row_id: the key for the row (required)
+        :param object body: datatable row
+        :return: dict(str, object)
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'row_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_flows_datatable_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `put_flows_datatable_row`")
+        # verify the required parameter 'row_id' is set
+        if ('row_id' not in params) or (params['row_id'] is None):
+            raise ValueError("Missing the required parameter `row_id` when calling `put_flows_datatable_row`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/rows/{rowId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+        if 'row_id' in params:
+            path_params['rowId'] = params['row_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='dict(str, object)',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

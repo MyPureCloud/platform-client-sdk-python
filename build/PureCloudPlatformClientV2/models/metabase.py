@@ -49,6 +49,7 @@ class Metabase(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
+            'type': 'str',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class Metabase(object):
             'state': 'state',
             'modified_by_app': 'modifiedByApp',
             'created_by_app': 'createdByApp',
+            'type': 'type',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +80,7 @@ class Metabase(object):
         self._state = None
         self._modified_by_app = None
         self._created_by_app = None
+        self._type = None
         self._self_uri = None
 
     @property
@@ -336,6 +339,33 @@ class Metabase(object):
         """
         
         self._created_by_app = created_by_app
+
+    @property
+    def type(self):
+        """
+        Gets the type of this Metabase.
+
+
+        :return: The type of this Metabase.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this Metabase.
+
+
+        :param type: The type of this Metabase.
+        :type: str
+        """
+        allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION", "TIE"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for type -> " + type
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     @property
     def self_uri(self):

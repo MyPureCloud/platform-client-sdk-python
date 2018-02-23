@@ -44,7 +44,8 @@ class JsonSchemaDocument(object):
             'description': 'str',
             'type': 'str',
             'required': 'list[str]',
-            'properties': 'dict(str, object)'
+            'properties': 'dict(str, object)',
+            'additional_properties': 'object'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class JsonSchemaDocument(object):
             'description': 'description',
             'type': 'type',
             'required': 'required',
-            'properties': 'properties'
+            'properties': 'properties',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -64,6 +66,7 @@ class JsonSchemaDocument(object):
         self._type = None
         self._required = None
         self._properties = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -225,6 +228,29 @@ class JsonSchemaDocument(object):
         """
         
         self._properties = properties
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this JsonSchemaDocument.
+
+
+        :return: The additional_properties of this JsonSchemaDocument.
+        :rtype: object
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this JsonSchemaDocument.
+
+
+        :param additional_properties: The additional_properties of this JsonSchemaDocument.
+        :type: object
+        """
+        
+        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

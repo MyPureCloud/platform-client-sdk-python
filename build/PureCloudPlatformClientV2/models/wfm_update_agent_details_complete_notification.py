@@ -38,41 +38,41 @@ class WfmUpdateAgentDetailsCompleteNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'result': 'str'
+            'status': 'str'
         }
 
         self.attribute_map = {
-            'result': 'result'
+            'status': 'status'
         }
 
-        self._result = None
+        self._status = None
 
     @property
-    def result(self):
+    def status(self):
         """
-        Gets the result of this WfmUpdateAgentDetailsCompleteNotification.
+        Gets the status of this WfmUpdateAgentDetailsCompleteNotification.
 
 
-        :return: The result of this WfmUpdateAgentDetailsCompleteNotification.
+        :return: The status of this WfmUpdateAgentDetailsCompleteNotification.
         :rtype: str
         """
-        return self._result
+        return self._status
 
-    @result.setter
-    def result(self, result):
+    @status.setter
+    def status(self, status):
         """
-        Sets the result of this WfmUpdateAgentDetailsCompleteNotification.
+        Sets the status of this WfmUpdateAgentDetailsCompleteNotification.
 
 
-        :param result: The result of this WfmUpdateAgentDetailsCompleteNotification.
+        :param status: The status of this WfmUpdateAgentDetailsCompleteNotification.
         :type: str
         """
-        allowed_values = ["Processing", "Error", "Complete"]
-        if result.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for result -> " + result
-            self._result = "outdated_sdk_version"
+        allowed_values = ["Processing", "Complete", "Error"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for status -> " + status
+            self._status = "outdated_sdk_version"
         else:
-            self._result = result
+            self._status = status
 
     def to_dict(self):
         """

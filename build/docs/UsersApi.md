@@ -42,8 +42,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
+|[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
 |[**post_user_routingskills**](UsersApi.html#post_user_routingskills) | Add routing skill to user|
 |[**post_users**](UsersApi.html#post_users) | Create user|
+|[**post_users_me_password**](UsersApi.html#post_users_me_password) | Change your password|
 |[**post_users_search**](UsersApi.html#post_users_search) | Search users|
 |[**put_user_callforwarding**](UsersApi.html#put_user_callforwarding) | Update a user&#39;s CallForwarding|
 |[**put_user_outofoffice**](UsersApi.html#put_user_outofoffice) | Update an OutOfOffice|
@@ -1656,6 +1658,52 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_user_password"></a>
+
+##  post_user_password(user_id, body)
+
+Change a users password
+
+
+
+Wraps POST /api/v2/users/{userId}/password 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.ChangePasswordRequest() # ChangePasswordRequest | Password
+
+try:
+    # Change a users password
+    api_instance.post_user_password(user_id, body)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_user_password: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**ChangePasswordRequest**](ChangePasswordRequest.html)| Password |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_user_routingskills"></a>
 
 ## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
@@ -1747,6 +1795,50 @@ except ApiException as e:
 ### Return type
 
 [**User**](User.html)
+
+<a name="post_users_me_password"></a>
+
+##  post_users_me_password(body)
+
+Change your password
+
+
+
+Wraps POST /api/v2/users/me/password 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.ChangeMyPasswordRequest() # ChangeMyPasswordRequest | Password
+
+try:
+    # Change your password
+    api_instance.post_users_me_password(body)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_users_me_password: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest.html)| Password |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_users_search"></a>
 

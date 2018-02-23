@@ -39,16 +39,16 @@ class PublishForm(object):
         """
         self.swagger_types = {
             'published': 'bool',
-            'context_id': 'str'
+            'id': 'str'
         }
 
         self.attribute_map = {
             'published': 'published',
-            'context_id': 'contextId'
+            'id': 'id'
         }
 
         self._published = None
-        self._context_id = None
+        self._id = None
 
     @property
     def published(self):
@@ -74,27 +74,27 @@ class PublishForm(object):
         self._published = published
 
     @property
-    def context_id(self):
+    def id(self):
         """
-        Gets the context_id of this PublishForm.
-        Unique Id for all versions of this form
+        Gets the id of this PublishForm.
+        Unique Id for this version of this form
 
-        :return: The context_id of this PublishForm.
+        :return: The id of this PublishForm.
         :rtype: str
         """
-        return self._context_id
+        return self._id
 
-    @context_id.setter
-    def context_id(self, context_id):
+    @id.setter
+    def id(self, id):
         """
-        Sets the context_id of this PublishForm.
-        Unique Id for all versions of this form
+        Sets the id of this PublishForm.
+        Unique Id for this version of this form
 
-        :param context_id: The context_id of this PublishForm.
+        :param id: The id of this PublishForm.
         :type: str
         """
         
-        self._context_id = context_id
+        self._id = id
 
     def to_dict(self):
         """

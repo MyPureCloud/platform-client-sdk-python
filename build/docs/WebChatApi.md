@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_webchat_deployments**](WebChatApi.html#get_webchat_deployments) | List WebChat deployments|
 |[**get_webchat_settings**](WebChatApi.html#get_webchat_settings) | Get WebChat deployment settings|
 |[**post_webchat_deployments**](WebChatApi.html#post_webchat_deployments) | Create WebChat deployment|
-|[**post_webchat_settings**](WebChatApi.html#post_webchat_settings) | Create WebChat deployment settings|
 |[**put_webchat_deployment**](WebChatApi.html#put_webchat_deployment) | Update a WebChat deployment|
 |[**put_webchat_settings**](WebChatApi.html#put_webchat_settings) | Update WebChat deployment settings|
 {: class="table table-striped"}
@@ -274,51 +273,6 @@ except ApiException as e:
 ### Return type
 
 [**WebChatDeployment**](WebChatDeployment.html)
-
-<a name="post_webchat_settings"></a>
-
-## [**WebChatSettings**](WebChatSettings.html) post_webchat_settings(body)
-
-Create WebChat deployment settings
-
-
-
-Wraps POST /api/v2/webchat/settings 
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.WebChatApi()
-body = PureCloudPlatformClientV2.WebChatSettings() # WebChatSettings | webChatSettings
-
-try:
-    # Create WebChat deployment settings
-    api_response = api_instance.post_webchat_settings(body)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling WebChatApi->post_webchat_settings: %s\n" % e
-~~~
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**WebChatSettings**](WebChatSettings.html)| webChatSettings |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**WebChatSettings**](WebChatSettings.html)
 
 <a name="put_webchat_deployment"></a>
 

@@ -199,6 +199,8 @@ from .models.certificate import Certificate
 from .models.certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .models.certificate_details import CertificateDetails
 from .models.change import Change
+from .models.change_my_password_request import ChangeMyPasswordRequest
+from .models.change_password_request import ChangePasswordRequest
 from .models.channel import Channel
 from .models.channel_entity_listing import ChannelEntityListing
 from .models.channel_topic import ChannelTopic
@@ -926,8 +928,10 @@ from .models.street_address import StreetAddress
 from .models.subscriber_response import SubscriberResponse
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.survey_assignment import SurveyAssignment
 from .models.survey_form import SurveyForm
 from .models.survey_form_entity_listing import SurveyFormEntityListing
+from .models.survey_form_uri_reference import SurveyFormUriReference
 from .models.system_presence import SystemPresence
 from .models.system_prompt import SystemPrompt
 from .models.system_prompt_asset import SystemPromptAsset

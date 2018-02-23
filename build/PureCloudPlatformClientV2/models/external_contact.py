@@ -551,7 +551,7 @@ class ExternalContact(object):
     def external_system_url(self):
         """
         Gets the external_system_url of this ExternalContact.
-
+        Identifies an external system-of-record resource that may have more detailed information on the contact
 
         :return: The external_system_url of this ExternalContact.
         :rtype: str
@@ -562,7 +562,7 @@ class ExternalContact(object):
     def external_system_url(self, external_system_url):
         """
         Sets the external_system_url of this ExternalContact.
-
+        Identifies an external system-of-record resource that may have more detailed information on the contact
 
         :param external_system_url: The external_system_url of this ExternalContact.
         :type: str

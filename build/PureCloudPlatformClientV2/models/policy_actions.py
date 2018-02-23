@@ -44,6 +44,7 @@ class PolicyActions(object):
             'assign_evaluations': 'list[EvaluationAssignment]',
             'assign_metered_evaluations': 'list[MeteredEvaluationAssignment]',
             'assign_calibrations': 'list[CalibrationAssignment]',
+            'assign_surveys': 'list[SurveyAssignment]',
             'retention_duration': 'RetentionDuration',
             'initiate_screen_recording': 'InitiateScreenRecording',
             'media_transcriptions': 'list[MediaTranscription]'
@@ -56,6 +57,7 @@ class PolicyActions(object):
             'assign_evaluations': 'assignEvaluations',
             'assign_metered_evaluations': 'assignMeteredEvaluations',
             'assign_calibrations': 'assignCalibrations',
+            'assign_surveys': 'assignSurveys',
             'retention_duration': 'retentionDuration',
             'initiate_screen_recording': 'initiateScreenRecording',
             'media_transcriptions': 'mediaTranscriptions'
@@ -67,6 +69,7 @@ class PolicyActions(object):
         self._assign_evaluations = None
         self._assign_metered_evaluations = None
         self._assign_calibrations = None
+        self._assign_surveys = None
         self._retention_duration = None
         self._initiate_screen_recording = None
         self._media_transcriptions = None
@@ -208,6 +211,29 @@ class PolicyActions(object):
         """
         
         self._assign_calibrations = assign_calibrations
+
+    @property
+    def assign_surveys(self):
+        """
+        Gets the assign_surveys of this PolicyActions.
+
+
+        :return: The assign_surveys of this PolicyActions.
+        :rtype: list[SurveyAssignment]
+        """
+        return self._assign_surveys
+
+    @assign_surveys.setter
+    def assign_surveys(self, assign_surveys):
+        """
+        Sets the assign_surveys of this PolicyActions.
+
+
+        :param assign_surveys: The assign_surveys of this PolicyActions.
+        :type: list[SurveyAssignment]
+        """
+        
+        self._assign_surveys = assign_surveys
 
     @property
     def retention_duration(self):
