@@ -40,18 +40,18 @@ class WfmMoveAgentsCompleteNotification(object):
         self.swagger_types = {
             'requesting_user': 'DocumentDataV2NotificationWorkspace',
             'destination_management_unit': 'DocumentDataV2NotificationWorkspace',
-            'move_agent_results': 'list[WfmMoveAgentsCompleteNotificationMoveAgentResults]'
+            'results': 'list[WfmMoveAgentsCompleteNotificationResults]'
         }
 
         self.attribute_map = {
             'requesting_user': 'requestingUser',
             'destination_management_unit': 'destinationManagementUnit',
-            'move_agent_results': 'moveAgentResults'
+            'results': 'results'
         }
 
         self._requesting_user = None
         self._destination_management_unit = None
-        self._move_agent_results = None
+        self._results = None
 
     @property
     def requesting_user(self):
@@ -100,27 +100,27 @@ class WfmMoveAgentsCompleteNotification(object):
         self._destination_management_unit = destination_management_unit
 
     @property
-    def move_agent_results(self):
+    def results(self):
         """
-        Gets the move_agent_results of this WfmMoveAgentsCompleteNotification.
+        Gets the results of this WfmMoveAgentsCompleteNotification.
 
 
-        :return: The move_agent_results of this WfmMoveAgentsCompleteNotification.
-        :rtype: list[WfmMoveAgentsCompleteNotificationMoveAgentResults]
+        :return: The results of this WfmMoveAgentsCompleteNotification.
+        :rtype: list[WfmMoveAgentsCompleteNotificationResults]
         """
-        return self._move_agent_results
+        return self._results
 
-    @move_agent_results.setter
-    def move_agent_results(self, move_agent_results):
+    @results.setter
+    def results(self, results):
         """
-        Sets the move_agent_results of this WfmMoveAgentsCompleteNotification.
+        Sets the results of this WfmMoveAgentsCompleteNotification.
 
 
-        :param move_agent_results: The move_agent_results of this WfmMoveAgentsCompleteNotification.
-        :type: list[WfmMoveAgentsCompleteNotificationMoveAgentResults]
+        :param results: The results of this WfmMoveAgentsCompleteNotification.
+        :type: list[WfmMoveAgentsCompleteNotificationResults]
         """
         
-        self._move_agent_results = move_agent_results
+        self._results = results
 
     def to_dict(self):
         """

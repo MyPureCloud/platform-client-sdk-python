@@ -470,12 +470,13 @@ class GroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: groupId (required)
+        :param str fields: Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
         :return: GroupProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id']
+        all_params = ['group_id', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -499,6 +500,8 @@ class GroupsApi(object):
             path_params['groupId'] = params['group_id']
 
         query_params = {}
+        if 'fields' in params:
+            query_params['fields'] = params['fields']
 
         header_params = {}
 

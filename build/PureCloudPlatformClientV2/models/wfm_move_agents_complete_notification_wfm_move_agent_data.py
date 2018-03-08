@@ -39,16 +39,16 @@ class WfmMoveAgentsCompleteNotificationWfmMoveAgentData(object):
         """
         self.swagger_types = {
             'user': 'WfmMoveAgentsCompleteNotificationUser',
-            'move_agent_result': 'str'
+            'result': 'str'
         }
 
         self.attribute_map = {
             'user': 'user',
-            'move_agent_result': 'moveAgentResult'
+            'result': 'result'
         }
 
         self._user = None
-        self._move_agent_result = None
+        self._result = None
 
     @property
     def user(self):
@@ -74,31 +74,31 @@ class WfmMoveAgentsCompleteNotificationWfmMoveAgentData(object):
         self._user = user
 
     @property
-    def move_agent_result(self):
+    def result(self):
         """
-        Gets the move_agent_result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
+        Gets the result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
 
 
-        :return: The move_agent_result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
+        :return: The result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
         :rtype: str
         """
-        return self._move_agent_result
+        return self._result
 
-    @move_agent_result.setter
-    def move_agent_result(self, move_agent_result):
+    @result.setter
+    def result(self, result):
         """
-        Sets the move_agent_result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
+        Sets the result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
 
 
-        :param move_agent_result: The move_agent_result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
+        :param result: The result of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
         :type: str
         """
         allowed_values = ["MoveSuccessful", "NothingToDo", "AlreadyMoved", "DestinationManagementUnitDoesNotExist", "DestinationManagementUnitAgentLimitExceeded", "MovingToDifferentManagementUnit"]
-        if move_agent_result.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for move_agent_result -> " + move_agent_result
-            self._move_agent_result = "outdated_sdk_version"
+        if result.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for result -> " + result
+            self._result = "outdated_sdk_version"
         else:
-            self._move_agent_result = move_agent_result
+            self._result = result
 
     def to_dict(self):
         """

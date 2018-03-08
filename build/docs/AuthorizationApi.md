@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_authorization_role**](AuthorizationApi.html#delete_authorization_role) | Delete an organization role.|
 |[**delete_user_roles**](AuthorizationApi.html#delete_user_roles) | Removes all the roles from the user.|
+|[**get_authorization_divisions_limit**](AuthorizationApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
 |[**get_authorization_permissions**](AuthorizationApi.html#get_authorization_permissions) | Get all permissions.|
 |[**get_authorization_products**](AuthorizationApi.html#get_authorization_products) | Get the list of enabled products|
 |[**get_authorization_role**](AuthorizationApi.html#get_authorization_role) | Get a single organization role.|
@@ -114,6 +115,47 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_authorization_divisions_limit"></a>
+
+## int** get_authorization_divisions_limit()
+
+Returns the maximum allowed number of divisions.
+
+
+
+Wraps GET /api/v2/authorization/divisions/limit 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Returns the maximum allowed number of divisions.
+    api_response = api_instance.get_authorization_divisions_limit()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**int**
 
 <a name="get_authorization_permissions"></a>
 

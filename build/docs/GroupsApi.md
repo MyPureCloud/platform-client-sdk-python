@@ -258,7 +258,7 @@ except ApiException as e:
 
 <a name="get_group_profile"></a>
 
-## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id)
+## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id, fields=fields)
 
 Get group profile
 
@@ -280,10 +280,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GroupsApi()
 group_id = 'group_id_example' # str | groupId
+fields = 'fields_example' # str | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
 
 try:
     # Get group profile
-    api_response = api_instance.get_group_profile(group_id)
+    api_response = api_instance.get_group_profile(group_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GroupsApi->get_group_profile: %s\n" % e
@@ -295,6 +296,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| groupId |  |
+| **fields** | **str**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
