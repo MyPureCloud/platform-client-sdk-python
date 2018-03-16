@@ -1,0 +1,25 @@
+---
+title: SmsPhoneNumber
+---
+## SmsPhoneNumber
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** |  | [optional] |
+| **phone_number** | **str** | A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234 | |
+| **phone_number_type** | **str** | Type of the phone number provisioned. | [optional] |
+| **provisioned_through_pure_cloud** | **bool** | Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud | [optional] |
+| **phone_number_status** | **str** | Status of the provisioned phone number. | [optional] |
+| **country_code** | **str** | The ISO 3166-1 alpha-2 country code of the country this phone number is associated with. | [optional] |
+| **date_created** | **datetime** | Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_modified** | **datetime** | Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **created_by** | [**User**](User.html) | User that provisioned this phone number | [optional] |
+| **modified_by** | [**User**](User.html) | User that last modified this phone number | [optional] |
+| **version** | **int** | Version number required for updates. | [optional] |
+| **self_uri** | **str** | The URI for this object | [optional] |
+{: class="table table-striped"}
+
+

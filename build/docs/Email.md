@@ -25,6 +25,7 @@ title: Email
 | **script_id** | **str** | The UUID of the script to use. | [optional] |
 | **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
 | **message_id** | **str** | A globally unique identifier for the stored content of this communication. | [optional] |
+| **draft_attachments** | [**list[Attachment]**](Attachment.html) | A list of uploaded attachments on the email draft. | [optional] |
 {: class="table table-striped"}
 
 

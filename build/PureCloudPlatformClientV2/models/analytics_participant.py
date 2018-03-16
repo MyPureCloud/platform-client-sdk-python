@@ -44,6 +44,7 @@ class AnalyticsParticipant(object):
             'purpose': 'str',
             'external_contact_id': 'str',
             'external_organization_id': 'str',
+            'flagged_reason': 'str',
             'sessions': 'list[AnalyticsSession]'
         }
 
@@ -54,6 +55,7 @@ class AnalyticsParticipant(object):
             'purpose': 'purpose',
             'external_contact_id': 'externalContactId',
             'external_organization_id': 'externalOrganizationId',
+            'flagged_reason': 'flaggedReason',
             'sessions': 'sessions'
         }
 
@@ -63,6 +65,7 @@ class AnalyticsParticipant(object):
         self._purpose = None
         self._external_contact_id = None
         self._external_organization_id = None
+        self._flagged_reason = None
         self._sessions = None
 
     @property
@@ -206,6 +209,33 @@ class AnalyticsParticipant(object):
         """
         
         self._external_organization_id = external_organization_id
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this AnalyticsParticipant.
+        Reason for which participant flagged conversation
+
+        :return: The flagged_reason of this AnalyticsParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this AnalyticsParticipant.
+        Reason for which participant flagged conversation
+
+        :param flagged_reason: The flagged_reason of this AnalyticsParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def sessions(self):

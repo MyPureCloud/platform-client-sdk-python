@@ -54,6 +54,7 @@ class ConversationNotificationEmails(object):
             'disconnected_time': 'datetime',
             'message_id': 'str',
             'direction': 'str',
+            'draft_attachments': 'list[ConversationNotificationDraftAttachments]',
             'additional_properties': 'object'
         }
 
@@ -74,6 +75,7 @@ class ConversationNotificationEmails(object):
             'disconnected_time': 'disconnectedTime',
             'message_id': 'messageId',
             'direction': 'direction',
+            'draft_attachments': 'draftAttachments',
             'additional_properties': 'additionalProperties'
         }
 
@@ -93,6 +95,7 @@ class ConversationNotificationEmails(object):
         self._disconnected_time = None
         self._message_id = None
         self._direction = None
+        self._draft_attachments = None
         self._additional_properties = None
 
     @property
@@ -474,6 +477,29 @@ class ConversationNotificationEmails(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def draft_attachments(self):
+        """
+        Gets the draft_attachments of this ConversationNotificationEmails.
+
+
+        :return: The draft_attachments of this ConversationNotificationEmails.
+        :rtype: list[ConversationNotificationDraftAttachments]
+        """
+        return self._draft_attachments
+
+    @draft_attachments.setter
+    def draft_attachments(self, draft_attachments):
+        """
+        Sets the draft_attachments of this ConversationNotificationEmails.
+
+
+        :param draft_attachments: The draft_attachments of this ConversationNotificationEmails.
+        :type: list[ConversationNotificationDraftAttachments]
+        """
+        
+        self._draft_attachments = draft_attachments
 
     @property
     def additional_properties(self):

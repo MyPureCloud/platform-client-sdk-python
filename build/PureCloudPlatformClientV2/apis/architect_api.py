@@ -766,7 +766,7 @@ class ArchitectApi(object):
     def delete_flows_datatable(self, datatable_id, **kwargs):
         """
         deletes a specific datatable by id
-        deletes an entire datatable (including schema and data) with a given datatableId)
+        deletes an entire datatable (including schema and data) with a given id)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3738,7 +3738,7 @@ class ArchitectApi(object):
 
     def get_flows_datatable(self, datatable_id, **kwargs):
         """
-        Returns a specific datatable by datatableId
+        Returns a specific datatable by id
         Given a datableid returns the schema associated with it.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3752,13 +3752,13 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
-        :param bool showbrief: If true returns a shortened version of the schema including the name, id and description]
-        :return: JsonSchemaDocument
+        :param str expand: Expand instructions for the result
+        :return: DataTable
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'showbrief']
+        all_params = ['datatable_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -3782,8 +3782,8 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
 
         query_params = {}
-        if 'showbrief' in params:
-            query_params['showbrief'] = params['showbrief']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -3812,7 +3812,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='JsonSchemaDocument',
+                                            response_type='DataTable',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3920,13 +3920,15 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
         :param bool showbrief: If true returns just the key value of the row
-        :return: list[dict(str, object)]
+        :return: DataTableRowEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'showbrief']
+        all_params = ['datatable_id', 'page_size', 'page_number', 'showbrief']
         all_params.append('callback')
 
         params = locals()
@@ -3950,6 +3952,10 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
         if 'showbrief' in params:
             query_params['showbrief'] = params['showbrief']
 
@@ -3980,7 +3986,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[dict(str, object)]',
+                                            response_type='DataTableRowEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4000,13 +4006,17 @@ class ArchitectApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param bool showbrief: If true, returns a shortened version of the schema including the name, id and description
-        :return: list[JsonSchemaDocument]
+        :param str expand: Expand instructions for the result
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :return: DataTablesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['showbrief']
+        all_params = ['expand', 'page_size', 'page_number', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4025,8 +4035,16 @@ class ArchitectApi(object):
         path_params = {}
 
         query_params = {}
-        if 'showbrief' in params:
-            query_params['showbrief'] = params['showbrief']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -4055,7 +4073,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[JsonSchemaDocument]',
+                                            response_type='DataTablesDomainEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5476,8 +5494,8 @@ class ArchitectApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param JsonSchemaDocument body: datatable json-schema (required)
-        :return: JsonSchemaDocument
+        :param DataTable body: datatable json-schema (required)
+        :return: DataTable
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5534,7 +5552,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='JsonSchemaDocument',
+                                            response_type='DataTable',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6120,8 +6138,8 @@ class ArchitectApi(object):
 
     def put_flows_datatable(self, datatable_id, **kwargs):
         """
-        Updates a specific datatable by datatableId
-        Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+        Updates a specific datatable by id
+        Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6134,14 +6152,14 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
-        :param bool showbrief: If true returns a shortened version of the schema including the name, id and description
-        :param JsonSchemaDocument body: datatable json-schema
-        :return: JsonSchemaDocument
+        :param str expand: Expand instructions for the result
+        :param DataTable body: datatable json-schema
+        :return: DataTable
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'showbrief', 'body']
+        all_params = ['datatable_id', 'expand', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6165,8 +6183,8 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
 
         query_params = {}
-        if 'showbrief' in params:
-            query_params['showbrief'] = params['showbrief']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -6197,7 +6215,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='JsonSchemaDocument',
+                                            response_type='DataTable',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

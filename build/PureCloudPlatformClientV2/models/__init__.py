@@ -14,6 +14,7 @@ from .active_alert_count import ActiveAlertCount
 from .activity_code import ActivityCode
 from .activity_code_container import ActivityCodeContainer
 from .acw_settings import AcwSettings
+from .additional_message import AdditionalMessage
 from .address import Address
 from .addressable_entity_user import AddressableEntityUser
 from .addressable_license_definition import AddressableLicenseDefinition
@@ -282,6 +283,7 @@ from .conversation_chat import ConversationChat
 from .conversation_entity_listing import ConversationEntityListing
 from .conversation_notification import ConversationNotification
 from .conversation_notification_address import ConversationNotificationAddress
+from .conversation_notification_attachment import ConversationNotificationAttachment
 from .conversation_notification_call import ConversationNotificationCall
 from .conversation_notification_callback import ConversationNotificationCallback
 from .conversation_notification_callbacks import ConversationNotificationCallbacks
@@ -293,6 +295,7 @@ from .conversation_notification_cobrowsesessions import ConversationNotification
 from .conversation_notification_dialer_preview import ConversationNotificationDialerPreview
 from .conversation_notification_disconnect_reason import ConversationNotificationDisconnectReason
 from .conversation_notification_disconnect_reasons import ConversationNotificationDisconnectReasons
+from .conversation_notification_draft_attachments import ConversationNotificationDraftAttachments
 from .conversation_notification_email import ConversationNotificationEmail
 from .conversation_notification_emails import ConversationNotificationEmails
 from .conversation_notification_error_details import ConversationNotificationErrorDetails
@@ -339,6 +342,9 @@ from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
+from .data_table import DataTable
+from .data_table_row_entity_listing import DataTableRowEntityListing
+from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .default_greeting_list import DefaultGreetingList
 from .delete_retention import DeleteRetention
 from .dependency import Dependency
@@ -448,6 +454,7 @@ from .email_attachment import EmailAttachment
 from .email_conversation import EmailConversation
 from .email_conversation_entity_listing import EmailConversationEntityListing
 from .email_conversation_notification import EmailConversationNotification
+from .email_conversation_notification_attachment import EmailConversationNotificationAttachment
 from .email_conversation_notification_detail import EmailConversationNotificationDetail
 from .email_conversation_notification_email_media_participant import EmailConversationNotificationEmailMediaParticipant
 from .email_conversation_notification_error_body import EmailConversationNotificationErrorBody
@@ -655,6 +662,8 @@ from .media_summary_detail import MediaSummaryDetail
 from .media_transcription import MediaTranscription
 from .member_entity import MemberEntity
 from .message import Message
+from .message_conversation import MessageConversation
+from .message_conversation_entity_listing import MessageConversationEntityListing
 from .message_conversation_notification import MessageConversationNotification
 from .message_conversation_notification_detail import MessageConversationNotificationDetail
 from .message_conversation_notification_error_body import MessageConversationNotificationErrorBody
@@ -666,8 +675,10 @@ from .message_conversation_notification_messages import MessageConversationNotif
 from .message_conversation_notification_participants import MessageConversationNotificationParticipants
 from .message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .message_conversation_notification_wrapup import MessageConversationNotificationWrapup
+from .message_data import MessageData
 from .message_details import MessageDetails
 from .message_media import MessageMedia
+from .message_media_participant import MessageMediaParticipant
 from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .meta_data import MetaData
@@ -789,6 +800,8 @@ from .queue_member_notification import QueueMemberNotification
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .reaction import Reaction
 from .recall_entry import RecallEntry
+from .recipient import Recipient
+from .recipient_listing import RecipientListing
 from .recording import Recording
 from .recording_data_v2_notification import RecordingDataV2Notification
 from .recording_data_v2_notification_conversation_data import RecordingDataV2NotificationConversationData
@@ -846,6 +859,7 @@ from .rule_set_notification_rule import RuleSetNotificationRule
 from .rule_set_notification_rules import RuleSetNotificationRules
 from .rule_set_notification_uri_reference import RuleSetNotificationUriReference
 from .run_now_response import RunNowResponse
+from .sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .salesforce import Salesforce
 from .schedule import Schedule
 from .schedule_entity_listing import ScheduleEntityListing
@@ -899,6 +913,11 @@ from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
+from .sms_address_provision import SmsAddressProvision
+from .sms_available_phone_number import SmsAvailablePhoneNumber
+from .sms_phone_number import SmsPhoneNumber
+from .sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
+from .sms_phone_number_provision import SmsPhoneNumberProvision
 from .social_conversation_notification import SocialConversationNotification
 from .social_conversation_notification_detail import SocialConversationNotificationDetail
 from .social_conversation_notification_error_body import SocialConversationNotificationErrorBody
@@ -938,6 +957,7 @@ from .tag_value_entity_listing import TagValueEntityListing
 from .term_attribute import TermAttribute
 from .test_execution_operation_result import TestExecutionOperationResult
 from .test_execution_result import TestExecutionResult
+from .text_message_listing import TextMessageListing
 from .ticker import Ticker
 from .time_allowed import TimeAllowed
 from .time_interval import TimeInterval

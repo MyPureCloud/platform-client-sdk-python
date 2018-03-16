@@ -14,6 +14,7 @@ from .models.active_alert_count import ActiveAlertCount
 from .models.activity_code import ActivityCode
 from .models.activity_code_container import ActivityCodeContainer
 from .models.acw_settings import AcwSettings
+from .models.additional_message import AdditionalMessage
 from .models.address import Address
 from .models.addressable_entity_user import AddressableEntityUser
 from .models.addressable_license_definition import AddressableLicenseDefinition
@@ -282,6 +283,7 @@ from .models.conversation_chat import ConversationChat
 from .models.conversation_entity_listing import ConversationEntityListing
 from .models.conversation_notification import ConversationNotification
 from .models.conversation_notification_address import ConversationNotificationAddress
+from .models.conversation_notification_attachment import ConversationNotificationAttachment
 from .models.conversation_notification_call import ConversationNotificationCall
 from .models.conversation_notification_callback import ConversationNotificationCallback
 from .models.conversation_notification_callbacks import ConversationNotificationCallbacks
@@ -293,6 +295,7 @@ from .models.conversation_notification_cobrowsesessions import ConversationNotif
 from .models.conversation_notification_dialer_preview import ConversationNotificationDialerPreview
 from .models.conversation_notification_disconnect_reason import ConversationNotificationDisconnectReason
 from .models.conversation_notification_disconnect_reasons import ConversationNotificationDisconnectReasons
+from .models.conversation_notification_draft_attachments import ConversationNotificationDraftAttachments
 from .models.conversation_notification_email import ConversationNotificationEmail
 from .models.conversation_notification_emails import ConversationNotificationEmails
 from .models.conversation_notification_error_details import ConversationNotificationErrorDetails
@@ -339,6 +342,9 @@ from .models.did import DID
 from .models.did_entity_listing import DIDEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
+from .models.data_table import DataTable
+from .models.data_table_row_entity_listing import DataTableRowEntityListing
+from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .models.default_greeting_list import DefaultGreetingList
 from .models.delete_retention import DeleteRetention
 from .models.dependency import Dependency
@@ -448,6 +454,7 @@ from .models.email_attachment import EmailAttachment
 from .models.email_conversation import EmailConversation
 from .models.email_conversation_entity_listing import EmailConversationEntityListing
 from .models.email_conversation_notification import EmailConversationNotification
+from .models.email_conversation_notification_attachment import EmailConversationNotificationAttachment
 from .models.email_conversation_notification_detail import EmailConversationNotificationDetail
 from .models.email_conversation_notification_email_media_participant import EmailConversationNotificationEmailMediaParticipant
 from .models.email_conversation_notification_error_body import EmailConversationNotificationErrorBody
@@ -655,6 +662,8 @@ from .models.media_summary_detail import MediaSummaryDetail
 from .models.media_transcription import MediaTranscription
 from .models.member_entity import MemberEntity
 from .models.message import Message
+from .models.message_conversation import MessageConversation
+from .models.message_conversation_entity_listing import MessageConversationEntityListing
 from .models.message_conversation_notification import MessageConversationNotification
 from .models.message_conversation_notification_detail import MessageConversationNotificationDetail
 from .models.message_conversation_notification_error_body import MessageConversationNotificationErrorBody
@@ -666,8 +675,10 @@ from .models.message_conversation_notification_messages import MessageConversati
 from .models.message_conversation_notification_participants import MessageConversationNotificationParticipants
 from .models.message_conversation_notification_uri_reference import MessageConversationNotificationUriReference
 from .models.message_conversation_notification_wrapup import MessageConversationNotificationWrapup
+from .models.message_data import MessageData
 from .models.message_details import MessageDetails
 from .models.message_media import MessageMedia
+from .models.message_media_participant import MessageMediaParticipant
 from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
 from .models.meta_data import MetaData
@@ -789,6 +800,8 @@ from .models.queue_member_notification import QueueMemberNotification
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry
+from .models.recipient import Recipient
+from .models.recipient_listing import RecipientListing
 from .models.recording import Recording
 from .models.recording_data_v2_notification import RecordingDataV2Notification
 from .models.recording_data_v2_notification_conversation_data import RecordingDataV2NotificationConversationData
@@ -846,6 +859,7 @@ from .models.rule_set_notification_rule import RuleSetNotificationRule
 from .models.rule_set_notification_rules import RuleSetNotificationRules
 from .models.rule_set_notification_uri_reference import RuleSetNotificationUriReference
 from .models.run_now_response import RunNowResponse
+from .models.sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .models.salesforce import Salesforce
 from .models.schedule import Schedule
 from .models.schedule_entity_listing import ScheduleEntityListing
@@ -899,6 +913,11 @@ from .models.site import Site
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
 from .models.skills_to_remove import SkillsToRemove
+from .models.sms_address_provision import SmsAddressProvision
+from .models.sms_available_phone_number import SmsAvailablePhoneNumber
+from .models.sms_phone_number import SmsPhoneNumber
+from .models.sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
+from .models.sms_phone_number_provision import SmsPhoneNumberProvision
 from .models.social_conversation_notification import SocialConversationNotification
 from .models.social_conversation_notification_detail import SocialConversationNotificationDetail
 from .models.social_conversation_notification_error_body import SocialConversationNotificationErrorBody
@@ -938,6 +957,7 @@ from .models.tag_value_entity_listing import TagValueEntityListing
 from .models.term_attribute import TermAttribute
 from .models.test_execution_operation_result import TestExecutionOperationResult
 from .models.test_execution_result import TestExecutionResult
+from .models.text_message_listing import TextMessageListing
 from .models.ticker import Ticker
 from .models.time_allowed import TimeAllowed
 from .models.time_interval import TimeInterval

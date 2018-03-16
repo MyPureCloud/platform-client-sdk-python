@@ -63,7 +63,7 @@ class Attachment(object):
     def attachment_id(self):
         """
         Gets the attachment_id of this Attachment.
-
+        The unique identifier for the attachment.
 
         :return: The attachment_id of this Attachment.
         :rtype: str
@@ -74,7 +74,7 @@ class Attachment(object):
     def attachment_id(self, attachment_id):
         """
         Sets the attachment_id of this Attachment.
-
+        The unique identifier for the attachment.
 
         :param attachment_id: The attachment_id of this Attachment.
         :type: str
@@ -86,7 +86,7 @@ class Attachment(object):
     def name(self):
         """
         Gets the name of this Attachment.
-
+        The name of the attachment.
 
         :return: The name of this Attachment.
         :rtype: str
@@ -97,7 +97,7 @@ class Attachment(object):
     def name(self, name):
         """
         Sets the name of this Attachment.
-
+        The name of the attachment.
 
         :param name: The name of this Attachment.
         :type: str
@@ -109,7 +109,7 @@ class Attachment(object):
     def content_uri(self):
         """
         Gets the content_uri of this Attachment.
-
+        The content uri of the attachment. If set, this is commonly a public api download location.
 
         :return: The content_uri of this Attachment.
         :rtype: str
@@ -120,7 +120,7 @@ class Attachment(object):
     def content_uri(self, content_uri):
         """
         Sets the content_uri of this Attachment.
-
+        The content uri of the attachment. If set, this is commonly a public api download location.
 
         :param content_uri: The content_uri of this Attachment.
         :type: str
@@ -132,7 +132,7 @@ class Attachment(object):
     def content_type(self):
         """
         Gets the content_type of this Attachment.
-
+        The type of file the attachment is.
 
         :return: The content_type of this Attachment.
         :rtype: str
@@ -143,7 +143,7 @@ class Attachment(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this Attachment.
-
+        The type of file the attachment is.
 
         :param content_type: The content_type of this Attachment.
         :type: str
@@ -155,7 +155,7 @@ class Attachment(object):
     def content_length(self):
         """
         Gets the content_length of this Attachment.
-
+        The length of the attachment file.
 
         :return: The content_length of this Attachment.
         :rtype: int
@@ -166,7 +166,7 @@ class Attachment(object):
     def content_length(self, content_length):
         """
         Sets the content_length of this Attachment.
-
+        The length of the attachment file.
 
         :param content_length: The content_length of this Attachment.
         :type: int

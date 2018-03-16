@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flow_version_configuration**](ArchitectApi.html#get_flow_version_configuration) | Create flow version configuration|
 |[**get_flow_versions**](ArchitectApi.html#get_flow_versions) | Get flow version list|
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
-|[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by datatableId|
+|[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by id|
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
@@ -81,7 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_architect_schedulegroup**](ArchitectApi.html#put_architect_schedulegroup) | Updates a schedule group by ID|
 |[**put_architect_systemprompt_resource**](ArchitectApi.html#put_architect_systemprompt_resource) | Updates a system prompt resource override.|
 |[**put_flow**](ArchitectApi.html#put_flow) | Update flow|
-|[**put_flows_datatable**](ArchitectApi.html#put_flows_datatable) | Updates a specific datatable by datatableId|
+|[**put_flows_datatable**](ArchitectApi.html#put_flows_datatable) | Updates a specific datatable by id|
 |[**put_flows_datatable_row**](ArchitectApi.html#put_flows_datatable_row) | Update a row entry|
 {: class="table table-striped"}
 
@@ -495,7 +495,7 @@ except ApiException as e:
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given datatableId)
+deletes an entire datatable (including schema and data) with a given id)
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId} 
 
@@ -2227,9 +2227,9 @@ except ApiException as e:
 
 <a name="get_flows_datatable"></a>
 
-## [**JsonSchemaDocument**](JsonSchemaDocument.html) get_flows_datatable(datatable_id, showbrief=showbrief)
+## [**DataTable**](DataTable.html) get_flows_datatable(datatable_id, expand=expand)
 
-Returns a specific datatable by datatableId
+Returns a specific datatable by id
 
 Given a datableid returns the schema associated with it.
 
@@ -2249,11 +2249,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
-showbrief = true # bool | If true returns a shortened version of the schema including the name, id and description] (optional) (default to true)
+expand = 'expand_example' # str | Expand instructions for the result (optional)
 
 try:
-    # Returns a specific datatable by datatableId
-    api_response = api_instance.get_flows_datatable(datatable_id, showbrief=showbrief)
+    # Returns a specific datatable by id
+    api_response = api_instance.get_flows_datatable(datatable_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatable: %s\n" % e
@@ -2265,12 +2265,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
-| **showbrief** | **bool**| If true returns a shortened version of the schema including the name, id and description] | [optional] [default to true] |
+| **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="get_flows_datatable_row"></a>
 
@@ -2323,7 +2323,7 @@ except ApiException as e:
 
 <a name="get_flows_datatable_rows"></a>
 
-## [**list[dict(str, object)]**](dict.html) get_flows_datatable_rows(datatable_id, showbrief=showbrief)
+## [**DataTableRowEntityListing**](DataTableRowEntityListing.html) get_flows_datatable_rows(datatable_id, page_size=page_size, page_number=page_number, showbrief=showbrief)
 
 Returns the rows for the datatable
 
@@ -2345,11 +2345,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
 showbrief = true # bool | If true returns just the key value of the row (optional) (default to true)
 
 try:
     # Returns the rows for the datatable
-    api_response = api_instance.get_flows_datatable_rows(datatable_id, showbrief=showbrief)
+    api_response = api_instance.get_flows_datatable_rows(datatable_id, page_size=page_size, page_number=page_number, showbrief=showbrief)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatable_rows: %s\n" % e
@@ -2361,16 +2363,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 | **showbrief** | **bool**| If true returns just the key value of the row | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**list[dict(str, object)]**](dict.html)
+[**DataTableRowEntityListing**](DataTableRowEntityListing.html)
 
 <a name="get_flows_datatables"></a>
 
-## [**list[JsonSchemaDocument]**](JsonSchemaDocument.html) get_flows_datatables(showbrief=showbrief)
+## [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html) get_flows_datatables(expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 Retrieve a list of datatables for the org
 
@@ -2391,11 +2395,15 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
-showbrief = true # bool | If true, returns a shortened version of the schema including the name, id and description (optional) (default to true)
+expand = 'expand_example' # str | Expand instructions for the result (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'id' # str | Sort by (optional) (default to id)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
 
 try:
     # Retrieve a list of datatables for the org
-    api_response = api_instance.get_flows_datatables(showbrief=showbrief)
+    api_response = api_instance.get_flows_datatables(expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e
@@ -2406,12 +2414,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **showbrief** | **bool**| If true, returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+| **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**list[JsonSchemaDocument]**](JsonSchemaDocument.html)
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
 
 <a name="post_architect_dependencytracking_build"></a>
 
@@ -3230,7 +3242,7 @@ except ApiException as e:
 
 <a name="post_flows_datatables"></a>
 
-## [**JsonSchemaDocument**](JsonSchemaDocument.html) post_flows_datatables(body)
+## [**DataTable**](DataTable.html) post_flows_datatables(body)
 
 Create a new datatable with the specified json-schema definition
 
@@ -3251,7 +3263,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
-body = PureCloudPlatformClientV2.JsonSchemaDocument() # JsonSchemaDocument | datatable json-schema
+body = PureCloudPlatformClientV2.DataTable() # DataTable | datatable json-schema
 
 try:
     # Create a new datatable with the specified json-schema definition
@@ -3266,12 +3278,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema |  |
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="put_architect_ivr"></a>
 
@@ -3608,11 +3620,11 @@ except ApiException as e:
 
 <a name="put_flows_datatable"></a>
 
-## [**JsonSchemaDocument**](JsonSchemaDocument.html) put_flows_datatable(datatable_id, showbrief=showbrief, body=body)
+## [**DataTable**](DataTable.html) put_flows_datatable(datatable_id, expand=expand, body=body)
 
-Updates a specific datatable by datatableId
+Updates a specific datatable by id
 
-Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId} 
 
@@ -3630,12 +3642,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
-showbrief = true # bool | If true returns a shortened version of the schema including the name, id and description (optional) (default to true)
-body = PureCloudPlatformClientV2.JsonSchemaDocument() # JsonSchemaDocument | datatable json-schema (optional)
+expand = 'expand_example' # str | Expand instructions for the result (optional)
+body = PureCloudPlatformClientV2.DataTable() # DataTable | datatable json-schema (optional)
 
 try:
-    # Updates a specific datatable by datatableId
-    api_response = api_instance.put_flows_datatable(datatable_id, showbrief=showbrief, body=body)
+    # Updates a specific datatable by id
+    api_response = api_instance.put_flows_datatable(datatable_id, expand=expand, body=body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_flows_datatable: %s\n" % e
@@ -3647,13 +3659,13 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
-| **showbrief** | **bool**| If true returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
-| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema | [optional]  |
+| **expand** | **str**| Expand instructions for the result | [optional] <br />**Values**: schema |
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="put_flows_datatable_row"></a>
 

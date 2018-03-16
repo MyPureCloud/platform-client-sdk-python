@@ -17,32 +17,37 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
 |[**get_conversation_participant_wrapup**](ConversationsApi.html#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversation_participant_wrapupcodes**](ConversationsApi.html#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations**](ConversationsApi.html#get_conversations) | Get conversations|
+|[**get_conversations**](ConversationsApi.html#get_conversations) | Get active conversations for the logged in user|
 |[**get_conversations_call**](ConversationsApi.html#get_conversations_call) | Get call conversation|
 |[**get_conversations_call_participant_wrapup**](ConversationsApi.html#get_conversations_call_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_call_participant_wrapupcodes**](ConversationsApi.html#get_conversations_call_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_callback**](ConversationsApi.html#get_conversations_callback) | Get callback conversation|
 |[**get_conversations_callback_participant_wrapup**](ConversationsApi.html#get_conversations_callback_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_callback_participant_wrapupcodes**](ConversationsApi.html#get_conversations_callback_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_callbacks**](ConversationsApi.html#get_conversations_callbacks) | Get callback conversations|
-|[**get_conversations_calls**](ConversationsApi.html#get_conversations_calls) | Get recent conversations|
+|[**get_conversations_callbacks**](ConversationsApi.html#get_conversations_callbacks) | Get active callback conversations for the logged in user|
+|[**get_conversations_calls**](ConversationsApi.html#get_conversations_calls) | Get active call conversations for the logged in user|
 |[**get_conversations_calls_history**](ConversationsApi.html#get_conversations_calls_history) | Get call history|
 |[**get_conversations_calls_maximumconferenceparties**](ConversationsApi.html#get_conversations_calls_maximumconferenceparties) | Get the maximum number of participants that this user can have on a conference|
 |[**get_conversations_chat**](ConversationsApi.html#get_conversations_chat) | Get chat conversation|
 |[**get_conversations_chat_participant_wrapup**](ConversationsApi.html#get_conversations_chat_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_chat_participant_wrapupcodes**](ConversationsApi.html#get_conversations_chat_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_chats**](ConversationsApi.html#get_conversations_chats) | Get recent chat conversations|
+|[**get_conversations_chats**](ConversationsApi.html#get_conversations_chats) | Get active chat conversations for the logged in user|
 |[**get_conversations_cobrowsesession**](ConversationsApi.html#get_conversations_cobrowsesession) | Get cobrowse conversation|
 |[**get_conversations_cobrowsesession_participant_wrapup**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_cobrowsesession_participant_wrapupcodes**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_cobrowsesessions**](ConversationsApi.html#get_conversations_cobrowsesessions) | Get recent cobrowse conversations|
+|[**get_conversations_cobrowsesessions**](ConversationsApi.html#get_conversations_cobrowsesessions) | Get active cobrowse conversations for the logged in user|
 |[**get_conversations_email**](ConversationsApi.html#get_conversations_email) | Get email conversation|
 |[**get_conversations_email_message**](ConversationsApi.html#get_conversations_email_message) | Get conversation message|
 |[**get_conversations_email_messages**](ConversationsApi.html#get_conversations_email_messages) | Get conversation messages|
 |[**get_conversations_email_messages_draft**](ConversationsApi.html#get_conversations_email_messages_draft) | Get conversation draft reply|
 |[**get_conversations_email_participant_wrapup**](ConversationsApi.html#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get recent email conversations|
+|[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
+|[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
+|[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get message|
+|[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
@@ -66,6 +71,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_email_participant**](ConversationsApi.html#patch_conversations_email_participant) | Update conversation participant|
 |[**patch_conversations_email_participant_attributes**](ConversationsApi.html#patch_conversations_email_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_email_participant_communication**](ConversationsApi.html#patch_conversations_email_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_message**](ConversationsApi.html#patch_conversations_message) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_message_participant**](ConversationsApi.html#patch_conversations_message_participant) | Update conversation participant|
+|[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_message_participant_communication**](ConversationsApi.html#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
@@ -89,6 +98,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
+|[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
+|[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
+|[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 {: class="table table-striped"}
@@ -519,7 +531,7 @@ except ApiException as e:
 
 ## [**ConversationEntityListing**](ConversationEntityListing.html) get_conversations(communication_type=communication_type)
 
-Get conversations
+Get active conversations for the logged in user
 
 
 
@@ -541,7 +553,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 communication_type = 'communication_type_example' # str | Call or Chat communication filtering (optional)
 
 try:
-    # Get conversations
+    # Get active conversations for the logged in user
     api_response = api_instance.get_conversations(communication_type=communication_type)
     pprint(api_response)
 except ApiException as e:
@@ -846,7 +858,7 @@ except ApiException as e:
 
 ## [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html) get_conversations_callbacks()
 
-Get callback conversations
+Get active callback conversations for the logged in user
 
 
 
@@ -867,7 +879,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get callback conversations
+    # Get active callback conversations for the logged in user
     api_response = api_instance.get_conversations_callbacks()
     pprint(api_response)
 except ApiException as e:
@@ -887,7 +899,7 @@ This endpoint does not need any parameter.
 
 ## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls()
 
-Get recent conversations
+Get active call conversations for the logged in user
 
 
 
@@ -908,7 +920,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get recent conversations
+    # Get active call conversations for the logged in user
     api_response = api_instance.get_conversations_calls()
     pprint(api_response)
 except ApiException as e:
@@ -1161,7 +1173,7 @@ except ApiException as e:
 
 ## [**ChatConversationEntityListing**](ChatConversationEntityListing.html) get_conversations_chats()
 
-Get recent chat conversations
+Get active chat conversations for the logged in user
 
 
 
@@ -1182,7 +1194,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get recent chat conversations
+    # Get active chat conversations for the logged in user
     api_response = api_instance.get_conversations_chats()
     pprint(api_response)
 except ApiException as e:
@@ -1343,7 +1355,7 @@ except ApiException as e:
 
 ## [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html) get_conversations_cobrowsesessions()
 
-Get recent cobrowse conversations
+Get active cobrowse conversations for the logged in user
 
 
 
@@ -1364,7 +1376,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get recent cobrowse conversations
+    # Get active cobrowse conversations for the logged in user
     api_response = api_instance.get_conversations_cobrowsesessions()
     pprint(api_response)
 except ApiException as e:
@@ -1662,7 +1674,7 @@ except ApiException as e:
 
 ## [**EmailConversationEntityListing**](EmailConversationEntityListing.html) get_conversations_emails()
 
-Get recent email conversations
+Get active email conversations for the logged in user
 
 
 
@@ -1683,7 +1695,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get recent email conversations
+    # Get active email conversations for the logged in user
     api_response = api_instance.get_conversations_emails()
     pprint(api_response)
 except ApiException as e:
@@ -1698,6 +1710,235 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing.html)
+
+<a name="get_conversations_message"></a>
+
+## [**MessageConversation**](MessageConversation.html) get_conversations_message(conversation_id)
+
+Get message conversation
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Get message conversation
+    api_response = api_instance.get_conversations_message(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_message: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageConversation**](MessageConversation.html)
+
+<a name="get_conversations_message_message"></a>
+
+## [**MessageData**](MessageData.html) get_conversations_message_message(conversation_id, message_id)
+
+Get message
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Get message
+    api_response = api_instance.get_conversations_message_message(conversation_id, message_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_message_message: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **message_id** | **str**| messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
+<a name="get_conversations_message_participant_wrapup"></a>
+
+## [**Wrapup**](Wrapup.html) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+Get the wrap-up for this conversation participant. 
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+provisional = false # bool | Indicates if the wrap-up code is provisional. (optional) (default to false)
+
+try:
+    # Get the wrap-up for this conversation participant. 
+    api_response = api_instance.get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_message_participant_wrapup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Wrapup**](Wrapup.html)
+
+<a name="get_conversations_message_participant_wrapupcodes"></a>
+
+## [**list[WrapupCode]**](WrapupCode.html) get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
+
+Get list of wrapup codes for this conversation participant
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str |  conversationId
+participant_id = 'participant_id_example' # str | participantId
+
+try:
+    # Get list of wrapup codes for this conversation participant
+    api_response = api_instance.get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_message_participant_wrapupcodes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**|  conversationId |  |
+| **participant_id** | **str**| participantId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[WrapupCode]**](WrapupCode.html)
+
+<a name="get_conversations_messages"></a>
+
+## [**MessageConversationEntityListing**](MessageConversationEntityListing.html) get_conversations_messages()
+
+Get active message conversations for the logged in user
+
+
+
+Wraps GET /api/v2/conversations/messages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get active message conversations for the logged in user
+    api_response = api_instance.get_conversations_messages()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messages: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageConversationEntityListing**](MessageConversationEntityListing.html)
 
 <a name="patch_conversation_participant"></a>
 
@@ -2814,6 +3055,200 @@ except ApiException as e:
 
 [**Empty**](Empty.html)
 
+<a name="patch_conversations_message"></a>
+
+## [**Conversation**](Conversation.html) patch_conversations_message(conversation_id, body)
+
+Update a conversation by disconnecting all of the participants
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
+
+try:
+    # Update a conversation by disconnecting all of the participants
+    api_response = api_instance.patch_conversations_message(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->patch_conversations_message: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Conversation**](Conversation.html)
+
+<a name="patch_conversations_message_participant"></a>
+
+##  patch_conversations_message_participant(conversation_id, participant_id, body=body)
+
+Update conversation participant
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str |  conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest |  (optional)
+
+try:
+    # Update conversation participant
+    api_instance.patch_conversations_message_participant(conversation_id, participant_id, body=body)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->patch_conversations_message_participant: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**|  conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="patch_conversations_message_participant_attributes"></a>
+
+##  patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+
+Update the attributes on a conversation participant.
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str |  conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes |  (optional)
+
+try:
+    # Update the attributes on a conversation participant.
+    api_instance.patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->patch_conversations_message_participant_attributes: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**|  conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="patch_conversations_message_participant_communication"></a>
+
+## [**Empty**](Empty.html) patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
+
+Update conversation participant's communication by disconnecting it.
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str |  conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
+
+try:
+    # Update conversation participant's communication by disconnecting it.
+    api_response = api_instance.patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->patch_conversations_message_participant_communication: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**|  conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
+
 <a name="post_analytics_conversation_details_properties"></a>
 
 ## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
@@ -3891,6 +4326,150 @@ except ApiException as e:
 ### Return type
 
 [**FaxSendResponse**](FaxSendResponse.html)
+
+<a name="post_conversations_message_communication_messages"></a>
+
+## [**MessageData**](MessageData.html) post_conversations_message_communication_messages(conversation_id, communication_id, body)
+
+Send message
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.AdditionalMessage() # AdditionalMessage | Message
+
+try:
+    # Send message
+    api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_message_communication_messages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
+<a name="post_conversations_message_messages_bulk"></a>
+
+## [**TextMessageListing**](TextMessageListing.html) post_conversations_message_messages_bulk(conversation_id, body=body)
+
+Get messages in batch
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | messageIds (optional)
+
+try:
+    # Get messages in batch
+    api_response = api_instance.post_conversations_message_messages_bulk(conversation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_message_messages_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | **list[str]**| messageIds | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TextMessageListing**](TextMessageListing.html)
+
+<a name="post_conversations_message_participant_replace"></a>
+
+##  post_conversations_message_participant_replace(conversation_id, participant_id, body)
+
+Replace this participant with the specified user and/or address
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
+
+try:
+    # Replace this participant with the specified user and/or address
+    api_instance.post_conversations_message_participant_replace(conversation_id, participant_id, body)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_message_participant_replace: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_conversations_call_participant_communication_uuidata"></a>
 

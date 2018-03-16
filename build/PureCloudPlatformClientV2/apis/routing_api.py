@@ -535,6 +535,84 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_routing_sms_phonenumber(self, address_id, **kwargs):
+        """
+        Delete a phone number provisioned for SMS.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_sms_phonenumber(address_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str address_id: Address ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['address_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_sms_phonenumber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'address_id' is set
+        if ('address_id' not in params) or (params['address_id'] is None):
+            raise ValueError("Missing the required parameter `address_id` when calling `delete_routing_sms_phonenumber`")
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'address_id' in params:
+            path_params['addressId'] = params['address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_routing_utilization(self, **kwargs):
         """
         Delete utilization settings and revert to system defaults.
@@ -1246,6 +1324,162 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_message_recipient(self, recipient_id, **kwargs):
+        """
+        Get a recipient
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_message_recipient(recipient_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str recipient_id: Recipient ID (required)
+        :return: Recipient
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['recipient_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_message_recipient" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'recipient_id' is set
+        if ('recipient_id' not in params) or (params['recipient_id'] is None):
+            raise ValueError("Missing the required parameter `recipient_id` when calling `get_routing_message_recipient`")
+
+
+        resource_path = '/api/v2/routing/message/recipients/{recipientId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'recipient_id' in params:
+            path_params['recipientId'] = params['recipient_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Recipient',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_message_recipients(self, **kwargs):
+        """
+        Get recipients
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_message_recipients(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: RecipientListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_message_recipients" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/message/recipients'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RecipientListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_queue(self, queue_id, **kwargs):
         """
         Get details about this queue.
@@ -1920,6 +2154,270 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SkillEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_sms_availablephonenumbers(self, country_code, phone_number_type, **kwargs):
+        """
+        Get a list of available phone numbers for SMS provisioning.
+        This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_sms_availablephonenumbers(country_code, phone_number_type, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str country_code: The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned (required)
+        :param str phone_number_type: Type of available phone numbers searched (required)
+        :param str region: Region/province/state that can be used to restrict the numbers returned
+        :param str city: City that can be used to restrict the numbers returned
+        :param str area_code: Area code that can be used to restrict the numbers returned
+        :param str pattern: A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+        :param str address_requirement: This indicates whether the phone number requires to have an Address registered.
+        :return: SMSAvailablePhoneNumberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['country_code', 'phone_number_type', 'region', 'city', 'area_code', 'pattern', 'address_requirement']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_sms_availablephonenumbers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'country_code' is set
+        if ('country_code' not in params) or (params['country_code'] is None):
+            raise ValueError("Missing the required parameter `country_code` when calling `get_routing_sms_availablephonenumbers`")
+        # verify the required parameter 'phone_number_type' is set
+        if ('phone_number_type' not in params) or (params['phone_number_type'] is None):
+            raise ValueError("Missing the required parameter `phone_number_type` when calling `get_routing_sms_availablephonenumbers`")
+
+
+        resource_path = '/api/v2/routing/sms/availablephonenumbers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'country_code' in params:
+            query_params['countryCode'] = params['country_code']
+        if 'region' in params:
+            query_params['region'] = params['region']
+        if 'city' in params:
+            query_params['city'] = params['city']
+        if 'area_code' in params:
+            query_params['areaCode'] = params['area_code']
+        if 'phone_number_type' in params:
+            query_params['phoneNumberType'] = params['phone_number_type']
+        if 'pattern' in params:
+            query_params['pattern'] = params['pattern']
+        if 'address_requirement' in params:
+            query_params['addressRequirement'] = params['address_requirement']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SMSAvailablePhoneNumberEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_sms_phonenumber(self, address_id, **kwargs):
+        """
+        Get a phone number provisioned for SMS.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_sms_phonenumber(address_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str address_id: Address ID (required)
+        :return: SmsPhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['address_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_sms_phonenumber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'address_id' is set
+        if ('address_id' not in params) or (params['address_id'] is None):
+            raise ValueError("Missing the required parameter `address_id` when calling `get_routing_sms_phonenumber`")
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'address_id' in params:
+            path_params['addressId'] = params['address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumber',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_sms_phonenumbers(self, **kwargs):
+        """
+        Get a list of provisioned phone numbers.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_sms_phonenumbers(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str phone_number: Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
+        :param str phone_number_type: Filter on phone number type
+        :param str phone_number_status: Filter on phone number status
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: SmsPhoneNumberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_sms_phonenumbers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'phone_number' in params:
+            query_params['phoneNumber'] = params['phone_number']
+        if 'phone_number_type' in params:
+            query_params['phoneNumberType'] = params['phone_number_type']
+        if 'phone_number_status' in params:
+            query_params['phoneNumberStatus'] = params['phone_number_status']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumberEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3064,6 +3562,162 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_routing_sms_addresses(self, body, **kwargs):
+        """
+        Provision an Address for SMS
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_sms_addresses(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SmsAddressProvision body: SmsAddress (required)
+        :return: SmsPhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_sms_addresses" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_sms_addresses`")
+
+
+        resource_path = '/api/v2/routing/sms/addresses'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumber',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_sms_phonenumbers(self, body, **kwargs):
+        """
+        Provision a phone number for SMS
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_sms_phonenumbers(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SmsPhoneNumberProvision body: SmsPhoneNumber (required)
+        :return: SmsPhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_sms_phonenumbers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_sms_phonenumbers`")
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumber',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_routing_wrapupcodes(self, body, **kwargs):
         """
         Create a wrap-up code
@@ -3316,6 +3970,90 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_routing_message_recipient(self, recipient_id, body, **kwargs):
+        """
+        Update a recipient
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_message_recipient(recipient_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str recipient_id: Recipient ID (required)
+        :param Recipient body: Recipient (required)
+        :return: Recipient
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['recipient_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_message_recipient" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'recipient_id' is set
+        if ('recipient_id' not in params) or (params['recipient_id'] is None):
+            raise ValueError("Missing the required parameter `recipient_id` when calling `put_routing_message_recipient`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_message_recipient`")
+
+
+        resource_path = '/api/v2/routing/message/recipients/{recipientId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'recipient_id' in params:
+            path_params['recipientId'] = params['recipient_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Recipient',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_routing_queue(self, queue_id, body, **kwargs):
         """
         Update a queue
@@ -3396,6 +4134,90 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Queue',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_routing_sms_phonenumber(self, address_id, body, **kwargs):
+        """
+        Update a phone number provisioned for SMS.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_sms_phonenumber(address_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str address_id: Address ID (required)
+        :param SmsPhoneNumber body: SmsPhoneNumber (required)
+        :return: SmsPhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['address_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_sms_phonenumber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'address_id' is set
+        if ('address_id' not in params) or (params['address_id'] is None):
+            raise ValueError("Missing the required parameter `address_id` when calling `put_routing_sms_phonenumber`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_sms_phonenumber`")
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'address_id' in params:
+            path_params['addressId'] = params['address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumber',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -55,7 +55,8 @@ class Email(object):
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
-            'message_id': 'str'
+            'message_id': 'str',
+            'draft_attachments': 'list[Attachment]'
         }
 
         self.attribute_map = {
@@ -76,7 +77,8 @@ class Email(object):
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
-            'message_id': 'messageId'
+            'message_id': 'messageId',
+            'draft_attachments': 'draftAttachments'
         }
 
         self._state = None
@@ -97,6 +99,7 @@ class Email(object):
         self._script_id = None
         self._peer_id = None
         self._message_id = None
+        self._draft_attachments = None
 
     @property
     def state(self):
@@ -523,6 +526,29 @@ class Email(object):
         """
         
         self._message_id = message_id
+
+    @property
+    def draft_attachments(self):
+        """
+        Gets the draft_attachments of this Email.
+        A list of uploaded attachments on the email draft.
+
+        :return: The draft_attachments of this Email.
+        :rtype: list[Attachment]
+        """
+        return self._draft_attachments
+
+    @draft_attachments.setter
+    def draft_attachments(self, draft_attachments):
+        """
+        Sets the draft_attachments of this Email.
+        A list of uploaded attachments on the email draft.
+
+        :param draft_attachments: The draft_attachments of this Email.
+        :type: list[Attachment]
+        """
+        
+        self._draft_attachments = draft_attachments
 
     def to_dict(self):
         """

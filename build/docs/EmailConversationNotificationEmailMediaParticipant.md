@@ -38,6 +38,7 @@ title: EmailConversationNotificationEmailMediaParticipant
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |
 | **message_id** | **str** |  | [optional] |
+| **draft_attachments** | [**list[ConversationNotificationDraftAttachments]**](ConversationNotificationDraftAttachments.html) |  | [optional] |
 {: class="table table-striped"}
 
 
