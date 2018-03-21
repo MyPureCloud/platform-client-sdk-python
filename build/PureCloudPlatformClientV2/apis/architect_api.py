@@ -3920,15 +3920,15 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
-        :param int page_size: Page size
         :param int page_number: Page number
+        :param int page_size: Page size
         :param bool showbrief: If true returns just the key value of the row
         :return: DataTableRowEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id', 'page_size', 'page_number', 'showbrief']
+        all_params = ['datatable_id', 'page_number', 'page_size', 'showbrief']
         all_params.append('callback')
 
         params = locals()
@@ -3952,10 +3952,10 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
         if 'showbrief' in params:
             query_params['showbrief'] = params['showbrief']
 
@@ -4007,8 +4007,8 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str expand: Expand instructions for the result
-        :param int page_size: Page size
         :param int page_number: Page number
+        :param int page_size: Page size
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :return: DataTablesDomainEntityListing
@@ -4016,7 +4016,7 @@ class ArchitectApi(object):
                  returns the request thread.
         """
 
-        all_params = ['expand', 'page_size', 'page_number', 'sort_by', 'sort_order']
+        all_params = ['expand', 'page_number', 'page_size', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4037,10 +4037,10 @@ class ArchitectApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:

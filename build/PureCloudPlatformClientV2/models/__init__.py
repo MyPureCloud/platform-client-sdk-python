@@ -78,6 +78,7 @@ from .audit_message import AuditMessage
 from .audit_query_response import AuditQueryResponse
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
+from .authz_typed_object import AuthzTypedObject
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -342,6 +343,7 @@ from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
+from .data_column import DataColumn
 from .data_table import DataTable
 from .data_table_row_entity_listing import DataTableRowEntityListing
 from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
@@ -536,6 +538,7 @@ from .flow_notification_notification_home_organization import FlowNotificationNo
 from .flow_notification_notification_user import FlowNotificationNotificationUser
 from .flow_version import FlowVersion
 from .flow_version_entity_listing import FlowVersionEntityListing
+from .free_seating_configuration import FreeSeatingConfiguration
 from .g_suite import GSuite
 from .geolocation import Geolocation
 from .geolocation_notification import GeolocationNotification
@@ -550,6 +553,7 @@ from .greeting_notification_greeting_owner import GreetingNotificationGreetingOw
 from .greeting_owner import GreetingOwner
 from .group import Group
 from .group_contact import GroupContact
+from .group_create import GroupCreate
 from .group_entity_listing import GroupEntityListing
 from .group_members_update import GroupMembersUpdate
 from .group_profile import GroupProfile
@@ -822,6 +826,9 @@ from .report_run_entry import ReportRunEntry
 from .report_run_entry_entity_domain_listing import ReportRunEntryEntityDomainListing
 from .report_schedule import ReportSchedule
 from .report_schedule_entity_listing import ReportScheduleEntityListing
+from .reporting_export_job_listing import ReportingExportJobListing
+from .reporting_export_job_request import ReportingExportJobRequest
+from .reporting_export_job_response import ReportingExportJobResponse
 from .request_config import RequestConfig
 from .resource_condition_node import ResourceConditionNode
 from .resource_condition_value import ResourceConditionValue
@@ -930,6 +937,7 @@ from .social_expression import SocialExpression
 from .sort_item import SortItem
 from .station import Station
 from .station_entity_listing import StationEntityListing
+from .station_settings import StationSettings
 from .statistical_response import StatisticalResponse
 from .statistical_summary import StatisticalSummary
 from .stats_notification_notification import StatsNotificationNotification
@@ -1074,6 +1082,7 @@ from .video_conversation_notification_participants import VideoConversationNotif
 from .video_conversation_notification_uri_reference import VideoConversationNotificationUriReference
 from .video_conversation_notification_video_media_participant import VideoConversationNotificationVideoMediaParticipant
 from .video_conversation_notification_wrapup import VideoConversationNotificationWrapup
+from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo
 from .voicemail import Voicemail

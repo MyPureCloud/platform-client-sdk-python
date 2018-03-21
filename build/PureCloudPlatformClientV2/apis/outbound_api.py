@@ -2387,6 +2387,7 @@ class OutboundApi(object):
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
+        :param list[str] id: id
         :param str contact_list_id: Contact List ID
         :param str dnc_list_id: DNC list ID
         :param str distribution_queue_id: Distribution queue ID
@@ -2399,7 +2400,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'contact_list_id', 'dnc_list_id', 'distribution_queue_id', 'edge_group_id', 'call_analysis_response_set_id', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'id', 'contact_list_id', 'dnc_list_id', 'distribution_queue_id', 'edge_group_id', 'call_analysis_response_set_id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2426,6 +2427,8 @@ class OutboundApi(object):
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'contact_list_id' in params:
             query_params['contactListId'] = params['contact_list_id']
         if 'dnc_list_id' in params:
@@ -2992,6 +2995,7 @@ class OutboundApi(object):
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
+        :param list[str] id: id
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :return: ContactListEntityListing
@@ -2999,7 +3003,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -3030,6 +3034,8 @@ class OutboundApi(object):
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:

@@ -48,8 +48,8 @@ class Question(object):
             'answer_options': 'list[AnswerOption]',
             'max_response_characters': 'int',
             'explanation_prompt': 'str',
-            'is_critical': 'bool',
-            'is_kill': 'bool'
+            'is_kill': 'bool',
+            'is_critical': 'bool'
         }
 
         self.attribute_map = {
@@ -63,8 +63,8 @@ class Question(object):
             'answer_options': 'answerOptions',
             'max_response_characters': 'maxResponseCharacters',
             'explanation_prompt': 'explanationPrompt',
-            'is_critical': 'isCritical',
-            'is_kill': 'isKill'
+            'is_kill': 'isKill',
+            'is_critical': 'isCritical'
         }
 
         self._id = None
@@ -77,8 +77,8 @@ class Question(object):
         self._answer_options = None
         self._max_response_characters = None
         self._explanation_prompt = None
-        self._is_critical = None
         self._is_kill = None
+        self._is_critical = None
 
     @property
     def id(self):
@@ -315,29 +315,6 @@ class Question(object):
         self._explanation_prompt = explanation_prompt
 
     @property
-    def is_critical(self):
-        """
-        Gets the is_critical of this Question.
-
-
-        :return: The is_critical of this Question.
-        :rtype: bool
-        """
-        return self._is_critical
-
-    @is_critical.setter
-    def is_critical(self, is_critical):
-        """
-        Sets the is_critical of this Question.
-
-
-        :param is_critical: The is_critical of this Question.
-        :type: bool
-        """
-        
-        self._is_critical = is_critical
-
-    @property
     def is_kill(self):
         """
         Gets the is_kill of this Question.
@@ -359,6 +336,29 @@ class Question(object):
         """
         
         self._is_kill = is_kill
+
+    @property
+    def is_critical(self):
+        """
+        Gets the is_critical of this Question.
+
+
+        :return: The is_critical of this Question.
+        :rtype: bool
+        """
+        return self._is_critical
+
+    @is_critical.setter
+    def is_critical(self, is_critical):
+        """
+        Sets the is_critical of this Question.
+
+
+        :param is_critical: The is_critical of this Question.
+        :type: bool
+        """
+        
+        self._is_critical = is_critical
 
     def to_dict(self):
         """

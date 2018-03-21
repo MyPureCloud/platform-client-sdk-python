@@ -47,6 +47,7 @@ class GroupUpdate(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'owner_ids': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class GroupUpdate(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'owner_ids': 'ownerIds',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +74,7 @@ class GroupUpdate(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._owner_ids = None
         self._self_uri = None
 
     @property
@@ -282,12 +285,35 @@ class GroupUpdate(object):
         :param visibility: The visibility of this GroupUpdate.
         :type: str
         """
-        allowed_values = ["public", "owners", "members"]
+        allowed_values = ["public", "ownerIds", "members"]
         if visibility.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for visibility -> " + visibility
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def owner_ids(self):
+        """
+        Gets the owner_ids of this GroupUpdate.
+        Owners of the group
+
+        :return: The owner_ids of this GroupUpdate.
+        :rtype: list[str]
+        """
+        return self._owner_ids
+
+    @owner_ids.setter
+    def owner_ids(self, owner_ids):
+        """
+        Sets the owner_ids of this GroupUpdate.
+        Owners of the group
+
+        :param owner_ids: The owner_ids of this GroupUpdate.
+        :type: list[str]
+        """
+        
+        self._owner_ids = owner_ids
 
     @property
     def self_uri(self):

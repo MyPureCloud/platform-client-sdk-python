@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_station_associateduser**](StationsApi.html#delete_station_associateduser) | Unassigns the user assigned to this station|
 |[**get_station**](StationsApi.html#get_station) | Get station.|
 |[**get_stations**](StationsApi.html#get_stations) | Get the list of available stations.|
+|[**get_stations_settings**](StationsApi.html#get_stations_settings) | Get an organization&#39;s StationSettings|
+|[**patch_stations_settings**](StationsApi.html#patch_stations_settings) | Patch an organization&#39;s StationSettings|
 {: class="table table-striped"}
 
 <a name="delete_station_associateduser"></a>
@@ -160,4 +162,90 @@ except ApiException as e:
 ### Return type
 
 [**StationEntityListing**](StationEntityListing.html)
+
+<a name="get_stations_settings"></a>
+
+## [**StationSettings**](StationSettings.html) get_stations_settings()
+
+Get an organization's StationSettings
+
+
+
+Wraps GET /api/v2/stations/settings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.StationsApi()
+
+try:
+    # Get an organization's StationSettings
+    api_response = api_instance.get_stations_settings()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling StationsApi->get_stations_settings: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**StationSettings**](StationSettings.html)
+
+<a name="patch_stations_settings"></a>
+
+## [**StationSettings**](StationSettings.html) patch_stations_settings(body)
+
+Patch an organization's StationSettings
+
+
+
+Wraps PATCH /api/v2/stations/settings 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.StationsApi()
+body = PureCloudPlatformClientV2.StationSettings() # StationSettings | Station settings
+
+try:
+    # Patch an organization's StationSettings
+    api_response = api_instance.patch_stations_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling StationsApi->patch_stations_settings: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**StationSettings**](StationSettings.html)| Station settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StationSettings**](StationSettings.html)
 

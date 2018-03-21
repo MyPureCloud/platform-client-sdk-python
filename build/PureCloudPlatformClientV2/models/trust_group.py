@@ -50,6 +50,7 @@ class TrustGroup(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'owners': 'list[User]',
             'date_created': 'datetime',
             'created_by': 'OrgUser'
         }
@@ -67,6 +68,7 @@ class TrustGroup(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'owners': 'owners',
             'date_created': 'dateCreated',
             'created_by': 'createdBy'
         }
@@ -83,6 +85,7 @@ class TrustGroup(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._owners = None
         self._date_created = None
         self._created_by = None
 
@@ -373,6 +376,29 @@ class TrustGroup(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def owners(self):
+        """
+        Gets the owners of this TrustGroup.
+        Owners of the group
+
+        :return: The owners of this TrustGroup.
+        :rtype: list[User]
+        """
+        return self._owners
+
+    @owners.setter
+    def owners(self, owners):
+        """
+        Sets the owners of this TrustGroup.
+        Owners of the group
+
+        :param owners: The owners of this TrustGroup.
+        :type: list[User]
+        """
+        
+        self._owners = owners
 
     @property
     def date_created(self):

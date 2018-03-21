@@ -471,7 +471,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GroupsApi()
-body = PureCloudPlatformClientV2.Group() # Group | Group
+body = PureCloudPlatformClientV2.GroupCreate() # GroupCreate | Group
 
 try:
     # Create a group
@@ -486,7 +486,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Group**](Group.html)| Group |  |
+| **body** | [**GroupCreate**](GroupCreate.html)| Group |  |
 {: class="table table-striped"}
 
 ### Return type

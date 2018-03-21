@@ -50,6 +50,7 @@ class Group(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'owners': 'list[User]',
             'self_uri': 'str'
         }
 
@@ -66,6 +67,7 @@ class Group(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'owners': 'owners',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +83,7 @@ class Group(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._owners = None
         self._self_uri = None
 
     @property
@@ -370,6 +373,29 @@ class Group(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def owners(self):
+        """
+        Gets the owners of this Group.
+        Owners of the group
+
+        :return: The owners of this Group.
+        :rtype: list[User]
+        """
+        return self._owners
+
+    @owners.setter
+    def owners(self, owners):
+        """
+        Sets the owners of this Group.
+        Owners of the group
+
+        :param owners: The owners of this Group.
+        :type: list[User]
+        """
+        
+        self._owners = owners
 
     @property
     def self_uri(self):

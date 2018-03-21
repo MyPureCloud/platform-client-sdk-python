@@ -112,7 +112,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '27.0.1'
+        header_params['purecloud-sdk'] = '28.0.0'
 
         # path parameters
         if path_params:

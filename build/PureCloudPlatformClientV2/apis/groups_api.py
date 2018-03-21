@@ -799,7 +799,7 @@ class GroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Group body: Group (required)
+        :param GroupCreate body: Group (required)
         :return: Group
                  If the method is called asynchronously,
                  returns the request thread.
