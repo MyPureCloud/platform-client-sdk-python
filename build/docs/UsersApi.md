@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_routingstatus**](UsersApi.html#get_user_routingstatus) | Fetch the routing status of a user|
 |[**get_user_station**](UsersApi.html#get_user_station) | Get station information for user|
 |[**get_user_superiors**](UsersApi.html#get_user_superiors) | Get superiors|
+|[**get_user_trustors**](UsersApi.html#get_user_trustors) | List the organizations that have authorized/trusted the user.|
 |[**get_users**](UsersApi.html#get_users) | Get the list of available users.|
 |[**get_users_me**](UsersApi.html#get_users_me) | Get current user details.|
 |[**get_users_search**](UsersApi.html#get_users_search) | Search users using the q64 value returned from a previous search|
@@ -1090,6 +1091,55 @@ except ApiException as e:
 ### Return type
 
 [**list[User]**](User.html)
+
+<a name="get_user_trustors"></a>
+
+## [**TrustorEntityListing**](TrustorEntityListing.html) get_user_trustors(user_id, page_size=page_size, page_number=page_number)
+
+List the organizations that have authorized/trusted the user.
+
+
+
+Wraps GET /api/v2/users/{userId}/trustors 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # List the organizations that have authorized/trusted the user.
+    api_response = api_instance.get_user_trustors(user_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_user_trustors: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustorEntityListing**](TrustorEntityListing.html)
 
 <a name="get_users"></a>
 

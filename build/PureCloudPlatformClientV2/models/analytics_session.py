@@ -493,7 +493,7 @@ class AnalyticsSession(object):
     def disposition_name(self):
         """
         Gets the disposition_name of this AnalyticsSession.
-        (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
+        (Dialer) Result of the analysis
 
         :return: The disposition_name of this AnalyticsSession.
         :rtype: str
@@ -504,17 +504,13 @@ class AnalyticsSession(object):
     def disposition_name(self, disposition_name):
         """
         Sets the disposition_name of this AnalyticsSession.
-        (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
+        (Dialer) Result of the analysis
 
         :param disposition_name: The disposition_name of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["disconnect", "person", "busy", "machine", "noanswer", "fax", "sit"]
-        if disposition_name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disposition_name -> " + disposition_name
-            self._disposition_name = "outdated_sdk_version"
-        else:
-            self._disposition_name = disposition_name
+        
+        self._disposition_name = disposition_name
 
     @property
     def edge_id(self):

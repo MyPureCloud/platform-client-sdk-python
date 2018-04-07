@@ -21,6 +21,7 @@ title: IVR
 | **dnis** | **list[str]** | The phone number(s) to contact the IVR by.  Each phone number must be unique and not in use by another resource.  For example, a user and an iVR cannot have the same phone number. | [optional] |
 | **open_hours_flow** | [**UriReference**](UriReference.html) | The Architect flow to execute during the hours an organization is open. | [optional] |
 | **closed_hours_flow** | [**UriReference**](UriReference.html) | The Architect flow to execute during the hours an organization is closed. | [optional] |
+| **holiday_hours_flow** | [**UriReference**](UriReference.html) | The Architect flow to execute during an organization&#39;s holiday hours. | [optional] |
 | **schedule_group** | [**UriReference**](UriReference.html) | The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

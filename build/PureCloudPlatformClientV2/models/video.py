@@ -49,7 +49,8 @@ class Video(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
-            'peer_id': 'str'
+            'peer_id': 'str',
+            'msids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class Video(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
-            'peer_id': 'peerId'
+            'peer_id': 'peerId',
+            'msids': 'msids'
         }
 
         self._state = None
@@ -79,6 +81,7 @@ class Video(object):
         self._disconnected_time = None
         self._provider = None
         self._peer_id = None
+        self._msids = None
 
     @property
     def state(self):
@@ -363,6 +366,29 @@ class Video(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def msids(self):
+        """
+        Gets the msids of this Video.
+        List of media stream ids
+
+        :return: The msids of this Video.
+        :rtype: list[str]
+        """
+        return self._msids
+
+    @msids.setter
+    def msids(self, msids):
+        """
+        Sets the msids of this Video.
+        List of media stream ids
+
+        :param msids: The msids of this Video.
+        :type: list[str]
+        """
+        
+        self._msids = msids
 
     def to_dict(self):
         """

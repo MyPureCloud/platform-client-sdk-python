@@ -21,6 +21,7 @@ title: ScheduleGroup
 | **time_zone** | **str** | The timezone the schedules are a part of.  This is not a schedule property to allow a schedule to be used in multiple timezones. | [optional] |
 | **open_schedules** | [**list[UriReference]**](UriReference.html) | The schedules defining the hours an organization is open. | [optional] |
 | **closed_schedules** | [**list[UriReference]**](UriReference.html) | The schedules defining the hours an organization is closed. | [optional] |
+| **holiday_schedules** | [**list[UriReference]**](UriReference.html) | The schedules defining the hours an organization is closed for the holidays. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

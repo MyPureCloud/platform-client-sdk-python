@@ -710,8 +710,8 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact Id (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str sort_order: Sort order
         :param list[str] expand: which fields, if any, to expand
         :return: NoteListing
@@ -799,8 +799,8 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: User supplied search keywords (no special syntax is currently supported)
         :param str sort_order: Sort order
         :param list[str] expand: which fields, if any, to expand
@@ -971,8 +971,8 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: User supplied search keywords (no special syntax is currently supported)
         :param str sort_order: Sort order
         :param list[str] expand: which fields, if any, to expand
@@ -1151,8 +1151,8 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization Id (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str sort_order: Sort order
         :param list[str] expand: which fields, if any, to expand
         :return: NoteListing
@@ -1241,8 +1241,8 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str expand: which fields, if any, to expand
         :param str sort_order: Sort order
         :return: RelationshipListing
@@ -1330,8 +1330,8 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+        :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: Search query
         :param list[str] trustor_id: Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
         :param str sort_order: Sort order

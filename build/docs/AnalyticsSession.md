@@ -21,7 +21,7 @@ title: AnalyticsSession
 | **outbound_contact_id** | **str** | (Dialer) Unique identifier of the contact | [optional] |
 | **outbound_contact_list_id** | **str** | (Dialer) Unique identifier of the contact list that this contact belongs to | [optional] |
 | **disposition_analyzer** | **str** | (Dialer) Unique identifier of the contact list that this contact belongs to | [optional] |
-| **disposition_name** | **str** | (Dialer) Result of the analysis (for example disposition.classification.callable.machine)  | [optional] |
+| **disposition_name** | **str** | (Dialer) Result of the analysis | [optional] |
 | **edge_id** | **str** | Unique identifier of the edge device | [optional] |
 | **remote_name_displayable** | **str** |  | [optional] |
 | **room_id** | **str** | Unique identifier for the room | [optional] |

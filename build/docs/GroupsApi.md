@@ -12,10 +12,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_group_members**](GroupsApi.html#delete_group_members) | Remove members|
 |[**get_fieldconfig**](GroupsApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_group**](GroupsApi.html#get_group) | Get group|
-|[**get_group_members**](GroupsApi.html#get_group_members) | Get group members|
+|[**get_group_individuals**](GroupsApi.html#get_group_individuals) | Get all individuals associated with the group|
+|[**get_group_members**](GroupsApi.html#get_group_members) | Get group members, includes individuals, owners, and dynamically included people|
 |[**get_group_profile**](GroupsApi.html#get_group_profile) | Get group profile|
 |[**get_groups**](GroupsApi.html#get_groups) | Get a group list|
 |[**get_groups_search**](GroupsApi.html#get_groups_search) | Search groups using the q64 value returned from a previous search|
+|[**get_profiles_groups**](GroupsApi.html#get_profiles_groups) | Get group profile listing|
 |[**post_group_members**](GroupsApi.html#post_group_members) | Add members|
 |[**post_groups**](GroupsApi.html#post_groups) | Create a group|
 |[**post_groups_search**](GroupsApi.html#post_groups_search) | Search groups|
@@ -203,11 +205,56 @@ except ApiException as e:
 
 [**Group**](Group.html)
 
+<a name="get_group_individuals"></a>
+
+## [**list[UserEntityListing]**](UserEntityListing.html) get_group_individuals(group_id)
+
+Get all individuals associated with the group
+
+
+
+Wraps GET /api/v2/groups/{groupId}/individuals 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+group_id = 'group_id_example' # str | Group ID
+
+try:
+    # Get all individuals associated with the group
+    api_response = api_instance.get_group_individuals(group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling GroupsApi->get_group_individuals: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **group_id** | **str**| Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UserEntityListing]**](UserEntityListing.html)
+
 <a name="get_group_members"></a>
 
 ## [**UserEntityListing**](UserEntityListing.html) get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
-Get group members
+Get group members, includes individuals, owners, and dynamically included people
 
 
 
@@ -233,7 +280,7 @@ sort_order = 'ASC' # str | Ascending or descending sort order (optional) (defaul
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Get group members
+    # Get group members, includes individuals, owners, and dynamically included people
     api_response = api_instance.get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -400,6 +447,57 @@ except ApiException as e:
 ### Return type
 
 [**GroupsSearchResponse**](GroupsSearchResponse.html)
+
+<a name="get_profiles_groups"></a>
+
+## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
+
+Get group profile listing
+
+
+
+Wraps GET /api/v2/profiles/groups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+id = ['id_example'] # list[str] | id (optional)
+sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+
+try:
+    # Get group profile listing
+    api_response = api_instance.get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling GroupsApi->get_profiles_groups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**GroupProfileEntityListing**](GroupProfileEntityListing.html)
 
 <a name="post_group_members"></a>
 

@@ -38,52 +38,29 @@ class TimeZone(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'display_name': 'str',
             'id': 'str',
-            'dstsavings': 'int',
-            'raw_offset': 'int'
+            'name': 'str',
+            'offset': 'int',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
-            'display_name': 'displayName',
             'id': 'id',
-            'dstsavings': 'dstsavings',
-            'raw_offset': 'rawOffset'
+            'name': 'name',
+            'offset': 'offset',
+            'self_uri': 'selfUri'
         }
 
-        self._display_name = None
         self._id = None
-        self._dstsavings = None
-        self._raw_offset = None
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this TimeZone.
-
-
-        :return: The display_name of this TimeZone.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this TimeZone.
-
-
-        :param display_name: The display_name of this TimeZone.
-        :type: str
-        """
-        
-        self._display_name = display_name
+        self._name = None
+        self._offset = None
+        self._self_uri = None
 
     @property
     def id(self):
         """
         Gets the id of this TimeZone.
-
+        The globally unique identifier for the object.
 
         :return: The id of this TimeZone.
         :rtype: str
@@ -94,7 +71,7 @@ class TimeZone(object):
     def id(self, id):
         """
         Sets the id of this TimeZone.
-
+        The globally unique identifier for the object.
 
         :param id: The id of this TimeZone.
         :type: str
@@ -103,50 +80,73 @@ class TimeZone(object):
         self._id = id
 
     @property
-    def dstsavings(self):
+    def name(self):
         """
-        Gets the dstsavings of this TimeZone.
+        Gets the name of this TimeZone.
 
 
-        :return: The dstsavings of this TimeZone.
-        :rtype: int
+        :return: The name of this TimeZone.
+        :rtype: str
         """
-        return self._dstsavings
+        return self._name
 
-    @dstsavings.setter
-    def dstsavings(self, dstsavings):
+    @name.setter
+    def name(self, name):
         """
-        Sets the dstsavings of this TimeZone.
+        Sets the name of this TimeZone.
 
 
-        :param dstsavings: The dstsavings of this TimeZone.
-        :type: int
+        :param name: The name of this TimeZone.
+        :type: str
         """
         
-        self._dstsavings = dstsavings
+        self._name = name
 
     @property
-    def raw_offset(self):
+    def offset(self):
         """
-        Gets the raw_offset of this TimeZone.
+        Gets the offset of this TimeZone.
 
 
-        :return: The raw_offset of this TimeZone.
+        :return: The offset of this TimeZone.
         :rtype: int
         """
-        return self._raw_offset
+        return self._offset
 
-    @raw_offset.setter
-    def raw_offset(self, raw_offset):
+    @offset.setter
+    def offset(self, offset):
         """
-        Sets the raw_offset of this TimeZone.
+        Sets the offset of this TimeZone.
 
 
-        :param raw_offset: The raw_offset of this TimeZone.
+        :param offset: The offset of this TimeZone.
         :type: int
         """
         
-        self._raw_offset = raw_offset
+        self._offset = offset
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this TimeZone.
+        The URI for this object
+
+        :return: The self_uri of this TimeZone.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this TimeZone.
+        The URI for this object
+
+        :param self_uri: The self_uri of this TimeZone.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

@@ -470,6 +470,9 @@ from .models.email_media_policy_conditions import EmailMediaPolicyConditions
 from .models.email_message import EmailMessage
 from .models.email_message_listing import EmailMessageListing
 from .models.email_setup import EmailSetup
+from .models.emergency_call_flow import EmergencyCallFlow
+from .models.emergency_group import EmergencyGroup
+from .models.emergency_group_listing import EmergencyGroupListing
 from .models.empty import Empty
 from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
@@ -557,6 +560,7 @@ from .models.group_create import GroupCreate
 from .models.group_entity_listing import GroupEntityListing
 from .models.group_members_update import GroupMembersUpdate
 from .models.group_profile import GroupProfile
+from .models.group_profile_entity_listing import GroupProfileEntityListing
 from .models.group_search_criteria import GroupSearchCriteria
 from .models.group_search_request import GroupSearchRequest
 from .models.group_update import GroupUpdate

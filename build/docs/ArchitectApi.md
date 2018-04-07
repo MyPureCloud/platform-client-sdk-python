@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_architect_emergencygroup**](ArchitectApi.html#delete_architect_emergencygroup) | Deletes a emergency group by ID|
 |[**delete_architect_ivr**](ArchitectApi.html#delete_architect_ivr) | Delete an IVR Config.|
 |[**delete_architect_prompt**](ArchitectApi.html#delete_architect_prompt) | Delete specified user prompt|
 |[**delete_architect_prompt_resource**](ArchitectApi.html#delete_architect_prompt_resource) | Delete specified user prompt resource|
@@ -28,6 +29,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_dependencytracking_type**](ArchitectApi.html#get_architect_dependencytracking_type) | Get a Dependency Tracking type.|
 |[**get_architect_dependencytracking_types**](ArchitectApi.html#get_architect_dependencytracking_types) | Get Dependency Tracking types.|
 |[**get_architect_dependencytracking_updatedresourceconsumers**](ArchitectApi.html#get_architect_dependencytracking_updatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources|
+|[**get_architect_emergencygroup**](ArchitectApi.html#get_architect_emergencygroup) | Gets a emergency group by ID|
+|[**get_architect_emergencygroups**](ArchitectApi.html#get_architect_emergencygroups) | Get a list of emergency groups.|
 |[**get_architect_ivr**](ArchitectApi.html#get_architect_ivr) | Get an IVR config.|
 |[**get_architect_ivrs**](ArchitectApi.html#get_architect_ivrs) | Get IVR configs.|
 |[**get_architect_prompt**](ArchitectApi.html#get_architect_prompt) | Get specified user prompt|
@@ -56,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
+|[**post_architect_emergencygroups**](ArchitectApi.html#post_architect_emergencygroups) | Creates a new emergency group|
 |[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
 |[**post_architect_prompt_history**](ArchitectApi.html#post_architect_prompt_history) | Generate prompt history|
 |[**post_architect_prompt_resources**](ArchitectApi.html#post_architect_prompt_resources) | Create a new user prompt resource|
@@ -74,6 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_actions_unlock**](ArchitectApi.html#post_flows_actions_unlock) | Unlock flow|
 |[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry|
 |[**post_flows_datatables**](ArchitectApi.html#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
+|[**put_architect_emergencygroup**](ArchitectApi.html#put_architect_emergencygroup) | Updates a emergency group by ID|
 |[**put_architect_ivr**](ArchitectApi.html#put_architect_ivr) | Update an IVR Config.|
 |[**put_architect_prompt**](ArchitectApi.html#put_architect_prompt) | Update specified user prompt|
 |[**put_architect_prompt_resource**](ArchitectApi.html#put_architect_prompt_resource) | Update specified user prompt resource|
@@ -84,6 +89,50 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_flows_datatable**](ArchitectApi.html#put_flows_datatable) | Updates a specific datatable by id|
 |[**put_flows_datatable_row**](ArchitectApi.html#put_flows_datatable_row) | Update a row entry|
 {: class="table table-striped"}
+
+<a name="delete_architect_emergencygroup"></a>
+
+##  delete_architect_emergencygroup(emergency_group_id)
+
+Deletes a emergency group by ID
+
+
+
+Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+emergency_group_id = 'emergency_group_id_example' # str | Emergency group ID
+
+try:
+    # Deletes a emergency group by ID
+    api_instance.delete_architect_emergencygroup(emergency_group_id)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->delete_architect_emergencygroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **emergency_group_id** | **str**| Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_architect_ivr"></a>
 
@@ -491,7 +540,7 @@ except ApiException as e:
 
 <a name="delete_flows_datatable"></a>
 
-##  delete_flows_datatable(datatable_id)
+##  delete_flows_datatable(datatable_id, force=force)
 
 deletes a specific datatable by id
 
@@ -513,10 +562,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 datatable_id = 'datatable_id_example' # str | id of datatable
+force = false # bool | force delete, even if in use (optional) (default to false)
 
 try:
     # deletes a specific datatable by id
-    api_instance.delete_flows_datatable(datatable_id)
+    api_instance.delete_flows_datatable(datatable_id, force=force)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_flows_datatable: %s\n" % e
 ~~~
@@ -527,6 +577,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **datatable_id** | **str**| id of datatable |  |
+| **force** | **bool**| force delete, even if in use | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1039,6 +1090,104 @@ except ApiException as e:
 ### Return type
 
 [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+
+<a name="get_architect_emergencygroup"></a>
+
+## [**EmergencyGroup**](EmergencyGroup.html) get_architect_emergencygroup(emergency_group_id)
+
+Gets a emergency group by ID
+
+
+
+Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+emergency_group_id = 'emergency_group_id_example' # str | Emergency group ID
+
+try:
+    # Gets a emergency group by ID
+    api_response = api_instance.get_architect_emergencygroup(emergency_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_emergencygroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **emergency_group_id** | **str**| Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
+
+<a name="get_architect_emergencygroups"></a>
+
+## [**EmergencyGroupListing**](EmergencyGroupListing.html) get_architect_emergencygroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
+
+Get a list of emergency groups.
+
+
+
+Wraps GET /api/v2/architect/emergencygroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
+name = 'name_example' # str | Name of the Emergency Group to filter by. (optional)
+
+try:
+    # Get a list of emergency groups.
+    api_response = api_instance.get_architect_emergencygroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_architect_emergencygroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to ASC] |
+| **name** | **str**| Name of the Emergency Group to filter by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroupListing**](EmergencyGroupListing.html)
 
 <a name="get_architect_ivr"></a>
 
@@ -2418,7 +2567,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
-| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2464,6 +2613,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 void (empty response body)
+
+<a name="post_architect_emergencygroups"></a>
+
+## [**EmergencyGroup**](EmergencyGroup.html) post_architect_emergencygroups(body=body)
+
+Creates a new emergency group
+
+
+
+Wraps POST /api/v2/architect/emergencygroups 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.EmergencyGroup() # EmergencyGroup |  (optional)
+
+try:
+    # Creates a new emergency group
+    api_response = api_instance.post_architect_emergencygroups(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_architect_emergencygroups: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
 
 <a name="post_architect_ivrs"></a>
 
@@ -3284,6 +3478,53 @@ except ApiException as e:
 ### Return type
 
 [**DataTable**](DataTable.html)
+
+<a name="put_architect_emergencygroup"></a>
+
+## [**EmergencyGroup**](EmergencyGroup.html) put_architect_emergencygroup(emergency_group_id, body=body)
+
+Updates a emergency group by ID
+
+
+
+Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+emergency_group_id = 'emergency_group_id_example' # str | Emergency group ID
+body = PureCloudPlatformClientV2.EmergencyGroup() # EmergencyGroup |  (optional)
+
+try:
+    # Updates a emergency group by ID
+    api_response = api_instance.put_architect_emergencygroup(emergency_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->put_architect_emergencygroup: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **emergency_group_id** | **str**| Emergency group ID |  |
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
 
 <a name="put_architect_ivr"></a>
 

@@ -46,6 +46,84 @@ class ArchitectApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_architect_emergencygroup(self, emergency_group_id, **kwargs):
+        """
+        Deletes a emergency group by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_architect_emergencygroup(emergency_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str emergency_group_id: Emergency group ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['emergency_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_architect_emergencygroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'emergency_group_id' is set
+        if ('emergency_group_id' not in params) or (params['emergency_group_id'] is None):
+            raise ValueError("Missing the required parameter `emergency_group_id` when calling `delete_architect_emergencygroup`")
+
+
+        resource_path = '/api/v2/architect/emergencygroups/{emergencyGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'emergency_group_id' in params:
+            path_params['emergencyGroupId'] = params['emergency_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_architect_ivr(self, ivr_id, **kwargs):
         """
         Delete an IVR Config.
@@ -779,12 +857,13 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str datatable_id: id of datatable (required)
+        :param bool force: force delete, even if in use
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['datatable_id']
+        all_params = ['datatable_id', 'force']
         all_params.append('callback')
 
         params = locals()
@@ -808,6 +887,8 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
 
         query_params = {}
+        if 'force' in params:
+            query_params['force'] = params['force']
 
         header_params = {}
 
@@ -1707,6 +1788,171 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DependencyObjectEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_architect_emergencygroup(self, emergency_group_id, **kwargs):
+        """
+        Gets a emergency group by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_emergencygroup(emergency_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str emergency_group_id: Emergency group ID (required)
+        :return: EmergencyGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['emergency_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_emergencygroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'emergency_group_id' is set
+        if ('emergency_group_id' not in params) or (params['emergency_group_id'] is None):
+            raise ValueError("Missing the required parameter `emergency_group_id` when calling `get_architect_emergencygroup`")
+
+
+        resource_path = '/api/v2/architect/emergencygroups/{emergencyGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'emergency_group_id' in params:
+            path_params['emergencyGroupId'] = params['emergency_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmergencyGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_architect_emergencygroups(self, **kwargs):
+        """
+        Get a list of emergency groups.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_emergencygroups(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param str name: Name of the Emergency Group to filter by.
+        :return: EmergencyGroupListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_emergencygroups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/emergencygroups'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmergencyGroupListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4150,6 +4396,81 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_architect_emergencygroups(self, **kwargs):
+        """
+        Creates a new emergency group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_architect_emergencygroups(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EmergencyGroup body: 
+        :return: EmergencyGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_architect_emergencygroups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/emergencygroups'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmergencyGroup',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_ivrs(self, **kwargs):
         """
         Create IVR config.
@@ -5553,6 +5874,87 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataTable',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_architect_emergencygroup(self, emergency_group_id, **kwargs):
+        """
+        Updates a emergency group by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_architect_emergencygroup(emergency_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str emergency_group_id: Emergency group ID (required)
+        :param EmergencyGroup body: 
+        :return: EmergencyGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['emergency_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_architect_emergencygroup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'emergency_group_id' is set
+        if ('emergency_group_id' not in params) or (params['emergency_group_id'] is None):
+            raise ValueError("Missing the required parameter `emergency_group_id` when calling `put_architect_emergencygroup`")
+
+
+        resource_path = '/api/v2/architect/emergencygroups/{emergencyGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'emergency_group_id' in params:
+            path_params['emergencyGroupId'] = params['emergency_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmergencyGroup',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

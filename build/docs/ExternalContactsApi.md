@@ -428,8 +428,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact Id
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
@@ -447,8 +447,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -480,8 +480,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
@@ -499,8 +499,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -583,8 +583,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
@@ -603,8 +603,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -687,8 +687,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization Id
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
@@ -706,8 +706,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -740,8 +740,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 expand = 'expand_example' # str | which fields, if any, to expand (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 
@@ -759,8 +759,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **sort_order** | **str**| Sort order | [optional]  |
 {: class="table table-striped"}
@@ -792,8 +792,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-page_size = 20 # int | Page size (optional) (default to 20)
-page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
+page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | Search query (optional)
 trustor_id = ['trustor_id_example'] # list[str] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
@@ -813,8 +813,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 20] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
 | **trustor_id** | [**list[str]**](str.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
 | **sort_order** | **str**| Sort order | [optional]  |

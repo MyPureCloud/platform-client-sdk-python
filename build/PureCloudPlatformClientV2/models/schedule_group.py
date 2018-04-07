@@ -52,6 +52,7 @@ class ScheduleGroup(object):
             'time_zone': 'str',
             'open_schedules': 'list[UriReference]',
             'closed_schedules': 'list[UriReference]',
+            'holiday_schedules': 'list[UriReference]',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class ScheduleGroup(object):
             'time_zone': 'timeZone',
             'open_schedules': 'openSchedules',
             'closed_schedules': 'closedSchedules',
+            'holiday_schedules': 'holidaySchedules',
             'self_uri': 'selfUri'
         }
 
@@ -87,6 +89,7 @@ class ScheduleGroup(object):
         self._time_zone = None
         self._open_schedules = None
         self._closed_schedules = None
+        self._holiday_schedules = None
         self._self_uri = None
 
     @property
@@ -414,6 +417,29 @@ class ScheduleGroup(object):
         """
         
         self._closed_schedules = closed_schedules
+
+    @property
+    def holiday_schedules(self):
+        """
+        Gets the holiday_schedules of this ScheduleGroup.
+        The schedules defining the hours an organization is closed for the holidays.
+
+        :return: The holiday_schedules of this ScheduleGroup.
+        :rtype: list[UriReference]
+        """
+        return self._holiday_schedules
+
+    @holiday_schedules.setter
+    def holiday_schedules(self, holiday_schedules):
+        """
+        Sets the holiday_schedules of this ScheduleGroup.
+        The schedules defining the hours an organization is closed for the holidays.
+
+        :param holiday_schedules: The holiday_schedules of this ScheduleGroup.
+        :type: list[UriReference]
+        """
+        
+        self._holiday_schedules = holiday_schedules
 
     @property
     def self_uri(self):

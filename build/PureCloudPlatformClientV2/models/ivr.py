@@ -52,6 +52,7 @@ class IVR(object):
             'dnis': 'list[str]',
             'open_hours_flow': 'UriReference',
             'closed_hours_flow': 'UriReference',
+            'holiday_hours_flow': 'UriReference',
             'schedule_group': 'UriReference',
             'self_uri': 'str'
         }
@@ -71,6 +72,7 @@ class IVR(object):
             'dnis': 'dnis',
             'open_hours_flow': 'openHoursFlow',
             'closed_hours_flow': 'closedHoursFlow',
+            'holiday_hours_flow': 'holidayHoursFlow',
             'schedule_group': 'scheduleGroup',
             'self_uri': 'selfUri'
         }
@@ -89,6 +91,7 @@ class IVR(object):
         self._dnis = None
         self._open_hours_flow = None
         self._closed_hours_flow = None
+        self._holiday_hours_flow = None
         self._schedule_group = None
         self._self_uri = None
 
@@ -417,6 +420,29 @@ class IVR(object):
         """
         
         self._closed_hours_flow = closed_hours_flow
+
+    @property
+    def holiday_hours_flow(self):
+        """
+        Gets the holiday_hours_flow of this IVR.
+        The Architect flow to execute during an organization's holiday hours.
+
+        :return: The holiday_hours_flow of this IVR.
+        :rtype: UriReference
+        """
+        return self._holiday_hours_flow
+
+    @holiday_hours_flow.setter
+    def holiday_hours_flow(self, holiday_hours_flow):
+        """
+        Sets the holiday_hours_flow of this IVR.
+        The Architect flow to execute during an organization's holiday hours.
+
+        :param holiday_hours_flow: The holiday_hours_flow of this IVR.
+        :type: UriReference
+        """
+        
+        self._holiday_hours_flow = holiday_hours_flow
 
     @property
     def schedule_group(self):

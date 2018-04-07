@@ -7,10 +7,10 @@ title: TimeZone
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **display_name** | **str** |  | [optional] |
-| **id** | **str** |  | [optional] |
-| **dstsavings** | **int** |  | [optional] |
-| **raw_offset** | **int** |  | [optional] |
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** |  | [optional] |
+| **offset** | **int** |  | [optional] |
+| **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 
 
