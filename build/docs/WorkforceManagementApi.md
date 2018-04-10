@@ -134,7 +134,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 date = 'date_example' # str | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
 
 try:
@@ -150,7 +150,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **date** | **str**| ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 |  |
 {: class="table table-striped"}
 
@@ -181,7 +181,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
 
@@ -198,7 +198,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **time_off_request_id** | **str**| Time Off Request Id |  |
 {: class="table table-striped"}
@@ -230,7 +230,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 recently_reviewed = false # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to false)
 
@@ -247,7 +247,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -279,7 +279,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Get agents in the management unit
@@ -294,7 +294,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -420,7 +420,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQuery() # WfmHistoricalAdherenceQuery | body (optional)
 
 try:
@@ -436,7 +436,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -467,7 +467,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.IntradayQueryDataCommand() # IntradayQueryDataCommand | body (optional)
 
 try:
@@ -483,7 +483,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -514,7 +514,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.UserListScheduleRequestBody() # UserListScheduleRequestBody | body (optional)
 
 try:
@@ -530,7 +530,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
 {: class="table table-striped"}
 

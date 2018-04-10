@@ -47,8 +47,19 @@ class ViewFilter(object):
             'dnis_list': 'list[str]',
             'user_ids': 'list[str]',
             'address_tos': 'list[str]',
+            'address_froms': 'list[str]',
             'outbound_campaign_ids': 'list[str]',
-            'outbound_contact_list_ids': 'list[str]'
+            'outbound_contact_list_ids': 'list[str]',
+            'contact_ids': 'list[str]',
+            'ani_list': 'list[str]',
+            'duration_milliseconds': 'NumericRange',
+            'evaluation_score': 'NumericRange',
+            'evaluation_critical_score': 'NumericRange',
+            'evaluation_form_ids': 'list[str]',
+            'evaluated_agent_ids': 'list[str]',
+            'evaluator_ids': 'list[str]',
+            'transferred': 'bool',
+            'abandoned': 'bool'
         }
 
         self.attribute_map = {
@@ -61,8 +72,19 @@ class ViewFilter(object):
             'dnis_list': 'dnisList',
             'user_ids': 'userIds',
             'address_tos': 'addressTos',
+            'address_froms': 'addressFroms',
             'outbound_campaign_ids': 'outboundCampaignIds',
-            'outbound_contact_list_ids': 'outboundContactListIds'
+            'outbound_contact_list_ids': 'outboundContactListIds',
+            'contact_ids': 'contactIds',
+            'ani_list': 'aniList',
+            'duration_milliseconds': 'durationMilliseconds',
+            'evaluation_score': 'evaluationScore',
+            'evaluation_critical_score': 'evaluationCriticalScore',
+            'evaluation_form_ids': 'evaluationFormIds',
+            'evaluated_agent_ids': 'evaluatedAgentIds',
+            'evaluator_ids': 'evaluatorIds',
+            'transferred': 'transferred',
+            'abandoned': 'abandoned'
         }
 
         self._media_types = None
@@ -74,14 +96,25 @@ class ViewFilter(object):
         self._dnis_list = None
         self._user_ids = None
         self._address_tos = None
+        self._address_froms = None
         self._outbound_campaign_ids = None
         self._outbound_contact_list_ids = None
+        self._contact_ids = None
+        self._ani_list = None
+        self._duration_milliseconds = None
+        self._evaluation_score = None
+        self._evaluation_critical_score = None
+        self._evaluation_form_ids = None
+        self._evaluated_agent_ids = None
+        self._evaluator_ids = None
+        self._transferred = None
+        self._abandoned = None
 
     @property
     def media_types(self):
         """
         Gets the media_types of this ViewFilter.
-        The media types used to filter the data export request
+        The media types are used to filter the view
 
         :return: The media_types of this ViewFilter.
         :rtype: list[str]
@@ -92,7 +125,7 @@ class ViewFilter(object):
     def media_types(self, media_types):
         """
         Sets the media_types of this ViewFilter.
-        The media types used to filter the data export request
+        The media types are used to filter the view
 
         :param media_types: The media_types of this ViewFilter.
         :type: list[str]
@@ -104,7 +137,7 @@ class ViewFilter(object):
     def queue_ids(self):
         """
         Gets the queue_ids of this ViewFilter.
-        The queue ids used to filter the data export request
+        The queue ids are used to filter the view
 
         :return: The queue_ids of this ViewFilter.
         :rtype: list[str]
@@ -115,7 +148,7 @@ class ViewFilter(object):
     def queue_ids(self, queue_ids):
         """
         Sets the queue_ids of this ViewFilter.
-        The queue ids used to filter the data export request
+        The queue ids are used to filter the view
 
         :param queue_ids: The queue_ids of this ViewFilter.
         :type: list[str]
@@ -127,7 +160,7 @@ class ViewFilter(object):
     def skill_ids(self):
         """
         Gets the skill_ids of this ViewFilter.
-        The skill ids used to filter the data export request
+        The skill ids are used to filter the view
 
         :return: The skill_ids of this ViewFilter.
         :rtype: list[str]
@@ -138,7 +171,7 @@ class ViewFilter(object):
     def skill_ids(self, skill_ids):
         """
         Sets the skill_ids of this ViewFilter.
-        The skill ids used to filter the data export request
+        The skill ids are used to filter the view
 
         :param skill_ids: The skill_ids of this ViewFilter.
         :type: list[str]
@@ -150,7 +183,7 @@ class ViewFilter(object):
     def language_ids(self):
         """
         Gets the language_ids of this ViewFilter.
-        The language ids used to filter the data export request
+        The language ids are used to filter the view
 
         :return: The language_ids of this ViewFilter.
         :rtype: list[str]
@@ -161,7 +194,7 @@ class ViewFilter(object):
     def language_ids(self, language_ids):
         """
         Sets the language_ids of this ViewFilter.
-        The language ids used to filter the data export request
+        The language ids are used to filter the view
 
         :param language_ids: The language_ids of this ViewFilter.
         :type: list[str]
@@ -173,7 +206,7 @@ class ViewFilter(object):
     def directions(self):
         """
         Gets the directions of this ViewFilter.
-        The directions used to filter the data export request
+        The directions are used to filter the view
 
         :return: The directions of this ViewFilter.
         :rtype: list[str]
@@ -184,7 +217,7 @@ class ViewFilter(object):
     def directions(self, directions):
         """
         Sets the directions of this ViewFilter.
-        The directions used to filter the data export request
+        The directions are used to filter the view
 
         :param directions: The directions of this ViewFilter.
         :type: list[str]
@@ -196,7 +229,7 @@ class ViewFilter(object):
     def wrap_up_codes(self):
         """
         Gets the wrap_up_codes of this ViewFilter.
-        The wrap up codes used to filter the data export request
+        The wrap up codes are used to filter the view
 
         :return: The wrap_up_codes of this ViewFilter.
         :rtype: list[str]
@@ -207,7 +240,7 @@ class ViewFilter(object):
     def wrap_up_codes(self, wrap_up_codes):
         """
         Sets the wrap_up_codes of this ViewFilter.
-        The wrap up codes used to filter the data export request
+        The wrap up codes are used to filter the view
 
         :param wrap_up_codes: The wrap_up_codes of this ViewFilter.
         :type: list[str]
@@ -219,7 +252,7 @@ class ViewFilter(object):
     def dnis_list(self):
         """
         Gets the dnis_list of this ViewFilter.
-        The dnis list used to filter the data export request
+        The dnis list is used to filter the view
 
         :return: The dnis_list of this ViewFilter.
         :rtype: list[str]
@@ -230,7 +263,7 @@ class ViewFilter(object):
     def dnis_list(self, dnis_list):
         """
         Sets the dnis_list of this ViewFilter.
-        The dnis list used to filter the data export request
+        The dnis list is used to filter the view
 
         :param dnis_list: The dnis_list of this ViewFilter.
         :type: list[str]
@@ -242,7 +275,7 @@ class ViewFilter(object):
     def user_ids(self):
         """
         Gets the user_ids of this ViewFilter.
-        The user ids used to filter the data export request
+        The user ids are used to filter the view
 
         :return: The user_ids of this ViewFilter.
         :rtype: list[str]
@@ -253,7 +286,7 @@ class ViewFilter(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this ViewFilter.
-        The user ids used to filter the data export request
+        The user ids are used to filter the view
 
         :param user_ids: The user_ids of this ViewFilter.
         :type: list[str]
@@ -265,7 +298,7 @@ class ViewFilter(object):
     def address_tos(self):
         """
         Gets the address_tos of this ViewFilter.
-        The address To values used to filter the data export request
+        The address To values are used to filter the view
 
         :return: The address_tos of this ViewFilter.
         :rtype: list[str]
@@ -276,7 +309,7 @@ class ViewFilter(object):
     def address_tos(self, address_tos):
         """
         Sets the address_tos of this ViewFilter.
-        The address To values used to filter the data export request
+        The address To values are used to filter the view
 
         :param address_tos: The address_tos of this ViewFilter.
         :type: list[str]
@@ -285,10 +318,33 @@ class ViewFilter(object):
         self._address_tos = address_tos
 
     @property
+    def address_froms(self):
+        """
+        Gets the address_froms of this ViewFilter.
+        The address from values are used to filter the view
+
+        :return: The address_froms of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._address_froms
+
+    @address_froms.setter
+    def address_froms(self, address_froms):
+        """
+        Sets the address_froms of this ViewFilter.
+        The address from values are used to filter the view
+
+        :param address_froms: The address_froms of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._address_froms = address_froms
+
+    @property
     def outbound_campaign_ids(self):
         """
         Gets the outbound_campaign_ids of this ViewFilter.
-        The outbound campaign ids used to filter the data export request
+        The outbound campaign ids are used to filter the view
 
         :return: The outbound_campaign_ids of this ViewFilter.
         :rtype: list[str]
@@ -299,7 +355,7 @@ class ViewFilter(object):
     def outbound_campaign_ids(self, outbound_campaign_ids):
         """
         Sets the outbound_campaign_ids of this ViewFilter.
-        The outbound campaign ids used to filter the data export request
+        The outbound campaign ids are used to filter the view
 
         :param outbound_campaign_ids: The outbound_campaign_ids of this ViewFilter.
         :type: list[str]
@@ -311,7 +367,7 @@ class ViewFilter(object):
     def outbound_contact_list_ids(self):
         """
         Gets the outbound_contact_list_ids of this ViewFilter.
-        The outbound contact list ids used to filter the data export request
+        The outbound contact list ids are used to filter the view
 
         :return: The outbound_contact_list_ids of this ViewFilter.
         :rtype: list[str]
@@ -322,13 +378,243 @@ class ViewFilter(object):
     def outbound_contact_list_ids(self, outbound_contact_list_ids):
         """
         Sets the outbound_contact_list_ids of this ViewFilter.
-        The outbound contact list ids used to filter the data export request
+        The outbound contact list ids are used to filter the view
 
         :param outbound_contact_list_ids: The outbound_contact_list_ids of this ViewFilter.
         :type: list[str]
         """
         
         self._outbound_contact_list_ids = outbound_contact_list_ids
+
+    @property
+    def contact_ids(self):
+        """
+        Gets the contact_ids of this ViewFilter.
+        The contact ids are used to filter the view
+
+        :return: The contact_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._contact_ids
+
+    @contact_ids.setter
+    def contact_ids(self, contact_ids):
+        """
+        Sets the contact_ids of this ViewFilter.
+        The contact ids are used to filter the view
+
+        :param contact_ids: The contact_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._contact_ids = contact_ids
+
+    @property
+    def ani_list(self):
+        """
+        Gets the ani_list of this ViewFilter.
+        The ani list ids are used to filter the view
+
+        :return: The ani_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._ani_list
+
+    @ani_list.setter
+    def ani_list(self, ani_list):
+        """
+        Sets the ani_list of this ViewFilter.
+        The ani list ids are used to filter the view
+
+        :param ani_list: The ani_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._ani_list = ani_list
+
+    @property
+    def duration_milliseconds(self):
+        """
+        Gets the duration_milliseconds of this ViewFilter.
+        The duration is used to filter the view
+
+        :return: The duration_milliseconds of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._duration_milliseconds
+
+    @duration_milliseconds.setter
+    def duration_milliseconds(self, duration_milliseconds):
+        """
+        Sets the duration_milliseconds of this ViewFilter.
+        The duration is used to filter the view
+
+        :param duration_milliseconds: The duration_milliseconds of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._duration_milliseconds = duration_milliseconds
+
+    @property
+    def evaluation_score(self):
+        """
+        Gets the evaluation_score of this ViewFilter.
+        The evaluationScore is used to filter the view
+
+        :return: The evaluation_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._evaluation_score
+
+    @evaluation_score.setter
+    def evaluation_score(self, evaluation_score):
+        """
+        Sets the evaluation_score of this ViewFilter.
+        The evaluationScore is used to filter the view
+
+        :param evaluation_score: The evaluation_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._evaluation_score = evaluation_score
+
+    @property
+    def evaluation_critical_score(self):
+        """
+        Gets the evaluation_critical_score of this ViewFilter.
+        The evaluationCriticalScore is used to filter the view
+
+        :return: The evaluation_critical_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._evaluation_critical_score
+
+    @evaluation_critical_score.setter
+    def evaluation_critical_score(self, evaluation_critical_score):
+        """
+        Sets the evaluation_critical_score of this ViewFilter.
+        The evaluationCriticalScore is used to filter the view
+
+        :param evaluation_critical_score: The evaluation_critical_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._evaluation_critical_score = evaluation_critical_score
+
+    @property
+    def evaluation_form_ids(self):
+        """
+        Gets the evaluation_form_ids of this ViewFilter.
+        The evaluation form ids are used to filter the view
+
+        :return: The evaluation_form_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluation_form_ids
+
+    @evaluation_form_ids.setter
+    def evaluation_form_ids(self, evaluation_form_ids):
+        """
+        Sets the evaluation_form_ids of this ViewFilter.
+        The evaluation form ids are used to filter the view
+
+        :param evaluation_form_ids: The evaluation_form_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._evaluation_form_ids = evaluation_form_ids
+
+    @property
+    def evaluated_agent_ids(self):
+        """
+        Gets the evaluated_agent_ids of this ViewFilter.
+        The evaluated agent ids are used to filter the view
+
+        :return: The evaluated_agent_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluated_agent_ids
+
+    @evaluated_agent_ids.setter
+    def evaluated_agent_ids(self, evaluated_agent_ids):
+        """
+        Sets the evaluated_agent_ids of this ViewFilter.
+        The evaluated agent ids are used to filter the view
+
+        :param evaluated_agent_ids: The evaluated_agent_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._evaluated_agent_ids = evaluated_agent_ids
+
+    @property
+    def evaluator_ids(self):
+        """
+        Gets the evaluator_ids of this ViewFilter.
+        The evaluator ids are used to filter the view
+
+        :return: The evaluator_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluator_ids
+
+    @evaluator_ids.setter
+    def evaluator_ids(self, evaluator_ids):
+        """
+        Sets the evaluator_ids of this ViewFilter.
+        The evaluator ids are used to filter the view
+
+        :param evaluator_ids: The evaluator_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._evaluator_ids = evaluator_ids
+
+    @property
+    def transferred(self):
+        """
+        Gets the transferred of this ViewFilter.
+        Indicates filtering for transfers
+
+        :return: The transferred of this ViewFilter.
+        :rtype: bool
+        """
+        return self._transferred
+
+    @transferred.setter
+    def transferred(self, transferred):
+        """
+        Sets the transferred of this ViewFilter.
+        Indicates filtering for transfers
+
+        :param transferred: The transferred of this ViewFilter.
+        :type: bool
+        """
+        
+        self._transferred = transferred
+
+    @property
+    def abandoned(self):
+        """
+        Gets the abandoned of this ViewFilter.
+        Indicates filtering for abandons
+
+        :return: The abandoned of this ViewFilter.
+        :rtype: bool
+        """
+        return self._abandoned
+
+    @abandoned.setter
+    def abandoned(self, abandoned):
+        """
+        Sets the abandoned of this ViewFilter.
+        Indicates filtering for abandons
+
+        :param abandoned: The abandoned of this ViewFilter.
+        :type: bool
+        """
+        
+        self._abandoned = abandoned
 
     def to_dict(self):
         """

@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete utilization settings and revert to system defaults.|
 |[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
+|[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](RoutingApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**get_routing_email_domain**](RoutingApi.html#get_routing_email_domain) | Get domain|
 |[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
@@ -40,9 +41,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the utilization settings.|
 |[**get_routing_wrapupcode**](RoutingApi.html#get_routing_wrapupcode) | Get details about this wrap-up code.|
 |[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
+|[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number of joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
+|[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
@@ -54,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
 |[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
 |[**post_routing_wrapupcodes**](RoutingApi.html#post_routing_wrapupcodes) | Create a wrap-up code|
+|[**post_user_routinglanguages**](RoutingApi.html#post_user_routinglanguages) | Add routing language to user|
 |[**post_user_routingskills**](RoutingApi.html#post_user_routingskills) | Add routing skill to user|
 |[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
 |[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
@@ -458,6 +462,52 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_user_routinglanguage"></a>
+
+##  delete_user_routinglanguage(user_id, language_id)
+
+Remove routing language from user
+
+
+
+Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+language_id = 'language_id_example' # str | languageId
+
+try:
+    # Remove routing language from user
+    api_instance.delete_user_routinglanguage(user_id, language_id)
+except ApiException as e:
+    print "Exception when calling RoutingApi->delete_user_routinglanguage: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **language_id** | **str**| languageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1568,6 +1618,57 @@ except ApiException as e:
 
 [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
 
+<a name="get_user_routinglanguages"></a>
+
+## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+
+List routing language for user
+
+
+
+Wraps GET /api/v2/users/{userId}/routinglanguages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+
+try:
+    # List routing language for user
+    api_response = api_instance.get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_user_routinglanguages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
 <a name="get_user_routingskills"></a>
 
 ## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
@@ -1714,6 +1815,55 @@ except ApiException as e:
 ### Return type
 
 [**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+
+<a name="patch_user_routinglanguage"></a>
+
+## [**UserRoutingLanguage**](UserRoutingLanguage.html) patch_user_routinglanguage(user_id, language_id, body)
+
+Update routing language proficiency or state.
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+language_id = 'language_id_example' # str | languageId
+body = PureCloudPlatformClientV2.UserRoutingLanguage() # UserRoutingLanguage | Language
+
+try:
+    # Update routing language proficiency or state.
+    api_response = api_instance.patch_user_routinglanguage(user_id, language_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_user_routinglanguage: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **language_id** | **str**| languageId |  |
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
 
 <a name="post_analytics_queues_observations_query"></a>
 
@@ -2217,6 +2367,53 @@ except ApiException as e:
 ### Return type
 
 [**WrapupCode**](WrapupCode.html)
+
+<a name="post_user_routinglanguages"></a>
+
+## [**UserRoutingLanguage**](UserRoutingLanguage.html) post_user_routinglanguages(user_id, body)
+
+Add routing language to user
+
+
+
+Wraps POST /api/v2/users/{userId}/routinglanguages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserRoutingLanguagePost() # UserRoutingLanguagePost | Language
+
+try:
+    # Add routing language to user
+    api_response = api_instance.post_user_routinglanguages(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->post_user_routinglanguages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
 
 <a name="post_user_routingskills"></a>
 

@@ -1036,6 +1036,7 @@ from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing
 from .user_expands import UserExpands
 from .user_image import UserImage
+from .user_language_entity_listing import UserLanguageEntityListing
 from .user_list_schedule_request_body import UserListScheduleRequestBody
 from .user_me import UserMe
 from .user_param import UserParam
@@ -1049,6 +1050,8 @@ from .user_queue_entity_listing import UserQueueEntityListing
 from .user_recording import UserRecording
 from .user_recording_entity_listing import UserRecordingEntityListing
 from .user_reference import UserReference
+from .user_routing_language import UserRoutingLanguage
+from .user_routing_language_post import UserRoutingLanguagePost
 from .user_routing_skill import UserRoutingSkill
 from .user_routing_skill_post import UserRoutingSkillPost
 from .user_routing_status_notification import UserRoutingStatusNotification

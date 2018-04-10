@@ -217,7 +217,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str date: ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
         :return: WfmIntradayQueueListing
                  If the method is called asynchronously,
@@ -301,7 +301,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param str time_off_request_id: Time Off Request Id (required)
         :return: TimeOffRequest
@@ -391,7 +391,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param bool recently_reviewed: Limit results to requests that have been reviewed within the preceding 30 days
         :return: TimeOffRequestList
@@ -478,7 +478,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: WfmUserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -718,7 +718,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param WfmHistoricalAdherenceQuery body: body
         :return: WfmHistoricalAdherenceResponse
                  If the method is called asynchronously,
@@ -799,7 +799,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param IntradayQueryDataCommand body: body
         :return: IntradayResponse
                  If the method is called asynchronously,
@@ -880,7 +880,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param UserListScheduleRequestBody body: body
         :return: UserScheduleContainer
                  If the method is called asynchronously,

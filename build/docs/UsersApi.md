@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
 |[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
+|[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
@@ -26,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_profileskills**](UsersApi.html#get_user_profileskills) | List profile skills for a user|
 |[**get_user_queues**](UsersApi.html#get_user_queues) | Get queues for user|
 |[**get_user_roles**](UsersApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
+|[**get_user_routinglanguages**](UsersApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](UsersApi.html#get_user_routingskills) | List routing skills for user|
 |[**get_user_routingstatus**](UsersApi.html#get_user_routingstatus) | Fetch the routing status of a user|
 |[**get_user_station**](UsersApi.html#get_user_station) | Get station information for user|
@@ -39,11 +41,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_geolocation**](UsersApi.html#patch_user_geolocation) | Patch a user&#39;s Geolocation|
 |[**patch_user_queue**](UsersApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](UsersApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
+|[**patch_user_routinglanguage**](UsersApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
+|[**post_user_routinglanguages**](UsersApi.html#post_user_routinglanguages) | Add routing language to user|
 |[**post_user_routingskills**](UsersApi.html#post_user_routingskills) | Add routing skill to user|
 |[**post_users**](UsersApi.html#post_users) | Create user|
 |[**post_users_me_password**](UsersApi.html#post_users_me_password) | Change your password|
@@ -141,6 +145,52 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_user_routinglanguage"></a>
+
+##  delete_user_routinglanguage(user_id, language_id)
+
+Remove routing language from user
+
+
+
+Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+language_id = 'language_id_example' # str | languageId
+
+try:
+    # Remove routing language from user
+    api_instance.delete_user_routinglanguage(user_id, language_id)
+except ApiException as e:
+    print "Exception when calling UsersApi->delete_user_routinglanguage: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **language_id** | **str**| languageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -904,6 +954,57 @@ except ApiException as e:
 
 [**UserAuthorization**](UserAuthorization.html)
 
+<a name="get_user_routinglanguages"></a>
+
+## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+
+List routing language for user
+
+
+
+Wraps GET /api/v2/users/{userId}/routinglanguages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
+
+try:
+    # List routing language for user
+    api_response = api_instance.get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_user_routinglanguages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
 <a name="get_user_routingskills"></a>
 
 ## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
@@ -1527,6 +1628,55 @@ except ApiException as e:
 
 [**UserQueueEntityListing**](UserQueueEntityListing.html)
 
+<a name="patch_user_routinglanguage"></a>
+
+## [**UserRoutingLanguage**](UserRoutingLanguage.html) patch_user_routinglanguage(user_id, language_id, body)
+
+Update routing language proficiency or state.
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+language_id = 'language_id_example' # str | languageId
+body = PureCloudPlatformClientV2.UserRoutingLanguage() # UserRoutingLanguage | Language
+
+try:
+    # Update routing language proficiency or state.
+    api_response = api_instance.patch_user_routinglanguage(user_id, language_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->patch_user_routinglanguage: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **language_id** | **str**| languageId |  |
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
+
 <a name="post_analytics_users_aggregates_query"></a>
 
 ## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
@@ -1753,6 +1903,53 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_user_routinglanguages"></a>
+
+## [**UserRoutingLanguage**](UserRoutingLanguage.html) post_user_routinglanguages(user_id, body)
+
+Add routing language to user
+
+
+
+Wraps POST /api/v2/users/{userId}/routinglanguages 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserRoutingLanguagePost() # UserRoutingLanguagePost | Language
+
+try:
+    # Add routing language to user
+    api_response = api_instance.post_user_routinglanguages(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_user_routinglanguages: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
 
 <a name="post_user_routingskills"></a>
 
