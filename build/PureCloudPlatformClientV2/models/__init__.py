@@ -57,6 +57,9 @@ from .analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .analytics_view import AnalyticsView
 from .annotation import Annotation
 from .answer_option import AnswerOption
+from .app_foundry_listing import AppFoundryListing
+from .app_foundry_listing_category import AppFoundryListingCategory
+from .app_foundry_listing_registry_info import AppFoundryListingRegistryInfo
 from .archive_retention import ArchiveRetention
 from .asg_info_response import AsgInfoResponse
 from .attachment import Attachment
@@ -78,7 +81,6 @@ from .audit_message import AuditMessage
 from .audit_query_response import AuditQueryResponse
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
-from .authz_typed_object import AuthzTypedObject
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -225,6 +227,9 @@ from .chat_media_policy import ChatMediaPolicy
 from .chat_media_policy_conditions import ChatMediaPolicyConditions
 from .chat_message import ChatMessage
 from .chat_message_user import ChatMessageUser
+from .client_app import ClientApp
+from .client_app_configuration_info import ClientAppConfigurationInfo
+from .client_app_entity_listing import ClientAppEntityListing
 from .cobrowse_conversation import CobrowseConversation
 from .cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .cobrowse_conversation_notification import CobrowseConversationNotification
@@ -331,6 +336,7 @@ from .create_callback_command import CreateCallbackCommand
 from .create_callback_on_conversation_command import CreateCallbackOnConversationCommand
 from .create_callback_response import CreateCallbackResponse
 from .create_email_request import CreateEmailRequest
+from .create_integration_request import CreateIntegrationRequest
 from .create_queue_request import CreateQueueRequest
 from .create_secure_session import CreateSecureSession
 from .create_share_request import CreateShareRequest
@@ -338,12 +344,18 @@ from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
 from .create_user import CreateUser
 from .create_web_chat_request import CreateWebChatRequest
+from .credential import Credential
+from .credential_info import CredentialInfo
+from .credential_info_listing import CredentialInfoListing
+from .credential_specification import CredentialSpecification
+from .credential_type import CredentialType
+from .credential_type_listing import CredentialTypeListing
 from .customer_interaction_center import CustomerInteractionCenter
 from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
-from .data_column import DataColumn
+from .data_export_notification_notification import DataExportNotificationNotification
 from .data_table import DataTable
 from .data_table_row_entity_listing import DataTableRowEntityListing
 from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
@@ -450,6 +462,7 @@ from .edge_service_state_request import EdgeServiceStateRequest
 from .edge_trunk_base import EdgeTrunkBase
 from .edge_version_information import EdgeVersionInformation
 from .edge_version_report import EdgeVersionReport
+from .effective_configuration import EffectiveConfiguration
 from .email import Email
 from .email_address import EmailAddress
 from .email_attachment import EmailAttachment
@@ -491,6 +504,7 @@ from .evaluation_form_entity_listing import EvaluationFormEntityListing
 from .evaluation_scoring_set import EvaluationScoringSet
 from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
+from .event_entity import EventEntity
 from .event_log import EventLog
 from .event_message import EventMessage
 from .expansion_criterium import ExpansionCriterium
@@ -585,6 +599,15 @@ from .inbound_route import InboundRoute
 from .inbound_route_entity_listing import InboundRouteEntityListing
 from .initiate_screen_recording import InitiateScreenRecording
 from .instance_info import InstanceInfo
+from .integration import Integration
+from .integration_configuration import IntegrationConfiguration
+from .integration_configuration_info import IntegrationConfigurationInfo
+from .integration_entity_listing import IntegrationEntityListing
+from .integration_event import IntegrationEvent
+from .integration_event_entity_listing import IntegrationEventEntityListing
+from .integration_status_info import IntegrationStatusInfo
+from .integration_type import IntegrationType
+from .integration_type_entity_listing import IntegrationTypeEntityListing
 from .interaction_stat_alert_notification import InteractionStatAlertNotification
 from .interaction_stat_alert_notification_notification_user import InteractionStatAlertNotificationNotificationUser
 from .interaction_stat_rule_notification import InteractionStatRuleNotification
@@ -595,6 +618,7 @@ from .interaction_stats_rule import InteractionStatsRule
 from .interaction_stats_rule_container import InteractionStatsRuleContainer
 from .intraday_data_group import IntradayDataGroup
 from .intraday_data_update_notification import IntradayDataUpdateNotification
+from .intraday_data_update_notification_date_time import IntradayDataUpdateNotificationDateTime
 from .intraday_data_update_notification_forecast_data_per_interval import IntradayDataUpdateNotificationForecastDataPerInterval
 from .intraday_data_update_notification_historical_agent_data_per_interval import IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
 from .intraday_data_update_notification_historical_queue_data_per_interval import IntradayDataUpdateNotificationHistoricalQueueDataPerInterval
@@ -611,6 +635,7 @@ from .intraday_data_update_notification_metrics import IntradayDataUpdateNotific
 from .intraday_data_update_notification_performance_prediction_agent_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval
 from .intraday_data_update_notification_performance_prediction_queue_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval
 from .intraday_data_update_notification_schedule_data_per_interval import IntradayDataUpdateNotificationScheduleDataPerInterval
+from .intraday_data_update_notification_start_date import IntradayDataUpdateNotificationStartDate
 from .intraday_forecast_data import IntradayForecastData
 from .intraday_historical_agent_data import IntradayHistoricalAgentData
 from .intraday_historical_queue_data import IntradayHistoricalQueueData
@@ -647,6 +672,7 @@ from .line_status import LineStatus
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .local_encryption_key_request import LocalEncryptionKeyRequest
+from .localized_field import LocalizedField
 from .location import Location
 from .location_address import LocationAddress
 from .location_definition import LocationDefinition
@@ -660,6 +686,7 @@ from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
 from .management_unit_settings import ManagementUnitSettings
+from .marketing_info import MarketingInfo
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
@@ -685,6 +712,7 @@ from .message_conversation_notification_uri_reference import MessageConversation
 from .message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .message_data import MessageData
 from .message_details import MessageDetails
+from .message_info import MessageInfo
 from .message_media import MessageMedia
 from .message_media_participant import MessageMediaParticipant
 from .message_media_policy import MessageMediaPolicy
@@ -733,6 +761,7 @@ from .outbound_settings import OutboundSettings
 from .outbound_settings_notification import OutboundSettingsNotification
 from .pin_configuration import PINConfiguration
 from .page import Page
+from .paged_listing_entity import PagedListingEntity
 from .paging_spec import PagingSpec
 from .parameter import Parameter
 from .parsed_certificate import ParsedCertificate
@@ -755,6 +784,7 @@ from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
+from .platform import Platform
 from .policy import Policy
 from .policy_actions import PolicyActions
 from .policy_conditions import PolicyConditions
@@ -768,6 +798,7 @@ from .post_output_contract import PostOutputContract
 from .prediction_results import PredictionResults
 from .presence_definition import PresenceDefinition
 from .presence_query_response import PresenceQueryResponse
+from .pricing_option import PricingOption
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -820,6 +851,7 @@ from .recording_data_v2_notification_workspace_data import RecordingDataV2Notifi
 from .recording_email_message import RecordingEmailMessage
 from .recording_messaging_message import RecordingMessagingMessage
 from .recording_settings import RecordingSettings
+from .region_time_zone import RegionTimeZone
 from .relationship import Relationship
 from .relationship_listing import RelationshipListing
 from .replace_request import ReplaceRequest
@@ -924,6 +956,7 @@ from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
+from .smart_case import SmartCase
 from .sms_address_provision import SmsAddressProvision
 from .sms_available_phone_number import SmsAvailablePhoneNumber
 from .sms_phone_number import SmsPhoneNumber
@@ -977,7 +1010,7 @@ from .time_off_request import TimeOffRequest
 from .time_off_request_list import TimeOffRequestList
 from .time_off_request_settings import TimeOffRequestSettings
 from .time_off_request_update_notification import TimeOffRequestUpdateNotification
-from .time_off_request_update_notification_user import TimeOffRequestUpdateNotificationUser
+from .time_off_request_update_notification_user_reference import TimeOffRequestUpdateNotificationUserReference
 from .time_slot import TimeSlot
 from .time_zone import TimeZone
 from .time_zone_entity_listing import TimeZoneEntityListing
@@ -1023,6 +1056,8 @@ from .uri_reference import UriReference
 from .usage import Usage
 from .usage_item import UsageItem
 from .user import User
+from .user_action_category import UserActionCategory
+from .user_action_category_entity_listing import UserActionCategoryEntityListing
 from .user_agent_info import UserAgentInfo
 from .user_authorization import UserAuthorization
 from .user_conversation_summary import UserConversationSummary
@@ -1063,7 +1098,8 @@ from .user_schedule import UserSchedule
 from .user_schedule_activity import UserScheduleActivity
 from .user_schedule_adherence import UserScheduleAdherence
 from .user_schedule_adherence_update_notification import UserScheduleAdherenceUpdateNotification
-from .user_schedule_adherence_update_notification_user import UserScheduleAdherenceUpdateNotificationUser
+from .user_schedule_adherence_update_notification_date_time import UserScheduleAdherenceUpdateNotificationDateTime
+from .user_schedule_adherence_update_notification_user_reference import UserScheduleAdherenceUpdateNotificationUserReference
 from .user_schedule_container import UserScheduleContainer
 from .user_schedule_full_day_time_off_marker import UserScheduleFullDayTimeOffMarker
 from .user_schedule_shift import UserScheduleShift
@@ -1080,6 +1116,7 @@ from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
+from .vendor_connection_request import VendorConnectionRequest
 from .video import Video
 from .video_conversation_notification import VideoConversationNotification
 from .video_conversation_notification_detail import VideoConversationNotificationDetail
@@ -1116,7 +1153,7 @@ from .wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .wfm_move_agents_complete_notification import WfmMoveAgentsCompleteNotification
 from .wfm_move_agents_complete_notification_management_unit import WfmMoveAgentsCompleteNotificationManagementUnit
 from .wfm_move_agents_complete_notification_results import WfmMoveAgentsCompleteNotificationResults
-from .wfm_move_agents_complete_notification_user import WfmMoveAgentsCompleteNotificationUser
+from .wfm_move_agents_complete_notification_user_reference import WfmMoveAgentsCompleteNotificationUserReference
 from .wfm_move_agents_complete_notification_wfm_move_agent_data import WfmMoveAgentsCompleteNotificationWfmMoveAgentData
 from .wfm_update_agent_details_complete_notification import WfmUpdateAgentDetailsCompleteNotification
 from .wfm_user_entity_listing import WfmUserEntityListing

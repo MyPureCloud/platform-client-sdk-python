@@ -39,6 +39,8 @@ class CreateCallRequest(object):
         """
         self.swagger_types = {
             'phone_number': 'str',
+            'caller_id': 'str',
+            'caller_id_name': 'str',
             'call_from_queue_id': 'str',
             'call_queue_id': 'str',
             'call_user_id': 'str',
@@ -51,6 +53,8 @@ class CreateCallRequest(object):
 
         self.attribute_map = {
             'phone_number': 'phoneNumber',
+            'caller_id': 'callerId',
+            'caller_id_name': 'callerIdName',
             'call_from_queue_id': 'callFromQueueId',
             'call_queue_id': 'callQueueId',
             'call_user_id': 'callUserId',
@@ -62,6 +66,8 @@ class CreateCallRequest(object):
         }
 
         self._phone_number = None
+        self._caller_id = None
+        self._caller_id_name = None
         self._call_from_queue_id = None
         self._call_queue_id = None
         self._call_user_id = None
@@ -93,6 +99,52 @@ class CreateCallRequest(object):
         """
         
         self._phone_number = phone_number
+
+    @property
+    def caller_id(self):
+        """
+        Gets the caller_id of this CreateCallRequest.
+        The caller id phone number for this outbound call.
+
+        :return: The caller_id of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._caller_id
+
+    @caller_id.setter
+    def caller_id(self, caller_id):
+        """
+        Sets the caller_id of this CreateCallRequest.
+        The caller id phone number for this outbound call.
+
+        :param caller_id: The caller_id of this CreateCallRequest.
+        :type: str
+        """
+        
+        self._caller_id = caller_id
+
+    @property
+    def caller_id_name(self):
+        """
+        Gets the caller_id_name of this CreateCallRequest.
+        The caller id name for this outbound call.
+
+        :return: The caller_id_name of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._caller_id_name
+
+    @caller_id_name.setter
+    def caller_id_name(self, caller_id_name):
+        """
+        Sets the caller_id_name of this CreateCallRequest.
+        The caller id name for this outbound call.
+
+        :param caller_id_name: The caller_id_name of this CreateCallRequest.
+        :type: str
+        """
+        
+        self._caller_id_name = caller_id_name
 
     @property
     def call_from_queue_id(self):

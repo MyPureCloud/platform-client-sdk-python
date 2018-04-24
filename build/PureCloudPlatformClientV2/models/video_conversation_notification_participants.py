@@ -65,11 +65,13 @@ class VideoConversationNotificationParticipants(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
             'peer_count': 'int',
-            'context': 'str'
+            'context': 'str',
+            'msids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -100,11 +102,13 @@ class VideoConversationNotificationParticipants(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
             'peer_count': 'peerCount',
-            'context': 'context'
+            'context': 'context',
+            'msids': 'msids'
         }
 
         self._id = None
@@ -134,11 +138,13 @@ class VideoConversationNotificationParticipants(object):
         self._wrapup = None
         self._peer = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
         self._peer_count = None
         self._context = None
+        self._msids = None
 
     @property
     def id(self):
@@ -774,6 +780,33 @@ class VideoConversationNotificationParticipants(object):
         self._screen_recording_state = screen_recording_state
 
     @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this VideoConversationNotificationParticipants.
+
+
+        :return: The flagged_reason of this VideoConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this VideoConversationNotificationParticipants.
+
+
+        :param flagged_reason: The flagged_reason of this VideoConversationNotificationParticipants.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
+
+    @property
     def audio_muted(self):
         """
         Gets the audio_muted of this VideoConversationNotificationParticipants.
@@ -887,6 +920,29 @@ class VideoConversationNotificationParticipants(object):
         """
         
         self._context = context
+
+    @property
+    def msids(self):
+        """
+        Gets the msids of this VideoConversationNotificationParticipants.
+
+
+        :return: The msids of this VideoConversationNotificationParticipants.
+        :rtype: list[str]
+        """
+        return self._msids
+
+    @msids.setter
+    def msids(self, msids):
+        """
+        Sets the msids of this VideoConversationNotificationParticipants.
+
+
+        :param msids: The msids of this VideoConversationNotificationParticipants.
+        :type: list[str]
+        """
+        
+        self._msids = msids
 
     def to_dict(self):
         """

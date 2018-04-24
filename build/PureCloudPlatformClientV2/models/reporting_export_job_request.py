@@ -42,11 +42,11 @@ class ReportingExportJobRequest(object):
             'time_zone': 'TimeZone',
             'export_format': 'str',
             'interval': 'str',
-            'data_columns': 'list[DataColumn]',
             'period': 'str',
             'view_type': 'str',
             'filter': 'ViewFilter',
-            'read': 'bool'
+            'read': 'bool',
+            'locale': 'str'
         }
 
         self.attribute_map = {
@@ -54,22 +54,22 @@ class ReportingExportJobRequest(object):
             'time_zone': 'timeZone',
             'export_format': 'exportFormat',
             'interval': 'interval',
-            'data_columns': 'dataColumns',
             'period': 'period',
             'view_type': 'viewType',
             'filter': 'filter',
-            'read': 'read'
+            'read': 'read',
+            'locale': 'locale'
         }
 
         self._name = None
         self._time_zone = None
         self._export_format = None
         self._interval = None
-        self._data_columns = None
         self._period = None
         self._view_type = None
         self._filter = None
         self._read = None
+        self._locale = None
 
     @property
     def name(self):
@@ -168,29 +168,6 @@ class ReportingExportJobRequest(object):
         self._interval = interval
 
     @property
-    def data_columns(self):
-        """
-        Gets the data_columns of this ReportingExportJobRequest.
-        The data columns included in the export
-
-        :return: The data_columns of this ReportingExportJobRequest.
-        :rtype: list[DataColumn]
-        """
-        return self._data_columns
-
-    @data_columns.setter
-    def data_columns(self, data_columns):
-        """
-        Sets the data_columns of this ReportingExportJobRequest.
-        The data columns included in the export
-
-        :param data_columns: The data_columns of this ReportingExportJobRequest.
-        :type: list[DataColumn]
-        """
-        
-        self._data_columns = data_columns
-
-    @property
     def period(self):
         """
         Gets the period of this ReportingExportJobRequest.
@@ -285,6 +262,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._read = read
+
+    @property
+    def locale(self):
+        """
+        Gets the locale of this ReportingExportJobRequest.
+        The locale use for localization of the exported data, i.e. en-us, es-mx  
+
+        :return: The locale of this ReportingExportJobRequest.
+        :rtype: str
+        """
+        return self._locale
+
+    @locale.setter
+    def locale(self, locale):
+        """
+        Sets the locale of this ReportingExportJobRequest.
+        The locale use for localization of the exported data, i.e. en-us, es-mx  
+
+        :param locale: The locale of this ReportingExportJobRequest.
+        :type: str
+        """
+        
+        self._locale = locale
 
     def to_dict(self):
         """

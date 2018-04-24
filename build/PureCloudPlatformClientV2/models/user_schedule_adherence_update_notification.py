@@ -47,7 +47,8 @@ class UserScheduleAdherenceUpdateNotification(object):
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
-            'adherence_change_time': 'str'
+            'adherence_change_time': 'IntradayDataUpdateNotificationStartDate',
+            'presence_update_time': 'UserScheduleAdherenceUpdateNotificationDateTime'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class UserScheduleAdherenceUpdateNotification(object):
             'is_out_of_office': 'isOutOfOffice',
             'adherence_state': 'adherenceState',
             'impact': 'impact',
-            'adherence_change_time': 'adherenceChangeTime'
+            'adherence_change_time': 'adherenceChangeTime',
+            'presence_update_time': 'presenceUpdateTime'
         }
 
         self._user = None
@@ -73,6 +75,7 @@ class UserScheduleAdherenceUpdateNotification(object):
         self._adherence_state = None
         self._impact = None
         self._adherence_change_time = None
+        self._presence_update_time = None
 
     @property
     def user(self):
@@ -259,8 +262,12 @@ class UserScheduleAdherenceUpdateNotification(object):
         :param adherence_state: The adherence_state of this UserScheduleAdherenceUpdateNotification.
         :type: str
         """
-        
-        self._adherence_state = adherence_state
+        allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored"]
+        if adherence_state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for adherence_state -> " + adherence_state
+            self._adherence_state = "outdated_sdk_version"
+        else:
+            self._adherence_state = adherence_state
 
     @property
     def impact(self):
@@ -292,7 +299,7 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :return: The adherence_change_time of this UserScheduleAdherenceUpdateNotification.
-        :rtype: str
+        :rtype: IntradayDataUpdateNotificationStartDate
         """
         return self._adherence_change_time
 
@@ -303,10 +310,33 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :param adherence_change_time: The adherence_change_time of this UserScheduleAdherenceUpdateNotification.
-        :type: str
+        :type: IntradayDataUpdateNotificationStartDate
         """
         
         self._adherence_change_time = adherence_change_time
+
+    @property
+    def presence_update_time(self):
+        """
+        Gets the presence_update_time of this UserScheduleAdherenceUpdateNotification.
+
+
+        :return: The presence_update_time of this UserScheduleAdherenceUpdateNotification.
+        :rtype: UserScheduleAdherenceUpdateNotificationDateTime
+        """
+        return self._presence_update_time
+
+    @presence_update_time.setter
+    def presence_update_time(self, presence_update_time):
+        """
+        Sets the presence_update_time of this UserScheduleAdherenceUpdateNotification.
+
+
+        :param presence_update_time: The presence_update_time of this UserScheduleAdherenceUpdateNotification.
+        :type: UserScheduleAdherenceUpdateNotificationDateTime
+        """
+        
+        self._presence_update_time = presence_update_time
 
     def to_dict(self):
         """

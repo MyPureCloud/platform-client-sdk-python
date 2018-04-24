@@ -46,6 +46,84 @@ class IntegrationsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_integration(self, integration_id, **kwargs):
+        """
+        Delete integration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_integration(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id (required)
+        :return: Integration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_integration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `delete_integration`")
+
+
+        resource_path = '/api/v2/integrations/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Integration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_integrations_action(self, action_id, **kwargs):
         """
         Delete an Action
@@ -198,6 +276,348 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_integrations_credential(self, credential_id, **kwargs):
+        """
+        Delete a set of credentials
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_integrations_credential(credential_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str credential_id: Credential ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['credential_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_integrations_credential" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'credential_id' is set
+        if ('credential_id' not in params) or (params['credential_id'] is None):
+            raise ValueError("Missing the required parameter `credential_id` when calling `delete_integrations_credential`")
+
+
+        resource_path = '/api/v2/integrations/credentials/{credentialId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'credential_id' in params:
+            path_params['credentialId'] = params['credential_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integration(self, integration_id, **kwargs):
+        """
+        Get integration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integration(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id (required)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[object] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: Integration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_integration`")
+
+
+        resource_path = '/api/v2/integrations/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Integration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integration_config_current(self, integration_id, **kwargs):
+        """
+        Get integration configuration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integration_config_current(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id (required)
+        :return: IntegrationConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integration_config_current" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_integration_config_current`")
+
+
+        resource_path = '/api/v2/integrations/{integrationId}/config/current'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations(self, **kwargs):
+        """
+        List integrations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[object] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: IntegrationEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1075,6 +1495,840 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_integrations_clientapps(self, **kwargs):
+        """
+        List permitted client app integrations for the logged in user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_clientapps(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[object] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: ClientAppEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_clientapps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/clientapps'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClientAppEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_credential(self, credential_id, **kwargs):
+        """
+        Get a single credential with sensitive fields redacted
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_credential(credential_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str credential_id: Credential ID (required)
+        :return: Credential
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['credential_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_credential" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'credential_id' is set
+        if ('credential_id' not in params) or (params['credential_id'] is None):
+            raise ValueError("Missing the required parameter `credential_id` when calling `get_integrations_credential`")
+
+
+        resource_path = '/api/v2/integrations/credentials/{credentialId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'credential_id' in params:
+            path_params['credentialId'] = params['credential_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Credential',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_credentials(self, **kwargs):
+        """
+        List multiple sets of credentials
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_credentials(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: CredentialInfoListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_credentials" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/credentials'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CredentialInfoListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_credentials_types(self, **kwargs):
+        """
+        List all credential types
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_credentials_types(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: CredentialTypeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_credentials_types" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/credentials/types'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CredentialTypeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_eventlog(self, **kwargs):
+        """
+        List all events
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_eventlog(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str sort_by: Sort by
+        :param str sort_order: Order by
+        :param str entity_id: Include only events with this entity ID
+        :return: IntegrationEventEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'entity_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_eventlog" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/eventlog'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'entity_id' in params:
+            query_params['entityId'] = params['entity_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationEventEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_eventlog_event_id(self, event_id, **kwargs):
+        """
+        Get a single event
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_eventlog_event_id(event_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str event_id: Event Id (required)
+        :return: IntegrationEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['event_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_eventlog_event_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'event_id' is set
+        if ('event_id' not in params) or (params['event_id'] is None):
+            raise ValueError("Missing the required parameter `event_id` when calling `get_integrations_eventlog_event_id`")
+
+
+        resource_path = '/api/v2/integrations/eventlog/{eventId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'event_id' in params:
+            path_params['eventId'] = params['event_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_type(self, type_id, **kwargs):
+        """
+        Get integration type.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_type(type_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str type_id: Integration Type Id (required)
+        :return: IntegrationType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['type_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'type_id' is set
+        if ('type_id' not in params) or (params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `get_integrations_type`")
+
+
+        resource_path = '/api/v2/integrations/types/{typeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'type_id' in params:
+            path_params['typeId'] = params['type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationType',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_type_configschema(self, type_id, config_type, **kwargs):
+        """
+        Get properties config schema for an integration type.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_type_configschema(type_id, config_type, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str type_id: Integration Type Id (required)
+        :param str config_type: Config schema type (required)
+        :return: JsonSchemaDocument
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['type_id', 'config_type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_type_configschema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'type_id' is set
+        if ('type_id' not in params) or (params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `get_integrations_type_configschema`")
+        # verify the required parameter 'config_type' is set
+        if ('config_type' not in params) or (params['config_type'] is None):
+            raise ValueError("Missing the required parameter `config_type` when calling `get_integrations_type_configschema`")
+
+
+        resource_path = '/api/v2/integrations/types/{typeId}/configschemas/{configType}'.replace('{format}', 'json')
+        path_params = {}
+        if 'type_id' in params:
+            path_params['typeId'] = params['type_id']
+        if 'config_type' in params:
+            path_params['configType'] = params['config_type']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonSchemaDocument',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_types(self, **kwargs):
+        """
+        List integration types
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_types(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[object] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: IntegrationTypeEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_types" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/types'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationTypeEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_integration(self, integration_id, **kwargs):
+        """
+        Update an integration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_integration(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id (required)
+        :param Integration body: Integration Update
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[object] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: Integration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_integration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `patch_integration`")
+
+
+        resource_path = '/api/v2/integrations/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Integration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_integrations_action(self, action_id, body, **kwargs):
         """
         Patch an Action
@@ -1239,6 +2493,81 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Action',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_integrations(self, **kwargs):
+        """
+        Create an integration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateIntegrationRequest body: Integration
+        :return: Integration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Integration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1809,6 +3138,318 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Action',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_integrations_credentials(self, **kwargs):
+        """
+        Create a set of credentials
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_credentials(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param Credential body: Credential
+        :return: CredentialInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_credentials" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/credentials'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CredentialInfo',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_integrations_workforcemanagement_vendorconnection(self, **kwargs):
+        """
+        Add a vendor connection
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_workforcemanagement_vendorconnection(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param VendorConnectionRequest body: 
+        :return: UserActionCategoryEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_workforcemanagement_vendorconnection" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/workforcemanagement/vendorconnection'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserActionCategoryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_integration_config_current(self, integration_id, **kwargs):
+        """
+        Update integration configuration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_integration_config_current(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id (required)
+        :param IntegrationConfiguration body: Integration Configuration
+        :return: IntegrationConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_integration_config_current" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `put_integration_config_current`")
+
+
+        resource_path = '/api/v2/integrations/{integrationId}/config/current'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntegrationConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_integrations_credential(self, credential_id, **kwargs):
+        """
+        Update a set of credentials
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_integrations_credential(credential_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str credential_id: Credential ID (required)
+        :param Credential body: Credential
+        :return: CredentialInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['credential_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_integrations_credential" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'credential_id' is set
+        if ('credential_id' not in params) or (params['credential_id'] is None):
+            raise ValueError("Missing the required parameter `credential_id` when calling `put_integrations_credential`")
+
+
+        resource_path = '/api/v2/integrations/credentials/{credentialId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'credential_id' in params:
+            path_params['credentialId'] = params['credential_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CredentialInfo',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

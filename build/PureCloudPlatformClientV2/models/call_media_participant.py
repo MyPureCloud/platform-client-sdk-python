@@ -64,6 +64,7 @@ class CallMediaParticipant(object):
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
             'peer': 'str',
+            'flagged_reason': 'str',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -105,6 +106,7 @@ class CallMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'flagged_reason': 'flaggedReason',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -145,6 +147,7 @@ class CallMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._flagged_reason = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -767,6 +770,33 @@ class CallMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this CallMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this CallMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this CallMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def muted(self):

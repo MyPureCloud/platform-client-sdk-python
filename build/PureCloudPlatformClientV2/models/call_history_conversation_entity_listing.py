@@ -45,8 +45,8 @@ class CallHistoryConversationEntityListing(object):
             'self_uri': 'str',
             'first_uri': 'str',
             'previous_uri': 'str',
-            'next_uri': 'str',
             'last_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -58,8 +58,8 @@ class CallHistoryConversationEntityListing(object):
             'self_uri': 'selfUri',
             'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
-            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -70,8 +70,8 @@ class CallHistoryConversationEntityListing(object):
         self._self_uri = None
         self._first_uri = None
         self._previous_uri = None
-        self._next_uri = None
         self._last_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -236,29 +236,6 @@ class CallHistoryConversationEntityListing(object):
         self._previous_uri = previous_uri
 
     @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this CallHistoryConversationEntityListing.
-
-
-        :return: The next_uri of this CallHistoryConversationEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this CallHistoryConversationEntityListing.
-
-
-        :param next_uri: The next_uri of this CallHistoryConversationEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
-
-    @property
     def last_uri(self):
         """
         Gets the last_uri of this CallHistoryConversationEntityListing.
@@ -280,6 +257,29 @@ class CallHistoryConversationEntityListing(object):
         """
         
         self._last_uri = last_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this CallHistoryConversationEntityListing.
+
+
+        :return: The next_uri of this CallHistoryConversationEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this CallHistoryConversationEntityListing.
+
+
+        :param next_uri: The next_uri of this CallHistoryConversationEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def page_count(self):

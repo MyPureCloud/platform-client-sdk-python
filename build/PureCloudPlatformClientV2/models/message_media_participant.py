@@ -64,6 +64,7 @@ class MessageMediaParticipant(object):
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
             'peer': 'str',
+            'flagged_reason': 'str',
             'to_address': 'Address',
             'from_address': 'Address',
             'messages': 'list[MessageDetails]',
@@ -99,6 +100,7 @@ class MessageMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'flagged_reason': 'flaggedReason',
             'to_address': 'toAddress',
             'from_address': 'fromAddress',
             'messages': 'messages',
@@ -133,6 +135,7 @@ class MessageMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._flagged_reason = None
         self._to_address = None
         self._from_address = None
         self._messages = None
@@ -751,6 +754,33 @@ class MessageMediaParticipant(object):
         self._peer = peer
 
     @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this MessageMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this MessageMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this MessageMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this MessageMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
+
+    @property
     def to_address(self):
         """
         Gets the to_address of this MessageMediaParticipant.
@@ -839,7 +869,7 @@ class MessageMediaParticipant(object):
         :param type: The type of this MessageMediaParticipant.
         :type: str
         """
-        allowed_values = ["sms"]
+        allowed_values = ["sms", "twitter", "facebook", "line"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

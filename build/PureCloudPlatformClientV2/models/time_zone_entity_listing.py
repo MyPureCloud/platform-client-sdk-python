@@ -38,15 +38,15 @@ class TimeZoneEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[TimeZone]',
+            'entities': 'list[RegionTimeZone]',
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
             'self_uri': 'str',
             'first_uri': 'str',
             'previous_uri': 'str',
-            'next_uri': 'str',
             'last_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -58,8 +58,8 @@ class TimeZoneEntityListing(object):
             'self_uri': 'selfUri',
             'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
-            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -70,8 +70,8 @@ class TimeZoneEntityListing(object):
         self._self_uri = None
         self._first_uri = None
         self._previous_uri = None
-        self._next_uri = None
         self._last_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -81,7 +81,7 @@ class TimeZoneEntityListing(object):
 
 
         :return: The entities of this TimeZoneEntityListing.
-        :rtype: list[TimeZone]
+        :rtype: list[RegionTimeZone]
         """
         return self._entities
 
@@ -92,7 +92,7 @@ class TimeZoneEntityListing(object):
 
 
         :param entities: The entities of this TimeZoneEntityListing.
-        :type: list[TimeZone]
+        :type: list[RegionTimeZone]
         """
         
         self._entities = entities
@@ -236,29 +236,6 @@ class TimeZoneEntityListing(object):
         self._previous_uri = previous_uri
 
     @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this TimeZoneEntityListing.
-
-
-        :return: The next_uri of this TimeZoneEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this TimeZoneEntityListing.
-
-
-        :param next_uri: The next_uri of this TimeZoneEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
-
-    @property
     def last_uri(self):
         """
         Gets the last_uri of this TimeZoneEntityListing.
@@ -280,6 +257,29 @@ class TimeZoneEntityListing(object):
         """
         
         self._last_uri = last_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this TimeZoneEntityListing.
+
+
+        :return: The next_uri of this TimeZoneEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this TimeZoneEntityListing.
+
+
+        :param next_uri: The next_uri of this TimeZoneEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def page_count(self):

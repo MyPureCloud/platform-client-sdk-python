@@ -19,7 +19,8 @@ title: UserScheduleAdherence
 | **is_out_of_office** | **bool** | Whether the user is marked OutOfOffice | [optional] |
 | **adherence_state** | **str** | The user&#39;s current adherence state | [optional] |
 | **impact** | **str** | The impact of the user&#39;s current adherenceState | [optional] |
-| **time_of_adherence_change** | **str** | Time when the user entered the current adherenceState in ISO-8601 format | [optional] |
+| **time_of_adherence_change** | **datetime** | Time when the user entered the current adherenceState in ISO-8601 format | [optional] |
+| **presence_update_time** | **datetime** | Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -65,6 +65,7 @@ class SocialConversationNotificationParticipants(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'social_media_id': 'str',
             'social_media_hub': 'str',
             'social_user_name': 'str',
@@ -99,6 +100,7 @@ class SocialConversationNotificationParticipants(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'social_media_id': 'socialMediaId',
             'social_media_hub': 'socialMediaHub',
             'social_user_name': 'socialUserName',
@@ -132,6 +134,7 @@ class SocialConversationNotificationParticipants(object):
         self._wrapup = None
         self._peer = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._social_media_id = None
         self._social_media_hub = None
         self._social_user_name = None
@@ -769,6 +772,33 @@ class SocialConversationNotificationParticipants(object):
         """
         
         self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this SocialConversationNotificationParticipants.
+
+
+        :return: The flagged_reason of this SocialConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this SocialConversationNotificationParticipants.
+
+
+        :param flagged_reason: The flagged_reason of this SocialConversationNotificationParticipants.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def social_media_id(self):

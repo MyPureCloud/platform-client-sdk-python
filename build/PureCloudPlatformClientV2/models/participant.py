@@ -75,7 +75,8 @@ class Participant(object):
             'social_expressions': 'list[SocialExpression]',
             'videos': 'list[Video]',
             'evaluations': 'list[Evaluation]',
-            'screen_recording_state': 'str'
+            'screen_recording_state': 'str',
+            'flagged_reason': 'str'
         }
 
         self.attribute_map = {
@@ -116,7 +117,8 @@ class Participant(object):
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
             'evaluations': 'evaluations',
-            'screen_recording_state': 'screenRecordingState'
+            'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason'
         }
 
         self._id = None
@@ -157,6 +159,7 @@ class Participant(object):
         self._videos = None
         self._evaluations = None
         self._screen_recording_state = None
+        self._flagged_reason = None
 
     @property
     def id(self):
@@ -1039,6 +1042,33 @@ class Participant(object):
             self._screen_recording_state = "outdated_sdk_version"
         else:
             self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this Participant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this Participant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this Participant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this Participant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     def to_dict(self):
         """

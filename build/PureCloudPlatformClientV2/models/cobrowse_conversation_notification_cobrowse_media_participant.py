@@ -65,6 +65,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -100,6 +101,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -134,6 +136,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         self._wrapup = None
         self._peer = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -772,6 +775,33 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         """
         
         self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :return: The flagged_reason of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :param flagged_reason: The flagged_reason of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def cobrowse_session_id(self):

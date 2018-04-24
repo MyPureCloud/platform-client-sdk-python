@@ -45,6 +45,7 @@ title: Participant
 | **videos** | [**list[Video]**](Video.html) |  | [optional] |
 | **evaluations** | [**list[Evaluation]**](Evaluation.html) |  | [optional] |
 | **screen_recording_state** | **str** | The current screen recording state for this participant. | [optional] |
+| **flagged_reason** | **str** | The reason specifying why participant flagged the conversation. | [optional] |
 {: class="table table-striped"}
 
 

@@ -34,6 +34,7 @@ title: MessageConversationNotificationMessageMediaParticipant
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
+| **flagged_reason** | **str** |  | [optional] |
 | **messages** | [**list[MessageConversationNotificationMessages]**](MessageConversationNotificationMessages.html) |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **recipient_country** | **str** |  | [optional] |

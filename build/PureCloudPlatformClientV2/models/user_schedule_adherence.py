@@ -50,7 +50,8 @@ class UserScheduleAdherence(object):
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
-            'time_of_adherence_change': 'str',
+            'time_of_adherence_change': 'datetime',
+            'presence_update_time': 'datetime',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class UserScheduleAdherence(object):
             'adherence_state': 'adherenceState',
             'impact': 'impact',
             'time_of_adherence_change': 'timeOfAdherenceChange',
+            'presence_update_time': 'presenceUpdateTime',
             'self_uri': 'selfUri'
         }
 
@@ -84,6 +86,7 @@ class UserScheduleAdherence(object):
         self._adherence_state = None
         self._impact = None
         self._time_of_adherence_change = None
+        self._presence_update_time = None
         self._self_uri = None
 
     @property
@@ -393,7 +396,7 @@ class UserScheduleAdherence(object):
         Time when the user entered the current adherenceState in ISO-8601 format
 
         :return: The time_of_adherence_change of this UserScheduleAdherence.
-        :rtype: str
+        :rtype: datetime
         """
         return self._time_of_adherence_change
 
@@ -404,10 +407,33 @@ class UserScheduleAdherence(object):
         Time when the user entered the current adherenceState in ISO-8601 format
 
         :param time_of_adherence_change: The time_of_adherence_change of this UserScheduleAdherence.
-        :type: str
+        :type: datetime
         """
         
         self._time_of_adherence_change = time_of_adherence_change
+
+    @property
+    def presence_update_time(self):
+        """
+        Gets the presence_update_time of this UserScheduleAdherence.
+        Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The presence_update_time of this UserScheduleAdherence.
+        :rtype: datetime
+        """
+        return self._presence_update_time
+
+    @presence_update_time.setter
+    def presence_update_time(self, presence_update_time):
+        """
+        Sets the presence_update_time of this UserScheduleAdherence.
+        Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param presence_update_time: The presence_update_time of this UserScheduleAdherence.
+        :type: datetime
+        """
+        
+        self._presence_update_time = presence_update_time
 
     @property
     def self_uri(self):

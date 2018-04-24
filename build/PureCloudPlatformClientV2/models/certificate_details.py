@@ -43,8 +43,8 @@ class CertificateDetails(object):
             'expiration_date': 'datetime',
             'issue_date': 'datetime',
             'expired': 'bool',
-            'signature_valid': 'bool',
-            'valid': 'bool'
+            'valid': 'bool',
+            'signature_valid': 'bool'
         }
 
         self.attribute_map = {
@@ -53,8 +53,8 @@ class CertificateDetails(object):
             'expiration_date': 'expirationDate',
             'issue_date': 'issueDate',
             'expired': 'expired',
-            'signature_valid': 'signatureValid',
-            'valid': 'valid'
+            'valid': 'valid',
+            'signature_valid': 'signatureValid'
         }
 
         self._issuer = None
@@ -62,8 +62,8 @@ class CertificateDetails(object):
         self._expiration_date = None
         self._issue_date = None
         self._expired = None
-        self._signature_valid = None
         self._valid = None
+        self._signature_valid = None
 
     @property
     def issuer(self):
@@ -181,29 +181,6 @@ class CertificateDetails(object):
         self._expired = expired
 
     @property
-    def signature_valid(self):
-        """
-        Gets the signature_valid of this CertificateDetails.
-
-
-        :return: The signature_valid of this CertificateDetails.
-        :rtype: bool
-        """
-        return self._signature_valid
-
-    @signature_valid.setter
-    def signature_valid(self, signature_valid):
-        """
-        Sets the signature_valid of this CertificateDetails.
-
-
-        :param signature_valid: The signature_valid of this CertificateDetails.
-        :type: bool
-        """
-        
-        self._signature_valid = signature_valid
-
-    @property
     def valid(self):
         """
         Gets the valid of this CertificateDetails.
@@ -225,6 +202,29 @@ class CertificateDetails(object):
         """
         
         self._valid = valid
+
+    @property
+    def signature_valid(self):
+        """
+        Gets the signature_valid of this CertificateDetails.
+
+
+        :return: The signature_valid of this CertificateDetails.
+        :rtype: bool
+        """
+        return self._signature_valid
+
+    @signature_valid.setter
+    def signature_valid(self, signature_valid):
+        """
+        Sets the signature_valid of this CertificateDetails.
+
+
+        :param signature_valid: The signature_valid of this CertificateDetails.
+        :type: bool
+        """
+        
+        self._signature_valid = signature_valid
 
     def to_dict(self):
         """

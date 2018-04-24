@@ -33,6 +33,7 @@ title: EmailMediaParticipant
 | **external_organization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. | [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. | [optional] |
 | **peer** | **str** | The peer communication corresponding to a matching leg for this communication. | [optional] |
+| **flagged_reason** | **str** | The reason specifying why participant flagged the conversation. | [optional] |
 | **subject** | **str** | The subject of the email. | [optional] |
 | **messages_sent** | **int** | The number of messages that have been sent in this email conversation. | [optional] |
 | **auto_generated** | **bool** | Indicates that the email was auto-generated like an Out of Office reply. | [optional] |

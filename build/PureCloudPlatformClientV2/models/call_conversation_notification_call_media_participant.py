@@ -65,6 +65,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -106,6 +107,7 @@ class CallConversationNotificationCallMediaParticipant(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -146,6 +148,7 @@ class CallConversationNotificationCallMediaParticipant(object):
         self._wrapup = None
         self._peer = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -790,6 +793,33 @@ class CallConversationNotificationCallMediaParticipant(object):
         """
         
         self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this CallConversationNotificationCallMediaParticipant.
+
+
+        :return: The flagged_reason of this CallConversationNotificationCallMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this CallConversationNotificationCallMediaParticipant.
+
+
+        :param flagged_reason: The flagged_reason of this CallConversationNotificationCallMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def muted(self):

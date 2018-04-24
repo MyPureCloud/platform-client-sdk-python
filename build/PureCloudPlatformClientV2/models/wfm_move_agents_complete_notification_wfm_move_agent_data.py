@@ -38,7 +38,7 @@ class WfmMoveAgentsCompleteNotificationWfmMoveAgentData(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'user': 'WfmMoveAgentsCompleteNotificationUser',
+            'user': 'WfmMoveAgentsCompleteNotificationUserReference',
             'result': 'str'
         }
 
@@ -57,7 +57,7 @@ class WfmMoveAgentsCompleteNotificationWfmMoveAgentData(object):
 
 
         :return: The user of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
-        :rtype: WfmMoveAgentsCompleteNotificationUser
+        :rtype: WfmMoveAgentsCompleteNotificationUserReference
         """
         return self._user
 
@@ -68,7 +68,7 @@ class WfmMoveAgentsCompleteNotificationWfmMoveAgentData(object):
 
 
         :param user: The user of this WfmMoveAgentsCompleteNotificationWfmMoveAgentData.
-        :type: WfmMoveAgentsCompleteNotificationUser
+        :type: WfmMoveAgentsCompleteNotificationUserReference
         """
         
         self._user = user

@@ -64,6 +64,7 @@ class CallbackMediaParticipant(object):
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
             'peer': 'str',
+            'flagged_reason': 'str',
             'outbound_preview': 'DialerPreview',
             'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
@@ -101,6 +102,7 @@ class CallbackMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'flagged_reason': 'flaggedReason',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -137,6 +139,7 @@ class CallbackMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._flagged_reason = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -755,6 +758,33 @@ class CallbackMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this CallbackMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this CallbackMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this CallbackMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this CallbackMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def outbound_preview(self):

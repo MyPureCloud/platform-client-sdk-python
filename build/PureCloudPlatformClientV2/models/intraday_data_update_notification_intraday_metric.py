@@ -70,7 +70,7 @@ class IntradayDataUpdateNotificationIntradayMetric(object):
         :param category: The category of this IntradayDataUpdateNotificationIntradayMetric.
         :type: str
         """
-        allowed_values = ["HISTORICAL_QUEUE_DATA", "HISTORICAL_AGENT_DATA", "FORECAST_DATA", "SCHEDULE_DATA", "PERFORMANCE_PREDICTION_AGENT_DATA", "PERFORMANCE_PREDICTION_QUEUE_DATA"]
+        allowed_values = ["HistoricalQueueData", "HistoricalAgentData", "ForecastData", "ScheduleData", "PerformancePredictionAgentData", "PerformancePredictionQueueData"]
         if category.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for category -> " + category
             self._category = "outdated_sdk_version"

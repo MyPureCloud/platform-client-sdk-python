@@ -34,6 +34,7 @@ title: EmailConversationNotificationParticipants
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
+| **flagged_reason** | **str** |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |

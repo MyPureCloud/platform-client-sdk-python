@@ -34,6 +34,7 @@ title: CobrowseConversationNotificationParticipants
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
+| **flagged_reason** | **str** |  | [optional] |
 | **cobrowse_session_id** | **str** |  | [optional] |
 | **cobrowse_role** | **str** |  | [optional] |
 | **viewer_url** | **str** |  | [optional] |

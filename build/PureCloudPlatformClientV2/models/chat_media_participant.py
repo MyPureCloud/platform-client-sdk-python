@@ -64,6 +64,7 @@ class ChatMediaParticipant(object):
             'external_organization': 'UriReference',
             'wrapup': 'Wrapup',
             'peer': 'str',
+            'flagged_reason': 'str',
             'room_id': 'str'
         }
 
@@ -94,6 +95,7 @@ class ChatMediaParticipant(object):
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
+            'flagged_reason': 'flaggedReason',
             'room_id': 'roomId'
         }
 
@@ -123,6 +125,7 @@ class ChatMediaParticipant(object):
         self._external_organization = None
         self._wrapup = None
         self._peer = None
+        self._flagged_reason = None
         self._room_id = None
 
     @property
@@ -734,6 +737,33 @@ class ChatMediaParticipant(object):
         """
         
         self._peer = peer
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this ChatMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this ChatMediaParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this ChatMediaParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this ChatMediaParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def room_id(self):

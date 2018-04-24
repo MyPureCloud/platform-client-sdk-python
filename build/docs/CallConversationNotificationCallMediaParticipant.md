@@ -34,6 +34,7 @@ title: CallConversationNotificationCallMediaParticipant
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  | [optional] |
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
+| **flagged_reason** | **str** |  | [optional] |
 | **muted** | **bool** |  | [optional] |
 | **confined** | **bool** |  | [optional] |
 | **recording** | **bool** |  | [optional] |

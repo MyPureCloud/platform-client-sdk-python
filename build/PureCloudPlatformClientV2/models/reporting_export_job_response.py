@@ -44,7 +44,6 @@ class ReportingExportJobResponse(object):
             'time_zone': 'TimeZone',
             'export_format': 'str',
             'interval': 'str',
-            'data_columns': 'list[DataColumn]',
             'download_url': 'str',
             'view_type': 'str',
             'export_error_messages_type': 'str',
@@ -53,6 +52,7 @@ class ReportingExportJobResponse(object):
             'read': 'bool',
             'created_date_time': 'datetime',
             'modified_date_time': 'datetime',
+            'locale': 'str',
             'self_uri': 'str'
         }
 
@@ -63,7 +63,6 @@ class ReportingExportJobResponse(object):
             'time_zone': 'timeZone',
             'export_format': 'exportFormat',
             'interval': 'interval',
-            'data_columns': 'dataColumns',
             'download_url': 'downloadUrl',
             'view_type': 'viewType',
             'export_error_messages_type': 'exportErrorMessagesType',
@@ -72,6 +71,7 @@ class ReportingExportJobResponse(object):
             'read': 'read',
             'created_date_time': 'createdDateTime',
             'modified_date_time': 'modifiedDateTime',
+            'locale': 'locale',
             'self_uri': 'selfUri'
         }
 
@@ -81,7 +81,6 @@ class ReportingExportJobResponse(object):
         self._time_zone = None
         self._export_format = None
         self._interval = None
-        self._data_columns = None
         self._download_url = None
         self._view_type = None
         self._export_error_messages_type = None
@@ -90,6 +89,7 @@ class ReportingExportJobResponse(object):
         self._read = None
         self._created_date_time = None
         self._modified_date_time = None
+        self._locale = None
         self._self_uri = None
 
     @property
@@ -237,29 +237,6 @@ class ReportingExportJobResponse(object):
         """
         
         self._interval = interval
-
-    @property
-    def data_columns(self):
-        """
-        Gets the data_columns of this ReportingExportJobResponse.
-        The data columns included in the export
-
-        :return: The data_columns of this ReportingExportJobResponse.
-        :rtype: list[DataColumn]
-        """
-        return self._data_columns
-
-    @data_columns.setter
-    def data_columns(self, data_columns):
-        """
-        Sets the data_columns of this ReportingExportJobResponse.
-        The data columns included in the export
-
-        :param data_columns: The data_columns of this ReportingExportJobResponse.
-        :type: list[DataColumn]
-        """
-        
-        self._data_columns = data_columns
 
     @property
     def download_url(self):
@@ -452,6 +429,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._modified_date_time = modified_date_time
+
+    @property
+    def locale(self):
+        """
+        Gets the locale of this ReportingExportJobResponse.
+        The locale use for localization of the exported data, i.e. en-us, es-mx  
+
+        :return: The locale of this ReportingExportJobResponse.
+        :rtype: str
+        """
+        return self._locale
+
+    @locale.setter
+    def locale(self, locale):
+        """
+        Sets the locale of this ReportingExportJobResponse.
+        The locale use for localization of the exported data, i.e. en-us, es-mx  
+
+        :param locale: The locale of this ReportingExportJobResponse.
+        :type: str
+        """
+        
+        self._locale = locale
 
     @property
     def self_uri(self):

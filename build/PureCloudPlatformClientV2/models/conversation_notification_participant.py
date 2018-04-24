@@ -57,6 +57,7 @@ class ConversationNotificationParticipant(object):
             'wrapup': 'ConversationNotificationWrapup',
             'monitored_participant_id': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'attributes': 'dict(str, str)',
             'calls': 'list[ConversationNotificationCalls]',
             'callbacks': 'list[ConversationNotificationCallbacks]',
@@ -90,6 +91,7 @@ class ConversationNotificationParticipant(object):
             'wrapup': 'wrapup',
             'monitored_participant_id': 'monitoredParticipantId',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'attributes': 'attributes',
             'calls': 'calls',
             'callbacks': 'callbacks',
@@ -122,6 +124,7 @@ class ConversationNotificationParticipant(object):
         self._wrapup = None
         self._monitored_participant_id = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._attributes = None
         self._calls = None
         self._callbacks = None
@@ -574,6 +577,29 @@ class ConversationNotificationParticipant(object):
             self._screen_recording_state = "outdated_sdk_version"
         else:
             self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this ConversationNotificationParticipant.
+
+
+        :return: The flagged_reason of this ConversationNotificationParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this ConversationNotificationParticipant.
+
+
+        :param flagged_reason: The flagged_reason of this ConversationNotificationParticipant.
+        :type: str
+        """
+        
+        self._flagged_reason = flagged_reason
 
     @property
     def attributes(self):

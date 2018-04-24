@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # import apis into api package
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
+from .app_foundry_api import AppFoundryApi
 from .architect_api import ArchitectApi
 from .attributes_api import AttributesApi
 from .authorization_api import AuthorizationApi
@@ -22,7 +23,6 @@ from .locations_api import LocationsApi
 from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
-from .objects_api import ObjectsApi
 from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi

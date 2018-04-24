@@ -57,6 +57,9 @@ from .models.analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .models.analytics_view import AnalyticsView
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
+from .models.app_foundry_listing import AppFoundryListing
+from .models.app_foundry_listing_category import AppFoundryListingCategory
+from .models.app_foundry_listing_registry_info import AppFoundryListingRegistryInfo
 from .models.archive_retention import ArchiveRetention
 from .models.asg_info_response import AsgInfoResponse
 from .models.attachment import Attachment
@@ -78,7 +81,6 @@ from .models.audit_message import AuditMessage
 from .models.audit_query_response import AuditQueryResponse
 from .models.audit_search_result import AuditSearchResult
 from .models.audit_user import AuditUser
-from .models.authz_typed_object import AuthzTypedObject
 from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
@@ -225,6 +227,9 @@ from .models.chat_media_policy import ChatMediaPolicy
 from .models.chat_media_policy_conditions import ChatMediaPolicyConditions
 from .models.chat_message import ChatMessage
 from .models.chat_message_user import ChatMessageUser
+from .models.client_app import ClientApp
+from .models.client_app_configuration_info import ClientAppConfigurationInfo
+from .models.client_app_entity_listing import ClientAppEntityListing
 from .models.cobrowse_conversation import CobrowseConversation
 from .models.cobrowse_conversation_entity_listing import CobrowseConversationEntityListing
 from .models.cobrowse_conversation_notification import CobrowseConversationNotification
@@ -331,6 +336,7 @@ from .models.create_callback_command import CreateCallbackCommand
 from .models.create_callback_on_conversation_command import CreateCallbackOnConversationCommand
 from .models.create_callback_response import CreateCallbackResponse
 from .models.create_email_request import CreateEmailRequest
+from .models.create_integration_request import CreateIntegrationRequest
 from .models.create_queue_request import CreateQueueRequest
 from .models.create_secure_session import CreateSecureSession
 from .models.create_share_request import CreateShareRequest
@@ -338,12 +344,18 @@ from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
 from .models.create_user import CreateUser
 from .models.create_web_chat_request import CreateWebChatRequest
+from .models.credential import Credential
+from .models.credential_info import CredentialInfo
+from .models.credential_info_listing import CredentialInfoListing
+from .models.credential_specification import CredentialSpecification
+from .models.credential_type import CredentialType
+from .models.credential_type_listing import CredentialTypeListing
 from .models.customer_interaction_center import CustomerInteractionCenter
 from .models.did import DID
 from .models.did_entity_listing import DIDEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
-from .models.data_column import DataColumn
+from .models.data_export_notification_notification import DataExportNotificationNotification
 from .models.data_table import DataTable
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
 from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
@@ -450,6 +462,7 @@ from .models.edge_service_state_request import EdgeServiceStateRequest
 from .models.edge_trunk_base import EdgeTrunkBase
 from .models.edge_version_information import EdgeVersionInformation
 from .models.edge_version_report import EdgeVersionReport
+from .models.effective_configuration import EffectiveConfiguration
 from .models.email import Email
 from .models.email_address import EmailAddress
 from .models.email_attachment import EmailAttachment
@@ -491,6 +504,7 @@ from .models.evaluation_form_entity_listing import EvaluationFormEntityListing
 from .models.evaluation_scoring_set import EvaluationScoringSet
 from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
+from .models.event_entity import EventEntity
 from .models.event_log import EventLog
 from .models.event_message import EventMessage
 from .models.expansion_criterium import ExpansionCriterium
@@ -585,6 +599,15 @@ from .models.inbound_route import InboundRoute
 from .models.inbound_route_entity_listing import InboundRouteEntityListing
 from .models.initiate_screen_recording import InitiateScreenRecording
 from .models.instance_info import InstanceInfo
+from .models.integration import Integration
+from .models.integration_configuration import IntegrationConfiguration
+from .models.integration_configuration_info import IntegrationConfigurationInfo
+from .models.integration_entity_listing import IntegrationEntityListing
+from .models.integration_event import IntegrationEvent
+from .models.integration_event_entity_listing import IntegrationEventEntityListing
+from .models.integration_status_info import IntegrationStatusInfo
+from .models.integration_type import IntegrationType
+from .models.integration_type_entity_listing import IntegrationTypeEntityListing
 from .models.interaction_stat_alert_notification import InteractionStatAlertNotification
 from .models.interaction_stat_alert_notification_notification_user import InteractionStatAlertNotificationNotificationUser
 from .models.interaction_stat_rule_notification import InteractionStatRuleNotification
@@ -595,6 +618,7 @@ from .models.interaction_stats_rule import InteractionStatsRule
 from .models.interaction_stats_rule_container import InteractionStatsRuleContainer
 from .models.intraday_data_group import IntradayDataGroup
 from .models.intraday_data_update_notification import IntradayDataUpdateNotification
+from .models.intraday_data_update_notification_date_time import IntradayDataUpdateNotificationDateTime
 from .models.intraday_data_update_notification_forecast_data_per_interval import IntradayDataUpdateNotificationForecastDataPerInterval
 from .models.intraday_data_update_notification_historical_agent_data_per_interval import IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
 from .models.intraday_data_update_notification_historical_queue_data_per_interval import IntradayDataUpdateNotificationHistoricalQueueDataPerInterval
@@ -611,6 +635,7 @@ from .models.intraday_data_update_notification_metrics import IntradayDataUpdate
 from .models.intraday_data_update_notification_performance_prediction_agent_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval
 from .models.intraday_data_update_notification_performance_prediction_queue_data_per_interval import IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval
 from .models.intraday_data_update_notification_schedule_data_per_interval import IntradayDataUpdateNotificationScheduleDataPerInterval
+from .models.intraday_data_update_notification_start_date import IntradayDataUpdateNotificationStartDate
 from .models.intraday_forecast_data import IntradayForecastData
 from .models.intraday_historical_agent_data import IntradayHistoricalAgentData
 from .models.intraday_historical_queue_data import IntradayHistoricalQueueData
@@ -647,6 +672,7 @@ from .models.line_status import LineStatus
 from .models.local_encryption_configuration import LocalEncryptionConfiguration
 from .models.local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
+from .models.localized_field import LocalizedField
 from .models.location import Location
 from .models.location_address import LocationAddress
 from .models.location_definition import LocationDefinition
@@ -660,6 +686,7 @@ from .models.logical_interface_entity_listing import LogicalInterfaceEntityListi
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
 from .models.management_unit_settings import ManagementUnitSettings
+from .models.marketing_info import MarketingInfo
 from .models.max_participants import MaxParticipants
 from .models.media_participant_request import MediaParticipantRequest
 from .models.media_policies import MediaPolicies
@@ -685,6 +712,7 @@ from .models.message_conversation_notification_uri_reference import MessageConve
 from .models.message_conversation_notification_wrapup import MessageConversationNotificationWrapup
 from .models.message_data import MessageData
 from .models.message_details import MessageDetails
+from .models.message_info import MessageInfo
 from .models.message_media import MessageMedia
 from .models.message_media_participant import MessageMediaParticipant
 from .models.message_media_policy import MessageMediaPolicy
@@ -733,6 +761,7 @@ from .models.outbound_settings import OutboundSettings
 from .models.outbound_settings_notification import OutboundSettingsNotification
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
+from .models.paged_listing_entity import PagedListingEntity
 from .models.paging_spec import PagingSpec
 from .models.parameter import Parameter
 from .models.parsed_certificate import ParsedCertificate
@@ -755,6 +784,7 @@ from .models.phone_status import PhoneStatus
 from .models.phones_reboot import PhonesReboot
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
+from .models.platform import Platform
 from .models.policy import Policy
 from .models.policy_actions import PolicyActions
 from .models.policy_conditions import PolicyConditions
@@ -768,6 +798,7 @@ from .models.post_output_contract import PostOutputContract
 from .models.prediction_results import PredictionResults
 from .models.presence_definition import PresenceDefinition
 from .models.presence_query_response import PresenceQueryResponse
+from .models.pricing_option import PricingOption
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -820,6 +851,7 @@ from .models.recording_data_v2_notification_workspace_data import RecordingDataV
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_settings import RecordingSettings
+from .models.region_time_zone import RegionTimeZone
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
 from .models.replace_request import ReplaceRequest
@@ -924,6 +956,7 @@ from .models.site import Site
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
 from .models.skills_to_remove import SkillsToRemove
+from .models.smart_case import SmartCase
 from .models.sms_address_provision import SmsAddressProvision
 from .models.sms_available_phone_number import SmsAvailablePhoneNumber
 from .models.sms_phone_number import SmsPhoneNumber
@@ -977,7 +1010,7 @@ from .models.time_off_request import TimeOffRequest
 from .models.time_off_request_list import TimeOffRequestList
 from .models.time_off_request_settings import TimeOffRequestSettings
 from .models.time_off_request_update_notification import TimeOffRequestUpdateNotification
-from .models.time_off_request_update_notification_user import TimeOffRequestUpdateNotificationUser
+from .models.time_off_request_update_notification_user_reference import TimeOffRequestUpdateNotificationUserReference
 from .models.time_slot import TimeSlot
 from .models.time_zone import TimeZone
 from .models.time_zone_entity_listing import TimeZoneEntityListing
@@ -1023,6 +1056,8 @@ from .models.uri_reference import UriReference
 from .models.usage import Usage
 from .models.usage_item import UsageItem
 from .models.user import User
+from .models.user_action_category import UserActionCategory
+from .models.user_action_category_entity_listing import UserActionCategoryEntityListing
 from .models.user_agent_info import UserAgentInfo
 from .models.user_authorization import UserAuthorization
 from .models.user_conversation_summary import UserConversationSummary
@@ -1063,7 +1098,8 @@ from .models.user_schedule import UserSchedule
 from .models.user_schedule_activity import UserScheduleActivity
 from .models.user_schedule_adherence import UserScheduleAdherence
 from .models.user_schedule_adherence_update_notification import UserScheduleAdherenceUpdateNotification
-from .models.user_schedule_adherence_update_notification_user import UserScheduleAdherenceUpdateNotificationUser
+from .models.user_schedule_adherence_update_notification_date_time import UserScheduleAdherenceUpdateNotificationDateTime
+from .models.user_schedule_adherence_update_notification_user_reference import UserScheduleAdherenceUpdateNotificationUserReference
 from .models.user_schedule_container import UserScheduleContainer
 from .models.user_schedule_full_day_time_off_marker import UserScheduleFullDayTimeOffMarker
 from .models.user_schedule_shift import UserScheduleShift
@@ -1080,6 +1116,7 @@ from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
+from .models.vendor_connection_request import VendorConnectionRequest
 from .models.video import Video
 from .models.video_conversation_notification import VideoConversationNotification
 from .models.video_conversation_notification_detail import VideoConversationNotificationDetail
@@ -1116,7 +1153,7 @@ from .models.wfm_intraday_queue_listing import WfmIntradayQueueListing
 from .models.wfm_move_agents_complete_notification import WfmMoveAgentsCompleteNotification
 from .models.wfm_move_agents_complete_notification_management_unit import WfmMoveAgentsCompleteNotificationManagementUnit
 from .models.wfm_move_agents_complete_notification_results import WfmMoveAgentsCompleteNotificationResults
-from .models.wfm_move_agents_complete_notification_user import WfmMoveAgentsCompleteNotificationUser
+from .models.wfm_move_agents_complete_notification_user_reference import WfmMoveAgentsCompleteNotificationUserReference
 from .models.wfm_move_agents_complete_notification_wfm_move_agent_data import WfmMoveAgentsCompleteNotificationWfmMoveAgentData
 from .models.wfm_update_agent_details_complete_notification import WfmUpdateAgentDetailsCompleteNotification
 from .models.wfm_user_entity_listing import WfmUserEntityListing
@@ -1137,6 +1174,7 @@ from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
 # import apis into sdk package
 from .apis.alerting_api import AlertingApi
 from .apis.analytics_api import AnalyticsApi
+from .apis.app_foundry_api import AppFoundryApi
 from .apis.architect_api import ArchitectApi
 from .apis.attributes_api import AttributesApi
 from .apis.authorization_api import AuthorizationApi
@@ -1156,7 +1194,6 @@ from .apis.locations_api import LocationsApi
 from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi
-from .apis.objects_api import ObjectsApi
 from .apis.organization_api import OrganizationApi
 from .apis.organization_authorization_api import OrganizationAuthorizationApi
 from .apis.outbound_api import OutboundApi

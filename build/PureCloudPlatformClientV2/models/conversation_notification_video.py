@@ -51,6 +51,7 @@ class ConversationNotificationVideo(object):
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
+            'msids': 'list[str]',
             'additional_properties': 'object'
         }
 
@@ -68,6 +69,7 @@ class ConversationNotificationVideo(object):
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
+            'msids': 'msids',
             'additional_properties': 'additionalProperties'
         }
 
@@ -84,6 +86,7 @@ class ConversationNotificationVideo(object):
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
+        self._msids = None
         self._additional_properties = None
 
     @property
@@ -392,6 +395,29 @@ class ConversationNotificationVideo(object):
         """
         
         self._disconnected_time = disconnected_time
+
+    @property
+    def msids(self):
+        """
+        Gets the msids of this ConversationNotificationVideo.
+
+
+        :return: The msids of this ConversationNotificationVideo.
+        :rtype: list[str]
+        """
+        return self._msids
+
+    @msids.setter
+    def msids(self, msids):
+        """
+        Sets the msids of this ConversationNotificationVideo.
+
+
+        :param msids: The msids of this ConversationNotificationVideo.
+        :type: list[str]
+        """
+        
+        self._msids = msids
 
     @property
     def additional_properties(self):

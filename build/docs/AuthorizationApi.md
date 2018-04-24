@@ -10,7 +10,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_authorization_role**](AuthorizationApi.html#delete_authorization_role) | Delete an organization role.|
 |[**delete_user_roles**](AuthorizationApi.html#delete_user_roles) | Removes all the roles from the user.|
-|[**get_authorization_divisions_limit**](AuthorizationApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
 |[**get_authorization_permissions**](AuthorizationApi.html#get_authorization_permissions) | Get all permissions.|
 |[**get_authorization_products**](AuthorizationApi.html#get_authorization_products) | Get the list of enabled products|
 |[**get_authorization_role**](AuthorizationApi.html#get_authorization_role) | Get a single organization role.|
@@ -18,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_roles**](AuthorizationApi.html#get_authorization_roles) | Retrieve a list of all roles defined for the organization|
 |[**get_user_roles**](AuthorizationApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
 |[**patch_authorization_role**](AuthorizationApi.html#patch_authorization_role) | Patch Organization Role for needsUpdate Field|
-|[**post_authorization_division_object**](AuthorizationApi.html#post_authorization_division_object) | Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER|
 |[**post_authorization_role_comparedefault_right_role_id**](AuthorizationApi.html#post_authorization_role_comparedefault_right_role_id) | Get an unsaved org role to default role comparison|
 |[**post_authorization_roles**](AuthorizationApi.html#post_authorization_roles) | Create an organization role.|
 |[**post_authorization_roles_default**](AuthorizationApi.html#post_authorization_roles_default) | Restores all default roles|
@@ -116,47 +114,6 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
-
-<a name="get_authorization_divisions_limit"></a>
-
-## int** get_authorization_divisions_limit()
-
-Returns the maximum allowed number of divisions.
-
-
-
-Wraps GET /api/v2/authorization/divisions/limit 
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-
-try:
-    # Returns the maximum allowed number of divisions.
-    api_response = api_instance.get_authorization_divisions_limit()
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e
-~~~
-
-### Parameters
-
-This endpoint does not need any parameter.
-{: class="table table-striped"}
-
-### Return type
-
-**int**
 
 <a name="get_authorization_permissions"></a>
 
@@ -494,55 +451,6 @@ except ApiException as e:
 ### Return type
 
 [**DomainOrganizationRole**](DomainOrganizationRole.html)
-
-<a name="post_authorization_division_object"></a>
-
-## [**list[AuthzTypedObject]**](AuthzTypedObject.html) post_authorization_division_object(division_id, object_type, body)
-
-Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-
-
-
-Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType} 
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-division_id = 'division_id_example' # str | Division ID
-object_type = 'object_type_example' # str | The type of the objects. Must be one of the valid object types
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Object Id List
-
-try:
-    # Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-    api_response = api_instance.post_authorization_division_object(division_id, object_type, body)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_division_object: %s\n" % e
-~~~
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **division_id** | **str**| Division ID |  |
-| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
-| **body** | **list[str]**| Object Id List |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**list[AuthzTypedObject]**](AuthzTypedObject.html)
 
 <a name="post_authorization_role_comparedefault_right_role_id"></a>
 

@@ -65,6 +65,7 @@ class ChatConversationNotificationParticipants(object):
             'wrapup': 'ConversationNotificationWrapup',
             'peer': 'str',
             'screen_recording_state': 'str',
+            'flagged_reason': 'str',
             'room_id': 'str'
         }
 
@@ -96,6 +97,7 @@ class ChatConversationNotificationParticipants(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
+            'flagged_reason': 'flaggedReason',
             'room_id': 'roomId'
         }
 
@@ -126,6 +128,7 @@ class ChatConversationNotificationParticipants(object):
         self._wrapup = None
         self._peer = None
         self._screen_recording_state = None
+        self._flagged_reason = None
         self._room_id = None
 
     @property
@@ -760,6 +763,33 @@ class ChatConversationNotificationParticipants(object):
         """
         
         self._screen_recording_state = screen_recording_state
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this ChatConversationNotificationParticipants.
+
+
+        :return: The flagged_reason of this ChatConversationNotificationParticipants.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this ChatConversationNotificationParticipants.
+
+
+        :param flagged_reason: The flagged_reason of this ChatConversationNotificationParticipants.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def room_id(self):
