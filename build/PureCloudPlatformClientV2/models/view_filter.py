@@ -52,7 +52,7 @@ class ViewFilter(object):
             'outbound_contact_list_ids': 'list[str]',
             'contact_ids': 'list[str]',
             'ani_list': 'list[str]',
-            'duration_milliseconds': 'NumericRange',
+            'durations_milliseconds': 'list[NumericRange]',
             'evaluation_score': 'NumericRange',
             'evaluation_critical_score': 'NumericRange',
             'evaluation_form_ids': 'list[str]',
@@ -77,7 +77,7 @@ class ViewFilter(object):
             'outbound_contact_list_ids': 'outboundContactListIds',
             'contact_ids': 'contactIds',
             'ani_list': 'aniList',
-            'duration_milliseconds': 'durationMilliseconds',
+            'durations_milliseconds': 'durationsMilliseconds',
             'evaluation_score': 'evaluationScore',
             'evaluation_critical_score': 'evaluationCriticalScore',
             'evaluation_form_ids': 'evaluationFormIds',
@@ -101,7 +101,7 @@ class ViewFilter(object):
         self._outbound_contact_list_ids = None
         self._contact_ids = None
         self._ani_list = None
-        self._duration_milliseconds = None
+        self._durations_milliseconds = None
         self._evaluation_score = None
         self._evaluation_critical_score = None
         self._evaluation_form_ids = None
@@ -433,27 +433,27 @@ class ViewFilter(object):
         self._ani_list = ani_list
 
     @property
-    def duration_milliseconds(self):
+    def durations_milliseconds(self):
         """
-        Gets the duration_milliseconds of this ViewFilter.
-        The duration is used to filter the view
+        Gets the durations_milliseconds of this ViewFilter.
+        The durations in milliseconds used to filter the view
 
-        :return: The duration_milliseconds of this ViewFilter.
-        :rtype: NumericRange
+        :return: The durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
         """
-        return self._duration_milliseconds
+        return self._durations_milliseconds
 
-    @duration_milliseconds.setter
-    def duration_milliseconds(self, duration_milliseconds):
+    @durations_milliseconds.setter
+    def durations_milliseconds(self, durations_milliseconds):
         """
-        Sets the duration_milliseconds of this ViewFilter.
-        The duration is used to filter the view
+        Sets the durations_milliseconds of this ViewFilter.
+        The durations in milliseconds used to filter the view
 
-        :param duration_milliseconds: The duration_milliseconds of this ViewFilter.
-        :type: NumericRange
+        :param durations_milliseconds: The durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
         """
         
-        self._duration_milliseconds = duration_milliseconds
+        self._durations_milliseconds = durations_milliseconds
 
     @property
     def evaluation_score(self):

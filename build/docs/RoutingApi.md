@@ -2071,7 +2071,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-body = [PureCloudPlatformClientV2.QueueMember()] # list[QueueMember] | Queue Members
+body = [PureCloudPlatformClientV2.Entity()] # list[Entity] | Queue Members
 delete = false # bool | True to delete queue members (optional) (default to false)
 
 try:
@@ -2088,7 +2088,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members |  |
+| **body** | [**list[Entity]**](Entity.html)| Queue Members |  |
 | **delete** | **bool**| True to delete queue members | [optional] [default to false] |
 {: class="table table-striped"}
 

@@ -86,7 +86,7 @@ class WfmHistoricalAdherenceQuery(object):
     def end_date(self):
         """
         Gets the end_date of this WfmHistoricalAdherenceQuery.
-        End of the date range to query in ISO-8601 format
+        End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
 
         :return: The end_date of this WfmHistoricalAdherenceQuery.
         :rtype: datetime
@@ -97,7 +97,7 @@ class WfmHistoricalAdherenceQuery(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this WfmHistoricalAdherenceQuery.
-        End of the date range to query in ISO-8601 format
+        End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
 
         :param end_date: The end_date of this WfmHistoricalAdherenceQuery.
         :type: datetime
@@ -109,7 +109,7 @@ class WfmHistoricalAdherenceQuery(object):
     def time_zone(self):
         """
         Gets the time_zone of this WfmHistoricalAdherenceQuery.
-        The time zone to use for returned results in olson format (See https://www.ibm.com/developerworks/aix/library/au-aix-posix/)
+        The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
 
         :return: The time_zone of this WfmHistoricalAdherenceQuery.
         :rtype: str
@@ -120,7 +120,7 @@ class WfmHistoricalAdherenceQuery(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this WfmHistoricalAdherenceQuery.
-        The time zone to use for returned results in olson format (See https://www.ibm.com/developerworks/aix/library/au-aix-posix/)
+        The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
 
         :param time_zone: The time_zone of this WfmHistoricalAdherenceQuery.
         :type: str
@@ -132,7 +132,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self):
         """
         Gets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on
+        The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
 
         :return: The user_ids of this WfmHistoricalAdherenceQuery.
         :rtype: list[str]
@@ -143,7 +143,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on
+        The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
 
         :param user_ids: The user_ids of this WfmHistoricalAdherenceQuery.
         :type: list[str]
@@ -155,7 +155,7 @@ class WfmHistoricalAdherenceQuery(object):
     def include_exceptions(self):
         """
         Gets the include_exceptions of this WfmHistoricalAdherenceQuery.
-
+        Whether user exceptions should be returned as part of the results
 
         :return: The include_exceptions of this WfmHistoricalAdherenceQuery.
         :rtype: bool
@@ -166,7 +166,7 @@ class WfmHistoricalAdherenceQuery(object):
     def include_exceptions(self, include_exceptions):
         """
         Sets the include_exceptions of this WfmHistoricalAdherenceQuery.
-
+        Whether user exceptions should be returned as part of the results
 
         :param include_exceptions: The include_exceptions of this WfmHistoricalAdherenceQuery.
         :type: bool

@@ -491,6 +491,7 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .endpoint_entity_listing import EndpointEntityListing
+from .entity import Entity
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
