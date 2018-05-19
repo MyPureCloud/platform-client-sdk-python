@@ -20,6 +20,7 @@ from .addressable_entity_user import AddressableEntityUser
 from .addressable_license_definition import AddressableLicenseDefinition
 from .adherence_settings import AdherenceSettings
 from .adjacents import Adjacents
+from .admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .agent import Agent
 from .agent_activity import AgentActivity
 from .agent_activity_entity_listing import AgentActivityEntityListing
@@ -57,9 +58,6 @@ from .analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .analytics_view import AnalyticsView
 from .annotation import Annotation
 from .answer_option import AnswerOption
-from .app_foundry_listing import AppFoundryListing
-from .app_foundry_listing_category import AppFoundryListingCategory
-from .app_foundry_listing_registry_info import AppFoundryListingRegistryInfo
 from .archive_retention import ArchiveRetention
 from .asg_info_response import AsgInfoResponse
 from .attachment import Attachment
@@ -81,6 +79,7 @@ from .audit_message import AuditMessage
 from .audit_query_response import AuditQueryResponse
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
+from .authz_division import AuthzDivision
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -491,7 +490,6 @@ from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .endpoint_entity_listing import EndpointEntityListing
-from .entity import Entity
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
@@ -673,7 +671,6 @@ from .line_status import LineStatus
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .local_encryption_key_request import LocalEncryptionKeyRequest
-from .localized_field import LocalizedField
 from .location import Location
 from .location_address import LocationAddress
 from .location_definition import LocationDefinition
@@ -687,7 +684,6 @@ from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
 from .management_unit_settings import ManagementUnitSettings
-from .marketing_info import MarketingInfo
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
@@ -762,7 +758,6 @@ from .outbound_settings import OutboundSettings
 from .outbound_settings_notification import OutboundSettingsNotification
 from .pin_configuration import PINConfiguration
 from .page import Page
-from .paged_listing_entity import PagedListingEntity
 from .paging_spec import PagingSpec
 from .parameter import Parameter
 from .parsed_certificate import ParsedCertificate
@@ -785,7 +780,6 @@ from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
-from .platform import Platform
 from .policy import Policy
 from .policy_actions import PolicyActions
 from .policy_conditions import PolicyConditions
@@ -799,7 +793,6 @@ from .post_output_contract import PostOutputContract
 from .prediction_results import PredictionResults
 from .presence_definition import PresenceDefinition
 from .presence_query_response import PresenceQueryResponse
-from .pricing_option import PricingOption
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -957,7 +950,6 @@ from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
-from .smart_case import SmartCase
 from .sms_address_provision import SmsAddressProvision
 from .sms_available_phone_number import SmsAvailablePhoneNumber
 from .sms_phone_number import SmsPhoneNumber
@@ -1007,8 +999,8 @@ from .text_message_listing import TextMessageListing
 from .ticker import Ticker
 from .time_allowed import TimeAllowed
 from .time_interval import TimeInterval
-from .time_off_request import TimeOffRequest
 from .time_off_request_list import TimeOffRequestList
+from .time_off_request_response import TimeOffRequestResponse
 from .time_off_request_settings import TimeOffRequestSettings
 from .time_off_request_update_notification import TimeOffRequestUpdateNotification
 from .time_off_request_update_notification_user_reference import TimeOffRequestUpdateNotificationUserReference
@@ -1171,3 +1163,4 @@ from .wrap_up_code_reference import WrapUpCodeReference
 from .wrapup import Wrapup
 from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
+from .writable_entity import WritableEntity

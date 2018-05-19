@@ -50,6 +50,8 @@ class ContactList(object):
             'preview_mode_accepted_values': 'list[str]',
             'size': 'int',
             'attempt_limits': 'UriReference',
+            'automatic_time_zone_mapping': 'bool',
+            'zip_code_column_name': 'str',
             'self_uri': 'str'
         }
 
@@ -66,6 +68,8 @@ class ContactList(object):
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
             'size': 'size',
             'attempt_limits': 'attemptLimits',
+            'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
+            'zip_code_column_name': 'zipCodeColumnName',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +85,8 @@ class ContactList(object):
         self._preview_mode_accepted_values = None
         self._size = None
         self._attempt_limits = None
+        self._automatic_time_zone_mapping = None
+        self._zip_code_column_name = None
         self._self_uri = None
 
     @property
@@ -340,7 +346,7 @@ class ContactList(object):
     def attempt_limits(self):
         """
         Gets the attempt_limits of this ContactList.
-        AttemptLimits for this ContactList
+        AttemptLimits for this ContactList.
 
         :return: The attempt_limits of this ContactList.
         :rtype: UriReference
@@ -351,13 +357,59 @@ class ContactList(object):
     def attempt_limits(self, attempt_limits):
         """
         Sets the attempt_limits of this ContactList.
-        AttemptLimits for this ContactList
+        AttemptLimits for this ContactList.
 
         :param attempt_limits: The attempt_limits of this ContactList.
         :type: UriReference
         """
         
         self._attempt_limits = attempt_limits
+
+    @property
+    def automatic_time_zone_mapping(self):
+        """
+        Gets the automatic_time_zone_mapping of this ContactList.
+        Indicates if automatic time zone mapping is to be used for this ContactList.
+
+        :return: The automatic_time_zone_mapping of this ContactList.
+        :rtype: bool
+        """
+        return self._automatic_time_zone_mapping
+
+    @automatic_time_zone_mapping.setter
+    def automatic_time_zone_mapping(self, automatic_time_zone_mapping):
+        """
+        Sets the automatic_time_zone_mapping of this ContactList.
+        Indicates if automatic time zone mapping is to be used for this ContactList.
+
+        :param automatic_time_zone_mapping: The automatic_time_zone_mapping of this ContactList.
+        :type: bool
+        """
+        
+        self._automatic_time_zone_mapping = automatic_time_zone_mapping
+
+    @property
+    def zip_code_column_name(self):
+        """
+        Gets the zip_code_column_name of this ContactList.
+        The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true.
+
+        :return: The zip_code_column_name of this ContactList.
+        :rtype: str
+        """
+        return self._zip_code_column_name
+
+    @zip_code_column_name.setter
+    def zip_code_column_name(self, zip_code_column_name):
+        """
+        Sets the zip_code_column_name of this ContactList.
+        The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true.
+
+        :param zip_code_column_name: The zip_code_column_name of this ContactList.
+        :type: str
+        """
+        
+        self._zip_code_column_name = zip_code_column_name
 
     @property
     def self_uri(self):

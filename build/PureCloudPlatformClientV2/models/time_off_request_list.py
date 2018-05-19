@@ -40,7 +40,7 @@ class TimeOffRequestList(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'time_off_requests': 'list[TimeOffRequest]',
+            'time_off_requests': 'list[TimeOffRequestResponse]',
             'self_uri': 'str'
         }
 
@@ -109,7 +109,7 @@ class TimeOffRequestList(object):
 
 
         :return: The time_off_requests of this TimeOffRequestList.
-        :rtype: list[TimeOffRequest]
+        :rtype: list[TimeOffRequestResponse]
         """
         return self._time_off_requests
 
@@ -120,7 +120,7 @@ class TimeOffRequestList(object):
 
 
         :param time_off_requests: The time_off_requests of this TimeOffRequestList.
-        :type: list[TimeOffRequest]
+        :type: list[TimeOffRequestResponse]
         """
         
         self._time_off_requests = time_off_requests

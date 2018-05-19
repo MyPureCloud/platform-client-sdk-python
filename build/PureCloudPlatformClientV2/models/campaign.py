@@ -48,6 +48,7 @@ class Campaign(object):
             'dialing_mode': 'str',
             'script': 'UriReference',
             'edge_group': 'UriReference',
+            'site': 'UriReference',
             'campaign_status': 'str',
             'phone_columns': 'list[PhoneColumn]',
             'abandon_rate': 'float',
@@ -82,6 +83,7 @@ class Campaign(object):
             'dialing_mode': 'dialingMode',
             'script': 'script',
             'edge_group': 'edgeGroup',
+            'site': 'site',
             'campaign_status': 'campaignStatus',
             'phone_columns': 'phoneColumns',
             'abandon_rate': 'abandonRate',
@@ -115,6 +117,7 @@ class Campaign(object):
         self._dialing_mode = None
         self._script = None
         self._edge_group = None
+        self._site = None
         self._campaign_status = None
         self._phone_columns = None
         self._abandon_rate = None
@@ -370,6 +373,29 @@ class Campaign(object):
         """
         
         self._edge_group = edge_group
+
+    @property
+    def site(self):
+        """
+        Gets the site of this Campaign.
+        The identifier of the site to be used for dialing; can be set in place of an edge group.
+
+        :return: The site of this Campaign.
+        :rtype: UriReference
+        """
+        return self._site
+
+    @site.setter
+    def site(self, site):
+        """
+        Sets the site of this Campaign.
+        The identifier of the site to be used for dialing; can be set in place of an edge group.
+
+        :param site: The site of this Campaign.
+        :type: UriReference
+        """
+        
+        self._site = site
 
     @property
     def campaign_status(self):

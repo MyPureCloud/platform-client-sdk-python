@@ -42,7 +42,8 @@ class DomainPermission(object):
             'entity_type': 'str',
             'action': 'str',
             'label': 'str',
-            'allows_conditions': 'bool'
+            'allows_conditions': 'bool',
+            'division_aware': 'bool'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class DomainPermission(object):
             'entity_type': 'entityType',
             'action': 'action',
             'label': 'label',
-            'allows_conditions': 'allowsConditions'
+            'allows_conditions': 'allowsConditions',
+            'division_aware': 'divisionAware'
         }
 
         self._domain = None
@@ -58,6 +60,7 @@ class DomainPermission(object):
         self._action = None
         self._label = None
         self._allows_conditions = None
+        self._division_aware = None
 
     @property
     def domain(self):
@@ -173,6 +176,29 @@ class DomainPermission(object):
         """
         
         self._allows_conditions = allows_conditions
+
+    @property
+    def division_aware(self):
+        """
+        Gets the division_aware of this DomainPermission.
+
+
+        :return: The division_aware of this DomainPermission.
+        :rtype: bool
+        """
+        return self._division_aware
+
+    @division_aware.setter
+    def division_aware(self, division_aware):
+        """
+        Sets the division_aware of this DomainPermission.
+
+
+        :param division_aware: The division_aware of this DomainPermission.
+        :type: bool
+        """
+        
+        self._division_aware = division_aware
 
     def to_dict(self):
         """

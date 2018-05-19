@@ -77,7 +77,7 @@ class Channel(object):
     def id(self):
         """
         Gets the id of this Channel.
-        The channel identifier.
+
 
         :return: The id of this Channel.
         :rtype: str
@@ -88,7 +88,7 @@ class Channel(object):
     def id(self, id):
         """
         Sets the id of this Channel.
-        The channel identifier.
+
 
         :param id: The id of this Channel.
         :type: str

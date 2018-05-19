@@ -54,7 +54,8 @@ class CallHistoryParticipant(object):
             'external_contact': 'ExternalContact',
             'external_organization': 'ExternalOrganization',
             'did_interact': 'bool',
-            'sip_response_codes': 'list[int]'
+            'sip_response_codes': 'list[int]',
+            'flagged_reason': 'str'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class CallHistoryParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'did_interact': 'didInteract',
-            'sip_response_codes': 'sipResponseCodes'
+            'sip_response_codes': 'sipResponseCodes',
+            'flagged_reason': 'flaggedReason'
         }
 
         self._id = None
@@ -94,6 +96,7 @@ class CallHistoryParticipant(object):
         self._external_organization = None
         self._did_interact = None
         self._sip_response_codes = None
+        self._flagged_reason = None
 
     @property
     def id(self):
@@ -493,6 +496,33 @@ class CallHistoryParticipant(object):
         """
         
         self._sip_response_codes = sip_response_codes
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this CallHistoryParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :return: The flagged_reason of this CallHistoryParticipant.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this CallHistoryParticipant.
+        The reason specifying why participant flagged the conversation.
+
+        :param flagged_reason: The flagged_reason of this CallHistoryParticipant.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for flagged_reason -> " + flagged_reason
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     def to_dict(self):
         """

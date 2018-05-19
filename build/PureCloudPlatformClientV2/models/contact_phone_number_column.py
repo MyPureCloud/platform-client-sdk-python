@@ -103,7 +103,7 @@ class ContactPhoneNumberColumn(object):
     def callable_time_column(self):
         """
         Gets the callable_time_column of this ContactPhoneNumberColumn.
-        A column that indicates the timezone to use for a given contact when checking callable times.
+        A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
 
         :return: The callable_time_column of this ContactPhoneNumberColumn.
         :rtype: str
@@ -114,7 +114,7 @@ class ContactPhoneNumberColumn(object):
     def callable_time_column(self, callable_time_column):
         """
         Sets the callable_time_column of this ContactPhoneNumberColumn.
-        A column that indicates the timezone to use for a given contact when checking callable times.
+        A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
 
         :param callable_time_column: The callable_time_column of this ContactPhoneNumberColumn.
         :type: str

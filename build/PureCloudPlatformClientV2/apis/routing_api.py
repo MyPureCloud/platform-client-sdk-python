@@ -3512,7 +3512,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param list[Entity] body: Queue Members (required)
+        :param list[WritableEntity] body: Queue Members (required)
         :param bool delete: True to delete queue members
         :return: str
                  If the method is called asynchronously,

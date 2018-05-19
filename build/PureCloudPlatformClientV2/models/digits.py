@@ -51,7 +51,7 @@ class Digits(object):
     def digits(self):
         """
         Gets the digits of this Digits.
-        A string representing the DTMF tones to play. Valid DTMF values: 1234567890#*ABCD
+        A string representing the digits pressed on phone.
 
         :return: The digits of this Digits.
         :rtype: str
@@ -62,7 +62,7 @@ class Digits(object):
     def digits(self, digits):
         """
         Sets the digits of this Digits.
-        A string representing the DTMF tones to play. Valid DTMF values: 1234567890#*ABCD
+        A string representing the digits pressed on phone.
 
         :param digits: The digits of this Digits.
         :type: str

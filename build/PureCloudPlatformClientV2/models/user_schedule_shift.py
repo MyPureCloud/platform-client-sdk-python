@@ -38,20 +38,52 @@ class UserScheduleShift(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'start_date': 'datetime',
             'length_in_minutes': 'int',
-            'activities': 'list[UserScheduleActivity]'
+            'activities': 'list[UserScheduleActivity]',
+            'delete': 'bool',
+            'manually_edited': 'bool'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'start_date': 'startDate',
             'length_in_minutes': 'lengthInMinutes',
-            'activities': 'activities'
+            'activities': 'activities',
+            'delete': 'delete',
+            'manually_edited': 'manuallyEdited'
         }
 
+        self._id = None
         self._start_date = None
         self._length_in_minutes = None
         self._activities = None
+        self._delete = None
+        self._manually_edited = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this UserScheduleShift.
+        ID of the schedule shift. This is only for the case of updating and deleting an existing shift
+
+        :return: The id of this UserScheduleShift.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this UserScheduleShift.
+        ID of the schedule shift. This is only for the case of updating and deleting an existing shift
+
+        :param id: The id of this UserScheduleShift.
+        :type: str
+        """
+        
+        self._id = id
 
     @property
     def start_date(self):
@@ -121,6 +153,52 @@ class UserScheduleShift(object):
         """
         
         self._activities = activities
+
+    @property
+    def delete(self):
+        """
+        Gets the delete of this UserScheduleShift.
+        If marked true for updating this schedule shift, it will be deleted
+
+        :return: The delete of this UserScheduleShift.
+        :rtype: bool
+        """
+        return self._delete
+
+    @delete.setter
+    def delete(self, delete):
+        """
+        Sets the delete of this UserScheduleShift.
+        If marked true for updating this schedule shift, it will be deleted
+
+        :param delete: The delete of this UserScheduleShift.
+        :type: bool
+        """
+        
+        self._delete = delete
+
+    @property
+    def manually_edited(self):
+        """
+        Gets the manually_edited of this UserScheduleShift.
+        Whether the shift was set as manually edited
+
+        :return: The manually_edited of this UserScheduleShift.
+        :rtype: bool
+        """
+        return self._manually_edited
+
+    @manually_edited.setter
+    def manually_edited(self, manually_edited):
+        """
+        Sets the manually_edited of this UserScheduleShift.
+        Whether the shift was set as manually edited
+
+        :param manually_edited: The manually_edited of this UserScheduleShift.
+        :type: bool
+        """
+        
+        self._manually_edited = manually_edited
 
     def to_dict(self):
         """

@@ -380,7 +380,7 @@ class GroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: Group ID (required)
-        :return: list[UserEntityListing]
+        :return: UserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -437,7 +437,7 @@ class GroupsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[UserEntityListing]',
+                                            response_type='UserEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -12,6 +12,7 @@ title: DomainPermission
 | **action** | **str** |  | [optional] |
 | **label** | **str** |  | [optional] |
 | **allows_conditions** | **bool** |  | [optional] |
+| **division_aware** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

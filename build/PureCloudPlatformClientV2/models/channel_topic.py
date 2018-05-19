@@ -54,7 +54,7 @@ class ChannelTopic(object):
     def id(self):
         """
         Gets the id of this ChannelTopic.
-        Topic id for subscription
+
 
         :return: The id of this ChannelTopic.
         :rtype: str
@@ -65,7 +65,7 @@ class ChannelTopic(object):
     def id(self, id):
         """
         Sets the id of this ChannelTopic.
-        Topic id for subscription
+
 
         :param id: The id of this ChannelTopic.
         :type: str

@@ -207,7 +207,7 @@ except ApiException as e:
 
 <a name="get_group_individuals"></a>
 
-## [**list[UserEntityListing]**](UserEntityListing.html) get_group_individuals(group_id)
+## [**UserEntityListing**](UserEntityListing.html) get_group_individuals(group_id)
 
 Get all individuals associated with the group
 
@@ -248,7 +248,7 @@ except ApiException as e:
 
 ### Return type
 
-[**list[UserEntityListing]**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing.html)
 
 <a name="get_group_members"></a>
 

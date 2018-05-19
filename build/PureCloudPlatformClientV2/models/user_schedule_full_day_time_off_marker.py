@@ -42,7 +42,8 @@ class UserScheduleFullDayTimeOffMarker(object):
             'activity_code_id': 'str',
             'is_paid': 'bool',
             'length_in_minutes': 'int',
-            'description': 'str'
+            'description': 'str',
+            'delete': 'bool'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class UserScheduleFullDayTimeOffMarker(object):
             'activity_code_id': 'activityCodeId',
             'is_paid': 'isPaid',
             'length_in_minutes': 'lengthInMinutes',
-            'description': 'description'
+            'description': 'description',
+            'delete': 'delete'
         }
 
         self._management_unit_date = None
@@ -58,12 +60,13 @@ class UserScheduleFullDayTimeOffMarker(object):
         self._is_paid = None
         self._length_in_minutes = None
         self._description = None
+        self._delete = None
 
     @property
     def management_unit_date(self):
         """
         Gets the management_unit_date of this UserScheduleFullDayTimeOffMarker.
-        The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format
+        The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.
 
         :return: The management_unit_date of this UserScheduleFullDayTimeOffMarker.
         :rtype: str
@@ -74,7 +77,7 @@ class UserScheduleFullDayTimeOffMarker(object):
     def management_unit_date(self, management_unit_date):
         """
         Sets the management_unit_date of this UserScheduleFullDayTimeOffMarker.
-        The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format
+        The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.
 
         :param management_unit_date: The management_unit_date of this UserScheduleFullDayTimeOffMarker.
         :type: str
@@ -173,6 +176,29 @@ class UserScheduleFullDayTimeOffMarker(object):
         """
         
         self._description = description
+
+    @property
+    def delete(self):
+        """
+        Gets the delete of this UserScheduleFullDayTimeOffMarker.
+        If marked true for updating an existing full day time off marker, it will be deleted
+
+        :return: The delete of this UserScheduleFullDayTimeOffMarker.
+        :rtype: bool
+        """
+        return self._delete
+
+    @delete.setter
+    def delete(self, delete):
+        """
+        Sets the delete of this UserScheduleFullDayTimeOffMarker.
+        If marked true for updating an existing full day time off marker, it will be deleted
+
+        :param delete: The delete of this UserScheduleFullDayTimeOffMarker.
+        :type: bool
+        """
+        
+        self._delete = delete
 
     def to_dict(self):
         """

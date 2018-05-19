@@ -26,7 +26,7 @@ title: ExternalContact
 | **create_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **external_organization** | [**ExternalOrganization**](ExternalOrganization.html) |  | [optional] |
 | **survey_opt_out** | **bool** |  | [optional] |
-| **external_system_url** | **str** | Identifies an external system-of-record resource that may have more detailed information on the contact | [optional] |
+| **external_system_url** | **str** | A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace. | [optional] |
 | **external_data_sources** | [**list[ExternalDataSource]**](ExternalDataSource.html) | Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

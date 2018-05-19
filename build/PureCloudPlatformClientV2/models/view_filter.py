@@ -59,7 +59,8 @@ class ViewFilter(object):
             'evaluated_agent_ids': 'list[str]',
             'evaluator_ids': 'list[str]',
             'transferred': 'bool',
-            'abandoned': 'bool'
+            'abandoned': 'bool',
+            'message_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -84,7 +85,8 @@ class ViewFilter(object):
             'evaluated_agent_ids': 'evaluatedAgentIds',
             'evaluator_ids': 'evaluatorIds',
             'transferred': 'transferred',
-            'abandoned': 'abandoned'
+            'abandoned': 'abandoned',
+            'message_types': 'messageTypes'
         }
 
         self._media_types = None
@@ -109,6 +111,7 @@ class ViewFilter(object):
         self._evaluator_ids = None
         self._transferred = None
         self._abandoned = None
+        self._message_types = None
 
     @property
     def media_types(self):
@@ -615,6 +618,29 @@ class ViewFilter(object):
         """
         
         self._abandoned = abandoned
+
+    @property
+    def message_types(self):
+        """
+        Gets the message_types of this ViewFilter.
+        The message media types used to filter the view
+
+        :return: The message_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._message_types
+
+    @message_types.setter
+    def message_types(self, message_types):
+        """
+        Sets the message_types of this ViewFilter.
+        The message media types used to filter the view
+
+        :param message_types: The message_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._message_types = message_types
 
     def to_dict(self):
         """

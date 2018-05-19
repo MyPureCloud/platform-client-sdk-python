@@ -45,6 +45,7 @@ class DialerContact(object):
             'call_records': 'dict(str, CallRecord)',
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
+            'contact_column_time_zones': 'dict(str, ContactColumnTimeZone)',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class DialerContact(object):
             'call_records': 'callRecords',
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
+            'contact_column_time_zones': 'contactColumnTimeZones',
             'self_uri': 'selfUri'
         }
 
@@ -66,6 +68,7 @@ class DialerContact(object):
         self._call_records = None
         self._callable = None
         self._phone_number_status = None
+        self._contact_column_time_zones = None
         self._self_uri = None
 
     @property
@@ -228,6 +231,29 @@ class DialerContact(object):
         """
         
         self._phone_number_status = phone_number_status
+
+    @property
+    def contact_column_time_zones(self):
+        """
+        Gets the contact_column_time_zones of this DialerContact.
+        Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip
+
+        :return: The contact_column_time_zones of this DialerContact.
+        :rtype: dict(str, ContactColumnTimeZone)
+        """
+        return self._contact_column_time_zones
+
+    @contact_column_time_zones.setter
+    def contact_column_time_zones(self, contact_column_time_zones):
+        """
+        Sets the contact_column_time_zones of this DialerContact.
+        Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip
+
+        :param contact_column_time_zones: The contact_column_time_zones of this DialerContact.
+        :type: dict(str, ContactColumnTimeZone)
+        """
+        
+        self._contact_column_time_zones = contact_column_time_zones
 
     @property
     def self_uri(self):

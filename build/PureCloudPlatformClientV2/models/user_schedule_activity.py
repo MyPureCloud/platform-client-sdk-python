@@ -43,7 +43,8 @@ class UserScheduleActivity(object):
             'length_in_minutes': 'int',
             'description': 'str',
             'counts_as_paid_time': 'bool',
-            'is_dst_fallback': 'bool'
+            'is_dst_fallback': 'bool',
+            'time_off_request_id': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class UserScheduleActivity(object):
             'length_in_minutes': 'lengthInMinutes',
             'description': 'description',
             'counts_as_paid_time': 'countsAsPaidTime',
-            'is_dst_fallback': 'isDstFallback'
+            'is_dst_fallback': 'isDstFallback',
+            'time_off_request_id': 'timeOffRequestId'
         }
 
         self._activity_code_id = None
@@ -61,6 +63,7 @@ class UserScheduleActivity(object):
         self._description = None
         self._counts_as_paid_time = None
         self._is_dst_fallback = None
+        self._time_off_request_id = None
 
     @property
     def activity_code_id(self):
@@ -199,6 +202,29 @@ class UserScheduleActivity(object):
         """
         
         self._is_dst_fallback = is_dst_fallback
+
+    @property
+    def time_off_request_id(self):
+        """
+        Gets the time_off_request_id of this UserScheduleActivity.
+        Time off request id of this activity
+
+        :return: The time_off_request_id of this UserScheduleActivity.
+        :rtype: str
+        """
+        return self._time_off_request_id
+
+    @time_off_request_id.setter
+    def time_off_request_id(self, time_off_request_id):
+        """
+        Sets the time_off_request_id of this UserScheduleActivity.
+        Time off request id of this activity
+
+        :param time_off_request_id: The time_off_request_id of this UserScheduleActivity.
+        :type: str
+        """
+        
+        self._time_off_request_id = time_off_request_id
 
     def to_dict(self):
         """

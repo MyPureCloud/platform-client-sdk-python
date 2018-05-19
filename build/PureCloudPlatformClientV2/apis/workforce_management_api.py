@@ -139,7 +139,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: ActivityCodeContainer
                  If the method is called asynchronously,
                  returns the request thread.
@@ -288,7 +288,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_user_timeoffrequest(self, mu_id, user_id, time_off_request_id, **kwargs):
         """
-        Get a time off request by id
+        Get a time off request
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -301,10 +301,10 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param str time_off_request_id: Time Off Request Id (required)
-        :return: TimeOffRequest
+        :return: TimeOffRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -371,14 +371,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='TimeOffRequest',
+                                            response_type='TimeOffRequestResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_user_timeoffrequests(self, mu_id, user_id, **kwargs):
         """
-        Get a list of time off requests for any user
+        Get a list of time off requests for a given user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -391,7 +391,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param bool recently_reviewed: Limit results to requests that have been reviewed within the preceding 30 days
         :return: TimeOffRequestList
@@ -622,6 +622,99 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_managementunit_user_timeoffrequest(self, mu_id, user_id, time_off_request_id, **kwargs):
+        """
+        Update a time off request
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str user_id: The id of the user the requested time off request belongs to (required)
+        :param str time_off_request_id: The id of the time off request to update (required)
+        :param AdminTimeOffRequestPatch body: body
+        :return: TimeOffRequestResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'user_id', 'time_off_request_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit_user_timeoffrequest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
+        # verify the required parameter 'time_off_request_id' is set
+        if ('time_off_request_id' not in params) or (params['time_off_request_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_request_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'time_off_request_id' in params:
+            path_params['timeOffRequestId'] = params['time_off_request_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TimeOffRequestResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_managementunit_activitycodes(self, mu_id, **kwargs):
         """
         Create a new activity code
@@ -637,7 +730,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param CreateActivityCodeRequest body: body
         :return: ActivityCode
                  If the method is called asynchronously,
@@ -867,7 +960,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_managementunit_schedules_search(self, mu_id, **kwargs):
         """
-        Get user schedules within the given time range
+        Query published schedules for given given time range for set of users
         
 
         This method makes a synchronous HTTP request by default. To make an

@@ -41,20 +41,23 @@ class CampaignDiagnostics(object):
             'callable_contacts': 'CallableContactsDiagnostic',
             'queue_utilization_diagnostic': 'QueueUtilizationDiagnostic',
             'rule_set_diagnostics': 'list[RuleSetDiagnostic]',
-            'outstanding_interactions_count': 'int'
+            'outstanding_interactions_count': 'int',
+            'scheduled_interactions_count': 'int'
         }
 
         self.attribute_map = {
             'callable_contacts': 'callableContacts',
             'queue_utilization_diagnostic': 'queueUtilizationDiagnostic',
             'rule_set_diagnostics': 'ruleSetDiagnostics',
-            'outstanding_interactions_count': 'outstandingInteractionsCount'
+            'outstanding_interactions_count': 'outstandingInteractionsCount',
+            'scheduled_interactions_count': 'scheduledInteractionsCount'
         }
 
         self._callable_contacts = None
         self._queue_utilization_diagnostic = None
         self._rule_set_diagnostics = None
         self._outstanding_interactions_count = None
+        self._scheduled_interactions_count = None
 
     @property
     def callable_contacts(self):
@@ -147,6 +150,29 @@ class CampaignDiagnostics(object):
         """
         
         self._outstanding_interactions_count = outstanding_interactions_count
+
+    @property
+    def scheduled_interactions_count(self):
+        """
+        Gets the scheduled_interactions_count of this CampaignDiagnostics.
+        Current number of scheduled interactions on the campaign
+
+        :return: The scheduled_interactions_count of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._scheduled_interactions_count
+
+    @scheduled_interactions_count.setter
+    def scheduled_interactions_count(self, scheduled_interactions_count):
+        """
+        Sets the scheduled_interactions_count of this CampaignDiagnostics.
+        Current number of scheduled interactions on the campaign
+
+        :param scheduled_interactions_count: The scheduled_interactions_count of this CampaignDiagnostics.
+        :type: int
+        """
+        
+        self._scheduled_interactions_count = scheduled_interactions_count
 
     def to_dict(self):
         """

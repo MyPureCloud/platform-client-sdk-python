@@ -640,7 +640,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 has_conversation = false # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to false)
@@ -662,7 +662,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
@@ -830,7 +830,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str | the policy name - used for filtering results in searches. (optional)
@@ -854,7 +854,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |

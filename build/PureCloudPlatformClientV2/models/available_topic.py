@@ -83,7 +83,7 @@ class AvailableTopic(object):
     def id(self):
         """
         Gets the id of this AvailableTopic.
-        The globally unique identifier for the object.
+
 
         :return: The id of this AvailableTopic.
         :rtype: str
@@ -94,7 +94,7 @@ class AvailableTopic(object):
     def id(self, id):
         """
         Sets the id of this AvailableTopic.
-        The globally unique identifier for the object.
+
 
         :param id: The id of this AvailableTopic.
         :type: str

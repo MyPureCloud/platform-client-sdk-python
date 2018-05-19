@@ -11,6 +11,7 @@ title: CampaignDiagnostics
 | **queue_utilization_diagnostic** | [**QueueUtilizationDiagnostic**](QueueUtilizationDiagnostic.html) | Information regarding the campaign&#39;s queue | [optional] |
 | **rule_set_diagnostics** | [**list[RuleSetDiagnostic]**](RuleSetDiagnostic.html) | Information regarding the campaign&#39;s rule sets | [optional] |
 | **outstanding_interactions_count** | **int** | Current number of outstanding interactions on the campaign | [optional] |
+| **scheduled_interactions_count** | **int** | Current number of scheduled interactions on the campaign | [optional] |
 {: class="table table-striped"}
 
 

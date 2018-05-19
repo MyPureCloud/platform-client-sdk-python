@@ -377,7 +377,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: Integration
@@ -550,7 +550,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: IntegrationEntityListing
@@ -1225,7 +1225,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: ActionEntityListing
@@ -1322,7 +1322,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: CategoryEntityListing
@@ -1417,7 +1417,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: ActionEntityListing
@@ -1513,7 +1513,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: ClientAppEntityListing
@@ -2158,7 +2158,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: IntegrationTypeEntityListing
@@ -2250,7 +2250,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: Integration

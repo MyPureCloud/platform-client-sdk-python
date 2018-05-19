@@ -38,13 +38,67 @@ class ContactColumnTimeZone(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'time_zone': 'str',
+            'column_type': 'str'
         }
 
         self.attribute_map = {
-            
+            'time_zone': 'timeZone',
+            'column_type': 'columnType'
         }
 
+        self._time_zone = None
+        self._column_type = None
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this ContactColumnTimeZone.
+        Time zone that the column matched to. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :return: The time_zone of this ContactColumnTimeZone.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this ContactColumnTimeZone.
+        Time zone that the column matched to. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :param time_zone: The time_zone of this ContactColumnTimeZone.
+        :type: str
+        """
+        
+        self._time_zone = time_zone
+
+    @property
+    def column_type(self):
+        """
+        Gets the column_type of this ContactColumnTimeZone.
+        Column Type will be either PHONE or ZIP
+
+        :return: The column_type of this ContactColumnTimeZone.
+        :rtype: str
+        """
+        return self._column_type
+
+    @column_type.setter
+    def column_type(self, column_type):
+        """
+        Sets the column_type of this ContactColumnTimeZone.
+        Column Type will be either PHONE or ZIP
+
+        :param column_type: The column_type of this ContactColumnTimeZone.
+        :type: str
+        """
+        allowed_values = ["PHONE", "ZIP"]
+        if column_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for column_type -> " + column_type
+            self._column_type = "outdated_sdk_version"
+        else:
+            self._column_type = column_type
 
     def to_dict(self):
         """

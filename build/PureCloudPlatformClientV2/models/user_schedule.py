@@ -39,16 +39,25 @@ class UserSchedule(object):
         """
         self.swagger_types = {
             'shifts': 'list[UserScheduleShift]',
-            'full_day_time_off_markers': 'list[UserScheduleFullDayTimeOffMarker]'
+            'full_day_time_off_markers': 'list[UserScheduleFullDayTimeOffMarker]',
+            'delete': 'bool',
+            'metadata': 'WfmVersionedEntityMetadata',
+            'work_plan_id': 'str'
         }
 
         self.attribute_map = {
             'shifts': 'shifts',
-            'full_day_time_off_markers': 'fullDayTimeOffMarkers'
+            'full_day_time_off_markers': 'fullDayTimeOffMarkers',
+            'delete': 'delete',
+            'metadata': 'metadata',
+            'work_plan_id': 'workPlanId'
         }
 
         self._shifts = None
         self._full_day_time_off_markers = None
+        self._delete = None
+        self._metadata = None
+        self._work_plan_id = None
 
     @property
     def shifts(self):
@@ -95,6 +104,75 @@ class UserSchedule(object):
         """
         
         self._full_day_time_off_markers = full_day_time_off_markers
+
+    @property
+    def delete(self):
+        """
+        Gets the delete of this UserSchedule.
+        If marked true for updating an existing user schedule, it will be deleted
+
+        :return: The delete of this UserSchedule.
+        :rtype: bool
+        """
+        return self._delete
+
+    @delete.setter
+    def delete(self, delete):
+        """
+        Sets the delete of this UserSchedule.
+        If marked true for updating an existing user schedule, it will be deleted
+
+        :param delete: The delete of this UserSchedule.
+        :type: bool
+        """
+        
+        self._delete = delete
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this UserSchedule.
+        Version metadata for this schedule
+
+        :return: The metadata of this UserSchedule.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this UserSchedule.
+        Version metadata for this schedule
+
+        :param metadata: The metadata of this UserSchedule.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
+
+    @property
+    def work_plan_id(self):
+        """
+        Gets the work_plan_id of this UserSchedule.
+        ID of the work plan associated with the user during schedule creation
+
+        :return: The work_plan_id of this UserSchedule.
+        :rtype: str
+        """
+        return self._work_plan_id
+
+    @work_plan_id.setter
+    def work_plan_id(self, work_plan_id):
+        """
+        Sets the work_plan_id of this UserSchedule.
+        ID of the work plan associated with the user during schedule creation
+
+        :param work_plan_id: The work_plan_id of this UserSchedule.
+        :type: str
+        """
+        
+        self._work_plan_id = work_plan_id
 
     def to_dict(self):
         """

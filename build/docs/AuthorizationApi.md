@@ -321,12 +321,12 @@ api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str |  (optional)
-permission = NULL # list[object] |  (optional)
-default_role_id = NULL # list[object] |  (optional)
+permission = ['permission_example'] # list[str] |  (optional)
+default_role_id = ['default_role_id_example'] # list[str] |  (optional)
 user_count = true # bool |  (optional) (default to true)
 id = ['id_example'] # list[str] | id (optional)
 
@@ -346,12 +346,12 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**|  | [optional]  |
-| **permission** | [**list[object]**](object.html)|  | [optional]  |
-| **default_role_id** | [**list[object]**](object.html)|  | [optional]  |
+| **permission** | [**list[str]**](str.html)|  | [optional]  |
+| **default_role_id** | [**list[str]**](str.html)|  | [optional]  |
 | **user_count** | **bool**|  | [optional] [default to true] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}

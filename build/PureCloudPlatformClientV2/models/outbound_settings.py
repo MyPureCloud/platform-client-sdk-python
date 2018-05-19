@@ -45,6 +45,8 @@ class OutboundSettings(object):
             'version': 'int',
             'max_calls_per_agent': 'int',
             'max_line_utilization': 'float',
+            'abandon_seconds': 'float',
+            'compliance_abandon_rate_denominator': 'str',
             'self_uri': 'str'
         }
 
@@ -56,6 +58,8 @@ class OutboundSettings(object):
             'version': 'version',
             'max_calls_per_agent': 'maxCallsPerAgent',
             'max_line_utilization': 'maxLineUtilization',
+            'abandon_seconds': 'abandonSeconds',
+            'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
             'self_uri': 'selfUri'
         }
 
@@ -66,6 +70,8 @@ class OutboundSettings(object):
         self._version = None
         self._max_calls_per_agent = None
         self._max_line_utilization = None
+        self._abandon_seconds = None
+        self._compliance_abandon_rate_denominator = None
         self._self_uri = None
 
     @property
@@ -228,6 +234,56 @@ class OutboundSettings(object):
         """
         
         self._max_line_utilization = max_line_utilization
+
+    @property
+    def abandon_seconds(self):
+        """
+        Gets the abandon_seconds of this OutboundSettings.
+        The number of seconds used to determine if a call is abandoned
+
+        :return: The abandon_seconds of this OutboundSettings.
+        :rtype: float
+        """
+        return self._abandon_seconds
+
+    @abandon_seconds.setter
+    def abandon_seconds(self, abandon_seconds):
+        """
+        Sets the abandon_seconds of this OutboundSettings.
+        The number of seconds used to determine if a call is abandoned
+
+        :param abandon_seconds: The abandon_seconds of this OutboundSettings.
+        :type: float
+        """
+        
+        self._abandon_seconds = abandon_seconds
+
+    @property
+    def compliance_abandon_rate_denominator(self):
+        """
+        Gets the compliance_abandon_rate_denominator of this OutboundSettings.
+        The denominator to be used in determining the compliance abandon rate
+
+        :return: The compliance_abandon_rate_denominator of this OutboundSettings.
+        :rtype: str
+        """
+        return self._compliance_abandon_rate_denominator
+
+    @compliance_abandon_rate_denominator.setter
+    def compliance_abandon_rate_denominator(self, compliance_abandon_rate_denominator):
+        """
+        Sets the compliance_abandon_rate_denominator of this OutboundSettings.
+        The denominator to be used in determining the compliance abandon rate
+
+        :param compliance_abandon_rate_denominator: The compliance_abandon_rate_denominator of this OutboundSettings.
+        :type: str
+        """
+        allowed_values = ["ALL_CALLS", "CALLS_THAT_REACHED_QUEUE"]
+        if compliance_abandon_rate_denominator.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for compliance_abandon_rate_denominator -> " + compliance_abandon_rate_denominator
+            self._compliance_abandon_rate_denominator = "outdated_sdk_version"
+        else:
+            self._compliance_abandon_rate_denominator = compliance_abandon_rate_denominator
 
     @property
     def self_uri(self):
