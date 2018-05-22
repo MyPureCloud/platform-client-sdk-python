@@ -11,6 +11,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
+from .general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
 from .geolocation_api import GeolocationApi
 from .greetings_api import GreetingsApi
 from .groups_api import GroupsApi

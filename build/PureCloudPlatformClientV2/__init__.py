@@ -285,6 +285,7 @@ from .models.conversation import Conversation
 from .models.conversation_association import ConversationAssociation
 from .models.conversation_basic import ConversationBasic
 from .models.conversation_chat import ConversationChat
+from .models.conversation_division_membership import ConversationDivisionMembership
 from .models.conversation_entity_listing import ConversationEntityListing
 from .models.conversation_notification import ConversationNotification
 from .models.conversation_notification_address import ConversationNotificationAddress
@@ -375,6 +376,7 @@ from .models.detail import Detail
 from .models.dialer_action import DialerAction
 from .models.dialer_audit_request import DialerAuditRequest
 from .models.dialer_contact import DialerContact
+from .models.dialer_contact_id import DialerContactId
 from .models.dialer_event_entity_listing import DialerEventEntityListing
 from .models.dialer_preview import DialerPreview
 from .models.dialer_rule import DialerRule
@@ -555,6 +557,10 @@ from .models.flow_notification_notification_user import FlowNotificationNotifica
 from .models.flow_version import FlowVersion
 from .models.flow_version_entity_listing import FlowVersionEntityListing
 from .models.free_seating_configuration import FreeSeatingConfiguration
+from .models.gdpr_request import GDPRRequest
+from .models.gdpr_request_entity_listing import GDPRRequestEntityListing
+from .models.gdpr_subject import GDPRSubject
+from .models.gdpr_subject_entity_listing import GDPRSubjectEntityListing
 from .models.g_suite import GSuite
 from .models.geolocation import Geolocation
 from .models.geolocation_notification import GeolocationNotification
@@ -850,6 +856,7 @@ from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
 from .models.replace_request import ReplaceRequest
 from .models.replace_response import ReplaceResponse
+from .models.replacement_term import ReplacementTerm
 from .models.report_meta_data import ReportMetaData
 from .models.report_meta_data_entity_listing import ReportMetaDataEntityListing
 from .models.report_run_entry import ReportRunEntry
@@ -1176,6 +1183,7 @@ from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi
+from .apis.general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
 from .apis.geolocation_api import GeolocationApi
 from .apis.greetings_api import GreetingsApi
 from .apis.groups_api import GroupsApi

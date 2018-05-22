@@ -285,6 +285,7 @@ from .conversation import Conversation
 from .conversation_association import ConversationAssociation
 from .conversation_basic import ConversationBasic
 from .conversation_chat import ConversationChat
+from .conversation_division_membership import ConversationDivisionMembership
 from .conversation_entity_listing import ConversationEntityListing
 from .conversation_notification import ConversationNotification
 from .conversation_notification_address import ConversationNotificationAddress
@@ -375,6 +376,7 @@ from .detail import Detail
 from .dialer_action import DialerAction
 from .dialer_audit_request import DialerAuditRequest
 from .dialer_contact import DialerContact
+from .dialer_contact_id import DialerContactId
 from .dialer_event_entity_listing import DialerEventEntityListing
 from .dialer_preview import DialerPreview
 from .dialer_rule import DialerRule
@@ -555,6 +557,10 @@ from .flow_notification_notification_user import FlowNotificationNotificationUse
 from .flow_version import FlowVersion
 from .flow_version_entity_listing import FlowVersionEntityListing
 from .free_seating_configuration import FreeSeatingConfiguration
+from .gdpr_request import GDPRRequest
+from .gdpr_request_entity_listing import GDPRRequestEntityListing
+from .gdpr_subject import GDPRSubject
+from .gdpr_subject_entity_listing import GDPRSubjectEntityListing
 from .g_suite import GSuite
 from .geolocation import Geolocation
 from .geolocation_notification import GeolocationNotification
@@ -850,6 +856,7 @@ from .relationship import Relationship
 from .relationship_listing import RelationshipListing
 from .replace_request import ReplaceRequest
 from .replace_response import ReplaceResponse
+from .replacement_term import ReplacementTerm
 from .report_meta_data import ReportMetaData
 from .report_meta_data_entity_listing import ReportMetaDataEntityListing
 from .report_run_entry import ReportRunEntry
