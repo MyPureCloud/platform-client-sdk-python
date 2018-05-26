@@ -292,12 +292,13 @@ class NotificationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str includechannels: Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence.
         :return: ChannelEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['includechannels']
         all_params.append('callback')
 
         params = locals()
@@ -316,6 +317,8 @@ class NotificationsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'includechannels' in params:
+            query_params['includechannels'] = params['includechannels']
 
         header_params = {}
 
@@ -436,7 +439,7 @@ class NotificationsApi(object):
     def post_notifications_channels(self, **kwargs):
         """
         Create a new channel
-        There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+        There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

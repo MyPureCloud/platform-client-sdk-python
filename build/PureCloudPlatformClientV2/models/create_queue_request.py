@@ -40,9 +40,9 @@ class CreateQueueRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'UriReference',
             'description': 'str',
             'version': 'int',
-            'division': 'UriReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'modified_by': 'str',
@@ -69,9 +69,9 @@ class CreateQueueRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'version': 'version',
-            'division': 'division',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
@@ -97,9 +97,9 @@ class CreateQueueRequest(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._version = None
-        self._division = None
         self._date_created = None
         self._date_modified = None
         self._modified_by = None
@@ -169,6 +169,29 @@ class CreateQueueRequest(object):
         self._name = name
 
     @property
+    def division(self):
+        """
+        Gets the division of this CreateQueueRequest.
+        The division to which this entity belongs.
+
+        :return: The division of this CreateQueueRequest.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this CreateQueueRequest.
+        The division to which this entity belongs.
+
+        :param division: The division of this CreateQueueRequest.
+        :type: UriReference
+        """
+        
+        self._division = division
+
+    @property
     def description(self):
         """
         Gets the description of this CreateQueueRequest.
@@ -213,29 +236,6 @@ class CreateQueueRequest(object):
         """
         
         self._version = version
-
-    @property
-    def division(self):
-        """
-        Gets the division of this CreateQueueRequest.
-        The division to which this queue belongs.
-
-        :return: The division of this CreateQueueRequest.
-        :rtype: UriReference
-        """
-        return self._division
-
-    @division.setter
-    def division(self, division):
-        """
-        Sets the division of this CreateQueueRequest.
-        The division to which this queue belongs.
-
-        :param division: The division of this CreateQueueRequest.
-        :type: UriReference
-        """
-        
-        self._division = division
 
     @property
     def date_created(self):

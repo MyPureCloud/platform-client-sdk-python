@@ -39,16 +39,19 @@ class Channel(object):
         """
         self.swagger_types = {
             'connect_uri': 'str',
-            'id': 'str'
+            'id': 'str',
+            'expires': 'datetime'
         }
 
         self.attribute_map = {
             'connect_uri': 'connectUri',
-            'id': 'id'
+            'id': 'id',
+            'expires': 'expires'
         }
 
         self._connect_uri = None
         self._id = None
+        self._expires = None
 
     @property
     def connect_uri(self):
@@ -95,6 +98,29 @@ class Channel(object):
         """
         
         self._id = id
+
+    @property
+    def expires(self):
+        """
+        Gets the expires of this Channel.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The expires of this Channel.
+        :rtype: datetime
+        """
+        return self._expires
+
+    @expires.setter
+    def expires(self, expires):
+        """
+        Sets the expires of this Channel.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param expires: The expires of this Channel.
+        :type: datetime
+        """
+        
+        self._expires = expires
 
     def to_dict(self):
         """

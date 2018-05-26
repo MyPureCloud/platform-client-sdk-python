@@ -546,6 +546,8 @@ from .models.field_list import FieldList
 from .models.filter import Filter
 from .models.filter_preview_response import FilterPreviewResponse
 from .models.flow import Flow
+from .models.flow_division_view import FlowDivisionView
+from .models.flow_division_view_entity_listing import FlowDivisionViewEntityListing
 from .models.flow_entity_listing import FlowEntityListing
 from .models.flow_notification_notification import FlowNotificationNotification
 from .models.flow_notification_notification_architect_operation import FlowNotificationNotificationArchitectOperation
@@ -1155,6 +1157,7 @@ from .models.wfm_move_agents_complete_notification_management_unit import WfmMov
 from .models.wfm_move_agents_complete_notification_results import WfmMoveAgentsCompleteNotificationResults
 from .models.wfm_move_agents_complete_notification_user_reference import WfmMoveAgentsCompleteNotificationUserReference
 from .models.wfm_move_agents_complete_notification_wfm_move_agent_data import WfmMoveAgentsCompleteNotificationWfmMoveAgentData
+from .models.wfm_schedule_notification_notification import WfmScheduleNotificationNotification
 from .models.wfm_update_agent_details_complete_notification import WfmUpdateAgentDetailsCompleteNotification
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata

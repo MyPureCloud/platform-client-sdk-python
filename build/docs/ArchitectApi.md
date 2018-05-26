@@ -58,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
+|[**get_flows_divisionviews**](ArchitectApi.html#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
 |[**post_architect_emergencygroups**](ArchitectApi.html#post_architect_emergencygroups) | Creates a new emergency group|
 |[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
@@ -2573,6 +2574,69 @@ except ApiException as e:
 ### Return type
 
 [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+
+<a name="get_flows_divisionviews"></a>
+
+## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before)
+
+Get a pageable list of basic flow information objects filterable by query parameters.
+
+This returns a simplified version of /flow consisting of name and type.
+
+Wraps GET /api/v2/flows/divisionviews 
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+type = 'type_example' # str | Type
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'id' # str | Sort by (optional) (default to id)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
+id = ['id_example'] # list[str] | ID (optional)
+name = 'name_example' # str | Name (optional)
+publish_version_id = 'publish_version_id_example' # str | Publish version ID (optional)
+published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
+published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
+
+try:
+    # Get a pageable list of basic flow information objects filterable by query parameters.
+    api_response = api_instance.get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **type** | **str**| Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **id** | [**list[str]**](str.html)| ID | [optional]  |
+| **name** | **str**| Name | [optional]  |
+| **publish_version_id** | **str**| Publish version ID | [optional]  |
+| **published_after** | **str**| Published after | [optional]  |
+| **published_before** | **str**| Published before | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html)
 
 <a name="post_architect_dependencytracking_build"></a>
 

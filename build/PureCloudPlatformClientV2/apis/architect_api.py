@@ -4324,6 +4324,111 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_divisionviews(self, type, **kwargs):
+        """
+        Get a pageable list of basic flow information objects filterable by query parameters.
+        This returns a simplified version of /flow consisting of name and type.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_divisionviews(type, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str type: Type (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID
+        :param str name: Name
+        :param str publish_version_id: Publish version ID
+        :param str published_after: Published after
+        :param str published_before: Published before
+        :return: FlowDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'publish_version_id', 'published_after', 'published_before']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'type' is set
+        if ('type' not in params) or (params['type'] is None):
+            raise ValueError("Missing the required parameter `type` when calling `get_flows_divisionviews`")
+
+
+        resource_path = '/api/v2/flows/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'type' in params:
+            query_params['type'] = params['type']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'publish_version_id' in params:
+            query_params['publishVersionId'] = params['publish_version_id']
+        if 'published_after' in params:
+            query_params['publishedAfter'] = params['published_after']
+        if 'published_before' in params:
+            query_params['publishedBefore'] = params['published_before']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowDivisionViewEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_dependencytracking_build(self, **kwargs):
         """
         Rebuild Dependency Tracking data for an organization

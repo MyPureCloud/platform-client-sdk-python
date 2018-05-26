@@ -41,7 +41,9 @@ class ViewFilter(object):
             'media_types': 'list[str]',
             'queue_ids': 'list[str]',
             'skill_ids': 'list[str]',
+            'skill_groups': 'list[str]',
             'language_ids': 'list[str]',
+            'language_groups': 'list[str]',
             'directions': 'list[str]',
             'wrap_up_codes': 'list[str]',
             'dnis_list': 'list[str]',
@@ -67,7 +69,9 @@ class ViewFilter(object):
             'media_types': 'mediaTypes',
             'queue_ids': 'queueIds',
             'skill_ids': 'skillIds',
+            'skill_groups': 'skillGroups',
             'language_ids': 'languageIds',
+            'language_groups': 'languageGroups',
             'directions': 'directions',
             'wrap_up_codes': 'wrapUpCodes',
             'dnis_list': 'dnisList',
@@ -92,7 +96,9 @@ class ViewFilter(object):
         self._media_types = None
         self._queue_ids = None
         self._skill_ids = None
+        self._skill_groups = None
         self._language_ids = None
+        self._language_groups = None
         self._directions = None
         self._wrap_up_codes = None
         self._dnis_list = None
@@ -183,6 +189,29 @@ class ViewFilter(object):
         self._skill_ids = skill_ids
 
     @property
+    def skill_groups(self):
+        """
+        Gets the skill_groups of this ViewFilter.
+        The skill groups used to filter the view
+
+        :return: The skill_groups of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._skill_groups
+
+    @skill_groups.setter
+    def skill_groups(self, skill_groups):
+        """
+        Sets the skill_groups of this ViewFilter.
+        The skill groups used to filter the view
+
+        :param skill_groups: The skill_groups of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._skill_groups = skill_groups
+
+    @property
     def language_ids(self):
         """
         Gets the language_ids of this ViewFilter.
@@ -204,6 +233,29 @@ class ViewFilter(object):
         """
         
         self._language_ids = language_ids
+
+    @property
+    def language_groups(self):
+        """
+        Gets the language_groups of this ViewFilter.
+        The language groups used to filter the view
+
+        :return: The language_groups of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._language_groups
+
+    @language_groups.setter
+    def language_groups(self, language_groups):
+        """
+        Sets the language_groups of this ViewFilter.
+        The language groups used to filter the view
+
+        :param language_groups: The language_groups of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._language_groups = language_groups
 
     @property
     def directions(self):

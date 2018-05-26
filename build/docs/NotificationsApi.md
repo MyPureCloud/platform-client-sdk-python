@@ -153,7 +153,7 @@ except ApiException as e:
 
 <a name="get_notifications_channels"></a>
 
-## [**ChannelEntityListing**](ChannelEntityListing.html) get_notifications_channels()
+## [**ChannelEntityListing**](ChannelEntityListing.html) get_notifications_channels(includechannels=includechannels)
 
 The list of existing channels
 
@@ -174,10 +174,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
+includechannels = 'token' # str | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional) (default to token)
 
 try:
     # The list of existing channels
-    api_response = api_instance.get_notifications_channels()
+    api_response = api_instance.get_notifications_channels(includechannels=includechannels)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling NotificationsApi->get_notifications_channels: %s\n" % e
@@ -185,7 +186,10 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **includechannels** | **str**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
 {: class="table table-striped"}
 
 ### Return type
@@ -245,7 +249,7 @@ except ApiException as e:
 
 Create a new channel
 
-There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
 
 Wraps POST /api/v2/notifications/channels 
 
