@@ -44,6 +44,7 @@ class WebChatDeployment(object):
             'authentication_required': 'bool',
             'authentication_url': 'str',
             'disabled': 'bool',
+            'web_chat_config': 'WebChatConfig',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class WebChatDeployment(object):
             'authentication_required': 'authenticationRequired',
             'authentication_url': 'authenticationUrl',
             'disabled': 'disabled',
+            'web_chat_config': 'webChatConfig',
             'self_uri': 'selfUri'
         }
 
@@ -63,6 +65,7 @@ class WebChatDeployment(object):
         self._authentication_required = None
         self._authentication_url = None
         self._disabled = None
+        self._web_chat_config = None
         self._self_uri = None
 
     @property
@@ -161,7 +164,7 @@ class WebChatDeployment(object):
     def authentication_url(self):
         """
         Gets the authentication_url of this WebChatDeployment.
-        URL for third party service authenticating webchat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
+        URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
 
         :return: The authentication_url of this WebChatDeployment.
         :rtype: str
@@ -172,7 +175,7 @@ class WebChatDeployment(object):
     def authentication_url(self, authentication_url):
         """
         Sets the authentication_url of this WebChatDeployment.
-        URL for third party service authenticating webchat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
+        URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
 
         :param authentication_url: The authentication_url of this WebChatDeployment.
         :type: str
@@ -202,6 +205,29 @@ class WebChatDeployment(object):
         """
         
         self._disabled = disabled
+
+    @property
+    def web_chat_config(self):
+        """
+        Gets the web_chat_config of this WebChatDeployment.
+
+
+        :return: The web_chat_config of this WebChatDeployment.
+        :rtype: WebChatConfig
+        """
+        return self._web_chat_config
+
+    @web_chat_config.setter
+    def web_chat_config(self, web_chat_config):
+        """
+        Sets the web_chat_config of this WebChatDeployment.
+
+
+        :param web_chat_config: The web_chat_config of this WebChatDeployment.
+        :type: WebChatConfig
+        """
+        
+        self._web_chat_config = web_chat_config
 
     @property
     def self_uri(self):

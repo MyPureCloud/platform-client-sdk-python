@@ -1570,7 +1570,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_externalcontacts_contact_notes(self, contact_id, **kwargs):
+    def post_externalcontacts_contact_notes(self, contact_id, body, **kwargs):
         """
         Create a note for an external contact
         
@@ -1581,12 +1581,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_externalcontacts_contact_notes(contact_id, callback=callback_function)
+        >>> thread = api.post_externalcontacts_contact_notes(contact_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact Id (required)
-        :param Note body: ExternalContact
+        :param Note body: ExternalContact (required)
         :return: Note
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1608,6 +1608,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'contact_id' is set
         if ('contact_id' not in params) or (params['contact_id'] is None):
             raise ValueError("Missing the required parameter `contact_id` when calling `post_externalcontacts_contact_notes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contact_notes`")
 
 
         resource_path = '/api/v2/externalcontacts/contacts/{contactId}/notes'.replace('{format}', 'json')
@@ -1651,7 +1654,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_externalcontacts_contacts(self, **kwargs):
+    def post_externalcontacts_contacts(self, body, **kwargs):
         """
         Create an external contact
         
@@ -1662,11 +1665,11 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_externalcontacts_contacts(callback=callback_function)
+        >>> thread = api.post_externalcontacts_contacts(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ExternalContact body: ExternalContact
+        :param ExternalContact body: ExternalContact (required)
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1685,6 +1688,9 @@ class ExternalContactsApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contacts`")
 
 
         resource_path = '/api/v2/externalcontacts/contacts'.replace('{format}', 'json')
@@ -1726,7 +1732,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_externalcontacts_organization_notes(self, external_organization_id, **kwargs):
+    def post_externalcontacts_organization_notes(self, external_organization_id, body, **kwargs):
         """
         Create a note for an external organization
         
@@ -1737,12 +1743,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_externalcontacts_organization_notes(external_organization_id, callback=callback_function)
+        >>> thread = api.post_externalcontacts_organization_notes(external_organization_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization Id (required)
-        :param Note body: ExternalContact
+        :param Note body: ExternalContact (required)
         :return: Note
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1764,6 +1770,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'external_organization_id' is set
         if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
             raise ValueError("Missing the required parameter `external_organization_id` when calling `post_externalcontacts_organization_notes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_organization_notes`")
 
 
         resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes'.replace('{format}', 'json')
@@ -1807,7 +1816,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_externalcontacts_organizations(self, **kwargs):
+    def post_externalcontacts_organizations(self, body, **kwargs):
         """
         Create an external organization
         
@@ -1818,11 +1827,11 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_externalcontacts_organizations(callback=callback_function)
+        >>> thread = api.post_externalcontacts_organizations(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ExternalOrganization body: ExternalOrganization
+        :param ExternalOrganization body: ExternalOrganization (required)
         :return: ExternalOrganization
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1841,6 +1850,9 @@ class ExternalContactsApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_organizations`")
 
 
         resource_path = '/api/v2/externalcontacts/organizations'.replace('{format}', 'json')
@@ -1882,7 +1894,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_externalcontacts_relationships(self, **kwargs):
+    def post_externalcontacts_relationships(self, body, **kwargs):
         """
         Create a relationship
         
@@ -1893,11 +1905,11 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_externalcontacts_relationships(callback=callback_function)
+        >>> thread = api.post_externalcontacts_relationships(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Relationship body: Relationship
+        :param Relationship body: Relationship (required)
         :return: Relationship
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1916,6 +1928,9 @@ class ExternalContactsApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_relationships`")
 
 
         resource_path = '/api/v2/externalcontacts/relationships'.replace('{format}', 'json')
@@ -1957,7 +1972,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_contact(self, contact_id, **kwargs):
+    def put_externalcontacts_contact(self, contact_id, body, **kwargs):
         """
         Update an external contact
         
@@ -1968,12 +1983,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_contact(contact_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_contact(contact_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :param ExternalContact body: ExternalContact
+        :param ExternalContact body: ExternalContact (required)
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1995,6 +2010,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'contact_id' is set
         if ('contact_id' not in params) or (params['contact_id'] is None):
             raise ValueError("Missing the required parameter `contact_id` when calling `put_externalcontacts_contact`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_contact`")
 
 
         resource_path = '/api/v2/externalcontacts/contacts/{contactId}'.replace('{format}', 'json')
@@ -2038,7 +2056,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_contact_note(self, contact_id, note_id, **kwargs):
+    def put_externalcontacts_contact_note(self, contact_id, note_id, body, **kwargs):
         """
         Update a note for an external contact
         
@@ -2049,13 +2067,13 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_contact_note(contact_id, note_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_contact_note(contact_id, note_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact Id (required)
         :param str note_id: Note Id (required)
-        :param Note body: Note
+        :param Note body: Note (required)
         :return: Note
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2080,6 +2098,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'note_id' is set
         if ('note_id' not in params) or (params['note_id'] is None):
             raise ValueError("Missing the required parameter `note_id` when calling `put_externalcontacts_contact_note`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_contact_note`")
 
 
         resource_path = '/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}'.replace('{format}', 'json')
@@ -2125,7 +2146,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_conversation(self, conversation_id, **kwargs):
+    def put_externalcontacts_conversation(self, conversation_id, body, **kwargs):
         """
         Associate an external contact with a conversation
         
@@ -2136,12 +2157,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_conversation(conversation_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_conversation(conversation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
-        :param ConversationAssociation body: ConversationAssociation
+        :param ConversationAssociation body: ConversationAssociation (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2163,6 +2184,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'conversation_id' is set
         if ('conversation_id' not in params) or (params['conversation_id'] is None):
             raise ValueError("Missing the required parameter `conversation_id` when calling `put_externalcontacts_conversation`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_conversation`")
 
 
         resource_path = '/api/v2/externalcontacts/conversations/{conversationId}'.replace('{format}', 'json')
@@ -2206,7 +2230,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_organization(self, external_organization_id, **kwargs):
+    def put_externalcontacts_organization(self, external_organization_id, body, **kwargs):
         """
         Update an external organization
         
@@ -2217,12 +2241,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_organization(external_organization_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_organization(external_organization_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param ExternalOrganization body: ExternalOrganization
+        :param ExternalOrganization body: ExternalOrganization (required)
         :return: ExternalOrganization
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2244,6 +2268,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'external_organization_id' is set
         if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
             raise ValueError("Missing the required parameter `external_organization_id` when calling `put_externalcontacts_organization`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_organization`")
 
 
         resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}'.replace('{format}', 'json')
@@ -2287,7 +2314,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_organization_note(self, external_organization_id, note_id, **kwargs):
+    def put_externalcontacts_organization_note(self, external_organization_id, note_id, body, **kwargs):
         """
         Update a note for an external organization
         
@@ -2298,13 +2325,13 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_organization_note(external_organization_id, note_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_organization_note(external_organization_id, note_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization Id (required)
         :param str note_id: Note Id (required)
-        :param Note body: Note
+        :param Note body: Note (required)
         :return: Note
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2329,6 +2356,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'note_id' is set
         if ('note_id' not in params) or (params['note_id'] is None):
             raise ValueError("Missing the required parameter `note_id` when calling `put_externalcontacts_organization_note`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_organization_note`")
 
 
         resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}'.replace('{format}', 'json')
@@ -2376,7 +2406,7 @@ class ExternalContactsApi(object):
 
     def put_externalcontacts_organization_trustor_trustor_id(self, external_organization_id, trustor_id, **kwargs):
         """
-        Links a Trustor with an Extenral Organization
+        Links a Trustor with an External Organization
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2458,7 +2488,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_externalcontacts_relationship(self, relationship_id, **kwargs):
+    def put_externalcontacts_relationship(self, relationship_id, body, **kwargs):
         """
         Update a relationship
         
@@ -2469,12 +2499,12 @@ class ExternalContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_externalcontacts_relationship(relationship_id, callback=callback_function)
+        >>> thread = api.put_externalcontacts_relationship(relationship_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str relationship_id: Relationship Id (required)
-        :param Relationship body: Relationship
+        :param Relationship body: Relationship (required)
         :return: Relationship
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2496,6 +2526,9 @@ class ExternalContactsApi(object):
         # verify the required parameter 'relationship_id' is set
         if ('relationship_id' not in params) or (params['relationship_id'] is None):
             raise ValueError("Missing the required parameter `relationship_id` when calling `put_externalcontacts_relationship`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_relationship`")
 
 
         resource_path = '/api/v2/externalcontacts/relationships/{relationshipId}'.replace('{format}', 'json')

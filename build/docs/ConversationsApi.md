@@ -110,11 +110,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
 
+
+
 Delete a code used to add a communication to this participant
 
 
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -158,11 +164,17 @@ void (empty response body)
 
 ##  delete_conversations_call_participant_consult(conversation_id, participant_id)
 
+
+
 Cancel the transfer
 
 
 
 Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -204,11 +216,17 @@ void (empty response body)
 
 ##  delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 
+
+
 Delete attachment from draft
 
 
 
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -250,11 +268,17 @@ void (empty response body)
 
 ## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversation_details(conversation_id)
 
+
+
 Get a conversation by id
 
 
 
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -295,11 +319,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) get_conversation(conversation_id)
 
+
+
 Get conversation
 
 
 
 Wraps GET /api/v2/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:view
 
 ### Example
 
@@ -340,11 +370,17 @@ except ApiException as e:
 
 ## [**SecureSession**](SecureSession.html) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
 
+
+
 Fetch info on a secure session
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -389,11 +425,17 @@ except ApiException as e:
 
 ## [**SecureSessionEntityListing**](SecureSessionEntityListing.html) get_conversation_participant_secureivrsessions(conversation_id, participant_id)
 
+
+
 Get a list of secure sessions for this participant.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -434,13 +476,19 @@ except ApiException as e:
 
 <a name="get_conversation_participant_wrapup"></a>
 
-## [**WrapupCode**](WrapupCode.html) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -479,17 +527,23 @@ except ApiException as e:
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversation_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversation_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -532,11 +586,17 @@ except ApiException as e:
 
 ## [**ConversationEntityListing**](ConversationEntityListing.html) get_conversations(communication_type=communication_type)
 
+
+
 Get active conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -577,11 +637,17 @@ except ApiException as e:
 
 ## [**CallConversation**](CallConversation.html) get_conversations_call(conversation_id)
 
+
+
 Get call conversation
 
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -620,13 +686,19 @@ except ApiException as e:
 
 <a name="get_conversations_call_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -665,17 +737,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_call_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -718,11 +796,17 @@ except ApiException as e:
 
 ## [**CallbackConversation**](CallbackConversation.html) get_conversations_callback(conversation_id)
 
+
+
 Get callback conversation
 
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -761,13 +845,19 @@ except ApiException as e:
 
 <a name="get_conversations_callback_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -806,17 +896,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_callback_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -859,11 +955,17 @@ except ApiException as e:
 
 ## [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html) get_conversations_callbacks()
 
+
+
 Get active callback conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/callbacks 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -900,11 +1002,17 @@ This endpoint does not need any parameter.
 
 ## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls()
 
+
+
 Get active call conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/calls 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -941,11 +1049,17 @@ This endpoint does not need any parameter.
 
 ## [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
 
+
+
 Get call history
 
 
 
 Wraps GET /api/v2/conversations/calls/history 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -992,11 +1106,17 @@ except ApiException as e:
 
 ## [**MaxParticipants**](MaxParticipants.html) get_conversations_calls_maximumconferenceparties()
 
+
+
 Get the maximum number of participants that this user can have on a conference
 
 
 
 Wraps GET /api/v2/conversations/calls/maximumconferenceparties 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1033,11 +1153,17 @@ This endpoint does not need any parameter.
 
 ## [**ChatConversation**](ChatConversation.html) get_conversations_chat(conversation_id)
 
+
+
 Get chat conversation
 
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1076,13 +1202,19 @@ except ApiException as e:
 
 <a name="get_conversations_chat_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1121,17 +1253,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_chat_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1174,11 +1312,17 @@ except ApiException as e:
 
 ## [**ChatConversationEntityListing**](ChatConversationEntityListing.html) get_conversations_chats()
 
+
+
 Get active chat conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/chats 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1215,11 +1359,17 @@ This endpoint does not need any parameter.
 
 ## [**CobrowseConversation**](CobrowseConversation.html) get_conversations_cobrowsesession(conversation_id)
 
+
+
 Get cobrowse conversation
 
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1258,13 +1408,19 @@ except ApiException as e:
 
 <a name="get_conversations_cobrowsesession_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1303,17 +1459,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_cobrowsesession_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1356,11 +1518,17 @@ except ApiException as e:
 
 ## [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html) get_conversations_cobrowsesessions()
 
+
+
 Get active cobrowse conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1397,11 +1565,17 @@ This endpoint does not need any parameter.
 
 ## [**EmailConversation**](EmailConversation.html) get_conversations_email(conversation_id)
 
+
+
 Get email conversation
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1442,11 +1616,17 @@ except ApiException as e:
 
 ## [**EmailMessage**](EmailMessage.html) get_conversations_email_message(conversation_id, message_id)
 
+
+
 Get conversation message
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1489,11 +1669,17 @@ except ApiException as e:
 
 ## [**EmailMessageListing**](EmailMessageListing.html) get_conversations_email_messages(conversation_id)
 
+
+
 Get conversation messages
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1534,11 +1720,17 @@ except ApiException as e:
 
 ## [**EmailMessage**](EmailMessage.html) get_conversations_email_messages_draft(conversation_id)
 
+
+
 Get conversation draft reply
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1577,13 +1769,19 @@ except ApiException as e:
 
 <a name="get_conversations_email_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1622,17 +1820,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_email_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1675,11 +1879,17 @@ except ApiException as e:
 
 ## [**EmailConversationEntityListing**](EmailConversationEntityListing.html) get_conversations_emails()
 
+
+
 Get active email conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/emails 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1716,11 +1926,17 @@ This endpoint does not need any parameter.
 
 ## [**MessageConversation**](MessageConversation.html) get_conversations_message(conversation_id)
 
+
+
 Get message conversation
 
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1761,11 +1977,17 @@ except ApiException as e:
 
 ## [**MessageData**](MessageData.html) get_conversations_message_message(conversation_id, message_id)
 
+
+
 Get message
 
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId} 
+
+Requires ANY permissions: 
+
+* conversation:message:view
 
 ### Example
 
@@ -1806,13 +2028,19 @@ except ApiException as e:
 
 <a name="get_conversations_message_participant_wrapup"></a>
 
-## [**Wrapup**](Wrapup.html) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1851,17 +2079,23 @@ except ApiException as e:
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="get_conversations_message_participant_wrapupcodes"></a>
 
 ## [**list[WrapupCode]**](WrapupCode.html) get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
+
+
 
 Get list of wrapup codes for this conversation participant
 
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1904,11 +2138,17 @@ except ApiException as e:
 
 ## [**MessageConversationEntityListing**](MessageConversationEntityListing.html) get_conversations_messages()
 
+
+
 Get active message conversations for the logged in user
 
 
 
 Wraps GET /api/v2/conversations/messages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1945,11 +2185,17 @@ This endpoint does not need any parameter.
 
 ##  patch_conversation_participant(conversation_id, participant_id, body)
 
+
+
 Update a participant.
 
 Update conversation participant.
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1993,11 +2239,17 @@ void (empty response body)
 
 ##  patch_conversation_participant_attributes(conversation_id, participant_id, body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2041,11 +2293,17 @@ void (empty response body)
 
 ## [**Conversation**](Conversation.html) patch_conversations_call(conversation_id, body)
 
+
+
 Update a conversation by setting it's recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2088,11 +2346,17 @@ except ApiException as e:
 
 ##  patch_conversations_call_participant(conversation_id, participant_id, body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2136,11 +2400,17 @@ void (empty response body)
 
 ##  patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2184,11 +2454,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2235,11 +2511,17 @@ except ApiException as e:
 
 ## [**ConsultTransferResponse**](ConsultTransferResponse.html) patch_conversations_call_participant_consult(conversation_id, participant_id, body)
 
+
+
 Change who can speak
 
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2284,11 +2566,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) patch_conversations_callback(conversation_id, body)
 
+
+
 Update a conversation by disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2331,11 +2619,17 @@ except ApiException as e:
 
 ##  patch_conversations_callback_participant(conversation_id, participant_id, body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2379,11 +2673,17 @@ void (empty response body)
 
 ##  patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2427,11 +2727,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2478,11 +2784,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) patch_conversations_chat(conversation_id, body)
 
+
+
 Update a conversation by disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2525,11 +2837,17 @@ except ApiException as e:
 
 ##  patch_conversations_chat_participant(conversation_id, participant_id, body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2573,11 +2891,17 @@ void (empty response body)
 
 ##  patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2621,11 +2945,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2672,11 +3002,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) patch_conversations_cobrowsesession(conversation_id, body)
 
+
+
 Update a conversation by disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2719,11 +3055,17 @@ except ApiException as e:
 
 ##  patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2767,11 +3109,17 @@ void (empty response body)
 
 ##  patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2815,11 +3163,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2866,11 +3220,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) patch_conversations_email(conversation_id, body)
 
+
+
 Update a conversation by disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2913,11 +3273,17 @@ except ApiException as e:
 
 ##  patch_conversations_email_participant(conversation_id, participant_id, body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2961,11 +3327,17 @@ void (empty response body)
 
 ##  patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3009,11 +3381,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3060,11 +3438,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) patch_conversations_message(conversation_id, body)
 
+
+
 Update a conversation by disconnecting all of the participants
 
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3107,11 +3491,17 @@ except ApiException as e:
 
 ##  patch_conversations_message_participant(conversation_id, participant_id, body=body)
 
+
+
 Update conversation participant
 
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3155,11 +3545,17 @@ void (empty response body)
 
 ##  patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
 
+
+
 Update the attributes on a conversation participant.
 
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3203,11 +3599,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
 
+
+
 Update conversation participant's communication by disconnecting it.
 
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3254,11 +3656,17 @@ except ApiException as e:
 
 ## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
 
+
+
 Index conversation properties
 
 
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties 
+
+Requires ANY permissions: 
+
+* analytics:conversationProperties:index
 
 ### Example
 
@@ -3301,11 +3709,17 @@ except ApiException as e:
 
 ## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
 
+
+
 Query for conversation aggregates
 
 
 
 Wraps POST /api/v2/analytics/conversations/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
 
 ### Example
 
@@ -3346,11 +3760,17 @@ except ApiException as e:
 
 ## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) post_analytics_conversations_details_query(body)
 
+
+
 Query for conversation details
 
 
 
 Wraps POST /api/v2/analytics/conversations/details/query 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -3391,11 +3811,17 @@ except ApiException as e:
 
 ## str** post_conversation_disconnect(conversation_id)
 
+
+
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resyncronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/disconnect 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3436,11 +3862,17 @@ except ApiException as e:
 
 ##  post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
 
+
+
 Create a new callback for the specified participant on the conversation.
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks 
+
+Requires ANY permissions: 
+
+* conversation:callback:create
 
 ### Example
 
@@ -3484,11 +3916,17 @@ void (empty response body)
 
 ##  post_conversation_participant_digits(conversation_id, participant_id, body=body)
 
+
+
 Sends DTMF to the participant
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3532,11 +3970,17 @@ void (empty response body)
 
 ##  post_conversation_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3580,11 +4024,17 @@ void (empty response body)
 
 ## [**SecureSession**](SecureSession.html) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
 
+
+
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3629,11 +4079,17 @@ except ApiException as e:
 
 ## [**Conversation**](Conversation.html) post_conversations_call(conversation_id, body)
 
+
+
 Place a new call as part of a callback conversation.
 
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3676,11 +4132,17 @@ except ApiException as e:
 
 ## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
+
+
 Initiate and update consult transfer
 
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3725,11 +4187,17 @@ except ApiException as e:
 
 ##  post_conversations_call_participant_monitor(conversation_id, participant_id)
 
+
+
 Listen in on the conversation from the point of view of a given participant.
 
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor 
+
+Requires ANY permissions: 
+
+* conversation:call:monitor
 
 ### Example
 
@@ -3771,11 +4239,17 @@ void (empty response body)
 
 ##  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3819,11 +4293,17 @@ void (empty response body)
 
 ## [**Conversation**](Conversation.html) post_conversations_call_participants(conversation_id, body)
 
+
+
 Add participants to a conversation
 
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3866,11 +4346,17 @@ except ApiException as e:
 
 ##  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3914,11 +4400,17 @@ void (empty response body)
 
 ## [**CreateCallbackResponse**](CreateCallbackResponse.html) post_conversations_callbacks(body)
 
+
+
 Create a Callback
 
 
 
 Wraps POST /api/v2/conversations/callbacks 
+
+Requires ANY permissions: 
+
+* conversation:callback:create
 
 ### Example
 
@@ -3959,11 +4451,17 @@ except ApiException as e:
 
 ## [**CreateCallResponse**](CreateCallResponse.html) post_conversations_calls(body)
 
+
+
 Create a call conversation
 
 
 
 Wraps POST /api/v2/conversations/calls 
+
+Requires ANY permissions: 
+
+* conversation:conference:add
 
 ### Example
 
@@ -4004,11 +4502,17 @@ except ApiException as e:
 
 ##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4052,11 +4556,17 @@ void (empty response body)
 
 ## [**ChatConversation**](ChatConversation.html) post_conversations_chats(body)
 
+
+
 Create a web chat conversation
 
 
 
 Wraps POST /api/v2/conversations/chats 
+
+Requires ANY permissions: 
+
+* conversation:webchat:create
 
 ### Example
 
@@ -4097,11 +4607,17 @@ except ApiException as e:
 
 ##  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4145,11 +4661,17 @@ void (empty response body)
 
 ## [**EmailConversation**](EmailConversation.html) post_conversations_email_inboundmessages(conversation_id, body)
 
+
+
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4192,11 +4714,17 @@ except ApiException as e:
 
 ## [**EmailMessage**](EmailMessage.html) post_conversations_email_messages(conversation_id, body)
 
+
+
 Send an email reply
 
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4239,11 +4767,17 @@ except ApiException as e:
 
 ##  post_conversations_email_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4287,11 +4821,17 @@ void (empty response body)
 
 ## [**EmailConversation**](EmailConversation.html) post_conversations_emails(body)
 
+
+
 Create an email conversation
 
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 
 Wraps POST /api/v2/conversations/emails 
+
+Requires ANY permissions: 
+
+* conversation:email:create
 
 ### Example
 
@@ -4332,11 +4872,17 @@ except ApiException as e:
 
 ## [**FaxSendResponse**](FaxSendResponse.html) post_conversations_faxes(body)
 
+
+
 Create Fax Conversation
 
 
 
 Wraps POST /api/v2/conversations/faxes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4377,11 +4923,17 @@ except ApiException as e:
 
 ## [**MessageData**](MessageData.html) post_conversations_message_communication_messages(conversation_id, communication_id, body)
 
+
+
 Send message
 
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
+
+Requires ANY permissions: 
+
+* conversation:message:create
 
 ### Example
 
@@ -4426,11 +4978,17 @@ except ApiException as e:
 
 ## [**TextMessageListing**](TextMessageListing.html) post_conversations_message_messages_bulk(conversation_id, body=body)
 
+
+
 Get messages in batch
 
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
+
+Requires ANY permissions: 
+
+* conversation:message:view
 
 ### Example
 
@@ -4473,11 +5031,17 @@ except ApiException as e:
 
 ##  post_conversations_message_participant_replace(conversation_id, participant_id, body)
 
+
+
 Replace this participant with the specified user and/or address
 
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4521,11 +5085,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
 
+
+
 Set uuiData to be sent on future commands.
 
 
 
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4572,11 +5142,17 @@ except ApiException as e:
 
 ## [**EmailMessage**](EmailMessage.html) put_conversations_email_messages_draft(conversation_id, body)
 
+
+
 Update conversation draft reply
 
 
 
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

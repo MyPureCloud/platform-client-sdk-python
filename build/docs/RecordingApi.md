@@ -51,11 +51,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
+
+
 Delete annotation
 
 
 
 Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -99,11 +105,17 @@ void (empty response body)
 
 ## [**OrphanRecording**](OrphanRecording.html) delete_orphanrecording(orphan_id)
 
+
+
 Deletes a single orphan recording
 
 
 
 Wraps DELETE /api/v2/orphanrecordings/{orphanId} 
+
+Requires ANY permissions: 
+
+* recording:orphan:delete
 
 ### Example
 
@@ -144,11 +156,17 @@ except ApiException as e:
 
 ##  delete_recording_mediaretentionpolicies(ids)
 
+
+
 Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
 Wraps DELETE /api/v2/recording/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:delete
 
 ### Example
 
@@ -188,11 +206,17 @@ void (empty response body)
 
 ##  delete_recording_mediaretentionpolicy(policy_id)
 
+
+
 Delete a media retention policy
 
 
 
 Wraps DELETE /api/v2/recording/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:delete
 
 ### Example
 
@@ -232,11 +256,17 @@ void (empty response body)
 
 ## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name)
 
+
+
 Gets a specific recording.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -285,11 +315,17 @@ except ApiException as e:
 
 ## [**Annotation**](Annotation.html) get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
+
+
 Get annotation
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -334,11 +370,17 @@ except ApiException as e:
 
 ## [**list[Annotation]**](Annotation.html) get_conversation_recording_annotations(conversation_id, recording_id)
 
+
+
 Get annotations for recording
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -381,11 +423,17 @@ except ApiException as e:
 
 ## [**list[Recording]**](Recording.html) get_conversation_recordingmetadata(conversation_id)
 
+
+
 Get recording metadata for a conversation. Does not return playable media.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -426,11 +474,17 @@ except ApiException as e:
 
 ## [**Recording**](Recording.html) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
 
+
+
 Get metadata for a specific recording. Does not return playable media.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -473,11 +527,17 @@ except ApiException as e:
 
 ## [**list[Recording]**](Recording.html) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
 
+
+
 Get all of a Conversation's Recordings.
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -522,11 +582,17 @@ except ApiException as e:
 
 ## [**OrphanRecording**](OrphanRecording.html) get_orphanrecording(orphan_id)
 
+
+
 Gets a single orphan recording
 
 
 
 Wraps GET /api/v2/orphanrecordings/{orphanId} 
+
+Requires ANY permissions: 
+
+* recording:orphan:view
 
 ### Example
 
@@ -567,11 +633,17 @@ except ApiException as e:
 
 ## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name)
 
+
+
 Gets the media of a single orphan recording
 
 A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
 
 Wraps GET /api/v2/orphanrecordings/{orphanId}/media 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -618,11 +690,17 @@ except ApiException as e:
 
 ## [**OrphanRecordingListing**](OrphanRecordingListing.html) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
 
+
+
 Gets all orphan recordings
 
 
 
 Wraps GET /api/v2/orphanrecordings 
+
+Requires ANY permissions: 
+
+* recording:orphan:view
 
 ### Example
 
@@ -677,11 +755,17 @@ except ApiException as e:
 
 ## [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html) get_recording_batchrequest(job_id)
 
+
+
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results
 
 
 
 Wraps GET /api/v2/recording/batchrequests/{jobId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -722,11 +806,17 @@ except ApiException as e:
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
 
+
+
 Get the local encryption settings
 
 
 
 Wraps GET /api/v2/recording/localkeys/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -767,11 +857,17 @@ except ApiException as e:
 
 ## [**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html) get_recording_localkeys_settings()
 
+
+
 gets a list local key settings data
 
 
 
 Wraps GET /api/v2/recording/localkeys/settings 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -808,11 +904,17 @@ This endpoint does not need any parameter.
 
 ## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
 
+
+
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
 
 Wraps GET /api/v2/recording/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:view
 
 ### Example
 
@@ -871,11 +973,17 @@ except ApiException as e:
 
 ## [**Policy**](Policy.html) get_recording_mediaretentionpolicy(policy_id)
 
+
+
 Get a media retention policy
 
 
 
 Wraps GET /api/v2/recording/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:view
 
 ### Example
 
@@ -916,11 +1024,17 @@ except ApiException as e:
 
 ## [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html) get_recording_recordingkeys(page_size=page_size, page_number=page_number)
 
+
+
 Get encryption key list
 
 
 
 Wraps GET /api/v2/recording/recordingkeys 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -963,11 +1077,17 @@ except ApiException as e:
 
 ## [**KeyRotationSchedule**](KeyRotationSchedule.html) get_recording_recordingkeys_rotationschedule()
 
+
+
 Get key rotation schedule
 
 
 
 Wraps GET /api/v2/recording/recordingkeys/rotationschedule 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -1004,11 +1124,17 @@ This endpoint does not need any parameter.
 
 ## [**RecordingSettings**](RecordingSettings.html) get_recording_settings(create_default=create_default)
 
+
+
 Get the Recording Settings for the Organization
 
 
 
 Wraps GET /api/v2/recording/settings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1049,11 +1175,17 @@ except ApiException as e:
 
 ## [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html) get_recordings_screensessions(page_size=page_size, page_number=page_number)
 
+
+
 Retrieves a paged listing of screen recording sessions
 
 
 
 Wraps GET /api/v2/recordings/screensessions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1096,11 +1228,17 @@ except ApiException as e:
 
 ## [**Policy**](Policy.html) patch_recording_mediaretentionpolicy(policy_id, body)
 
+
+
 Patch a media retention policy
 
 
 
 Wraps PATCH /api/v2/recording/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:edit
 
 ### Example
 
@@ -1143,11 +1281,17 @@ except ApiException as e:
 
 ##  patch_recordings_screensession(recording_session_id, body=body)
 
+
+
 Update a screen recording session
 
 
 
 Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1189,11 +1333,17 @@ void (empty response body)
 
 ## [**Annotation**](Annotation.html) post_conversation_recording_annotations(conversation_id, recording_id, body)
 
+
+
 Create annotation
 
 
 
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1238,11 +1388,17 @@ except ApiException as e:
 
 ## [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html) post_recording_batchrequests(body)
 
+
+
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 
 
 
 Wraps POST /api/v2/recording/batchrequests 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1283,11 +1439,17 @@ except ApiException as e:
 
 ## [**EncryptionKey**](EncryptionKey.html) post_recording_localkeys(body)
 
+
+
 create a local recording key
 
 
 
 Wraps POST /api/v2/recording/localkeys 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1328,11 +1490,17 @@ except ApiException as e:
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) post_recording_localkeys_settings(body)
 
+
+
 create settings for local key creation
 
 
 
 Wraps POST /api/v2/recording/localkeys/settings 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1373,11 +1541,17 @@ except ApiException as e:
 
 ## [**Policy**](Policy.html) post_recording_mediaretentionpolicies(body)
 
+
+
 Create media retention policy
 
 
 
 Wraps POST /api/v2/recording/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:add
 
 ### Example
 
@@ -1418,11 +1592,17 @@ except ApiException as e:
 
 ## [**EncryptionKey**](EncryptionKey.html) post_recording_recordingkeys()
 
+
+
 Create encryption key
 
 
 
 Wraps POST /api/v2/recording/recordingkeys 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1459,11 +1639,17 @@ This endpoint does not need any parameter.
 
 ## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body)
 
+
+
 Updates the retention records on a recording.
 
 Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1508,11 +1694,17 @@ except ApiException as e:
 
 ## [**Annotation**](Annotation.html) put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
 
+
+
 Update annotation
 
 
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1559,11 +1751,17 @@ except ApiException as e:
 
 ## [**Recording**](Recording.html) put_orphanrecording(orphan_id, body=body)
 
+
+
 Updates an orphan recording to a regular recording with retention values
 
 If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
 
 Wraps PUT /api/v2/orphanrecordings/{orphanId} 
+
+Requires ANY permissions: 
+
+* recording:orphan:edit
 
 ### Example
 
@@ -1606,11 +1804,17 @@ except ApiException as e:
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) put_recording_localkeys_setting(settings_id, body)
 
+
+
 Update the local encryption settings
 
 
 
 Wraps PUT /api/v2/recording/localkeys/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1653,11 +1857,17 @@ except ApiException as e:
 
 ## [**Policy**](Policy.html) put_recording_mediaretentionpolicy(policy_id, body)
 
+
+
 Update a media retention policy
 
 
 
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:edit
 
 ### Example
 
@@ -1700,11 +1910,17 @@ except ApiException as e:
 
 ## [**KeyRotationSchedule**](KeyRotationSchedule.html) put_recording_recordingkeys_rotationschedule(body)
 
+
+
 Update key rotation schedule
 
 
 
 Wraps PUT /api/v2/recording/recordingkeys/rotationschedule 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1745,11 +1961,17 @@ except ApiException as e:
 
 ## [**RecordingSettings**](RecordingSettings.html) put_recording_settings(body)
 
+
+
 Update the Recording Settings for the Organization
 
 
 
 Wraps PUT /api/v2/recording/settings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

@@ -28,11 +28,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_group(group_id)
 
+
+
 Delete group
 
 
 
 Wraps DELETE /api/v2/groups/{groupId} 
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 
@@ -72,11 +78,17 @@ void (empty response body)
 
 ## [**Empty**](Empty.html) delete_group_members(group_id, ids)
 
+
+
 Remove members
 
 
 
 Wraps DELETE /api/v2/groups/{groupId}/members 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -119,11 +131,17 @@ except ApiException as e:
 
 ## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
 
+
+
 Fetch field config for an entity type
 
 
 
 Wraps GET /api/v2/fieldconfig 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -164,11 +182,17 @@ except ApiException as e:
 
 ## [**Group**](Group.html) get_group(group_id)
 
+
+
 Get group
 
 
 
 Wraps GET /api/v2/groups/{groupId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -209,11 +233,17 @@ except ApiException as e:
 
 ## [**UserEntityListing**](UserEntityListing.html) get_group_individuals(group_id)
 
+
+
 Get all individuals associated with the group
 
 
 
 Wraps GET /api/v2/groups/{groupId}/individuals 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -254,11 +284,17 @@ except ApiException as e:
 
 ## [**UserEntityListing**](UserEntityListing.html) get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
+
+
 Get group members, includes individuals, owners, and dynamically included people
 
 
 
 Wraps GET /api/v2/groups/{groupId}/members 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -307,11 +343,17 @@ except ApiException as e:
 
 ## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id, fields=fields)
 
+
+
 Get group profile
 
 
 
 Wraps GET /api/v2/groups/{groupId}/profile 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -354,11 +396,17 @@ except ApiException as e:
 
 ## [**GroupEntityListing**](GroupEntityListing.html) get_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
 
+
+
 Get a group list
 
 
 
 Wraps GET /api/v2/groups 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -405,11 +453,17 @@ except ApiException as e:
 
 ## [**GroupsSearchResponse**](GroupsSearchResponse.html) get_groups_search(q64, expand=expand)
 
+
+
 Search groups using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/groups/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -452,11 +506,17 @@ except ApiException as e:
 
 ## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
 
+
+
 Get group profile listing
 
 
 
 Wraps GET /api/v2/profiles/groups 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -503,11 +563,17 @@ except ApiException as e:
 
 ## [**Empty**](Empty.html) post_group_members(group_id, body)
 
+
+
 Add members
 
 
 
 Wraps POST /api/v2/groups/{groupId}/members 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -550,11 +616,17 @@ except ApiException as e:
 
 ## [**Group**](Group.html) post_groups(body)
 
+
+
 Create a group
 
 
 
 Wraps POST /api/v2/groups 
+
+Requires ANY permissions: 
+
+* group_administration* group_creation
 
 ### Example
 
@@ -595,11 +667,17 @@ except ApiException as e:
 
 ## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
 
+
+
 Search groups
 
 
 
 Wraps POST /api/v2/groups/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -640,11 +718,17 @@ except ApiException as e:
 
 ## [**Group**](Group.html) put_group(group_id, body=body)
 
+
+
 Update group
 
 
 
 Wraps PUT /api/v2/groups/{groupId} 
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 

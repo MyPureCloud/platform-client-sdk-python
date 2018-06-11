@@ -95,11 +95,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_architect_emergencygroup(emergency_group_id)
 
+
+
 Deletes a emergency group by ID
 
 
 
 Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -139,11 +145,17 @@ void (empty response body)
 
 ##  delete_architect_ivr(ivr_id)
 
+
+
 Delete an IVR Config.
 
 
 
 Wraps DELETE /api/v2/architect/ivrs/{ivrId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -183,11 +195,17 @@ void (empty response body)
 
 ##  delete_architect_prompt(prompt_id, all_resources=all_resources)
 
+
+
 Delete specified user prompt
 
 
 
 Wraps DELETE /api/v2/architect/prompts/{promptId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -229,11 +247,17 @@ void (empty response body)
 
 ##  delete_architect_prompt_resource(prompt_id, language_code)
 
+
+
 Delete specified user prompt resource
 
 
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -275,11 +299,17 @@ void (empty response body)
 
 ## [**Operation**](Operation.html) delete_architect_prompts(id)
 
+
+
 Batch-delete a list of prompts
 
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps DELETE /api/v2/architect/prompts 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -320,11 +350,17 @@ except ApiException as e:
 
 ##  delete_architect_schedule(schedule_id)
 
+
+
 Delete a schedule by id
 
 
 
 Wraps DELETE /api/v2/architect/schedules/{scheduleId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -364,11 +400,17 @@ void (empty response body)
 
 ##  delete_architect_schedulegroup(schedule_group_id)
 
+
+
 Deletes a schedule group by ID
 
 
 
 Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -408,11 +450,17 @@ void (empty response body)
 
 ##  delete_architect_systemprompt_resource(prompt_id, language_code)
 
+
+
 Delete a system prompt resource override.
 
 
 
 Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -454,11 +502,17 @@ void (empty response body)
 
 ##  delete_flow(flow_id)
 
+
+
 Delete flow
 
 
 
 Wraps DELETE /api/v2/flows/{flowId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -498,11 +552,17 @@ void (empty response body)
 
 ## [**Operation**](Operation.html) delete_flows(id)
 
+
+
 Batch-delete a list of flows
 
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps DELETE /api/v2/flows 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -543,11 +603,17 @@ except ApiException as e:
 
 ##  delete_flows_datatable(datatable_id, force=force)
 
+
+
 deletes a specific datatable by id
 
 deletes an entire datatable (including schema and data) with a given id)
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -589,11 +655,17 @@ void (empty response body)
 
 ##  delete_flows_datatable_row(datatable_id, row_id)
 
+
+
 Delete a row entry
 
 Deletes a row with a given rowId.
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -635,11 +707,17 @@ void (empty response body)
 
 ## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking(name, page_number=page_number, page_size=page_size, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
 
+
+
 Get Dependency Tracking objects that have a given display name
 
 
 
 Wraps GET /api/v2/architect/dependencytracking 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -694,11 +772,17 @@ except ApiException as e:
 
 ## [**DependencyStatus**](DependencyStatus.html) get_architect_dependencytracking_build()
 
+
+
 Get Dependency Tracking build status for an organization
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/build 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -735,11 +819,17 @@ This endpoint does not need any parameter.
 
 ## [**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html) get_architect_dependencytracking_consumedresources(id, version, object_type, resource_type=resource_type)
 
+
+
 Get resources that are consumed by a given Dependency Tracking object
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/consumedresources 
+
+Requires ANY permissions: 
+
+* admin* editor* readonly
 
 ### Example
 
@@ -786,11 +876,17 @@ except ApiException as e:
 
 ## [**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html) get_architect_dependencytracking_consumingresources(id, object_type, resource_type=resource_type)
 
+
+
 Get resources that consume a given Dependency Tracking object
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/consumingresources 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -835,11 +931,17 @@ except ApiException as e:
 
 ## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking_deletedresourceconsumers(name=name, object_type=object_type, flow_filter=flow_filter, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
 
+
+
 Get Dependency Tracking objects that consume deleted resources
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -892,11 +994,17 @@ except ApiException as e:
 
 ## [**DependencyObject**](DependencyObject.html) get_architect_dependencytracking_object(id, version=version, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
 
+
+
 Get a Dependency Tracking object
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/object 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -949,11 +1057,17 @@ except ApiException as e:
 
 ## [**DependencyType**](DependencyType.html) get_architect_dependencytracking_type(type_id)
 
+
+
 Get a Dependency Tracking type.
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/types/{typeId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -994,11 +1108,17 @@ except ApiException as e:
 
 ## [**DependencyTypeEntityListing**](DependencyTypeEntityListing.html) get_architect_dependencytracking_types(page_number=page_number, page_size=page_size)
 
+
+
 Get Dependency Tracking types.
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/types 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1041,11 +1161,17 @@ except ApiException as e:
 
 ## [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) get_architect_dependencytracking_updatedresourceconsumers(name=name, object_type=object_type, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
 
+
+
 Get Dependency Tracking objects that depend on updated resources
 
 
 
 Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1096,11 +1222,17 @@ except ApiException as e:
 
 ## [**EmergencyGroup**](EmergencyGroup.html) get_architect_emergencygroup(emergency_group_id)
 
+
+
 Gets a emergency group by ID
 
 
 
 Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1141,11 +1273,17 @@ except ApiException as e:
 
 ## [**EmergencyGroupListing**](EmergencyGroupListing.html) get_architect_emergencygroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
 
+
+
 Get a list of emergency groups.
 
 
 
 Wraps GET /api/v2/architect/emergencygroups 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1194,11 +1332,17 @@ except ApiException as e:
 
 ## [**IVR**](IVR.html) get_architect_ivr(ivr_id)
 
+
+
 Get an IVR config.
 
 
 
 Wraps GET /api/v2/architect/ivrs/{ivrId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1239,11 +1383,17 @@ except ApiException as e:
 
 ## [**IVREntityListing**](IVREntityListing.html) get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
 
+
+
 Get IVR configs.
 
 
 
 Wraps GET /api/v2/architect/ivrs 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1292,11 +1442,17 @@ except ApiException as e:
 
 ## [**Prompt**](Prompt.html) get_architect_prompt(prompt_id)
 
+
+
 Get specified user prompt
 
 
 
 Wraps GET /api/v2/architect/prompts/{promptId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1337,11 +1493,17 @@ except ApiException as e:
 
 ## [**HistoryListing**](HistoryListing.html) get_architect_prompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
 
+
+
 Get generated prompt history
 
 
 
 Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1394,11 +1556,17 @@ except ApiException as e:
 
 ## [**PromptAsset**](PromptAsset.html) get_architect_prompt_resource(prompt_id, language_code)
 
+
+
 Get specified user prompt resource
 
 
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1441,11 +1609,17 @@ except ApiException as e:
 
 ## [**PromptAssetEntityListing**](PromptAssetEntityListing.html) get_architect_prompt_resources(prompt_id, page_number=page_number, page_size=page_size)
 
+
+
 Get a pageable list of user prompt resources
 
 The returned list is pageable, and query parameters can be used for filtering.
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1490,11 +1664,17 @@ except ApiException as e:
 
 ## [**PromptEntityListing**](PromptEntityListing.html) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get a pageable list of user prompts
 
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
 
 Wraps GET /api/v2/architect/prompts 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1547,11 +1727,17 @@ except ApiException as e:
 
 ## [**Schedule**](Schedule.html) get_architect_schedule(schedule_id)
 
+
+
 Get a schedule by ID
 
 
 
 Wraps GET /api/v2/architect/schedules/{scheduleId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1592,11 +1778,17 @@ except ApiException as e:
 
 ## [**ScheduleGroup**](ScheduleGroup.html) get_architect_schedulegroup(schedule_group_id)
 
+
+
 Gets a schedule group by ID
 
 
 
 Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1637,11 +1829,17 @@ except ApiException as e:
 
 ## [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html) get_architect_schedulegroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
 
+
+
 Get a list of schedule groups.
 
 
 
 Wraps GET /api/v2/architect/schedulegroups 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1690,11 +1888,17 @@ except ApiException as e:
 
 ## [**ScheduleEntityListing**](ScheduleEntityListing.html) get_architect_schedules(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
 
+
+
 Get a list of schedules.
 
 
 
 Wraps GET /api/v2/architect/schedules 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1743,11 +1947,17 @@ except ApiException as e:
 
 ## [**SystemPrompt**](SystemPrompt.html) get_architect_systemprompt(prompt_id)
 
+
+
 Get a system prompt
 
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1788,11 +1998,17 @@ except ApiException as e:
 
 ## [**HistoryListing**](HistoryListing.html) get_architect_systemprompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
 
+
+
 Get generated prompt history
 
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1845,11 +2061,17 @@ except ApiException as e:
 
 ## [**SystemPromptAsset**](SystemPromptAsset.html) get_architect_systemprompt_resource(prompt_id, language_code)
 
+
+
 Get a system prompt resource.
 
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1892,11 +2114,17 @@ except ApiException as e:
 
 ## [**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html) get_architect_systemprompt_resources(prompt_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get system prompt resources.
 
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1945,11 +2173,17 @@ except ApiException as e:
 
 ## [**SystemPromptEntityListing**](SystemPromptEntityListing.html) get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
 
+
+
 Get System Prompts
 
 
 
 Wraps GET /api/v2/architect/systemprompts 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2002,11 +2236,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) get_flow(flow_id, deleted=deleted)
 
+
+
 Get flow
 
 
 
 Wraps GET /api/v2/flows/{flowId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2049,11 +2289,17 @@ except ApiException as e:
 
 ## [**HistoryListing**](HistoryListing.html) get_flow_history_history_id(flow_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
 
+
+
 Get generated flow history
 
 
 
 Wraps GET /api/v2/flows/{flowId}/history/{historyId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2106,11 +2352,17 @@ except ApiException as e:
 
 ## object** get_flow_latestconfiguration(flow_id, deleted=deleted)
 
+
+
 Get the latest configuration for flow
 
 
 
 Wraps GET /api/v2/flows/{flowId}/latestconfiguration 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2153,11 +2405,17 @@ except ApiException as e:
 
 ## [**FlowVersion**](FlowVersion.html) get_flow_version(flow_id, version_id, deleted=deleted)
 
+
+
 Get flow version
 
 
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2202,11 +2460,17 @@ except ApiException as e:
 
 ## object** get_flow_version_configuration(flow_id, version_id, deleted=deleted)
 
+
+
 Create flow version configuration
 
 
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2251,11 +2515,17 @@ except ApiException as e:
 
 ## [**FlowVersionEntityListing**](FlowVersionEntityListing.html) get_flow_versions(flow_id, page_number=page_number, page_size=page_size, deleted=deleted)
 
+
+
 Get flow version list
 
 
 
 Wraps GET /api/v2/flows/{flowId}/versions 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2300,13 +2570,19 @@ except ApiException as e:
 
 <a name="get_flows"></a>
 
-## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before)
+## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
+
+
 
 Get a pageable list of flows, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
 
 Wraps GET /api/v2/flows 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2338,10 +2614,11 @@ deleted = false # bool | Include deleted (optional) (default to false)
 include_schemas = false # bool | Include variable schemas (optional) (default to false)
 published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
 published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of flows, filtered by query parameters
-    api_response = api_instance.get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before)
+    api_response = api_instance.get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows: %s\n" % e
@@ -2369,6 +2646,7 @@ except ApiException as e:
 | **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
 | **published_after** | **str**| Published after | [optional]  |
 | **published_before** | **str**| Published before | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2379,11 +2657,17 @@ except ApiException as e:
 
 ## [**DataTable**](DataTable.html) get_flows_datatable(datatable_id, expand=expand)
 
+
+
 Returns a specific datatable by id
 
 Given a datableid returns the schema associated with it.
 
 Wraps GET /api/v2/flows/datatables/{datatableId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2426,11 +2710,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) get_flows_datatable_row(datatable_id, row_id, showbrief=showbrief)
 
+
+
 Returns a specific row for the datatable
 
 Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2475,11 +2765,17 @@ except ApiException as e:
 
 ## [**DataTableRowEntityListing**](DataTableRowEntityListing.html) get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
 
+
+
 Returns the rows for the datatable
 
 Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2526,11 +2822,17 @@ except ApiException as e:
 
 ## [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html) get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including ID, name and description.
 
 Wraps GET /api/v2/flows/datatables 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2577,13 +2879,19 @@ except ApiException as e:
 
 <a name="get_flows_divisionviews"></a>
 
-## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before)
+## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
+
+
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type.
 
 Wraps GET /api/v2/flows/divisionviews 
+
+Requires ANY permissions: 
+
+* architect:flow:search
 
 ### Example
 
@@ -2608,10 +2916,11 @@ name = 'name_example' # str | Name (optional)
 publish_version_id = 'publish_version_id_example' # str | Publish version ID (optional)
 published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
 published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of basic flow information objects filterable by query parameters.
-    api_response = api_instance.get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before)
+    api_response = api_instance.get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
@@ -2632,6 +2941,7 @@ except ApiException as e:
 | **publish_version_id** | **str**| Publish version ID | [optional]  |
 | **published_after** | **str**| Published after | [optional]  |
 | **published_before** | **str**| Published before | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2642,11 +2952,17 @@ except ApiException as e:
 
 ##  post_architect_dependencytracking_build()
 
+
+
 Rebuild Dependency Tracking data for an organization
 
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
 Wraps POST /api/v2/architect/dependencytracking/build 
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -2682,11 +2998,17 @@ void (empty response body)
 
 ## [**EmergencyGroup**](EmergencyGroup.html) post_architect_emergencygroups(body=body)
 
+
+
 Creates a new emergency group
 
 
 
 Wraps POST /api/v2/architect/emergencygroups 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2727,11 +3049,17 @@ except ApiException as e:
 
 ## [**IVR**](IVR.html) post_architect_ivrs(body=body)
 
+
+
 Create IVR config.
 
 
 
 Wraps POST /api/v2/architect/ivrs 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2772,11 +3100,17 @@ except ApiException as e:
 
 ## [**Operation**](Operation.html) post_architect_prompt_history(prompt_id)
 
+
+
 Generate prompt history
 
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps POST /api/v2/architect/prompts/{promptId}/history 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2817,11 +3151,17 @@ except ApiException as e:
 
 ## [**PromptAsset**](PromptAsset.html) post_architect_prompt_resources(prompt_id, body=body)
 
+
+
 Create a new user prompt resource
 
 
 
 Wraps POST /api/v2/architect/prompts/{promptId}/resources 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -2864,11 +3204,17 @@ except ApiException as e:
 
 ## [**Prompt**](Prompt.html) post_architect_prompts(body=body)
 
+
+
 Create a new user prompt
 
 
 
 Wraps POST /api/v2/architect/prompts 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -2909,11 +3255,17 @@ except ApiException as e:
 
 ## [**ScheduleGroup**](ScheduleGroup.html) post_architect_schedulegroups(body=body)
 
+
+
 Creates a new schedule group
 
 
 
 Wraps POST /api/v2/architect/schedulegroups 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2954,11 +3306,17 @@ except ApiException as e:
 
 ## [**Schedule**](Schedule.html) post_architect_schedules(body=body)
 
+
+
 Create a new schedule.
 
 
 
 Wraps POST /api/v2/architect/schedules 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2999,11 +3357,17 @@ except ApiException as e:
 
 ## [**Operation**](Operation.html) post_architect_systemprompt_history(prompt_id)
 
+
+
 Generate system prompt history
 
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/history 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3044,11 +3408,17 @@ except ApiException as e:
 
 ## [**SystemPromptAsset**](SystemPromptAsset.html) post_architect_systemprompt_resources(prompt_id, body=body)
 
+
+
 Create system prompt resource override.
 
 
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/resources 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3091,11 +3461,17 @@ except ApiException as e:
 
 ## [**FlowVersion**](FlowVersion.html) post_flow_versions(flow_id, body=body)
 
+
+
 Create flow version
 
 
 
 Wraps POST /api/v2/flows/{flowId}/versions 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3138,11 +3514,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows(body=body)
 
+
+
 Create flow
 
 
 
 Wraps POST /api/v2/flows 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3183,11 +3565,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows_actions_checkin(flow)
 
+
+
 Check-in flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/checkin 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3228,11 +3616,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows_actions_checkout(flow)
 
+
+
 Check-out flow
 
 
 
 Wraps POST /api/v2/flows/actions/checkout 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3273,11 +3667,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows_actions_deactivate(flow)
 
+
+
 Deactivate flow
 
 
 
 Wraps POST /api/v2/flows/actions/deactivate 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3318,11 +3718,17 @@ except ApiException as e:
 
 ## [**Operation**](Operation.html) post_flows_actions_publish(flow, version=version)
 
+
+
 Publish flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/publish 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3365,11 +3771,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows_actions_revert(flow)
 
+
+
 Revert flow
 
 
 
 Wraps POST /api/v2/flows/actions/revert 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3410,11 +3822,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) post_flows_actions_unlock(flow)
 
+
+
 Unlock flow
 
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
 
 Wraps POST /api/v2/flows/actions/unlock 
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -3455,11 +3873,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) post_flows_datatable_rows(datatable_id, data_table_row)
 
+
+
 Create a new row entry
 
 Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows 
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3502,11 +3926,17 @@ except ApiException as e:
 
 ## [**DataTable**](DataTable.html) post_flows_datatables(body)
 
+
+
 Create a new datatable with the specified json-schema definition
 
 This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
 
 Wraps POST /api/v2/flows/datatables 
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3547,11 +3977,17 @@ except ApiException as e:
 
 ## [**EmergencyGroup**](EmergencyGroup.html) put_architect_emergencygroup(emergency_group_id, body=body)
 
+
+
 Updates a emergency group by ID
 
 
 
 Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3594,11 +4030,17 @@ except ApiException as e:
 
 ## [**IVR**](IVR.html) put_architect_ivr(ivr_id, body=body)
 
+
+
 Update an IVR Config.
 
 
 
 Wraps PUT /api/v2/architect/ivrs/{ivrId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3641,11 +4083,17 @@ except ApiException as e:
 
 ## [**Prompt**](Prompt.html) put_architect_prompt(prompt_id, body=body)
 
+
+
 Update specified user prompt
 
 
 
 Wraps PUT /api/v2/architect/prompts/{promptId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3688,11 +4136,17 @@ except ApiException as e:
 
 ## [**PromptAsset**](PromptAsset.html) put_architect_prompt_resource(prompt_id, language_code, body=body)
 
+
+
 Update specified user prompt resource
 
 
 
 Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3737,11 +4191,17 @@ except ApiException as e:
 
 ## [**Schedule**](Schedule.html) put_architect_schedule(schedule_id, body=body)
 
+
+
 Update schedule by ID
 
 
 
 Wraps PUT /api/v2/architect/schedules/{scheduleId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3784,11 +4244,17 @@ except ApiException as e:
 
 ## [**ScheduleGroup**](ScheduleGroup.html) put_architect_schedulegroup(schedule_group_id, body=body)
 
+
+
 Updates a schedule group by ID
 
 
 
 Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3831,11 +4297,17 @@ except ApiException as e:
 
 ## [**SystemPromptAsset**](SystemPromptAsset.html) put_architect_systemprompt_resource(prompt_id, language_code, body=body)
 
+
+
 Updates a system prompt resource override.
 
 
 
 Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3880,11 +4352,17 @@ except ApiException as e:
 
 ## [**Flow**](Flow.html) put_flow(flow_id, body=body)
 
+
+
 Update flow
 
 
 
 Wraps PUT /api/v2/flows/{flowId} 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3927,11 +4405,17 @@ except ApiException as e:
 
 ## [**DataTable**](DataTable.html) put_flows_datatable(datatable_id, expand=expand, body=body)
 
+
+
 Updates a specific datatable by id
 
 Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 
@@ -3976,11 +4460,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) put_flows_datatable_row(datatable_id, row_id, body=body)
 
+
+
 Update a row entry
 
 Updates a row with the given to the new values.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 

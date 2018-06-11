@@ -60,6 +60,7 @@ from .annotation import Annotation
 from .answer_option import AnswerOption
 from .archive_retention import ArchiveRetention
 from .asg_info_response import AsgInfoResponse
+from .assigned_wrapup_code import AssignedWrapupCode
 from .attachment import Attachment
 from .attempt_limits import AttemptLimits
 from .attempt_limits_entity_listing import AttemptLimitsEntityListing
@@ -79,7 +80,6 @@ from .audit_message import AuditMessage
 from .audit_query_response import AuditQueryResponse
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
-from .authz_division import AuthzDivision
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -156,6 +156,8 @@ from .callback_identifier import CallbackIdentifier
 from .callback_media_participant import CallbackMediaParticipant
 from .campaign import Campaign
 from .campaign_diagnostics import CampaignDiagnostics
+from .campaign_division_view import CampaignDivisionView
+from .campaign_division_view_listing import CampaignDivisionViewListing
 from .campaign_entity_listing import CampaignEntityListing
 from .campaign_interaction import CampaignInteraction
 from .campaign_interactions import CampaignInteractions
@@ -1145,6 +1147,7 @@ from .voicemail_search_criteria import VoicemailSearchCriteria
 from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
+from .web_chat_config import WebChatConfig
 from .web_chat_deployment import WebChatDeployment
 from .web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
 from .web_chat_settings import WebChatSettings

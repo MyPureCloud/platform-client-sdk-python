@@ -52,11 +52,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_contentmanagement_document(document_id, override=override)
 
+
+
 Delete a document.
 
 
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -98,11 +104,17 @@ void (empty response body)
 
 ##  delete_contentmanagement_share(share_id)
 
+
+
 Deletes an existing share.
 
 This revokes sharing rights specified in the share record
 
 Wraps DELETE /api/v2/contentmanagement/shares/{shareId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -142,11 +154,17 @@ void (empty response body)
 
 ##  delete_contentmanagement_status_status_id(status_id)
 
+
+
 Cancel the command for this status
 
 
 
 Wraps DELETE /api/v2/contentmanagement/status/{statusId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -186,11 +204,17 @@ void (empty response body)
 
 ##  delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
 
+
+
 Delete a workspace
 
 
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -232,11 +256,17 @@ void (empty response body)
 
 ##  delete_contentmanagement_workspace_member(workspace_id, member_id)
 
+
+
 Delete a member from a workspace
 
 
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -278,11 +308,17 @@ void (empty response body)
 
 ##  delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
 
+
+
 Delete workspace tag
 
 Delete a tag from a workspace. Will remove this tag from all documents.
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -324,11 +360,17 @@ void (empty response body)
 
 ## [**Document**](Document.html) get_contentmanagement_document(document_id, expand=expand)
 
+
+
 Get a document.
 
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -371,11 +413,17 @@ except ApiException as e:
 
 ## [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html) get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get a list of audits for a document.
 
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -428,11 +476,17 @@ except ApiException as e:
 
 ## [**DownloadResponse**](DownloadResponse.html) get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
 
+
+
 Download a document.
 
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -477,11 +531,17 @@ except ApiException as e:
 
 ## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get a list of documents.
 
 
 
 Wraps GET /api/v2/contentmanagement/documents 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -534,11 +594,17 @@ except ApiException as e:
 
 ## [**QueryResults**](QueryResults.html) get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
 
+
+
 Query content
 
 
 
 Wraps GET /api/v2/contentmanagement/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -589,11 +655,17 @@ except ApiException as e:
 
 ## [**SecurityProfile**](SecurityProfile.html) get_contentmanagement_securityprofile(security_profile_id)
 
+
+
 Get a Security Profile
 
 
 
 Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -634,11 +706,17 @@ except ApiException as e:
 
 ## [**SecurityProfileEntityListing**](SecurityProfileEntityListing.html) get_contentmanagement_securityprofiles()
 
+
+
 Get a List of Security Profiles
 
 
 
 Wraps GET /api/v2/contentmanagement/securityprofiles 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -675,11 +753,17 @@ This endpoint does not need any parameter.
 
 ## [**Share**](Share.html) get_contentmanagement_share(share_id, expand=expand)
 
+
+
 Retrieve details about an existing share.
 
 
 
 Wraps GET /api/v2/contentmanagement/shares/{shareId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -722,11 +806,17 @@ except ApiException as e:
 
 ## [**SharedResponse**](SharedResponse.html) get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
 
+
+
 Get shared documents. Securely download a shared document.
 
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 
 Wraps GET /api/v2/contentmanagement/shared/{sharedId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -775,11 +865,17 @@ except ApiException as e:
 
 ## [**ShareEntityListing**](ShareEntityListing.html) get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
 
+
+
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 
 Failing to specify a filter will return 400.
 
 Wraps GET /api/v2/contentmanagement/shares 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -826,11 +922,17 @@ except ApiException as e:
 
 ## [**CommandStatusEntityListing**](CommandStatusEntityListing.html) get_contentmanagement_status(page_size=page_size, page_number=page_number)
 
+
+
 Get a list of statuses for pending operations
 
 
 
 Wraps GET /api/v2/contentmanagement/status 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -873,11 +975,17 @@ except ApiException as e:
 
 ## [**CommandStatus**](CommandStatus.html) get_contentmanagement_status_status_id(status_id)
 
+
+
 Get a status.
 
 
 
 Wraps GET /api/v2/contentmanagement/status/{statusId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -918,11 +1026,17 @@ except ApiException as e:
 
 ## [**Usage**](Usage.html) get_contentmanagement_usage()
 
+
+
 Get usage details.
 
 
 
 Wraps GET /api/v2/contentmanagement/usage 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -959,11 +1073,17 @@ This endpoint does not need any parameter.
 
 ## [**Workspace**](Workspace.html) get_contentmanagement_workspace(workspace_id, expand=expand)
 
+
+
 Get a workspace.
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1006,11 +1126,17 @@ except ApiException as e:
 
 ## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get a list of documents.
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1061,11 +1187,17 @@ except ApiException as e:
 
 ## [**WorkspaceMember**](WorkspaceMember.html) get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
 
+
+
 Get a workspace member
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1110,11 +1242,17 @@ except ApiException as e:
 
 ## [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html) get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
 
+
+
 Get a list workspace members
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1161,11 +1299,17 @@ except ApiException as e:
 
 ## [**TagValue**](TagValue.html) get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
 
+
+
 Get a workspace tag
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1210,11 +1354,17 @@ except ApiException as e:
 
 ## [**TagValueEntityListing**](TagValueEntityListing.html) get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
 
+
+
 Get a list of workspace tags
 
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1263,11 +1413,17 @@ except ApiException as e:
 
 ## [**WorkspaceEntityListing**](WorkspaceEntityListing.html) get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
 
+
+
 Get a list of workspaces.
 
 Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
 
 Wraps GET /api/v2/contentmanagement/workspaces 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1314,11 +1470,17 @@ except ApiException as e:
 
 ## [**QueryResults**](QueryResults.html) post_contentmanagement_auditquery(body)
 
+
+
 Query audits
 
 
 
 Wraps POST /api/v2/contentmanagement/auditquery 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1359,11 +1521,17 @@ except ApiException as e:
 
 ## [**Document**](Document.html) post_contentmanagement_document(document_id, body, expand=expand, override=override)
 
+
+
 Update a document.
 
 
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1410,11 +1578,17 @@ except ApiException as e:
 
 ## [**ReplaceResponse**](ReplaceResponse.html) post_contentmanagement_document_content(document_id, body, override=override)
 
+
+
 Replace the contents of a document.
 
 
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1459,11 +1633,17 @@ except ApiException as e:
 
 ## [**Document**](Document.html) post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
 
+
+
 Add a document.
 
 
 
 Wraps POST /api/v2/contentmanagement/documents 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1510,11 +1690,17 @@ except ApiException as e:
 
 ## [**QueryResults**](QueryResults.html) post_contentmanagement_query(body, expand=expand)
 
+
+
 Query content
 
 
 
 Wraps POST /api/v2/contentmanagement/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1557,11 +1743,17 @@ except ApiException as e:
 
 ## [**CreateShareResponse**](CreateShareResponse.html) post_contentmanagement_shares(body)
 
+
+
 Creates a new share or updates an existing share if the entity has already been shared
 
 
 
 Wraps POST /api/v2/contentmanagement/shares 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1602,11 +1794,17 @@ except ApiException as e:
 
 ## [**TagValue**](TagValue.html) post_contentmanagement_workspace_tagvalues(workspace_id, body)
 
+
+
 Create a workspace tag
 
 
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1649,11 +1847,17 @@ except ApiException as e:
 
 ## [**TagValueEntityListing**](TagValueEntityListing.html) post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
 
+
+
 Perform a prefix query on tags in the workspace
 
 
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1698,11 +1902,17 @@ except ApiException as e:
 
 ## [**Workspace**](Workspace.html) post_contentmanagement_workspaces(body)
 
+
+
 Create a group workspace
 
 
 
 Wraps POST /api/v2/contentmanagement/workspaces 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1743,11 +1953,17 @@ except ApiException as e:
 
 ## [**Workspace**](Workspace.html) put_contentmanagement_workspace(workspace_id, body)
 
+
+
 Update a workspace
 
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1790,11 +2006,17 @@ except ApiException as e:
 
 ## [**WorkspaceMember**](WorkspaceMember.html) put_contentmanagement_workspace_member(workspace_id, member_id, body)
 
+
+
 Add a member to a workspace
 
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1839,11 +2061,17 @@ except ApiException as e:
 
 ## [**TagValue**](TagValue.html) put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
 
+
+
 Update a workspace tag. Will update all documents with the new tag value.
 
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

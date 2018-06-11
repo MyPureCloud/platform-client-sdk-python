@@ -21,11 +21,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_notifications_channel_subscriptions(channel_id)
 
+
+
 Remove all subscriptions
 
 
 
 Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -65,11 +71,17 @@ void (empty response body)
 
 ## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) get_notifications_availabletopics(expand=expand)
 
+
+
 Get available notification topics.
 
 
 
 Wraps GET /api/v2/notifications/availabletopics 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -110,11 +122,17 @@ except ApiException as e:
 
 ## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) get_notifications_channel_subscriptions(channel_id)
 
+
+
 The list of all subscriptions for this channel
 
 
 
 Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -155,11 +173,17 @@ except ApiException as e:
 
 ## [**ChannelEntityListing**](ChannelEntityListing.html) get_notifications_channels(includechannels=includechannels)
 
+
+
 The list of existing channels
 
 
 
 Wraps GET /api/v2/notifications/channels 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -200,11 +224,17 @@ except ApiException as e:
 
 ## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) post_notifications_channel_subscriptions(channel_id, body)
 
+
+
 Add a list of subscriptions to the existing list of subscriptions
 
 
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -247,11 +277,17 @@ except ApiException as e:
 
 ## [**Channel**](Channel.html) post_notifications_channels()
 
+
+
 Create a new channel
 
 There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
 
 Wraps POST /api/v2/notifications/channels 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -288,11 +324,17 @@ This endpoint does not need any parameter.
 
 ## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) put_notifications_channel_subscriptions(channel_id, body)
 
+
+
 Replace the current list of subscriptions with a new list.
 
 
 
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

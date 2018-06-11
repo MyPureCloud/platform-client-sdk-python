@@ -25,11 +25,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_alerting_interactionstats_alert(alert_id)
 
+
+
 Delete an interaction stats alert
 
 
 
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId} 
+
+Requires ANY permissions: 
+
+* alerting:alert:delete
 
 ### Example
 
@@ -69,11 +75,17 @@ void (empty response body)
 
 ##  delete_alerting_interactionstats_rule(rule_id)
 
+
+
 Delete an interaction stats rule.
 
 
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* alerting:rule:delete
 
 ### Example
 
@@ -113,11 +125,17 @@ void (empty response body)
 
 ## [**ActiveAlertCount**](ActiveAlertCount.html) get_alerting_alerts_active()
 
+
+
 Gets active alert count for a user.
 
 
 
 Wraps GET /api/v2/alerting/alerts/active 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -154,11 +172,17 @@ This endpoint does not need any parameter.
 
 ## [**InteractionStatsAlert**](InteractionStatsAlert.html) get_alerting_interactionstats_alert(alert_id, expand=expand)
 
+
+
 Get an interaction stats alert
 
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId} 
+
+Requires ANY permissions: 
+
+* alerting:alert:view
 
 ### Example
 
@@ -201,11 +225,17 @@ except ApiException as e:
 
 ## [**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html) get_alerting_interactionstats_alerts(expand=expand)
 
+
+
 Get interaction stats alert list.
 
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts 
+
+Requires ANY permissions: 
+
+* alerting:alert:view
 
 ### Example
 
@@ -246,11 +276,17 @@ except ApiException as e:
 
 ## [**UnreadMetric**](UnreadMetric.html) get_alerting_interactionstats_alerts_unread()
 
+
+
 Gets user unread count of interaction stats alerts.
 
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -287,11 +323,17 @@ This endpoint does not need any parameter.
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) get_alerting_interactionstats_rule(rule_id, expand=expand)
 
+
+
 Get an interaction stats rule.
 
 
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* alerting:rule:view
 
 ### Example
 
@@ -334,11 +376,17 @@ except ApiException as e:
 
 ## [**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html) get_alerting_interactionstats_rules(expand=expand)
 
+
+
 Get an interaction stats rule list.
 
 
 
 Wraps GET /api/v2/alerting/interactionstats/rules 
+
+Requires ANY permissions: 
+
+* alerting:rule:view
 
 ### Example
 
@@ -379,11 +427,17 @@ except ApiException as e:
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) post_alerting_interactionstats_rules(body, expand=expand)
 
+
+
 Create an interaction stats rule.
 
 
 
 Wraps POST /api/v2/alerting/interactionstats/rules 
+
+Requires ANY permissions: 
+
+* alerting:rule:add
 
 ### Example
 
@@ -426,11 +480,17 @@ except ApiException as e:
 
 ## [**UnreadStatus**](UnreadStatus.html) put_alerting_interactionstats_alert(alert_id, body, expand=expand)
 
+
+
 Update an interaction stats alert read status
 
 
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId} 
+
+Requires ANY permissions: 
+
+* alerting:alert:edit
 
 ### Example
 
@@ -475,11 +535,17 @@ except ApiException as e:
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) put_alerting_interactionstats_rule(rule_id, body, expand=expand)
 
+
+
 Update an interaction stats rule
 
 
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* alerting:rule:edit
 
 ### Example
 

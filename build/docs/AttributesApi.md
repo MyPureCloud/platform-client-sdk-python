@@ -20,11 +20,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_attribute(attribute_id)
 
+
+
 Delete an existing Attribute.
 
 This will remove attribute.
 
 Wraps DELETE /api/v2/attributes/{attributeId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -64,11 +70,17 @@ void (empty response body)
 
 ## [**Attribute**](Attribute.html) get_attribute(attribute_id)
 
+
+
 Get details about an existing attribute.
 
 
 
 Wraps GET /api/v2/attributes/{attributeId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -109,11 +121,17 @@ except ApiException as e:
 
 ## [**AttributeEntityListing**](AttributeEntityListing.html) get_attributes(page_number=page_number, page_size=page_size)
 
+
+
 Gets a list of existing attributes.
 
 
 
 Wraps GET /api/v2/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -156,11 +174,17 @@ except ApiException as e:
 
 ## [**Attribute**](Attribute.html) post_attributes(body)
 
+
+
 Create an attribute.
 
 
 
 Wraps POST /api/v2/attributes 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -201,11 +225,17 @@ except ApiException as e:
 
 ## [**AttributeEntityListing**](AttributeEntityListing.html) post_attributes_query(body)
 
+
+
 Query attributes
 
 
 
 Wraps POST /api/v2/attributes/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -246,11 +276,17 @@ except ApiException as e:
 
 ## [**Attribute**](Attribute.html) put_attribute(attribute_id, body)
 
+
+
 Update an existing attribute.
 
 Fields that can be updated: name, description. The most recent version is required for updates.
 
 Wraps PUT /api/v2/attributes/{attributeId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

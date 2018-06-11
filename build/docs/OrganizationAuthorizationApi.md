@@ -37,11 +37,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_orgauthorization_trustee(trustee_org_id)
 
+
+
 Delete Org Trust
 
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:delete
 
 ### Example
 
@@ -81,11 +87,17 @@ void (empty response body)
 
 ##  delete_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
 
+
+
 Delete Trustee User
 
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete* admin* role_manager
 
 ### Example
 
@@ -127,11 +139,17 @@ void (empty response body)
 
 ##  delete_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
 
+
+
 Delete Trustee User Roles
 
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete* admin* role_manager
 
 ### Example
 
@@ -173,11 +191,17 @@ void (empty response body)
 
 ##  delete_orgauthorization_trustor(trustor_org_id)
 
+
+
 Delete Org Trust
 
 
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:delete
 
 ### Example
 
@@ -217,11 +241,17 @@ void (empty response body)
 
 ##  delete_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
 
+
+
 Delete Trustee User
 
 
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete
 
 ### Example
 
@@ -263,11 +293,17 @@ void (empty response body)
 
 ## [**TrustRequest**](TrustRequest.html) get_orgauthorization_pairing(pairing_id)
 
+
+
 Get Pairing Info
 
 
 
 Wraps GET /api/v2/orgauthorization/pairings/{pairingId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view* authorization:orgTrustor:view
 
 ### Example
 
@@ -308,11 +344,17 @@ except ApiException as e:
 
 ## [**Trustee**](Trustee.html) get_orgauthorization_trustee(trustee_org_id)
 
+
+
 Get Org Trust
 
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
 
 ### Example
 
@@ -353,11 +395,17 @@ except ApiException as e:
 
 ## [**TrustUser**](TrustUser.html) get_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
 
+
+
 Get Trustee User
 
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -400,11 +448,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) get_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
 
+
+
 Get Trustee User Roles
 
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -447,11 +501,17 @@ except ApiException as e:
 
 ## [**TrustUserEntityListing**](TrustUserEntityListing.html) get_orgauthorization_trustee_users(trustee_org_id, page_size=page_size, page_number=page_number)
 
+
+
 The list of trustee users for this organization (i.e. users granted access to this organization).
 
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -496,11 +556,17 @@ except ApiException as e:
 
 ## [**TrustEntityListing**](TrustEntityListing.html) get_orgauthorization_trustees(page_size=page_size, page_number=page_number)
 
+
+
 The list of trustees for this organization (i.e. organizations granted access to this organization).
 
 
 
 Wraps GET /api/v2/orgauthorization/trustees 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
 
 ### Example
 
@@ -543,11 +609,17 @@ except ApiException as e:
 
 ## [**Trustor**](Trustor.html) get_orgauthorization_trustor(trustor_org_id)
 
+
+
 Get Org Trust
 
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -588,11 +660,17 @@ except ApiException as e:
 
 ## [**TrustUser**](TrustUser.html) get_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
 
+
+
 Get Trustee User
 
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -635,11 +713,17 @@ except ApiException as e:
 
 ## [**TrustUserEntityListing**](TrustUserEntityListing.html) get_orgauthorization_trustor_users(trustor_org_id, page_size=page_size, page_number=page_number)
 
+
+
 The list of users in the trustor organization (i.e. users granted access).
 
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -684,11 +768,17 @@ except ApiException as e:
 
 ## [**TrustorEntityListing**](TrustorEntityListing.html) get_orgauthorization_trustors(page_size=page_size, page_number=page_number)
 
+
+
 The list of organizations that have authorized/trusted your organization.
 
 
 
 Wraps GET /api/v2/orgauthorization/trustors 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -731,11 +821,17 @@ except ApiException as e:
 
 ## [**TrustRequest**](TrustRequest.html) post_orgauthorization_pairings(body)
 
+
+
 A pairing id is created by the trustee and given to the trustor to create a trust.
 
 
 
 Wraps POST /api/v2/orgauthorization/pairings 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:add
 
 ### Example
 
@@ -776,11 +872,17 @@ except ApiException as e:
 
 ## [**TrustUser**](TrustUser.html) post_orgauthorization_trustee_users(trustee_org_id, body)
 
+
+
 Add a user to the trust.
 
 
 
 Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users 
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add* admin* role_manager
 
 ### Example
 
@@ -823,11 +925,17 @@ except ApiException as e:
 
 ## [**Trustee**](Trustee.html) post_orgauthorization_trustees(body)
 
+
+
 Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 
 
 
 Wraps POST /api/v2/orgauthorization/trustees 
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add* authorization:orgTrusteeUser:add
 
 ### Example
 
@@ -868,11 +976,17 @@ except ApiException as e:
 
 ## [**AuditQueryResponse**](AuditQueryResponse.html) post_orgauthorization_trustees_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get Org Trustee Audits
 
 
 
 Wraps POST /api/v2/orgauthorization/trustees/audits 
+
+Requires ANY permissions: 
+
+* authorization:audit:view
 
 ### Example
 
@@ -921,11 +1035,17 @@ except ApiException as e:
 
 ## [**AuditQueryResponse**](AuditQueryResponse.html) post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
+
+
 Get Org Trustor Audits
 
 
 
 Wraps POST /api/v2/orgauthorization/trustor/audits 
+
+Requires ANY permissions: 
+
+* authorization:audit:view
 
 ### Example
 
@@ -974,11 +1094,17 @@ except ApiException as e:
 
 ## [**Trustee**](Trustee.html) put_orgauthorization_trustee(trustee_org_id, body)
 
+
+
 Update Org Trust
 
 
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId} 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:edit
 
 ### Example
 
@@ -1021,11 +1147,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) put_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id, body)
 
+
+
 Update Trustee User Roles
 
 
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:edit* admin* role_manager
 
 ### Example
 
@@ -1070,11 +1202,17 @@ except ApiException as e:
 
 ## [**TrustUser**](TrustUser.html) put_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
 
+
+
 Add a Trustee user to the trust.
 
 
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add
 
 ### Example
 

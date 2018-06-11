@@ -36,7 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate an external contact with a conversation|
 |[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
-|[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an Extenral Organization|
+|[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
 |[**put_externalcontacts_relationship**](ExternalContactsApi.html#put_externalcontacts_relationship) | Update a relationship|
 {: class="table table-striped"}
 
@@ -44,11 +44,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_externalcontacts_contact(contact_id)
 
+
+
 Delete an external contact
 
 
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:delete
 
 ### Example
 
@@ -88,11 +94,17 @@ void (empty response body)
 
 ##  delete_externalcontacts_contact_note(contact_id, note_id)
 
+
+
 Delete a note for an external contact
 
 
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -134,11 +146,17 @@ void (empty response body)
 
 ##  delete_externalcontacts_organization(external_organization_id)
 
+
+
 Delete an external organization
 
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:delete
 
 ### Example
 
@@ -178,11 +196,17 @@ void (empty response body)
 
 ##  delete_externalcontacts_organization_note(external_organization_id, note_id)
 
+
+
 Delete a note for an external organization
 
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -224,11 +248,17 @@ void (empty response body)
 
 ##  delete_externalcontacts_organization_trustor(external_organization_id)
 
+
+
 Unlink the Trustor for this External Organization
 
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -268,11 +298,17 @@ void (empty response body)
 
 ##  delete_externalcontacts_relationship(relationship_id)
 
+
+
 Delete a relationship
 
 
 
 Wraps DELETE /api/v2/externalcontacts/relationships/{relationshipId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -312,11 +348,17 @@ void (empty response body)
 
 ## [**ExternalContact**](ExternalContact.html) get_externalcontacts_contact(contact_id, expand=expand)
 
+
+
 Fetch an external contact
 
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -359,11 +401,17 @@ except ApiException as e:
 
 ## [**Note**](Note.html) get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
 
+
+
 Fetch a note for an external contact
 
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -408,11 +456,17 @@ except ApiException as e:
 
 ## [**NoteListing**](NoteListing.html) get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
+
+
 List notes for an external contact
 
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -461,11 +515,17 @@ except ApiException as e:
 
 ## [**ContactListing**](ContactListing.html) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
+
+
 Search for external contacts
 
 
 
 Wraps GET /api/v2/externalcontacts/contacts 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -514,11 +574,17 @@ except ApiException as e:
 
 ## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
 
+
+
 Fetch an external organization
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -563,11 +629,17 @@ except ApiException as e:
 
 ## [**ContactListing**](ContactListing.html) get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
+
+
 Search for external contacts in an external organization
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -618,11 +690,17 @@ except ApiException as e:
 
 ## [**Note**](Note.html) get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
 
+
+
 Fetch a note for an external organization
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -667,11 +745,17 @@ except ApiException as e:
 
 ## [**NoteListing**](NoteListing.html) get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
+
+
 List notes for an external organization
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -720,11 +804,17 @@ except ApiException as e:
 
 ## [**RelationshipListing**](RelationshipListing.html) get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
 
+
+
 Fetch a relationship for an external organization
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -773,11 +863,17 @@ except ApiException as e:
 
 ## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
 
+
+
 Search for external organizations
 
 
 
 Wraps GET /api/v2/externalcontacts/organizations 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -830,11 +926,17 @@ except ApiException as e:
 
 ## [**Relationship**](Relationship.html) get_externalcontacts_relationship(relationship_id, expand=expand)
 
+
+
 Fetch a relationship
 
 
 
 Wraps GET /api/v2/externalcontacts/relationships/{relationshipId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -877,11 +979,17 @@ except ApiException as e:
 
 ## [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
 
+
+
 Lookup contacts and externalOrganizations based on an attribute
 
 
 
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -922,13 +1030,19 @@ except ApiException as e:
 
 <a name="post_externalcontacts_contact_notes"></a>
 
-## [**Note**](Note.html) post_externalcontacts_contact_notes(contact_id, body=body)
+## [**Note**](Note.html) post_externalcontacts_contact_notes(contact_id, body)
+
+
 
 Create a note for an external contact
 
 
 
 Wraps POST /api/v2/externalcontacts/contacts/{contactId}/notes 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -944,11 +1058,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact Id
-body = PureCloudPlatformClientV2.Note() # Note | ExternalContact (optional)
+body = PureCloudPlatformClientV2.Note() # Note | ExternalContact
 
 try:
     # Create a note for an external contact
-    api_response = api_instance.post_externalcontacts_contact_notes(contact_id, body=body)
+    api_response = api_instance.post_externalcontacts_contact_notes(contact_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_contact_notes: %s\n" % e
@@ -960,7 +1074,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
+| **body** | [**Note**](Note.html)| ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -969,13 +1083,19 @@ except ApiException as e:
 
 <a name="post_externalcontacts_contacts"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contacts(body=body)
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contacts(body)
+
+
 
 Create an external contact
 
 
 
 Wraps POST /api/v2/externalcontacts/contacts 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:add
 
 ### Example
 
@@ -990,11 +1110,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-body = PureCloudPlatformClientV2.ExternalContact() # ExternalContact | ExternalContact (optional)
+body = PureCloudPlatformClientV2.ExternalContact() # ExternalContact | ExternalContact
 
 try:
     # Create an external contact
-    api_response = api_instance.post_externalcontacts_contacts(body=body)
+    api_response = api_instance.post_externalcontacts_contacts(body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_contacts: %s\n" % e
@@ -1005,7 +1125,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1014,13 +1134,19 @@ except ApiException as e:
 
 <a name="post_externalcontacts_organization_notes"></a>
 
-## [**Note**](Note.html) post_externalcontacts_organization_notes(external_organization_id, body=body)
+## [**Note**](Note.html) post_externalcontacts_organization_notes(external_organization_id, body)
+
+
 
 Create a note for an external organization
 
 
 
 Wraps POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1036,11 +1162,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization Id
-body = PureCloudPlatformClientV2.Note() # Note | ExternalContact (optional)
+body = PureCloudPlatformClientV2.Note() # Note | ExternalContact
 
 try:
     # Create a note for an external organization
-    api_response = api_instance.post_externalcontacts_organization_notes(external_organization_id, body=body)
+    api_response = api_instance.post_externalcontacts_organization_notes(external_organization_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_organization_notes: %s\n" % e
@@ -1052,7 +1178,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
+| **body** | [**Note**](Note.html)| ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1061,13 +1187,19 @@ except ApiException as e:
 
 <a name="post_externalcontacts_organizations"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) post_externalcontacts_organizations(body=body)
+## [**ExternalOrganization**](ExternalOrganization.html) post_externalcontacts_organizations(body)
+
+
 
 Create an external organization
 
 
 
 Wraps POST /api/v2/externalcontacts/organizations 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:add
 
 ### Example
 
@@ -1082,11 +1214,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-body = PureCloudPlatformClientV2.ExternalOrganization() # ExternalOrganization | ExternalOrganization (optional)
+body = PureCloudPlatformClientV2.ExternalOrganization() # ExternalOrganization | ExternalOrganization
 
 try:
     # Create an external organization
-    api_response = api_instance.post_externalcontacts_organizations(body=body)
+    api_response = api_instance.post_externalcontacts_organizations(body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_organizations: %s\n" % e
@@ -1097,7 +1229,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1106,13 +1238,19 @@ except ApiException as e:
 
 <a name="post_externalcontacts_relationships"></a>
 
-## [**Relationship**](Relationship.html) post_externalcontacts_relationships(body=body)
+## [**Relationship**](Relationship.html) post_externalcontacts_relationships(body)
+
+
 
 Create a relationship
 
 
 
 Wraps POST /api/v2/externalcontacts/relationships 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1127,11 +1265,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-body = PureCloudPlatformClientV2.Relationship() # Relationship | Relationship (optional)
+body = PureCloudPlatformClientV2.Relationship() # Relationship | Relationship
 
 try:
     # Create a relationship
-    api_response = api_instance.post_externalcontacts_relationships(body=body)
+    api_response = api_instance.post_externalcontacts_relationships(body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_relationships: %s\n" % e
@@ -1142,7 +1280,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
+| **body** | [**Relationship**](Relationship.html)| Relationship |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1151,13 +1289,19 @@ except ApiException as e:
 
 <a name="put_externalcontacts_contact"></a>
 
-## [**ExternalContact**](ExternalContact.html) put_externalcontacts_contact(contact_id, body=body)
+## [**ExternalContact**](ExternalContact.html) put_externalcontacts_contact(contact_id, body)
+
+
 
 Update an external contact
 
 
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1173,11 +1317,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact ID
-body = PureCloudPlatformClientV2.ExternalContact() # ExternalContact | ExternalContact (optional)
+body = PureCloudPlatformClientV2.ExternalContact() # ExternalContact | ExternalContact
 
 try:
     # Update an external contact
-    api_response = api_instance.put_externalcontacts_contact(contact_id, body=body)
+    api_response = api_instance.put_externalcontacts_contact(contact_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_contact: %s\n" % e
@@ -1189,7 +1333,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1198,13 +1342,19 @@ except ApiException as e:
 
 <a name="put_externalcontacts_contact_note"></a>
 
-## [**Note**](Note.html) put_externalcontacts_contact_note(contact_id, note_id, body=body)
+## [**Note**](Note.html) put_externalcontacts_contact_note(contact_id, note_id, body)
+
+
 
 Update a note for an external contact
 
 
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1221,11 +1371,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact Id
 note_id = 'note_id_example' # str | Note Id
-body = PureCloudPlatformClientV2.Note() # Note | Note (optional)
+body = PureCloudPlatformClientV2.Note() # Note | Note
 
 try:
     # Update a note for an external contact
-    api_response = api_instance.put_externalcontacts_contact_note(contact_id, note_id, body=body)
+    api_response = api_instance.put_externalcontacts_contact_note(contact_id, note_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_contact_note: %s\n" % e
@@ -1238,7 +1388,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
 | **note_id** | **str**| Note Id |  |
-| **body** | [**Note**](Note.html)| Note | [optional]  |
+| **body** | [**Note**](Note.html)| Note |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1247,13 +1397,19 @@ except ApiException as e:
 
 <a name="put_externalcontacts_conversation"></a>
 
-##  put_externalcontacts_conversation(conversation_id, body=body)
+##  put_externalcontacts_conversation(conversation_id, body)
+
+
 
 Associate an external contact with a conversation
 
 
 
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* externalContacts:conversation:associate
 
 ### Example
 
@@ -1269,11 +1425,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
-body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation (optional)
+body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation
 
 try:
     # Associate an external contact with a conversation
-    api_instance.put_externalcontacts_conversation(conversation_id, body=body)
+    api_instance.put_externalcontacts_conversation(conversation_id, body)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e
 ~~~
@@ -1284,7 +1440,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional]  |
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1293,13 +1449,19 @@ void (empty response body)
 
 <a name="put_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization(external_organization_id, body=body)
+## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization(external_organization_id, body)
+
+
 
 Update an external organization
 
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1315,11 +1477,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-body = PureCloudPlatformClientV2.ExternalOrganization() # ExternalOrganization | ExternalOrganization (optional)
+body = PureCloudPlatformClientV2.ExternalOrganization() # ExternalOrganization | ExternalOrganization
 
 try:
     # Update an external organization
-    api_response = api_instance.put_externalcontacts_organization(external_organization_id, body=body)
+    api_response = api_instance.put_externalcontacts_organization(external_organization_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_organization: %s\n" % e
@@ -1331,7 +1493,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1340,13 +1502,19 @@ except ApiException as e:
 
 <a name="put_externalcontacts_organization_note"></a>
 
-## [**Note**](Note.html) put_externalcontacts_organization_note(external_organization_id, note_id, body=body)
+## [**Note**](Note.html) put_externalcontacts_organization_note(external_organization_id, note_id, body)
+
+
 
 Update a note for an external organization
 
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1363,11 +1531,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization Id
 note_id = 'note_id_example' # str | Note Id
-body = PureCloudPlatformClientV2.Note() # Note | Note (optional)
+body = PureCloudPlatformClientV2.Note() # Note | Note
 
 try:
     # Update a note for an external organization
-    api_response = api_instance.put_externalcontacts_organization_note(external_organization_id, note_id, body=body)
+    api_response = api_instance.put_externalcontacts_organization_note(external_organization_id, note_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_note: %s\n" % e
@@ -1380,7 +1548,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
-| **body** | [**Note**](Note.html)| Note | [optional]  |
+| **body** | [**Note**](Note.html)| Note |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1391,11 +1559,17 @@ except ApiException as e:
 
 ## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
 
-Links a Trustor with an Extenral Organization
+
+
+Links a Trustor with an External Organization
 
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1414,7 +1588,7 @@ external_organization_id = 'external_organization_id_example' # str | External O
 trustor_id = 'trustor_id_example' # str | Trustor ID
 
 try:
-    # Links a Trustor with an Extenral Organization
+    # Links a Trustor with an External Organization
     api_response = api_instance.put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
     pprint(api_response)
 except ApiException as e:
@@ -1436,13 +1610,19 @@ except ApiException as e:
 
 <a name="put_externalcontacts_relationship"></a>
 
-## [**Relationship**](Relationship.html) put_externalcontacts_relationship(relationship_id, body=body)
+## [**Relationship**](Relationship.html) put_externalcontacts_relationship(relationship_id, body)
+
+
 
 Update a relationship
 
 
 
 Wraps PUT /api/v2/externalcontacts/relationships/{relationshipId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1458,11 +1638,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 relationship_id = 'relationship_id_example' # str | Relationship Id
-body = PureCloudPlatformClientV2.Relationship() # Relationship | Relationship (optional)
+body = PureCloudPlatformClientV2.Relationship() # Relationship | Relationship
 
 try:
     # Update a relationship
-    api_response = api_instance.put_externalcontacts_relationship(relationship_id, body=body)
+    api_response = api_instance.put_externalcontacts_relationship(relationship_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_relationship: %s\n" % e
@@ -1474,7 +1654,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
+| **body** | [**Relationship**](Relationship.html)| Relationship |  |
 {: class="table table-striped"}
 
 ### Return type

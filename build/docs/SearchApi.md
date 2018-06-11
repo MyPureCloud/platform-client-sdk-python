@@ -28,11 +28,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**DocumentationSearchResponse**](DocumentationSearchResponse.html) get_documentation_search(q64)
 
+
+
 Search documentation using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/documentation/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -73,11 +79,17 @@ except ApiException as e:
 
 ## [**GroupsSearchResponse**](GroupsSearchResponse.html) get_groups_search(q64, expand=expand)
 
+
+
 Search groups using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/groups/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -120,11 +132,17 @@ except ApiException as e:
 
 ## [**LocationsSearchResponse**](LocationsSearchResponse.html) get_locations_search(q64, expand=expand)
 
+
+
 Search locations using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/locations/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -167,11 +185,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search(q64, expand=expand, profile=profile)
 
+
+
 Search using the q64 value returned from a previous search.
 
 
 
 Wraps GET /api/v2/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -216,11 +240,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search_suggest(q64, expand=expand, profile=profile)
 
+
+
 Suggest resources using the q64 value returned from a previous suggest query.
 
 
 
 Wraps GET /api/v2/search/suggest 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -265,11 +295,17 @@ except ApiException as e:
 
 ## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
 
+
+
 Search users using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/users/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -312,11 +348,17 @@ except ApiException as e:
 
 ## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) get_voicemail_search(q64, expand=expand)
 
+
+
 Search voicemails using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/voicemail/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -359,11 +401,17 @@ except ApiException as e:
 
 ## [**DocumentationSearchResponse**](DocumentationSearchResponse.html) post_documentation_search(body)
 
+
+
 Search documentation
 
 
 
 Wraps POST /api/v2/documentation/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -404,11 +452,17 @@ except ApiException as e:
 
 ## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
 
+
+
 Search groups
 
 
 
 Wraps POST /api/v2/groups/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -449,11 +503,17 @@ except ApiException as e:
 
 ## [**LocationsSearchResponse**](LocationsSearchResponse.html) post_locations_search(body)
 
+
+
 Search locations
 
 
 
 Wraps POST /api/v2/locations/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -494,11 +554,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search(body, profile=profile)
 
+
+
 Search resources.
 
 
 
 Wraps POST /api/v2/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -541,11 +607,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search_suggest(body, profile=profile)
 
+
+
 Suggest resources.
 
 
 
 Wraps POST /api/v2/search/suggest 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -588,11 +660,17 @@ except ApiException as e:
 
 ## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search(body)
 
+
+
 Search users
 
 
 
 Wraps POST /api/v2/users/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -633,11 +711,17 @@ except ApiException as e:
 
 ## [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) post_voicemail_search(body)
 
+
+
 Search voicemails
 
 
 
 Wraps POST /api/v2/voicemail/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

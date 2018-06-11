@@ -60,6 +60,7 @@ from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
 from .models.archive_retention import ArchiveRetention
 from .models.asg_info_response import AsgInfoResponse
+from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.attachment import Attachment
 from .models.attempt_limits import AttemptLimits
 from .models.attempt_limits_entity_listing import AttemptLimitsEntityListing
@@ -79,7 +80,6 @@ from .models.audit_message import AuditMessage
 from .models.audit_query_response import AuditQueryResponse
 from .models.audit_search_result import AuditSearchResult
 from .models.audit_user import AuditUser
-from .models.authz_division import AuthzDivision
 from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
@@ -156,6 +156,8 @@ from .models.callback_identifier import CallbackIdentifier
 from .models.callback_media_participant import CallbackMediaParticipant
 from .models.campaign import Campaign
 from .models.campaign_diagnostics import CampaignDiagnostics
+from .models.campaign_division_view import CampaignDivisionView
+from .models.campaign_division_view_listing import CampaignDivisionViewListing
 from .models.campaign_entity_listing import CampaignEntityListing
 from .models.campaign_interaction import CampaignInteraction
 from .models.campaign_interactions import CampaignInteractions
@@ -1145,6 +1147,7 @@ from .models.voicemail_search_criteria import VoicemailSearchCriteria
 from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
+from .models.web_chat_config import WebChatConfig
 from .models.web_chat_deployment import WebChatDeployment
 from .models.web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
 from .models.web_chat_settings import WebChatSettings

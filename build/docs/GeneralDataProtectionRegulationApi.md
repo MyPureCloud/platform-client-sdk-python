@@ -18,11 +18,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**GDPRRequest**](GDPRRequest.html) get_gdpr_request(request_id)
 
+
+
 Get an existing GDPR request
 
 
 
 Wraps GET /api/v2/gdpr/requests/{requestId} 
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -63,11 +69,17 @@ except ApiException as e:
 
 ## [**GDPRRequestEntityListing**](GDPRRequestEntityListing.html) get_gdpr_requests(page_size=page_size, page_number=page_number)
 
+
+
 Get all GDPR requests
 
 
 
 Wraps GET /api/v2/gdpr/requests 
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -110,11 +122,17 @@ except ApiException as e:
 
 ## [**GDPRSubjectEntityListing**](GDPRSubjectEntityListing.html) get_gdpr_subjects(search_type, search_value)
 
+
+
 Get GDPR subjects
 
 
 
 Wraps GET /api/v2/gdpr/subjects 
+
+Requires ANY permissions: 
+
+* gdpr:subject:view
 
 ### Example
 
@@ -157,11 +175,17 @@ except ApiException as e:
 
 ## [**GDPRRequest**](GDPRRequest.html) post_gdpr_requests(body, delete_confirmed=delete_confirmed)
 
+
+
 Submit a new GDPR request
 
 
 
 Wraps POST /api/v2/gdpr/requests 
+
+Requires ANY permissions: 
+
+* gdpr:request:add
 
 ### Example
 

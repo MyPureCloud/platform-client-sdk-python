@@ -22,11 +22,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**LicenseDefinition**](LicenseDefinition.html) get_license_definition(license_id)
 
+
+
 Get PureCloud license definition.
 
 
 
 Wraps GET /api/v2/license/definitions/{licenseId} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -67,11 +73,17 @@ except ApiException as e:
 
 ## [**list[LicenseDefinition]**](LicenseDefinition.html) get_license_definitions()
 
+
+
 Get all PureCloud license definitions available for the organization.
 
 
 
 Wraps GET /api/v2/license/definitions 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -108,11 +120,17 @@ This endpoint does not need any parameter.
 
 ## [**LicenseOrganization**](LicenseOrganization.html) get_license_organization()
 
+
+
 Get license assignments for the organization.
 
 
 
 Wraps GET /api/v2/license/organization 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -149,11 +167,17 @@ This endpoint does not need any parameter.
 
 ## [**LicenseOrgToggle**](LicenseOrgToggle.html) get_license_toggle(feature_name)
 
+
+
 Get PureCloud license feature toggle value.
 
 
 
 Wraps GET /api/v2/license/toggles/{featureName} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -194,11 +218,17 @@ except ApiException as e:
 
 ## [**LicenseUser**](LicenseUser.html) get_license_user(user_id)
 
+
+
 Get licenses for specified user.
 
 
 
 Wraps GET /api/v2/license/users/{userId} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -239,11 +269,17 @@ except ApiException as e:
 
 ## [**list[LicenseUpdateStatus]**](LicenseUpdateStatus.html) post_license_organization(body=body)
 
+
+
 Update the organization's license assignments in a batch.
 
 
 
 Wraps POST /api/v2/license/organization 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -284,11 +320,17 @@ except ApiException as e:
 
 ## [**LicenseOrgToggle**](LicenseOrgToggle.html) post_license_toggle(feature_name)
 
+
+
 Switch PureCloud license feature toggle value.
 
 
 
 Wraps POST /api/v2/license/toggles/{featureName} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -329,11 +371,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) post_license_users(body=body)
 
+
+
 Fetch user licenses in a batch.
 
 
 
 Wraps POST /api/v2/license/users 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

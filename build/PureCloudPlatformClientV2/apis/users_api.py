@@ -1451,12 +1451,13 @@ class UsersApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param bool joined: Is joined to the queue
+        :param list[str] division_id: Division ID(s)
         :return: UserQueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'page_size', 'page_number', 'joined']
+        all_params = ['user_id', 'page_size', 'page_number', 'joined', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -1486,6 +1487,8 @@ class UsersApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'joined' in params:
             query_params['joined'] = params['joined']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -2703,12 +2706,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
         :param list[UserQueue] body: User Queues (required)
+        :param list[str] division_id: Division ID(s)
         :return: UserQueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'body']
+        all_params = ['user_id', 'body', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -2735,6 +2739,8 @@ class UsersApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 

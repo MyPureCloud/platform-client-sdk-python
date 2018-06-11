@@ -38,69 +38,23 @@ class TimeZone(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'display_name': 'str',
-            'id': 'str',
             'dstsavings': 'int',
-            'raw_offset': 'int'
+            'raw_offset': 'int',
+            'id': 'str',
+            'display_name': 'str'
         }
 
         self.attribute_map = {
-            'display_name': 'displayName',
-            'id': 'id',
             'dstsavings': 'dstsavings',
-            'raw_offset': 'rawOffset'
+            'raw_offset': 'rawOffset',
+            'id': 'id',
+            'display_name': 'displayName'
         }
 
-        self._display_name = None
-        self._id = None
         self._dstsavings = None
         self._raw_offset = None
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this TimeZone.
-
-
-        :return: The display_name of this TimeZone.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this TimeZone.
-
-
-        :param display_name: The display_name of this TimeZone.
-        :type: str
-        """
-        
-        self._display_name = display_name
-
-    @property
-    def id(self):
-        """
-        Gets the id of this TimeZone.
-
-
-        :return: The id of this TimeZone.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this TimeZone.
-
-
-        :param id: The id of this TimeZone.
-        :type: str
-        """
-        
-        self._id = id
+        self._id = None
+        self._display_name = None
 
     @property
     def dstsavings(self):
@@ -147,6 +101,52 @@ class TimeZone(object):
         """
         
         self._raw_offset = raw_offset
+
+    @property
+    def id(self):
+        """
+        Gets the id of this TimeZone.
+
+
+        :return: The id of this TimeZone.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this TimeZone.
+
+
+        :param id: The id of this TimeZone.
+        :type: str
+        """
+        
+        self._id = id
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this TimeZone.
+
+
+        :return: The display_name of this TimeZone.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this TimeZone.
+
+
+        :param display_name: The display_name of this TimeZone.
+        :type: str
+        """
+        
+        self._display_name = display_name
 
     def to_dict(self):
         """

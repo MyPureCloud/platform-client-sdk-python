@@ -19,11 +19,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_station_associateduser(station_id)
 
+
+
 Unassigns the user assigned to this station
 
 
 
 Wraps DELETE /api/v2/stations/{stationId}/associateduser 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -63,11 +69,17 @@ void (empty response body)
 
 ## [**Station**](Station.html) get_station(station_id)
 
+
+
 Get station.
 
 
 
 Wraps GET /api/v2/stations/{stationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -108,11 +120,17 @@ except ApiException as e:
 
 ## [**StationEntityListing**](StationEntityListing.html) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
 
+
+
 Get the list of available stations.
 
 
 
 Wraps GET /api/v2/stations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -167,11 +185,17 @@ except ApiException as e:
 
 ## [**StationSettings**](StationSettings.html) get_stations_settings()
 
+
+
 Get an organization's StationSettings
 
 
 
 Wraps GET /api/v2/stations/settings 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -208,11 +232,17 @@ This endpoint does not need any parameter.
 
 ## [**StationSettings**](StationSettings.html) patch_stations_settings(body)
 
+
+
 Patch an organization's StationSettings
 
 
 
 Wraps PATCH /api/v2/stations/settings 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 

@@ -42,11 +42,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**Empty**](Empty.html) delete_identityproviders_adfs()
 
+
+
 Delete ADFS Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/adfs 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -83,11 +89,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_cic()
 
+
+
 Delete Customer Interaction Center (CIC) Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/cic 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -124,11 +136,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_gsuite()
 
+
+
 Delete G Suite Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/gsuite 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -165,11 +183,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_identitynow()
 
+
+
 Delete IdentityNow Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/identitynow 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -206,11 +230,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_okta()
 
+
+
 Delete Okta Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/okta 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -247,11 +277,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_onelogin()
 
+
+
 Delete OneLogin Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/onelogin 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -288,11 +324,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_ping()
 
+
+
 Delete Ping Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/ping 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -329,11 +371,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_purecloud()
 
+
+
 Delete PureCloud Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/purecloud 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -370,11 +418,17 @@ This endpoint does not need any parameter.
 
 ## [**Empty**](Empty.html) delete_identityproviders_salesforce()
 
+
+
 Delete Salesforce Identity Provider
 
 
 
 Wraps DELETE /api/v2/identityproviders/salesforce 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
 
 ### Example
 
@@ -411,11 +465,17 @@ This endpoint does not need any parameter.
 
 ## [**OAuthProviderEntityListing**](OAuthProviderEntityListing.html) get_identityproviders()
 
+
+
 The list of identity providers
 
 
 
 Wraps GET /api/v2/identityproviders 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -452,11 +512,17 @@ This endpoint does not need any parameter.
 
 ## [**ADFS**](ADFS.html) get_identityproviders_adfs()
 
+
+
 Get ADFS Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/adfs 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -493,11 +559,17 @@ This endpoint does not need any parameter.
 
 ## [**CustomerInteractionCenter**](CustomerInteractionCenter.html) get_identityproviders_cic()
 
+
+
 Get Customer Interaction Center (CIC) Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/cic 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -534,11 +606,17 @@ This endpoint does not need any parameter.
 
 ## [**GSuite**](GSuite.html) get_identityproviders_gsuite()
 
+
+
 Get G Suite Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/gsuite 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -575,11 +653,17 @@ This endpoint does not need any parameter.
 
 ## [**IdentityNow**](IdentityNow.html) get_identityproviders_identitynow()
 
+
+
 Get IdentityNow Provider
 
 
 
 Wraps GET /api/v2/identityproviders/identitynow 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -616,11 +700,17 @@ This endpoint does not need any parameter.
 
 ## [**Okta**](Okta.html) get_identityproviders_okta()
 
+
+
 Get Okta Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/okta 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -657,11 +747,17 @@ This endpoint does not need any parameter.
 
 ## [**OneLogin**](OneLogin.html) get_identityproviders_onelogin()
 
+
+
 Get OneLogin Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/onelogin 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -698,11 +794,17 @@ This endpoint does not need any parameter.
 
 ## [**PingIdentity**](PingIdentity.html) get_identityproviders_ping()
 
+
+
 Get Ping Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/ping 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -739,11 +841,17 @@ This endpoint does not need any parameter.
 
 ## [**PureCloud**](PureCloud.html) get_identityproviders_purecloud()
 
+
+
 Get PureCloud Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/purecloud 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -780,11 +888,17 @@ This endpoint does not need any parameter.
 
 ## [**Salesforce**](Salesforce.html) get_identityproviders_salesforce()
 
+
+
 Get Salesforce Identity Provider
 
 
 
 Wraps GET /api/v2/identityproviders/salesforce 
+
+Requires ANY permissions: 
+
+* sso:provider:view
 
 ### Example
 
@@ -821,11 +935,17 @@ This endpoint does not need any parameter.
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_adfs(body)
 
+
+
 Update/Create ADFS Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/adfs 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -866,11 +986,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_cic(body)
 
+
+
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/cic 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -911,11 +1037,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_gsuite(body)
 
+
+
 Update/Create G Suite Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/gsuite 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -956,11 +1088,17 @@ except ApiException as e:
 
 ## [**IdentityNow**](IdentityNow.html) put_identityproviders_identitynow(body)
 
+
+
 Update/Create IdentityNow Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/identitynow 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -1001,11 +1139,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_okta(body)
 
+
+
 Update/Create Okta Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/okta 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -1046,11 +1190,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_onelogin(body)
 
+
+
 Update/Create OneLogin Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/onelogin 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -1091,11 +1241,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_ping(body)
 
+
+
 Update/Create Ping Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/ping 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -1136,11 +1292,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_purecloud(body)
 
+
+
 Update/Create PureCloud Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/purecloud 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 
@@ -1181,11 +1343,17 @@ except ApiException as e:
 
 ## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_salesforce(body)
 
+
+
 Update/Create Salesforce Identity Provider
 
 
 
 Wraps PUT /api/v2/identityproviders/salesforce 
+
+Requires ANY permissions: 
+
+* sso:provider:add* sso:provider:edit
 
 ### Example
 

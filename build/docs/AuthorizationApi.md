@@ -31,11 +31,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_authorization_role(role_id)
 
+
+
 Delete an organization role.
 
 
 
 Wraps DELETE /api/v2/authorization/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:delete
 
 ### Example
 
@@ -75,11 +81,17 @@ void (empty response body)
 
 ##  delete_user_roles(user_id)
 
+
+
 Removes all the roles from the user.
 
 
 
 Wraps DELETE /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -119,11 +131,17 @@ void (empty response body)
 
 ## [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html) get_authorization_permissions(page_size=page_size, page_number=page_number)
 
+
+
 Get all permissions.
 
 Retrieve a list of all permission defined in the system.
 
 Wraps GET /api/v2/authorization/permissions 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -166,11 +184,17 @@ except ApiException as e:
 
 ## [**OrganizationProductEntityListing**](OrganizationProductEntityListing.html) get_authorization_products()
 
+
+
 Get the list of enabled products
 
 Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
 
 Wraps GET /api/v2/authorization/products 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -207,11 +231,17 @@ This endpoint does not need any parameter.
 
 ## [**DomainOrganizationRole**](DomainOrganizationRole.html) get_authorization_role(role_id)
 
+
+
 Get a single organization role.
 
 Get the organization role specified by its ID.
 
 Wraps GET /api/v2/authorization/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -252,11 +282,17 @@ except ApiException as e:
 
 ## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) get_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id)
 
+
+
 Get an org role to default role comparison comparison
 
 Compares any organization role to a default role id and show differences
 
 Wraps GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} 
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -299,11 +335,17 @@ except ApiException as e:
 
 ## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
 
+
+
 Retrieve a list of all roles defined for the organization
 
 
 
 Wraps GET /api/v2/authorization/roles 
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -364,11 +406,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) get_user_roles(user_id)
 
+
+
 Returns a listing of roles and permissions for a user.
 
 
 
 Wraps GET /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -409,11 +457,17 @@ except ApiException as e:
 
 ## [**DomainOrganizationRole**](DomainOrganizationRole.html) patch_authorization_role(role_id, body)
 
+
+
 Patch Organization Role for needsUpdate Field
 
 Patch Organization Role for needsUpdate Field
 
 Wraps PATCH /api/v2/authorization/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -456,11 +510,17 @@ except ApiException as e:
 
 ## [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
 
+
+
 Get an unsaved org role to default role comparison
 
 Allows users to compare their existing roles in an unsaved state to its default role
 
 Wraps POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} 
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -505,11 +565,17 @@ except ApiException as e:
 
 ## [**DomainOrganizationRole**](DomainOrganizationRole.html) post_authorization_roles(body)
 
+
+
 Create an organization role.
 
 
 
 Wraps POST /api/v2/authorization/roles 
+
+Requires ANY permissions: 
+
+* authorization:role:add
 
 ### Example
 
@@ -550,11 +616,17 @@ except ApiException as e:
 
 ## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) post_authorization_roles_default(force=force)
 
+
+
 Restores all default roles
 
 This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
 
 Wraps POST /api/v2/authorization/roles/default 
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -595,11 +667,17 @@ except ApiException as e:
 
 ## [**DomainOrganizationRole**](DomainOrganizationRole.html) put_authorization_role(role_id, body)
 
+
+
 Update an organization role.
 
 Update
 
 Wraps PUT /api/v2/authorization/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -642,11 +720,17 @@ except ApiException as e:
 
 ## list[str]** put_authorization_role_users_add(role_id, body)
 
+
+
 Sets the users for the role
 
 
 
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/add 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
 
 ### Example
 
@@ -689,11 +773,17 @@ except ApiException as e:
 
 ## list[str]** put_authorization_role_users_remove(role_id, body)
 
+
+
 Removes the users from the role
 
 
 
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/remove 
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
 
 ### Example
 
@@ -736,11 +826,17 @@ except ApiException as e:
 
 ## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) put_authorization_roles_default(body)
 
+
+
 Restore specified default roles
 
 
 
 Wraps PUT /api/v2/authorization/roles/default 
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -781,11 +877,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) put_user_roles(user_id, body)
 
+
+
 Sets the user's roles
 
 
 
 Wraps PUT /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 

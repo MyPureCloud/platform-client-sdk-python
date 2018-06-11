@@ -20,11 +20,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_userrecording(recording_id)
 
+
+
 Delete a user recording.
 
 
 
 Wraps DELETE /api/v2/userrecordings/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -64,11 +70,17 @@ void (empty response body)
 
 ## [**UserRecording**](UserRecording.html) get_userrecording(recording_id, expand=expand)
 
+
+
 Get a user recording.
 
 
 
 Wraps GET /api/v2/userrecordings/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -111,11 +123,17 @@ except ApiException as e:
 
 ## [**DownloadResponse**](DownloadResponse.html) get_userrecording_media(recording_id, format_id=format_id)
 
+
+
 Download a user recording.
 
 
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -158,11 +176,17 @@ except ApiException as e:
 
 ## [**UserRecordingEntityListing**](UserRecordingEntityListing.html) get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
 
+
+
 Get a list of user recordings.
 
 
 
 Wraps GET /api/v2/userrecordings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -207,11 +231,17 @@ except ApiException as e:
 
 ## [**FaxSummary**](FaxSummary.html) get_userrecordings_summary()
 
+
+
 Get user recording summary
 
 
 
 Wraps GET /api/v2/userrecordings/summary 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -248,11 +278,17 @@ This endpoint does not need any parameter.
 
 ## [**UserRecording**](UserRecording.html) put_userrecording(recording_id, body, expand=expand)
 
+
+
 Update a user recording.
 
 
 
 Wraps PUT /api/v2/userrecordings/{recordingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

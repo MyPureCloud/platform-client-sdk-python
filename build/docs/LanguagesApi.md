@@ -24,11 +24,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_language(language_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Delete Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
 Wraps DELETE /api/v2/languages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -68,11 +74,17 @@ void (empty response body)
 
 ##  delete_routing_language(language_id)
 
+
+
 Delete Language
 
 
 
 Wraps DELETE /api/v2/routing/languages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -112,11 +124,17 @@ void (empty response body)
 
 ## [**Language**](Language.html) get_language(language_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
 Wraps GET /api/v2/languages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -157,11 +175,17 @@ except ApiException as e:
 
 ## [**LanguageEntityListing**](LanguageEntityListing.html) get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get the list of supported languages. (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
 
 Wraps GET /api/v2/languages 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -208,11 +232,17 @@ except ApiException as e:
 
 ## [**AvailableTranslations**](AvailableTranslations.html) get_languages_translations()
 
+
+
 Get all available languages for translation
 
 
 
 Wraps GET /api/v2/languages/translations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -249,11 +279,17 @@ This endpoint does not need any parameter.
 
 ## [**dict(str, object)**](dict.html) get_languages_translations_builtin(language)
 
+
+
 Get the builtin translation for a language
 
 
 
 Wraps GET /api/v2/languages/translations/builtin 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -294,11 +330,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) get_languages_translations_organization(language)
 
+
+
 Get effective translation for an organization by language
 
 
 
 Wraps GET /api/v2/languages/translations/organization 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -339,11 +381,17 @@ except ApiException as e:
 
 ## [**dict(str, object)**](dict.html) get_languages_translations_user(user_id)
 
+
+
 Get effective language translation for a user
 
 
 
 Wraps GET /api/v2/languages/translations/users/{userId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -384,11 +432,17 @@ except ApiException as e:
 
 ## [**Language**](Language.html) get_routing_language(language_id)
 
+
+
 Get language
 
 
 
 Wraps GET /api/v2/routing/languages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -429,11 +483,17 @@ except ApiException as e:
 
 ## [**Language**](Language.html) post_languages(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Create Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
 
 Wraps POST /api/v2/languages 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 

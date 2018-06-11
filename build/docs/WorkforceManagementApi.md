@@ -26,11 +26,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**list[UserScheduleAdherence]**](UserScheduleAdherence.html) get_workforcemanagement_adherence(user_id)
 
+
+
 Get a list of UserScheduleAdherence records for the requested users
 
 
 
 Wraps GET /api/v2/workforcemanagement/adherence 
+
+Requires ANY permissions: 
+
+* wfm:realtimeAdherence:view
 
 ### Example
 
@@ -71,11 +77,17 @@ except ApiException as e:
 
 ## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(mu_id)
 
+
+
 Get activity codes
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:administer* wfm:agent:administer* wfm:agentSchedule:view* wfm:historicalAdherence:view* wfm:intraday:view* wfm:managementUnit:administer* wfm:publishedSchedule:view* wfm:realtimeAdherence:view* wfm:schedule:administer* wfm:schedule:generate* wfm:serviceGoalGroup:administer* wfm:shortTermForecast:administer* wfm:agentTimeOffRequest:submit* wfm:timeOffRequest:administer* wfm:workPlan:administer
 
 ### Example
 
@@ -116,11 +128,17 @@ except ApiException as e:
 
 ## [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html) get_workforcemanagement_managementunit_intraday_queues(mu_id, date)
 
+
+
 Get intraday queues for the given date
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues 
+
+Requires ANY permissions: 
+
+* wfm:intraday:view
 
 ### Example
 
@@ -163,11 +181,17 @@ except ApiException as e:
 
 ## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
 
+
+
 Get a time off request
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:administer
 
 ### Example
 
@@ -212,11 +236,17 @@ except ApiException as e:
 
 ## [**TimeOffRequestList**](TimeOffRequestList.html) get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
 
+
+
 Get a list of time off requests for a given user
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:administer
 
 ### Example
 
@@ -261,11 +291,17 @@ except ApiException as e:
 
 ## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_users(mu_id)
 
+
+
 Get agents in the management unit
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users 
+
+Requires ANY permissions: 
+
+* wfm:agent:administer
 
 ### Example
 
@@ -306,11 +342,17 @@ except ApiException as e:
 
 ## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand)
 
+
+
 Get management units
 
 
 
 Wraps GET /api/v2/workforcemanagement/managementunits 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -326,7 +368,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 page_size = 56 # int |  (optional)
-page_number = 1 # int |  (optional) (default to 1)
+page_number = 56 # int |  (optional)
 expand = 'expand_example' # str |  (optional)
 
 try:
@@ -343,7 +385,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**|  | [optional]  |
-| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_number** | **int**|  | [optional]  |
 | **expand** | **str**|  | [optional] <br />**Values**: details |
 {: class="table table-striped"}
 
@@ -355,11 +397,17 @@ except ApiException as e:
 
 ## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, body=body)
 
+
+
 Update a time off request
 
 
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:administer
 
 ### Example
 
@@ -406,11 +454,17 @@ except ApiException as e:
 
 ## [**ActivityCode**](ActivityCode.html) post_workforcemanagement_managementunit_activitycodes(mu_id, body=body)
 
+
+
 Create a new activity code
 
 
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/activitycodes 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:administer
 
 ### Example
 
@@ -453,11 +507,17 @@ except ApiException as e:
 
 ## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_managementunit_historicaladherencequery(mu_id, body=body)
 
+
+
 Request a historical adherence report
 
 
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery 
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
 
 ### Example
 
@@ -500,11 +560,17 @@ except ApiException as e:
 
 ## [**IntradayResponse**](IntradayResponse.html) post_workforcemanagement_managementunit_intraday(mu_id, body=body)
 
+
+
 Get intraday data for the given date for the requested queueIds
 
 
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/intraday 
+
+Requires ANY permissions: 
+
+* wfm:intraday:view
 
 ### Example
 
@@ -547,11 +613,17 @@ except ApiException as e:
 
 ## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
 
+
+
 Query published schedules for given given time range for set of users
 
 
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search 
+
+Requires ANY permissions: 
+
+* wfm:schedule:administer* wfm:publishedSchedule:view
 
 ### Example
 

@@ -17,11 +17,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**ServerDate**](ServerDate.html) get_date()
 
+
+
 Get the current system date/time
 
 
 
 Wraps GET /api/v2/date 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -58,11 +64,17 @@ This endpoint does not need any parameter.
 
 ## [**TimeZoneEntityListing**](TimeZoneEntityListing.html) get_timezones(page_size=page_size, page_number=page_number)
 
+
+
 Get time zones list
 
 
 
 Wraps GET /api/v2/timezones 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -105,11 +117,17 @@ except ApiException as e:
 
 ## [**ParsedCertificate**](ParsedCertificate.html) post_certificate_details(body)
 
+
+
 Returns the information about an X509 PEM encoded certificate or certificate chain.
 
 
 
 Wraps POST /api/v2/certificate/details 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

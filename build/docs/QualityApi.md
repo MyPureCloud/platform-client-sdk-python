@@ -64,11 +64,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**Calibration**](Calibration.html) delete_quality_calibration(calibration_id, calibrator_id)
 
+
+
 Delete a calibration by id.
 
 
 
 Wraps DELETE /api/v2/quality/calibrations/{calibrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -111,11 +117,17 @@ except ApiException as e:
 
 ## [**Evaluation**](Evaluation.html) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
+
+
 Delete an evaluation
 
 
 
 Wraps DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -160,11 +172,17 @@ except ApiException as e:
 
 ##  delete_quality_form(form_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Delete an evaluation form.
 
 
 
 Wraps DELETE /api/v2/quality/forms/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:delete
 
 ### Example
 
@@ -204,11 +222,17 @@ void (empty response body)
 
 ##  delete_quality_forms_evaluation(form_id)
 
+
+
 Delete an evaluation form.
 
 
 
 Wraps DELETE /api/v2/quality/forms/evaluations/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:delete
 
 ### Example
 
@@ -248,11 +272,17 @@ void (empty response body)
 
 ##  delete_quality_forms_survey(form_id)
 
+
+
 Delete a survey form.
 
 
 
 Wraps DELETE /api/v2/quality/forms/surveys/{formId} 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:delete
 
 ### Example
 
@@ -292,11 +322,17 @@ void (empty response body)
 
 ##  delete_quality_keywordset(keyword_set_id)
 
+
+
 Delete a keywordSet by id.
 
 
 
 Wraps DELETE /api/v2/quality/keywordsets/{keywordSetId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -336,11 +372,17 @@ void (empty response body)
 
 ##  delete_quality_keywordsets(ids)
 
+
+
 Delete keyword sets
 
 Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
 
 Wraps DELETE /api/v2/quality/keywordsets 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -380,11 +422,17 @@ void (empty response body)
 
 ## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group)
 
+
+
 Gets a list of Agent Activities
 
 Including the number of evaluations and average evaluation score
 
 Wraps GET /api/v2/quality/agents/activity 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -447,11 +495,17 @@ except ApiException as e:
 
 ## [**Calibration**](Calibration.html) get_quality_calibration(calibration_id, calibrator_id=calibrator_id, conversation_id=conversation_id)
 
+
+
 Get a calibration by id.  Requires either calibrator id or conversation id
 
 
 
 Wraps GET /api/v2/quality/calibrations/{calibrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -496,11 +550,17 @@ except ApiException as e:
 
 ## [**CalibrationEntityListing**](CalibrationEntityListing.html) get_quality_calibrations(calibrator_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, start_time=start_time, end_time=end_time)
 
+
+
 Get the list of calibrations
 
 
 
 Wraps GET /api/v2/quality/calibrations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -559,11 +619,17 @@ except ApiException as e:
 
 ## [**QualityAuditPage**](QualityAuditPage.html) get_quality_conversation_audits(conversation_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, recording_id=recording_id, entity_type=entity_type)
 
+
+
 Get audits for conversation or recording
 
 
 
 Wraps GET /api/v2/quality/conversations/{conversationId}/audits 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -620,11 +686,17 @@ except ApiException as e:
 
 ## [**Evaluation**](Evaluation.html) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
+
+
 Get an evaluation
 
 
 
 Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -669,11 +741,17 @@ except ApiException as e:
 
 ## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
+
+
 Queries Evaluations and returns a paged list
 
 Query params must include one of conversationId, evaluatorUserId, or agentUserId
 
 Wraps GET /api/v2/quality/evaluations/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -748,11 +826,17 @@ except ApiException as e:
 
 ## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)
 
+
+
 Get an evaluator activity
 
 
 
 Wraps GET /api/v2/quality/evaluators/activity 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -813,11 +897,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) get_quality_form(form_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get an evaluation form
 
 
 
 Wraps GET /api/v2/quality/forms/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -858,11 +948,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Gets all the revisions for a specific evaluation.
 
 
 
 Wraps GET /api/v2/quality/forms/{formId}/versions 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -907,11 +1003,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get the list of evaluation forms
 
 
 
 Wraps GET /api/v2/quality/forms 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -964,11 +1066,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) get_quality_forms_evaluation(form_id)
 
+
+
 Get an evaluation form
 
 
 
 Wraps GET /api/v2/quality/forms/evaluations/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1009,11 +1117,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number)
 
+
+
 Gets all the revisions for a specific evaluation.
 
 
 
 Wraps GET /api/v2/quality/forms/evaluations/{formId}/versions 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1058,11 +1172,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
 
+
+
 Get the list of evaluation forms
 
 
 
 Wraps GET /api/v2/quality/forms/evaluations 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1115,11 +1235,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) get_quality_forms_survey(form_id)
 
+
+
 Get a survey form
 
 
 
 Wraps GET /api/v2/quality/forms/surveys/{formId} 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1160,11 +1286,17 @@ except ApiException as e:
 
 ## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_survey_versions(form_id, page_size=page_size, page_number=page_number)
 
+
+
 Gets all the revisions for a specific survey.
 
 
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}/versions 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1209,11 +1341,17 @@ except ApiException as e:
 
 ## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
 
+
+
 Get the list of survey forms
 
 
 
 Wraps GET /api/v2/quality/forms/surveys 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1266,11 +1404,17 @@ except ApiException as e:
 
 ## [**KeywordSet**](KeywordSet.html) get_quality_keywordset(keyword_set_id)
 
+
+
 Get a keywordSet by id.
 
 
 
 Wraps GET /api/v2/quality/keywordsets/{keywordSetId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1311,11 +1455,17 @@ except ApiException as e:
 
 ## [**KeywordSetEntityListing**](KeywordSetEntityListing.html) get_quality_keywordsets(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, queue_id=queue_id, agent_id=agent_id, operator=operator)
 
+
+
 Get the list of keyword sets
 
 
 
 Wraps GET /api/v2/quality/keywordsets 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1374,11 +1524,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedform(form_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get the published evaluation forms.
 
 
 
 Wraps GET /api/v2/quality/publishedforms/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1419,11 +1575,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Get the published evaluation forms.
 
 
 
 Wraps GET /api/v2/quality/publishedforms 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1468,11 +1630,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedforms_evaluation(form_id)
 
+
+
 Get the most recent published version of an evaluation form.
 
 
 
 Wraps GET /api/v2/quality/publishedforms/evaluations/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1513,11 +1681,17 @@ except ApiException as e:
 
 ## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name)
 
+
+
 Get the published evaluation forms.
 
 
 
 Wraps GET /api/v2/quality/publishedforms/evaluations 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1562,11 +1736,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) get_quality_publishedforms_survey(form_id)
 
+
+
 Get the most recent published version of a survey form.
 
 
 
 Wraps GET /api/v2/quality/publishedforms/surveys/{formId} 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1607,11 +1787,17 @@ except ApiException as e:
 
 ## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name)
 
+
+
 Get the published survey forms.
 
 
 
 Wraps GET /api/v2/quality/publishedforms/surveys 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1656,11 +1842,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) patch_quality_forms_survey(form_id, body)
 
+
+
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 
 
 
 Wraps PATCH /api/v2/quality/forms/surveys/{formId} 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:edit
 
 ### Example
 
@@ -1703,11 +1895,17 @@ except ApiException as e:
 
 ## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
 
+
+
 Query for evaluation aggregates
 
 
 
 Wraps POST /api/v2/analytics/evaluations/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
 
 ### Example
 
@@ -1748,11 +1946,17 @@ except ApiException as e:
 
 ## [**Calibration**](Calibration.html) post_quality_calibrations(body, expand=expand)
 
+
+
 Create a calibration
 
 
 
 Wraps POST /api/v2/quality/calibrations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1795,11 +1999,17 @@ except ApiException as e:
 
 ## [**Evaluation**](Evaluation.html) post_quality_conversation_evaluations(conversation_id, body, expand=expand)
 
+
+
 Create an evaluation
 
 
 
 Wraps POST /api/v2/quality/conversations/{conversationId}/evaluations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1844,11 +2054,17 @@ except ApiException as e:
 
 ## [**EvaluationScoringSet**](EvaluationScoringSet.html) post_quality_evaluations_scoring(body)
 
+
+
 Score evaluation
 
 
 
 Wraps POST /api/v2/quality/evaluations/scoring 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1889,11 +2105,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) post_quality_forms(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Create an evaluation form.
 
 
 
 Wraps POST /api/v2/quality/forms 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -1934,11 +2156,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) post_quality_forms_evaluations(body)
 
+
+
 Create an evaluation form.
 
 
 
 Wraps POST /api/v2/quality/forms/evaluations 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -1979,11 +2207,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) post_quality_forms_surveys(body)
 
+
+
 Create a survey form.
 
 
 
 Wraps POST /api/v2/quality/forms/surveys 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:add
 
 ### Example
 
@@ -2024,11 +2258,17 @@ except ApiException as e:
 
 ## [**KeywordSet**](KeywordSet.html) post_quality_keywordsets(body, expand=expand)
 
+
+
 Create a Keyword Set
 
 
 
 Wraps POST /api/v2/quality/keywordsets 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2071,11 +2311,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Publish an evaluation form.
 
 
 
 Wraps POST /api/v2/quality/publishedforms 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2116,11 +2362,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms_evaluations(body)
 
+
+
 Publish an evaluation form.
 
 
 
 Wraps POST /api/v2/quality/publishedforms/evaluations 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2161,11 +2413,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) post_quality_publishedforms_surveys(body)
 
+
+
 Publish a survey form.
 
 
 
 Wraps POST /api/v2/quality/publishedforms/surveys 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:add
 
 ### Example
 
@@ -2206,11 +2464,17 @@ except ApiException as e:
 
 ## [**KeywordSet**](KeywordSet.html) post_quality_spotability(body=body)
 
+
+
 Retrieve the spotability statistic
 
 
 
 Wraps POST /api/v2/quality/spotability 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2251,11 +2515,17 @@ except ApiException as e:
 
 ## [**Calibration**](Calibration.html) put_quality_calibration(calibration_id, body)
 
+
+
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 
 
 
 Wraps PUT /api/v2/quality/calibrations/{calibrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2298,11 +2568,17 @@ except ApiException as e:
 
 ## [**Evaluation**](Evaluation.html) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
 
+
+
 Update an evaluation
 
 
 
 Wraps PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2349,11 +2625,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) put_quality_form(form_id, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 Update an evaluation form.
 
 
 
 Wraps PUT /api/v2/quality/forms/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:edit
 
 ### Example
 
@@ -2396,11 +2678,17 @@ except ApiException as e:
 
 ## [**EvaluationForm**](EvaluationForm.html) put_quality_forms_evaluation(form_id, body)
 
+
+
 Update an evaluation form.
 
 
 
 Wraps PUT /api/v2/quality/forms/evaluations/{formId} 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:edit
 
 ### Example
 
@@ -2443,11 +2731,17 @@ except ApiException as e:
 
 ## [**SurveyForm**](SurveyForm.html) put_quality_forms_survey(form_id, body)
 
+
+
 Update a survey form.
 
 
 
 Wraps PUT /api/v2/quality/forms/surveys/{formId} 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:edit
 
 ### Example
 
@@ -2490,11 +2784,17 @@ except ApiException as e:
 
 ## [**KeywordSet**](KeywordSet.html) put_quality_keywordset(keyword_set_id, body)
 
+
+
 Update a keywordSet to the specified keywordSet via PUT.
 
 
 
 Wraps PUT /api/v2/quality/keywordsets/{keywordSetId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

@@ -3888,12 +3888,13 @@ class ArchitectApi(object):
         :param bool include_schemas: Include variable schemas
         :param str published_after: Published after
         :param str published_before: Published before
+        :param list[str] division_id: division ID(s)
         :return: FlowEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3949,6 +3950,8 @@ class ArchitectApi(object):
             query_params['publishedAfter'] = params['published_after']
         if 'published_before' in params:
             query_params['publishedBefore'] = params['published_before']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -4349,12 +4352,13 @@ class ArchitectApi(object):
         :param str publish_version_id: Publish version ID
         :param str published_after: Published after
         :param str published_before: Published before
+        :param list[str] division_id: division ID(s)
         :return: FlowDivisionViewEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'publish_version_id', 'published_after', 'published_before']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'publish_version_id', 'published_after', 'published_before', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -4396,6 +4400,8 @@ class ArchitectApi(object):
             query_params['publishedAfter'] = params['published_after']
         if 'published_before' in params:
             query_params['publishedBefore'] = params['published_before']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 

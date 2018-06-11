@@ -16,11 +16,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_tokens_me()
 
+
+
 Delete  auth token used to make the request.
 
 
 
 Wraps DELETE /api/v2/tokens/me 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -56,11 +62,17 @@ void (empty response body)
 
 ## [**TokenInfo**](TokenInfo.html) get_tokens_me()
 
+
+
 Fetch information about the current token
 
 
 
 Wraps GET /api/v2/tokens/me 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

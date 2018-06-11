@@ -30,11 +30,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_greeting(greeting_id)
 
+
+
 Deletes a Greeting with the given GreetingId
 
 
 
 Wraps DELETE /api/v2/greetings/{greetingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -74,11 +80,17 @@ void (empty response body)
 
 ## [**Greeting**](Greeting.html) get_greeting(greeting_id)
 
+
+
 Get a Greeting with the given GreetingId
 
 
 
 Wraps GET /api/v2/greetings/{greetingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -119,11 +131,17 @@ except ApiException as e:
 
 ## [**GreetingMediaInfo**](GreetingMediaInfo.html) get_greeting_media(greeting_id, format_id=format_id)
 
+
+
 Get media playback URI for this greeting
 
 
 
 Wraps GET /api/v2/greetings/{greetingId}/media 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -166,11 +184,17 @@ except ApiException as e:
 
 ## [**DomainEntityListing**](DomainEntityListing.html) get_greetings(page_size=page_size, page_number=page_number)
 
+
+
 Gets an Organization's Greetings
 
 
 
 Wraps GET /api/v2/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -213,11 +237,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) get_greetings_defaults()
 
+
+
 Get an Organization's DefaultGreetingList
 
 
 
 Wraps GET /api/v2/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -254,11 +284,17 @@ This endpoint does not need any parameter.
 
 ## [**GreetingListing**](GreetingListing.html) get_group_greetings(group_id, page_size=page_size, page_number=page_number)
 
+
+
 Get a list of the Group's Greetings
 
 
 
 Wraps GET /api/v2/groups/{groupId}/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -303,11 +339,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) get_group_greetings_defaults(group_id)
 
+
+
 Grabs the list of Default Greetings given a Group's ID
 
 
 
 Wraps GET /api/v2/groups/{groupId}/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -348,11 +390,17 @@ except ApiException as e:
 
 ## [**DomainEntityListing**](DomainEntityListing.html) get_user_greetings(user_id, page_size=page_size, page_number=page_number)
 
+
+
 Get a list of the User's Greetings
 
 
 
 Wraps GET /api/v2/users/{userId}/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -397,11 +445,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) get_user_greetings_defaults(user_id)
 
+
+
 Grabs the list of Default Greetings given a User's ID
 
 
 
 Wraps GET /api/v2/users/{userId}/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -442,11 +496,17 @@ except ApiException as e:
 
 ## [**Greeting**](Greeting.html) post_greetings(body)
 
+
+
 Create a Greeting for an Organization
 
 
 
 Wraps POST /api/v2/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -487,11 +547,17 @@ except ApiException as e:
 
 ## [**Greeting**](Greeting.html) post_group_greetings(group_id, body)
 
+
+
 Creates a Greeting for a Group
 
 
 
 Wraps POST /api/v2/groups/{groupId}/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -534,11 +600,17 @@ except ApiException as e:
 
 ## [**Greeting**](Greeting.html) post_user_greetings(user_id, body)
 
+
+
 Creates a Greeting for a User
 
 
 
 Wraps POST /api/v2/users/{userId}/greetings 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -581,11 +653,17 @@ except ApiException as e:
 
 ## [**Greeting**](Greeting.html) put_greeting(greeting_id, body)
 
+
+
 Updates the Greeting with the given GreetingId
 
 
 
 Wraps PUT /api/v2/greetings/{greetingId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -628,11 +706,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) put_greetings_defaults(body)
 
+
+
 Update an Organization's DefaultGreetingList
 
 
 
 Wraps PUT /api/v2/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -673,11 +757,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) put_group_greetings_defaults(group_id, body)
 
+
+
 Updates the DefaultGreetingList of the specified Group
 
 
 
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -720,11 +810,17 @@ except ApiException as e:
 
 ## [**DefaultGreetingList**](DefaultGreetingList.html) put_user_greetings_defaults(user_id, body)
 
+
+
 Updates the DefaultGreetingList of the specified User
 
 
 
 Wraps PUT /api/v2/users/{userId}/greetings/defaults 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

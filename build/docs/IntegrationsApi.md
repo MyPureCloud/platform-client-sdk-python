@@ -55,11 +55,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**Integration**](Integration.html) delete_integration(integration_id)
 
+
+
 Delete integration.
 
 
 
 Wraps DELETE /api/v2/integrations/{integrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -100,11 +106,17 @@ except ApiException as e:
 
 ##  delete_integrations_action(action_id)
 
+
+
 Delete an Action
 
 
 
 Wraps DELETE /api/v2/integrations/actions/{actionId} 
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -144,11 +156,17 @@ void (empty response body)
 
 ##  delete_integrations_action_draft(action_id)
 
+
+
 Delete a Draft
 
 
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}/draft 
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -188,11 +206,17 @@ void (empty response body)
 
 ##  delete_integrations_credential(credential_id)
 
+
+
 Delete a set of credentials
 
 
 
 Wraps DELETE /api/v2/integrations/credentials/{credentialId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -232,11 +256,17 @@ void (empty response body)
 
 ## [**Integration**](Integration.html) get_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 Get integration.
 
 
 
 Wraps GET /api/v2/integrations/{integrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -289,11 +319,17 @@ except ApiException as e:
 
 ## [**IntegrationConfiguration**](IntegrationConfiguration.html) get_integration_config_current(integration_id)
 
+
+
 Get integration configuration.
 
 
 
 Wraps GET /api/v2/integrations/{integrationId}/config/current 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -334,11 +370,17 @@ except ApiException as e:
 
 ## [**IntegrationEntityListing**](IntegrationEntityListing.html) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 List integrations
 
 
 
 Wraps GET /api/v2/integrations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -389,11 +431,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) get_integrations_action(action_id, expand=expand, include_config=include_config)
 
+
+
 Retrieves a single Action matching id.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId} 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -438,11 +486,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) get_integrations_action_draft(action_id, expand=expand, include_config=include_config)
 
+
+
 Retrieve a Draft
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -487,11 +541,17 @@ except ApiException as e:
 
 ## [**JsonSchemaDocument**](JsonSchemaDocument.html) get_integrations_action_draft_schema(action_id, file_name)
 
+
+
 Retrieve schema for a Draft based on filename.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName} 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -534,11 +594,17 @@ except ApiException as e:
 
 ## str** get_integrations_action_draft_template(action_id, file_name)
 
+
+
 Retrieve templates for a Draft based on filename.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName} 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -581,11 +647,17 @@ except ApiException as e:
 
 ## [**DraftValidationResult**](DraftValidationResult.html) get_integrations_action_draft_validation(action_id)
 
+
+
 Validate current Draft configuration.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/validation 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -626,11 +698,17 @@ except ApiException as e:
 
 ## [**JsonSchemaDocument**](JsonSchemaDocument.html) get_integrations_action_schema(action_id, file_name)
 
+
+
 Retrieve schema for an action based on filename.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/schemas/{fileName} 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -673,11 +751,17 @@ except ApiException as e:
 
 ## str** get_integrations_action_template(action_id, file_name)
 
+
+
 Retrieve text of templates for an action based on filename.
 
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/templates/{fileName} 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -720,11 +804,17 @@ except ApiException as e:
 
 ## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 Retrieves all actions associated with filters passed in via query param.
 
 
 
 Wraps GET /api/v2/integrations/actions 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -781,11 +871,17 @@ except ApiException as e:
 
 ## [**CategoryEntityListing**](CategoryEntityListing.html) get_integrations_actions_categories(secure=secure, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 Retrieves all categories of available Actions
 
 
 
 Wraps GET /api/v2/integrations/actions/categories 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -838,11 +934,17 @@ except ApiException as e:
 
 ## [**ActionEntityListing**](ActionEntityListing.html) get_integrations_actions_drafts(category=category, secure=secure, include_auth_actions=include_auth_actions, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 Retrieves all action drafts associated with the filters passed in via query param.
 
 
 
 Wraps GET /api/v2/integrations/actions/drafts 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -899,11 +1001,17 @@ except ApiException as e:
 
 ## [**ClientAppEntityListing**](ClientAppEntityListing.html) get_integrations_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 List permitted client app integrations for the logged in user
 
 
 
 Wraps GET /api/v2/integrations/clientapps 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -954,11 +1062,17 @@ except ApiException as e:
 
 ## [**Credential**](Credential.html) get_integrations_credential(credential_id)
 
+
+
 Get a single credential with sensitive fields redacted
 
 
 
 Wraps GET /api/v2/integrations/credentials/{credentialId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -999,11 +1113,17 @@ except ApiException as e:
 
 ## [**CredentialInfoListing**](CredentialInfoListing.html) get_integrations_credentials(page_number=page_number, page_size=page_size)
 
+
+
 List multiple sets of credentials
 
 
 
 Wraps GET /api/v2/integrations/credentials 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1046,11 +1166,17 @@ except ApiException as e:
 
 ## [**CredentialTypeListing**](CredentialTypeListing.html) get_integrations_credentials_types()
 
+
+
 List all credential types
 
 
 
 Wraps GET /api/v2/integrations/credentials/types 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1087,11 +1213,17 @@ This endpoint does not need any parameter.
 
 ## [**IntegrationEventEntityListing**](IntegrationEventEntityListing.html) get_integrations_eventlog(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, entity_id=entity_id)
 
+
+
 List all events
 
 
 
 Wraps GET /api/v2/integrations/eventlog 
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1140,11 +1272,17 @@ except ApiException as e:
 
 ## [**IntegrationEvent**](IntegrationEvent.html) get_integrations_eventlog_event_id(event_id)
 
+
+
 Get a single event
 
 
 
 Wraps GET /api/v2/integrations/eventlog/{eventId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1185,11 +1323,17 @@ except ApiException as e:
 
 ## [**IntegrationType**](IntegrationType.html) get_integrations_type(type_id)
 
+
+
 Get integration type.
 
 
 
 Wraps GET /api/v2/integrations/types/{typeId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1230,11 +1374,17 @@ except ApiException as e:
 
 ## [**JsonSchemaDocument**](JsonSchemaDocument.html) get_integrations_type_configschema(type_id, config_type)
 
+
+
 Get properties config schema for an integration type.
 
 
 
 Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1277,11 +1427,17 @@ except ApiException as e:
 
 ## [**IntegrationTypeEntityListing**](IntegrationTypeEntityListing.html) get_integrations_types(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 List integration types
 
 
 
 Wraps GET /api/v2/integrations/types 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1332,11 +1488,17 @@ except ApiException as e:
 
 ## [**Integration**](Integration.html) patch_integration(integration_id, body=body, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
+
+
 Update an integration.
 
 
 
 Wraps PATCH /api/v2/integrations/{integrationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1391,11 +1553,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) patch_integrations_action(action_id, body)
 
+
+
 Patch an Action
 
 
 
 Wraps PATCH /api/v2/integrations/actions/{actionId} 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1438,11 +1606,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) patch_integrations_action_draft(action_id, body)
 
+
+
 Update an existing Draft
 
 
 
 Wraps PATCH /api/v2/integrations/actions/{actionId}/draft 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1485,11 +1659,17 @@ except ApiException as e:
 
 ## [**Integration**](Integration.html) post_integrations(body=body)
 
+
+
 Create an integration.
 
 
 
 Wraps POST /api/v2/integrations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1530,11 +1710,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) post_integrations_action_draft(action_id)
 
+
+
 Create a new Draft from existing Action
 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1575,11 +1761,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) post_integrations_action_draft_publish(action_id, body)
 
+
+
 Publish a Draft and make it the active Action configuration
 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/publish 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1622,11 +1814,17 @@ except ApiException as e:
 
 ## [**TestExecutionResult**](TestExecutionResult.html) post_integrations_action_draft_test(action_id, body)
 
+
+
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/test 
+
+Requires ANY permissions: 
+
+* integrations:action:execute
 
 ### Example
 
@@ -1669,11 +1867,17 @@ except ApiException as e:
 
 ## object** post_integrations_action_execute(action_id, body)
 
+
+
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/execute 
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1716,11 +1920,17 @@ except ApiException as e:
 
 ## [**TestExecutionResult**](TestExecutionResult.html) post_integrations_action_test(action_id, body)
 
+
+
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/test 
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1763,11 +1973,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) post_integrations_actions(body)
 
+
+
 Create a new Action
 
 
 
 Wraps POST /api/v2/integrations/actions 
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -1808,11 +2024,17 @@ except ApiException as e:
 
 ## [**Action**](Action.html) post_integrations_actions_drafts(body)
 
+
+
 Create a new Draft
 
 
 
 Wraps POST /api/v2/integrations/actions/drafts 
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -1853,11 +2075,17 @@ except ApiException as e:
 
 ## [**CredentialInfo**](CredentialInfo.html) post_integrations_credentials(body=body)
 
+
+
 Create a set of credentials
 
 
 
 Wraps POST /api/v2/integrations/credentials 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1898,11 +2126,17 @@ except ApiException as e:
 
 ## [**UserActionCategoryEntityListing**](UserActionCategoryEntityListing.html) post_integrations_workforcemanagement_vendorconnection(body=body)
 
+
+
 Add a vendor connection
 
 
 
 Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1943,11 +2177,17 @@ except ApiException as e:
 
 ## [**IntegrationConfiguration**](IntegrationConfiguration.html) put_integration_config_current(integration_id, body=body)
 
+
+
 Update integration configuration.
 
 
 
 Wraps PUT /api/v2/integrations/{integrationId}/config/current 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1990,11 +2230,17 @@ except ApiException as e:
 
 ## [**CredentialInfo**](CredentialInfo.html) put_integrations_credential(credential_id, body=body)
 
+
+
 Update a set of credentials
 
 
 
 Wraps PUT /api/v2/integrations/credentials/{credentialId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

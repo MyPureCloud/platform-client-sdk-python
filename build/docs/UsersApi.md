@@ -66,11 +66,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**Empty**](Empty.html) delete_user(user_id)
 
+
+
 Delete user
 
 
 
 Wraps DELETE /api/v2/users/{userId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -111,11 +117,17 @@ except ApiException as e:
 
 ##  delete_user_roles(user_id)
 
+
+
 Removes all the roles from the user.
 
 
 
 Wraps DELETE /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -155,11 +167,17 @@ void (empty response body)
 
 ##  delete_user_routinglanguage(user_id, language_id)
 
+
+
 Remove routing language from user
 
 
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -201,11 +219,17 @@ void (empty response body)
 
 ##  delete_user_routingskill(user_id, skill_id)
 
+
+
 Remove routing skill from user
 
 
 
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -247,11 +271,17 @@ void (empty response body)
 
 ##  delete_user_station_associatedstation(user_id)
 
+
+
 Clear associated station
 
 
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -291,11 +321,17 @@ void (empty response body)
 
 ##  delete_user_station_defaultstation(user_id)
 
+
+
 Clear default station
 
 
 
 Wraps DELETE /api/v2/users/{userId}/station/defaultstation 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 
@@ -335,11 +371,17 @@ void (empty response body)
 
 ## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
 
+
+
 Fetch field config for an entity type
 
 
 
 Wraps GET /api/v2/fieldconfig 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -380,11 +422,17 @@ except ApiException as e:
 
 ## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, state=state)
 
+
+
 Get a user profile listing
 
 
 
 Wraps GET /api/v2/profiles/users 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -437,11 +485,17 @@ except ApiException as e:
 
 ## [**User**](User.html) get_user(user_id, expand=expand, state=state)
 
+
+
 Get user.
 
 
 
 Wraps GET /api/v2/users/{userId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -486,11 +540,17 @@ except ApiException as e:
 
 ## [**Adjacents**](Adjacents.html) get_user_adjacents(user_id, expand=expand)
 
+
+
 Get adjacents
 
 
 
 Wraps GET /api/v2/users/{userId}/adjacents 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -533,11 +593,17 @@ except ApiException as e:
 
 ## [**CallForwarding**](CallForwarding.html) get_user_callforwarding(user_id)
 
+
+
 Get a user's CallForwarding
 
 
 
 Wraps GET /api/v2/users/{userId}/callforwarding 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -578,11 +644,17 @@ except ApiException as e:
 
 ## [**list[User]**](User.html) get_user_directreports(user_id, expand=expand)
 
+
+
 Get direct reports
 
 
 
 Wraps GET /api/v2/users/{userId}/directreports 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -625,11 +697,17 @@ except ApiException as e:
 
 ## [**UserEntityListing**](UserEntityListing.html) get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
+
+
 Get favorites
 
 
 
 Wraps GET /api/v2/users/{userId}/favorites 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -678,11 +756,17 @@ except ApiException as e:
 
 ## [**Geolocation**](Geolocation.html) get_user_geolocation(user_id, client_id)
 
+
+
 Get a user's Geolocation
 
 
 
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -725,11 +809,17 @@ except ApiException as e:
 
 ## [**OutOfOffice**](OutOfOffice.html) get_user_outofoffice(user_id)
 
+
+
 Get a OutOfOffice
 
 
 
 Wraps GET /api/v2/users/{userId}/outofoffice 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -770,11 +860,17 @@ except ApiException as e:
 
 ## [**UserProfile**](UserProfile.html) get_user_profile(user_id, expand=expand)
 
+
+
 Get user profile
 
 
 
 Wraps GET /api/v2/users/{userId}/profile 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -817,11 +913,17 @@ except ApiException as e:
 
 ## list[str]** get_user_profileskills(user_id)
 
+
+
 List profile skills for a user
 
 
 
 Wraps GET /api/v2/users/{userId}/profileskills 
+
+Requires ANY permissions: 
+
+* directory:userProfile:view
 
 ### Example
 
@@ -860,13 +962,19 @@ except ApiException as e:
 
 <a name="get_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined)
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
+
+
 
 Get queues for user
 
 
 
 Wraps GET /api/v2/users/{userId}/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -885,10 +993,11 @@ user_id = 'user_id_example' # str | User ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 joined = true # bool | Is joined to the queue (optional) (default to true)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
     # Get queues for user
-    api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined)
+    api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_queues: %s\n" % e
@@ -903,6 +1012,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **joined** | **bool**| Is joined to the queue | [optional] [default to true] |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -913,11 +1023,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) get_user_roles(user_id)
 
+
+
 Returns a listing of roles and permissions for a user.
 
 
 
 Wraps GET /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -958,11 +1074,17 @@ except ApiException as e:
 
 ## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
+
+
 List routing language for user
 
 
 
 Wraps GET /api/v2/users/{userId}/routinglanguages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1009,11 +1131,17 @@ except ApiException as e:
 
 ## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
+
+
 List routing skills for user
 
 
 
 Wraps GET /api/v2/users/{userId}/routingskills 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1060,11 +1188,17 @@ except ApiException as e:
 
 ## [**RoutingStatus**](RoutingStatus.html) get_user_routingstatus(user_id)
 
+
+
 Fetch the routing status of a user
 
 
 
 Wraps GET /api/v2/users/{userId}/routingstatus 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1105,11 +1239,17 @@ except ApiException as e:
 
 ## [**UserStations**](UserStations.html) get_user_station(user_id)
 
+
+
 Get station information for user
 
 
 
 Wraps GET /api/v2/users/{userId}/station 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1150,11 +1290,17 @@ except ApiException as e:
 
 ## [**list[User]**](User.html) get_user_superiors(user_id, expand=expand)
 
+
+
 Get superiors
 
 
 
 Wraps GET /api/v2/users/{userId}/superiors 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1197,11 +1343,17 @@ except ApiException as e:
 
 ## [**TrustorEntityListing**](TrustorEntityListing.html) get_user_trustors(user_id, page_size=page_size, page_number=page_number)
 
+
+
 List the organizations that have authorized/trusted the user.
 
 
 
 Wraps GET /api/v2/users/{userId}/trustors 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -1246,11 +1398,17 @@ except ApiException as e:
 
 ## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand, state=state)
 
+
+
 Get the list of available users.
 
 
 
 Wraps GET /api/v2/users 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1301,11 +1459,17 @@ except ApiException as e:
 
 ## [**UserMe**](UserMe.html) get_users_me(expand=expand)
 
+
+
 Get current user details.
 
 This request is not valid when using the Client Credentials OAuth grant.
 
 Wraps GET /api/v2/users/me 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1346,11 +1510,17 @@ except ApiException as e:
 
 ## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
 
+
+
 Search users using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/users/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1393,11 +1563,17 @@ except ApiException as e:
 
 ## [**User**](User.html) patch_user(user_id, body)
 
+
+
 Update user
 
 
 
 Wraps PATCH /api/v2/users/{userId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1440,11 +1616,17 @@ except ApiException as e:
 
 ## [**CallForwarding**](CallForwarding.html) patch_user_callforwarding(user_id, body)
 
+
+
 Patch a user's CallForwarding
 
 
 
 Wraps PATCH /api/v2/users/{userId}/callforwarding 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1487,11 +1669,17 @@ except ApiException as e:
 
 ## [**Geolocation**](Geolocation.html) patch_user_geolocation(user_id, client_id, body)
 
+
+
 Patch a user's Geolocation
 
 The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1536,11 +1724,17 @@ except ApiException as e:
 
 ## [**UserQueue**](UserQueue.html) patch_user_queue(queue_id, user_id, body)
 
+
+
 Join or unjoin a queue for a user
 
 
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId} 
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1583,13 +1777,19 @@ except ApiException as e:
 
 <a name="patch_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) patch_user_queues(user_id, body)
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) patch_user_queues(user_id, body, division_id=division_id)
+
+
 
 Join or unjoin a set of queues for a user
 
 
 
 Wraps PATCH /api/v2/users/{userId}/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1606,10 +1806,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 body = [PureCloudPlatformClientV2.UserQueue()] # list[UserQueue] | User Queues
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
     # Join or unjoin a set of queues for a user
-    api_response = api_instance.patch_user_queues(user_id, body)
+    api_response = api_instance.patch_user_queues(user_id, body, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_queues: %s\n" % e
@@ -1622,6 +1823,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **body** | [**list[UserQueue]**](UserQueue.html)| User Queues |  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1632,11 +1834,17 @@ except ApiException as e:
 
 ## [**UserRoutingLanguage**](UserRoutingLanguage.html) patch_user_routinglanguage(user_id, language_id, body)
 
+
+
 Update routing language proficiency or state.
 
 
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -1681,11 +1889,17 @@ except ApiException as e:
 
 ## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
 
+
+
 Query for user aggregates
 
 
 
 Wraps POST /api/v2/analytics/users/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
 
 ### Example
 
@@ -1726,11 +1940,17 @@ except ApiException as e:
 
 ## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) post_analytics_users_details_query(body)
 
+
+
 Query for user details
 
 
 
 Wraps POST /api/v2/analytics/users/details/query 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1771,11 +1991,17 @@ except ApiException as e:
 
 ## [**ObservationQueryResponse**](ObservationQueryResponse.html) post_analytics_users_observations_query(body)
 
+
+
 Query for user observations
 
 
 
 Wraps POST /api/v2/analytics/users/observations/query 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1816,11 +2042,17 @@ except ApiException as e:
 
 ##  post_user_invite(user_id, force=force)
 
+
+
 Send an activation email to the user
 
 
 
 Wraps POST /api/v2/users/{userId}/invite 
+
+Requires ANY permissions: 
+
+* directory:user:add* user_manager* user_administration
 
 ### Example
 
@@ -1862,11 +2094,17 @@ void (empty response body)
 
 ##  post_user_password(user_id, body)
 
+
+
 Change a users password
 
 
 
 Wraps POST /api/v2/users/{userId}/password 
+
+Requires ANY permissions: 
+
+* user_administration* directory:userPassword:edit
 
 ### Example
 
@@ -1908,11 +2146,17 @@ void (empty response body)
 
 ## [**UserRoutingLanguage**](UserRoutingLanguage.html) post_user_routinglanguages(user_id, body)
 
+
+
 Add routing language to user
 
 
 
 Wraps POST /api/v2/users/{userId}/routinglanguages 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -1955,11 +2199,17 @@ except ApiException as e:
 
 ## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
 
+
+
 Add routing skill to user
 
 
 
 Wraps POST /api/v2/users/{userId}/routingskills 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2002,11 +2252,17 @@ except ApiException as e:
 
 ## [**User**](User.html) post_users(body)
 
+
+
 Create user
 
 
 
 Wraps POST /api/v2/users 
+
+Requires ANY permissions: 
+
+* directory:user:add
 
 ### Example
 
@@ -2047,11 +2303,17 @@ except ApiException as e:
 
 ##  post_users_me_password(body)
 
+
+
 Change your password
 
 
 
 Wraps POST /api/v2/users/me/password 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2091,11 +2353,17 @@ void (empty response body)
 
 ## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search(body)
 
+
+
 Search users
 
 
 
 Wraps POST /api/v2/users/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2136,11 +2404,17 @@ except ApiException as e:
 
 ## [**CallForwarding**](CallForwarding.html) put_user_callforwarding(user_id, body)
 
+
+
 Update a user's CallForwarding
 
 
 
 Wraps PUT /api/v2/users/{userId}/callforwarding 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2183,11 +2457,17 @@ except ApiException as e:
 
 ## [**OutOfOffice**](OutOfOffice.html) put_user_outofoffice(user_id, body)
 
+
+
 Update an OutOfOffice
 
 
 
 Wraps PUT /api/v2/users/{userId}/outofoffice 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2230,11 +2510,17 @@ except ApiException as e:
 
 ## list[str]** put_user_profileskills(user_id, body=body)
 
+
+
 Update profile skills for a user
 
 
 
 Wraps PUT /api/v2/users/{userId}/profileskills 
+
+Requires ANY permissions: 
+
+* directory:userProfile:edit* admin* user_manager* user_administration
 
 ### Example
 
@@ -2277,11 +2563,17 @@ except ApiException as e:
 
 ## [**UserAuthorization**](UserAuthorization.html) put_user_roles(user_id, body)
 
+
+
 Sets the user's roles
 
 
 
 Wraps PUT /api/v2/users/{userId}/roles 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -2324,11 +2616,17 @@ except ApiException as e:
 
 ## [**UserRoutingSkill**](UserRoutingSkill.html) put_user_routingskill(user_id, skill_id, body)
 
+
+
 Update routing skill proficiency or state.
 
 
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2373,11 +2671,17 @@ except ApiException as e:
 
 ## [**RoutingStatus**](RoutingStatus.html) put_user_routingstatus(user_id, body)
 
+
+
 Update the routing status of a user
 
 
 
 Wraps PUT /api/v2/users/{userId}/routingstatus 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2420,11 +2724,17 @@ except ApiException as e:
 
 ##  put_user_station_associatedstation_station_id(user_id, station_id)
 
+
+
 Set associated station
 
 
 
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2466,11 +2776,17 @@ void (empty response body)
 
 ##  put_user_station_defaultstation_station_id(user_id, station_id)
 
+
+
 Set default station
 
 
 
 Wraps PUT /api/v2/users/{userId}/station/defaultstation/{stationId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 

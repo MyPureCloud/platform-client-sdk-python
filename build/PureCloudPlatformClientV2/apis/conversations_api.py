@@ -652,7 +652,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversation ID (required)
         :param str participant_id: participant ID (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: WrapupCode
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -716,7 +716,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WrapupCode',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -976,7 +976,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1040,7 +1040,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1225,7 +1225,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1289,7 +1289,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1774,7 +1774,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1838,7 +1838,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2095,7 +2095,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2159,7 +2159,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2656,7 +2656,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2720,7 +2720,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3061,7 +3061,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param bool provisional: Indicates if the wrap-up code is provisional.
-        :return: Wrapup
+        :return: AssignedWrapupCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3125,7 +3125,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Wrapup',
+                                            response_type='AssignedWrapupCode',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

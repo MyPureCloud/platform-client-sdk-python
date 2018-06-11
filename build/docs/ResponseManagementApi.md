@@ -25,11 +25,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_responsemanagement_library(library_id)
 
+
+
 Delete an existing response library.
 
 This will remove any responses associated with the library.
 
 Wraps DELETE /api/v2/responsemanagement/libraries/{libraryId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -69,11 +75,17 @@ void (empty response body)
 
 ##  delete_responsemanagement_response(response_id)
 
+
+
 Delete an existing response.
 
 This will remove the response from any libraries associated with it.
 
 Wraps DELETE /api/v2/responsemanagement/responses/{responseId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -113,11 +125,17 @@ void (empty response body)
 
 ## [**LibraryEntityListing**](LibraryEntityListing.html) get_responsemanagement_libraries(page_number=page_number, page_size=page_size)
 
+
+
 Gets a list of existing response libraries.
 
 
 
 Wraps GET /api/v2/responsemanagement/libraries 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -160,11 +178,17 @@ except ApiException as e:
 
 ## [**Library**](Library.html) get_responsemanagement_library(library_id)
 
+
+
 Get details about an existing response library.
 
 
 
 Wraps GET /api/v2/responsemanagement/libraries/{libraryId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -205,11 +229,17 @@ except ApiException as e:
 
 ## [**Response**](Response.html) get_responsemanagement_response(response_id, expand=expand)
 
+
+
 Get details about an existing response.
 
 
 
 Wraps GET /api/v2/responsemanagement/responses/{responseId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -252,11 +282,17 @@ except ApiException as e:
 
 ## [**ResponseEntityListing**](ResponseEntityListing.html) get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
 
+
+
 Gets a list of existing responses.
 
 
 
 Wraps GET /api/v2/responsemanagement/responses 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -303,11 +339,17 @@ except ApiException as e:
 
 ## [**Library**](Library.html) post_responsemanagement_libraries(body)
 
+
+
 Create a response library.
 
 
 
 Wraps POST /api/v2/responsemanagement/libraries 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -348,11 +390,17 @@ except ApiException as e:
 
 ## [**Response**](Response.html) post_responsemanagement_responses(body, expand=expand)
 
+
+
 Create a response.
 
 
 
 Wraps POST /api/v2/responsemanagement/responses 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -395,11 +443,17 @@ except ApiException as e:
 
 ## [**ResponseQueryResults**](ResponseQueryResults.html) post_responsemanagement_responses_query(body)
 
+
+
 Query responses
 
 
 
 Wraps POST /api/v2/responsemanagement/responses/query 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -440,11 +494,17 @@ except ApiException as e:
 
 ## [**Library**](Library.html) put_responsemanagement_library(library_id, body)
 
+
+
 Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
 
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -487,11 +547,17 @@ except ApiException as e:
 
 ## [**Response**](Response.html) put_responsemanagement_response(response_id, body, expand=expand)
 
+
+
 Update an existing response.
 
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
 
 Wraps PUT /api/v2/responsemanagement/responses/{responseId} 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

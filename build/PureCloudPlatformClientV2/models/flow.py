@@ -40,8 +40,8 @@ class Flow(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'UriReference',
             'description': 'str',
-            'division': 'AuthzDivision',
             'type': 'str',
             'locked_user': 'User',
             'active': 'bool',
@@ -60,8 +60,8 @@ class Flow(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'description': 'description',
             'division': 'division',
+            'description': 'description',
             'type': 'type',
             'locked_user': 'lockedUser',
             'active': 'active',
@@ -79,8 +79,8 @@ class Flow(object):
 
         self._id = None
         self._name = None
-        self._description = None
         self._division = None
+        self._description = None
         self._type = None
         self._locked_user = None
         self._active = None
@@ -142,6 +142,29 @@ class Flow(object):
         self._name = name
 
     @property
+    def division(self):
+        """
+        Gets the division of this Flow.
+        The division to which this entity belongs.
+
+        :return: The division of this Flow.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Flow.
+        The division to which this entity belongs.
+
+        :param division: The division of this Flow.
+        :type: UriReference
+        """
+        
+        self._division = division
+
+    @property
     def description(self):
         """
         Gets the description of this Flow.
@@ -163,29 +186,6 @@ class Flow(object):
         """
         
         self._description = description
-
-    @property
-    def division(self):
-        """
-        Gets the division of this Flow.
-
-
-        :return: The division of this Flow.
-        :rtype: AuthzDivision
-        """
-        return self._division
-
-    @division.setter
-    def division(self, division):
-        """
-        Sets the division of this Flow.
-
-
-        :param division: The division of this Flow.
-        :type: AuthzDivision
-        """
-        
-        self._division = division
 
     @property
     def type(self):

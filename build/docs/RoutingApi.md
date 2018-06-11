@@ -72,11 +72,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ##  delete_routing_email_domain(domain_id)
 
+
+
 Delete a domain
 
 
 
 Wraps DELETE /api/v2/routing/email/domains/{domainId} 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -116,11 +122,17 @@ void (empty response body)
 
 ##  delete_routing_email_domain_route(domain_name, route_id)
 
+
+
 Delete a route
 
 
 
 Wraps DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -162,11 +174,17 @@ void (empty response body)
 
 ##  delete_routing_queue(queue_id, force_delete=force_delete)
 
+
+
 Delete a queue
 
 
 
 Wraps DELETE /api/v2/routing/queues/{queueId} 
+
+Requires ANY permissions: 
+
+* routing:queue:delete
 
 ### Example
 
@@ -208,11 +226,17 @@ void (empty response body)
 
 ##  delete_routing_queue_user(queue_id, member_id)
 
+
+
 Delete queue member
 
 
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/users/{memberId} 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -254,11 +278,17 @@ void (empty response body)
 
 ##  delete_routing_queue_wrapupcode(queue_id, code_id)
 
+
+
 Delete a wrap-up code from a queue
 
 
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -300,11 +330,17 @@ void (empty response body)
 
 ##  delete_routing_skill(skill_id)
 
+
+
 Delete Routing Skill
 
 
 
 Wraps DELETE /api/v2/routing/skills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -344,11 +380,17 @@ void (empty response body)
 
 ##  delete_routing_sms_phonenumber(address_id)
 
+
+
 Delete a phone number provisioned for SMS.
 
 
 
 Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId} 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:delete
 
 ### Example
 
@@ -388,11 +430,17 @@ void (empty response body)
 
 ##  delete_routing_utilization()
 
+
+
 Delete utilization settings and revert to system defaults.
 
 
 
 Wraps DELETE /api/v2/routing/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
 
 ### Example
 
@@ -428,11 +476,17 @@ void (empty response body)
 
 ##  delete_routing_wrapupcode(code_id)
 
+
+
 Delete wrap-up code
 
 
 
 Wraps DELETE /api/v2/routing/wrapupcodes/{codeId} 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:delete
 
 ### Example
 
@@ -472,11 +526,17 @@ void (empty response body)
 
 ##  delete_user_routinglanguage(user_id, language_id)
 
+
+
 Remove routing language from user
 
 
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -518,11 +578,17 @@ void (empty response body)
 
 ##  delete_user_routingskill(user_id, skill_id)
 
+
+
 Remove routing skill from user
 
 
 
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -564,11 +630,17 @@ void (empty response body)
 
 ## [**InboundDomain**](InboundDomain.html) get_routing_email_domain(domain_id)
 
+
+
 Get domain
 
 
 
 Wraps GET /api/v2/routing/email/domains/{domainId} 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -609,11 +681,17 @@ except ApiException as e:
 
 ## [**InboundRoute**](InboundRoute.html) get_routing_email_domain_route(domain_name, route_id)
 
+
+
 Get a route
 
 
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -656,11 +734,17 @@ except ApiException as e:
 
 ## [**InboundRouteEntityListing**](InboundRouteEntityListing.html) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
 
+
+
 Get routes
 
 
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -707,11 +791,17 @@ except ApiException as e:
 
 ## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains()
 
+
+
 Get domains
 
 
 
 Wraps GET /api/v2/routing/email/domains 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -748,11 +838,17 @@ This endpoint does not need any parameter.
 
 ## [**EmailSetup**](EmailSetup.html) get_routing_email_setup()
 
+
+
 Get email setup
 
 
 
 Wraps GET /api/v2/routing/email/setup 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -789,11 +885,17 @@ This endpoint does not need any parameter.
 
 ## [**LanguageEntityListing**](LanguageEntityListing.html) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
+
+
 Get the list of supported languages.
 
 
 
 Wraps GET /api/v2/routing/languages 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -840,11 +942,17 @@ except ApiException as e:
 
 ## [**Recipient**](Recipient.html) get_routing_message_recipient(recipient_id)
 
+
+
 Get a recipient
 
 
 
 Wraps GET /api/v2/routing/message/recipients/{recipientId} 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -885,11 +993,17 @@ except ApiException as e:
 
 ## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(page_size=page_size, page_number=page_number)
 
+
+
 Get recipients
 
 
 
 Wraps GET /api/v2/routing/message/recipients 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -932,11 +1046,17 @@ except ApiException as e:
 
 ## [**Queue**](Queue.html) get_routing_queue(queue_id)
 
+
+
 Get details about this queue.
 
 
 
 Wraps GET /api/v2/routing/queues/{queueId} 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -977,11 +1097,17 @@ except ApiException as e:
 
 ## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
 
+
+
 Get Estimated Wait Time
 
 
 
 Wraps GET /api/v2/routing/queues/{queueId}/estimatedwaittime 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1024,11 +1150,17 @@ except ApiException as e:
 
 ## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
 
+
+
 Get Estimated Wait Time
 
 
 
 Wraps GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1071,11 +1203,17 @@ except ApiException as e:
 
 ## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
 
+
+
 Get the members of this queue
 
 
 
 Wraps GET /api/v2/routing/queues/{queueId}/users 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1138,11 +1276,17 @@ except ApiException as e:
 
 ## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_queue_wrapupcodes(queue_id)
 
+
+
 Get the wrap-up codes for a queue
 
 
 
 Wraps GET /api/v2/routing/queues/{queueId}/wrapupcodes 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1181,13 +1325,19 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active, division_id=division_id)
+
+
 
 Get list of queues.
 
 
 
 Wraps GET /api/v2/routing/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1207,10 +1357,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 name = 'name_example' # str | Name (optional)
 active = true # bool | Active (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active)
+    api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_queues: %s\n" % e
@@ -1226,6 +1377,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 | **name** | **str**| Name | [optional]  |
 | **active** | **bool**| Active | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1236,11 +1388,17 @@ except ApiException as e:
 
 ## [**RoutingSkill**](RoutingSkill.html) get_routing_skill(skill_id)
 
+
+
 Get Routing Skill
 
 
 
 Wraps GET /api/v2/routing/skills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -1281,11 +1439,17 @@ except ApiException as e:
 
 ## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name)
 
+
+
 Get the list of routing skills.
 
 
 
 Wraps GET /api/v2/routing/skills 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -1330,11 +1494,17 @@ except ApiException as e:
 
 ## [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html) get_routing_sms_availablephonenumbers(country_code, phone_number_type, region=region, city=city, area_code=area_code, pattern=pattern, address_requirement=address_requirement)
 
+
+
 Get a list of available phone numbers for SMS provisioning.
 
 This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
 
 Wraps GET /api/v2/routing/sms/availablephonenumbers 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -1387,11 +1557,17 @@ except ApiException as e:
 
 ## [**SmsPhoneNumber**](SmsPhoneNumber.html) get_routing_sms_phonenumber(address_id)
 
+
+
 Get a phone number provisioned for SMS.
 
 
 
 Wraps GET /api/v2/routing/sms/phonenumbers/{addressId} 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
 
 ### Example
 
@@ -1432,11 +1608,17 @@ except ApiException as e:
 
 ## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, page_size=page_size, page_number=page_number)
 
+
+
 Get a list of provisioned phone numbers.
 
 
 
 Wraps GET /api/v2/routing/sms/phonenumbers 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
 
 ### Example
 
@@ -1485,11 +1667,17 @@ except ApiException as e:
 
 ## [**Utilization**](Utilization.html) get_routing_utilization()
 
+
+
 Get the utilization settings.
 
 
 
 Wraps GET /api/v2/routing/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage* routing:utilization:view
 
 ### Example
 
@@ -1526,11 +1714,17 @@ This endpoint does not need any parameter.
 
 ## [**WrapupCode**](WrapupCode.html) get_routing_wrapupcode(code_id)
 
+
+
 Get details about this wrap-up code.
 
 
 
 Wraps GET /api/v2/routing/wrapupcodes/{codeId} 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:view
 
 ### Example
 
@@ -1571,11 +1765,17 @@ except ApiException as e:
 
 ## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
 
+
+
 Get list of wrapup codes.
 
 
 
 Wraps GET /api/v2/routing/wrapupcodes 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:view
 
 ### Example
 
@@ -1622,11 +1822,17 @@ except ApiException as e:
 
 ## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
+
+
 List routing language for user
 
 
 
 Wraps GET /api/v2/users/{userId}/routinglanguages 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1673,11 +1879,17 @@ except ApiException as e:
 
 ## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
+
+
 List routing skills for user
 
 
 
 Wraps GET /api/v2/users/{userId}/routingskills 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1724,11 +1936,17 @@ except ApiException as e:
 
 ## [**QueueMember**](QueueMember.html) patch_routing_queue_user(queue_id, member_id, body)
 
+
+
 Update the ring number of joined status for a User in a Queue
 
 
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users/{memberId} 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -1773,11 +1991,17 @@ except ApiException as e:
 
 ## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) patch_routing_queue_users(queue_id, body)
 
+
+
 Join or unjoin a set of users for a queue
 
 
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -1820,11 +2044,17 @@ except ApiException as e:
 
 ## [**UserRoutingLanguage**](UserRoutingLanguage.html) patch_user_routinglanguage(user_id, language_id, body)
 
+
+
 Update routing language proficiency or state.
 
 
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -1869,11 +2099,17 @@ except ApiException as e:
 
 ## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_queues_observations_query(body)
 
+
+
 Query for queue observations
 
 
 
 Wraps POST /api/v2/analytics/queues/observations/query 
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
 
 ### Example
 
@@ -1914,11 +2150,17 @@ except ApiException as e:
 
 ## [**InboundRoute**](InboundRoute.html) post_routing_email_domain_routes(domain_name, body)
 
+
+
 Create a route
 
 
 
 Wraps POST /api/v2/routing/email/domains/{domainName}/routes 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -1961,11 +2203,17 @@ except ApiException as e:
 
 ## [**InboundDomain**](InboundDomain.html) post_routing_email_domains(body)
 
+
+
 Create a domain
 
 
 
 Wraps POST /api/v2/routing/email/domains 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -2006,11 +2254,17 @@ except ApiException as e:
 
 ## [**Language**](Language.html) post_routing_languages(body)
 
+
+
 Create Language
 
 
 
 Wraps POST /api/v2/routing/languages 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -2051,11 +2305,17 @@ except ApiException as e:
 
 ## str** post_routing_queue_users(queue_id, body, delete=delete)
 
+
+
 Bulk add or delete up to 100 queue members
 
 
 
 Wraps POST /api/v2/routing/queues/{queueId}/users 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2100,11 +2360,17 @@ except ApiException as e:
 
 ## [**list[WrapupCode]**](WrapupCode.html) post_routing_queue_wrapupcodes(queue_id, body)
 
+
+
 Add up to 100 wrap-up codes to a queue
 
 
 
 Wraps POST /api/v2/routing/queues/{queueId}/wrapupcodes 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2147,11 +2413,17 @@ except ApiException as e:
 
 ## [**Queue**](Queue.html) post_routing_queues(body)
 
+
+
 Create queue
 
 
 
 Wraps POST /api/v2/routing/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:add
 
 ### Example
 
@@ -2192,11 +2464,17 @@ except ApiException as e:
 
 ## [**RoutingSkill**](RoutingSkill.html) post_routing_skills(body)
 
+
+
 Create Skill
 
 
 
 Wraps POST /api/v2/routing/skills 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -2237,11 +2515,17 @@ except ApiException as e:
 
 ## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_addresses(body)
 
+
+
 Provision an Address for SMS
 
 
 
 Wraps POST /api/v2/routing/sms/addresses 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -2282,11 +2566,17 @@ except ApiException as e:
 
 ## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body)
 
+
+
 Provision a phone number for SMS
 
 
 
 Wraps POST /api/v2/routing/sms/phonenumbers 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -2327,11 +2617,17 @@ except ApiException as e:
 
 ## [**WrapupCode**](WrapupCode.html) post_routing_wrapupcodes(body)
 
+
+
 Create a wrap-up code
 
 
 
 Wraps POST /api/v2/routing/wrapupcodes 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:add
 
 ### Example
 
@@ -2372,11 +2668,17 @@ except ApiException as e:
 
 ## [**UserRoutingLanguage**](UserRoutingLanguage.html) post_user_routinglanguages(user_id, body)
 
+
+
 Add routing language to user
 
 
 
 Wraps POST /api/v2/users/{userId}/routinglanguages 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2419,11 +2721,17 @@ except ApiException as e:
 
 ## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
 
+
+
 Add routing skill to user
 
 
 
 Wraps POST /api/v2/users/{userId}/routingskills 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2466,11 +2774,17 @@ except ApiException as e:
 
 ## [**InboundRoute**](InboundRoute.html) put_routing_email_domain_route(domain_name, route_id, body)
 
+
+
 Update a route
 
 
 
 Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -2515,11 +2829,17 @@ except ApiException as e:
 
 ## [**Recipient**](Recipient.html) put_routing_message_recipient(recipient_id, body)
 
+
+
 Update a recipient
 
 
 
 Wraps PUT /api/v2/routing/message/recipients/{recipientId} 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -2562,11 +2882,17 @@ except ApiException as e:
 
 ## [**Queue**](Queue.html) put_routing_queue(queue_id, body)
 
+
+
 Update a queue
 
 
 
 Wraps PUT /api/v2/routing/queues/{queueId} 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2609,11 +2935,17 @@ except ApiException as e:
 
 ## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body)
 
+
+
 Update a phone number provisioned for SMS.
 
 
 
 Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId} 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:edit
 
 ### Example
 
@@ -2656,11 +2988,17 @@ except ApiException as e:
 
 ## [**Utilization**](Utilization.html) put_routing_utilization(body)
 
+
+
 Update the utilization settings.
 
 
 
 Wraps PUT /api/v2/routing/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
 
 ### Example
 
@@ -2701,11 +3039,17 @@ except ApiException as e:
 
 ## [**WrapupCode**](WrapupCode.html) put_routing_wrapupcode(code_id, body)
 
+
+
 Update wrap-up code
 
 
 
 Wraps PUT /api/v2/routing/wrapupcodes/{codeId} 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:edit
 
 ### Example
 
@@ -2748,11 +3092,17 @@ except ApiException as e:
 
 ## [**UserRoutingSkill**](UserRoutingSkill.html) put_user_routingskill(user_id, skill_id, body)
 
+
+
 Update routing skill proficiency or state.
 
 
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 

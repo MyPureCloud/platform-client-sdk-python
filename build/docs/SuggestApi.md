@@ -18,11 +18,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search(q64, expand=expand, profile=profile)
 
+
+
 Search using the q64 value returned from a previous search.
 
 
 
 Wraps GET /api/v2/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -67,11 +73,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) get_search_suggest(q64, expand=expand, profile=profile)
 
+
+
 Suggest resources using the q64 value returned from a previous suggest query.
 
 
 
 Wraps GET /api/v2/search/suggest 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -116,11 +128,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search(body, profile=profile)
 
+
+
 Search resources.
 
 
 
 Wraps POST /api/v2/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -163,11 +181,17 @@ except ApiException as e:
 
 ## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_search_suggest(body, profile=profile)
 
+
+
 Suggest resources.
 
 
 
 Wraps POST /api/v2/search/suggest 
+
+Requires NO permissions: 
+
+
 
 ### Example
 

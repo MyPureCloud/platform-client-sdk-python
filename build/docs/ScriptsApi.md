@@ -25,11 +25,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**Script**](Script.html) get_script(script_id)
 
+
+
 Get a script
 
 
 
 Wraps GET /api/v2/scripts/{scriptId} 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -70,11 +76,17 @@ except ApiException as e:
 
 ## [**Page**](Page.html) get_script_page(script_id, page_id, script_data_version=script_data_version)
 
+
+
 Get a page
 
 
 
 Wraps GET /api/v2/scripts/{scriptId}/pages/{pageId} 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -119,11 +131,17 @@ except ApiException as e:
 
 ## [**list[Page]**](Page.html) get_script_pages(script_id, script_data_version=script_data_version)
 
+
+
 Get the list of pages
 
 
 
 Wraps GET /api/v2/scripts/{scriptId}/pages 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -166,11 +184,17 @@ except ApiException as e:
 
 ## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version)
 
+
+
 Get the list of scripts
 
 
 
 Wraps GET /api/v2/scripts 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -227,11 +251,17 @@ except ApiException as e:
 
 ## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published(script_id, page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
 
+
+
 Get the published scripts.
 
 
 
 Wraps GET /api/v2/scripts/published 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -286,11 +316,17 @@ except ApiException as e:
 
 ## [**Script**](Script.html) get_scripts_published_script_id(script_id, script_data_version=script_data_version)
 
+
+
 Get the published script.
 
 
 
 Wraps GET /api/v2/scripts/published/{scriptId} 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -333,11 +369,17 @@ except ApiException as e:
 
 ## [**Page**](Page.html) get_scripts_published_script_id_page(script_id, page_id, script_data_version=script_data_version)
 
+
+
 Get the published page.
 
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages/{pageId} 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -382,11 +424,17 @@ except ApiException as e:
 
 ## [**list[Page]**](Page.html) get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
 
+
+
 Get the list of published pages
 
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -429,11 +477,17 @@ except ApiException as e:
 
 ## object** get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
 
+
+
 Get the published variables
 
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/variables 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -482,11 +536,17 @@ except ApiException as e:
 
 ## [**ImportScriptStatusResponse**](ImportScriptStatusResponse.html) get_scripts_upload_status(upload_id, long_poll=long_poll)
 
+
+
 Get the upload status of an imported script
 
 
 
 Wraps GET /api/v2/scripts/uploads/{uploadId}/status 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -529,11 +589,17 @@ except ApiException as e:
 
 ## [**ExportScriptResponse**](ExportScriptResponse.html) post_script_export(script_id, body=body)
 
+
+
 Export a script via download service.
 
 
 
 Wraps POST /api/v2/scripts/{scriptId}/export 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 

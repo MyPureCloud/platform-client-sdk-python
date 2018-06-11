@@ -18,11 +18,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## [**LocationDefinition**](LocationDefinition.html) get_location(location_id)
 
+
+
 Get Location by ID.
 
 
 
 Wraps GET /api/v2/locations/{locationId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -63,11 +69,17 @@ except ApiException as e:
 
 ## [**LocationEntityListing**](LocationEntityListing.html) get_locations(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
+
+
 Get a list of all locations.
 
 
 
 Wraps GET /api/v2/locations 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -112,11 +124,17 @@ except ApiException as e:
 
 ## [**LocationsSearchResponse**](LocationsSearchResponse.html) get_locations_search(q64, expand=expand)
 
+
+
 Search locations using the q64 value returned from a previous search
 
 
 
 Wraps GET /api/v2/locations/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -159,11 +177,17 @@ except ApiException as e:
 
 ## [**LocationsSearchResponse**](LocationsSearchResponse.html) post_locations_search(body)
 
+
+
 Search locations
 
 
 
 Wraps POST /api/v2/locations/search 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
