@@ -31,7 +31,6 @@ Wraps DELETE /api/v2/userrecordings/{recordingId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -79,7 +78,6 @@ Get a user recording.
 Wraps GET /api/v2/userrecordings/{recordingId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -134,7 +132,6 @@ Wraps GET /api/v2/userrecordings/{recordingId}/media
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -185,7 +182,6 @@ Get a list of user recordings.
 Wraps GET /api/v2/userrecordings 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -242,7 +238,6 @@ Wraps GET /api/v2/userrecordings/summary
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -287,7 +282,6 @@ Update a user recording.
 Wraps PUT /api/v2/userrecordings/{recordingId} 
 
 Requires NO permissions: 
-
 
 
 ### Example

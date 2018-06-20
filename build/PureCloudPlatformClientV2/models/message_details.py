@@ -43,7 +43,8 @@ class MessageDetails(object):
             'message_status': 'str',
             'message_segment_count': 'int',
             'message_time': 'datetime',
-            'media': 'list[MessageMedia]'
+            'media': 'list[MessageMedia]',
+            'stickers': 'list[MessageSticker]'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class MessageDetails(object):
             'message_status': 'messageStatus',
             'message_segment_count': 'messageSegmentCount',
             'message_time': 'messageTime',
-            'media': 'media'
+            'media': 'media',
+            'stickers': 'stickers'
         }
 
         self._message_id = None
@@ -61,6 +63,7 @@ class MessageDetails(object):
         self._message_segment_count = None
         self._message_time = None
         self._media = None
+        self._stickers = None
 
     @property
     def message_id(self):
@@ -203,6 +206,29 @@ class MessageDetails(object):
         """
         
         self._media = media
+
+    @property
+    def stickers(self):
+        """
+        Gets the stickers of this MessageDetails.
+        One or more stickers associated with this message, if any
+
+        :return: The stickers of this MessageDetails.
+        :rtype: list[MessageSticker]
+        """
+        return self._stickers
+
+    @stickers.setter
+    def stickers(self, stickers):
+        """
+        Sets the stickers of this MessageDetails.
+        One or more stickers associated with this message, if any
+
+        :param stickers: The stickers of this MessageDetails.
+        :type: list[MessageSticker]
+        """
+        
+        self._stickers = stickers
 
     def to_dict(self):
         """

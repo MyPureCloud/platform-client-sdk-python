@@ -31,7 +31,6 @@ Wraps DELETE /api/v2/fax/documents/{documentId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -79,7 +78,6 @@ Get a document.
 Wraps GET /api/v2/fax/documents/{documentId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -132,7 +130,6 @@ Wraps GET /api/v2/fax/documents/{documentId}/content
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -181,7 +178,6 @@ Get a list of fax documents.
 Wraps GET /api/v2/fax/documents 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -236,7 +232,6 @@ Wraps GET /api/v2/fax/summary
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -281,7 +276,6 @@ Update a fax document.
 Wraps PUT /api/v2/fax/documents/{documentId} 
 
 Requires NO permissions: 
-
 
 
 ### Example

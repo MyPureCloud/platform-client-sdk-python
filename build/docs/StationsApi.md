@@ -30,7 +30,6 @@ Wraps DELETE /api/v2/stations/{stationId}/associateduser
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -78,7 +77,6 @@ Get station.
 Wraps GET /api/v2/stations/{stationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -129,7 +127,6 @@ Get the list of available stations.
 Wraps GET /api/v2/stations 
 
 Requires NO permissions: 
-
 
 
 ### Example

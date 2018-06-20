@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue_users**](RoutingApi.html#get_routing_queue_users) | Get the members of this queue|
 |[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
 |[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
+|[**get_routing_queues_search**](RoutingApi.html#get_routing_queues_search) | Search for queues by name|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
@@ -536,7 +537,8 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -588,7 +590,8 @@ Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -1384,6 +1387,69 @@ except ApiException as e:
 
 [**QueueEntityListing**](QueueEntityListing.html)
 
+<a name="get_routing_queues_search"></a>
+
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_search(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
+
+
+
+Search for queues by name
+
+
+
+Wraps GET /api/v2/routing/queues/search 
+
+Requires ANY permissions: 
+
+* routing:queue:search
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
+name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | Queue ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+
+try:
+    # Search for queues by name
+    api_response = api_instance.get_routing_queues_search(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_queues_search: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
+| **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| Queue ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**QueueEntityListing**](QueueEntityListing.html)
+
 <a name="get_routing_skill"></a>
 
 ## [**RoutingSkill**](RoutingSkill.html) get_routing_skill(skill_id)
@@ -1677,7 +1743,8 @@ Wraps GET /api/v2/routing/utilization
 
 Requires ANY permissions: 
 
-* routing:utilization:manage* routing:utilization:view
+* routing:utilization:manage
+* routing:utilization:view
 
 ### Example
 
@@ -1833,7 +1900,6 @@ Wraps GET /api/v2/users/{userId}/routinglanguages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1888,7 +1954,6 @@ List routing skills for user
 Wraps GET /api/v2/users/{userId}/routingskills 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2054,7 +2119,8 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2678,7 +2744,8 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2731,7 +2798,8 @@ Wraps POST /api/v2/users/{userId}/routingskills
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -3102,7 +3170,8 @@ Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 

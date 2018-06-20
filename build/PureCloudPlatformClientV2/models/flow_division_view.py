@@ -40,6 +40,7 @@ class FlowDivisionView(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'type': 'str',
             'self_uri': 'str'
         }
@@ -47,12 +48,14 @@ class FlowDivisionView(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'type': 'type',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._type = None
         self._self_uri = None
 
@@ -101,6 +104,29 @@ class FlowDivisionView(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this FlowDivisionView.
+        The division to which this entity belongs.
+
+        :return: The division of this FlowDivisionView.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this FlowDivisionView.
+        The division to which this entity belongs.
+
+        :param division: The division of this FlowDivisionView.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def type(self):

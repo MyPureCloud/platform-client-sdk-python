@@ -27,7 +27,6 @@ Wraps DELETE /api/v2/tokens/me
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -71,7 +70,6 @@ Fetch information about the current token
 Wraps GET /api/v2/tokens/me 
 
 Requires NO permissions: 
-
 
 
 ### Example

@@ -386,6 +386,7 @@ from .models.digit_length import DigitLength
 from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disconnect_reason import DisconnectReason
+from .models.division import Division
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate
 from .models.dnc_list_entity_listing import DncListEntityListing
@@ -721,9 +722,11 @@ from .models.message_data import MessageData
 from .models.message_details import MessageDetails
 from .models.message_info import MessageInfo
 from .models.message_media import MessageMedia
+from .models.message_media_data import MessageMediaData
 from .models.message_media_participant import MessageMediaParticipant
 from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
+from .models.message_sticker import MessageSticker
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment

@@ -49,6 +49,7 @@ class MessageData(object):
             'text_body': 'str',
             'status': 'str',
             'media': 'list[MessageMedia]',
+            'stickers': 'list[MessageSticker]',
             'created_by': 'User',
             'self_uri': 'str'
         }
@@ -65,6 +66,7 @@ class MessageData(object):
             'text_body': 'textBody',
             'status': 'status',
             'media': 'media',
+            'stickers': 'stickers',
             'created_by': 'createdBy',
             'self_uri': 'selfUri'
         }
@@ -80,6 +82,7 @@ class MessageData(object):
         self._text_body = None
         self._status = None
         self._media = None
+        self._stickers = None
         self._created_by = None
         self._self_uri = None
 
@@ -347,6 +350,29 @@ class MessageData(object):
         """
         
         self._media = media
+
+    @property
+    def stickers(self):
+        """
+        Gets the stickers of this MessageData.
+        The sticker details associated to a message.
+
+        :return: The stickers of this MessageData.
+        :rtype: list[MessageSticker]
+        """
+        return self._stickers
+
+    @stickers.setter
+    def stickers(self, stickers):
+        """
+        Sets the stickers of this MessageData.
+        The sticker details associated to a message.
+
+        :param stickers: The stickers of this MessageData.
+        :type: list[MessageSticker]
+        """
+        
+        self._stickers = stickers
 
     @property
     def created_by(self):

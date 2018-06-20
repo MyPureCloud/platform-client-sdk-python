@@ -945,7 +945,8 @@ Wraps PUT /api/v2/identityproviders/adfs
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -996,7 +997,8 @@ Wraps PUT /api/v2/identityproviders/cic
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1047,7 +1049,8 @@ Wraps PUT /api/v2/identityproviders/gsuite
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1098,7 +1101,8 @@ Wraps PUT /api/v2/identityproviders/identitynow
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1149,7 +1153,8 @@ Wraps PUT /api/v2/identityproviders/okta
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1200,7 +1205,8 @@ Wraps PUT /api/v2/identityproviders/onelogin
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1251,7 +1257,8 @@ Wraps PUT /api/v2/identityproviders/ping
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1302,7 +1309,8 @@ Wraps PUT /api/v2/identityproviders/purecloud
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 
@@ -1353,7 +1361,8 @@ Wraps PUT /api/v2/identityproviders/salesforce
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
 ### Example
 

@@ -4507,7 +4507,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_emergencygroups(self, **kwargs):
+    def post_architect_emergencygroups(self, body, **kwargs):
         """
         Creates a new emergency group
         
@@ -4518,11 +4518,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_emergencygroups(callback=callback_function)
+        >>> thread = api.post_architect_emergencygroups(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param EmergencyGroup body: 
+        :param EmergencyGroup body:  (required)
         :return: EmergencyGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4541,6 +4541,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_emergencygroups`")
 
 
         resource_path = '/api/v2/architect/emergencygroups'.replace('{format}', 'json')
@@ -4582,7 +4585,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_ivrs(self, **kwargs):
+    def post_architect_ivrs(self, body, **kwargs):
         """
         Create IVR config.
         
@@ -4593,11 +4596,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_ivrs(callback=callback_function)
+        >>> thread = api.post_architect_ivrs(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param IVR body: 
+        :param IVR body:  (required)
         :return: IVR
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4616,6 +4619,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_ivrs`")
 
 
         resource_path = '/api/v2/architect/ivrs'.replace('{format}', 'json')
@@ -4735,7 +4741,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_prompt_resources(self, prompt_id, **kwargs):
+    def post_architect_prompt_resources(self, prompt_id, body, **kwargs):
         """
         Create a new user prompt resource
         
@@ -4746,12 +4752,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_prompt_resources(prompt_id, callback=callback_function)
+        >>> thread = api.post_architect_prompt_resources(prompt_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
-        :param PromptAssetCreate body: 
+        :param PromptAssetCreate body:  (required)
         :return: PromptAsset
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4773,6 +4779,9 @@ class ArchitectApi(object):
         # verify the required parameter 'prompt_id' is set
         if ('prompt_id' not in params) or (params['prompt_id'] is None):
             raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_prompt_resources`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_prompt_resources`")
 
 
         resource_path = '/api/v2/architect/prompts/{promptId}/resources'.replace('{format}', 'json')
@@ -4816,7 +4825,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_prompts(self, **kwargs):
+    def post_architect_prompts(self, body, **kwargs):
         """
         Create a new user prompt
         
@@ -4827,11 +4836,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_prompts(callback=callback_function)
+        >>> thread = api.post_architect_prompts(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Prompt body: 
+        :param Prompt body:  (required)
         :return: Prompt
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4850,6 +4859,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_prompts`")
 
 
         resource_path = '/api/v2/architect/prompts'.replace('{format}', 'json')
@@ -4891,7 +4903,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_schedulegroups(self, **kwargs):
+    def post_architect_schedulegroups(self, body, **kwargs):
         """
         Creates a new schedule group
         
@@ -4902,11 +4914,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_schedulegroups(callback=callback_function)
+        >>> thread = api.post_architect_schedulegroups(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ScheduleGroup body: 
+        :param ScheduleGroup body:  (required)
         :return: ScheduleGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4925,6 +4937,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_schedulegroups`")
 
 
         resource_path = '/api/v2/architect/schedulegroups'.replace('{format}', 'json')
@@ -4966,7 +4981,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_schedules(self, **kwargs):
+    def post_architect_schedules(self, body, **kwargs):
         """
         Create a new schedule.
         
@@ -4977,11 +4992,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_schedules(callback=callback_function)
+        >>> thread = api.post_architect_schedules(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Schedule body: 
+        :param Schedule body:  (required)
         :return: Schedule
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5000,6 +5015,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_schedules`")
 
 
         resource_path = '/api/v2/architect/schedules'.replace('{format}', 'json')
@@ -5119,7 +5137,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_architect_systemprompt_resources(self, prompt_id, **kwargs):
+    def post_architect_systemprompt_resources(self, prompt_id, body, **kwargs):
         """
         Create system prompt resource override.
         
@@ -5130,12 +5148,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_architect_systemprompt_resources(prompt_id, callback=callback_function)
+        >>> thread = api.post_architect_systemprompt_resources(prompt_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
-        :param SystemPromptAsset body: 
+        :param SystemPromptAsset body:  (required)
         :return: SystemPromptAsset
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5157,6 +5175,9 @@ class ArchitectApi(object):
         # verify the required parameter 'prompt_id' is set
         if ('prompt_id' not in params) or (params['prompt_id'] is None):
             raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_systemprompt_resources`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_architect_systemprompt_resources`")
 
 
         resource_path = '/api/v2/architect/systemprompts/{promptId}/resources'.replace('{format}', 'json')
@@ -5200,7 +5221,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flow_versions(self, flow_id, **kwargs):
+    def post_flow_versions(self, flow_id, body, **kwargs):
         """
         Create flow version
         
@@ -5211,12 +5232,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_flow_versions(flow_id, callback=callback_function)
+        >>> thread = api.post_flow_versions(flow_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
-        :param object body: 
+        :param object body:  (required)
         :return: FlowVersion
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5238,6 +5259,9 @@ class ArchitectApi(object):
         # verify the required parameter 'flow_id' is set
         if ('flow_id' not in params) or (params['flow_id'] is None):
             raise ValueError("Missing the required parameter `flow_id` when calling `post_flow_versions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flow_versions`")
 
 
         resource_path = '/api/v2/flows/{flowId}/versions'.replace('{format}', 'json')
@@ -5281,7 +5305,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_flows(self, **kwargs):
+    def post_flows(self, body, **kwargs):
         """
         Create flow
         
@@ -5292,11 +5316,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_flows(callback=callback_function)
+        >>> thread = api.post_flows(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Flow body: 
+        :param Flow body:  (required)
         :return: Flow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5315,6 +5339,9 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows`")
 
 
         resource_path = '/api/v2/flows'.replace('{format}', 'json')
@@ -5989,7 +6016,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_emergencygroup(self, emergency_group_id, **kwargs):
+    def put_architect_emergencygroup(self, emergency_group_id, body, **kwargs):
         """
         Updates a emergency group by ID
         
@@ -6000,12 +6027,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_emergencygroup(emergency_group_id, callback=callback_function)
+        >>> thread = api.put_architect_emergencygroup(emergency_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str emergency_group_id: Emergency group ID (required)
-        :param EmergencyGroup body: 
+        :param EmergencyGroup body:  (required)
         :return: EmergencyGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6027,6 +6054,9 @@ class ArchitectApi(object):
         # verify the required parameter 'emergency_group_id' is set
         if ('emergency_group_id' not in params) or (params['emergency_group_id'] is None):
             raise ValueError("Missing the required parameter `emergency_group_id` when calling `put_architect_emergencygroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_emergencygroup`")
 
 
         resource_path = '/api/v2/architect/emergencygroups/{emergencyGroupId}'.replace('{format}', 'json')
@@ -6070,7 +6100,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_ivr(self, ivr_id, **kwargs):
+    def put_architect_ivr(self, ivr_id, body, **kwargs):
         """
         Update an IVR Config.
         
@@ -6081,12 +6111,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_ivr(ivr_id, callback=callback_function)
+        >>> thread = api.put_architect_ivr(ivr_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str ivr_id: IVR id (required)
-        :param IVR body: 
+        :param IVR body:  (required)
         :return: IVR
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6108,6 +6138,9 @@ class ArchitectApi(object):
         # verify the required parameter 'ivr_id' is set
         if ('ivr_id' not in params) or (params['ivr_id'] is None):
             raise ValueError("Missing the required parameter `ivr_id` when calling `put_architect_ivr`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_ivr`")
 
 
         resource_path = '/api/v2/architect/ivrs/{ivrId}'.replace('{format}', 'json')
@@ -6151,7 +6184,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_prompt(self, prompt_id, **kwargs):
+    def put_architect_prompt(self, prompt_id, body, **kwargs):
         """
         Update specified user prompt
         
@@ -6162,12 +6195,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_prompt(prompt_id, callback=callback_function)
+        >>> thread = api.put_architect_prompt(prompt_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
-        :param Prompt body: 
+        :param Prompt body:  (required)
         :return: Prompt
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6189,6 +6222,9 @@ class ArchitectApi(object):
         # verify the required parameter 'prompt_id' is set
         if ('prompt_id' not in params) or (params['prompt_id'] is None):
             raise ValueError("Missing the required parameter `prompt_id` when calling `put_architect_prompt`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_prompt`")
 
 
         resource_path = '/api/v2/architect/prompts/{promptId}'.replace('{format}', 'json')
@@ -6232,7 +6268,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_prompt_resource(self, prompt_id, language_code, **kwargs):
+    def put_architect_prompt_resource(self, prompt_id, language_code, body, **kwargs):
         """
         Update specified user prompt resource
         
@@ -6243,13 +6279,13 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_prompt_resource(prompt_id, language_code, callback=callback_function)
+        >>> thread = api.put_architect_prompt_resource(prompt_id, language_code, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
         :param str language_code: Language (required)
-        :param PromptAsset body: 
+        :param PromptAsset body:  (required)
         :return: PromptAsset
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6274,6 +6310,9 @@ class ArchitectApi(object):
         # verify the required parameter 'language_code' is set
         if ('language_code' not in params) or (params['language_code'] is None):
             raise ValueError("Missing the required parameter `language_code` when calling `put_architect_prompt_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_prompt_resource`")
 
 
         resource_path = '/api/v2/architect/prompts/{promptId}/resources/{languageCode}'.replace('{format}', 'json')
@@ -6319,7 +6358,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_schedule(self, schedule_id, **kwargs):
+    def put_architect_schedule(self, schedule_id, body, **kwargs):
         """
         Update schedule by ID
         
@@ -6330,12 +6369,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_schedule(schedule_id, callback=callback_function)
+        >>> thread = api.put_architect_schedule(schedule_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schedule_id: Schedule ID (required)
-        :param Schedule body: 
+        :param Schedule body:  (required)
         :return: Schedule
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6357,6 +6396,9 @@ class ArchitectApi(object):
         # verify the required parameter 'schedule_id' is set
         if ('schedule_id' not in params) or (params['schedule_id'] is None):
             raise ValueError("Missing the required parameter `schedule_id` when calling `put_architect_schedule`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_schedule`")
 
 
         resource_path = '/api/v2/architect/schedules/{scheduleId}'.replace('{format}', 'json')
@@ -6400,7 +6442,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_schedulegroup(self, schedule_group_id, **kwargs):
+    def put_architect_schedulegroup(self, schedule_group_id, body, **kwargs):
         """
         Updates a schedule group by ID
         
@@ -6411,12 +6453,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_schedulegroup(schedule_group_id, callback=callback_function)
+        >>> thread = api.put_architect_schedulegroup(schedule_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schedule_group_id: Schedule group ID (required)
-        :param ScheduleGroup body: 
+        :param ScheduleGroup body:  (required)
         :return: ScheduleGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6438,6 +6480,9 @@ class ArchitectApi(object):
         # verify the required parameter 'schedule_group_id' is set
         if ('schedule_group_id' not in params) or (params['schedule_group_id'] is None):
             raise ValueError("Missing the required parameter `schedule_group_id` when calling `put_architect_schedulegroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_schedulegroup`")
 
 
         resource_path = '/api/v2/architect/schedulegroups/{scheduleGroupId}'.replace('{format}', 'json')
@@ -6481,7 +6526,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_systemprompt_resource(self, prompt_id, language_code, **kwargs):
+    def put_architect_systemprompt_resource(self, prompt_id, language_code, body, **kwargs):
         """
         Updates a system prompt resource override.
         
@@ -6492,13 +6537,13 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_architect_systemprompt_resource(prompt_id, language_code, callback=callback_function)
+        >>> thread = api.put_architect_systemprompt_resource(prompt_id, language_code, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
         :param str language_code: Language (required)
-        :param SystemPromptAsset body: 
+        :param SystemPromptAsset body:  (required)
         :return: SystemPromptAsset
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6523,6 +6568,9 @@ class ArchitectApi(object):
         # verify the required parameter 'language_code' is set
         if ('language_code' not in params) or (params['language_code'] is None):
             raise ValueError("Missing the required parameter `language_code` when calling `put_architect_systemprompt_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_systemprompt_resource`")
 
 
         resource_path = '/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}'.replace('{format}', 'json')
@@ -6568,7 +6616,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_flow(self, flow_id, **kwargs):
+    def put_flow(self, flow_id, body, **kwargs):
         """
         Update flow
         
@@ -6579,12 +6627,12 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_flow(flow_id, callback=callback_function)
+        >>> thread = api.put_flow(flow_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
-        :param Flow body: 
+        :param Flow body:  (required)
         :return: Flow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6606,6 +6654,9 @@ class ArchitectApi(object):
         # verify the required parameter 'flow_id' is set
         if ('flow_id' not in params) or (params['flow_id'] is None):
             raise ValueError("Missing the required parameter `flow_id` when calling `put_flow`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_flow`")
 
 
         resource_path = '/api/v2/flows/{flowId}'.replace('{format}', 'json')

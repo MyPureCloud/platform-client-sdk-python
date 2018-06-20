@@ -63,7 +63,6 @@ Wraps DELETE /api/v2/contentmanagement/documents/{documentId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -115,7 +114,6 @@ Wraps DELETE /api/v2/contentmanagement/shares/{shareId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -165,7 +163,6 @@ Wraps DELETE /api/v2/contentmanagement/status/{statusId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -213,7 +210,6 @@ Delete a workspace
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -267,7 +263,6 @@ Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberI
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -317,7 +312,6 @@ Delete a tag from a workspace. Will remove this tag from all documents.
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -371,7 +365,6 @@ Wraps GET /api/v2/contentmanagement/documents/{documentId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -422,7 +415,6 @@ Get a list of audits for a document.
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -487,7 +479,6 @@ Wraps GET /api/v2/contentmanagement/documents/{documentId}/content
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -540,7 +531,6 @@ Get a list of documents.
 Wraps GET /api/v2/contentmanagement/documents 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -605,7 +595,6 @@ Wraps GET /api/v2/contentmanagement/query
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -666,7 +655,6 @@ Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -717,7 +705,6 @@ Wraps GET /api/v2/contentmanagement/securityprofiles
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -762,7 +749,6 @@ Retrieve details about an existing share.
 Wraps GET /api/v2/contentmanagement/shares/{shareId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -815,7 +801,6 @@ This method requires the download sharing URI obtained in the get document respo
 Wraps GET /api/v2/contentmanagement/shared/{sharedId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -876,7 +861,6 @@ Wraps GET /api/v2/contentmanagement/shares
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -933,7 +917,6 @@ Wraps GET /api/v2/contentmanagement/status
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -986,7 +969,6 @@ Wraps GET /api/v2/contentmanagement/status/{statusId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1037,7 +1019,6 @@ Wraps GET /api/v2/contentmanagement/usage
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1082,7 +1063,6 @@ Get a workspace.
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1135,7 +1115,6 @@ Get a list of documents.
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1198,7 +1177,6 @@ Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1251,7 +1229,6 @@ Get a list workspace members
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1310,7 +1287,6 @@ Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1363,7 +1339,6 @@ Get a list of workspace tags
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1424,7 +1399,6 @@ Wraps GET /api/v2/contentmanagement/workspaces
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1481,7 +1455,6 @@ Wraps POST /api/v2/contentmanagement/auditquery
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1530,7 +1503,6 @@ Update a document.
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1589,7 +1561,6 @@ Wraps POST /api/v2/contentmanagement/documents/{documentId}/content
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1642,7 +1613,6 @@ Add a document.
 Wraps POST /api/v2/contentmanagement/documents 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1701,7 +1671,6 @@ Wraps POST /api/v2/contentmanagement/query
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1754,7 +1723,6 @@ Wraps POST /api/v2/contentmanagement/shares
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1803,7 +1771,6 @@ Create a workspace tag
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1856,7 +1823,6 @@ Perform a prefix query on tags in the workspace
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1913,7 +1879,6 @@ Wraps POST /api/v2/contentmanagement/workspaces
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1962,7 +1927,6 @@ Update a workspace
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2017,7 +1981,6 @@ Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2070,7 +2033,6 @@ Update a workspace tag. Will update all documents with the new tag value.
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
 Requires NO permissions: 
-
 
 
 ### Example

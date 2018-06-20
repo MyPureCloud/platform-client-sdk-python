@@ -40,7 +40,7 @@ class Queue(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'UriReference',
+            'division': 'Division',
             'description': 'str',
             'version': 'int',
             'date_created': 'datetime',
@@ -172,7 +172,7 @@ class Queue(object):
         The division to which this entity belongs.
 
         :return: The division of this Queue.
-        :rtype: UriReference
+        :rtype: Division
         """
         return self._division
 
@@ -183,7 +183,7 @@ class Queue(object):
         The division to which this entity belongs.
 
         :param division: The division of this Queue.
-        :type: UriReference
+        :type: Division
         """
         
         self._division = division

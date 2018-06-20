@@ -32,7 +32,6 @@ Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -80,7 +79,6 @@ Get available notification topics.
 Wraps GET /api/v2/notifications/availabletopics 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -133,7 +131,6 @@ Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -184,7 +181,6 @@ Wraps GET /api/v2/notifications/channels
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -233,7 +229,6 @@ Add a list of subscriptions to the existing list of subscriptions
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -288,7 +283,6 @@ Wraps POST /api/v2/notifications/channels
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -333,7 +327,6 @@ Replace the current list of subscriptions with a new list.
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions 
 
 Requires NO permissions: 
-
 
 
 ### Example

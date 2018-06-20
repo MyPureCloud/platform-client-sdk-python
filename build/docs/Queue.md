@@ -9,7 +9,7 @@ title: Queue
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
-| **division** | [**UriReference**](UriReference.html) | The division to which this entity belongs. | [optional] |
+| **division** | [**Division**](Division.html) | The division to which this entity belongs. | [optional] |
 | **description** | **str** | The queue description. | [optional] |
 | **version** | **int** | The current version of the queue. | [optional] |
 | **date_created** | **datetime** | The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |

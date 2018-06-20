@@ -83,7 +83,6 @@ Wraps GET /api/v2/presencedefinitions/{presenceId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -134,7 +133,6 @@ Get an Organization's list of Presence Definitions
 Wraps GET /api/v2/presencedefinitions 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -193,7 +191,6 @@ Wraps GET /api/v2/systempresences
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -238,7 +235,6 @@ Get a user's Presence
 Wraps GET /api/v2/users/{userId}/presences/{sourceId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -291,7 +287,6 @@ The presence object can be patched one of three ways. Option 1: Set the 'primary
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId} 
 
 Requires NO permissions: 
-
 
 
 ### Example

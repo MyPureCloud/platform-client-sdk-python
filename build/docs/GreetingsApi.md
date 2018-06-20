@@ -41,7 +41,6 @@ Wraps DELETE /api/v2/greetings/{greetingId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -89,7 +88,6 @@ Get a Greeting with the given GreetingId
 Wraps GET /api/v2/greetings/{greetingId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -140,7 +138,6 @@ Get media playback URI for this greeting
 Wraps GET /api/v2/greetings/{greetingId}/media 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -195,7 +192,6 @@ Wraps GET /api/v2/greetings
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -248,7 +244,6 @@ Wraps GET /api/v2/greetings/defaults
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -293,7 +288,6 @@ Get a list of the Group's Greetings
 Wraps GET /api/v2/groups/{groupId}/greetings 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -350,7 +344,6 @@ Wraps GET /api/v2/groups/{groupId}/greetings/defaults
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -399,7 +392,6 @@ Get a list of the User's Greetings
 Wraps GET /api/v2/users/{userId}/greetings 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -456,7 +448,6 @@ Wraps GET /api/v2/users/{userId}/greetings/defaults
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -507,7 +498,6 @@ Wraps POST /api/v2/greetings
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -556,7 +546,6 @@ Creates a Greeting for a Group
 Wraps POST /api/v2/groups/{groupId}/greetings 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -611,7 +600,6 @@ Wraps POST /api/v2/users/{userId}/greetings
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -662,7 +650,6 @@ Updates the Greeting with the given GreetingId
 Wraps PUT /api/v2/greetings/{greetingId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -717,7 +704,6 @@ Wraps PUT /api/v2/greetings/defaults
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -766,7 +752,6 @@ Updates the DefaultGreetingList of the specified Group
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -819,7 +804,6 @@ Updates the DefaultGreetingList of the specified User
 Wraps PUT /api/v2/users/{userId}/greetings/defaults 
 
 Requires NO permissions: 
-
 
 
 ### Example

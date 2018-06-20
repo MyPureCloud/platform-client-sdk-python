@@ -44,6 +44,7 @@ class OutboundSettings(object):
             'date_modified': 'datetime',
             'version': 'int',
             'max_calls_per_agent': 'int',
+            'max_configurable_calls_per_agent': 'int',
             'max_line_utilization': 'float',
             'abandon_seconds': 'float',
             'compliance_abandon_rate_denominator': 'str',
@@ -57,6 +58,7 @@ class OutboundSettings(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'max_calls_per_agent': 'maxCallsPerAgent',
+            'max_configurable_calls_per_agent': 'maxConfigurableCallsPerAgent',
             'max_line_utilization': 'maxLineUtilization',
             'abandon_seconds': 'abandonSeconds',
             'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
@@ -69,6 +71,7 @@ class OutboundSettings(object):
         self._date_modified = None
         self._version = None
         self._max_calls_per_agent = None
+        self._max_configurable_calls_per_agent = None
         self._max_line_utilization = None
         self._abandon_seconds = None
         self._compliance_abandon_rate_denominator = None
@@ -211,6 +214,29 @@ class OutboundSettings(object):
         """
         
         self._max_calls_per_agent = max_calls_per_agent
+
+    @property
+    def max_configurable_calls_per_agent(self):
+        """
+        Gets the max_configurable_calls_per_agent of this OutboundSettings.
+        The maximum number of calls that can be configured to be placed per agent on any campaign
+
+        :return: The max_configurable_calls_per_agent of this OutboundSettings.
+        :rtype: int
+        """
+        return self._max_configurable_calls_per_agent
+
+    @max_configurable_calls_per_agent.setter
+    def max_configurable_calls_per_agent(self, max_configurable_calls_per_agent):
+        """
+        Sets the max_configurable_calls_per_agent of this OutboundSettings.
+        The maximum number of calls that can be configured to be placed per agent on any campaign
+
+        :param max_configurable_calls_per_agent: The max_configurable_calls_per_agent of this OutboundSettings.
+        :type: int
+        """
+        
+        self._max_configurable_calls_per_agent = max_configurable_calls_per_agent
 
     @property
     def max_line_utilization(self):

@@ -44,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
 |[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
+|[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
 |[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get message|
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
@@ -100,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
 |[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
+|[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
@@ -119,7 +121,6 @@ Delete a code used to add a communication to this participant
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -175,7 +176,6 @@ Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -225,7 +225,6 @@ Delete attachment from draft
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -381,7 +380,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/se
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -436,7 +434,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/se
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -487,7 +484,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -544,7 +540,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wr
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -597,7 +592,6 @@ Wraps GET /api/v2/conversations
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -648,7 +642,6 @@ Wraps GET /api/v2/conversations/calls/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -697,7 +690,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -754,7 +746,6 @@ Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participant
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -807,7 +798,6 @@ Wraps GET /api/v2/conversations/callbacks/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -856,7 +846,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -913,7 +902,6 @@ Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{partici
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -966,7 +954,6 @@ Wraps GET /api/v2/conversations/callbacks
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1013,7 +1000,6 @@ Wraps GET /api/v2/conversations/calls
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1058,7 +1044,6 @@ Get call history
 Wraps GET /api/v2/conversations/calls/history 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1117,7 +1102,6 @@ Wraps GET /api/v2/conversations/calls/maximumconferenceparties
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1162,7 +1146,6 @@ Get chat conversation
 Wraps GET /api/v2/conversations/chats/{conversationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1213,7 +1196,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1270,7 +1252,6 @@ Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participant
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1323,7 +1304,6 @@ Wraps GET /api/v2/conversations/chats
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1368,7 +1348,6 @@ Get cobrowse conversation
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1419,7 +1398,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1476,7 +1454,6 @@ Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1529,7 +1506,6 @@ Wraps GET /api/v2/conversations/cobrowsesessions
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1574,7 +1550,6 @@ Get email conversation
 Wraps GET /api/v2/conversations/emails/{conversationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1625,7 +1600,6 @@ Get conversation message
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1680,7 +1654,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1731,7 +1704,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1780,7 +1752,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1837,7 +1808,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1890,7 +1860,6 @@ Wraps GET /api/v2/conversations/emails
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1937,7 +1906,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1972,6 +1940,61 @@ except ApiException as e:
 ### Return type
 
 [**MessageConversation**](MessageConversation.html)
+
+<a name="get_conversations_message_communication_messages_media_media_id"></a>
+
+## [**MessageMediaData**](MessageMediaData.html) get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
+
+
+
+Get media
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} 
+
+Requires ANY permissions: 
+
+* conversation:message:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+media_id = 'media_id_example' # str | mediaId
+
+try:
+    # Get media
+    api_response = api_instance.get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_message_communication_messages_media_media_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **media_id** | **str**| mediaId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageMediaData**](MessageMediaData.html)
 
 <a name="get_conversations_message_message"></a>
 
@@ -2041,7 +2064,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2096,7 +2118,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2149,7 +2170,6 @@ Wraps GET /api/v2/conversations/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2194,7 +2214,6 @@ Update conversation participant.
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2248,7 +2267,6 @@ Update the attributes on a conversation participant.
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2357,7 +2375,6 @@ Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2411,7 +2428,6 @@ Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2463,7 +2479,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2520,7 +2535,6 @@ Change who can speak
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2630,7 +2644,6 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2684,7 +2697,6 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2736,7 +2748,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2848,7 +2859,6 @@ Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2902,7 +2912,6 @@ Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -2954,7 +2963,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3066,7 +3074,6 @@ Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3120,7 +3127,6 @@ Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3172,7 +3178,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3284,7 +3289,6 @@ Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3338,7 +3342,6 @@ Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3390,7 +3393,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3502,7 +3504,6 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{partic
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3556,7 +3557,6 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{partic
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3608,7 +3608,6 @@ Update conversation participant's communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3927,7 +3926,6 @@ Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/d
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -3981,7 +3979,6 @@ Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/r
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4033,7 +4030,6 @@ Create secure IVR session. Only a participant in the conversation can invoke a s
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4090,7 +4086,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4141,7 +4136,6 @@ Initiate and update consult transfer
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4250,7 +4244,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4304,7 +4297,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4355,7 +4347,6 @@ Replace this participant with the specified user and/or address
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4513,7 +4504,6 @@ Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4618,7 +4608,6 @@ Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4670,7 +4659,6 @@ Send an email to an external conversation. An external conversation is one where
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4725,7 +4713,6 @@ Wraps POST /api/v2/conversations/emails/{conversationId}/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4776,7 +4763,6 @@ Replace this participant with the specified user and/or address
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4883,7 +4869,6 @@ Wraps POST /api/v2/conversations/faxes
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4974,6 +4959,59 @@ except ApiException as e:
 
 [**MessageData**](MessageData.html)
 
+<a name="post_conversations_message_communication_messages_media"></a>
+
+## [**MessageMediaData**](MessageMediaData.html) post_conversations_message_communication_messages_media(conversation_id, communication_id)
+
+
+
+Create media
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+
+try:
+    # Create media
+    api_response = api_instance.post_conversations_message_communication_messages_media(conversation_id, communication_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_message_communication_messages_media: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageMediaData**](MessageMediaData.html)
+
 <a name="post_conversations_message_messages_bulk"></a>
 
 ## [**TextMessageListing**](TextMessageListing.html) post_conversations_message_messages_bulk(conversation_id, body=body)
@@ -5042,7 +5080,6 @@ Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{partici
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -5094,7 +5131,6 @@ Set uuiData to be sent on future commands.
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -5151,7 +5187,6 @@ Update conversation draft reply
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft 
 
 Requires NO permissions: 
-
 
 
 ### Example

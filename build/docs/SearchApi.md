@@ -39,7 +39,6 @@ Wraps GET /api/v2/documentation/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -88,7 +87,6 @@ Search groups using the q64 value returned from a previous search
 Wraps GET /api/v2/groups/search 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -143,7 +141,6 @@ Wraps GET /api/v2/locations/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -194,7 +191,6 @@ Search using the q64 value returned from a previous search.
 Wraps GET /api/v2/search 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -251,7 +247,6 @@ Wraps GET /api/v2/search/suggest
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -306,7 +301,6 @@ Wraps GET /api/v2/users/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -357,7 +351,6 @@ Search voicemails using the q64 value returned from a previous search
 Wraps GET /api/v2/voicemail/search 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -412,7 +405,6 @@ Wraps POST /api/v2/documentation/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -461,7 +453,6 @@ Search groups
 Wraps POST /api/v2/groups/search 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -514,7 +505,6 @@ Wraps POST /api/v2/locations/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -563,7 +553,6 @@ Search resources.
 Wraps POST /api/v2/search 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -618,7 +607,6 @@ Wraps POST /api/v2/search/suggest
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -671,7 +659,6 @@ Wraps POST /api/v2/users/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -720,7 +707,6 @@ Search voicemails
 Wraps POST /api/v2/voicemail/search 
 
 Requires NO permissions: 
-
 
 
 ### Example

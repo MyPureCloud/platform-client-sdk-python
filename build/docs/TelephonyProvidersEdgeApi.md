@@ -254,7 +254,6 @@ Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -856,7 +855,6 @@ Wraps GET /api/v2/configuration/schemas/edges/vnext
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -907,7 +905,6 @@ List schemas of a specific category (Deprecated)
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -962,7 +959,6 @@ List schemas of a specific category (Deprecated)
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1021,7 +1017,6 @@ Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1074,7 +1069,6 @@ Get metadata for a schema (Deprecated)
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1665,7 +1659,6 @@ Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1714,7 +1707,6 @@ Gets all the available software versions for this edge.
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1891,7 +1883,6 @@ Get the list of available languages.
 Wraps GET /api/v2/telephony/providers/edges/availablelanguages 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2417,7 +2408,6 @@ The report will not have consistent data about the edge version(s) until all edg
 Wraps GET /api/v2/telephony/providers/edges/edgeversionreport 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3720,7 +3710,8 @@ Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}
 
 Requires ANY permissions: 
 
-* telephony:plugin:all* telephony:sites:view
+* telephony:plugin:all
+* telephony:sites:view
 
 ### Example
 
@@ -4092,7 +4083,6 @@ Wraps GET /api/v2/telephony/providers/edges/sites
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -4153,7 +4143,6 @@ Get a list of Edge-compatible time zones
 Wraps GET /api/v2/telephony/providers/edges/timezones 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4649,7 +4638,8 @@ Wraps GET /api/v2/telephony/providers/edges/trunkswithrecording
 
 Requires ANY permissions: 
 
-* recording:retentionPolicy:view* telephony:plugin:all
+* recording:retentionPolicy:view
+* telephony:plugin:all
 
 ### Example
 
@@ -4914,7 +4904,6 @@ Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -5120,7 +5109,6 @@ Validates a street address
 Wraps POST /api/v2/telephony/providers/edges/addressvalidation 
 
 Requires NO permissions: 
-
 
 
 ### Example

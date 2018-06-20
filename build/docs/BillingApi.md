@@ -25,7 +25,10 @@ Wraps GET /api/v2/billing/reports/billableusage
 
 Requires ANY permissions: 
 
-* billing:subscription:read* billing:subscription:view* billing:subscription:create* billing:subscription:add
+* billing:subscription:read
+* billing:subscription:view
+* billing:subscription:create
+* billing:subscription:add
 
 ### Example
 

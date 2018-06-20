@@ -87,7 +87,21 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
 Requires ANY permissions: 
 
-* wfm:activityCode:administer* wfm:agent:administer* wfm:agentSchedule:view* wfm:historicalAdherence:view* wfm:intraday:view* wfm:managementUnit:administer* wfm:publishedSchedule:view* wfm:realtimeAdherence:view* wfm:schedule:administer* wfm:schedule:generate* wfm:serviceGoalGroup:administer* wfm:shortTermForecast:administer* wfm:agentTimeOffRequest:submit* wfm:timeOffRequest:administer* wfm:workPlan:administer
+* wfm:activityCode:administer
+* wfm:agent:administer
+* wfm:agentSchedule:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:administer
+* wfm:publishedSchedule:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:administer
+* wfm:schedule:generate
+* wfm:serviceGoalGroup:administer
+* wfm:shortTermForecast:administer
+* wfm:agentTimeOffRequest:submit
+* wfm:timeOffRequest:administer
+* wfm:workPlan:administer
 
 ### Example
 
@@ -302,6 +316,9 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users
 Requires ANY permissions: 
 
 * wfm:agent:administer
+* wfm:timeOffRequest:administer
+* wfm:realtimeAdherence:view
+* wfm:historicalAdherence:view
 
 ### Example
 
@@ -340,7 +357,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunits"></a>
 
-## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand)
+## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand, feature=feature, division_id=division_id)
 
 
 
@@ -351,7 +368,6 @@ Get management units
 Wraps GET /api/v2/workforcemanagement/managementunits 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -370,10 +386,12 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 page_size = 56 # int |  (optional)
 page_number = 56 # int |  (optional)
 expand = 'expand_example' # str |  (optional)
+feature = 'feature_example' # str |  (optional)
+division_id = 'division_id_example' # str |  (optional)
 
 try:
     # Get management units
-    api_response = api_instance.get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand)
+    api_response = api_instance.get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand, feature=feature, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits: %s\n" % e
@@ -387,6 +405,8 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional]  |
 | **page_number** | **int**|  | [optional]  |
 | **expand** | **str**|  | [optional] <br />**Values**: details |
+| **feature** | **str**|  | [optional] <br />**Values**: Agents, ActivityCodes, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
+| **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -623,7 +643,8 @@ Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer* wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:publishedSchedule:view
 
 ### Example
 

@@ -29,7 +29,6 @@ Wraps GET /api/v2/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -82,7 +81,6 @@ Suggest resources using the q64 value returned from a previous suggest query.
 Wraps GET /api/v2/search/suggest 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -139,7 +137,6 @@ Wraps POST /api/v2/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -190,7 +187,6 @@ Suggest resources.
 Wraps POST /api/v2/search/suggest 
 
 Requires NO permissions: 
-
 
 
 ### Example

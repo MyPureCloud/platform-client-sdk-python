@@ -49,7 +49,6 @@ Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -197,7 +196,6 @@ Wraps GET /api/v2/analytics/reporting/metadata
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -252,7 +250,6 @@ Wraps GET /api/v2/analytics/reporting/{reportId}/metadata
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -305,7 +302,6 @@ Wraps GET /api/v2/analytics/reporting/reportformats
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -350,7 +346,6 @@ Get a scheduled report job.
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -401,7 +396,6 @@ Get list of completed scheduled report jobs.
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -458,7 +452,6 @@ Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -507,7 +500,6 @@ A completed scheduled report job.
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -562,7 +554,6 @@ Wraps GET /api/v2/analytics/reporting/schedules
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -613,7 +604,6 @@ Get a list of report time periods.
 Wraps GET /api/v2/analytics/reporting/timeperiods 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -970,7 +960,6 @@ Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1019,7 +1008,6 @@ Create a scheduled report job.
 Wraps POST /api/v2/analytics/reporting/schedules 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1223,7 +1211,6 @@ Update a scheduled report job.
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId} 
 
 Requires NO permissions: 
-
 
 
 ### Example

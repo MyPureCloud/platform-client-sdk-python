@@ -18,6 +18,7 @@ title: MessageData
 | **text_body** | **str** | The body of the text message. | |
 | **status** | **str** | The status of the message. | |
 | **media** | [**list[MessageMedia]**](MessageMedia.html) | The media details associated to a message. | [optional] |
+| **stickers** | [**list[MessageSticker]**](MessageSticker.html) | The sticker details associated to a message. | [optional] |
 | **created_by** | [**User**](User.html) | User who sent this message. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

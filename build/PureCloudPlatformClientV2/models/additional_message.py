@@ -38,14 +38,20 @@ class AdditionalMessage(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'text_body': 'str'
+            'text_body': 'str',
+            'media_ids': 'list[str]',
+            'sticker_ids': 'list[str]'
         }
 
         self.attribute_map = {
-            'text_body': 'textBody'
+            'text_body': 'textBody',
+            'media_ids': 'mediaIds',
+            'sticker_ids': 'stickerIds'
         }
 
         self._text_body = None
+        self._media_ids = None
+        self._sticker_ids = None
 
     @property
     def text_body(self):
@@ -69,6 +75,52 @@ class AdditionalMessage(object):
         """
         
         self._text_body = text_body
+
+    @property
+    def media_ids(self):
+        """
+        Gets the media_ids of this AdditionalMessage.
+        The media ids associated with the text message.
+
+        :return: The media_ids of this AdditionalMessage.
+        :rtype: list[str]
+        """
+        return self._media_ids
+
+    @media_ids.setter
+    def media_ids(self, media_ids):
+        """
+        Sets the media_ids of this AdditionalMessage.
+        The media ids associated with the text message.
+
+        :param media_ids: The media_ids of this AdditionalMessage.
+        :type: list[str]
+        """
+        
+        self._media_ids = media_ids
+
+    @property
+    def sticker_ids(self):
+        """
+        Gets the sticker_ids of this AdditionalMessage.
+        The sticker ids associated with the text message.
+
+        :return: The sticker_ids of this AdditionalMessage.
+        :rtype: list[str]
+        """
+        return self._sticker_ids
+
+    @sticker_ids.setter
+    def sticker_ids(self, sticker_ids):
+        """
+        Sets the sticker_ids of this AdditionalMessage.
+        The sticker ids associated with the text message.
+
+        :param sticker_ids: The sticker_ids of this AdditionalMessage.
+        :type: list[str]
+        """
+        
+        self._sticker_ids = sticker_ids
 
     def to_dict(self):
         """

@@ -62,7 +62,6 @@ Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/ann
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -267,7 +266,6 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -326,7 +324,6 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annota
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -381,7 +378,6 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annota
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -434,7 +430,6 @@ Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -483,7 +478,6 @@ Get metadata for a specific recording. Does not return playable media.
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -536,7 +530,6 @@ Get all of a Conversation's Recordings.
 Wraps GET /api/v2/conversations/{conversationId}/recordings 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -642,7 +635,6 @@ A 202 response means the orphaned media is currently transcoding and will be ava
 Wraps GET /api/v2/orphanrecordings/{orphanId}/media 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -764,7 +756,6 @@ Get the status and results for a batch request job, only the user that submitted
 Wraps GET /api/v2/recording/batchrequests/{jobId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1135,7 +1126,6 @@ Wraps GET /api/v2/recording/settings
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1184,7 +1174,6 @@ Retrieves a paged listing of screen recording sessions
 Wraps GET /api/v2/recordings/screensessions 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1292,7 +1281,6 @@ Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1342,7 +1330,6 @@ Create annotation
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1397,7 +1384,6 @@ Submit a batch download request for recordings. Recordings in response will be i
 Wraps POST /api/v2/recording/batchrequests 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1650,7 +1636,6 @@ Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~python
@@ -1703,7 +1688,6 @@ Update annotation
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1970,7 +1954,6 @@ Update the Recording Settings for the Organization
 Wraps PUT /api/v2/recording/settings 
 
 Requires NO permissions: 
-
 
 
 ### Example

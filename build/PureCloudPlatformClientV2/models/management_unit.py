@@ -40,6 +40,7 @@ class ManagementUnit(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'start_day_of_week': 'str',
             'time_zone': 'str',
             'settings': 'ManagementUnitSettings',
@@ -53,6 +54,7 @@ class ManagementUnit(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
             'settings': 'settings',
@@ -65,6 +67,7 @@ class ManagementUnit(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._start_day_of_week = None
         self._time_zone = None
         self._settings = None
@@ -119,6 +122,29 @@ class ManagementUnit(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this ManagementUnit.
+        The division to which this entity belongs.
+
+        :return: The division of this ManagementUnit.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this ManagementUnit.
+        The division to which this entity belongs.
+
+        :param division: The division of this ManagementUnit.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def start_day_of_week(self):

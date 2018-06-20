@@ -40,7 +40,7 @@ class CampaignDivisionView(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'UriReference',
+            'division': 'Division',
             'self_uri': 'str'
         }
 
@@ -109,7 +109,7 @@ class CampaignDivisionView(object):
         The division to which this entity belongs.
 
         :return: The division of this CampaignDivisionView.
-        :rtype: UriReference
+        :rtype: Division
         """
         return self._division
 
@@ -120,7 +120,7 @@ class CampaignDivisionView(object):
         The division to which this entity belongs.
 
         :param division: The division of this CampaignDivisionView.
-        :type: UriReference
+        :type: Division
         """
         
         self._division = division

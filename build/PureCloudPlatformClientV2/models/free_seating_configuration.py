@@ -38,40 +38,44 @@ class FreeSeatingConfiguration(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool',
+            'free_seating_state': 'str',
             'ttl_minutes': 'int'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled',
+            'free_seating_state': 'freeSeatingState',
             'ttl_minutes': 'ttlMinutes'
         }
 
-        self._enabled = None
+        self._free_seating_state = None
         self._ttl_minutes = None
 
     @property
-    def enabled(self):
+    def free_seating_state(self):
         """
-        Gets the enabled of this FreeSeatingConfiguration.
-        Whether or not free-seating is enabled for the organization
+        Gets the free_seating_state of this FreeSeatingConfiguration.
+        The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.
 
-        :return: The enabled of this FreeSeatingConfiguration.
-        :rtype: bool
+        :return: The free_seating_state of this FreeSeatingConfiguration.
+        :rtype: str
         """
-        return self._enabled
+        return self._free_seating_state
 
-    @enabled.setter
-    def enabled(self, enabled):
+    @free_seating_state.setter
+    def free_seating_state(self, free_seating_state):
         """
-        Sets the enabled of this FreeSeatingConfiguration.
-        Whether or not free-seating is enabled for the organization
+        Sets the free_seating_state of this FreeSeatingConfiguration.
+        The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.
 
-        :param enabled: The enabled of this FreeSeatingConfiguration.
-        :type: bool
+        :param free_seating_state: The free_seating_state of this FreeSeatingConfiguration.
+        :type: str
         """
-        
-        self._enabled = enabled
+        allowed_values = ["ON", "OFF", "PARTIAL"]
+        if free_seating_state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for free_seating_state -> " + free_seating_state
+            self._free_seating_state = "outdated_sdk_version"
+        else:
+            self._free_seating_state = free_seating_state
 
     @property
     def ttl_minutes(self):

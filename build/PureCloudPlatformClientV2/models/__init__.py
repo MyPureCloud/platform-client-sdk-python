@@ -386,6 +386,7 @@ from .digit_length import DigitLength
 from .digits import Digits
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disconnect_reason import DisconnectReason
+from .division import Division
 from .dnc_list import DncList
 from .dnc_list_create import DncListCreate
 from .dnc_list_entity_listing import DncListEntityListing
@@ -721,9 +722,11 @@ from .message_data import MessageData
 from .message_details import MessageDetails
 from .message_info import MessageInfo
 from .message_media import MessageMedia
+from .message_media_data import MessageMediaData
 from .message_media_participant import MessageMediaParticipant
 from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
+from .message_sticker import MessageSticker
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
