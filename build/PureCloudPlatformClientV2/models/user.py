@@ -61,6 +61,7 @@ class User(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'acd_auto_answer': 'bool',
             'self_uri': 'str'
         }
 
@@ -88,6 +89,7 @@ class User(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'acd_auto_answer': 'acdAutoAnswer',
             'self_uri': 'selfUri'
         }
 
@@ -114,6 +116,7 @@ class User(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._acd_auto_answer = None
         self._self_uri = None
 
     @property
@@ -648,6 +651,29 @@ class User(object):
         """
         
         self._groups = groups
+
+    @property
+    def acd_auto_answer(self):
+        """
+        Gets the acd_auto_answer of this User.
+        acd auto answer
+
+        :return: The acd_auto_answer of this User.
+        :rtype: bool
+        """
+        return self._acd_auto_answer
+
+    @acd_auto_answer.setter
+    def acd_auto_answer(self, acd_auto_answer):
+        """
+        Sets the acd_auto_answer of this User.
+        acd auto answer
+
+        :param acd_auto_answer: The acd_auto_answer of this User.
+        :type: bool
+        """
+        
+        self._acd_auto_answer = acd_auto_answer
 
     @property
     def self_uri(self):

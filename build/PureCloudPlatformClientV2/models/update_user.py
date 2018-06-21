@@ -54,6 +54,7 @@ class UpdateUser(object):
             'locations': 'list[Location]',
             'groups': 'list[Group]',
             'state': 'str',
+            'acd_auto_answer': 'bool',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class UpdateUser(object):
             'locations': 'locations',
             'groups': 'groups',
             'state': 'state',
+            'acd_auto_answer': 'acdAutoAnswer',
             'self_uri': 'selfUri'
         }
 
@@ -93,6 +95,7 @@ class UpdateUser(object):
         self._locations = None
         self._groups = None
         self._state = None
+        self._acd_auto_answer = None
         self._self_uri = None
 
     @property
@@ -466,6 +469,29 @@ class UpdateUser(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def acd_auto_answer(self):
+        """
+        Gets the acd_auto_answer of this UpdateUser.
+        The value that denotes if acdAutoAnswer is set on the user
+
+        :return: The acd_auto_answer of this UpdateUser.
+        :rtype: bool
+        """
+        return self._acd_auto_answer
+
+    @acd_auto_answer.setter
+    def acd_auto_answer(self, acd_auto_answer):
+        """
+        Sets the acd_auto_answer of this UpdateUser.
+        The value that denotes if acdAutoAnswer is set on the user
+
+        :param acd_auto_answer: The acd_auto_answer of this UpdateUser.
+        :type: bool
+        """
+        
+        self._acd_auto_answer = acd_auto_answer
 
     @property
     def self_uri(self):

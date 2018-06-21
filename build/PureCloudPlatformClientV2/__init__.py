@@ -777,6 +777,7 @@ from .models.parsed_certificate import ParsedCertificate
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
 from .models.participant_basic import ParticipantBasic
+from .models.patch_user import PatchUser
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permissions import Permissions
 from .models.phone import Phone

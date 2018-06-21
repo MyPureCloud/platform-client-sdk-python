@@ -23,6 +23,7 @@ title: UpdateUser
 | **locations** | [**list[Location]**](Location.html) | The user placement at each site location. | [optional] |
 | **groups** | [**list[Group]**](Group.html) | The groups the user is a member of | [optional] |
 | **state** | **str** | The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field. | [optional] |
+| **acd_auto_answer** | **bool** | The value that denotes if acdAutoAnswer is set on the user | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

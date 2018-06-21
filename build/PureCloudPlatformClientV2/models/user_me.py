@@ -61,6 +61,7 @@ class UserMe(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'acd_auto_answer': 'bool',
             'date': 'ServerDate',
             'geolocation_settings': 'GeolocationSettings',
             'organization': 'Organization',
@@ -102,6 +103,7 @@ class UserMe(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'acd_auto_answer': 'acdAutoAnswer',
             'date': 'date',
             'geolocation_settings': 'geolocationSettings',
             'organization': 'organization',
@@ -142,6 +144,7 @@ class UserMe(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._acd_auto_answer = None
         self._date = None
         self._geolocation_settings = None
         self._organization = None
@@ -690,6 +693,29 @@ class UserMe(object):
         """
         
         self._groups = groups
+
+    @property
+    def acd_auto_answer(self):
+        """
+        Gets the acd_auto_answer of this UserMe.
+        acd auto answer
+
+        :return: The acd_auto_answer of this UserMe.
+        :rtype: bool
+        """
+        return self._acd_auto_answer
+
+    @acd_auto_answer.setter
+    def acd_auto_answer(self, acd_auto_answer):
+        """
+        Sets the acd_auto_answer of this UserMe.
+        acd auto answer
+
+        :param acd_auto_answer: The acd_auto_answer of this UserMe.
+        :type: bool
+        """
+        
+        self._acd_auto_answer = acd_auto_answer
 
     @property
     def date(self):

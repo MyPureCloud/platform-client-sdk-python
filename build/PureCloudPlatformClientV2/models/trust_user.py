@@ -61,6 +61,7 @@ class TrustUser(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'acd_auto_answer': 'bool',
             'trust_user_details': 'TrustUserDetails'
         }
 
@@ -88,6 +89,7 @@ class TrustUser(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'acd_auto_answer': 'acdAutoAnswer',
             'trust_user_details': 'trustUserDetails'
         }
 
@@ -114,6 +116,7 @@ class TrustUser(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._acd_auto_answer = None
         self._trust_user_details = None
 
     @property
@@ -648,6 +651,29 @@ class TrustUser(object):
         """
         
         self._groups = groups
+
+    @property
+    def acd_auto_answer(self):
+        """
+        Gets the acd_auto_answer of this TrustUser.
+        acd auto answer
+
+        :return: The acd_auto_answer of this TrustUser.
+        :rtype: bool
+        """
+        return self._acd_auto_answer
+
+    @acd_auto_answer.setter
+    def acd_auto_answer(self, acd_auto_answer):
+        """
+        Sets the acd_auto_answer of this TrustUser.
+        acd auto answer
+
+        :param acd_auto_answer: The acd_auto_answer of this TrustUser.
+        :type: bool
+        """
+        
+        self._acd_auto_answer = acd_auto_answer
 
     @property
     def trust_user_details(self):

@@ -42,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_queue**](UsersApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](UsersApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](UsersApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
+|[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
@@ -1867,6 +1868,60 @@ except ApiException as e:
 ### Return type
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
+
+<a name="patch_users_bulk"></a>
+
+## [**UserEntityListing**](UserEntityListing.html) patch_users_bulk(body)
+
+
+
+Update bulk acd autoanswer on users
+
+
+
+Wraps PATCH /api/v2/users/bulk 
+
+Requires ANY permissions: 
+
+* directory:user:add
+* user_manager
+* user_administration
+* directory:user:edit
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = [PureCloudPlatformClientV2.PatchUser()] # list[PatchUser] | Users
+
+try:
+    # Update bulk acd autoanswer on users
+    api_response = api_instance.patch_users_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->patch_users_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[PatchUser]**](PatchUser.html)| Users |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserEntityListing**](UserEntityListing.html)
 
 <a name="post_analytics_users_aggregates_query"></a>
 

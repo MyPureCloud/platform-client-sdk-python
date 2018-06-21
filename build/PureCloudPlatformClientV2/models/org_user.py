@@ -61,6 +61,7 @@ class OrgUser(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'acd_auto_answer': 'bool',
             'organization': 'Organization'
         }
 
@@ -88,6 +89,7 @@ class OrgUser(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'acd_auto_answer': 'acdAutoAnswer',
             'organization': 'organization'
         }
 
@@ -114,6 +116,7 @@ class OrgUser(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._acd_auto_answer = None
         self._organization = None
 
     @property
@@ -648,6 +651,29 @@ class OrgUser(object):
         """
         
         self._groups = groups
+
+    @property
+    def acd_auto_answer(self):
+        """
+        Gets the acd_auto_answer of this OrgUser.
+        acd auto answer
+
+        :return: The acd_auto_answer of this OrgUser.
+        :rtype: bool
+        """
+        return self._acd_auto_answer
+
+    @acd_auto_answer.setter
+    def acd_auto_answer(self, acd_auto_answer):
+        """
+        Sets the acd_auto_answer of this OrgUser.
+        acd auto answer
+
+        :param acd_auto_answer: The acd_auto_answer of this OrgUser.
+        :type: bool
+        """
+        
+        self._acd_auto_answer = acd_auto_answer
 
     @property
     def organization(self):
