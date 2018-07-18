@@ -42,6 +42,7 @@ class EmailMediaPolicyConditions(object):
             'date_ranges': 'list[str]',
             'for_queues': 'list[Queue]',
             'wrapup_codes': 'list[WrapupCode]',
+            'languages': 'list[Language]',
             'time_allowed': 'TimeAllowed'
         }
 
@@ -50,6 +51,7 @@ class EmailMediaPolicyConditions(object):
             'date_ranges': 'dateRanges',
             'for_queues': 'forQueues',
             'wrapup_codes': 'wrapupCodes',
+            'languages': 'languages',
             'time_allowed': 'timeAllowed'
         }
 
@@ -57,6 +59,7 @@ class EmailMediaPolicyConditions(object):
         self._date_ranges = None
         self._for_queues = None
         self._wrapup_codes = None
+        self._languages = None
         self._time_allowed = None
 
     @property
@@ -150,6 +153,29 @@ class EmailMediaPolicyConditions(object):
         """
         
         self._wrapup_codes = wrapup_codes
+
+    @property
+    def languages(self):
+        """
+        Gets the languages of this EmailMediaPolicyConditions.
+
+
+        :return: The languages of this EmailMediaPolicyConditions.
+        :rtype: list[Language]
+        """
+        return self._languages
+
+    @languages.setter
+    def languages(self, languages):
+        """
+        Sets the languages of this EmailMediaPolicyConditions.
+
+
+        :param languages: The languages of this EmailMediaPolicyConditions.
+        :type: list[Language]
+        """
+        
+        self._languages = languages
 
     @property
     def time_allowed(self):

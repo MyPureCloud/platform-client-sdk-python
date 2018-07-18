@@ -44,6 +44,7 @@ class SurveyForm(object):
             'published': 'bool',
             'disabled': 'bool',
             'context_id': 'str',
+            'language': 'str',
             'header_image_id': 'str',
             'header_image_url': 'str',
             'header': 'str',
@@ -60,6 +61,7 @@ class SurveyForm(object):
             'published': 'published',
             'disabled': 'disabled',
             'context_id': 'contextId',
+            'language': 'language',
             'header_image_id': 'headerImageId',
             'header_image_url': 'headerImageUrl',
             'header': 'header',
@@ -75,6 +77,7 @@ class SurveyForm(object):
         self._published = None
         self._disabled = None
         self._context_id = None
+        self._language = None
         self._header_image_id = None
         self._header_image_url = None
         self._header = None
@@ -220,6 +223,29 @@ class SurveyForm(object):
         """
         
         self._context_id = context_id
+
+    @property
+    def language(self):
+        """
+        Gets the language of this SurveyForm.
+        Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW
+
+        :return: The language of this SurveyForm.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this SurveyForm.
+        Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW
+
+        :param language: The language of this SurveyForm.
+        :type: str
+        """
+        
+        self._language = language
 
     @property
     def header_image_id(self):

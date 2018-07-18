@@ -43,6 +43,7 @@ class RecordingMessagingMessage(object):
             'from_external_contact': 'ExternalContact',
             'to': 'str',
             'timestamp': 'datetime',
+            'id': 'str',
             'message_text': 'str'
         }
 
@@ -52,6 +53,7 @@ class RecordingMessagingMessage(object):
             'from_external_contact': 'fromExternalContact',
             'to': 'to',
             'timestamp': 'timestamp',
+            'id': 'id',
             'message_text': 'messageText'
         }
 
@@ -60,6 +62,7 @@ class RecordingMessagingMessage(object):
         self._from_external_contact = None
         self._to = None
         self._timestamp = None
+        self._id = None
         self._message_text = None
 
     @property
@@ -176,6 +179,29 @@ class RecordingMessagingMessage(object):
         """
         
         self._timestamp = timestamp
+
+    @property
+    def id(self):
+        """
+        Gets the id of this RecordingMessagingMessage.
+
+
+        :return: The id of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this RecordingMessagingMessage.
+
+
+        :param id: The id of this RecordingMessagingMessage.
+        :type: str
+        """
+        
+        self._id = id
 
     @property
     def message_text(self):

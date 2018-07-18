@@ -39,20 +39,17 @@ class PatchUser(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'acd_auto_answer': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'acd_auto_answer': 'acdAutoAnswer',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._name = None
         self._acd_auto_answer = None
         self._self_uri = None
 
@@ -78,29 +75,6 @@ class PatchUser(object):
         """
         
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this PatchUser.
-
-
-        :return: The name of this PatchUser.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this PatchUser.
-
-
-        :param name: The name of this PatchUser.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def acd_auto_answer(self):

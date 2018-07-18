@@ -430,7 +430,7 @@ class ExternalOrganization(object):
     def external_system_url(self):
         """
         Gets the external_system_url of this ExternalOrganization.
-        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
 
         :return: The external_system_url of this ExternalOrganization.
         :rtype: str
@@ -441,7 +441,7 @@ class ExternalOrganization(object):
     def external_system_url(self, external_system_url):
         """
         Sets the external_system_url of this ExternalOrganization.
-        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
 
         :param external_system_url: The external_system_url of this ExternalOrganization.
         :type: str

@@ -42,6 +42,7 @@ class CallMediaPolicyConditions(object):
             'date_ranges': 'list[str]',
             'for_queues': 'list[Queue]',
             'wrapup_codes': 'list[WrapupCode]',
+            'languages': 'list[Language]',
             'time_allowed': 'TimeAllowed',
             'directions': 'list[str]',
             'duration': 'DurationCondition'
@@ -52,6 +53,7 @@ class CallMediaPolicyConditions(object):
             'date_ranges': 'dateRanges',
             'for_queues': 'forQueues',
             'wrapup_codes': 'wrapupCodes',
+            'languages': 'languages',
             'time_allowed': 'timeAllowed',
             'directions': 'directions',
             'duration': 'duration'
@@ -61,6 +63,7 @@ class CallMediaPolicyConditions(object):
         self._date_ranges = None
         self._for_queues = None
         self._wrapup_codes = None
+        self._languages = None
         self._time_allowed = None
         self._directions = None
         self._duration = None
@@ -156,6 +159,29 @@ class CallMediaPolicyConditions(object):
         """
         
         self._wrapup_codes = wrapup_codes
+
+    @property
+    def languages(self):
+        """
+        Gets the languages of this CallMediaPolicyConditions.
+
+
+        :return: The languages of this CallMediaPolicyConditions.
+        :rtype: list[Language]
+        """
+        return self._languages
+
+    @languages.setter
+    def languages(self, languages):
+        """
+        Sets the languages of this CallMediaPolicyConditions.
+
+
+        :param languages: The languages of this CallMediaPolicyConditions.
+        :type: list[Language]
+        """
+        
+        self._languages = languages
 
     @property
     def time_allowed(self):

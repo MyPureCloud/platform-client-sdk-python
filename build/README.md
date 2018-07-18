@@ -51,7 +51,7 @@ Example of getting the authenticated user's information:
 
 ~~~ python
 usersApi = PureCloudPlatformClientV2.UsersApi()
-print usersApi.get_me()
+print usersApi.get_users_me()
 ~~~
 
 ## SDK Source Code Generation

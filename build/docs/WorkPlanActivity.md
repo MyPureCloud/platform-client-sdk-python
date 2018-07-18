@@ -1,0 +1,25 @@
+---
+title: WorkPlanActivity
+---
+## WorkPlanActivity
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **activity_code_id** | **str** | ID of the activity code associated with this activity | [optional] |
+| **description** | **str** | Description of the activity | [optional] |
+| **length_minutes** | **int** | Length of the activity in minutes | [optional] |
+| **start_time_is_relative_to_shift_start** | **bool** | Whether the start time of the activity is relative to the start time of the shift it belongs to | [optional] |
+| **flexible_start_time** | **bool** | Whether the start time of the activity is flexible | [optional] |
+| **earliest_start_time_minutes** | **int** | Earliest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == true | [optional] |
+| **latest_start_time_minutes** | **int** | Latest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == true | [optional] |
+| **exact_start_time_minutes** | **int** | Exact activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == false | [optional] |
+| **start_time_increment_minutes** | **int** | Increment in offset minutes that would contribute to different possible start times for the activity | [optional] |
+| **counts_as_paid_time** | **bool** | Whether the activity is paid | [optional] |
+| **counts_as_contiguous_work_time** | **bool** | Whether the activity duration is counted towards contiguous work time | [optional] |
+| **id** | **str** | ID of the activity. This is required only for the case of updating an existing activity | [optional] |
+| **delete** | **bool** | If marked true for updating an existing activity, the activity will be permanently deleted | [optional] |
+{: class="table table-striped"}
+
+

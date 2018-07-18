@@ -3913,7 +3913,7 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_user_profileskills(self, user_id, **kwargs):
+    def put_user_profileskills(self, user_id, body, **kwargs):
         """
         Update profile skills for a user
         
@@ -3924,12 +3924,12 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_user_profileskills(user_id, callback=callback_function)
+        >>> thread = api.put_user_profileskills(user_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :param list[str] body: Skills
+        :param list[str] body: Skills (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3951,6 +3951,9 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `put_user_profileskills`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_user_profileskills`")
 
 
         resource_path = '/api/v2/users/{userId}/profileskills'.replace('{format}', 'json')

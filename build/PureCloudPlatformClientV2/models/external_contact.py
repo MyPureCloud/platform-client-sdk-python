@@ -53,6 +53,8 @@ class ExternalContact(object):
             'other_email': 'str',
             'address': 'ContactAddress',
             'twitter_id': 'TwitterId',
+            'line_id': 'LineId',
+            'facebook_id': 'FacebookId',
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'external_organization': 'ExternalOrganization',
@@ -78,6 +80,8 @@ class ExternalContact(object):
             'other_email': 'otherEmail',
             'address': 'address',
             'twitter_id': 'twitterId',
+            'line_id': 'lineId',
+            'facebook_id': 'facebookId',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'external_organization': 'externalOrganization',
@@ -102,6 +106,8 @@ class ExternalContact(object):
         self._other_email = None
         self._address = None
         self._twitter_id = None
+        self._line_id = None
+        self._facebook_id = None
         self._modify_date = None
         self._create_date = None
         self._external_organization = None
@@ -456,6 +462,52 @@ class ExternalContact(object):
         self._twitter_id = twitter_id
 
     @property
+    def line_id(self):
+        """
+        Gets the line_id of this ExternalContact.
+
+
+        :return: The line_id of this ExternalContact.
+        :rtype: LineId
+        """
+        return self._line_id
+
+    @line_id.setter
+    def line_id(self, line_id):
+        """
+        Sets the line_id of this ExternalContact.
+
+
+        :param line_id: The line_id of this ExternalContact.
+        :type: LineId
+        """
+        
+        self._line_id = line_id
+
+    @property
+    def facebook_id(self):
+        """
+        Gets the facebook_id of this ExternalContact.
+
+
+        :return: The facebook_id of this ExternalContact.
+        :rtype: FacebookId
+        """
+        return self._facebook_id
+
+    @facebook_id.setter
+    def facebook_id(self, facebook_id):
+        """
+        Sets the facebook_id of this ExternalContact.
+
+
+        :param facebook_id: The facebook_id of this ExternalContact.
+        :type: FacebookId
+        """
+        
+        self._facebook_id = facebook_id
+
+    @property
     def modify_date(self):
         """
         Gets the modify_date of this ExternalContact.
@@ -551,7 +603,7 @@ class ExternalContact(object):
     def external_system_url(self):
         """
         Gets the external_system_url of this ExternalContact.
-        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
 
         :return: The external_system_url of this ExternalContact.
         :rtype: str
@@ -562,7 +614,7 @@ class ExternalContact(object):
     def external_system_url(self, external_system_url):
         """
         Sets the external_system_url of this ExternalContact.
-        A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
 
         :param external_system_url: The external_system_url of this ExternalContact.
         :type: str

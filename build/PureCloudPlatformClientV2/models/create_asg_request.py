@@ -42,7 +42,7 @@ class CreateAsgRequest(object):
             'edge_group_id': 'str',
             'external_trunk_base_id': 'str',
             'asg_logical_iam_instance_profile': 'str',
-            'asg_ami': 'bool',
+            'asg_ami': 'str',
             'asg_type': 'str',
             'asg_instance_count': 'int',
             'asg_network_space': 'str',
@@ -173,7 +173,7 @@ class CreateAsgRequest(object):
         Overrides the default EDGE AMI used with the ASG
 
         :return: The asg_ami of this CreateAsgRequest.
-        :rtype: bool
+        :rtype: str
         """
         return self._asg_ami
 
@@ -184,7 +184,7 @@ class CreateAsgRequest(object):
         Overrides the default EDGE AMI used with the ASG
 
         :param asg_ami: The asg_ami of this CreateAsgRequest.
-        :type: bool
+        :type: str
         """
         
         self._asg_ami = asg_ami

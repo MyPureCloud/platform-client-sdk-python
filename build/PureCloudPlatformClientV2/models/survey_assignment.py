@@ -38,20 +38,26 @@ class SurveyAssignment(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'survey_form': 'SurveyFormUriReference',
+            'survey_form': 'PublishedSurveyFormReference',
             'flow': 'UriReference',
-            'invite_time_interval': 'str'
+            'invite_time_interval': 'str',
+            'sending_user': 'str',
+            'sending_domain': 'str'
         }
 
         self.attribute_map = {
             'survey_form': 'surveyForm',
             'flow': 'flow',
-            'invite_time_interval': 'inviteTimeInterval'
+            'invite_time_interval': 'inviteTimeInterval',
+            'sending_user': 'sendingUser',
+            'sending_domain': 'sendingDomain'
         }
 
         self._survey_form = None
         self._flow = None
         self._invite_time_interval = None
+        self._sending_user = None
+        self._sending_domain = None
 
     @property
     def survey_form(self):
@@ -60,7 +66,7 @@ class SurveyAssignment(object):
         The survey form used for this survey.
 
         :return: The survey_form of this SurveyAssignment.
-        :rtype: SurveyFormUriReference
+        :rtype: PublishedSurveyFormReference
         """
         return self._survey_form
 
@@ -71,7 +77,7 @@ class SurveyAssignment(object):
         The survey form used for this survey.
 
         :param survey_form: The survey_form of this SurveyAssignment.
-        :type: SurveyFormUriReference
+        :type: PublishedSurveyFormReference
         """
         
         self._survey_form = survey_form
@@ -121,6 +127,52 @@ class SurveyAssignment(object):
         """
         
         self._invite_time_interval = invite_time_interval
+
+    @property
+    def sending_user(self):
+        """
+        Gets the sending_user of this SurveyAssignment.
+        User together with sendingDomain used to send email, null to use no-reply
+
+        :return: The sending_user of this SurveyAssignment.
+        :rtype: str
+        """
+        return self._sending_user
+
+    @sending_user.setter
+    def sending_user(self, sending_user):
+        """
+        Sets the sending_user of this SurveyAssignment.
+        User together with sendingDomain used to send email, null to use no-reply
+
+        :param sending_user: The sending_user of this SurveyAssignment.
+        :type: str
+        """
+        
+        self._sending_user = sending_user
+
+    @property
+    def sending_domain(self):
+        """
+        Gets the sending_domain of this SurveyAssignment.
+        Validated email domain, required
+
+        :return: The sending_domain of this SurveyAssignment.
+        :rtype: str
+        """
+        return self._sending_domain
+
+    @sending_domain.setter
+    def sending_domain(self, sending_domain):
+        """
+        Sets the sending_domain of this SurveyAssignment.
+        Validated email domain, required
+
+        :param sending_domain: The sending_domain of this SurveyAssignment.
+        :type: str
+        """
+        
+        self._sending_domain = sending_domain
 
     def to_dict(self):
         """

@@ -66,7 +66,7 @@ class AsgInfoResponse(object):
     def id(self):
         """
         Gets the id of this AsgInfoResponse.
-        The globally unique identifier for the object.
+        The full id of the asg <orgId>-<siteId>-ASG-<asgVersion>
 
         :return: The id of this AsgInfoResponse.
         :rtype: str
@@ -77,7 +77,7 @@ class AsgInfoResponse(object):
     def id(self, id):
         """
         Sets the id of this AsgInfoResponse.
-        The globally unique identifier for the object.
+        The full id of the asg <orgId>-<siteId>-ASG-<asgVersion>
 
         :param id: The id of this AsgInfoResponse.
         :type: str
@@ -112,7 +112,7 @@ class AsgInfoResponse(object):
     def ami(self):
         """
         Gets the ami of this AsgInfoResponse.
-        The ami ami of the asg.
+        The version of the asg, ex '003'
 
         :return: The ami of this AsgInfoResponse.
         :rtype: str
@@ -123,7 +123,7 @@ class AsgInfoResponse(object):
     def ami(self, ami):
         """
         Sets the ami of this AsgInfoResponse.
-        The ami ami of the asg.
+        The version of the asg, ex '003'
 
         :param ami: The ami of this AsgInfoResponse.
         :type: str

@@ -12,6 +12,7 @@ title: MessageConversationNotificationMessages
 | **message_segment_count** | **int** |  | [optional] |
 | **message_status** | **str** |  | [optional] |
 | **media** | [**list[ConversationNotificationMedia]**](ConversationNotificationMedia.html) |  | [optional] |
+| **stickers** | [**list[ConversationNotificationStickers]**](ConversationNotificationStickers.html) |  | [optional] |
 {: class="table table-striped"}
 
 

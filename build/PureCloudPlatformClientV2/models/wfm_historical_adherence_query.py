@@ -132,7 +132,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self):
         """
         Gets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
 
         :return: The user_ids of this WfmHistoricalAdherenceQuery.
         :rtype: list[str]
@@ -143,7 +143,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
 
         :param user_ids: The user_ids of this WfmHistoricalAdherenceQuery.
         :type: list[str]

@@ -39,16 +39,25 @@ class MessageConversationNotificationMessageMedia(object):
         """
         self.swagger_types = {
             'url': 'str',
-            'media_type': 'str'
+            'media_type': 'str',
+            'content_length_bytes': 'int',
+            'name': 'str',
+            'id': 'str'
         }
 
         self.attribute_map = {
             'url': 'url',
-            'media_type': 'mediaType'
+            'media_type': 'mediaType',
+            'content_length_bytes': 'contentLengthBytes',
+            'name': 'name',
+            'id': 'id'
         }
 
         self._url = None
         self._media_type = None
+        self._content_length_bytes = None
+        self._name = None
+        self._id = None
 
     @property
     def url(self):
@@ -95,6 +104,75 @@ class MessageConversationNotificationMessageMedia(object):
         """
         
         self._media_type = media_type
+
+    @property
+    def content_length_bytes(self):
+        """
+        Gets the content_length_bytes of this MessageConversationNotificationMessageMedia.
+
+
+        :return: The content_length_bytes of this MessageConversationNotificationMessageMedia.
+        :rtype: int
+        """
+        return self._content_length_bytes
+
+    @content_length_bytes.setter
+    def content_length_bytes(self, content_length_bytes):
+        """
+        Sets the content_length_bytes of this MessageConversationNotificationMessageMedia.
+
+
+        :param content_length_bytes: The content_length_bytes of this MessageConversationNotificationMessageMedia.
+        :type: int
+        """
+        
+        self._content_length_bytes = content_length_bytes
+
+    @property
+    def name(self):
+        """
+        Gets the name of this MessageConversationNotificationMessageMedia.
+
+
+        :return: The name of this MessageConversationNotificationMessageMedia.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this MessageConversationNotificationMessageMedia.
+
+
+        :param name: The name of this MessageConversationNotificationMessageMedia.
+        :type: str
+        """
+        
+        self._name = name
+
+    @property
+    def id(self):
+        """
+        Gets the id of this MessageConversationNotificationMessageMedia.
+
+
+        :return: The id of this MessageConversationNotificationMessageMedia.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this MessageConversationNotificationMessageMedia.
+
+
+        :param id: The id of this MessageConversationNotificationMessageMedia.
+        :type: str
+        """
+        
+        self._id = id
 
     def to_dict(self):
         """

@@ -2547,7 +2547,7 @@ except ApiException as e:
 
 <a name="put_user_profileskills"></a>
 
-## list[str]** put_user_profileskills(user_id, body=body)
+## list[str]** put_user_profileskills(user_id, body)
 
 
 
@@ -2578,11 +2578,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
-body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Skills (optional)
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Skills
 
 try:
     # Update profile skills for a user
-    api_response = api_instance.put_user_profileskills(user_id, body=body)
+    api_response = api_instance.put_user_profileskills(user_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_profileskills: %s\n" % e
@@ -2594,7 +2594,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | **list[str]**| Skills | [optional]  |
+| **body** | **list[str]**| Skills |  |
 {: class="table table-striped"}
 
 ### Return type

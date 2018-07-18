@@ -2086,9 +2086,9 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_queues_search(self, **kwargs):
+    def get_routing_queues_divisionviews(self, **kwargs):
         """
-        Search for queues by name
+        Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2097,7 +2097,7 @@ class RoutingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_routing_queues_search(callback=callback_function)
+        >>> thread = api.get_routing_queues_divisionviews(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2121,14 +2121,14 @@ class RoutingApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_routing_queues_search" % key
+                    " to method get_routing_queues_divisionviews" % key
                 )
             params[key] = val
         del params['kwargs']
 
 
 
-        resource_path = '/api/v2/routing/queues/search'.replace('{format}', 'json')
+        resource_path = '/api/v2/routing/queues/divisionviews'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

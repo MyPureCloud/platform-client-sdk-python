@@ -33,7 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue_users**](RoutingApi.html#get_routing_queue_users) | Get the members of this queue|
 |[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
 |[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
-|[**get_routing_queues_search**](RoutingApi.html#get_routing_queues_search) | Search for queues by name|
+|[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
@@ -1387,17 +1387,17 @@ except ApiException as e:
 
 [**QueueEntityListing**](QueueEntityListing.html)
 
-<a name="get_routing_queues_search"></a>
+<a name="get_routing_queues_divisionviews"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_search(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
-
-
-
-Search for queues by name
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_divisionviews(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
 
 
 
-Wraps GET /api/v2/routing/queues/search 
+Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+
+
+
+Wraps GET /api/v2/routing/queues/divisionviews 
 
 Requires ANY permissions: 
 
@@ -1425,11 +1425,11 @@ id = ['id_example'] # list[str] | Queue ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
-    # Search for queues by name
-    api_response = api_instance.get_routing_queues_search(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
+    # Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+    api_response = api_instance.get_routing_queues_divisionviews(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queues_search: %s\n" % e
+    print "Exception when calling RoutingApi->get_routing_queues_divisionviews: %s\n" % e
 ~~~
 
 ### Parameters

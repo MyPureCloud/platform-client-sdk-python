@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaignrule**](OutboundApi.html#get_outbound_campaignrule) | Get Campaign Rule|
 |[**get_outbound_campaignrules**](OutboundApi.html#get_outbound_campaignrules) | Query Campaign Rule list|
 |[**get_outbound_campaigns**](OutboundApi.html#get_outbound_campaigns) | Query a list of dialer campaigns.|
+|[**get_outbound_campaigns_divisionview**](OutboundApi.html#get_outbound_campaigns_divisionview) | Get a basic Campaign information object|
 |[**get_outbound_campaigns_divisionviews**](OutboundApi.html#get_outbound_campaigns_divisionviews) | Query a list of basic Campaign information objects|
 |[**get_outbound_contactlist**](OutboundApi.html#get_outbound_contactlist) | Get a dialer contact list.|
 |[**get_outbound_contactlist_contact**](OutboundApi.html#get_outbound_contactlist_contact) | Get a contact.|
@@ -1610,7 +1611,7 @@ except ApiException as e:
 
 <a name="get_outbound_campaigns"></a>
 
-## [**CampaignEntityListing**](CampaignEntityListing.html) get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, sort_by=sort_by, sort_order=sort_order)
+## [**CampaignEntityListing**](CampaignEntityListing.html) get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1647,12 +1648,13 @@ dnc_list_id = 'dnc_list_id_example' # str | DNC list ID (optional)
 distribution_queue_id = 'distribution_queue_id_example' # str | Distribution queue ID (optional)
 edge_group_id = 'edge_group_id_example' # str | Edge group ID (optional)
 call_analysis_response_set_id = 'call_analysis_response_set_id_example' # str | Call analysis response set ID (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of dialer campaigns.
-    api_response = api_instance.get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaigns: %s\n" % e
@@ -1673,6 +1675,7 @@ except ApiException as e:
 | **distribution_queue_id** | **str**| Distribution queue ID | [optional]  |
 | **edge_group_id** | **str**| Edge group ID | [optional]  |
 | **call_analysis_response_set_id** | **str**| Call analysis response set ID | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -1681,9 +1684,60 @@ except ApiException as e:
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
 
+<a name="get_outbound_campaigns_divisionview"></a>
+
+## [**CampaignDivisionView**](CampaignDivisionView.html) get_outbound_campaigns_divisionview(campaign_id)
+
+
+
+Get a basic Campaign information object
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId} 
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+
+try:
+    # Get a basic Campaign information object
+    api_response = api_instance.get_outbound_campaigns_divisionview(campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_campaigns_divisionview: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignDivisionView**](CampaignDivisionView.html)
+
 <a name="get_outbound_campaigns_divisionviews"></a>
 
-## [**CampaignDivisionViewListing**](CampaignDivisionViewListing.html) get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**CampaignDivisionViewListing**](CampaignDivisionViewListing.html) get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1714,12 +1768,13 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | id (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of basic Campaign information objects
-    api_response = api_instance.get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaigns_divisionviews: %s\n" % e
@@ -1734,6 +1789,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

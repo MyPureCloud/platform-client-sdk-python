@@ -40,6 +40,7 @@ class TrustUser(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'chat': 'Chat',
             'department': 'str',
             'email': 'str',
@@ -68,6 +69,7 @@ class TrustUser(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'chat': 'chat',
             'department': 'department',
             'email': 'email',
@@ -95,6 +97,7 @@ class TrustUser(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._chat = None
         self._department = None
         self._email = None
@@ -164,6 +167,29 @@ class TrustUser(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this TrustUser.
+        The division to which this entity belongs.
+
+        :return: The division of this TrustUser.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this TrustUser.
+        The division to which this entity belongs.
+
+        :param division: The division of this TrustUser.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def chat(self):

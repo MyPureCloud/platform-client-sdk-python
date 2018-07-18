@@ -843,7 +843,7 @@ class MessageConversationNotificationParticipants(object):
         :param type: The type of this MessageConversationNotificationParticipants.
         :type: str
         """
-        allowed_values = ["SMS", "TWITTER", "FACEBOOK", "LINE", "VIBER", "WECHAT"]
+        allowed_values = ["SMS", "TWITTER", "FACEBOOK", "LINE", "VIBER", "WECHAT", "WHATSAPP", "TELEGRAM", "KAKAO"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

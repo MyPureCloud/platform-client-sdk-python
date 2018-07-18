@@ -40,6 +40,7 @@ class UserMe(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'chat': 'Chat',
             'department': 'str',
             'email': 'str',
@@ -82,6 +83,7 @@ class UserMe(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'chat': 'chat',
             'department': 'department',
             'email': 'email',
@@ -123,6 +125,7 @@ class UserMe(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._chat = None
         self._department = None
         self._email = None
@@ -206,6 +209,29 @@ class UserMe(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this UserMe.
+        The division to which this entity belongs.
+
+        :return: The division of this UserMe.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this UserMe.
+        The division to which this entity belongs.
+
+        :param division: The division of this UserMe.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def chat(self):

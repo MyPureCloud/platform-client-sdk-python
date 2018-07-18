@@ -9,6 +9,7 @@ title: UserMe
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
+| **division** | [**Division**](Division.html) | The division to which this entity belongs. | [optional] |
 | **chat** | [**Chat**](Chat.html) |  | [optional] |
 | **department** | **str** |  | [optional] |
 | **email** | **str** |  | [optional] |

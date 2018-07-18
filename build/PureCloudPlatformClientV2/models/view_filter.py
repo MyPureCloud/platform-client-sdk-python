@@ -62,7 +62,11 @@ class ViewFilter(object):
             'evaluator_ids': 'list[str]',
             'transferred': 'bool',
             'abandoned': 'bool',
-            'message_types': 'list[str]'
+            'message_types': 'list[str]',
+            'division_ids': 'list[str]',
+            'survey_form_ids': 'list[str]',
+            'survey_total_score': 'NumericRange',
+            'survey_nps_score': 'NumericRange'
         }
 
         self.attribute_map = {
@@ -90,7 +94,11 @@ class ViewFilter(object):
             'evaluator_ids': 'evaluatorIds',
             'transferred': 'transferred',
             'abandoned': 'abandoned',
-            'message_types': 'messageTypes'
+            'message_types': 'messageTypes',
+            'division_ids': 'divisionIds',
+            'survey_form_ids': 'surveyFormIds',
+            'survey_total_score': 'surveyTotalScore',
+            'survey_nps_score': 'surveyNpsScore'
         }
 
         self._media_types = None
@@ -118,6 +126,10 @@ class ViewFilter(object):
         self._transferred = None
         self._abandoned = None
         self._message_types = None
+        self._division_ids = None
+        self._survey_form_ids = None
+        self._survey_total_score = None
+        self._survey_nps_score = None
 
     @property
     def media_types(self):
@@ -693,6 +705,98 @@ class ViewFilter(object):
         """
         
         self._message_types = message_types
+
+    @property
+    def division_ids(self):
+        """
+        Gets the division_ids of this ViewFilter.
+        The divison Ids used to filter the view
+
+        :return: The division_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids):
+        """
+        Sets the division_ids of this ViewFilter.
+        The divison Ids used to filter the view
+
+        :param division_ids: The division_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._division_ids = division_ids
+
+    @property
+    def survey_form_ids(self):
+        """
+        Gets the survey_form_ids of this ViewFilter.
+        The survey form ids used to filter the view
+
+        :return: The survey_form_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._survey_form_ids
+
+    @survey_form_ids.setter
+    def survey_form_ids(self, survey_form_ids):
+        """
+        Sets the survey_form_ids of this ViewFilter.
+        The survey form ids used to filter the view
+
+        :param survey_form_ids: The survey_form_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._survey_form_ids = survey_form_ids
+
+    @property
+    def survey_total_score(self):
+        """
+        Gets the survey_total_score of this ViewFilter.
+        The survey total score used to filter the view
+
+        :return: The survey_total_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._survey_total_score
+
+    @survey_total_score.setter
+    def survey_total_score(self, survey_total_score):
+        """
+        Sets the survey_total_score of this ViewFilter.
+        The survey total score used to filter the view
+
+        :param survey_total_score: The survey_total_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._survey_total_score = survey_total_score
+
+    @property
+    def survey_nps_score(self):
+        """
+        Gets the survey_nps_score of this ViewFilter.
+        The survey NPS score used to filter the view
+
+        :return: The survey_nps_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._survey_nps_score
+
+    @survey_nps_score.setter
+    def survey_nps_score(self, survey_nps_score):
+        """
+        Sets the survey_nps_score of this ViewFilter.
+        The survey NPS score used to filter the view
+
+        :param survey_nps_score: The survey_nps_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._survey_nps_score = survey_nps_score
 
     def to_dict(self):
         """

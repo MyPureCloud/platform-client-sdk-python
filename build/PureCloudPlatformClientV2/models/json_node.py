@@ -45,12 +45,12 @@ class JsonNode(object):
             'boolean': 'bool',
             'number': 'bool',
             'float': 'bool',
-            'floating_point_number': 'bool',
             'value_node': 'bool',
             'container_node': 'bool',
             'missing_node': 'bool',
             'pojo': 'bool',
             'integral_number': 'bool',
+            'floating_point_number': 'bool',
             'short': 'bool',
             'int': 'bool',
             'long': 'bool',
@@ -69,12 +69,12 @@ class JsonNode(object):
             'boolean': 'boolean',
             'number': 'number',
             'float': 'float',
-            'floating_point_number': 'floatingPointNumber',
             'value_node': 'valueNode',
             'container_node': 'containerNode',
             'missing_node': 'missingNode',
             'pojo': 'pojo',
             'integral_number': 'integralNumber',
+            'floating_point_number': 'floatingPointNumber',
             'short': 'short',
             'int': 'int',
             'long': 'long',
@@ -92,12 +92,12 @@ class JsonNode(object):
         self._boolean = None
         self._number = None
         self._float = None
-        self._floating_point_number = None
         self._value_node = None
         self._container_node = None
         self._missing_node = None
         self._pojo = None
         self._integral_number = None
+        self._floating_point_number = None
         self._short = None
         self._int = None
         self._long = None
@@ -273,29 +273,6 @@ class JsonNode(object):
         self._float = float
 
     @property
-    def floating_point_number(self):
-        """
-        Gets the floating_point_number of this JsonNode.
-
-
-        :return: The floating_point_number of this JsonNode.
-        :rtype: bool
-        """
-        return self._floating_point_number
-
-    @floating_point_number.setter
-    def floating_point_number(self, floating_point_number):
-        """
-        Sets the floating_point_number of this JsonNode.
-
-
-        :param floating_point_number: The floating_point_number of this JsonNode.
-        :type: bool
-        """
-        
-        self._floating_point_number = floating_point_number
-
-    @property
     def value_node(self):
         """
         Gets the value_node of this JsonNode.
@@ -409,6 +386,29 @@ class JsonNode(object):
         """
         
         self._integral_number = integral_number
+
+    @property
+    def floating_point_number(self):
+        """
+        Gets the floating_point_number of this JsonNode.
+
+
+        :return: The floating_point_number of this JsonNode.
+        :rtype: bool
+        """
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        """
+        Sets the floating_point_number of this JsonNode.
+
+
+        :param floating_point_number: The floating_point_number of this JsonNode.
+        :type: bool
+        """
+        
+        self._floating_point_number = floating_point_number
 
     @property
     def short(self):

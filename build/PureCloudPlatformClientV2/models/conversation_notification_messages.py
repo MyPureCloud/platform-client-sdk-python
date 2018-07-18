@@ -42,7 +42,8 @@ class ConversationNotificationMessages(object):
             'message_time': 'datetime',
             'message_status': 'str',
             'message_segment_count': 'int',
-            'media': 'list[ConversationNotificationMedia]'
+            'media': 'list[ConversationNotificationMedia]',
+            'stickers': 'list[ConversationNotificationStickers]'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class ConversationNotificationMessages(object):
             'message_time': 'messageTime',
             'message_status': 'messageStatus',
             'message_segment_count': 'messageSegmentCount',
-            'media': 'media'
+            'media': 'media',
+            'stickers': 'stickers'
         }
 
         self._message_id = None
@@ -58,6 +60,7 @@ class ConversationNotificationMessages(object):
         self._message_status = None
         self._message_segment_count = None
         self._media = None
+        self._stickers = None
 
     @property
     def message_id(self):
@@ -177,6 +180,29 @@ class ConversationNotificationMessages(object):
         """
         
         self._media = media
+
+    @property
+    def stickers(self):
+        """
+        Gets the stickers of this ConversationNotificationMessages.
+
+
+        :return: The stickers of this ConversationNotificationMessages.
+        :rtype: list[ConversationNotificationStickers]
+        """
+        return self._stickers
+
+    @stickers.setter
+    def stickers(self, stickers):
+        """
+        Sets the stickers of this ConversationNotificationMessages.
+
+
+        :param stickers: The stickers of this ConversationNotificationMessages.
+        :type: list[ConversationNotificationStickers]
+        """
+        
+        self._stickers = stickers
 
     def to_dict(self):
         """

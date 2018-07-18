@@ -43,6 +43,7 @@ class Trustor(object):
             'date_created': 'datetime',
             'created_by': 'OrgUser',
             'organization': 'Organization',
+            'authorization': 'TrusteeAuthorization',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class Trustor(object):
             'date_created': 'dateCreated',
             'created_by': 'createdBy',
             'organization': 'organization',
+            'authorization': 'authorization',
             'self_uri': 'selfUri'
         }
 
@@ -60,6 +62,7 @@ class Trustor(object):
         self._date_created = None
         self._created_by = None
         self._organization = None
+        self._authorization = None
         self._self_uri = None
 
     @property
@@ -176,6 +179,29 @@ class Trustor(object):
         """
         
         self._organization = organization
+
+    @property
+    def authorization(self):
+        """
+        Gets the authorization of this Trustor.
+        Authorization for the trustee user has in this trustor organization
+
+        :return: The authorization of this Trustor.
+        :rtype: TrusteeAuthorization
+        """
+        return self._authorization
+
+    @authorization.setter
+    def authorization(self, authorization):
+        """
+        Sets the authorization of this Trustor.
+        Authorization for the trustee user has in this trustor organization
+
+        :param authorization: The authorization of this Trustor.
+        :type: TrusteeAuthorization
+        """
+        
+        self._authorization = authorization
 
     @property
     def self_uri(self):

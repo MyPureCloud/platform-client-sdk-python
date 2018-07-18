@@ -69,6 +69,7 @@ class CampaignNotification(object):
             'call_analysis_language': 'str',
             'priority': 'int',
             'contact_list_filters': 'list[CampaignNotificationUriReference]',
+            'division': 'CampaignNotificationUriReference',
             'additional_properties': 'object'
         }
 
@@ -104,6 +105,7 @@ class CampaignNotification(object):
             'call_analysis_language': 'callAnalysisLanguage',
             'priority': 'priority',
             'contact_list_filters': 'contactListFilters',
+            'division': 'division',
             'additional_properties': 'additionalProperties'
         }
 
@@ -138,6 +140,7 @@ class CampaignNotification(object):
         self._call_analysis_language = None
         self._priority = None
         self._contact_list_filters = None
+        self._division = None
         self._additional_properties = None
 
     @property
@@ -860,6 +863,29 @@ class CampaignNotification(object):
         """
         
         self._contact_list_filters = contact_list_filters
+
+    @property
+    def division(self):
+        """
+        Gets the division of this CampaignNotification.
+
+
+        :return: The division of this CampaignNotification.
+        :rtype: CampaignNotificationUriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this CampaignNotification.
+
+
+        :param division: The division of this CampaignNotification.
+        :type: CampaignNotificationUriReference
+        """
+        
+        self._division = division
 
     @property
     def additional_properties(self):
