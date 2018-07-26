@@ -43,6 +43,7 @@ class AnalyticsConversation(object):
             'conversation_end': 'datetime',
             'participants': 'list[AnalyticsParticipant]',
             'evaluations': 'list[AnalyticsEvaluation]',
+            'surveys': 'list[AnalyticsSurvey]',
             'division_ids': 'list[str]'
         }
 
@@ -52,6 +53,7 @@ class AnalyticsConversation(object):
             'conversation_end': 'conversationEnd',
             'participants': 'participants',
             'evaluations': 'evaluations',
+            'surveys': 'surveys',
             'division_ids': 'divisionIds'
         }
 
@@ -60,6 +62,7 @@ class AnalyticsConversation(object):
         self._conversation_end = None
         self._participants = None
         self._evaluations = None
+        self._surveys = None
         self._division_ids = None
 
     @property
@@ -176,6 +179,29 @@ class AnalyticsConversation(object):
         """
         
         self._evaluations = evaluations
+
+    @property
+    def surveys(self):
+        """
+        Gets the surveys of this AnalyticsConversation.
+        Surveys tied to this conversation
+
+        :return: The surveys of this AnalyticsConversation.
+        :rtype: list[AnalyticsSurvey]
+        """
+        return self._surveys
+
+    @surveys.setter
+    def surveys(self, surveys):
+        """
+        Sets the surveys of this AnalyticsConversation.
+        Surveys tied to this conversation
+
+        :param surveys: The surveys of this AnalyticsConversation.
+        :type: list[AnalyticsSurvey]
+        """
+        
+        self._surveys = surveys
 
     @property
     def division_ids(self):

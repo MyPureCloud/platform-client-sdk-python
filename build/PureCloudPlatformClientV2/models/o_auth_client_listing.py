@@ -49,6 +49,7 @@ class OAuthClientListing(object):
             'date_modified': 'datetime',
             'created_by': 'UriReference',
             'modified_by': 'UriReference',
+            'scope': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class OAuthClientListing(object):
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
+            'scope': 'scope',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +80,7 @@ class OAuthClientListing(object):
         self._date_modified = None
         self._created_by = None
         self._modified_by = None
+        self._scope = None
         self._self_uri = None
 
     @property
@@ -332,6 +335,29 @@ class OAuthClientListing(object):
         """
         
         self._modified_by = modified_by
+
+    @property
+    def scope(self):
+        """
+        Gets the scope of this OAuthClientListing.
+        The scope requested by this client
+
+        :return: The scope of this OAuthClientListing.
+        :rtype: list[str]
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """
+        Sets the scope of this OAuthClientListing.
+        The scope requested by this client
+
+        :param scope: The scope of this OAuthClientListing.
+        :type: list[str]
+        """
+        
+        self._scope = scope
 
     @property
     def self_uri(self):

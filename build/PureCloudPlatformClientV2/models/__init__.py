@@ -53,6 +53,7 @@ from .analytics_query_predicate import AnalyticsQueryPredicate
 from .analytics_routing_status_record import AnalyticsRoutingStatusRecord
 from .analytics_session import AnalyticsSession
 from .analytics_session_metric import AnalyticsSessionMetric
+from .analytics_survey import AnalyticsSurvey
 from .analytics_user_detail import AnalyticsUserDetail
 from .analytics_user_details_query_response import AnalyticsUserDetailsQueryResponse
 from .analytics_user_presence_record import AnalyticsUserPresenceRecord

@@ -45,6 +45,7 @@ class OrgOAuthClient(object):
             'created_by': 'UriReference',
             'modified_by': 'UriReference',
             'authorized_grant_type': 'str',
+            'scope': 'list[str]',
             'organization': 'NamedEntity'
         }
 
@@ -56,6 +57,7 @@ class OrgOAuthClient(object):
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'authorized_grant_type': 'authorizedGrantType',
+            'scope': 'scope',
             'organization': 'organization'
         }
 
@@ -66,6 +68,7 @@ class OrgOAuthClient(object):
         self._created_by = None
         self._modified_by = None
         self._authorized_grant_type = None
+        self._scope = None
         self._organization = None
 
     @property
@@ -232,6 +235,29 @@ class OrgOAuthClient(object):
             self._authorized_grant_type = "outdated_sdk_version"
         else:
             self._authorized_grant_type = authorized_grant_type
+
+    @property
+    def scope(self):
+        """
+        Gets the scope of this OrgOAuthClient.
+        The scope requested by this client
+
+        :return: The scope of this OrgOAuthClient.
+        :rtype: list[str]
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """
+        Sets the scope of this OrgOAuthClient.
+        The scope requested by this client
+
+        :param scope: The scope of this OrgOAuthClient.
+        :type: list[str]
+        """
+        
+        self._scope = scope
 
     @property
     def organization(self):

@@ -50,6 +50,7 @@ class OAuthClient(object):
             'created_by': 'UriReference',
             'modified_by': 'UriReference',
             'authorized_grant_type': 'str',
+            'scope': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -66,6 +67,7 @@ class OAuthClient(object):
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'authorized_grant_type': 'authorizedGrantType',
+            'scope': 'scope',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +83,7 @@ class OAuthClient(object):
         self._created_by = None
         self._modified_by = None
         self._authorized_grant_type = None
+        self._scope = None
         self._self_uri = None
 
     @property
@@ -362,6 +365,29 @@ class OAuthClient(object):
             self._authorized_grant_type = "outdated_sdk_version"
         else:
             self._authorized_grant_type = authorized_grant_type
+
+    @property
+    def scope(self):
+        """
+        Gets the scope of this OAuthClient.
+        The scope requested by this client
+
+        :return: The scope of this OAuthClient.
+        :rtype: list[str]
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """
+        Sets the scope of this OAuthClient.
+        The scope requested by this client
+
+        :param scope: The scope of this OAuthClient.
+        :type: list[str]
+        """
+        
+        self._scope = scope
 
     @property
     def self_uri(self):
