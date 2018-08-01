@@ -39,19 +39,16 @@ class PatchUser(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'acd_auto_answer': 'bool',
-            'self_uri': 'str'
+            'acd_auto_answer': 'bool'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'acd_auto_answer': 'acdAutoAnswer',
-            'self_uri': 'selfUri'
+            'acd_auto_answer': 'acdAutoAnswer'
         }
 
         self._id = None
         self._acd_auto_answer = None
-        self._self_uri = None
 
     @property
     def id(self):
@@ -98,29 +95,6 @@ class PatchUser(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this PatchUser.
-        The URI for this object
-
-        :return: The self_uri of this PatchUser.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this PatchUser.
-        The URI for this object
-
-        :param self_uri: The self_uri of this PatchUser.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

@@ -46,6 +46,7 @@ title: UserMe
 | **field_configs** | [**FieldConfigs**](FieldConfigs.html) | The field config for all entities types of user&#39;s organization | [optional] |
 | **token** | [**TokenInfo**](TokenInfo.html) | Information about the current token | [optional] |
 | **trustors** | [**list[Trustor]**](Trustor.html) | Organizations having this user as a trustee | [optional] |
+| **org_products** | [**list[DomainOrganizationProduct]**](DomainOrganizationProduct.html) | Products enabled in this organization | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

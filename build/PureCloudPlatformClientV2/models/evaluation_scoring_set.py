@@ -40,7 +40,7 @@ class EvaluationScoringSet(object):
         self.swagger_types = {
             'total_score': 'float',
             'total_critical_score': 'float',
-            'question_group_scores': 'list[QuestionGroupScore]',
+            'question_group_scores': 'list[EvaluationQuestionGroupScore]',
             'any_failed_kill_questions': 'bool',
             'comments': 'str',
             'agent_comments': 'str'
@@ -115,7 +115,7 @@ class EvaluationScoringSet(object):
 
 
         :return: The question_group_scores of this EvaluationScoringSet.
-        :rtype: list[QuestionGroupScore]
+        :rtype: list[EvaluationQuestionGroupScore]
         """
         return self._question_group_scores
 
@@ -126,7 +126,7 @@ class EvaluationScoringSet(object):
 
 
         :param question_group_scores: The question_group_scores of this EvaluationScoringSet.
-        :type: list[QuestionGroupScore]
+        :type: list[EvaluationQuestionGroupScore]
         """
         
         self._question_group_scores = question_group_scores

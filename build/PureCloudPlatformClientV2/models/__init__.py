@@ -525,6 +525,8 @@ from .evaluation_entity_listing import EvaluationEntityListing
 from .evaluation_form import EvaluationForm
 from .evaluation_form_and_scoring_set import EvaluationFormAndScoringSet
 from .evaluation_form_entity_listing import EvaluationFormEntityListing
+from .evaluation_question_group_score import EvaluationQuestionGroupScore
+from .evaluation_question_score import EvaluationQuestionScore
 from .evaluation_scoring_set import EvaluationScoringSet
 from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
@@ -887,8 +889,6 @@ from .query_result import QueryResult
 from .query_results import QueryResults
 from .question import Question
 from .question_group import QuestionGroup
-from .question_group_score import QuestionGroupScore
-from .question_score import QuestionScore
 from .queue import Queue
 from .queue_email_address import QueueEmailAddress
 from .queue_entity_listing import QueueEntityListing

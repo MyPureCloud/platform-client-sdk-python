@@ -77,6 +77,7 @@ class UserMe(object):
             'field_configs': 'FieldConfigs',
             'token': 'TokenInfo',
             'trustors': 'list[Trustor]',
+            'org_products': 'list[DomainOrganizationProduct]',
             'self_uri': 'str'
         }
 
@@ -120,6 +121,7 @@ class UserMe(object):
             'field_configs': 'fieldConfigs',
             'token': 'token',
             'trustors': 'trustors',
+            'org_products': 'orgProducts',
             'self_uri': 'selfUri'
         }
 
@@ -162,6 +164,7 @@ class UserMe(object):
         self._field_configs = None
         self._token = None
         self._trustors = None
+        self._org_products = None
         self._self_uri = None
 
     @property
@@ -1064,6 +1067,29 @@ class UserMe(object):
         """
         
         self._trustors = trustors
+
+    @property
+    def org_products(self):
+        """
+        Gets the org_products of this UserMe.
+        Products enabled in this organization
+
+        :return: The org_products of this UserMe.
+        :rtype: list[DomainOrganizationProduct]
+        """
+        return self._org_products
+
+    @org_products.setter
+    def org_products(self, org_products):
+        """
+        Sets the org_products of this UserMe.
+        Products enabled in this organization
+
+        :param org_products: The org_products of this UserMe.
+        :type: list[DomainOrganizationProduct]
+        """
+        
+        self._org_products = org_products
 
     @property
     def self_uri(self):
