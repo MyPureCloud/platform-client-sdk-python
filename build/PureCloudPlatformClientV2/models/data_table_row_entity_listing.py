@@ -43,10 +43,10 @@ class DataTableRowEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'self_uri': 'str',
-            'first_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
+            'first_uri': 'str',
             'page_count': 'int'
         }
 
@@ -56,10 +56,10 @@ class DataTableRowEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'self_uri': 'selfUri',
-            'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
+            'first_uri': 'firstUri',
             'page_count': 'pageCount'
         }
 
@@ -68,10 +68,10 @@ class DataTableRowEntityListing(object):
         self._page_number = None
         self._total = None
         self._self_uri = None
-        self._first_uri = None
         self._previous_uri = None
         self._next_uri = None
         self._last_uri = None
+        self._first_uri = None
         self._page_count = None
 
     @property
@@ -190,29 +190,6 @@ class DataTableRowEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def first_uri(self):
-        """
-        Gets the first_uri of this DataTableRowEntityListing.
-
-
-        :return: The first_uri of this DataTableRowEntityListing.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri):
-        """
-        Sets the first_uri of this DataTableRowEntityListing.
-
-
-        :param first_uri: The first_uri of this DataTableRowEntityListing.
-        :type: str
-        """
-        
-        self._first_uri = first_uri
-
-    @property
     def previous_uri(self):
         """
         Gets the previous_uri of this DataTableRowEntityListing.
@@ -280,6 +257,29 @@ class DataTableRowEntityListing(object):
         """
         
         self._last_uri = last_uri
+
+    @property
+    def first_uri(self):
+        """
+        Gets the first_uri of this DataTableRowEntityListing.
+
+
+        :return: The first_uri of this DataTableRowEntityListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri):
+        """
+        Sets the first_uri of this DataTableRowEntityListing.
+
+
+        :param first_uri: The first_uri of this DataTableRowEntityListing.
+        :type: str
+        """
+        
+        self._first_uri = first_uri
 
     @property
     def page_count(self):
