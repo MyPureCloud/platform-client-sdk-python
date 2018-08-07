@@ -40,7 +40,7 @@ class CreateQueueRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'version': 'int',
             'date_created': 'datetime',
@@ -175,7 +175,7 @@ class CreateQueueRequest(object):
         The division to which this entity belongs.
 
         :return: The division of this CreateQueueRequest.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -186,7 +186,7 @@ class CreateQueueRequest(object):
         The division to which this entity belongs.
 
         :param division: The division of this CreateQueueRequest.
-        :type: Division
+        :type: WritableDivision
         """
         
         self._division = division

@@ -3765,7 +3765,7 @@ class RoutingApi(object):
 
     def post_routing_queues(self, body, **kwargs):
         """
-        Create queue
+        Create a queue
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4511,7 +4511,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param Queue body: Queue (required)
+        :param QueueRequest body: Queue (required)
         :return: Queue
                  If the method is called asynchronously,
                  returns the request thread.

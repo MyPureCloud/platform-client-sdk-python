@@ -56,7 +56,6 @@ class UserQueue(object):
             'skill_evaluation_method': 'str',
             'queue_flow': 'UriReference',
             'whisper_prompt': 'UriReference',
-            'auto_answer_only': 'bool',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -85,7 +84,6 @@ class UserQueue(object):
             'skill_evaluation_method': 'skillEvaluationMethod',
             'queue_flow': 'queueFlow',
             'whisper_prompt': 'whisperPrompt',
-            'auto_answer_only': 'autoAnswerOnly',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -113,7 +111,6 @@ class UserQueue(object):
         self._skill_evaluation_method = None
         self._queue_flow = None
         self._whisper_prompt = None
-        self._auto_answer_only = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -543,29 +540,6 @@ class UserQueue(object):
         """
         
         self._whisper_prompt = whisper_prompt
-
-    @property
-    def auto_answer_only(self):
-        """
-        Gets the auto_answer_only of this UserQueue.
-        Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
-
-        :return: The auto_answer_only of this UserQueue.
-        :rtype: bool
-        """
-        return self._auto_answer_only
-
-    @auto_answer_only.setter
-    def auto_answer_only(self, auto_answer_only):
-        """
-        Sets the auto_answer_only of this UserQueue.
-        Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
-
-        :param auto_answer_only: The auto_answer_only of this UserQueue.
-        :type: bool
-        """
-        
-        self._auto_answer_only = auto_answer_only
 
     @property
     def calling_party_name(self):

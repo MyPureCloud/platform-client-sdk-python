@@ -1491,7 +1491,7 @@ class ExternalContactsApi(object):
 
     def get_externalcontacts_reversewhitepageslookup(self, lookup_val, **kwargs):
         """
-        Lookup contacts and externalOrganizations based on an attribute
+        Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
         
 
         This method makes a synchronous HTTP request by default. To make an

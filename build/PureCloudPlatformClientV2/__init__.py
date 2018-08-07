@@ -897,6 +897,7 @@ from .models.queue_member import QueueMember
 from .models.queue_member_entity_listing import QueueMemberEntityListing
 from .models.queue_member_notification import QueueMemberNotification
 from .models.queue_reference import QueueReference
+from .models.queue_request import QueueRequest
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry
@@ -1061,6 +1062,8 @@ from .models.stats_notification_notification_datum import StatsNotificationNotif
 from .models.stats_notification_notification_metric import StatsNotificationNotificationMetric
 from .models.stats_notification_notification_metrics import StatsNotificationNotificationMetrics
 from .models.street_address import StreetAddress
+from .models.subject_division_grants import SubjectDivisionGrants
+from .models.subject_division_grants_entity_listing import SubjectDivisionGrantsEntityListing
 from .models.subscriber_response import SubscriberResponse
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
@@ -1276,6 +1279,7 @@ from .models.wrap_up_code_reference import WrapUpCodeReference
 from .models.wrapup import Wrapup
 from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
+from .models.writable_division import WritableDivision
 from .models.writable_entity import WritableEntity
 
 # import apis into sdk package

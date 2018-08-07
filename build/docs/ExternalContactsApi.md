@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organization_relationships**](ExternalContactsApi.html#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
 |[**get_externalcontacts_organizations**](ExternalContactsApi.html#get_externalcontacts_organizations) | Search for external organizations|
 |[**get_externalcontacts_relationship**](ExternalContactsApi.html#get_externalcontacts_relationship) | Fetch a relationship|
-|[**get_externalcontacts_reversewhitepageslookup**](ExternalContactsApi.html#get_externalcontacts_reversewhitepageslookup) | Lookup contacts and externalOrganizations based on an attribute|
+|[**get_externalcontacts_reversewhitepageslookup**](ExternalContactsApi.html#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
 |[**post_externalcontacts_contact_notes**](ExternalContactsApi.html#post_externalcontacts_contact_notes) | Create a note for an external contact|
 |[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
 |[**post_externalcontacts_organization_notes**](ExternalContactsApi.html#post_externalcontacts_organization_notes) | Create a note for an external organization|
@@ -981,7 +981,7 @@ except ApiException as e:
 
 
 
-Lookup contacts and externalOrganizations based on an attribute
+Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 
 
 
@@ -1008,7 +1008,7 @@ lookup_val = 'lookup_val_example' # str | User supplied value to lookup contacts
 expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
 
 try:
-    # Lookup contacts and externalOrganizations based on an attribute
+    # Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
     api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
     pprint(api_response)
 except ApiException as e:

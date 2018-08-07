@@ -53,7 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
 |[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | Bulk add or delete up to 100 queue members|
 |[**post_routing_queue_wrapupcodes**](RoutingApi.html#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
-|[**post_routing_queues**](RoutingApi.html#post_routing_queues) | Create queue|
+|[**post_routing_queues**](RoutingApi.html#post_routing_queues) | Create a queue|
 |[**post_routing_skills**](RoutingApi.html#post_routing_skills) | Create Skill|
 |[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
 |[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
@@ -2478,7 +2478,7 @@ except ApiException as e:
 
 
 
-Create queue
+Create a queue
 
 
 
@@ -2504,7 +2504,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.CreateQueueRequest() # CreateQueueRequest | Queue
 
 try:
-    # Create queue
+    # Create a queue
     api_response = api_instance.post_routing_queues(body)
     pprint(api_response)
 except ApiException as e:
@@ -2973,7 +2973,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-body = PureCloudPlatformClientV2.Queue() # Queue | Queue
+body = PureCloudPlatformClientV2.QueueRequest() # QueueRequest | Queue
 
 try:
     # Update a queue
@@ -2989,7 +2989,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**Queue**](Queue.html)| Queue |  |
+| **body** | [**QueueRequest**](QueueRequest.html)| Queue |  |
 {: class="table table-striped"}
 
 ### Return type
