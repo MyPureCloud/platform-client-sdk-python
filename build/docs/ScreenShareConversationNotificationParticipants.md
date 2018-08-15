@@ -28,6 +28,7 @@ title: ScreenShareConversationNotificationParticipants
 | **script** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup_timeout_ms** | **int** |  | [optional] |
 | **wrapup_skipped** | **bool** |  | [optional] |
+| **alerting_timeout_ms** | **int** |  | [optional] |
 | **provider** | **str** |  | [optional] |
 | **external_contact** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  | [optional] |
 | **external_organization** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  | [optional] |

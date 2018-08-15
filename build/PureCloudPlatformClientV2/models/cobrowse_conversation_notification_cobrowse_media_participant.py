@@ -59,6 +59,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'script': 'CobrowseConversationNotificationUriReference',
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
+            'alerting_timeout_ms': 'int',
             'provider': 'str',
             'external_contact': 'CobrowseConversationNotificationUriReference',
             'external_organization': 'CobrowseConversationNotificationUriReference',
@@ -95,6 +96,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
             'script': 'script',
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup_skipped': 'wrapupSkipped',
+            'alerting_timeout_ms': 'alertingTimeoutMs',
             'provider': 'provider',
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
@@ -130,6 +132,7 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         self._script = None
         self._wrapup_timeout_ms = None
         self._wrapup_skipped = None
+        self._alerting_timeout_ms = None
         self._provider = None
         self._external_contact = None
         self._external_organization = None
@@ -637,6 +640,29 @@ class CobrowseConversationNotificationCobrowseMediaParticipant(object):
         """
         
         self._wrapup_skipped = wrapup_skipped
+
+    @property
+    def alerting_timeout_ms(self):
+        """
+        Gets the alerting_timeout_ms of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :return: The alerting_timeout_ms of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :rtype: int
+        """
+        return self._alerting_timeout_ms
+
+    @alerting_timeout_ms.setter
+    def alerting_timeout_ms(self, alerting_timeout_ms):
+        """
+        Sets the alerting_timeout_ms of this CobrowseConversationNotificationCobrowseMediaParticipant.
+
+
+        :param alerting_timeout_ms: The alerting_timeout_ms of this CobrowseConversationNotificationCobrowseMediaParticipant.
+        :type: int
+        """
+        
+        self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
     def provider(self):

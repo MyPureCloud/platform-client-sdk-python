@@ -2389,7 +2389,7 @@ class OutboundApi(object):
         :param str name: Name
         :param list[str] id: id
         :param str contact_list_id: Contact List ID
-        :param str dnc_list_id: DNC list ID
+        :param str dnc_list_ids: DNC list ID
         :param str distribution_queue_id: Distribution queue ID
         :param str edge_group_id: Edge group ID
         :param str call_analysis_response_set_id: Call analysis response set ID
@@ -2401,7 +2401,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'id', 'contact_list_id', 'dnc_list_id', 'distribution_queue_id', 'edge_group_id', 'call_analysis_response_set_id', 'division_id', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'id', 'contact_list_id', 'dnc_list_ids', 'distribution_queue_id', 'edge_group_id', 'call_analysis_response_set_id', 'division_id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2432,8 +2432,8 @@ class OutboundApi(object):
             query_params['id'] = params['id']
         if 'contact_list_id' in params:
             query_params['contactListId'] = params['contact_list_id']
-        if 'dnc_list_id' in params:
-            query_params['dncListId'] = params['dnc_list_id']
+        if 'dnc_list_ids' in params:
+            query_params['dncListIds'] = params['dnc_list_ids']
         if 'distribution_queue_id' in params:
             query_params['distributionQueueId'] = params['distribution_queue_id']
         if 'edge_group_id' in params:

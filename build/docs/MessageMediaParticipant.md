@@ -28,6 +28,7 @@ title: MessageMediaParticipant
 | **script** | [**UriReference**](UriReference.html) | The Engage script that should be used by this participant. | [optional] |
 | **wrapup_timeout_ms** | **int** | The amount of time the participant has to complete wrap-up. | [optional] |
 | **wrapup_skipped** | **bool** | Value is true when the participant has skipped wrap-up. | [optional] |
+| **alerting_timeout_ms** | **int** | Specifies how long the agent has to answer an interaction before being marked as not responding. | [optional] |
 | **provider** | **str** | The source provider for the communication. | [optional] |
 | **external_contact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. | [optional] |
 | **external_organization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. | [optional] |

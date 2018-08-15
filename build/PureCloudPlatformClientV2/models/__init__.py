@@ -44,6 +44,8 @@ from .analytics_conversation import AnalyticsConversation
 from .analytics_conversation_query_response import AnalyticsConversationQueryResponse
 from .analytics_conversation_segment import AnalyticsConversationSegment
 from .analytics_evaluation import AnalyticsEvaluation
+from .analytics_flow import AnalyticsFlow
+from .analytics_flow_outcome import AnalyticsFlowOutcome
 from .analytics_participant import AnalyticsParticipant
 from .analytics_property import AnalyticsProperty
 from .analytics_query_aggregation import AnalyticsQueryAggregation

@@ -59,6 +59,7 @@ class ScreenShareConversationNotificationParticipants(object):
             'script': 'ScreenShareConversationNotificationUriReference',
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
+            'alerting_timeout_ms': 'int',
             'provider': 'str',
             'external_contact': 'ScreenShareConversationNotificationUriReference',
             'external_organization': 'ScreenShareConversationNotificationUriReference',
@@ -93,6 +94,7 @@ class ScreenShareConversationNotificationParticipants(object):
             'script': 'script',
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup_skipped': 'wrapupSkipped',
+            'alerting_timeout_ms': 'alertingTimeoutMs',
             'provider': 'provider',
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
@@ -126,6 +128,7 @@ class ScreenShareConversationNotificationParticipants(object):
         self._script = None
         self._wrapup_timeout_ms = None
         self._wrapup_skipped = None
+        self._alerting_timeout_ms = None
         self._provider = None
         self._external_contact = None
         self._external_organization = None
@@ -631,6 +634,29 @@ class ScreenShareConversationNotificationParticipants(object):
         """
         
         self._wrapup_skipped = wrapup_skipped
+
+    @property
+    def alerting_timeout_ms(self):
+        """
+        Gets the alerting_timeout_ms of this ScreenShareConversationNotificationParticipants.
+
+
+        :return: The alerting_timeout_ms of this ScreenShareConversationNotificationParticipants.
+        :rtype: int
+        """
+        return self._alerting_timeout_ms
+
+    @alerting_timeout_ms.setter
+    def alerting_timeout_ms(self, alerting_timeout_ms):
+        """
+        Sets the alerting_timeout_ms of this ScreenShareConversationNotificationParticipants.
+
+
+        :param alerting_timeout_ms: The alerting_timeout_ms of this ScreenShareConversationNotificationParticipants.
+        :type: int
+        """
+        
+        self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
     def provider(self):

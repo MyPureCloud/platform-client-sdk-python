@@ -28,6 +28,7 @@ title: CobrowseConversationNotificationParticipants
 | **script** | [**CobrowseConversationNotificationUriReference**](CobrowseConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup_timeout_ms** | **int** |  | [optional] |
 | **wrapup_skipped** | **bool** |  | [optional] |
+| **alerting_timeout_ms** | **int** |  | [optional] |
 | **provider** | **str** |  | [optional] |
 | **external_contact** | [**CobrowseConversationNotificationUriReference**](CobrowseConversationNotificationUriReference.html) |  | [optional] |
 | **external_organization** | [**CobrowseConversationNotificationUriReference**](CobrowseConversationNotificationUriReference.html) |  | [optional] |

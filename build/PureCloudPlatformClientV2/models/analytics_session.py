@@ -74,7 +74,8 @@ class AnalyticsSession(object):
             'video_room_id': 'str',
             'video_address_self': 'str',
             'segments': 'list[AnalyticsConversationSegment]',
-            'metrics': 'list[AnalyticsSessionMetric]'
+            'metrics': 'list[AnalyticsSessionMetric]',
+            'flow': 'AnalyticsFlow'
         }
 
         self.attribute_map = {
@@ -114,7 +115,8 @@ class AnalyticsSession(object):
             'video_room_id': 'videoRoomId',
             'video_address_self': 'videoAddressSelf',
             'segments': 'segments',
-            'metrics': 'metrics'
+            'metrics': 'metrics',
+            'flow': 'flow'
         }
 
         self._media_type = None
@@ -154,6 +156,7 @@ class AnalyticsSession(object):
         self._video_address_self = None
         self._segments = None
         self._metrics = None
+        self._flow = None
 
     @property
     def media_type(self):
@@ -1017,6 +1020,29 @@ class AnalyticsSession(object):
         """
         
         self._metrics = metrics
+
+    @property
+    def flow(self):
+        """
+        Gets the flow of this AnalyticsSession.
+        IVR flow execution associated with this session
+
+        :return: The flow of this AnalyticsSession.
+        :rtype: AnalyticsFlow
+        """
+        return self._flow
+
+    @flow.setter
+    def flow(self, flow):
+        """
+        Sets the flow of this AnalyticsSession.
+        IVR flow execution associated with this session
+
+        :param flow: The flow of this AnalyticsSession.
+        :type: AnalyticsFlow
+        """
+        
+        self._flow = flow
 
     def to_dict(self):
         """

@@ -28,6 +28,7 @@ title: ChatConversationNotificationParticipants
 | **script** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  | [optional] |
 | **wrapup_timeout_ms** | **int** |  | [optional] |
 | **wrapup_skipped** | **bool** |  | [optional] |
+| **alerting_timeout_ms** | **int** |  | [optional] |
 | **provider** | **str** |  | [optional] |
 | **external_contact** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  | [optional] |
 | **external_organization** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  | [optional] |

@@ -55,6 +55,7 @@ class ConversationNotificationParticipants(object):
             'wrapup_prompt': 'str',
             'wrapup_timeout_ms': 'int',
             'wrapup': 'ConversationNotificationWrapup',
+            'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
@@ -89,6 +90,7 @@ class ConversationNotificationParticipants(object):
             'wrapup_prompt': 'wrapupPrompt',
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup': 'wrapup',
+            'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
@@ -122,6 +124,7 @@ class ConversationNotificationParticipants(object):
         self._wrapup_prompt = None
         self._wrapup_timeout_ms = None
         self._wrapup = None
+        self._alerting_timeout_ms = None
         self._monitored_participant_id = None
         self._screen_recording_state = None
         self._flagged_reason = None
@@ -527,6 +530,29 @@ class ConversationNotificationParticipants(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def alerting_timeout_ms(self):
+        """
+        Gets the alerting_timeout_ms of this ConversationNotificationParticipants.
+
+
+        :return: The alerting_timeout_ms of this ConversationNotificationParticipants.
+        :rtype: int
+        """
+        return self._alerting_timeout_ms
+
+    @alerting_timeout_ms.setter
+    def alerting_timeout_ms(self, alerting_timeout_ms):
+        """
+        Sets the alerting_timeout_ms of this ConversationNotificationParticipants.
+
+
+        :param alerting_timeout_ms: The alerting_timeout_ms of this ConversationNotificationParticipants.
+        :type: int
+        """
+        
+        self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
     def monitored_participant_id(self):

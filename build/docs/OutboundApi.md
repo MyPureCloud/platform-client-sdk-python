@@ -1611,7 +1611,7 @@ except ApiException as e:
 
 <a name="get_outbound_campaigns"></a>
 
-## [**CampaignEntityListing**](CampaignEntityListing.html) get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+## [**CampaignEntityListing**](CampaignEntityListing.html) get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_ids=dnc_list_ids, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1644,7 +1644,7 @@ filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
-dnc_list_id = 'dnc_list_id_example' # str | DNC list ID (optional)
+dnc_list_ids = 'dnc_list_ids_example' # str | DNC list ID (optional)
 distribution_queue_id = 'distribution_queue_id_example' # str | Distribution queue ID (optional)
 edge_group_id = 'edge_group_id_example' # str | Edge group ID (optional)
 call_analysis_response_set_id = 'call_analysis_response_set_id_example' # str | Call analysis response set ID (optional)
@@ -1654,7 +1654,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of dialer campaigns.
-    api_response = api_instance.get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_id=dnc_list_id, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_ids=dnc_list_ids, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaigns: %s\n" % e
@@ -1671,7 +1671,7 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
-| **dnc_list_id** | **str**| DNC list ID | [optional]  |
+| **dnc_list_ids** | **str**| DNC list ID | [optional]  |
 | **distribution_queue_id** | **str**| Distribution queue ID | [optional]  |
 | **edge_group_id** | **str**| Edge group ID | [optional]  |
 | **call_analysis_response_set_id** | **str**| Call analysis response set ID | [optional]  |

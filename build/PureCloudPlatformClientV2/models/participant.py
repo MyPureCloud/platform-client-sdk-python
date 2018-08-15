@@ -63,6 +63,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
             'wrapup': 'Wrapup',
+            'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
             'attributes': 'dict(str, str)',
             'calls': 'list[Call]',
@@ -105,6 +106,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup_skipped': 'wrapupSkipped',
             'wrapup': 'wrapup',
+            'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
             'attributes': 'attributes',
             'calls': 'calls',
@@ -146,6 +148,7 @@ class Participant(object):
         self._wrapup_timeout_ms = None
         self._wrapup_skipped = None
         self._wrapup = None
+        self._alerting_timeout_ms = None
         self._monitored_participant_id = None
         self._attributes = None
         self._calls = None
@@ -739,6 +742,29 @@ class Participant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def alerting_timeout_ms(self):
+        """
+        Gets the alerting_timeout_ms of this Participant.
+        Specifies how long the agent has to answer an interaction before being marked as not responding.
+
+        :return: The alerting_timeout_ms of this Participant.
+        :rtype: int
+        """
+        return self._alerting_timeout_ms
+
+    @alerting_timeout_ms.setter
+    def alerting_timeout_ms(self, alerting_timeout_ms):
+        """
+        Sets the alerting_timeout_ms of this Participant.
+        Specifies how long the agent has to answer an interaction before being marked as not responding.
+
+        :param alerting_timeout_ms: The alerting_timeout_ms of this Participant.
+        :type: int
+        """
+        
+        self._alerting_timeout_ms = alerting_timeout_ms
 
     @property
     def monitored_participant_id(self):

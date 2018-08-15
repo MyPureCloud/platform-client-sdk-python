@@ -32,6 +32,7 @@ title: Participant
 | **wrapup_timeout_ms** | **int** | Specifies how long a timed ACW session will last. | [optional] |
 | **wrapup_skipped** | **bool** | The UI sets this field when the agent chooses to skip entering a wrapup for this participant. | [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Call wrap up or disposition data. | [optional] |
+| **alerting_timeout_ms** | **int** | Specifies how long the agent has to answer an interaction before being marked as not responding. | [optional] |
 | **monitored_participant_id** | **str** | If this participant is a monitor, then this will be the id of the participant that is being monitored. | [optional] |
 | **attributes** | **dict(str, str)** | Additional participant attributes | [optional] |
 | **calls** | [**list[Call]**](Call.html) |  | [optional] |

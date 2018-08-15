@@ -1,62 +1,127 @@
-Platform API version: 2528
+Platform API version: 2554
 
 
 # Major Changes (2 changes)
 
-**UserQueue** (1 change)
+**GET /api/v2/outbound/campaigns** (2 changes)
 
-* Property autoAnswerOnly was removed
-
-**CreateQueueRequest** (1 change)
-
-* Property division was changed from Division to WritableDivision
+* Parameter dncListId was removed
+* Parameter dncListIds was added
 
 
-# Minor Changes (12 changes)
+# Minor Changes (64 changes)
 
-**/api/v2/authorization/roles/{roleId}/subjectgrants** (2 changes)
+**Participant** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property alertingTimeoutMs was added
 
-**Operation** (2 changes)
+**ReportRunEntry** (1 change)
 
-* Enum value CREATE was added to property actionName
-* Enum value UPDATE was added to property actionName
+* Enum value UNABLE_TO_COMPLETE was added to property runStatus
 
-**HistoryListing** (2 changes)
+**ChatMediaParticipant** (1 change)
 
-* Enum value CREATE was added to property actionName
-* Enum value UPDATE was added to property actionName
+* Optional property alertingTimeoutMs was added
 
-**WritableDivision** (1 change)
+**CobrowseMediaParticipant** (1 change)
+
+* Optional property alertingTimeoutMs was added
+
+**AggregateMetricData** (6 changes)
+
+* Enum value nFlow was added to property metric
+* Enum value tFlowHangUp was added to property metric
+* Enum value tFlowExit was added to property metric
+* Enum value tFlow was added to property metric
+* Enum value tFlowOutcome was added to property metric
+* Enum value nFlowOutcome was added to property metric
+
+**AnalyticsQueryPredicate** (20 changes)
+
+* Enum value flowId was added to property dimension
+* Enum value flowName was added to property dimension
+* Enum value flowVersion was added to property dimension
+* Enum value flowType was added to property dimension
+* Enum value exitReason was added to property dimension
+* Enum value transferType was added to property dimension
+* Enum value transferTargetName was added to property dimension
+* Enum value transferTargetAddress was added to property dimension
+* Enum value issuedCallback was added to property dimension
+* Enum value startingLanguage was added to property dimension
+* Enum value endingLanguage was added to property dimension
+* Enum value flowOutcomeId was added to property dimension
+* Enum value flowOutcomeValue was added to property dimension
+* Enum value flowOutcome was added to property dimension
+* Enum value nFlow was added to property metric
+* Enum value tFlowHangUp was added to property metric
+* Enum value tFlowExit was added to property metric
+* Enum value tFlow was added to property metric
+* Enum value tFlowOutcome was added to property metric
+* Enum value nFlowOutcome was added to property metric
+
+**ObservationQuery** (6 changes)
+
+* Enum value nFlow was added to property metrics
+* Enum value tFlowHangUp was added to property metrics
+* Enum value tFlowExit was added to property metrics
+* Enum value tFlow was added to property metrics
+* Enum value tFlowOutcome was added to property metrics
+* Enum value nFlowOutcome was added to property metrics
+
+**AggregationQuery** (20 changes)
+
+* Enum value flowId was added to property groupBy
+* Enum value flowName was added to property groupBy
+* Enum value flowVersion was added to property groupBy
+* Enum value flowType was added to property groupBy
+* Enum value exitReason was added to property groupBy
+* Enum value transferType was added to property groupBy
+* Enum value transferTargetName was added to property groupBy
+* Enum value transferTargetAddress was added to property groupBy
+* Enum value issuedCallback was added to property groupBy
+* Enum value startingLanguage was added to property groupBy
+* Enum value endingLanguage was added to property groupBy
+* Enum value flowOutcomeId was added to property groupBy
+* Enum value flowOutcomeValue was added to property groupBy
+* Enum value flowOutcome was added to property groupBy
+* Enum value nFlow was added to property metrics
+* Enum value tFlowHangUp was added to property metrics
+* Enum value tFlowExit was added to property metrics
+* Enum value tFlow was added to property metrics
+* Enum value tFlowOutcome was added to property metrics
+* Enum value nFlowOutcome was added to property metrics
+
+**CallbackMediaParticipant** (1 change)
+
+* Optional property alertingTimeoutMs was added
+
+**AnalyticsFlow** (1 change)
 
 * Model was added
 
-**ForecastTimeSeriesResult** (2 changes)
-
-* Enum value PointEstimateUsingLatestWeek was added to property forecastingMethod
-* Enum value PointEstimateUsingWeightedAverage was added to property forecastingMethod
-
-**SubjectDivisionGrants** (1 change)
+**AnalyticsFlowOutcome** (1 change)
 
 * Model was added
 
-**SubjectDivisionGrantsEntityListing** (1 change)
+**AnalyticsSession** (1 change)
 
-* Model was added
+* Optional property flow was added
 
-**QueueRequest** (1 change)
+**ParticipantBasic** (1 change)
 
-* Model was added
+* Optional property alertingTimeoutMs was added
+
+**EmailMediaParticipant** (1 change)
+
+* Optional property alertingTimeoutMs was added
+
+**CallMediaParticipant** (1 change)
+
+* Optional property alertingTimeoutMs was added
+
+**MessageMediaParticipant** (1 change)
+
+* Optional property alertingTimeoutMs was added
 
 
-# Point Changes (2 changes)
-
-**POST /api/v2/routing/queues** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/externalcontacts/reversewhitepageslookup** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)

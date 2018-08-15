@@ -39,22 +39,22 @@ class IntradayDataUpdateNotificationDateTime(object):
         """
         self.swagger_types = {
             'i_millis': 'int',
-            'before_now': 'bool',
             'after_now': 'bool',
-            'equal_now': 'bool'
+            'equal_now': 'bool',
+            'before_now': 'bool'
         }
 
         self.attribute_map = {
             'i_millis': 'iMillis',
-            'before_now': 'beforeNow',
             'after_now': 'afterNow',
-            'equal_now': 'equalNow'
+            'equal_now': 'equalNow',
+            'before_now': 'beforeNow'
         }
 
         self._i_millis = None
-        self._before_now = None
         self._after_now = None
         self._equal_now = None
+        self._before_now = None
 
     @property
     def i_millis(self):
@@ -78,29 +78,6 @@ class IntradayDataUpdateNotificationDateTime(object):
         """
         
         self._i_millis = i_millis
-
-    @property
-    def before_now(self):
-        """
-        Gets the before_now of this IntradayDataUpdateNotificationDateTime.
-
-
-        :return: The before_now of this IntradayDataUpdateNotificationDateTime.
-        :rtype: bool
-        """
-        return self._before_now
-
-    @before_now.setter
-    def before_now(self, before_now):
-        """
-        Sets the before_now of this IntradayDataUpdateNotificationDateTime.
-
-
-        :param before_now: The before_now of this IntradayDataUpdateNotificationDateTime.
-        :type: bool
-        """
-        
-        self._before_now = before_now
 
     @property
     def after_now(self):
@@ -147,6 +124,29 @@ class IntradayDataUpdateNotificationDateTime(object):
         """
         
         self._equal_now = equal_now
+
+    @property
+    def before_now(self):
+        """
+        Gets the before_now of this IntradayDataUpdateNotificationDateTime.
+
+
+        :return: The before_now of this IntradayDataUpdateNotificationDateTime.
+        :rtype: bool
+        """
+        return self._before_now
+
+    @before_now.setter
+    def before_now(self, before_now):
+        """
+        Sets the before_now of this IntradayDataUpdateNotificationDateTime.
+
+
+        :param before_now: The before_now of this IntradayDataUpdateNotificationDateTime.
+        :type: bool
+        """
+        
+        self._before_now = before_now
 
     def to_dict(self):
         """

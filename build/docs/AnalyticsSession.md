@@ -44,6 +44,7 @@ title: AnalyticsSession
 | **video_address_self** | **str** | Direct Video address | [optional] |
 | **segments** | [**list[AnalyticsConversationSegment]**](AnalyticsConversationSegment.html) | List of segments for this session | [optional] |
 | **metrics** | [**list[AnalyticsSessionMetric]**](AnalyticsSessionMetric.html) | List of metrics for this session | [optional] |
+| **flow** | [**AnalyticsFlow**](AnalyticsFlow.html) | IVR flow execution associated with this session | [optional] |
 {: class="table table-striped"}
 
 
