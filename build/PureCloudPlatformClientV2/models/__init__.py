@@ -63,7 +63,6 @@ from .analytics_view import AnalyticsView
 from .annotation import Annotation
 from .answer_option import AnswerOption
 from .archive_retention import ArchiveRetention
-from .asg_info_response import AsgInfoResponse
 from .assigned_wrapup_code import AssignedWrapupCode
 from .async_week_schedule_response import AsyncWeekScheduleResponse
 from .attachment import Attachment
@@ -343,7 +342,6 @@ from .cover_sheet import CoverSheet
 from .create_activity_code_request import CreateActivityCodeRequest
 from .create_admin_time_off_request import CreateAdminTimeOffRequest
 from .create_agent_time_off_request import CreateAgentTimeOffRequest
-from .create_asg_request import CreateAsgRequest
 from .create_call_request import CreateCallRequest
 from .create_call_response import CreateCallResponse
 from .create_callback_command import CreateCallbackCommand
@@ -653,7 +651,6 @@ from .inbound_message_request import InboundMessageRequest
 from .inbound_route import InboundRoute
 from .inbound_route_entity_listing import InboundRouteEntityListing
 from .initiate_screen_recording import InitiateScreenRecording
-from .instance_info import InstanceInfo
 from .integration import Integration
 from .integration_configuration import IntegrationConfiguration
 from .integration_configuration_info import IntegrationConfigurationInfo

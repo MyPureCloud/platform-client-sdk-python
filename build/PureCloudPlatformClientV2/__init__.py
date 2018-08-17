@@ -63,7 +63,6 @@ from .models.analytics_view import AnalyticsView
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
 from .models.archive_retention import ArchiveRetention
-from .models.asg_info_response import AsgInfoResponse
 from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.async_week_schedule_response import AsyncWeekScheduleResponse
 from .models.attachment import Attachment
@@ -343,7 +342,6 @@ from .models.cover_sheet import CoverSheet
 from .models.create_activity_code_request import CreateActivityCodeRequest
 from .models.create_admin_time_off_request import CreateAdminTimeOffRequest
 from .models.create_agent_time_off_request import CreateAgentTimeOffRequest
-from .models.create_asg_request import CreateAsgRequest
 from .models.create_call_request import CreateCallRequest
 from .models.create_call_response import CreateCallResponse
 from .models.create_callback_command import CreateCallbackCommand
@@ -653,7 +651,6 @@ from .models.inbound_message_request import InboundMessageRequest
 from .models.inbound_route import InboundRoute
 from .models.inbound_route_entity_listing import InboundRouteEntityListing
 from .models.initiate_screen_recording import InitiateScreenRecording
-from .models.instance_info import InstanceInfo
 from .models.integration import Integration
 from .models.integration_configuration import IntegrationConfiguration
 from .models.integration_configuration_info import IntegrationConfigurationInfo

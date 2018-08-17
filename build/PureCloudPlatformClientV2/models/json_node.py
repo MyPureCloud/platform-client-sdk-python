@@ -38,8 +38,6 @@ class JsonNode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'array': 'bool',
-            'null': 'bool',
             'node_type': 'str',
             'object': 'bool',
             'boolean': 'bool',
@@ -58,12 +56,12 @@ class JsonNode(object):
             'big_decimal': 'bool',
             'big_integer': 'bool',
             'textual': 'bool',
-            'binary': 'bool'
+            'binary': 'bool',
+            'array': 'bool',
+            'null': 'bool'
         }
 
         self.attribute_map = {
-            'array': 'array',
-            'null': 'null',
             'node_type': 'nodeType',
             'object': 'object',
             'boolean': 'boolean',
@@ -82,11 +80,11 @@ class JsonNode(object):
             'big_decimal': 'bigDecimal',
             'big_integer': 'bigInteger',
             'textual': 'textual',
-            'binary': 'binary'
+            'binary': 'binary',
+            'array': 'array',
+            'null': 'null'
         }
 
-        self._array = None
-        self._null = None
         self._node_type = None
         self._object = None
         self._boolean = None
@@ -106,52 +104,8 @@ class JsonNode(object):
         self._big_integer = None
         self._textual = None
         self._binary = None
-
-    @property
-    def array(self):
-        """
-        Gets the array of this JsonNode.
-
-
-        :return: The array of this JsonNode.
-        :rtype: bool
-        """
-        return self._array
-
-    @array.setter
-    def array(self, array):
-        """
-        Sets the array of this JsonNode.
-
-
-        :param array: The array of this JsonNode.
-        :type: bool
-        """
-        
-        self._array = array
-
-    @property
-    def null(self):
-        """
-        Gets the null of this JsonNode.
-
-
-        :return: The null of this JsonNode.
-        :rtype: bool
-        """
-        return self._null
-
-    @null.setter
-    def null(self, null):
-        """
-        Sets the null of this JsonNode.
-
-
-        :param null: The null of this JsonNode.
-        :type: bool
-        """
-        
-        self._null = null
+        self._array = None
+        self._null = None
 
     @property
     def node_type(self):
@@ -593,6 +547,52 @@ class JsonNode(object):
         """
         
         self._binary = binary
+
+    @property
+    def array(self):
+        """
+        Gets the array of this JsonNode.
+
+
+        :return: The array of this JsonNode.
+        :rtype: bool
+        """
+        return self._array
+
+    @array.setter
+    def array(self, array):
+        """
+        Sets the array of this JsonNode.
+
+
+        :param array: The array of this JsonNode.
+        :type: bool
+        """
+        
+        self._array = array
+
+    @property
+    def null(self):
+        """
+        Gets the null of this JsonNode.
+
+
+        :return: The null of this JsonNode.
+        :rtype: bool
+        """
+        return self._null
+
+    @null.setter
+    def null(self, null):
+        """
+        Sets the null of this JsonNode.
+
+
+        :param null: The null of this JsonNode.
+        :type: bool
+        """
+        
+        self._null = null
 
     def to_dict(self):
         """

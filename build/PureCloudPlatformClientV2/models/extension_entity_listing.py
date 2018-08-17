@@ -44,9 +44,9 @@ class ExtensionEntityListing(object):
             'total': 'int',
             'self_uri': 'str',
             'first_uri': 'str',
-            'next_uri': 'str',
             'last_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -57,9 +57,9 @@ class ExtensionEntityListing(object):
             'total': 'total',
             'self_uri': 'selfUri',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -69,9 +69,9 @@ class ExtensionEntityListing(object):
         self._total = None
         self._self_uri = None
         self._first_uri = None
-        self._next_uri = None
         self._last_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -213,29 +213,6 @@ class ExtensionEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this ExtensionEntityListing.
-
-
-        :return: The next_uri of this ExtensionEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this ExtensionEntityListing.
-
-
-        :param next_uri: The next_uri of this ExtensionEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
-
-    @property
     def last_uri(self):
         """
         Gets the last_uri of this ExtensionEntityListing.
@@ -280,6 +257,29 @@ class ExtensionEntityListing(object):
         """
         
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this ExtensionEntityListing.
+
+
+        :return: The next_uri of this ExtensionEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this ExtensionEntityListing.
+
+
+        :param next_uri: The next_uri of this ExtensionEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def page_count(self):
