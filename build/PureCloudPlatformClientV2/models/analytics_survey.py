@@ -47,7 +47,8 @@ class AnalyticsSurvey(object):
             'user_id': 'str',
             'queue_id': 'str',
             'status': 'str',
-            'created_date': 'datetime'
+            'created_date': 'datetime',
+            'geto_survey_total_score': 'int'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class AnalyticsSurvey(object):
             'user_id': 'userId',
             'queue_id': 'queueId',
             'status': 'status',
-            'created_date': 'createdDate'
+            'created_date': 'createdDate',
+            'geto_survey_total_score': 'getoSurveyTotalScore'
         }
 
         self._survey_id = None
@@ -73,6 +75,7 @@ class AnalyticsSurvey(object):
         self._queue_id = None
         self._status = None
         self._created_date = None
+        self._geto_survey_total_score = None
 
     @property
     def survey_id(self):
@@ -303,6 +306,29 @@ class AnalyticsSurvey(object):
         """
         
         self._created_date = created_date
+
+    @property
+    def geto_survey_total_score(self):
+        """
+        Gets the geto_survey_total_score of this AnalyticsSurvey.
+        The total score for the survey
+
+        :return: The geto_survey_total_score of this AnalyticsSurvey.
+        :rtype: int
+        """
+        return self._geto_survey_total_score
+
+    @geto_survey_total_score.setter
+    def geto_survey_total_score(self, geto_survey_total_score):
+        """
+        Sets the geto_survey_total_score of this AnalyticsSurvey.
+        The total score for the survey
+
+        :param geto_survey_total_score: The geto_survey_total_score of this AnalyticsSurvey.
+        :type: int
+        """
+        
+        self._geto_survey_total_score = geto_survey_total_score
 
     def to_dict(self):
         """

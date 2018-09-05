@@ -11,6 +11,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
+from .flows_api import FlowsApi
 from .general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
 from .geolocation_api import GeolocationApi
 from .greetings_api import GreetingsApi
@@ -20,9 +21,11 @@ from .integrations_api import IntegrationsApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
+from .messaging_api import MessagingApi
 from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
+from .objects_api import ObjectsApi
 from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi

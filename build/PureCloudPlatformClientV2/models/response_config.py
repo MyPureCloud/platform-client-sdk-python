@@ -39,17 +39,20 @@ class ResponseConfig(object):
         """
         self.swagger_types = {
             'translation_map': 'dict(str, str)',
+            'translation_map_defaults': 'dict(str, str)',
             'success_template': 'str',
             'success_template_uri': 'str'
         }
 
         self.attribute_map = {
             'translation_map': 'translationMap',
+            'translation_map_defaults': 'translationMapDefaults',
             'success_template': 'successTemplate',
             'success_template_uri': 'successTemplateUri'
         }
 
         self._translation_map = None
+        self._translation_map_defaults = None
         self._success_template = None
         self._success_template_uri = None
 
@@ -75,6 +78,29 @@ class ResponseConfig(object):
         """
         
         self._translation_map = translation_map
+
+    @property
+    def translation_map_defaults(self):
+        """
+        Gets the translation_map_defaults of this ResponseConfig.
+        Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key.
+
+        :return: The translation_map_defaults of this ResponseConfig.
+        :rtype: dict(str, str)
+        """
+        return self._translation_map_defaults
+
+    @translation_map_defaults.setter
+    def translation_map_defaults(self, translation_map_defaults):
+        """
+        Sets the translation_map_defaults of this ResponseConfig.
+        Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key.
+
+        :param translation_map_defaults: The translation_map_defaults of this ResponseConfig.
+        :type: dict(str, str)
+        """
+        
+        self._translation_map_defaults = translation_map_defaults
 
     @property
     def success_template(self):

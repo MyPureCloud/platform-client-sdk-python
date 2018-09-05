@@ -45,6 +45,7 @@ class SystemPromptAsset(object):
             'duration_seconds': 'float',
             'media_uri': 'str',
             'tts_string': 'str',
+            'text': 'str',
             'upload_uri': 'str',
             'upload_status': 'str',
             'has_default': 'bool',
@@ -61,6 +62,7 @@ class SystemPromptAsset(object):
             'duration_seconds': 'durationSeconds',
             'media_uri': 'mediaUri',
             'tts_string': 'ttsString',
+            'text': 'text',
             'upload_uri': 'uploadUri',
             'upload_status': 'uploadStatus',
             'has_default': 'hasDefault',
@@ -76,6 +78,7 @@ class SystemPromptAsset(object):
         self._duration_seconds = None
         self._media_uri = None
         self._tts_string = None
+        self._text = None
         self._upload_uri = None
         self._upload_status = None
         self._has_default = None
@@ -243,6 +246,29 @@ class SystemPromptAsset(object):
         """
         
         self._tts_string = tts_string
+
+    @property
+    def text(self):
+        """
+        Gets the text of this SystemPromptAsset.
+
+
+        :return: The text of this SystemPromptAsset.
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """
+        Sets the text of this SystemPromptAsset.
+
+
+        :param text: The text of this SystemPromptAsset.
+        :type: str
+        """
+        
+        self._text = text
 
     @property
     def upload_uri(self):

@@ -8,25 +8,91 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_authorization_division**](AuthorizationApi.html#delete_authorization_division) | Delete a division.|
 |[**delete_authorization_role**](AuthorizationApi.html#delete_authorization_role) | Delete an organization role.|
+|[**delete_authorization_subject_division_role**](AuthorizationApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_user_roles**](AuthorizationApi.html#delete_user_roles) | Removes all the roles from the user.|
+|[**get_authorization_division**](AuthorizationApi.html#get_authorization_division) | Returns an authorization division.|
+|[**get_authorization_divisions**](AuthorizationApi.html#get_authorization_divisions) | Retrieve a list of all divisions defined for the organization|
+|[**get_authorization_divisions_home**](AuthorizationApi.html#get_authorization_divisions_home) | Retrieve the home division for the organization.|
+|[**get_authorization_divisions_limit**](AuthorizationApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
+|[**get_authorization_divisionspermitted_me**](AuthorizationApi.html#get_authorization_divisionspermitted_me) | Returns whether or not current user can perform the specified action(s).|
+|[**get_authorization_divisionspermitted_subject_id**](AuthorizationApi.html#get_authorization_divisionspermitted_subject_id) | Returns whether or not specified user can perform the specified action(s).|
 |[**get_authorization_permissions**](AuthorizationApi.html#get_authorization_permissions) | Get all permissions.|
 |[**get_authorization_products**](AuthorizationApi.html#get_authorization_products) | Get the list of enabled products|
 |[**get_authorization_role**](AuthorizationApi.html#get_authorization_role) | Get a single organization role.|
 |[**get_authorization_role_comparedefault_right_role_id**](AuthorizationApi.html#get_authorization_role_comparedefault_right_role_id) | Get an org role to default role comparison comparison|
 |[**get_authorization_role_subjectgrants**](AuthorizationApi.html#get_authorization_role_subjectgrants) | Get the subjects&#39; granted divisions in the specified role.|
+|[**get_authorization_role_users**](AuthorizationApi.html#get_authorization_role_users) | Get a list of the users in a specified role.|
 |[**get_authorization_roles**](AuthorizationApi.html#get_authorization_roles) | Retrieve a list of all roles defined for the organization|
+|[**get_authorization_subject**](AuthorizationApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
+|[**get_authorization_subjects_me**](AuthorizationApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
 |[**get_user_roles**](AuthorizationApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
 |[**patch_authorization_role**](AuthorizationApi.html#patch_authorization_role) | Patch Organization Role for needsUpdate Field|
+|[**post_authorization_division_object**](AuthorizationApi.html#post_authorization_division_object) | Assign a list of objects to a division|
+|[**post_authorization_divisions**](AuthorizationApi.html#post_authorization_divisions) | Create a division.|
+|[**post_authorization_role**](AuthorizationApi.html#post_authorization_role) | Bulk-grant subjects and divisions with an organization role.|
 |[**post_authorization_role_comparedefault_right_role_id**](AuthorizationApi.html#post_authorization_role_comparedefault_right_role_id) | Get an unsaved org role to default role comparison|
 |[**post_authorization_roles**](AuthorizationApi.html#post_authorization_roles) | Create an organization role.|
 |[**post_authorization_roles_default**](AuthorizationApi.html#post_authorization_roles_default) | Restores all default roles|
+|[**post_authorization_subject_division_role**](AuthorizationApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
+|[**put_authorization_division**](AuthorizationApi.html#put_authorization_division) | Update a division.|
 |[**put_authorization_role**](AuthorizationApi.html#put_authorization_role) | Update an organization role.|
 |[**put_authorization_role_users_add**](AuthorizationApi.html#put_authorization_role_users_add) | Sets the users for the role|
 |[**put_authorization_role_users_remove**](AuthorizationApi.html#put_authorization_role_users_remove) | Removes the users from the role|
 |[**put_authorization_roles_default**](AuthorizationApi.html#put_authorization_roles_default) | Restore specified default roles|
 |[**put_user_roles**](AuthorizationApi.html#put_user_roles) | Sets the user&#39;s roles|
 {: class="table table-striped"}
+
+<a name="delete_authorization_division"></a>
+
+##  delete_authorization_division(division_id)
+
+
+
+Delete a division.
+
+
+
+Wraps DELETE /api/v2/authorization/divisions/{divisionId} 
+
+Requires ANY permissions: 
+
+* authorization:division:delete
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+
+try:
+    # Delete a division.
+    api_instance.delete_authorization_division(division_id)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->delete_authorization_division: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_authorization_role"></a>
 
@@ -74,6 +140,60 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_authorization_subject_division_role"></a>
+
+##  delete_authorization_subject_division_role(subject_id, division_id, role_id)
+
+
+
+Delete a grant of a role in a division
+
+
+
+Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division of the grant
+role_id = 'role_id_example' # str | the id of the role of the grant
+
+try:
+    # Delete a grant of a role in a division
+    api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->delete_authorization_subject_division_role: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **division_id** | **str**| the id of the division of the grant |  |
+| **role_id** | **str**| the id of the role of the grant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -131,6 +251,324 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_authorization_division"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) get_authorization_division(division_id, object_count=object_count)
+
+
+
+Returns an authorization division.
+
+
+
+Wraps GET /api/v2/authorization/divisions/{divisionId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+object_count = false # bool | Get count of objects in this division, grouped by type (optional) (default to false)
+
+try:
+    # Returns an authorization division.
+    api_response = api_instance.get_authorization_division(division_id, object_count=object_count)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_division: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **object_count** | **bool**| Get count of objects in this division, grouped by type | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
+
+<a name="get_authorization_divisions"></a>
+
+## [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html) get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
+
+
+
+Retrieve a list of all divisions defined for the organization
+
+Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
+
+Wraps GET /api/v2/authorization/divisions 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+object_count = false # bool | Include the count of objects contained in the division (optional) (default to false)
+id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Retrieve a list of all divisions defined for the organization
+    api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to false] |
+| **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
+| **name** | **str**| Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html)
+
+<a name="get_authorization_divisions_home"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) get_authorization_divisions_home()
+
+
+
+Retrieve the home division for the organization.
+
+Will not include object counts.
+
+Wraps GET /api/v2/authorization/divisions/home 
+
+Requires ANY permissions: 
+
+* authorization:division:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Retrieve the home division for the organization.
+    api_response = api_instance.get_authorization_divisions_home()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisions_home: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
+
+<a name="get_authorization_divisions_limit"></a>
+
+## int** get_authorization_divisions_limit()
+
+
+
+Returns the maximum allowed number of divisions.
+
+
+
+Wraps GET /api/v2/authorization/divisions/limit 
+
+Requires ANY permissions: 
+
+* authorization:division:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Returns the maximum allowed number of divisions.
+    api_response = api_instance.get_authorization_divisions_limit()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**int**
+
+<a name="get_authorization_divisionspermitted_me"></a>
+
+## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_me(permission, name=name)
+
+
+
+Returns whether or not current user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Returns whether or not current user can perform the specified action(s).
+    api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_me: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **name** | **str**| Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AuthzDivision]**](AuthzDivision.html)
+
+<a name="get_authorization_divisionspermitted_subject_id"></a>
+
+## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
+
+
+
+Returns whether or not specified user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/{subjectId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Returns whether or not specified user can perform the specified action(s).
+    api_response = api_instance.get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_subject_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **name** | **str**| Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AuthzDivision]**](AuthzDivision.html)
 
 <a name="get_authorization_permissions"></a>
 
@@ -397,6 +835,60 @@ except ApiException as e:
 
 [**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing.html)
 
+<a name="get_authorization_role_users"></a>
+
+## [**UserEntityListing**](UserEntityListing.html) get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
+
+
+
+Get a list of the users in a specified role.
+
+Get an array of the UUIDs of the users in the specified role.
+
+Wraps GET /api/v2/authorization/roles/{roleId}/users 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+role_id = 'role_id_example' # str | Role ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of the users in a specified role.
+    api_response = api_instance.get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_role_users: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **role_id** | **str**| Role ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserEntityListing**](UserEntityListing.html)
+
 <a name="get_authorization_roles"></a>
 
 ## [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
@@ -467,6 +959,103 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+
+<a name="get_authorization_subject"></a>
+
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id)
+
+
+
+Returns a listing of roles and permissions for a user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/{subjectId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+
+try:
+    # Returns a listing of roles and permissions for a user.
+    api_response = api_instance.get_authorization_subject(subject_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_subject: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
+
+<a name="get_authorization_subjects_me"></a>
+
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me()
+
+
+
+Returns a listing of roles and permissions for the currently authenticated user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Returns a listing of roles and permissions for the currently authenticated user.
+    api_response = api_instance.get_authorization_subjects_me()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_subjects_me: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
 
 <a name="get_user_roles"></a>
 
@@ -573,6 +1162,163 @@ except ApiException as e:
 ### Return type
 
 [**DomainOrganizationRole**](DomainOrganizationRole.html)
+
+<a name="post_authorization_division_object"></a>
+
+##  post_authorization_division_object(division_id, object_type, body)
+
+
+
+Assign a list of objects to a division
+
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
+
+Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType} 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+object_type = 'object_type_example' # str | The type of the objects. Must be one of the valid object types
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Object Id List
+
+try:
+    # Assign a list of objects to a division
+    api_instance.post_authorization_division_object(division_id, object_type, body)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->post_authorization_division_object: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
+| **body** | **list[str]**| Object Id List |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_authorization_divisions"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) post_authorization_divisions(body)
+
+
+
+Create a division.
+
+
+
+Wraps POST /api/v2/authorization/divisions 
+
+Requires ALL permissions: 
+
+* authorization:division:add
+* authorization:grant:add
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Division
+
+try:
+    # Create a division.
+    api_response = api_instance.post_authorization_divisions(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->post_authorization_divisions: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Division |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
+
+<a name="post_authorization_role"></a>
+
+##  post_authorization_role(role_id, body)
+
+
+
+Bulk-grant subjects and divisions with an organization role.
+
+
+
+Wraps POST /api/v2/authorization/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+role_id = 'role_id_example' # str | Role ID
+body = PureCloudPlatformClientV2.SubjectDivisions() # SubjectDivisions | Subjects and Divisions
+
+try:
+    # Bulk-grant subjects and divisions with an organization role.
+    api_instance.post_authorization_role(role_id, body)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->post_authorization_role: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **role_id** | **str**| Role ID |  |
+| **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_authorization_role_comparedefault_right_role_id"></a>
 
@@ -730,6 +1476,115 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+
+<a name="post_authorization_subject_division_role"></a>
+
+##  post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
+
+
+
+Make a grant of a role in a division
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division to which to make the grant
+role_id = 'role_id_example' # str | the id of the role to grant
+subject_type = 'PC_USER' # str | what the type of the subject is, PC_GROUP or PC_USER (optional) (default to PC_USER)
+
+try:
+    # Make a grant of a role in a division
+    api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->post_authorization_subject_division_role: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **division_id** | **str**| the id of the division to which to make the grant |  |
+| **role_id** | **str**| the id of the role to grant |  |
+| **subject_type** | **str**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="put_authorization_division"></a>
+
+## [**AuthzDivision**](AuthzDivision.html) put_authorization_division(division_id, body)
+
+
+
+Update a division.
+
+
+
+Wraps PUT /api/v2/authorization/divisions/{divisionId} 
+
+Requires ANY permissions: 
+
+* authorization:division:edit
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Updated division data
+
+try:
+    # Update a division.
+    api_response = api_instance.put_authorization_division(division_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->put_authorization_division: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
 
 <a name="put_authorization_role"></a>
 

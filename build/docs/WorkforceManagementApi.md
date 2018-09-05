@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplan) | Get a work plan|
 |[**get_workforcemanagement_managementunit_workplans**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplans) | Get work plans|
 |[**get_workforcemanagement_managementunits**](WorkforceManagementApi.html#get_workforcemanagement_managementunits) | Get management units|
+|[**get_workforcemanagement_managementunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_managementunits_divisionviews) | Get management units across divisions|
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
 |[**patch_workforcemanagement_managementunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_activitycode) | Update an activity code|
@@ -1680,6 +1681,57 @@ except ApiException as e:
 | **expand** | **str**|  | [optional] <br />**Values**: details |
 | **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ManagementUnitListing**](ManagementUnitListing.html)
+
+<a name="get_workforcemanagement_managementunits_divisionviews"></a>
+
+## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_managementunits_divisionviews(division_id=division_id)
+
+
+
+Get management units across divisions
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/divisionviews 
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:search
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+division_id = ['division_id_example'] # list[str] | The divisionIds to filter by. If omitted, will return all divisions (optional)
+
+try:
+    # Get management units across divisions
+    api_response = api_instance.get_workforcemanagement_managementunits_divisionviews(division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits_divisionviews: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | [**list[str]**](str.html)| The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

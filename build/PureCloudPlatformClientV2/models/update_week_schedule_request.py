@@ -43,7 +43,8 @@ class UpdateWeekScheduleRequest(object):
             'user_schedules': 'dict(str, UserSchedule)',
             'partial_upload_ids': 'list[str]',
             'metadata': 'WfmVersionedEntityMetadata',
-            'agent_schedules_version': 'int'
+            'agent_schedules_version': 'int',
+            'agent_update_filter': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class UpdateWeekScheduleRequest(object):
             'user_schedules': 'userSchedules',
             'partial_upload_ids': 'partialUploadIds',
             'metadata': 'metadata',
-            'agent_schedules_version': 'agentSchedulesVersion'
+            'agent_schedules_version': 'agentSchedulesVersion',
+            'agent_update_filter': 'agentUpdateFilter'
         }
 
         self._description = None
@@ -61,6 +63,7 @@ class UpdateWeekScheduleRequest(object):
         self._partial_upload_ids = None
         self._metadata = None
         self._agent_schedules_version = None
+        self._agent_update_filter = None
 
     @property
     def description(self):
@@ -199,6 +202,33 @@ class UpdateWeekScheduleRequest(object):
         """
         
         self._agent_schedules_version = agent_schedules_version
+
+    @property
+    def agent_update_filter(self):
+        """
+        Gets the agent_update_filter of this UpdateWeekScheduleRequest.
+        The condition to notify agents about schedule updates. Applicable to only published schedule
+
+        :return: The agent_update_filter of this UpdateWeekScheduleRequest.
+        :rtype: str
+        """
+        return self._agent_update_filter
+
+    @agent_update_filter.setter
+    def agent_update_filter(self, agent_update_filter):
+        """
+        Sets the agent_update_filter of this UpdateWeekScheduleRequest.
+        The condition to notify agents about schedule updates. Applicable to only published schedule
+
+        :param agent_update_filter: The agent_update_filter of this UpdateWeekScheduleRequest.
+        :type: str
+        """
+        allowed_values = ["All", "ShiftTimeChange", "None"]
+        if agent_update_filter.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for agent_update_filter -> " + agent_update_filter
+            self._agent_update_filter = "outdated_sdk_version"
+        else:
+            self._agent_update_filter = agent_update_filter
 
     def to_dict(self):
         """

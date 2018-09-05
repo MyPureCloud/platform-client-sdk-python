@@ -378,7 +378,7 @@ class UpdateUser(object):
     def profile_skills(self):
         """
         Gets the profile_skills of this UpdateUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :return: The profile_skills of this UpdateUser.
         :rtype: list[str]
@@ -389,7 +389,7 @@ class UpdateUser(object):
     def profile_skills(self, profile_skills):
         """
         Sets the profile_skills of this UpdateUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :param profile_skills: The profile_skills of this UpdateUser.
         :type: list[str]

@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_documentation_gkn_search**](SearchApi.html#get_documentation_gkn_search) | Search gkn documentation using the q64 value returned from a previous search|
 |[**get_documentation_search**](SearchApi.html#get_documentation_search) | Search documentation using the q64 value returned from a previous search|
 |[**get_groups_search**](SearchApi.html#get_groups_search) | Search groups using the q64 value returned from a previous search|
 |[**get_locations_search**](SearchApi.html#get_locations_search) | Search locations using the q64 value returned from a previous search|
@@ -15,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_search_suggest**](SearchApi.html#get_search_suggest) | Suggest resources using the q64 value returned from a previous suggest query.|
 |[**get_users_search**](SearchApi.html#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_voicemail_search**](SearchApi.html#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
+|[**post_documentation_gkn_search**](SearchApi.html#post_documentation_gkn_search) | Search gkn documentation|
 |[**post_documentation_search**](SearchApi.html#post_documentation_search) | Search documentation|
 |[**post_groups_search**](SearchApi.html#post_groups_search) | Search groups|
 |[**post_locations_search**](SearchApi.html#post_locations_search) | Search locations|
@@ -23,6 +25,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_search**](SearchApi.html#post_users_search) | Search users|
 |[**post_voicemail_search**](SearchApi.html#post_voicemail_search) | Search voicemails|
 {: class="table table-striped"}
+
+<a name="get_documentation_gkn_search"></a>
+
+## [**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html) get_documentation_gkn_search(q64)
+
+
+
+Search gkn documentation using the q64 value returned from a previous search
+
+
+
+Wraps GET /api/v2/documentation/gkn/search 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+q64 = 'q64_example' # str | q64
+
+try:
+    # Search gkn documentation using the q64 value returned from a previous search
+    api_response = api_instance.get_documentation_gkn_search(q64)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SearchApi->get_documentation_gkn_search: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **q64** | **str**| q64 |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
 
 <a name="get_documentation_search"></a>
 
@@ -224,7 +276,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 | **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -278,7 +330,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 | **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -389,6 +441,56 @@ except ApiException as e:
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+
+<a name="post_documentation_gkn_search"></a>
+
+## [**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html) post_documentation_gkn_search(body)
+
+
+
+Search gkn documentation
+
+
+
+Wraps POST /api/v2/documentation/gkn/search 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.GKNDocumentationSearchRequest() # GKNDocumentationSearchRequest | Search request options
+
+try:
+    # Search gkn documentation
+    api_response = api_instance.post_documentation_gkn_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SearchApi->post_documentation_gkn_search: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
 
 <a name="post_documentation_search"></a>
 

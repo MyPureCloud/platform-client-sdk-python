@@ -62,6 +62,8 @@ class OrgUser(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'skills': 'list[UserRoutingSkill]',
+            'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
             'organization': 'Organization'
         }
@@ -91,6 +93,8 @@ class OrgUser(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'skills': 'skills',
+            'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
             'organization': 'organization'
         }
@@ -119,6 +123,8 @@ class OrgUser(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._skills = None
+        self._languages = None
         self._acd_auto_answer = None
         self._organization = None
 
@@ -613,7 +619,7 @@ class OrgUser(object):
     def profile_skills(self):
         """
         Gets the profile_skills of this OrgUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :return: The profile_skills of this OrgUser.
         :rtype: list[str]
@@ -624,7 +630,7 @@ class OrgUser(object):
     def profile_skills(self, profile_skills):
         """
         Sets the profile_skills of this OrgUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :param profile_skills: The profile_skills of this OrgUser.
         :type: list[str]
@@ -677,6 +683,52 @@ class OrgUser(object):
         """
         
         self._groups = groups
+
+    @property
+    def skills(self):
+        """
+        Gets the skills of this OrgUser.
+        Routing (ACD) skills possessed by the user
+
+        :return: The skills of this OrgUser.
+        :rtype: list[UserRoutingSkill]
+        """
+        return self._skills
+
+    @skills.setter
+    def skills(self, skills):
+        """
+        Sets the skills of this OrgUser.
+        Routing (ACD) skills possessed by the user
+
+        :param skills: The skills of this OrgUser.
+        :type: list[UserRoutingSkill]
+        """
+        
+        self._skills = skills
+
+    @property
+    def languages(self):
+        """
+        Gets the languages of this OrgUser.
+        Routing (ACD) languages possessed by the user
+
+        :return: The languages of this OrgUser.
+        :rtype: list[UserRoutingLanguage]
+        """
+        return self._languages
+
+    @languages.setter
+    def languages(self, languages):
+        """
+        Sets the languages of this OrgUser.
+        Routing (ACD) languages possessed by the user
+
+        :param languages: The languages of this OrgUser.
+        :type: list[UserRoutingLanguage]
+        """
+        
+        self._languages = languages
 
     @property
     def acd_auto_answer(self):

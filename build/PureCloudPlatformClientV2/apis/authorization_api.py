@@ -46,6 +46,84 @@ class AuthorizationApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_authorization_division(self, division_id, **kwargs):
+        """
+        Delete a division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_authorization_division(division_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: Division ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_authorization_division" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `delete_authorization_division`")
+
+
+        resource_path = '/api/v2/authorization/divisions/{divisionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_authorization_role(self, role_id, **kwargs):
         """
         Delete an organization role.
@@ -87,6 +165,96 @@ class AuthorizationApi(object):
 
         resource_path = '/api/v2/authorization/roles/{roleId}'.replace('{format}', 'json')
         path_params = {}
+        if 'role_id' in params:
+            path_params['roleId'] = params['role_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_authorization_subject_division_role(self, subject_id, division_id, role_id, **kwargs):
+        """
+        Delete a grant of a role in a division
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_authorization_subject_division_role(subject_id, division_id, role_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: Subject ID (user or group) (required)
+        :param str division_id: the id of the division of the grant (required)
+        :param str role_id: the id of the role of the grant (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id', 'division_id', 'role_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_authorization_subject_division_role" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `delete_authorization_subject_division_role`")
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `delete_authorization_subject_division_role`")
+        # verify the required parameter 'role_id' is set
+        if ('role_id' not in params) or (params['role_id'] is None):
+            raise ValueError("Missing the required parameter `role_id` when calling `delete_authorization_subject_division_role`")
+
+
+        resource_path = '/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
         if 'role_id' in params:
             path_params['roleId'] = params['role_id']
 
@@ -198,6 +366,498 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_division(self, division_id, **kwargs):
+        """
+        Returns an authorization division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_division(division_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: Division ID (required)
+        :param bool object_count: Get count of objects in this division, grouped by type
+        :return: AuthzDivision
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'object_count']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_division" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `get_authorization_division`")
+
+
+        resource_path = '/api/v2/authorization/divisions/{divisionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+
+        query_params = {}
+        if 'object_count' in params:
+            query_params['objectCount'] = params['object_count']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivision',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisions(self, **kwargs):
+        """
+        Retrieve a list of all divisions defined for the organization
+        Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :param bool object_count: Include the count of objects contained in the division
+        :param list[str] id: Optionally request specific divisions by their IDs
+        :param str name: Search term to filter by division name
+        :return: AuthzDivisionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'object_count', 'id', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/divisions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+        if 'object_count' in params:
+            query_params['objectCount'] = params['object_count']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivisionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisions_home(self, **kwargs):
+        """
+        Retrieve the home division for the organization.
+        Will not include object counts.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisions_home(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: AuthzDivision
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisions_home" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/divisions/home'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivision',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisions_limit(self, **kwargs):
+        """
+        Returns the maximum allowed number of divisions.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisions_limit(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: int
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisions_limit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/divisions/limit'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='int',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisionspermitted_me(self, permission, **kwargs):
+        """
+        Returns whether or not current user can perform the specified action(s).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisionspermitted_me(permission, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str permission: The permission string, including the object to access, e.g. routing:queue:view (required)
+        :param str name: Search term to filter by division name
+        :return: list[AuthzDivision]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['permission', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisionspermitted_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'permission' is set
+        if ('permission' not in params) or (params['permission'] is None):
+            raise ValueError("Missing the required parameter `permission` when calling `get_authorization_divisionspermitted_me`")
+
+
+        resource_path = '/api/v2/authorization/divisionspermitted/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'permission' in params:
+            query_params['permission'] = params['permission']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[AuthzDivision]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisionspermitted_subject_id(self, subject_id, permission, **kwargs):
+        """
+        Returns whether or not specified user can perform the specified action(s).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisionspermitted_subject_id(subject_id, permission, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: Subject ID (user or group) (required)
+        :param str permission: The permission string, including the object to access, e.g. routing:queue:view (required)
+        :param str name: Search term to filter by division name
+        :return: list[AuthzDivision]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id', 'permission', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisionspermitted_subject_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_authorization_divisionspermitted_subject_id`")
+        # verify the required parameter 'permission' is set
+        if ('permission' not in params) or (params['permission'] is None):
+            raise ValueError("Missing the required parameter `permission` when calling `get_authorization_divisionspermitted_subject_id`")
+
+
+        resource_path = '/api/v2/authorization/divisionspermitted/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'permission' in params:
+            query_params['permission'] = params['permission']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[AuthzDivision]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -610,6 +1270,90 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_authorization_role_users(self, role_id, **kwargs):
+        """
+        Get a list of the users in a specified role.
+        Get an array of the UUIDs of the users in the specified role.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_role_users(role_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str role_id: Role ID (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: UserEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['role_id', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_role_users" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'role_id' is set
+        if ('role_id' not in params) or (params['role_id'] is None):
+            raise ValueError("Missing the required parameter `role_id` when calling `get_authorization_role_users`")
+
+
+        resource_path = '/api/v2/authorization/roles/{roleId}/users'.replace('{format}', 'json')
+        path_params = {}
+        if 'role_id' in params:
+            path_params['roleId'] = params['role_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_authorization_roles(self, **kwargs):
         """
         Retrieve a list of all roles defined for the organization
@@ -711,6 +1455,156 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OrganizationRoleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_subject(self, subject_id, **kwargs):
+        """
+        Returns a listing of roles and permissions for a user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_subject(subject_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: Subject ID (user or group) (required)
+        :return: AuthzSubject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_subject" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_authorization_subject`")
+
+
+        resource_path = '/api/v2/authorization/subjects/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzSubject',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_subjects_me(self, **kwargs):
+        """
+        Returns a listing of roles and permissions for the currently authenticated user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_subjects_me(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: AuthzSubject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_subjects_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/subjects/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzSubject',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -873,6 +1767,258 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DomainOrganizationRole',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_division_object(self, division_id, object_type, body, **kwargs):
+        """
+        Assign a list of objects to a division
+        Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_division_object(division_id, object_type, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: Division ID (required)
+        :param str object_type: The type of the objects. Must be one of the valid object types (required)
+        :param list[str] body: Object Id List (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'object_type', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_division_object" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `post_authorization_division_object`")
+        # verify the required parameter 'object_type' is set
+        if ('object_type' not in params) or (params['object_type'] is None):
+            raise ValueError("Missing the required parameter `object_type` when calling `post_authorization_division_object`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_division_object`")
+
+
+        resource_path = '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}'.replace('{format}', 'json')
+        path_params = {}
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+        if 'object_type' in params:
+            path_params['objectType'] = params['object_type']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_divisions(self, body, **kwargs):
+        """
+        Create a division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_divisions(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AuthzDivision body: Division (required)
+        :return: AuthzDivision
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_divisions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_divisions`")
+
+
+        resource_path = '/api/v2/authorization/divisions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivision',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_role(self, role_id, body, **kwargs):
+        """
+        Bulk-grant subjects and divisions with an organization role.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_role(role_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str role_id: Role ID (required)
+        :param SubjectDivisions body: Subjects and Divisions (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['role_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_role" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'role_id' is set
+        if ('role_id' not in params) or (params['role_id'] is None):
+            raise ValueError("Missing the required parameter `role_id` when calling `post_authorization_role`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_role`")
+
+
+        resource_path = '/api/v2/authorization/roles/{roleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'role_id' in params:
+            path_params['roleId'] = params['role_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1116,6 +2262,183 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OrganizationRoleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_subject_division_role(self, subject_id, division_id, role_id, **kwargs):
+        """
+        Make a grant of a role in a division
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_subject_division_role(subject_id, division_id, role_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: Subject ID (user or group) (required)
+        :param str division_id: the id of the division to which to make the grant (required)
+        :param str role_id: the id of the role to grant (required)
+        :param str subject_type: what the type of the subject is, PC_GROUP or PC_USER
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id', 'division_id', 'role_id', 'subject_type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_subject_division_role" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `post_authorization_subject_division_role`")
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `post_authorization_subject_division_role`")
+        # verify the required parameter 'role_id' is set
+        if ('role_id' not in params) or (params['role_id'] is None):
+            raise ValueError("Missing the required parameter `role_id` when calling `post_authorization_subject_division_role`")
+
+
+        resource_path = '/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+        if 'role_id' in params:
+            path_params['roleId'] = params['role_id']
+
+        query_params = {}
+        if 'subject_type' in params:
+            query_params['subjectType'] = params['subject_type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_authorization_division(self, division_id, body, **kwargs):
+        """
+        Update a division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_authorization_division(division_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: Division ID (required)
+        :param AuthzDivision body: Updated division data (required)
+        :return: AuthzDivision
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_authorization_division" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `put_authorization_division`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_authorization_division`")
+
+
+        resource_path = '/api/v2/authorization/divisions/{divisionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'division_id' in params:
+            path_params['divisionId'] = params['division_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivision',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

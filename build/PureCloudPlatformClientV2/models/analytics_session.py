@@ -320,7 +320,7 @@ class AnalyticsSession(object):
         :param message_type: The message_type of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["sms"]
+        allowed_values = ["sms", "facebook", "twitter", "line"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for message_type -> " + message_type
             self._message_type = "outdated_sdk_version"

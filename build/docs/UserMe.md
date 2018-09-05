@@ -28,9 +28,11 @@ title: UserMe
 | **geolocation** | [**Geolocation**](Geolocation.html) | Current geolocation position | [optional] |
 | **station** | [**UserStations**](UserStations.html) | Effective, default, and last station information | [optional] |
 | **authorization** | [**UserAuthorization**](UserAuthorization.html) | Roles and permissions assigned to the user | [optional] |
-| **profile_skills** | **list[str]** | Skills possessed by the user | [optional] |
+| **profile_skills** | **list[str]** | Profile skills possessed by the user | [optional] |
 | **locations** | [**list[Location]**](Location.html) | The user placement at each site location. | [optional] |
 | **groups** | [**list[Group]**](Group.html) | The groups the user is a member of | [optional] |
+| **skills** | [**list[UserRoutingSkill]**](UserRoutingSkill.html) | Routing (ACD) skills possessed by the user | [optional] |
+| **languages** | [**list[UserRoutingLanguage]**](UserRoutingLanguage.html) | Routing (ACD) languages possessed by the user | [optional] |
 | **acd_auto_answer** | **bool** | acd auto answer | [optional] |
 | **date** | [**ServerDate**](ServerDate.html) | The PureCloud system date time. | [optional] |
 | **geolocation_settings** | [**GeolocationSettings**](GeolocationSettings.html) | Geolocation settings for user&#39;s organization. | [optional] |

@@ -84,6 +84,12 @@ from .audit_message import AuditMessage
 from .audit_query_response import AuditQueryResponse
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
+from .authz_division import AuthzDivision
+from .authz_division_entity_listing import AuthzDivisionEntityListing
+from .authz_grant import AuthzGrant
+from .authz_grant_policy import AuthzGrantPolicy
+from .authz_grant_role import AuthzGrantRole
+from .authz_subject import AuthzSubject
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -547,6 +553,9 @@ from .external_data_source import ExternalDataSource
 from .external_organization import ExternalOrganization
 from .external_organization_listing import ExternalOrganizationListing
 from .facebook_id import FacebookId
+from .facebook_integration import FacebookIntegration
+from .facebook_integration_entity_listing import FacebookIntegrationEntityListing
+from .facebook_integration_request import FacebookIntegrationRequest
 from .facebook_scoped_id import FacebookScopedId
 from .facet import Facet
 from .facet_entry import FacetEntry
@@ -601,6 +610,10 @@ from .gdpr_request import GDPRRequest
 from .gdpr_request_entity_listing import GDPRRequestEntityListing
 from .gdpr_subject import GDPRSubject
 from .gdpr_subject_entity_listing import GDPRSubjectEntityListing
+from .gkn_documentation_result import GKNDocumentationResult
+from .gkn_documentation_search_criteria import GKNDocumentationSearchCriteria
+from .gkn_documentation_search_request import GKNDocumentationSearchRequest
+from .gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .g_suite import GSuite
 from .generate_short_term_forecast_request import GenerateShortTermForecastRequest
 from .generate_short_term_forecast_response import GenerateShortTermForecastResponse
@@ -722,6 +735,9 @@ from .line_base import LineBase
 from .line_base_entity_listing import LineBaseEntityListing
 from .line_entity_listing import LineEntityListing
 from .line_id import LineId
+from .line_integration import LineIntegration
+from .line_integration_entity_listing import LineIntegrationEntityListing
+from .line_integration_request import LineIntegrationRequest
 from .line_status import LineStatus
 from .line_user_id import LineUserId
 from .list_wrapper_forecast_source_day_pointer import ListWrapperForecastSourceDayPointer
@@ -776,6 +792,8 @@ from .message_media_participant import MessageMediaParticipant
 from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .message_sticker import MessageSticker
+from .messaging_sticker import MessagingSticker
+from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
@@ -1063,6 +1081,7 @@ from .stats_notification_notification_metrics import StatsNotificationNotificati
 from .street_address import StreetAddress
 from .subject_division_grants import SubjectDivisionGrants
 from .subject_division_grants_entity_listing import SubjectDivisionGrantsEntityListing
+from .subject_divisions import SubjectDivisions
 from .subscriber_response import SubscriberResponse
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
@@ -1131,6 +1150,9 @@ from .trustor import Trustor
 from .trustor_audit_query_request import TrustorAuditQueryRequest
 from .trustor_entity_listing import TrustorEntityListing
 from .twitter_id import TwitterId
+from .twitter_integration import TwitterIntegration
+from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
+from .twitter_integration_request import TwitterIntegrationRequest
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus
 from .update_action_input import UpdateActionInput
@@ -1278,5 +1300,6 @@ from .wrap_up_code_reference import WrapUpCodeReference
 from .wrapup import Wrapup
 from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
+from .writable_dialer_contact import WritableDialerContact
 from .writable_division import WritableDivision
 from .writable_entity import WritableEntity

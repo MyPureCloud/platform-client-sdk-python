@@ -46,6 +46,84 @@ class SearchApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def get_documentation_gkn_search(self, q64, **kwargs):
+        """
+        Search gkn documentation using the q64 value returned from a previous search
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_documentation_gkn_search(q64, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str q64: q64 (required)
+        :return: GKNDocumentationSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['q64']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_documentation_gkn_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'q64' is set
+        if ('q64' not in params) or (params['q64'] is None):
+            raise ValueError("Missing the required parameter `q64` when calling `get_documentation_gkn_search`")
+
+
+        resource_path = '/api/v2/documentation/gkn/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'q64' in params:
+            query_params['q64'] = params['q64']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GKNDocumentationSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_documentation_search(self, q64, **kwargs):
         """
         Search documentation using the q64 value returned from a previous search
@@ -612,6 +690,84 @@ class SearchApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='VoicemailsSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_documentation_gkn_search(self, body, **kwargs):
+        """
+        Search gkn documentation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_documentation_gkn_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GKNDocumentationSearchRequest body: Search request options (required)
+        :return: GKNDocumentationSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_documentation_gkn_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_documentation_gkn_search`")
+
+
+        resource_path = '/api/v2/documentation/gkn/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GKNDocumentationSearchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

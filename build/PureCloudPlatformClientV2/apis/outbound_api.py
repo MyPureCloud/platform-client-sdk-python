@@ -5276,7 +5276,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_list_id: Contact List ID (required)
-        :param list[DialerContact] body: Contact (required)
+        :param list[WritableDialerContact] body: Contact (required)
         :param bool priority: Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
         :param bool clear_system_data: Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
         :param bool do_not_queue: Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the 'priority' parameter.

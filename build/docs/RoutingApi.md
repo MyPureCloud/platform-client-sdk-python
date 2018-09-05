@@ -47,6 +47,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number of joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
+|[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
+|[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Add bulk routing skills to user|
 |[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
@@ -1260,7 +1262,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -1827,7 +1829,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name)
 
 
 
@@ -1856,12 +1858,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-name = 'name_example' # str | Name (optional)
 sort_by = 'name' # str | Sort by (optional) (default to name)
+name = 'name_example' # str | Name (optional)
 
 try:
     # Get list of wrapup codes.
-    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e
@@ -1874,8 +1876,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id |
 | **name** | **str**| Name | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2157,6 +2159,114 @@ except ApiException as e:
 ### Return type
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
+
+<a name="patch_user_routinglanguages_bulk"></a>
+
+## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) patch_user_routinglanguages_bulk(user_id, body)
+
+
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingLanguagePost()] # list[UserRoutingLanguagePost] | Language
+
+try:
+    # Add bulk routing language to user. Max limit 50 languages
+    api_response = api_instance.patch_user_routinglanguages_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_user_routinglanguages_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
+<a name="patch_user_routingskills_bulk"></a>
+
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) patch_user_routingskills_bulk(user_id, body)
+
+
+
+Add bulk routing skills to user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routingskills/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
+
+try:
+    # Add bulk routing skills to user
+    api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_user_routingskills_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
 
 <a name="post_analytics_queues_observations_query"></a>
 

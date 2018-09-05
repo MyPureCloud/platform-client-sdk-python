@@ -67,8 +67,12 @@ class WebChatConfig(object):
         :param web_chat_skin: The web_chat_skin of this WebChatConfig.
         :type: str
         """
-        
-        self._web_chat_skin = web_chat_skin
+        allowed_values = ["basic", "modern-caret-skin"]
+        if web_chat_skin.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for web_chat_skin -> " + web_chat_skin
+            self._web_chat_skin = "outdated_sdk_version"
+        else:
+            self._web_chat_skin = web_chat_skin
 
     def to_dict(self):
         """

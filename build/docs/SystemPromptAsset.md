@@ -14,6 +14,7 @@ title: SystemPromptAsset
 | **duration_seconds** | **float** |  | [optional] |
 | **media_uri** | **str** |  | [optional] |
 | **tts_string** | **str** |  | [optional] |
+| **text** | **str** |  | [optional] |
 | **upload_uri** | **str** |  | [optional] |
 | **upload_status** | **str** |  | [optional] |
 | **has_default** | **bool** |  | [optional] |

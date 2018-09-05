@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
+|[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
 {: class="table table-striped"}
 
 <a name="delete_presencedefinition"></a>
@@ -431,4 +432,55 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="put_users_presences_bulk"></a>
+
+## [**list[UserPresence]**](UserPresence.html) put_users_presences_bulk(body)
+
+
+
+Update bulk user Presences
+
+
+
+Wraps PUT /api/v2/users/presences/bulk 
+
+Requires ANY permissions: 
+
+* user_administration
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+body = [PureCloudPlatformClientV2.UserPresence()] # list[UserPresence] | List of User presences
+
+try:
+    # Update bulk user Presences
+    api_response = api_instance.put_users_presences_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PresenceApi->put_users_presences_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[UserPresence]**](UserPresence.html)| List of User presences |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UserPresence]**](UserPresence.html)
 

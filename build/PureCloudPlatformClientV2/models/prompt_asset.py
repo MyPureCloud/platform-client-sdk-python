@@ -44,6 +44,7 @@ class PromptAsset(object):
             'language': 'str',
             'media_uri': 'str',
             'tts_string': 'str',
+            'text': 'str',
             'upload_status': 'str',
             'upload_uri': 'str',
             'language_default': 'bool',
@@ -59,6 +60,7 @@ class PromptAsset(object):
             'language': 'language',
             'media_uri': 'mediaUri',
             'tts_string': 'ttsString',
+            'text': 'text',
             'upload_status': 'uploadStatus',
             'upload_uri': 'uploadUri',
             'language_default': 'languageDefault',
@@ -73,6 +75,7 @@ class PromptAsset(object):
         self._language = None
         self._media_uri = None
         self._tts_string = None
+        self._text = None
         self._upload_status = None
         self._upload_uri = None
         self._language_default = None
@@ -217,6 +220,29 @@ class PromptAsset(object):
         """
         
         self._tts_string = tts_string
+
+    @property
+    def text(self):
+        """
+        Gets the text of this PromptAsset.
+
+
+        :return: The text of this PromptAsset.
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """
+        Sets the text of this PromptAsset.
+
+
+        :param text: The text of this PromptAsset.
+        :type: str
+        """
+        
+        self._text = text
 
     @property
     def upload_status(self):

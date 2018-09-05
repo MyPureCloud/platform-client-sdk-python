@@ -41,6 +41,7 @@ class ConversationQuery(object):
             'interval': 'str',
             'conversation_filters': 'list[AnalyticsQueryFilter]',
             'evaluation_filters': 'list[AnalyticsQueryFilter]',
+            'survey_filters': 'list[AnalyticsQueryFilter]',
             'segment_filters': 'list[AnalyticsQueryFilter]',
             'aggregations': 'list[AnalyticsQueryAggregation]',
             'paging': 'PagingSpec',
@@ -52,6 +53,7 @@ class ConversationQuery(object):
             'interval': 'interval',
             'conversation_filters': 'conversationFilters',
             'evaluation_filters': 'evaluationFilters',
+            'survey_filters': 'surveyFilters',
             'segment_filters': 'segmentFilters',
             'aggregations': 'aggregations',
             'paging': 'paging',
@@ -62,6 +64,7 @@ class ConversationQuery(object):
         self._interval = None
         self._conversation_filters = None
         self._evaluation_filters = None
+        self._survey_filters = None
         self._segment_filters = None
         self._aggregations = None
         self._paging = None
@@ -136,6 +139,29 @@ class ConversationQuery(object):
         """
         
         self._evaluation_filters = evaluation_filters
+
+    @property
+    def survey_filters(self):
+        """
+        Gets the survey_filters of this ConversationQuery.
+        Filters that target quality management survey-level data
+
+        :return: The survey_filters of this ConversationQuery.
+        :rtype: list[AnalyticsQueryFilter]
+        """
+        return self._survey_filters
+
+    @survey_filters.setter
+    def survey_filters(self, survey_filters):
+        """
+        Sets the survey_filters of this ConversationQuery.
+        Filters that target quality management survey-level data
+
+        :param survey_filters: The survey_filters of this ConversationQuery.
+        :type: list[AnalyticsQueryFilter]
+        """
+        
+        self._survey_filters = survey_filters
 
     @property
     def segment_filters(self):

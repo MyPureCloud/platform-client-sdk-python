@@ -45,6 +45,7 @@ class CreateCallbackOnConversationCommand(object):
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
             'country_code': 'str',
+            'validate_callback_numbers': 'bool',
             'data': 'dict(str, str)'
         }
 
@@ -56,6 +57,7 @@ class CreateCallbackOnConversationCommand(object):
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'country_code': 'countryCode',
+            'validate_callback_numbers': 'validateCallbackNumbers',
             'data': 'data'
         }
 
@@ -66,6 +68,7 @@ class CreateCallbackOnConversationCommand(object):
         self._callback_numbers = None
         self._callback_scheduled_time = None
         self._country_code = None
+        self._validate_callback_numbers = None
         self._data = None
 
     @property
@@ -228,6 +231,29 @@ class CreateCallbackOnConversationCommand(object):
         """
         
         self._country_code = country_code
+
+    @property
+    def validate_callback_numbers(self):
+        """
+        Gets the validate_callback_numbers of this CreateCallbackOnConversationCommand.
+        Whether or not to validate the callback numbers for phone number format.
+
+        :return: The validate_callback_numbers of this CreateCallbackOnConversationCommand.
+        :rtype: bool
+        """
+        return self._validate_callback_numbers
+
+    @validate_callback_numbers.setter
+    def validate_callback_numbers(self, validate_callback_numbers):
+        """
+        Sets the validate_callback_numbers of this CreateCallbackOnConversationCommand.
+        Whether or not to validate the callback numbers for phone number format.
+
+        :param validate_callback_numbers: The validate_callback_numbers of this CreateCallbackOnConversationCommand.
+        :type: bool
+        """
+        
+        self._validate_callback_numbers = validate_callback_numbers
 
     @property
     def data(self):

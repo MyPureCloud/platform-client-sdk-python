@@ -38,93 +38,37 @@ class ChatBadgeNotificationBadgeEntity(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'type': 'str',
-            'jid': 'str'
+            'jabber_id': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'type': 'type',
-            'jid': 'jid'
+            'jabber_id': 'jabberId'
         }
 
-        self._id = None
-        self._type = None
-        self._jid = None
+        self._jabber_id = None
 
     @property
-    def id(self):
+    def jabber_id(self):
         """
-        Gets the id of this ChatBadgeNotificationBadgeEntity.
+        Gets the jabber_id of this ChatBadgeNotificationBadgeEntity.
 
 
-        :return: The id of this ChatBadgeNotificationBadgeEntity.
+        :return: The jabber_id of this ChatBadgeNotificationBadgeEntity.
         :rtype: str
         """
-        return self._id
+        return self._jabber_id
 
-    @id.setter
-    def id(self, id):
+    @jabber_id.setter
+    def jabber_id(self, jabber_id):
         """
-        Sets the id of this ChatBadgeNotificationBadgeEntity.
+        Sets the jabber_id of this ChatBadgeNotificationBadgeEntity.
 
 
-        :param id: The id of this ChatBadgeNotificationBadgeEntity.
+        :param jabber_id: The jabber_id of this ChatBadgeNotificationBadgeEntity.
         :type: str
         """
         
-        self._id = id
-
-    @property
-    def type(self):
-        """
-        Gets the type of this ChatBadgeNotificationBadgeEntity.
-
-
-        :return: The type of this ChatBadgeNotificationBadgeEntity.
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """
-        Sets the type of this ChatBadgeNotificationBadgeEntity.
-
-
-        :param type: The type of this ChatBadgeNotificationBadgeEntity.
-        :type: str
-        """
-        allowed_values = ["user", "group", "adhoc"]
-        if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
-            self._type = "outdated_sdk_version"
-        else:
-            self._type = type
-
-    @property
-    def jid(self):
-        """
-        Gets the jid of this ChatBadgeNotificationBadgeEntity.
-
-
-        :return: The jid of this ChatBadgeNotificationBadgeEntity.
-        :rtype: str
-        """
-        return self._jid
-
-    @jid.setter
-    def jid(self, jid):
-        """
-        Sets the jid of this ChatBadgeNotificationBadgeEntity.
-
-
-        :param jid: The jid of this ChatBadgeNotificationBadgeEntity.
-        :type: str
-        """
-        
-        self._jid = jid
+        self._jabber_id = jabber_id
 
     def to_dict(self):
         """

@@ -8,12 +8,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
 |[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
 |[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
+|[**get_authorization_divisionspermitted_me**](UsersApi.html#get_authorization_divisionspermitted_me) | Returns whether or not current user can perform the specified action(s).|
+|[**get_authorization_divisionspermitted_subject_id**](UsersApi.html#get_authorization_divisionspermitted_subject_id) | Returns whether or not specified user can perform the specified action(s).|
+|[**get_authorization_subject**](UsersApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
+|[**get_authorization_subjects_me**](UsersApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
 |[**get_fieldconfig**](UsersApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_profiles_users**](UsersApi.html#get_profiles_users) | Get a user profile listing|
 |[**get_user**](UsersApi.html#get_user) | Get user.|
@@ -42,10 +47,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_queue**](UsersApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](UsersApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](UsersApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
+|[**patch_user_routinglanguages_bulk**](UsersApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
+|[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Add bulk routing skills to user|
 |[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
+|[**post_authorization_subject_division_role**](UsersApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
 |[**post_user_routinglanguages**](UsersApi.html#post_user_routinglanguages) | Add routing language to user|
@@ -62,6 +70,60 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_associatedstation_station_id**](UsersApi.html#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](UsersApi.html#put_user_station_defaultstation_station_id) | Set default station|
 {: class="table table-striped"}
+
+<a name="delete_authorization_subject_division_role"></a>
+
+##  delete_authorization_subject_division_role(subject_id, division_id, role_id)
+
+
+
+Delete a grant of a role in a division
+
+
+
+Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division of the grant
+role_id = 'role_id_example' # str | the id of the role of the grant
+
+try:
+    # Delete a grant of a role in a division
+    api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
+except ApiException as e:
+    print "Exception when calling UsersApi->delete_authorization_subject_division_role: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **division_id** | **str**| the id of the division of the grant |  |
+| **role_id** | **str**| the id of the role of the grant |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_user"></a>
 
@@ -374,6 +436,209 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="get_authorization_divisionspermitted_me"></a>
+
+## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_me(permission, name=name)
+
+
+
+Returns whether or not current user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Returns whether or not current user can perform the specified action(s).
+    api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_divisionspermitted_me: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **name** | **str**| Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AuthzDivision]**](AuthzDivision.html)
+
+<a name="get_authorization_divisionspermitted_subject_id"></a>
+
+## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
+
+
+
+Returns whether or not specified user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/{subjectId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+name = 'name_example' # str | Search term to filter by division name (optional)
+
+try:
+    # Returns whether or not specified user can perform the specified action(s).
+    api_response = api_instance.get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_divisionspermitted_subject_id: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **name** | **str**| Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AuthzDivision]**](AuthzDivision.html)
+
+<a name="get_authorization_subject"></a>
+
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id)
+
+
+
+Returns a listing of roles and permissions for a user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/{subjectId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+
+try:
+    # Returns a listing of roles and permissions for a user.
+    api_response = api_instance.get_authorization_subject(subject_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_subject: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
+
+<a name="get_authorization_subjects_me"></a>
+
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me()
+
+
+
+Returns a listing of roles and permissions for the currently authenticated user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Returns a listing of roles and permissions for the currently authenticated user.
+    api_response = api_instance.get_authorization_subjects_me()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
+
 <a name="get_fieldconfig"></a>
 
 ## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
@@ -532,7 +797,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **state** | **str**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -585,7 +850,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -687,7 +952,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -745,7 +1010,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to ASC] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -899,7 +1164,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1324,7 +1589,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1438,7 +1703,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |
 {: class="table table-striped"}
 
@@ -1489,7 +1754,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -1875,6 +2140,114 @@ except ApiException as e:
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
 
+<a name="patch_user_routinglanguages_bulk"></a>
+
+## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) patch_user_routinglanguages_bulk(user_id, body)
+
+
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingLanguagePost()] # list[UserRoutingLanguagePost] | Language
+
+try:
+    # Add bulk routing language to user. Max limit 50 languages
+    api_response = api_instance.patch_user_routinglanguages_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->patch_user_routinglanguages_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost.html)| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
+<a name="patch_user_routingskills_bulk"></a>
+
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) patch_user_routingskills_bulk(user_id, body)
+
+
+
+Add bulk routing skills to user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routingskills/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
+
+try:
+    # Add bulk routing skills to user
+    api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->patch_user_routingskills_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
+
 <a name="patch_users_bulk"></a>
 
 ## [**UserEntityListing**](UserEntityListing.html) patch_users_bulk(body)
@@ -2081,6 +2454,62 @@ except ApiException as e:
 ### Return type
 
 [**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="post_authorization_subject_division_role"></a>
+
+##  post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
+
+
+
+Make a grant of a role in a division
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division to which to make the grant
+role_id = 'role_id_example' # str | the id of the role to grant
+subject_type = 'PC_USER' # str | what the type of the subject is, PC_GROUP or PC_USER (optional) (default to PC_USER)
+
+try:
+    # Make a grant of a role in a division
+    api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_authorization_subject_division_role: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **division_id** | **str**| the id of the division to which to make the grant |  |
+| **role_id** | **str**| the id of the role to grant |  |
+| **subject_type** | **str**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_user_invite"></a>
 

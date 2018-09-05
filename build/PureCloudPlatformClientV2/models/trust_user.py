@@ -62,6 +62,8 @@ class TrustUser(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'skills': 'list[UserRoutingSkill]',
+            'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
             'trust_user_details': 'TrustUserDetails'
         }
@@ -91,6 +93,8 @@ class TrustUser(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'skills': 'skills',
+            'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
             'trust_user_details': 'trustUserDetails'
         }
@@ -119,6 +123,8 @@ class TrustUser(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._skills = None
+        self._languages = None
         self._acd_auto_answer = None
         self._trust_user_details = None
 
@@ -613,7 +619,7 @@ class TrustUser(object):
     def profile_skills(self):
         """
         Gets the profile_skills of this TrustUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :return: The profile_skills of this TrustUser.
         :rtype: list[str]
@@ -624,7 +630,7 @@ class TrustUser(object):
     def profile_skills(self, profile_skills):
         """
         Sets the profile_skills of this TrustUser.
-        Skills possessed by the user
+        Profile skills possessed by the user
 
         :param profile_skills: The profile_skills of this TrustUser.
         :type: list[str]
@@ -677,6 +683,52 @@ class TrustUser(object):
         """
         
         self._groups = groups
+
+    @property
+    def skills(self):
+        """
+        Gets the skills of this TrustUser.
+        Routing (ACD) skills possessed by the user
+
+        :return: The skills of this TrustUser.
+        :rtype: list[UserRoutingSkill]
+        """
+        return self._skills
+
+    @skills.setter
+    def skills(self, skills):
+        """
+        Sets the skills of this TrustUser.
+        Routing (ACD) skills possessed by the user
+
+        :param skills: The skills of this TrustUser.
+        :type: list[UserRoutingSkill]
+        """
+        
+        self._skills = skills
+
+    @property
+    def languages(self):
+        """
+        Gets the languages of this TrustUser.
+        Routing (ACD) languages possessed by the user
+
+        :return: The languages of this TrustUser.
+        :rtype: list[UserRoutingLanguage]
+        """
+        return self._languages
+
+    @languages.setter
+    def languages(self, languages):
+        """
+        Sets the languages of this TrustUser.
+        Routing (ACD) languages possessed by the user
+
+        :param languages: The languages of this TrustUser.
+        :type: list[UserRoutingLanguage]
+        """
+        
+        self._languages = languages
 
     @property
     def acd_auto_answer(self):

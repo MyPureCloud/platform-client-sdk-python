@@ -146,7 +146,7 @@ class QueueRequest(object):
     def name(self):
         """
         Gets the name of this QueueRequest.
-
+        The queue name
 
         :return: The name of this QueueRequest.
         :rtype: str
@@ -157,7 +157,7 @@ class QueueRequest(object):
     def name(self, name):
         """
         Sets the name of this QueueRequest.
-
+        The queue name
 
         :param name: The name of this QueueRequest.
         :type: str
