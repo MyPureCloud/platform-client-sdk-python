@@ -1399,7 +1399,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -1567,7 +1567,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -1735,7 +1735,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -2293,7 +2293,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -2383,7 +2383,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -2572,7 +2572,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -3070,7 +3070,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -3165,7 +3165,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param bool include_import_status: Include import status
         :param bool include_size: Include size
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -3507,7 +3507,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param bool include_import_status: Import status
         :param bool include_size: Include size
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -3850,7 +3850,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name
@@ -4318,7 +4318,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
+        :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param str filter_type: Filter type
         :param str name: Name

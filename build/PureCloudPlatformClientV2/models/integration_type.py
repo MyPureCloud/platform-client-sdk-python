@@ -47,6 +47,7 @@ class IntegrationType(object):
             'config_properties_schema_uri': 'str',
             'config_advanced_schema_uri': 'str',
             'help_uri': 'str',
+            'terms_of_service_uri': 'str',
             'credentials': 'dict(str, CredentialSpecification)',
             'non_installable': 'bool',
             'max_instances': 'int',
@@ -64,6 +65,7 @@ class IntegrationType(object):
             'config_properties_schema_uri': 'configPropertiesSchemaUri',
             'config_advanced_schema_uri': 'configAdvancedSchemaUri',
             'help_uri': 'helpUri',
+            'terms_of_service_uri': 'termsOfServiceUri',
             'credentials': 'credentials',
             'non_installable': 'nonInstallable',
             'max_instances': 'maxInstances',
@@ -80,6 +82,7 @@ class IntegrationType(object):
         self._config_properties_schema_uri = None
         self._config_advanced_schema_uri = None
         self._help_uri = None
+        self._terms_of_service_uri = None
         self._credentials = None
         self._non_installable = None
         self._max_instances = None
@@ -292,6 +295,29 @@ class IntegrationType(object):
         """
         
         self._help_uri = help_uri
+
+    @property
+    def terms_of_service_uri(self):
+        """
+        Gets the terms_of_service_uri of this IntegrationType.
+        URI of a page with terms and conditions for the integration type
+
+        :return: The terms_of_service_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._terms_of_service_uri
+
+    @terms_of_service_uri.setter
+    def terms_of_service_uri(self, terms_of_service_uri):
+        """
+        Sets the terms_of_service_uri of this IntegrationType.
+        URI of a page with terms and conditions for the integration type
+
+        :param terms_of_service_uri: The terms_of_service_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._terms_of_service_uri = terms_of_service_uri
 
     @property
     def credentials(self):

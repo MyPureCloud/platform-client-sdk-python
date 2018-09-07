@@ -986,7 +986,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1006,7 +1006,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -1098,7 +1098,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1118,7 +1118,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -1210,7 +1210,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1230,7 +1230,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -1577,7 +1577,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1597,7 +1597,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -1638,7 +1638,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1665,7 +1665,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -1764,7 +1764,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -1785,7 +1785,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -2091,7 +2091,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -2112,7 +2112,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -2156,7 +2156,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 include_import_status = false # bool | Include import status (optional) (default to false)
 include_size = false # bool | Include size (optional) (default to false)
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -2179,7 +2179,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **include_import_status** | **bool**| Include import status | [optional] [default to false] |
 | **include_size** | **bool**| Include size | [optional] [default to false] |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -2383,7 +2383,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 include_import_status = false # bool | Import status (optional) (default to false)
 include_size = false # bool | Include size (optional) (default to false)
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -2405,7 +2405,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **include_import_status** | **bool**| Import status | [optional] [default to false] |
 | **include_size** | **bool**| Include size | [optional] [default to false] |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -2611,7 +2611,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -2631,7 +2631,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
@@ -2919,7 +2919,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
@@ -2939,7 +2939,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
