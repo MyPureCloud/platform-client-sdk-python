@@ -44,6 +44,8 @@ class UpdateWeekScheduleRequest(object):
             'partial_upload_ids': 'list[str]',
             'metadata': 'WfmVersionedEntityMetadata',
             'agent_schedules_version': 'int',
+            'short_term_forecast': 'ShortTermForecastReference',
+            'headcount_forecast': 'HeadcountForecast',
             'agent_update_filter': 'str'
         }
 
@@ -54,6 +56,8 @@ class UpdateWeekScheduleRequest(object):
             'partial_upload_ids': 'partialUploadIds',
             'metadata': 'metadata',
             'agent_schedules_version': 'agentSchedulesVersion',
+            'short_term_forecast': 'shortTermForecast',
+            'headcount_forecast': 'headcountForecast',
             'agent_update_filter': 'agentUpdateFilter'
         }
 
@@ -63,6 +67,8 @@ class UpdateWeekScheduleRequest(object):
         self._partial_upload_ids = None
         self._metadata = None
         self._agent_schedules_version = None
+        self._short_term_forecast = None
+        self._headcount_forecast = None
         self._agent_update_filter = None
 
     @property
@@ -204,10 +210,56 @@ class UpdateWeekScheduleRequest(object):
         self._agent_schedules_version = agent_schedules_version
 
     @property
+    def short_term_forecast(self):
+        """
+        Gets the short_term_forecast of this UpdateWeekScheduleRequest.
+        Reference to optionally point the schedule at a new short term forecast
+
+        :return: The short_term_forecast of this UpdateWeekScheduleRequest.
+        :rtype: ShortTermForecastReference
+        """
+        return self._short_term_forecast
+
+    @short_term_forecast.setter
+    def short_term_forecast(self, short_term_forecast):
+        """
+        Sets the short_term_forecast of this UpdateWeekScheduleRequest.
+        Reference to optionally point the schedule at a new short term forecast
+
+        :param short_term_forecast: The short_term_forecast of this UpdateWeekScheduleRequest.
+        :type: ShortTermForecastReference
+        """
+        
+        self._short_term_forecast = short_term_forecast
+
+    @property
+    def headcount_forecast(self):
+        """
+        Gets the headcount_forecast of this UpdateWeekScheduleRequest.
+        The headcount forecast associated with the schedule.  If not null, existing values will be irrecoverably replaced
+
+        :return: The headcount_forecast of this UpdateWeekScheduleRequest.
+        :rtype: HeadcountForecast
+        """
+        return self._headcount_forecast
+
+    @headcount_forecast.setter
+    def headcount_forecast(self, headcount_forecast):
+        """
+        Sets the headcount_forecast of this UpdateWeekScheduleRequest.
+        The headcount forecast associated with the schedule.  If not null, existing values will be irrecoverably replaced
+
+        :param headcount_forecast: The headcount_forecast of this UpdateWeekScheduleRequest.
+        :type: HeadcountForecast
+        """
+        
+        self._headcount_forecast = headcount_forecast
+
+    @property
     def agent_update_filter(self):
         """
         Gets the agent_update_filter of this UpdateWeekScheduleRequest.
-        The condition to notify agents about schedule updates. Applicable to only published schedule
+        For a published schedule, this determines whether a notification will be shown to agents in the default PureCloud user interface.  The CPC notification will always be sent and the value specified here affects what data is returned in the 'updates' property.  In the default PureCloud UI, \"None\" means that agents will not be notified, \"ShiftTimesOnly\" means agents will only be notified for changes to shift start and end times,  and \"All\" means that agents will be notified for any change to a shift or activity (except for full day off activities).  When building a custom client, use this property to specify the level of detail you need. Defaults to \"ShiftTimesOnly\".
 
         :return: The agent_update_filter of this UpdateWeekScheduleRequest.
         :rtype: str
@@ -218,7 +270,7 @@ class UpdateWeekScheduleRequest(object):
     def agent_update_filter(self, agent_update_filter):
         """
         Sets the agent_update_filter of this UpdateWeekScheduleRequest.
-        The condition to notify agents about schedule updates. Applicable to only published schedule
+        For a published schedule, this determines whether a notification will be shown to agents in the default PureCloud user interface.  The CPC notification will always be sent and the value specified here affects what data is returned in the 'updates' property.  In the default PureCloud UI, \"None\" means that agents will not be notified, \"ShiftTimesOnly\" means agents will only be notified for changes to shift start and end times,  and \"All\" means that agents will be notified for any change to a shift or activity (except for full day off activities).  When building a custom client, use this property to specify the level of detail you need. Defaults to \"ShiftTimesOnly\".
 
         :param agent_update_filter: The agent_update_filter of this UpdateWeekScheduleRequest.
         :type: str

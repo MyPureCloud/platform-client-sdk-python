@@ -1560,7 +1560,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedforms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1590,10 +1590,11 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
+only_latest_per_context = false # bool | onlyLatestPerContext (optional) (default to false)
 
 try:
     # Get the published evaluation forms.
-    api_response = api_instance.get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name)
+    api_response = api_instance.get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms: %s\n" % e
@@ -1607,6 +1608,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
+| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1666,7 +1668,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedforms_evaluations"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
 
 
 
@@ -1696,10 +1698,11 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
+only_latest_per_context = false # bool | onlyLatestPerContext (optional) (default to false)
 
 try:
     # Get the published evaluation forms.
-    api_response = api_instance.get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name)
+    api_response = api_instance.get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_evaluations: %s\n" % e
@@ -1713,6 +1716,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
+| **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1772,7 +1776,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedforms_surveys"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name)
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name, only_latest_enabled_per_context=only_latest_enabled_per_context)
 
 
 
@@ -1802,10 +1806,11 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
+only_latest_enabled_per_context = false # bool | onlyLatestEnabledPerContext (optional) (default to false)
 
 try:
     # Get the published survey forms.
-    api_response = api_instance.get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name)
+    api_response = api_instance.get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name, only_latest_enabled_per_context=only_latest_enabled_per_context)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_surveys: %s\n" % e
@@ -1819,6 +1824,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
+| **only_latest_enabled_per_context** | **bool**| onlyLatestEnabledPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

@@ -118,7 +118,7 @@ class FacebookIntegrationRequest(object):
     def page_access_token(self):
         """
         Gets the page_access_token of this FacebookIntegrationRequest.
-        The Page Access Token of a facebook page
+        The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
 
         :return: The page_access_token of this FacebookIntegrationRequest.
         :rtype: str
@@ -129,7 +129,7 @@ class FacebookIntegrationRequest(object):
     def page_access_token(self, page_access_token):
         """
         Sets the page_access_token of this FacebookIntegrationRequest.
-        The Page Access Token of a facebook page
+        The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
 
         :param page_access_token: The page_access_token of this FacebookIntegrationRequest.
         :type: str
@@ -141,7 +141,7 @@ class FacebookIntegrationRequest(object):
     def user_access_token(self):
         """
         Gets the user_access_token of this FacebookIntegrationRequest.
-        The User Access Token of the facebook user logged into the facebook app
+        The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.
 
         :return: The user_access_token of this FacebookIntegrationRequest.
         :rtype: str
@@ -152,7 +152,7 @@ class FacebookIntegrationRequest(object):
     def user_access_token(self, user_access_token):
         """
         Sets the user_access_token of this FacebookIntegrationRequest.
-        The User Access Token of the facebook user logged into the facebook app
+        The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.
 
         :param user_access_token: The user_access_token of this FacebookIntegrationRequest.
         :type: str
@@ -164,7 +164,7 @@ class FacebookIntegrationRequest(object):
     def page_id(self):
         """
         Gets the page_id of this FacebookIntegrationRequest.
-        The page Id of a facebook page
+        The page Id of a facebook page. The pageId is required when userAccessToken is provided.
 
         :return: The page_id of this FacebookIntegrationRequest.
         :rtype: str
@@ -175,7 +175,7 @@ class FacebookIntegrationRequest(object):
     def page_id(self, page_id):
         """
         Sets the page_id of this FacebookIntegrationRequest.
-        The page Id of a facebook page
+        The page Id of a facebook page. The pageId is required when userAccessToken is provided.
 
         :param page_id: The page_id of this FacebookIntegrationRequest.
         :type: str

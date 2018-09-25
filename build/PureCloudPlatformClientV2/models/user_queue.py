@@ -59,6 +59,7 @@ class UserQueue(object):
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
+            'outbound_messaging_addresses': 'QueueMessagingAddresses',
             'outbound_email_address': 'QueueEmailAddress',
             'joined': 'bool',
             'member_count': 'int',
@@ -87,6 +88,7 @@ class UserQueue(object):
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
+            'outbound_messaging_addresses': 'outboundMessagingAddresses',
             'outbound_email_address': 'outboundEmailAddress',
             'joined': 'joined',
             'member_count': 'memberCount',
@@ -114,6 +116,7 @@ class UserQueue(object):
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
+        self._outbound_messaging_addresses = None
         self._outbound_email_address = None
         self._joined = None
         self._member_count = None
@@ -609,6 +612,29 @@ class UserQueue(object):
         """
         
         self._default_scripts = default_scripts
+
+    @property
+    def outbound_messaging_addresses(self):
+        """
+        Gets the outbound_messaging_addresses of this UserQueue.
+        The messaging addresses for the queue.
+
+        :return: The outbound_messaging_addresses of this UserQueue.
+        :rtype: QueueMessagingAddresses
+        """
+        return self._outbound_messaging_addresses
+
+    @outbound_messaging_addresses.setter
+    def outbound_messaging_addresses(self, outbound_messaging_addresses):
+        """
+        Sets the outbound_messaging_addresses of this UserQueue.
+        The messaging addresses for the queue.
+
+        :param outbound_messaging_addresses: The outbound_messaging_addresses of this UserQueue.
+        :type: QueueMessagingAddresses
+        """
+        
+        self._outbound_messaging_addresses = outbound_messaging_addresses
 
     @property
     def outbound_email_address(self):

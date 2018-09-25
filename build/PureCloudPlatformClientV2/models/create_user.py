@@ -43,7 +43,8 @@ class CreateUser(object):
             'email': 'str',
             'addresses': 'list[Contact]',
             'title': 'str',
-            'password': 'str'
+            'password': 'str',
+            'division_id': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class CreateUser(object):
             'email': 'email',
             'addresses': 'addresses',
             'title': 'title',
-            'password': 'password'
+            'password': 'password',
+            'division_id': 'divisionId'
         }
 
         self._name = None
@@ -61,6 +63,7 @@ class CreateUser(object):
         self._addresses = None
         self._title = None
         self._password = None
+        self._division_id = None
 
     @property
     def name(self):
@@ -199,6 +202,29 @@ class CreateUser(object):
         """
         
         self._password = password
+
+    @property
+    def division_id(self):
+        """
+        Gets the division_id of this CreateUser.
+        The division to which this user will belong
+
+        :return: The division_id of this CreateUser.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id):
+        """
+        Sets the division_id of this CreateUser.
+        The division to which this user will belong
+
+        :param division_id: The division_id of this CreateUser.
+        :type: str
+        """
+        
+        self._division_id = division_id
 
     def to_dict(self):
         """

@@ -20,7 +20,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_messaging_sticker**](MessagingApi.html#get_messaging_sticker) | Get a list of Messaging Stickers|
 |[**post_messaging_integrations_facebook**](MessagingApi.html#post_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_messaging_integrations_line**](MessagingApi.html#post_messaging_integrations_line) | Create a LINE messenger Integration|
-|[**post_messaging_integrations_line_webhook_integration_id**](MessagingApi.html#post_messaging_integrations_line_webhook_integration_id) | Webhook redirect for LINE messenger Integration|
 |[**post_messaging_integrations_twitter**](MessagingApi.html#post_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**put_messaging_integrations_line_integration_id**](MessagingApi.html#put_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
 {: class="table table-striped"}
@@ -643,55 +642,6 @@ except ApiException as e:
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
-
-<a name="post_messaging_integrations_line_webhook_integration_id"></a>
-
-##  post_messaging_integrations_line_webhook_integration_id(integration_id)
-
-
-
-Webhook redirect for LINE messenger Integration
-
-
-
-Wraps POST /api/v2/messaging/integrations/line/webhook/{integrationId} 
-
-Requires NO permissions: 
-
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.MessagingApi()
-integration_id = 'integration_id_example' # str | Integration ID
-
-try:
-    # Webhook redirect for LINE messenger Integration
-    api_instance.post_messaging_integrations_line_webhook_integration_id(integration_id)
-except ApiException as e:
-    print "Exception when calling MessagingApi->post_messaging_integrations_line_webhook_integration_id: %s\n" % e
-~~~
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **integration_id** | **str**| Integration ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="post_messaging_integrations_twitter"></a>
 

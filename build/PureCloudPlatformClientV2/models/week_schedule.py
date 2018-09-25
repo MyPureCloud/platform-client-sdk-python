@@ -46,7 +46,7 @@ class WeekSchedule(object):
             'short_term_forecast': 'ShortTermForecastReference',
             'metadata': 'WfmVersionedEntityMetadata',
             'user_schedules': 'dict(str, UserSchedule)',
-            'headcount_forecast': 'HeadcountForecastResponse',
+            'headcount_forecast': 'HeadcountForecast',
             'agent_schedules_version': 'int',
             'self_uri': 'str'
         }
@@ -268,7 +268,7 @@ class WeekSchedule(object):
         Headcount information for the week schedule
 
         :return: The headcount_forecast of this WeekSchedule.
-        :rtype: HeadcountForecastResponse
+        :rtype: HeadcountForecast
         """
         return self._headcount_forecast
 
@@ -279,7 +279,7 @@ class WeekSchedule(object):
         Headcount information for the week schedule
 
         :param headcount_forecast: The headcount_forecast of this WeekSchedule.
-        :type: HeadcountForecastResponse
+        :type: HeadcountForecast
         """
         
         self._headcount_forecast = headcount_forecast

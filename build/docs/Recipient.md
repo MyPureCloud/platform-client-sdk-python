@@ -14,6 +14,7 @@ title: Recipient
 | **date_modified** | **datetime** | Date this recipient was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **created_by** | [**User**](User.html) | User that created this recipient | [optional] |
 | **modified_by** | [**User**](User.html) | User that modified this recipient | [optional] |
+| **messenger_type** | **str** | The messenger type for this recipient | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

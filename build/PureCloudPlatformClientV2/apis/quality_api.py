@@ -2365,12 +2365,13 @@ class QualityApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str name: Name
+        :param bool only_latest_per_context: onlyLatestPerContext
         :return: EvaluationFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name']
+        all_params = ['page_size', 'page_number', 'name', 'only_latest_per_context']
         all_params.append('callback')
 
         params = locals()
@@ -2395,6 +2396,8 @@ class QualityApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'only_latest_per_context' in params:
+            query_params['onlyLatestPerContext'] = params['only_latest_per_context']
 
         header_params = {}
 
@@ -2524,12 +2527,13 @@ class QualityApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str name: Name
+        :param bool only_latest_per_context: onlyLatestPerContext
         :return: EvaluationFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name']
+        all_params = ['page_size', 'page_number', 'name', 'only_latest_per_context']
         all_params.append('callback')
 
         params = locals()
@@ -2554,6 +2558,8 @@ class QualityApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'only_latest_per_context' in params:
+            query_params['onlyLatestPerContext'] = params['only_latest_per_context']
 
         header_params = {}
 
@@ -2683,12 +2689,13 @@ class QualityApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str name: Name
+        :param bool only_latest_enabled_per_context: onlyLatestEnabledPerContext
         :return: SurveyFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name']
+        all_params = ['page_size', 'page_number', 'name', 'only_latest_enabled_per_context']
         all_params.append('callback')
 
         params = locals()
@@ -2713,6 +2720,8 @@ class QualityApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'only_latest_enabled_per_context' in params:
+            query_params['onlyLatestEnabledPerContext'] = params['only_latest_enabled_per_context']
 
         header_params = {}
 

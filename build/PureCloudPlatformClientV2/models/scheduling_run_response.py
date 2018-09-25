@@ -39,6 +39,8 @@ class SchedulingRunResponse(object):
         """
         self.swagger_types = {
             'run_id': 'str',
+            'scheduler_run_id': 'str',
+            'intraday_rescheduling': 'bool',
             'state': 'str',
             'percent_complete': 'float',
             'target_week': 'str',
@@ -47,11 +49,17 @@ class SchedulingRunResponse(object):
             'scheduling_start_time': 'datetime',
             'scheduling_started_by': 'UserReference',
             'scheduling_canceled_by': 'UserReference',
-            'scheduling_completed_time': 'datetime'
+            'scheduling_completed_time': 'datetime',
+            'rescheduling_options': 'ReschedulingOptionsResponse',
+            'rescheduling_result_expiration': 'datetime',
+            'applied': 'bool',
+            'unscheduled_agents': 'list[UnscheduledAgentWarning]'
         }
 
         self.attribute_map = {
             'run_id': 'runId',
+            'scheduler_run_id': 'schedulerRunId',
+            'intraday_rescheduling': 'intradayRescheduling',
             'state': 'state',
             'percent_complete': 'percentComplete',
             'target_week': 'targetWeek',
@@ -60,10 +68,16 @@ class SchedulingRunResponse(object):
             'scheduling_start_time': 'schedulingStartTime',
             'scheduling_started_by': 'schedulingStartedBy',
             'scheduling_canceled_by': 'schedulingCanceledBy',
-            'scheduling_completed_time': 'schedulingCompletedTime'
+            'scheduling_completed_time': 'schedulingCompletedTime',
+            'rescheduling_options': 'reschedulingOptions',
+            'rescheduling_result_expiration': 'reschedulingResultExpiration',
+            'applied': 'applied',
+            'unscheduled_agents': 'unscheduledAgents'
         }
 
         self._run_id = None
+        self._scheduler_run_id = None
+        self._intraday_rescheduling = None
         self._state = None
         self._percent_complete = None
         self._target_week = None
@@ -73,6 +87,10 @@ class SchedulingRunResponse(object):
         self._scheduling_started_by = None
         self._scheduling_canceled_by = None
         self._scheduling_completed_time = None
+        self._rescheduling_options = None
+        self._rescheduling_result_expiration = None
+        self._applied = None
+        self._unscheduled_agents = None
 
     @property
     def run_id(self):
@@ -96,6 +114,52 @@ class SchedulingRunResponse(object):
         """
         
         self._run_id = run_id
+
+    @property
+    def scheduler_run_id(self):
+        """
+        Gets the scheduler_run_id of this SchedulingRunResponse.
+        The runId from scheduler service.  Useful for debugging schedule errors
+
+        :return: The scheduler_run_id of this SchedulingRunResponse.
+        :rtype: str
+        """
+        return self._scheduler_run_id
+
+    @scheduler_run_id.setter
+    def scheduler_run_id(self, scheduler_run_id):
+        """
+        Sets the scheduler_run_id of this SchedulingRunResponse.
+        The runId from scheduler service.  Useful for debugging schedule errors
+
+        :param scheduler_run_id: The scheduler_run_id of this SchedulingRunResponse.
+        :type: str
+        """
+        
+        self._scheduler_run_id = scheduler_run_id
+
+    @property
+    def intraday_rescheduling(self):
+        """
+        Gets the intraday_rescheduling of this SchedulingRunResponse.
+        Whether this is the result of a rescheduling request
+
+        :return: The intraday_rescheduling of this SchedulingRunResponse.
+        :rtype: bool
+        """
+        return self._intraday_rescheduling
+
+    @intraday_rescheduling.setter
+    def intraday_rescheduling(self, intraday_rescheduling):
+        """
+        Sets the intraday_rescheduling of this SchedulingRunResponse.
+        Whether this is the result of a rescheduling request
+
+        :param intraday_rescheduling: The intraday_rescheduling of this SchedulingRunResponse.
+        :type: bool
+        """
+        
+        self._intraday_rescheduling = intraday_rescheduling
 
     @property
     def state(self):
@@ -174,7 +238,7 @@ class SchedulingRunResponse(object):
     def schedule_id(self):
         """
         Gets the schedule_id of this SchedulingRunResponse.
-        ID of the schedule
+        ID of the schedule. Does not apply to reschedule, see reschedulingOptions.existingScheduleId
 
         :return: The schedule_id of this SchedulingRunResponse.
         :rtype: str
@@ -185,7 +249,7 @@ class SchedulingRunResponse(object):
     def schedule_id(self, schedule_id):
         """
         Sets the schedule_id of this SchedulingRunResponse.
-        ID of the schedule
+        ID of the schedule. Does not apply to reschedule, see reschedulingOptions.existingScheduleId
 
         :param schedule_id: The schedule_id of this SchedulingRunResponse.
         :type: str
@@ -197,7 +261,7 @@ class SchedulingRunResponse(object):
     def schedule_description(self):
         """
         Gets the schedule_description of this SchedulingRunResponse.
-        Description of the schedule run
+        Description of the schedule
 
         :return: The schedule_description of this SchedulingRunResponse.
         :rtype: str
@@ -208,7 +272,7 @@ class SchedulingRunResponse(object):
     def schedule_description(self, schedule_description):
         """
         Sets the schedule_description of this SchedulingRunResponse.
-        Description of the schedule run
+        Description of the schedule
 
         :param schedule_description: The schedule_description of this SchedulingRunResponse.
         :type: str
@@ -307,6 +371,98 @@ class SchedulingRunResponse(object):
         """
         
         self._scheduling_completed_time = scheduling_completed_time
+
+    @property
+    def rescheduling_options(self):
+        """
+        Gets the rescheduling_options of this SchedulingRunResponse.
+        The selected options for the reschedule request. Will always be null if intradayRescheduling is false
+
+        :return: The rescheduling_options of this SchedulingRunResponse.
+        :rtype: ReschedulingOptionsResponse
+        """
+        return self._rescheduling_options
+
+    @rescheduling_options.setter
+    def rescheduling_options(self, rescheduling_options):
+        """
+        Sets the rescheduling_options of this SchedulingRunResponse.
+        The selected options for the reschedule request. Will always be null if intradayRescheduling is false
+
+        :param rescheduling_options: The rescheduling_options of this SchedulingRunResponse.
+        :type: ReschedulingOptionsResponse
+        """
+        
+        self._rescheduling_options = rescheduling_options
+
+    @property
+    def rescheduling_result_expiration(self):
+        """
+        Gets the rescheduling_result_expiration of this SchedulingRunResponse.
+        When the rescheduling result data will expire. Results are kept temporarily as they should be applied as soon as possible after the run finishes.  Will always be null if intradayRescheduling is false. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The rescheduling_result_expiration of this SchedulingRunResponse.
+        :rtype: datetime
+        """
+        return self._rescheduling_result_expiration
+
+    @rescheduling_result_expiration.setter
+    def rescheduling_result_expiration(self, rescheduling_result_expiration):
+        """
+        Sets the rescheduling_result_expiration of this SchedulingRunResponse.
+        When the rescheduling result data will expire. Results are kept temporarily as they should be applied as soon as possible after the run finishes.  Will always be null if intradayRescheduling is false. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param rescheduling_result_expiration: The rescheduling_result_expiration of this SchedulingRunResponse.
+        :type: datetime
+        """
+        
+        self._rescheduling_result_expiration = rescheduling_result_expiration
+
+    @property
+    def applied(self):
+        """
+        Gets the applied of this SchedulingRunResponse.
+        Whether the rescheduling run has been marked applied
+
+        :return: The applied of this SchedulingRunResponse.
+        :rtype: bool
+        """
+        return self._applied
+
+    @applied.setter
+    def applied(self, applied):
+        """
+        Sets the applied of this SchedulingRunResponse.
+        Whether the rescheduling run has been marked applied
+
+        :param applied: The applied of this SchedulingRunResponse.
+        :type: bool
+        """
+        
+        self._applied = applied
+
+    @property
+    def unscheduled_agents(self):
+        """
+        Gets the unscheduled_agents of this SchedulingRunResponse.
+        Agents that were not scheduled in the rescheduling operation. Will always be null if intradayRescheduling is false
+
+        :return: The unscheduled_agents of this SchedulingRunResponse.
+        :rtype: list[UnscheduledAgentWarning]
+        """
+        return self._unscheduled_agents
+
+    @unscheduled_agents.setter
+    def unscheduled_agents(self, unscheduled_agents):
+        """
+        Sets the unscheduled_agents of this SchedulingRunResponse.
+        Agents that were not scheduled in the rescheduling operation. Will always be null if intradayRescheduling is false
+
+        :param unscheduled_agents: The unscheduled_agents of this SchedulingRunResponse.
+        :type: list[UnscheduledAgentWarning]
+        """
+        
+        self._unscheduled_agents = unscheduled_agents
 
     def to_dict(self):
         """

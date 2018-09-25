@@ -995,7 +995,7 @@ except ApiException as e:
 
 <a name="get_routing_message_recipients"></a>
 
-## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(page_size=page_size, page_number=page_number)
+## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(messenger_type=messenger_type, page_size=page_size, page_number=page_number)
 
 
 
@@ -1022,12 +1022,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
+messenger_type = 'messenger_type_example' # str | Messenger Type (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 
 try:
     # Get recipients
-    api_response = api_instance.get_routing_message_recipients(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_routing_message_recipients(messenger_type=messenger_type, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_message_recipients: %s\n" % e
@@ -1038,6 +1039,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}

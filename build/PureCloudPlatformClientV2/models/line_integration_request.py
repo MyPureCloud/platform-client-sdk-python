@@ -43,7 +43,6 @@ class LineIntegrationRequest(object):
             'channel_id': 'str',
             'channel_secret': 'str',
             'switcher_secret': 'str',
-            'channel_access_token': 'str',
             'self_uri': 'str'
         }
 
@@ -53,7 +52,6 @@ class LineIntegrationRequest(object):
             'channel_id': 'channelId',
             'channel_secret': 'channelSecret',
             'switcher_secret': 'switcherSecret',
-            'channel_access_token': 'channelAccessToken',
             'self_uri': 'selfUri'
         }
 
@@ -62,7 +60,6 @@ class LineIntegrationRequest(object):
         self._channel_id = None
         self._channel_secret = None
         self._switcher_secret = None
-        self._channel_access_token = None
         self._self_uri = None
 
     @property
@@ -179,29 +176,6 @@ class LineIntegrationRequest(object):
         """
         
         self._switcher_secret = switcher_secret
-
-    @property
-    def channel_access_token(self):
-        """
-        Gets the channel_access_token of this LineIntegrationRequest.
-        The Channel Access Token from LINE messenger
-
-        :return: The channel_access_token of this LineIntegrationRequest.
-        :rtype: str
-        """
-        return self._channel_access_token
-
-    @channel_access_token.setter
-    def channel_access_token(self, channel_access_token):
-        """
-        Sets the channel_access_token of this LineIntegrationRequest.
-        The Channel Access Token from LINE messenger
-
-        :param channel_access_token: The channel_access_token of this LineIntegrationRequest.
-        :type: str
-        """
-        
-        self._channel_access_token = channel_access_token
 
     @property
     def self_uri(self):

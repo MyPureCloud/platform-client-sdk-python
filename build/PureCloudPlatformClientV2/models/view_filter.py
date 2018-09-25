@@ -47,6 +47,8 @@ class ViewFilter(object):
             'directions': 'list[str]',
             'wrap_up_codes': 'list[str]',
             'dnis_list': 'list[str]',
+            'filter_queues_by_user_ids': 'list[str]',
+            'filter_users_by_queue_ids': 'list[str]',
             'user_ids': 'list[str]',
             'address_tos': 'list[str]',
             'address_froms': 'list[str]',
@@ -79,6 +81,8 @@ class ViewFilter(object):
             'directions': 'directions',
             'wrap_up_codes': 'wrapUpCodes',
             'dnis_list': 'dnisList',
+            'filter_queues_by_user_ids': 'filterQueuesByUserIds',
+            'filter_users_by_queue_ids': 'filterUsersByQueueIds',
             'user_ids': 'userIds',
             'address_tos': 'addressTos',
             'address_froms': 'addressFroms',
@@ -110,6 +114,8 @@ class ViewFilter(object):
         self._directions = None
         self._wrap_up_codes = None
         self._dnis_list = None
+        self._filter_queues_by_user_ids = None
+        self._filter_users_by_queue_ids = None
         self._user_ids = None
         self._address_tos = None
         self._address_froms = None
@@ -337,6 +343,52 @@ class ViewFilter(object):
         """
         
         self._dnis_list = dnis_list
+
+    @property
+    def filter_queues_by_user_ids(self):
+        """
+        Gets the filter_queues_by_user_ids of this ViewFilter.
+        The user ids are used to fetch associated queues for the view
+
+        :return: The filter_queues_by_user_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._filter_queues_by_user_ids
+
+    @filter_queues_by_user_ids.setter
+    def filter_queues_by_user_ids(self, filter_queues_by_user_ids):
+        """
+        Sets the filter_queues_by_user_ids of this ViewFilter.
+        The user ids are used to fetch associated queues for the view
+
+        :param filter_queues_by_user_ids: The filter_queues_by_user_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._filter_queues_by_user_ids = filter_queues_by_user_ids
+
+    @property
+    def filter_users_by_queue_ids(self):
+        """
+        Gets the filter_users_by_queue_ids of this ViewFilter.
+        The queue ids are used to fetch associated users for the view
+
+        :return: The filter_users_by_queue_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._filter_users_by_queue_ids
+
+    @filter_users_by_queue_ids.setter
+    def filter_users_by_queue_ids(self, filter_users_by_queue_ids):
+        """
+        Sets the filter_users_by_queue_ids of this ViewFilter.
+        The queue ids are used to fetch associated users for the view
+
+        :param filter_users_by_queue_ids: The filter_users_by_queue_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._filter_users_by_queue_ids = filter_users_by_queue_ids
 
     @property
     def user_ids(self):

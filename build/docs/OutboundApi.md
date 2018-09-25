@@ -38,12 +38,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaignrule**](OutboundApi.html#get_outbound_campaignrule) | Get Campaign Rule|
 |[**get_outbound_campaignrules**](OutboundApi.html#get_outbound_campaignrules) | Query Campaign Rule list|
 |[**get_outbound_campaigns**](OutboundApi.html#get_outbound_campaigns) | Query a list of dialer campaigns.|
-|[**get_outbound_campaigns_divisionview**](OutboundApi.html#get_outbound_campaigns_divisionview) | Get a basic Campaign information object|
 |[**get_outbound_campaigns_divisionviews**](OutboundApi.html#get_outbound_campaigns_divisionviews) | Query a list of basic Campaign information objects|
 |[**get_outbound_contactlist**](OutboundApi.html#get_outbound_contactlist) | Get a dialer contact list.|
 |[**get_outbound_contactlist_contact**](OutboundApi.html#get_outbound_contactlist_contact) | Get a contact.|
 |[**get_outbound_contactlist_export**](OutboundApi.html#get_outbound_contactlist_export) | Get the URI of a contact list export.|
 |[**get_outbound_contactlist_importstatus**](OutboundApi.html#get_outbound_contactlist_importstatus) | Get dialer contactList import status.|
+|[**get_outbound_contactlist_timezonemappingpreview**](OutboundApi.html#get_outbound_contactlist_timezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list|
 |[**get_outbound_contactlistfilter**](OutboundApi.html#get_outbound_contactlistfilter) | Get Contact list filter|
 |[**get_outbound_contactlistfilters**](OutboundApi.html#get_outbound_contactlistfilters) | Query Contact list filters|
 |[**get_outbound_contactlists**](OutboundApi.html#get_outbound_contactlists) | Query a list of contact lists.|
@@ -1684,57 +1684,6 @@ except ApiException as e:
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
 
-<a name="get_outbound_campaigns_divisionview"></a>
-
-## [**CampaignDivisionView**](CampaignDivisionView.html) get_outbound_campaigns_divisionview(campaign_id)
-
-
-
-Get a basic Campaign information object
-
-This returns a simplified version of a Campaign, consisting of name and division.
-
-Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId} 
-
-Requires ANY permissions: 
-
-* outbound:campaign:search
-
-### Example
-
-~~~python
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud Auth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.OutboundApi()
-campaign_id = 'campaign_id_example' # str | Campaign ID
-
-try:
-    # Get a basic Campaign information object
-    api_response = api_instance.get_outbound_campaigns_divisionview(campaign_id)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns_divisionview: %s\n" % e
-~~~
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **campaign_id** | **str**| Campaign ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**CampaignDivisionView**](CampaignDivisionView.html)
-
 <a name="get_outbound_campaigns_divisionviews"></a>
 
 ## [**CampaignDivisionViewListing**](CampaignDivisionViewListing.html) get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
@@ -2010,6 +1959,57 @@ except ApiException as e:
 ### Return type
 
 [**ImportStatus**](ImportStatus.html)
+
+<a name="get_outbound_contactlist_timezonemappingpreview"></a>
+
+## [**TimeZoneMappingPreview**](TimeZoneMappingPreview.html) get_outbound_contactlist_timezonemappingpreview(contact_list_id)
+
+
+
+Preview the result of applying Automatic Time Zone Mapping to a contact list
+
+
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | ContactList ID
+
+try:
+    # Preview the result of applying Automatic Time Zone Mapping to a contact list
+    api_response = api_instance.get_outbound_contactlist_timezonemappingpreview(contact_list_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_contactlist_timezonemappingpreview: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| ContactList ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeZoneMappingPreview**](TimeZoneMappingPreview.html)
 
 <a name="get_outbound_contactlistfilter"></a>
 

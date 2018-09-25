@@ -41,41 +41,44 @@ class AnalyticsSurvey(object):
             'survey_id': 'str',
             'survey_form_id': 'str',
             'survey_form_context_id': 'str',
-            'participant_id': 'str',
-            'external_contact_id': 'str',
-            'customer_address': 'str',
             'user_id': 'str',
             'queue_id': 'str',
             'status': 'str',
-            'created_date': 'datetime',
-            'geto_survey_total_score': 'int'
+            'geto_survey_total_score': 'int',
+            'survey_promoter_score': 'int',
+            'survey_completed_time': 'int',
+            'media_types': 'list[str]',
+            'language_ids': 'list[str]',
+            'skill_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'survey_id': 'surveyId',
             'survey_form_id': 'surveyFormId',
             'survey_form_context_id': 'surveyFormContextId',
-            'participant_id': 'participantId',
-            'external_contact_id': 'externalContactId',
-            'customer_address': 'customerAddress',
             'user_id': 'userId',
             'queue_id': 'queueId',
             'status': 'status',
-            'created_date': 'createdDate',
-            'geto_survey_total_score': 'getoSurveyTotalScore'
+            'geto_survey_total_score': 'getoSurveyTotalScore',
+            'survey_promoter_score': 'surveyPromoterScore',
+            'survey_completed_time': 'surveyCompletedTime',
+            'media_types': 'mediaTypes',
+            'language_ids': 'languageIds',
+            'skill_ids': 'skillIds'
         }
 
         self._survey_id = None
         self._survey_form_id = None
         self._survey_form_context_id = None
-        self._participant_id = None
-        self._external_contact_id = None
-        self._customer_address = None
         self._user_id = None
         self._queue_id = None
         self._status = None
-        self._created_date = None
         self._geto_survey_total_score = None
+        self._survey_promoter_score = None
+        self._survey_completed_time = None
+        self._media_types = None
+        self._language_ids = None
+        self._skill_ids = None
 
     @property
     def survey_id(self):
@@ -147,75 +150,6 @@ class AnalyticsSurvey(object):
         self._survey_form_context_id = survey_form_context_id
 
     @property
-    def participant_id(self):
-        """
-        Gets the participant_id of this AnalyticsSurvey.
-        Unique identifier of participant
-
-        :return: The participant_id of this AnalyticsSurvey.
-        :rtype: str
-        """
-        return self._participant_id
-
-    @participant_id.setter
-    def participant_id(self, participant_id):
-        """
-        Sets the participant_id of this AnalyticsSurvey.
-        Unique identifier of participant
-
-        :param participant_id: The participant_id of this AnalyticsSurvey.
-        :type: str
-        """
-        
-        self._participant_id = participant_id
-
-    @property
-    def external_contact_id(self):
-        """
-        Gets the external_contact_id of this AnalyticsSurvey.
-        External contact id
-
-        :return: The external_contact_id of this AnalyticsSurvey.
-        :rtype: str
-        """
-        return self._external_contact_id
-
-    @external_contact_id.setter
-    def external_contact_id(self, external_contact_id):
-        """
-        Sets the external_contact_id of this AnalyticsSurvey.
-        External contact id
-
-        :param external_contact_id: The external_contact_id of this AnalyticsSurvey.
-        :type: str
-        """
-        
-        self._external_contact_id = external_contact_id
-
-    @property
-    def customer_address(self):
-        """
-        Gets the customer_address of this AnalyticsSurvey.
-        Customer address
-
-        :return: The customer_address of this AnalyticsSurvey.
-        :rtype: str
-        """
-        return self._customer_address
-
-    @customer_address.setter
-    def customer_address(self, customer_address):
-        """
-        Sets the customer_address of this AnalyticsSurvey.
-        Customer address
-
-        :param customer_address: The customer_address of this AnalyticsSurvey.
-        :type: str
-        """
-        
-        self._customer_address = customer_address
-
-    @property
     def user_id(self):
         """
         Gets the user_id of this AnalyticsSurvey.
@@ -285,33 +219,10 @@ class AnalyticsSurvey(object):
         self._status = status
 
     @property
-    def created_date(self):
-        """
-        Gets the created_date of this AnalyticsSurvey.
-        Creation date of survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-
-        :return: The created_date of this AnalyticsSurvey.
-        :rtype: datetime
-        """
-        return self._created_date
-
-    @created_date.setter
-    def created_date(self, created_date):
-        """
-        Sets the created_date of this AnalyticsSurvey.
-        Creation date of survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-
-        :param created_date: The created_date of this AnalyticsSurvey.
-        :type: datetime
-        """
-        
-        self._created_date = created_date
-
-    @property
     def geto_survey_total_score(self):
         """
         Gets the geto_survey_total_score of this AnalyticsSurvey.
-        The total score for the survey
+        Creation date of survey
 
         :return: The geto_survey_total_score of this AnalyticsSurvey.
         :rtype: int
@@ -322,13 +233,128 @@ class AnalyticsSurvey(object):
     def geto_survey_total_score(self, geto_survey_total_score):
         """
         Sets the geto_survey_total_score of this AnalyticsSurvey.
-        The total score for the survey
+        Creation date of survey
 
         :param geto_survey_total_score: The geto_survey_total_score of this AnalyticsSurvey.
         :type: int
         """
         
         self._geto_survey_total_score = geto_survey_total_score
+
+    @property
+    def survey_promoter_score(self):
+        """
+        Gets the survey_promoter_score of this AnalyticsSurvey.
+        NPS score of the survey
+
+        :return: The survey_promoter_score of this AnalyticsSurvey.
+        :rtype: int
+        """
+        return self._survey_promoter_score
+
+    @survey_promoter_score.setter
+    def survey_promoter_score(self, survey_promoter_score):
+        """
+        Sets the survey_promoter_score of this AnalyticsSurvey.
+        NPS score of the survey
+
+        :param survey_promoter_score: The survey_promoter_score of this AnalyticsSurvey.
+        :type: int
+        """
+        
+        self._survey_promoter_score = survey_promoter_score
+
+    @property
+    def survey_completed_time(self):
+        """
+        Gets the survey_completed_time of this AnalyticsSurvey.
+        Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+
+        :return: The survey_completed_time of this AnalyticsSurvey.
+        :rtype: int
+        """
+        return self._survey_completed_time
+
+    @survey_completed_time.setter
+    def survey_completed_time(self, survey_completed_time):
+        """
+        Sets the survey_completed_time of this AnalyticsSurvey.
+        Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+
+        :param survey_completed_time: The survey_completed_time of this AnalyticsSurvey.
+        :type: int
+        """
+        
+        self._survey_completed_time = survey_completed_time
+
+    @property
+    def media_types(self):
+        """
+        Gets the media_types of this AnalyticsSurvey.
+        Media types associated with the conversation
+
+        :return: The media_types of this AnalyticsSurvey.
+        :rtype: list[str]
+        """
+        return self._media_types
+
+    @media_types.setter
+    def media_types(self, media_types):
+        """
+        Sets the media_types of this AnalyticsSurvey.
+        Media types associated with the conversation
+
+        :param media_types: The media_types of this AnalyticsSurvey.
+        :type: list[str]
+        """
+        
+        self._media_types = media_types
+
+    @property
+    def language_ids(self):
+        """
+        Gets the language_ids of this AnalyticsSurvey.
+        Language IDs associated with the conversation
+
+        :return: The language_ids of this AnalyticsSurvey.
+        :rtype: list[str]
+        """
+        return self._language_ids
+
+    @language_ids.setter
+    def language_ids(self, language_ids):
+        """
+        Sets the language_ids of this AnalyticsSurvey.
+        Language IDs associated with the conversation
+
+        :param language_ids: The language_ids of this AnalyticsSurvey.
+        :type: list[str]
+        """
+        
+        self._language_ids = language_ids
+
+    @property
+    def skill_ids(self):
+        """
+        Gets the skill_ids of this AnalyticsSurvey.
+        Skill IDs associated with the conversation
+
+        :return: The skill_ids of this AnalyticsSurvey.
+        :rtype: list[str]
+        """
+        return self._skill_ids
+
+    @skill_ids.setter
+    def skill_ids(self, skill_ids):
+        """
+        Sets the skill_ids of this AnalyticsSurvey.
+        Skill IDs associated with the conversation
+
+        :param skill_ids: The skill_ids of this AnalyticsSurvey.
+        :type: list[str]
+        """
+        
+        self._skill_ids = skill_ids
 
     def to_dict(self):
         """

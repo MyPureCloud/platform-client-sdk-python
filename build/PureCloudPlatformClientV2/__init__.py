@@ -63,6 +63,7 @@ from .models.analytics_view import AnalyticsView
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
 from .models.archive_retention import ArchiveRetention
+from .models.array_node import ArrayNode
 from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.async_week_schedule_response import AsyncWeekScheduleResponse
 from .models.attachment import Attachment
@@ -357,6 +358,7 @@ from .models.create_email_request import CreateEmailRequest
 from .models.create_integration_request import CreateIntegrationRequest
 from .models.create_management_unit_api_request import CreateManagementUnitApiRequest
 from .models.create_management_unit_settings import CreateManagementUnitSettings
+from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .models.create_queue_media_association_request import CreateQueueMediaAssociationRequest
 from .models.create_queue_request import CreateQueueRequest
 from .models.create_secure_session import CreateSecureSession
@@ -641,8 +643,8 @@ from .models.group_search_criteria import GroupSearchCriteria
 from .models.group_search_request import GroupSearchRequest
 from .models.group_update import GroupUpdate
 from .models.groups_search_response import GroupsSearchResponse
-from .models.headcount_forecast_response import HeadcountForecastResponse
-from .models.headcount_interval_response import HeadcountIntervalResponse
+from .models.headcount_forecast import HeadcountForecast
+from .models.headcount_interval import HeadcountInterval
 from .models.heart_beat_alert_notification import HeartBeatAlertNotification
 from .models.heart_beat_alert_notification_notification_user import HeartBeatAlertNotificationNotificationUser
 from .models.heart_beat_alert_notification_notification_users import HeartBeatAlertNotificationNotificationUsers
@@ -711,7 +713,6 @@ from .models.intraday_query_data_command import IntradayQueryDataCommand
 from .models.intraday_queue import IntradayQueue
 from .models.intraday_response import IntradayResponse
 from .models.intraday_schedule_data import IntradayScheduleData
-from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
 from .models.key_rotation_schedule import KeyRotationSchedule
@@ -913,6 +914,7 @@ from .models.queue_media_association import QueueMediaAssociation
 from .models.queue_member import QueueMember
 from .models.queue_member_entity_listing import QueueMemberEntityListing
 from .models.queue_member_notification import QueueMemberNotification
+from .models.queue_messaging_addresses import QueueMessagingAddresses
 from .models.queue_reference import QueueReference
 from .models.queue_request import QueueRequest
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
@@ -946,6 +948,9 @@ from .models.reporting_export_job_listing import ReportingExportJobListing
 from .models.reporting_export_job_request import ReportingExportJobRequest
 from .models.reporting_export_job_response import ReportingExportJobResponse
 from .models.request_config import RequestConfig
+from .models.reschedule_request import RescheduleRequest
+from .models.reschedule_result import RescheduleResult
+from .models.rescheduling_options_response import ReschedulingOptionsResponse
 from .models.resource_condition_node import ResourceConditionNode
 from .models.resource_condition_value import ResourceConditionValue
 from .models.resource_permission_policy import ResourcePermissionPolicy
@@ -1116,6 +1121,7 @@ from .models.time_off_request_update_notification_user_reference import TimeOffR
 from .models.time_slot import TimeSlot
 from .models.time_zone import TimeZone
 from .models.time_zone_entity_listing import TimeZoneEntityListing
+from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token_info import TokenInfo
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
@@ -1155,9 +1161,11 @@ from .models.twitter_integration_entity_listing import TwitterIntegrationEntityL
 from .models.twitter_integration_request import TwitterIntegrationRequest
 from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus
+from .models.unscheduled_agent_warning import UnscheduledAgentWarning
 from .models.update_action_input import UpdateActionInput
 from .models.update_activity_code_request import UpdateActivityCodeRequest
 from .models.update_draft_input import UpdateDraftInput
+from .models.update_scheduling_run_request import UpdateSchedulingRunRequest
 from .models.update_user import UpdateUser
 from .models.update_week_schedule_request import UpdateWeekScheduleRequest
 from .models.uri_reference import UriReference

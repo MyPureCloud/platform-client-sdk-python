@@ -29,6 +29,7 @@ title: CreateQueueRequest
 | **calling_party_name** | **str** | The name to use for caller identification for outbound calls from this queue. | [optional] |
 | **calling_party_number** | **str** | The phone number to use for caller identification for outbound calls from this queue. | [optional] |
 | **default_scripts** | [**dict(str, Script)**](Script.html) | The default script Ids for the communication types. | [optional] |
+| **outbound_messaging_addresses** | [**QueueMessagingAddresses**](QueueMessagingAddresses.html) | The messaging addresses for the queue. | [optional] |
 | **outbound_email_address** | [**QueueEmailAddress**](QueueEmailAddress.html) |  | [optional] |
 | **source_queue_id** | **str** | The id of an existing queue to copy the settings from when creating a new queue. | [optional] |
 | **member_count** | **int** |  | [optional] |

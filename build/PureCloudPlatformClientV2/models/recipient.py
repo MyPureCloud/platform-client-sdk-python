@@ -45,6 +45,7 @@ class Recipient(object):
             'date_modified': 'datetime',
             'created_by': 'User',
             'modified_by': 'User',
+            'messenger_type': 'str',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class Recipient(object):
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
+            'messenger_type': 'messengerType',
             'self_uri': 'selfUri'
         }
 
@@ -66,6 +68,7 @@ class Recipient(object):
         self._date_modified = None
         self._created_by = None
         self._modified_by = None
+        self._messenger_type = None
         self._self_uri = None
 
     @property
@@ -228,6 +231,33 @@ class Recipient(object):
         """
         
         self._modified_by = modified_by
+
+    @property
+    def messenger_type(self):
+        """
+        Gets the messenger_type of this Recipient.
+        The messenger type for this recipient
+
+        :return: The messenger_type of this Recipient.
+        :rtype: str
+        """
+        return self._messenger_type
+
+    @messenger_type.setter
+    def messenger_type(self, messenger_type):
+        """
+        Sets the messenger_type of this Recipient.
+        The messenger type for this recipient
+
+        :param messenger_type: The messenger_type of this Recipient.
+        :type: str
+        """
+        allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "telegram", "kakao"]
+        if messenger_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for messenger_type -> " + messenger_type
+            self._messenger_type = "outdated_sdk_version"
+        else:
+            self._messenger_type = messenger_type
 
     @property
     def self_uri(self):

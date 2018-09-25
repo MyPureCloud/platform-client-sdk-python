@@ -60,6 +60,7 @@ class CreateQueueRequest(object):
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
+            'outbound_messaging_addresses': 'QueueMessagingAddresses',
             'outbound_email_address': 'QueueEmailAddress',
             'source_queue_id': 'str',
             'member_count': 'int',
@@ -89,6 +90,7 @@ class CreateQueueRequest(object):
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
+            'outbound_messaging_addresses': 'outboundMessagingAddresses',
             'outbound_email_address': 'outboundEmailAddress',
             'source_queue_id': 'sourceQueueId',
             'member_count': 'memberCount',
@@ -117,6 +119,7 @@ class CreateQueueRequest(object):
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
+        self._outbound_messaging_addresses = None
         self._outbound_email_address = None
         self._source_queue_id = None
         self._member_count = None
@@ -635,6 +638,29 @@ class CreateQueueRequest(object):
         """
         
         self._default_scripts = default_scripts
+
+    @property
+    def outbound_messaging_addresses(self):
+        """
+        Gets the outbound_messaging_addresses of this CreateQueueRequest.
+        The messaging addresses for the queue.
+
+        :return: The outbound_messaging_addresses of this CreateQueueRequest.
+        :rtype: QueueMessagingAddresses
+        """
+        return self._outbound_messaging_addresses
+
+    @outbound_messaging_addresses.setter
+    def outbound_messaging_addresses(self, outbound_messaging_addresses):
+        """
+        Sets the outbound_messaging_addresses of this CreateQueueRequest.
+        The messaging addresses for the queue.
+
+        :param outbound_messaging_addresses: The outbound_messaging_addresses of this CreateQueueRequest.
+        :type: QueueMessagingAddresses
+        """
+        
+        self._outbound_messaging_addresses = outbound_messaging_addresses
 
     @property
     def outbound_email_address(self):

@@ -63,6 +63,7 @@ from .analytics_view import AnalyticsView
 from .annotation import Annotation
 from .answer_option import AnswerOption
 from .archive_retention import ArchiveRetention
+from .array_node import ArrayNode
 from .assigned_wrapup_code import AssignedWrapupCode
 from .async_week_schedule_response import AsyncWeekScheduleResponse
 from .attachment import Attachment
@@ -357,6 +358,7 @@ from .create_email_request import CreateEmailRequest
 from .create_integration_request import CreateIntegrationRequest
 from .create_management_unit_api_request import CreateManagementUnitApiRequest
 from .create_management_unit_settings import CreateManagementUnitSettings
+from .create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .create_queue_media_association_request import CreateQueueMediaAssociationRequest
 from .create_queue_request import CreateQueueRequest
 from .create_secure_session import CreateSecureSession
@@ -641,8 +643,8 @@ from .group_search_criteria import GroupSearchCriteria
 from .group_search_request import GroupSearchRequest
 from .group_update import GroupUpdate
 from .groups_search_response import GroupsSearchResponse
-from .headcount_forecast_response import HeadcountForecastResponse
-from .headcount_interval_response import HeadcountIntervalResponse
+from .headcount_forecast import HeadcountForecast
+from .headcount_interval import HeadcountInterval
 from .heart_beat_alert_notification import HeartBeatAlertNotification
 from .heart_beat_alert_notification_notification_user import HeartBeatAlertNotificationNotificationUser
 from .heart_beat_alert_notification_notification_users import HeartBeatAlertNotificationNotificationUsers
@@ -711,7 +713,6 @@ from .intraday_query_data_command import IntradayQueryDataCommand
 from .intraday_queue import IntradayQueue
 from .intraday_response import IntradayResponse
 from .intraday_schedule_data import IntradayScheduleData
-from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
 from .key_rotation_schedule import KeyRotationSchedule
@@ -913,6 +914,7 @@ from .queue_media_association import QueueMediaAssociation
 from .queue_member import QueueMember
 from .queue_member_entity_listing import QueueMemberEntityListing
 from .queue_member_notification import QueueMemberNotification
+from .queue_messaging_addresses import QueueMessagingAddresses
 from .queue_reference import QueueReference
 from .queue_request import QueueRequest
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
@@ -946,6 +948,9 @@ from .reporting_export_job_listing import ReportingExportJobListing
 from .reporting_export_job_request import ReportingExportJobRequest
 from .reporting_export_job_response import ReportingExportJobResponse
 from .request_config import RequestConfig
+from .reschedule_request import RescheduleRequest
+from .reschedule_result import RescheduleResult
+from .rescheduling_options_response import ReschedulingOptionsResponse
 from .resource_condition_node import ResourceConditionNode
 from .resource_condition_value import ResourceConditionValue
 from .resource_permission_policy import ResourcePermissionPolicy
@@ -1116,6 +1121,7 @@ from .time_off_request_update_notification_user_reference import TimeOffRequestU
 from .time_slot import TimeSlot
 from .time_zone import TimeZone
 from .time_zone_entity_listing import TimeZoneEntityListing
+from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
 from .transfer_request import TransferRequest
 from .trunk import Trunk
@@ -1155,9 +1161,11 @@ from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .twitter_integration_request import TwitterIntegrationRequest
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus
+from .unscheduled_agent_warning import UnscheduledAgentWarning
 from .update_action_input import UpdateActionInput
 from .update_activity_code_request import UpdateActivityCodeRequest
 from .update_draft_input import UpdateDraftInput
+from .update_scheduling_run_request import UpdateSchedulingRunRequest
 from .update_user import UpdateUser
 from .update_week_schedule_request import UpdateWeekScheduleRequest
 from .uri_reference import UriReference

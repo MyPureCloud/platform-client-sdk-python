@@ -1,7 +1,7 @@
 ---
-title: JsonNode
+title: ArrayNode
 ---
-## JsonNode
+## ArrayNode
 
 ## Properties
 

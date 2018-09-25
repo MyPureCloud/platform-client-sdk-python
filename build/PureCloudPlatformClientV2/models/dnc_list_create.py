@@ -107,7 +107,7 @@ class DncListCreate(object):
     def name(self):
         """
         Gets the name of this DncListCreate.
-        The name of the list.
+        The name of the DncList.
 
         :return: The name of this DncListCreate.
         :rtype: str
@@ -118,7 +118,7 @@ class DncListCreate(object):
     def name(self, name):
         """
         Sets the name of this DncListCreate.
-        The name of the list.
+        The name of the DncList.
 
         :param name: The name of this DncListCreate.
         :type: str
@@ -199,7 +199,7 @@ class DncListCreate(object):
     def import_status(self):
         """
         Gets the import_status of this DncListCreate.
-        the status of the import process
+        The status of the import process
 
         :return: The import_status of this DncListCreate.
         :rtype: ImportStatus
@@ -210,7 +210,7 @@ class DncListCreate(object):
     def import_status(self, import_status):
         """
         Sets the import_status of this DncListCreate.
-        the status of the import process
+        The status of the import process
 
         :param import_status: The import_status of this DncListCreate.
         :type: ImportStatus
@@ -222,7 +222,7 @@ class DncListCreate(object):
     def size(self):
         """
         Gets the size of this DncListCreate.
-        the number of phone numbers in the do not call list
+        The total number of phone numbers in the DncList.
 
         :return: The size of this DncListCreate.
         :rtype: int
@@ -233,7 +233,7 @@ class DncListCreate(object):
     def size(self, size):
         """
         Sets the size of this DncListCreate.
-        the number of phone numbers in the do not call list
+        The total number of phone numbers in the DncList.
 
         :param size: The size of this DncListCreate.
         :type: int
@@ -245,7 +245,7 @@ class DncListCreate(object):
     def dnc_source_type(self):
         """
         Gets the dnc_source_type of this DncListCreate.
-        the type of dnc list being created, rds (csv file), gryphon, or dnc.com
+        The type of the DncList.
 
         :return: The dnc_source_type of this DncListCreate.
         :rtype: str
@@ -256,7 +256,7 @@ class DncListCreate(object):
     def dnc_source_type(self, dnc_source_type):
         """
         Sets the dnc_source_type of this DncListCreate.
-        the type of dnc list being created, rds (csv file), gryphon, or dnc.com
+        The type of the DncList.
 
         :param dnc_source_type: The dnc_source_type of this DncListCreate.
         :type: str
@@ -272,7 +272,7 @@ class DncListCreate(object):
     def login_id(self):
         """
         Gets the login_id of this DncListCreate.
-        the loginId if the dncSourceType is dnc.com
+        A dnc.com loginId. Required if the dncSourceType is dnc.com.
 
         :return: The login_id of this DncListCreate.
         :rtype: str
@@ -283,7 +283,7 @@ class DncListCreate(object):
     def login_id(self, login_id):
         """
         Sets the login_id of this DncListCreate.
-        the loginId if the dncSourceType is dnc.com
+        A dnc.com loginId. Required if the dncSourceType is dnc.com.
 
         :param login_id: The login_id of this DncListCreate.
         :type: str
@@ -295,7 +295,7 @@ class DncListCreate(object):
     def dnc_codes(self):
         """
         Gets the dnc_codes of this DncListCreate.
-        the list of dnc.com codes to be treated as DNC
+        The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
 
         :return: The dnc_codes of this DncListCreate.
         :rtype: list[str]
@@ -306,7 +306,7 @@ class DncListCreate(object):
     def dnc_codes(self, dnc_codes):
         """
         Sets the dnc_codes of this DncListCreate.
-        the list of dnc.com codes to be treated as DNC
+        The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
 
         :param dnc_codes: The dnc_codes of this DncListCreate.
         :type: list[str]
@@ -318,7 +318,7 @@ class DncListCreate(object):
     def license_id(self):
         """
         Gets the license_id of this DncListCreate.
-        the license number if the dncSourceType is gryphon
+        A gryphon license number. Required if the dncSourceType is gryphon.
 
         :return: The license_id of this DncListCreate.
         :rtype: str
@@ -329,7 +329,7 @@ class DncListCreate(object):
     def license_id(self, license_id):
         """
         Sets the license_id of this DncListCreate.
-        the license number if the dncSourceType is gryphon
+        A gryphon license number. Required if the dncSourceType is gryphon.
 
         :param license_id: The license_id of this DncListCreate.
         :type: str

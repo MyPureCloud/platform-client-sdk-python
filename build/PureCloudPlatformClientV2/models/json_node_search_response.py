@@ -46,8 +46,8 @@ class JsonNodeSearchResponse(object):
             'current_page': 'str',
             'next_page': 'str',
             'types': 'list[str]',
-            'results': 'JsonNode',
-            'aggregations': 'JsonNode'
+            'results': 'ArrayNode',
+            'aggregations': 'ArrayNode'
         }
 
         self.attribute_map = {
@@ -265,7 +265,7 @@ class JsonNodeSearchResponse(object):
         Search results
 
         :return: The results of this JsonNodeSearchResponse.
-        :rtype: JsonNode
+        :rtype: ArrayNode
         """
         return self._results
 
@@ -276,7 +276,7 @@ class JsonNodeSearchResponse(object):
         Search results
 
         :param results: The results of this JsonNodeSearchResponse.
-        :type: JsonNode
+        :type: ArrayNode
         """
         
         self._results = results
@@ -288,7 +288,7 @@ class JsonNodeSearchResponse(object):
 
 
         :return: The aggregations of this JsonNodeSearchResponse.
-        :rtype: JsonNode
+        :rtype: ArrayNode
         """
         return self._aggregations
 
@@ -299,7 +299,7 @@ class JsonNodeSearchResponse(object):
 
 
         :param aggregations: The aggregations of this JsonNodeSearchResponse.
-        :type: JsonNode
+        :type: ArrayNode
         """
         
         self._aggregations = aggregations
