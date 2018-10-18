@@ -38,8 +38,8 @@ class IntradayDataUpdateNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'start_date': 'IntradayDataUpdateNotificationStartDate',
-            'end_date': 'IntradayDataUpdateNotificationDateTime',
+            'start_date': 'datetime',
+            'end_date': 'datetime',
             'interval_length_minutes': 'int',
             'number_of_intervals': 'int',
             'metrics': 'list[IntradayDataUpdateNotificationMetrics]',
@@ -72,7 +72,7 @@ class IntradayDataUpdateNotification(object):
 
 
         :return: The start_date of this IntradayDataUpdateNotification.
-        :rtype: IntradayDataUpdateNotificationStartDate
+        :rtype: datetime
         """
         return self._start_date
 
@@ -83,7 +83,7 @@ class IntradayDataUpdateNotification(object):
 
 
         :param start_date: The start_date of this IntradayDataUpdateNotification.
-        :type: IntradayDataUpdateNotificationStartDate
+        :type: datetime
         """
         
         self._start_date = start_date
@@ -95,7 +95,7 @@ class IntradayDataUpdateNotification(object):
 
 
         :return: The end_date of this IntradayDataUpdateNotification.
-        :rtype: IntradayDataUpdateNotificationDateTime
+        :rtype: datetime
         """
         return self._end_date
 
@@ -106,7 +106,7 @@ class IntradayDataUpdateNotification(object):
 
 
         :param end_date: The end_date of this IntradayDataUpdateNotification.
-        :type: IntradayDataUpdateNotificationDateTime
+        :type: datetime
         """
         
         self._end_date = end_date

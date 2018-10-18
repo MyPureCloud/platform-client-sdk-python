@@ -40,35 +40,68 @@ class WorkPlanListItemResponse(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'agent_count': 'int',
+            'enabled': 'bool',
+            'constrain_weekly_paid_time': 'bool',
+            'flexible_weekly_paid_time': 'bool',
+            'weekly_exact_paid_minutes': 'int',
             'weekly_minimum_paid_minutes': 'int',
             'weekly_maximum_paid_minutes': 'int',
+            'constrain_paid_time_granularity': 'bool',
+            'paid_time_granularity_minutes': 'int',
+            'constrain_minimum_time_between_shifts': 'bool',
+            'minimum_time_between_shifts_minutes': 'int',
             'maximum_days': 'int',
-            'enabled': 'bool',
+            'optional_days': 'SetWrapperDayOfWeek',
+            'shift_start_variances': 'ListWrapperShiftStartVariance',
+            'shifts': 'list[WorkPlanShift]',
+            'agents': 'list[DeletableUserReference]',
             'metadata': 'WfmVersionedEntityMetadata',
+            'agent_count': 'int',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'agent_count': 'agentCount',
+            'enabled': 'enabled',
+            'constrain_weekly_paid_time': 'constrainWeeklyPaidTime',
+            'flexible_weekly_paid_time': 'flexibleWeeklyPaidTime',
+            'weekly_exact_paid_minutes': 'weeklyExactPaidMinutes',
             'weekly_minimum_paid_minutes': 'weeklyMinimumPaidMinutes',
             'weekly_maximum_paid_minutes': 'weeklyMaximumPaidMinutes',
+            'constrain_paid_time_granularity': 'constrainPaidTimeGranularity',
+            'paid_time_granularity_minutes': 'paidTimeGranularityMinutes',
+            'constrain_minimum_time_between_shifts': 'constrainMinimumTimeBetweenShifts',
+            'minimum_time_between_shifts_minutes': 'minimumTimeBetweenShiftsMinutes',
             'maximum_days': 'maximumDays',
-            'enabled': 'enabled',
+            'optional_days': 'optionalDays',
+            'shift_start_variances': 'shiftStartVariances',
+            'shifts': 'shifts',
+            'agents': 'agents',
             'metadata': 'metadata',
+            'agent_count': 'agentCount',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._agent_count = None
+        self._enabled = None
+        self._constrain_weekly_paid_time = None
+        self._flexible_weekly_paid_time = None
+        self._weekly_exact_paid_minutes = None
         self._weekly_minimum_paid_minutes = None
         self._weekly_maximum_paid_minutes = None
+        self._constrain_paid_time_granularity = None
+        self._paid_time_granularity_minutes = None
+        self._constrain_minimum_time_between_shifts = None
+        self._minimum_time_between_shifts_minutes = None
         self._maximum_days = None
-        self._enabled = None
+        self._optional_days = None
+        self._shift_start_variances = None
+        self._shifts = None
+        self._agents = None
         self._metadata = None
+        self._agent_count = None
         self._self_uri = None
 
     @property
@@ -118,98 +151,6 @@ class WorkPlanListItemResponse(object):
         self._name = name
 
     @property
-    def agent_count(self):
-        """
-        Gets the agent_count of this WorkPlanListItemResponse.
-        Number of agents in this work plan
-
-        :return: The agent_count of this WorkPlanListItemResponse.
-        :rtype: int
-        """
-        return self._agent_count
-
-    @agent_count.setter
-    def agent_count(self, agent_count):
-        """
-        Sets the agent_count of this WorkPlanListItemResponse.
-        Number of agents in this work plan
-
-        :param agent_count: The agent_count of this WorkPlanListItemResponse.
-        :type: int
-        """
-        
-        self._agent_count = agent_count
-
-    @property
-    def weekly_minimum_paid_minutes(self):
-        """
-        Gets the weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
-        Minimum weekly paid time in minutes defined in this work plan
-
-        :return: The weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
-        :rtype: int
-        """
-        return self._weekly_minimum_paid_minutes
-
-    @weekly_minimum_paid_minutes.setter
-    def weekly_minimum_paid_minutes(self, weekly_minimum_paid_minutes):
-        """
-        Sets the weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
-        Minimum weekly paid time in minutes defined in this work plan
-
-        :param weekly_minimum_paid_minutes: The weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
-        :type: int
-        """
-        
-        self._weekly_minimum_paid_minutes = weekly_minimum_paid_minutes
-
-    @property
-    def weekly_maximum_paid_minutes(self):
-        """
-        Gets the weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
-        Maximum weekly paid time in minutes defined in this work plan
-
-        :return: The weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
-        :rtype: int
-        """
-        return self._weekly_maximum_paid_minutes
-
-    @weekly_maximum_paid_minutes.setter
-    def weekly_maximum_paid_minutes(self, weekly_maximum_paid_minutes):
-        """
-        Sets the weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
-        Maximum weekly paid time in minutes defined in this work plan
-
-        :param weekly_maximum_paid_minutes: The weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
-        :type: int
-        """
-        
-        self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
-
-    @property
-    def maximum_days(self):
-        """
-        Gets the maximum_days of this WorkPlanListItemResponse.
-        Maximum number of days in a week that can be scheduled using this work plan
-
-        :return: The maximum_days of this WorkPlanListItemResponse.
-        :rtype: int
-        """
-        return self._maximum_days
-
-    @maximum_days.setter
-    def maximum_days(self, maximum_days):
-        """
-        Sets the maximum_days of this WorkPlanListItemResponse.
-        Maximum number of days in a week that can be scheduled using this work plan
-
-        :param maximum_days: The maximum_days of this WorkPlanListItemResponse.
-        :type: int
-        """
-        
-        self._maximum_days = maximum_days
-
-    @property
     def enabled(self):
         """
         Gets the enabled of this WorkPlanListItemResponse.
@@ -233,6 +174,328 @@ class WorkPlanListItemResponse(object):
         self._enabled = enabled
 
     @property
+    def constrain_weekly_paid_time(self):
+        """
+        Gets the constrain_weekly_paid_time of this WorkPlanListItemResponse.
+        Whether the weekly paid time constraint is enabled for this work plan
+
+        :return: The constrain_weekly_paid_time of this WorkPlanListItemResponse.
+        :rtype: bool
+        """
+        return self._constrain_weekly_paid_time
+
+    @constrain_weekly_paid_time.setter
+    def constrain_weekly_paid_time(self, constrain_weekly_paid_time):
+        """
+        Sets the constrain_weekly_paid_time of this WorkPlanListItemResponse.
+        Whether the weekly paid time constraint is enabled for this work plan
+
+        :param constrain_weekly_paid_time: The constrain_weekly_paid_time of this WorkPlanListItemResponse.
+        :type: bool
+        """
+        
+        self._constrain_weekly_paid_time = constrain_weekly_paid_time
+
+    @property
+    def flexible_weekly_paid_time(self):
+        """
+        Gets the flexible_weekly_paid_time of this WorkPlanListItemResponse.
+        Whether the weekly paid time constraint is flexible for this work plan
+
+        :return: The flexible_weekly_paid_time of this WorkPlanListItemResponse.
+        :rtype: bool
+        """
+        return self._flexible_weekly_paid_time
+
+    @flexible_weekly_paid_time.setter
+    def flexible_weekly_paid_time(self, flexible_weekly_paid_time):
+        """
+        Sets the flexible_weekly_paid_time of this WorkPlanListItemResponse.
+        Whether the weekly paid time constraint is flexible for this work plan
+
+        :param flexible_weekly_paid_time: The flexible_weekly_paid_time of this WorkPlanListItemResponse.
+        :type: bool
+        """
+        
+        self._flexible_weekly_paid_time = flexible_weekly_paid_time
+
+    @property
+    def weekly_exact_paid_minutes(self):
+        """
+        Gets the weekly_exact_paid_minutes of this WorkPlanListItemResponse.
+        Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == false
+
+        :return: The weekly_exact_paid_minutes of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._weekly_exact_paid_minutes
+
+    @weekly_exact_paid_minutes.setter
+    def weekly_exact_paid_minutes(self, weekly_exact_paid_minutes):
+        """
+        Sets the weekly_exact_paid_minutes of this WorkPlanListItemResponse.
+        Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == false
+
+        :param weekly_exact_paid_minutes: The weekly_exact_paid_minutes of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._weekly_exact_paid_minutes = weekly_exact_paid_minutes
+
+    @property
+    def weekly_minimum_paid_minutes(self):
+        """
+        Gets the weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
+        Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
+
+        :return: The weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._weekly_minimum_paid_minutes
+
+    @weekly_minimum_paid_minutes.setter
+    def weekly_minimum_paid_minutes(self, weekly_minimum_paid_minutes):
+        """
+        Sets the weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
+        Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
+
+        :param weekly_minimum_paid_minutes: The weekly_minimum_paid_minutes of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._weekly_minimum_paid_minutes = weekly_minimum_paid_minutes
+
+    @property
+    def weekly_maximum_paid_minutes(self):
+        """
+        Gets the weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
+        Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
+
+        :return: The weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._weekly_maximum_paid_minutes
+
+    @weekly_maximum_paid_minutes.setter
+    def weekly_maximum_paid_minutes(self, weekly_maximum_paid_minutes):
+        """
+        Sets the weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
+        Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
+
+        :param weekly_maximum_paid_minutes: The weekly_maximum_paid_minutes of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
+
+    @property
+    def constrain_paid_time_granularity(self):
+        """
+        Gets the constrain_paid_time_granularity of this WorkPlanListItemResponse.
+        Whether paid time granularity is constrained for this workplan
+
+        :return: The constrain_paid_time_granularity of this WorkPlanListItemResponse.
+        :rtype: bool
+        """
+        return self._constrain_paid_time_granularity
+
+    @constrain_paid_time_granularity.setter
+    def constrain_paid_time_granularity(self, constrain_paid_time_granularity):
+        """
+        Sets the constrain_paid_time_granularity of this WorkPlanListItemResponse.
+        Whether paid time granularity is constrained for this workplan
+
+        :param constrain_paid_time_granularity: The constrain_paid_time_granularity of this WorkPlanListItemResponse.
+        :type: bool
+        """
+        
+        self._constrain_paid_time_granularity = constrain_paid_time_granularity
+
+    @property
+    def paid_time_granularity_minutes(self):
+        """
+        Gets the paid_time_granularity_minutes of this WorkPlanListItemResponse.
+        Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
+
+        :return: The paid_time_granularity_minutes of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._paid_time_granularity_minutes
+
+    @paid_time_granularity_minutes.setter
+    def paid_time_granularity_minutes(self, paid_time_granularity_minutes):
+        """
+        Sets the paid_time_granularity_minutes of this WorkPlanListItemResponse.
+        Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
+
+        :param paid_time_granularity_minutes: The paid_time_granularity_minutes of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._paid_time_granularity_minutes = paid_time_granularity_minutes
+
+    @property
+    def constrain_minimum_time_between_shifts(self):
+        """
+        Gets the constrain_minimum_time_between_shifts of this WorkPlanListItemResponse.
+        Whether the minimum time between shifts constraint is enabled for this work plan
+
+        :return: The constrain_minimum_time_between_shifts of this WorkPlanListItemResponse.
+        :rtype: bool
+        """
+        return self._constrain_minimum_time_between_shifts
+
+    @constrain_minimum_time_between_shifts.setter
+    def constrain_minimum_time_between_shifts(self, constrain_minimum_time_between_shifts):
+        """
+        Sets the constrain_minimum_time_between_shifts of this WorkPlanListItemResponse.
+        Whether the minimum time between shifts constraint is enabled for this work plan
+
+        :param constrain_minimum_time_between_shifts: The constrain_minimum_time_between_shifts of this WorkPlanListItemResponse.
+        :type: bool
+        """
+        
+        self._constrain_minimum_time_between_shifts = constrain_minimum_time_between_shifts
+
+    @property
+    def minimum_time_between_shifts_minutes(self):
+        """
+        Gets the minimum_time_between_shifts_minutes of this WorkPlanListItemResponse.
+        Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts == true
+
+        :return: The minimum_time_between_shifts_minutes of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._minimum_time_between_shifts_minutes
+
+    @minimum_time_between_shifts_minutes.setter
+    def minimum_time_between_shifts_minutes(self, minimum_time_between_shifts_minutes):
+        """
+        Sets the minimum_time_between_shifts_minutes of this WorkPlanListItemResponse.
+        Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts == true
+
+        :param minimum_time_between_shifts_minutes: The minimum_time_between_shifts_minutes of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._minimum_time_between_shifts_minutes = minimum_time_between_shifts_minutes
+
+    @property
+    def maximum_days(self):
+        """
+        Gets the maximum_days of this WorkPlanListItemResponse.
+        Maximum number days in a week allowed to be scheduled for this work plan
+
+        :return: The maximum_days of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._maximum_days
+
+    @maximum_days.setter
+    def maximum_days(self, maximum_days):
+        """
+        Sets the maximum_days of this WorkPlanListItemResponse.
+        Maximum number days in a week allowed to be scheduled for this work plan
+
+        :param maximum_days: The maximum_days of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._maximum_days = maximum_days
+
+    @property
+    def optional_days(self):
+        """
+        Gets the optional_days of this WorkPlanListItemResponse.
+        Optional days to schedule for this work plan. Populate with expand=details
+
+        :return: The optional_days of this WorkPlanListItemResponse.
+        :rtype: SetWrapperDayOfWeek
+        """
+        return self._optional_days
+
+    @optional_days.setter
+    def optional_days(self, optional_days):
+        """
+        Sets the optional_days of this WorkPlanListItemResponse.
+        Optional days to schedule for this work plan. Populate with expand=details
+
+        :param optional_days: The optional_days of this WorkPlanListItemResponse.
+        :type: SetWrapperDayOfWeek
+        """
+        
+        self._optional_days = optional_days
+
+    @property
+    def shift_start_variances(self):
+        """
+        Gets the shift_start_variances of this WorkPlanListItemResponse.
+        Variance in minutes among start times of shifts in this work plan. Populate with expand=details
+
+        :return: The shift_start_variances of this WorkPlanListItemResponse.
+        :rtype: ListWrapperShiftStartVariance
+        """
+        return self._shift_start_variances
+
+    @shift_start_variances.setter
+    def shift_start_variances(self, shift_start_variances):
+        """
+        Sets the shift_start_variances of this WorkPlanListItemResponse.
+        Variance in minutes among start times of shifts in this work plan. Populate with expand=details
+
+        :param shift_start_variances: The shift_start_variances of this WorkPlanListItemResponse.
+        :type: ListWrapperShiftStartVariance
+        """
+        
+        self._shift_start_variances = shift_start_variances
+
+    @property
+    def shifts(self):
+        """
+        Gets the shifts of this WorkPlanListItemResponse.
+        Shifts in this work plan. Populate with expand=details (defaults to empty list)
+
+        :return: The shifts of this WorkPlanListItemResponse.
+        :rtype: list[WorkPlanShift]
+        """
+        return self._shifts
+
+    @shifts.setter
+    def shifts(self, shifts):
+        """
+        Sets the shifts of this WorkPlanListItemResponse.
+        Shifts in this work plan. Populate with expand=details (defaults to empty list)
+
+        :param shifts: The shifts of this WorkPlanListItemResponse.
+        :type: list[WorkPlanShift]
+        """
+        
+        self._shifts = shifts
+
+    @property
+    def agents(self):
+        """
+        Gets the agents of this WorkPlanListItemResponse.
+        Agents in this work plan. Populate with expand=details (defaults to empty list)
+
+        :return: The agents of this WorkPlanListItemResponse.
+        :rtype: list[DeletableUserReference]
+        """
+        return self._agents
+
+    @agents.setter
+    def agents(self, agents):
+        """
+        Sets the agents of this WorkPlanListItemResponse.
+        Agents in this work plan. Populate with expand=details (defaults to empty list)
+
+        :param agents: The agents of this WorkPlanListItemResponse.
+        :type: list[DeletableUserReference]
+        """
+        
+        self._agents = agents
+
+    @property
     def metadata(self):
         """
         Gets the metadata of this WorkPlanListItemResponse.
@@ -254,6 +517,29 @@ class WorkPlanListItemResponse(object):
         """
         
         self._metadata = metadata
+
+    @property
+    def agent_count(self):
+        """
+        Gets the agent_count of this WorkPlanListItemResponse.
+        Number of agents in this work plan.  Populate with expand=agentCount
+
+        :return: The agent_count of this WorkPlanListItemResponse.
+        :rtype: int
+        """
+        return self._agent_count
+
+    @agent_count.setter
+    def agent_count(self, agent_count):
+        """
+        Sets the agent_count of this WorkPlanListItemResponse.
+        Number of agents in this work plan.  Populate with expand=agentCount
+
+        :param agent_count: The agent_count of this WorkPlanListItemResponse.
+        :type: int
+        """
+        
+        self._agent_count = agent_count
 
     @property
     def self_uri(self):

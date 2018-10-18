@@ -45,6 +45,8 @@ class CreateWorkPlan(object):
             'weekly_exact_paid_minutes': 'int',
             'weekly_minimum_paid_minutes': 'int',
             'weekly_maximum_paid_minutes': 'int',
+            'constrain_paid_time_granularity': 'bool',
+            'paid_time_granularity_minutes': 'int',
             'constrain_minimum_time_between_shifts': 'bool',
             'minimum_time_between_shifts_minutes': 'int',
             'maximum_days': 'int',
@@ -62,6 +64,8 @@ class CreateWorkPlan(object):
             'weekly_exact_paid_minutes': 'weeklyExactPaidMinutes',
             'weekly_minimum_paid_minutes': 'weeklyMinimumPaidMinutes',
             'weekly_maximum_paid_minutes': 'weeklyMaximumPaidMinutes',
+            'constrain_paid_time_granularity': 'constrainPaidTimeGranularity',
+            'paid_time_granularity_minutes': 'paidTimeGranularityMinutes',
             'constrain_minimum_time_between_shifts': 'constrainMinimumTimeBetweenShifts',
             'minimum_time_between_shifts_minutes': 'minimumTimeBetweenShiftsMinutes',
             'maximum_days': 'maximumDays',
@@ -78,6 +82,8 @@ class CreateWorkPlan(object):
         self._weekly_exact_paid_minutes = None
         self._weekly_minimum_paid_minutes = None
         self._weekly_maximum_paid_minutes = None
+        self._constrain_paid_time_granularity = None
+        self._paid_time_granularity_minutes = None
         self._constrain_minimum_time_between_shifts = None
         self._minimum_time_between_shifts_minutes = None
         self._maximum_days = None
@@ -246,6 +252,52 @@ class CreateWorkPlan(object):
         """
         
         self._weekly_maximum_paid_minutes = weekly_maximum_paid_minutes
+
+    @property
+    def constrain_paid_time_granularity(self):
+        """
+        Gets the constrain_paid_time_granularity of this CreateWorkPlan.
+        Whether paid time granularity should be constrained for this workplan
+
+        :return: The constrain_paid_time_granularity of this CreateWorkPlan.
+        :rtype: bool
+        """
+        return self._constrain_paid_time_granularity
+
+    @constrain_paid_time_granularity.setter
+    def constrain_paid_time_granularity(self, constrain_paid_time_granularity):
+        """
+        Sets the constrain_paid_time_granularity of this CreateWorkPlan.
+        Whether paid time granularity should be constrained for this workplan
+
+        :param constrain_paid_time_granularity: The constrain_paid_time_granularity of this CreateWorkPlan.
+        :type: bool
+        """
+        
+        self._constrain_paid_time_granularity = constrain_paid_time_granularity
+
+    @property
+    def paid_time_granularity_minutes(self):
+        """
+        Gets the paid_time_granularity_minutes of this CreateWorkPlan.
+        Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
+
+        :return: The paid_time_granularity_minutes of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._paid_time_granularity_minutes
+
+    @paid_time_granularity_minutes.setter
+    def paid_time_granularity_minutes(self, paid_time_granularity_minutes):
+        """
+        Sets the paid_time_granularity_minutes of this CreateWorkPlan.
+        Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
+
+        :param paid_time_granularity_minutes: The paid_time_granularity_minutes of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._paid_time_granularity_minutes = paid_time_granularity_minutes
 
     @property
     def constrain_minimum_time_between_shifts(self):

@@ -346,7 +346,7 @@ class DocumentAudit(object):
         :param status: The status of this DocumentAudit.
         :type: str
         """
-        allowed_values = ["SUCCESS", "FAILURE"]
+        allowed_values = ["SUCCESS", "FAILURE", "WARNING"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"

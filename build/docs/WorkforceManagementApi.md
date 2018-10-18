@@ -1716,7 +1716,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-expand = 'expand_example' # str |  (optional)
+expand = ['expand_example'] # list[str] |  (optional)
 
 try:
     # Get work plans
@@ -1732,7 +1732,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **expand** | **str**|  | [optional] <br />**Values**: agentCount |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: agentCount, details |
 {: class="table table-striped"}
 
 ### Return type

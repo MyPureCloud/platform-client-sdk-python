@@ -48,6 +48,14 @@ class IntegrationType(object):
             'config_advanced_schema_uri': 'str',
             'help_uri': 'str',
             'terms_of_service_uri': 'str',
+            'vendor_name': 'str',
+            'vendor_website_uri': 'str',
+            'marketplace_uri': 'str',
+            'faq_uri': 'str',
+            'privacy_policy_uri': 'str',
+            'support_contact_uri': 'str',
+            'sales_contact_uri': 'str',
+            'help_links': 'list[HelpLink]',
             'credentials': 'dict(str, CredentialSpecification)',
             'non_installable': 'bool',
             'max_instances': 'int',
@@ -66,6 +74,14 @@ class IntegrationType(object):
             'config_advanced_schema_uri': 'configAdvancedSchemaUri',
             'help_uri': 'helpUri',
             'terms_of_service_uri': 'termsOfServiceUri',
+            'vendor_name': 'vendorName',
+            'vendor_website_uri': 'vendorWebsiteUri',
+            'marketplace_uri': 'marketplaceUri',
+            'faq_uri': 'faqUri',
+            'privacy_policy_uri': 'privacyPolicyUri',
+            'support_contact_uri': 'supportContactUri',
+            'sales_contact_uri': 'salesContactUri',
+            'help_links': 'helpLinks',
             'credentials': 'credentials',
             'non_installable': 'nonInstallable',
             'max_instances': 'maxInstances',
@@ -83,6 +99,14 @@ class IntegrationType(object):
         self._config_advanced_schema_uri = None
         self._help_uri = None
         self._terms_of_service_uri = None
+        self._vendor_name = None
+        self._vendor_website_uri = None
+        self._marketplace_uri = None
+        self._faq_uri = None
+        self._privacy_policy_uri = None
+        self._support_contact_uri = None
+        self._sales_contact_uri = None
+        self._help_links = None
         self._credentials = None
         self._non_installable = None
         self._max_instances = None
@@ -318,6 +342,190 @@ class IntegrationType(object):
         """
         
         self._terms_of_service_uri = terms_of_service_uri
+
+    @property
+    def vendor_name(self):
+        """
+        Gets the vendor_name of this IntegrationType.
+        Name of the vendor of this integration type
+
+        :return: The vendor_name of this IntegrationType.
+        :rtype: str
+        """
+        return self._vendor_name
+
+    @vendor_name.setter
+    def vendor_name(self, vendor_name):
+        """
+        Sets the vendor_name of this IntegrationType.
+        Name of the vendor of this integration type
+
+        :param vendor_name: The vendor_name of this IntegrationType.
+        :type: str
+        """
+        
+        self._vendor_name = vendor_name
+
+    @property
+    def vendor_website_uri(self):
+        """
+        Gets the vendor_website_uri of this IntegrationType.
+        URI of the vendor's website
+
+        :return: The vendor_website_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._vendor_website_uri
+
+    @vendor_website_uri.setter
+    def vendor_website_uri(self, vendor_website_uri):
+        """
+        Sets the vendor_website_uri of this IntegrationType.
+        URI of the vendor's website
+
+        :param vendor_website_uri: The vendor_website_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._vendor_website_uri = vendor_website_uri
+
+    @property
+    def marketplace_uri(self):
+        """
+        Gets the marketplace_uri of this IntegrationType.
+        URI of the marketplace listing for this integration type
+
+        :return: The marketplace_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._marketplace_uri
+
+    @marketplace_uri.setter
+    def marketplace_uri(self, marketplace_uri):
+        """
+        Sets the marketplace_uri of this IntegrationType.
+        URI of the marketplace listing for this integration type
+
+        :param marketplace_uri: The marketplace_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._marketplace_uri = marketplace_uri
+
+    @property
+    def faq_uri(self):
+        """
+        Gets the faq_uri of this IntegrationType.
+        URI of frequently asked questions about the integration type
+
+        :return: The faq_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._faq_uri
+
+    @faq_uri.setter
+    def faq_uri(self, faq_uri):
+        """
+        Sets the faq_uri of this IntegrationType.
+        URI of frequently asked questions about the integration type
+
+        :param faq_uri: The faq_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._faq_uri = faq_uri
+
+    @property
+    def privacy_policy_uri(self):
+        """
+        Gets the privacy_policy_uri of this IntegrationType.
+        URI of a privacy policy for users of the integration type
+
+        :return: The privacy_policy_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._privacy_policy_uri
+
+    @privacy_policy_uri.setter
+    def privacy_policy_uri(self, privacy_policy_uri):
+        """
+        Sets the privacy_policy_uri of this IntegrationType.
+        URI of a privacy policy for users of the integration type
+
+        :param privacy_policy_uri: The privacy_policy_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._privacy_policy_uri = privacy_policy_uri
+
+    @property
+    def support_contact_uri(self):
+        """
+        Gets the support_contact_uri of this IntegrationType.
+        URI for vendor support
+
+        :return: The support_contact_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._support_contact_uri
+
+    @support_contact_uri.setter
+    def support_contact_uri(self, support_contact_uri):
+        """
+        Sets the support_contact_uri of this IntegrationType.
+        URI for vendor support
+
+        :param support_contact_uri: The support_contact_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._support_contact_uri = support_contact_uri
+
+    @property
+    def sales_contact_uri(self):
+        """
+        Gets the sales_contact_uri of this IntegrationType.
+        URI for vendor sales information
+
+        :return: The sales_contact_uri of this IntegrationType.
+        :rtype: str
+        """
+        return self._sales_contact_uri
+
+    @sales_contact_uri.setter
+    def sales_contact_uri(self, sales_contact_uri):
+        """
+        Sets the sales_contact_uri of this IntegrationType.
+        URI for vendor sales information
+
+        :param sales_contact_uri: The sales_contact_uri of this IntegrationType.
+        :type: str
+        """
+        
+        self._sales_contact_uri = sales_contact_uri
+
+    @property
+    def help_links(self):
+        """
+        Gets the help_links of this IntegrationType.
+        List of links to additional help resources
+
+        :return: The help_links of this IntegrationType.
+        :rtype: list[HelpLink]
+        """
+        return self._help_links
+
+    @help_links.setter
+    def help_links(self, help_links):
+        """
+        Sets the help_links of this IntegrationType.
+        List of links to additional help resources
+
+        :param help_links: The help_links of this IntegrationType.
+        :type: list[HelpLink]
+        """
+        
+        self._help_links = help_links
 
     @property
     def credentials(self):

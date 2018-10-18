@@ -2417,7 +2417,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param str expand: 
+        :param list[str] expand: 
         :return: WorkPlanListResponse
                  If the method is called asynchronously,
                  returns the request thread.

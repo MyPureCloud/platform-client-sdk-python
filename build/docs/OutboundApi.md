@@ -47,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_contactlistfilter**](OutboundApi.html#get_outbound_contactlistfilter) | Get Contact list filter|
 |[**get_outbound_contactlistfilters**](OutboundApi.html#get_outbound_contactlistfilters) | Query Contact list filters|
 |[**get_outbound_contactlists**](OutboundApi.html#get_outbound_contactlists) | Query a list of contact lists.|
+|[**get_outbound_contactlists_divisionviews**](OutboundApi.html#get_outbound_contactlists_divisionviews) | Query a list of simplified contact list objects.|
 |[**get_outbound_dnclist**](OutboundApi.html#get_outbound_dnclist) | Get dialer DNC list|
 |[**get_outbound_dnclist_export**](OutboundApi.html#get_outbound_dnclist_export) | Get the URI of a DNC list export.|
 |[**get_outbound_dnclist_importstatus**](OutboundApi.html#get_outbound_dnclist_importstatus) | Get dialer dncList import status.|
@@ -72,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_campaignrules**](OutboundApi.html#post_outbound_campaignrules) | Create Campaign Rule|
 |[**post_outbound_campaigns**](OutboundApi.html#post_outbound_campaigns) | Create a campaign.|
 |[**post_outbound_campaigns_progress**](OutboundApi.html#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
+|[**post_outbound_contactlist_clear**](OutboundApi.html#post_outbound_contactlist_clear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.|
 |[**post_outbound_contactlist_contacts**](OutboundApi.html#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
 |[**post_outbound_contactlist_contacts_bulk**](OutboundApi.html#post_outbound_contactlist_contacts_bulk) | Get contacts from a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
@@ -2192,6 +2194,73 @@ except ApiException as e:
 
 [**ContactListEntityListing**](ContactListEntityListing.html)
 
+<a name="get_outbound_contactlists_divisionviews"></a>
+
+## [**ContactListDivisionViewListing**](ContactListDivisionViewListing.html) get_outbound_contactlists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+
+
+
+Query a list of simplified contact list objects.
+
+This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+
+Wraps GET /api/v2/outbound/contactlists/divisionviews 
+
+Requires ANY permissions: 
+
+* outbound:contactList:search
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+include_import_status = false # bool | Include import status (optional) (default to false)
+include_size = false # bool | Include size (optional) (default to false)
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
+name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | id (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = 'a' # str | Sort order (optional) (default to a)
+
+try:
+    # Query a list of simplified contact list objects.
+    api_response = api_instance.get_outbound_contactlists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_contactlists_divisionviews: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **include_import_status** | **bool**| Include import status | [optional] [default to false] |
+| **include_size** | **bool**| Include size | [optional] [default to false] |
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **sort_by** | **str**| Sort by | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
+
 <a name="get_outbound_dnclist"></a>
 
 ## [**DncList**](DncList.html) get_outbound_dnclist(dnc_list_id, include_import_status=include_import_status, include_size=include_size)
@@ -2354,7 +2423,7 @@ except ApiException as e:
 
 <a name="get_outbound_dnclists"></a>
 
-## [**DncListEntityListing**](DncListEntityListing.html) get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**DncListEntityListing**](DncListEntityListing.html) get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2387,12 +2456,14 @@ page_size = 25 # int | Page size. The max that will be returned is 100. (optiona
 page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
+dnc_source_type = 'dnc_source_type_example' # str | DncSourceType (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = 'sort_order_example' # str | Sort order (optional)
 
 try:
     # Query dialer DNC lists
-    api_response = api_instance.get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclists: %s\n" % e
@@ -2409,6 +2480,8 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
+| **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -3513,6 +3586,56 @@ except ApiException as e:
 ### Return type
 
 [**list[CampaignProgress]**](CampaignProgress.html)
+
+<a name="post_outbound_contactlist_clear"></a>
+
+##  post_outbound_contactlist_clear(contact_list_id)
+
+
+
+Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+
+
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/clear 
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+
+try:
+    # Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+    api_instance.post_outbound_contactlist_clear(contact_list_id)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_outbound_contactlist_contacts"></a>
 

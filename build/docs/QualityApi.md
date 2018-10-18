@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_survey**](QualityApi.html#get_quality_forms_survey) | Get a survey form|
 |[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
 |[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
+|[**get_quality_forms_surveys_bulk**](QualityApi.html#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
 |[**get_quality_keywordset**](QualityApi.html#get_quality_keywordset) | Get a keywordSet by id.|
 |[**get_quality_keywordsets**](QualityApi.html#get_quality_keywordsets) | Get the list of keyword sets|
 |[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
@@ -1383,6 +1384,57 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **expand** | **str**| Expand | [optional]  |
 | **name** | **str**| Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="get_quality_forms_surveys_bulk"></a>
+
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk(ids)
+
+
+
+Retrieve a list of survey forms by their ids
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/bulk 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+ids = ['ids_example'] # list[str] | A comma-delimited list of valid survey form ids
+
+try:
+    # Retrieve a list of survey forms by their ids
+    api_response = api_instance.get_quality_forms_surveys_bulk(ids)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_surveys_bulk: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ids** | [**list[str]**](str.html)| A comma-delimited list of valid survey form ids |  |
 {: class="table table-striped"}
 
 ### Return type

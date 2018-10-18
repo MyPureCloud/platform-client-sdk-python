@@ -47,7 +47,8 @@ class DataExportNotificationNotification(object):
             'export_error_messages_type': 'str',
             'read': 'bool',
             'created_date_time': 'datetime',
-            'modified_date_time': 'datetime'
+            'modified_date_time': 'datetime',
+            'percentage_complete': 'float'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class DataExportNotificationNotification(object):
             'export_error_messages_type': 'exportErrorMessagesType',
             'read': 'read',
             'created_date_time': 'createdDateTime',
-            'modified_date_time': 'modifiedDateTime'
+            'modified_date_time': 'modifiedDateTime',
+            'percentage_complete': 'percentageComplete'
         }
 
         self._id = None
@@ -73,6 +75,7 @@ class DataExportNotificationNotification(object):
         self._read = None
         self._created_date_time = None
         self._modified_date_time = None
+        self._percentage_complete = None
 
     @property
     def id(self):
@@ -140,7 +143,7 @@ class DataExportNotificationNotification(object):
         :param status: The status of this DataExportNotificationNotification.
         :type: str
         """
-        allowed_values = ["SUBMITTED", "RUNNING", "COMPLETED", "FAILED"]
+        allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
@@ -319,6 +322,29 @@ class DataExportNotificationNotification(object):
         """
         
         self._modified_date_time = modified_date_time
+
+    @property
+    def percentage_complete(self):
+        """
+        Gets the percentage_complete of this DataExportNotificationNotification.
+
+
+        :return: The percentage_complete of this DataExportNotificationNotification.
+        :rtype: float
+        """
+        return self._percentage_complete
+
+    @percentage_complete.setter
+    def percentage_complete(self, percentage_complete):
+        """
+        Sets the percentage_complete of this DataExportNotificationNotification.
+
+
+        :param percentage_complete: The percentage_complete of this DataExportNotificationNotification.
+        :type: float
+        """
+        
+        self._percentage_complete = percentage_complete
 
     def to_dict(self):
         """

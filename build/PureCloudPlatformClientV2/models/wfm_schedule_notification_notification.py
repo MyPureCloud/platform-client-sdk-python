@@ -41,6 +41,7 @@ class WfmScheduleNotificationNotification(object):
             'status': 'str',
             'operation_id': 'str',
             'download_url': 'str',
+            'percent_complete': 'int',
             'event_type': 'str'
         }
 
@@ -48,12 +49,14 @@ class WfmScheduleNotificationNotification(object):
             'status': 'status',
             'operation_id': 'operationId',
             'download_url': 'downloadUrl',
+            'percent_complete': 'percentComplete',
             'event_type': 'eventType'
         }
 
         self._status = None
         self._operation_id = None
         self._download_url = None
+        self._percent_complete = None
         self._event_type = None
 
     @property
@@ -130,6 +133,29 @@ class WfmScheduleNotificationNotification(object):
         self._download_url = download_url
 
     @property
+    def percent_complete(self):
+        """
+        Gets the percent_complete of this WfmScheduleNotificationNotification.
+
+
+        :return: The percent_complete of this WfmScheduleNotificationNotification.
+        :rtype: int
+        """
+        return self._percent_complete
+
+    @percent_complete.setter
+    def percent_complete(self, percent_complete):
+        """
+        Sets the percent_complete of this WfmScheduleNotificationNotification.
+
+
+        :param percent_complete: The percent_complete of this WfmScheduleNotificationNotification.
+        :type: int
+        """
+        
+        self._percent_complete = percent_complete
+
+    @property
     def event_type(self):
         """
         Gets the event_type of this WfmScheduleNotificationNotification.
@@ -149,7 +175,7 @@ class WfmScheduleNotificationNotification(object):
         :param event_type: The event_type of this WfmScheduleNotificationNotification.
         :type: str
         """
-        allowed_values = ["Update", "Import", "Copy", "Generate"]
+        allowed_values = ["Update", "Import", "Copy", "Generate", "Reschedule"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for event_type -> " + event_type
             self._event_type = "outdated_sdk_version"

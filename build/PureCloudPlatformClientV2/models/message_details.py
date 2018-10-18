@@ -131,7 +131,7 @@ class MessageDetails(object):
         :param message_status: The message_status of this MessageDetails.
         :type: str
         """
-        allowed_values = ["queued", "sent", "failed", "received"]
+        allowed_values = ["queued", "sent", "failed", "received", "delivery-success", "delivery-failed", "read"]
         if message_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for message_status -> " + message_status
             self._message_status = "outdated_sdk_version"

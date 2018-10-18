@@ -41,12 +41,13 @@ class AnalyticsSurvey(object):
             'survey_id': 'str',
             'survey_form_id': 'str',
             'survey_form_context_id': 'str',
+            'event_time': 'datetime',
             'user_id': 'str',
             'queue_id': 'str',
             'status': 'str',
             'geto_survey_total_score': 'int',
             'survey_promoter_score': 'int',
-            'survey_completed_time': 'int',
+            'getsurvey_completed_date': 'datetime',
             'media_types': 'list[str]',
             'language_ids': 'list[str]',
             'skill_ids': 'list[str]'
@@ -56,12 +57,13 @@ class AnalyticsSurvey(object):
             'survey_id': 'surveyId',
             'survey_form_id': 'surveyFormId',
             'survey_form_context_id': 'surveyFormContextId',
+            'event_time': 'eventTime',
             'user_id': 'userId',
             'queue_id': 'queueId',
             'status': 'status',
             'geto_survey_total_score': 'getoSurveyTotalScore',
             'survey_promoter_score': 'surveyPromoterScore',
-            'survey_completed_time': 'surveyCompletedTime',
+            'getsurvey_completed_date': 'getsurveyCompletedDate',
             'media_types': 'mediaTypes',
             'language_ids': 'languageIds',
             'skill_ids': 'skillIds'
@@ -70,12 +72,13 @@ class AnalyticsSurvey(object):
         self._survey_id = None
         self._survey_form_id = None
         self._survey_form_context_id = None
+        self._event_time = None
         self._user_id = None
         self._queue_id = None
         self._status = None
         self._geto_survey_total_score = None
         self._survey_promoter_score = None
-        self._survey_completed_time = None
+        self._getsurvey_completed_date = None
         self._media_types = None
         self._language_ids = None
         self._skill_ids = None
@@ -148,6 +151,29 @@ class AnalyticsSurvey(object):
         """
         
         self._survey_form_context_id = survey_form_context_id
+
+    @property
+    def event_time(self):
+        """
+        Gets the event_time of this AnalyticsSurvey.
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The event_time of this AnalyticsSurvey.
+        :rtype: datetime
+        """
+        return self._event_time
+
+    @event_time.setter
+    def event_time(self, event_time):
+        """
+        Sets the event_time of this AnalyticsSurvey.
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param event_time: The event_time of this AnalyticsSurvey.
+        :type: datetime
+        """
+        
+        self._event_time = event_time
 
     @property
     def user_id(self):
@@ -265,27 +291,27 @@ class AnalyticsSurvey(object):
         self._survey_promoter_score = survey_promoter_score
 
     @property
-    def survey_completed_time(self):
+    def getsurvey_completed_date(self):
         """
-        Gets the survey_completed_time of this AnalyticsSurvey.
-        Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+        Gets the getsurvey_completed_date of this AnalyticsSurvey.
+        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
-        :return: The survey_completed_time of this AnalyticsSurvey.
-        :rtype: int
+        :return: The getsurvey_completed_date of this AnalyticsSurvey.
+        :rtype: datetime
         """
-        return self._survey_completed_time
+        return self._getsurvey_completed_date
 
-    @survey_completed_time.setter
-    def survey_completed_time(self, survey_completed_time):
+    @getsurvey_completed_date.setter
+    def getsurvey_completed_date(self, getsurvey_completed_date):
         """
-        Sets the survey_completed_time of this AnalyticsSurvey.
-        Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+        Sets the getsurvey_completed_date of this AnalyticsSurvey.
+        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
-        :param survey_completed_time: The survey_completed_time of this AnalyticsSurvey.
-        :type: int
+        :param getsurvey_completed_date: The getsurvey_completed_date of this AnalyticsSurvey.
+        :type: datetime
         """
         
-        self._survey_completed_time = survey_completed_time
+        self._getsurvey_completed_date = getsurvey_completed_date
 
     @property
     def media_types(self):

@@ -49,6 +49,7 @@ class DncListNotification(object):
             'login_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
+            'division': 'DocumentDataV2NotificationCreatedBy',
             'additional_properties': 'object'
         }
 
@@ -64,6 +65,7 @@ class DncListNotification(object):
             'login_id': 'loginId',
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
+            'division': 'division',
             'additional_properties': 'additionalProperties'
         }
 
@@ -78,6 +80,7 @@ class DncListNotification(object):
         self._login_id = None
         self._dnc_codes = None
         self._license_id = None
+        self._division = None
         self._additional_properties = None
 
     @property
@@ -336,6 +339,29 @@ class DncListNotification(object):
         """
         
         self._license_id = license_id
+
+    @property
+    def division(self):
+        """
+        Gets the division of this DncListNotification.
+
+
+        :return: The division of this DncListNotification.
+        :rtype: DocumentDataV2NotificationCreatedBy
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this DncListNotification.
+
+
+        :param division: The division of this DncListNotification.
+        :type: DocumentDataV2NotificationCreatedBy
+        """
+        
+        self._division = division
 
     @property
     def additional_properties(self):

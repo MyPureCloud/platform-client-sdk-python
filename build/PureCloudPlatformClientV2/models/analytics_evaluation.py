@@ -41,7 +41,7 @@ class AnalyticsEvaluation(object):
             'evaluation_id': 'str',
             'evaluator_id': 'str',
             'user_id': 'str',
-            'event_time': 'str',
+            'event_time': 'datetime',
             'queue_id': 'str',
             'form_id': 'str',
             'context_id': 'str',
@@ -147,10 +147,10 @@ class AnalyticsEvaluation(object):
     def event_time(self):
         """
         Gets the event_time of this AnalyticsEvaluation.
-        Specifies when an evaluation occurred
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The event_time of this AnalyticsEvaluation.
-        :rtype: str
+        :rtype: datetime
         """
         return self._event_time
 
@@ -158,10 +158,10 @@ class AnalyticsEvaluation(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this AnalyticsEvaluation.
-        Specifies when an evaluation occurred
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param event_time: The event_time of this AnalyticsEvaluation.
-        :type: str
+        :type: datetime
         """
         
         self._event_time = event_time

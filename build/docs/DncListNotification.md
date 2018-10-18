@@ -18,6 +18,7 @@ title: DncListNotification
 | **login_id** | **str** |  | [optional] |
 | **dnc_codes** | **list[str]** |  | [optional] |
 | **license_id** | **str** |  | [optional] |
+| **division** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

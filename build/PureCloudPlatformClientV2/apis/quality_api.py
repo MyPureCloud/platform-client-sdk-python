@@ -2089,6 +2089,84 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_quality_forms_surveys_bulk(self, ids, **kwargs):
+        """
+        Retrieve a list of survey forms by their ids
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_forms_surveys_bulk(ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] ids: A comma-delimited list of valid survey form ids (required)
+        :return: SurveyFormEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_forms_surveys_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'ids' is set
+        if ('ids' not in params) or (params['ids'] is None):
+            raise ValueError("Missing the required parameter `ids` when calling `get_quality_forms_surveys_bulk`")
+
+
+        resource_path = '/api/v2/quality/forms/surveys/bulk'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SurveyFormEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_quality_keywordset(self, keyword_set_id, **kwargs):
         """
         Get a keywordSet by id.

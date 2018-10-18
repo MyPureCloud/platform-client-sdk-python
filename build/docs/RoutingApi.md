@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
 |[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
 |[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
+|[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
@@ -1452,6 +1453,64 @@ except ApiException as e:
 ### Return type
 
 [**QueueEntityListing**](QueueEntityListing.html)
+
+<a name="get_routing_queues_me"></a>
+
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_routing_queues_me(joined=joined, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+
+
+
+Get a paged listing of queues the user is a member of.
+
+
+
+Wraps GET /api/v2/routing/queues/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+joined = true # bool | Joined (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
+
+try:
+    # Get a paged listing of queues the user is a member of.
+    api_response = api_instance.get_routing_queues_me(joined=joined, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_queues_me: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **joined** | **bool**| Joined | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to name] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="get_routing_skill"></a>
 

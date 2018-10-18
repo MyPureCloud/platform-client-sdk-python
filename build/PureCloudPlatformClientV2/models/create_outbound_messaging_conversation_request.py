@@ -89,7 +89,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def to_address(self):
         """
         Gets the to_address of this CreateOutboundMessagingConversationRequest.
-        The messaging address of the recipient of the message.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
 
         :return: The to_address of this CreateOutboundMessagingConversationRequest.
         :rtype: str
@@ -100,7 +100,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def to_address(self, to_address):
         """
         Sets the to_address of this CreateOutboundMessagingConversationRequest.
-        The messaging address of the recipient of the message.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
 
         :param to_address: The to_address of this CreateOutboundMessagingConversationRequest.
         :type: str

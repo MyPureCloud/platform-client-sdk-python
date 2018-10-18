@@ -47,8 +47,8 @@ class UserScheduleAdherenceUpdateNotification(object):
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
-            'adherence_change_time': 'IntradayDataUpdateNotificationStartDate',
-            'presence_update_time': 'UserScheduleAdherenceUpdateNotificationDateTime'
+            'adherence_change_time': 'datetime',
+            'presence_update_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -299,7 +299,7 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :return: The adherence_change_time of this UserScheduleAdherenceUpdateNotification.
-        :rtype: IntradayDataUpdateNotificationStartDate
+        :rtype: datetime
         """
         return self._adherence_change_time
 
@@ -310,7 +310,7 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :param adherence_change_time: The adherence_change_time of this UserScheduleAdherenceUpdateNotification.
-        :type: IntradayDataUpdateNotificationStartDate
+        :type: datetime
         """
         
         self._adherence_change_time = adherence_change_time
@@ -322,7 +322,7 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :return: The presence_update_time of this UserScheduleAdherenceUpdateNotification.
-        :rtype: UserScheduleAdherenceUpdateNotificationDateTime
+        :rtype: datetime
         """
         return self._presence_update_time
 
@@ -333,7 +333,7 @@ class UserScheduleAdherenceUpdateNotification(object):
 
 
         :param presence_update_time: The presence_update_time of this UserScheduleAdherenceUpdateNotification.
-        :type: UserScheduleAdherenceUpdateNotificationDateTime
+        :type: datetime
         """
         
         self._presence_update_time = presence_update_time

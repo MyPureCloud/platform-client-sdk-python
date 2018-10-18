@@ -53,6 +53,7 @@ class ReportingExportJobResponse(object):
             'created_date_time': 'datetime',
             'modified_date_time': 'datetime',
             'locale': 'str',
+            'percentage_complete': 'float',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class ReportingExportJobResponse(object):
             'created_date_time': 'createdDateTime',
             'modified_date_time': 'modifiedDateTime',
             'locale': 'locale',
+            'percentage_complete': 'percentageComplete',
             'self_uri': 'selfUri'
         }
 
@@ -90,6 +92,7 @@ class ReportingExportJobResponse(object):
         self._created_date_time = None
         self._modified_date_time = None
         self._locale = None
+        self._percentage_complete = None
         self._self_uri = None
 
     @property
@@ -158,7 +161,7 @@ class ReportingExportJobResponse(object):
         :param status: The status of this ReportingExportJobResponse.
         :type: str
         """
-        allowed_values = ["SUBMITTED", "RUNNING", "COMPLETED", "FAILED"]
+        allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
@@ -452,6 +455,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._locale = locale
+
+    @property
+    def percentage_complete(self):
+        """
+        Gets the percentage_complete of this ReportingExportJobResponse.
+        The percentage of the job that has completed processing
+
+        :return: The percentage_complete of this ReportingExportJobResponse.
+        :rtype: float
+        """
+        return self._percentage_complete
+
+    @percentage_complete.setter
+    def percentage_complete(self, percentage_complete):
+        """
+        Sets the percentage_complete of this ReportingExportJobResponse.
+        The percentage of the job that has completed processing
+
+        :param percentage_complete: The percentage_complete of this ReportingExportJobResponse.
+        :type: float
+        """
+        
+        self._percentage_complete = percentage_complete
 
     @property
     def self_uri(self):

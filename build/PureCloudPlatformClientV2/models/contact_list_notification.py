@@ -52,6 +52,7 @@ class ContactListNotification(object):
             'attempt_limits': 'DocumentDataV2NotificationCreatedBy',
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
+            'division': 'ContactListNotificationUriReference',
             'additional_properties': 'object'
         }
 
@@ -70,6 +71,7 @@ class ContactListNotification(object):
             'attempt_limits': 'attemptLimits',
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'zip_code_column_name': 'zipCodeColumnName',
+            'division': 'division',
             'additional_properties': 'additionalProperties'
         }
 
@@ -87,6 +89,7 @@ class ContactListNotification(object):
         self._attempt_limits = None
         self._automatic_time_zone_mapping = None
         self._zip_code_column_name = None
+        self._division = None
         self._additional_properties = None
 
     @property
@@ -410,6 +413,29 @@ class ContactListNotification(object):
         """
         
         self._zip_code_column_name = zip_code_column_name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this ContactListNotification.
+
+
+        :return: The division of this ContactListNotification.
+        :rtype: ContactListNotificationUriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this ContactListNotification.
+
+
+        :param division: The division of this ContactListNotification.
+        :type: ContactListNotificationUriReference
+        """
+        
+        self._division = division
 
     @property
     def additional_properties(self):
