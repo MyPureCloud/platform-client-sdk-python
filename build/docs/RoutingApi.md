@@ -889,7 +889,7 @@ This endpoint does not need any parameter.
 
 <a name="get_routing_languages"></a>
 
-## [**LanguageEntityListing**](LanguageEntityListing.html) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## [**LanguageEntityListing**](LanguageEntityListing.html) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id)
 
 
 
@@ -919,10 +919,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | id (optional)
 
 try:
     # Get the list of supported languages.
-    api_response = api_instance.get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+    api_response = api_instance.get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_languages: %s\n" % e
@@ -937,6 +938,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1564,7 +1566,7 @@ except ApiException as e:
 
 <a name="get_routing_skills"></a>
 
-## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name)
+## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
 
 
 
@@ -1593,10 +1595,11 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Filter for results that start with this value (optional)
+id = ['id_example'] # list[str] | id (optional)
 
 try:
     # Get the list of routing skills.
-    api_response = api_instance.get_routing_skills(page_size=page_size, page_number=page_number, name=name)
+    api_response = api_instance.get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_skills: %s\n" % e
@@ -1610,6 +1613,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Filter for results that start with this value | [optional]  |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

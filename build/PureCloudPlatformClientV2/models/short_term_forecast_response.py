@@ -73,7 +73,7 @@ class ShortTermForecastResponse(object):
         :param status: The status of this ShortTermForecastResponse.
         :type: str
         """
-        allowed_values = ["Processing", "Complete", "Error"]
+        allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"

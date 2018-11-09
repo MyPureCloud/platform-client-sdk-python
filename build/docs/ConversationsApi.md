@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
 |[**get_conversation_participant_secureivrsession**](ConversationsApi.html#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
 |[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
@@ -309,6 +310,57 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsConversation**](AnalyticsConversation.html)
+
+<a name="get_analytics_conversations_details"></a>
+
+## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversations_details(id=id)
+
+
+
+Gets multiple conversations by id
+
+
+
+Wraps GET /api/v2/analytics/conversations/details 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+id = ['id_example'] # list[str] | Comma-separated conversation ids (optional)
+
+try:
+    # Gets multiple conversations by id
+    api_response = api_instance.get_analytics_conversations_details(id=id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_analytics_conversations_details: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| Comma-separated conversation ids | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

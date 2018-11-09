@@ -128,7 +128,7 @@ class ConversationNotificationMessages(object):
         :param message_status: The message_status of this ConversationNotificationMessages.
         :type: str
         """
-        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED"]
+        allowed_values = ["QUEUED", "SENT", "FAILED", "RECEIVED", "DELIVERY_SUCCESS", "DELIVERY_FAILED", "READ"]
         if message_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for message_status -> " + message_status
             self._message_status = "outdated_sdk_version"

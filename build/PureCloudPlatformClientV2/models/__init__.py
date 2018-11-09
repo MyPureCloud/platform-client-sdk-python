@@ -419,6 +419,8 @@ from .disconnect_reason import DisconnectReason
 from .division import Division
 from .dnc_list import DncList
 from .dnc_list_create import DncListCreate
+from .dnc_list_division_view import DncListDivisionView
+from .dnc_list_division_view_listing import DncListDivisionViewListing
 from .dnc_list_entity_listing import DncListEntityListing
 from .dnc_list_notification import DncListNotification
 from .dnc_list_notification_import_status import DncListNotificationImportStatus
@@ -790,11 +792,13 @@ from .message_data import MessageData
 from .message_details import MessageDetails
 from .message_info import MessageInfo
 from .message_media import MessageMedia
+from .message_media_attachment import MessageMediaAttachment
 from .message_media_data import MessageMediaData
 from .message_media_participant import MessageMediaParticipant
 from .message_media_policy import MessageMediaPolicy
 from .message_media_policy_conditions import MessageMediaPolicyConditions
 from .message_sticker import MessageSticker
+from .message_sticker_attachment import MessageStickerAttachment
 from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .meta_data import MetaData

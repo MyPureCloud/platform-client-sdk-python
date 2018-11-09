@@ -1343,12 +1343,13 @@ class RoutingApi(object):
         :param int page_number: Page number
         :param str sort_order: Ascending or descending sort order
         :param str name: Name
+        :param list[str] id: id
         :return: LanguageEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_order', 'name']
+        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -1375,6 +1376,8 @@ class RoutingApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 
@@ -2365,12 +2368,13 @@ class RoutingApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str name: Filter for results that start with this value
+        :param list[str] id: id
         :return: SkillEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name']
+        all_params = ['page_size', 'page_number', 'name', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -2395,6 +2399,8 @@ class RoutingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 

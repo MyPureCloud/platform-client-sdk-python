@@ -75,7 +75,8 @@ class AnalyticsSession(object):
             'video_address_self': 'str',
             'segments': 'list[AnalyticsConversationSegment]',
             'metrics': 'list[AnalyticsSessionMetric]',
-            'flow': 'AnalyticsFlow'
+            'flow': 'AnalyticsFlow',
+            'recording': 'bool'
         }
 
         self.attribute_map = {
@@ -116,7 +117,8 @@ class AnalyticsSession(object):
             'video_address_self': 'videoAddressSelf',
             'segments': 'segments',
             'metrics': 'metrics',
-            'flow': 'flow'
+            'flow': 'flow',
+            'recording': 'recording'
         }
 
         self._media_type = None
@@ -157,6 +159,7 @@ class AnalyticsSession(object):
         self._segments = None
         self._metrics = None
         self._flow = None
+        self._recording = None
 
     @property
     def media_type(self):
@@ -1043,6 +1046,29 @@ class AnalyticsSession(object):
         """
         
         self._flow = flow
+
+    @property
+    def recording(self):
+        """
+        Gets the recording of this AnalyticsSession.
+        Flag determining if an audio recording was started or not
+
+        :return: The recording of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._recording
+
+    @recording.setter
+    def recording(self, recording):
+        """
+        Sets the recording of this AnalyticsSession.
+        Flag determining if an audio recording was started or not
+
+        :param recording: The recording of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._recording = recording
 
     def to_dict(self):
         """

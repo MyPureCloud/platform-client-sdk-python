@@ -119,7 +119,7 @@ class WfmHistoricalAdherenceCalculationsCompleteNoticeNotification(object):
         :param query_state: The query_state of this WfmHistoricalAdherenceCalculationsCompleteNoticeNotification.
         :type: str
         """
-        allowed_values = ["Processing", "Complete", "Error"]
+        allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if query_state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for query_state -> " + query_state
             self._query_state = "outdated_sdk_version"

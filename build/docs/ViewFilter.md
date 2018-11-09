@@ -38,6 +38,13 @@ title: ViewFilter
 | **survey_form_ids** | **list[str]** | The survey form ids used to filter the view | [optional] |
 | **survey_total_score** | [**NumericRange**](NumericRange.html) | The survey total score used to filter the view | [optional] |
 | **survey_nps_score** | [**NumericRange**](NumericRange.html) | The survey NPS score used to filter the view | [optional] |
+| **show_secondary_status** | **bool** | Indicates if the Secondary Status should be shown | [optional] |
+| **agent_duration_sort_order** | **str** | Provides the agent duration sort order | [optional] |
+| **waiting_duration_sort_order** | **str** | Provides the waiting duration sort order | [optional] |
+| **interacting_duration_sort_order** | **str** | Provides the interacting duration sort order | [optional] |
+| **agent_name** | **str** | Displays the Agent name as provided by the user | [optional] |
+| **skills_list** | **list[str]** | The list of skill strings as free form text | [optional] |
+| **language_list** | **list[str]** | The list of language strings as free form text | [optional] |
 {: class="table table-striped"}
 
 

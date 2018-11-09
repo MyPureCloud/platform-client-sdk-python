@@ -68,7 +68,14 @@ class ViewFilter(object):
             'division_ids': 'list[str]',
             'survey_form_ids': 'list[str]',
             'survey_total_score': 'NumericRange',
-            'survey_nps_score': 'NumericRange'
+            'survey_nps_score': 'NumericRange',
+            'show_secondary_status': 'bool',
+            'agent_duration_sort_order': 'str',
+            'waiting_duration_sort_order': 'str',
+            'interacting_duration_sort_order': 'str',
+            'agent_name': 'str',
+            'skills_list': 'list[str]',
+            'language_list': 'list[str]'
         }
 
         self.attribute_map = {
@@ -102,7 +109,14 @@ class ViewFilter(object):
             'division_ids': 'divisionIds',
             'survey_form_ids': 'surveyFormIds',
             'survey_total_score': 'surveyTotalScore',
-            'survey_nps_score': 'surveyNpsScore'
+            'survey_nps_score': 'surveyNpsScore',
+            'show_secondary_status': 'showSecondaryStatus',
+            'agent_duration_sort_order': 'agentDurationSortOrder',
+            'waiting_duration_sort_order': 'waitingDurationSortOrder',
+            'interacting_duration_sort_order': 'interactingDurationSortOrder',
+            'agent_name': 'agentName',
+            'skills_list': 'skillsList',
+            'language_list': 'languageList'
         }
 
         self._media_types = None
@@ -136,6 +150,13 @@ class ViewFilter(object):
         self._survey_form_ids = None
         self._survey_total_score = None
         self._survey_nps_score = None
+        self._show_secondary_status = None
+        self._agent_duration_sort_order = None
+        self._waiting_duration_sort_order = None
+        self._interacting_duration_sort_order = None
+        self._agent_name = None
+        self._skills_list = None
+        self._language_list = None
 
     @property
     def media_types(self):
@@ -849,6 +870,179 @@ class ViewFilter(object):
         """
         
         self._survey_nps_score = survey_nps_score
+
+    @property
+    def show_secondary_status(self):
+        """
+        Gets the show_secondary_status of this ViewFilter.
+        Indicates if the Secondary Status should be shown
+
+        :return: The show_secondary_status of this ViewFilter.
+        :rtype: bool
+        """
+        return self._show_secondary_status
+
+    @show_secondary_status.setter
+    def show_secondary_status(self, show_secondary_status):
+        """
+        Sets the show_secondary_status of this ViewFilter.
+        Indicates if the Secondary Status should be shown
+
+        :param show_secondary_status: The show_secondary_status of this ViewFilter.
+        :type: bool
+        """
+        
+        self._show_secondary_status = show_secondary_status
+
+    @property
+    def agent_duration_sort_order(self):
+        """
+        Gets the agent_duration_sort_order of this ViewFilter.
+        Provides the agent duration sort order
+
+        :return: The agent_duration_sort_order of this ViewFilter.
+        :rtype: str
+        """
+        return self._agent_duration_sort_order
+
+    @agent_duration_sort_order.setter
+    def agent_duration_sort_order(self, agent_duration_sort_order):
+        """
+        Sets the agent_duration_sort_order of this ViewFilter.
+        Provides the agent duration sort order
+
+        :param agent_duration_sort_order: The agent_duration_sort_order of this ViewFilter.
+        :type: str
+        """
+        allowed_values = ["ascending", "descending"]
+        if agent_duration_sort_order.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for agent_duration_sort_order -> " + agent_duration_sort_order
+            self._agent_duration_sort_order = "outdated_sdk_version"
+        else:
+            self._agent_duration_sort_order = agent_duration_sort_order
+
+    @property
+    def waiting_duration_sort_order(self):
+        """
+        Gets the waiting_duration_sort_order of this ViewFilter.
+        Provides the waiting duration sort order
+
+        :return: The waiting_duration_sort_order of this ViewFilter.
+        :rtype: str
+        """
+        return self._waiting_duration_sort_order
+
+    @waiting_duration_sort_order.setter
+    def waiting_duration_sort_order(self, waiting_duration_sort_order):
+        """
+        Sets the waiting_duration_sort_order of this ViewFilter.
+        Provides the waiting duration sort order
+
+        :param waiting_duration_sort_order: The waiting_duration_sort_order of this ViewFilter.
+        :type: str
+        """
+        allowed_values = ["ascending", "descending"]
+        if waiting_duration_sort_order.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for waiting_duration_sort_order -> " + waiting_duration_sort_order
+            self._waiting_duration_sort_order = "outdated_sdk_version"
+        else:
+            self._waiting_duration_sort_order = waiting_duration_sort_order
+
+    @property
+    def interacting_duration_sort_order(self):
+        """
+        Gets the interacting_duration_sort_order of this ViewFilter.
+        Provides the interacting duration sort order
+
+        :return: The interacting_duration_sort_order of this ViewFilter.
+        :rtype: str
+        """
+        return self._interacting_duration_sort_order
+
+    @interacting_duration_sort_order.setter
+    def interacting_duration_sort_order(self, interacting_duration_sort_order):
+        """
+        Sets the interacting_duration_sort_order of this ViewFilter.
+        Provides the interacting duration sort order
+
+        :param interacting_duration_sort_order: The interacting_duration_sort_order of this ViewFilter.
+        :type: str
+        """
+        allowed_values = ["ascending", "descending"]
+        if interacting_duration_sort_order.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for interacting_duration_sort_order -> " + interacting_duration_sort_order
+            self._interacting_duration_sort_order = "outdated_sdk_version"
+        else:
+            self._interacting_duration_sort_order = interacting_duration_sort_order
+
+    @property
+    def agent_name(self):
+        """
+        Gets the agent_name of this ViewFilter.
+        Displays the Agent name as provided by the user
+
+        :return: The agent_name of this ViewFilter.
+        :rtype: str
+        """
+        return self._agent_name
+
+    @agent_name.setter
+    def agent_name(self, agent_name):
+        """
+        Sets the agent_name of this ViewFilter.
+        Displays the Agent name as provided by the user
+
+        :param agent_name: The agent_name of this ViewFilter.
+        :type: str
+        """
+        
+        self._agent_name = agent_name
+
+    @property
+    def skills_list(self):
+        """
+        Gets the skills_list of this ViewFilter.
+        The list of skill strings as free form text
+
+        :return: The skills_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._skills_list
+
+    @skills_list.setter
+    def skills_list(self, skills_list):
+        """
+        Sets the skills_list of this ViewFilter.
+        The list of skill strings as free form text
+
+        :param skills_list: The skills_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._skills_list = skills_list
+
+    @property
+    def language_list(self):
+        """
+        Gets the language_list of this ViewFilter.
+        The list of language strings as free form text
+
+        :return: The language_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._language_list
+
+    @language_list.setter
+    def language_list(self, language_list):
+        """
+        Sets the language_list of this ViewFilter.
+        The list of language strings as free form text
+
+        :param language_list: The language_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._language_list = language_list
 
     def to_dict(self):
         """

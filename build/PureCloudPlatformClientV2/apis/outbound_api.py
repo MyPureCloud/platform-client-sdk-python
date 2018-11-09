@@ -3247,10 +3247,94 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_outbound_contactlists_divisionview(self, contact_list_id, **kwargs):
+        """
+        Get a basic ContactList information object
+        This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_contactlists_divisionview(contact_list_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contactlist ID (required)
+        :param bool include_import_status: Include import status
+        :param bool include_size: Include size
+        :return: ContactListDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'include_import_status', 'include_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_contactlists_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `get_outbound_contactlists_divisionview`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/divisionviews/{contactListId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+        if 'include_import_status' in params:
+            query_params['includeImportStatus'] = params['include_import_status']
+        if 'include_size' in params:
+            query_params['includeSize'] = params['include_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactListDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_outbound_contactlists_divisionviews(self, **kwargs):
         """
         Query a list of simplified contact list objects.
-        This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+        This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3687,6 +3771,189 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DncListEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_dnclists_divisionview(self, dnc_list_id, **kwargs):
+        """
+        Get a basic DncList information object
+        This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_dnclists_divisionview(dnc_list_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dnc_list_id: Dnclist ID (required)
+        :param bool include_import_status: Include import status
+        :param bool include_size: Include size
+        :return: DncListDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dnc_list_id', 'include_import_status', 'include_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_dnclists_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dnc_list_id' is set
+        if ('dnc_list_id' not in params) or (params['dnc_list_id'] is None):
+            raise ValueError("Missing the required parameter `dnc_list_id` when calling `get_outbound_dnclists_divisionview`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/divisionviews/{dncListId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'dnc_list_id' in params:
+            path_params['dncListId'] = params['dnc_list_id']
+
+        query_params = {}
+        if 'include_import_status' in params:
+            query_params['includeImportStatus'] = params['include_import_status']
+        if 'include_size' in params:
+            query_params['includeSize'] = params['include_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DncListDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_dnclists_divisionviews(self, **kwargs):
+        """
+        Query a list of simplified dnc list objects.
+        This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_dnclists_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool include_import_status: Include import status
+        :param bool include_size: Include size
+        :param int page_size: Page size. The max that will be returned is 100.
+        :param int page_number: Page number
+        :param str filter_type: Filter type
+        :param str name: Name
+        :param list[str] id: id
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :return: DncListDivisionViewListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'id', 'sort_by', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_dnclists_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/dnclists/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'include_import_status' in params:
+            query_params['includeImportStatus'] = params['include_import_status']
+        if 'include_size' in params:
+            query_params['includeSize'] = params['include_size']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DncListDivisionViewListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5361,84 +5628,6 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[CampaignProgress]',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def post_outbound_contactlist_clear(self, contact_list_id, **kwargs):
-        """
-        Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_outbound_contactlist_clear(contact_list_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str contact_list_id: Contact List ID (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['contact_list_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_outbound_contactlist_clear" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'contact_list_id' is set
-        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
-            raise ValueError("Missing the required parameter `contact_list_id` when calling `post_outbound_contactlist_clear`")
-
-
-        resource_path = '/api/v2/outbound/contactlists/{contactListId}/clear'.replace('{format}', 'json')
-        path_params = {}
-        if 'contact_list_id' in params:
-            path_params['contactListId'] = params['contact_list_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud Auth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

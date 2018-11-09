@@ -3856,7 +3856,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows(self, type, **kwargs):
+    def get_flows(self, **kwargs):
         """
         Get a pageable list of flows, filtered by query parameters
         Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
@@ -3867,11 +3867,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_flows(type, callback=callback_function)
+        >>> thread = api.get_flows(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str type: Type (required)
+        :param list[str] type: Type
         :param int page_number: Page number
         :param int page_size: Page size
         :param str sort_by: Sort by
@@ -3907,9 +3907,6 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'type' is set
-        if ('type' not in params) or (params['type'] is None):
-            raise ValueError("Missing the required parameter `type` when calling `get_flows`")
 
 
         resource_path = '/api/v2/flows'.replace('{format}', 'json')
@@ -4327,7 +4324,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_flows_divisionviews(self, type, **kwargs):
+    def get_flows_divisionviews(self, **kwargs):
         """
         Get a pageable list of basic flow information objects filterable by query parameters.
         This returns a simplified version of /flow consisting of name and type.
@@ -4338,11 +4335,11 @@ class ArchitectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_flows_divisionviews(type, callback=callback_function)
+        >>> thread = api.get_flows_divisionviews(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str type: Type (required)
+        :param list[str] type: Type
         :param int page_number: Page number
         :param int page_size: Page size
         :param str sort_by: Sort by
@@ -4371,9 +4368,6 @@ class ArchitectApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'type' is set
-        if ('type' not in params) or (params['type'] is None):
-            raise ValueError("Missing the required parameter `type` when calling `get_flows_divisionviews`")
 
 
         resource_path = '/api/v2/flows/divisionviews'.replace('{format}', 'json')

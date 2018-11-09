@@ -48,7 +48,8 @@ class CreateCallRequest(object):
             'language_id': 'str',
             'routing_skills_ids': 'list[str]',
             'conversation_ids': 'list[str]',
-            'participants': 'list[Destination]'
+            'participants': 'list[Destination]',
+            'uui_data': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class CreateCallRequest(object):
             'language_id': 'languageId',
             'routing_skills_ids': 'routingSkillsIds',
             'conversation_ids': 'conversationIds',
-            'participants': 'participants'
+            'participants': 'participants',
+            'uui_data': 'uuiData'
         }
 
         self._phone_number = None
@@ -76,6 +78,7 @@ class CreateCallRequest(object):
         self._routing_skills_ids = None
         self._conversation_ids = None
         self._participants = None
+        self._uui_data = None
 
     @property
     def phone_number(self):
@@ -329,6 +332,29 @@ class CreateCallRequest(object):
         """
         
         self._participants = participants
+
+    @property
+    def uui_data(self):
+        """
+        Gets the uui_data of this CreateCallRequest.
+        User to User Information (UUI) data managed by SIP session application.
+
+        :return: The uui_data of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._uui_data
+
+    @uui_data.setter
+    def uui_data(self, uui_data):
+        """
+        Sets the uui_data of this CreateCallRequest.
+        User to User Information (UUI) data managed by SIP session application.
+
+        :param uui_data: The uui_data of this CreateCallRequest.
+        :type: str
+        """
+        
+        self._uui_data = uui_data
 
     def to_dict(self):
         """

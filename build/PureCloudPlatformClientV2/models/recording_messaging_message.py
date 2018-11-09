@@ -44,7 +44,9 @@ class RecordingMessagingMessage(object):
             'to': 'str',
             'timestamp': 'datetime',
             'id': 'str',
-            'message_text': 'str'
+            'message_text': 'str',
+            'message_media_attachments': 'list[MessageMediaAttachment]',
+            'message_sticker_attachments': 'list[MessageStickerAttachment]'
         }
 
         self.attribute_map = {
@@ -54,7 +56,9 @@ class RecordingMessagingMessage(object):
             'to': 'to',
             'timestamp': 'timestamp',
             'id': 'id',
-            'message_text': 'messageText'
+            'message_text': 'messageText',
+            'message_media_attachments': 'messageMediaAttachments',
+            'message_sticker_attachments': 'messageStickerAttachments'
         }
 
         self._pcFrom = None
@@ -64,6 +68,8 @@ class RecordingMessagingMessage(object):
         self._timestamp = None
         self._id = None
         self._message_text = None
+        self._message_media_attachments = None
+        self._message_sticker_attachments = None
 
     @property
     def pcFrom(self):
@@ -225,6 +231,52 @@ class RecordingMessagingMessage(object):
         """
         
         self._message_text = message_text
+
+    @property
+    def message_media_attachments(self):
+        """
+        Gets the message_media_attachments of this RecordingMessagingMessage.
+
+
+        :return: The message_media_attachments of this RecordingMessagingMessage.
+        :rtype: list[MessageMediaAttachment]
+        """
+        return self._message_media_attachments
+
+    @message_media_attachments.setter
+    def message_media_attachments(self, message_media_attachments):
+        """
+        Sets the message_media_attachments of this RecordingMessagingMessage.
+
+
+        :param message_media_attachments: The message_media_attachments of this RecordingMessagingMessage.
+        :type: list[MessageMediaAttachment]
+        """
+        
+        self._message_media_attachments = message_media_attachments
+
+    @property
+    def message_sticker_attachments(self):
+        """
+        Gets the message_sticker_attachments of this RecordingMessagingMessage.
+
+
+        :return: The message_sticker_attachments of this RecordingMessagingMessage.
+        :rtype: list[MessageStickerAttachment]
+        """
+        return self._message_sticker_attachments
+
+    @message_sticker_attachments.setter
+    def message_sticker_attachments(self, message_sticker_attachments):
+        """
+        Sets the message_sticker_attachments of this RecordingMessagingMessage.
+
+
+        :param message_sticker_attachments: The message_sticker_attachments of this RecordingMessagingMessage.
+        :type: list[MessageStickerAttachment]
+        """
+        
+        self._message_sticker_attachments = message_sticker_attachments
 
     def to_dict(self):
         """

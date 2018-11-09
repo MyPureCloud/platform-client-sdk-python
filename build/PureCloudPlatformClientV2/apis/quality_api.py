@@ -1508,12 +1508,13 @@ class QualityApi(object):
         :param str previous_page: Previous page token
         :param str expand: Expand
         :param str name: Name
+        :param str sort_order: Order to sort results, either asc or desc
         :return: EvaluationFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1546,6 +1547,8 @@ class QualityApi(object):
             query_params['expand'] = params['expand']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -1763,12 +1766,13 @@ class QualityApi(object):
         :param str previous_page: Previous page token
         :param str expand: Expand
         :param str name: Name
+        :param str sort_order: Order to sort results, either asc or desc
         :return: EvaluationFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1801,6 +1805,8 @@ class QualityApi(object):
             query_params['expand'] = params['expand']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -2018,12 +2024,13 @@ class QualityApi(object):
         :param str previous_page: Previous page token
         :param str expand: Expand
         :param str name: Name
+        :param str sort_order: Order to sort results, either asc or desc
         :return: SurveyFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'next_page', 'previous_page', 'expand', 'name', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2056,6 +2063,8 @@ class QualityApi(object):
             query_params['expand'] = params['expand']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -2089,7 +2098,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_surveys_bulk(self, ids, **kwargs):
+    def get_quality_forms_surveys_bulk(self, id, **kwargs):
         """
         Retrieve a list of survey forms by their ids
         
@@ -2100,17 +2109,17 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_quality_forms_surveys_bulk(ids, callback=callback_function)
+        >>> thread = api.get_quality_forms_surveys_bulk(id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] ids: A comma-delimited list of valid survey form ids (required)
+        :param list[str] id: A comma-delimited list of valid survey form ids (required)
         :return: SurveyFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ids']
+        all_params = ['id']
         all_params.append('callback')
 
         params = locals()
@@ -2123,17 +2132,98 @@ class QualityApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'ids' is set
-        if ('ids' not in params) or (params['ids'] is None):
-            raise ValueError("Missing the required parameter `ids` when calling `get_quality_forms_surveys_bulk`")
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_quality_forms_surveys_bulk`")
 
 
         resource_path = '/api/v2/quality/forms/surveys/bulk'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
-        if 'ids' in params:
-            query_params['ids'] = params['ids']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SurveyFormEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_forms_surveys_bulk_contexts(self, context_id, **kwargs):
+        """
+        Retrieve a list of the latest form versions by context ids
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_forms_surveys_bulk_contexts(context_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] context_id: A comma-delimited list of valid survey form context ids (required)
+        :param bool published: If true, the latest published version will be included. If false, only the unpublished version will be included.
+        :return: SurveyFormEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['context_id', 'published']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_forms_surveys_bulk_contexts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'context_id' is set
+        if ('context_id' not in params) or (params['context_id'] is None):
+            raise ValueError("Missing the required parameter `context_id` when calling `get_quality_forms_surveys_bulk_contexts`")
+
+
+        resource_path = '/api/v2/quality/forms/surveys/bulk/contexts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'context_id' in params:
+            query_params['contextId'] = params['context_id']
+        if 'published' in params:
+            query_params['published'] = params['published']
 
         header_params = {}
 

@@ -2570,7 +2570,7 @@ except ApiException as e:
 
 <a name="get_flows"></a>
 
-## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
+## [**FlowEntityListing**](FlowEntityListing.html) get_flows(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
 
 
 
@@ -2597,7 +2597,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
-type = 'type_example' # str | Type
+type = ['type_example'] # list[str] | Type (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'id' # str | Sort by (optional) (default to id)
@@ -2618,7 +2618,7 @@ division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of flows, filtered by query parameters
-    api_response = api_instance.get_flows(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
+    api_response = api_instance.get_flows(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows: %s\n" % e
@@ -2629,7 +2629,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **type** | [**list[str]**](str.html)| Type | [optional] <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to id] |
@@ -2879,7 +2879,7 @@ except ApiException as e:
 
 <a name="get_flows_divisionviews"></a>
 
-## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
+## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
 
 
 
@@ -2906,7 +2906,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
-type = 'type_example' # str | Type
+type = ['type_example'] # list[str] | Type (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'id' # str | Sort by (optional) (default to id)
@@ -2920,7 +2920,7 @@ division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of basic flow information objects filterable by query parameters.
-    api_response = api_instance.get_flows_divisionviews(type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
+    api_response = api_instance.get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
@@ -2931,7 +2931,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **type** | [**list[str]**](str.html)| Type | [optional] <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to id] |

@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_analytics_reporting_schedule**](AnalyticsApi.html#delete_analytics_reporting_schedule) | Delete a scheduled report job.|
 |[**get_analytics_conversation_details**](AnalyticsApi.html#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
 |[**get_analytics_reporting_report_id_metadata**](AnalyticsApi.html#get_analytics_reporting_report_id_metadata) | Get a reporting metadata.|
@@ -129,6 +130,57 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsConversation**](AnalyticsConversation.html)
+
+<a name="get_analytics_conversations_details"></a>
+
+## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversations_details(id=id)
+
+
+
+Gets multiple conversations by id
+
+
+
+Wraps GET /api/v2/analytics/conversations/details 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+id = ['id_example'] # list[str] | Comma-separated conversation ids (optional)
+
+try:
+    # Gets multiple conversations by id
+    api_response = api_instance.get_analytics_conversations_details(id=id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->get_analytics_conversations_details: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| Comma-separated conversation ids | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
 |[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
 |[**get_quality_forms_surveys_bulk**](QualityApi.html#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
+|[**get_quality_forms_surveys_bulk_contexts**](QualityApi.html#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
 |[**get_quality_keywordset**](QualityApi.html#get_quality_keywordset) | Get a keywordSet by id.|
 |[**get_quality_keywordsets**](QualityApi.html#get_quality_keywordsets) | Get the list of keyword sets|
 |[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
@@ -991,7 +992,7 @@ except ApiException as e:
 
 <a name="get_quality_forms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1025,10 +1026,11 @@ next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 expand = 'expand_example' # str | Expand (optional)
 name = 'name_example' # str | Name (optional)
+sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
 try:
     # Get the list of evaluation forms
-    api_response = api_instance.get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+    api_response = api_instance.get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms: %s\n" % e
@@ -1046,6 +1048,7 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **expand** | **str**| Expand | [optional]  |
 | **name** | **str**| Name | [optional]  |
+| **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1160,7 +1163,7 @@ except ApiException as e:
 
 <a name="get_quality_forms_evaluations"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 
 
@@ -1194,10 +1197,11 @@ next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 expand = 'expand_example' # str | Expand (optional)
 name = 'name_example' # str | Name (optional)
+sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
 try:
     # Get the list of evaluation forms
-    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_evaluations: %s\n" % e
@@ -1215,6 +1219,7 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **expand** | **str**| Expand | [optional]  |
 | **name** | **str**| Name | [optional]  |
+| **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1329,7 +1334,7 @@ except ApiException as e:
 
 <a name="get_quality_forms_surveys"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 
 
@@ -1363,10 +1368,11 @@ next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 expand = 'expand_example' # str | Expand (optional)
 name = 'name_example' # str | Name (optional)
+sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
 try:
     # Get the list of survey forms
-    api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name)
+    api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_surveys: %s\n" % e
@@ -1384,6 +1390,7 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **expand** | **str**| Expand | [optional]  |
 | **name** | **str**| Name | [optional]  |
+| **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1392,7 +1399,7 @@ except ApiException as e:
 
 <a name="get_quality_forms_surveys_bulk"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk(ids)
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk(id)
 
 
 
@@ -1419,11 +1426,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-ids = ['ids_example'] # list[str] | A comma-delimited list of valid survey form ids
+id = ['id_example'] # list[str] | A comma-delimited list of valid survey form ids
 
 try:
     # Retrieve a list of survey forms by their ids
-    api_response = api_instance.get_quality_forms_surveys_bulk(ids)
+    api_response = api_instance.get_quality_forms_surveys_bulk(id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_surveys_bulk: %s\n" % e
@@ -1434,7 +1441,60 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **ids** | [**list[str]**](str.html)| A comma-delimited list of valid survey form ids |  |
+| **id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="get_quality_forms_surveys_bulk_contexts"></a>
+
+## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk_contexts(context_id, published=published)
+
+
+
+Retrieve a list of the latest form versions by context ids
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/bulk/contexts 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+context_id = ['context_id_example'] # list[str] | A comma-delimited list of valid survey form context ids
+published = true # bool | If true, the latest published version will be included. If false, only the unpublished version will be included. (optional) (default to true)
+
+try:
+    # Retrieve a list of the latest form versions by context ids
+    api_response = api_instance.get_quality_forms_surveys_bulk_contexts(context_id, published=published)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->get_quality_forms_surveys_bulk_contexts: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form context ids |  |
+| **published** | **bool**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

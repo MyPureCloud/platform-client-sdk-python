@@ -18,6 +18,7 @@ title: CreateCallRequest
 | **routing_skills_ids** | **list[str]** | The skill ID&#39;s to use for routing this call (if calling a queue). | [optional] |
 | **conversation_ids** | **list[str]** | The list of existing call conversations to merge into a new ad-hoc conference. | [optional] |
 | **participants** | [**list[Destination]**](Destination.html) | The list of participants to call to create a new ad-hoc conference. | [optional] |
+| **uui_data** | **str** | User to User Information (UUI) data managed by SIP session application. | [optional] |
 {: class="table table-striped"}
 
 

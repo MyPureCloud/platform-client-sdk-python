@@ -419,6 +419,8 @@ from .models.disconnect_reason import DisconnectReason
 from .models.division import Division
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate
+from .models.dnc_list_division_view import DncListDivisionView
+from .models.dnc_list_division_view_listing import DncListDivisionViewListing
 from .models.dnc_list_entity_listing import DncListEntityListing
 from .models.dnc_list_notification import DncListNotification
 from .models.dnc_list_notification_import_status import DncListNotificationImportStatus
@@ -790,11 +792,13 @@ from .models.message_data import MessageData
 from .models.message_details import MessageDetails
 from .models.message_info import MessageInfo
 from .models.message_media import MessageMedia
+from .models.message_media_attachment import MessageMediaAttachment
 from .models.message_media_data import MessageMediaData
 from .models.message_media_participant import MessageMediaParticipant
 from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
 from .models.message_sticker import MessageSticker
+from .models.message_sticker_attachment import MessageStickerAttachment
 from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .models.meta_data import MetaData
