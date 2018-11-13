@@ -39,16 +39,19 @@ class ServiceGoalGroupGoals(object):
         """
         self.swagger_types = {
             'service_level': 'WfmServiceLevel',
-            'average_speed_of_answer': 'WfmAverageSpeedOfAnswer'
+            'average_speed_of_answer': 'WfmAverageSpeedOfAnswer',
+            'abandon_rate': 'WfmAbandonRate'
         }
 
         self.attribute_map = {
             'service_level': 'serviceLevel',
-            'average_speed_of_answer': 'averageSpeedOfAnswer'
+            'average_speed_of_answer': 'averageSpeedOfAnswer',
+            'abandon_rate': 'abandonRate'
         }
 
         self._service_level = None
         self._average_speed_of_answer = None
+        self._abandon_rate = None
 
     @property
     def service_level(self):
@@ -95,6 +98,29 @@ class ServiceGoalGroupGoals(object):
         """
         
         self._average_speed_of_answer = average_speed_of_answer
+
+    @property
+    def abandon_rate(self):
+        """
+        Gets the abandon_rate of this ServiceGoalGroupGoals.
+        Abandon rate targets for this service goal group
+
+        :return: The abandon_rate of this ServiceGoalGroupGoals.
+        :rtype: WfmAbandonRate
+        """
+        return self._abandon_rate
+
+    @abandon_rate.setter
+    def abandon_rate(self, abandon_rate):
+        """
+        Sets the abandon_rate of this ServiceGoalGroupGoals.
+        Abandon rate targets for this service goal group
+
+        :param abandon_rate: The abandon_rate of this ServiceGoalGroupGoals.
+        :type: WfmAbandonRate
+        """
+        
+        self._abandon_rate = abandon_rate
 
     def to_dict(self):
         """
