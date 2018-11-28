@@ -66,7 +66,7 @@ class Prompt(object):
     def id(self):
         """
         Gets the id of this Prompt.
-        The globally unique identifier for the object.
+        The prompt identifier
 
         :return: The id of this Prompt.
         :rtype: str
@@ -77,7 +77,7 @@ class Prompt(object):
     def id(self, id):
         """
         Sets the id of this Prompt.
-        The globally unique identifier for the object.
+        The prompt identifier
 
         :param id: The id of this Prompt.
         :type: str

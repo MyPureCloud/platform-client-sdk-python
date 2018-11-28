@@ -7,7 +7,7 @@ title: Dependency
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | The dependency identifier | [optional] |
 | **name** | **str** |  | [optional] |
 | **version** | **str** |  | [optional] |
 | **type** | **str** |  | [optional] |

@@ -75,7 +75,10 @@ class ViewFilter(object):
             'interacting_duration_sort_order': 'str',
             'agent_name': 'str',
             'skills_list': 'list[str]',
-            'language_list': 'list[str]'
+            'language_list': 'list[str]',
+            'mos': 'NumericRange',
+            'survey_question_group_score': 'NumericRange',
+            'survey_promoter_score': 'NumericRange'
         }
 
         self.attribute_map = {
@@ -116,7 +119,10 @@ class ViewFilter(object):
             'interacting_duration_sort_order': 'interactingDurationSortOrder',
             'agent_name': 'agentName',
             'skills_list': 'skillsList',
-            'language_list': 'languageList'
+            'language_list': 'languageList',
+            'mos': 'mos',
+            'survey_question_group_score': 'surveyQuestionGroupScore',
+            'survey_promoter_score': 'surveyPromoterScore'
         }
 
         self._media_types = None
@@ -157,6 +163,9 @@ class ViewFilter(object):
         self._agent_name = None
         self._skills_list = None
         self._language_list = None
+        self._mos = None
+        self._survey_question_group_score = None
+        self._survey_promoter_score = None
 
     @property
     def media_types(self):
@@ -1043,6 +1052,75 @@ class ViewFilter(object):
         """
         
         self._language_list = language_list
+
+    @property
+    def mos(self):
+        """
+        Gets the mos of this ViewFilter.
+        The desired range for mos values
+
+        :return: The mos of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._mos
+
+    @mos.setter
+    def mos(self, mos):
+        """
+        Sets the mos of this ViewFilter.
+        The desired range for mos values
+
+        :param mos: The mos of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._mos = mos
+
+    @property
+    def survey_question_group_score(self):
+        """
+        Gets the survey_question_group_score of this ViewFilter.
+        The survey question group score used to filter the view
+
+        :return: The survey_question_group_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._survey_question_group_score
+
+    @survey_question_group_score.setter
+    def survey_question_group_score(self, survey_question_group_score):
+        """
+        Sets the survey_question_group_score of this ViewFilter.
+        The survey question group score used to filter the view
+
+        :param survey_question_group_score: The survey_question_group_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._survey_question_group_score = survey_question_group_score
+
+    @property
+    def survey_promoter_score(self):
+        """
+        Gets the survey_promoter_score of this ViewFilter.
+        The survey promoter score used to filter the view
+
+        :return: The survey_promoter_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._survey_promoter_score
+
+    @survey_promoter_score.setter
+    def survey_promoter_score(self, survey_promoter_score):
+        """
+        Sets the survey_promoter_score of this ViewFilter.
+        The survey promoter score used to filter the view
+
+        :param survey_promoter_score: The survey_promoter_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._survey_promoter_score = survey_promoter_score
 
     def to_dict(self):
         """

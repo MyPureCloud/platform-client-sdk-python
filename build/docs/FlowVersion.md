@@ -7,7 +7,7 @@ title: FlowVersion
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | The flow version identifier | [optional] |
 | **name** | **str** |  | [optional] |
 | **commit_version** | **str** |  | [optional] |
 | **configuration_version** | **str** |  | [optional] |

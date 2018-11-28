@@ -63,7 +63,7 @@ class FlowDivisionView(object):
     def id(self):
         """
         Gets the id of this FlowDivisionView.
-        The globally unique identifier for the object.
+        The flow identifier
 
         :return: The id of this FlowDivisionView.
         :rtype: str
@@ -74,7 +74,7 @@ class FlowDivisionView(object):
     def id(self, id):
         """
         Sets the id of this FlowDivisionView.
-        The globally unique identifier for the object.
+        The flow identifier
 
         :param id: The id of this FlowDivisionView.
         :type: str

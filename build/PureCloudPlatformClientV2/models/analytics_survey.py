@@ -40,48 +40,42 @@ class AnalyticsSurvey(object):
         self.swagger_types = {
             'survey_id': 'str',
             'survey_form_id': 'str',
+            'survey_form_name': 'str',
             'survey_form_context_id': 'str',
             'event_time': 'datetime',
             'user_id': 'str',
             'queue_id': 'str',
-            'status': 'str',
-            'geto_survey_total_score': 'int',
+            'survey_status': 'str',
             'survey_promoter_score': 'int',
-            'getsurvey_completed_date': 'datetime',
-            'media_types': 'list[str]',
-            'language_ids': 'list[str]',
-            'skill_ids': 'list[str]'
+            'survey_completed_date': 'datetime',
+            'o_survey_total_score': 'int'
         }
 
         self.attribute_map = {
             'survey_id': 'surveyId',
             'survey_form_id': 'surveyFormId',
+            'survey_form_name': 'surveyFormName',
             'survey_form_context_id': 'surveyFormContextId',
             'event_time': 'eventTime',
             'user_id': 'userId',
             'queue_id': 'queueId',
-            'status': 'status',
-            'geto_survey_total_score': 'getoSurveyTotalScore',
+            'survey_status': 'surveyStatus',
             'survey_promoter_score': 'surveyPromoterScore',
-            'getsurvey_completed_date': 'getsurveyCompletedDate',
-            'media_types': 'mediaTypes',
-            'language_ids': 'languageIds',
-            'skill_ids': 'skillIds'
+            'survey_completed_date': 'surveyCompletedDate',
+            'o_survey_total_score': 'oSurveyTotalScore'
         }
 
         self._survey_id = None
         self._survey_form_id = None
+        self._survey_form_name = None
         self._survey_form_context_id = None
         self._event_time = None
         self._user_id = None
         self._queue_id = None
-        self._status = None
-        self._geto_survey_total_score = None
+        self._survey_status = None
         self._survey_promoter_score = None
-        self._getsurvey_completed_date = None
-        self._media_types = None
-        self._language_ids = None
-        self._skill_ids = None
+        self._survey_completed_date = None
+        self._o_survey_total_score = None
 
     @property
     def survey_id(self):
@@ -130,6 +124,29 @@ class AnalyticsSurvey(object):
         self._survey_form_id = survey_form_id
 
     @property
+    def survey_form_name(self):
+        """
+        Gets the survey_form_name of this AnalyticsSurvey.
+        Name of the survey form
+
+        :return: The survey_form_name of this AnalyticsSurvey.
+        :rtype: str
+        """
+        return self._survey_form_name
+
+    @survey_form_name.setter
+    def survey_form_name(self, survey_form_name):
+        """
+        Sets the survey_form_name of this AnalyticsSurvey.
+        Name of the survey form
+
+        :param survey_form_name: The survey_form_name of this AnalyticsSurvey.
+        :type: str
+        """
+        
+        self._survey_form_name = survey_form_name
+
+    @property
     def survey_form_context_id(self):
         """
         Gets the survey_form_context_id of this AnalyticsSurvey.
@@ -156,7 +173,7 @@ class AnalyticsSurvey(object):
     def event_time(self):
         """
         Gets the event_time of this AnalyticsSurvey.
-        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The event_time of this AnalyticsSurvey.
         :rtype: datetime
@@ -167,7 +184,7 @@ class AnalyticsSurvey(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this AnalyticsSurvey.
-        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param event_time: The event_time of this AnalyticsSurvey.
         :type: datetime
@@ -222,56 +239,33 @@ class AnalyticsSurvey(object):
         self._queue_id = queue_id
 
     @property
-    def status(self):
+    def survey_status(self):
         """
-        Gets the status of this AnalyticsSurvey.
+        Gets the survey_status of this AnalyticsSurvey.
         Survey status
 
-        :return: The status of this AnalyticsSurvey.
+        :return: The survey_status of this AnalyticsSurvey.
         :rtype: str
         """
-        return self._status
+        return self._survey_status
 
-    @status.setter
-    def status(self, status):
+    @survey_status.setter
+    def survey_status(self, survey_status):
         """
-        Sets the status of this AnalyticsSurvey.
+        Sets the survey_status of this AnalyticsSurvey.
         Survey status
 
-        :param status: The status of this AnalyticsSurvey.
+        :param survey_status: The survey_status of this AnalyticsSurvey.
         :type: str
         """
         
-        self._status = status
-
-    @property
-    def geto_survey_total_score(self):
-        """
-        Gets the geto_survey_total_score of this AnalyticsSurvey.
-        Creation date of survey
-
-        :return: The geto_survey_total_score of this AnalyticsSurvey.
-        :rtype: int
-        """
-        return self._geto_survey_total_score
-
-    @geto_survey_total_score.setter
-    def geto_survey_total_score(self, geto_survey_total_score):
-        """
-        Sets the geto_survey_total_score of this AnalyticsSurvey.
-        Creation date of survey
-
-        :param geto_survey_total_score: The geto_survey_total_score of this AnalyticsSurvey.
-        :type: int
-        """
-        
-        self._geto_survey_total_score = geto_survey_total_score
+        self._survey_status = survey_status
 
     @property
     def survey_promoter_score(self):
         """
         Gets the survey_promoter_score of this AnalyticsSurvey.
-        NPS score of the survey
+        Promoter score of the survey
 
         :return: The survey_promoter_score of this AnalyticsSurvey.
         :rtype: int
@@ -282,7 +276,7 @@ class AnalyticsSurvey(object):
     def survey_promoter_score(self, survey_promoter_score):
         """
         Sets the survey_promoter_score of this AnalyticsSurvey.
-        NPS score of the survey
+        Promoter score of the survey
 
         :param survey_promoter_score: The survey_promoter_score of this AnalyticsSurvey.
         :type: int
@@ -291,96 +285,50 @@ class AnalyticsSurvey(object):
         self._survey_promoter_score = survey_promoter_score
 
     @property
-    def getsurvey_completed_date(self):
+    def survey_completed_date(self):
         """
-        Gets the getsurvey_completed_date of this AnalyticsSurvey.
+        Gets the survey_completed_date of this AnalyticsSurvey.
         Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
-        :return: The getsurvey_completed_date of this AnalyticsSurvey.
+        :return: The survey_completed_date of this AnalyticsSurvey.
         :rtype: datetime
         """
-        return self._getsurvey_completed_date
+        return self._survey_completed_date
 
-    @getsurvey_completed_date.setter
-    def getsurvey_completed_date(self, getsurvey_completed_date):
+    @survey_completed_date.setter
+    def survey_completed_date(self, survey_completed_date):
         """
-        Sets the getsurvey_completed_date of this AnalyticsSurvey.
+        Sets the survey_completed_date of this AnalyticsSurvey.
         Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
-        :param getsurvey_completed_date: The getsurvey_completed_date of this AnalyticsSurvey.
+        :param survey_completed_date: The survey_completed_date of this AnalyticsSurvey.
         :type: datetime
         """
         
-        self._getsurvey_completed_date = getsurvey_completed_date
+        self._survey_completed_date = survey_completed_date
 
     @property
-    def media_types(self):
+    def o_survey_total_score(self):
         """
-        Gets the media_types of this AnalyticsSurvey.
-        Media types associated with the conversation
+        Gets the o_survey_total_score of this AnalyticsSurvey.
 
-        :return: The media_types of this AnalyticsSurvey.
-        :rtype: list[str]
+
+        :return: The o_survey_total_score of this AnalyticsSurvey.
+        :rtype: int
         """
-        return self._media_types
+        return self._o_survey_total_score
 
-    @media_types.setter
-    def media_types(self, media_types):
+    @o_survey_total_score.setter
+    def o_survey_total_score(self, o_survey_total_score):
         """
-        Sets the media_types of this AnalyticsSurvey.
-        Media types associated with the conversation
+        Sets the o_survey_total_score of this AnalyticsSurvey.
 
-        :param media_types: The media_types of this AnalyticsSurvey.
-        :type: list[str]
+
+        :param o_survey_total_score: The o_survey_total_score of this AnalyticsSurvey.
+        :type: int
         """
         
-        self._media_types = media_types
-
-    @property
-    def language_ids(self):
-        """
-        Gets the language_ids of this AnalyticsSurvey.
-        Language IDs associated with the conversation
-
-        :return: The language_ids of this AnalyticsSurvey.
-        :rtype: list[str]
-        """
-        return self._language_ids
-
-    @language_ids.setter
-    def language_ids(self, language_ids):
-        """
-        Sets the language_ids of this AnalyticsSurvey.
-        Language IDs associated with the conversation
-
-        :param language_ids: The language_ids of this AnalyticsSurvey.
-        :type: list[str]
-        """
-        
-        self._language_ids = language_ids
-
-    @property
-    def skill_ids(self):
-        """
-        Gets the skill_ids of this AnalyticsSurvey.
-        Skill IDs associated with the conversation
-
-        :return: The skill_ids of this AnalyticsSurvey.
-        :rtype: list[str]
-        """
-        return self._skill_ids
-
-    @skill_ids.setter
-    def skill_ids(self, skill_ids):
-        """
-        Sets the skill_ids of this AnalyticsSurvey.
-        Skill IDs associated with the conversation
-
-        :param skill_ids: The skill_ids of this AnalyticsSurvey.
-        :type: list[str]
-        """
-        
-        self._skill_ids = skill_ids
+        self._o_survey_total_score = o_survey_total_score
 
     def to_dict(self):
         """

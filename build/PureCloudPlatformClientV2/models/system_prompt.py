@@ -63,7 +63,7 @@ class SystemPrompt(object):
     def id(self):
         """
         Gets the id of this SystemPrompt.
-        The globally unique identifier for the object.
+        The system prompt identifier
 
         :return: The id of this SystemPrompt.
         :rtype: str
@@ -74,7 +74,7 @@ class SystemPrompt(object):
     def id(self, id):
         """
         Sets the id of this SystemPrompt.
-        The globally unique identifier for the object.
+        The system prompt identifier
 
         :param id: The id of this SystemPrompt.
         :type: str

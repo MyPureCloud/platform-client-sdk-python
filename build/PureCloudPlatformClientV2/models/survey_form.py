@@ -49,7 +49,7 @@ class SurveyForm(object):
             'header_image_url': 'str',
             'header': 'str',
             'footer': 'str',
-            'question_groups': 'list[QuestionGroup]',
+            'question_groups': 'list[SurveyQuestionGroup]',
             'published_versions': 'DomainEntityListingSurveyForm',
             'self_uri': 'str'
         }
@@ -346,7 +346,7 @@ class SurveyForm(object):
         A list of question groups
 
         :return: The question_groups of this SurveyForm.
-        :rtype: list[QuestionGroup]
+        :rtype: list[SurveyQuestionGroup]
         """
         return self._question_groups
 
@@ -357,7 +357,7 @@ class SurveyForm(object):
         A list of question groups
 
         :param question_groups: The question_groups of this SurveyForm.
-        :type: list[QuestionGroup]
+        :type: list[SurveyQuestionGroup]
         """
         
         self._question_groups = question_groups

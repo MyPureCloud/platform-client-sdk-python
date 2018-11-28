@@ -39,7 +39,7 @@ class ObservationDataContainer(object):
         """
         self.swagger_types = {
             'group': 'dict(str, str)',
-            'data': 'list[AggregateMetricData]'
+            'data': 'list[ObservationMetricData]'
         }
 
         self.attribute_map = {
@@ -80,7 +80,7 @@ class ObservationDataContainer(object):
 
 
         :return: The data of this ObservationDataContainer.
-        :rtype: list[AggregateMetricData]
+        :rtype: list[ObservationMetricData]
         """
         return self._data
 
@@ -91,7 +91,7 @@ class ObservationDataContainer(object):
 
 
         :param data: The data of this ObservationDataContainer.
-        :type: list[AggregateMetricData]
+        :type: list[ObservationMetricData]
         """
         
         self._data = data

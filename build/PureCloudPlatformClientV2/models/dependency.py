@@ -72,7 +72,7 @@ class Dependency(object):
     def id(self):
         """
         Gets the id of this Dependency.
-        The globally unique identifier for the object.
+        The dependency identifier
 
         :return: The id of this Dependency.
         :rtype: str
@@ -83,7 +83,7 @@ class Dependency(object):
     def id(self, id):
         """
         Sets the id of this Dependency.
-        The globally unique identifier for the object.
+        The dependency identifier
 
         :param id: The id of this Dependency.
         :type: str

@@ -1,0 +1,20 @@
+---
+title: ConversationEventTopicFaxStatus
+---
+## ConversationEventTopicFaxStatus
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **direction** | **str** |  | [optional] |
+| **expected_pages** | **int** |  | [optional] |
+| **active_page** | **int** |  | [optional] |
+| **lines_transmitted** | **int** |  | [optional] |
+| **bytes_transmitted** | **int** |  | [optional] |
+| **baud_rate** | **int** |  | [optional] |
+| **page_errors** | **int** |  | [optional] |
+| **line_errors** | **int** |  | [optional] |
+{: class="table table-striped"}
+
+

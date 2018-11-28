@@ -7,7 +7,7 @@ title: SystemPrompt
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | The system prompt identifier | [optional] |
 | **name** | **str** |  | [optional] |
 | **description** | **str** |  | [optional] |
 | **resources** | [**list[SystemPromptAsset]**](SystemPromptAsset.html) |  | [optional] |

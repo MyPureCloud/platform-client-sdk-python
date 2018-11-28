@@ -41,6 +41,8 @@ class AnalyticsConversation(object):
             'conversation_id': 'str',
             'conversation_start': 'datetime',
             'conversation_end': 'datetime',
+            'media_stats_min_conversation_mos': 'float',
+            'media_stats_min_conversation_r_factor': 'float',
             'participants': 'list[AnalyticsParticipant]',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
@@ -51,6 +53,8 @@ class AnalyticsConversation(object):
             'conversation_id': 'conversationId',
             'conversation_start': 'conversationStart',
             'conversation_end': 'conversationEnd',
+            'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
+            'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
             'participants': 'participants',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
@@ -60,6 +64,8 @@ class AnalyticsConversation(object):
         self._conversation_id = None
         self._conversation_start = None
         self._conversation_end = None
+        self._media_stats_min_conversation_mos = None
+        self._media_stats_min_conversation_r_factor = None
         self._participants = None
         self._evaluations = None
         self._surveys = None
@@ -133,6 +139,52 @@ class AnalyticsConversation(object):
         """
         
         self._conversation_end = conversation_end
+
+    @property
+    def media_stats_min_conversation_mos(self):
+        """
+        Gets the media_stats_min_conversation_mos of this AnalyticsConversation.
+        The lowest estimated average MOS among all the audio streams belonging to this conversation
+
+        :return: The media_stats_min_conversation_mos of this AnalyticsConversation.
+        :rtype: float
+        """
+        return self._media_stats_min_conversation_mos
+
+    @media_stats_min_conversation_mos.setter
+    def media_stats_min_conversation_mos(self, media_stats_min_conversation_mos):
+        """
+        Sets the media_stats_min_conversation_mos of this AnalyticsConversation.
+        The lowest estimated average MOS among all the audio streams belonging to this conversation
+
+        :param media_stats_min_conversation_mos: The media_stats_min_conversation_mos of this AnalyticsConversation.
+        :type: float
+        """
+        
+        self._media_stats_min_conversation_mos = media_stats_min_conversation_mos
+
+    @property
+    def media_stats_min_conversation_r_factor(self):
+        """
+        Gets the media_stats_min_conversation_r_factor of this AnalyticsConversation.
+        The lowest R-factor value among all of the audio streams belonging to this conversation
+
+        :return: The media_stats_min_conversation_r_factor of this AnalyticsConversation.
+        :rtype: float
+        """
+        return self._media_stats_min_conversation_r_factor
+
+    @media_stats_min_conversation_r_factor.setter
+    def media_stats_min_conversation_r_factor(self, media_stats_min_conversation_r_factor):
+        """
+        Sets the media_stats_min_conversation_r_factor of this AnalyticsConversation.
+        The lowest R-factor value among all of the audio streams belonging to this conversation
+
+        :param media_stats_min_conversation_r_factor: The media_stats_min_conversation_r_factor of this AnalyticsConversation.
+        :type: float
+        """
+        
+        self._media_stats_min_conversation_r_factor = media_stats_min_conversation_r_factor
 
     @property
     def participants(self):

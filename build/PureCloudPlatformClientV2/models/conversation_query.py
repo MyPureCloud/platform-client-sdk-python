@@ -42,6 +42,7 @@ class ConversationQuery(object):
             'conversation_filters': 'list[AnalyticsQueryFilter]',
             'evaluation_filters': 'list[AnalyticsQueryFilter]',
             'survey_filters': 'list[AnalyticsQueryFilter]',
+            'media_endpoint_stat_filters': 'list[AnalyticsQueryFilter]',
             'segment_filters': 'list[AnalyticsQueryFilter]',
             'aggregations': 'list[AnalyticsQueryAggregation]',
             'paging': 'PagingSpec',
@@ -54,6 +55,7 @@ class ConversationQuery(object):
             'conversation_filters': 'conversationFilters',
             'evaluation_filters': 'evaluationFilters',
             'survey_filters': 'surveyFilters',
+            'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
             'segment_filters': 'segmentFilters',
             'aggregations': 'aggregations',
             'paging': 'paging',
@@ -65,6 +67,7 @@ class ConversationQuery(object):
         self._conversation_filters = None
         self._evaluation_filters = None
         self._survey_filters = None
+        self._media_endpoint_stat_filters = None
         self._segment_filters = None
         self._aggregations = None
         self._paging = None
@@ -162,6 +165,29 @@ class ConversationQuery(object):
         """
         
         self._survey_filters = survey_filters
+
+    @property
+    def media_endpoint_stat_filters(self):
+        """
+        Gets the media_endpoint_stat_filters of this ConversationQuery.
+        Filters that target call quality of service data
+
+        :return: The media_endpoint_stat_filters of this ConversationQuery.
+        :rtype: list[AnalyticsQueryFilter]
+        """
+        return self._media_endpoint_stat_filters
+
+    @media_endpoint_stat_filters.setter
+    def media_endpoint_stat_filters(self, media_endpoint_stat_filters):
+        """
+        Sets the media_endpoint_stat_filters of this ConversationQuery.
+        Filters that target call quality of service data
+
+        :param media_endpoint_stat_filters: The media_endpoint_stat_filters of this ConversationQuery.
+        :type: list[AnalyticsQueryFilter]
+        """
+        
+        self._media_endpoint_stat_filters = media_endpoint_stat_filters
 
     @property
     def segment_filters(self):

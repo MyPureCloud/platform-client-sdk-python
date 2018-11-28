@@ -7,7 +7,7 @@ title: FlowDivisionView
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | The flow identifier | [optional] |
 | **name** | **str** | The flow name | |
 | **division** | [**Division**](Division.html) | The division to which this entity belongs. | [optional] |
 | **type** | **str** |  | [optional] |

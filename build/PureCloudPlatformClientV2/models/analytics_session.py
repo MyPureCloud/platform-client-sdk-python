@@ -76,6 +76,7 @@ class AnalyticsSession(object):
             'segments': 'list[AnalyticsConversationSegment]',
             'metrics': 'list[AnalyticsSessionMetric]',
             'flow': 'AnalyticsFlow',
+            'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'recording': 'bool'
         }
 
@@ -118,6 +119,7 @@ class AnalyticsSession(object):
             'segments': 'segments',
             'metrics': 'metrics',
             'flow': 'flow',
+            'media_endpoint_stats': 'mediaEndpointStats',
             'recording': 'recording'
         }
 
@@ -159,6 +161,7 @@ class AnalyticsSession(object):
         self._segments = None
         self._metrics = None
         self._flow = None
+        self._media_endpoint_stats = None
         self._recording = None
 
     @property
@@ -1046,6 +1049,29 @@ class AnalyticsSession(object):
         """
         
         self._flow = flow
+
+    @property
+    def media_endpoint_stats(self):
+        """
+        Gets the media_endpoint_stats of this AnalyticsSession.
+        Media endpoint stats associated with this session
+
+        :return: The media_endpoint_stats of this AnalyticsSession.
+        :rtype: list[AnalyticsMediaEndpointStat]
+        """
+        return self._media_endpoint_stats
+
+    @media_endpoint_stats.setter
+    def media_endpoint_stats(self, media_endpoint_stats):
+        """
+        Sets the media_endpoint_stats of this AnalyticsSession.
+        Media endpoint stats associated with this session
+
+        :param media_endpoint_stats: The media_endpoint_stats of this AnalyticsSession.
+        :type: list[AnalyticsMediaEndpointStat]
+        """
+        
+        self._media_endpoint_stats = media_endpoint_stats
 
     @property
     def recording(self):

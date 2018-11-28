@@ -46,8 +46,8 @@ class AnalyticsEvaluation(object):
             'form_id': 'str',
             'context_id': 'str',
             'form_name': 'str',
-            'geto_total_score': 'int',
-            'geto_total_critical_score': 'int'
+            'o_total_score': 'int',
+            'o_total_critical_score': 'int'
         }
 
         self.attribute_map = {
@@ -59,8 +59,8 @@ class AnalyticsEvaluation(object):
             'form_id': 'formId',
             'context_id': 'contextId',
             'form_name': 'formName',
-            'geto_total_score': 'getoTotalScore',
-            'geto_total_critical_score': 'getoTotalCriticalScore'
+            'o_total_score': 'oTotalScore',
+            'o_total_critical_score': 'oTotalCriticalScore'
         }
 
         self._evaluation_id = None
@@ -71,8 +71,8 @@ class AnalyticsEvaluation(object):
         self._form_id = None
         self._context_id = None
         self._form_name = None
-        self._geto_total_score = None
-        self._geto_total_critical_score = None
+        self._o_total_score = None
+        self._o_total_critical_score = None
 
     @property
     def evaluation_id(self):
@@ -259,50 +259,50 @@ class AnalyticsEvaluation(object):
         self._form_name = form_name
 
     @property
-    def geto_total_score(self):
+    def o_total_score(self):
         """
-        Gets the geto_total_score of this AnalyticsEvaluation.
-        The total evaluation for interactions
+        Gets the o_total_score of this AnalyticsEvaluation.
 
-        :return: The geto_total_score of this AnalyticsEvaluation.
+
+        :return: The o_total_score of this AnalyticsEvaluation.
         :rtype: int
         """
-        return self._geto_total_score
+        return self._o_total_score
 
-    @geto_total_score.setter
-    def geto_total_score(self, geto_total_score):
+    @o_total_score.setter
+    def o_total_score(self, o_total_score):
         """
-        Sets the geto_total_score of this AnalyticsEvaluation.
-        The total evaluation for interactions
+        Sets the o_total_score of this AnalyticsEvaluation.
 
-        :param geto_total_score: The geto_total_score of this AnalyticsEvaluation.
+
+        :param o_total_score: The o_total_score of this AnalyticsEvaluation.
         :type: int
         """
         
-        self._geto_total_score = geto_total_score
+        self._o_total_score = o_total_score
 
     @property
-    def geto_total_critical_score(self):
+    def o_total_critical_score(self):
         """
-        Gets the geto_total_critical_score of this AnalyticsEvaluation.
-        The score for critical evaluation questions
+        Gets the o_total_critical_score of this AnalyticsEvaluation.
 
-        :return: The geto_total_critical_score of this AnalyticsEvaluation.
+
+        :return: The o_total_critical_score of this AnalyticsEvaluation.
         :rtype: int
         """
-        return self._geto_total_critical_score
+        return self._o_total_critical_score
 
-    @geto_total_critical_score.setter
-    def geto_total_critical_score(self, geto_total_critical_score):
+    @o_total_critical_score.setter
+    def o_total_critical_score(self, o_total_critical_score):
         """
-        Sets the geto_total_critical_score of this AnalyticsEvaluation.
-        The score for critical evaluation questions
+        Sets the o_total_critical_score of this AnalyticsEvaluation.
 
-        :param geto_total_critical_score: The geto_total_critical_score of this AnalyticsEvaluation.
+
+        :param o_total_critical_score: The o_total_critical_score of this AnalyticsEvaluation.
         :type: int
         """
         
-        self._geto_total_critical_score = geto_total_critical_score
+        self._o_total_critical_score = o_total_critical_score
 
     def to_dict(self):
         """

@@ -43,7 +43,7 @@ class EvaluationForm(object):
             'modified_date': 'datetime',
             'published': 'bool',
             'context_id': 'str',
-            'question_groups': 'list[QuestionGroup]',
+            'question_groups': 'list[EvaluationQuestionGroup]',
             'published_versions': 'DomainEntityListingEvaluationForm',
             'self_uri': 'str'
         }
@@ -190,7 +190,7 @@ class EvaluationForm(object):
         A list of question groups
 
         :return: The question_groups of this EvaluationForm.
-        :rtype: list[QuestionGroup]
+        :rtype: list[EvaluationQuestionGroup]
         """
         return self._question_groups
 
@@ -201,7 +201,7 @@ class EvaluationForm(object):
         A list of question groups
 
         :param question_groups: The question_groups of this EvaluationForm.
-        :type: list[QuestionGroup]
+        :type: list[EvaluationQuestionGroup]
         """
         
         self._question_groups = question_groups

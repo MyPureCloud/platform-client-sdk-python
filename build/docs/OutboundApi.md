@@ -76,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_campaignrules**](OutboundApi.html#post_outbound_campaignrules) | Create Campaign Rule|
 |[**post_outbound_campaigns**](OutboundApi.html#post_outbound_campaigns) | Create a campaign.|
 |[**post_outbound_campaigns_progress**](OutboundApi.html#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
+|[**post_outbound_contactlist_clear**](OutboundApi.html#post_outbound_contactlist_clear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.|
 |[**post_outbound_contactlist_contacts**](OutboundApi.html#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
 |[**post_outbound_contactlist_contacts_bulk**](OutboundApi.html#post_outbound_contactlist_contacts_bulk) | Get contacts from a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
@@ -2131,7 +2132,7 @@ except ApiException as e:
 
 <a name="get_outbound_contactlists"></a>
 
-## [**ContactListEntityListing**](ContactListEntityListing.html) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+## [**ContactListEntityListing**](ContactListEntityListing.html) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2165,12 +2166,13 @@ page_number = 1 # int | Page number (optional) (default to 1)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of contact lists.
-    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e
@@ -2188,6 +2190,7 @@ except ApiException as e:
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -3765,6 +3768,56 @@ except ApiException as e:
 ### Return type
 
 [**list[CampaignProgress]**](CampaignProgress.html)
+
+<a name="post_outbound_contactlist_clear"></a>
+
+##  post_outbound_contactlist_clear(contact_list_id)
+
+
+
+Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+
+
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/clear 
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud Auth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+
+try:
+    # Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+    api_instance.post_outbound_contactlist_clear(contact_list_id)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_outbound_contactlist_contacts"></a>
 

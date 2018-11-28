@@ -84,7 +84,7 @@ class FlowVersion(object):
     def id(self):
         """
         Gets the id of this FlowVersion.
-        The globally unique identifier for the object.
+        The flow version identifier
 
         :return: The id of this FlowVersion.
         :rtype: str
@@ -95,7 +95,7 @@ class FlowVersion(object):
     def id(self, id):
         """
         Sets the id of this FlowVersion.
-        The globally unique identifier for the object.
+        The flow version identifier
 
         :param id: The id of this FlowVersion.
         :type: str

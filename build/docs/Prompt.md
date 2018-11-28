@@ -7,7 +7,7 @@ title: Prompt
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | The prompt identifier | [optional] |
 | **name** | **str** | The prompt name. | |
 | **description** | **str** |  | [optional] |
 | **resources** | [**list[PromptAsset]**](PromptAsset.html) |  | [optional] |

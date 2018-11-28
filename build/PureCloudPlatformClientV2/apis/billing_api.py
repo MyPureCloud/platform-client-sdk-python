@@ -129,3 +129,84 @@ class BillingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
+    def get_billing_trusteebillingoverview_trustor_org_id(self, trustor_org_id, **kwargs):
+        """
+        Get the billing overview for an organization that is managed by a partner.
+        Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_trusteebillingoverview_trustor_org_id(trustor_org_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trustor_org_id: The organization ID of the trustor (customer) organization. (required)
+        :param int billing_period_index: Billing Period Index
+        :return: TrusteeBillingOverview
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trustor_org_id', 'billing_period_index']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_trusteebillingoverview_trustor_org_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trustor_org_id' is set
+        if ('trustor_org_id' not in params) or (params['trustor_org_id'] is None):
+            raise ValueError("Missing the required parameter `trustor_org_id` when calling `get_billing_trusteebillingoverview_trustor_org_id`")
+
+
+        resource_path = '/api/v2/billing/trusteebillingoverview/{trustorOrgId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trustor_org_id' in params:
+            path_params['trustorOrgId'] = params['trustor_org_id']
+
+        query_params = {}
+        if 'billing_period_index' in params:
+            query_params['billingPeriodIndex'] = params['billing_period_index']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud Auth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrusteeBillingOverview',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response

@@ -382,9 +382,8 @@ Will not include object counts.
 
 Wraps GET /api/v2/authorization/divisions/home 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:division:view
 
 ### Example
 
