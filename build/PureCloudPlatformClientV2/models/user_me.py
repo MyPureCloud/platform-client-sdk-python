@@ -65,6 +65,7 @@ class UserMe(object):
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
+            'language_preference': 'str',
             'date': 'ServerDate',
             'geolocation_settings': 'GeolocationSettings',
             'organization': 'Organization',
@@ -111,6 +112,7 @@ class UserMe(object):
             'skills': 'skills',
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
+            'language_preference': 'languagePreference',
             'date': 'date',
             'geolocation_settings': 'geolocationSettings',
             'organization': 'organization',
@@ -156,6 +158,7 @@ class UserMe(object):
         self._skills = None
         self._languages = None
         self._acd_auto_answer = None
+        self._language_preference = None
         self._date = None
         self._geolocation_settings = None
         self._organization = None
@@ -797,6 +800,29 @@ class UserMe(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
+
+    @property
+    def language_preference(self):
+        """
+        Gets the language_preference of this UserMe.
+        preferred language by the user
+
+        :return: The language_preference of this UserMe.
+        :rtype: str
+        """
+        return self._language_preference
+
+    @language_preference.setter
+    def language_preference(self, language_preference):
+        """
+        Sets the language_preference of this UserMe.
+        preferred language by the user
+
+        :param language_preference: The language_preference of this UserMe.
+        :type: str
+        """
+        
+        self._language_preference = language_preference
 
     @property
     def date(self):

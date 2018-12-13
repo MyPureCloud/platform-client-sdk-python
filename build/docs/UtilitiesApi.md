@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_date**](UtilitiesApi.html#get_date) | Get the current system date/time|
 |[**get_timezones**](UtilitiesApi.html#get_timezones) | Get time zones list|
 |[**post_certificate_details**](UtilitiesApi.html#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
+|[**post_gmsc_tokens**](UtilitiesApi.html#post_gmsc_tokens) | Generate a JWT for use with common cloud.|
 {: class="table table-striped"}
 
 <a name="get_date"></a>
@@ -36,7 +37,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -82,7 +83,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -134,7 +135,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -160,4 +161,50 @@ except ApiException as e:
 ### Return type
 
 [**ParsedCertificate**](ParsedCertificate.html)
+
+<a name="post_gmsc_tokens"></a>
+
+## [**Token**](Token.html) post_gmsc_tokens()
+
+
+
+Generate a JWT for use with common cloud.
+
+
+
+Wraps POST /api/v2/gmsc/tokens 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UtilitiesApi()
+
+try:
+    # Generate a JWT for use with common cloud.
+    api_response = api_instance.post_gmsc_tokens()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UtilitiesApi->post_gmsc_tokens: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**Token**](Token.html)
 

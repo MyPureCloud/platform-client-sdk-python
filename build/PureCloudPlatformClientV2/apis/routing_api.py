@@ -110,7 +110,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -194,7 +194,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -275,7 +275,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -359,7 +359,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -443,7 +443,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -521,7 +521,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -599,7 +599,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -671,7 +671,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -749,7 +749,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -833,7 +833,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -917,7 +917,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -995,7 +995,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1079,7 +1079,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1166,7 +1166,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1238,7 +1238,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1310,7 +1310,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1397,7 +1397,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1475,7 +1475,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1556,7 +1556,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1634,7 +1634,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1715,7 +1715,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1799,7 +1799,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1910,7 +1910,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1988,7 +1988,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2078,7 +2078,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2094,7 +2094,7 @@ class RoutingApi(object):
 
     def get_routing_queues_divisionviews(self, **kwargs):
         """
-        Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+        Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2107,8 +2107,8 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: Page size
-        :param int page_number: Page number
+        :param int page_size: Page size [max value is 100]
+        :param int page_number: Page number [max value is 5]
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param str name: Name
@@ -2171,7 +2171,91 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueueEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_queues_divisionviews_all(self, **kwargs):
+        """
+        Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_queues_divisionviews_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size [max value is 500]
+        :param int page_number: Page number
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :return: QueueEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_queues_divisionviews_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/queues/divisionviews/all'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2258,7 +2342,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2336,7 +2420,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2420,7 +2504,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2519,7 +2603,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2597,7 +2681,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2684,7 +2768,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2756,7 +2840,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2834,7 +2918,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2918,7 +3002,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3005,7 +3089,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3092,7 +3176,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3108,7 +3192,7 @@ class RoutingApi(object):
 
     def patch_routing_queue_user(self, queue_id, member_id, body, **kwargs):
         """
-        Update the ring number of joined status for a User in a Queue
+        Update the ring number or joined status for a User in a Queue
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3182,7 +3266,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3266,7 +3350,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3356,7 +3440,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3440,7 +3524,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3524,7 +3608,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3602,7 +3686,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -3686,7 +3770,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -3764,7 +3848,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -3842,7 +3926,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -3929,7 +4013,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4013,7 +4097,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4091,7 +4175,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4169,7 +4253,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4247,7 +4331,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4325,7 +4409,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4403,7 +4487,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4487,7 +4571,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4571,7 +4655,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -4661,7 +4745,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -4745,7 +4829,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -4829,7 +4913,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -4913,7 +4997,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -4991,7 +5075,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -5075,7 +5159,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -5165,7 +5249,7 @@ class RoutingApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,

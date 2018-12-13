@@ -37,7 +37,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -60,7 +60,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 | **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -91,7 +91,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -114,7 +114,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 | **profile** | **bool**| profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -145,7 +145,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -197,7 +197,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class

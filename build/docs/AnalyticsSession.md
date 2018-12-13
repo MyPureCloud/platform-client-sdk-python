@@ -30,7 +30,7 @@ title: AnalyticsSession
 | **callback_user_name** | **str** | The name of the user requesting a call back | [optional] |
 | **callback_numbers** | **list[str]** | List of numbers to callback | [optional] |
 | **callback_scheduled_time** | **datetime** | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **script_id** | **str** | Scheduled callback date/time, Date time is represented as an ISO-8601 string.  | [optional] |
+| **script_id** | **str** | A unique identifier for a script | [optional] |
 | **peer_id** | **str** | A unique identifier for a peer | [optional] |
 | **skip_enabled** | **bool** | (Dialer) Whether the agent can skip the dialer contact | [optional] |
 | **timeout_seconds** | **int** | The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling | [optional] |

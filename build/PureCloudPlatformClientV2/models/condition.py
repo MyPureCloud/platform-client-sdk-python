@@ -91,7 +91,7 @@ class Condition(object):
         :param type: The type of this Condition.
         :type: str
         """
-        allowed_values = ["wrapupCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition"]
+        allowed_values = ["wrapupCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -148,7 +148,7 @@ class Condition(object):
     def value(self):
         """
         Gets the value of this Condition.
-        A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.
 
         :return: The value of this Condition.
         :rtype: str
@@ -159,7 +159,7 @@ class Condition(object):
     def value(self, value):
         """
         Sets the value of this Condition.
-        A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+        A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.
 
         :param value: The value of this Condition.
         :type: str
@@ -171,7 +171,7 @@ class Condition(object):
     def value_type(self):
         """
         Gets the value_type of this Condition.
-        The type of the value associated with this Condition.
+        The type of the value associated with this Condition. Not used for a DataActionCondition.
 
         :return: The value_type of this Condition.
         :rtype: str
@@ -182,7 +182,7 @@ class Condition(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this Condition.
-        The type of the value associated with this Condition.
+        The type of the value associated with this Condition. Not used for a DataActionCondition.
 
         :param value_type: The value_type of this Condition.
         :type: str
@@ -198,7 +198,7 @@ class Condition(object):
     def operator(self):
         """
         Gets the operator of this Condition.
-        An operation with which to evaluate the Condition.
+        An operation with which to evaluate the Condition. Not used for a DataActionCondition.
 
         :return: The operator of this Condition.
         :rtype: str
@@ -209,7 +209,7 @@ class Condition(object):
     def operator(self, operator):
         """
         Sets the operator of this Condition.
-        An operation with which to evaluate the Condition.
+        An operation with which to evaluate the Condition. Not used for a DataActionCondition.
 
         :param operator: The operator of this Condition.
         :type: str
@@ -271,7 +271,7 @@ class Condition(object):
     def property_type(self):
         """
         Gets the property_type of this Condition.
-        The type of the property associated with this Condition.
+        The type of the property associated with this Condition. Required for a contactPropertyCondition.
 
         :return: The property_type of this Condition.
         :rtype: str
@@ -282,7 +282,7 @@ class Condition(object):
     def property_type(self, property_type):
         """
         Sets the property_type of this Condition.
-        The type of the property associated with this Condition.
+        The type of the property associated with this Condition. Required for a contactPropertyCondition.
 
         :param property_type: The property_type of this Condition.
         :type: str

@@ -49,7 +49,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -98,7 +98,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -150,7 +150,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -200,7 +200,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -250,7 +250,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -300,7 +300,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -328,7 +328,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
 {: class="table table-striped"}
 
 ### Return type
@@ -358,7 +358,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -410,7 +410,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -466,7 +466,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -518,7 +518,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -574,7 +574,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -628,7 +628,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -678,7 +678,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
@@ -730,7 +730,7 @@ import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: PureCloud Auth
+# Configure OAuth2 access token for authorization: PureCloud OAuth
 PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class

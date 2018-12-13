@@ -65,6 +65,7 @@ class OrgUser(object):
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
+            'language_preference': 'str',
             'organization': 'Organization'
         }
 
@@ -96,6 +97,7 @@ class OrgUser(object):
             'skills': 'skills',
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
+            'language_preference': 'languagePreference',
             'organization': 'organization'
         }
 
@@ -126,6 +128,7 @@ class OrgUser(object):
         self._skills = None
         self._languages = None
         self._acd_auto_answer = None
+        self._language_preference = None
         self._organization = None
 
     @property
@@ -752,6 +755,29 @@ class OrgUser(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
+
+    @property
+    def language_preference(self):
+        """
+        Gets the language_preference of this OrgUser.
+        preferred language by the user
+
+        :return: The language_preference of this OrgUser.
+        :rtype: str
+        """
+        return self._language_preference
+
+    @language_preference.setter
+    def language_preference(self, language_preference):
+        """
+        Sets the language_preference of this OrgUser.
+        preferred language by the user
+
+        :param language_preference: The language_preference of this OrgUser.
+        :type: str
+        """
+        
+        self._language_preference = language_preference
 
     @property
     def organization(self):

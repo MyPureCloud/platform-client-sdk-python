@@ -110,7 +110,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -188,7 +188,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -278,7 +278,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -356,7 +356,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -437,7 +437,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -536,7 +536,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -608,7 +608,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -680,7 +680,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -761,7 +761,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -848,7 +848,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -926,7 +926,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -998,7 +998,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1076,7 +1076,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1092,7 +1092,7 @@ class AuthorizationApi(object):
 
     def get_authorization_role_comparedefault_right_role_id(self, left_role_id, right_role_id, **kwargs):
         """
-        Get an org role to default role comparison comparison
+        Get an org role to default role comparison
         Compares any organization role to a default role id and show differences
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1160,7 +1160,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1256,7 +1256,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1340,7 +1340,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1445,7 +1445,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1523,7 +1523,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1595,7 +1595,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1673,7 +1673,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1757,7 +1757,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -1847,7 +1847,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -1925,7 +1925,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -1956,12 +1956,13 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param str role_id: Role ID (required)
         :param SubjectDivisions body: Subjects and Divisions (required)
+        :param str subject_type: what the type of the subject is, PC_GROUP or PC_USER
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['role_id', 'body']
+        all_params = ['role_id', 'body', 'subject_type']
         all_params.append('callback')
 
         params = locals()
@@ -1988,6 +1989,8 @@ class AuthorizationApi(object):
             path_params['roleId'] = params['role_id']
 
         query_params = {}
+        if 'subject_type' in params:
+            query_params['subjectType'] = params['subject_type']
 
         header_params = {}
 
@@ -2009,7 +2012,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -2099,7 +2102,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -2177,7 +2180,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -2252,7 +2255,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -2345,7 +2348,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -2429,7 +2432,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -2513,7 +2516,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -2597,7 +2600,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -2681,7 +2684,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -2759,7 +2762,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -2843,7 +2846,7 @@ class AuthorizationApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,

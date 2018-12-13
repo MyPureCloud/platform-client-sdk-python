@@ -225,6 +225,7 @@ from .models.contact import Contact
 from .models.contact_address import ContactAddress
 from .models.contact_callback_request import ContactCallbackRequest
 from .models.contact_column_time_zone import ContactColumnTimeZone
+from .models.contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .models.contact_list import ContactList
 from .models.contact_list_division_view import ContactListDivisionView
 from .models.contact_list_division_view_listing import ContactListDivisionViewListing
@@ -325,6 +326,7 @@ from .models.conversation_message_event_topic_message_media_participant import C
 from .models.conversation_message_event_topic_message_sticker import ConversationMessageEventTopicMessageSticker
 from .models.conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .models.conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
+from .models.conversation_properties import ConversationProperties
 from .models.conversation_query import ConversationQuery
 from .models.conversation_screen_share_event_topic_detail import ConversationScreenShareEventTopicDetail
 from .models.conversation_screen_share_event_topic_error_body import ConversationScreenShareEventTopicErrorBody
@@ -386,6 +388,7 @@ from .models.did import DID
 from .models.did_entity_listing import DIDEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
+from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_schema import DataSchema
 from .models.data_table import DataTable
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
@@ -1088,6 +1091,7 @@ from .models.scheduling_settings import SchedulingSettings
 from .models.schema_category import SchemaCategory
 from .models.schema_category_entity_listing import SchemaCategoryEntityListing
 from .models.schema_reference_entity_listing import SchemaReferenceEntityListing
+from .models.scorable_survey import ScorableSurvey
 from .models.screen_recording_session import ScreenRecordingSession
 from .models.screen_recording_session_listing import ScreenRecordingSessionListing
 from .models.screen_recording_session_request import ScreenRecordingSessionRequest
@@ -1159,11 +1163,16 @@ from .models.subscriber_response import SubscriberResponse
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.survey import Survey
 from .models.survey_assignment import SurveyAssignment
 from .models.survey_form import SurveyForm
+from .models.survey_form_and_scoring_set import SurveyFormAndScoringSet
 from .models.survey_form_entity_listing import SurveyFormEntityListing
 from .models.survey_question import SurveyQuestion
 from .models.survey_question_group import SurveyQuestionGroup
+from .models.survey_question_group_score import SurveyQuestionGroupScore
+from .models.survey_question_score import SurveyQuestionScore
+from .models.survey_scoring_set import SurveyScoringSet
 from .models.system_message_system_message import SystemMessageSystemMessage
 from .models.system_presence import SystemPresence
 from .models.system_prompt import SystemPrompt
@@ -1191,6 +1200,7 @@ from .models.time_slot import TimeSlot
 from .models.time_zone import TimeZone
 from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
+from .models.token import Token
 from .models.token_info import TokenInfo
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk

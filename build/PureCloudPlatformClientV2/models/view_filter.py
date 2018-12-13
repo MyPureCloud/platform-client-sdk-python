@@ -78,7 +78,20 @@ class ViewFilter(object):
             'language_list': 'list[str]',
             'mos': 'NumericRange',
             'survey_question_group_score': 'NumericRange',
-            'survey_promoter_score': 'NumericRange'
+            'survey_promoter_score': 'NumericRange',
+            'survey_form_context_ids': 'list[str]',
+            'conversation_ids': 'list[str]',
+            'is_ended': 'bool',
+            'is_surveyed': 'bool',
+            'survey_scores': 'list[NumericRange]',
+            'promoter_scores': 'list[NumericRange]',
+            'is_campaign': 'bool',
+            'survey_statuses': 'list[str]',
+            'conversation_properties': 'ConversationProperties',
+            'is_blind_transferred': 'bool',
+            'is_consulted': 'bool',
+            'is_consult_transferred': 'bool',
+            'remote_participants': 'list[str]'
         }
 
         self.attribute_map = {
@@ -122,7 +135,20 @@ class ViewFilter(object):
             'language_list': 'languageList',
             'mos': 'mos',
             'survey_question_group_score': 'surveyQuestionGroupScore',
-            'survey_promoter_score': 'surveyPromoterScore'
+            'survey_promoter_score': 'surveyPromoterScore',
+            'survey_form_context_ids': 'surveyFormContextIds',
+            'conversation_ids': 'conversationIds',
+            'is_ended': 'isEnded',
+            'is_surveyed': 'isSurveyed',
+            'survey_scores': 'surveyScores',
+            'promoter_scores': 'promoterScores',
+            'is_campaign': 'isCampaign',
+            'survey_statuses': 'surveyStatuses',
+            'conversation_properties': 'conversationProperties',
+            'is_blind_transferred': 'isBlindTransferred',
+            'is_consulted': 'isConsulted',
+            'is_consult_transferred': 'isConsultTransferred',
+            'remote_participants': 'remoteParticipants'
         }
 
         self._media_types = None
@@ -166,6 +192,19 @@ class ViewFilter(object):
         self._mos = None
         self._survey_question_group_score = None
         self._survey_promoter_score = None
+        self._survey_form_context_ids = None
+        self._conversation_ids = None
+        self._is_ended = None
+        self._is_surveyed = None
+        self._survey_scores = None
+        self._promoter_scores = None
+        self._is_campaign = None
+        self._survey_statuses = None
+        self._conversation_properties = None
+        self._is_blind_transferred = None
+        self._is_consulted = None
+        self._is_consult_transferred = None
+        self._remote_participants = None
 
     @property
     def media_types(self):
@@ -1121,6 +1160,305 @@ class ViewFilter(object):
         """
         
         self._survey_promoter_score = survey_promoter_score
+
+    @property
+    def survey_form_context_ids(self):
+        """
+        Gets the survey_form_context_ids of this ViewFilter.
+        The list of survey form context ids used to filter the view
+
+        :return: The survey_form_context_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._survey_form_context_ids
+
+    @survey_form_context_ids.setter
+    def survey_form_context_ids(self, survey_form_context_ids):
+        """
+        Sets the survey_form_context_ids of this ViewFilter.
+        The list of survey form context ids used to filter the view
+
+        :param survey_form_context_ids: The survey_form_context_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._survey_form_context_ids = survey_form_context_ids
+
+    @property
+    def conversation_ids(self):
+        """
+        Gets the conversation_ids of this ViewFilter.
+        The list of conversation ids used to filter the view
+
+        :return: The conversation_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._conversation_ids
+
+    @conversation_ids.setter
+    def conversation_ids(self, conversation_ids):
+        """
+        Sets the conversation_ids of this ViewFilter.
+        The list of conversation ids used to filter the view
+
+        :param conversation_ids: The conversation_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._conversation_ids = conversation_ids
+
+    @property
+    def is_ended(self):
+        """
+        Gets the is_ended of this ViewFilter.
+        Indicates filtering for ended
+
+        :return: The is_ended of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_ended
+
+    @is_ended.setter
+    def is_ended(self, is_ended):
+        """
+        Sets the is_ended of this ViewFilter.
+        Indicates filtering for ended
+
+        :param is_ended: The is_ended of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_ended = is_ended
+
+    @property
+    def is_surveyed(self):
+        """
+        Gets the is_surveyed of this ViewFilter.
+        Indicates filtering for survey
+
+        :return: The is_surveyed of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_surveyed
+
+    @is_surveyed.setter
+    def is_surveyed(self, is_surveyed):
+        """
+        Sets the is_surveyed of this ViewFilter.
+        Indicates filtering for survey
+
+        :param is_surveyed: The is_surveyed of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_surveyed = is_surveyed
+
+    @property
+    def survey_scores(self):
+        """
+        Gets the survey_scores of this ViewFilter.
+        The list of survey score ranges used to filter the view
+
+        :return: The survey_scores of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._survey_scores
+
+    @survey_scores.setter
+    def survey_scores(self, survey_scores):
+        """
+        Sets the survey_scores of this ViewFilter.
+        The list of survey score ranges used to filter the view
+
+        :param survey_scores: The survey_scores of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._survey_scores = survey_scores
+
+    @property
+    def promoter_scores(self):
+        """
+        Gets the promoter_scores of this ViewFilter.
+        The list of promoter score ranges used to filter the view
+
+        :return: The promoter_scores of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._promoter_scores
+
+    @promoter_scores.setter
+    def promoter_scores(self, promoter_scores):
+        """
+        Sets the promoter_scores of this ViewFilter.
+        The list of promoter score ranges used to filter the view
+
+        :param promoter_scores: The promoter_scores of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._promoter_scores = promoter_scores
+
+    @property
+    def is_campaign(self):
+        """
+        Gets the is_campaign of this ViewFilter.
+        Indicates filtering for campaign
+
+        :return: The is_campaign of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_campaign
+
+    @is_campaign.setter
+    def is_campaign(self, is_campaign):
+        """
+        Sets the is_campaign of this ViewFilter.
+        Indicates filtering for campaign
+
+        :param is_campaign: The is_campaign of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_campaign = is_campaign
+
+    @property
+    def survey_statuses(self):
+        """
+        Gets the survey_statuses of this ViewFilter.
+        The list of survey statuses used to filter the view
+
+        :return: The survey_statuses of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._survey_statuses
+
+    @survey_statuses.setter
+    def survey_statuses(self, survey_statuses):
+        """
+        Sets the survey_statuses of this ViewFilter.
+        The list of survey statuses used to filter the view
+
+        :param survey_statuses: The survey_statuses of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._survey_statuses = survey_statuses
+
+    @property
+    def conversation_properties(self):
+        """
+        Gets the conversation_properties of this ViewFilter.
+        A grouping of conversation level filters
+
+        :return: The conversation_properties of this ViewFilter.
+        :rtype: ConversationProperties
+        """
+        return self._conversation_properties
+
+    @conversation_properties.setter
+    def conversation_properties(self, conversation_properties):
+        """
+        Sets the conversation_properties of this ViewFilter.
+        A grouping of conversation level filters
+
+        :param conversation_properties: The conversation_properties of this ViewFilter.
+        :type: ConversationProperties
+        """
+        
+        self._conversation_properties = conversation_properties
+
+    @property
+    def is_blind_transferred(self):
+        """
+        Gets the is_blind_transferred of this ViewFilter.
+        Indicates filtering for blind transferred
+
+        :return: The is_blind_transferred of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_blind_transferred
+
+    @is_blind_transferred.setter
+    def is_blind_transferred(self, is_blind_transferred):
+        """
+        Sets the is_blind_transferred of this ViewFilter.
+        Indicates filtering for blind transferred
+
+        :param is_blind_transferred: The is_blind_transferred of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_blind_transferred = is_blind_transferred
+
+    @property
+    def is_consulted(self):
+        """
+        Gets the is_consulted of this ViewFilter.
+        Indicates filtering for consulted
+
+        :return: The is_consulted of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_consulted
+
+    @is_consulted.setter
+    def is_consulted(self, is_consulted):
+        """
+        Sets the is_consulted of this ViewFilter.
+        Indicates filtering for consulted
+
+        :param is_consulted: The is_consulted of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_consulted = is_consulted
+
+    @property
+    def is_consult_transferred(self):
+        """
+        Gets the is_consult_transferred of this ViewFilter.
+        Indicates filtering for consult transferred
+
+        :return: The is_consult_transferred of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_consult_transferred
+
+    @is_consult_transferred.setter
+    def is_consult_transferred(self, is_consult_transferred):
+        """
+        Sets the is_consult_transferred of this ViewFilter.
+        Indicates filtering for consult transferred
+
+        :param is_consult_transferred: The is_consult_transferred of this ViewFilter.
+        :type: bool
+        """
+        
+        self._is_consult_transferred = is_consult_transferred
+
+    @property
+    def remote_participants(self):
+        """
+        Gets the remote_participants of this ViewFilter.
+        The list of remote participants used to filter the view
+
+        :return: The remote_participants of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._remote_participants
+
+    @remote_participants.setter
+    def remote_participants(self, remote_participants):
+        """
+        Sets the remote_participants of this ViewFilter.
+        The list of remote participants used to filter the view
+
+        :param remote_participants: The remote_participants of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._remote_participants = remote_participants
 
     def to_dict(self):
         """

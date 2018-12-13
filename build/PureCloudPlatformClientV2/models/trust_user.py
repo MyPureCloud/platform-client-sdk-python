@@ -65,6 +65,7 @@ class TrustUser(object):
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
+            'language_preference': 'str',
             'trust_user_details': 'TrustUserDetails'
         }
 
@@ -96,6 +97,7 @@ class TrustUser(object):
             'skills': 'skills',
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
+            'language_preference': 'languagePreference',
             'trust_user_details': 'trustUserDetails'
         }
 
@@ -126,6 +128,7 @@ class TrustUser(object):
         self._skills = None
         self._languages = None
         self._acd_auto_answer = None
+        self._language_preference = None
         self._trust_user_details = None
 
     @property
@@ -752,6 +755,29 @@ class TrustUser(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
+
+    @property
+    def language_preference(self):
+        """
+        Gets the language_preference of this TrustUser.
+        preferred language by the user
+
+        :return: The language_preference of this TrustUser.
+        :rtype: str
+        """
+        return self._language_preference
+
+    @language_preference.setter
+    def language_preference(self, language_preference):
+        """
+        Sets the language_preference of this TrustUser.
+        preferred language by the user
+
+        :param language_preference: The language_preference of this TrustUser.
+        :type: str
+        """
+        
+        self._language_preference = language_preference
 
     @property
     def trust_user_details(self):

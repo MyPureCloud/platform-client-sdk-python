@@ -122,7 +122,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -206,7 +206,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -290,7 +290,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
@@ -368,7 +368,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -443,7 +443,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -521,7 +521,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -611,7 +611,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -695,7 +695,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -782,7 +782,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -866,7 +866,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -941,7 +941,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1019,7 +1019,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1106,7 +1106,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1190,7 +1190,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1268,7 +1268,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1355,7 +1355,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1439,7 +1439,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1511,7 +1511,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1583,7 +1583,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1667,7 +1667,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1739,7 +1739,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1817,7 +1817,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1904,7 +1904,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1988,7 +1988,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2060,7 +2060,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2138,7 +2138,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2225,7 +2225,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2309,7 +2309,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2381,7 +2381,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2459,7 +2459,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2543,7 +2543,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2621,7 +2621,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2699,7 +2699,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2786,7 +2786,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2870,7 +2870,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -2942,7 +2942,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3020,7 +3020,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3110,7 +3110,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3194,7 +3194,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3281,7 +3281,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3365,7 +3365,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3437,7 +3437,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -3527,7 +3527,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3617,7 +3617,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3701,7 +3701,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3791,7 +3791,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3881,7 +3881,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -3977,7 +3977,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4067,7 +4067,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4151,7 +4151,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4241,7 +4241,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4331,7 +4331,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4427,7 +4427,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4511,7 +4511,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4601,7 +4601,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4691,7 +4691,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4787,7 +4787,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4871,7 +4871,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -4958,7 +4958,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5045,7 +5045,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5141,7 +5141,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5225,7 +5225,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5315,7 +5315,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5405,7 +5405,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5501,7 +5501,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5585,7 +5585,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5672,7 +5672,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5759,7 +5759,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5855,7 +5855,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PATCH',
                                             path_params,
@@ -5939,7 +5939,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6017,7 +6017,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6095,7 +6095,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6173,7 +6173,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6260,7 +6260,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6347,7 +6347,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6437,7 +6437,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6524,7 +6524,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6608,7 +6608,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6698,7 +6698,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6782,7 +6782,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6872,7 +6872,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -6956,7 +6956,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7046,7 +7046,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7124,7 +7124,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7202,7 +7202,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7292,7 +7292,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7370,7 +7370,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7457,7 +7457,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7541,7 +7541,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7625,7 +7625,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7715,7 +7715,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7793,7 +7793,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7871,7 +7871,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -7961,7 +7961,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -8045,7 +8045,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -8126,7 +8126,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -8216,7 +8216,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -8294,7 +8294,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -8390,7 +8390,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -8474,7 +8474,7 @@ class ConversationsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['PureCloud Auth']
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,

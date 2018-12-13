@@ -218,12 +218,19 @@ class Configuration(object):
         """
         return {
 
-            'PureCloud Auth':
+            'PureCloud OAuth':
                 {
                     'type': 'oauth2',
                     'in': 'header',
                     'key': 'Authorization',
                     'value': 'Bearer ' + self.access_token
+                },
+            'Guest Chat JWT':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'Authorization',
+                    'value': self.get_api_key_with_prefix('Authorization')
                 },
 
         }
@@ -238,5 +245,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 46.0.0".\
+               "SDK Package Version: 47.0.0".\
                format(env=sys.platform, pyversion=sys.version)

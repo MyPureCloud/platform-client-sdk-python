@@ -225,6 +225,7 @@ from .contact import Contact
 from .contact_address import ContactAddress
 from .contact_callback_request import ContactCallbackRequest
 from .contact_column_time_zone import ContactColumnTimeZone
+from .contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .contact_list import ContactList
 from .contact_list_division_view import ContactListDivisionView
 from .contact_list_division_view_listing import ContactListDivisionViewListing
@@ -325,6 +326,7 @@ from .conversation_message_event_topic_message_media_participant import Conversa
 from .conversation_message_event_topic_message_sticker import ConversationMessageEventTopicMessageSticker
 from .conversation_message_event_topic_uri_reference import ConversationMessageEventTopicUriReference
 from .conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
+from .conversation_properties import ConversationProperties
 from .conversation_query import ConversationQuery
 from .conversation_screen_share_event_topic_detail import ConversationScreenShareEventTopicDetail
 from .conversation_screen_share_event_topic_error_body import ConversationScreenShareEventTopicErrorBody
@@ -386,6 +388,7 @@ from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
+from .data_action_condition_predicate import DataActionConditionPredicate
 from .data_schema import DataSchema
 from .data_table import DataTable
 from .data_table_row_entity_listing import DataTableRowEntityListing
@@ -1088,6 +1091,7 @@ from .scheduling_settings import SchedulingSettings
 from .schema_category import SchemaCategory
 from .schema_category_entity_listing import SchemaCategoryEntityListing
 from .schema_reference_entity_listing import SchemaReferenceEntityListing
+from .scorable_survey import ScorableSurvey
 from .screen_recording_session import ScreenRecordingSession
 from .screen_recording_session_listing import ScreenRecordingSessionListing
 from .screen_recording_session_request import ScreenRecordingSessionRequest
@@ -1159,11 +1163,16 @@ from .subscriber_response import SubscriberResponse
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .survey import Survey
 from .survey_assignment import SurveyAssignment
 from .survey_form import SurveyForm
+from .survey_form_and_scoring_set import SurveyFormAndScoringSet
 from .survey_form_entity_listing import SurveyFormEntityListing
 from .survey_question import SurveyQuestion
 from .survey_question_group import SurveyQuestionGroup
+from .survey_question_group_score import SurveyQuestionGroupScore
+from .survey_question_score import SurveyQuestionScore
+from .survey_scoring_set import SurveyScoringSet
 from .system_message_system_message import SystemMessageSystemMessage
 from .system_presence import SystemPresence
 from .system_prompt import SystemPrompt
@@ -1191,6 +1200,7 @@ from .time_slot import TimeSlot
 from .time_zone import TimeZone
 from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
+from .token import Token
 from .token_info import TokenInfo
 from .transfer_request import TransferRequest
 from .trunk import Trunk

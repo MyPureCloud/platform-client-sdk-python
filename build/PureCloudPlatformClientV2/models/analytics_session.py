@@ -709,7 +709,7 @@ class AnalyticsSession(object):
     def script_id(self):
         """
         Gets the script_id of this AnalyticsSession.
-        Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
+        A unique identifier for a script
 
         :return: The script_id of this AnalyticsSession.
         :rtype: str
@@ -720,7 +720,7 @@ class AnalyticsSession(object):
     def script_id(self, script_id):
         """
         Sets the script_id of this AnalyticsSession.
-        Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
+        A unique identifier for a script
 
         :param script_id: The script_id of this AnalyticsSession.
         :type: str
