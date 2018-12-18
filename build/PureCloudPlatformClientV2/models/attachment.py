@@ -42,7 +42,8 @@ class Attachment(object):
             'name': 'str',
             'content_uri': 'str',
             'content_type': 'str',
-            'content_length': 'int'
+            'content_length': 'int',
+            'inline_image': 'bool'
         }
 
         self.attribute_map = {
@@ -50,7 +51,8 @@ class Attachment(object):
             'name': 'name',
             'content_uri': 'contentUri',
             'content_type': 'contentType',
-            'content_length': 'contentLength'
+            'content_length': 'contentLength',
+            'inline_image': 'inlineImage'
         }
 
         self._attachment_id = None
@@ -58,6 +60,7 @@ class Attachment(object):
         self._content_uri = None
         self._content_type = None
         self._content_length = None
+        self._inline_image = None
 
     @property
     def attachment_id(self):
@@ -173,6 +176,29 @@ class Attachment(object):
         """
         
         self._content_length = content_length
+
+    @property
+    def inline_image(self):
+        """
+        Gets the inline_image of this Attachment.
+        Whether or not the attachment was attached inline.,
+
+        :return: The inline_image of this Attachment.
+        :rtype: bool
+        """
+        return self._inline_image
+
+    @inline_image.setter
+    def inline_image(self, inline_image):
+        """
+        Sets the inline_image of this Attachment.
+        Whether or not the attachment was attached inline.,
+
+        :param inline_image: The inline_image of this Attachment.
+        :type: bool
+        """
+        
+        self._inline_image = inline_image
 
     def to_dict(self):
         """
