@@ -815,6 +815,7 @@ from .models.operation import Operation
 from .models.org_media_utilization import OrgMediaUtilization
 from .models.org_o_auth_client import OrgOAuthClient
 from .models.org_user import OrgUser
+from .models.org_whitelist_settings import OrgWhitelistSettings
 from .models.organization import Organization
 from .models.organization_features import OrganizationFeatures
 from .models.organization_presence import OrganizationPresence

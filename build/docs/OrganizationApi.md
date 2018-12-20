@@ -10,8 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_fieldconfig**](OrganizationApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_organizations_me**](OrganizationApi.html#get_organizations_me) | Get organization.|
+|[**get_organizations_whitelist**](OrganizationApi.html#get_organizations_whitelist) | Get organization whitelist settings|
 |[**patch_organizations_feature**](OrganizationApi.html#patch_organizations_feature) | Update organization|
 |[**put_organizations_me**](OrganizationApi.html#put_organizations_me) | Update organization.|
+|[**put_organizations_whitelist**](OrganizationApi.html#put_organizations_whitelist) | Update organization whitelist settings|
 {: class="table table-striped"}
 
 <a name="get_fieldconfig"></a>
@@ -109,6 +111,52 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Organization**](Organization.html)
+
+<a name="get_organizations_whitelist"></a>
+
+## [**OrgWhitelistSettings**](OrgWhitelistSettings.html) get_organizations_whitelist()
+
+
+
+Get organization whitelist settings
+
+
+
+Wraps GET /api/v2/organizations/whitelist 
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+
+try:
+    # Get organization whitelist settings
+    api_response = api_instance.get_organizations_whitelist()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OrganizationApi->get_organizations_whitelist: %s\n" % e
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
 
 <a name="patch_organizations_feature"></a>
 
@@ -213,4 +261,55 @@ except ApiException as e:
 ### Return type
 
 [**Organization**](Organization.html)
+
+<a name="put_organizations_whitelist"></a>
+
+## [**OrgWhitelistSettings**](OrgWhitelistSettings.html) put_organizations_whitelist(body)
+
+
+
+Update organization whitelist settings
+
+
+
+Wraps PUT /api/v2/organizations/whitelist 
+
+Requires ANY permissions: 
+
+* admin
+
+### Example
+
+~~~python
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+body = PureCloudPlatformClientV2.OrgWhitelistSettings() # OrgWhitelistSettings | Whitelist settings
+
+try:
+    # Update organization whitelist settings
+    api_response = api_instance.put_organizations_whitelist(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OrganizationApi->put_organizations_whitelist: %s\n" % e
+~~~
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings.html)| Whitelist settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
 

@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "PureCloudPlatformClientV2"
-VERSION = "47.1.2"
+VERSION = "47.2.0"
 
 
 
@@ -19,7 +19,7 @@ REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(
     name="PureCloudPlatformClientV2",
-    version="47.1.2",
+    version="47.2.0",
     description="PureCloud Platform API SDK",
     author="Genesys Developer Evangelists",
     author_email="DeveloperEvangelists@Genesys.com",

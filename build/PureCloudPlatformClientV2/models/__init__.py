@@ -815,6 +815,7 @@ from .operation import Operation
 from .org_media_utilization import OrgMediaUtilization
 from .org_o_auth_client import OrgOAuthClient
 from .org_user import OrgUser
+from .org_whitelist_settings import OrgWhitelistSettings
 from .organization import Organization
 from .organization_features import OrganizationFeatures
 from .organization_presence import OrganizationPresence

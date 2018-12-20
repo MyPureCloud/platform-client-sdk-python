@@ -43,6 +43,7 @@ class AnalyticsConversation(object):
             'conversation_end': 'datetime',
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
+            'originating_direction': 'str',
             'participants': 'list[AnalyticsParticipant]',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
@@ -55,6 +56,7 @@ class AnalyticsConversation(object):
             'conversation_end': 'conversationEnd',
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
+            'originating_direction': 'originatingDirection',
             'participants': 'participants',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
@@ -66,6 +68,7 @@ class AnalyticsConversation(object):
         self._conversation_end = None
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
+        self._originating_direction = None
         self._participants = None
         self._evaluations = None
         self._surveys = None
@@ -185,6 +188,33 @@ class AnalyticsConversation(object):
         """
         
         self._media_stats_min_conversation_r_factor = media_stats_min_conversation_r_factor
+
+    @property
+    def originating_direction(self):
+        """
+        Gets the originating_direction of this AnalyticsConversation.
+        The original direction of the conversation
+
+        :return: The originating_direction of this AnalyticsConversation.
+        :rtype: str
+        """
+        return self._originating_direction
+
+    @originating_direction.setter
+    def originating_direction(self, originating_direction):
+        """
+        Sets the originating_direction of this AnalyticsConversation.
+        The original direction of the conversation
+
+        :param originating_direction: The originating_direction of this AnalyticsConversation.
+        :type: str
+        """
+        allowed_values = ["inbound", "outbound"]
+        if originating_direction.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for originating_direction -> " + originating_direction
+            self._originating_direction = "outdated_sdk_version"
+        else:
+            self._originating_direction = originating_direction
 
     @property
     def participants(self):

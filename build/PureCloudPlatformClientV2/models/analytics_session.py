@@ -48,6 +48,7 @@ class AnalyticsSession(object):
             'ani': 'str',
             'direction': 'str',
             'dnis': 'str',
+            'session_dnis': 'str',
             'outbound_campaign_id': 'str',
             'outbound_contact_id': 'str',
             'outbound_contact_list_id': 'str',
@@ -91,6 +92,7 @@ class AnalyticsSession(object):
             'ani': 'ani',
             'direction': 'direction',
             'dnis': 'dnis',
+            'session_dnis': 'sessionDnis',
             'outbound_campaign_id': 'outboundCampaignId',
             'outbound_contact_id': 'outboundContactId',
             'outbound_contact_list_id': 'outboundContactListId',
@@ -133,6 +135,7 @@ class AnalyticsSession(object):
         self._ani = None
         self._direction = None
         self._dnis = None
+        self._session_dnis = None
         self._outbound_campaign_id = None
         self._outbound_contact_id = None
         self._outbound_contact_list_id = None
@@ -387,7 +390,7 @@ class AnalyticsSession(object):
     def dnis(self):
         """
         Gets the dnis of this AnalyticsSession.
-        Automatic Number Identification (caller's number)
+        Dialed number identification service (number dialed by the calling party)
 
         :return: The dnis of this AnalyticsSession.
         :rtype: str
@@ -398,13 +401,36 @@ class AnalyticsSession(object):
     def dnis(self, dnis):
         """
         Sets the dnis of this AnalyticsSession.
-        Automatic Number Identification (caller's number)
+        Dialed number identification service (number dialed by the calling party)
 
         :param dnis: The dnis of this AnalyticsSession.
         :type: str
         """
         
         self._dnis = dnis
+
+    @property
+    def session_dnis(self):
+        """
+        Gets the session_dnis of this AnalyticsSession.
+        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
+
+        :return: The session_dnis of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._session_dnis
+
+    @session_dnis.setter
+    def session_dnis(self, session_dnis):
+        """
+        Sets the session_dnis of this AnalyticsSession.
+        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
+
+        :param session_dnis: The session_dnis of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._session_dnis = session_dnis
 
     @property
     def outbound_campaign_id(self):

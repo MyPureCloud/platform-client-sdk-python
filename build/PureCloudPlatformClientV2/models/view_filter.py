@@ -91,7 +91,8 @@ class ViewFilter(object):
             'is_blind_transferred': 'bool',
             'is_consulted': 'bool',
             'is_consult_transferred': 'bool',
-            'remote_participants': 'list[str]'
+            'remote_participants': 'list[str]',
+            'status_list': 'list[str]'
         }
 
         self.attribute_map = {
@@ -148,7 +149,8 @@ class ViewFilter(object):
             'is_blind_transferred': 'isBlindTransferred',
             'is_consulted': 'isConsulted',
             'is_consult_transferred': 'isConsultTransferred',
-            'remote_participants': 'remoteParticipants'
+            'remote_participants': 'remoteParticipants',
+            'status_list': 'statusList'
         }
 
         self._media_types = None
@@ -205,6 +207,7 @@ class ViewFilter(object):
         self._is_consulted = None
         self._is_consult_transferred = None
         self._remote_participants = None
+        self._status_list = None
 
     @property
     def media_types(self):
@@ -1459,6 +1462,29 @@ class ViewFilter(object):
         """
         
         self._remote_participants = remote_participants
+
+    @property
+    def status_list(self):
+        """
+        Gets the status_list of this ViewFilter.
+        A list of status for the configuration view
+
+        :return: The status_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._status_list
+
+    @status_list.setter
+    def status_list(self, status_list):
+        """
+        Sets the status_list of this ViewFilter.
+        A list of status for the configuration view
+
+        :param status_list: The status_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._status_list = status_list
 
     def to_dict(self):
         """
