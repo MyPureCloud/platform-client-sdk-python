@@ -99,9 +99,7 @@ from .attachment import Attachment
 from .attempt_limits import AttemptLimits
 from .attempt_limits_entity_listing import AttemptLimitsEntityListing
 from .attribute import Attribute
-from .attribute_entity_listing import AttributeEntityListing
 from .attribute_filter_item import AttributeFilterItem
-from .attribute_query_request import AttributeQueryRequest
 from .audit_change import AuditChange
 from .audit_entity import AuditEntity
 from .audit_entity_reference import AuditEntityReference
@@ -759,6 +757,7 @@ from .location_emergency_number import LocationEmergencyNumber
 from .location_entity_listing import LocationEntityListing
 from .location_search_criteria import LocationSearchCriteria
 from .location_search_request import LocationSearchRequest
+from .location_update_definition import LocationUpdateDefinition
 from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
@@ -1069,6 +1068,7 @@ from .rest_error_detail import RestErrorDetail
 from .retention_duration import RetentionDuration
 from .reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
 from .ring import Ring
+from .role_division import RoleDivision
 from .route_group import RouteGroup
 from .route_group_attributes import RouteGroupAttributes
 from .route_group_list import RouteGroupList
@@ -1378,6 +1378,7 @@ from .wfm_user_entity_listing import WfmUserEntityListing
 from .wfm_user_schedule_adherence_updated_topic_user_reference import WfmUserScheduleAdherenceUpdatedTopicUserReference
 from .wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update import WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
+from .whats_app_id import WhatsAppId
 from .work_plan import WorkPlan
 from .work_plan_activity import WorkPlanActivity
 from .work_plan_list_item_response import WorkPlanListItemResponse

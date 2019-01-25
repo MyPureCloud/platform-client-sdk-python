@@ -4,7 +4,6 @@ from __future__ import absolute_import
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
-from .attributes_api import AttributesApi
 from .authorization_api import AuthorizationApi
 from .billing_api import BillingApi
 from .content_management_api import ContentManagementApi

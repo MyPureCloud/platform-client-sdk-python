@@ -50,6 +50,7 @@ class OAuthClientListing(object):
             'created_by': 'UriReference',
             'modified_by': 'UriReference',
             'scope': 'list[str]',
+            'role_divisions': 'list[RoleDivision]',
             'self_uri': 'str'
         }
 
@@ -66,6 +67,7 @@ class OAuthClientListing(object):
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'scope': 'scope',
+            'role_divisions': 'roleDivisions',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +83,7 @@ class OAuthClientListing(object):
         self._created_by = None
         self._modified_by = None
         self._scope = None
+        self._role_divisions = None
         self._self_uri = None
 
     @property
@@ -358,6 +361,29 @@ class OAuthClientListing(object):
         """
         
         self._scope = scope
+
+    @property
+    def role_divisions(self):
+        """
+        Gets the role_divisions of this OAuthClientListing.
+        Set of roles and their corresponding divisions associated with this client
+
+        :return: The role_divisions of this OAuthClientListing.
+        :rtype: list[RoleDivision]
+        """
+        return self._role_divisions
+
+    @role_divisions.setter
+    def role_divisions(self, role_divisions):
+        """
+        Sets the role_divisions of this OAuthClientListing.
+        Set of roles and their corresponding divisions associated with this client
+
+        :param role_divisions: The role_divisions of this OAuthClientListing.
+        :type: list[RoleDivision]
+        """
+        
+        self._role_divisions = role_divisions
 
     @property
     def self_uri(self):

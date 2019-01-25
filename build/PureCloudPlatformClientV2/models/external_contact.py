@@ -54,6 +54,7 @@ class ExternalContact(object):
             'address': 'ContactAddress',
             'twitter_id': 'TwitterId',
             'line_id': 'LineId',
+            'whats_app_id': 'WhatsAppId',
             'facebook_id': 'FacebookId',
             'modify_date': 'datetime',
             'create_date': 'datetime',
@@ -81,6 +82,7 @@ class ExternalContact(object):
             'address': 'address',
             'twitter_id': 'twitterId',
             'line_id': 'lineId',
+            'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
@@ -107,6 +109,7 @@ class ExternalContact(object):
         self._address = None
         self._twitter_id = None
         self._line_id = None
+        self._whats_app_id = None
         self._facebook_id = None
         self._modify_date = None
         self._create_date = None
@@ -483,6 +486,29 @@ class ExternalContact(object):
         """
         
         self._line_id = line_id
+
+    @property
+    def whats_app_id(self):
+        """
+        Gets the whats_app_id of this ExternalContact.
+
+
+        :return: The whats_app_id of this ExternalContact.
+        :rtype: WhatsAppId
+        """
+        return self._whats_app_id
+
+    @whats_app_id.setter
+    def whats_app_id(self, whats_app_id):
+        """
+        Sets the whats_app_id of this ExternalContact.
+
+
+        :param whats_app_id: The whats_app_id of this ExternalContact.
+        :type: WhatsAppId
+        """
+        
+        self._whats_app_id = whats_app_id
 
     @property
     def facebook_id(self):

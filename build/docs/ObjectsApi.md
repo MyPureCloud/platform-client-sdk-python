@@ -244,9 +244,8 @@ Returns the maximum allowed number of divisions.
 
 Wraps GET /api/v2/authorization/divisions/limit 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:division:view
 
 ### Example
 

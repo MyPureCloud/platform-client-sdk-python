@@ -46,6 +46,84 @@ class LocationsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_location(self, location_id, **kwargs):
+        """
+        Delete a location
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_location(location_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str location_id: Location ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_location" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_id' is set
+        if ('location_id' not in params) or (params['location_id'] is None):
+            raise ValueError("Missing the required parameter `location_id` when calling `delete_location`")
+
+
+        resource_path = '/api/v2/locations/{locationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_id' in params:
+            path_params['locationId'] = params['location_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_location(self, location_id, **kwargs):
         """
         Get Location by ID.
@@ -141,13 +219,14 @@ class LocationsApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param list[str] id: id
         :param str sort_order: Sort order
         :return: LocationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_order']
+        all_params = ['page_size', 'page_number', 'id', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -170,6 +249,8 @@ class LocationsApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
 
@@ -282,6 +363,168 @@ class LocationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LocationsSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_location(self, location_id, body, **kwargs):
+        """
+        Update a location
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_location(location_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str location_id: Location ID (required)
+        :param LocationUpdateDefinition body: Location (required)
+        :return: LocationDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_location" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_id' is set
+        if ('location_id' not in params) or (params['location_id'] is None):
+            raise ValueError("Missing the required parameter `location_id` when calling `patch_location`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_location`")
+
+
+        resource_path = '/api/v2/locations/{locationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_id' in params:
+            path_params['locationId'] = params['location_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LocationDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_locations(self, body, **kwargs):
+        """
+        Create a location
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_locations(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LocationDefinition body: Location (required)
+        :return: LocationDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_locations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_locations`")
+
+
+        resource_path = '/api/v2/locations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LocationDefinition',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -78,7 +78,14 @@ class AnalyticsSession(object):
             'metrics': 'list[AnalyticsSessionMetric]',
             'flow': 'AnalyticsFlow',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
-            'recording': 'bool'
+            'recording': 'bool',
+            'journey_customer_id': 'str',
+            'journey_customer_id_type': 'str',
+            'journey_customer_session_id': 'str',
+            'journey_customer_session_id_type': 'str',
+            'journey_action_id': 'str',
+            'journey_action_map_id': 'str',
+            'journey_action_map_version': 'str'
         }
 
         self.attribute_map = {
@@ -122,7 +129,14 @@ class AnalyticsSession(object):
             'metrics': 'metrics',
             'flow': 'flow',
             'media_endpoint_stats': 'mediaEndpointStats',
-            'recording': 'recording'
+            'recording': 'recording',
+            'journey_customer_id': 'journeyCustomerId',
+            'journey_customer_id_type': 'journeyCustomerIdType',
+            'journey_customer_session_id': 'journeyCustomerSessionId',
+            'journey_customer_session_id_type': 'journeyCustomerSessionIdType',
+            'journey_action_id': 'journeyActionId',
+            'journey_action_map_id': 'journeyActionMapId',
+            'journey_action_map_version': 'journeyActionMapVersion'
         }
 
         self._media_type = None
@@ -166,6 +180,13 @@ class AnalyticsSession(object):
         self._flow = None
         self._media_endpoint_stats = None
         self._recording = None
+        self._journey_customer_id = None
+        self._journey_customer_id_type = None
+        self._journey_customer_session_id = None
+        self._journey_customer_session_id_type = None
+        self._journey_action_id = None
+        self._journey_action_map_id = None
+        self._journey_action_map_version = None
 
     @property
     def media_type(self):
@@ -1121,6 +1142,167 @@ class AnalyticsSession(object):
         """
         
         self._recording = recording
+
+    @property
+    def journey_customer_id(self):
+        """
+        Gets the journey_customer_id of this AnalyticsSession.
+        ID of the journey customer
+
+        :return: The journey_customer_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_id
+
+    @journey_customer_id.setter
+    def journey_customer_id(self, journey_customer_id):
+        """
+        Sets the journey_customer_id of this AnalyticsSession.
+        ID of the journey customer
+
+        :param journey_customer_id: The journey_customer_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_id = journey_customer_id
+
+    @property
+    def journey_customer_id_type(self):
+        """
+        Gets the journey_customer_id_type of this AnalyticsSession.
+        Type of the journey customer ID
+
+        :return: The journey_customer_id_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_id_type
+
+    @journey_customer_id_type.setter
+    def journey_customer_id_type(self, journey_customer_id_type):
+        """
+        Sets the journey_customer_id_type of this AnalyticsSession.
+        Type of the journey customer ID
+
+        :param journey_customer_id_type: The journey_customer_id_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_id_type = journey_customer_id_type
+
+    @property
+    def journey_customer_session_id(self):
+        """
+        Gets the journey_customer_session_id of this AnalyticsSession.
+        ID of the journey customer session
+
+        :return: The journey_customer_session_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_session_id
+
+    @journey_customer_session_id.setter
+    def journey_customer_session_id(self, journey_customer_session_id):
+        """
+        Sets the journey_customer_session_id of this AnalyticsSession.
+        ID of the journey customer session
+
+        :param journey_customer_session_id: The journey_customer_session_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_session_id = journey_customer_session_id
+
+    @property
+    def journey_customer_session_id_type(self):
+        """
+        Gets the journey_customer_session_id_type of this AnalyticsSession.
+        Type of the journey customer session ID
+
+        :return: The journey_customer_session_id_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_session_id_type
+
+    @journey_customer_session_id_type.setter
+    def journey_customer_session_id_type(self, journey_customer_session_id_type):
+        """
+        Sets the journey_customer_session_id_type of this AnalyticsSession.
+        Type of the journey customer session ID
+
+        :param journey_customer_session_id_type: The journey_customer_session_id_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_session_id_type = journey_customer_session_id_type
+
+    @property
+    def journey_action_id(self):
+        """
+        Gets the journey_action_id of this AnalyticsSession.
+        Journey action ID
+
+        :return: The journey_action_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_action_id
+
+    @journey_action_id.setter
+    def journey_action_id(self, journey_action_id):
+        """
+        Sets the journey_action_id of this AnalyticsSession.
+        Journey action ID
+
+        :param journey_action_id: The journey_action_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_action_id = journey_action_id
+
+    @property
+    def journey_action_map_id(self):
+        """
+        Gets the journey_action_map_id of this AnalyticsSession.
+        Journey action map ID
+
+        :return: The journey_action_map_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_action_map_id
+
+    @journey_action_map_id.setter
+    def journey_action_map_id(self, journey_action_map_id):
+        """
+        Sets the journey_action_map_id of this AnalyticsSession.
+        Journey action map ID
+
+        :param journey_action_map_id: The journey_action_map_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_action_map_id = journey_action_map_id
+
+    @property
+    def journey_action_map_version(self):
+        """
+        Gets the journey_action_map_version of this AnalyticsSession.
+        Journey action map version
+
+        :return: The journey_action_map_version of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_action_map_version
+
+    @journey_action_map_version.setter
+    def journey_action_map_version(self, journey_action_map_version):
+        """
+        Sets the journey_action_map_version of this AnalyticsSession.
+        Journey action map version
+
+        :param journey_action_map_version: The journey_action_map_version of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_action_map_version = journey_action_map_version
 
     def to_dict(self):
         """

@@ -8,7 +8,7 @@ title: LocationDefinition
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
-| **name** | **str** |  | [optional] |
+| **name** | **str** | The name of the Location. | |
 | **address** | [**LocationAddress**](LocationAddress.html) |  | [optional] |
 | **address_verified** | **bool** |  | [optional] |
 | **emergency_number** | [**LocationEmergencyNumber**](LocationEmergencyNumber.html) |  | [optional] |

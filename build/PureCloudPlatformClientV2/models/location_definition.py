@@ -98,7 +98,7 @@ class LocationDefinition(object):
     def name(self):
         """
         Gets the name of this LocationDefinition.
-
+        The name of the Location.
 
         :return: The name of this LocationDefinition.
         :rtype: str
@@ -109,7 +109,7 @@ class LocationDefinition(object):
     def name(self, name):
         """
         Sets the name of this LocationDefinition.
-
+        The name of the Location.
 
         :param name: The name of this LocationDefinition.
         :type: str

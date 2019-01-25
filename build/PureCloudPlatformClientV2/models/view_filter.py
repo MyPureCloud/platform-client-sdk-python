@@ -92,7 +92,16 @@ class ViewFilter(object):
             'is_consulted': 'bool',
             'is_consult_transferred': 'bool',
             'remote_participants': 'list[str]',
-            'status_list': 'list[str]'
+            'status_list': 'list[str]',
+            'flow_ids': 'list[str]',
+            'flow_outcome_ids': 'list[str]',
+            'flow_outcome_values': 'list[str]',
+            'flow_destination_types': 'list[str]',
+            'flow_disconnect_reasons': 'list[str]',
+            'flow_types': 'list[str]',
+            'flow_entry_types': 'list[str]',
+            'flow_entry_reasons': 'list[str]',
+            'group_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -150,7 +159,16 @@ class ViewFilter(object):
             'is_consulted': 'isConsulted',
             'is_consult_transferred': 'isConsultTransferred',
             'remote_participants': 'remoteParticipants',
-            'status_list': 'statusList'
+            'status_list': 'statusList',
+            'flow_ids': 'flowIds',
+            'flow_outcome_ids': 'flowOutcomeIds',
+            'flow_outcome_values': 'flowOutcomeValues',
+            'flow_destination_types': 'flowDestinationTypes',
+            'flow_disconnect_reasons': 'flowDisconnectReasons',
+            'flow_types': 'flowTypes',
+            'flow_entry_types': 'flowEntryTypes',
+            'flow_entry_reasons': 'flowEntryReasons',
+            'group_ids': 'groupIds'
         }
 
         self._media_types = None
@@ -208,6 +226,15 @@ class ViewFilter(object):
         self._is_consult_transferred = None
         self._remote_participants = None
         self._status_list = None
+        self._flow_ids = None
+        self._flow_outcome_ids = None
+        self._flow_outcome_values = None
+        self._flow_destination_types = None
+        self._flow_disconnect_reasons = None
+        self._flow_types = None
+        self._flow_entry_types = None
+        self._flow_entry_reasons = None
+        self._group_ids = None
 
     @property
     def media_types(self):
@@ -1485,6 +1512,213 @@ class ViewFilter(object):
         """
         
         self._status_list = status_list
+
+    @property
+    def flow_ids(self):
+        """
+        Gets the flow_ids of this ViewFilter.
+        The list of flow Ids
+
+        :return: The flow_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_ids
+
+    @flow_ids.setter
+    def flow_ids(self, flow_ids):
+        """
+        Sets the flow_ids of this ViewFilter.
+        The list of flow Ids
+
+        :param flow_ids: The flow_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_ids = flow_ids
+
+    @property
+    def flow_outcome_ids(self):
+        """
+        Gets the flow_outcome_ids of this ViewFilter.
+        A list of outcome ids of the flow
+
+        :return: The flow_outcome_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_outcome_ids
+
+    @flow_outcome_ids.setter
+    def flow_outcome_ids(self, flow_outcome_ids):
+        """
+        Sets the flow_outcome_ids of this ViewFilter.
+        A list of outcome ids of the flow
+
+        :param flow_outcome_ids: The flow_outcome_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_outcome_ids = flow_outcome_ids
+
+    @property
+    def flow_outcome_values(self):
+        """
+        Gets the flow_outcome_values of this ViewFilter.
+        A list of outcome values of the flow
+
+        :return: The flow_outcome_values of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_outcome_values
+
+    @flow_outcome_values.setter
+    def flow_outcome_values(self, flow_outcome_values):
+        """
+        Sets the flow_outcome_values of this ViewFilter.
+        A list of outcome values of the flow
+
+        :param flow_outcome_values: The flow_outcome_values of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_outcome_values = flow_outcome_values
+
+    @property
+    def flow_destination_types(self):
+        """
+        Gets the flow_destination_types of this ViewFilter.
+        The list of destination types of the flow
+
+        :return: The flow_destination_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_destination_types
+
+    @flow_destination_types.setter
+    def flow_destination_types(self, flow_destination_types):
+        """
+        Sets the flow_destination_types of this ViewFilter.
+        The list of destination types of the flow
+
+        :param flow_destination_types: The flow_destination_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_destination_types = flow_destination_types
+
+    @property
+    def flow_disconnect_reasons(self):
+        """
+        Gets the flow_disconnect_reasons of this ViewFilter.
+        The list of reasons for the flow to disconnect
+
+        :return: The flow_disconnect_reasons of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_disconnect_reasons
+
+    @flow_disconnect_reasons.setter
+    def flow_disconnect_reasons(self, flow_disconnect_reasons):
+        """
+        Sets the flow_disconnect_reasons of this ViewFilter.
+        The list of reasons for the flow to disconnect
+
+        :param flow_disconnect_reasons: The flow_disconnect_reasons of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_disconnect_reasons = flow_disconnect_reasons
+
+    @property
+    def flow_types(self):
+        """
+        Gets the flow_types of this ViewFilter.
+        A list of types of the flow
+
+        :return: The flow_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_types
+
+    @flow_types.setter
+    def flow_types(self, flow_types):
+        """
+        Sets the flow_types of this ViewFilter.
+        A list of types of the flow
+
+        :param flow_types: The flow_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_types = flow_types
+
+    @property
+    def flow_entry_types(self):
+        """
+        Gets the flow_entry_types of this ViewFilter.
+        A list of types of the flow entry
+
+        :return: The flow_entry_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_entry_types
+
+    @flow_entry_types.setter
+    def flow_entry_types(self, flow_entry_types):
+        """
+        Sets the flow_entry_types of this ViewFilter.
+        A list of types of the flow entry
+
+        :param flow_entry_types: The flow_entry_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_entry_types = flow_entry_types
+
+    @property
+    def flow_entry_reasons(self):
+        """
+        Gets the flow_entry_reasons of this ViewFilter.
+        A list of reasons of flow entry
+
+        :return: The flow_entry_reasons of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_entry_reasons
+
+    @flow_entry_reasons.setter
+    def flow_entry_reasons(self, flow_entry_reasons):
+        """
+        Sets the flow_entry_reasons of this ViewFilter.
+        A list of reasons of flow entry
+
+        :param flow_entry_reasons: The flow_entry_reasons of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_entry_reasons = flow_entry_reasons
+
+    @property
+    def group_ids(self):
+        """
+        Gets the group_ids of this ViewFilter.
+        A list of directory group ids
+
+        :return: The group_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._group_ids
+
+    @group_ids.setter
+    def group_ids(self, group_ids):
+        """
+        Sets the group_ids of this ViewFilter.
+        A list of directory group ids
+
+        :param group_ids: The group_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._group_ids = group_ids
 
     def to_dict(self):
         """

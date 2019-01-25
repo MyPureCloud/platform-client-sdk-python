@@ -46,6 +46,7 @@ class OrgOAuthClient(object):
             'modified_by': 'UriReference',
             'authorized_grant_type': 'str',
             'scope': 'list[str]',
+            'role_divisions': 'list[RoleDivision]',
             'organization': 'NamedEntity'
         }
 
@@ -58,6 +59,7 @@ class OrgOAuthClient(object):
             'modified_by': 'modifiedBy',
             'authorized_grant_type': 'authorizedGrantType',
             'scope': 'scope',
+            'role_divisions': 'roleDivisions',
             'organization': 'organization'
         }
 
@@ -69,6 +71,7 @@ class OrgOAuthClient(object):
         self._modified_by = None
         self._authorized_grant_type = None
         self._scope = None
+        self._role_divisions = None
         self._organization = None
 
     @property
@@ -258,6 +261,29 @@ class OrgOAuthClient(object):
         """
         
         self._scope = scope
+
+    @property
+    def role_divisions(self):
+        """
+        Gets the role_divisions of this OrgOAuthClient.
+        Set of roles and their corresponding divisions associated with this client
+
+        :return: The role_divisions of this OrgOAuthClient.
+        :rtype: list[RoleDivision]
+        """
+        return self._role_divisions
+
+    @role_divisions.setter
+    def role_divisions(self, role_divisions):
+        """
+        Sets the role_divisions of this OrgOAuthClient.
+        Set of roles and their corresponding divisions associated with this client
+
+        :param role_divisions: The role_divisions of this OrgOAuthClient.
+        :type: list[RoleDivision]
+        """
+        
+        self._role_divisions = role_divisions
 
     @property
     def organization(self):

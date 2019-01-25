@@ -48,6 +48,13 @@ title: AnalyticsSession
 | **flow** | [**AnalyticsFlow**](AnalyticsFlow.html) | IVR flow execution associated with this session | [optional] |
 | **media_endpoint_stats** | [**list[AnalyticsMediaEndpointStat]**](AnalyticsMediaEndpointStat.html) | Media endpoint stats associated with this session | [optional] |
 | **recording** | **bool** | Flag determining if an audio recording was started or not | [optional] |
+| **journey_customer_id** | **str** | ID of the journey customer | [optional] |
+| **journey_customer_id_type** | **str** | Type of the journey customer ID | [optional] |
+| **journey_customer_session_id** | **str** | ID of the journey customer session | [optional] |
+| **journey_customer_session_id_type** | **str** | Type of the journey customer session ID | [optional] |
+| **journey_action_id** | **str** | Journey action ID | [optional] |
+| **journey_action_map_id** | **str** | Journey action map ID | [optional] |
+| **journey_action_map_version** | **str** | Journey action map version | [optional] |
 {: class="table table-striped"}
 
 

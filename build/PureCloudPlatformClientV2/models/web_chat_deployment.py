@@ -45,6 +45,7 @@ class WebChatDeployment(object):
             'authentication_url': 'str',
             'disabled': 'bool',
             'web_chat_config': 'WebChatConfig',
+            'allowed_domains': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class WebChatDeployment(object):
             'authentication_url': 'authenticationUrl',
             'disabled': 'disabled',
             'web_chat_config': 'webChatConfig',
+            'allowed_domains': 'allowedDomains',
             'self_uri': 'selfUri'
         }
 
@@ -66,6 +68,7 @@ class WebChatDeployment(object):
         self._authentication_url = None
         self._disabled = None
         self._web_chat_config = None
+        self._allowed_domains = None
         self._self_uri = None
 
     @property
@@ -228,6 +231,29 @@ class WebChatDeployment(object):
         """
         
         self._web_chat_config = web_chat_config
+
+    @property
+    def allowed_domains(self):
+        """
+        Gets the allowed_domains of this WebChatDeployment.
+
+
+        :return: The allowed_domains of this WebChatDeployment.
+        :rtype: list[str]
+        """
+        return self._allowed_domains
+
+    @allowed_domains.setter
+    def allowed_domains(self, allowed_domains):
+        """
+        Sets the allowed_domains of this WebChatDeployment.
+
+
+        :param allowed_domains: The allowed_domains of this WebChatDeployment.
+        :type: list[str]
+        """
+        
+        self._allowed_domains = allowed_domains
 
     @property
     def self_uri(self):

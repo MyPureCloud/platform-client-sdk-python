@@ -43,6 +43,8 @@ class AnalyticsFlow(object):
             'flow_version': 'str',
             'flow_type': 'str',
             'exit_reason': 'str',
+            'entry_reason': 'str',
+            'entry_type': 'str',
             'transfer_type': 'str',
             'transfer_target_name': 'str',
             'transfer_target_address': 'str',
@@ -58,6 +60,8 @@ class AnalyticsFlow(object):
             'flow_version': 'flowVersion',
             'flow_type': 'flowType',
             'exit_reason': 'exitReason',
+            'entry_reason': 'entryReason',
+            'entry_type': 'entryType',
             'transfer_type': 'transferType',
             'transfer_target_name': 'transferTargetName',
             'transfer_target_address': 'transferTargetAddress',
@@ -72,6 +76,8 @@ class AnalyticsFlow(object):
         self._flow_version = None
         self._flow_type = None
         self._exit_reason = None
+        self._entry_reason = None
+        self._entry_type = None
         self._transfer_type = None
         self._transfer_target_name = None
         self._transfer_target_address = None
@@ -198,6 +204,56 @@ class AnalyticsFlow(object):
         """
         
         self._exit_reason = exit_reason
+
+    @property
+    def entry_reason(self):
+        """
+        Gets the entry_reason of this AnalyticsFlow.
+        The particular entry reason for this flow, e.g. an address, userId, or flowId
+
+        :return: The entry_reason of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._entry_reason
+
+    @entry_reason.setter
+    def entry_reason(self, entry_reason):
+        """
+        Sets the entry_reason of this AnalyticsFlow.
+        The particular entry reason for this flow, e.g. an address, userId, or flowId
+
+        :param entry_reason: The entry_reason of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._entry_reason = entry_reason
+
+    @property
+    def entry_type(self):
+        """
+        Gets the entry_type of this AnalyticsFlow.
+        The entry type for this flow
+
+        :return: The entry_type of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._entry_type
+
+    @entry_type.setter
+    def entry_type(self, entry_type):
+        """
+        Sets the entry_type of this AnalyticsFlow.
+        The entry type for this flow
+
+        :param entry_type: The entry_type of this AnalyticsFlow.
+        :type: str
+        """
+        allowed_values = ["dnis", "direct", "flow", "agent", "outbound"]
+        if entry_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for entry_type -> " + entry_type
+            self._entry_type = "outdated_sdk_version"
+        else:
+            self._entry_type = entry_type
 
     @property
     def transfer_type(self):
