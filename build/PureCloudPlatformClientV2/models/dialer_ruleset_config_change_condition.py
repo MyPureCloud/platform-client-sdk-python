@@ -47,6 +47,7 @@ class DialerRulesetConfigChangeCondition(object):
             'codes': 'list[str]',
             'property_type': 'str',
             'pcProperty': 'str',
+            'data_not_found_resolution': 'bool',
             'contact_id_field': 'str',
             'call_analysis_result_field': 'str',
             'agent_wrapup_field': 'str',
@@ -66,6 +67,7 @@ class DialerRulesetConfigChangeCondition(object):
             'codes': 'codes',
             'property_type': 'propertyType',
             'pcProperty': 'property',
+            'data_not_found_resolution': 'dataNotFoundResolution',
             'contact_id_field': 'contactIdField',
             'call_analysis_result_field': 'callAnalysisResultField',
             'agent_wrapup_field': 'agentWrapupField',
@@ -84,6 +86,7 @@ class DialerRulesetConfigChangeCondition(object):
         self._codes = None
         self._property_type = None
         self._pcProperty = None
+        self._data_not_found_resolution = None
         self._contact_id_field = None
         self._call_analysis_result_field = None
         self._agent_wrapup_field = None
@@ -310,6 +313,29 @@ class DialerRulesetConfigChangeCondition(object):
         """
         
         self._pcProperty = pcProperty
+
+    @property
+    def data_not_found_resolution(self):
+        """
+        Gets the data_not_found_resolution of this DialerRulesetConfigChangeCondition.
+
+
+        :return: The data_not_found_resolution of this DialerRulesetConfigChangeCondition.
+        :rtype: bool
+        """
+        return self._data_not_found_resolution
+
+    @data_not_found_resolution.setter
+    def data_not_found_resolution(self, data_not_found_resolution):
+        """
+        Sets the data_not_found_resolution of this DialerRulesetConfigChangeCondition.
+
+
+        :param data_not_found_resolution: The data_not_found_resolution of this DialerRulesetConfigChangeCondition.
+        :type: bool
+        """
+        
+        self._data_not_found_resolution = data_not_found_resolution
 
     @property
     def contact_id_field(self):

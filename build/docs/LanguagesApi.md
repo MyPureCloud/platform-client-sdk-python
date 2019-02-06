@@ -38,7 +38,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -56,7 +56,7 @@ try:
     api_instance.delete_language(language_id)
 except ApiException as e:
     print "Exception when calling LanguagesApi->delete_language: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -88,7 +88,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -106,7 +106,7 @@ try:
     api_instance.delete_routing_language(language_id)
 except ApiException as e:
     print "Exception when calling LanguagesApi->delete_routing_language: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -138,7 +138,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -157,7 +157,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_language: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -189,7 +189,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -211,7 +211,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_languages: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -245,7 +245,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -263,7 +263,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_languages_translations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -291,7 +291,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -310,7 +310,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_languages_translations_builtin: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -341,7 +341,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -360,7 +360,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_languages_translations_organization: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -391,7 +391,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -410,7 +410,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_languages_translations_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -441,7 +441,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -460,7 +460,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->get_routing_language: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -492,7 +492,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -511,7 +511,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguagesApi->post_languages: %s\n" % e
-~~~
+```
 
 ### Parameters
 

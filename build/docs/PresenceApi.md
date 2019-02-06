@@ -37,7 +37,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -55,7 +55,7 @@ try:
     api_instance.delete_presencedefinition(presence_id)
 except ApiException as e:
     print "Exception when calling PresenceApi->delete_presencedefinition: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -86,7 +86,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -106,7 +106,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->get_presencedefinition: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -138,7 +138,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -160,7 +160,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->get_presencedefinitions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -194,7 +194,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -212,7 +212,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->get_systempresences: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -240,7 +240,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -260,7 +260,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->get_user_presence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -292,7 +292,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -313,7 +313,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->patch_user_presence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -347,7 +347,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -366,7 +366,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->post_presencedefinitions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -398,7 +398,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -418,7 +418,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->put_presencedefinition: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -451,7 +451,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -470,7 +470,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PresenceApi->put_users_presences_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 

@@ -33,7 +33,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -52,7 +52,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->get_fieldconfig: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -83,7 +83,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -101,7 +101,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->get_organizations_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -129,7 +129,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -147,7 +147,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->get_organizations_whitelist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -176,7 +176,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -196,7 +196,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->patch_organizations_feature: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -229,7 +229,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -248,7 +248,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->put_organizations_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -280,7 +280,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -299,7 +299,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationApi->put_organizations_whitelist: %s\n" % e
-~~~
+```
 
 ### Parameters
 

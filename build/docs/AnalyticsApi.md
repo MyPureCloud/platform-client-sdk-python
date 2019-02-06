@@ -54,7 +54,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -72,7 +72,7 @@ try:
     api_instance.delete_analytics_reporting_schedule(schedule_id)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->delete_analytics_reporting_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -104,7 +104,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -123,7 +123,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_conversation_details: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -155,7 +155,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -174,7 +174,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_conversations_details: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -206,7 +206,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -224,7 +224,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_exports: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -252,7 +252,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -273,7 +273,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_metadata: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -306,7 +306,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -326,7 +326,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_report_id_metadata: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -358,7 +358,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -376,7 +376,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_reportformats: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -404,7 +404,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -423,7 +423,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -454,7 +454,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -475,7 +475,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -508,7 +508,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -527,7 +527,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_latest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -558,7 +558,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -578,7 +578,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_run_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -610,7 +610,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -630,7 +630,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -662,7 +662,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -680,7 +680,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_timeperiods: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -709,7 +709,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -729,7 +729,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_conversation_details_properties: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -762,7 +762,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -781,7 +781,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_conversations_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -813,7 +813,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -832,7 +832,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_conversations_details_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -864,7 +864,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -883,7 +883,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_evaluations_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -915,7 +915,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -934,7 +934,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_flows_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -966,7 +966,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -985,7 +985,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_queues_observations_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1017,7 +1017,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1036,7 +1036,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_reporting_exports: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1067,7 +1067,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1086,7 +1086,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_reporting_schedule_runreport: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1117,7 +1117,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1136,7 +1136,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_reporting_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1168,7 +1168,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1187,7 +1187,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_surveys_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1219,7 +1219,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1238,7 +1238,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_users_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1270,7 +1270,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1289,7 +1289,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_users_details_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1321,7 +1321,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1340,7 +1340,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->post_analytics_users_observations_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1371,7 +1371,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1391,7 +1391,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->put_analytics_reporting_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 

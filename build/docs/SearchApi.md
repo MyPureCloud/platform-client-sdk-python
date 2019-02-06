@@ -43,7 +43,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -59,7 +59,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_documentation_gkn_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -90,7 +90,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -106,7 +106,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_documentation_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -137,7 +137,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -157,7 +157,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_groups_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -189,7 +189,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -209,7 +209,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_locations_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -241,7 +241,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -262,7 +262,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -295,7 +295,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -316,7 +316,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_search_suggest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -349,7 +349,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -369,7 +369,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_users_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -401,7 +401,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -421,7 +421,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_voicemail_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -453,7 +453,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -469,7 +469,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_documentation_gkn_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -500,7 +500,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -516,7 +516,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_documentation_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -547,7 +547,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -566,7 +566,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_groups_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -597,7 +597,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -616,7 +616,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_locations_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -647,7 +647,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -667,7 +667,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -699,7 +699,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -719,7 +719,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_search_suggest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -751,7 +751,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -770,7 +770,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_users_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -801,7 +801,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -820,7 +820,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->post_voicemail_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 

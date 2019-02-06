@@ -35,7 +35,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -53,7 +53,7 @@ try:
     api_instance.delete_location(location_id)
 except ApiException as e:
     print "Exception when calling LocationsApi->delete_location: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -85,7 +85,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -104,7 +104,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->get_location: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -135,7 +135,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -157,7 +157,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->get_locations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -191,7 +191,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -211,7 +211,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->get_locations_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -244,7 +244,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -264,7 +264,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->patch_location: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -297,7 +297,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -316,7 +316,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->post_locations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -347,7 +347,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -366,7 +366,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->post_locations_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 

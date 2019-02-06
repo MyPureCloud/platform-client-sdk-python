@@ -36,7 +36,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -54,7 +54,7 @@ try:
     api_instance.delete_webchat_deployment(deployment_id)
 except ApiException as e:
     print "Exception when calling WebChatApi->delete_webchat_deployment: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -86,7 +86,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -103,7 +103,7 @@ try:
     api_instance.delete_webchat_settings()
 except ApiException as e:
     print "Exception when calling WebChatApi->delete_webchat_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -132,7 +132,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -151,7 +151,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->get_webchat_deployment: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -183,7 +183,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -201,7 +201,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->get_webchat_deployments: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -230,7 +230,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -248,7 +248,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->get_webchat_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -277,7 +277,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -296,7 +296,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->post_webchat_deployments: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -328,7 +328,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -348,7 +348,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->put_webchat_deployment: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -381,7 +381,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -400,7 +400,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WebChatApi->put_webchat_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 

@@ -43,7 +43,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -61,7 +61,7 @@ try:
     api_instance.delete_greeting(greeting_id)
 except ApiException as e:
     print "Exception when calling GreetingsApi->delete_greeting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -92,7 +92,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -111,7 +111,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_greeting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -142,7 +142,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -162,7 +162,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_greeting_media: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -194,7 +194,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -214,7 +214,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -246,7 +246,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -264,7 +264,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -292,7 +292,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -313,7 +313,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_group_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -346,7 +346,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -365,7 +365,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_group_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -396,7 +396,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -417,7 +417,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_user_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -450,7 +450,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -469,7 +469,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->get_user_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -500,7 +500,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -519,7 +519,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->post_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -550,7 +550,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -570,7 +570,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->post_group_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -602,7 +602,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -622,7 +622,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->post_user_greetings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -654,7 +654,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -674,7 +674,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->put_greeting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -706,7 +706,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -725,7 +725,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->put_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -756,7 +756,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -776,7 +776,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->put_group_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -808,7 +808,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -828,7 +828,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling GreetingsApi->put_user_greetings_defaults: %s\n" % e
-~~~
+```
 
 ### Parameters
 

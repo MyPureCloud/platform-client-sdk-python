@@ -16,6 +16,7 @@ title: DialerRulesetConfigChangeCondition
 | **codes** | **list[str]** |  | [optional] |
 | **property_type** | **str** |  | [optional] |
 | **pcProperty** | **str** |  | [optional] |
+| **data_not_found_resolution** | **bool** |  | [optional] |
 | **contact_id_field** | **str** |  | [optional] |
 | **call_analysis_result_field** | **str** |  | [optional] |
 | **agent_wrapup_field** | **str** |  | [optional] |

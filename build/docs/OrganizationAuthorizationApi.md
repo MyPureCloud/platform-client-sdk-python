@@ -51,7 +51,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -69,7 +69,7 @@ try:
     api_instance.delete_orgauthorization_trustee(trustee_org_id)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -103,7 +103,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -122,7 +122,7 @@ try:
     api_instance.delete_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -157,7 +157,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -176,7 +176,7 @@ try:
     api_instance.delete_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -209,7 +209,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -227,7 +227,7 @@ try:
     api_instance.delete_orgauthorization_trustor(trustor_org_id)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -259,7 +259,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -278,7 +278,7 @@ try:
     api_instance.delete_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -312,7 +312,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -331,7 +331,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_pairing: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -363,7 +363,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -382,7 +382,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -414,7 +414,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -434,7 +434,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -467,7 +467,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -487,7 +487,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -520,7 +520,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -541,7 +541,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -575,7 +575,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -595,7 +595,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustees: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -628,7 +628,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -647,7 +647,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -679,7 +679,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -699,7 +699,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -732,7 +732,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -753,7 +753,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -787,7 +787,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -807,7 +807,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustors: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -840,7 +840,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -859,7 +859,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_pairings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -893,7 +893,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -913,7 +913,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustee_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -947,7 +947,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -966,7 +966,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -998,7 +998,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1021,7 +1021,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_audits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1057,7 +1057,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1080,7 +1080,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustor_audits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1116,7 +1116,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1136,7 +1136,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1171,7 +1171,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1192,7 +1192,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1226,7 +1226,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1246,7 +1246,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustor_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 

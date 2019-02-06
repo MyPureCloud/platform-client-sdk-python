@@ -85,7 +85,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -105,7 +105,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_calibration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -137,7 +137,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -158,7 +158,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_conversation_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -192,7 +192,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -210,7 +210,7 @@ try:
     api_instance.delete_quality_form(form_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_form: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -242,7 +242,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -260,7 +260,7 @@ try:
     api_instance.delete_quality_forms_evaluation(form_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_forms_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -292,7 +292,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -310,7 +310,7 @@ try:
     api_instance.delete_quality_forms_survey(form_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_forms_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -341,7 +341,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -359,7 +359,7 @@ try:
     api_instance.delete_quality_keywordset(keyword_set_id)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_keywordset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -390,7 +390,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -408,7 +408,7 @@ try:
     api_instance.delete_quality_keywordsets(ids)
 except ApiException as e:
     print "Exception when calling QualityApi->delete_quality_keywordsets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -439,7 +439,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -469,7 +469,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_agents_activity: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -511,7 +511,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -532,7 +532,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_calibration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -565,7 +565,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -593,7 +593,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_calibrations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -633,7 +633,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -660,7 +660,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_conversation_audits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -699,7 +699,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -720,7 +720,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_conversation_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -753,7 +753,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -772,7 +772,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_conversation_surveys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -803,7 +803,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -839,7 +839,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -887,7 +887,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -916,7 +916,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_evaluators_activity: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -958,7 +958,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -977,7 +977,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_form: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1009,7 +1009,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1030,7 +1030,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_form_versions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1064,7 +1064,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1090,7 +1090,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1129,7 +1129,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1148,7 +1148,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1180,7 +1180,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1201,7 +1201,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_evaluation_versions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1235,7 +1235,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1261,7 +1261,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_evaluations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1300,7 +1300,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1319,7 +1319,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1351,7 +1351,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1372,7 +1372,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_survey_versions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1406,7 +1406,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1432,7 +1432,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_surveys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1471,7 +1471,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1490,7 +1490,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_surveys_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1522,7 +1522,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1542,7 +1542,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_surveys_bulk_contexts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1574,7 +1574,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1593,7 +1593,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_keywordset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1624,7 +1624,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1652,7 +1652,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_keywordsets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1693,7 +1693,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1712,7 +1712,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedform: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1744,7 +1744,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1766,7 +1766,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1801,7 +1801,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1820,7 +1820,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1852,7 +1852,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1874,7 +1874,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_evaluations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1909,7 +1909,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1928,7 +1928,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1960,7 +1960,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1982,7 +1982,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_publishedforms_surveys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2016,7 +2016,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2035,7 +2035,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2066,7 +2066,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2082,7 +2082,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_surveys_scorable: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2114,7 +2114,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2134,7 +2134,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->patch_quality_forms_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2167,7 +2167,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2186,7 +2186,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_analytics_evaluations_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2218,7 +2218,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2237,7 +2237,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_analytics_surveys_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2268,7 +2268,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2288,7 +2288,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_calibrations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2320,7 +2320,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2341,7 +2341,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_conversation_evaluations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2374,7 +2374,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2393,7 +2393,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_evaluations_scoring: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2425,7 +2425,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2444,7 +2444,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_forms: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2476,7 +2476,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2495,7 +2495,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_forms_evaluations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2527,7 +2527,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2546,7 +2546,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_forms_surveys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2577,7 +2577,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2597,7 +2597,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_keywordsets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2630,7 +2630,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2649,7 +2649,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_publishedforms: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2681,7 +2681,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2700,7 +2700,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_publishedforms_evaluations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2732,7 +2732,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2751,7 +2751,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_publishedforms_surveys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2782,7 +2782,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2801,7 +2801,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_spotability: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2832,7 +2832,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2851,7 +2851,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->post_quality_surveys_scoring: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2882,7 +2882,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2902,7 +2902,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_calibration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2934,7 +2934,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2956,7 +2956,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_conversation_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2991,7 +2991,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3011,7 +3011,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_form: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3044,7 +3044,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3064,7 +3064,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_forms_evaluation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3097,7 +3097,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3117,7 +3117,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_forms_survey: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3149,7 +3149,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3169,7 +3169,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_keywordset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3201,7 +3201,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3218,7 +3218,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->put_quality_surveys_scorable: %s\n" % e
-~~~
+```
 
 ### Parameters
 

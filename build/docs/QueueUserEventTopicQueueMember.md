@@ -7,10 +7,11 @@ title: QueueUserEventTopicQueueMember
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **queue_id** | **str** |  | [optional] |
+| **member_id** | **str** |  | [optional] |
+| **name** | **str** |  | [optional] |
+| **ring_number** | **int** |  | [optional] |
+| **type** | **str** |  | [optional] |
 | **joined** | **bool** |  | [optional] |
-| **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 
 

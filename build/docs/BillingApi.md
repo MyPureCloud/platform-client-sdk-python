@@ -33,7 +33,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -53,7 +53,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling BillingApi->get_billing_reports_billableusage: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -86,7 +86,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -106,7 +106,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling BillingApi->get_billing_trusteebillingoverview_trustor_org_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 

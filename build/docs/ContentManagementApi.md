@@ -65,7 +65,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -84,7 +84,7 @@ try:
     api_instance.delete_contentmanagement_document(document_id, override=override)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -116,7 +116,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -134,7 +134,7 @@ try:
     api_instance.delete_contentmanagement_share(share_id)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_share: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -165,7 +165,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -183,7 +183,7 @@ try:
     api_instance.delete_contentmanagement_status_status_id(status_id)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_status_status_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -214,7 +214,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -233,7 +233,7 @@ try:
     api_instance.delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -265,7 +265,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -284,7 +284,7 @@ try:
     api_instance.delete_contentmanagement_workspace_member(workspace_id, member_id)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace_member: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -316,7 +316,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -335,7 +335,7 @@ try:
     api_instance.delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace_tagvalue: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -367,7 +367,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -387,7 +387,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -419,7 +419,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -444,7 +444,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_document_audits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -481,7 +481,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -502,7 +502,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_document_content: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -535,7 +535,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -560,7 +560,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_documents: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -597,7 +597,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -621,7 +621,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -657,7 +657,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -676,7 +676,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_securityprofile: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -707,7 +707,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -725,7 +725,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_securityprofiles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -753,7 +753,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -773,7 +773,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_share: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -805,7 +805,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -828,7 +828,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_shared_shared_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -863,7 +863,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -885,7 +885,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_shares: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -919,7 +919,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -939,7 +939,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_status: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -971,7 +971,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -990,7 +990,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_status_status_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1021,7 +1021,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1039,7 +1039,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_usage: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1067,7 +1067,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1087,7 +1087,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1119,7 +1119,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1143,7 +1143,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_documents: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1179,7 +1179,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1200,7 +1200,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_member: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1233,7 +1233,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1255,7 +1255,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_members: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1289,7 +1289,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1310,7 +1310,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalue: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1343,7 +1343,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1366,7 +1366,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalues: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1401,7 +1401,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1423,7 +1423,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->get_contentmanagement_workspaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1457,7 +1457,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1476,7 +1476,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_auditquery: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1507,7 +1507,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1529,7 +1529,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1563,7 +1563,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1584,7 +1584,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_document_content: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1617,7 +1617,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1639,7 +1639,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_documents: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1673,7 +1673,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1693,7 +1693,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1725,7 +1725,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1744,7 +1744,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_shares: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1775,7 +1775,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1795,7 +1795,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1827,7 +1827,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1848,7 +1848,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1881,7 +1881,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1900,7 +1900,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->post_contentmanagement_workspaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1931,7 +1931,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1951,7 +1951,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->put_contentmanagement_workspace: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1983,7 +1983,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2004,7 +2004,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->put_contentmanagement_workspace_member: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2037,7 +2037,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2058,7 +2058,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ContentManagementApi->put_contentmanagement_workspace_tagvalue: %s\n" % e
-~~~
+```
 
 ### Parameters
 

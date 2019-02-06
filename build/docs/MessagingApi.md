@@ -42,7 +42,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -60,7 +60,7 @@ try:
     api_instance.delete_messaging_integrations_facebook_integration_id(integration_id)
 except ApiException as e:
     print "Exception when calling MessagingApi->delete_messaging_integrations_facebook_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -92,7 +92,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -110,7 +110,7 @@ try:
     api_instance.delete_messaging_integrations_line_integration_id(integration_id)
 except ApiException as e:
     print "Exception when calling MessagingApi->delete_messaging_integrations_line_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -142,7 +142,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -160,7 +160,7 @@ try:
     api_instance.delete_messaging_integrations_twitter_integration_id(integration_id)
 except ApiException as e:
     print "Exception when calling MessagingApi->delete_messaging_integrations_twitter_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -192,7 +192,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -212,7 +212,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_facebook: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -245,7 +245,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -264,7 +264,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_facebook_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -296,7 +296,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -316,7 +316,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_line: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -349,7 +349,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -368,7 +368,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_line_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -400,7 +400,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -420,7 +420,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_twitter: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -453,7 +453,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -472,7 +472,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_integrations_twitter_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -504,7 +504,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -525,7 +525,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->get_messaging_sticker: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -559,7 +559,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -578,7 +578,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->post_messaging_integrations_facebook: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -610,7 +610,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -629,7 +629,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->post_messaging_integrations_line: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -661,7 +661,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -680,7 +680,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->post_messaging_integrations_twitter: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -712,7 +712,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -732,7 +732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingApi->put_messaging_integrations_line_integration_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 

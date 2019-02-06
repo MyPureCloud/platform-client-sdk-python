@@ -33,7 +33,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -51,7 +51,7 @@ try:
     api_instance.delete_fax_document(document_id)
 except ApiException as e:
     print "Exception when calling FaxApi->delete_fax_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -82,7 +82,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -101,7 +101,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling FaxApi->get_fax_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -132,7 +132,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -151,7 +151,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling FaxApi->get_fax_document_content: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -182,7 +182,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -202,7 +202,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling FaxApi->get_fax_documents: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -234,7 +234,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -252,7 +252,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling FaxApi->get_fax_summary: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -280,7 +280,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -300,7 +300,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling FaxApi->put_fax_document: %s\n" % e
-~~~
+```
 
 ### Parameters
 

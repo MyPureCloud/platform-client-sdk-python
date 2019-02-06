@@ -41,6 +41,8 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_field': 'str',
             'output_operator': 'str',
             'comparison_value': 'str',
+            'output_field_missing_resolution': 'bool',
+            'inverted': 'bool',
             'additional_properties': 'object'
         }
 
@@ -48,12 +50,16 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
             'output_field': 'outputField',
             'output_operator': 'outputOperator',
             'comparison_value': 'comparisonValue',
+            'output_field_missing_resolution': 'outputFieldMissingResolution',
+            'inverted': 'inverted',
             'additional_properties': 'additionalProperties'
         }
 
         self._output_field = None
         self._output_operator = None
         self._comparison_value = None
+        self._output_field_missing_resolution = None
+        self._inverted = None
         self._additional_properties = None
 
     @property
@@ -128,6 +134,52 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         """
         
         self._comparison_value = comparison_value
+
+    @property
+    def output_field_missing_resolution(self):
+        """
+        Gets the output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :return: The output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :rtype: bool
+        """
+        return self._output_field_missing_resolution
+
+    @output_field_missing_resolution.setter
+    def output_field_missing_resolution(self, output_field_missing_resolution):
+        """
+        Sets the output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :param output_field_missing_resolution: The output_field_missing_resolution of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :type: bool
+        """
+        
+        self._output_field_missing_resolution = output_field_missing_resolution
+
+    @property
+    def inverted(self):
+        """
+        Gets the inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :return: The inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :rtype: bool
+        """
+        return self._inverted
+
+    @inverted.setter
+    def inverted(self, inverted):
+        """
+        Sets the inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
+
+
+        :param inverted: The inverted of this DialerRulesetConfigChangeDataActionConditionPredicate.
+        :type: bool
+        """
+        
+        self._inverted = inverted
 
     @property
     def additional_properties(self):

@@ -153,7 +153,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -171,7 +171,7 @@ try:
     api_instance.delete_telephony_providers_edge(edge_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -203,7 +203,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -222,7 +222,7 @@ try:
     api_instance.delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_logicalinterface: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -254,7 +254,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -272,7 +272,7 @@ try:
     api_instance.delete_telephony_providers_edge_softwareupdate(edge_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_softwareupdate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -304,7 +304,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -322,7 +322,7 @@ try:
     api_instance.delete_telephony_providers_edges_certificateauthority(certificate_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_certificateauthority: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -354,7 +354,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -372,7 +372,7 @@ try:
     api_instance.delete_telephony_providers_edges_didpool(did_pool_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_didpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -404,7 +404,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -422,7 +422,7 @@ try:
     api_instance.delete_telephony_providers_edges_edgegroup(edge_group_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_edgegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -454,7 +454,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -472,7 +472,7 @@ try:
     api_instance.delete_telephony_providers_edges_endpoint(endpoint_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_endpoint: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -504,7 +504,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -522,7 +522,7 @@ try:
     api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -554,7 +554,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -572,7 +572,7 @@ try:
     api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -604,7 +604,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -622,7 +622,7 @@ try:
     api_instance.delete_telephony_providers_edges_phone(phone_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phone: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -654,7 +654,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -672,7 +672,7 @@ try:
     api_instance.delete_telephony_providers_edges_phonebasesetting(phone_base_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phonebasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -704,7 +704,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -722,7 +722,7 @@ try:
     api_instance.delete_telephony_providers_edges_site(site_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -754,7 +754,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -773,7 +773,7 @@ try:
     api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -806,7 +806,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -824,7 +824,7 @@ try:
     api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -855,7 +855,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -875,7 +875,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -907,7 +907,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -928,7 +928,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -961,7 +961,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -983,7 +983,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1017,7 +1017,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1038,7 +1038,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1071,7 +1071,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1095,7 +1095,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1132,7 +1132,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1152,7 +1152,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1185,7 +1185,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1205,7 +1205,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1238,7 +1238,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1259,7 +1259,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1293,7 +1293,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1314,7 +1314,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterface: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1348,7 +1348,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1368,7 +1368,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterfaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1401,7 +1401,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1421,7 +1421,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logs_job: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1454,7 +1454,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1473,7 +1473,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_metrics: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1505,7 +1505,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1525,7 +1525,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterface: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1558,7 +1558,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1577,7 +1577,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterfaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1609,7 +1609,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1628,7 +1628,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_setuppackage: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1659,7 +1659,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1678,7 +1678,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareupdate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1709,7 +1709,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1728,7 +1728,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareversions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1760,7 +1760,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1785,7 +1785,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_trunks: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1823,7 +1823,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1848,7 +1848,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1885,7 +1885,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1903,7 +1903,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_availablelanguages: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1932,7 +1932,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1950,7 +1950,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthorities: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1979,7 +1979,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1998,7 +1998,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthority: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2030,7 +2030,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2049,7 +2049,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_did: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2081,7 +2081,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2100,7 +2100,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2132,7 +2132,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2153,7 +2153,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2187,7 +2187,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2210,7 +2210,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2246,7 +2246,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2266,7 +2266,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2299,7 +2299,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2319,7 +2319,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2352,7 +2352,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2375,7 +2375,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2410,7 +2410,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2428,7 +2428,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgeversionreport: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2457,7 +2457,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2476,7 +2476,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoint: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2508,7 +2508,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2530,7 +2530,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoints: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2565,7 +2565,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2584,7 +2584,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extension: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2616,7 +2616,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2635,7 +2635,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2667,7 +2667,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2689,7 +2689,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2724,7 +2724,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2747,7 +2747,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2783,7 +2783,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2802,7 +2802,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_line: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2834,7 +2834,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2853,7 +2853,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2885,7 +2885,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2907,7 +2907,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesettings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2942,7 +2942,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2965,7 +2965,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3001,7 +3001,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3020,7 +3020,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3052,7 +3052,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3072,7 +3072,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_logicalinterfaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3105,7 +3105,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3124,7 +3124,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_metrics: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3156,7 +3156,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3175,7 +3175,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3207,7 +3207,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3230,7 +3230,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroutes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3266,7 +3266,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3285,7 +3285,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phone: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3317,7 +3317,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3336,7 +3336,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3368,7 +3368,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3392,7 +3392,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3429,7 +3429,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3449,7 +3449,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_availablemetabases: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3482,7 +3482,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3501,7 +3501,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3533,7 +3533,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3565,7 +3565,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3610,7 +3610,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3629,7 +3629,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3661,7 +3661,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3680,7 +3680,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_physicalinterfaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3713,7 +3713,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3732,7 +3732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3764,7 +3764,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3784,7 +3784,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplan: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3817,7 +3817,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3836,7 +3836,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3868,7 +3868,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3888,7 +3888,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans_classifications: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3921,7 +3921,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3941,7 +3941,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3974,7 +3974,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3997,7 +3997,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroutes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4032,7 +4032,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4057,7 +4057,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4094,7 +4094,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4114,7 +4114,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_timezones: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4147,7 +4147,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4166,7 +4166,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4198,7 +4198,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4217,7 +4217,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk_metrics: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4249,7 +4249,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4269,7 +4269,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4302,7 +4302,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4329,7 +4329,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4369,7 +4369,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4390,7 +4390,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_availablemetabases: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4424,7 +4424,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4443,7 +4443,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4475,7 +4475,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4500,7 +4500,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4538,7 +4538,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4557,7 +4557,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks_metrics: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4590,7 +4590,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4609,7 +4609,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkswithrecording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4641,7 +4641,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4661,7 +4661,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logicalinterfaces: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4694,7 +4694,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4714,7 +4714,7 @@ try:
     api_instance.post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_job_upload: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4748,7 +4748,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4768,7 +4768,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_jobs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4801,7 +4801,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4821,7 +4821,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_reboot: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4853,7 +4853,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4873,7 +4873,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_softwareupdate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4906,7 +4906,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4926,7 +4926,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_statuscode: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4959,7 +4959,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4978,7 +4978,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_unpair: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5010,7 +5010,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5029,7 +5029,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5060,7 +5060,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5079,7 +5079,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_addressvalidation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5111,7 +5111,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5130,7 +5130,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_certificateauthorities: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5162,7 +5162,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5181,7 +5181,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_didpools: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5213,7 +5213,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5232,7 +5232,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_edgegroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5264,7 +5264,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5283,7 +5283,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_endpoints: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5315,7 +5315,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5334,7 +5334,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_extensionpools: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5366,7 +5366,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5385,7 +5385,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5417,7 +5417,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5435,7 +5435,7 @@ try:
     api_instance.post_telephony_providers_edges_phone_reboot(phone_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phone_reboot: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5467,7 +5467,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5486,7 +5486,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phonebasesettings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5518,7 +5518,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5537,7 +5537,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5569,7 +5569,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5587,7 +5587,7 @@ try:
     api_instance.post_telephony_providers_edges_phones_reboot(body)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones_reboot: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5619,7 +5619,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5639,7 +5639,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_outboundroutes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5672,7 +5672,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5690,7 +5690,7 @@ try:
     api_instance.post_telephony_providers_edges_site_rebalance(site_id)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_rebalance: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5722,7 +5722,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5741,7 +5741,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_sites: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5773,7 +5773,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5792,7 +5792,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunkbasesettings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5824,7 +5824,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5844,7 +5844,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5877,7 +5877,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5898,7 +5898,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5932,7 +5932,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5953,7 +5953,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_logicalinterface: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5987,7 +5987,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6007,7 +6007,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_certificateauthority: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6040,7 +6040,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6060,7 +6060,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_did: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6093,7 +6093,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6113,7 +6113,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_didpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6146,7 +6146,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6166,7 +6166,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6199,7 +6199,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6220,7 +6220,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6254,7 +6254,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6274,7 +6274,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_endpoint: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6307,7 +6307,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6327,7 +6327,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extension: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6360,7 +6360,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6380,7 +6380,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extensionpool: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6413,7 +6413,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6433,7 +6433,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6466,7 +6466,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6486,7 +6486,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phone: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6519,7 +6519,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6539,7 +6539,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phonebasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6572,7 +6572,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6592,7 +6592,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6625,7 +6625,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6645,7 +6645,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_numberplans: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6678,7 +6678,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6699,7 +6699,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_outboundroute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -6733,7 +6733,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -6753,7 +6753,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_trunkbasesetting: %s\n" % e
-~~~
+```
 
 ### Parameters
 

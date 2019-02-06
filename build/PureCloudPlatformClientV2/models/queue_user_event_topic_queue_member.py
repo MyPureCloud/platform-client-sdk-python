@@ -38,69 +38,118 @@ class QueueUserEventTopicQueueMember(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'queue_id': 'str',
-            'joined': 'bool',
-            'additional_properties': 'object'
+            'member_id': 'str',
+            'name': 'str',
+            'ring_number': 'int',
+            'type': 'str',
+            'joined': 'bool'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'queue_id': 'queueId',
-            'joined': 'joined',
-            'additional_properties': 'additionalProperties'
+            'member_id': 'memberId',
+            'name': 'name',
+            'ring_number': 'ringNumber',
+            'type': 'type',
+            'joined': 'joined'
         }
 
-        self._id = None
-        self._queue_id = None
+        self._member_id = None
+        self._name = None
+        self._ring_number = None
+        self._type = None
         self._joined = None
-        self._additional_properties = None
 
     @property
-    def id(self):
+    def member_id(self):
         """
-        Gets the id of this QueueUserEventTopicQueueMember.
+        Gets the member_id of this QueueUserEventTopicQueueMember.
 
 
-        :return: The id of this QueueUserEventTopicQueueMember.
+        :return: The member_id of this QueueUserEventTopicQueueMember.
         :rtype: str
         """
-        return self._id
+        return self._member_id
 
-    @id.setter
-    def id(self, id):
+    @member_id.setter
+    def member_id(self, member_id):
         """
-        Sets the id of this QueueUserEventTopicQueueMember.
+        Sets the member_id of this QueueUserEventTopicQueueMember.
 
 
-        :param id: The id of this QueueUserEventTopicQueueMember.
+        :param member_id: The member_id of this QueueUserEventTopicQueueMember.
         :type: str
         """
         
-        self._id = id
+        self._member_id = member_id
 
     @property
-    def queue_id(self):
+    def name(self):
         """
-        Gets the queue_id of this QueueUserEventTopicQueueMember.
+        Gets the name of this QueueUserEventTopicQueueMember.
 
 
-        :return: The queue_id of this QueueUserEventTopicQueueMember.
+        :return: The name of this QueueUserEventTopicQueueMember.
         :rtype: str
         """
-        return self._queue_id
+        return self._name
 
-    @queue_id.setter
-    def queue_id(self, queue_id):
+    @name.setter
+    def name(self, name):
         """
-        Sets the queue_id of this QueueUserEventTopicQueueMember.
+        Sets the name of this QueueUserEventTopicQueueMember.
 
 
-        :param queue_id: The queue_id of this QueueUserEventTopicQueueMember.
+        :param name: The name of this QueueUserEventTopicQueueMember.
         :type: str
         """
         
-        self._queue_id = queue_id
+        self._name = name
+
+    @property
+    def ring_number(self):
+        """
+        Gets the ring_number of this QueueUserEventTopicQueueMember.
+
+
+        :return: The ring_number of this QueueUserEventTopicQueueMember.
+        :rtype: int
+        """
+        return self._ring_number
+
+    @ring_number.setter
+    def ring_number(self, ring_number):
+        """
+        Sets the ring_number of this QueueUserEventTopicQueueMember.
+
+
+        :param ring_number: The ring_number of this QueueUserEventTopicQueueMember.
+        :type: int
+        """
+        
+        self._ring_number = ring_number
+
+    @property
+    def type(self):
+        """
+        Gets the type of this QueueUserEventTopicQueueMember.
+
+
+        :return: The type of this QueueUserEventTopicQueueMember.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this QueueUserEventTopicQueueMember.
+
+
+        :param type: The type of this QueueUserEventTopicQueueMember.
+        :type: str
+        """
+        
+        self._type = type
 
     @property
     def joined(self):
@@ -124,29 +173,6 @@ class QueueUserEventTopicQueueMember(object):
         """
         
         self._joined = joined
-
-    @property
-    def additional_properties(self):
-        """
-        Gets the additional_properties of this QueueUserEventTopicQueueMember.
-
-
-        :return: The additional_properties of this QueueUserEventTopicQueueMember.
-        :rtype: object
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties):
-        """
-        Sets the additional_properties of this QueueUserEventTopicQueueMember.
-
-
-        :param additional_properties: The additional_properties of this QueueUserEventTopicQueueMember.
-        :type: object
-        """
-        
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

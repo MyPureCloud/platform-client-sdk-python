@@ -62,7 +62,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -80,7 +80,7 @@ try:
     api_instance.delete_authorization_division(division_id)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->delete_authorization_division: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -114,7 +114,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -132,7 +132,7 @@ try:
     api_instance.delete_authorization_role(role_id)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->delete_authorization_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -164,7 +164,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -184,7 +184,7 @@ try:
     api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->delete_authorization_subject_division_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -220,7 +220,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -238,7 +238,7 @@ try:
     api_instance.delete_user_roles(user_id)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->delete_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -269,7 +269,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -289,7 +289,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_division: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -321,7 +321,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -348,7 +348,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_divisions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -387,7 +387,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -405,7 +405,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_divisions_home: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -433,7 +433,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -451,7 +451,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -479,7 +479,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -499,7 +499,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -531,7 +531,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -552,7 +552,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_subject_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -585,7 +585,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -605,7 +605,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_permissions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -637,7 +637,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -655,7 +655,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_products: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -684,7 +684,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -703,7 +703,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -735,7 +735,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -755,7 +755,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_role_comparedefault_right_role_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -788,7 +788,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -813,7 +813,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_role_subjectgrants: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -850,7 +850,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -871,7 +871,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_role_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -905,7 +905,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -934,7 +934,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -976,7 +976,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -995,7 +995,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_subject: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1026,7 +1026,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1044,7 +1044,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_subjects_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1073,7 +1073,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1092,7 +1092,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1126,7 +1126,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1146,7 +1146,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->patch_authorization_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1178,7 +1178,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1198,7 +1198,7 @@ try:
     api_instance.post_authorization_division_object(division_id, object_type, body)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_division_object: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1233,7 +1233,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1252,7 +1252,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_divisions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1284,7 +1284,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1304,7 +1304,7 @@ try:
     api_instance.post_authorization_role(role_id, body, subject_type=subject_type)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1338,7 +1338,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1359,7 +1359,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_role_comparedefault_right_role_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1393,7 +1393,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1412,7 +1412,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1444,7 +1444,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1463,7 +1463,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_roles_default: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1495,7 +1495,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1516,7 +1516,7 @@ try:
     api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->post_authorization_subject_division_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1551,7 +1551,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1571,7 +1571,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_authorization_division: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1606,7 +1606,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1626,7 +1626,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_authorization_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1659,7 +1659,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1679,7 +1679,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_authorization_role_users_add: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1712,7 +1712,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1732,7 +1732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_authorization_role_users_remove: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1765,7 +1765,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1784,7 +1784,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_authorization_roles_default: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1818,7 +1818,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1838,7 +1838,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->put_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 

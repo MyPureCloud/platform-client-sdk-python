@@ -56,7 +56,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -74,7 +74,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_adfs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -103,7 +103,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -121,7 +121,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_cic: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -150,7 +150,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -168,7 +168,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_gsuite: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -197,7 +197,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -215,7 +215,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_identitynow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -244,7 +244,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -262,7 +262,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_okta: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -291,7 +291,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -309,7 +309,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_onelogin: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -338,7 +338,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -356,7 +356,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_ping: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -385,7 +385,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -403,7 +403,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_purecloud: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -432,7 +432,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -450,7 +450,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_salesforce: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -479,7 +479,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -497,7 +497,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -526,7 +526,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -544,7 +544,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_adfs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -573,7 +573,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -591,7 +591,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_cic: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -620,7 +620,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -638,7 +638,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_gsuite: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -667,7 +667,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -685,7 +685,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_identitynow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -714,7 +714,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -732,7 +732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_okta: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -761,7 +761,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -779,7 +779,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_onelogin: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -808,7 +808,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -826,7 +826,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_ping: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -855,7 +855,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -873,7 +873,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_purecloud: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -902,7 +902,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -920,7 +920,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->get_identityproviders_salesforce: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -950,7 +950,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -969,7 +969,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_adfs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1002,7 +1002,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1021,7 +1021,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_cic: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1054,7 +1054,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1073,7 +1073,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_gsuite: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1106,7 +1106,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1125,7 +1125,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_identitynow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1158,7 +1158,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1177,7 +1177,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_okta: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1210,7 +1210,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1229,7 +1229,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_onelogin: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1262,7 +1262,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1281,7 +1281,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_ping: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1314,7 +1314,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1333,7 +1333,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_purecloud: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1366,7 +1366,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1385,7 +1385,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->put_identityproviders_salesforce: %s\n" % e
-~~~
+```
 
 ### Parameters
 

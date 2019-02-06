@@ -124,7 +124,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -142,7 +142,7 @@ try:
     api_instance.delete_outbound_attemptlimit(attempt_limits_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_attemptlimit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -174,7 +174,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -192,7 +192,7 @@ try:
     api_instance.delete_outbound_callabletimeset(callable_time_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_callabletimeset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -224,7 +224,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -242,7 +242,7 @@ try:
     api_instance.delete_outbound_callanalysisresponseset(call_analysis_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_callanalysisresponseset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -274,7 +274,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -293,7 +293,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -325,7 +325,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -343,7 +343,7 @@ try:
     api_instance.delete_outbound_campaign_progress(campaign_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_campaign_progress: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -375,7 +375,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -393,7 +393,7 @@ try:
     api_instance.delete_outbound_campaignrule(campaign_rule_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_campaignrule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -425,7 +425,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -443,7 +443,7 @@ try:
     api_instance.delete_outbound_contactlist(contact_list_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -475,7 +475,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -494,7 +494,7 @@ try:
     api_instance.delete_outbound_contactlist_contact(contact_list_id, contact_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlist_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -527,7 +527,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -546,7 +546,7 @@ try:
     api_instance.delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlist_contacts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -579,7 +579,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -597,7 +597,7 @@ try:
     api_instance.delete_outbound_contactlistfilter(contact_list_filter_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlistfilter: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -629,7 +629,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -647,7 +647,7 @@ try:
     api_instance.delete_outbound_contactlists(id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_contactlists: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -679,7 +679,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -697,7 +697,7 @@ try:
     api_instance.delete_outbound_dnclist(dnc_list_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_dnclist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -729,7 +729,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -747,7 +747,7 @@ try:
     api_instance.delete_outbound_ruleset(rule_set_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_ruleset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -779,7 +779,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -797,7 +797,7 @@ try:
     api_instance.delete_outbound_schedules_campaign(campaign_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_schedules_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -829,7 +829,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -847,7 +847,7 @@ try:
     api_instance.delete_outbound_schedules_sequence(sequence_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_schedules_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -879,7 +879,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -897,7 +897,7 @@ try:
     api_instance.delete_outbound_sequence(sequence_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->delete_outbound_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -929,7 +929,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -948,7 +948,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_attemptlimit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -980,7 +980,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1004,7 +1004,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_attemptlimits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1041,7 +1041,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1060,7 +1060,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callabletimeset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1092,7 +1092,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1116,7 +1116,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callabletimesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1153,7 +1153,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1172,7 +1172,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callanalysisresponseset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1204,7 +1204,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1228,7 +1228,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callanalysisresponsesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1265,7 +1265,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1284,7 +1284,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1316,7 +1316,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1335,7 +1335,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaign_diagnostics: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1367,7 +1367,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1386,7 +1386,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaign_interactions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1418,7 +1418,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1437,7 +1437,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaign_progress: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1469,7 +1469,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1488,7 +1488,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaign_stats: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1520,7 +1520,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1539,7 +1539,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaignrule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1571,7 +1571,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1595,7 +1595,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaignrules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1632,7 +1632,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1663,7 +1663,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaigns: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1707,7 +1707,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1732,7 +1732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaigns_divisionviews: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1770,7 +1770,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1791,7 +1791,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1825,7 +1825,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1845,7 +1845,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlist_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1879,7 +1879,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1899,7 +1899,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlist_export: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1932,7 +1932,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1951,7 +1951,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlist_importstatus: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1983,7 +1983,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2002,7 +2002,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlist_timezonemappingpreview: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2034,7 +2034,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2053,7 +2053,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlistfilter: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2085,7 +2085,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2110,7 +2110,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlistfilters: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2148,7 +2148,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2176,7 +2176,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2217,7 +2217,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2238,7 +2238,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlists_divisionview: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2272,7 +2272,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2299,7 +2299,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlists_divisionviews: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2339,7 +2339,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2360,7 +2360,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2395,7 +2395,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2415,7 +2415,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclist_export: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2448,7 +2448,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2467,7 +2467,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclist_importstatus: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2499,7 +2499,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2527,7 +2527,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclists: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2568,7 +2568,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2589,7 +2589,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclists_divisionview: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2623,7 +2623,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2650,7 +2650,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclists_divisionviews: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2690,7 +2690,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2709,7 +2709,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_event: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2741,7 +2741,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2766,7 +2766,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_events: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2804,7 +2804,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2823,7 +2823,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_ruleset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2855,7 +2855,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2879,7 +2879,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_rulesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2916,7 +2916,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2935,7 +2935,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_schedules_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2967,7 +2967,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2985,7 +2985,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_schedules_campaigns: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3014,7 +3014,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3033,7 +3033,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_schedules_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3065,7 +3065,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3083,7 +3083,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_schedules_sequences: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3112,7 +3112,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3131,7 +3131,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3163,7 +3163,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3187,7 +3187,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_sequences: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3224,7 +3224,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3242,7 +3242,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3271,7 +3271,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3289,7 +3289,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_wrapupcodemappings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3318,7 +3318,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3336,7 +3336,7 @@ try:
     api_instance.patch_outbound_settings(body)
 except ApiException as e:
     print "Exception when calling OutboundApi->patch_outbound_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3368,7 +3368,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3387,7 +3387,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_attemptlimits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3419,7 +3419,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3443,7 +3443,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_audits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3480,7 +3480,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3499,7 +3499,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_callabletimesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3531,7 +3531,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3550,7 +3550,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_callanalysisresponsesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3581,7 +3581,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3601,7 +3601,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_campaign_callback_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3634,7 +3634,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3653,7 +3653,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_campaignrules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3685,7 +3685,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3704,7 +3704,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_campaigns: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3736,7 +3736,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3755,7 +3755,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_campaigns_progress: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3787,7 +3787,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3805,7 +3805,7 @@ try:
     api_instance.post_outbound_contactlist_clear(contact_list_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3837,7 +3837,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3860,7 +3860,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlist_contacts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3896,7 +3896,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3916,7 +3916,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3950,7 +3950,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3969,7 +3969,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlist_export: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4001,7 +4001,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4020,7 +4020,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlistfilters: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4052,7 +4052,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4071,7 +4071,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlistfilters_preview: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4103,7 +4103,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4122,7 +4122,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_contactlists: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4154,7 +4154,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4172,7 +4172,7 @@ try:
     api_instance.post_outbound_conversation_dnc(conversation_id)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_conversation_dnc: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4205,7 +4205,7 @@ Requires ALL permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4224,7 +4224,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_dnclist_export: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4256,7 +4256,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4275,7 +4275,7 @@ try:
     api_instance.post_outbound_dnclist_phonenumbers(dnc_list_id, body)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_dnclist_phonenumbers: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4308,7 +4308,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4327,7 +4327,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_dnclists: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4359,7 +4359,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4378,7 +4378,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_rulesets: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4410,7 +4410,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4429,7 +4429,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->post_outbound_sequences: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4461,7 +4461,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4481,7 +4481,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_attemptlimit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4514,7 +4514,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4534,7 +4534,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_callabletimeset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4567,7 +4567,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4587,7 +4587,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_callanalysisresponseset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4620,7 +4620,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4640,7 +4640,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4672,7 +4672,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4693,7 +4693,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_campaign_agent: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4727,7 +4727,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4747,7 +4747,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_campaignrule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4780,7 +4780,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4800,7 +4800,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_contactlist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4833,7 +4833,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4854,7 +4854,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_contactlist_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4888,7 +4888,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4908,7 +4908,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_contactlistfilter: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4941,7 +4941,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4961,7 +4961,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_dnclist: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4994,7 +4994,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5014,7 +5014,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_ruleset: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5047,7 +5047,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5067,7 +5067,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_schedules_campaign: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5100,7 +5100,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5120,7 +5120,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_schedules_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5153,7 +5153,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5173,7 +5173,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_sequence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -5206,7 +5206,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -5225,7 +5225,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->put_outbound_wrapupcodemappings: %s\n" % e
-~~~
+```
 
 ### Parameters
 

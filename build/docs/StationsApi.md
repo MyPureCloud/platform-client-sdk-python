@@ -32,7 +32,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -50,7 +50,7 @@ try:
     api_instance.delete_station_associateduser(station_id)
 except ApiException as e:
     print "Exception when calling StationsApi->delete_station_associateduser: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -81,7 +81,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -100,7 +100,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling StationsApi->get_station: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -131,7 +131,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -157,7 +157,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling StationsApi->get_stations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -196,7 +196,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -214,7 +214,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling StationsApi->get_stations_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -243,7 +243,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -262,7 +262,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling StationsApi->patch_stations_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 

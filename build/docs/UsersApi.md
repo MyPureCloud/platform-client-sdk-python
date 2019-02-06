@@ -89,7 +89,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -109,7 +109,7 @@ try:
     api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_authorization_subject_division_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -145,7 +145,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -164,7 +164,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -198,7 +198,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -216,7 +216,7 @@ try:
     api_instance.delete_user_roles(user_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -249,7 +249,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -268,7 +268,7 @@ try:
     api_instance.delete_user_routinglanguage(user_id, language_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_routinglanguage: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -302,7 +302,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -321,7 +321,7 @@ try:
     api_instance.delete_user_routingskill(user_id, skill_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_routingskill: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -353,7 +353,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -371,7 +371,7 @@ try:
     api_instance.delete_user_station_associatedstation(user_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_station_associatedstation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -404,7 +404,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -422,7 +422,7 @@ try:
     api_instance.delete_user_station_defaultstation(user_id)
 except ApiException as e:
     print "Exception when calling UsersApi->delete_user_station_defaultstation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -453,7 +453,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -473,7 +473,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_authorization_divisionspermitted_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -505,7 +505,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -526,7 +526,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_authorization_divisionspermitted_subject_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -560,7 +560,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -579,7 +579,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_authorization_subject: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -610,7 +610,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -628,7 +628,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -656,7 +656,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -675,7 +675,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_fieldconfig: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -706,7 +706,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -731,7 +731,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_profiles_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -768,7 +768,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -789,7 +789,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -822,7 +822,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -842,7 +842,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_adjacents: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -874,7 +874,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -893,7 +893,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_callforwarding: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -924,7 +924,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -944,7 +944,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_directreports: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -976,7 +976,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -999,7 +999,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_favorites: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1034,7 +1034,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1054,7 +1054,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_geolocation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1086,7 +1086,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1105,7 +1105,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_outofoffice: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1136,7 +1136,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1156,7 +1156,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_profile: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1189,7 +1189,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1208,7 +1208,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_profileskills: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1240,7 +1240,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1263,7 +1263,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_queues: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1299,7 +1299,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1318,7 +1318,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1349,7 +1349,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1371,7 +1371,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_routinglanguages: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1405,7 +1405,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1427,7 +1427,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_routingskills: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1461,7 +1461,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1480,7 +1480,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_routingstatus: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1511,7 +1511,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1530,7 +1530,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_station: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1561,7 +1561,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1581,7 +1581,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_superiors: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1614,7 +1614,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1635,7 +1635,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_trustors: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1668,7 +1668,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1692,7 +1692,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1728,7 +1728,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1747,7 +1747,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users_me: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1778,7 +1778,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1798,7 +1798,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1833,7 +1833,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1853,7 +1853,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1885,7 +1885,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1905,7 +1905,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_callforwarding: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1937,7 +1937,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1958,7 +1958,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_geolocation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1992,7 +1992,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2013,7 +2013,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_queue: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2047,7 +2047,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2068,7 +2068,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_queues: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2103,7 +2103,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2124,7 +2124,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_routinglanguage: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2159,7 +2159,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2179,7 +2179,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_routinglanguages_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2213,7 +2213,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2233,7 +2233,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_user_routingskills_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2269,7 +2269,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2288,7 +2288,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->patch_users_bulk: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2320,7 +2320,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2339,7 +2339,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_analytics_users_aggregates_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2371,7 +2371,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2390,7 +2390,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_analytics_users_details_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2422,7 +2422,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2441,7 +2441,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_analytics_users_observations_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2473,7 +2473,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2494,7 +2494,7 @@ try:
     api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
 except ApiException as e:
     print "Exception when calling UsersApi->post_authorization_subject_division_role: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2531,7 +2531,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2550,7 +2550,7 @@ try:
     api_instance.post_user_invite(user_id, force=force)
 except ApiException as e:
     print "Exception when calling UsersApi->post_user_invite: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2584,7 +2584,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2603,7 +2603,7 @@ try:
     api_instance.post_user_password(user_id, body)
 except ApiException as e:
     print "Exception when calling UsersApi->post_user_password: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2637,7 +2637,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2657,7 +2657,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_user_routinglanguages: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2691,7 +2691,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2711,7 +2711,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_user_routingskills: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2744,7 +2744,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2763,7 +2763,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2794,7 +2794,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2812,7 +2812,7 @@ try:
     api_instance.post_users_me_password(body)
 except ApiException as e:
     print "Exception when calling UsersApi->post_users_me_password: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2843,7 +2843,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2862,7 +2862,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->post_users_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2893,7 +2893,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2913,7 +2913,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_callforwarding: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2945,7 +2945,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2965,7 +2965,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_outofoffice: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3001,7 +3001,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3021,7 +3021,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_profileskills: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3056,7 +3056,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3076,7 +3076,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_roles: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3110,7 +3110,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3131,7 +3131,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_routingskill: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3164,7 +3164,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3184,7 +3184,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_routingstatus: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3216,7 +3216,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3235,7 +3235,7 @@ try:
     api_instance.put_user_station_associatedstation_station_id(user_id, station_id)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_station_associatedstation_station_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3269,7 +3269,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3288,7 +3288,7 @@ try:
     api_instance.put_user_station_defaultstation_station_id(user_id, station_id)
 except ApiException as e:
     print "Exception when calling UsersApi->put_user_station_defaultstation_station_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 

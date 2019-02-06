@@ -109,7 +109,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -127,7 +127,7 @@ try:
     api_instance.delete_architect_emergencygroup(emergency_group_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_emergencygroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -159,7 +159,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -177,7 +177,7 @@ try:
     api_instance.delete_architect_ivr(ivr_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_ivr: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -209,7 +209,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -228,7 +228,7 @@ try:
     api_instance.delete_architect_prompt(prompt_id, all_resources=all_resources)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_prompt: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -261,7 +261,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -280,7 +280,7 @@ try:
     api_instance.delete_architect_prompt_resource(prompt_id, language_code)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_prompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -313,7 +313,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -332,7 +332,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_prompts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -364,7 +364,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -382,7 +382,7 @@ try:
     api_instance.delete_architect_schedule(schedule_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -414,7 +414,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -432,7 +432,7 @@ try:
     api_instance.delete_architect_schedulegroup(schedule_group_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_schedulegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -464,7 +464,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -483,7 +483,7 @@ try:
     api_instance.delete_architect_systemprompt_resource(prompt_id, language_code)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_systemprompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -516,7 +516,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -534,7 +534,7 @@ try:
     api_instance.delete_flow(flow_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_flow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -566,7 +566,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -585,7 +585,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_flows: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -617,7 +617,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -636,7 +636,7 @@ try:
     api_instance.delete_flows_datatable(datatable_id, force=force)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_flows_datatable: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -669,7 +669,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -688,7 +688,7 @@ try:
     api_instance.delete_flows_datatable_row(datatable_id, row_id)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_flows_datatable_row: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -721,7 +721,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -747,7 +747,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -786,7 +786,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -804,7 +804,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_build: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -833,7 +833,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -855,7 +855,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_consumedresources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -890,7 +890,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -911,7 +911,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_consumingresources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -945,7 +945,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -970,7 +970,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_deletedresourceconsumers: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1008,7 +1008,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1033,7 +1033,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_object: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1071,7 +1071,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1090,7 +1090,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_type: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1122,7 +1122,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1142,7 +1142,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_types: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1175,7 +1175,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1199,7 +1199,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_dependencytracking_updatedresourceconsumers: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1236,7 +1236,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1255,7 +1255,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_emergencygroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1287,7 +1287,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1310,7 +1310,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_emergencygroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1346,7 +1346,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1365,7 +1365,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_ivr: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1397,7 +1397,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1420,7 +1420,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_ivrs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1456,7 +1456,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1475,7 +1475,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_prompt: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1507,7 +1507,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1532,7 +1532,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_prompt_history_history_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1570,7 +1570,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1590,7 +1590,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_prompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1623,7 +1623,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1644,7 +1644,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_prompt_resources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1678,7 +1678,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1703,7 +1703,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1741,7 +1741,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1760,7 +1760,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1792,7 +1792,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1811,7 +1811,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_schedulegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1843,7 +1843,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1866,7 +1866,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_schedulegroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1902,7 +1902,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1925,7 +1925,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1961,7 +1961,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1980,7 +1980,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_systemprompt: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2012,7 +2012,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2037,7 +2037,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_systemprompt_history_history_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2075,7 +2075,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2095,7 +2095,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_systemprompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2128,7 +2128,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2151,7 +2151,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_systemprompt_resources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2187,7 +2187,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2212,7 +2212,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_architect_systemprompts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2250,7 +2250,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2270,7 +2270,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2303,7 +2303,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2328,7 +2328,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow_history_history_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2366,7 +2366,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2386,7 +2386,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow_latestconfiguration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2419,7 +2419,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2440,7 +2440,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow_version: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2474,7 +2474,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2495,7 +2495,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow_version_configuration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2529,7 +2529,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2551,7 +2551,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flow_versions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2586,7 +2586,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2622,7 +2622,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2671,7 +2671,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2691,7 +2691,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatable: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2724,7 +2724,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2745,7 +2745,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatable_row: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2779,7 +2779,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2801,7 +2801,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatable_rows: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2836,7 +2836,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2859,7 +2859,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2895,7 +2895,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2924,7 +2924,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2966,7 +2966,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2983,7 +2983,7 @@ try:
     api_instance.post_architect_dependencytracking_build()
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_dependencytracking_build: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3012,7 +3012,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3031,7 +3031,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_emergencygroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3063,7 +3063,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3082,7 +3082,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_ivrs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3114,7 +3114,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3133,7 +3133,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_prompt_history: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3165,7 +3165,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3185,7 +3185,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_prompt_resources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3218,7 +3218,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3237,7 +3237,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_prompts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3269,7 +3269,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3288,7 +3288,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_schedulegroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3320,7 +3320,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3339,7 +3339,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3371,7 +3371,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3390,7 +3390,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_systemprompt_history: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3422,7 +3422,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3442,7 +3442,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_architect_systemprompt_resources: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3475,7 +3475,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3495,7 +3495,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flow_versions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3528,7 +3528,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3547,7 +3547,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3580,7 +3580,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3599,7 +3599,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_checkin: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3631,7 +3631,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3650,7 +3650,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_checkout: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3682,7 +3682,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3701,7 +3701,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_deactivate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3734,7 +3734,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3754,7 +3754,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_publish: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3787,7 +3787,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3806,7 +3806,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_revert: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3838,7 +3838,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3857,7 +3857,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_actions_unlock: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3889,7 +3889,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3909,7 +3909,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_datatable_rows: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3942,7 +3942,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3961,7 +3961,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->post_flows_datatables: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3993,7 +3993,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4013,7 +4013,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_emergencygroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4046,7 +4046,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4066,7 +4066,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_ivr: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4099,7 +4099,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4119,7 +4119,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_prompt: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4152,7 +4152,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4173,7 +4173,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_prompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4207,7 +4207,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4227,7 +4227,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4260,7 +4260,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4280,7 +4280,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_schedulegroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4313,7 +4313,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4334,7 +4334,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_architect_systemprompt_resource: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4368,7 +4368,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4388,7 +4388,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_flow: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4421,7 +4421,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4442,7 +4442,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_flows_datatable: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -4476,7 +4476,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -4497,7 +4497,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->put_flows_datatable_row: %s\n" % e
-~~~
+```
 
 ### Parameters
 

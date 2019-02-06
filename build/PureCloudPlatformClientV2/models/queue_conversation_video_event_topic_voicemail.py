@@ -93,7 +93,7 @@ class QueueConversationVideoEventTopicVoicemail(object):
         :param upload_status: The upload_status of this QueueConversationVideoEventTopicVoicemail.
         :type: str
         """
-        allowed_values = ["PENDING", "COMPLETE", "FAILED", "TIMEOUT"]
+        allowed_values = ["PENDING", "COMPLETE", "FAILED", "TIMEOUT", "NONE"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for upload_status -> " + upload_status
             self._upload_status = "outdated_sdk_version"

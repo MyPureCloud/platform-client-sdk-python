@@ -58,7 +58,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -76,7 +76,7 @@ try:
     api_instance.delete_externalcontacts_contact(contact_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -108,7 +108,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -127,7 +127,7 @@ try:
     api_instance.delete_externalcontacts_contact_note(contact_id, note_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -160,7 +160,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -178,7 +178,7 @@ try:
     api_instance.delete_externalcontacts_organization(external_organization_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -210,7 +210,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -229,7 +229,7 @@ try:
     api_instance.delete_externalcontacts_organization_note(external_organization_id, note_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -262,7 +262,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -280,7 +280,7 @@ try:
     api_instance.delete_externalcontacts_organization_trustor(external_organization_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_trustor: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -312,7 +312,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -330,7 +330,7 @@ try:
     api_instance.delete_externalcontacts_relationship(relationship_id)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_relationship: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -362,7 +362,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -382,7 +382,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -415,7 +415,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -436,7 +436,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_contact_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -470,7 +470,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -493,7 +493,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_contact_notes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -529,7 +529,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -552,7 +552,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -588,7 +588,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -609,7 +609,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -643,7 +643,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -667,7 +667,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_contacts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -704,7 +704,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -725,7 +725,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -759,7 +759,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -782,7 +782,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_notes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -818,7 +818,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -841,7 +841,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_relationships: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -877,7 +877,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -902,7 +902,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -940,7 +940,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -960,7 +960,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_relationship: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -993,7 +993,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1013,7 +1013,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->get_externalcontacts_reversewhitepageslookup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1046,7 +1046,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1066,7 +1066,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_contact_notes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1099,7 +1099,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1118,7 +1118,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_contacts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1150,7 +1150,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1170,7 +1170,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_organization_notes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1203,7 +1203,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1222,7 +1222,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_organizations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1254,7 +1254,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1273,7 +1273,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->post_externalcontacts_relationships: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1305,7 +1305,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1325,7 +1325,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_contact: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1358,7 +1358,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1379,7 +1379,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_contact_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1413,7 +1413,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1432,7 +1432,7 @@ try:
     api_instance.put_externalcontacts_conversation(conversation_id, body)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1465,7 +1465,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1485,7 +1485,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_organization: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1518,7 +1518,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1539,7 +1539,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_note: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1573,7 +1573,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1593,7 +1593,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_trustor_trustor_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1626,7 +1626,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1646,7 +1646,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_relationship: %s\n" % e
-~~~
+```
 
 ### Parameters
 

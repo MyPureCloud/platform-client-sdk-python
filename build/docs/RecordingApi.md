@@ -64,7 +64,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -84,7 +84,7 @@ try:
     api_instance.delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_conversation_recording_annotation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -118,7 +118,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -137,7 +137,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_orphanrecording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -169,7 +169,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -187,7 +187,7 @@ try:
     api_instance.delete_recording_mediaretentionpolicies(ids)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicies: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -219,7 +219,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -237,7 +237,7 @@ try:
     api_instance.delete_recording_mediaretentionpolicy(policy_id)
 except ApiException as e:
     print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -268,7 +268,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -291,7 +291,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -326,7 +326,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -347,7 +347,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recording_annotation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -380,7 +380,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -400,7 +400,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recording_annotations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -432,7 +432,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -451,7 +451,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -482,7 +482,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -502,7 +502,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recordingmetadata_recording_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -534,7 +534,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -555,7 +555,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -589,7 +589,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -608,7 +608,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -639,7 +639,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -661,7 +661,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -696,7 +696,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -722,7 +722,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecordings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -760,7 +760,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -779,7 +779,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_batchrequest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -811,7 +811,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -830,7 +830,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_localkeys_setting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -862,7 +862,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -880,7 +880,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_localkeys_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -909,7 +909,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -937,7 +937,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_mediaretentionpolicies: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -978,7 +978,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -997,7 +997,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_mediaretentionpolicy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1029,7 +1029,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1049,7 +1049,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_recordingkeys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1082,7 +1082,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1100,7 +1100,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_recordingkeys_rotationschedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1128,7 +1128,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1147,7 +1147,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1178,7 +1178,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1198,7 +1198,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recordings_screensessions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1231,7 +1231,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1251,7 +1251,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->patch_recording_mediaretentionpolicy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1283,7 +1283,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1302,7 +1302,7 @@ try:
     api_instance.patch_recordings_screensession(recording_session_id, body=body)
 except ApiException as e:
     print "Exception when calling RecordingApi->patch_recordings_screensession: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1334,7 +1334,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1355,7 +1355,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_conversation_recording_annotations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1388,7 +1388,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1407,7 +1407,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_recording_batchrequests: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1439,7 +1439,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1458,7 +1458,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_recording_localkeys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1490,7 +1490,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1509,7 +1509,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_recording_localkeys_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1541,7 +1541,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1560,7 +1560,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_recording_mediaretentionpolicies: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1592,7 +1592,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1610,7 +1610,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->post_recording_recordingkeys: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1638,7 +1638,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1659,7 +1659,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_conversation_recording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1692,7 +1692,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1714,7 +1714,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_conversation_recording_annotation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1749,7 +1749,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1769,7 +1769,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_orphanrecording: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1802,7 +1802,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1822,7 +1822,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_recording_localkeys_setting: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1855,7 +1855,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1875,7 +1875,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_recording_mediaretentionpolicy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1908,7 +1908,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1927,7 +1927,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_recording_recordingkeys_rotationschedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1958,7 +1958,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1977,7 +1977,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->put_recording_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 

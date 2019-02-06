@@ -68,7 +68,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -87,7 +87,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->delete_integration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -119,7 +119,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -137,7 +137,7 @@ try:
     api_instance.delete_integrations_action(action_id)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->delete_integrations_action: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -169,7 +169,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -187,7 +187,7 @@ try:
     api_instance.delete_integrations_action_draft(action_id)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->delete_integrations_action_draft: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -218,7 +218,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -236,7 +236,7 @@ try:
     api_instance.delete_integrations_credential(credential_id)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->delete_integrations_credential: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -267,7 +267,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -292,7 +292,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -329,7 +329,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -348,7 +348,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integration_config_current: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -379,7 +379,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -403,7 +403,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -441,7 +441,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -462,7 +462,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -497,7 +497,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -518,7 +518,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_draft: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -553,7 +553,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -573,7 +573,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_draft_schema: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -607,7 +607,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -627,7 +627,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_draft_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -660,7 +660,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -679,7 +679,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_draft_validation: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -712,7 +712,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -732,7 +732,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_schema: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -766,7 +766,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -786,7 +786,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_action_template: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -820,7 +820,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -847,7 +847,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -888,7 +888,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -913,7 +913,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_actions_categories: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -952,7 +952,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -979,7 +979,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1018,7 +1018,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1042,7 +1042,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_clientapps: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1078,7 +1078,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1097,7 +1097,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_credential: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1128,7 +1128,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1148,7 +1148,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_credentials: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1180,7 +1180,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1198,7 +1198,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_credentials_types: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1228,7 +1228,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1251,7 +1251,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_eventlog: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1288,7 +1288,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1307,7 +1307,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_eventlog_event_id: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1338,7 +1338,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1357,7 +1357,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_type: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1388,7 +1388,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1408,7 +1408,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_type_configschema: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1440,7 +1440,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1464,7 +1464,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->get_integrations_types: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1500,7 +1500,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1526,7 +1526,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->patch_integration: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1565,7 +1565,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1585,7 +1585,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->patch_integrations_action: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1618,7 +1618,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1638,7 +1638,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->patch_integrations_action_draft: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1670,7 +1670,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1689,7 +1689,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1721,7 +1721,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1740,7 +1740,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_action_draft: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1772,7 +1772,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1792,7 +1792,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_action_draft_publish: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1825,7 +1825,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1845,7 +1845,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_action_draft_test: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1879,7 +1879,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1899,7 +1899,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_action_execute: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1933,7 +1933,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1953,7 +1953,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_action_test: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1986,7 +1986,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2005,7 +2005,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_actions: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2037,7 +2037,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2056,7 +2056,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_actions_drafts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2087,7 +2087,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2106,7 +2106,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_credentials: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2137,7 +2137,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2156,7 +2156,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->post_integrations_workforcemanagement_vendorconnection: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2187,7 +2187,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2207,7 +2207,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->put_integration_config_current: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2239,7 +2239,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2259,7 +2259,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IntegrationsApi->put_integrations_credential: %s\n" % e
-~~~
+```
 
 ### Parameters
 

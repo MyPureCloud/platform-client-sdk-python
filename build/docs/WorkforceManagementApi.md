@@ -93,7 +93,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -111,7 +111,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit(mu_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -144,7 +144,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -163,7 +163,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_activitycode(mu_id, ac_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_activitycode: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -196,7 +196,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -215,7 +215,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_scheduling_run(management_unit_id, run_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_scheduling_run: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -249,7 +249,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -268,7 +268,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_servicegoalgroup(management_unit_id, service_goal_group_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_servicegoalgroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -302,7 +302,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -322,7 +322,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_week_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -357,7 +357,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -377,7 +377,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_week_shorttermforecast(management_unit_id, week_date_id, forecast_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_week_shorttermforecast: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -412,7 +412,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -431,7 +431,7 @@ try:
     api_instance.delete_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplan: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -464,7 +464,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -483,7 +483,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -558,7 +558,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -578,7 +578,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -612,7 +612,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -632,7 +632,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_activitycode: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -708,7 +708,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -727,7 +727,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_activitycodes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -760,7 +760,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -780,7 +780,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -813,7 +813,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -833,7 +833,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_intraday_queues: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -866,7 +866,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -886,7 +886,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_scheduling_run: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -919,7 +919,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -939,7 +939,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_scheduling_run_result: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -972,7 +972,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -991,7 +991,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_scheduling_runs: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1024,7 +1024,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1044,7 +1044,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_servicegoalgroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1080,7 +1080,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1099,7 +1099,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_servicegoalgroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1132,7 +1132,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1151,7 +1151,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1184,7 +1184,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1205,7 +1205,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1240,7 +1240,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1261,7 +1261,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1305,7 +1305,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1324,7 +1324,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_users: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1358,7 +1358,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1381,7 +1381,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1419,7 +1419,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1440,7 +1440,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedule_generationresults: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1476,7 +1476,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1496,7 +1496,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1530,7 +1530,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1552,7 +1552,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shorttermforecast_final: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1589,7 +1589,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1609,7 +1609,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shorttermforecasts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1645,7 +1645,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1665,7 +1665,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplan: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1704,7 +1704,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1724,7 +1724,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1756,7 +1756,7 @@ Requires NO permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1779,7 +1779,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1815,7 +1815,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1834,7 +1834,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits_divisionviews: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1867,7 +1867,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1886,7 +1886,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1919,7 +1919,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1938,7 +1938,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -1971,7 +1971,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -1992,7 +1992,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_activitycode: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2026,7 +2026,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2047,7 +2047,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_scheduling_run: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2082,7 +2082,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2103,7 +2103,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_servicegoalgroup: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2138,7 +2138,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2158,7 +2158,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_settings: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2192,7 +2192,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2214,7 +2214,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2250,7 +2250,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2274,7 +2274,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_schedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2312,7 +2312,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2333,7 +2333,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplan: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2367,7 +2367,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2387,7 +2387,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_timeoffrequest: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2420,7 +2420,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2439,7 +2439,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2472,7 +2472,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2492,7 +2492,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_activitycodes: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2525,7 +2525,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2545,7 +2545,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_historicaladherencequery: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2578,7 +2578,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2598,7 +2598,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_intraday: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2633,7 +2633,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2653,7 +2653,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_schedules_search: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2687,7 +2687,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2707,7 +2707,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_servicegoalgroups: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2741,7 +2741,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2761,7 +2761,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2795,7 +2795,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2815,7 +2815,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_fetchdetails: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2849,7 +2849,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2869,7 +2869,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_query: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2903,7 +2903,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2927,7 +2927,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_schedule_copy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -2965,7 +2965,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -2987,7 +2987,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_schedule_reschedule: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3023,7 +3023,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3046,7 +3046,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3082,7 +3082,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3103,7 +3103,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_schedules_generate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3139,7 +3139,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3160,7 +3160,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_schedules_partialupload: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3195,7 +3195,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3218,7 +3218,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shorttermforecast_copy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3255,7 +3255,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3277,7 +3277,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shorttermforecasts: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3313,7 +3313,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3335,7 +3335,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shorttermforecasts_generate: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3371,7 +3371,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3392,7 +3392,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3427,7 +3427,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3448,7 +3448,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_copy: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3483,7 +3483,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3503,7 +3503,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplans: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3537,7 +3537,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3556,7 +3556,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunits: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3590,7 +3590,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3609,7 +3609,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_schedules: %s\n" % e
-~~~
+```
 
 ### Parameters
 
@@ -3641,7 +3641,7 @@ Requires ANY permissions:
 
 ### Example
 
-~~~python
+```{"language":"python"}
 import time
 import PureCloudPlatformClientV2
 from PureCloudPlatformClientV2.rest import ApiException
@@ -3660,7 +3660,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests: %s\n" % e
-~~~
+```
 
 ### Parameters
 
