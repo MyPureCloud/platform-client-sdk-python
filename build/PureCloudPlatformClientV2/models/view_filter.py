@@ -45,8 +45,10 @@ class ViewFilter(object):
             'language_ids': 'list[str]',
             'language_groups': 'list[str]',
             'directions': 'list[str]',
+            'originating_directions': 'list[str]',
             'wrap_up_codes': 'list[str]',
             'dnis_list': 'list[str]',
+            'session_dnis_list': 'list[str]',
             'filter_queues_by_user_ids': 'list[str]',
             'filter_users_by_queue_ids': 'list[str]',
             'user_ids': 'list[str]',
@@ -101,7 +103,11 @@ class ViewFilter(object):
             'flow_types': 'list[str]',
             'flow_entry_types': 'list[str]',
             'flow_entry_reasons': 'list[str]',
-            'group_ids': 'list[str]'
+            'flow_versions': 'list[str]',
+            'group_ids': 'list[str]',
+            'has_journey_customer_id': 'bool',
+            'has_journey_action_map_id': 'bool',
+            'has_journey_visit_id': 'bool'
         }
 
         self.attribute_map = {
@@ -112,8 +118,10 @@ class ViewFilter(object):
             'language_ids': 'languageIds',
             'language_groups': 'languageGroups',
             'directions': 'directions',
+            'originating_directions': 'originatingDirections',
             'wrap_up_codes': 'wrapUpCodes',
             'dnis_list': 'dnisList',
+            'session_dnis_list': 'sessionDnisList',
             'filter_queues_by_user_ids': 'filterQueuesByUserIds',
             'filter_users_by_queue_ids': 'filterUsersByQueueIds',
             'user_ids': 'userIds',
@@ -168,7 +176,11 @@ class ViewFilter(object):
             'flow_types': 'flowTypes',
             'flow_entry_types': 'flowEntryTypes',
             'flow_entry_reasons': 'flowEntryReasons',
-            'group_ids': 'groupIds'
+            'flow_versions': 'flowVersions',
+            'group_ids': 'groupIds',
+            'has_journey_customer_id': 'hasJourneyCustomerId',
+            'has_journey_action_map_id': 'hasJourneyActionMapId',
+            'has_journey_visit_id': 'hasJourneyVisitId'
         }
 
         self._media_types = None
@@ -178,8 +190,10 @@ class ViewFilter(object):
         self._language_ids = None
         self._language_groups = None
         self._directions = None
+        self._originating_directions = None
         self._wrap_up_codes = None
         self._dnis_list = None
+        self._session_dnis_list = None
         self._filter_queues_by_user_ids = None
         self._filter_users_by_queue_ids = None
         self._user_ids = None
@@ -234,7 +248,11 @@ class ViewFilter(object):
         self._flow_types = None
         self._flow_entry_types = None
         self._flow_entry_reasons = None
+        self._flow_versions = None
         self._group_ids = None
+        self._has_journey_customer_id = None
+        self._has_journey_action_map_id = None
+        self._has_journey_visit_id = None
 
     @property
     def media_types(self):
@@ -398,6 +416,29 @@ class ViewFilter(object):
         self._directions = directions
 
     @property
+    def originating_directions(self):
+        """
+        Gets the originating_directions of this ViewFilter.
+        The list of orginating directions used to filter the view
+
+        :return: The originating_directions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._originating_directions
+
+    @originating_directions.setter
+    def originating_directions(self, originating_directions):
+        """
+        Sets the originating_directions of this ViewFilter.
+        The list of orginating directions used to filter the view
+
+        :param originating_directions: The originating_directions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._originating_directions = originating_directions
+
+    @property
     def wrap_up_codes(self):
         """
         Gets the wrap_up_codes of this ViewFilter.
@@ -442,6 +483,29 @@ class ViewFilter(object):
         """
         
         self._dnis_list = dnis_list
+
+    @property
+    def session_dnis_list(self):
+        """
+        Gets the session_dnis_list of this ViewFilter.
+        The list of session dnis used to filter the view
+
+        :return: The session_dnis_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._session_dnis_list
+
+    @session_dnis_list.setter
+    def session_dnis_list(self, session_dnis_list):
+        """
+        Sets the session_dnis_list of this ViewFilter.
+        The list of session dnis used to filter the view
+
+        :param session_dnis_list: The session_dnis_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._session_dnis_list = session_dnis_list
 
     @property
     def filter_queues_by_user_ids(self):
@@ -1698,6 +1762,29 @@ class ViewFilter(object):
         self._flow_entry_reasons = flow_entry_reasons
 
     @property
+    def flow_versions(self):
+        """
+        Gets the flow_versions of this ViewFilter.
+        A list of versions of a flow
+
+        :return: The flow_versions of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_versions
+
+    @flow_versions.setter
+    def flow_versions(self, flow_versions):
+        """
+        Sets the flow_versions of this ViewFilter.
+        A list of versions of a flow
+
+        :param flow_versions: The flow_versions of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_versions = flow_versions
+
+    @property
     def group_ids(self):
         """
         Gets the group_ids of this ViewFilter.
@@ -1719,6 +1806,75 @@ class ViewFilter(object):
         """
         
         self._group_ids = group_ids
+
+    @property
+    def has_journey_customer_id(self):
+        """
+        Gets the has_journey_customer_id of this ViewFilter.
+        Indicates filtering for journey customer id
+
+        :return: The has_journey_customer_id of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_journey_customer_id
+
+    @has_journey_customer_id.setter
+    def has_journey_customer_id(self, has_journey_customer_id):
+        """
+        Sets the has_journey_customer_id of this ViewFilter.
+        Indicates filtering for journey customer id
+
+        :param has_journey_customer_id: The has_journey_customer_id of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_journey_customer_id = has_journey_customer_id
+
+    @property
+    def has_journey_action_map_id(self):
+        """
+        Gets the has_journey_action_map_id of this ViewFilter.
+        Indicates filtering for Journey action map id
+
+        :return: The has_journey_action_map_id of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_journey_action_map_id
+
+    @has_journey_action_map_id.setter
+    def has_journey_action_map_id(self, has_journey_action_map_id):
+        """
+        Sets the has_journey_action_map_id of this ViewFilter.
+        Indicates filtering for Journey action map id
+
+        :param has_journey_action_map_id: The has_journey_action_map_id of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_journey_action_map_id = has_journey_action_map_id
+
+    @property
+    def has_journey_visit_id(self):
+        """
+        Gets the has_journey_visit_id of this ViewFilter.
+        Indicates filtering for Journey visit id
+
+        :return: The has_journey_visit_id of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_journey_visit_id
+
+    @has_journey_visit_id.setter
+    def has_journey_visit_id(self, has_journey_visit_id):
+        """
+        Sets the has_journey_visit_id of this ViewFilter.
+        Indicates filtering for Journey visit id
+
+        :param has_journey_visit_id: The has_journey_visit_id of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_journey_visit_id = has_journey_visit_id
 
     def to_dict(self):
         """

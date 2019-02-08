@@ -175,7 +175,7 @@ class AnalyticsFlow(object):
         :param flow_type: The flow_type of this AnalyticsFlow.
         :type: str
         """
-        allowed_values = ["INBOUNDCALL", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "WORKFLOW"]
+        allowed_values = ["INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "WORKFLOW"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for flow_type -> " + flow_type
             self._flow_type = "outdated_sdk_version"

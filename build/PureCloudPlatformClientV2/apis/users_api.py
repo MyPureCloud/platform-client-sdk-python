@@ -2520,7 +2520,8 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
-        :param list[str] id: id
+        :param list[str] id: A list of user IDs to fetch by bulk
+        :param list[str] jabber_id: A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand
         :param str state: Only list users of this state
@@ -2529,7 +2530,7 @@ class UsersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'sort_order', 'expand', 'state']
+        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order', 'expand', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -2554,6 +2555,8 @@ class UsersApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'id' in params:
             query_params['id'] = params['id']
+        if 'jabber_id' in params:
+            query_params['jabberId'] = params['jabber_id']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:

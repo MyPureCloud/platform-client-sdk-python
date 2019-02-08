@@ -1940,12 +1940,14 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
         :return: WrapupCodeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id']
+        all_params = ['queue_id', 'page_size', 'page_number']
         all_params.append('callback')
 
         params = locals()
@@ -1969,6 +1971,10 @@ class RoutingApi(object):
             path_params['queueId'] = params['queue_id']
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
 
         header_params = {}
 

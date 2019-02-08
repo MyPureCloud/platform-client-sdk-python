@@ -46,6 +46,7 @@ class AnalyticsEvaluation(object):
             'form_id': 'str',
             'context_id': 'str',
             'form_name': 'str',
+            'calibration_id': 'str',
             'o_total_score': 'int',
             'o_total_critical_score': 'int'
         }
@@ -59,6 +60,7 @@ class AnalyticsEvaluation(object):
             'form_id': 'formId',
             'context_id': 'contextId',
             'form_name': 'formName',
+            'calibration_id': 'calibrationId',
             'o_total_score': 'oTotalScore',
             'o_total_critical_score': 'oTotalCriticalScore'
         }
@@ -71,6 +73,7 @@ class AnalyticsEvaluation(object):
         self._form_id = None
         self._context_id = None
         self._form_name = None
+        self._calibration_id = None
         self._o_total_score = None
         self._o_total_critical_score = None
 
@@ -257,6 +260,29 @@ class AnalyticsEvaluation(object):
         """
         
         self._form_name = form_name
+
+    @property
+    def calibration_id(self):
+        """
+        Gets the calibration_id of this AnalyticsEvaluation.
+        The calibration id used for the purpose of training evaluators
+
+        :return: The calibration_id of this AnalyticsEvaluation.
+        :rtype: str
+        """
+        return self._calibration_id
+
+    @calibration_id.setter
+    def calibration_id(self, calibration_id):
+        """
+        Sets the calibration_id of this AnalyticsEvaluation.
+        The calibration id used for the purpose of training evaluators
+
+        :param calibration_id: The calibration_id of this AnalyticsEvaluation.
+        :type: str
+        """
+        
+        self._calibration_id = calibration_id
 
     @property
     def o_total_score(self):

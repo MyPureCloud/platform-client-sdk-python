@@ -14,8 +14,10 @@ title: ViewFilter
 | **language_ids** | **list[str]** | The language ids are used to filter the view | [optional] |
 | **language_groups** | **list[str]** | The language groups used to filter the view | [optional] |
 | **directions** | **list[str]** | The directions are used to filter the view | [optional] |
+| **originating_directions** | **list[str]** | The list of orginating directions used to filter the view | [optional] |
 | **wrap_up_codes** | **list[str]** | The wrap up codes are used to filter the view | [optional] |
 | **dnis_list** | **list[str]** | The dnis list is used to filter the view | [optional] |
+| **session_dnis_list** | **list[str]** | The list of session dnis used to filter the view | [optional] |
 | **filter_queues_by_user_ids** | **list[str]** | The user ids are used to fetch associated queues for the view | [optional] |
 | **filter_users_by_queue_ids** | **list[str]** | The queue ids are used to fetch associated users for the view | [optional] |
 | **user_ids** | **list[str]** | The user ids are used to filter the view | [optional] |
@@ -70,7 +72,11 @@ title: ViewFilter
 | **flow_types** | **list[str]** | A list of types of the flow | [optional] |
 | **flow_entry_types** | **list[str]** | A list of types of the flow entry | [optional] |
 | **flow_entry_reasons** | **list[str]** | A list of reasons of flow entry | [optional] |
+| **flow_versions** | **list[str]** | A list of versions of a flow | [optional] |
 | **group_ids** | **list[str]** | A list of directory group ids | [optional] |
+| **has_journey_customer_id** | **bool** | Indicates filtering for journey customer id | [optional] |
+| **has_journey_action_map_id** | **bool** | Indicates filtering for Journey action map id | [optional] |
+| **has_journey_visit_id** | **bool** | Indicates filtering for Journey visit id | [optional] |
 {: class="table table-striped"}
 
 

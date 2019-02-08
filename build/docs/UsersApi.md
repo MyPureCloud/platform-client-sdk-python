@@ -1653,7 +1653,7 @@ except ApiException as e:
 
 <a name="get_users"></a>
 
-## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand, state=state)
+## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, state=state)
 
 
 
@@ -1681,14 +1681,15 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-id = ['id_example'] # list[str] | id (optional)
+id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
+jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 state = 'active' # str | Only list users of this state (optional) (default to active)
 
 try:
     # Get the list of available users.
-    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order, expand=expand, state=state)
+    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, state=state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users: %s\n" % e
@@ -1701,7 +1702,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str.html)| A list of user IDs to fetch by bulk | [optional]  |
+| **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
 | **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |

@@ -638,8 +638,8 @@ class IntegrationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
-        :param str expand: Indicates fields of the response which should be expanded.
-        :param bool include_config: Show config when available
+        :param str expand: Indicates a field in the response which should be expanded.
+        :param bool include_config: Return config in response.
         :return: Action
                  If the method is called asynchronously,
                  returns the request thread.
@@ -722,8 +722,8 @@ class IntegrationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
-        :param str expand: Indicates fields of the response which should be expanded.
-        :param bool include_config: Show config when available
+        :param str expand: Indicates a field in the response which should be expanded.
+        :param bool include_config: Return config in response.
         :return: Action
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1219,21 +1219,22 @@ class IntegrationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str category: Filter by category name
-        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param str sort_by: Root level field name to sort on.
+        :param str sort_order: Direction to sort 'sortBy' field.
+        :param str category: Filter by category name
+        :param str name: Filter by action name. Provide full or just the first part of name.
+        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['category', 'secure', 'include_auth_actions', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'secure', 'include_auth_actions']
         all_params.append('callback')
 
         params = locals()
@@ -1252,24 +1253,26 @@ class IntegrationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'category' in params:
-            query_params['category'] = params['category']
-        if 'secure' in params:
-            query_params['secure'] = params['secure']
-        if 'include_auth_actions' in params:
-            query_params['includeAuthActions'] = params['include_auth_actions']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
         if 'next_page' in params:
             query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'category' in params:
+            query_params['category'] = params['category']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'secure' in params:
+            query_params['secure'] = params['secure']
+        if 'include_auth_actions' in params:
+            query_params['includeAuthActions'] = params['include_auth_actions']
 
         header_params = {}
 
@@ -1318,19 +1321,19 @@ class IntegrationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str secure: Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param str sort_by: Root level field name to sort on.
+        :param str sort_order: Direction to sort 'sortBy' field.
+        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
         :return: CategoryEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['secure', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'secure']
         all_params.append('callback')
 
         params = locals()
@@ -1349,20 +1352,20 @@ class IntegrationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'secure' in params:
-            query_params['secure'] = params['secure']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
         if 'next_page' in params:
             query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'secure' in params:
+            query_params['secure'] = params['secure']
 
         header_params = {}
 
@@ -1411,21 +1414,22 @@ class IntegrationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str category: Filter by category name
-        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param str sort_by: Root level field name to sort on.
+        :param str sort_order: Direction to sort 'sortBy' field.
+        :param str category: Filter by category name
+        :param str name: Filter by action name. Provide full or just the first part of name.
+        :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+        :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['category', 'secure', 'include_auth_actions', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'secure', 'include_auth_actions']
         all_params.append('callback')
 
         params = locals()
@@ -1444,24 +1448,26 @@ class IntegrationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'category' in params:
-            query_params['category'] = params['category']
-        if 'secure' in params:
-            query_params['secure'] = params['secure']
-        if 'include_auth_actions' in params:
-            query_params['includeAuthActions'] = params['include_auth_actions']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
         if 'next_page' in params:
             query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'category' in params:
+            query_params['category'] = params['category']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'secure' in params:
+            query_params['secure'] = params['secure']
+        if 'include_auth_actions' in params:
+            query_params['includeAuthActions'] = params['include_auth_actions']
 
         header_params = {}
 

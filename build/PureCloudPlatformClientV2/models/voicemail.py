@@ -93,7 +93,7 @@ class Voicemail(object):
         :param upload_status: The upload_status of this Voicemail.
         :type: str
         """
-        allowed_values = ["pending", "complete", "failed", "timeout"]
+        allowed_values = ["pending", "complete", "failed", "timeout", "none"]
         if upload_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for upload_status -> " + upload_status
             self._upload_status = "outdated_sdk_version"

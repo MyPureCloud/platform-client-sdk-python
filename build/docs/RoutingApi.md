@@ -1284,7 +1284,7 @@ except ApiException as e:
 
 <a name="get_routing_queue_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_queue_wrapupcodes(queue_id)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
 
 
 
@@ -1312,10 +1312,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
 
 try:
     # Get the wrap-up codes for a queue
-    api_response = api_instance.get_routing_queue_wrapupcodes(queue_id)
+    api_response = api_instance.get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_queue_wrapupcodes: %s\n" % e
@@ -1327,6 +1329,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type

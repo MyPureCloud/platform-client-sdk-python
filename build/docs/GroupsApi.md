@@ -38,6 +38,7 @@ Wraps DELETE /api/v2/groups/{groupId}
 
 Requires ANY permissions: 
 
+* directory:group:delete
 * group_administration
 * admin
 
@@ -617,6 +618,7 @@ Wraps POST /api/v2/groups
 
 Requires ANY permissions: 
 
+* directory:group:add
 * group_administration
 * group_creation
 
@@ -719,6 +721,7 @@ Wraps PUT /api/v2/groups/{groupId}
 
 Requires ANY permissions: 
 
+* directory:group:edit
 * group_administration
 * admin
 

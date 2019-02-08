@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_roles**](AuthorizationApi.html#get_authorization_roles) | Retrieve a list of all roles defined for the organization|
 |[**get_authorization_subject**](AuthorizationApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
 |[**get_authorization_subjects_me**](AuthorizationApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
+|[**get_authorization_subjects_rolecounts**](AuthorizationApi.html#get_authorization_subjects_rolecounts) | Get the count of roles granted to a list of subjects|
 |[**get_user_roles**](AuthorizationApi.html#get_user_roles) | Returns a listing of roles and permissions for a user.|
 |[**patch_authorization_role**](AuthorizationApi.html#patch_authorization_role) | Patch Organization Role for needsUpdate Field|
 |[**post_authorization_division_object**](AuthorizationApi.html#post_authorization_division_object) | Assign a list of objects to a division|
@@ -1054,6 +1055,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**AuthzSubject**](AuthzSubject.html)
+
+<a name="get_authorization_subjects_rolecounts"></a>
+
+## [**dict(str, object)**](dict.html) get_authorization_subjects_rolecounts(id=id)
+
+
+
+Get the count of roles granted to a list of subjects
+
+
+
+Wraps GET /api/v2/authorization/subjects/rolecounts 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+id = ['id_example'] # list[str] | id (optional)
+
+try:
+    # Get the count of roles granted to a list of subjects
+    api_response = api_instance.get_authorization_subjects_rolecounts(id=id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_subjects_rolecounts: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**dict(str, object)**](dict.html)
 
 <a name="get_user_roles"></a>
 

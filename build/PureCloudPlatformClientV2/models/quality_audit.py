@@ -41,9 +41,9 @@ class QualityAudit(object):
             'id': 'str',
             'name': 'str',
             'user': 'User',
-            'timestamp': 'str',
             'level': 'str',
             'entity': 'AuditEntity',
+            'timestamp': 'str',
             'action': 'str',
             'status': 'str',
             'changes': 'list[Change]',
@@ -55,9 +55,9 @@ class QualityAudit(object):
             'id': 'id',
             'name': 'name',
             'user': 'user',
-            'timestamp': 'timestamp',
             'level': 'level',
             'entity': 'entity',
+            'timestamp': 'timestamp',
             'action': 'action',
             'status': 'status',
             'changes': 'changes',
@@ -68,9 +68,9 @@ class QualityAudit(object):
         self._id = None
         self._name = None
         self._user = None
-        self._timestamp = None
         self._level = None
         self._entity = None
+        self._timestamp = None
         self._action = None
         self._status = None
         self._changes = None
@@ -147,29 +147,6 @@ class QualityAudit(object):
         self._user = user
 
     @property
-    def timestamp(self):
-        """
-        Gets the timestamp of this QualityAudit.
-
-
-        :return: The timestamp of this QualityAudit.
-        :rtype: str
-        """
-        return self._timestamp
-
-    @timestamp.setter
-    def timestamp(self, timestamp):
-        """
-        Sets the timestamp of this QualityAudit.
-
-
-        :param timestamp: The timestamp of this QualityAudit.
-        :type: str
-        """
-        
-        self._timestamp = timestamp
-
-    @property
     def level(self):
         """
         Gets the level of this QualityAudit.
@@ -214,6 +191,29 @@ class QualityAudit(object):
         """
         
         self._entity = entity
+
+    @property
+    def timestamp(self):
+        """
+        Gets the timestamp of this QualityAudit.
+
+
+        :return: The timestamp of this QualityAudit.
+        :rtype: str
+        """
+        return self._timestamp
+
+    @timestamp.setter
+    def timestamp(self, timestamp):
+        """
+        Sets the timestamp of this QualityAudit.
+
+
+        :param timestamp: The timestamp of this QualityAudit.
+        :type: str
+        """
+        
+        self._timestamp = timestamp
 
     @property
     def action(self):
