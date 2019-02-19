@@ -83,6 +83,10 @@ class ApiClient(object):
         # Set default User-Agent.
         self.user_agent = 'PureCloud SDK/python'
 
+        # access token for OAuth
+        self.access_token = ""
+
+
     @property
     def user_agent(self):
         """
@@ -112,7 +116,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '49.0.0'
+        header_params['purecloud-sdk'] = '49.0.1'
 
         # path parameters
         if path_params:
@@ -456,7 +460,7 @@ class ApiClient(object):
             return
 
         for auth in auth_settings:
-            auth_setting = config.auth_settings().get(auth)
+            auth_setting = config.auth_settings(self.access_token).get(auth)
             if auth_setting:
                 if not auth_setting['value']:
                     continue

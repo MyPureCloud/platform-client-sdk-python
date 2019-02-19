@@ -210,12 +210,13 @@ class Configuration(object):
         return urllib3.util.make_headers(basic_auth=self.username + ':' + self.password)\
                            .get('authorization')
 
-    def auth_settings(self):
+    def auth_settings(self, access_token=None):
         """
         Gets Auth Settings dict for api client.
 
         :return: The Auth Settings information dict.
         """
+
         return {
 
             'PureCloud OAuth':
@@ -223,7 +224,7 @@ class Configuration(object):
                     'type': 'oauth2',
                     'in': 'header',
                     'key': 'Authorization',
-                    'value': 'Bearer ' + self.access_token
+                    'value': 'Bearer ' + self.access_token if access_token is None or access_token == "" else 'Bearer ' + access_token
                 },
             'Guest Chat JWT':
                 {
@@ -245,5 +246,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 49.0.0".\
+               "SDK Package Version: 49.0.1".\
                format(env=sys.platform, pyversion=sys.version)
