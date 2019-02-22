@@ -3198,7 +3198,7 @@ class RoutingApi(object):
 
     def patch_routing_queue_user(self, queue_id, member_id, body, **kwargs):
         """
-        Update the ring number or joined status for a User in a Queue
+        Update the ring number OR joined status for a User in a Queue
         
 
         This method makes a synchronous HTTP request by default. To make an

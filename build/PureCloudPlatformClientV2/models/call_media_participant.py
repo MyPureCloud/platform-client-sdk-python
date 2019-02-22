@@ -66,6 +66,7 @@ class CallMediaParticipant(object):
             'wrapup': 'Wrapup',
             'peer': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'JourneyContext',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -109,6 +110,7 @@ class CallMediaParticipant(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -151,6 +153,7 @@ class CallMediaParticipant(object):
         self._wrapup = None
         self._peer = None
         self._flagged_reason = None
+        self._journey_context = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -823,6 +826,29 @@ class CallMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this CallMediaParticipant.
+        Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+
+        :return: The journey_context of this CallMediaParticipant.
+        :rtype: JourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this CallMediaParticipant.
+        Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+
+        :param journey_context: The journey_context of this CallMediaParticipant.
+        :type: JourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def muted(self):

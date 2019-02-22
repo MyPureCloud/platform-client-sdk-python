@@ -127,6 +127,7 @@ from .models.batch_download_request import BatchDownloadRequest
 from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
+from .models.biography import Biography
 from .models.bullseye import Bullseye
 from .models.calibration import Calibration
 from .models.calibration_assignment import CalibrationAssignment
@@ -553,6 +554,7 @@ from .models.email_setup import EmailSetup
 from .models.emergency_call_flow import EmergencyCallFlow
 from .models.emergency_group import EmergencyGroup
 from .models.emergency_group_listing import EmergencyGroupListing
+from .models.employer_info import EmployerInfo
 from .models.empty import Empty
 from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
@@ -708,6 +710,11 @@ from .models.intraday_query_data_command import IntradayQueryDataCommand
 from .models.intraday_queue import IntradayQueue
 from .models.intraday_response import IntradayResponse
 from .models.intraday_schedule_data import IntradayScheduleData
+from .models.journey_action import JourneyAction
+from .models.journey_action_map import JourneyActionMap
+from .models.journey_context import JourneyContext
+from .models.journey_customer import JourneyCustomer
+from .models.journey_customer_session import JourneyCustomerSession
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
 from .models.key_rotation_schedule import KeyRotationSchedule

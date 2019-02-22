@@ -46,6 +46,7 @@ class WebChatDeployment(object):
             'disabled': 'bool',
             'web_chat_config': 'WebChatConfig',
             'allowed_domains': 'list[str]',
+            'flow': 'UriReference',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class WebChatDeployment(object):
             'disabled': 'disabled',
             'web_chat_config': 'webChatConfig',
             'allowed_domains': 'allowedDomains',
+            'flow': 'flow',
             'self_uri': 'selfUri'
         }
 
@@ -69,6 +71,7 @@ class WebChatDeployment(object):
         self._disabled = None
         self._web_chat_config = None
         self._allowed_domains = None
+        self._flow = None
         self._self_uri = None
 
     @property
@@ -254,6 +257,29 @@ class WebChatDeployment(object):
         """
         
         self._allowed_domains = allowed_domains
+
+    @property
+    def flow(self):
+        """
+        Gets the flow of this WebChatDeployment.
+        The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
+
+        :return: The flow of this WebChatDeployment.
+        :rtype: UriReference
+        """
+        return self._flow
+
+    @flow.setter
+    def flow(self, flow):
+        """
+        Sets the flow of this WebChatDeployment.
+        The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
+
+        :param flow: The flow of this WebChatDeployment.
+        :type: UriReference
+        """
+        
+        self._flow = flow
 
     @property
     def self_uri(self):

@@ -253,7 +253,7 @@ class UserSearchCriteria(object):
         :param type: The type of this UserSearchCriteria.
         :type: str
         """
-        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL"]
+        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL", "QUERY_STRING"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

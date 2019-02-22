@@ -98,7 +98,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BillingApi()
 trustor_org_id = 'trustor_org_id_example' # str | The organization ID of the trustor (customer) organization.
-billing_period_index = 0 # int | Billing Period Index (optional) (default to 0)
+billing_period_index = 0 # int | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (optional) (default to 0)
 
 try:
     # Get the billing overview for an organization that is managed by a partner.
@@ -114,7 +114,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustor_org_id** | **str**| The organization ID of the trustor (customer) organization. |  |
-| **billing_period_index** | **int**| Billing Period Index | [optional] [default to 0] |
+| **billing_period_index** | **int**| 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. | [optional] [default to 0] |
 {: class="table table-striped"}
 
 ### Return type

@@ -52,6 +52,9 @@ class OrgUser(object):
             'manager': 'User',
             'images': 'list[UserImage]',
             'version': 'int',
+            'certifications': 'list[str]',
+            'biography': 'Biography',
+            'employer_info': 'EmployerInfo',
             'routing_status': 'RoutingStatus',
             'presence': 'UserPresence',
             'conversation_summary': 'UserConversationSummary',
@@ -84,6 +87,9 @@ class OrgUser(object):
             'manager': 'manager',
             'images': 'images',
             'version': 'version',
+            'certifications': 'certifications',
+            'biography': 'biography',
+            'employer_info': 'employerInfo',
             'routing_status': 'routingStatus',
             'presence': 'presence',
             'conversation_summary': 'conversationSummary',
@@ -115,6 +121,9 @@ class OrgUser(object):
         self._manager = None
         self._images = None
         self._version = None
+        self._certifications = None
+        self._biography = None
+        self._employer_info = None
         self._routing_status = None
         self._presence = None
         self._conversation_summary = None
@@ -456,6 +465,75 @@ class OrgUser(object):
         """
         
         self._version = version
+
+    @property
+    def certifications(self):
+        """
+        Gets the certifications of this OrgUser.
+
+
+        :return: The certifications of this OrgUser.
+        :rtype: list[str]
+        """
+        return self._certifications
+
+    @certifications.setter
+    def certifications(self, certifications):
+        """
+        Sets the certifications of this OrgUser.
+
+
+        :param certifications: The certifications of this OrgUser.
+        :type: list[str]
+        """
+        
+        self._certifications = certifications
+
+    @property
+    def biography(self):
+        """
+        Gets the biography of this OrgUser.
+
+
+        :return: The biography of this OrgUser.
+        :rtype: Biography
+        """
+        return self._biography
+
+    @biography.setter
+    def biography(self, biography):
+        """
+        Sets the biography of this OrgUser.
+
+
+        :param biography: The biography of this OrgUser.
+        :type: Biography
+        """
+        
+        self._biography = biography
+
+    @property
+    def employer_info(self):
+        """
+        Gets the employer_info of this OrgUser.
+
+
+        :return: The employer_info of this OrgUser.
+        :rtype: EmployerInfo
+        """
+        return self._employer_info
+
+    @employer_info.setter
+    def employer_info(self, employer_info):
+        """
+        Sets the employer_info of this OrgUser.
+
+
+        :param employer_info: The employer_info of this OrgUser.
+        :type: EmployerInfo
+        """
+        
+        self._employer_info = employer_info
 
     @property
     def routing_status(self):

@@ -66,6 +66,7 @@ class CallbackMediaParticipant(object):
             'wrapup': 'Wrapup',
             'peer': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'JourneyContext',
             'outbound_preview': 'DialerPreview',
             'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
@@ -105,6 +106,7 @@ class CallbackMediaParticipant(object):
             'wrapup': 'wrapup',
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -143,6 +145,7 @@ class CallbackMediaParticipant(object):
         self._wrapup = None
         self._peer = None
         self._flagged_reason = None
+        self._journey_context = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -811,6 +814,29 @@ class CallbackMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this CallbackMediaParticipant.
+        Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+
+        :return: The journey_context of this CallbackMediaParticipant.
+        :rtype: JourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this CallbackMediaParticipant.
+        Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+
+        :param journey_context: The journey_context of this CallbackMediaParticipant.
+        :type: JourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def outbound_preview(self):

@@ -35,6 +35,7 @@ title: ChatMediaParticipant
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. | [optional] |
 | **peer** | **str** | The peer communication corresponding to a matching leg for this communication. | [optional] |
 | **flagged_reason** | **str** | The reason specifying why participant flagged the conversation. | [optional] |
+| **journey_context** | [**JourneyContext**](JourneyContext.html) | Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context. | [optional] |
 | **room_id** | **str** | The ID of the chat room. | [optional] |
 {: class="table table-striped"}
 

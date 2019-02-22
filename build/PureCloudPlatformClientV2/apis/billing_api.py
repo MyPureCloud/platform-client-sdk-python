@@ -146,7 +146,7 @@ class BillingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str trustor_org_id: The organization ID of the trustor (customer) organization. (required)
-        :param int billing_period_index: Billing Period Index
+        :param int billing_period_index: 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
         :return: TrusteeBillingOverview
                  If the method is called asynchronously,
                  returns the request thread.

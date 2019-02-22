@@ -15,6 +15,7 @@ title: WebChatDeployment
 | **disabled** | **bool** |  | [optional] |
 | **web_chat_config** | [**WebChatConfig**](WebChatConfig.html) |  | [optional] |
 | **allowed_domains** | **list[str]** |  | [optional] |
+| **flow** | [**UriReference**](UriReference.html) | The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

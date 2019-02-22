@@ -42,14 +42,11 @@ class UserQueue(object):
             'name': 'str',
             'division': 'Division',
             'description': 'str',
-            'version': 'int',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'modified_by': 'str',
             'created_by': 'str',
-            'state': 'str',
-            'modified_by_app': 'str',
-            'created_by_app': 'str',
+            'member_count': 'int',
             'media_settings': 'dict(str, MediaSetting)',
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
@@ -62,7 +59,6 @@ class UserQueue(object):
             'outbound_messaging_addresses': 'QueueMessagingAddresses',
             'outbound_email_address': 'QueueEmailAddress',
             'joined': 'bool',
-            'member_count': 'int',
             'self_uri': 'str'
         }
 
@@ -71,14 +67,11 @@ class UserQueue(object):
             'name': 'name',
             'division': 'division',
             'description': 'description',
-            'version': 'version',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
             'created_by': 'createdBy',
-            'state': 'state',
-            'modified_by_app': 'modifiedByApp',
-            'created_by_app': 'createdByApp',
+            'member_count': 'memberCount',
             'media_settings': 'mediaSettings',
             'bullseye': 'bullseye',
             'acw_settings': 'acwSettings',
@@ -91,7 +84,6 @@ class UserQueue(object):
             'outbound_messaging_addresses': 'outboundMessagingAddresses',
             'outbound_email_address': 'outboundEmailAddress',
             'joined': 'joined',
-            'member_count': 'memberCount',
             'self_uri': 'selfUri'
         }
 
@@ -99,14 +91,11 @@ class UserQueue(object):
         self._name = None
         self._division = None
         self._description = None
-        self._version = None
         self._date_created = None
         self._date_modified = None
         self._modified_by = None
         self._created_by = None
-        self._state = None
-        self._modified_by_app = None
-        self._created_by_app = None
+        self._member_count = None
         self._media_settings = None
         self._bullseye = None
         self._acw_settings = None
@@ -119,7 +108,6 @@ class UserQueue(object):
         self._outbound_messaging_addresses = None
         self._outbound_email_address = None
         self._joined = None
-        self._member_count = None
         self._self_uri = None
 
     @property
@@ -215,29 +203,6 @@ class UserQueue(object):
         self._description = description
 
     @property
-    def version(self):
-        """
-        Gets the version of this UserQueue.
-        The current version of the queue.
-
-        :return: The version of this UserQueue.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this UserQueue.
-        The current version of the queue.
-
-        :param version: The version of this UserQueue.
-        :type: int
-        """
-        
-        self._version = version
-
-    @property
     def date_created(self):
         """
         Gets the date_created of this UserQueue.
@@ -330,83 +295,33 @@ class UserQueue(object):
         self._created_by = created_by
 
     @property
-    def state(self):
+    def member_count(self):
         """
-        Gets the state of this UserQueue.
-        Indicates if the queue is active, inactive, or deleted.
+        Gets the member_count of this UserQueue.
+        The number of users in the queue.
 
-        :return: The state of this UserQueue.
-        :rtype: str
+        :return: The member_count of this UserQueue.
+        :rtype: int
         """
-        return self._state
+        return self._member_count
 
-    @state.setter
-    def state(self, state):
+    @member_count.setter
+    def member_count(self, member_count):
         """
-        Sets the state of this UserQueue.
-        Indicates if the queue is active, inactive, or deleted.
+        Sets the member_count of this UserQueue.
+        The number of users in the queue.
 
-        :param state: The state of this UserQueue.
-        :type: str
-        """
-        allowed_values = ["active", "inactive", "deleted"]
-        if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
-            self._state = "outdated_sdk_version"
-        else:
-            self._state = state
-
-    @property
-    def modified_by_app(self):
-        """
-        Gets the modified_by_app of this UserQueue.
-        The application that last modified the queue.
-
-        :return: The modified_by_app of this UserQueue.
-        :rtype: str
-        """
-        return self._modified_by_app
-
-    @modified_by_app.setter
-    def modified_by_app(self, modified_by_app):
-        """
-        Sets the modified_by_app of this UserQueue.
-        The application that last modified the queue.
-
-        :param modified_by_app: The modified_by_app of this UserQueue.
-        :type: str
+        :param member_count: The member_count of this UserQueue.
+        :type: int
         """
         
-        self._modified_by_app = modified_by_app
-
-    @property
-    def created_by_app(self):
-        """
-        Gets the created_by_app of this UserQueue.
-        The application that created the queue.
-
-        :return: The created_by_app of this UserQueue.
-        :rtype: str
-        """
-        return self._created_by_app
-
-    @created_by_app.setter
-    def created_by_app(self, created_by_app):
-        """
-        Sets the created_by_app of this UserQueue.
-        The application that created the queue.
-
-        :param created_by_app: The created_by_app of this UserQueue.
-        :type: str
-        """
-        
-        self._created_by_app = created_by_app
+        self._member_count = member_count
 
     @property
     def media_settings(self):
         """
         Gets the media_settings of this UserQueue.
-        The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
+        The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
 
         :return: The media_settings of this UserQueue.
         :rtype: dict(str, MediaSetting)
@@ -417,7 +332,7 @@ class UserQueue(object):
     def media_settings(self, media_settings):
         """
         Sets the media_settings of this UserQueue.
-        The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
+        The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
 
         :param media_settings: The media_settings of this UserQueue.
         :type: dict(str, MediaSetting)
@@ -681,29 +596,6 @@ class UserQueue(object):
         """
         
         self._joined = joined
-
-    @property
-    def member_count(self):
-        """
-        Gets the member_count of this UserQueue.
-
-
-        :return: The member_count of this UserQueue.
-        :rtype: int
-        """
-        return self._member_count
-
-    @member_count.setter
-    def member_count(self, member_count):
-        """
-        Sets the member_count of this UserQueue.
-
-
-        :param member_count: The member_count of this UserQueue.
-        :type: int
-        """
-        
-        self._member_count = member_count
 
     @property
     def self_uri(self):

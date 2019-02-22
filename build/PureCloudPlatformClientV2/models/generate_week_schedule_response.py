@@ -38,20 +38,43 @@ class GenerateWeekScheduleResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'download_url': 'str',
             'status': 'str',
-            'operation_id': 'str',
-            'download_url': 'str'
+            'operation_id': 'str'
         }
 
         self.attribute_map = {
+            'download_url': 'downloadUrl',
             'status': 'status',
-            'operation_id': 'operationId',
-            'download_url': 'downloadUrl'
+            'operation_id': 'operationId'
         }
 
+        self._download_url = None
         self._status = None
         self._operation_id = None
-        self._download_url = None
+
+    @property
+    def download_url(self):
+        """
+        Gets the download_url of this GenerateWeekScheduleResponse.
+        The url to fetch the result for large responses. The value is null if result contains the data
+
+        :return: The download_url of this GenerateWeekScheduleResponse.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url):
+        """
+        Sets the download_url of this GenerateWeekScheduleResponse.
+        The url to fetch the result for large responses. The value is null if result contains the data
+
+        :param download_url: The download_url of this GenerateWeekScheduleResponse.
+        :type: str
+        """
+        
+        self._download_url = download_url
 
     @property
     def status(self):
@@ -102,29 +125,6 @@ class GenerateWeekScheduleResponse(object):
         """
         
         self._operation_id = operation_id
-
-    @property
-    def download_url(self):
-        """
-        Gets the download_url of this GenerateWeekScheduleResponse.
-        The url to fetch the result for large responses. The value will be null if result contains the data
-
-        :return: The download_url of this GenerateWeekScheduleResponse.
-        :rtype: str
-        """
-        return self._download_url
-
-    @download_url.setter
-    def download_url(self, download_url):
-        """
-        Sets the download_url of this GenerateWeekScheduleResponse.
-        The url to fetch the result for large responses. The value will be null if result contains the data
-
-        :param download_url: The download_url of this GenerateWeekScheduleResponse.
-        :type: str
-        """
-        
-        self._download_url = download_url
 
     def to_dict(self):
         """

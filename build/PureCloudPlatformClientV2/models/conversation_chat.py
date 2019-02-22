@@ -51,7 +51,8 @@ class ConversationChat(object):
             'disconnected_time': 'datetime',
             'provider': 'str',
             'script_id': 'str',
-            'peer_id': 'str'
+            'peer_id': 'str',
+            'journey_context': 'JourneyContext'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class ConversationChat(object):
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
             'script_id': 'scriptId',
-            'peer_id': 'peerId'
+            'peer_id': 'peerId',
+            'journey_context': 'journeyContext'
         }
 
         self._state = None
@@ -85,6 +87,7 @@ class ConversationChat(object):
         self._provider = None
         self._script_id = None
         self._peer_id = None
+        self._journey_context = None
 
     @property
     def state(self):
@@ -419,6 +422,29 @@ class ConversationChat(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this ConversationChat.
+        A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
+
+        :return: The journey_context of this ConversationChat.
+        :rtype: JourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this ConversationChat.
+        A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
+
+        :param journey_context: The journey_context of this ConversationChat.
+        :type: JourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     def to_dict(self):
         """

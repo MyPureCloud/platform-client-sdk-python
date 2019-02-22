@@ -127,6 +127,7 @@ from .batch_download_request import BatchDownloadRequest
 from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
+from .biography import Biography
 from .bullseye import Bullseye
 from .calibration import Calibration
 from .calibration_assignment import CalibrationAssignment
@@ -553,6 +554,7 @@ from .email_setup import EmailSetup
 from .emergency_call_flow import EmergencyCallFlow
 from .emergency_group import EmergencyGroup
 from .emergency_group_listing import EmergencyGroupListing
+from .employer_info import EmployerInfo
 from .empty import Empty
 from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
@@ -708,6 +710,11 @@ from .intraday_query_data_command import IntradayQueryDataCommand
 from .intraday_queue import IntradayQueue
 from .intraday_response import IntradayResponse
 from .intraday_schedule_data import IntradayScheduleData
+from .journey_action import JourneyAction
+from .journey_action_map import JourneyActionMap
+from .journey_context import JourneyContext
+from .journey_customer import JourneyCustomer
+from .journey_customer_session import JourneyCustomerSession
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
 from .key_rotation_schedule import KeyRotationSchedule

@@ -44,8 +44,8 @@ class MessagingStickerEntityListing(object):
             'total': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
-            'previous_uri': 'str',
             'next_uri': 'str',
+            'previous_uri': 'str',
             'last_uri': 'str',
             'page_count': 'int'
         }
@@ -57,8 +57,8 @@ class MessagingStickerEntityListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
@@ -69,8 +69,8 @@ class MessagingStickerEntityListing(object):
         self._total = None
         self._first_uri = None
         self._self_uri = None
-        self._previous_uri = None
         self._next_uri = None
+        self._previous_uri = None
         self._last_uri = None
         self._page_count = None
 
@@ -213,29 +213,6 @@ class MessagingStickerEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def previous_uri(self):
-        """
-        Gets the previous_uri of this MessagingStickerEntityListing.
-
-
-        :return: The previous_uri of this MessagingStickerEntityListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
-        """
-        Sets the previous_uri of this MessagingStickerEntityListing.
-
-
-        :param previous_uri: The previous_uri of this MessagingStickerEntityListing.
-        :type: str
-        """
-        
-        self._previous_uri = previous_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this MessagingStickerEntityListing.
@@ -257,6 +234,29 @@ class MessagingStickerEntityListing(object):
         """
         
         self._next_uri = next_uri
+
+    @property
+    def previous_uri(self):
+        """
+        Gets the previous_uri of this MessagingStickerEntityListing.
+
+
+        :return: The previous_uri of this MessagingStickerEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
+        """
+        Sets the previous_uri of this MessagingStickerEntityListing.
+
+
+        :param previous_uri: The previous_uri of this MessagingStickerEntityListing.
+        :type: str
+        """
+        
+        self._previous_uri = previous_uri
 
     @property
     def last_uri(self):

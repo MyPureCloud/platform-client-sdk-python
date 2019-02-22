@@ -38,23 +38,69 @@ class AsyncWeekScheduleResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'status': 'str',
             'result': 'WeekSchedule',
-            'operation_id': 'str',
-            'download_url': 'str'
+            'download_url': 'str',
+            'status': 'str',
+            'operation_id': 'str'
         }
 
         self.attribute_map = {
-            'status': 'status',
             'result': 'result',
-            'operation_id': 'operationId',
-            'download_url': 'downloadUrl'
+            'download_url': 'downloadUrl',
+            'status': 'status',
+            'operation_id': 'operationId'
         }
 
-        self._status = None
         self._result = None
-        self._operation_id = None
         self._download_url = None
+        self._status = None
+        self._operation_id = None
+
+    @property
+    def result(self):
+        """
+        Gets the result of this AsyncWeekScheduleResponse.
+        Week schedule result. The value will be null if the data is sent through notification or if response is large.
+
+        :return: The result of this AsyncWeekScheduleResponse.
+        :rtype: WeekSchedule
+        """
+        return self._result
+
+    @result.setter
+    def result(self, result):
+        """
+        Sets the result of this AsyncWeekScheduleResponse.
+        Week schedule result. The value will be null if the data is sent through notification or if response is large.
+
+        :param result: The result of this AsyncWeekScheduleResponse.
+        :type: WeekSchedule
+        """
+        
+        self._result = result
+
+    @property
+    def download_url(self):
+        """
+        Gets the download_url of this AsyncWeekScheduleResponse.
+        The url to fetch the result for large responses. The value is null if result contains the data
+
+        :return: The download_url of this AsyncWeekScheduleResponse.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url):
+        """
+        Sets the download_url of this AsyncWeekScheduleResponse.
+        The url to fetch the result for large responses. The value is null if result contains the data
+
+        :param download_url: The download_url of this AsyncWeekScheduleResponse.
+        :type: str
+        """
+        
+        self._download_url = download_url
 
     @property
     def status(self):
@@ -84,29 +130,6 @@ class AsyncWeekScheduleResponse(object):
             self._status = status
 
     @property
-    def result(self):
-        """
-        Gets the result of this AsyncWeekScheduleResponse.
-        Week schedule result. The value will be null if the data is sent through notification or if response is large.
-
-        :return: The result of this AsyncWeekScheduleResponse.
-        :rtype: WeekSchedule
-        """
-        return self._result
-
-    @result.setter
-    def result(self, result):
-        """
-        Sets the result of this AsyncWeekScheduleResponse.
-        Week schedule result. The value will be null if the data is sent through notification or if response is large.
-
-        :param result: The result of this AsyncWeekScheduleResponse.
-        :type: WeekSchedule
-        """
-        
-        self._result = result
-
-    @property
     def operation_id(self):
         """
         Gets the operation_id of this AsyncWeekScheduleResponse.
@@ -128,29 +151,6 @@ class AsyncWeekScheduleResponse(object):
         """
         
         self._operation_id = operation_id
-
-    @property
-    def download_url(self):
-        """
-        Gets the download_url of this AsyncWeekScheduleResponse.
-        The url to fetch the result for large responses. The value will be null if result contains the data
-
-        :return: The download_url of this AsyncWeekScheduleResponse.
-        :rtype: str
-        """
-        return self._download_url
-
-    @download_url.setter
-    def download_url(self, download_url):
-        """
-        Sets the download_url of this AsyncWeekScheduleResponse.
-        The url to fetch the result for large responses. The value will be null if result contains the data
-
-        :param download_url: The download_url of this AsyncWeekScheduleResponse.
-        :type: str
-        """
-        
-        self._download_url = download_url
 
     def to_dict(self):
         """

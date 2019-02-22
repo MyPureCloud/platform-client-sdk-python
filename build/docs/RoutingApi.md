@@ -46,7 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
-|[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number or joined status for a User in a Queue|
+|[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number OR joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
@@ -1268,7 +1268,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -2129,7 +2129,7 @@ except ApiException as e:
 
 
 
-Update the ring number or joined status for a User in a Queue
+Update the ring number OR joined status for a User in a Queue
 
 
 
@@ -2157,7 +2157,7 @@ member_id = 'member_id_example' # str | Member ID
 body = PureCloudPlatformClientV2.QueueMember() # QueueMember | Queue Member
 
 try:
-    # Update the ring number or joined status for a User in a Queue
+    # Update the ring number OR joined status for a User in a Queue
     api_response = api_instance.patch_routing_queue_user(queue_id, member_id, body)
     pprint(api_response)
 except ApiException as e:

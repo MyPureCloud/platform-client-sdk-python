@@ -55,6 +55,9 @@ class UpdateUser(object):
             'groups': 'list[Group]',
             'state': 'str',
             'acd_auto_answer': 'bool',
+            'certifications': 'list[str]',
+            'biography': 'Biography',
+            'employer_info': 'EmployerInfo',
             'self_uri': 'str'
         }
 
@@ -76,6 +79,9 @@ class UpdateUser(object):
             'groups': 'groups',
             'state': 'state',
             'acd_auto_answer': 'acdAutoAnswer',
+            'certifications': 'certifications',
+            'biography': 'biography',
+            'employer_info': 'employerInfo',
             'self_uri': 'selfUri'
         }
 
@@ -96,6 +102,9 @@ class UpdateUser(object):
         self._groups = None
         self._state = None
         self._acd_auto_answer = None
+        self._certifications = None
+        self._biography = None
+        self._employer_info = None
         self._self_uri = None
 
     @property
@@ -492,6 +501,75 @@ class UpdateUser(object):
         """
         
         self._acd_auto_answer = acd_auto_answer
+
+    @property
+    def certifications(self):
+        """
+        Gets the certifications of this UpdateUser.
+
+
+        :return: The certifications of this UpdateUser.
+        :rtype: list[str]
+        """
+        return self._certifications
+
+    @certifications.setter
+    def certifications(self, certifications):
+        """
+        Sets the certifications of this UpdateUser.
+
+
+        :param certifications: The certifications of this UpdateUser.
+        :type: list[str]
+        """
+        
+        self._certifications = certifications
+
+    @property
+    def biography(self):
+        """
+        Gets the biography of this UpdateUser.
+
+
+        :return: The biography of this UpdateUser.
+        :rtype: Biography
+        """
+        return self._biography
+
+    @biography.setter
+    def biography(self, biography):
+        """
+        Sets the biography of this UpdateUser.
+
+
+        :param biography: The biography of this UpdateUser.
+        :type: Biography
+        """
+        
+        self._biography = biography
+
+    @property
+    def employer_info(self):
+        """
+        Gets the employer_info of this UpdateUser.
+
+
+        :return: The employer_info of this UpdateUser.
+        :rtype: EmployerInfo
+        """
+        return self._employer_info
+
+    @employer_info.setter
+    def employer_info(self, employer_info):
+        """
+        Sets the employer_info of this UpdateUser.
+
+
+        :param employer_info: The employer_info of this UpdateUser.
+        :type: EmployerInfo
+        """
+        
+        self._employer_info = employer_info
 
     @property
     def self_uri(self):
