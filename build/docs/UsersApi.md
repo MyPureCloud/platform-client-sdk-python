@@ -1236,6 +1236,7 @@ Wraps GET /api/v2/users/{userId}/queues
 
 Requires ANY permissions: 
 
+* routing:queue:view
 * routing:queue:join
 
 ### Example
@@ -2582,7 +2583,7 @@ Wraps POST /api/v2/users/{userId}/password
 Requires ANY permissions: 
 
 * user_administration
-* directory:userPassword:edit
+* directory:user:setPassword
 
 ### Example
 

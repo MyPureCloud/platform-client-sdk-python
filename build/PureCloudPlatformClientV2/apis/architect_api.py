@@ -3859,7 +3859,7 @@ class ArchitectApi(object):
     def get_flows(self, **kwargs):
         """
         Get a pageable list of flows, filtered by query parameters
-        Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+        If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4327,7 +4327,7 @@ class ArchitectApi(object):
     def get_flows_divisionviews(self, **kwargs):
         """
         Get a pageable list of basic flow information objects filterable by query parameters.
-        This returns a simplified version of /flow consisting of name and type.
+        This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

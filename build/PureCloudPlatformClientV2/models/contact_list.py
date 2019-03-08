@@ -43,6 +43,7 @@ class ContactList(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
+            'division': 'UriReference',
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
             'import_status': 'ImportStatus',
@@ -61,6 +62,7 @@ class ContactList(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'version': 'version',
+            'division': 'division',
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
             'import_status': 'importStatus',
@@ -78,6 +80,7 @@ class ContactList(object):
         self._date_created = None
         self._date_modified = None
         self._version = None
+        self._division = None
         self._column_names = None
         self._phone_columns = None
         self._import_status = None
@@ -203,6 +206,29 @@ class ContactList(object):
         """
         
         self._version = version
+
+    @property
+    def division(self):
+        """
+        Gets the division of this ContactList.
+        The division this entity belongs to.
+
+        :return: The division of this ContactList.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this ContactList.
+        The division this entity belongs to.
+
+        :param division: The division of this ContactList.
+        :type: UriReference
+        """
+        
+        self._division = division
 
     @property
     def column_names(self):

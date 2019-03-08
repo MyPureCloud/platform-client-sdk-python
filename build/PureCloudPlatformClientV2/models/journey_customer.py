@@ -39,16 +39,16 @@ class JourneyCustomer(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'type': 'str'
+            'id_type': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'type': 'type'
+            'id_type': 'idType'
         }
 
         self._id = None
-        self._type = None
+        self._id_type = None
 
     @property
     def id(self):
@@ -74,27 +74,27 @@ class JourneyCustomer(object):
         self._id = id
 
     @property
-    def type(self):
+    def id_type(self):
         """
-        Gets the type of this JourneyCustomer.
+        Gets the id_type of this JourneyCustomer.
         The type of the customerId within the Journey System (e.g. cookie).
 
-        :return: The type of this JourneyCustomer.
+        :return: The id_type of this JourneyCustomer.
         :rtype: str
         """
-        return self._type
+        return self._id_type
 
-    @type.setter
-    def type(self, type):
+    @id_type.setter
+    def id_type(self, id_type):
         """
-        Sets the type of this JourneyCustomer.
+        Sets the id_type of this JourneyCustomer.
         The type of the customerId within the Journey System (e.g. cookie).
 
-        :param type: The type of this JourneyCustomer.
+        :param id_type: The id_type of this JourneyCustomer.
         :type: str
         """
         
-        self._type = type
+        self._id_type = id_type
 
     def to_dict(self):
         """

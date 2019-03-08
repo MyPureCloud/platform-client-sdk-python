@@ -69,6 +69,7 @@ class Campaign(object):
             'call_analysis_language': 'str',
             'priority': 'int',
             'contact_list_filters': 'list[UriReference]',
+            'division': 'UriReference',
             'self_uri': 'str'
         }
 
@@ -104,6 +105,7 @@ class Campaign(object):
             'call_analysis_language': 'callAnalysisLanguage',
             'priority': 'priority',
             'contact_list_filters': 'contactListFilters',
+            'division': 'division',
             'self_uri': 'selfUri'
         }
 
@@ -138,6 +140,7 @@ class Campaign(object):
         self._call_analysis_language = None
         self._priority = None
         self._contact_list_filters = None
+        self._division = None
         self._self_uri = None
 
     @property
@@ -860,6 +863,29 @@ class Campaign(object):
         """
         
         self._contact_list_filters = contact_list_filters
+
+    @property
+    def division(self):
+        """
+        Gets the division of this Campaign.
+        The division this campaign belongs to.
+
+        :return: The division of this Campaign.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this Campaign.
+        The division this campaign belongs to.
+
+        :param division: The division of this Campaign.
+        :type: UriReference
+        """
+        
+        self._division = division
 
     @property
     def self_uri(self):

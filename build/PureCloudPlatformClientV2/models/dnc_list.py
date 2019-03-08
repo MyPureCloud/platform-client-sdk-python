@@ -49,6 +49,7 @@ class DncList(object):
             'login_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
+            'division': 'UriReference',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class DncList(object):
             'login_id': 'loginId',
             'dnc_codes': 'dncCodes',
             'license_id': 'licenseId',
+            'division': 'division',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +80,7 @@ class DncList(object):
         self._login_id = None
         self._dnc_codes = None
         self._license_id = None
+        self._division = None
         self._self_uri = None
 
     @property
@@ -336,6 +339,29 @@ class DncList(object):
         """
         
         self._license_id = license_id
+
+    @property
+    def division(self):
+        """
+        Gets the division of this DncList.
+        The division this DncList belongs to.
+
+        :return: The division of this DncList.
+        :rtype: UriReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this DncList.
+        The division this DncList belongs to.
+
+        :param division: The division of this DncList.
+        :type: UriReference
+        """
+        
+        self._division = division
 
     @property
     def self_uri(self):

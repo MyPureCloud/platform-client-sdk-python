@@ -38,6 +38,7 @@ title: Campaign
 | **call_analysis_language** | **str** | The language the edge will use to analyze the call. | [optional] |
 | **priority** | **int** | The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest. | [optional] |
 | **contact_list_filters** | [**list[UriReference]**](UriReference.html) | Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied. | [optional] |
+| **division** | [**UriReference**](UriReference.html) | The division this campaign belongs to. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

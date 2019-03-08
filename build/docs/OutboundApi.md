@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaignrule**](OutboundApi.html#get_outbound_campaignrule) | Get Campaign Rule|
 |[**get_outbound_campaignrules**](OutboundApi.html#get_outbound_campaignrules) | Query Campaign Rule list|
 |[**get_outbound_campaigns**](OutboundApi.html#get_outbound_campaigns) | Query a list of dialer campaigns.|
+|[**get_outbound_campaigns_divisionview**](OutboundApi.html#get_outbound_campaigns_divisionview) | Get a basic Campaign information object|
 |[**get_outbound_campaigns_divisionviews**](OutboundApi.html#get_outbound_campaigns_divisionviews) | Query a list of basic Campaign information objects|
 |[**get_outbound_contactlist**](OutboundApi.html#get_outbound_contactlist) | Get a dialer contact list.|
 |[**get_outbound_contactlist_contact**](OutboundApi.html#get_outbound_contactlist_contact) | Get a contact.|
@@ -1688,6 +1689,57 @@ except ApiException as e:
 ### Return type
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
+
+<a name="get_outbound_campaigns_divisionview"></a>
+
+## [**CampaignDivisionView**](CampaignDivisionView.html) get_outbound_campaigns_divisionview(campaign_id)
+
+
+
+Get a basic Campaign information object
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId} 
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+
+try:
+    # Get a basic Campaign information object
+    api_response = api_instance.get_outbound_campaigns_divisionview(campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_campaigns_divisionview: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignDivisionView**](CampaignDivisionView.html)
 
 <a name="get_outbound_campaigns_divisionviews"></a>
 

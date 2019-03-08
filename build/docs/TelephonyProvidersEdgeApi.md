@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_certificateauthority) | Delete a certificate authority.|
 |[**delete_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_didpool) | Delete a DID Pool by ID.|
 |[**delete_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_edgegroup) | Delete an edge group.|
-|[**delete_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_endpoint) | Delete endpoint|
 |[**delete_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_extensionpool) | Delete an extension pool by ID|
 |[**delete_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_outboundroute) | Delete Outbound Route|
 |[**delete_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_phone) | Delete a Phone by ID|
@@ -52,8 +51,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbase) | Gets the edge trunk base associated with the edge group|
 |[**get_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroups) | Get the list of edge groups.|
 |[**get_telephony_providers_edges_edgeversionreport**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgeversionreport) | Get the edge version report.|
-|[**get_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_endpoint) | Get endpoint|
-|[**get_telephony_providers_edges_endpoints**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_endpoints) | Get endpoints|
 |[**get_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extension) | Get an extension by ID.|
 |[**get_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpool) | Get an extension pool by ID|
 |[**get_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpools) | Get a listing of extension pools|
@@ -104,7 +101,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_certificateauthorities**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_certificateauthorities) | Create a certificate authority.|
 |[**post_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_didpools) | Create a new DID pool|
 |[**post_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_edgegroups) | Create an edge group.|
-|[**post_telephony_providers_edges_endpoints**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_endpoints) | Create endpoint|
 |[**post_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_extensionpools) | Create a new extension pool|
 |[**post_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_outboundroutes) | Create outbound rule|
 |[**post_telephony_providers_edges_phone_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phone_reboot) | Reboot a Phone|
@@ -123,7 +119,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_didpool) | Update a DID Pool by ID.|
 |[**put_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup) | Update an edge group.|
 |[**put_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup_edgetrunkbase) | Update the edge trunk base associated with the edge group|
-|[**put_telephony_providers_edges_endpoint**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_endpoint) | Update endpoint|
 |[**put_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extension) | Update an extension by ID.|
 |[**put_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extensionpool) | Update an extension pool by ID|
 |[**put_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_outboundroute) | Update outbound route|
@@ -430,56 +425,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **edge_group_id** | **str**| Edge group ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_telephony_providers_edges_endpoint"></a>
-
-##  delete_telephony_providers_edges_endpoint(endpoint_id)
-
-
-
-Delete endpoint
-
-
-
-Wraps DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-endpoint_id = 'endpoint_id_example' # str | Endpoint ID
-
-try:
-    # Delete endpoint
-    api_instance.delete_telephony_providers_edges_endpoint(endpoint_id)
-except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_endpoint: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2438,114 +2383,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**EdgeVersionReport**](EdgeVersionReport.html)
-
-<a name="get_telephony_providers_edges_endpoint"></a>
-
-## [**Endpoint**](Endpoint.html) get_telephony_providers_edges_endpoint(endpoint_id)
-
-
-
-Get endpoint
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/endpoints/{endpointId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-endpoint_id = 'endpoint_id_example' # str | Endpoint ID
-
-try:
-    # Get endpoint
-    api_response = api_instance.get_telephony_providers_edges_endpoint(endpoint_id)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoint: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
-
-<a name="get_telephony_providers_edges_endpoints"></a>
-
-## [**EndpointEntityListing**](EndpointEntityListing.html) get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
-
-
-
-Get endpoints
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/endpoints 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-name = 'name_example' # str | Name (optional)
-sort_by = 'name' # str | Sort by (optional) (default to name)
-
-try:
-    # Get endpoints
-    api_response = api_instance.get_telephony_providers_edges_endpoints(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_endpoints: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **name** | **str**| Name | [optional]  |
-| **sort_by** | **str**| Sort by | [optional] [default to name] |
-{: class="table table-striped"}
-
-### Return type
-
-[**EndpointEntityListing**](EndpointEntityListing.html)
 
 <a name="get_telephony_providers_edges_extension"></a>
 
@@ -5246,57 +5083,6 @@ except ApiException as e:
 
 [**EdgeGroup**](EdgeGroup.html)
 
-<a name="post_telephony_providers_edges_endpoints"></a>
-
-## [**Endpoint**](Endpoint.html) post_telephony_providers_edges_endpoints(body)
-
-
-
-Create endpoint
-
-
-
-Wraps POST /api/v2/telephony/providers/edges/endpoints 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-body = PureCloudPlatformClientV2.Endpoint() # Endpoint | EndpointTemplate
-
-try:
-    # Create endpoint
-    api_response = api_instance.post_telephony_providers_edges_endpoints(body)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_endpoints: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
-
 <a name="post_telephony_providers_edges_extensionpools"></a>
 
 ## [**ExtensionPool**](ExtensionPool.html) post_telephony_providers_edges_extensionpools(body)
@@ -6235,59 +6021,6 @@ except ApiException as e:
 ### Return type
 
 [**EdgeTrunkBase**](EdgeTrunkBase.html)
-
-<a name="put_telephony_providers_edges_endpoint"></a>
-
-## [**Endpoint**](Endpoint.html) put_telephony_providers_edges_endpoint(endpoint_id, body)
-
-
-
-Update endpoint
-
-
-
-Wraps PUT /api/v2/telephony/providers/edges/endpoints/{endpointId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-endpoint_id = 'endpoint_id_example' # str | Endpoint ID
-body = PureCloudPlatformClientV2.Endpoint() # Endpoint | EndpointTemplate
-
-try:
-    # Update endpoint
-    api_response = api_instance.put_telephony_providers_edges_endpoint(endpoint_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_endpoint: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **endpoint_id** | **str**| Endpoint ID |  |
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
 
 <a name="put_telephony_providers_edges_extension"></a>
 
