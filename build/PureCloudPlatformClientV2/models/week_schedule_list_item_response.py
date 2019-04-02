@@ -95,7 +95,7 @@ class WeekScheduleListItemResponse(object):
     def week_date(self):
         """
         Gets the week_date of this WeekScheduleListItemResponse.
-        First day of this week schedule in week in yyyy-MM-dd format
+        First day of this week schedule in yyyy-MM-dd format
 
         :return: The week_date of this WeekScheduleListItemResponse.
         :rtype: str
@@ -106,7 +106,7 @@ class WeekScheduleListItemResponse(object):
     def week_date(self, week_date):
         """
         Sets the week_date of this WeekScheduleListItemResponse.
-        First day of this week schedule in week in yyyy-MM-dd format
+        First day of this week schedule in yyyy-MM-dd format
 
         :param week_date: The week_date of this WeekScheduleListItemResponse.
         :type: str

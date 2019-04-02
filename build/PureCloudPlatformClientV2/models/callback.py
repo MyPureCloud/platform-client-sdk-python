@@ -52,6 +52,7 @@ class Callback(object):
             'script_id': 'str',
             'skip_enabled': 'bool',
             'timeout_seconds': 'int',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'callback_scheduled_time': 'datetime',
@@ -75,6 +76,7 @@ class Callback(object):
             'script_id': 'scriptId',
             'skip_enabled': 'skipEnabled',
             'timeout_seconds': 'timeoutSeconds',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'callback_scheduled_time': 'callbackScheduledTime',
@@ -97,6 +99,7 @@ class Callback(object):
         self._script_id = None
         self._skip_enabled = None
         self._timeout_seconds = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._disconnected_time = None
         self._callback_scheduled_time = None
@@ -437,6 +440,29 @@ class Callback(object):
         """
         
         self._timeout_seconds = timeout_seconds
+
+    @property
+    def start_alerting_time(self):
+        """
+        Gets the start_alerting_time of this Callback.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_alerting_time of this Callback.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time):
+        """
+        Sets the start_alerting_time of this Callback.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_alerting_time: The start_alerting_time of this Callback.
+        :type: datetime
+        """
+        
+        self._start_alerting_time = start_alerting_time
 
     @property
     def connected_time(self):

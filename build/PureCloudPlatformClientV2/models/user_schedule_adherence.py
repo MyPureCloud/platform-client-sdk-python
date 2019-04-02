@@ -52,6 +52,8 @@ class UserScheduleAdherence(object):
             'impact': 'str',
             'time_of_adherence_change': 'datetime',
             'presence_update_time': 'datetime',
+            'active_queues': 'list[QueueReference]',
+            'active_queues_modified_time': 'datetime',
             'self_uri': 'str'
         }
 
@@ -70,6 +72,8 @@ class UserScheduleAdherence(object):
             'impact': 'impact',
             'time_of_adherence_change': 'timeOfAdherenceChange',
             'presence_update_time': 'presenceUpdateTime',
+            'active_queues': 'activeQueues',
+            'active_queues_modified_time': 'activeQueuesModifiedTime',
             'self_uri': 'selfUri'
         }
 
@@ -87,6 +91,8 @@ class UserScheduleAdherence(object):
         self._impact = None
         self._time_of_adherence_change = None
         self._presence_update_time = None
+        self._active_queues = None
+        self._active_queues_modified_time = None
         self._self_uri = None
 
     @property
@@ -434,6 +440,52 @@ class UserScheduleAdherence(object):
         """
         
         self._presence_update_time = presence_update_time
+
+    @property
+    def active_queues(self):
+        """
+        Gets the active_queues of this UserScheduleAdherence.
+        The list of queues to which this user is joined
+
+        :return: The active_queues of this UserScheduleAdherence.
+        :rtype: list[QueueReference]
+        """
+        return self._active_queues
+
+    @active_queues.setter
+    def active_queues(self, active_queues):
+        """
+        Sets the active_queues of this UserScheduleAdherence.
+        The list of queues to which this user is joined
+
+        :param active_queues: The active_queues of this UserScheduleAdherence.
+        :type: list[QueueReference]
+        """
+        
+        self._active_queues = active_queues
+
+    @property
+    def active_queues_modified_time(self):
+        """
+        Gets the active_queues_modified_time of this UserScheduleAdherence.
+        Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The active_queues_modified_time of this UserScheduleAdherence.
+        :rtype: datetime
+        """
+        return self._active_queues_modified_time
+
+    @active_queues_modified_time.setter
+    def active_queues_modified_time(self, active_queues_modified_time):
+        """
+        Sets the active_queues_modified_time of this UserScheduleAdherence.
+        Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param active_queues_modified_time: The active_queues_modified_time of this UserScheduleAdherence.
+        :type: datetime
+        """
+        
+        self._active_queues_modified_time = active_queues_modified_time
 
     @property
     def self_uri(self):

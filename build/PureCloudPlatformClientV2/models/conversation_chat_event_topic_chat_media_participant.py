@@ -67,6 +67,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'ConversationChatEventTopicJourneyContext',
             'room_id': 'str'
         }
 
@@ -100,6 +101,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'room_id': 'roomId'
         }
 
@@ -132,6 +134,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
+        self._journey_context = None
         self._room_id = None
 
     @property
@@ -816,6 +819,29 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The journey_context of this ConversationChatEventTopicChatMediaParticipant.
+        :rtype: ConversationChatEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :param journey_context: The journey_context of this ConversationChatEventTopicChatMediaParticipant.
+        :type: ConversationChatEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def room_id(self):

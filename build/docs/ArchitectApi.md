@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_architect_ivr**](ArchitectApi.html#delete_architect_ivr) | Delete an IVR Config.|
 |[**delete_architect_prompt**](ArchitectApi.html#delete_architect_prompt) | Delete specified user prompt|
 |[**delete_architect_prompt_resource**](ArchitectApi.html#delete_architect_prompt_resource) | Delete specified user prompt resource|
+|[**delete_architect_prompt_resource_audio**](ArchitectApi.html#delete_architect_prompt_resource_audio) | Delete specified user prompt resource audio|
 |[**delete_architect_prompts**](ArchitectApi.html#delete_architect_prompts) | Batch-delete a list of prompts|
 |[**delete_architect_schedule**](ArchitectApi.html#delete_architect_schedule) | Delete a schedule by id|
 |[**delete_architect_schedulegroup**](ArchitectApi.html#delete_architect_schedulegroup) | Deletes a schedule group by ID|
@@ -56,7 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by id|
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
-|[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable|
+|[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable with the given id|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
 |[**get_flows_divisionviews**](ArchitectApi.html#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
@@ -77,7 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_actions_publish**](ArchitectApi.html#post_flows_actions_publish) | Publish flow|
 |[**post_flows_actions_revert**](ArchitectApi.html#post_flows_actions_revert) | Revert flow|
 |[**post_flows_actions_unlock**](ArchitectApi.html#post_flows_actions_unlock) | Unlock flow|
-|[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry|
+|[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry for the datatable.|
 |[**post_flows_datatables**](ArchitectApi.html#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
 |[**put_architect_emergencygroup**](ArchitectApi.html#put_architect_emergencygroup) | Updates a emergency group by ID|
 |[**put_architect_ivr**](ArchitectApi.html#put_architect_ivr) | Update an IVR Config.|
@@ -280,6 +281,58 @@ try:
     api_instance.delete_architect_prompt_resource(prompt_id, language_code)
 except ApiException as e:
     print "Exception when calling ArchitectApi->delete_architect_prompt_resource: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_architect_prompt_resource_audio"></a>
+
+##  delete_architect_prompt_resource_audio(prompt_id, language_code)
+
+
+
+Delete specified user prompt resource audio
+
+
+
+Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio 
+
+Requires ANY permissions: 
+
+* architect:userPrompt:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Delete specified user prompt resource audio
+    api_instance.delete_architect_prompt_resource_audio(prompt_id, language_code)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->delete_architect_prompt_resource_audio: %s\n" % e
 ```
 
 ### Parameters
@@ -607,7 +660,7 @@ except ApiException as e:
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given id)
+Deletes an entire datatable (including the schema and data) with a given datatableId
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId} 
 
@@ -659,7 +712,7 @@ void (empty response body)
 
 Delete a row entry
 
-Deletes a row with a given rowId.
+Deletes a row with a given rowId (the value of the key field).
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
@@ -1691,7 +1744,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-name = 'name_example' # str | Name (optional)
+name = ['name_example'] # list[str] | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
 sort_by = 'id' # str | Sort by (optional) (default to id)
@@ -1712,7 +1765,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **name** | **str**| Name | [optional]  |
+| **name** | [**list[str]**](str.html)| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to id] |
@@ -2661,7 +2714,7 @@ except ApiException as e:
 
 Returns a specific datatable by id
 
-Given a datableid returns the schema associated with it.
+Given a datatableId returns the datatable object and schema associated with it.
 
 Wraps GET /api/v2/flows/datatables/{datatableId} 
 
@@ -2714,7 +2767,7 @@ except ApiException as e:
 
 Returns a specific row for the datatable
 
-Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
@@ -2767,9 +2820,9 @@ except ApiException as e:
 
 
 
-Returns the rows for the datatable
+Returns the rows for the datatable with the given id
 
-Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows 
 
@@ -2796,7 +2849,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 showbrief = true # bool | If true returns just the key value of the row (optional) (default to true)
 
 try:
-    # Returns the rows for the datatable
+    # Returns the rows for the datatable with the given id
     api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
     pprint(api_response)
 except ApiException as e:
@@ -2826,7 +2879,7 @@ except ApiException as e:
 
 Retrieve a list of datatables for the org
 
-Returns a metadata list of the datatables associated with this org, including ID, name and description.
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
 Wraps GET /api/v2/flows/datatables 
 
@@ -3563,7 +3616,7 @@ except ApiException as e:
 
 <a name="post_flows_actions_checkin"></a>
 
-## [**Flow**](Flow.html) post_flows_actions_checkin(flow)
+## [**Operation**](Operation.html) post_flows_actions_checkin(flow)
 
 
 
@@ -3611,7 +3664,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Operation**](Operation.html)
 
 <a name="post_flows_actions_checkout"></a>
 
@@ -3877,9 +3930,9 @@ except ApiException as e:
 
 
 
-Create a new row entry
+Create a new row entry for the datatable.
 
-Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows 
 
@@ -3904,7 +3957,7 @@ datatable_id = 'datatable_id_example' # str | id of datatable
 data_table_row = NULL # object | 
 
 try:
-    # Create a new row entry
+    # Create a new row entry for the datatable.
     api_response = api_instance.post_flows_datatable_rows(datatable_id, data_table_row)
     pprint(api_response)
 except ApiException as e:
@@ -3932,7 +3985,7 @@ except ApiException as e:
 
 Create a new datatable with the specified json-schema definition
 
-This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
 Wraps POST /api/v2/flows/datatables 
 
@@ -4411,7 +4464,7 @@ except ApiException as e:
 
 Updates a specific datatable by id
 
-Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId} 
 
@@ -4466,7 +4519,7 @@ except ApiException as e:
 
 Update a row entry
 
-Updates a row with the given to the new values.
+Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 

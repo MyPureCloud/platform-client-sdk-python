@@ -36,6 +36,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
 | **flagged_reason** | **str** |  | [optional] |
+| **journey_context** | [**ConversationSocialExpressionEventTopicJourneyContext**](ConversationSocialExpressionEventTopicJourneyContext.html) |  | [optional] |
 | **social_media_id** | **str** |  | [optional] |
 | **social_media_hub** | **str** |  | [optional] |
 | **social_user_name** | **str** |  | [optional] |

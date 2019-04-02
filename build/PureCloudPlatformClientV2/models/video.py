@@ -46,11 +46,13 @@ class Video(object):
             'sharing_screen': 'bool',
             'peer_count': 'int',
             'disconnect_type': 'str',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
             'peer_id': 'str',
-            'msids': 'list[str]'
+            'msids': 'list[str]',
+            'pcSelf': 'Address'
         }
 
         self.attribute_map = {
@@ -62,11 +64,13 @@ class Video(object):
             'sharing_screen': 'sharingScreen',
             'peer_count': 'peerCount',
             'disconnect_type': 'disconnectType',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
             'peer_id': 'peerId',
-            'msids': 'msids'
+            'msids': 'msids',
+            'pcSelf': 'self'
         }
 
         self._state = None
@@ -77,11 +81,13 @@ class Video(object):
         self._sharing_screen = None
         self._peer_count = None
         self._disconnect_type = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
         self._peer_id = None
         self._msids = None
+        self._pcSelf = None
 
     @property
     def state(self):
@@ -276,6 +282,29 @@ class Video(object):
             self._disconnect_type = disconnect_type
 
     @property
+    def start_alerting_time(self):
+        """
+        Gets the start_alerting_time of this Video.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_alerting_time of this Video.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time):
+        """
+        Sets the start_alerting_time of this Video.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_alerting_time: The start_alerting_time of this Video.
+        :type: datetime
+        """
+        
+        self._start_alerting_time = start_alerting_time
+
+    @property
     def connected_time(self):
         """
         Gets the connected_time of this Video.
@@ -389,6 +418,29 @@ class Video(object):
         """
         
         self._msids = msids
+
+    @property
+    def pcSelf(self):
+        """
+        Gets the pcSelf of this Video.
+        Address and name data for a call endpoint.
+
+        :return: The pcSelf of this Video.
+        :rtype: Address
+        """
+        return self._pcSelf
+
+    @pcSelf.setter
+    def pcSelf(self, pcSelf):
+        """
+        Sets the pcSelf of this Video.
+        Address and name data for a call endpoint.
+
+        :param pcSelf: The pcSelf of this Video.
+        :type: Address
+        """
+        
+        self._pcSelf = pcSelf
 
     def to_dict(self):
         """

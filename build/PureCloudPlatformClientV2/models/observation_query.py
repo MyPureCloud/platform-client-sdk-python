@@ -39,16 +39,19 @@ class ObservationQuery(object):
         """
         self.swagger_types = {
             'filter': 'AnalyticsQueryFilter',
-            'metrics': 'list[str]'
+            'metrics': 'list[str]',
+            'detail_metrics': 'list[str]'
         }
 
         self.attribute_map = {
             'filter': 'filter',
-            'metrics': 'metrics'
+            'metrics': 'metrics',
+            'detail_metrics': 'detailMetrics'
         }
 
         self._filter = None
         self._metrics = None
+        self._detail_metrics = None
 
     @property
     def filter(self):
@@ -95,6 +98,29 @@ class ObservationQuery(object):
         """
         
         self._metrics = metrics
+
+    @property
+    def detail_metrics(self):
+        """
+        Gets the detail_metrics of this ObservationQuery.
+        Metrics for which to include additional detailed observations
+
+        :return: The detail_metrics of this ObservationQuery.
+        :rtype: list[str]
+        """
+        return self._detail_metrics
+
+    @detail_metrics.setter
+    def detail_metrics(self, detail_metrics):
+        """
+        Sets the detail_metrics of this ObservationQuery.
+        Metrics for which to include additional detailed observations
+
+        :param detail_metrics: The detail_metrics of this ObservationQuery.
+        :type: list[str]
+        """
+        
+        self._detail_metrics = detail_metrics
 
     def to_dict(self):
         """

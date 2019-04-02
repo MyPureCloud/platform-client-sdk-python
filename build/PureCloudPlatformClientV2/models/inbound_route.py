@@ -49,6 +49,8 @@ class InboundRoute(object):
             'from_email': 'str',
             'flow': 'UriReference',
             'reply_email_address': 'QueueEmailAddress',
+            'auto_bcc': 'list[EmailAddress]',
+            'spam_flow': 'UriReference',
             'self_uri': 'str'
         }
 
@@ -64,6 +66,8 @@ class InboundRoute(object):
             'from_email': 'fromEmail',
             'flow': 'flow',
             'reply_email_address': 'replyEmailAddress',
+            'auto_bcc': 'autoBcc',
+            'spam_flow': 'spamFlow',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +82,8 @@ class InboundRoute(object):
         self._from_email = None
         self._flow = None
         self._reply_email_address = None
+        self._auto_bcc = None
+        self._spam_flow = None
         self._self_uri = None
 
     @property
@@ -332,6 +338,52 @@ class InboundRoute(object):
         """
         
         self._reply_email_address = reply_email_address
+
+    @property
+    def auto_bcc(self):
+        """
+        Gets the auto_bcc of this InboundRoute.
+        The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+
+        :return: The auto_bcc of this InboundRoute.
+        :rtype: list[EmailAddress]
+        """
+        return self._auto_bcc
+
+    @auto_bcc.setter
+    def auto_bcc(self, auto_bcc):
+        """
+        Sets the auto_bcc of this InboundRoute.
+        The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+
+        :param auto_bcc: The auto_bcc of this InboundRoute.
+        :type: list[EmailAddress]
+        """
+        
+        self._auto_bcc = auto_bcc
+
+    @property
+    def spam_flow(self):
+        """
+        Gets the spam_flow of this InboundRoute.
+        The flow to use for processing inbound emails that have been marked as spam.
+
+        :return: The spam_flow of this InboundRoute.
+        :rtype: UriReference
+        """
+        return self._spam_flow
+
+    @spam_flow.setter
+    def spam_flow(self, spam_flow):
+        """
+        Sets the spam_flow of this InboundRoute.
+        The flow to use for processing inbound emails that have been marked as spam.
+
+        :param spam_flow: The spam_flow of this InboundRoute.
+        :type: UriReference
+        """
+        
+        self._spam_flow = spam_flow
 
     @property
     def self_uri(self):

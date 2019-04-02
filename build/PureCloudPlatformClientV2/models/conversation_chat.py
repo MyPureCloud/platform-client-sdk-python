@@ -47,6 +47,7 @@ class ConversationChat(object):
             'direction': 'str',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
@@ -65,6 +66,7 @@ class ConversationChat(object):
             'direction': 'direction',
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
@@ -82,6 +84,7 @@ class ConversationChat(object):
         self._direction = None
         self._disconnect_type = None
         self._start_hold_time = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
@@ -307,6 +310,29 @@ class ConversationChat(object):
         """
         
         self._start_hold_time = start_hold_time
+
+    @property
+    def start_alerting_time(self):
+        """
+        Gets the start_alerting_time of this ConversationChat.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_alerting_time of this ConversationChat.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time):
+        """
+        Sets the start_alerting_time of this ConversationChat.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_alerting_time: The start_alerting_time of this ConversationChat.
+        :type: datetime
+        """
+        
+        self._start_alerting_time = start_alerting_time
 
     @property
     def connected_time(self):

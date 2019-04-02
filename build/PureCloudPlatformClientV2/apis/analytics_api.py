@@ -218,7 +218,7 @@ class AnalyticsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] id: Comma-separated conversation ids
-        :return: AnalyticsConversation
+        :return: AnalyticsConversationMultiGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -272,7 +272,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AnalyticsConversation',
+                                            response_type='AnalyticsConversationMultiGetResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

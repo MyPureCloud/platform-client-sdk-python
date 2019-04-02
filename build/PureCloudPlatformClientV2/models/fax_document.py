@@ -53,8 +53,8 @@ class FaxDocument(object):
             'caller_address': 'str',
             'receiver_address': 'str',
             'thumbnails': 'list[DocumentThumbnail]',
-            'download_sharing_uri': 'str',
             'sharing_uri': 'str',
+            'download_sharing_uri': 'str',
             'self_uri': 'str'
         }
 
@@ -74,8 +74,8 @@ class FaxDocument(object):
             'caller_address': 'callerAddress',
             'receiver_address': 'receiverAddress',
             'thumbnails': 'thumbnails',
-            'download_sharing_uri': 'downloadSharingUri',
             'sharing_uri': 'sharingUri',
+            'download_sharing_uri': 'downloadSharingUri',
             'self_uri': 'selfUri'
         }
 
@@ -94,8 +94,8 @@ class FaxDocument(object):
         self._caller_address = None
         self._receiver_address = None
         self._thumbnails = None
-        self._download_sharing_uri = None
         self._sharing_uri = None
+        self._download_sharing_uri = None
         self._self_uri = None
 
     @property
@@ -444,29 +444,6 @@ class FaxDocument(object):
         self._thumbnails = thumbnails
 
     @property
-    def download_sharing_uri(self):
-        """
-        Gets the download_sharing_uri of this FaxDocument.
-
-
-        :return: The download_sharing_uri of this FaxDocument.
-        :rtype: str
-        """
-        return self._download_sharing_uri
-
-    @download_sharing_uri.setter
-    def download_sharing_uri(self, download_sharing_uri):
-        """
-        Sets the download_sharing_uri of this FaxDocument.
-
-
-        :param download_sharing_uri: The download_sharing_uri of this FaxDocument.
-        :type: str
-        """
-        
-        self._download_sharing_uri = download_sharing_uri
-
-    @property
     def sharing_uri(self):
         """
         Gets the sharing_uri of this FaxDocument.
@@ -488,6 +465,29 @@ class FaxDocument(object):
         """
         
         self._sharing_uri = sharing_uri
+
+    @property
+    def download_sharing_uri(self):
+        """
+        Gets the download_sharing_uri of this FaxDocument.
+
+
+        :return: The download_sharing_uri of this FaxDocument.
+        :rtype: str
+        """
+        return self._download_sharing_uri
+
+    @download_sharing_uri.setter
+    def download_sharing_uri(self, download_sharing_uri):
+        """
+        Sets the download_sharing_uri of this FaxDocument.
+
+
+        :param download_sharing_uri: The download_sharing_uri of this FaxDocument.
+        :type: str
+        """
+        
+        self._download_sharing_uri = download_sharing_uri
 
     @property
     def self_uri(self):

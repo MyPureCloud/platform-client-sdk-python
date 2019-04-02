@@ -40,18 +40,24 @@ class ObservationMetricData(object):
         self.swagger_types = {
             'metric': 'str',
             'qualifier': 'str',
-            'stats': 'StatisticalSummary'
+            'stats': 'StatisticalSummary',
+            'truncated': 'bool',
+            'observations': 'list[ObservationValue]'
         }
 
         self.attribute_map = {
             'metric': 'metric',
             'qualifier': 'qualifier',
-            'stats': 'stats'
+            'stats': 'stats',
+            'truncated': 'truncated',
+            'observations': 'observations'
         }
 
         self._metric = None
         self._qualifier = None
         self._stats = None
+        self._truncated = None
+        self._observations = None
 
     @property
     def metric(self):
@@ -125,6 +131,52 @@ class ObservationMetricData(object):
         """
         
         self._stats = stats
+
+    @property
+    def truncated(self):
+        """
+        Gets the truncated of this ObservationMetricData.
+        Flag for a truncated list of observations. If truncated, the first half of the list of observations will contain the oldest observations and the second half the newest observations.
+
+        :return: The truncated of this ObservationMetricData.
+        :rtype: bool
+        """
+        return self._truncated
+
+    @truncated.setter
+    def truncated(self, truncated):
+        """
+        Sets the truncated of this ObservationMetricData.
+        Flag for a truncated list of observations. If truncated, the first half of the list of observations will contain the oldest observations and the second half the newest observations.
+
+        :param truncated: The truncated of this ObservationMetricData.
+        :type: bool
+        """
+        
+        self._truncated = truncated
+
+    @property
+    def observations(self):
+        """
+        Gets the observations of this ObservationMetricData.
+        List of observations sorted by timestamp in ascending order. This list may be truncated.
+
+        :return: The observations of this ObservationMetricData.
+        :rtype: list[ObservationValue]
+        """
+        return self._observations
+
+    @observations.setter
+    def observations(self, observations):
+        """
+        Sets the observations of this ObservationMetricData.
+        List of observations sorted by timestamp in ascending order. This list may be truncated.
+
+        :param observations: The observations of this ObservationMetricData.
+        :type: list[ObservationValue]
+        """
+        
+        self._observations = observations
 
     def to_dict(self):
         """

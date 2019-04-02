@@ -367,6 +367,90 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_architect_prompt_resource_audio(self, prompt_id, language_code, **kwargs):
+        """
+        Delete specified user prompt resource audio
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_architect_prompt_resource_audio(prompt_id, language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: Prompt ID (required)
+        :param str language_code: Language (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id', 'language_code']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_architect_prompt_resource_audio" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `delete_architect_prompt_resource_audio`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `delete_architect_prompt_resource_audio`")
+
+
+        resource_path = '/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_architect_prompts(self, id, **kwargs):
         """
         Batch-delete a list of prompts
@@ -844,7 +928,7 @@ class ArchitectApi(object):
     def delete_flows_datatable(self, datatable_id, **kwargs):
         """
         deletes a specific datatable by id
-        deletes an entire datatable (including schema and data) with a given id)
+        Deletes an entire datatable (including the schema and data) with a given datatableId
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -925,7 +1009,7 @@ class ArchitectApi(object):
     def delete_flows_datatable_row(self, datatable_id, row_id, **kwargs):
         """
         Delete a row entry
-        Deletes a row with a given rowId.
+        Deletes a row with a given rowId (the value of the key field).
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2484,7 +2568,7 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param int page_number: Page number
         :param int page_size: Page size
-        :param str name: Name
+        :param list[str] name: Name
         :param str description: Description
         :param str name_or_description: Name or description
         :param str sort_by: Sort by
@@ -3985,7 +4069,7 @@ class ArchitectApi(object):
     def get_flows_datatable(self, datatable_id, **kwargs):
         """
         Returns a specific datatable by id
-        Given a datableid returns the schema associated with it.
+        Given a datatableId returns the datatable object and schema associated with it.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4066,7 +4150,7 @@ class ArchitectApi(object):
     def get_flows_datatable_row(self, datatable_id, row_id, **kwargs):
         """
         Returns a specific row for the datatable
-        Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+        Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4152,8 +4236,8 @@ class ArchitectApi(object):
 
     def get_flows_datatable_rows(self, datatable_id, **kwargs):
         """
-        Returns the rows for the datatable
-        Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+        Returns the rows for the datatable with the given id
+        Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4240,7 +4324,7 @@ class ArchitectApi(object):
     def get_flows_datatables(self, **kwargs):
         """
         Retrieve a list of datatables for the org
-        Returns a metadata list of the datatables associated with this org, including ID, name and description.
+        Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5393,7 +5477,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow: Flow ID (required)
-        :return: Flow
+        :return: Operation
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5450,7 +5534,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Flow',
+                                            response_type='Operation',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5850,8 +5934,8 @@ class ArchitectApi(object):
 
     def post_flows_datatable_rows(self, datatable_id, data_table_row, **kwargs):
         """
-        Create a new row entry
-        Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+        Create a new row entry for the datatable.
+        Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5935,7 +6019,7 @@ class ArchitectApi(object):
     def post_flows_datatables(self, body, **kwargs):
         """
         Create a new datatable with the specified json-schema definition
-        This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+        This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6697,7 +6781,7 @@ class ArchitectApi(object):
     def put_flows_datatable(self, datatable_id, **kwargs):
         """
         Updates a specific datatable by id
-        Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+        Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6781,7 +6865,7 @@ class ArchitectApi(object):
     def put_flows_datatable_row(self, datatable_id, row_id, **kwargs):
         """
         Update a row entry
-        Updates a row with the given to the new values.
+        Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

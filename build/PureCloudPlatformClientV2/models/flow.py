@@ -40,7 +40,7 @@ class Flow(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'type': 'str',
             'locked_user': 'User',
@@ -148,7 +148,7 @@ class Flow(object):
         The division to which this entity belongs.
 
         :return: The division of this Flow.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
@@ -159,7 +159,7 @@ class Flow(object):
         The division to which this entity belongs.
 
         :param division: The division of this Flow.
-        :type: Division
+        :type: WritableDivision
         """
         
         self._division = division

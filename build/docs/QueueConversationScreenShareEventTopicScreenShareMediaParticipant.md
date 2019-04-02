@@ -36,6 +36,7 @@ title: QueueConversationScreenShareEventTopicScreenShareMediaParticipant
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
 | **flagged_reason** | **str** |  | [optional] |
+| **journey_context** | [**QueueConversationScreenShareEventTopicJourneyContext**](QueueConversationScreenShareEventTopicJourneyContext.html) |  | [optional] |
 | **context** | **str** |  | [optional] |
 | **peer_count** | **int** |  | [optional] |
 | **sharing** | **bool** |  | [optional] |

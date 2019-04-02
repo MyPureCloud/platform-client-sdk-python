@@ -46,6 +46,7 @@ class WfmAgent(object):
             'work_plan': 'WorkPlanReference',
             'schedulable': 'bool',
             'time_zone': 'WfmTimeZone',
+            'accept_direct_shift_trades': 'bool',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -59,6 +60,7 @@ class WfmAgent(object):
             'work_plan': 'workPlan',
             'schedulable': 'schedulable',
             'time_zone': 'timeZone',
+            'accept_direct_shift_trades': 'acceptDirectShiftTrades',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -71,6 +73,7 @@ class WfmAgent(object):
         self._work_plan = None
         self._schedulable = None
         self._time_zone = None
+        self._accept_direct_shift_trades = None
         self._metadata = None
         self._self_uri = None
 
@@ -257,6 +260,29 @@ class WfmAgent(object):
         """
         
         self._time_zone = time_zone
+
+    @property
+    def accept_direct_shift_trades(self):
+        """
+        Gets the accept_direct_shift_trades of this WfmAgent.
+        Whether the agent accepts direct shift trade requests
+
+        :return: The accept_direct_shift_trades of this WfmAgent.
+        :rtype: bool
+        """
+        return self._accept_direct_shift_trades
+
+    @accept_direct_shift_trades.setter
+    def accept_direct_shift_trades(self, accept_direct_shift_trades):
+        """
+        Sets the accept_direct_shift_trades of this WfmAgent.
+        Whether the agent accepts direct shift trade requests
+
+        :param accept_direct_shift_trades: The accept_direct_shift_trades of this WfmAgent.
+        :type: bool
+        """
+        
+        self._accept_direct_shift_trades = accept_direct_shift_trades
 
     @property
     def metadata(self):

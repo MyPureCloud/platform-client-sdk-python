@@ -39,16 +39,19 @@ class CurrentUserScheduleRequestBody(object):
         """
         self.swagger_types = {
             'start_date': 'datetime',
-            'end_date': 'datetime'
+            'end_date': 'datetime',
+            'load_full_weeks': 'bool'
         }
 
         self.attribute_map = {
             'start_date': 'startDate',
-            'end_date': 'endDate'
+            'end_date': 'endDate',
+            'load_full_weeks': 'loadFullWeeks'
         }
 
         self._start_date = None
         self._end_date = None
+        self._load_full_weeks = None
 
     @property
     def start_date(self):
@@ -95,6 +98,29 @@ class CurrentUserScheduleRequestBody(object):
         """
         
         self._end_date = end_date
+
+    @property
+    def load_full_weeks(self):
+        """
+        Gets the load_full_weeks of this CurrentUserScheduleRequestBody.
+        Whether to load the full week's schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false
+
+        :return: The load_full_weeks of this CurrentUserScheduleRequestBody.
+        :rtype: bool
+        """
+        return self._load_full_weeks
+
+    @load_full_weeks.setter
+    def load_full_weeks(self, load_full_weeks):
+        """
+        Sets the load_full_weeks of this CurrentUserScheduleRequestBody.
+        Whether to load the full week's schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false
+
+        :param load_full_weeks: The load_full_weeks of this CurrentUserScheduleRequestBody.
+        :type: bool
+        """
+        
+        self._load_full_weeks = load_full_weeks
 
     def to_dict(self):
         """

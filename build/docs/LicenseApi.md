@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_license_organization**](LicenseApi.html#get_license_organization) | Get license assignments for the organization.|
 |[**get_license_toggle**](LicenseApi.html#get_license_toggle) | Get PureCloud license feature toggle value.|
 |[**get_license_user**](LicenseApi.html#get_license_user) | Get licenses for specified user.|
+|[**get_license_users**](LicenseApi.html#get_license_users) | Get a page of users and their licenses|
 |[**post_license_organization**](LicenseApi.html#post_license_organization) | Update the organization&#39;s license assignments in a batch.|
 |[**post_license_toggle**](LicenseApi.html#post_license_toggle) | Switch PureCloud license feature toggle value.|
 |[**post_license_users**](LicenseApi.html#post_license_users) | Fetch user licenses in a batch.|
@@ -274,6 +275,61 @@ except ApiException as e:
 ### Return type
 
 [**LicenseUser**](LicenseUser.html)
+
+<a name="get_license_users"></a>
+
+## [**UserLicensesEntityListing**](UserLicensesEntityListing.html) get_license_users(page_size=page_size, page_number=page_number)
+
+
+
+Get a page of users and their licenses
+
+Retrieve a page of users in an organization along with the licenses they possess.
+
+Wraps GET /api/v2/license/users 
+
+Requires ANY permissions: 
+
+* admin
+* role_manager
+* authorization:grant:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LicenseApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a page of users and their licenses
+    api_response = api_instance.get_license_users(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling LicenseApi->get_license_users: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLicensesEntityListing**](UserLicensesEntityListing.html)
 
 <a name="post_license_organization"></a>
 

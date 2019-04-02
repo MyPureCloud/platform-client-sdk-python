@@ -46,6 +46,7 @@ class ChatMessage(object):
             'chat': 'str',
             'message': 'str',
             'type': 'str',
+            'body_type': 'str',
             'user': 'ChatMessageUser'
         }
 
@@ -58,6 +59,7 @@ class ChatMessage(object):
             'chat': 'chat',
             'message': 'message',
             'type': 'type',
+            'body_type': 'bodyType',
             'user': 'user'
         }
 
@@ -69,13 +71,14 @@ class ChatMessage(object):
         self._chat = None
         self._message = None
         self._type = None
+        self._body_type = None
         self._user = None
 
     @property
     def body(self):
         """
         Gets the body of this ChatMessage.
-
+        The message body
 
         :return: The body of this ChatMessage.
         :rtype: str
@@ -86,7 +89,7 @@ class ChatMessage(object):
     def body(self, body):
         """
         Sets the body of this ChatMessage.
-
+        The message body
 
         :param body: The body of this ChatMessage.
         :type: str
@@ -121,7 +124,7 @@ class ChatMessage(object):
     def to(self):
         """
         Gets the to of this ChatMessage.
-
+        The message recipient
 
         :return: The to of this ChatMessage.
         :rtype: str
@@ -132,7 +135,7 @@ class ChatMessage(object):
     def to(self, to):
         """
         Sets the to of this ChatMessage.
-
+        The message recipient
 
         :param to: The to of this ChatMessage.
         :type: str
@@ -144,7 +147,7 @@ class ChatMessage(object):
     def pcFrom(self):
         """
         Gets the pcFrom of this ChatMessage.
-
+        The message sender
 
         :return: The pcFrom of this ChatMessage.
         :rtype: str
@@ -155,7 +158,7 @@ class ChatMessage(object):
     def pcFrom(self, pcFrom):
         """
         Sets the pcFrom of this ChatMessage.
-
+        The message sender
 
         :param pcFrom: The pcFrom of this ChatMessage.
         :type: str
@@ -190,7 +193,7 @@ class ChatMessage(object):
     def chat(self):
         """
         Gets the chat of this ChatMessage.
-
+        The interaction id (if available)
 
         :return: The chat of this ChatMessage.
         :rtype: str
@@ -201,7 +204,7 @@ class ChatMessage(object):
     def chat(self, chat):
         """
         Sets the chat of this ChatMessage.
-
+        The interaction id (if available)
 
         :param chat: The chat of this ChatMessage.
         :type: str
@@ -213,7 +216,7 @@ class ChatMessage(object):
     def message(self):
         """
         Gets the message of this ChatMessage.
-
+        The message id
 
         :return: The message of this ChatMessage.
         :rtype: str
@@ -224,7 +227,7 @@ class ChatMessage(object):
     def message(self, message):
         """
         Sets the message of this ChatMessage.
-
+        The message id
 
         :param message: The message of this ChatMessage.
         :type: str
@@ -256,10 +259,37 @@ class ChatMessage(object):
         self._type = type
 
     @property
+    def body_type(self):
+        """
+        Gets the body_type of this ChatMessage.
+        Type of the message body (v2 chats only)
+
+        :return: The body_type of this ChatMessage.
+        :rtype: str
+        """
+        return self._body_type
+
+    @body_type.setter
+    def body_type(self, body_type):
+        """
+        Sets the body_type of this ChatMessage.
+        Type of the message body (v2 chats only)
+
+        :param body_type: The body_type of this ChatMessage.
+        :type: str
+        """
+        allowed_values = ["STANDARD", "ACTIVITY", "TYPING", "NOTICE", "MEMBERJOIN", "MEMBERLEAVE", "MEDIAREQUEST"]
+        if body_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for body_type -> " + body_type
+            self._body_type = "outdated_sdk_version"
+        else:
+            self._body_type = body_type
+
+    @property
     def user(self):
         """
         Gets the user of this ChatMessage.
-
+        The user information for the sender (if available)
 
         :return: The user of this ChatMessage.
         :rtype: ChatMessageUser
@@ -270,7 +300,7 @@ class ChatMessage(object):
     def user(self, user):
         """
         Sets the user of this ChatMessage.
-
+        The user information for the sender (if available)
 
         :param user: The user of this ChatMessage.
         :type: ChatMessageUser

@@ -39,15 +39,18 @@ class UserScheduleContainer(object):
         """
         self.swagger_types = {
             'management_unit_time_zone': 'str',
+            'published_schedules': 'list[WeekScheduleReference]',
             'user_schedules': 'dict(str, UserSchedule)'
         }
 
         self.attribute_map = {
             'management_unit_time_zone': 'managementUnitTimeZone',
+            'published_schedules': 'publishedSchedules',
             'user_schedules': 'userSchedules'
         }
 
         self._management_unit_time_zone = None
+        self._published_schedules = None
         self._user_schedules = None
 
     @property
@@ -72,6 +75,29 @@ class UserScheduleContainer(object):
         """
         
         self._management_unit_time_zone = management_unit_time_zone
+
+    @property
+    def published_schedules(self):
+        """
+        Gets the published_schedules of this UserScheduleContainer.
+        References to all published week schedules overlapping the start/end date query parameters
+
+        :return: The published_schedules of this UserScheduleContainer.
+        :rtype: list[WeekScheduleReference]
+        """
+        return self._published_schedules
+
+    @published_schedules.setter
+    def published_schedules(self, published_schedules):
+        """
+        Sets the published_schedules of this UserScheduleContainer.
+        References to all published week schedules overlapping the start/end date query parameters
+
+        :param published_schedules: The published_schedules of this UserScheduleContainer.
+        :type: list[WeekScheduleReference]
+        """
+        
+        self._published_schedules = published_schedules
 
     @property
     def user_schedules(self):

@@ -42,6 +42,7 @@ class ManagementUnitSettings(object):
             'short_term_forecasting': 'ShortTermForecastingSettings',
             'time_off': 'TimeOffRequestSettings',
             'scheduling': 'SchedulingSettings',
+            'shift_trading': 'ShiftTradeSettings',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -50,6 +51,7 @@ class ManagementUnitSettings(object):
             'short_term_forecasting': 'shortTermForecasting',
             'time_off': 'timeOff',
             'scheduling': 'scheduling',
+            'shift_trading': 'shiftTrading',
             'metadata': 'metadata'
         }
 
@@ -57,6 +59,7 @@ class ManagementUnitSettings(object):
         self._short_term_forecasting = None
         self._time_off = None
         self._scheduling = None
+        self._shift_trading = None
         self._metadata = None
 
     @property
@@ -150,6 +153,29 @@ class ManagementUnitSettings(object):
         """
         
         self._scheduling = scheduling
+
+    @property
+    def shift_trading(self):
+        """
+        Gets the shift_trading of this ManagementUnitSettings.
+        Shift trade settings for this management unit
+
+        :return: The shift_trading of this ManagementUnitSettings.
+        :rtype: ShiftTradeSettings
+        """
+        return self._shift_trading
+
+    @shift_trading.setter
+    def shift_trading(self, shift_trading):
+        """
+        Sets the shift_trading of this ManagementUnitSettings.
+        Shift trade settings for this management unit
+
+        :param shift_trading: The shift_trading of this ManagementUnitSettings.
+        :type: ShiftTradeSettings
+        """
+        
+        self._shift_trading = shift_trading
 
     @property
     def metadata(self):

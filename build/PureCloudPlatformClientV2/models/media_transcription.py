@@ -96,7 +96,7 @@ class MediaTranscription(object):
         :param transcription_provider: The transcription_provider of this MediaTranscription.
         :type: str
         """
-        allowed_values = ["VOCI"]
+        allowed_values = ["VOCI", "CALLJOURNEY"]
         if transcription_provider.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for transcription_provider -> " + transcription_provider
             self._transcription_provider = "outdated_sdk_version"

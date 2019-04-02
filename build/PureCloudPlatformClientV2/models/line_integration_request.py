@@ -43,6 +43,7 @@ class LineIntegrationRequest(object):
             'channel_id': 'str',
             'channel_secret': 'str',
             'switcher_secret': 'str',
+            'service_code': 'str',
             'self_uri': 'str'
         }
 
@@ -52,6 +53,7 @@ class LineIntegrationRequest(object):
             'channel_id': 'channelId',
             'channel_secret': 'channelSecret',
             'switcher_secret': 'switcherSecret',
+            'service_code': 'serviceCode',
             'self_uri': 'selfUri'
         }
 
@@ -60,6 +62,7 @@ class LineIntegrationRequest(object):
         self._channel_id = None
         self._channel_secret = None
         self._switcher_secret = None
+        self._service_code = None
         self._self_uri = None
 
     @property
@@ -112,7 +115,7 @@ class LineIntegrationRequest(object):
     def channel_id(self):
         """
         Gets the channel_id of this LineIntegrationRequest.
-        The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory
+        The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)
 
         :return: The channel_id of this LineIntegrationRequest.
         :rtype: str
@@ -123,7 +126,7 @@ class LineIntegrationRequest(object):
     def channel_id(self, channel_id):
         """
         Sets the channel_id of this LineIntegrationRequest.
-        The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory
+        The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)
 
         :param channel_id: The channel_id of this LineIntegrationRequest.
         :type: str
@@ -135,7 +138,7 @@ class LineIntegrationRequest(object):
     def channel_secret(self):
         """
         Gets the channel_secret of this LineIntegrationRequest.
-        The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory
+        The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory. (NOTE: ChannelSecret can only be updated if the integration is set to inactive)
 
         :return: The channel_secret of this LineIntegrationRequest.
         :rtype: str
@@ -146,7 +149,7 @@ class LineIntegrationRequest(object):
     def channel_secret(self, channel_secret):
         """
         Sets the channel_secret of this LineIntegrationRequest.
-        The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory
+        The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory. (NOTE: ChannelSecret can only be updated if the integration is set to inactive)
 
         :param channel_secret: The channel_secret of this LineIntegrationRequest.
         :type: str
@@ -176,6 +179,29 @@ class LineIntegrationRequest(object):
         """
         
         self._switcher_secret = switcher_secret
+
+    @property
+    def service_code(self):
+        """
+        Gets the service_code of this LineIntegrationRequest.
+        The Service Code from LINE messenger. Only applicable to LINE Enterprise accounts. This service code can be found in your create documentation provided by LINE
+
+        :return: The service_code of this LineIntegrationRequest.
+        :rtype: str
+        """
+        return self._service_code
+
+    @service_code.setter
+    def service_code(self, service_code):
+        """
+        Sets the service_code of this LineIntegrationRequest.
+        The Service Code from LINE messenger. Only applicable to LINE Enterprise accounts. This service code can be found in your create documentation provided by LINE
+
+        :param service_code: The service_code of this LineIntegrationRequest.
+        :type: str
+        """
+        
+        self._service_code = service_code
 
     @property
     def self_uri(self):

@@ -41,20 +41,23 @@ class CreateManagementUnitSettings(object):
             'adherence': 'AdherenceSettings',
             'short_term_forecasting': 'ShortTermForecastingSettings',
             'time_off': 'TimeOffRequestSettings',
-            'scheduling': 'SchedulingSettings'
+            'scheduling': 'SchedulingSettings',
+            'shift_trading': 'ShiftTradeSettings'
         }
 
         self.attribute_map = {
             'adherence': 'adherence',
             'short_term_forecasting': 'shortTermForecasting',
             'time_off': 'timeOff',
-            'scheduling': 'scheduling'
+            'scheduling': 'scheduling',
+            'shift_trading': 'shiftTrading'
         }
 
         self._adherence = None
         self._short_term_forecasting = None
         self._time_off = None
         self._scheduling = None
+        self._shift_trading = None
 
     @property
     def adherence(self):
@@ -147,6 +150,29 @@ class CreateManagementUnitSettings(object):
         """
         
         self._scheduling = scheduling
+
+    @property
+    def shift_trading(self):
+        """
+        Gets the shift_trading of this CreateManagementUnitSettings.
+        Shift trade settings for this management unit
+
+        :return: The shift_trading of this CreateManagementUnitSettings.
+        :rtype: ShiftTradeSettings
+        """
+        return self._shift_trading
+
+    @shift_trading.setter
+    def shift_trading(self, shift_trading):
+        """
+        Sets the shift_trading of this CreateManagementUnitSettings.
+        Shift trade settings for this management unit
+
+        :param shift_trading: The shift_trading of this CreateManagementUnitSettings.
+        :type: ShiftTradeSettings
+        """
+        
+        self._shift_trading = shift_trading
 
     def to_dict(self):
         """

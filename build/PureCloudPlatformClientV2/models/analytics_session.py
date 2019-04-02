@@ -85,7 +85,8 @@ class AnalyticsSession(object):
             'journey_customer_session_id_type': 'str',
             'journey_action_id': 'str',
             'journey_action_map_id': 'str',
-            'journey_action_map_version': 'str'
+            'journey_action_map_version': 'str',
+            'protocol_call_id': 'str'
         }
 
         self.attribute_map = {
@@ -136,7 +137,8 @@ class AnalyticsSession(object):
             'journey_customer_session_id_type': 'journeyCustomerSessionIdType',
             'journey_action_id': 'journeyActionId',
             'journey_action_map_id': 'journeyActionMapId',
-            'journey_action_map_version': 'journeyActionMapVersion'
+            'journey_action_map_version': 'journeyActionMapVersion',
+            'protocol_call_id': 'protocolCallId'
         }
 
         self._media_type = None
@@ -187,6 +189,7 @@ class AnalyticsSession(object):
         self._journey_action_id = None
         self._journey_action_map_id = None
         self._journey_action_map_version = None
+        self._protocol_call_id = None
 
     @property
     def media_type(self):
@@ -1303,6 +1306,29 @@ class AnalyticsSession(object):
         """
         
         self._journey_action_map_version = journey_action_map_version
+
+    @property
+    def protocol_call_id(self):
+        """
+        Gets the protocol_call_id of this AnalyticsSession.
+        The original voice protocol call ID, e.g. a SIP call ID
+
+        :return: The protocol_call_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._protocol_call_id
+
+    @protocol_call_id.setter
+    def protocol_call_id(self, protocol_call_id):
+        """
+        Sets the protocol_call_id of this AnalyticsSession.
+        The original voice protocol call ID, e.g. a SIP call ID
+
+        :param protocol_call_id: The protocol_call_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._protocol_call_id = protocol_call_id
 
     def to_dict(self):
         """

@@ -49,6 +49,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'start_hold_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
+            'journey_context': 'QueueConversationSocialExpressionEventTopicJourneyContext',
             'additional_properties': 'object'
         }
 
@@ -64,6 +65,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'start_hold_time': 'startHoldTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
+            'journey_context': 'journeyContext',
             'additional_properties': 'additionalProperties'
         }
 
@@ -78,6 +80,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         self._start_hold_time = None
         self._connected_time = None
         self._disconnected_time = None
+        self._journey_context = None
         self._additional_properties = None
 
     @property
@@ -340,6 +343,29 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         """
         
         self._disconnected_time = disconnected_time
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :return: The journey_context of this QueueConversationSocialExpressionEventTopicChat.
+        :rtype: QueueConversationSocialExpressionEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :param journey_context: The journey_context of this QueueConversationSocialExpressionEventTopicChat.
+        :type: QueueConversationSocialExpressionEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def additional_properties(self):

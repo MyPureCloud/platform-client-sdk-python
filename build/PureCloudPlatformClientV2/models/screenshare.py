@@ -44,6 +44,7 @@ class Screenshare(object):
             'sharing': 'bool',
             'peer_count': 'int',
             'disconnect_type': 'str',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
@@ -58,6 +59,7 @@ class Screenshare(object):
             'sharing': 'sharing',
             'peer_count': 'peerCount',
             'disconnect_type': 'disconnectType',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
@@ -71,6 +73,7 @@ class Screenshare(object):
         self._sharing = None
         self._peer_count = None
         self._disconnect_type = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
@@ -222,6 +225,29 @@ class Screenshare(object):
             self._disconnect_type = "outdated_sdk_version"
         else:
             self._disconnect_type = disconnect_type
+
+    @property
+    def start_alerting_time(self):
+        """
+        Gets the start_alerting_time of this Screenshare.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_alerting_time of this Screenshare.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time):
+        """
+        Sets the start_alerting_time of this Screenshare.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_alerting_time: The start_alerting_time of this Screenshare.
+        :type: datetime
+        """
+        
+        self._start_alerting_time = start_alerting_time
 
     @property
     def connected_time(self):

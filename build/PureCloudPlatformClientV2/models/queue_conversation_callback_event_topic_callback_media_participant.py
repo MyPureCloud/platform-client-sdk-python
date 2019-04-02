@@ -67,6 +67,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'QueueConversationCallbackEventTopicJourneyContext',
             'outbound_preview': 'QueueConversationCallbackEventTopicDialerPreview',
             'voicemail': 'QueueConversationCallbackEventTopicVoicemail',
             'callback_numbers': 'list[str]',
@@ -107,6 +108,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -146,6 +148,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
+        self._journey_context = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -837,6 +840,29 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The journey_context of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: QueueConversationCallbackEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param journey_context: The journey_context of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: QueueConversationCallbackEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def outbound_preview(self):

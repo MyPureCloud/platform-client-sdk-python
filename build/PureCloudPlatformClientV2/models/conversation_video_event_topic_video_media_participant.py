@@ -67,6 +67,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'ConversationVideoEventTopicJourneyContext',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
@@ -105,6 +106,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
@@ -142,6 +144,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
+        self._journey_context = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
@@ -831,6 +834,29 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :return: The journey_context of this ConversationVideoEventTopicVideoMediaParticipant.
+        :rtype: ConversationVideoEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :param journey_context: The journey_context of this ConversationVideoEventTopicVideoMediaParticipant.
+        :type: ConversationVideoEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def audio_muted(self):

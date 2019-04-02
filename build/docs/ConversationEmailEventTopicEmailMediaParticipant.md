@@ -36,6 +36,7 @@ title: ConversationEmailEventTopicEmailMediaParticipant
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
 | **flagged_reason** | **str** |  | [optional] |
+| **journey_context** | [**ConversationEmailEventTopicJourneyContext**](ConversationEmailEventTopicJourneyContext.html) |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |

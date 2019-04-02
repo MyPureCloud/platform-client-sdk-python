@@ -83,6 +83,7 @@ class ViewFilter(object):
             'survey_promoter_score': 'NumericRange',
             'survey_form_context_ids': 'list[str]',
             'conversation_ids': 'list[str]',
+            'sip_call_ids': 'list[str]',
             'is_ended': 'bool',
             'is_surveyed': 'bool',
             'survey_scores': 'list[NumericRange]',
@@ -156,6 +157,7 @@ class ViewFilter(object):
             'survey_promoter_score': 'surveyPromoterScore',
             'survey_form_context_ids': 'surveyFormContextIds',
             'conversation_ids': 'conversationIds',
+            'sip_call_ids': 'sipCallIds',
             'is_ended': 'isEnded',
             'is_surveyed': 'isSurveyed',
             'survey_scores': 'surveyScores',
@@ -228,6 +230,7 @@ class ViewFilter(object):
         self._survey_promoter_score = None
         self._survey_form_context_ids = None
         self._conversation_ids = None
+        self._sip_call_ids = None
         self._is_ended = None
         self._is_surveyed = None
         self._survey_scores = None
@@ -1300,6 +1303,29 @@ class ViewFilter(object):
         """
         
         self._conversation_ids = conversation_ids
+
+    @property
+    def sip_call_ids(self):
+        """
+        Gets the sip_call_ids of this ViewFilter.
+        The list of SIP call ids used to filter the view
+
+        :return: The sip_call_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._sip_call_ids
+
+    @sip_call_ids.setter
+    def sip_call_ids(self, sip_call_ids):
+        """
+        Sets the sip_call_ids of this ViewFilter.
+        The list of SIP call ids used to filter the view
+
+        :param sip_call_ids: The sip_call_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._sip_call_ids = sip_call_ids
 
     @property
     def is_ended(self):

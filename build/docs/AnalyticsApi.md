@@ -139,7 +139,7 @@ except ApiException as e:
 
 <a name="get_analytics_conversations_details"></a>
 
-## [**AnalyticsConversation**](AnalyticsConversation.html) get_analytics_conversations_details(id=id)
+## [**AnalyticsConversationMultiGetResponse**](AnalyticsConversationMultiGetResponse.html) get_analytics_conversations_details(id=id)
 
 
 
@@ -186,7 +186,7 @@ except ApiException as e:
 
 ### Return type
 
-[**AnalyticsConversation**](AnalyticsConversation.html)
+[**AnalyticsConversationMultiGetResponse**](AnalyticsConversationMultiGetResponse.html)
 
 <a name="get_analytics_reporting_exports"></a>
 

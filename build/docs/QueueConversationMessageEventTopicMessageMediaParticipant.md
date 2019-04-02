@@ -36,6 +36,7 @@ title: QueueConversationMessageEventTopicMessageMediaParticipant
 | **peer** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |
 | **flagged_reason** | **str** |  | [optional] |
+| **journey_context** | [**QueueConversationMessageEventTopicJourneyContext**](QueueConversationMessageEventTopicJourneyContext.html) |  | [optional] |
 | **messages** | [**list[QueueConversationMessageEventTopicMessageDetails]**](QueueConversationMessageEventTopicMessageDetails.html) |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **recipient_country** | **str** |  | [optional] |

@@ -44,10 +44,10 @@ class ConversationQuery(object):
             'survey_filters': 'list[AnalyticsQueryFilter]',
             'media_endpoint_stat_filters': 'list[AnalyticsQueryFilter]',
             'segment_filters': 'list[AnalyticsQueryFilter]',
-            'aggregations': 'list[AnalyticsQueryAggregation]',
-            'paging': 'PagingSpec',
             'order': 'str',
-            'order_by': 'str'
+            'order_by': 'str',
+            'aggregations': 'list[AnalyticsQueryAggregation]',
+            'paging': 'PagingSpec'
         }
 
         self.attribute_map = {
@@ -57,10 +57,10 @@ class ConversationQuery(object):
             'survey_filters': 'surveyFilters',
             'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
             'segment_filters': 'segmentFilters',
-            'aggregations': 'aggregations',
-            'paging': 'paging',
             'order': 'order',
-            'order_by': 'orderBy'
+            'order_by': 'orderBy',
+            'aggregations': 'aggregations',
+            'paging': 'paging'
         }
 
         self._interval = None
@@ -69,10 +69,10 @@ class ConversationQuery(object):
         self._survey_filters = None
         self._media_endpoint_stat_filters = None
         self._segment_filters = None
-        self._aggregations = None
-        self._paging = None
         self._order = None
         self._order_by = None
+        self._aggregations = None
+        self._paging = None
 
     @property
     def interval(self):
@@ -213,52 +213,6 @@ class ConversationQuery(object):
         self._segment_filters = segment_filters
 
     @property
-    def aggregations(self):
-        """
-        Gets the aggregations of this ConversationQuery.
-        Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
-
-        :return: The aggregations of this ConversationQuery.
-        :rtype: list[AnalyticsQueryAggregation]
-        """
-        return self._aggregations
-
-    @aggregations.setter
-    def aggregations(self, aggregations):
-        """
-        Sets the aggregations of this ConversationQuery.
-        Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
-
-        :param aggregations: The aggregations of this ConversationQuery.
-        :type: list[AnalyticsQueryAggregation]
-        """
-        
-        self._aggregations = aggregations
-
-    @property
-    def paging(self):
-        """
-        Gets the paging of this ConversationQuery.
-        Page size and number to control iterating through large result sets. Default page size is 25
-
-        :return: The paging of this ConversationQuery.
-        :rtype: PagingSpec
-        """
-        return self._paging
-
-    @paging.setter
-    def paging(self, paging):
-        """
-        Sets the paging of this ConversationQuery.
-        Page size and number to control iterating through large result sets. Default page size is 25
-
-        :param paging: The paging of this ConversationQuery.
-        :type: PagingSpec
-        """
-        
-        self._paging = paging
-
-    @property
     def order(self):
         """
         Gets the order of this ConversationQuery.
@@ -311,6 +265,52 @@ class ConversationQuery(object):
             self._order_by = "outdated_sdk_version"
         else:
             self._order_by = order_by
+
+    @property
+    def aggregations(self):
+        """
+        Gets the aggregations of this ConversationQuery.
+        Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
+
+        :return: The aggregations of this ConversationQuery.
+        :rtype: list[AnalyticsQueryAggregation]
+        """
+        return self._aggregations
+
+    @aggregations.setter
+    def aggregations(self, aggregations):
+        """
+        Sets the aggregations of this ConversationQuery.
+        Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
+
+        :param aggregations: The aggregations of this ConversationQuery.
+        :type: list[AnalyticsQueryAggregation]
+        """
+        
+        self._aggregations = aggregations
+
+    @property
+    def paging(self):
+        """
+        Gets the paging of this ConversationQuery.
+        Page size and number to control iterating through large result sets. Default page size is 25
+
+        :return: The paging of this ConversationQuery.
+        :rtype: PagingSpec
+        """
+        return self._paging
+
+    @paging.setter
+    def paging(self, paging):
+        """
+        Sets the paging of this ConversationQuery.
+        Page size and number to control iterating through large result sets. Default page size is 25
+
+        :param paging: The paging of this ConversationQuery.
+        :type: PagingSpec
+        """
+        
+        self._paging = paging
 
     def to_dict(self):
         """

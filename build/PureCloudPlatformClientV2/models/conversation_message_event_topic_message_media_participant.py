@@ -67,6 +67,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
+            'journey_context': 'ConversationMessageEventTopicJourneyContext',
             'messages': 'list[ConversationMessageEventTopicMessageDetails]',
             'type': 'str',
             'recipient_country': 'str',
@@ -103,6 +104,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
+            'journey_context': 'journeyContext',
             'messages': 'messages',
             'type': 'type',
             'recipient_country': 'recipientCountry',
@@ -138,6 +140,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
+        self._journey_context = None
         self._messages = None
         self._type = None
         self._recipient_country = None
@@ -825,6 +828,29 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this ConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :return: The journey_context of this ConversationMessageEventTopicMessageMediaParticipant.
+        :rtype: ConversationMessageEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this ConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :param journey_context: The journey_context of this ConversationMessageEventTopicMessageMediaParticipant.
+        :type: ConversationMessageEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def messages(self):

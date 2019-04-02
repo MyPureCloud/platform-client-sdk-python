@@ -38,20 +38,98 @@ class WfmAgentScheduleUpdateTopicWfmScheduleShift(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'week_date': 'str',
+            'week_schedule_id': 'str',
+            'id': 'str',
             'start_date': 'datetime',
             'length_in_minutes': 'int',
             'activities': 'list[WfmAgentScheduleUpdateTopicWfmScheduleActivity]'
         }
 
         self.attribute_map = {
+            'week_date': 'weekDate',
+            'week_schedule_id': 'weekScheduleId',
+            'id': 'id',
             'start_date': 'startDate',
             'length_in_minutes': 'lengthInMinutes',
             'activities': 'activities'
         }
 
+        self._week_date = None
+        self._week_schedule_id = None
+        self._id = None
         self._start_date = None
         self._length_in_minutes = None
         self._activities = None
+
+    @property
+    def week_date(self):
+        """
+        Gets the week_date of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :return: The week_date of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :rtype: str
+        """
+        return self._week_date
+
+    @week_date.setter
+    def week_date(self, week_date):
+        """
+        Sets the week_date of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :param week_date: The week_date of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :type: str
+        """
+        
+        self._week_date = week_date
+
+    @property
+    def week_schedule_id(self):
+        """
+        Gets the week_schedule_id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :return: The week_schedule_id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :rtype: str
+        """
+        return self._week_schedule_id
+
+    @week_schedule_id.setter
+    def week_schedule_id(self, week_schedule_id):
+        """
+        Sets the week_schedule_id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :param week_schedule_id: The week_schedule_id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :type: str
+        """
+        
+        self._week_schedule_id = week_schedule_id
+
+    @property
+    def id(self):
+        """
+        Gets the id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :return: The id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+
+
+        :param id: The id of this WfmAgentScheduleUpdateTopicWfmScheduleShift.
+        :type: str
+        """
+        
+        self._id = id
 
     @property
     def start_date(self):

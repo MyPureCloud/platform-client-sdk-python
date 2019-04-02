@@ -38,6 +38,7 @@ class UserScheduleShift(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'week_schedule': 'WeekScheduleReference',
             'id': 'str',
             'start_date': 'datetime',
             'length_in_minutes': 'int',
@@ -47,6 +48,7 @@ class UserScheduleShift(object):
         }
 
         self.attribute_map = {
+            'week_schedule': 'weekSchedule',
             'id': 'id',
             'start_date': 'startDate',
             'length_in_minutes': 'lengthInMinutes',
@@ -55,12 +57,36 @@ class UserScheduleShift(object):
             'manually_edited': 'manuallyEdited'
         }
 
+        self._week_schedule = None
         self._id = None
         self._start_date = None
         self._length_in_minutes = None
         self._activities = None
         self._delete = None
         self._manually_edited = None
+
+    @property
+    def week_schedule(self):
+        """
+        Gets the week_schedule of this UserScheduleShift.
+        The schedule to which this shift belongs
+
+        :return: The week_schedule of this UserScheduleShift.
+        :rtype: WeekScheduleReference
+        """
+        return self._week_schedule
+
+    @week_schedule.setter
+    def week_schedule(self, week_schedule):
+        """
+        Sets the week_schedule of this UserScheduleShift.
+        The schedule to which this shift belongs
+
+        :param week_schedule: The week_schedule of this UserScheduleShift.
+        :type: WeekScheduleReference
+        """
+        
+        self._week_schedule = week_schedule
 
     @property
     def id(self):

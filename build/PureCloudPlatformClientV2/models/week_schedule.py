@@ -104,7 +104,7 @@ class WeekSchedule(object):
     def week_date(self):
         """
         Gets the week_date of this WeekSchedule.
-        First day of this week schedule in week in yyyy-MM-dd format
+        First day of this week schedule in yyyy-MM-dd format
 
         :return: The week_date of this WeekSchedule.
         :rtype: str
@@ -115,7 +115,7 @@ class WeekSchedule(object):
     def week_date(self, week_date):
         """
         Sets the week_date of this WeekSchedule.
-        First day of this week schedule in week in yyyy-MM-dd format
+        First day of this week schedule in yyyy-MM-dd format
 
         :param week_date: The week_date of this WeekSchedule.
         :type: str

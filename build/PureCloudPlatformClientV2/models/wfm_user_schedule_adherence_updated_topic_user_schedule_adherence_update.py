@@ -42,13 +42,16 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
             'management_unit_id': 'str',
             'scheduled_activity_category': 'str',
             'system_presence': 'str',
+            'organization_secondary_presence_id': 'str',
             'routing_status': 'str',
             'actual_activity_category': 'str',
             'is_out_of_office': 'bool',
             'adherence_state': 'str',
             'impact': 'str',
             'adherence_change_time': 'datetime',
-            'presence_update_time': 'datetime'
+            'presence_update_time': 'datetime',
+            'active_queues': 'list[WfmUserScheduleAdherenceUpdatedTopicQueueReference]',
+            'active_queues_modified_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -56,19 +59,23 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
             'management_unit_id': 'managementUnitId',
             'scheduled_activity_category': 'scheduledActivityCategory',
             'system_presence': 'systemPresence',
+            'organization_secondary_presence_id': 'organizationSecondaryPresenceId',
             'routing_status': 'routingStatus',
             'actual_activity_category': 'actualActivityCategory',
             'is_out_of_office': 'isOutOfOffice',
             'adherence_state': 'adherenceState',
             'impact': 'impact',
             'adherence_change_time': 'adherenceChangeTime',
-            'presence_update_time': 'presenceUpdateTime'
+            'presence_update_time': 'presenceUpdateTime',
+            'active_queues': 'activeQueues',
+            'active_queues_modified_time': 'activeQueuesModifiedTime'
         }
 
         self._user = None
         self._management_unit_id = None
         self._scheduled_activity_category = None
         self._system_presence = None
+        self._organization_secondary_presence_id = None
         self._routing_status = None
         self._actual_activity_category = None
         self._is_out_of_office = None
@@ -76,6 +83,8 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         self._impact = None
         self._adherence_change_time = None
         self._presence_update_time = None
+        self._active_queues = None
+        self._active_queues_modified_time = None
 
     @property
     def user(self):
@@ -168,6 +177,29 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._system_presence = system_presence
+
+    @property
+    def organization_secondary_presence_id(self):
+        """
+        Gets the organization_secondary_presence_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The organization_secondary_presence_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :rtype: str
+        """
+        return self._organization_secondary_presence_id
+
+    @organization_secondary_presence_id.setter
+    def organization_secondary_presence_id(self, organization_secondary_presence_id):
+        """
+        Sets the organization_secondary_presence_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :param organization_secondary_presence_id: The organization_secondary_presence_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :type: str
+        """
+        
+        self._organization_secondary_presence_id = organization_secondary_presence_id
 
     @property
     def routing_status(self):
@@ -337,6 +369,52 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._presence_update_time = presence_update_time
+
+    @property
+    def active_queues(self):
+        """
+        Gets the active_queues of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The active_queues of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :rtype: list[WfmUserScheduleAdherenceUpdatedTopicQueueReference]
+        """
+        return self._active_queues
+
+    @active_queues.setter
+    def active_queues(self, active_queues):
+        """
+        Sets the active_queues of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :param active_queues: The active_queues of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :type: list[WfmUserScheduleAdherenceUpdatedTopicQueueReference]
+        """
+        
+        self._active_queues = active_queues
+
+    @property
+    def active_queues_modified_time(self):
+        """
+        Gets the active_queues_modified_time of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The active_queues_modified_time of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :rtype: datetime
+        """
+        return self._active_queues_modified_time
+
+    @active_queues_modified_time.setter
+    def active_queues_modified_time(self, active_queues_modified_time):
+        """
+        Sets the active_queues_modified_time of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :param active_queues_modified_time: The active_queues_modified_time of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :type: datetime
+        """
+        
+        self._active_queues_modified_time = active_queues_modified_time
 
     def to_dict(self):
         """

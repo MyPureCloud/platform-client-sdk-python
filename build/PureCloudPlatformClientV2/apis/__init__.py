@@ -17,6 +17,7 @@ from .greetings_api import GreetingsApi
 from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .integrations_api import IntegrationsApi
+from .journey_api import JourneyApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
@@ -44,4 +45,5 @@ from .users_api import UsersApi
 from .utilities_api import UtilitiesApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi
+from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi

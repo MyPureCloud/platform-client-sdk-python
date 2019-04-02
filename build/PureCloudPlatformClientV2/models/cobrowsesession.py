@@ -47,6 +47,7 @@ class Cobrowsesession(object):
             'controlling': 'list[str]',
             'viewer_url': 'str',
             'provider_event_time': 'datetime',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'provider': 'str',
@@ -64,6 +65,7 @@ class Cobrowsesession(object):
             'controlling': 'controlling',
             'viewer_url': 'viewerUrl',
             'provider_event_time': 'providerEventTime',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
@@ -80,6 +82,7 @@ class Cobrowsesession(object):
         self._controlling = None
         self._viewer_url = None
         self._provider_event_time = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._disconnected_time = None
         self._provider = None
@@ -300,6 +303,29 @@ class Cobrowsesession(object):
         """
         
         self._provider_event_time = provider_event_time
+
+    @property
+    def start_alerting_time(self):
+        """
+        Gets the start_alerting_time of this Cobrowsesession.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_alerting_time of this Cobrowsesession.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time):
+        """
+        Sets the start_alerting_time of this Cobrowsesession.
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_alerting_time: The start_alerting_time of this Cobrowsesession.
+        :type: datetime
+        """
+        
+        self._start_alerting_time = start_alerting_time
 
     @property
     def connected_time(self):
