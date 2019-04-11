@@ -40,41 +40,41 @@ class WfmAgent(object):
         self.swagger_types = {
             'id': 'str',
             'user': 'UserReference',
-            'queues': 'list[QueueReference]',
-            'languages': 'list[LanguageReference]',
-            'skills': 'list[RoutingSkillReference]',
             'work_plan': 'WorkPlanReference',
-            'schedulable': 'bool',
             'time_zone': 'WfmTimeZone',
             'accept_direct_shift_trades': 'bool',
             'metadata': 'WfmVersionedEntityMetadata',
+            'queues': 'list[QueueReference]',
+            'languages': 'list[LanguageReference]',
+            'skills': 'list[RoutingSkillReference]',
+            'schedulable': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'user': 'user',
-            'queues': 'queues',
-            'languages': 'languages',
-            'skills': 'skills',
             'work_plan': 'workPlan',
-            'schedulable': 'schedulable',
             'time_zone': 'timeZone',
             'accept_direct_shift_trades': 'acceptDirectShiftTrades',
             'metadata': 'metadata',
+            'queues': 'queues',
+            'languages': 'languages',
+            'skills': 'skills',
+            'schedulable': 'schedulable',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._user = None
-        self._queues = None
-        self._languages = None
-        self._skills = None
         self._work_plan = None
-        self._schedulable = None
         self._time_zone = None
         self._accept_direct_shift_trades = None
         self._metadata = None
+        self._queues = None
+        self._languages = None
+        self._skills = None
+        self._schedulable = None
         self._self_uri = None
 
     @property
@@ -122,6 +122,98 @@ class WfmAgent(object):
         """
         
         self._user = user
+
+    @property
+    def work_plan(self):
+        """
+        Gets the work_plan of this WfmAgent.
+        The work plan associated with this agent
+
+        :return: The work_plan of this WfmAgent.
+        :rtype: WorkPlanReference
+        """
+        return self._work_plan
+
+    @work_plan.setter
+    def work_plan(self, work_plan):
+        """
+        Sets the work_plan of this WfmAgent.
+        The work plan associated with this agent
+
+        :param work_plan: The work_plan of this WfmAgent.
+        :type: WorkPlanReference
+        """
+        
+        self._work_plan = work_plan
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this WfmAgent.
+        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+
+        :return: The time_zone of this WfmAgent.
+        :rtype: WfmTimeZone
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this WfmAgent.
+        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+
+        :param time_zone: The time_zone of this WfmAgent.
+        :type: WfmTimeZone
+        """
+        
+        self._time_zone = time_zone
+
+    @property
+    def accept_direct_shift_trades(self):
+        """
+        Gets the accept_direct_shift_trades of this WfmAgent.
+        Whether the agent accepts direct shift trade requests
+
+        :return: The accept_direct_shift_trades of this WfmAgent.
+        :rtype: bool
+        """
+        return self._accept_direct_shift_trades
+
+    @accept_direct_shift_trades.setter
+    def accept_direct_shift_trades(self, accept_direct_shift_trades):
+        """
+        Sets the accept_direct_shift_trades of this WfmAgent.
+        Whether the agent accepts direct shift trade requests
+
+        :param accept_direct_shift_trades: The accept_direct_shift_trades of this WfmAgent.
+        :type: bool
+        """
+        
+        self._accept_direct_shift_trades = accept_direct_shift_trades
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this WfmAgent.
+        Metadata for this agent
+
+        :return: The metadata of this WfmAgent.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this WfmAgent.
+        Metadata for this agent
+
+        :param metadata: The metadata of this WfmAgent.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
 
     @property
     def queues(self):
@@ -193,29 +285,6 @@ class WfmAgent(object):
         self._skills = skills
 
     @property
-    def work_plan(self):
-        """
-        Gets the work_plan of this WfmAgent.
-        The work plan associated with this agent
-
-        :return: The work_plan of this WfmAgent.
-        :rtype: WorkPlanReference
-        """
-        return self._work_plan
-
-    @work_plan.setter
-    def work_plan(self, work_plan):
-        """
-        Sets the work_plan of this WfmAgent.
-        The work plan associated with this agent
-
-        :param work_plan: The work_plan of this WfmAgent.
-        :type: WorkPlanReference
-        """
-        
-        self._work_plan = work_plan
-
-    @property
     def schedulable(self):
         """
         Gets the schedulable of this WfmAgent.
@@ -237,75 +306,6 @@ class WfmAgent(object):
         """
         
         self._schedulable = schedulable
-
-    @property
-    def time_zone(self):
-        """
-        Gets the time_zone of this WfmAgent.
-        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
-
-        :return: The time_zone of this WfmAgent.
-        :rtype: WfmTimeZone
-        """
-        return self._time_zone
-
-    @time_zone.setter
-    def time_zone(self, time_zone):
-        """
-        Sets the time_zone of this WfmAgent.
-        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
-
-        :param time_zone: The time_zone of this WfmAgent.
-        :type: WfmTimeZone
-        """
-        
-        self._time_zone = time_zone
-
-    @property
-    def accept_direct_shift_trades(self):
-        """
-        Gets the accept_direct_shift_trades of this WfmAgent.
-        Whether the agent accepts direct shift trade requests
-
-        :return: The accept_direct_shift_trades of this WfmAgent.
-        :rtype: bool
-        """
-        return self._accept_direct_shift_trades
-
-    @accept_direct_shift_trades.setter
-    def accept_direct_shift_trades(self, accept_direct_shift_trades):
-        """
-        Sets the accept_direct_shift_trades of this WfmAgent.
-        Whether the agent accepts direct shift trade requests
-
-        :param accept_direct_shift_trades: The accept_direct_shift_trades of this WfmAgent.
-        :type: bool
-        """
-        
-        self._accept_direct_shift_trades = accept_direct_shift_trades
-
-    @property
-    def metadata(self):
-        """
-        Gets the metadata of this WfmAgent.
-        Metadata for this agent
-
-        :return: The metadata of this WfmAgent.
-        :rtype: WfmVersionedEntityMetadata
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """
-        Sets the metadata of this WfmAgent.
-        Metadata for this agent
-
-        :param metadata: The metadata of this WfmAgent.
-        :type: WfmVersionedEntityMetadata
-        """
-        
-        self._metadata = metadata
 
     @property
     def self_uri(self):

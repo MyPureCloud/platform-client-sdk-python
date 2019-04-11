@@ -52,7 +52,7 @@ class ShiftTradeResponse(object):
             'receiving_shift_end': 'datetime',
             'expiration': 'datetime',
             'one_sided': 'bool',
-            'acceptable_intervals': 'list[ShiftTradeResponseAcceptableIntervals]',
+            'acceptable_intervals': 'list[str]',
             'reviewed_by': 'UserReference',
             'reviewed_date': 'datetime',
             'metadata': 'WfmVersionedEntityMetadata'
@@ -431,7 +431,7 @@ class ShiftTradeResponse(object):
 
 
         :return: The acceptable_intervals of this ShiftTradeResponse.
-        :rtype: list[ShiftTradeResponseAcceptableIntervals]
+        :rtype: list[str]
         """
         return self._acceptable_intervals
 
@@ -442,7 +442,7 @@ class ShiftTradeResponse(object):
 
 
         :param acceptable_intervals: The acceptable_intervals of this ShiftTradeResponse.
-        :type: list[ShiftTradeResponseAcceptableIntervals]
+        :type: list[str]
         """
         
         self._acceptable_intervals = acceptable_intervals

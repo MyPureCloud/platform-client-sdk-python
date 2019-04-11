@@ -17,7 +17,6 @@ from .greetings_api import GreetingsApi
 from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .integrations_api import IntegrationsApi
-from .journey_api import JourneyApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
