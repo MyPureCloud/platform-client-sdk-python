@@ -863,6 +863,7 @@ from .models.numeric_range import NumericRange
 from .models.o_auth_client import OAuthClient
 from .models.o_auth_client_entity_listing import OAuthClientEntityListing
 from .models.o_auth_client_listing import OAuthClientListing
+from .models.o_auth_client_request import OAuthClientRequest
 from .models.o_auth_provider import OAuthProvider
 from .models.o_auth_provider_entity_listing import OAuthProviderEntityListing
 from .models.observation_data_container import ObservationDataContainer
@@ -946,6 +947,7 @@ from .models.publish_draft_input import PublishDraftInput
 from .models.publish_form import PublishForm
 from .models.published_survey_form_reference import PublishedSurveyFormReference
 from .models.pure_cloud import PureCloud
+from .models.pure_enage import PureEnage
 from .models.qualifier_mapping_observation_query_response import QualifierMappingObservationQueryResponse
 from .models.quality_audit import QualityAudit
 from .models.quality_audit_page import QualityAuditPage

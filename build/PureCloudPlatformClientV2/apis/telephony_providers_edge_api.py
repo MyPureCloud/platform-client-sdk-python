@@ -6106,7 +6106,7 @@ class TelephonyProvidersEdgeApi(object):
     def get_telephony_providers_edges_trunkbasesetting(self, trunk_base_settings_id, **kwargs):
         """
         Get a Trunk Base Settings object by ID
-        Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+        Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6187,7 +6187,7 @@ class TelephonyProvidersEdgeApi(object):
     def get_telephony_providers_edges_trunkbasesettings(self, **kwargs):
         """
         Get Trunk Base Settings listing
-        Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+        Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

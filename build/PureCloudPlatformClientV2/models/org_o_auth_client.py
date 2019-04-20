@@ -243,7 +243,7 @@ class OrgOAuthClient(object):
     def scope(self):
         """
         Gets the scope of this OrgOAuthClient.
-        The scope requested by this client
+        The scope requested by this client. Scopes only apply to clients not using the client_credential grant
 
         :return: The scope of this OrgOAuthClient.
         :rtype: list[str]
@@ -254,7 +254,7 @@ class OrgOAuthClient(object):
     def scope(self, scope):
         """
         Sets the scope of this OrgOAuthClient.
-        The scope requested by this client
+        The scope requested by this client. Scopes only apply to clients not using the client_credential grant
 
         :param scope: The scope of this OrgOAuthClient.
         :type: list[str]
@@ -266,7 +266,7 @@ class OrgOAuthClient(object):
     def role_divisions(self):
         """
         Gets the role_divisions of this OrgOAuthClient.
-        Set of roles and their corresponding divisions associated with this client
+        Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
 
         :return: The role_divisions of this OrgOAuthClient.
         :rtype: list[RoleDivision]
@@ -277,7 +277,7 @@ class OrgOAuthClient(object):
     def role_divisions(self, role_divisions):
         """
         Sets the role_divisions of this OrgOAuthClient.
-        Set of roles and their corresponding divisions associated with this client
+        Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
 
         :param role_divisions: The role_divisions of this OrgOAuthClient.
         :type: list[RoleDivision]

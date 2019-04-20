@@ -228,7 +228,7 @@ class OAuthClientListing(object):
     def role_ids(self):
         """
         Gets the role_ids of this OAuthClientListing.
-        Roles assigned to this client. Roles only apply to clients using the client_credential grant
+        Deprecated. Use roleDivisions instead.
 
         :return: The role_ids of this OAuthClientListing.
         :rtype: list[str]
@@ -239,7 +239,7 @@ class OAuthClientListing(object):
     def role_ids(self, role_ids):
         """
         Sets the role_ids of this OAuthClientListing.
-        Roles assigned to this client. Roles only apply to clients using the client_credential grant
+        Deprecated. Use roleDivisions instead.
 
         :param role_ids: The role_ids of this OAuthClientListing.
         :type: list[str]
@@ -343,7 +343,7 @@ class OAuthClientListing(object):
     def scope(self):
         """
         Gets the scope of this OAuthClientListing.
-        The scope requested by this client
+        The scope requested by this client. Scopes only apply to clients not using the client_credential grant
 
         :return: The scope of this OAuthClientListing.
         :rtype: list[str]
@@ -354,7 +354,7 @@ class OAuthClientListing(object):
     def scope(self, scope):
         """
         Sets the scope of this OAuthClientListing.
-        The scope requested by this client
+        The scope requested by this client. Scopes only apply to clients not using the client_credential grant
 
         :param scope: The scope of this OAuthClientListing.
         :type: list[str]
@@ -366,7 +366,7 @@ class OAuthClientListing(object):
     def role_divisions(self):
         """
         Gets the role_divisions of this OAuthClientListing.
-        Set of roles and their corresponding divisions associated with this client
+        Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
 
         :return: The role_divisions of this OAuthClientListing.
         :rtype: list[RoleDivision]
@@ -377,7 +377,7 @@ class OAuthClientListing(object):
     def role_divisions(self, role_divisions):
         """
         Sets the role_divisions of this OAuthClientListing.
-        Set of roles and their corresponding divisions associated with this client
+        Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
 
         :param role_divisions: The role_divisions of this OAuthClientListing.
         :type: list[RoleDivision]

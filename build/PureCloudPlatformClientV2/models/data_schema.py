@@ -42,6 +42,8 @@ class DataSchema(object):
             'name': 'str',
             'version': 'int',
             'applies_to': 'list[str]',
+            'enabled': 'bool',
+            'deleted': 'bool',
             'created_by': 'UriReference',
             'date_created': 'datetime',
             'json_schema': 'JsonSchemaDocument',
@@ -53,6 +55,8 @@ class DataSchema(object):
             'name': 'name',
             'version': 'version',
             'applies_to': 'appliesTo',
+            'enabled': 'enabled',
+            'deleted': 'deleted',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'json_schema': 'jsonSchema',
@@ -63,6 +67,8 @@ class DataSchema(object):
         self._name = None
         self._version = None
         self._applies_to = None
+        self._enabled = None
+        self._deleted = None
         self._created_by = None
         self._date_created = None
         self._json_schema = None
@@ -159,6 +165,52 @@ class DataSchema(object):
         """
         
         self._applies_to = applies_to
+
+    @property
+    def enabled(self):
+        """
+        Gets the enabled of this DataSchema.
+        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists
+
+        :return: The enabled of this DataSchema.
+        :rtype: bool
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        """
+        Sets the enabled of this DataSchema.
+        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists
+
+        :param enabled: The enabled of this DataSchema.
+        :type: bool
+        """
+        
+        self._enabled = enabled
+
+    @property
+    def deleted(self):
+        """
+        Gets the deleted of this DataSchema.
+        The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.
+
+        :return: The deleted of this DataSchema.
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """
+        Sets the deleted of this DataSchema.
+        The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.
+
+        :param deleted: The deleted of this DataSchema.
+        :type: bool
+        """
+        
+        self._deleted = deleted
 
     @property
     def created_by(self):

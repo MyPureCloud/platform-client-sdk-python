@@ -863,6 +863,7 @@ from .numeric_range import NumericRange
 from .o_auth_client import OAuthClient
 from .o_auth_client_entity_listing import OAuthClientEntityListing
 from .o_auth_client_listing import OAuthClientListing
+from .o_auth_client_request import OAuthClientRequest
 from .o_auth_provider import OAuthProvider
 from .o_auth_provider_entity_listing import OAuthProviderEntityListing
 from .observation_data_container import ObservationDataContainer
@@ -946,6 +947,7 @@ from .publish_draft_input import PublishDraftInput
 from .publish_form import PublishForm
 from .published_survey_form_reference import PublishedSurveyFormReference
 from .pure_cloud import PureCloud
+from .pure_enage import PureEnage
 from .qualifier_mapping_observation_query_response import QualifierMappingObservationQueryResponse
 from .quality_audit import QualityAudit
 from .quality_audit_page import QualityAuditPage

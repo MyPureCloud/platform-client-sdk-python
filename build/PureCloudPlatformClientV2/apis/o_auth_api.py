@@ -367,7 +367,7 @@ class OAuthApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OAuthClient body: Client (required)
+        :param OAuthClientRequest body: Client (required)
         :return: OAuthClient
                  If the method is called asynchronously,
                  returns the request thread.
@@ -446,7 +446,7 @@ class OAuthApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str client_id: Client ID (required)
-        :param OAuthClient body: Client (required)
+        :param OAuthClientRequest body: Client (required)
         :return: OAuthClient
                  If the method is called asynchronously,
                  returns the request thread.

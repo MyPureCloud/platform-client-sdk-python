@@ -244,7 +244,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
-body = PureCloudPlatformClientV2.OAuthClient() # OAuthClient | Client
+body = PureCloudPlatformClientV2.OAuthClientRequest() # OAuthClientRequest | Client
 
 try:
     # Create OAuth client
@@ -259,7 +259,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
+| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -296,7 +296,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 client_id = 'client_id_example' # str | Client ID
-body = PureCloudPlatformClientV2.OAuthClient() # OAuthClient | Client
+body = PureCloudPlatformClientV2.OAuthClientRequest() # OAuthClientRequest | Client
 
 try:
     # Update OAuth Client
@@ -312,7 +312,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
+| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -1280,12 +1280,14 @@ class ArchitectApi(object):
         :param str version: Consuming object version (required)
         :param str object_type: Consuming object type.  Only versioned types are allowed here. (required)
         :param list[str] resource_type: Types of consumed resources to show
+        :param int page_number: Page number
+        :param int page_size: Page size
         :return: ConsumedResourcesEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'version', 'object_type', 'resource_type']
+        all_params = ['id', 'version', 'object_type', 'resource_type', 'page_number', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -1321,6 +1323,10 @@ class ArchitectApi(object):
             query_params['objectType'] = params['object_type']
         if 'resource_type' in params:
             query_params['resourceType'] = params['resource_type']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
 
         header_params = {}
 
@@ -1372,12 +1378,14 @@ class ArchitectApi(object):
         :param str id: Consumed object ID (required)
         :param str object_type: Consumed object type (required)
         :param list[str] resource_type: Types of consuming resources to show.  Only versioned types are allowed here.
+        :param int page_number: Page number
+        :param int page_size: Page size
         :return: ConsumingResourcesEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'object_type', 'resource_type']
+        all_params = ['id', 'object_type', 'resource_type', 'page_number', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -1408,6 +1416,10 @@ class ArchitectApi(object):
             query_params['objectType'] = params['object_type']
         if 'resource_type' in params:
             query_params['resourceType'] = params['resource_type']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
 
         header_params = {}
 
