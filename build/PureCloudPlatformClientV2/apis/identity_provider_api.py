@@ -1429,7 +1429,7 @@ class IdentityProviderApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: PureEnage
+        :return: PureEngage
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1481,7 +1481,7 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PureEnage',
+                                            response_type='PureEngage',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2197,7 +2197,7 @@ class IdentityProviderApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param PureEnage body: Provider (required)
+        :param PureEngage body: Provider (required)
         :return: OAuthProvider
                  If the method is called asynchronously,
                  returns the request thread.

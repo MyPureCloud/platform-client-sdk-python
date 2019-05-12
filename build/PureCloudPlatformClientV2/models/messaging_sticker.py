@@ -209,7 +209,7 @@ class MessagingSticker(object):
         :param messenger_type: The messenger_type of this MessagingSticker.
         :type: str
         """
-        allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "telegram", "kakao"]
+        allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for messenger_type -> " + messenger_type
             self._messenger_type = "outdated_sdk_version"

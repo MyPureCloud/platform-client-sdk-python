@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
-|[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Add bulk routing skills to user|
+|[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the utilization settings.|
 |[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
 |[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
+|[**put_user_routingskills_bulk**](RoutingApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
 {: class="table table-striped"}
 
 <a name="delete_routing_email_domain"></a>
@@ -1043,7 +1044,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
+| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -2347,7 +2348,7 @@ except ApiException as e:
 
 
 
-Add bulk routing skills to user
+Bulk add routing skills to user
 
 
 
@@ -2375,7 +2376,7 @@ user_id = 'user_id_example' # str | User ID
 body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
 
 try:
-    # Add bulk routing skills to user
+    # Bulk add routing skills to user
     api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -3445,4 +3446,58 @@ except ApiException as e:
 ### Return type
 
 [**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="put_user_routingskills_bulk"></a>
+
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) put_user_routingskills_bulk(user_id, body)
+
+
+
+Replace all routing skills assigned to a user
+
+
+
+Wraps PUT /api/v2/users/{userId}/routingskills/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
+
+try:
+    # Replace all routing skills assigned to a user
+    api_response = api_instance.put_user_routingskills_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->put_user_routingskills_bulk: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
 

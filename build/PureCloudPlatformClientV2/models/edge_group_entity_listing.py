@@ -42,11 +42,11 @@ class EdgeGroupEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'self_uri': 'str',
             'first_uri': 'str',
-            'next_uri': 'str',
-            'previous_uri': 'str',
+            'self_uri': 'str',
             'last_uri': 'str',
+            'previous_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -55,11 +55,11 @@ class EdgeGroupEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'self_uri': 'selfUri',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
-            'previous_uri': 'previousUri',
+            'self_uri': 'selfUri',
             'last_uri': 'lastUri',
+            'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -67,11 +67,11 @@ class EdgeGroupEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._self_uri = None
         self._first_uri = None
-        self._next_uri = None
-        self._previous_uri = None
+        self._self_uri = None
         self._last_uri = None
+        self._previous_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -167,29 +167,6 @@ class EdgeGroupEntityListing(object):
         self._total = total
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this EdgeGroupEntityListing.
-
-
-        :return: The self_uri of this EdgeGroupEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this EdgeGroupEntityListing.
-
-
-        :param self_uri: The self_uri of this EdgeGroupEntityListing.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
-
-    @property
     def first_uri(self):
         """
         Gets the first_uri of this EdgeGroupEntityListing.
@@ -213,27 +190,50 @@ class EdgeGroupEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self):
+    def self_uri(self):
         """
-        Gets the next_uri of this EdgeGroupEntityListing.
+        Gets the self_uri of this EdgeGroupEntityListing.
 
 
-        :return: The next_uri of this EdgeGroupEntityListing.
+        :return: The self_uri of this EdgeGroupEntityListing.
         :rtype: str
         """
-        return self._next_uri
+        return self._self_uri
 
-    @next_uri.setter
-    def next_uri(self, next_uri):
+    @self_uri.setter
+    def self_uri(self, self_uri):
         """
-        Sets the next_uri of this EdgeGroupEntityListing.
+        Sets the self_uri of this EdgeGroupEntityListing.
 
 
-        :param next_uri: The next_uri of this EdgeGroupEntityListing.
+        :param self_uri: The self_uri of this EdgeGroupEntityListing.
         :type: str
         """
         
-        self._next_uri = next_uri
+        self._self_uri = self_uri
+
+    @property
+    def last_uri(self):
+        """
+        Gets the last_uri of this EdgeGroupEntityListing.
+
+
+        :return: The last_uri of this EdgeGroupEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri):
+        """
+        Sets the last_uri of this EdgeGroupEntityListing.
+
+
+        :param last_uri: The last_uri of this EdgeGroupEntityListing.
+        :type: str
+        """
+        
+        self._last_uri = last_uri
 
     @property
     def previous_uri(self):
@@ -259,27 +259,27 @@ class EdgeGroupEntityListing(object):
         self._previous_uri = previous_uri
 
     @property
-    def last_uri(self):
+    def next_uri(self):
         """
-        Gets the last_uri of this EdgeGroupEntityListing.
+        Gets the next_uri of this EdgeGroupEntityListing.
 
 
-        :return: The last_uri of this EdgeGroupEntityListing.
+        :return: The next_uri of this EdgeGroupEntityListing.
         :rtype: str
         """
-        return self._last_uri
+        return self._next_uri
 
-    @last_uri.setter
-    def last_uri(self, last_uri):
+    @next_uri.setter
+    def next_uri(self, next_uri):
         """
-        Sets the last_uri of this EdgeGroupEntityListing.
+        Sets the next_uri of this EdgeGroupEntityListing.
 
 
-        :param last_uri: The last_uri of this EdgeGroupEntityListing.
+        :param next_uri: The next_uri of this EdgeGroupEntityListing.
         :type: str
         """
         
-        self._last_uri = last_uri
+        self._next_uri = next_uri
 
     @property
     def page_count(self):

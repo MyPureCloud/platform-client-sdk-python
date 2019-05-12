@@ -2116,7 +2116,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_dids"></a>
 
-## [**DIDEntityListing**](DIDEntityListing.html) get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
+## [**DIDEntityListing**](DIDEntityListing.html) get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id)
 
 
 
@@ -2148,10 +2148,12 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'number' # str | Sort by (optional) (default to number)
 sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
 phone_number = 'phone_number_example' # str | Filter by phoneNumber (optional)
+owner_id = 'owner_id_example' # str | Filter by the owner of a phone number (optional)
+did_pool_id = 'did_pool_id_example' # str | Filter by the DID Pool assignment (optional)
 
 try:
     # Get a listing of DIDs
-    api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number)
+    api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e
@@ -2167,6 +2169,8 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to number] |
 | **sort_order** | **str**| Sort order | [optional] [default to ASC] |
 | **phone_number** | **str**| Filter by phoneNumber | [optional]  |
+| **owner_id** | **str**| Filter by the owner of a phone number | [optional]  |
+| **did_pool_id** | **str**| Filter by the DID Pool assignment | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

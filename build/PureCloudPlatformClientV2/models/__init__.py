@@ -101,6 +101,8 @@ from .attempt_limits import AttemptLimits
 from .attempt_limits_entity_listing import AttemptLimitsEntityListing
 from .attribute import Attribute
 from .attribute_filter_item import AttributeFilterItem
+from .atzm_time_slot import AtzmTimeSlot
+from .atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
 from .audit_change import AuditChange
 from .audit_entity import AuditEntity
 from .audit_entity_reference import AuditEntityReference
@@ -116,6 +118,7 @@ from .authz_grant import AuthzGrant
 from .authz_grant_policy import AuthzGrantPolicy
 from .authz_grant_role import AuthzGrantRole
 from .authz_subject import AuthzSubject
+from .automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
 from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
@@ -157,6 +160,7 @@ from .callable_contacts_diagnostic import CallableContactsDiagnostic
 from .callable_time import CallableTime
 from .callable_time_set import CallableTimeSet
 from .callable_time_set_entity_listing import CallableTimeSetEntityListing
+from .callable_window import CallableWindow
 from .callback import Callback
 from .callback_basic import CallbackBasic
 from .callback_conversation import CallbackConversation
@@ -493,6 +497,10 @@ from .dialer_dnclist_config_change_dnc_list import DialerDnclistConfigChangeDncL
 from .dialer_dnclist_config_change_import_status import DialerDnclistConfigChangeImportStatus
 from .dialer_dnclist_config_change_uri_reference import DialerDnclistConfigChangeUriReference
 from .dialer_event_entity_listing import DialerEventEntityListing
+from .dialer_outbound_settings_config_change_atzm_time_slot import DialerOutboundSettingsConfigChangeAtzmTimeSlot
+from .dialer_outbound_settings_config_change_atzm_time_slot_with_time_zone import DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone
+from .dialer_outbound_settings_config_change_automatic_time_zone_mapping_settings import DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
+from .dialer_outbound_settings_config_change_callable_window import DialerOutboundSettingsConfigChangeCallableWindow
 from .dialer_outbound_settings_config_change_outbound_settings import DialerOutboundSettingsConfigChangeOutboundSettings
 from .dialer_preview import DialerPreview
 from .dialer_responseset_config_change_reaction import DialerResponsesetConfigChangeReaction
@@ -743,6 +751,7 @@ from .integration_configuration_info import IntegrationConfigurationInfo
 from .integration_entity_listing import IntegrationEntityListing
 from .integration_event import IntegrationEvent
 from .integration_event_entity_listing import IntegrationEventEntityListing
+from .integration_export import IntegrationExport
 from .integration_status_info import IntegrationStatusInfo
 from .integration_type import IntegrationType
 from .integration_type_entity_listing import IntegrationTypeEntityListing
@@ -947,7 +956,7 @@ from .publish_draft_input import PublishDraftInput
 from .publish_form import PublishForm
 from .published_survey_form_reference import PublishedSurveyFormReference
 from .pure_cloud import PureCloud
-from .pure_enage import PureEnage
+from .pure_engage import PureEngage
 from .qualifier_mapping_observation_query_response import QualifierMappingObservationQueryResponse
 from .quality_audit import QualityAudit
 from .quality_audit_page import QualityAuditPage
@@ -1187,6 +1196,7 @@ from .route_group import RouteGroup
 from .route_group_attributes import RouteGroupAttributes
 from .route_group_list import RouteGroupList
 from .routing_data import RoutingData
+from .routing_rule import RoutingRule
 from .routing_skill import RoutingSkill
 from .routing_skill_reference import RoutingSkillReference
 from .routing_status import RoutingStatus

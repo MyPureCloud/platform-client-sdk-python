@@ -46,7 +46,8 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
             'max_calls_per_agent': 'int',
             'max_line_utilization': 'float',
             'abandon_seconds': 'float',
-            'compliance_abandon_rate_denominator': 'str'
+            'compliance_abandon_rate_denominator': 'str',
+            'automatic_time_zone_mapping': 'DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
             'max_calls_per_agent': 'maxCallsPerAgent',
             'max_line_utilization': 'maxLineUtilization',
             'abandon_seconds': 'abandonSeconds',
-            'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator'
+            'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
+            'automatic_time_zone_mapping': 'automaticTimeZoneMapping'
         }
 
         self._id = None
@@ -70,6 +72,7 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
         self._max_line_utilization = None
         self._abandon_seconds = None
         self._compliance_abandon_rate_denominator = None
+        self._automatic_time_zone_mapping = None
 
     @property
     def id(self):
@@ -281,6 +284,29 @@ class DialerOutboundSettingsConfigChangeOutboundSettings(object):
             self._compliance_abandon_rate_denominator = "outdated_sdk_version"
         else:
             self._compliance_abandon_rate_denominator = compliance_abandon_rate_denominator
+
+    @property
+    def automatic_time_zone_mapping(self):
+        """
+        Gets the automatic_time_zone_mapping of this DialerOutboundSettingsConfigChangeOutboundSettings.
+
+
+        :return: The automatic_time_zone_mapping of this DialerOutboundSettingsConfigChangeOutboundSettings.
+        :rtype: DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
+        """
+        return self._automatic_time_zone_mapping
+
+    @automatic_time_zone_mapping.setter
+    def automatic_time_zone_mapping(self, automatic_time_zone_mapping):
+        """
+        Sets the automatic_time_zone_mapping of this DialerOutboundSettingsConfigChangeOutboundSettings.
+
+
+        :param automatic_time_zone_mapping: The automatic_time_zone_mapping of this DialerOutboundSettingsConfigChangeOutboundSettings.
+        :type: DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
+        """
+        
+        self._automatic_time_zone_mapping = automatic_time_zone_mapping
 
     def to_dict(self):
         """

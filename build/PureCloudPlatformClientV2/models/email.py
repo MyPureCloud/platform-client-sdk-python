@@ -57,7 +57,8 @@ class Email(object):
             'script_id': 'str',
             'peer_id': 'str',
             'message_id': 'str',
-            'draft_attachments': 'list[Attachment]'
+            'draft_attachments': 'list[Attachment]',
+            'spam': 'bool'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class Email(object):
             'script_id': 'scriptId',
             'peer_id': 'peerId',
             'message_id': 'messageId',
-            'draft_attachments': 'draftAttachments'
+            'draft_attachments': 'draftAttachments',
+            'spam': 'spam'
         }
 
         self._state = None
@@ -103,6 +105,7 @@ class Email(object):
         self._peer_id = None
         self._message_id = None
         self._draft_attachments = None
+        self._spam = None
 
     @property
     def state(self):
@@ -575,6 +578,29 @@ class Email(object):
         """
         
         self._draft_attachments = draft_attachments
+
+    @property
+    def spam(self):
+        """
+        Gets the spam of this Email.
+        Indicates if the inbound email was marked as spam.
+
+        :return: The spam of this Email.
+        :rtype: bool
+        """
+        return self._spam
+
+    @spam.setter
+    def spam(self, spam):
+        """
+        Sets the spam of this Email.
+        Indicates if the inbound email was marked as spam.
+
+        :param spam: The spam of this Email.
+        :type: bool
+        """
+        
+        self._spam = spam
 
     def to_dict(self):
         """

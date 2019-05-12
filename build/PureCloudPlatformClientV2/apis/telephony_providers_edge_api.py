@@ -3162,12 +3162,14 @@ class TelephonyProvidersEdgeApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param str phone_number: Filter by phoneNumber
+        :param str owner_id: Filter by the owner of a phone number
+        :param str did_pool_id: Filter by the DID Pool assignment
         :return: DIDEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'phone_number']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'phone_number', 'owner_id', 'did_pool_id']
         all_params.append('callback')
 
         params = locals()
@@ -3196,6 +3198,10 @@ class TelephonyProvidersEdgeApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'phone_number' in params:
             query_params['phoneNumber'] = params['phone_number']
+        if 'owner_id' in params:
+            query_params['owner.id'] = params['owner_id']
+        if 'did_pool_id' in params:
+            query_params['didPool.id'] = params['did_pool_id']
 
         header_params = {}
 

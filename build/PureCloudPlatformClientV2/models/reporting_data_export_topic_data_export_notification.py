@@ -143,7 +143,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         :param status: The status of this ReportingDataExportTopicDataExportNotification.
         :type: str
         """
-        allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "FAILED"]
+        allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "COMPLETED_WITH_PARTIAL_RESULTS", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"

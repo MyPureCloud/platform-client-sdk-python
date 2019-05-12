@@ -936,7 +936,7 @@ This endpoint does not need any parameter.
 
 <a name="get_identityproviders_pureengage"></a>
 
-## [**PureEnage**](PureEnage.html) get_identityproviders_pureengage()
+## [**PureEngage**](PureEngage.html) get_identityproviders_pureengage()
 
 
 
@@ -979,7 +979,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PureEnage**](PureEnage.html)
+[**PureEngage**](PureEngage.html)
 
 <a name="get_identityproviders_salesforce"></a>
 
@@ -1474,7 +1474,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
-body = PureCloudPlatformClientV2.PureEnage() # PureEnage | Provider
+body = PureCloudPlatformClientV2.PureEngage() # PureEngage | Provider
 
 try:
     # Update/Create PureEngage Identity Provider
@@ -1489,7 +1489,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PureEnage**](PureEnage.html)| Provider |  |
+| **body** | [**PureEngage**](PureEngage.html)| Provider |  |
 {: class="table table-striped"}
 
 ### Return type

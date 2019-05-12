@@ -50,6 +50,10 @@ class SmsPhoneNumber(object):
             'created_by': 'User',
             'modified_by': 'User',
             'version': 'int',
+            'purchase_date': 'datetime',
+            'cancellation_date': 'datetime',
+            'renewal_date': 'datetime',
+            'auto_renewable': 'str',
             'self_uri': 'str'
         }
 
@@ -66,6 +70,10 @@ class SmsPhoneNumber(object):
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'version': 'version',
+            'purchase_date': 'purchaseDate',
+            'cancellation_date': 'cancellationDate',
+            'renewal_date': 'renewalDate',
+            'auto_renewable': 'autoRenewable',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +89,10 @@ class SmsPhoneNumber(object):
         self._created_by = None
         self._modified_by = None
         self._version = None
+        self._purchase_date = None
+        self._cancellation_date = None
+        self._renewal_date = None
+        self._auto_renewable = None
         self._self_uri = None
 
     @property
@@ -222,7 +234,7 @@ class SmsPhoneNumber(object):
         :param phone_number_status: The phone_number_status of this SmsPhoneNumber.
         :type: str
         """
-        allowed_values = ["invalid", "active", "porting"]
+        allowed_values = ["INVALID", "ACTIVE", "PORTING", "PENDING", "PENDING_CANCELLATION"]
         if phone_number_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for phone_number_status -> " + phone_number_status
             self._phone_number_status = "outdated_sdk_version"
@@ -366,6 +378,102 @@ class SmsPhoneNumber(object):
         """
         
         self._version = version
+
+    @property
+    def purchase_date(self):
+        """
+        Gets the purchase_date of this SmsPhoneNumber.
+        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The purchase_date of this SmsPhoneNumber.
+        :rtype: datetime
+        """
+        return self._purchase_date
+
+    @purchase_date.setter
+    def purchase_date(self, purchase_date):
+        """
+        Sets the purchase_date of this SmsPhoneNumber.
+        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param purchase_date: The purchase_date of this SmsPhoneNumber.
+        :type: datetime
+        """
+        
+        self._purchase_date = purchase_date
+
+    @property
+    def cancellation_date(self):
+        """
+        Gets the cancellation_date of this SmsPhoneNumber.
+        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The cancellation_date of this SmsPhoneNumber.
+        :rtype: datetime
+        """
+        return self._cancellation_date
+
+    @cancellation_date.setter
+    def cancellation_date(self, cancellation_date):
+        """
+        Sets the cancellation_date of this SmsPhoneNumber.
+        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param cancellation_date: The cancellation_date of this SmsPhoneNumber.
+        :type: datetime
+        """
+        
+        self._cancellation_date = cancellation_date
+
+    @property
+    def renewal_date(self):
+        """
+        Gets the renewal_date of this SmsPhoneNumber.
+        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The renewal_date of this SmsPhoneNumber.
+        :rtype: datetime
+        """
+        return self._renewal_date
+
+    @renewal_date.setter
+    def renewal_date(self, renewal_date):
+        """
+        Sets the renewal_date of this SmsPhoneNumber.
+        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param renewal_date: The renewal_date of this SmsPhoneNumber.
+        :type: datetime
+        """
+        
+        self._renewal_date = renewal_date
+
+    @property
+    def auto_renewable(self):
+        """
+        Gets the auto_renewable of this SmsPhoneNumber.
+        Renewal time period of this phone number, if the phoneNumberType is shortcode.
+
+        :return: The auto_renewable of this SmsPhoneNumber.
+        :rtype: str
+        """
+        return self._auto_renewable
+
+    @auto_renewable.setter
+    def auto_renewable(self, auto_renewable):
+        """
+        Sets the auto_renewable of this SmsPhoneNumber.
+        Renewal time period of this phone number, if the phoneNumberType is shortcode.
+
+        :param auto_renewable: The auto_renewable of this SmsPhoneNumber.
+        :type: str
+        """
+        allowed_values = ["Quarterly"]
+        if auto_renewable.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for auto_renewable -> " + auto_renewable
+            self._auto_renewable = "outdated_sdk_version"
+        else:
+            self._auto_renewable = auto_renewable
 
     @property
     def self_uri(self):

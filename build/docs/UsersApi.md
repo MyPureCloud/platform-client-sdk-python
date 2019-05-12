@@ -48,7 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_queues**](UsersApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](UsersApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](UsersApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
-|[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Add bulk routing skills to user|
+|[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
@@ -66,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_profileskills**](UsersApi.html#put_user_profileskills) | Update profile skills for a user|
 |[**put_user_roles**](UsersApi.html#put_user_roles) | Sets the user&#39;s roles|
 |[**put_user_routingskill**](UsersApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
+|[**put_user_routingskills_bulk**](UsersApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
 |[**put_user_routingstatus**](UsersApi.html#put_user_routingstatus) | Update the routing status of a user|
 |[**put_user_station_associatedstation_station_id**](UsersApi.html#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](UsersApi.html#put_user_station_defaultstation_station_id) | Set default station|
@@ -1707,7 +1708,7 @@ except ApiException as e:
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |
+| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
 ### Return type
@@ -2203,7 +2204,7 @@ except ApiException as e:
 
 
 
-Add bulk routing skills to user
+Bulk add routing skills to user
 
 
 
@@ -2231,7 +2232,7 @@ user_id = 'user_id_example' # str | User ID
 body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
 
 try:
-    # Add bulk routing skills to user
+    # Bulk add routing skills to user
     api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -3149,6 +3150,60 @@ except ApiException as e:
 ### Return type
 
 [**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="put_user_routingskills_bulk"></a>
+
+## [**UserSkillEntityListing**](UserSkillEntityListing.html) put_user_routingskills_bulk(user_id, body)
+
+
+
+Replace all routing skills assigned to a user
+
+
+
+Wraps PUT /api/v2/users/{userId}/routingskills/bulk 
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserRoutingSkillPost()] # list[UserRoutingSkillPost] | Skill
+
+try:
+    # Replace all routing skills assigned to a user
+    api_response = api_instance.put_user_routingskills_bulk(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->put_user_routingskills_bulk: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
 
 <a name="put_user_routingstatus"></a>
 
