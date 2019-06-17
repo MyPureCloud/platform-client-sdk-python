@@ -43,6 +43,7 @@ class ObservationValue(object):
             'session_id': 'str',
             'requested_routing_skill_ids': 'list[str]',
             'requested_language_id': 'str',
+            'routing_priority': 'int',
             'participant_name': 'str',
             'user_id': 'str',
             'direction': 'str',
@@ -60,6 +61,7 @@ class ObservationValue(object):
             'session_id': 'sessionId',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
             'requested_language_id': 'requestedLanguageId',
+            'routing_priority': 'routingPriority',
             'participant_name': 'participantName',
             'user_id': 'userId',
             'direction': 'direction',
@@ -76,6 +78,7 @@ class ObservationValue(object):
         self._session_id = None
         self._requested_routing_skill_ids = None
         self._requested_language_id = None
+        self._routing_priority = None
         self._participant_name = None
         self._user_id = None
         self._direction = None
@@ -200,6 +203,29 @@ class ObservationValue(object):
         """
         
         self._requested_language_id = requested_language_id
+
+    @property
+    def routing_priority(self):
+        """
+        Gets the routing_priority of this ObservationValue.
+        Routing priority for the current interaction
+
+        :return: The routing_priority of this ObservationValue.
+        :rtype: int
+        """
+        return self._routing_priority
+
+    @routing_priority.setter
+    def routing_priority(self, routing_priority):
+        """
+        Sets the routing_priority of this ObservationValue.
+        Routing priority for the current interaction
+
+        :param routing_priority: The routing_priority of this ObservationValue.
+        :type: int
+        """
+        
+        self._routing_priority = routing_priority
 
     @property
     def participant_name(self):

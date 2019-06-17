@@ -163,7 +163,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **search_type** | **str**| Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL |
+| **search_type** | **str**| Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER |
 | **search_value** | **str**| Search Value |  |
 {: class="table table-striped"}
 

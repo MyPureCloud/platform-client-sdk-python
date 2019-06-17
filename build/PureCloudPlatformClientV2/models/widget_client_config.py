@@ -40,17 +40,20 @@ class WidgetClientConfig(object):
         self.swagger_types = {
             'v1': 'WidgetClientConfigV1',
             'v2': 'WidgetClientConfigV2',
+            'v1_http': 'WidgetClientConfigV1Http',
             'third_party': 'WidgetClientConfigThirdParty'
         }
 
         self.attribute_map = {
             'v1': 'v1',
             'v2': 'v2',
+            'v1_http': 'v1-http',
             'third_party': 'third-party'
         }
 
         self._v1 = None
         self._v2 = None
+        self._v1_http = None
         self._third_party = None
 
     @property
@@ -98,6 +101,29 @@ class WidgetClientConfig(object):
         """
         
         self._v2 = v2
+
+    @property
+    def v1_http(self):
+        """
+        Gets the v1_http of this WidgetClientConfig.
+
+
+        :return: The v1_http of this WidgetClientConfig.
+        :rtype: WidgetClientConfigV1Http
+        """
+        return self._v1_http
+
+    @v1_http.setter
+    def v1_http(self, v1_http):
+        """
+        Sets the v1_http of this WidgetClientConfig.
+
+
+        :param v1_http: The v1_http of this WidgetClientConfig.
+        :type: WidgetClientConfigV1Http
+        """
+        
+        self._v1_http = v1_http
 
     @property
     def third_party(self):

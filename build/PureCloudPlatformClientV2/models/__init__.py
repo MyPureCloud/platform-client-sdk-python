@@ -426,6 +426,9 @@ from .create_share_request import CreateShareRequest
 from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
 from .create_user import CreateUser
+from .create_web_chat_conversation_request import CreateWebChatConversationRequest
+from .create_web_chat_conversation_response import CreateWebChatConversationResponse
+from .create_web_chat_message_request import CreateWebChatMessageRequest
 from .create_web_chat_request import CreateWebChatRequest
 from .create_work_plan import CreateWorkPlan
 from .create_work_plan_activity import CreateWorkPlanActivity
@@ -691,6 +694,7 @@ from .forecast_result_response import ForecastResultResponse
 from .forecast_source_day_pointer import ForecastSourceDayPointer
 from .forecast_time_series_result import ForecastTimeSeriesResult
 from .free_seating_configuration import FreeSeatingConfiguration
+from .gdpr_journey_customer import GDPRJourneyCustomer
 from .gdpr_request import GDPRRequest
 from .gdpr_request_entity_listing import GDPRRequestEntityListing
 from .gdpr_subject import GDPRSubject
@@ -726,6 +730,7 @@ from .group_search_criteria import GroupSearchCriteria
 from .group_search_request import GroupSearchRequest
 from .group_update import GroupUpdate
 from .groups_search_response import GroupsSearchResponse
+from .guest_member_info import GuestMemberInfo
 from .headcount_forecast import HeadcountForecast
 from .headcount_interval import HeadcountInterval
 from .help_link import HelpLink
@@ -775,6 +780,7 @@ from .journey_action_map import JourneyActionMap
 from .journey_context import JourneyContext
 from .journey_customer import JourneyCustomer
 from .journey_customer_session import JourneyCustomerSession
+from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
 from .key_rotation_schedule import KeyRotationSchedule
@@ -831,6 +837,7 @@ from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
 from .management_unit_settings import ManagementUnitSettings
+from .manager import Manager
 from .max_participants import MaxParticipants
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
@@ -856,8 +863,10 @@ from .message_sticker import MessageSticker
 from .message_sticker_attachment import MessageStickerAttachment
 from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
+from .meta import Meta
 from .meta_data import MetaData
 from .metabase import Metabase
+from .metered_assignment_by_agent import MeteredAssignmentByAgent
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
 from .modeling_processing_error import ModelingProcessingError
 from .modeling_status_response import ModelingStatusResponse
@@ -913,7 +922,10 @@ from .partial_upload_response import PartialUploadResponse
 from .participant import Participant
 from .participant_attributes import ParticipantAttributes
 from .participant_basic import ParticipantBasic
+from .patch_operation import PatchOperation
+from .patch_request import PatchRequest
 from .patch_user import PatchUser
+from .path import Path
 from .permission_collection_entity_listing import PermissionCollectionEntityListing
 from .permissions import Permissions
 from .phone import Phone
@@ -928,6 +940,7 @@ from .phone_number_column import PhoneNumberColumn
 from .phone_number_status import PhoneNumberStatus
 from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
+from .photo import Photo
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
 from .policy import Policy
@@ -1220,6 +1233,20 @@ from .scheduling_status_response import SchedulingStatusResponse
 from .schema_category import SchemaCategory
 from .schema_category_entity_listing import SchemaCategoryEntityListing
 from .schema_reference_entity_listing import SchemaReferenceEntityListing
+from .scim_email import ScimEmail
+from .scim_list_response import ScimListResponse
+from .scim_metadata import ScimMetadata
+from .scim_phone_number import ScimPhoneNumber
+from .scim_resource import ScimResource
+from .scim_service_provider_config import ScimServiceProviderConfig
+from .scim_v2_create_user import ScimV2CreateUser
+from .scim_v2_enterprise_user import ScimV2EnterpriseUser
+from .scim_v2_group import ScimV2Group
+from .scim_v2_group_reference import ScimV2GroupReference
+from .scim_v2_member_reference import ScimV2MemberReference
+from .scim_v2_patch_operation import ScimV2PatchOperation
+from .scim_v2_patch_request import ScimV2PatchRequest
+from .scim_v2_user import ScimV2User
 from .scorable_survey import ScorableSurvey
 from .screen_recording_session import ScreenRecordingSession
 from .screen_recording_session_listing import ScreenRecordingSessionListing
@@ -1275,6 +1302,7 @@ from .sms_phone_number import SmsPhoneNumber
 from .sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .sms_phone_number_provision import SmsPhoneNumberProvision
 from .social_expression import SocialExpression
+from .social_handle import SocialHandle
 from .sort_item import SortItem
 from .stat_event_campaign_topic_datum import StatEventCampaignTopicDatum
 from .stat_event_campaign_topic_metric import StatEventCampaignTopicMetric
@@ -1467,9 +1495,18 @@ from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
 from .web_chat_config import WebChatConfig
+from .web_chat_conversation import WebChatConversation
 from .web_chat_deployment import WebChatDeployment
 from .web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
+from .web_chat_guest_media_request import WebChatGuestMediaRequest
+from .web_chat_guest_media_request_entity_list import WebChatGuestMediaRequestEntityList
+from .web_chat_member_info import WebChatMemberInfo
+from .web_chat_member_info_entity_list import WebChatMemberInfoEntityList
+from .web_chat_message import WebChatMessage
+from .web_chat_message_entity_list import WebChatMessageEntityList
+from .web_chat_routing_target import WebChatRoutingTarget
 from .web_chat_settings import WebChatSettings
+from .web_chat_typing import WebChatTyping
 from .week_schedule import WeekSchedule
 from .week_schedule_generation_result import WeekScheduleGenerationResult
 from .week_schedule_list_item_response import WeekScheduleListItemResponse
@@ -1526,6 +1563,7 @@ from .whats_app_id import WhatsAppId
 from .widget_client_config import WidgetClientConfig
 from .widget_client_config_third_party import WidgetClientConfigThirdParty
 from .widget_client_config_v1 import WidgetClientConfigV1
+from .widget_client_config_v1_http import WidgetClientConfigV1Http
 from .widget_client_config_v2 import WidgetClientConfigV2
 from .widget_deployment import WidgetDeployment
 from .widget_deployment_entity_listing import WidgetDeploymentEntityListing

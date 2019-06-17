@@ -40,21 +40,21 @@ class TimeZone(object):
         self.swagger_types = {
             'display_name': 'str',
             'id': 'str',
-            'dstsavings': 'int',
-            'raw_offset': 'int'
+            'raw_offset': 'int',
+            'dstsavings': 'int'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
-            'dstsavings': 'dstsavings',
-            'raw_offset': 'rawOffset'
+            'raw_offset': 'rawOffset',
+            'dstsavings': 'dstsavings'
         }
 
         self._display_name = None
         self._id = None
-        self._dstsavings = None
         self._raw_offset = None
+        self._dstsavings = None
 
     @property
     def display_name(self):
@@ -103,29 +103,6 @@ class TimeZone(object):
         self._id = id
 
     @property
-    def dstsavings(self):
-        """
-        Gets the dstsavings of this TimeZone.
-
-
-        :return: The dstsavings of this TimeZone.
-        :rtype: int
-        """
-        return self._dstsavings
-
-    @dstsavings.setter
-    def dstsavings(self, dstsavings):
-        """
-        Sets the dstsavings of this TimeZone.
-
-
-        :param dstsavings: The dstsavings of this TimeZone.
-        :type: int
-        """
-        
-        self._dstsavings = dstsavings
-
-    @property
     def raw_offset(self):
         """
         Gets the raw_offset of this TimeZone.
@@ -147,6 +124,29 @@ class TimeZone(object):
         """
         
         self._raw_offset = raw_offset
+
+    @property
+    def dstsavings(self):
+        """
+        Gets the dstsavings of this TimeZone.
+
+
+        :return: The dstsavings of this TimeZone.
+        :rtype: int
+        """
+        return self._dstsavings
+
+    @dstsavings.setter
+    def dstsavings(self, dstsavings):
+        """
+        Sets the dstsavings of this TimeZone.
+
+
+        :param dstsavings: The dstsavings of this TimeZone.
+        :type: int
+        """
+        
+        self._dstsavings = dstsavings
 
     def to_dict(self):
         """

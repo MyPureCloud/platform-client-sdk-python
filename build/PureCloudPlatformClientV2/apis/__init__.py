@@ -33,6 +33,7 @@ from .quality_api import QualityApi
 from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
+from .scim_api import SCIMApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .stations_api import StationsApi

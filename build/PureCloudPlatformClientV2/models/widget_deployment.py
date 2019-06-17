@@ -255,7 +255,7 @@ class WidgetDeployment(object):
         :param client_type: The client_type of this WidgetDeployment.
         :type: str
         """
-        allowed_values = ["v1", "v2", "third-party"]
+        allowed_values = ["v1", "v2", "v1-http", "third-party"]
         if client_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for client_type -> " + client_type
             self._client_type = "outdated_sdk_version"

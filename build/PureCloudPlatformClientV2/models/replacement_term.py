@@ -73,7 +73,7 @@ class ReplacementTerm(object):
         :param type: The type of this ReplacementTerm.
         :type: str
         """
-        allowed_values = ["NAME", "ADDRESS", "PHONE", "EMAIL"]
+        allowed_values = ["NAME", "ADDRESS", "PHONE", "EMAIL", "TWITTER"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

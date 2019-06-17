@@ -53,6 +53,7 @@ class ConversationChat(object):
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
+            'avatar_image_url': 'str',
             'journey_context': 'JourneyContext'
         }
 
@@ -72,6 +73,7 @@ class ConversationChat(object):
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
+            'avatar_image_url': 'avatarImageUrl',
             'journey_context': 'journeyContext'
         }
 
@@ -90,6 +92,7 @@ class ConversationChat(object):
         self._provider = None
         self._script_id = None
         self._peer_id = None
+        self._avatar_image_url = None
         self._journey_context = None
 
     @property
@@ -448,6 +451,29 @@ class ConversationChat(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def avatar_image_url(self):
+        """
+        Gets the avatar_image_url of this ConversationChat.
+        If available, the URI to the avatar image of this communication.
+
+        :return: The avatar_image_url of this ConversationChat.
+        :rtype: str
+        """
+        return self._avatar_image_url
+
+    @avatar_image_url.setter
+    def avatar_image_url(self, avatar_image_url):
+        """
+        Sets the avatar_image_url of this ConversationChat.
+        If available, the URI to the avatar image of this communication.
+
+        :param avatar_image_url: The avatar_image_url of this ConversationChat.
+        :type: str
+        """
+        
+        self._avatar_image_url = avatar_image_url
 
     @property
     def journey_context(self):

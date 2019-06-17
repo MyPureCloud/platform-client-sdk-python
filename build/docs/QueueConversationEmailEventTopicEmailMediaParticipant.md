@@ -42,6 +42,7 @@ title: QueueConversationEmailEventTopicEmailMediaParticipant
 | **auto_generated** | **bool** |  | [optional] |
 | **message_id** | **str** |  | [optional] |
 | **draft_attachments** | [**list[QueueConversationEmailEventTopicAttachment]**](QueueConversationEmailEventTopicAttachment.html) |  | [optional] |
+| **spam** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

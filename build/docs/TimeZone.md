@@ -9,8 +9,8 @@ title: TimeZone
 |------------ | ------------- | ------------- | -------------|
 | **display_name** | **str** |  | [optional] |
 | **id** | **str** |  | [optional] |
-| **dstsavings** | **int** |  | [optional] |
 | **raw_offset** | **int** |  | [optional] |
+| **dstsavings** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

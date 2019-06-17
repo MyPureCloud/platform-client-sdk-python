@@ -24,6 +24,7 @@ title: QueueConversationSocialExpressionEventTopicEmail
 | **message_id** | **str** |  | [optional] |
 | **direction** | **str** |  | [optional] |
 | **draft_attachments** | [**list[QueueConversationSocialExpressionEventTopicAttachment]**](QueueConversationSocialExpressionEventTopicAttachment.html) |  | [optional] |
+| **spam** | **bool** |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

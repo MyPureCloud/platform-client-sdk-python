@@ -38,17 +38,69 @@ class TimeInterval(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'months': 'int',
+            'weeks': 'int',
             'days': 'int',
             'hours': 'int'
         }
 
         self.attribute_map = {
+            'months': 'months',
+            'weeks': 'weeks',
             'days': 'days',
             'hours': 'hours'
         }
 
+        self._months = None
+        self._weeks = None
         self._days = None
         self._hours = None
+
+    @property
+    def months(self):
+        """
+        Gets the months of this TimeInterval.
+
+
+        :return: The months of this TimeInterval.
+        :rtype: int
+        """
+        return self._months
+
+    @months.setter
+    def months(self, months):
+        """
+        Sets the months of this TimeInterval.
+
+
+        :param months: The months of this TimeInterval.
+        :type: int
+        """
+        
+        self._months = months
+
+    @property
+    def weeks(self):
+        """
+        Gets the weeks of this TimeInterval.
+
+
+        :return: The weeks of this TimeInterval.
+        :rtype: int
+        """
+        return self._weeks
+
+    @weeks.setter
+    def weeks(self, weeks):
+        """
+        Sets the weeks of this TimeInterval.
+
+
+        :param weeks: The weeks of this TimeInterval.
+        :type: int
+        """
+        
+        self._weeks = weeks
 
     @property
     def days(self):

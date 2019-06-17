@@ -42,6 +42,8 @@ class GDPRSubject(object):
             'user_id': 'str',
             'external_contact_id': 'str',
             'dialer_contact_id': 'DialerContactId',
+            'journey_customer': 'GDPRJourneyCustomer',
+            'social_handle': 'SocialHandle',
             'addresses': 'list[str]',
             'phone_numbers': 'list[str]',
             'email_addresses': 'list[str]'
@@ -52,6 +54,8 @@ class GDPRSubject(object):
             'user_id': 'userId',
             'external_contact_id': 'externalContactId',
             'dialer_contact_id': 'dialerContactId',
+            'journey_customer': 'journeyCustomer',
+            'social_handle': 'socialHandle',
             'addresses': 'addresses',
             'phone_numbers': 'phoneNumbers',
             'email_addresses': 'emailAddresses'
@@ -61,6 +65,8 @@ class GDPRSubject(object):
         self._user_id = None
         self._external_contact_id = None
         self._dialer_contact_id = None
+        self._journey_customer = None
+        self._social_handle = None
         self._addresses = None
         self._phone_numbers = None
         self._email_addresses = None
@@ -156,6 +162,52 @@ class GDPRSubject(object):
         """
         
         self._dialer_contact_id = dialer_contact_id
+
+    @property
+    def journey_customer(self):
+        """
+        Gets the journey_customer of this GDPRSubject.
+
+
+        :return: The journey_customer of this GDPRSubject.
+        :rtype: GDPRJourneyCustomer
+        """
+        return self._journey_customer
+
+    @journey_customer.setter
+    def journey_customer(self, journey_customer):
+        """
+        Sets the journey_customer of this GDPRSubject.
+
+
+        :param journey_customer: The journey_customer of this GDPRSubject.
+        :type: GDPRJourneyCustomer
+        """
+        
+        self._journey_customer = journey_customer
+
+    @property
+    def social_handle(self):
+        """
+        Gets the social_handle of this GDPRSubject.
+
+
+        :return: The social_handle of this GDPRSubject.
+        :rtype: SocialHandle
+        """
+        return self._social_handle
+
+    @social_handle.setter
+    def social_handle(self, social_handle):
+        """
+        Sets the social_handle of this GDPRSubject.
+
+
+        :param social_handle: The social_handle of this GDPRSubject.
+        :type: SocialHandle
+        """
+        
+        self._social_handle = social_handle
 
     @property
     def addresses(self):

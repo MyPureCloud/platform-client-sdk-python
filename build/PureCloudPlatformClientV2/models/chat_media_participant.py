@@ -67,7 +67,8 @@ class ChatMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
-            'room_id': 'str'
+            'room_id': 'str',
+            'avatar_image_url': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +101,8 @@ class ChatMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
-            'room_id': 'roomId'
+            'room_id': 'roomId',
+            'avatar_image_url': 'avatarImageUrl'
         }
 
         self._id = None
@@ -133,6 +135,7 @@ class ChatMediaParticipant(object):
         self._flagged_reason = None
         self._journey_context = None
         self._room_id = None
+        self._avatar_image_url = None
 
     @property
     def id(self):
@@ -839,6 +842,29 @@ class ChatMediaParticipant(object):
         """
         
         self._room_id = room_id
+
+    @property
+    def avatar_image_url(self):
+        """
+        Gets the avatar_image_url of this ChatMediaParticipant.
+        If available, the URI to the avatar image of this communication.
+
+        :return: The avatar_image_url of this ChatMediaParticipant.
+        :rtype: str
+        """
+        return self._avatar_image_url
+
+    @avatar_image_url.setter
+    def avatar_image_url(self, avatar_image_url):
+        """
+        Sets the avatar_image_url of this ChatMediaParticipant.
+        If available, the URI to the avatar image of this communication.
+
+        :param avatar_image_url: The avatar_image_url of this ChatMediaParticipant.
+        :type: str
+        """
+        
+        self._avatar_image_url = avatar_image_url
 
     def to_dict(self):
         """

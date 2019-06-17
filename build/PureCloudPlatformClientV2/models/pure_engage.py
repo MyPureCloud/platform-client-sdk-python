@@ -42,8 +42,8 @@ class PureEngage(object):
             'name': 'str',
             'auto_provision_users': 'bool',
             'certificate': 'str',
-            'issuer_uri': 'str',
             'sso_target_uri': 'str',
+            'issuer_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
         }
@@ -53,8 +53,8 @@ class PureEngage(object):
             'name': 'name',
             'auto_provision_users': 'autoProvisionUsers',
             'certificate': 'certificate',
-            'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
+            'issuer_uri': 'issuerURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
         }
@@ -63,8 +63,8 @@ class PureEngage(object):
         self._name = None
         self._auto_provision_users = None
         self._certificate = None
-        self._issuer_uri = None
         self._sso_target_uri = None
+        self._issuer_uri = None
         self._disabled = None
         self._self_uri = None
 
@@ -161,29 +161,6 @@ class PureEngage(object):
         self._certificate = certificate
 
     @property
-    def issuer_uri(self):
-        """
-        Gets the issuer_uri of this PureEngage.
-
-
-        :return: The issuer_uri of this PureEngage.
-        :rtype: str
-        """
-        return self._issuer_uri
-
-    @issuer_uri.setter
-    def issuer_uri(self, issuer_uri):
-        """
-        Sets the issuer_uri of this PureEngage.
-
-
-        :param issuer_uri: The issuer_uri of this PureEngage.
-        :type: str
-        """
-        
-        self._issuer_uri = issuer_uri
-
-    @property
     def sso_target_uri(self):
         """
         Gets the sso_target_uri of this PureEngage.
@@ -205,6 +182,29 @@ class PureEngage(object):
         """
         
         self._sso_target_uri = sso_target_uri
+
+    @property
+    def issuer_uri(self):
+        """
+        Gets the issuer_uri of this PureEngage.
+
+
+        :return: The issuer_uri of this PureEngage.
+        :rtype: str
+        """
+        return self._issuer_uri
+
+    @issuer_uri.setter
+    def issuer_uri(self, issuer_uri):
+        """
+        Sets the issuer_uri of this PureEngage.
+
+
+        :param issuer_uri: The issuer_uri of this PureEngage.
+        :type: str
+        """
+        
+        self._issuer_uri = issuer_uri
 
     @property
     def disabled(self):

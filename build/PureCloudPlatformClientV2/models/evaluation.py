@@ -52,6 +52,9 @@ class Evaluation(object):
             'assigned_date': 'datetime',
             'changed_date': 'datetime',
             'queue': 'Queue',
+            'media_type': 'list[str]',
+            'rescore': 'bool',
+            'conversation_date': 'datetime',
             'never_release': 'bool',
             'resource_id': 'str',
             'resource_type': 'str',
@@ -75,6 +78,9 @@ class Evaluation(object):
             'assigned_date': 'assignedDate',
             'changed_date': 'changedDate',
             'queue': 'queue',
+            'media_type': 'mediaType',
+            'rescore': 'rescore',
+            'conversation_date': 'conversationDate',
             'never_release': 'neverRelease',
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
@@ -97,6 +103,9 @@ class Evaluation(object):
         self._assigned_date = None
         self._changed_date = None
         self._queue = None
+        self._media_type = None
+        self._rescore = None
+        self._conversation_date = None
         self._never_release = None
         self._resource_id = None
         self._resource_type = None
@@ -429,6 +438,75 @@ class Evaluation(object):
         """
         
         self._queue = queue
+
+    @property
+    def media_type(self):
+        """
+        Gets the media_type of this Evaluation.
+        List of different communication types used in conversation.
+
+        :return: The media_type of this Evaluation.
+        :rtype: list[str]
+        """
+        return self._media_type
+
+    @media_type.setter
+    def media_type(self, media_type):
+        """
+        Sets the media_type of this Evaluation.
+        List of different communication types used in conversation.
+
+        :param media_type: The media_type of this Evaluation.
+        :type: list[str]
+        """
+        
+        self._media_type = media_type
+
+    @property
+    def rescore(self):
+        """
+        Gets the rescore of this Evaluation.
+        Is only true when evaluation is re-scored.
+
+        :return: The rescore of this Evaluation.
+        :rtype: bool
+        """
+        return self._rescore
+
+    @rescore.setter
+    def rescore(self, rescore):
+        """
+        Sets the rescore of this Evaluation.
+        Is only true when evaluation is re-scored.
+
+        :param rescore: The rescore of this Evaluation.
+        :type: bool
+        """
+        
+        self._rescore = rescore
+
+    @property
+    def conversation_date(self):
+        """
+        Gets the conversation_date of this Evaluation.
+        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The conversation_date of this Evaluation.
+        :rtype: datetime
+        """
+        return self._conversation_date
+
+    @conversation_date.setter
+    def conversation_date(self, conversation_date):
+        """
+        Sets the conversation_date of this Evaluation.
+        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param conversation_date: The conversation_date of this Evaluation.
+        :type: datetime
+        """
+        
+        self._conversation_date = conversation_date
 
     @property
     def never_release(self):

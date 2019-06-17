@@ -7,6 +7,8 @@ title: TimeInterval
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **months** | **int** |  | [optional] |
+| **weeks** | **int** |  | [optional] |
 | **days** | **int** |  | [optional] |
 | **hours** | **int** |  | [optional] |
 {: class="table table-striped"}

@@ -55,6 +55,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'message_id': 'str',
             'direction': 'str',
             'draft_attachments': 'list[QueueConversationVideoEventTopicAttachment]',
+            'spam': 'bool',
             'additional_properties': 'object'
         }
 
@@ -76,6 +77,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'message_id': 'messageId',
             'direction': 'direction',
             'draft_attachments': 'draftAttachments',
+            'spam': 'spam',
             'additional_properties': 'additionalProperties'
         }
 
@@ -96,6 +98,7 @@ class QueueConversationVideoEventTopicEmail(object):
         self._message_id = None
         self._direction = None
         self._draft_attachments = None
+        self._spam = None
         self._additional_properties = None
 
     @property
@@ -500,6 +503,29 @@ class QueueConversationVideoEventTopicEmail(object):
         """
         
         self._draft_attachments = draft_attachments
+
+    @property
+    def spam(self):
+        """
+        Gets the spam of this QueueConversationVideoEventTopicEmail.
+
+
+        :return: The spam of this QueueConversationVideoEventTopicEmail.
+        :rtype: bool
+        """
+        return self._spam
+
+    @spam.setter
+    def spam(self, spam):
+        """
+        Sets the spam of this QueueConversationVideoEventTopicEmail.
+
+
+        :param spam: The spam of this QueueConversationVideoEventTopicEmail.
+        :type: bool
+        """
+        
+        self._spam = spam
 
     @property
     def additional_properties(self):

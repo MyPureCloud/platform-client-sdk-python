@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_conversation_participant_code**](ConversationsApi.html#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
+|[**delete_conversation_participant_flaggedreason**](ConversationsApi.html#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
@@ -106,6 +107,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
+|[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
 {: class="table table-striped"}
@@ -157,6 +159,57 @@ except ApiException as e:
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
 | **add_communication_code** | **str**| addCommunicationCode |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversation_participant_flaggedreason"></a>
+
+##  delete_conversation_participant_flaggedreason(conversation_id, participant_id)
+
+
+
+Remove flagged reason from conversation participant.
+
+
+
+Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+
+try:
+    # Remove flagged reason from conversation participant.
+    api_instance.delete_conversation_participant_flaggedreason(conversation_id, participant_id)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->delete_conversation_participant_flaggedreason: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5221,6 +5274,57 @@ except ApiException as e:
 ### Return type
 
 [**MessageConversation**](MessageConversation.html)
+
+<a name="put_conversation_participant_flaggedreason"></a>
+
+##  put_conversation_participant_flaggedreason(conversation_id, participant_id)
+
+
+
+Set flagged reason on conversation participant to indicate bad conversation quality.
+
+
+
+Wraps PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+
+try:
+    # Set flagged reason on conversation participant to indicate bad conversation quality.
+    api_instance.put_conversation_participant_flaggedreason(conversation_id, participant_id)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->put_conversation_participant_flaggedreason: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_conversations_call_participant_communication_uuidata"></a>
 

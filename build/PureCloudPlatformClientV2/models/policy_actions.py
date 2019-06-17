@@ -43,6 +43,7 @@ class PolicyActions(object):
             'always_delete': 'bool',
             'assign_evaluations': 'list[EvaluationAssignment]',
             'assign_metered_evaluations': 'list[MeteredEvaluationAssignment]',
+            'assign_metered_assignment_by_agent': 'list[MeteredAssignmentByAgent]',
             'assign_calibrations': 'list[CalibrationAssignment]',
             'assign_surveys': 'list[SurveyAssignment]',
             'retention_duration': 'RetentionDuration',
@@ -56,6 +57,7 @@ class PolicyActions(object):
             'always_delete': 'alwaysDelete',
             'assign_evaluations': 'assignEvaluations',
             'assign_metered_evaluations': 'assignMeteredEvaluations',
+            'assign_metered_assignment_by_agent': 'assignMeteredAssignmentByAgent',
             'assign_calibrations': 'assignCalibrations',
             'assign_surveys': 'assignSurveys',
             'retention_duration': 'retentionDuration',
@@ -68,6 +70,7 @@ class PolicyActions(object):
         self._always_delete = None
         self._assign_evaluations = None
         self._assign_metered_evaluations = None
+        self._assign_metered_assignment_by_agent = None
         self._assign_calibrations = None
         self._assign_surveys = None
         self._retention_duration = None
@@ -188,6 +191,29 @@ class PolicyActions(object):
         """
         
         self._assign_metered_evaluations = assign_metered_evaluations
+
+    @property
+    def assign_metered_assignment_by_agent(self):
+        """
+        Gets the assign_metered_assignment_by_agent of this PolicyActions.
+
+
+        :return: The assign_metered_assignment_by_agent of this PolicyActions.
+        :rtype: list[MeteredAssignmentByAgent]
+        """
+        return self._assign_metered_assignment_by_agent
+
+    @assign_metered_assignment_by_agent.setter
+    def assign_metered_assignment_by_agent(self, assign_metered_assignment_by_agent):
+        """
+        Sets the assign_metered_assignment_by_agent of this PolicyActions.
+
+
+        :param assign_metered_assignment_by_agent: The assign_metered_assignment_by_agent of this PolicyActions.
+        :type: list[MeteredAssignmentByAgent]
+        """
+        
+        self._assign_metered_assignment_by_agent = assign_metered_assignment_by_agent
 
     @property
     def assign_calibrations(self):

@@ -426,6 +426,9 @@ from .models.create_share_request import CreateShareRequest
 from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
 from .models.create_user import CreateUser
+from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
+from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
+from .models.create_web_chat_message_request import CreateWebChatMessageRequest
 from .models.create_web_chat_request import CreateWebChatRequest
 from .models.create_work_plan import CreateWorkPlan
 from .models.create_work_plan_activity import CreateWorkPlanActivity
@@ -691,6 +694,7 @@ from .models.forecast_result_response import ForecastResultResponse
 from .models.forecast_source_day_pointer import ForecastSourceDayPointer
 from .models.forecast_time_series_result import ForecastTimeSeriesResult
 from .models.free_seating_configuration import FreeSeatingConfiguration
+from .models.gdpr_journey_customer import GDPRJourneyCustomer
 from .models.gdpr_request import GDPRRequest
 from .models.gdpr_request_entity_listing import GDPRRequestEntityListing
 from .models.gdpr_subject import GDPRSubject
@@ -726,6 +730,7 @@ from .models.group_search_criteria import GroupSearchCriteria
 from .models.group_search_request import GroupSearchRequest
 from .models.group_update import GroupUpdate
 from .models.groups_search_response import GroupsSearchResponse
+from .models.guest_member_info import GuestMemberInfo
 from .models.headcount_forecast import HeadcountForecast
 from .models.headcount_interval import HeadcountInterval
 from .models.help_link import HelpLink
@@ -775,6 +780,7 @@ from .models.journey_action_map import JourneyActionMap
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
+from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
 from .models.key_rotation_schedule import KeyRotationSchedule
@@ -831,6 +837,7 @@ from .models.logical_interface_entity_listing import LogicalInterfaceEntityListi
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
 from .models.management_unit_settings import ManagementUnitSettings
+from .models.manager import Manager
 from .models.max_participants import MaxParticipants
 from .models.media_participant_request import MediaParticipantRequest
 from .models.media_policies import MediaPolicies
@@ -856,8 +863,10 @@ from .models.message_sticker import MessageSticker
 from .models.message_sticker_attachment import MessageStickerAttachment
 from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
+from .models.meta import Meta
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
+from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment
 from .models.modeling_processing_error import ModelingProcessingError
 from .models.modeling_status_response import ModelingStatusResponse
@@ -913,7 +922,10 @@ from .models.partial_upload_response import PartialUploadResponse
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
 from .models.participant_basic import ParticipantBasic
+from .models.patch_operation import PatchOperation
+from .models.patch_request import PatchRequest
 from .models.patch_user import PatchUser
+from .models.path import Path
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permissions import Permissions
 from .models.phone import Phone
@@ -928,6 +940,7 @@ from .models.phone_number_column import PhoneNumberColumn
 from .models.phone_number_status import PhoneNumberStatus
 from .models.phone_status import PhoneStatus
 from .models.phones_reboot import PhonesReboot
+from .models.photo import Photo
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
 from .models.policy import Policy
@@ -1220,6 +1233,20 @@ from .models.scheduling_status_response import SchedulingStatusResponse
 from .models.schema_category import SchemaCategory
 from .models.schema_category_entity_listing import SchemaCategoryEntityListing
 from .models.schema_reference_entity_listing import SchemaReferenceEntityListing
+from .models.scim_email import ScimEmail
+from .models.scim_list_response import ScimListResponse
+from .models.scim_metadata import ScimMetadata
+from .models.scim_phone_number import ScimPhoneNumber
+from .models.scim_resource import ScimResource
+from .models.scim_service_provider_config import ScimServiceProviderConfig
+from .models.scim_v2_create_user import ScimV2CreateUser
+from .models.scim_v2_enterprise_user import ScimV2EnterpriseUser
+from .models.scim_v2_group import ScimV2Group
+from .models.scim_v2_group_reference import ScimV2GroupReference
+from .models.scim_v2_member_reference import ScimV2MemberReference
+from .models.scim_v2_patch_operation import ScimV2PatchOperation
+from .models.scim_v2_patch_request import ScimV2PatchRequest
+from .models.scim_v2_user import ScimV2User
 from .models.scorable_survey import ScorableSurvey
 from .models.screen_recording_session import ScreenRecordingSession
 from .models.screen_recording_session_listing import ScreenRecordingSessionListing
@@ -1275,6 +1302,7 @@ from .models.sms_phone_number import SmsPhoneNumber
 from .models.sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .models.sms_phone_number_provision import SmsPhoneNumberProvision
 from .models.social_expression import SocialExpression
+from .models.social_handle import SocialHandle
 from .models.sort_item import SortItem
 from .models.stat_event_campaign_topic_datum import StatEventCampaignTopicDatum
 from .models.stat_event_campaign_topic_metric import StatEventCampaignTopicMetric
@@ -1467,9 +1495,18 @@ from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
 from .models.web_chat_config import WebChatConfig
+from .models.web_chat_conversation import WebChatConversation
 from .models.web_chat_deployment import WebChatDeployment
 from .models.web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
+from .models.web_chat_guest_media_request import WebChatGuestMediaRequest
+from .models.web_chat_guest_media_request_entity_list import WebChatGuestMediaRequestEntityList
+from .models.web_chat_member_info import WebChatMemberInfo
+from .models.web_chat_member_info_entity_list import WebChatMemberInfoEntityList
+from .models.web_chat_message import WebChatMessage
+from .models.web_chat_message_entity_list import WebChatMessageEntityList
+from .models.web_chat_routing_target import WebChatRoutingTarget
 from .models.web_chat_settings import WebChatSettings
+from .models.web_chat_typing import WebChatTyping
 from .models.week_schedule import WeekSchedule
 from .models.week_schedule_generation_result import WeekScheduleGenerationResult
 from .models.week_schedule_list_item_response import WeekScheduleListItemResponse
@@ -1526,6 +1563,7 @@ from .models.whats_app_id import WhatsAppId
 from .models.widget_client_config import WidgetClientConfig
 from .models.widget_client_config_third_party import WidgetClientConfigThirdParty
 from .models.widget_client_config_v1 import WidgetClientConfigV1
+from .models.widget_client_config_v1_http import WidgetClientConfigV1Http
 from .models.widget_client_config_v2 import WidgetClientConfigV2
 from .models.widget_deployment import WidgetDeployment
 from .models.widget_deployment_entity_listing import WidgetDeploymentEntityListing
@@ -1583,6 +1621,7 @@ from .apis.quality_api import QualityApi
 from .apis.recording_api import RecordingApi
 from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
+from .apis.scim_api import SCIMApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.stations_api import StationsApi

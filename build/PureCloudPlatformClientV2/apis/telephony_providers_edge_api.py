@@ -5044,6 +5044,7 @@ class TelephonyProvidersEdgeApi(object):
         :param str phone_hardware_id: Filter by phone_hardwareId
         :param str lines_id: Filter by lines.id
         :param str lines_name: Filter by lines.name
+        :param str name: Name of the Phone to filter by
         :param list[str] expand: Fields to expand in the response, comma-separated
         :param list[str] fields: Fields and properties to get, comma-separated
         :return: PhoneEntityListing
@@ -5051,7 +5052,7 @@ class TelephonyProvidersEdgeApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'site_id', 'web_rtc_user_id', 'phone_base_settings_id', 'lines_logged_in_user_id', 'lines_default_for_user_id', 'phone_hardware_id', 'lines_id', 'lines_name', 'expand', 'fields']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'site_id', 'web_rtc_user_id', 'phone_base_settings_id', 'lines_logged_in_user_id', 'lines_default_for_user_id', 'phone_hardware_id', 'lines_id', 'lines_name', 'name', 'expand', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -5094,6 +5095,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['lines.id'] = params['lines_id']
         if 'lines_name' in params:
             query_params['lines.name'] = params['lines_name']
+        if 'name' in params:
+            query_params['name'] = params['name']
         if 'expand' in params:
             query_params['expand'] = params['expand']
         if 'fields' in params:

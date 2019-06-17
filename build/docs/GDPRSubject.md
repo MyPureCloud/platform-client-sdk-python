@@ -11,6 +11,8 @@ title: GDPRSubject
 | **user_id** | **str** |  | [optional] |
 | **external_contact_id** | **str** |  | [optional] |
 | **dialer_contact_id** | [**DialerContactId**](DialerContactId.html) |  | [optional] |
+| **journey_customer** | [**GDPRJourneyCustomer**](GDPRJourneyCustomer.html) |  | [optional] |
+| **social_handle** | [**SocialHandle**](SocialHandle.html) |  | [optional] |
 | **addresses** | **list[str]** |  | [optional] |
 | **phone_numbers** | **list[str]** |  | [optional] |
 | **email_addresses** | **list[str]** |  | [optional] |

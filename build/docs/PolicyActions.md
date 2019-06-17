@@ -12,6 +12,7 @@ title: PolicyActions
 | **always_delete** | **bool** | true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default = false | [optional] |
 | **assign_evaluations** | [**list[EvaluationAssignment]**](EvaluationAssignment.html) |  | [optional] |
 | **assign_metered_evaluations** | [**list[MeteredEvaluationAssignment]**](MeteredEvaluationAssignment.html) |  | [optional] |
+| **assign_metered_assignment_by_agent** | [**list[MeteredAssignmentByAgent]**](MeteredAssignmentByAgent.html) |  | [optional] |
 | **assign_calibrations** | [**list[CalibrationAssignment]**](CalibrationAssignment.html) |  | [optional] |
 | **assign_surveys** | [**list[SurveyAssignment]**](SurveyAssignment.html) |  | [optional] |
 | **retention_duration** | [**RetentionDuration**](RetentionDuration.html) |  | [optional] |
