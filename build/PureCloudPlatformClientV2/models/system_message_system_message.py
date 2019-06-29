@@ -46,7 +46,7 @@ class SystemMessageSystemMessage(object):
             'oauth_client_id': 'str',
             'reason': 'str',
             'message': 'str',
-            'data': 'dict(str, str)'
+            'data': 'object'
         }
 
         self.attribute_map = {
@@ -114,7 +114,7 @@ class SystemMessageSystemMessage(object):
         :param system_topic_type: The system_topic_type of this SystemMessageSystemMessage.
         :type: str
         """
-        allowed_values = ["no_longer_subscribed"]
+        allowed_values = ["no_longer_subscribed", "subscription_changed"]
         if system_topic_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for system_topic_type -> " + system_topic_type
             self._system_topic_type = "outdated_sdk_version"
@@ -270,7 +270,7 @@ class SystemMessageSystemMessage(object):
 
 
         :return: The data of this SystemMessageSystemMessage.
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._data
 
@@ -281,7 +281,7 @@ class SystemMessageSystemMessage(object):
 
 
         :param data: The data of this SystemMessageSystemMessage.
-        :type: dict(str, str)
+        :type: object
         """
         
         self._data = data

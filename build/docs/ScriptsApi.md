@@ -249,7 +249,7 @@ except ApiException as e:
 
 <a name="get_scripts_published"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published(script_id, page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
+## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
 
 
 
@@ -276,7 +276,6 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ScriptsApi()
-script_id = 'script_id_example' # str | Script ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 expand = 'expand_example' # str | Expand (optional)
@@ -287,7 +286,7 @@ script_data_version = 'script_data_version_example' # str | Advanced usage - con
 
 try:
     # Get the published scripts.
-    api_response = api_instance.get_scripts_published(script_id, page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
+    api_response = api_instance.get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ScriptsApi->get_scripts_published: %s\n" % e
@@ -298,7 +297,6 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **script_id** | **str**| Script ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **expand** | **str**| Expand | [optional]  |

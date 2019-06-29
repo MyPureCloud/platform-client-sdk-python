@@ -86,7 +86,8 @@ class AnalyticsSession(object):
             'journey_action_id': 'str',
             'journey_action_map_id': 'str',
             'journey_action_map_version': 'str',
-            'protocol_call_id': 'str'
+            'protocol_call_id': 'str',
+            'provider': 'str'
         }
 
         self.attribute_map = {
@@ -138,7 +139,8 @@ class AnalyticsSession(object):
             'journey_action_id': 'journeyActionId',
             'journey_action_map_id': 'journeyActionMapId',
             'journey_action_map_version': 'journeyActionMapVersion',
-            'protocol_call_id': 'protocolCallId'
+            'protocol_call_id': 'protocolCallId',
+            'provider': 'provider'
         }
 
         self._media_type = None
@@ -190,6 +192,7 @@ class AnalyticsSession(object):
         self._journey_action_map_id = None
         self._journey_action_map_version = None
         self._protocol_call_id = None
+        self._provider = None
 
     @property
     def media_type(self):
@@ -1329,6 +1332,29 @@ class AnalyticsSession(object):
         """
         
         self._protocol_call_id = protocol_call_id
+
+    @property
+    def provider(self):
+        """
+        Gets the provider of this AnalyticsSession.
+        The source provider for the communication
+
+        :return: The provider of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """
+        Sets the provider of this AnalyticsSession.
+        The source provider for the communication
+
+        :param provider: The provider of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._provider = provider
 
     def to_dict(self):
         """

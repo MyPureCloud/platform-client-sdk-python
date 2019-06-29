@@ -54,7 +54,7 @@ class WfmAverageSpeedOfAnswer(object):
     def include(self):
         """
         Gets the include of this WfmAverageSpeedOfAnswer.
-        Whether to include average speed of answer (ASA) in this service goal group's configuration
+        Whether to include average speed of answer (ASA) in the associated configuration
 
         :return: The include of this WfmAverageSpeedOfAnswer.
         :rtype: bool
@@ -65,7 +65,7 @@ class WfmAverageSpeedOfAnswer(object):
     def include(self, include):
         """
         Sets the include of this WfmAverageSpeedOfAnswer.
-        Whether to include average speed of answer (ASA) in this service goal group's configuration
+        Whether to include average speed of answer (ASA) in the associated configuration
 
         :param include: The include of this WfmAverageSpeedOfAnswer.
         :type: bool

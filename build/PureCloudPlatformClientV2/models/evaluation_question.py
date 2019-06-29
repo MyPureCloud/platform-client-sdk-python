@@ -46,8 +46,8 @@ class EvaluationQuestion(object):
             'comments_required': 'bool',
             'visibility_condition': 'VisibilityCondition',
             'answer_options': 'list[AnswerOption]',
-            'is_critical': 'bool',
-            'is_kill': 'bool'
+            'is_kill': 'bool',
+            'is_critical': 'bool'
         }
 
         self.attribute_map = {
@@ -59,8 +59,8 @@ class EvaluationQuestion(object):
             'comments_required': 'commentsRequired',
             'visibility_condition': 'visibilityCondition',
             'answer_options': 'answerOptions',
-            'is_critical': 'isCritical',
-            'is_kill': 'isKill'
+            'is_kill': 'isKill',
+            'is_critical': 'isCritical'
         }
 
         self._id = None
@@ -71,8 +71,8 @@ class EvaluationQuestion(object):
         self._comments_required = None
         self._visibility_condition = None
         self._answer_options = None
-        self._is_critical = None
         self._is_kill = None
+        self._is_critical = None
 
     @property
     def id(self):
@@ -263,29 +263,6 @@ class EvaluationQuestion(object):
         self._answer_options = answer_options
 
     @property
-    def is_critical(self):
-        """
-        Gets the is_critical of this EvaluationQuestion.
-
-
-        :return: The is_critical of this EvaluationQuestion.
-        :rtype: bool
-        """
-        return self._is_critical
-
-    @is_critical.setter
-    def is_critical(self, is_critical):
-        """
-        Sets the is_critical of this EvaluationQuestion.
-
-
-        :param is_critical: The is_critical of this EvaluationQuestion.
-        :type: bool
-        """
-        
-        self._is_critical = is_critical
-
-    @property
     def is_kill(self):
         """
         Gets the is_kill of this EvaluationQuestion.
@@ -307,6 +284,29 @@ class EvaluationQuestion(object):
         """
         
         self._is_kill = is_kill
+
+    @property
+    def is_critical(self):
+        """
+        Gets the is_critical of this EvaluationQuestion.
+
+
+        :return: The is_critical of this EvaluationQuestion.
+        :rtype: bool
+        """
+        return self._is_critical
+
+    @is_critical.setter
+    def is_critical(self, is_critical):
+        """
+        Sets the is_critical of this EvaluationQuestion.
+
+
+        :param is_critical: The is_critical of this EvaluationQuestion.
+        :type: bool
+        """
+        
+        self._is_critical = is_critical
 
     def to_dict(self):
         """

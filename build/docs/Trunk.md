@@ -25,6 +25,15 @@ title: Trunk
 | **edge_group** | [**UriReference**](UriReference.html) | The edge group associated with this trunk. | [optional] |
 | **in_service** | **bool** | True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base. | [optional] |
 | **enabled** | **bool** | True if the Edge used by this trunk is in-service | [optional] |
+| **logical_interface** | [**UriReference**](UriReference.html) | The Logical Interface on the Edge to which the trunk is assigned. | [optional] |
+| **connected_status** | [**TrunkConnectedStatus**](TrunkConnectedStatus.html) | The connected status of the trunk | [optional] |
+| **options_status** | [**list[TrunkMetricsOptions]**](TrunkMetricsOptions.html) | The trunk optionsStatus | [optional] |
+| **registers_status** | [**list[TrunkMetricsRegisters]**](TrunkMetricsRegisters.html) | The trunk registersStatus | [optional] |
+| **ip_status** | [**TrunkMetricsNetworkTypeIp**](TrunkMetricsNetworkTypeIp.html) | The trunk ipStatus | [optional] |
+| **options_enabled_status** | **str** | Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0. | [optional] |
+| **registers_enabled_status** | **str** | Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0. | [optional] |
+| **family** | **int** | The IP Network Family of the trunk | [optional] |
+| **proxy_address_list** | **list[str]** | The list of proxy addresses (ports if provided) for the trunk | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -63,6 +63,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
             'wrapup': 'Wrapup',
+            'conversation_routing_data': 'ConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
             'attributes': 'dict(str, str)',
@@ -106,6 +107,7 @@ class Participant(object):
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup_skipped': 'wrapupSkipped',
             'wrapup': 'wrapup',
+            'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
             'attributes': 'attributes',
@@ -148,6 +150,7 @@ class Participant(object):
         self._wrapup_timeout_ms = None
         self._wrapup_skipped = None
         self._wrapup = None
+        self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
         self._attributes = None
@@ -742,6 +745,29 @@ class Participant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this Participant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this Participant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this Participant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this Participant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def alerting_timeout_ms(self):

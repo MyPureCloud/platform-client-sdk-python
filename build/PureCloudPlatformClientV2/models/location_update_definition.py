@@ -44,7 +44,8 @@ class LocationUpdateDefinition(object):
             'emergency_number': 'LocationEmergencyNumber',
             'state': 'str',
             'version': 'int',
-            'path': 'list[str]'
+            'path': 'list[str]',
+            'notes': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class LocationUpdateDefinition(object):
             'emergency_number': 'emergencyNumber',
             'state': 'state',
             'version': 'version',
-            'path': 'path'
+            'path': 'path',
+            'notes': 'notes'
         }
 
         self._name = None
@@ -64,6 +66,7 @@ class LocationUpdateDefinition(object):
         self._state = None
         self._version = None
         self._path = None
+        self._notes = None
 
     @property
     def name(self):
@@ -229,6 +232,29 @@ class LocationUpdateDefinition(object):
         """
         
         self._path = path
+
+    @property
+    def notes(self):
+        """
+        Gets the notes of this LocationUpdateDefinition.
+
+
+        :return: The notes of this LocationUpdateDefinition.
+        :rtype: str
+        """
+        return self._notes
+
+    @notes.setter
+    def notes(self, notes):
+        """
+        Sets the notes of this LocationUpdateDefinition.
+
+
+        :param notes: The notes of this LocationUpdateDefinition.
+        :type: str
+        """
+        
+        self._notes = notes
 
     def to_dict(self):
         """

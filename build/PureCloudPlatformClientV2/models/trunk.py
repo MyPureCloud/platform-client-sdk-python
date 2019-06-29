@@ -56,6 +56,15 @@ class Trunk(object):
             'edge_group': 'UriReference',
             'in_service': 'bool',
             'enabled': 'bool',
+            'logical_interface': 'UriReference',
+            'connected_status': 'TrunkConnectedStatus',
+            'options_status': 'list[TrunkMetricsOptions]',
+            'registers_status': 'list[TrunkMetricsRegisters]',
+            'ip_status': 'TrunkMetricsNetworkTypeIp',
+            'options_enabled_status': 'str',
+            'registers_enabled_status': 'str',
+            'family': 'int',
+            'proxy_address_list': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -78,6 +87,15 @@ class Trunk(object):
             'edge_group': 'edgeGroup',
             'in_service': 'inService',
             'enabled': 'enabled',
+            'logical_interface': 'logicalInterface',
+            'connected_status': 'connectedStatus',
+            'options_status': 'optionsStatus',
+            'registers_status': 'registersStatus',
+            'ip_status': 'ipStatus',
+            'options_enabled_status': 'optionsEnabledStatus',
+            'registers_enabled_status': 'registersEnabledStatus',
+            'family': 'family',
+            'proxy_address_list': 'proxyAddressList',
             'self_uri': 'selfUri'
         }
 
@@ -99,6 +117,15 @@ class Trunk(object):
         self._edge_group = None
         self._in_service = None
         self._enabled = None
+        self._logical_interface = None
+        self._connected_status = None
+        self._options_status = None
+        self._registers_status = None
+        self._ip_status = None
+        self._options_enabled_status = None
+        self._registers_enabled_status = None
+        self._family = None
+        self._proxy_address_list = None
         self._self_uri = None
 
     @property
@@ -522,6 +549,221 @@ class Trunk(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def logical_interface(self):
+        """
+        Gets the logical_interface of this Trunk.
+        The Logical Interface on the Edge to which the trunk is assigned.
+
+        :return: The logical_interface of this Trunk.
+        :rtype: UriReference
+        """
+        return self._logical_interface
+
+    @logical_interface.setter
+    def logical_interface(self, logical_interface):
+        """
+        Sets the logical_interface of this Trunk.
+        The Logical Interface on the Edge to which the trunk is assigned.
+
+        :param logical_interface: The logical_interface of this Trunk.
+        :type: UriReference
+        """
+        
+        self._logical_interface = logical_interface
+
+    @property
+    def connected_status(self):
+        """
+        Gets the connected_status of this Trunk.
+        The connected status of the trunk
+
+        :return: The connected_status of this Trunk.
+        :rtype: TrunkConnectedStatus
+        """
+        return self._connected_status
+
+    @connected_status.setter
+    def connected_status(self, connected_status):
+        """
+        Sets the connected_status of this Trunk.
+        The connected status of the trunk
+
+        :param connected_status: The connected_status of this Trunk.
+        :type: TrunkConnectedStatus
+        """
+        
+        self._connected_status = connected_status
+
+    @property
+    def options_status(self):
+        """
+        Gets the options_status of this Trunk.
+        The trunk optionsStatus
+
+        :return: The options_status of this Trunk.
+        :rtype: list[TrunkMetricsOptions]
+        """
+        return self._options_status
+
+    @options_status.setter
+    def options_status(self, options_status):
+        """
+        Sets the options_status of this Trunk.
+        The trunk optionsStatus
+
+        :param options_status: The options_status of this Trunk.
+        :type: list[TrunkMetricsOptions]
+        """
+        
+        self._options_status = options_status
+
+    @property
+    def registers_status(self):
+        """
+        Gets the registers_status of this Trunk.
+        The trunk registersStatus
+
+        :return: The registers_status of this Trunk.
+        :rtype: list[TrunkMetricsRegisters]
+        """
+        return self._registers_status
+
+    @registers_status.setter
+    def registers_status(self, registers_status):
+        """
+        Sets the registers_status of this Trunk.
+        The trunk registersStatus
+
+        :param registers_status: The registers_status of this Trunk.
+        :type: list[TrunkMetricsRegisters]
+        """
+        
+        self._registers_status = registers_status
+
+    @property
+    def ip_status(self):
+        """
+        Gets the ip_status of this Trunk.
+        The trunk ipStatus
+
+        :return: The ip_status of this Trunk.
+        :rtype: TrunkMetricsNetworkTypeIp
+        """
+        return self._ip_status
+
+    @ip_status.setter
+    def ip_status(self, ip_status):
+        """
+        Sets the ip_status of this Trunk.
+        The trunk ipStatus
+
+        :param ip_status: The ip_status of this Trunk.
+        :type: TrunkMetricsNetworkTypeIp
+        """
+        
+        self._ip_status = ip_status
+
+    @property
+    def options_enabled_status(self):
+        """
+        Gets the options_enabled_status of this Trunk.
+        Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
+
+        :return: The options_enabled_status of this Trunk.
+        :rtype: str
+        """
+        return self._options_enabled_status
+
+    @options_enabled_status.setter
+    def options_enabled_status(self, options_enabled_status):
+        """
+        Sets the options_enabled_status of this Trunk.
+        Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
+
+        :param options_enabled_status: The options_enabled_status of this Trunk.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
+        if options_enabled_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for options_enabled_status -> " + options_enabled_status
+            self._options_enabled_status = "outdated_sdk_version"
+        else:
+            self._options_enabled_status = options_enabled_status
+
+    @property
+    def registers_enabled_status(self):
+        """
+        Gets the registers_enabled_status of this Trunk.
+        Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
+
+        :return: The registers_enabled_status of this Trunk.
+        :rtype: str
+        """
+        return self._registers_enabled_status
+
+    @registers_enabled_status.setter
+    def registers_enabled_status(self, registers_enabled_status):
+        """
+        Sets the registers_enabled_status of this Trunk.
+        Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
+
+        :param registers_enabled_status: The registers_enabled_status of this Trunk.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
+        if registers_enabled_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for registers_enabled_status -> " + registers_enabled_status
+            self._registers_enabled_status = "outdated_sdk_version"
+        else:
+            self._registers_enabled_status = registers_enabled_status
+
+    @property
+    def family(self):
+        """
+        Gets the family of this Trunk.
+        The IP Network Family of the trunk
+
+        :return: The family of this Trunk.
+        :rtype: int
+        """
+        return self._family
+
+    @family.setter
+    def family(self, family):
+        """
+        Sets the family of this Trunk.
+        The IP Network Family of the trunk
+
+        :param family: The family of this Trunk.
+        :type: int
+        """
+        
+        self._family = family
+
+    @property
+    def proxy_address_list(self):
+        """
+        Gets the proxy_address_list of this Trunk.
+        The list of proxy addresses (ports if provided) for the trunk
+
+        :return: The proxy_address_list of this Trunk.
+        :rtype: list[str]
+        """
+        return self._proxy_address_list
+
+    @proxy_address_list.setter
+    def proxy_address_list(self, proxy_address_list):
+        """
+        Sets the proxy_address_list of this Trunk.
+        The list of proxy addresses (ports if provided) for the trunk
+
+        :param proxy_address_list: The proxy_address_list of this Trunk.
+        :type: list[str]
+        """
+        
+        self._proxy_address_list = proxy_address_list
 
     @property
     def self_uri(self):

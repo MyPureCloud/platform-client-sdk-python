@@ -12,6 +12,7 @@ title: WfmUserNotification
 | **timestamp** | **datetime** | The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **type** | **str** | The type of this notification | [optional] |
 | **shift_trade** | [**ShiftTradeNotification**](ShiftTradeNotification.html) | A shift trade notification.  Only set if type == ShiftTrade | [optional] |
+| **time_off_request** | [**TimeOffRequestNotification**](TimeOffRequestNotification.html) | A time off request notification.  Only set if type == TimeOffRequest | [optional] |
 | **marked_as_read** | **bool** | Whether this notification has been marked \&quot;read\&quot; | |
 | **agent_notification** | **bool** | Whether this notification is for an agent | [optional] |
 | **other_notification_ids_in_group** | **list[str]** | Other notification IDs in group.  This field is only populated in real-time notifications | [optional] |

@@ -43,6 +43,7 @@ class WfmUserNotification(object):
             'timestamp': 'datetime',
             'type': 'str',
             'shift_trade': 'ShiftTradeNotification',
+            'time_off_request': 'TimeOffRequestNotification',
             'marked_as_read': 'bool',
             'agent_notification': 'bool',
             'other_notification_ids_in_group': 'list[str]'
@@ -54,6 +55,7 @@ class WfmUserNotification(object):
             'timestamp': 'timestamp',
             'type': 'type',
             'shift_trade': 'shiftTrade',
+            'time_off_request': 'timeOffRequest',
             'marked_as_read': 'markedAsRead',
             'agent_notification': 'agentNotification',
             'other_notification_ids_in_group': 'otherNotificationIdsInGroup'
@@ -64,6 +66,7 @@ class WfmUserNotification(object):
         self._timestamp = None
         self._type = None
         self._shift_trade = None
+        self._time_off_request = None
         self._marked_as_read = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
@@ -157,7 +160,7 @@ class WfmUserNotification(object):
         :param type: The type of this WfmUserNotification.
         :type: str
         """
-        allowed_values = ["ShiftTrade"]
+        allowed_values = ["ShiftTrade", "TimeOffRequest"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -186,6 +189,29 @@ class WfmUserNotification(object):
         """
         
         self._shift_trade = shift_trade
+
+    @property
+    def time_off_request(self):
+        """
+        Gets the time_off_request of this WfmUserNotification.
+        A time off request notification.  Only set if type == TimeOffRequest
+
+        :return: The time_off_request of this WfmUserNotification.
+        :rtype: TimeOffRequestNotification
+        """
+        return self._time_off_request
+
+    @time_off_request.setter
+    def time_off_request(self, time_off_request):
+        """
+        Sets the time_off_request of this WfmUserNotification.
+        A time off request notification.  Only set if type == TimeOffRequest
+
+        :param time_off_request: The time_off_request of this WfmUserNotification.
+        :type: TimeOffRequestNotification
+        """
+        
+        self._time_off_request = time_off_request
 
     @property
     def marked_as_read(self):

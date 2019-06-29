@@ -57,6 +57,8 @@ class Recording(object):
             'archive_date': 'datetime',
             'archive_medium': 'str',
             'delete_date': 'datetime',
+            'output_duration_ms': 'int',
+            'output_size_in_bytes': 'int',
             'max_allowed_restorations_for_org': 'int',
             'remaining_restorations_allowed_for_org': 'int',
             'session_id': 'str',
@@ -84,6 +86,8 @@ class Recording(object):
             'archive_date': 'archiveDate',
             'archive_medium': 'archiveMedium',
             'delete_date': 'deleteDate',
+            'output_duration_ms': 'outputDurationMs',
+            'output_size_in_bytes': 'outputSizeInBytes',
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
             'remaining_restorations_allowed_for_org': 'remainingRestorationsAllowedForOrg',
             'session_id': 'sessionId',
@@ -110,6 +114,8 @@ class Recording(object):
         self._archive_date = None
         self._archive_medium = None
         self._delete_date = None
+        self._output_duration_ms = None
+        self._output_size_in_bytes = None
         self._max_allowed_restorations_for_org = None
         self._remaining_restorations_allowed_for_org = None
         self._session_id = None
@@ -560,6 +566,52 @@ class Recording(object):
         """
         
         self._delete_date = delete_date
+
+    @property
+    def output_duration_ms(self):
+        """
+        Gets the output_duration_ms of this Recording.
+        Duration of transcoded media in milliseconds
+
+        :return: The output_duration_ms of this Recording.
+        :rtype: int
+        """
+        return self._output_duration_ms
+
+    @output_duration_ms.setter
+    def output_duration_ms(self, output_duration_ms):
+        """
+        Sets the output_duration_ms of this Recording.
+        Duration of transcoded media in milliseconds
+
+        :param output_duration_ms: The output_duration_ms of this Recording.
+        :type: int
+        """
+        
+        self._output_duration_ms = output_duration_ms
+
+    @property
+    def output_size_in_bytes(self):
+        """
+        Gets the output_size_in_bytes of this Recording.
+        Size of transcoded media in bytes
+
+        :return: The output_size_in_bytes of this Recording.
+        :rtype: int
+        """
+        return self._output_size_in_bytes
+
+    @output_size_in_bytes.setter
+    def output_size_in_bytes(self, output_size_in_bytes):
+        """
+        Sets the output_size_in_bytes of this Recording.
+        Size of transcoded media in bytes
+
+        :param output_size_in_bytes: The output_size_in_bytes of this Recording.
+        :type: int
+        """
+        
+        self._output_size_in_bytes = output_size_in_bytes
 
     @property
     def max_allowed_restorations_for_org(self):

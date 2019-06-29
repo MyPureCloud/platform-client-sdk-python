@@ -172,7 +172,7 @@ Wraps PATCH /api/v2/organizations/features/{featureName}
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 ### Example
 
@@ -225,7 +225,7 @@ Wraps PUT /api/v2/organizations/me
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 ### Example
 
@@ -276,7 +276,7 @@ Wraps PUT /api/v2/organizations/whitelist
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 ### Example
 

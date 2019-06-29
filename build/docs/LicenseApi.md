@@ -10,7 +10,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_license_definition**](LicenseApi.html#get_license_definition) | Get PureCloud license definition.|
 |[**get_license_definitions**](LicenseApi.html#get_license_definitions) | Get all PureCloud license definitions available for the organization.|
-|[**get_license_organization**](LicenseApi.html#get_license_organization) | Get license assignments for the organization.|
 |[**get_license_toggle**](LicenseApi.html#get_license_toggle) | Get PureCloud license feature toggle value.|
 |[**get_license_user**](LicenseApi.html#get_license_user) | Get licenses for specified user.|
 |[**get_license_users**](LicenseApi.html#get_license_users) | Get a page of users and their licenses|
@@ -33,8 +32,6 @@ Wraps GET /api/v2/license/definitions/{licenseId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -86,8 +83,6 @@ Wraps GET /api/v2/license/definitions
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -121,55 +116,6 @@ This endpoint does not need any parameter.
 
 [**list[LicenseDefinition]**](LicenseDefinition.html)
 
-<a name="get_license_organization"></a>
-
-## [**LicenseOrganization**](LicenseOrganization.html) get_license_organization()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get license assignments for the organization.
-
-
-
-Wraps GET /api/v2/license/organization 
-
-Requires ANY permissions: 
-
-* admin
-* role_manager
-* authorization:grant:add
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.LicenseApi()
-
-try:
-    # Get license assignments for the organization.
-    api_response = api_instance.get_license_organization()
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_organization: %s\n" % e
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-{: class="table table-striped"}
-
-### Return type
-
-[**LicenseOrganization**](LicenseOrganization.html)
-
 <a name="get_license_toggle"></a>
 
 ## [**LicenseOrgToggle**](LicenseOrgToggle.html) get_license_toggle(feature_name)
@@ -184,8 +130,6 @@ Wraps GET /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -237,8 +181,6 @@ Wraps GET /api/v2/license/users/{userId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -288,11 +230,8 @@ Retrieve a page of users in an organization along with the licenses they possess
 
 Wraps GET /api/v2/license/users 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* admin
-* role_manager
-* authorization:grant:add
 
 ### Example
 
@@ -345,8 +284,6 @@ Wraps POST /api/v2/license/organization
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -398,8 +335,6 @@ Wraps POST /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example

@@ -47,6 +47,8 @@ class ChatMessage(object):
             'message': 'str',
             'type': 'str',
             'body_type': 'str',
+            'sender_communication_id': 'str',
+            'participant_purpose': 'str',
             'user': 'ChatMessageUser'
         }
 
@@ -60,6 +62,8 @@ class ChatMessage(object):
             'message': 'message',
             'type': 'type',
             'body_type': 'bodyType',
+            'sender_communication_id': 'senderCommunicationId',
+            'participant_purpose': 'participantPurpose',
             'user': 'user'
         }
 
@@ -72,6 +76,8 @@ class ChatMessage(object):
         self._message = None
         self._type = None
         self._body_type = None
+        self._sender_communication_id = None
+        self._participant_purpose = None
         self._user = None
 
     @property
@@ -284,6 +290,52 @@ class ChatMessage(object):
             self._body_type = "outdated_sdk_version"
         else:
             self._body_type = body_type
+
+    @property
+    def sender_communication_id(self):
+        """
+        Gets the sender_communication_id of this ChatMessage.
+        Communication of sender (v2 chats only)
+
+        :return: The sender_communication_id of this ChatMessage.
+        :rtype: str
+        """
+        return self._sender_communication_id
+
+    @sender_communication_id.setter
+    def sender_communication_id(self, sender_communication_id):
+        """
+        Sets the sender_communication_id of this ChatMessage.
+        Communication of sender (v2 chats only)
+
+        :param sender_communication_id: The sender_communication_id of this ChatMessage.
+        :type: str
+        """
+        
+        self._sender_communication_id = sender_communication_id
+
+    @property
+    def participant_purpose(self):
+        """
+        Gets the participant_purpose of this ChatMessage.
+        Participant purpose of sender (v2 chats only)
+
+        :return: The participant_purpose of this ChatMessage.
+        :rtype: str
+        """
+        return self._participant_purpose
+
+    @participant_purpose.setter
+    def participant_purpose(self, participant_purpose):
+        """
+        Sets the participant_purpose of this ChatMessage.
+        Participant purpose of sender (v2 chats only)
+
+        :param participant_purpose: The participant_purpose of this ChatMessage.
+        :type: str
+        """
+        
+        self._participant_purpose = participant_purpose
 
     @property
     def user(self):

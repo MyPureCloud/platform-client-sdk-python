@@ -124,7 +124,7 @@ class DataSchema(object):
     def version(self):
         """
         Gets the version of this DataSchema.
-        The schema's version. Required for updates.
+        The schema's version, a positive integer. Required for updates.
 
         :return: The version of this DataSchema.
         :rtype: int
@@ -135,7 +135,7 @@ class DataSchema(object):
     def version(self, version):
         """
         Sets the version of this DataSchema.
-        The schema's version. Required for updates.
+        The schema's version, a positive integer. Required for updates.
 
         :param version: The version of this DataSchema.
         :type: int

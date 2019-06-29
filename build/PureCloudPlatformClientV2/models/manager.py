@@ -46,6 +46,7 @@ class Manager(object):
             'phone_numbers': 'list[ScimPhoneNumber]',
             'emails': 'list[ScimEmail]',
             'photos': 'list[Photo]',
+            'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
             'meta': 'ScimMetadata',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser',
@@ -62,6 +63,7 @@ class Manager(object):
             'phone_numbers': 'phoneNumbers',
             'emails': 'emails',
             'photos': 'photos',
+            'external_id': 'externalId',
             'groups': 'groups',
             'meta': 'meta',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
@@ -77,6 +79,7 @@ class Manager(object):
         self._phone_numbers = None
         self._emails = None
         self._photos = None
+        self._external_id = None
         self._groups = None
         self._meta = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
@@ -266,6 +269,29 @@ class Manager(object):
         """
         
         self._photos = photos
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this Manager.
+        External ID
+
+        :return: The external_id of this Manager.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this Manager.
+        External ID
+
+        :param external_id: The external_id of this Manager.
+        :type: str
+        """
+        
+        self._external_id = external_id
 
     @property
     def groups(self):

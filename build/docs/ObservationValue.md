@@ -22,6 +22,7 @@ title: ObservationValue
 | **address_to** | **str** | The address receiving an action | [optional] |
 | **ani** | **str** | Automatic Number Identification (caller&#39;s number) | [optional] |
 | **dnis** | **str** | Dialed number identification service (number dialed by the calling party) | [optional] |
+| **scored_agents** | [**list[AnalyticsScoredAgent]**](AnalyticsScoredAgent.html) |  | [optional] |
 {: class="table table-striped"}
 
 

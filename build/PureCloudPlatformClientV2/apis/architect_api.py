@@ -1380,12 +1380,13 @@ class ArchitectApi(object):
         :param list[str] resource_type: Types of consuming resources to show.  Only versioned types are allowed here.
         :param int page_number: Page number
         :param int page_size: Page size
+        :param str flow_filter: Show only checkedIn or published flows
         :return: ConsumingResourcesEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'object_type', 'resource_type', 'page_number', 'page_size']
+        all_params = ['id', 'object_type', 'resource_type', 'page_number', 'page_size', 'flow_filter']
         all_params.append('callback')
 
         params = locals()
@@ -1420,6 +1421,8 @@ class ArchitectApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'flow_filter' in params:
+            query_params['flowFilter'] = params['flow_filter']
 
         header_params = {}
 

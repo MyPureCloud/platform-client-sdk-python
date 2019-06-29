@@ -1,7 +1,7 @@
 ---
-title: AddressableEntityUser
+title: BusinessUnitReference
 ---
-## AddressableEntityUser
+## BusinessUnitReference
 
 ## Properties
 

@@ -47,6 +47,7 @@ class Survey(object):
             'queue': 'QueueReference',
             'answers': 'SurveyScoringSet',
             'completed_date': 'datetime',
+            'survey_error_details': 'SurveyErrorDetails',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class Survey(object):
             'queue': 'queue',
             'answers': 'answers',
             'completed_date': 'completedDate',
+            'survey_error_details': 'surveyErrorDetails',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +74,7 @@ class Survey(object):
         self._queue = None
         self._answers = None
         self._completed_date = None
+        self._survey_error_details = None
         self._self_uri = None
 
     @property
@@ -284,6 +287,29 @@ class Survey(object):
         """
         
         self._completed_date = completed_date
+
+    @property
+    def survey_error_details(self):
+        """
+        Gets the survey_error_details of this Survey.
+        Additional information about what happened when the survey is in Error status.
+
+        :return: The survey_error_details of this Survey.
+        :rtype: SurveyErrorDetails
+        """
+        return self._survey_error_details
+
+    @survey_error_details.setter
+    def survey_error_details(self, survey_error_details):
+        """
+        Sets the survey_error_details of this Survey.
+        Additional information about what happened when the survey is in Error status.
+
+        :param survey_error_details: The survey_error_details of this Survey.
+        :type: SurveyErrorDetails
+        """
+        
+        self._survey_error_details = survey_error_details
 
     @property
     def self_uri(self):

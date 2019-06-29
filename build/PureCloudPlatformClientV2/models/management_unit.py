@@ -41,6 +41,7 @@ class ManagementUnit(object):
             'id': 'str',
             'name': 'str',
             'division': 'Division',
+            'business_unit': 'BusinessUnitReference',
             'start_day_of_week': 'str',
             'time_zone': 'str',
             'settings': 'ManagementUnitSettings',
@@ -55,6 +56,7 @@ class ManagementUnit(object):
             'id': 'id',
             'name': 'name',
             'division': 'division',
+            'business_unit': 'businessUnit',
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
             'settings': 'settings',
@@ -68,6 +70,7 @@ class ManagementUnit(object):
         self._id = None
         self._name = None
         self._division = None
+        self._business_unit = None
         self._start_day_of_week = None
         self._time_zone = None
         self._settings = None
@@ -145,6 +148,29 @@ class ManagementUnit(object):
         """
         
         self._division = division
+
+    @property
+    def business_unit(self):
+        """
+        Gets the business_unit of this ManagementUnit.
+        The business unit to which this management unit belongs
+
+        :return: The business_unit of this ManagementUnit.
+        :rtype: BusinessUnitReference
+        """
+        return self._business_unit
+
+    @business_unit.setter
+    def business_unit(self, business_unit):
+        """
+        Sets the business_unit of this ManagementUnit.
+        The business unit to which this management unit belongs
+
+        :param business_unit: The business_unit of this ManagementUnit.
+        :type: BusinessUnitReference
+        """
+        
+        self._business_unit = business_unit
 
     @property
     def start_day_of_week(self):

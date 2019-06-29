@@ -46,6 +46,7 @@ class LocationDefinition(object):
             'state': 'str',
             'version': 'int',
             'path': 'list[str]',
+            'notes': 'str',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class LocationDefinition(object):
             'state': 'state',
             'version': 'version',
             'path': 'path',
+            'notes': 'notes',
             'self_uri': 'selfUri'
         }
 
@@ -69,6 +71,7 @@ class LocationDefinition(object):
         self._state = None
         self._version = None
         self._path = None
+        self._notes = None
         self._self_uri = None
 
     @property
@@ -258,6 +261,29 @@ class LocationDefinition(object):
         """
         
         self._path = path
+
+    @property
+    def notes(self):
+        """
+        Gets the notes of this LocationDefinition.
+
+
+        :return: The notes of this LocationDefinition.
+        :rtype: str
+        """
+        return self._notes
+
+    @notes.setter
+    def notes(self, notes):
+        """
+        Sets the notes of this LocationDefinition.
+
+
+        :param notes: The notes of this LocationDefinition.
+        :type: str
+        """
+        
+        self._notes = notes
 
     @property
     def self_uri(self):

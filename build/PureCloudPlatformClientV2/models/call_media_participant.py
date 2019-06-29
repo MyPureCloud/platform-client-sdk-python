@@ -67,6 +67,7 @@ class CallMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
+            'conversation_routing_data': 'ConversationRoutingData',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -111,6 +112,7 @@ class CallMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'conversation_routing_data': 'conversationRoutingData',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -154,6 +156,7 @@ class CallMediaParticipant(object):
         self._peer = None
         self._flagged_reason = None
         self._journey_context = None
+        self._conversation_routing_data = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -849,6 +852,29 @@ class CallMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this CallMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this CallMediaParticipant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this CallMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this CallMediaParticipant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def muted(self):

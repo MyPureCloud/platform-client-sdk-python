@@ -16,7 +16,6 @@ from .activity_code_container import ActivityCodeContainer
 from .acw_settings import AcwSettings
 from .additional_message import AdditionalMessage
 from .address import Address
-from .addressable_entity_user import AddressableEntityUser
 from .addressable_license_definition import AddressableLicenseDefinition
 from .adherence_settings import AdherenceSettings
 from .adhoc_recording_topic_conversation_data import AdhocRecordingTopicConversationData
@@ -59,6 +58,7 @@ from .analytics_query_clause import AnalyticsQueryClause
 from .analytics_query_filter import AnalyticsQueryFilter
 from .analytics_query_predicate import AnalyticsQueryPredicate
 from .analytics_routing_status_record import AnalyticsRoutingStatusRecord
+from .analytics_scored_agent import AnalyticsScoredAgent
 from .analytics_session import AnalyticsSession
 from .analytics_session_metric import AnalyticsSessionMetric
 from .analytics_survey import AnalyticsSurvey
@@ -133,6 +133,7 @@ from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
 from .biography import Biography
 from .bullseye import Bullseye
+from .business_unit_reference import BusinessUnitReference
 from .calibration import Calibration
 from .calibration_assignment import CalibrationAssignment
 from .calibration_create import CalibrationCreate
@@ -367,6 +368,7 @@ from .conversation_message_event_topic_uri_reference import ConversationMessageE
 from .conversation_message_event_topic_wrapup import ConversationMessageEventTopicWrapup
 from .conversation_properties import ConversationProperties
 from .conversation_query import ConversationQuery
+from .conversation_routing_data import ConversationRoutingData
 from .conversation_screen_share_event_topic_detail import ConversationScreenShareEventTopicDetail
 from .conversation_screen_share_event_topic_error_body import ConversationScreenShareEventTopicErrorBody
 from .conversation_screen_share_event_topic_journey_action import ConversationScreenShareEventTopicJourneyAction
@@ -683,6 +685,7 @@ from .field_list import FieldList
 from .filter import Filter
 from .filter_preview_response import FilterPreviewResponse
 from .flow import Flow
+from .flow_diagnostic_info import FlowDiagnosticInfo
 from .flow_division_view import FlowDivisionView
 from .flow_division_view_entity_listing import FlowDivisionViewEntityListing
 from .flow_entity_listing import FlowEntityListing
@@ -804,7 +807,6 @@ from .license_assignment_request import LicenseAssignmentRequest
 from .license_batch_assignment_request import LicenseBatchAssignmentRequest
 from .license_definition import LicenseDefinition
 from .license_org_toggle import LicenseOrgToggle
-from .license_organization import LicenseOrganization
 from .license_update_status import LicenseUpdateStatus
 from .license_user import LicenseUser
 from .line import Line
@@ -1248,6 +1250,7 @@ from .scim_v2_patch_operation import ScimV2PatchOperation
 from .scim_v2_patch_request import ScimV2PatchRequest
 from .scim_v2_user import ScimV2User
 from .scorable_survey import ScorableSurvey
+from .scored_agent import ScoredAgent
 from .screen_recording_session import ScreenRecordingSession
 from .screen_recording_session_listing import ScreenRecordingSessionListing
 from .screen_recording_session_request import ScreenRecordingSessionRequest
@@ -1294,6 +1297,7 @@ from .shrinkage_override import ShrinkageOverride
 from .shrinkage_overrides import ShrinkageOverrides
 from .site import Site
 from .site_entity_listing import SiteEntityListing
+from .skill import Skill
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
 from .sms_address_provision import SmsAddressProvision
@@ -1328,6 +1332,7 @@ from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
 from .survey import Survey
 from .survey_assignment import SurveyAssignment
+from .survey_error_details import SurveyErrorDetails
 from .survey_form import SurveyForm
 from .survey_form_and_scoring_set import SurveyFormAndScoringSet
 from .survey_form_entity_listing import SurveyFormEntityListing
@@ -1356,6 +1361,7 @@ from .time_off_request_entity_list import TimeOffRequestEntityList
 from .time_off_request_list import TimeOffRequestList
 from .time_off_request_lookup import TimeOffRequestLookup
 from .time_off_request_lookup_list import TimeOffRequestLookupList
+from .time_off_request_notification import TimeOffRequestNotification
 from .time_off_request_query_body import TimeOffRequestQueryBody
 from .time_off_request_response import TimeOffRequestResponse
 from .time_off_request_settings import TimeOffRequestSettings
@@ -1430,6 +1436,7 @@ from .user_details_query import UserDetailsQuery
 from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing
 from .user_expands import UserExpands
+from .user_external_identifier import UserExternalIdentifier
 from .user_greeting_event_greeting import UserGreetingEventGreeting
 from .user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner

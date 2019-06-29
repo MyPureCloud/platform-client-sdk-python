@@ -38,37 +38,63 @@ class Agent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'stage': 'str'
+            'id': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
-            'stage': 'stage'
+            'id': 'id',
+            'self_uri': 'selfUri'
         }
 
-        self._stage = None
+        self._id = None
+        self._self_uri = None
 
     @property
-    def stage(self):
+    def id(self):
         """
-        Gets the stage of this Agent.
-        The current stage for this agent
+        Gets the id of this Agent.
 
-        :return: The stage of this Agent.
+
+        :return: The id of this Agent.
         :rtype: str
         """
-        return self._stage
+        return self._id
 
-    @stage.setter
-    def stage(self, stage):
+    @id.setter
+    def id(self, id):
         """
-        Sets the stage of this Agent.
-        The current stage for this agent
+        Sets the id of this Agent.
 
-        :param stage: The stage of this Agent.
+
+        :param id: The id of this Agent.
         :type: str
         """
         
-        self._stage = stage
+        self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this Agent.
+
+
+        :return: The self_uri of this Agent.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this Agent.
+
+
+        :param self_uri: The self_uri of this Agent.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

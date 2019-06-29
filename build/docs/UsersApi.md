@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
+|[**delete_user_externalid_authority_name_external_key**](UsersApi.html#delete_user_externalid_authority_name_external_key) | Delete the external identifier for user.|
 |[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
 |[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
@@ -25,6 +26,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_adjacents**](UsersApi.html#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](UsersApi.html#get_user_callforwarding) | Get a user&#39;s CallForwarding|
 |[**get_user_directreports**](UsersApi.html#get_user_directreports) | Get direct reports|
+|[**get_user_externalid**](UsersApi.html#get_user_externalid) | Get the external identifiers for a user.|
+|[**get_user_externalid_authority_name**](UsersApi.html#get_user_externalid_authority_name) | Get the external identifier of user for an authority.|
 |[**get_user_favorites**](UsersApi.html#get_user_favorites) | Get favorites|
 |[**get_user_geolocation**](UsersApi.html#get_user_geolocation) | Get a user&#39;s Geolocation|
 |[**get_user_outofoffice**](UsersApi.html#get_user_outofoffice) | Get a OutOfOffice|
@@ -39,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_superiors**](UsersApi.html#get_user_superiors) | Get superiors|
 |[**get_user_trustors**](UsersApi.html#get_user_trustors) | List the organizations that have authorized/trusted the user.|
 |[**get_users**](UsersApi.html#get_users) | Get the list of available users.|
+|[**get_users_externalid_authority_name_external_key**](UsersApi.html#get_users_externalid_authority_name_external_key) | Get the user associated with external identifier.|
 |[**get_users_me**](UsersApi.html#get_users_me) | Get current user details.|
 |[**get_users_search**](UsersApi.html#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**patch_user**](UsersApi.html#patch_user) | Update user|
@@ -54,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**post_authorization_subject_division_role**](UsersApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
+|[**post_user_externalid**](UsersApi.html#post_user_externalid) | Create mapping between external identifier and user. Limit 100 per entity.|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
 |[**post_user_routinglanguages**](UsersApi.html#post_user_routinglanguages) | Add routing language to user|
@@ -141,8 +146,6 @@ Wraps DELETE /api/v2/users/{userId}
 Requires ANY permissions: 
 
 * directory:user:delete
-* user_manager
-* user_administration
 
 ### Example
 
@@ -179,6 +182,60 @@ except ApiException as e:
 
 [**Empty**](Empty.html)
 
+<a name="delete_user_externalid_authority_name_external_key"></a>
+
+##  delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key)
+
+
+
+Delete the external identifier for user.
+
+
+
+Wraps DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+authority_name = 'authority_name_example' # str | Authority Name
+external_key = 'external_key_example' # str | External Key
+
+try:
+    # Delete the external identifier for user.
+    api_instance.delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key)
+except ApiException as e:
+    print "Exception when calling UsersApi->delete_user_externalid_authority_name_external_key: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **authority_name** | **str**| Authority Name |  |
+| **external_key** | **str**| External Key |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_user_roles"></a>
 
 ##  delete_user_roles(user_id)
@@ -193,8 +250,6 @@ Wraps DELETE /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:delete
 
 ### Example
@@ -246,7 +301,6 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -299,7 +353,6 @@ Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -959,6 +1012,108 @@ except ApiException as e:
 ### Return type
 
 [**list[User]**](User.html)
+
+<a name="get_user_externalid"></a>
+
+## [**list[UserExternalIdentifier]**](UserExternalIdentifier.html) get_user_externalid(user_id)
+
+
+
+Get the external identifiers for a user.
+
+
+
+Wraps GET /api/v2/users/{userId}/externalid 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the external identifiers for a user.
+    api_response = api_instance.get_user_externalid(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_user_externalid: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UserExternalIdentifier]**](UserExternalIdentifier.html)
+
+<a name="get_user_externalid_authority_name"></a>
+
+## [**UserExternalIdentifier**](UserExternalIdentifier.html) get_user_externalid_authority_name(user_id, authority_name)
+
+
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/{userId}/externalid/{authorityName} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+authority_name = 'authority_name_example' # str | Authority Name
+
+try:
+    # Get the external identifier of user for an authority.
+    api_response = api_instance.get_user_externalid_authority_name(user_id, authority_name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_user_externalid_authority_name: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **authority_name** | **str**| Authority Name |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserExternalIdentifier**](UserExternalIdentifier.html)
 
 <a name="get_user_favorites"></a>
 
@@ -1715,6 +1870,60 @@ except ApiException as e:
 
 [**UserEntityListing**](UserEntityListing.html)
 
+<a name="get_users_externalid_authority_name_external_key"></a>
+
+## [**User**](User.html) get_users_externalid_authority_name_external_key(authority_name, external_key, expand=expand)
+
+
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/externalid/{authorityName}/{externalKey} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+authority_name = 'authority_name_example' # str | Authority Name
+external_key = 'external_key_example' # str | External Key
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Get the user associated with external identifier.
+    api_response = api_instance.get_users_externalid_authority_name_external_key(authority_name, external_key, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_users_externalid_authority_name_external_key: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **authority_name** | **str**| Authority Name |  |
+| **external_key** | **str**| External Key |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+{: class="table table-striped"}
+
+### Return type
+
+[**User**](User.html)
+
 <a name="get_users_me"></a>
 
 ## [**UserMe**](UserMe.html) get_users_me(expand=expand)
@@ -1832,8 +2041,6 @@ Wraps PATCH /api/v2/users/{userId}
 Requires ANY permissions: 
 
 * directory:user:edit
-* user_manager
-* user_administration
 
 ### Example
 
@@ -2103,7 +2310,6 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2159,7 +2365,6 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2213,7 +2418,6 @@ Wraps PATCH /api/v2/users/{userId}/routingskills/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2267,8 +2471,6 @@ Wraps PATCH /api/v2/users/bulk
 Requires ANY permissions: 
 
 * directory:user:add
-* user_manager
-* user_administration
 * directory:user:edit
 
 ### Example
@@ -2515,6 +2717,59 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_user_externalid"></a>
+
+## [**list[UserExternalIdentifier]**](UserExternalIdentifier.html) post_user_externalid(user_id, body)
+
+
+
+Create mapping between external identifier and user. Limit 100 per entity.
+
+Authority Name and External key are case sensitive.
+
+Wraps POST /api/v2/users/{userId}/externalid 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserExternalIdentifier() # UserExternalIdentifier | 
+
+try:
+    # Create mapping between external identifier and user. Limit 100 per entity.
+    api_response = api_instance.post_user_externalid(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_user_externalid: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserExternalIdentifier**](UserExternalIdentifier.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UserExternalIdentifier]**](UserExternalIdentifier.html)
+
 <a name="post_user_invite"></a>
 
 ##  post_user_invite(user_id, force=force)
@@ -2530,8 +2785,6 @@ Wraps POST /api/v2/users/{userId}/invite
 Requires ANY permissions: 
 
 * directory:user:add
-* user_manager
-* user_administration
 
 ### Example
 
@@ -2583,7 +2836,6 @@ Wraps POST /api/v2/users/{userId}/password
 
 Requires ANY permissions: 
 
-* user_administration
 * directory:user:setPassword
 
 ### Example
@@ -2637,7 +2889,6 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2691,7 +2942,6 @@ Wraps POST /api/v2/users/{userId}/routingskills
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2999,9 +3249,6 @@ Wraps PUT /api/v2/users/{userId}/profileskills
 Requires ANY permissions: 
 
 * directory:userProfile:edit
-* admin
-* user_manager
-* user_administration
 
 ### Example
 
@@ -3054,8 +3301,6 @@ Wraps PUT /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -3110,7 +3355,6 @@ Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -3166,7 +3410,6 @@ Wraps PUT /api/v2/users/{userId}/routingskills/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 

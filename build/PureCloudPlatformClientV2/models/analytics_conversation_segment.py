@@ -50,6 +50,7 @@ class AnalyticsConversationSegment(object):
             'requested_routing_user_ids': 'list[str]',
             'requested_routing_skill_ids': 'list[str]',
             'requested_language_id': 'str',
+            'scored_agents': 'list[AnalyticsScoredAgent]',
             'properties': 'list[AnalyticsProperty]',
             'source_conversation_id': 'str',
             'destination_conversation_id': 'str',
@@ -77,6 +78,7 @@ class AnalyticsConversationSegment(object):
             'requested_routing_user_ids': 'requestedRoutingUserIds',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
             'requested_language_id': 'requestedLanguageId',
+            'scored_agents': 'scoredAgents',
             'properties': 'properties',
             'source_conversation_id': 'sourceConversationId',
             'destination_conversation_id': 'destinationConversationId',
@@ -103,6 +105,7 @@ class AnalyticsConversationSegment(object):
         self._requested_routing_user_ids = None
         self._requested_routing_skill_ids = None
         self._requested_language_id = None
+        self._scored_agents = None
         self._properties = None
         self._source_conversation_id = None
         self._destination_conversation_id = None
@@ -399,6 +402,29 @@ class AnalyticsConversationSegment(object):
         """
         
         self._requested_language_id = requested_language_id
+
+    @property
+    def scored_agents(self):
+        """
+        Gets the scored_agents of this AnalyticsConversationSegment.
+
+
+        :return: The scored_agents of this AnalyticsConversationSegment.
+        :rtype: list[AnalyticsScoredAgent]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents):
+        """
+        Sets the scored_agents of this AnalyticsConversationSegment.
+
+
+        :param scored_agents: The scored_agents of this AnalyticsConversationSegment.
+        :type: list[AnalyticsScoredAgent]
+        """
+        
+        self._scored_agents = scored_agents
 
     @property
     def properties(self):

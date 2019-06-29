@@ -67,6 +67,7 @@ class CallbackMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
+            'conversation_routing_data': 'ConversationRoutingData',
             'outbound_preview': 'DialerPreview',
             'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
@@ -107,6 +108,7 @@ class CallbackMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'conversation_routing_data': 'conversationRoutingData',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -146,6 +148,7 @@ class CallbackMediaParticipant(object):
         self._peer = None
         self._flagged_reason = None
         self._journey_context = None
+        self._conversation_routing_data = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -837,6 +840,29 @@ class CallbackMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this CallbackMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this CallbackMediaParticipant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this CallbackMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this CallbackMediaParticipant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def outbound_preview(self):

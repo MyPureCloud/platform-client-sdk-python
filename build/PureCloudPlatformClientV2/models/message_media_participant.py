@@ -67,6 +67,7 @@ class MessageMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
+            'conversation_routing_data': 'ConversationRoutingData',
             'to_address': 'Address',
             'from_address': 'Address',
             'messages': 'list[MessageDetails]',
@@ -105,6 +106,7 @@ class MessageMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'conversation_routing_data': 'conversationRoutingData',
             'to_address': 'toAddress',
             'from_address': 'fromAddress',
             'messages': 'messages',
@@ -142,6 +144,7 @@ class MessageMediaParticipant(object):
         self._peer = None
         self._flagged_reason = None
         self._journey_context = None
+        self._conversation_routing_data = None
         self._to_address = None
         self._from_address = None
         self._messages = None
@@ -831,6 +834,29 @@ class MessageMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this MessageMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this MessageMediaParticipant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this MessageMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this MessageMediaParticipant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def to_address(self):

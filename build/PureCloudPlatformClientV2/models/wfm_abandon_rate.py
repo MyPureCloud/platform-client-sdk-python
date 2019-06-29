@@ -54,7 +54,7 @@ class WfmAbandonRate(object):
     def include(self):
         """
         Gets the include of this WfmAbandonRate.
-        Whether to include abandon rate in the associated service goal group's configuration
+        Whether to include abandon rate in the associated configuration
 
         :return: The include of this WfmAbandonRate.
         :rtype: bool
@@ -65,7 +65,7 @@ class WfmAbandonRate(object):
     def include(self, include):
         """
         Sets the include of this WfmAbandonRate.
-        Whether to include abandon rate in the associated service goal group's configuration
+        Whether to include abandon rate in the associated configuration
 
         :param include: The include of this WfmAbandonRate.
         :type: bool
@@ -77,7 +77,7 @@ class WfmAbandonRate(object):
     def percent(self):
         """
         Gets the percent of this WfmAbandonRate.
-        Abandon rate percent goal for the associated service goal group. Required if include == true
+        Abandon rate percent goal. Required if include == true
 
         :return: The percent of this WfmAbandonRate.
         :rtype: int
@@ -88,7 +88,7 @@ class WfmAbandonRate(object):
     def percent(self, percent):
         """
         Sets the percent of this WfmAbandonRate.
-        Abandon rate percent goal for the associated service goal group. Required if include == true
+        Abandon rate percent goal. Required if include == true
 
         :param percent: The percent of this WfmAbandonRate.
         :type: int

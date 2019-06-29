@@ -44,7 +44,8 @@ class PhoneCapabilities(object):
             'hardware_id_type': 'str',
             'allow_reboot': 'bool',
             'no_rebalance': 'bool',
-            'no_cloud_provisioning': 'bool'
+            'no_cloud_provisioning': 'bool',
+            'media_codecs': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class PhoneCapabilities(object):
             'hardware_id_type': 'hardwareIdType',
             'allow_reboot': 'allowReboot',
             'no_rebalance': 'noRebalance',
-            'no_cloud_provisioning': 'noCloudProvisioning'
+            'no_cloud_provisioning': 'noCloudProvisioning',
+            'media_codecs': 'mediaCodecs'
         }
 
         self._provisions = None
@@ -64,6 +66,7 @@ class PhoneCapabilities(object):
         self._allow_reboot = None
         self._no_rebalance = None
         self._no_cloud_provisioning = None
+        self._media_codecs = None
 
     @property
     def provisions(self):
@@ -225,6 +228,29 @@ class PhoneCapabilities(object):
         """
         
         self._no_cloud_provisioning = no_cloud_provisioning
+
+    @property
+    def media_codecs(self):
+        """
+        Gets the media_codecs of this PhoneCapabilities.
+
+
+        :return: The media_codecs of this PhoneCapabilities.
+        :rtype: list[str]
+        """
+        return self._media_codecs
+
+    @media_codecs.setter
+    def media_codecs(self, media_codecs):
+        """
+        Sets the media_codecs of this PhoneCapabilities.
+
+
+        :param media_codecs: The media_codecs of this PhoneCapabilities.
+        :type: list[str]
+        """
+        
+        self._media_codecs = media_codecs
 
     def to_dict(self):
         """

@@ -15,6 +15,7 @@ title: LocationDefinition
 | **state** | **str** | Current activity status of the location. | [optional] |
 | **version** | **int** |  | [optional] |
 | **path** | **list[str]** |  | [optional] |
+| **notes** | **str** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -2307,12 +2307,15 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
+        :param bool include_only_published: Return only published schedules
+        :param str earliest_week_date: The start date of the earliest week to query in yyyy-MM-dd format
+        :param str latest_week_date: The start date of the latest week to query in yyyy-MM-dd format
         :return: WeekScheduleListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id']
+        all_params = ['management_unit_id', 'week_id', 'include_only_published', 'earliest_week_date', 'latest_week_date']
         all_params.append('callback')
 
         params = locals()
@@ -2341,6 +2344,12 @@ class WorkforceManagementApi(object):
             path_params['weekId'] = params['week_id']
 
         query_params = {}
+        if 'include_only_published' in params:
+            query_params['includeOnlyPublished'] = params['include_only_published']
+        if 'earliest_week_date' in params:
+            query_params['earliestWeekDate'] = params['earliest_week_date']
+        if 'latest_week_date' in params:
+            query_params['latestWeekDate'] = params['latest_week_date']
 
         header_params = {}
 

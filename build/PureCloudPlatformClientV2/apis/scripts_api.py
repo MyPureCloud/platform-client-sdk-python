@@ -391,7 +391,7 @@ class ScriptsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scripts_published(self, script_id, **kwargs):
+    def get_scripts_published(self, **kwargs):
         """
         Get the published scripts.
         
@@ -402,11 +402,10 @@ class ScriptsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_scripts_published(script_id, callback=callback_function)
+        >>> thread = api.get_scripts_published(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str script_id: Script ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
         :param str expand: Expand
@@ -419,7 +418,7 @@ class ScriptsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['script_id', 'page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version']
+        all_params = ['page_size', 'page_number', 'expand', 'name', 'feature', 'flow_id', 'script_data_version']
         all_params.append('callback')
 
         params = locals()
@@ -432,15 +431,10 @@ class ScriptsApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'script_id' is set
-        if ('script_id' not in params) or (params['script_id'] is None):
-            raise ValueError("Missing the required parameter `script_id` when calling `get_scripts_published`")
 
 
         resource_path = '/api/v2/scripts/published'.replace('{format}', 'json')
         path_params = {}
-        if 'script_id' in params:
-            path_params['scriptId'] = params['script_id']
 
         query_params = {}
         if 'page_size' in params:

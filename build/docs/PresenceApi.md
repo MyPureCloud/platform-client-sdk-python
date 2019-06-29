@@ -447,7 +447,7 @@ Wraps PUT /api/v2/users/presences/bulk
 
 Requires ANY permissions: 
 
-* user_administration
+* directory:user:edit
 
 ### Example
 

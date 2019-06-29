@@ -311,7 +311,7 @@ class ReportingExportJobResponse(object):
         :param export_error_messages_type: The export_error_messages_type of this ReportingExportJobResponse.
         :type: str
         """
-        allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB", "EXPORT_TYPE_NOT_IMPLEMENTED"]
+        allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB", "EXPORT_TYPE_NOT_IMPLEMENTED", "REACHED_MAXIMUM_ATTEMPT_OF_RETRY", "FAILED_LONG_RUNNING_EXPORT"]
         if export_error_messages_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for export_error_messages_type -> " + export_error_messages_type
             self._export_error_messages_type = "outdated_sdk_version"

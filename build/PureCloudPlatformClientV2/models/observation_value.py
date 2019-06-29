@@ -52,7 +52,8 @@ class ObservationValue(object):
             'address_from': 'str',
             'address_to': 'str',
             'ani': 'str',
-            'dnis': 'str'
+            'dnis': 'str',
+            'scored_agents': 'list[AnalyticsScoredAgent]'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class ObservationValue(object):
             'address_from': 'addressFrom',
             'address_to': 'addressTo',
             'ani': 'ani',
-            'dnis': 'dnis'
+            'dnis': 'dnis',
+            'scored_agents': 'scoredAgents'
         }
 
         self._observation_date = None
@@ -88,6 +90,7 @@ class ObservationValue(object):
         self._address_to = None
         self._ani = None
         self._dnis = None
+        self._scored_agents = None
 
     @property
     def observation_date(self):
@@ -437,6 +440,29 @@ class ObservationValue(object):
         """
         
         self._dnis = dnis
+
+    @property
+    def scored_agents(self):
+        """
+        Gets the scored_agents of this ObservationValue.
+
+
+        :return: The scored_agents of this ObservationValue.
+        :rtype: list[AnalyticsScoredAgent]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents):
+        """
+        Sets the scored_agents of this ObservationValue.
+
+
+        :param scored_agents: The scored_agents of this ObservationValue.
+        :type: list[AnalyticsScoredAgent]
+        """
+        
+        self._scored_agents = scored_agents
 
     def to_dict(self):
         """

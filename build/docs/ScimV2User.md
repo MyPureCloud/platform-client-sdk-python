@@ -17,6 +17,7 @@ title: ScimV2User
 | **phone_numbers** | [**list[ScimPhoneNumber]**](ScimPhoneNumber.html) | Phone numbers | [optional] |
 | **emails** | [**list[ScimEmail]**](ScimEmail.html) | Emails | [optional] |
 | **photos** | [**list[Photo]**](Photo.html) | Photos | [optional] |
+| **external_id** | **str** | External ID | [optional] |
 | **groups** | [**list[ScimV2GroupReference]**](ScimV2GroupReference.html) | Group References | [optional] |
 | **meta** | [**ScimMetadata**](ScimMetadata.html) |  | [optional] |
 | **urnietfparamsscimschemasextensionenterprise2_0_user** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) |  | [optional] |

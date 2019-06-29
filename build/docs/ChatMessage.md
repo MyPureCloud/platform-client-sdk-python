@@ -16,6 +16,8 @@ title: ChatMessage
 | **message** | **str** | The message id | [optional] |
 | **type** | **str** |  | [optional] |
 | **body_type** | **str** | Type of the message body (v2 chats only) | [optional] |
+| **sender_communication_id** | **str** | Communication of sender (v2 chats only) | [optional] |
+| **participant_purpose** | **str** | Participant purpose of sender (v2 chats only) | [optional] |
 | **user** | [**ChatMessageUser**](ChatMessageUser.html) | The user information for the sender (if available) | [optional] |
 {: class="table table-striped"}
 

@@ -67,6 +67,7 @@ class ChatMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
+            'conversation_routing_data': 'ConversationRoutingData',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -101,6 +102,7 @@ class ChatMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'conversation_routing_data': 'conversationRoutingData',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -134,6 +136,7 @@ class ChatMediaParticipant(object):
         self._peer = None
         self._flagged_reason = None
         self._journey_context = None
+        self._conversation_routing_data = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -819,6 +822,29 @@ class ChatMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this ChatMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this ChatMediaParticipant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this ChatMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this ChatMediaParticipant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def room_id(self):

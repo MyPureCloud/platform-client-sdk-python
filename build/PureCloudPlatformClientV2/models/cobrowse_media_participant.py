@@ -67,6 +67,7 @@ class CobrowseMediaParticipant(object):
             'peer': 'str',
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
+            'conversation_routing_data': 'ConversationRoutingData',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'controlling': 'list[str]',
@@ -104,6 +105,7 @@ class CobrowseMediaParticipant(object):
             'peer': 'peer',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'conversation_routing_data': 'conversationRoutingData',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'controlling': 'controlling',
@@ -140,6 +142,7 @@ class CobrowseMediaParticipant(object):
         self._peer = None
         self._flagged_reason = None
         self._journey_context = None
+        self._conversation_routing_data = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._controlling = None
@@ -828,6 +831,29 @@ class CobrowseMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this CobrowseMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :return: The conversation_routing_data of this CobrowseMediaParticipant.
+        :rtype: ConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this CobrowseMediaParticipant.
+        Information on how a communication should be routed to an agent.
+
+        :param conversation_routing_data: The conversation_routing_data of this CobrowseMediaParticipant.
+        :type: ConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def cobrowse_session_id(self):

@@ -571,6 +571,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -588,6 +592,9 @@ Requires ANY permissions:
 * wfm:serviceGoalGroup:delete
 * wfm:serviceGoalGroup:edit
 * wfm:serviceGoalGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
 * wfm:shortTermForecast:add
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
@@ -712,6 +719,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -1583,7 +1594,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_week_schedules"></a>
 
-## [**WeekScheduleListResponse**](WeekScheduleListResponse.html) get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id)
+## [**WeekScheduleListResponse**](WeekScheduleListResponse.html) get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
 
 
 
@@ -1613,10 +1624,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format.
+include_only_published = true # bool | Return only published schedules (optional)
+earliest_week_date = 'earliest_week_date_example' # str | The start date of the earliest week to query in yyyy-MM-dd format (optional)
+latest_week_date = 'latest_week_date_example' # str | The start date of the latest week to query in yyyy-MM-dd format (optional)
 
 try:
     # Get the list of schedules in a week in management unit
-    api_response = api_instance.get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedules: %s\n" % e
@@ -1629,6 +1643,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_id** | **str**| First day of schedule week in yyyy-MM-dd format. |  |
+| **include_only_published** | **bool**| Return only published schedules | [optional]  |
+| **earliest_week_date** | **str**| The start date of the earliest week to query in yyyy-MM-dd format | [optional]  |
+| **latest_week_date** | **str**| The start date of the latest week to query in yyyy-MM-dd format | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1906,7 +1923,7 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional]  |
 | **page_number** | **int**|  | [optional]  |
 | **expand** | **str**|  | [optional] <br />**Values**: details |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 

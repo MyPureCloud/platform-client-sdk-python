@@ -57,7 +57,7 @@ class WfmServiceLevel(object):
     def include(self):
         """
         Gets the include of this WfmServiceLevel.
-        Whether to include service level targets in the associated service goal group's configuration
+        Whether to include service level targets in the associated configuration
 
         :return: The include of this WfmServiceLevel.
         :rtype: bool
@@ -68,7 +68,7 @@ class WfmServiceLevel(object):
     def include(self, include):
         """
         Sets the include of this WfmServiceLevel.
-        Whether to include service level targets in the associated service goal group's configuration
+        Whether to include service level targets in the associated configuration
 
         :param include: The include of this WfmServiceLevel.
         :type: bool
@@ -80,7 +80,7 @@ class WfmServiceLevel(object):
     def percent(self):
         """
         Gets the percent of this WfmServiceLevel.
-        Service level target percent answered for the associated service goal group. Required if include == true
+        Service level target percent answered. Required if include == true
 
         :return: The percent of this WfmServiceLevel.
         :rtype: int
@@ -91,7 +91,7 @@ class WfmServiceLevel(object):
     def percent(self, percent):
         """
         Sets the percent of this WfmServiceLevel.
-        Service level target percent answered for the associated service goal group. Required if include == true
+        Service level target percent answered. Required if include == true
 
         :param percent: The percent of this WfmServiceLevel.
         :type: int
@@ -103,7 +103,7 @@ class WfmServiceLevel(object):
     def seconds(self):
         """
         Gets the seconds of this WfmServiceLevel.
-        Service level target answer time for the associated service goal group. Required if include == true
+        Service level target answer time. Required if include == true
 
         :return: The seconds of this WfmServiceLevel.
         :rtype: int
@@ -114,7 +114,7 @@ class WfmServiceLevel(object):
     def seconds(self, seconds):
         """
         Sets the seconds of this WfmServiceLevel.
-        Service level target answer time for the associated service goal group. Required if include == true
+        Service level target answer time. Required if include == true
 
         :param seconds: The seconds of this WfmServiceLevel.
         :type: int

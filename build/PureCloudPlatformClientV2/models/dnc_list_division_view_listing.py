@@ -44,9 +44,9 @@ class DncListDivisionViewListing(object):
             'total': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
+            'next_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
-            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -57,9 +57,9 @@ class DncListDivisionViewListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
+            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
-            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -69,9 +69,9 @@ class DncListDivisionViewListing(object):
         self._total = None
         self._first_uri = None
         self._self_uri = None
+        self._next_uri = None
         self._previous_uri = None
         self._last_uri = None
-        self._next_uri = None
         self._page_count = None
 
     @property
@@ -213,6 +213,29 @@ class DncListDivisionViewListing(object):
         self._self_uri = self_uri
 
     @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this DncListDivisionViewListing.
+
+
+        :return: The next_uri of this DncListDivisionViewListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this DncListDivisionViewListing.
+
+
+        :param next_uri: The next_uri of this DncListDivisionViewListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
+
+    @property
     def previous_uri(self):
         """
         Gets the previous_uri of this DncListDivisionViewListing.
@@ -257,29 +280,6 @@ class DncListDivisionViewListing(object):
         """
         
         self._last_uri = last_uri
-
-    @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this DncListDivisionViewListing.
-
-
-        :return: The next_uri of this DncListDivisionViewListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this DncListDivisionViewListing.
-
-
-        :param next_uri: The next_uri of this DncListDivisionViewListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
 
     @property
     def page_count(self):
