@@ -55,6 +55,7 @@ class QueueConversationEventTopicParticipant(object):
             'wrapup_prompt': 'str',
             'wrapup_timeout_ms': 'int',
             'wrapup': 'QueueConversationEventTopicWrapup',
+            'conversation_routing_data': 'QueueConversationEventTopicConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
             'screen_recording_state': 'str',
@@ -90,6 +91,7 @@ class QueueConversationEventTopicParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup': 'wrapup',
+            'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
             'screen_recording_state': 'screenRecordingState',
@@ -124,6 +126,7 @@ class QueueConversationEventTopicParticipant(object):
         self._wrapup_prompt = None
         self._wrapup_timeout_ms = None
         self._wrapup = None
+        self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
         self._screen_recording_state = None
@@ -530,6 +533,29 @@ class QueueConversationEventTopicParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this QueueConversationEventTopicParticipant.
+
+
+        :return: The conversation_routing_data of this QueueConversationEventTopicParticipant.
+        :rtype: QueueConversationEventTopicConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this QueueConversationEventTopicParticipant.
+
+
+        :param conversation_routing_data: The conversation_routing_data of this QueueConversationEventTopicParticipant.
+        :type: QueueConversationEventTopicConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def alerting_timeout_ms(self):

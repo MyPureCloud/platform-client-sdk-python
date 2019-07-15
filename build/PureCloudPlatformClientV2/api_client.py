@@ -32,6 +32,9 @@ import mimetypes
 import random
 import tempfile
 import threading
+import base64
+import json
+
 
 from datetime import datetime
 from datetime import date
@@ -87,6 +90,74 @@ class ApiClient(object):
         self.access_token = ""
 
 
+
+    def get_client_credentials_token(self, client_id, client_secret):
+        """
+        :param client_id: Client ID to authenticate with
+        :param client_secret: Client Secret to Authenticate with
+        :return: Returns the Api Object which allows this to directly enter into an api call, also sets the token
+        """
+        query_params = {}
+        body = None
+        host = (self.host).split('.', 2)[1]
+        url = 'https://login.' + host + '.com/oauth/token'
+
+        post_params = {'grant_type': 'client_credentials'}
+
+        auth_string = 'Basic ' + base64.b64encode(bytes((client_id + ':' + client_secret).encode('ascii'))).decode(
+            'ascii')
+
+        header_params = {
+            "Authorization": auth_string,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        header_params = self.sanitize_for_serialization(header_params)
+        post_params = self.sanitize_for_serialization(post_params)
+
+        response = self.request("POST", url,
+                                query_params=query_params,
+                                headers=header_params,
+                                post_params=post_params, body=body);
+        data = json.loads('[' + response.data + ']')
+        self.access_token = data[0]["access_token"]
+        return self;
+
+    def get_saml2bearer_token(self,client_id,client_secret,org_name,assertion):
+        """:param client_id: Client Id to authenticate with
+         :param client_secret: Client Secret to authenticate with
+         :param org_name: Orginization name to authenticate with
+         :param assertion: SamlAssertion encoded
+         :return:
+         """
+
+        query_params = {}
+        body = None
+        host = (self.host).split('.', 2)[1]
+        url = 'https://login.' + host + '.com/oauth/token'
+
+        post_params = {'grant_type': 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+                       'orgName': org_name,
+                       'assertion': assertion
+                       }
+
+        auth_string = 'Basic ' + base64.b64encode(bytes((client_id + ':' + client_secret).encode('ascii'))).decode(
+            'ascii')
+
+        header_params = {
+            "Authorization": auth_string,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        header_params = self.sanitize_for_serialization(header_params)
+        post_params = self.sanitize_for_serialization(post_params)
+
+        response = self.request("POST", url,
+                                query_params=query_params,
+                                headers=header_params,
+                                post_params=post_params, body=body);
+        data = json.loads('[' + response.data + ']')
+        self.access_token = data[0]["access_token"]
+        return self;  
+
     @property
     def user_agent(self):
         """
@@ -116,7 +187,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '57.0.0'
+        header_params['purecloud-sdk'] = '57.0.1'
 
         # path parameters
         if path_params:

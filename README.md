@@ -26,19 +26,53 @@ import PureCloudPlatformClientV2
 
 ### Authenticating
 
-The Python SDK does not currently contain helper methods to complete an OAuth flow. The consuming applicaiton must complete an OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via `PureCloudPlatformClientV2.configuration.access_token`. For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
+#### Client Credentials Grant
+
+**Use when...**
+
+* The app is authenticating as a non-human (e.g. a service, scheduled task, or other non-UI application)
+
+For headless and non-user applications, the [Client Credentials Grant](http://developer.mypurecloud.com/api/rest/authorization/use-client-credentials.html) 
 
 ```{"language":"python"}
-PureCloudPlatformClientV2.configuration.access_token = 'cuQbSAf1LU4CuIaSj1D6Gm399jmTr7zLTTc3KPSyCvEyJQIo9r648h3SH8oFzLPPKxE3Mvb166lq5NcjSBoGE5A'
+apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_client_credentials_token("7de3af06-c0b3-4f9b-af45-72f4a14037cc", "qLh-825gtjPrIY2kcWKAkmlaSgi6Z1Ws2BAyixWbTrs")
+authApi = PureCloudPlatformClientV2.AuthorizationApi(apiclient)
+print authApi.get_authorization_permissions()
 ```
+
+#### OAuth2 SAML2 Bearer Grant
+
+**Use when...**
+
+* The app is authenticating as a human user, the [OAuth2 SAML2 Bearer](https://developer.mypurecloud.com/api/rest/authorization/use-saml2-bearer.html)
+
+```{"language":"python"}
+apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_saml2bearer_token("565c3091-4107-4675-b606-b1fead2d15a4", "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8", orgName ,encodedsamlassertion)
+usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
+print usersApi.get_users_me()
+
+```
+
+
 
 ### Setting the Environment
 
 If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the new base path before constructing any API classes. The new base path should be the base path to the Platform API for your environment.
 
 ```{"language":"python"}
-PureCloudPlatformClientV2.configuration.host = 'https://api.mypurecloud.ie'
+region = PureCloudRegionHosts.us_east_1
+PureCloudPlatformClientV2.configuration.host = region.get_api_host
 ```
+
+### Connect to a Proxy Server
+
+If connecting to a proxy server, set the the address of your proxy server as follows:
+
+```{"language":"python"}
+PureCloudPlatformClientV2.configuration.proxy = 'YOUR_PROXY_URL'
+```
+
+The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is given.
 
 ### Making Requests
 

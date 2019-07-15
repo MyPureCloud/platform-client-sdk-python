@@ -101,6 +101,9 @@ class Configuration(object):
         # client key file
         self.key_file = None
 
+        # proxy
+        self.proxy = None
+
     @property
     def logger_file(self):
         """
@@ -246,5 +249,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 57.0.0".\
+               "SDK Package Version: 57.0.1".\
                format(env=sys.platform, pyversion=sys.version)

@@ -24,6 +24,7 @@ title: QueueConversationSocialExpressionEventTopicParticipant
 | **wrapup_prompt** | **str** |  | [optional] |
 | **wrapup_timeout_ms** | **int** |  | [optional] |
 | **wrapup** | [**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html) |  | [optional] |
+| **conversation_routing_data** | [**QueueConversationSocialExpressionEventTopicConversationRoutingData**](QueueConversationSocialExpressionEventTopicConversationRoutingData.html) |  | [optional] |
 | **alerting_timeout_ms** | **int** |  | [optional] |
 | **monitored_participant_id** | **str** |  | [optional] |
 | **screen_recording_state** | **str** |  | [optional] |

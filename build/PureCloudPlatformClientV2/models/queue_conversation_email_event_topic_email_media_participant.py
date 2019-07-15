@@ -64,6 +64,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
             'external_contact': 'QueueConversationEmailEventTopicUriReference',
             'external_organization': 'QueueConversationEmailEventTopicUriReference',
             'wrapup': 'QueueConversationEmailEventTopicWrapup',
+            'conversation_routing_data': 'QueueConversationEmailEventTopicConversationRoutingData',
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
@@ -103,6 +104,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'conversation_routing_data': 'conversationRoutingData',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
@@ -141,6 +143,7 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._conversation_routing_data = None
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
@@ -761,6 +764,29 @@ class QueueConversationEmailEventTopicEmailMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this QueueConversationEmailEventTopicEmailMediaParticipant.
+
+
+        :return: The conversation_routing_data of this QueueConversationEmailEventTopicEmailMediaParticipant.
+        :rtype: QueueConversationEmailEventTopicConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this QueueConversationEmailEventTopicEmailMediaParticipant.
+
+
+        :param conversation_routing_data: The conversation_routing_data of this QueueConversationEmailEventTopicEmailMediaParticipant.
+        :type: QueueConversationEmailEventTopicConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def peer(self):

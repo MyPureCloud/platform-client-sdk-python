@@ -64,6 +64,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'external_contact': 'QueueConversationChatEventTopicUriReference',
             'external_organization': 'QueueConversationChatEventTopicUriReference',
             'wrapup': 'QueueConversationChatEventTopicWrapup',
+            'conversation_routing_data': 'QueueConversationChatEventTopicConversationRoutingData',
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
@@ -98,6 +99,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'conversation_routing_data': 'conversationRoutingData',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
@@ -131,6 +133,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._conversation_routing_data = None
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
@@ -746,6 +749,29 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The conversation_routing_data of this QueueConversationChatEventTopicChatMediaParticipant.
+        :rtype: QueueConversationChatEventTopicConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :param conversation_routing_data: The conversation_routing_data of this QueueConversationChatEventTopicChatMediaParticipant.
+        :type: QueueConversationChatEventTopicConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def peer(self):

@@ -64,6 +64,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'external_contact': 'QueueConversationScreenShareEventTopicUriReference',
             'external_organization': 'QueueConversationScreenShareEventTopicUriReference',
             'wrapup': 'QueueConversationScreenShareEventTopicWrapup',
+            'conversation_routing_data': 'QueueConversationScreenShareEventTopicConversationRoutingData',
             'peer': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
@@ -100,6 +101,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'external_contact': 'externalContact',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
+            'conversation_routing_data': 'conversationRoutingData',
             'peer': 'peer',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
@@ -135,6 +137,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._external_contact = None
         self._external_organization = None
         self._wrapup = None
+        self._conversation_routing_data = None
         self._peer = None
         self._screen_recording_state = None
         self._flagged_reason = None
@@ -752,6 +755,29 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def conversation_routing_data(self):
+        """
+        Gets the conversation_routing_data of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The conversation_routing_data of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: QueueConversationScreenShareEventTopicConversationRoutingData
+        """
+        return self._conversation_routing_data
+
+    @conversation_routing_data.setter
+    def conversation_routing_data(self, conversation_routing_data):
+        """
+        Sets the conversation_routing_data of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param conversation_routing_data: The conversation_routing_data of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: QueueConversationScreenShareEventTopicConversationRoutingData
+        """
+        
+        self._conversation_routing_data = conversation_routing_data
 
     @property
     def peer(self):
