@@ -187,7 +187,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '57.0.1'
+        header_params['purecloud-sdk'] = '57.0.2'
 
         # path parameters
         if path_params:
@@ -345,6 +345,9 @@ class ApiClient(object):
             if klass in ['int', 'float', 'str', 'bool',
                          "date", 'datetime', "object"]:
                 klass = eval(klass)
+            # for LocalDateTime special case, use datetime in Python
+            elif klass == 'LocalDateTime':
+                klass = eval('datetime')
             # for model types
             else:
                 klass = eval('models.' + klass)
