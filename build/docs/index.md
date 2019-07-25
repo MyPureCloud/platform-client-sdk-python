@@ -88,6 +88,14 @@ usersApi = PureCloudPlatformClientV2.UsersApi()
 print usersApi.get_users_me()
 ```
 
+### Transform response object to JSON
+
+You can use `to_json()` method on the model to get a raw JSON string of the model.
+
+```{"language":"python"}
+print usersApi.get_users_me().to_json()
+```
+
 ## SDK Source Code Generation
 
 The SDK is automatically regenerated and published from the API's definition after each API release. For more information on the build process, see the [platform-client-sdk-common](https://github.com/MyPureCloud/platform-client-sdk-common) project.

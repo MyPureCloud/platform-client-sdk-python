@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class EmailMessage(object):
     """
@@ -49,6 +51,7 @@ class EmailMessage(object):
             'text_body': 'str',
             'html_body': 'str',
             'time': 'datetime',
+            'history_included': 'bool',
             'self_uri': 'str'
         }
 
@@ -64,6 +67,7 @@ class EmailMessage(object):
             'text_body': 'textBody',
             'html_body': 'htmlBody',
             'time': 'time',
+            'history_included': 'historyIncluded',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +82,7 @@ class EmailMessage(object):
         self._text_body = None
         self._html_body = None
         self._time = None
+        self._history_included = None
         self._self_uri = None
 
     @property
@@ -334,6 +339,29 @@ class EmailMessage(object):
         self._time = time
 
     @property
+    def history_included(self):
+        """
+        Gets the history_included of this EmailMessage.
+        Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
+
+        :return: The history_included of this EmailMessage.
+        :rtype: bool
+        """
+        return self._history_included
+
+    @history_included.setter
+    def history_included(self, history_included):
+        """
+        Sets the history_included of this EmailMessage.
+        Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
+
+        :param history_included: The history_included of this EmailMessage.
+        :type: bool
+        """
+        
+        self._history_included = history_included
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this EmailMessage.
@@ -381,6 +409,12 @@ class EmailMessage(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

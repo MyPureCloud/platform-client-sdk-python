@@ -48,7 +48,7 @@ class SCIMApi(object):
 
     def delete_scim_user(self, user_id, **kwargs):
         """
-        Soft delete user with specified ID
+        Delete a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -61,8 +61,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
@@ -129,7 +129,7 @@ class SCIMApi(object):
 
     def delete_scim_v2_user(self, user_id, **kwargs):
         """
-        Soft delete user with specified ID
+        Delete a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -142,8 +142,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
@@ -210,7 +210,7 @@ class SCIMApi(object):
 
     def get_scim_group(self, group_id, **kwargs):
         """
-        Return Group with specified ID
+        Get a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -223,8 +223,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
-        :param str if_none_match: If-None-Match for ETag version checking
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+        :param str if_none_match: The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -291,7 +291,7 @@ class SCIMApi(object):
 
     def get_scim_groups(self, **kwargs):
         """
-        Query Groups
+        Get a list of groups
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -304,9 +304,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_index: Starting item of request. 1-based
-        :param int count: The requested number of items per page. A value of 0 will return no results other than the totalResults count.
-        :param str filter: filter parameter e.g. displayName eq groupName
+        :param int start_index: The 1-based index of the first query result.
+        :param int count: The requested number of items per page. A value of 0 returns totalResults.
+        :param str filter: Filters results.
         :return: ScimListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -372,7 +372,7 @@ class SCIMApi(object):
 
     def get_scim_user(self, user_id, **kwargs):
         """
-        Return user with specified ID (default version)
+        Get a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -385,8 +385,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
-        :param str if_none_match: If-None-Match for ETag version checking
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
+        :param str if_none_match: The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -453,7 +453,7 @@ class SCIMApi(object):
 
     def get_scim_users(self, filter, **kwargs):
         """
-        Query Users
+        Get a list of users
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -466,9 +466,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: filter parameter e.g. userName eq search@sample.org (required)
-        :param int start_index: Starting item of request. 1-based
-        :param int count: The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+        :param str filter: Filters results. (required)
+        :param int start_index: The 1-based index of the first query result.
+        :param int count: The requested number of items per page. A value of 0 returns totalResults.
         :return: ScimListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -537,7 +537,7 @@ class SCIMApi(object):
 
     def get_scim_v2_group(self, group_id, **kwargs):
         """
-        Return Group with specified ID
+        Get a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -550,8 +550,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
-        :param str if_none_match: If-None-Match for ETag version checking
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+        :param str if_none_match: The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -618,7 +618,7 @@ class SCIMApi(object):
 
     def get_scim_v2_groups(self, filter, **kwargs):
         """
-        Query Groups
+        Get a list of groups
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -631,9 +631,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: filter parameter e.g. displayName eq groupName (required)
-        :param int start_index: Starting item of request. 1-based
-        :param int count: The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+        :param str filter: Filters results. (required)
+        :param int start_index: The 1-based index of the first query result.
+        :param int count: The requested number of items per page. A value of 0 returns totalResults.
         :return: ScimListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -702,7 +702,7 @@ class SCIMApi(object):
 
     def get_scim_v2_serviceproviderconfig(self, **kwargs):
         """
-        Get SCIM Configuration
+        Get the SCIM configuration
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -715,7 +715,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str if_none_match: If-None-Match for ETag version checking
+        :param str if_none_match: The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
         :return: ScimServiceProviderConfig
                  If the method is called asynchronously,
                  returns the request thread.
@@ -777,7 +777,7 @@ class SCIMApi(object):
 
     def get_scim_v2_user(self, user_id, **kwargs):
         """
-        Return User with specified ID
+        Get a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -790,8 +790,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
-        :param str if_none_match: If-None-Match for ETag version checking
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+        :param str if_none_match: The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -858,7 +858,7 @@ class SCIMApi(object):
 
     def get_scim_v2_users(self, filter, **kwargs):
         """
-        Query Users
+        Get a list of users
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -871,9 +871,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: filter parameter e.g. userName eq search@sample.org (required)
-        :param int start_index: Starting item of request. 1-based
-        :param int count: The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+        :param str filter: Filters results. (required)
+        :param int start_index: The 1-based index of the first query result.
+        :param int count: The requested number of items per page. A value of 0 returns totalResults.
         :return: ScimListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -942,7 +942,7 @@ class SCIMApi(object):
 
     def patch_scim_group(self, group_id, body, **kwargs):
         """
-        Update Group with specified ID
+        Modify a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -955,9 +955,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups. (required)
         :param PatchRequest body: Group (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1029,7 +1029,7 @@ class SCIMApi(object):
 
     def patch_scim_user(self, user_id, body, **kwargs):
         """
-        Patch user with specified ID
+        Modify a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1042,9 +1042,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
         :param ScimV2PatchRequest body: SCIM Patch Request (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1116,7 +1116,7 @@ class SCIMApi(object):
 
     def patch_scim_v2_group(self, group_id, body, **kwargs):
         """
-        Update Group with specified ID
+        Modify a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1129,9 +1129,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
         :param PatchRequest body: Group (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1203,7 +1203,7 @@ class SCIMApi(object):
 
     def patch_scim_v2_user(self, user_id, body, **kwargs):
         """
-        Update user with specified ID
+        Modify a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1216,9 +1216,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: User Id (required)
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
         :param ScimV2PatchRequest body: SCIM Patch Request (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1290,7 +1290,7 @@ class SCIMApi(object):
 
     def post_scim_users(self, body, **kwargs):
         """
-        Create user
+        Create a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1368,7 +1368,7 @@ class SCIMApi(object):
 
     def post_scim_v2_users(self, body, **kwargs):
         """
-        Create user
+        Create a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1446,7 +1446,7 @@ class SCIMApi(object):
 
     def put_scim_group(self, group_id, body, **kwargs):
         """
-        Update Group with specified ID
+        Replace a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1459,9 +1459,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups. (required)
         :param ScimV2Group body: Group (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1533,7 +1533,7 @@ class SCIMApi(object):
 
     def put_scim_user(self, user_id, body, **kwargs):
         """
-        Update user with specified ID
+        Replace a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1546,9 +1546,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id:  (required)
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
         :param ScimV2User body: User (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1620,7 +1620,7 @@ class SCIMApi(object):
 
     def put_scim_v2_group(self, group_id, body, **kwargs):
         """
-        Update Group with specified ID
+        Replace a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1633,9 +1633,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id:  (required)
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
         :param ScimV2Group body: Group (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1707,7 +1707,7 @@ class SCIMApi(object):
 
     def put_scim_v2_user(self, user_id, body, **kwargs):
         """
-        Update user with specified ID
+        Replace a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1720,9 +1720,9 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: User Id (required)
+        :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
         :param ScimV2User body: User (required)
-        :param str if_match: If-Match for ETag version checking
+        :param str if_match: The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.

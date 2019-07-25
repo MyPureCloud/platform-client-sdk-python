@@ -13,6 +13,7 @@ title: QueueConversationSocialExpressionEventTopicChat
 | **script_id** | **str** |  | [optional] |
 | **peer_id** | **str** |  | [optional] |
 | **room_id** | **str** |  | [optional] |
+| **avatar_image_url** | **str** |  | [optional] |
 | **held** | **bool** |  | [optional] |
 | **disconnect_type** | **str** |  | [optional] |
 | **start_hold_time** | **datetime** |  | [optional] |

@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class LocationDefinition(object):
     """
@@ -47,6 +49,8 @@ class LocationDefinition(object):
             'version': 'int',
             'path': 'list[str]',
             'notes': 'str',
+            'profile_image': 'list[LocationImage]',
+            'floorplan_image': 'list[LocationImage]',
             'self_uri': 'str'
         }
 
@@ -60,6 +64,8 @@ class LocationDefinition(object):
             'version': 'version',
             'path': 'path',
             'notes': 'notes',
+            'profile_image': 'profileImage',
+            'floorplan_image': 'floorplanImage',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +78,8 @@ class LocationDefinition(object):
         self._version = None
         self._path = None
         self._notes = None
+        self._profile_image = None
+        self._floorplan_image = None
         self._self_uri = None
 
     @property
@@ -286,6 +294,52 @@ class LocationDefinition(object):
         self._notes = notes
 
     @property
+    def profile_image(self):
+        """
+        Gets the profile_image of this LocationDefinition.
+        Profile image set for the location
+
+        :return: The profile_image of this LocationDefinition.
+        :rtype: list[LocationImage]
+        """
+        return self._profile_image
+
+    @profile_image.setter
+    def profile_image(self, profile_image):
+        """
+        Sets the profile_image of this LocationDefinition.
+        Profile image set for the location
+
+        :param profile_image: The profile_image of this LocationDefinition.
+        :type: list[LocationImage]
+        """
+        
+        self._profile_image = profile_image
+
+    @property
+    def floorplan_image(self):
+        """
+        Gets the floorplan_image of this LocationDefinition.
+
+
+        :return: The floorplan_image of this LocationDefinition.
+        :rtype: list[LocationImage]
+        """
+        return self._floorplan_image
+
+    @floorplan_image.setter
+    def floorplan_image(self, floorplan_image):
+        """
+        Sets the floorplan_image of this LocationDefinition.
+
+
+        :param floorplan_image: The floorplan_image of this LocationDefinition.
+        :type: list[LocationImage]
+        """
+        
+        self._floorplan_image = floorplan_image
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this LocationDefinition.
@@ -333,6 +387,12 @@ class LocationDefinition(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

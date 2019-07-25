@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class DataSchema(object):
     """
@@ -43,7 +45,6 @@ class DataSchema(object):
             'version': 'int',
             'applies_to': 'list[str]',
             'enabled': 'bool',
-            'deleted': 'bool',
             'created_by': 'UriReference',
             'date_created': 'datetime',
             'json_schema': 'JsonSchemaDocument',
@@ -56,7 +57,6 @@ class DataSchema(object):
             'version': 'version',
             'applies_to': 'appliesTo',
             'enabled': 'enabled',
-            'deleted': 'deleted',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'json_schema': 'jsonSchema',
@@ -68,7 +68,6 @@ class DataSchema(object):
         self._version = None
         self._applies_to = None
         self._enabled = None
-        self._deleted = None
         self._created_by = None
         self._date_created = None
         self._json_schema = None
@@ -147,7 +146,7 @@ class DataSchema(object):
     def applies_to(self):
         """
         Gets the applies_to of this DataSchema.
-        The PureCloud data this schema extends.
+        One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
 
         :return: The applies_to of this DataSchema.
         :rtype: list[str]
@@ -158,7 +157,7 @@ class DataSchema(object):
     def applies_to(self, applies_to):
         """
         Sets the applies_to of this DataSchema.
-        The PureCloud data this schema extends.
+        One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
 
         :param applies_to: The applies_to of this DataSchema.
         :type: list[str]
@@ -170,7 +169,7 @@ class DataSchema(object):
     def enabled(self):
         """
         Gets the enabled of this DataSchema.
-        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists
+        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists
 
         :return: The enabled of this DataSchema.
         :rtype: bool
@@ -181,7 +180,7 @@ class DataSchema(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this DataSchema.
-        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists
+        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists
 
         :param enabled: The enabled of this DataSchema.
         :type: bool
@@ -190,33 +189,10 @@ class DataSchema(object):
         self._enabled = enabled
 
     @property
-    def deleted(self):
-        """
-        Gets the deleted of this DataSchema.
-        The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.
-
-        :return: The deleted of this DataSchema.
-        :rtype: bool
-        """
-        return self._deleted
-
-    @deleted.setter
-    def deleted(self, deleted):
-        """
-        Sets the deleted of this DataSchema.
-        The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.
-
-        :param deleted: The deleted of this DataSchema.
-        :type: bool
-        """
-        
-        self._deleted = deleted
-
-    @property
     def created_by(self):
         """
         Gets the created_by of this DataSchema.
-        The user that created this schema.
+        The URI of the user that created this schema.
 
         :return: The created_by of this DataSchema.
         :rtype: UriReference
@@ -227,7 +203,7 @@ class DataSchema(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this DataSchema.
-        The user that created this schema.
+        The URI of the user that created this schema.
 
         :param created_by: The created_by of this DataSchema.
         :type: UriReference
@@ -262,7 +238,7 @@ class DataSchema(object):
     def json_schema(self):
         """
         Gets the json_schema of this DataSchema.
-        The JSON schema defining the data extension.
+        The JSON schema defining the extension to the built-in entity type.
 
         :return: The json_schema of this DataSchema.
         :rtype: JsonSchemaDocument
@@ -273,7 +249,7 @@ class DataSchema(object):
     def json_schema(self, json_schema):
         """
         Sets the json_schema of this DataSchema.
-        The JSON schema defining the data extension.
+        The JSON schema defining the extension to the built-in entity type.
 
         :param json_schema: The json_schema of this DataSchema.
         :type: JsonSchemaDocument
@@ -329,6 +305,12 @@ class DataSchema(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

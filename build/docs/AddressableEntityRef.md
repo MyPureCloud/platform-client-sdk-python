@@ -1,7 +1,7 @@
 ---
-title: Skill
+title: AddressableEntityRef
 ---
-## Skill
+## AddressableEntityRef
 
 ## Properties
 

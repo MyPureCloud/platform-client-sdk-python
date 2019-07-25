@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class SubscriptionOverviewUsage(object):
     """
@@ -46,7 +48,8 @@ class SubscriptionOverviewUsage(object):
             'overage_price': 'str',
             'prepay_quantity': 'str',
             'prepay_price': 'str',
-            'usage_notes': 'str'
+            'usage_notes': 'str',
+            'is_cancellable': 'bool'
         }
 
         self.attribute_map = {
@@ -58,7 +61,8 @@ class SubscriptionOverviewUsage(object):
             'overage_price': 'overagePrice',
             'prepay_quantity': 'prepayQuantity',
             'prepay_price': 'prepayPrice',
-            'usage_notes': 'usageNotes'
+            'usage_notes': 'usageNotes',
+            'is_cancellable': 'isCancellable'
         }
 
         self._name = None
@@ -70,6 +74,7 @@ class SubscriptionOverviewUsage(object):
         self._prepay_quantity = None
         self._prepay_price = None
         self._usage_notes = None
+        self._is_cancellable = None
 
     @property
     def name(self):
@@ -278,6 +283,29 @@ class SubscriptionOverviewUsage(object):
         
         self._usage_notes = usage_notes
 
+    @property
+    def is_cancellable(self):
+        """
+        Gets the is_cancellable of this SubscriptionOverviewUsage.
+        Indicates whether the item is cancellable
+
+        :return: The is_cancellable of this SubscriptionOverviewUsage.
+        :rtype: bool
+        """
+        return self._is_cancellable
+
+    @is_cancellable.setter
+    def is_cancellable(self, is_cancellable):
+        """
+        Sets the is_cancellable of this SubscriptionOverviewUsage.
+        Indicates whether the item is cancellable
+
+        :param is_cancellable: The is_cancellable of this SubscriptionOverviewUsage.
+        :type: bool
+        """
+        
+        self._is_cancellable = is_cancellable
+
     def to_dict(self):
         """
         Returns the model properties as a dict
@@ -303,6 +331,12 @@ class SubscriptionOverviewUsage(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

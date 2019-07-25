@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class QueueConversationVideoEventTopicChat(object):
     """
@@ -44,6 +46,7 @@ class QueueConversationVideoEventTopicChat(object):
             'script_id': 'str',
             'peer_id': 'str',
             'room_id': 'str',
+            'avatar_image_url': 'str',
             'held': 'bool',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
@@ -60,6 +63,7 @@ class QueueConversationVideoEventTopicChat(object):
             'script_id': 'scriptId',
             'peer_id': 'peerId',
             'room_id': 'roomId',
+            'avatar_image_url': 'avatarImageUrl',
             'held': 'held',
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
@@ -75,6 +79,7 @@ class QueueConversationVideoEventTopicChat(object):
         self._script_id = None
         self._peer_id = None
         self._room_id = None
+        self._avatar_image_url = None
         self._held = None
         self._disconnect_type = None
         self._start_hold_time = None
@@ -224,6 +229,29 @@ class QueueConversationVideoEventTopicChat(object):
         """
         
         self._room_id = room_id
+
+    @property
+    def avatar_image_url(self):
+        """
+        Gets the avatar_image_url of this QueueConversationVideoEventTopicChat.
+
+
+        :return: The avatar_image_url of this QueueConversationVideoEventTopicChat.
+        :rtype: str
+        """
+        return self._avatar_image_url
+
+    @avatar_image_url.setter
+    def avatar_image_url(self, avatar_image_url):
+        """
+        Sets the avatar_image_url of this QueueConversationVideoEventTopicChat.
+
+
+        :param avatar_image_url: The avatar_image_url of this QueueConversationVideoEventTopicChat.
+        :type: str
+        """
+        
+        self._avatar_image_url = avatar_image_url
 
     @property
     def held(self):
@@ -415,6 +443,12 @@ class QueueConversationVideoEventTopicChat(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

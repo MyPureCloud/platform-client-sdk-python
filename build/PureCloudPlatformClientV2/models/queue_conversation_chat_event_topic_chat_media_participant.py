@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class QueueConversationChatEventTopicChatMediaParticipant(object):
     """
@@ -69,7 +71,8 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'journey_context': 'QueueConversationChatEventTopicJourneyContext',
-            'room_id': 'str'
+            'room_id': 'str',
+            'avatar_image_url': 'str'
         }
 
         self.attribute_map = {
@@ -104,7 +107,8 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
-            'room_id': 'roomId'
+            'room_id': 'roomId',
+            'avatar_image_url': 'avatarImageUrl'
         }
 
         self._id = None
@@ -139,6 +143,7 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         self._flagged_reason = None
         self._journey_context = None
         self._room_id = None
+        self._avatar_image_url = None
 
     @property
     def id(self):
@@ -892,6 +897,29 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
         
         self._room_id = room_id
 
+    @property
+    def avatar_image_url(self):
+        """
+        Gets the avatar_image_url of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The avatar_image_url of this QueueConversationChatEventTopicChatMediaParticipant.
+        :rtype: str
+        """
+        return self._avatar_image_url
+
+    @avatar_image_url.setter
+    def avatar_image_url(self, avatar_image_url):
+        """
+        Sets the avatar_image_url of this QueueConversationChatEventTopicChatMediaParticipant.
+
+
+        :param avatar_image_url: The avatar_image_url of this QueueConversationChatEventTopicChatMediaParticipant.
+        :type: str
+        """
+        
+        self._avatar_image_url = avatar_image_url
+
     def to_dict(self):
         """
         Returns the model properties as a dict
@@ -917,6 +945,12 @@ class QueueConversationChatEventTopicChatMediaParticipant(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

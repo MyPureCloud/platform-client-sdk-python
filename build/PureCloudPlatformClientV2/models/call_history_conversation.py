@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class CallHistoryConversation(object):
     """
@@ -49,6 +51,7 @@ class CallHistoryConversation(object):
             'was_callback': 'bool',
             'had_screen_share': 'bool',
             'had_cobrowse': 'bool',
+            'was_outbound_campaign': 'bool',
             'self_uri': 'str'
         }
 
@@ -64,6 +67,7 @@ class CallHistoryConversation(object):
             'was_callback': 'wasCallback',
             'had_screen_share': 'hadScreenShare',
             'had_cobrowse': 'hadCobrowse',
+            'was_outbound_campaign': 'wasOutboundCampaign',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +82,7 @@ class CallHistoryConversation(object):
         self._was_callback = None
         self._had_screen_share = None
         self._had_cobrowse = None
+        self._was_outbound_campaign = None
         self._self_uri = None
 
     @property
@@ -338,6 +343,29 @@ class CallHistoryConversation(object):
         self._had_cobrowse = had_cobrowse
 
     @property
+    def was_outbound_campaign(self):
+        """
+        Gets the was_outbound_campaign of this CallHistoryConversation.
+        Was this conversation associated with an outbound campaign
+
+        :return: The was_outbound_campaign of this CallHistoryConversation.
+        :rtype: bool
+        """
+        return self._was_outbound_campaign
+
+    @was_outbound_campaign.setter
+    def was_outbound_campaign(self, was_outbound_campaign):
+        """
+        Sets the was_outbound_campaign of this CallHistoryConversation.
+        Was this conversation associated with an outbound campaign
+
+        :param was_outbound_campaign: The was_outbound_campaign of this CallHistoryConversation.
+        :type: bool
+        """
+        
+        self._was_outbound_campaign = was_outbound_campaign
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this CallHistoryConversation.
@@ -385,6 +413,12 @@ class CallHistoryConversation(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

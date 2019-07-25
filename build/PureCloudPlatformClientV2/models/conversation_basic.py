@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class ConversationBasic(object):
     """
@@ -42,6 +44,7 @@ class ConversationBasic(object):
             'name': 'str',
             'start_time': 'datetime',
             'end_time': 'datetime',
+            'divisions': 'list[ConversationDivisionMembership]',
             'self_uri': 'str',
             'participants': 'list[ParticipantBasic]'
         }
@@ -51,6 +54,7 @@ class ConversationBasic(object):
             'name': 'name',
             'start_time': 'startTime',
             'end_time': 'endTime',
+            'divisions': 'divisions',
             'self_uri': 'selfUri',
             'participants': 'participants'
         }
@@ -59,6 +63,7 @@ class ConversationBasic(object):
         self._name = None
         self._start_time = None
         self._end_time = None
+        self._divisions = None
         self._self_uri = None
         self._participants = None
 
@@ -155,6 +160,29 @@ class ConversationBasic(object):
         self._end_time = end_time
 
     @property
+    def divisions(self):
+        """
+        Gets the divisions of this ConversationBasic.
+        Identifiers of divisions associated with this conversation
+
+        :return: The divisions of this ConversationBasic.
+        :rtype: list[ConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions):
+        """
+        Sets the divisions of this ConversationBasic.
+        Identifiers of divisions associated with this conversation
+
+        :param divisions: The divisions of this ConversationBasic.
+        :type: list[ConversationDivisionMembership]
+        """
+        
+        self._divisions = divisions
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this ConversationBasic.
@@ -225,6 +253,12 @@ class ConversationBasic(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

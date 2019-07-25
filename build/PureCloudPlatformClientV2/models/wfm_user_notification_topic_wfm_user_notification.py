@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class WfmUserNotificationTopicWfmUserNotification(object):
     """
@@ -43,6 +45,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'timestamp': 'datetime',
             'type': 'str',
             'shift_trade': 'WfmUserNotificationTopicShiftTradeNotification',
+            'time_off_request': 'WfmUserNotificationTopicTimeOffRequestNotification',
             'agent_notification': 'bool',
             'other_notification_ids_in_group': 'list[str]'
         }
@@ -53,6 +56,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'timestamp': 'timestamp',
             'type': 'type',
             'shift_trade': 'shiftTrade',
+            'time_off_request': 'timeOffRequest',
             'agent_notification': 'agentNotification',
             'other_notification_ids_in_group': 'otherNotificationIdsInGroup'
         }
@@ -62,6 +66,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         self._timestamp = None
         self._type = None
         self._shift_trade = None
+        self._time_off_request = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
 
@@ -154,7 +159,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         :param type: The type of this WfmUserNotificationTopicWfmUserNotification.
         :type: str
         """
-        allowed_values = ["ShiftTrade"]
+        allowed_values = ["ShiftTrade", "TimeOffRequest"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -183,6 +188,29 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         """
         
         self._shift_trade = shift_trade
+
+    @property
+    def time_off_request(self):
+        """
+        Gets the time_off_request of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :return: The time_off_request of this WfmUserNotificationTopicWfmUserNotification.
+        :rtype: WfmUserNotificationTopicTimeOffRequestNotification
+        """
+        return self._time_off_request
+
+    @time_off_request.setter
+    def time_off_request(self, time_off_request):
+        """
+        Sets the time_off_request of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :param time_off_request: The time_off_request of this WfmUserNotificationTopicWfmUserNotification.
+        :type: WfmUserNotificationTopicTimeOffRequestNotification
+        """
+        
+        self._time_off_request = time_off_request
 
     @property
     def agent_notification(self):
@@ -255,6 +283,12 @@ class WfmUserNotificationTopicWfmUserNotification(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

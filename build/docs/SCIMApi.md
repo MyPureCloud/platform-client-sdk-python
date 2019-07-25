@@ -8,27 +8,27 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_scim_user**](SCIMApi.html#delete_scim_user) | Soft delete user with specified ID|
-|[**delete_scim_v2_user**](SCIMApi.html#delete_scim_v2_user) | Soft delete user with specified ID|
-|[**get_scim_group**](SCIMApi.html#get_scim_group) | Return Group with specified ID|
-|[**get_scim_groups**](SCIMApi.html#get_scim_groups) | Query Groups|
-|[**get_scim_user**](SCIMApi.html#get_scim_user) | Return user with specified ID (default version)|
-|[**get_scim_users**](SCIMApi.html#get_scim_users) | Query Users|
-|[**get_scim_v2_group**](SCIMApi.html#get_scim_v2_group) | Return Group with specified ID|
-|[**get_scim_v2_groups**](SCIMApi.html#get_scim_v2_groups) | Query Groups|
-|[**get_scim_v2_serviceproviderconfig**](SCIMApi.html#get_scim_v2_serviceproviderconfig) | Get SCIM Configuration|
-|[**get_scim_v2_user**](SCIMApi.html#get_scim_v2_user) | Return User with specified ID|
-|[**get_scim_v2_users**](SCIMApi.html#get_scim_v2_users) | Query Users|
-|[**patch_scim_group**](SCIMApi.html#patch_scim_group) | Update Group with specified ID|
-|[**patch_scim_user**](SCIMApi.html#patch_scim_user) | Patch user with specified ID|
-|[**patch_scim_v2_group**](SCIMApi.html#patch_scim_v2_group) | Update Group with specified ID|
-|[**patch_scim_v2_user**](SCIMApi.html#patch_scim_v2_user) | Update user with specified ID|
-|[**post_scim_users**](SCIMApi.html#post_scim_users) | Create user|
-|[**post_scim_v2_users**](SCIMApi.html#post_scim_v2_users) | Create user|
-|[**put_scim_group**](SCIMApi.html#put_scim_group) | Update Group with specified ID|
-|[**put_scim_user**](SCIMApi.html#put_scim_user) | Update user with specified ID|
-|[**put_scim_v2_group**](SCIMApi.html#put_scim_v2_group) | Update Group with specified ID|
-|[**put_scim_v2_user**](SCIMApi.html#put_scim_v2_user) | Update user with specified ID|
+|[**delete_scim_user**](SCIMApi.html#delete_scim_user) | Delete a user|
+|[**delete_scim_v2_user**](SCIMApi.html#delete_scim_v2_user) | Delete a user|
+|[**get_scim_group**](SCIMApi.html#get_scim_group) | Get a group|
+|[**get_scim_groups**](SCIMApi.html#get_scim_groups) | Get a list of groups|
+|[**get_scim_user**](SCIMApi.html#get_scim_user) | Get a user|
+|[**get_scim_users**](SCIMApi.html#get_scim_users) | Get a list of users|
+|[**get_scim_v2_group**](SCIMApi.html#get_scim_v2_group) | Get a group|
+|[**get_scim_v2_groups**](SCIMApi.html#get_scim_v2_groups) | Get a list of groups|
+|[**get_scim_v2_serviceproviderconfig**](SCIMApi.html#get_scim_v2_serviceproviderconfig) | Get the SCIM configuration|
+|[**get_scim_v2_user**](SCIMApi.html#get_scim_v2_user) | Get a user|
+|[**get_scim_v2_users**](SCIMApi.html#get_scim_v2_users) | Get a list of users|
+|[**patch_scim_group**](SCIMApi.html#patch_scim_group) | Modify a group|
+|[**patch_scim_user**](SCIMApi.html#patch_scim_user) | Modify a user|
+|[**patch_scim_v2_group**](SCIMApi.html#patch_scim_v2_group) | Modify a group|
+|[**patch_scim_v2_user**](SCIMApi.html#patch_scim_v2_user) | Modify a user|
+|[**post_scim_users**](SCIMApi.html#post_scim_users) | Create a user|
+|[**post_scim_v2_users**](SCIMApi.html#post_scim_v2_users) | Create a user|
+|[**put_scim_group**](SCIMApi.html#put_scim_group) | Replace a group|
+|[**put_scim_user**](SCIMApi.html#put_scim_user) | Replace a user|
+|[**put_scim_v2_group**](SCIMApi.html#put_scim_v2_group) | Replace a group|
+|[**put_scim_v2_user**](SCIMApi.html#put_scim_v2_user) | Replace a user|
 {: class="table table-striped"}
 
 <a name="delete_scim_user"></a>
@@ -37,7 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -60,11 +60,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Soft delete user with specified ID
+    # Delete a user
     api_response = api_instance.delete_scim_user(user_id, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -76,8 +76,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -90,7 +90,7 @@ except ApiException as e:
 
 
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -113,11 +113,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Soft delete user with specified ID
+    # Delete a user
     api_response = api_instance.delete_scim_v2_user(user_id, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -129,8 +129,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -143,7 +143,7 @@ except ApiException as e:
 
 
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -166,11 +166,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
-if_none_match = 'if_none_match_example' # str | If-None-Match for ETag version checking (optional)
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
+if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
 
 try:
-    # Return Group with specified ID
+    # Get a group
     api_response = api_instance.get_scim_group(group_id, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
@@ -182,8 +182,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
-| **if_none_match** | **str**| If-None-Match for ETag version checking | [optional]  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
+| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -196,7 +196,7 @@ except ApiException as e:
 
 
 
-Query Groups
+Get a list of groups
 
 
 
@@ -219,12 +219,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-start_index = 1 # int | Starting item of request. 1-based (optional) (default to 1)
-count = 25 # int | The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional) (default to 25)
-filter = 'displayName eq groupName' # str | filter parameter e.g. displayName eq groupName (optional)
+start_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)
+count = 25 # int | The requested number of items per page. A value of 0 returns totalResults. (optional) (default to 25)
+filter = 'displayName eq groupName' # str | Filters results. (optional)
 
 try:
-    # Query Groups
+    # Get a list of groups
     api_response = api_instance.get_scim_groups(start_index=start_index, count=count, filter=filter)
     pprint(api_response)
 except ApiException as e:
@@ -236,9 +236,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **start_index** | **int**| Starting item of request. 1-based | [optional] [default to 1] |
-| **count** | **int**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
-| **filter** | **str**| filter parameter e.g. displayName eq groupName | [optional]  |
+| **start_index** | **int**| The 1-based index of the first query result. | [optional] [default to 1] |
+| **count** | **int**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
+| **filter** | **str**| Filters results. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -251,7 +251,7 @@ except ApiException as e:
 
 
 
-Return user with specified ID (default version)
+Get a user
 
 
 
@@ -275,11 +275,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
-if_none_match = 'if_none_match_example' # str | If-None-Match for ETag version checking (optional)
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
+if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
 
 try:
-    # Return user with specified ID (default version)
+    # Get a user
     api_response = api_instance.get_scim_user(user_id, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
@@ -291,8 +291,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
-| **if_none_match** | **str**| If-None-Match for ETag version checking | [optional]  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
+| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -305,7 +305,7 @@ except ApiException as e:
 
 
 
-Query Users
+Get a list of users
 
 
 
@@ -329,12 +329,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-filter = 'filter_example' # str | filter parameter e.g. userName eq search@sample.org
-start_index = 1 # int | Starting item of request. 1-based (optional) (default to 1)
-count = 25 # int | The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional) (default to 25)
+filter = 'filter_example' # str | Filters results.
+start_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)
+count = 25 # int | The requested number of items per page. A value of 0 returns totalResults. (optional) (default to 25)
 
 try:
-    # Query Users
+    # Get a list of users
     api_response = api_instance.get_scim_users(filter, start_index=start_index, count=count)
     pprint(api_response)
 except ApiException as e:
@@ -346,9 +346,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter** | **str**| filter parameter e.g. userName eq search@sample.org |  |
-| **start_index** | **int**| Starting item of request. 1-based | [optional] [default to 1] |
-| **count** | **int**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+| **filter** | **str**| Filters results. |  |
+| **start_index** | **int**| The 1-based index of the first query result. | [optional] [default to 1] |
+| **count** | **int**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -361,7 +361,7 @@ except ApiException as e:
 
 
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -384,11 +384,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
-if_none_match = 'if_none_match_example' # str | If-None-Match for ETag version checking (optional)
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
 
 try:
-    # Return Group with specified ID
+    # Get a group
     api_response = api_instance.get_scim_v2_group(group_id, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
@@ -400,8 +400,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
-| **if_none_match** | **str**| If-None-Match for ETag version checking | [optional]  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
+| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -414,7 +414,7 @@ except ApiException as e:
 
 
 
-Query Groups
+Get a list of groups
 
 
 
@@ -437,12 +437,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-filter = 'displayName eq groupName' # str | filter parameter e.g. displayName eq groupName
-start_index = 1 # int | Starting item of request. 1-based (optional) (default to 1)
-count = 25 # int | The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional) (default to 25)
+filter = 'displayName eq groupName' # str | Filters results.
+start_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)
+count = 25 # int | The requested number of items per page. A value of 0 returns totalResults. (optional) (default to 25)
 
 try:
-    # Query Groups
+    # Get a list of groups
     api_response = api_instance.get_scim_v2_groups(filter, start_index=start_index, count=count)
     pprint(api_response)
 except ApiException as e:
@@ -454,9 +454,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter** | **str**| filter parameter e.g. displayName eq groupName |  |
-| **start_index** | **int**| Starting item of request. 1-based | [optional] [default to 1] |
-| **count** | **int**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+| **filter** | **str**| Filters results. |  |
+| **start_index** | **int**| The 1-based index of the first query result. | [optional] [default to 1] |
+| **count** | **int**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -469,7 +469,7 @@ except ApiException as e:
 
 
 
-Get SCIM Configuration
+Get the SCIM configuration
 
 
 
@@ -488,10 +488,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-if_none_match = 'if_none_match_example' # str | If-None-Match for ETag version checking (optional)
+if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
 
 try:
-    # Get SCIM Configuration
+    # Get the SCIM configuration
     api_response = api_instance.get_scim_v2_serviceproviderconfig(if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
@@ -503,7 +503,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **if_none_match** | **str**| If-None-Match for ETag version checking | [optional]  |
+| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -516,7 +516,7 @@ except ApiException as e:
 
 
 
-Return User with specified ID
+Get a user
 
 
 
@@ -540,11 +540,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
-if_none_match = 'if_none_match_example' # str | If-None-Match for ETag version checking (optional)
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
 
 try:
-    # Return User with specified ID
+    # Get a user
     api_response = api_instance.get_scim_v2_user(user_id, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
@@ -556,8 +556,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
-| **if_none_match** | **str**| If-None-Match for ETag version checking | [optional]  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
+| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -570,7 +570,7 @@ except ApiException as e:
 
 
 
-Query Users
+Get a list of users
 
 
 
@@ -594,12 +594,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-filter = 'filter_example' # str | filter parameter e.g. userName eq search@sample.org
-start_index = 1 # int | Starting item of request. 1-based (optional) (default to 1)
-count = 25 # int | The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional) (default to 25)
+filter = 'filter_example' # str | Filters results.
+start_index = 1 # int | The 1-based index of the first query result. (optional) (default to 1)
+count = 25 # int | The requested number of items per page. A value of 0 returns totalResults. (optional) (default to 25)
 
 try:
-    # Query Users
+    # Get a list of users
     api_response = api_instance.get_scim_v2_users(filter, start_index=start_index, count=count)
     pprint(api_response)
 except ApiException as e:
@@ -611,9 +611,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter** | **str**| filter parameter e.g. userName eq search@sample.org |  |
-| **start_index** | **int**| Starting item of request. 1-based | [optional] [default to 1] |
-| **count** | **int**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+| **filter** | **str**| Filters results. |  |
+| **start_index** | **int**| The 1-based index of the first query result. | [optional] [default to 1] |
+| **count** | **int**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -626,7 +626,7 @@ except ApiException as e:
 
 
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -649,12 +649,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
 body = PureCloudPlatformClientV2.PatchRequest() # PatchRequest | Group
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update Group with specified ID
+    # Modify a group
     api_response = api_instance.patch_scim_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -666,9 +666,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
 | **body** | [**PatchRequest**](PatchRequest.html)| Group |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -681,7 +681,7 @@ except ApiException as e:
 
 
 
-Patch user with specified ID
+Modify a user
 
 
 
@@ -705,12 +705,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
 body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | SCIM Patch Request
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Patch user with specified ID
+    # Modify a user
     api_response = api_instance.patch_scim_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -722,9 +722,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -737,7 +737,7 @@ except ApiException as e:
 
 
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -760,12 +760,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 body = PureCloudPlatformClientV2.PatchRequest() # PatchRequest | Group
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update Group with specified ID
+    # Modify a group
     api_response = api_instance.patch_scim_v2_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -777,9 +777,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
 | **body** | [**PatchRequest**](PatchRequest.html)| Group |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -792,7 +792,7 @@ except ApiException as e:
 
 
 
-Update user with specified ID
+Modify a user
 
 
 
@@ -816,12 +816,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | User Id
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | SCIM Patch Request
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update user with specified ID
+    # Modify a user
     api_response = api_instance.patch_scim_v2_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -833,9 +833,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User Id |  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -848,7 +848,7 @@ except ApiException as e:
 
 
 
-Create user
+Create a user
 
 
 
@@ -874,7 +874,7 @@ api_instance = PureCloudPlatformClientV2.SCIMApi()
 body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | SCIM Create User
 
 try:
-    # Create user
+    # Create a user
     api_response = api_instance.post_scim_users(body)
     pprint(api_response)
 except ApiException as e:
@@ -899,7 +899,7 @@ except ApiException as e:
 
 
 
-Create user
+Create a user
 
 
 
@@ -925,7 +925,7 @@ api_instance = PureCloudPlatformClientV2.SCIMApi()
 body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | SCIM Create User
 
 try:
-    # Create user
+    # Create a user
     api_response = api_instance.post_scim_v2_users(body)
     pprint(api_response)
 except ApiException as e:
@@ -950,7 +950,7 @@ except ApiException as e:
 
 
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -973,12 +973,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
 body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | Group
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update Group with specified ID
+    # Replace a group
     api_response = api_instance.put_scim_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -990,9 +990,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
 | **body** | [**ScimV2Group**](ScimV2Group.html)| Group |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1005,7 +1005,7 @@ except ApiException as e:
 
 
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -1029,12 +1029,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | 
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
 body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | User
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update user with specified ID
+    # Replace a user
     api_response = api_instance.put_scim_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -1046,9 +1046,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**|  |  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
 | **body** | [**ScimV2User**](ScimV2User.html)| User |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1061,7 +1061,7 @@ except ApiException as e:
 
 
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -1084,12 +1084,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | 
+group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | Group
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update Group with specified ID
+    # Replace a group
     api_response = api_instance.put_scim_v2_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -1101,9 +1101,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**|  |  |
+| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
 | **body** | [**ScimV2Group**](ScimV2Group.html)| Group |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1116,7 +1116,7 @@ except ApiException as e:
 
 
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -1140,12 +1140,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-user_id = 'user_id_example' # str | User Id
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | User
-if_match = 'if_match_example' # str | If-Match for ETag version checking (optional)
+if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
 
 try:
-    # Update user with specified ID
+    # Replace a user
     api_response = api_instance.put_scim_v2_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
@@ -1157,9 +1157,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User Id |  |
+| **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
 | **body** | [**ScimV2User**](ScimV2User.html)| User |  |
-| **if_match** | **str**| If-Match for ETag version checking | [optional]  |
+| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

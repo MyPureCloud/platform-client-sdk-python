@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class ConversationProperties(object):
     """
@@ -41,6 +43,7 @@ class ConversationProperties(object):
             'is_waiting': 'bool',
             'is_active': 'bool',
             'is_acd': 'bool',
+            'is_preferred': 'bool',
             'is_screenshare': 'bool',
             'is_cobrowse': 'bool',
             'is_voicemail': 'bool',
@@ -53,6 +56,7 @@ class ConversationProperties(object):
             'is_waiting': 'isWaiting',
             'is_active': 'isActive',
             'is_acd': 'isAcd',
+            'is_preferred': 'isPreferred',
             'is_screenshare': 'isScreenshare',
             'is_cobrowse': 'isCobrowse',
             'is_voicemail': 'isVoicemail',
@@ -64,6 +68,7 @@ class ConversationProperties(object):
         self._is_waiting = None
         self._is_active = None
         self._is_acd = None
+        self._is_preferred = None
         self._is_screenshare = None
         self._is_cobrowse = None
         self._is_voicemail = None
@@ -139,6 +144,29 @@ class ConversationProperties(object):
         """
         
         self._is_acd = is_acd
+
+    @property
+    def is_preferred(self):
+        """
+        Gets the is_preferred of this ConversationProperties.
+        Indicates filtering for Preferred Agent Routing
+
+        :return: The is_preferred of this ConversationProperties.
+        :rtype: bool
+        """
+        return self._is_preferred
+
+    @is_preferred.setter
+    def is_preferred(self, is_preferred):
+        """
+        Sets the is_preferred of this ConversationProperties.
+        Indicates filtering for Preferred Agent Routing
+
+        :param is_preferred: The is_preferred of this ConversationProperties.
+        :type: bool
+        """
+        
+        self._is_preferred = is_preferred
 
     @property
     def is_screenshare(self):
@@ -303,6 +331,12 @@ class ConversationProperties(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

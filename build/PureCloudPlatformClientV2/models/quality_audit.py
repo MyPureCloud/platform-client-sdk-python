@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class QualityAudit(object):
     """
@@ -41,6 +43,7 @@ class QualityAudit(object):
             'id': 'str',
             'name': 'str',
             'user': 'User',
+            'job_id': 'str',
             'level': 'str',
             'entity': 'AuditEntity',
             'timestamp': 'str',
@@ -55,6 +58,7 @@ class QualityAudit(object):
             'id': 'id',
             'name': 'name',
             'user': 'user',
+            'job_id': 'jobId',
             'level': 'level',
             'entity': 'entity',
             'timestamp': 'timestamp',
@@ -68,6 +72,7 @@ class QualityAudit(object):
         self._id = None
         self._name = None
         self._user = None
+        self._job_id = None
         self._level = None
         self._entity = None
         self._timestamp = None
@@ -145,6 +150,29 @@ class QualityAudit(object):
         """
         
         self._user = user
+
+    @property
+    def job_id(self):
+        """
+        Gets the job_id of this QualityAudit.
+
+
+        :return: The job_id of this QualityAudit.
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id):
+        """
+        Sets the job_id of this QualityAudit.
+
+
+        :param job_id: The job_id of this QualityAudit.
+        :type: str
+        """
+        
+        self._job_id = job_id
 
     @property
     def level(self):
@@ -355,6 +383,12 @@ class QualityAudit(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

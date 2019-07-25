@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class ManagementUnit(object):
     """
@@ -41,14 +43,13 @@ class ManagementUnit(object):
             'id': 'str',
             'name': 'str',
             'division': 'Division',
-            'business_unit': 'BusinessUnitReference',
             'start_day_of_week': 'str',
             'time_zone': 'str',
             'settings': 'ManagementUnitSettings',
+            'metadata': 'WfmVersionedEntityMetadata',
             'version': 'int',
             'date_modified': 'datetime',
             'modified_by': 'UserReference',
-            'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
 
@@ -56,28 +57,26 @@ class ManagementUnit(object):
             'id': 'id',
             'name': 'name',
             'division': 'division',
-            'business_unit': 'businessUnit',
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
             'settings': 'settings',
+            'metadata': 'metadata',
             'version': 'version',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
-            'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._division = None
-        self._business_unit = None
         self._start_day_of_week = None
         self._time_zone = None
         self._settings = None
+        self._metadata = None
         self._version = None
         self._date_modified = None
         self._modified_by = None
-        self._metadata = None
         self._self_uri = None
 
     @property
@@ -150,29 +149,6 @@ class ManagementUnit(object):
         self._division = division
 
     @property
-    def business_unit(self):
-        """
-        Gets the business_unit of this ManagementUnit.
-        The business unit to which this management unit belongs
-
-        :return: The business_unit of this ManagementUnit.
-        :rtype: BusinessUnitReference
-        """
-        return self._business_unit
-
-    @business_unit.setter
-    def business_unit(self, business_unit):
-        """
-        Sets the business_unit of this ManagementUnit.
-        The business unit to which this management unit belongs
-
-        :param business_unit: The business_unit of this ManagementUnit.
-        :type: BusinessUnitReference
-        """
-        
-        self._business_unit = business_unit
-
-    @property
     def start_day_of_week(self):
         """
         Gets the start_day_of_week of this ManagementUnit.
@@ -203,7 +179,7 @@ class ManagementUnit(object):
     def time_zone(self):
         """
         Gets the time_zone of this ManagementUnit.
-        The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
+        The time zone for the management unit in standard Olson format
 
         :return: The time_zone of this ManagementUnit.
         :rtype: str
@@ -214,7 +190,7 @@ class ManagementUnit(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this ManagementUnit.
-        The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
+        The time zone for the management unit in standard Olson format
 
         :param time_zone: The time_zone of this ManagementUnit.
         :type: str
@@ -246,10 +222,33 @@ class ManagementUnit(object):
         self._settings = settings
 
     @property
+    def metadata(self):
+        """
+        Gets the metadata of this ManagementUnit.
+        Version info metadata for this management unit. Deprecated, use settings.metadata
+
+        :return: The metadata of this ManagementUnit.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this ManagementUnit.
+        Version info metadata for this management unit. Deprecated, use settings.metadata
+
+        :param metadata: The metadata of this ManagementUnit.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
+
+    @property
     def version(self):
         """
         Gets the version of this ManagementUnit.
-        The version of the underlying entity.  Deprecated, use metadata field instead
+        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
 
         :return: The version of this ManagementUnit.
         :rtype: int
@@ -260,7 +259,7 @@ class ManagementUnit(object):
     def version(self, version):
         """
         Sets the version of this ManagementUnit.
-        The version of the underlying entity.  Deprecated, use metadata field instead
+        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
 
         :param version: The version of this ManagementUnit.
         :type: int
@@ -272,7 +271,7 @@ class ManagementUnit(object):
     def date_modified(self):
         """
         Gets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_modified of this ManagementUnit.
         :rtype: datetime
@@ -283,7 +282,7 @@ class ManagementUnit(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_modified: The date_modified of this ManagementUnit.
         :type: datetime
@@ -295,7 +294,7 @@ class ManagementUnit(object):
     def modified_by(self):
         """
         Gets the modified_by of this ManagementUnit.
-        The user who last modified this entity.  Deprecated, use metadata field instead
+        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
 
         :return: The modified_by of this ManagementUnit.
         :rtype: UserReference
@@ -306,36 +305,13 @@ class ManagementUnit(object):
     def modified_by(self, modified_by):
         """
         Sets the modified_by of this ManagementUnit.
-        The user who last modified this entity.  Deprecated, use metadata field instead
+        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
 
         :param modified_by: The modified_by of this ManagementUnit.
         :type: UserReference
         """
         
         self._modified_by = modified_by
-
-    @property
-    def metadata(self):
-        """
-        Gets the metadata of this ManagementUnit.
-        Version info metadata for this management unit
-
-        :return: The metadata of this ManagementUnit.
-        :rtype: WfmVersionedEntityMetadata
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """
-        Sets the metadata of this ManagementUnit.
-        Version info metadata for this management unit
-
-        :param metadata: The metadata of this ManagementUnit.
-        :type: WfmVersionedEntityMetadata
-        """
-        
-        self._metadata = metadata
 
     @property
     def self_uri(self):
@@ -385,6 +361,12 @@ class ManagementUnit(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

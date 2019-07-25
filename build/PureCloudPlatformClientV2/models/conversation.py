@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class Conversation(object):
     """
@@ -48,6 +50,7 @@ class Conversation(object):
             'max_participants': 'int',
             'recording_state': 'str',
             'state': 'str',
+            'divisions': 'list[ConversationDivisionMembership]',
             'self_uri': 'str'
         }
 
@@ -62,6 +65,7 @@ class Conversation(object):
             'max_participants': 'maxParticipants',
             'recording_state': 'recordingState',
             'state': 'state',
+            'divisions': 'divisions',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +79,7 @@ class Conversation(object):
         self._max_participants = None
         self._recording_state = None
         self._state = None
+        self._divisions = None
         self._self_uri = None
 
     @property
@@ -316,6 +321,29 @@ class Conversation(object):
             self._state = state
 
     @property
+    def divisions(self):
+        """
+        Gets the divisions of this Conversation.
+        Identifiers of divisions associated with this conversation
+
+        :return: The divisions of this Conversation.
+        :rtype: list[ConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions):
+        """
+        Sets the divisions of this Conversation.
+        Identifiers of divisions associated with this conversation
+
+        :param divisions: The divisions of this Conversation.
+        :type: list[ConversationDivisionMembership]
+        """
+        
+        self._divisions = divisions
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this Conversation.
@@ -363,6 +391,12 @@ class Conversation(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

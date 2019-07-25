@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_conversation_recording_annotation**](RecordingApi.html#delete_conversation_recording_annotation) | Delete annotation|
 |[**delete_orphanrecording**](RecordingApi.html#delete_orphanrecording) | Deletes a single orphan recording|
+|[**delete_recording_job**](RecordingApi.html#delete_recording_job) | Delete the recording bulk job|
 |[**delete_recording_mediaretentionpolicies**](RecordingApi.html#delete_recording_mediaretentionpolicies) | Delete media retention policies|
 |[**delete_recording_mediaretentionpolicy**](RecordingApi.html#delete_recording_mediaretentionpolicy) | Delete a media retention policy|
 |[**get_conversation_recording**](RecordingApi.html#get_conversation_recording) | Gets a specific recording.|
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
 |[**get_orphanrecordings**](RecordingApi.html#get_orphanrecordings) | Gets all orphan recordings|
 |[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results|
+|[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
+|[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
 |[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings|
 |[**get_recording_localkeys_settings**](RecordingApi.html#get_recording_localkeys_settings) | gets a list local key settings data|
 |[**get_recording_mediaretentionpolicies**](RecordingApi.html#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
@@ -34,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_recordings_screensession**](RecordingApi.html#patch_recordings_screensession) | Update a screen recording session|
 |[**post_conversation_recording_annotations**](RecordingApi.html#post_conversation_recording_annotations) | Create annotation|
 |[**post_recording_batchrequests**](RecordingApi.html#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
+|[**post_recording_jobs**](RecordingApi.html#post_recording_jobs) | Create a recording bulk job|
 |[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local recording key|
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
@@ -41,6 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
 |[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
+|[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job|
 |[**put_recording_localkeys_setting**](RecordingApi.html#put_recording_localkeys_setting) | Update the local encryption settings|
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
@@ -150,6 +155,56 @@ except ApiException as e:
 ### Return type
 
 [**OrphanRecording**](OrphanRecording.html)
+
+<a name="delete_recording_job"></a>
+
+##  delete_recording_job(job_id)
+
+
+
+Delete the recording bulk job
+
+
+
+Wraps DELETE /api/v2/recording/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* recording:job:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete the recording bulk job
+    api_instance.delete_recording_job(job_id)
+except ApiException as e:
+    print "Exception when calling RecordingApi->delete_recording_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_recording_mediaretentionpolicies"></a>
 
@@ -794,6 +849,110 @@ except ApiException as e:
 
 [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
 
+<a name="get_recording_job"></a>
+
+## [**RecordingJob**](RecordingJob.html) get_recording_job(job_id)
+
+
+
+Get the status of the job associated with the job id.
+
+
+
+Wraps GET /api/v2/recording/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get the status of the job associated with the job id.
+    api_response = api_instance.get_recording_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->get_recording_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
+
+<a name="get_recording_jobs"></a>
+
+## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number)
+
+
+
+Get the status of all jobs within the user's organization
+
+
+
+Wraps GET /api/v2/recording/jobs 
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get the status of all jobs within the user's organization
+    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->get_recording_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingJobEntityListing**](RecordingJobEntityListing.html)
+
 <a name="get_recording_localkeys_setting"></a>
 
 ## [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) get_recording_localkeys_setting(settings_id)
@@ -1422,6 +1581,57 @@ except ApiException as e:
 
 [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
 
+<a name="post_recording_jobs"></a>
+
+## [**RecordingJob**](RecordingJob.html) post_recording_jobs(body)
+
+
+
+Create a recording bulk job
+
+
+
+Wraps POST /api/v2/recording/jobs 
+
+Requires ANY permissions: 
+
+* recording:job:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.RecordingJobsQuery() # RecordingJobsQuery | query
+
+try:
+    # Create a recording bulk job
+    api_response = api_instance.post_recording_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->post_recording_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RecordingJobsQuery**](RecordingJobsQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
+
 <a name="post_recording_localkeys"></a>
 
 ## [**EncryptionKey**](EncryptionKey.html) post_recording_localkeys(body)
@@ -1784,6 +1994,59 @@ except ApiException as e:
 ### Return type
 
 [**Recording**](Recording.html)
+
+<a name="put_recording_job"></a>
+
+## [**RecordingJob**](RecordingJob.html) put_recording_job(job_id, body)
+
+
+
+Execute the recording bulk job
+
+
+
+Wraps PUT /api/v2/recording/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* recording:job:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+job_id = 'job_id_example' # str | jobId
+body = PureCloudPlatformClientV2.ExecuteRecordingJobsQuery() # ExecuteRecordingJobsQuery | query
+
+try:
+    # Execute the recording bulk job
+    api_response = api_instance.put_recording_job(job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->put_recording_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **body** | [**ExecuteRecordingJobsQuery**](ExecuteRecordingJobsQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
 
 <a name="put_recording_localkeys_setting"></a>
 

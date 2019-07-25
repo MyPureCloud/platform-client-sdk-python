@@ -31,6 +31,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_credentials_types**](IntegrationsApi.html#get_integrations_credentials_types) | List all credential types|
 |[**get_integrations_eventlog**](IntegrationsApi.html#get_integrations_eventlog) | List all events|
 |[**get_integrations_eventlog_event_id**](IntegrationsApi.html#get_integrations_eventlog_event_id) | Get a single event|
+|[**get_integrations_speech_dialogflow_agent**](IntegrationsApi.html#get_integrations_speech_dialogflow_agent) | Get details about a Dialogflow agent|
+|[**get_integrations_speech_dialogflow_agents**](IntegrationsApi.html#get_integrations_speech_dialogflow_agents) | Get a list of Dialogflow agents in the customers&#39; Google accounts|
+|[**get_integrations_speech_lex_bot_alias**](IntegrationsApi.html#get_integrations_speech_lex_bot_alias) | Get details about a Lex bot alias|
+|[**get_integrations_speech_lex_bot_bot_id_aliases**](IntegrationsApi.html#get_integrations_speech_lex_bot_bot_id_aliases) | Get a list of aliases for a bot in the customer&#39;s AWS accounts|
+|[**get_integrations_speech_lex_bots**](IntegrationsApi.html#get_integrations_speech_lex_bots) | Get a list of Lex bots in the customers&#39; AWS accounts|
+|[**get_integrations_speech_tts_engine**](IntegrationsApi.html#get_integrations_speech_tts_engine) | Get details about a TTS engine|
+|[**get_integrations_speech_tts_engine_voice**](IntegrationsApi.html#get_integrations_speech_tts_engine_voice) | Get details about a specific voice for a TTS engine|
+|[**get_integrations_speech_tts_engine_voices**](IntegrationsApi.html#get_integrations_speech_tts_engine_voices) | Get a list of voices for a TTS engine|
+|[**get_integrations_speech_tts_engines**](IntegrationsApi.html#get_integrations_speech_tts_engines) | Get a list of TTS engines enabled for org|
+|[**get_integrations_speech_tts_settings**](IntegrationsApi.html#get_integrations_speech_tts_settings) | Get TTS settings for an org|
 |[**get_integrations_type**](IntegrationsApi.html#get_integrations_type) | Get integration type.|
 |[**get_integrations_type_configschema**](IntegrationsApi.html#get_integrations_type_configschema) | Get properties config schema for an integration type.|
 |[**get_integrations_types**](IntegrationsApi.html#get_integrations_types) | List integration types|
@@ -49,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_workforcemanagement_vendorconnection**](IntegrationsApi.html#post_integrations_workforcemanagement_vendorconnection) | Add a vendor connection|
 |[**put_integration_config_current**](IntegrationsApi.html#put_integration_config_current) | Update integration configuration.|
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
+|[**put_integrations_speech_tts_settings**](IntegrationsApi.html#put_integrations_speech_tts_settings) | Update TTS settings for an org|
 {: class="table table-striped"}
 
 <a name="delete_integration"></a>
@@ -1325,6 +1336,544 @@ except ApiException as e:
 
 [**IntegrationEvent**](IntegrationEvent.html)
 
+<a name="get_integrations_speech_dialogflow_agent"></a>
+
+## [**DialogflowAgent**](DialogflowAgent.html) get_integrations_speech_dialogflow_agent(agent_id)
+
+
+
+Get details about a Dialogflow agent
+
+
+
+Wraps GET /api/v2/integrations/speech/dialogflow/agents/{agentId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+agent_id = 'agent_id_example' # str | The agent ID
+
+try:
+    # Get details about a Dialogflow agent
+    api_response = api_instance.get_integrations_speech_dialogflow_agent(agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agent: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The agent ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DialogflowAgent**](DialogflowAgent.html)
+
+<a name="get_integrations_speech_dialogflow_agents"></a>
+
+## [**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html) get_integrations_speech_dialogflow_agents(page_number=page_number, page_size=page_size, name=name)
+
+
+
+Get a list of Dialogflow agents in the customers' Google accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/dialogflow/agents 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Filter on agent name (optional)
+
+try:
+    # Get a list of Dialogflow agents in the customers' Google accounts
+    api_response = api_instance.get_integrations_speech_dialogflow_agents(page_number=page_number, page_size=page_size, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agents: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Filter on agent name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html)
+
+<a name="get_integrations_speech_lex_bot_alias"></a>
+
+## [**LexBotAlias**](LexBotAlias.html) get_integrations_speech_lex_bot_alias(alias_id)
+
+
+
+Get details about a Lex bot alias
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bot/alias/{aliasId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+alias_id = 'alias_id_example' # str | The alias ID
+
+try:
+    # Get details about a Lex bot alias
+    api_response = api_instance.get_integrations_speech_lex_bot_alias(alias_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_alias: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **alias_id** | **str**| The alias ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexBotAlias**](LexBotAlias.html)
+
+<a name="get_integrations_speech_lex_bot_bot_id_aliases"></a>
+
+## [**LexBotAliasEntityListing**](LexBotAliasEntityListing.html) get_integrations_speech_lex_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
+
+
+
+Get a list of aliases for a bot in the customer's AWS accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bot/{botId}/aliases 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+bot_id = 'bot_id_example' # str | The bot ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+status = 'status_example' # str | Filter on alias status (optional)
+name = 'name_example' # str | Filter on alias name (optional)
+
+try:
+    # Get a list of aliases for a bot in the customer's AWS accounts
+    api_response = api_instance.get_integrations_speech_lex_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_bot_id_aliases: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bot_id** | **str**| The bot ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **status** | **str**| Filter on alias status | [optional] <br />**Values**: READY, FAILED, BUILDING, NOT_BUILT |
+| **name** | **str**| Filter on alias name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexBotAliasEntityListing**](LexBotAliasEntityListing.html)
+
+<a name="get_integrations_speech_lex_bots"></a>
+
+## [**LexBotEntityListing**](LexBotEntityListing.html) get_integrations_speech_lex_bots(page_number=page_number, page_size=page_size, name=name)
+
+
+
+Get a list of Lex bots in the customers' AWS accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bots 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Filter on bot name (optional)
+
+try:
+    # Get a list of Lex bots in the customers' AWS accounts
+    api_response = api_instance.get_integrations_speech_lex_bots(page_number=page_number, page_size=page_size, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bots: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Filter on bot name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexBotEntityListing**](LexBotEntityListing.html)
+
+<a name="get_integrations_speech_tts_engine"></a>
+
+## [**TtsEngineEntity**](TtsEngineEntity.html) get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
+
+
+
+Get details about a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+engine_id = 'engine_id_example' # str | The engine ID
+include_voices = false # bool | Include voices for the engine (optional) (default to false)
+
+try:
+    # Get details about a TTS engine
+    api_response = api_instance.get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **engine_id** | **str**| The engine ID |  |
+| **include_voices** | **bool**| Include voices for the engine | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsEngineEntity**](TtsEngineEntity.html)
+
+<a name="get_integrations_speech_tts_engine_voice"></a>
+
+## [**TtsVoiceEntity**](TtsVoiceEntity.html) get_integrations_speech_tts_engine_voice(engine_id, voice_id)
+
+
+
+Get details about a specific voice for a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+engine_id = 'engine_id_example' # str | The engine ID
+voice_id = 'voice_id_example' # str | The voice ID
+
+try:
+    # Get details about a specific voice for a TTS engine
+    api_response = api_instance.get_integrations_speech_tts_engine_voice(engine_id, voice_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voice: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **engine_id** | **str**| The engine ID |  |
+| **voice_id** | **str**| The voice ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsVoiceEntity**](TtsVoiceEntity.html)
+
+<a name="get_integrations_speech_tts_engine_voices"></a>
+
+## [**TtsVoiceEntityListing**](TtsVoiceEntityListing.html) get_integrations_speech_tts_engine_voices(engine_id, page_number=page_number, page_size=page_size)
+
+
+
+Get a list of voices for a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+engine_id = 'engine_id_example' # str | The engine ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a list of voices for a TTS engine
+    api_response = api_instance.get_integrations_speech_tts_engine_voices(engine_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voices: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **engine_id** | **str**| The engine ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsVoiceEntityListing**](TtsVoiceEntityListing.html)
+
+<a name="get_integrations_speech_tts_engines"></a>
+
+## [**TtsEngineEntityListing**](TtsEngineEntityListing.html) get_integrations_speech_tts_engines(page_number=page_number, page_size=page_size, include_voices=include_voices, name=name, language=language)
+
+
+
+Get a list of TTS engines enabled for org
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+include_voices = false # bool | Include voices for the engine (optional) (default to false)
+name = 'name_example' # str | Filter on engine name (optional)
+language = 'language_example' # str | Filter on supported language. If includeVoices=true then the voices are also filtered. (optional)
+
+try:
+    # Get a list of TTS engines enabled for org
+    api_response = api_instance.get_integrations_speech_tts_engines(page_number=page_number, page_size=page_size, include_voices=include_voices, name=name, language=language)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engines: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **include_voices** | **bool**| Include voices for the engine | [optional] [default to false] |
+| **name** | **str**| Filter on engine name | [optional]  |
+| **language** | **str**| Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsEngineEntityListing**](TtsEngineEntityListing.html)
+
+<a name="get_integrations_speech_tts_settings"></a>
+
+## [**TtsSettings**](TtsSettings.html) get_integrations_speech_tts_settings()
+
+
+
+Get TTS settings for an org
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/settings 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+
+try:
+    # Get TTS settings for an org
+    api_response = api_instance.get_integrations_speech_tts_settings()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_settings: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsSettings**](TtsSettings.html)
+
 <a name="get_integrations_type"></a>
 
 ## [**IntegrationType**](IntegrationType.html) get_integrations_type(type_id)
@@ -2277,4 +2826,55 @@ except ApiException as e:
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
+
+<a name="put_integrations_speech_tts_settings"></a>
+
+## [**TtsSettings**](TtsSettings.html) put_integrations_speech_tts_settings(body)
+
+
+
+Update TTS settings for an org
+
+
+
+Wraps PUT /api/v2/integrations/speech/tts/settings 
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+body = PureCloudPlatformClientV2.TtsSettings() # TtsSettings | Updated TtsSettings
+
+try:
+    # Update TTS settings for an org
+    api_response = api_instance.put_integrations_speech_tts_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IntegrationsApi->put_integrations_speech_tts_settings: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TtsSettings**](TtsSettings.html)| Updated TtsSettings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TtsSettings**](TtsSettings.html)
 

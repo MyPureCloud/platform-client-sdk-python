@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class CreateManagementUnitApiRequest(object):
     """
@@ -159,7 +161,7 @@ class CreateManagementUnitApiRequest(object):
     def division_id(self):
         """
         Gets the division_id of this CreateManagementUnitApiRequest.
-        The division to which this management unit belongs.  Defaults to home division ID
+        The id of the division to which this management unit belongs.  Defaults to home division ID
 
         :return: The division_id of this CreateManagementUnitApiRequest.
         :rtype: str
@@ -170,7 +172,7 @@ class CreateManagementUnitApiRequest(object):
     def division_id(self, division_id):
         """
         Sets the division_id of this CreateManagementUnitApiRequest.
-        The division to which this management unit belongs.  Defaults to home division ID
+        The id of the division to which this management unit belongs.  Defaults to home division ID
 
         :param division_id: The division_id of this CreateManagementUnitApiRequest.
         :type: str
@@ -203,6 +205,12 @@ class CreateManagementUnitApiRequest(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

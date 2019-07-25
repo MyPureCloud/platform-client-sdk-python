@@ -61,7 +61,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -811,8 +811,8 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param str expand: 
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param list[str] expand: 
         :return: ManagementUnit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1617,7 +1617,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_settings(self, mu_id, **kwargs):
         """
-        Get the settings for the requested management unit
+        Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1630,7 +1630,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: ManagementUnitSettings
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3262,6 +3262,87 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_managementunit(self, mu_id, **kwargs):
+        """
+        Update the requested management unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit(mu_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param UpdateManagementUnitRequest body: body
+        :return: ManagementUnit
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `patch_workforcemanagement_managementunit`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ManagementUnit',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_managementunit_activitycode(self, mu_id, ac_id, **kwargs):
         """
         Update an activity code
@@ -3525,7 +3606,7 @@ class WorkforceManagementApi(object):
 
     def patch_workforcemanagement_managementunit_settings(self, mu_id, **kwargs):
         """
-        Patch the settings for the requested management unit
+        Update the settings for the requested management unit
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3538,7 +3619,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param ManagementUnitSettings body: config
         :return: ManagementUnitSettings
                  If the method is called asynchronously,
@@ -4278,6 +4359,87 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IntradayResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_move(self, mu_id, **kwargs):
+        """
+        Move the requested management unit to a new business unit
+        Returns status 200 if the management unit is already in the requested business unit
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_move(mu_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param MoveManagementUnitRequest body: body
+        :return: MoveManagementUnitResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mu_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_move" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'mu_id' is set
+        if ('mu_id' not in params) or (params['mu_id'] is None):
+            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_move`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/move'.replace('{format}', 'json')
+        path_params = {}
+        if 'mu_id' in params:
+            path_params['muId'] = params['mu_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MoveManagementUnitResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

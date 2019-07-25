@@ -7,8 +7,7 @@ title: Agent
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **self_uri** | **str** |  | [optional] |
+| **stage** | **str** | The current stage for this agent | [optional] |
 {: class="table table-striped"}
 
 

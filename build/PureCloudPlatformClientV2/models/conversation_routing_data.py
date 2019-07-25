@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class ConversationRoutingData(object):
     """
@@ -38,10 +40,10 @@ class ConversationRoutingData(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'queue': 'Queue',
-            'language': 'Language',
+            'queue': 'AddressableEntityRef',
+            'language': 'AddressableEntityRef',
             'priority': 'int',
-            'skills': 'list[Skill]',
+            'skills': 'list[AddressableEntityRef]',
             'scored_agents': 'list[ScoredAgent]'
         }
 
@@ -66,7 +68,7 @@ class ConversationRoutingData(object):
         The queue to use for routing decisions
 
         :return: The queue of this ConversationRoutingData.
-        :rtype: Queue
+        :rtype: AddressableEntityRef
         """
         return self._queue
 
@@ -77,7 +79,7 @@ class ConversationRoutingData(object):
         The queue to use for routing decisions
 
         :param queue: The queue of this ConversationRoutingData.
-        :type: Queue
+        :type: AddressableEntityRef
         """
         
         self._queue = queue
@@ -89,7 +91,7 @@ class ConversationRoutingData(object):
         The language to use for routing decisions
 
         :return: The language of this ConversationRoutingData.
-        :rtype: Language
+        :rtype: AddressableEntityRef
         """
         return self._language
 
@@ -100,7 +102,7 @@ class ConversationRoutingData(object):
         The language to use for routing decisions
 
         :param language: The language of this ConversationRoutingData.
-        :type: Language
+        :type: AddressableEntityRef
         """
         
         self._language = language
@@ -135,7 +137,7 @@ class ConversationRoutingData(object):
         The skills to use for routing decisions
 
         :return: The skills of this ConversationRoutingData.
-        :rtype: list[Skill]
+        :rtype: list[AddressableEntityRef]
         """
         return self._skills
 
@@ -146,7 +148,7 @@ class ConversationRoutingData(object):
         The skills to use for routing decisions
 
         :param skills: The skills of this ConversationRoutingData.
-        :type: list[Skill]
+        :type: list[AddressableEntityRef]
         """
         
         self._skills = skills
@@ -199,6 +201,12 @@ class ConversationRoutingData(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

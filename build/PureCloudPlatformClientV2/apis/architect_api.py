@@ -4528,6 +4528,180 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_outcome(self, flow_outcome_id, **kwargs):
+        """
+        Get a flow outcome
+        Returns a specified flow outcome
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_outcome(flow_outcome_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_outcome_id: flow outcome ID (required)
+        :return: FlowOutcome
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_outcome_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_outcome" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_outcome_id' is set
+        if ('flow_outcome_id' not in params) or (params['flow_outcome_id'] is None):
+            raise ValueError("Missing the required parameter `flow_outcome_id` when calling `get_flows_outcome`")
+
+
+        resource_path = '/api/v2/flows/outcomes/{flowOutcomeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_outcome_id' in params:
+            path_params['flowOutcomeId'] = params['flow_outcome_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowOutcome',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_outcomes(self, **kwargs):
+        """
+        Get a pageable list of flow outcomes, filtered by query parameters
+        Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_outcomes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID
+        :param str name: Name
+        :param str description: Description
+        :param str name_or_description: Name or description
+        :return: FlowOutcomeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_outcomes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/outcomes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'description' in params:
+            query_params['description'] = params['description']
+        if 'name_or_description' in params:
+            query_params['nameOrDescription'] = params['name_or_description']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowOutcomeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_dependencytracking_build(self, **kwargs):
         """
         Rebuild Dependency Tracking data for an organization
@@ -6109,6 +6283,81 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flows_outcomes(self, **kwargs):
+        """
+        Create a flow outcome
+        Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_outcomes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param FlowOutcome body: 
+        :return: FlowOutcome
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_outcomes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/outcomes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowOutcome',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_architect_emergencygroup(self, emergency_group_id, body, **kwargs):
         """
         Updates a emergency group by ID
@@ -6960,6 +7209,87 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='dict(str, object)',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_flows_outcome(self, flow_outcome_id, **kwargs):
+        """
+        Updates a flow outcome
+        Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_flows_outcome(flow_outcome_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_outcome_id: flow outcome ID (required)
+        :param FlowOutcome body: 
+        :return: Operation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_outcome_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_flows_outcome" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_outcome_id' is set
+        if ('flow_outcome_id' not in params) or (params['flow_outcome_id'] is None):
+            raise ValueError("Missing the required parameter `flow_outcome_id` when calling `put_flows_outcome`")
+
+
+        resource_path = '/api/v2/flows/outcomes/{flowOutcomeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_outcome_id' in params:
+            path_params['flowOutcomeId'] = params['flow_outcome_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Operation',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

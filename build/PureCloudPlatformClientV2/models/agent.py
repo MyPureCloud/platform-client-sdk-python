@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class Agent(object):
     """
@@ -38,63 +40,37 @@ class Agent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'self_uri': 'str'
+            'stage': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'self_uri': 'selfUri'
+            'stage': 'stage'
         }
 
-        self._id = None
-        self._self_uri = None
+        self._stage = None
 
     @property
-    def id(self):
+    def stage(self):
         """
-        Gets the id of this Agent.
+        Gets the stage of this Agent.
+        The current stage for this agent
 
-
-        :return: The id of this Agent.
+        :return: The stage of this Agent.
         :rtype: str
         """
-        return self._id
+        return self._stage
 
-    @id.setter
-    def id(self, id):
+    @stage.setter
+    def stage(self, stage):
         """
-        Sets the id of this Agent.
+        Sets the stage of this Agent.
+        The current stage for this agent
 
-
-        :param id: The id of this Agent.
+        :param stage: The stage of this Agent.
         :type: str
         """
         
-        self._id = id
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this Agent.
-
-
-        :return: The self_uri of this Agent.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this Agent.
-
-
-        :param self_uri: The self_uri of this Agent.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
+        self._stage = stage
 
     def to_dict(self):
         """
@@ -121,6 +97,12 @@ class Agent(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

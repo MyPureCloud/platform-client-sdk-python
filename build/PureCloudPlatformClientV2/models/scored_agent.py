@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class ScoredAgent(object):
     """
@@ -38,7 +40,7 @@ class ScoredAgent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'agent': 'Agent',
+            'agent': 'AddressableEntityRef',
             'score': 'int'
         }
 
@@ -57,7 +59,7 @@ class ScoredAgent(object):
         The agent
 
         :return: The agent of this ScoredAgent.
-        :rtype: Agent
+        :rtype: AddressableEntityRef
         """
         return self._agent
 
@@ -68,7 +70,7 @@ class ScoredAgent(object):
         The agent
 
         :param agent: The agent of this ScoredAgent.
-        :type: Agent
+        :type: AddressableEntityRef
         """
         
         self._agent = agent
@@ -121,6 +123,12 @@ class ScoredAgent(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

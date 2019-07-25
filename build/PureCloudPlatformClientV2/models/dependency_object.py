@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class DependencyObject(object):
     """
@@ -163,7 +165,7 @@ class DependencyObject(object):
         :param type: The type of this DependencyObject.
         :type: str
         """
-        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "DATATABLE", "DIALOGFLOWAGENT", "EMAILROUTE", "EMERGENCYGROUP", "FLOWOUTCOME", "GROUP", "INBOUNDCALLFLOW", "INBOUNDCHATFLOW", "INBOUNDEMAILFLOW", "INBOUNDSHORTMESSAGEFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "LEXBOT", "LEXBOTALIAS", "OUTBOUNDCALLFLOW", "QUEUE", "RECORDINGPOLICY", "RESPONSE", "SCHEDULE", "SCHEDULEGROUP", "SECUREACTION", "SECURECALLFLOW", "SURVEYINVITEFLOW", "SYSTEMPROMPT", "TTSENGINE", "TTSVOICE", "USER", "USERPROMPT", "WORKFLOW"]
+        allowed_values = ["ACDLANGUAGE", "ACDSKILL", "ACDWRAPUPCODE", "BRIDGEACTION", "COMPOSERSCRIPT", "CONTACTLIST", "DATAACTION", "DATATABLE", "DIALOGFLOWAGENT", "EMAILROUTE", "EMERGENCYGROUP", "FLOWOUTCOME", "GROUP", "INBOUNDCALLFLOW", "INBOUNDCHATFLOW", "INBOUNDEMAILFLOW", "INBOUNDSHORTMESSAGEFLOW", "INQUEUECALLFLOW", "IVRCONFIGURATION", "LANGUAGE", "LEXBOT", "LEXBOTALIAS", "OUTBOUNDCALLFLOW", "QUEUE", "RECORDINGPOLICY", "RESPONSE", "SCHEDULE", "SCHEDULEGROUP", "SECUREACTION", "SECURECALLFLOW", "SURVEYINVITEFLOW", "SYSTEMPROMPT", "TTSENGINE", "TTSVOICE", "USER", "USERPROMPT", "WIDGET", "WORKFLOW"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -333,6 +335,12 @@ class DependencyObject(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

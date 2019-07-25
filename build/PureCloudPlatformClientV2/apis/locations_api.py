@@ -140,12 +140,13 @@ class LocationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str location_id: Location ID (required)
+        :param list[str] expand: Which fields, if any, to expand
         :return: LocationDefinition
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['location_id']
+        all_params = ['location_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -169,6 +170,8 @@ class LocationsApi(object):
             path_params['locationId'] = params['location_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

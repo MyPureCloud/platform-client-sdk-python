@@ -1844,7 +1844,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **phone_number** | **str**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
-| **phone_number_type** | **str**| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree |
+| **phone_number_type** | **str**| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
 | **phone_number_status** | **str**| Filter on phone number status | [optional] <br />**Values**: active, invalid, porting |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |

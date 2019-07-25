@@ -21,7 +21,9 @@ Copyright 2016 SmartBear Software
 from pprint import pformat
 from six import iteritems
 import re
+import json
 
+from ..utils import sanitize_for_serialization
 
 class CallHistoryParticipant(object):
     """
@@ -55,7 +57,8 @@ class CallHistoryParticipant(object):
             'external_organization': 'ExternalOrganization',
             'did_interact': 'bool',
             'sip_response_codes': 'list[int]',
-            'flagged_reason': 'str'
+            'flagged_reason': 'str',
+            'outbound_campaign': 'Campaign'
         }
 
         self.attribute_map = {
@@ -76,7 +79,8 @@ class CallHistoryParticipant(object):
             'external_organization': 'externalOrganization',
             'did_interact': 'didInteract',
             'sip_response_codes': 'sipResponseCodes',
-            'flagged_reason': 'flaggedReason'
+            'flagged_reason': 'flaggedReason',
+            'outbound_campaign': 'outboundCampaign'
         }
 
         self._id = None
@@ -97,6 +101,7 @@ class CallHistoryParticipant(object):
         self._did_interact = None
         self._sip_response_codes = None
         self._flagged_reason = None
+        self._outbound_campaign = None
 
     @property
     def id(self):
@@ -524,6 +529,29 @@ class CallHistoryParticipant(object):
         else:
             self._flagged_reason = flagged_reason
 
+    @property
+    def outbound_campaign(self):
+        """
+        Gets the outbound_campaign of this CallHistoryParticipant.
+        The outbound campaign associated with the participant
+
+        :return: The outbound_campaign of this CallHistoryParticipant.
+        :rtype: Campaign
+        """
+        return self._outbound_campaign
+
+    @outbound_campaign.setter
+    def outbound_campaign(self, outbound_campaign):
+        """
+        Sets the outbound_campaign of this CallHistoryParticipant.
+        The outbound campaign associated with the participant
+
+        :param outbound_campaign: The outbound_campaign of this CallHistoryParticipant.
+        :type: Campaign
+        """
+        
+        self._outbound_campaign = outbound_campaign
+
     def to_dict(self):
         """
         Returns the model properties as a dict
@@ -549,6 +577,12 @@ class CallHistoryParticipant(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """
+        Returns the model as raw JSON
+        """
+        return json.dumps(sanitize_for_serialization(self.to_dict()))
 
     def to_str(self):
         """

@@ -69,7 +69,7 @@ void (empty response body)
 
 <a name="get_location"></a>
 
-## [**LocationDefinition**](LocationDefinition.html) get_location(location_id)
+## [**LocationDefinition**](LocationDefinition.html) get_location(location_id, expand=expand)
 
 
 
@@ -96,10 +96,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LocationsApi()
 location_id = 'location_id_example' # str | Location ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get Location by ID.
-    api_response = api_instance.get_location(location_id)
+    api_response = api_instance.get_location(location_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LocationsApi->get_location: %s\n" % e
@@ -111,6 +112,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: images |
 {: class="table table-striped"}
 
 ### Return type

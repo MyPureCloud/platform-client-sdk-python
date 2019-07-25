@@ -42,6 +42,7 @@ title: EmailMediaParticipant
 | **auto_generated** | **bool** | Indicates that the email was auto-generated like an Out of Office reply. | [optional] |
 | **draft_attachments** | [**list[Attachment]**](Attachment.html) | A list of uploaded attachments on the email draft. | [optional] |
 | **spam** | **bool** | Indicates if the inbound email was marked as spam. | [optional] |
+| **message_id** | **str** | A globally unique identifier for the stored content of this communication. | [optional] |
 {: class="table table-striped"}
 
 
