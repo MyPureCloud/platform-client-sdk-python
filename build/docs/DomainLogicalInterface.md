@@ -39,6 +39,9 @@ title: DomainLogicalInterface
 | **use_for_internal_edge_communication** | **bool** | This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group. | [optional] |
 | **external_trunk_base_assignments** | [**list[TrunkBaseAssignment]**](TrunkBaseAssignment.html) | External trunk base settings to use for external communication from this interface. | [optional] |
 | **phone_trunk_base_assignments** | [**list[TrunkBaseAssignment]**](TrunkBaseAssignment.html) | Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true. | [optional] |
+| **trace_enabled** | **bool** |  | [optional] |
+| **start_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **end_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

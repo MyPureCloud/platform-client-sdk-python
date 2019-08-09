@@ -41,7 +41,6 @@ class ScimV2MemberReference(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'display_name': 'str',
             'meta': 'ScimMetadata',
             'value': 'str',
             'ref': 'str'
@@ -49,14 +48,12 @@ class ScimV2MemberReference(object):
 
         self.attribute_map = {
             'type': 'type',
-            'display_name': 'displayName',
             'meta': 'meta',
             'value': 'value',
             'ref': '$ref'
         }
 
         self._type = None
-        self._display_name = None
         self._meta = None
         self._value = None
         self._ref = None
@@ -89,33 +86,10 @@ class ScimV2MemberReference(object):
             self._type = type
 
     @property
-    def display_name(self):
-        """
-        Gets the display_name of this ScimV2MemberReference.
-        Display Name
-
-        :return: The display_name of this ScimV2MemberReference.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this ScimV2MemberReference.
-        Display Name
-
-        :param display_name: The display_name of this ScimV2MemberReference.
-        :type: str
-        """
-        
-        self._display_name = display_name
-
-    @property
     def meta(self):
         """
         Gets the meta of this ScimV2MemberReference.
-
+        Resource SCIM meta
 
         :return: The meta of this ScimV2MemberReference.
         :rtype: ScimMetadata
@@ -126,7 +100,7 @@ class ScimV2MemberReference(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2MemberReference.
-
+        Resource SCIM meta
 
         :param meta: The meta of this ScimV2MemberReference.
         :type: ScimMetadata

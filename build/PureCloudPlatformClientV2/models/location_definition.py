@@ -42,13 +42,13 @@ class LocationDefinition(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'emergency_number': 'LocationEmergencyNumber',
             'address': 'LocationAddress',
             'address_verified': 'bool',
-            'emergency_number': 'LocationEmergencyNumber',
             'state': 'str',
+            'notes': 'str',
             'version': 'int',
             'path': 'list[str]',
-            'notes': 'str',
             'profile_image': 'list[LocationImage]',
             'floorplan_image': 'list[LocationImage]',
             'self_uri': 'str'
@@ -57,13 +57,13 @@ class LocationDefinition(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'emergency_number': 'emergencyNumber',
             'address': 'address',
             'address_verified': 'addressVerified',
-            'emergency_number': 'emergencyNumber',
             'state': 'state',
+            'notes': 'notes',
             'version': 'version',
             'path': 'path',
-            'notes': 'notes',
             'profile_image': 'profileImage',
             'floorplan_image': 'floorplanImage',
             'self_uri': 'selfUri'
@@ -71,13 +71,13 @@ class LocationDefinition(object):
 
         self._id = None
         self._name = None
+        self._emergency_number = None
         self._address = None
         self._address_verified = None
-        self._emergency_number = None
         self._state = None
+        self._notes = None
         self._version = None
         self._path = None
-        self._notes = None
         self._profile_image = None
         self._floorplan_image = None
         self._self_uri = None
@@ -129,6 +129,29 @@ class LocationDefinition(object):
         self._name = name
 
     @property
+    def emergency_number(self):
+        """
+        Gets the emergency_number of this LocationDefinition.
+
+
+        :return: The emergency_number of this LocationDefinition.
+        :rtype: LocationEmergencyNumber
+        """
+        return self._emergency_number
+
+    @emergency_number.setter
+    def emergency_number(self, emergency_number):
+        """
+        Sets the emergency_number of this LocationDefinition.
+
+
+        :param emergency_number: The emergency_number of this LocationDefinition.
+        :type: LocationEmergencyNumber
+        """
+        
+        self._emergency_number = emergency_number
+
+    @property
     def address(self):
         """
         Gets the address of this LocationDefinition.
@@ -175,29 +198,6 @@ class LocationDefinition(object):
         self._address_verified = address_verified
 
     @property
-    def emergency_number(self):
-        """
-        Gets the emergency_number of this LocationDefinition.
-
-
-        :return: The emergency_number of this LocationDefinition.
-        :rtype: LocationEmergencyNumber
-        """
-        return self._emergency_number
-
-    @emergency_number.setter
-    def emergency_number(self, emergency_number):
-        """
-        Sets the emergency_number of this LocationDefinition.
-
-
-        :param emergency_number: The emergency_number of this LocationDefinition.
-        :type: LocationEmergencyNumber
-        """
-        
-        self._emergency_number = emergency_number
-
-    @property
     def state(self):
         """
         Gets the state of this LocationDefinition.
@@ -223,6 +223,29 @@ class LocationDefinition(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def notes(self):
+        """
+        Gets the notes of this LocationDefinition.
+
+
+        :return: The notes of this LocationDefinition.
+        :rtype: str
+        """
+        return self._notes
+
+    @notes.setter
+    def notes(self, notes):
+        """
+        Sets the notes of this LocationDefinition.
+
+
+        :param notes: The notes of this LocationDefinition.
+        :type: str
+        """
+        
+        self._notes = notes
 
     @property
     def version(self):
@@ -251,7 +274,7 @@ class LocationDefinition(object):
     def path(self):
         """
         Gets the path of this LocationDefinition.
-
+        A list of ancestor IDs in order
 
         :return: The path of this LocationDefinition.
         :rtype: list[str]
@@ -262,36 +285,13 @@ class LocationDefinition(object):
     def path(self, path):
         """
         Sets the path of this LocationDefinition.
-
+        A list of ancestor IDs in order
 
         :param path: The path of this LocationDefinition.
         :type: list[str]
         """
         
         self._path = path
-
-    @property
-    def notes(self):
-        """
-        Gets the notes of this LocationDefinition.
-
-
-        :return: The notes of this LocationDefinition.
-        :rtype: str
-        """
-        return self._notes
-
-    @notes.setter
-    def notes(self, notes):
-        """
-        Sets the notes of this LocationDefinition.
-
-
-        :param notes: The notes of this LocationDefinition.
-        :type: str
-        """
-        
-        self._notes = notes
 
     @property
     def profile_image(self):

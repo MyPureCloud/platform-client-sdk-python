@@ -61,7 +61,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Delete a user
@@ -77,7 +77,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -114,7 +114,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Delete a user
@@ -130,7 +130,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -167,7 +167,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
-if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
+if_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
 
 try:
     # Get a group
@@ -183,7 +183,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
-| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+| **if_none_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -192,7 +192,7 @@ except ApiException as e:
 
 <a name="get_scim_groups"></a>
 
-## [**ScimListResponse**](ScimListResponse.html) get_scim_groups(start_index=start_index, count=count, filter=filter)
+## [**ScimGroupListResponse**](ScimGroupListResponse.html) get_scim_groups(start_index=start_index, count=count, filter=filter)
 
 
 
@@ -243,7 +243,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ScimListResponse**](ScimListResponse.html)
+[**ScimGroupListResponse**](ScimGroupListResponse.html)
 
 <a name="get_scim_user"></a>
 
@@ -276,7 +276,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
-if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
+if_none_match = 'if_none_match_example' # str | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
 
 try:
     # Get a user
@@ -292,7 +292,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
-| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+| **if_none_match** | **str**| TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -301,7 +301,7 @@ except ApiException as e:
 
 <a name="get_scim_users"></a>
 
-## [**ScimListResponse**](ScimListResponse.html) get_scim_users(filter, start_index=start_index, count=count)
+## [**ScimUserListResponse**](ScimUserListResponse.html) get_scim_users(filter, start_index=start_index, count=count)
 
 
 
@@ -353,7 +353,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ScimListResponse**](ScimListResponse.html)
+[**ScimUserListResponse**](ScimUserListResponse.html)
 
 <a name="get_scim_v2_group"></a>
 
@@ -385,7 +385,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
+if_none_match = 'if_none_match_example' # str | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
 
 try:
     # Get a group
@@ -401,7 +401,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
-| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+| **if_none_match** | **str**| TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -410,7 +410,7 @@ except ApiException as e:
 
 <a name="get_scim_v2_groups"></a>
 
-## [**ScimListResponse**](ScimListResponse.html) get_scim_v2_groups(filter, start_index=start_index, count=count)
+## [**ScimGroupListResponse**](ScimGroupListResponse.html) get_scim_v2_groups(filter, start_index=start_index, count=count)
 
 
 
@@ -461,7 +461,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ScimListResponse**](ScimListResponse.html)
+[**ScimGroupListResponse**](ScimGroupListResponse.html)
 
 <a name="get_scim_v2_serviceproviderconfig"></a>
 
@@ -488,7 +488,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
+if_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
 
 try:
     # Get the SCIM configuration
@@ -503,7 +503,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+| **if_none_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -541,7 +541,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-if_none_match = 'if_none_match_example' # str | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
+if_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
 
 try:
     # Get a user
@@ -557,7 +557,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
-| **if_none_match** | **str**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+| **if_none_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -566,7 +566,7 @@ except ApiException as e:
 
 <a name="get_scim_v2_users"></a>
 
-## [**ScimListResponse**](ScimListResponse.html) get_scim_v2_users(filter, start_index=start_index, count=count)
+## [**ScimUserListResponse**](ScimUserListResponse.html) get_scim_v2_users(filter, start_index=start_index, count=count)
 
 
 
@@ -618,7 +618,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ScimListResponse**](ScimListResponse.html)
+[**ScimUserListResponse**](ScimUserListResponse.html)
 
 <a name="patch_scim_group"></a>
 
@@ -650,8 +650,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
-body = PureCloudPlatformClientV2.PatchRequest() # PatchRequest | Group
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Modify a group
@@ -667,8 +667,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
-| **body** | [**PatchRequest**](PatchRequest.html)| Group |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| The information used to modify a group. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -706,8 +706,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
-body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | SCIM Patch Request
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Modify a user
@@ -723,8 +723,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
-| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| The information used to modify a user. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -761,8 +761,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-body = PureCloudPlatformClientV2.PatchRequest() # PatchRequest | Group
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a group.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Modify a group
@@ -778,8 +778,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
-| **body** | [**PatchRequest**](PatchRequest.html)| Group |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| The information used to modify a group. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -817,8 +817,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | SCIM Patch Request
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2PatchRequest() # ScimV2PatchRequest | The information used to modify a user.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Modify a user
@@ -834,8 +834,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
-| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| The information used to modify a user. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -871,7 +871,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | SCIM Create User
+body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.
 
 try:
     # Create a user
@@ -886,7 +886,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ScimV2CreateUser**](ScimV2CreateUser.html)| SCIM Create User |  |
+| **body** | [**ScimV2CreateUser**](ScimV2CreateUser.html)| The information used to create a user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -922,7 +922,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
-body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | SCIM Create User
+body = PureCloudPlatformClientV2.ScimV2CreateUser() # ScimV2CreateUser | The information used to create a user.
 
 try:
     # Create a user
@@ -937,7 +937,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ScimV2CreateUser**](ScimV2CreateUser.html)| SCIM Create User |  |
+| **body** | [**ScimV2CreateUser**](ScimV2CreateUser.html)| The information used to create a user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -974,8 +974,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups.
-body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | Group
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Replace a group
@@ -991,8 +991,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups. |  |
-| **body** | [**ScimV2Group**](ScimV2Group.html)| Group |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to replace a group. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1030,8 +1030,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/users.
-body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | User
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Replace a user
@@ -1047,8 +1047,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/users. |  |
-| **body** | [**ScimV2User**](ScimV2User.html)| User |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2User**](ScimV2User.html)| The information used to replace a user. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1085,8 +1085,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | Group
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to replace a group.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Replace a group
@@ -1102,8 +1102,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
-| **body** | [**ScimV2Group**](ScimV2Group.html)| Group |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to replace a group. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1141,8 +1141,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SCIMApi()
 user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | User
-if_match = 'if_match_example' # str | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
+body = PureCloudPlatformClientV2.ScimV2User() # ScimV2User | The information used to replace a user.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\". (optional)
 
 try:
     # Replace a user
@@ -1158,8 +1158,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
-| **body** | [**ScimV2User**](ScimV2User.html)| User |  |
-| **if_match** | **str**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+| **body** | [**ScimV2User**](ScimV2User.html)| The information used to replace a user. |  |
+| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

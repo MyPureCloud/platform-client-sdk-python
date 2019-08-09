@@ -301,6 +301,7 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -745,7 +746,7 @@ except ApiException as e:
 
 <a name="get_profiles_users"></a>
 
-## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, state=state)
+## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand)
 
 
 
@@ -777,11 +778,10 @@ id = ['id_example'] # list[str] | id (optional)
 jid = ['jid_example'] # list[str] | jid (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
-state = 'active' # str | Only list users of this state (optional) (default to active)
 
 try:
     # Get a user profile listing
-    api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, state=state)
+    api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_profiles_users: %s\n" % e
@@ -798,7 +798,6 @@ except ApiException as e:
 | **jid** | [**list[str]**](str.html)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
-| **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -2310,6 +2309,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -2365,6 +2365,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -2889,6 +2890,7 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 

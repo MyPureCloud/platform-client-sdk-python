@@ -72,6 +72,9 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'bool',
             'external_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'phone_trunk_base_assignments': 'list[TrunkBaseAssignment]',
+            'trace_enabled': 'bool',
+            'start_date': 'datetime',
+            'end_date': 'datetime',
             'self_uri': 'str'
         }
 
@@ -108,6 +111,9 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'useForInternalEdgeCommunication',
             'external_trunk_base_assignments': 'externalTrunkBaseAssignments',
             'phone_trunk_base_assignments': 'phoneTrunkBaseAssignments',
+            'trace_enabled': 'traceEnabled',
+            'start_date': 'startDate',
+            'end_date': 'endDate',
             'self_uri': 'selfUri'
         }
 
@@ -143,6 +149,9 @@ class DomainLogicalInterface(object):
         self._use_for_internal_edge_communication = None
         self._external_trunk_base_assignments = None
         self._phone_trunk_base_assignments = None
+        self._trace_enabled = None
+        self._start_date = None
+        self._end_date = None
         self._self_uri = None
 
     @property
@@ -892,6 +901,75 @@ class DomainLogicalInterface(object):
         """
         
         self._phone_trunk_base_assignments = phone_trunk_base_assignments
+
+    @property
+    def trace_enabled(self):
+        """
+        Gets the trace_enabled of this DomainLogicalInterface.
+
+
+        :return: The trace_enabled of this DomainLogicalInterface.
+        :rtype: bool
+        """
+        return self._trace_enabled
+
+    @trace_enabled.setter
+    def trace_enabled(self, trace_enabled):
+        """
+        Sets the trace_enabled of this DomainLogicalInterface.
+
+
+        :param trace_enabled: The trace_enabled of this DomainLogicalInterface.
+        :type: bool
+        """
+        
+        self._trace_enabled = trace_enabled
+
+    @property
+    def start_date(self):
+        """
+        Gets the start_date of this DomainLogicalInterface.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_date of this DomainLogicalInterface.
+        :rtype: datetime
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """
+        Sets the start_date of this DomainLogicalInterface.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_date: The start_date of this DomainLogicalInterface.
+        :type: datetime
+        """
+        
+        self._start_date = start_date
+
+    @property
+    def end_date(self):
+        """
+        Gets the end_date of this DomainLogicalInterface.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The end_date of this DomainLogicalInterface.
+        :rtype: datetime
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """
+        Sets the end_date of this DomainLogicalInterface.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param end_date: The end_date of this DomainLogicalInterface.
+        :type: datetime
+        """
+        
+        self._end_date = end_date
 
     @property
     def self_uri(self):

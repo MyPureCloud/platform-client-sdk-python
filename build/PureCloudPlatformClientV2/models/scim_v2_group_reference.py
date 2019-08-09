@@ -40,7 +40,6 @@ class ScimV2GroupReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'display_name': 'str',
             'meta': 'ScimMetadata',
             'type': 'str',
             'value': 'str',
@@ -48,47 +47,22 @@ class ScimV2GroupReference(object):
         }
 
         self.attribute_map = {
-            'display_name': 'displayName',
             'meta': 'meta',
             'type': 'type',
             'value': 'value',
             'ref': '$ref'
         }
 
-        self._display_name = None
         self._meta = None
         self._type = None
         self._value = None
         self._ref = None
 
     @property
-    def display_name(self):
-        """
-        Gets the display_name of this ScimV2GroupReference.
-        Display Name
-
-        :return: The display_name of this ScimV2GroupReference.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this ScimV2GroupReference.
-        Display Name
-
-        :param display_name: The display_name of this ScimV2GroupReference.
-        :type: str
-        """
-        
-        self._display_name = display_name
-
-    @property
     def meta(self):
         """
         Gets the meta of this ScimV2GroupReference.
-
+        Resource SCIM meta
 
         :return: The meta of this ScimV2GroupReference.
         :rtype: ScimMetadata
@@ -99,7 +73,7 @@ class ScimV2GroupReference(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2GroupReference.
-
+        Resource SCIM meta
 
         :param meta: The meta of this ScimV2GroupReference.
         :type: ScimMetadata

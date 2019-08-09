@@ -1123,13 +1123,12 @@ class UsersApi(object):
         :param list[str] jid: jid
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand
-        :param str state: Only list users of this state
         :return: UserProfileEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'jid', 'sort_order', 'expand', 'state']
+        all_params = ['page_size', 'page_number', 'id', 'jid', 'sort_order', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1160,8 +1159,6 @@ class UsersApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
-        if 'state' in params:
-            query_params['state'] = params['state']
 
         header_params = {}
 

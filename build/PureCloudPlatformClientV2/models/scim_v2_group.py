@@ -41,23 +41,23 @@ class ScimV2Group(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'display_name': 'str',
             'schemas': 'list[str]',
+            'display_name': 'str',
             'members': 'list[ScimV2MemberReference]',
             'meta': 'ScimMetadata'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'display_name': 'displayName',
             'schemas': 'schemas',
+            'display_name': 'displayName',
             'members': 'members',
             'meta': 'meta'
         }
 
         self._id = None
-        self._display_name = None
         self._schemas = None
+        self._display_name = None
         self._members = None
         self._meta = None
 
@@ -85,29 +85,6 @@ class ScimV2Group(object):
         self._id = id
 
     @property
-    def display_name(self):
-        """
-        Gets the display_name of this ScimV2Group.
-        Display Name
-
-        :return: The display_name of this ScimV2Group.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this ScimV2Group.
-        Display Name
-
-        :param display_name: The display_name of this ScimV2Group.
-        :type: str
-        """
-        
-        self._display_name = display_name
-
-    @property
     def schemas(self):
         """
         Gets the schemas of this ScimV2Group.
@@ -129,6 +106,29 @@ class ScimV2Group(object):
         """
         
         self._schemas = schemas
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this ScimV2Group.
+        Display Name
+
+        :return: The display_name of this ScimV2Group.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this ScimV2Group.
+        Display Name
+
+        :param display_name: The display_name of this ScimV2Group.
+        :type: str
+        """
+        
+        self._display_name = display_name
 
     @property
     def members(self):
@@ -157,7 +157,7 @@ class ScimV2Group(object):
     def meta(self):
         """
         Gets the meta of this ScimV2Group.
-
+        Resource SCIM meta
 
         :return: The meta of this ScimV2Group.
         :rtype: ScimMetadata
@@ -168,7 +168,7 @@ class ScimV2Group(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2Group.
-
+        Resource SCIM meta
 
         :param meta: The meta of this ScimV2Group.
         :type: ScimMetadata

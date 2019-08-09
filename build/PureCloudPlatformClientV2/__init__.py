@@ -125,6 +125,8 @@ from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.base_program_entity import BaseProgramEntity
+from .models.base_topic_entitiy import BaseTopicEntitiy
 from .models.batch_download_job_result import BatchDownloadJobResult
 from .models.batch_download_job_status_result import BatchDownloadJobStatusResult
 from .models.batch_download_job_submission import BatchDownloadJobSubmission
@@ -450,6 +452,7 @@ from .models.create_service_goal_group_request import CreateServiceGoalGroupRequ
 from .models.create_share_request import CreateShareRequest
 from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
+from .models.create_topic_request import CreateTopicRequest
 from .models.create_user import CreateUser
 from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
@@ -907,7 +910,6 @@ from .models.messaging_integration import MessagingIntegration
 from .models.messaging_integration_entity_listing import MessagingIntegrationEntityListing
 from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
-from .models.meta import Meta
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -968,10 +970,7 @@ from .models.partial_upload_response import PartialUploadResponse
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
 from .models.participant_basic import ParticipantBasic
-from .models.patch_operation import PatchOperation
-from .models.patch_request import PatchRequest
 from .models.patch_user import PatchUser
-from .models.path import Path
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permissions import Permissions
 from .models.phone import Phone
@@ -987,6 +986,7 @@ from .models.phone_number_status import PhoneNumberStatus
 from .models.phone_status import PhoneStatus
 from .models.phones_reboot import PhonesReboot
 from .models.photo import Photo
+from .models.phrase import Phrase
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
 from .models.policy import Policy
@@ -1004,6 +1004,7 @@ from .models.presence_definition import PresenceDefinition
 from .models.presence_event_organization_presence import PresenceEventOrganizationPresence
 from .models.presence_event_user_presence import PresenceEventUserPresence
 from .models.presence_query_response import PresenceQueryResponse
+from .models.program import Program
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -1306,11 +1307,11 @@ from .models.schema_category import SchemaCategory
 from .models.schema_category_entity_listing import SchemaCategoryEntityListing
 from .models.schema_reference_entity_listing import SchemaReferenceEntityListing
 from .models.scim_email import ScimEmail
-from .models.scim_list_response import ScimListResponse
+from .models.scim_group_list_response import ScimGroupListResponse
 from .models.scim_metadata import ScimMetadata
 from .models.scim_phone_number import ScimPhoneNumber
-from .models.scim_resource import ScimResource
 from .models.scim_service_provider_config import ScimServiceProviderConfig
+from .models.scim_user_list_response import ScimUserListResponse
 from .models.scim_v2_create_user import ScimV2CreateUser
 from .models.scim_v2_enterprise_user import ScimV2EnterpriseUser
 from .models.scim_v2_group import ScimV2Group
@@ -1440,6 +1441,7 @@ from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token import Token
 from .models.token_info import TokenInfo
+from .models.topic import Topic
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase
@@ -1553,6 +1555,8 @@ from .models.user_station_change_topic_user import UserStationChangeTopicUser
 from .models.user_station_change_topic_user_station import UserStationChangeTopicUserStation
 from .models.user_station_change_topic_user_stations import UserStationChangeTopicUserStations
 from .models.user_stations import UserStations
+from .models.user_tokens_topic_token_notification import UserTokensTopicTokenNotification
+from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
 from .models.validate_address_request import ValidateAddressRequest
@@ -1709,6 +1713,7 @@ from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
+from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
 from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi

@@ -41,7 +41,6 @@ class RecordingJob(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'state': 'str',
             'recording_jobs_query': 'RecordingJobsQuery',
             'date_created': 'datetime',
@@ -55,7 +54,6 @@ class RecordingJob(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'state': 'state',
             'recording_jobs_query': 'recordingJobsQuery',
             'date_created': 'dateCreated',
@@ -68,7 +66,6 @@ class RecordingJob(object):
         }
 
         self._id = None
-        self._name = None
         self._state = None
         self._recording_jobs_query = None
         self._date_created = None
@@ -101,29 +98,6 @@ class RecordingJob(object):
         """
         
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this RecordingJob.
-
-
-        :return: The name of this RecordingJob.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this RecordingJob.
-
-
-        :param name: The name of this RecordingJob.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def state(self):

@@ -135,7 +135,7 @@ class PromptAssetCreate(object):
     def prompt_id(self):
         """
         Gets the prompt_id of this PromptAssetCreate.
-
+        Associated prompt ID
 
         :return: The prompt_id of this PromptAssetCreate.
         :rtype: str
@@ -146,7 +146,7 @@ class PromptAssetCreate(object):
     def prompt_id(self, prompt_id):
         """
         Sets the prompt_id of this PromptAssetCreate.
-
+        Associated prompt ID
 
         :param prompt_id: The prompt_id of this PromptAssetCreate.
         :type: str
@@ -181,7 +181,7 @@ class PromptAssetCreate(object):
     def media_uri(self):
         """
         Gets the media_uri of this PromptAssetCreate.
-
+        URI of the resource audio
 
         :return: The media_uri of this PromptAssetCreate.
         :rtype: str
@@ -192,7 +192,7 @@ class PromptAssetCreate(object):
     def media_uri(self, media_uri):
         """
         Sets the media_uri of this PromptAssetCreate.
-
+        URI of the resource audio
 
         :param media_uri: The media_uri of this PromptAssetCreate.
         :type: str
@@ -204,7 +204,7 @@ class PromptAssetCreate(object):
     def tts_string(self):
         """
         Gets the tts_string of this PromptAssetCreate.
-
+        Text to speech of the resource
 
         :return: The tts_string of this PromptAssetCreate.
         :rtype: str
@@ -215,7 +215,7 @@ class PromptAssetCreate(object):
     def tts_string(self, tts_string):
         """
         Sets the tts_string of this PromptAssetCreate.
-
+        Text to speech of the resource
 
         :param tts_string: The tts_string of this PromptAssetCreate.
         :type: str
@@ -227,7 +227,7 @@ class PromptAssetCreate(object):
     def text(self):
         """
         Gets the text of this PromptAssetCreate.
-
+        Text of the resource
 
         :return: The text of this PromptAssetCreate.
         :rtype: str
@@ -238,7 +238,7 @@ class PromptAssetCreate(object):
     def text(self, text):
         """
         Sets the text of this PromptAssetCreate.
-
+        Text of the resource
 
         :param text: The text of this PromptAssetCreate.
         :type: str
@@ -250,7 +250,7 @@ class PromptAssetCreate(object):
     def upload_status(self):
         """
         Gets the upload_status of this PromptAssetCreate.
-
+        Audio upload status
 
         :return: The upload_status of this PromptAssetCreate.
         :rtype: str
@@ -261,7 +261,7 @@ class PromptAssetCreate(object):
     def upload_status(self, upload_status):
         """
         Sets the upload_status of this PromptAssetCreate.
-
+        Audio upload status
 
         :param upload_status: The upload_status of this PromptAssetCreate.
         :type: str
@@ -273,7 +273,7 @@ class PromptAssetCreate(object):
     def upload_uri(self):
         """
         Gets the upload_uri of this PromptAssetCreate.
-
+        Upload URI for the resource audio
 
         :return: The upload_uri of this PromptAssetCreate.
         :rtype: str
@@ -284,7 +284,7 @@ class PromptAssetCreate(object):
     def upload_uri(self, upload_uri):
         """
         Sets the upload_uri of this PromptAssetCreate.
-
+        Upload URI for the resource audio
 
         :param upload_uri: The upload_uri of this PromptAssetCreate.
         :type: str
@@ -296,7 +296,7 @@ class PromptAssetCreate(object):
     def language_default(self):
         """
         Gets the language_default of this PromptAssetCreate.
-
+        Whether or not this resource locale is the default for the language
 
         :return: The language_default of this PromptAssetCreate.
         :rtype: bool
@@ -307,7 +307,7 @@ class PromptAssetCreate(object):
     def language_default(self, language_default):
         """
         Sets the language_default of this PromptAssetCreate.
-
+        Whether or not this resource locale is the default for the language
 
         :param language_default: The language_default of this PromptAssetCreate.
         :type: bool

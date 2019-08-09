@@ -41,7 +41,6 @@ class BatchDownloadJobStatusResult(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'job_id': 'str',
             'expected_result_count': 'int',
             'result_count': 'int',
@@ -52,7 +51,6 @@ class BatchDownloadJobStatusResult(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'job_id': 'jobId',
             'expected_result_count': 'expectedResultCount',
             'result_count': 'resultCount',
@@ -62,7 +60,6 @@ class BatchDownloadJobStatusResult(object):
         }
 
         self._id = None
-        self._name = None
         self._job_id = None
         self._expected_result_count = None
         self._result_count = None
@@ -92,29 +89,6 @@ class BatchDownloadJobStatusResult(object):
         """
         
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this BatchDownloadJobStatusResult.
-
-
-        :return: The name of this BatchDownloadJobStatusResult.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this BatchDownloadJobStatusResult.
-
-
-        :param name: The name of this BatchDownloadJobStatusResult.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def job_id(self):

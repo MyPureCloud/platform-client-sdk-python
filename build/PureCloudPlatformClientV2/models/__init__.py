@@ -125,6 +125,8 @@ from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .base_program_entity import BaseProgramEntity
+from .base_topic_entitiy import BaseTopicEntitiy
 from .batch_download_job_result import BatchDownloadJobResult
 from .batch_download_job_status_result import BatchDownloadJobStatusResult
 from .batch_download_job_submission import BatchDownloadJobSubmission
@@ -450,6 +452,7 @@ from .create_service_goal_group_request import CreateServiceGoalGroupRequest
 from .create_share_request import CreateShareRequest
 from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
+from .create_topic_request import CreateTopicRequest
 from .create_user import CreateUser
 from .create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .create_web_chat_conversation_response import CreateWebChatConversationResponse
@@ -907,7 +910,6 @@ from .messaging_integration import MessagingIntegration
 from .messaging_integration_entity_listing import MessagingIntegrationEntityListing
 from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
-from .meta import Meta
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -968,10 +970,7 @@ from .partial_upload_response import PartialUploadResponse
 from .participant import Participant
 from .participant_attributes import ParticipantAttributes
 from .participant_basic import ParticipantBasic
-from .patch_operation import PatchOperation
-from .patch_request import PatchRequest
 from .patch_user import PatchUser
-from .path import Path
 from .permission_collection_entity_listing import PermissionCollectionEntityListing
 from .permissions import Permissions
 from .phone import Phone
@@ -987,6 +986,7 @@ from .phone_number_status import PhoneNumberStatus
 from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
 from .photo import Photo
+from .phrase import Phrase
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
 from .policy import Policy
@@ -1004,6 +1004,7 @@ from .presence_definition import PresenceDefinition
 from .presence_event_organization_presence import PresenceEventOrganizationPresence
 from .presence_event_user_presence import PresenceEventUserPresence
 from .presence_query_response import PresenceQueryResponse
+from .program import Program
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -1306,11 +1307,11 @@ from .schema_category import SchemaCategory
 from .schema_category_entity_listing import SchemaCategoryEntityListing
 from .schema_reference_entity_listing import SchemaReferenceEntityListing
 from .scim_email import ScimEmail
-from .scim_list_response import ScimListResponse
+from .scim_group_list_response import ScimGroupListResponse
 from .scim_metadata import ScimMetadata
 from .scim_phone_number import ScimPhoneNumber
-from .scim_resource import ScimResource
 from .scim_service_provider_config import ScimServiceProviderConfig
+from .scim_user_list_response import ScimUserListResponse
 from .scim_v2_create_user import ScimV2CreateUser
 from .scim_v2_enterprise_user import ScimV2EnterpriseUser
 from .scim_v2_group import ScimV2Group
@@ -1440,6 +1441,7 @@ from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token import Token
 from .token_info import TokenInfo
+from .topic import Topic
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase
@@ -1553,6 +1555,8 @@ from .user_station_change_topic_user import UserStationChangeTopicUser
 from .user_station_change_topic_user_station import UserStationChangeTopicUserStation
 from .user_station_change_topic_user_stations import UserStationChangeTopicUserStations
 from .user_stations import UserStations
+from .user_tokens_topic_token_notification import UserTokensTopicTokenNotification
+from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
 from .validate_address_request import ValidateAddressRequest

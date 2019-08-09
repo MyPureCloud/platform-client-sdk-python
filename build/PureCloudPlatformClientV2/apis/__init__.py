@@ -36,6 +36,7 @@ from .routing_api import RoutingApi
 from .scim_api import SCIMApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
+from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi

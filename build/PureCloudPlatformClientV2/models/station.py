@@ -52,6 +52,7 @@ class Station(object):
             'line_appearance_id': 'str',
             'web_rtc_media_dscp': 'int',
             'web_rtc_persistent_enabled': 'bool',
+            'web_rtc_force_turn': 'bool',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class Station(object):
             'line_appearance_id': 'lineAppearanceId',
             'web_rtc_media_dscp': 'webRtcMediaDscp',
             'web_rtc_persistent_enabled': 'webRtcPersistentEnabled',
+            'web_rtc_force_turn': 'webRtcForceTurn',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class Station(object):
         self._line_appearance_id = None
         self._web_rtc_media_dscp = None
         self._web_rtc_persistent_enabled = None
+        self._web_rtc_force_turn = None
         self._self_uri = None
 
     @property
@@ -364,6 +367,29 @@ class Station(object):
         """
         
         self._web_rtc_persistent_enabled = web_rtc_persistent_enabled
+
+    @property
+    def web_rtc_force_turn(self):
+        """
+        Gets the web_rtc_force_turn of this Station.
+        Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.
+
+        :return: The web_rtc_force_turn of this Station.
+        :rtype: bool
+        """
+        return self._web_rtc_force_turn
+
+    @web_rtc_force_turn.setter
+    def web_rtc_force_turn(self, web_rtc_force_turn):
+        """
+        Sets the web_rtc_force_turn of this Station.
+        Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.
+
+        :param web_rtc_force_turn: The web_rtc_force_turn of this Station.
+        :type: bool
+        """
+        
+        self._web_rtc_force_turn = web_rtc_force_turn
 
     @property
     def self_uri(self):

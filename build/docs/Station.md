@@ -19,6 +19,7 @@ title: Station
 | **line_appearance_id** | **str** |  | [optional] |
 | **web_rtc_media_dscp** | **int** | The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone. | [optional] |
 | **web_rtc_persistent_enabled** | **bool** | The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone. | [optional] |
+| **web_rtc_force_turn** | **bool** | Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

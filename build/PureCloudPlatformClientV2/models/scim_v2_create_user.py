@@ -40,10 +40,10 @@ class ScimV2CreateUser(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'display_name': 'str',
             'schemas': 'list[str]',
             'active': 'bool',
             'user_name': 'str',
+            'display_name': 'str',
             'password': 'str',
             'title': 'str',
             'phone_numbers': 'list[ScimPhoneNumber]',
@@ -56,10 +56,10 @@ class ScimV2CreateUser(object):
         }
 
         self.attribute_map = {
-            'display_name': 'displayName',
             'schemas': 'schemas',
             'active': 'active',
             'user_name': 'userName',
+            'display_name': 'displayName',
             'password': 'password',
             'title': 'title',
             'phone_numbers': 'phoneNumbers',
@@ -71,10 +71,10 @@ class ScimV2CreateUser(object):
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'
         }
 
-        self._display_name = None
         self._schemas = None
         self._active = None
         self._user_name = None
+        self._display_name = None
         self._password = None
         self._title = None
         self._phone_numbers = None
@@ -84,29 +84,6 @@ class ScimV2CreateUser(object):
         self._groups = None
         self._meta = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this ScimV2CreateUser.
-        Display Name
-
-        :return: The display_name of this ScimV2CreateUser.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this ScimV2CreateUser.
-        Display Name
-
-        :param display_name: The display_name of this ScimV2CreateUser.
-        :type: str
-        """
-        
-        self._display_name = display_name
 
     @property
     def schemas(self):
@@ -176,6 +153,29 @@ class ScimV2CreateUser(object):
         """
         
         self._user_name = user_name
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this ScimV2CreateUser.
+        Display Name
+
+        :return: The display_name of this ScimV2CreateUser.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this ScimV2CreateUser.
+        Display Name
+
+        :param display_name: The display_name of this ScimV2CreateUser.
+        :type: str
+        """
+        
+        self._display_name = display_name
 
     @property
     def password(self):

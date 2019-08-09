@@ -422,7 +422,7 @@ class Campaign(object):
         :param campaign_status: The campaign_status of this Campaign.
         :type: str
         """
-        allowed_values = ["on", "stopping", "off", "complete", "invalid"]
+        allowed_values = ["on", "stopping", "off", "complete", "invalid", "forced_off", "forced_stopping"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for campaign_status -> " + campaign_status
             self._campaign_status = "outdated_sdk_version"

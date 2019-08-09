@@ -1,14 +1,14 @@
 ---
-title: Path
+title: UserTokensTopicUriReference
 ---
-## Path
+## UserTokensTopicUriReference
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **schema_urn** | **str** |  | [optional] |
-| **root** | **bool** |  | [optional] |
+| **id** | **str** |  | [optional] |
+| **name** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

@@ -110,7 +110,9 @@ class ViewFilter(object):
             'group_ids': 'list[str]',
             'has_journey_customer_id': 'bool',
             'has_journey_action_map_id': 'bool',
-            'has_journey_visit_id': 'bool'
+            'has_journey_visit_id': 'bool',
+            'oauth_client_ids': 'list[str]',
+            'api_operations': 'list[str]'
         }
 
         self.attribute_map = {
@@ -184,7 +186,9 @@ class ViewFilter(object):
             'group_ids': 'groupIds',
             'has_journey_customer_id': 'hasJourneyCustomerId',
             'has_journey_action_map_id': 'hasJourneyActionMapId',
-            'has_journey_visit_id': 'hasJourneyVisitId'
+            'has_journey_visit_id': 'hasJourneyVisitId',
+            'oauth_client_ids': 'oauthClientIds',
+            'api_operations': 'apiOperations'
         }
 
         self._media_types = None
@@ -258,6 +262,8 @@ class ViewFilter(object):
         self._has_journey_customer_id = None
         self._has_journey_action_map_id = None
         self._has_journey_visit_id = None
+        self._oauth_client_ids = None
+        self._api_operations = None
 
     @property
     def media_types(self):
@@ -1903,6 +1909,52 @@ class ViewFilter(object):
         """
         
         self._has_journey_visit_id = has_journey_visit_id
+
+    @property
+    def oauth_client_ids(self):
+        """
+        Gets the oauth_client_ids of this ViewFilter.
+        A list of OAuth client IDs
+
+        :return: The oauth_client_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._oauth_client_ids
+
+    @oauth_client_ids.setter
+    def oauth_client_ids(self, oauth_client_ids):
+        """
+        Sets the oauth_client_ids of this ViewFilter.
+        A list of OAuth client IDs
+
+        :param oauth_client_ids: The oauth_client_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._oauth_client_ids = oauth_client_ids
+
+    @property
+    def api_operations(self):
+        """
+        Gets the api_operations of this ViewFilter.
+        A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
+
+        :return: The api_operations of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._api_operations
+
+    @api_operations.setter
+    def api_operations(self, api_operations):
+        """
+        Sets the api_operations of this ViewFilter.
+        A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
+
+        :param api_operations: The api_operations of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._api_operations = api_operations
 
     def to_dict(self):
         """

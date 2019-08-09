@@ -41,18 +41,15 @@ class BatchDownloadJobSubmissionResult(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._name = None
         self._self_uri = None
 
     @property
@@ -77,29 +74,6 @@ class BatchDownloadJobSubmissionResult(object):
         """
         
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this BatchDownloadJobSubmissionResult.
-
-
-        :return: The name of this BatchDownloadJobSubmissionResult.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this BatchDownloadJobSubmissionResult.
-
-
-        :param name: The name of this BatchDownloadJobSubmissionResult.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def self_uri(self):

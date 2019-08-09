@@ -41,10 +41,10 @@ class ScimV2User(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'display_name': 'str',
             'schemas': 'list[str]',
             'active': 'bool',
             'user_name': 'str',
+            'display_name': 'str',
             'password': 'str',
             'title': 'str',
             'phone_numbers': 'list[ScimPhoneNumber]',
@@ -58,10 +58,10 @@ class ScimV2User(object):
 
         self.attribute_map = {
             'id': 'id',
-            'display_name': 'displayName',
             'schemas': 'schemas',
             'active': 'active',
             'user_name': 'userName',
+            'display_name': 'displayName',
             'password': 'password',
             'title': 'title',
             'phone_numbers': 'phoneNumbers',
@@ -74,10 +74,10 @@ class ScimV2User(object):
         }
 
         self._id = None
-        self._display_name = None
         self._schemas = None
         self._active = None
         self._user_name = None
+        self._display_name = None
         self._password = None
         self._title = None
         self._phone_numbers = None
@@ -110,29 +110,6 @@ class ScimV2User(object):
         """
         
         self._id = id
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this ScimV2User.
-        Display Name
-
-        :return: The display_name of this ScimV2User.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this ScimV2User.
-        Display Name
-
-        :param display_name: The display_name of this ScimV2User.
-        :type: str
-        """
-        
-        self._display_name = display_name
 
     @property
     def schemas(self):
@@ -202,6 +179,29 @@ class ScimV2User(object):
         """
         
         self._user_name = user_name
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this ScimV2User.
+        Display Name
+
+        :return: The display_name of this ScimV2User.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this ScimV2User.
+        Display Name
+
+        :param display_name: The display_name of this ScimV2User.
+        :type: str
+        """
+        
+        self._display_name = display_name
 
     @property
     def password(self):
@@ -368,7 +368,7 @@ class ScimV2User(object):
     def meta(self):
         """
         Gets the meta of this ScimV2User.
-
+        Resource SCIM meta
 
         :return: The meta of this ScimV2User.
         :rtype: ScimMetadata
@@ -379,7 +379,7 @@ class ScimV2User(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2User.
-
+        Resource SCIM meta
 
         :param meta: The meta of this ScimV2User.
         :type: ScimMetadata
