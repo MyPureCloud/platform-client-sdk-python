@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
+|[**get_routing_sms_address**](RoutingApi.html#get_routing_sms_address) | Get an Address by Id for SMS|
+|[**get_routing_sms_addresses**](RoutingApi.html#get_routing_sms_addresses) | Get a list of Addresses for SMS|
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
 |[**get_routing_sms_phonenumber**](RoutingApi.html#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
 |[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
@@ -1682,6 +1684,110 @@ except ApiException as e:
 
 [**SkillEntityListing**](SkillEntityListing.html)
 
+<a name="get_routing_sms_address"></a>
+
+## [**SmsAddress**](SmsAddress.html) get_routing_sms_address(address_id)
+
+
+
+Get an Address by Id for SMS
+
+
+
+Wraps GET /api/v2/routing/sms/addresses/{addressId} 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+address_id = 'address_id_example' # str | Address ID
+
+try:
+    # Get an Address by Id for SMS
+    api_response = api_instance.get_routing_sms_address(address_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_sms_address: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **address_id** | **str**| Address ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsAddress**](SmsAddress.html)
+
+<a name="get_routing_sms_addresses"></a>
+
+## [**SmsAddressEntityListing**](SmsAddressEntityListing.html) get_routing_sms_addresses(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Addresses for SMS
+
+
+
+Wraps GET /api/v2/routing/sms/addresses 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Addresses for SMS
+    api_response = api_instance.get_routing_sms_addresses(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_sms_addresses: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsAddressEntityListing**](SmsAddressEntityListing.html)
+
 <a name="get_routing_sms_availablephonenumbers"></a>
 
 ## [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html) get_routing_sms_availablephonenumbers(country_code, phone_number_type, region=region, city=city, area_code=area_code, pattern=pattern, address_requirement=address_requirement)
@@ -2812,7 +2918,7 @@ except ApiException as e:
 
 <a name="post_routing_sms_addresses"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_addresses(body)
+## [**SmsAddress**](SmsAddress.html) post_routing_sms_addresses(body)
 
 
 
@@ -2859,7 +2965,7 @@ except ApiException as e:
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsAddress**](SmsAddress.html)
 
 <a name="post_routing_sms_phonenumbers"></a>
 

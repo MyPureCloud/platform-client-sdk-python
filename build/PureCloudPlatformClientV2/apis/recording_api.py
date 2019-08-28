@@ -1395,12 +1395,16 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str sort_by: Sort by
+        :param str state: Filter by state
+        :param bool show_only_my_jobs: Show only my jobs
+        :param str job_type: Job Type (Can be left empty for both)
         :return: RecordingJobEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number']
+        all_params = ['page_size', 'page_number', 'sort_by', 'state', 'show_only_my_jobs', 'job_type']
         all_params.append('callback')
 
         params = locals()
@@ -1423,6 +1427,14 @@ class RecordingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'state' in params:
+            query_params['state'] = params['state']
+        if 'show_only_my_jobs' in params:
+            query_params['showOnlyMyJobs'] = params['show_only_my_jobs']
+        if 'job_type' in params:
+            query_params['jobType'] = params['job_type']
 
         header_params = {}
 

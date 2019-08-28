@@ -112,7 +112,7 @@ class ScimV2GroupReference(object):
     def value(self):
         """
         Gets the value of this ScimV2GroupReference.
-        Value of ID of group member. May be User or Group id
+        The ID of the group member. Can be userId or groupId.
 
         :return: The value of this ScimV2GroupReference.
         :rtype: str
@@ -123,7 +123,7 @@ class ScimV2GroupReference(object):
     def value(self, value):
         """
         Sets the value of this ScimV2GroupReference.
-        Value of ID of group member. May be User or Group id
+        The ID of the group member. Can be userId or groupId.
 
         :param value: The value of this ScimV2GroupReference.
         :type: str

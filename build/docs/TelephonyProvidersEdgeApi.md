@@ -3032,7 +3032,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_outboundroutes"></a>
 
-## [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html) get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
+## [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html) get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
 
 
 
@@ -3063,11 +3063,12 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
 site_id = 'site_id_example' # str | Filter by site.id (optional)
+external_trunk_bases_ids = 'external_trunk_bases_ids_example' # str | Filter by externalTrunkBases.ids (optional)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 
 try:
     # Get outbound routes
-    api_response = api_instance.get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, sort_by=sort_by)
+    api_response = api_instance.get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroutes: %s\n" % e
@@ -3082,6 +3083,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **site_id** | **str**| Filter by site.id | [optional]  |
+| **external_trunk_bases_ids** | **str**| Filter by externalTrunkBases.ids | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
@@ -3801,7 +3803,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_site_outboundroutes"></a>
 
-## [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html) get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+## [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html) get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
 
 
 
@@ -3832,11 +3834,12 @@ site_id = 'site_id_example' # str | Site ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 name = 'name_example' # str | Name (optional)
+external_trunk_bases_ids = 'external_trunk_bases_ids_example' # str | externalTrunkBases.ids (optional)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 
 try:
     # Get outbound routes
-    api_response = api_instance.get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, sort_by=sort_by)
+    api_response = api_instance.get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroutes: %s\n" % e
@@ -3851,6 +3854,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
+| **external_trunk_bases_ids** | **str**| externalTrunkBases.ids | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 

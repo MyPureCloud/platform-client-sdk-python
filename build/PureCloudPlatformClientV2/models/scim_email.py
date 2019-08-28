@@ -59,7 +59,7 @@ class ScimEmail(object):
     def value(self):
         """
         Gets the value of this ScimEmail.
-        Email address
+        The email address.
 
         :return: The value of this ScimEmail.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimEmail(object):
     def value(self, value):
         """
         Sets the value of this ScimEmail.
-        Email address
+        The email address.
 
         :param value: The value of this ScimEmail.
         :type: str
@@ -82,7 +82,7 @@ class ScimEmail(object):
     def type(self):
         """
         Gets the type of this ScimEmail.
-        Type of Email
+        The type of email address.
 
         :return: The type of this ScimEmail.
         :rtype: str
@@ -93,7 +93,7 @@ class ScimEmail(object):
     def type(self, type):
         """
         Sets the type of this ScimEmail.
-        Type of Email
+        The type of email address.
 
         :param type: The type of this ScimEmail.
         :type: str
@@ -109,7 +109,7 @@ class ScimEmail(object):
     def primary(self):
         """
         Gets the primary of this ScimEmail.
-        Primary flag
+        Indicates whether the email address is the primary email address.
 
         :return: The primary of this ScimEmail.
         :rtype: bool
@@ -120,7 +120,7 @@ class ScimEmail(object):
     def primary(self, primary):
         """
         Sets the primary of this ScimEmail.
-        Primary flag
+        Indicates whether the email address is the primary email address.
 
         :param primary: The primary of this ScimEmail.
         :type: bool

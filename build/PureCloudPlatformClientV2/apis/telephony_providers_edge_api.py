@@ -4547,13 +4547,14 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_number: Page number
         :param str name: Name
         :param str site_id: Filter by site.id
+        :param str external_trunk_bases_ids: Filter by externalTrunkBases.ids
         :param str sort_by: Sort by
         :return: OutboundRouteEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'name', 'site_id', 'sort_by']
+        all_params = ['page_size', 'page_number', 'name', 'site_id', 'external_trunk_bases_ids', 'sort_by']
         all_params.append('callback')
 
         params = locals()
@@ -4580,6 +4581,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['name'] = params['name']
         if 'site_id' in params:
             query_params['site.id'] = params['site_id']
+        if 'external_trunk_bases_ids' in params:
+            query_params['externalTrunkBases.ids'] = params['external_trunk_bases_ids']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
 
@@ -5714,13 +5717,14 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str name: Name
+        :param str external_trunk_bases_ids: externalTrunkBases.ids
         :param str sort_by: Sort by
         :return: OutboundRouteBaseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['site_id', 'page_size', 'page_number', 'name', 'sort_by']
+        all_params = ['site_id', 'page_size', 'page_number', 'name', 'external_trunk_bases_ids', 'sort_by']
         all_params.append('callback')
 
         params = locals()
@@ -5750,6 +5754,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'external_trunk_bases_ids' in params:
+            query_params['externalTrunkBases.ids'] = params['external_trunk_bases_ids']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
 

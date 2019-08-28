@@ -7,7 +7,7 @@ title: ScimV2PatchRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **schemas** | **list[str]** | Schemas used in this patch request | |
+| **schemas** | **list[str]** | A list of schemas used in the patch request. | |
 | **operations** | [**list[ScimV2PatchOperation]**](ScimV2PatchOperation.html) |  | [optional] |
 {: class="table table-striped"}
 

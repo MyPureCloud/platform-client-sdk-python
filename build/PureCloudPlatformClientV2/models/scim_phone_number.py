@@ -59,7 +59,7 @@ class ScimPhoneNumber(object):
     def value(self):
         """
         Gets the value of this ScimPhoneNumber.
-        Phone number (e164)
+        A phone number in E.164 format.
 
         :return: The value of this ScimPhoneNumber.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimPhoneNumber(object):
     def value(self, value):
         """
         Sets the value of this ScimPhoneNumber.
-        Phone number (e164)
+        A phone number in E.164 format.
 
         :param value: The value of this ScimPhoneNumber.
         :type: str
@@ -82,7 +82,7 @@ class ScimPhoneNumber(object):
     def type(self):
         """
         Gets the type of this ScimPhoneNumber.
-        Type of Phone number
+        The type of phone number. 
 
         :return: The type of this ScimPhoneNumber.
         :rtype: str
@@ -93,7 +93,7 @@ class ScimPhoneNumber(object):
     def type(self, type):
         """
         Sets the type of this ScimPhoneNumber.
-        Type of Phone number
+        The type of phone number. 
 
         :param type: The type of this ScimPhoneNumber.
         :type: str
@@ -109,7 +109,7 @@ class ScimPhoneNumber(object):
     def primary(self):
         """
         Gets the primary of this ScimPhoneNumber.
-        Primary phone number flag
+        Indicates whether the phone number is the primary phone number.
 
         :return: The primary of this ScimPhoneNumber.
         :rtype: bool
@@ -120,7 +120,7 @@ class ScimPhoneNumber(object):
     def primary(self, primary):
         """
         Sets the primary of this ScimPhoneNumber.
-        Primary phone number flag
+        Indicates whether the phone number is the primary phone number.
 
         :param primary: The primary of this ScimPhoneNumber.
         :type: bool

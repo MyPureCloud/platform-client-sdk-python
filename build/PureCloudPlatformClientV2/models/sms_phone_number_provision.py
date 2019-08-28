@@ -45,6 +45,7 @@ class SmsPhoneNumberProvision(object):
             'phone_number': 'str',
             'phone_number_type': 'str',
             'country_code': 'str',
+            'address_id': 'str',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class SmsPhoneNumberProvision(object):
             'phone_number': 'phoneNumber',
             'phone_number_type': 'phoneNumberType',
             'country_code': 'countryCode',
+            'address_id': 'addressId',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class SmsPhoneNumberProvision(object):
         self._phone_number = None
         self._phone_number_type = None
         self._country_code = None
+        self._address_id = None
         self._self_uri = None
 
     @property
@@ -182,6 +185,29 @@ class SmsPhoneNumberProvision(object):
         """
         
         self._country_code = country_code
+
+    @property
+    def address_id(self):
+        """
+        Gets the address_id of this SmsPhoneNumberProvision.
+        The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here
+
+        :return: The address_id of this SmsPhoneNumberProvision.
+        :rtype: str
+        """
+        return self._address_id
+
+    @address_id.setter
+    def address_id(self, address_id):
+        """
+        Sets the address_id of this SmsPhoneNumberProvision.
+        The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here
+
+        :param address_id: The address_id of this SmsPhoneNumberProvision.
+        :type: str
+        """
+        
+        self._address_id = address_id
 
     @property
     def self_uri(self):

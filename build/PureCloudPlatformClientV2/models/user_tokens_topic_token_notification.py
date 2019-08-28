@@ -43,20 +43,29 @@ class UserTokensTopicTokenNotification(object):
             'user': 'UserTokensTopicUriReference',
             'ip_address': 'str',
             'date_created': 'str',
-            'token_expiration_date': 'str'
+            'token_expiration_date': 'str',
+            'session_id': 'str',
+            'client_id': 'str',
+            'token_hash': 'str'
         }
 
         self.attribute_map = {
             'user': 'user',
             'ip_address': 'ipAddress',
             'date_created': 'dateCreated',
-            'token_expiration_date': 'tokenExpirationDate'
+            'token_expiration_date': 'tokenExpirationDate',
+            'session_id': 'sessionId',
+            'client_id': 'clientId',
+            'token_hash': 'tokenHash'
         }
 
         self._user = None
         self._ip_address = None
         self._date_created = None
         self._token_expiration_date = None
+        self._session_id = None
+        self._client_id = None
+        self._token_hash = None
 
     @property
     def user(self):
@@ -149,6 +158,75 @@ class UserTokensTopicTokenNotification(object):
         """
         
         self._token_expiration_date = token_expiration_date
+
+    @property
+    def session_id(self):
+        """
+        Gets the session_id of this UserTokensTopicTokenNotification.
+
+
+        :return: The session_id of this UserTokensTopicTokenNotification.
+        :rtype: str
+        """
+        return self._session_id
+
+    @session_id.setter
+    def session_id(self, session_id):
+        """
+        Sets the session_id of this UserTokensTopicTokenNotification.
+
+
+        :param session_id: The session_id of this UserTokensTopicTokenNotification.
+        :type: str
+        """
+        
+        self._session_id = session_id
+
+    @property
+    def client_id(self):
+        """
+        Gets the client_id of this UserTokensTopicTokenNotification.
+
+
+        :return: The client_id of this UserTokensTopicTokenNotification.
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """
+        Sets the client_id of this UserTokensTopicTokenNotification.
+
+
+        :param client_id: The client_id of this UserTokensTopicTokenNotification.
+        :type: str
+        """
+        
+        self._client_id = client_id
+
+    @property
+    def token_hash(self):
+        """
+        Gets the token_hash of this UserTokensTopicTokenNotification.
+
+
+        :return: The token_hash of this UserTokensTopicTokenNotification.
+        :rtype: str
+        """
+        return self._token_hash
+
+    @token_hash.setter
+    def token_hash(self, token_hash):
+        """
+        Sets the token_hash of this UserTokensTopicTokenNotification.
+
+
+        :param token_hash: The token_hash of this UserTokensTopicTokenNotification.
+        :type: str
+        """
+        
+        self._token_hash = token_hash
 
     def to_dict(self):
         """

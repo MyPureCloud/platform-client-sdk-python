@@ -59,7 +59,7 @@ class ScimV2EnterpriseUser(object):
     def division(self):
         """
         Gets the division of this ScimV2EnterpriseUser.
-        User division name
+        The division that the user belongs to.
 
         :return: The division of this ScimV2EnterpriseUser.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimV2EnterpriseUser(object):
     def division(self, division):
         """
         Sets the division of this ScimV2EnterpriseUser.
-        User division name
+        The division that the user belongs to.
 
         :param division: The division of this ScimV2EnterpriseUser.
         :type: str
@@ -82,7 +82,7 @@ class ScimV2EnterpriseUser(object):
     def department(self):
         """
         Gets the department of this ScimV2EnterpriseUser.
-        User department name
+        The department that the user belongs to.
 
         :return: The department of this ScimV2EnterpriseUser.
         :rtype: str
@@ -93,7 +93,7 @@ class ScimV2EnterpriseUser(object):
     def department(self, department):
         """
         Sets the department of this ScimV2EnterpriseUser.
-        User department name
+        The department that the user belongs to.
 
         :param department: The department of this ScimV2EnterpriseUser.
         :type: str
@@ -105,7 +105,7 @@ class ScimV2EnterpriseUser(object):
     def manager(self):
         """
         Gets the manager of this ScimV2EnterpriseUser.
-        Manager
+        The user's manager.
 
         :return: The manager of this ScimV2EnterpriseUser.
         :rtype: Manager
@@ -116,7 +116,7 @@ class ScimV2EnterpriseUser(object):
     def manager(self, manager):
         """
         Sets the manager of this ScimV2EnterpriseUser.
-        Manager
+        The user's manager.
 
         :param manager: The manager of this ScimV2EnterpriseUser.
         :type: Manager

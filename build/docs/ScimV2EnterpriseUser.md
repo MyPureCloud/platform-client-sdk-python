@@ -7,9 +7,9 @@ title: ScimV2EnterpriseUser
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **division** | **str** | User division name | [optional] |
-| **department** | **str** | User department name | [optional] |
-| **manager** | [**Manager**](Manager.html) | Manager | [optional] |
+| **division** | **str** | The division that the user belongs to. | [optional] |
+| **department** | **str** | The department that the user belongs to. | [optional] |
+| **manager** | [**Manager**](Manager.html) | The user&#39;s manager. | [optional] |
 {: class="table table-striped"}
 
 

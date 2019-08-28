@@ -125,8 +125,6 @@ from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
-from .base_program_entity import BaseProgramEntity
-from .base_topic_entitiy import BaseTopicEntitiy
 from .batch_download_job_result import BatchDownloadJobResult
 from .batch_download_job_status_result import BatchDownloadJobStatusResult
 from .batch_download_job_submission import BatchDownloadJobSubmission
@@ -452,7 +450,6 @@ from .create_service_goal_group_request import CreateServiceGoalGroupRequest
 from .create_share_request import CreateShareRequest
 from .create_share_request_member import CreateShareRequestMember
 from .create_share_response import CreateShareResponse
-from .create_topic_request import CreateTopicRequest
 from .create_user import CreateUser
 from .create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .create_web_chat_conversation_response import CreateWebChatConversationResponse
@@ -647,6 +644,7 @@ from .email_media_policy_conditions import EmailMediaPolicyConditions
 from .email_message import EmailMessage
 from .email_message_listing import EmailMessageListing
 from .email_setup import EmailSetup
+from .embedded_integration import EmbeddedIntegration
 from .emergency_call_flow import EmergencyCallFlow
 from .emergency_group import EmergencyGroup
 from .emergency_group_listing import EmergencyGroupListing
@@ -986,7 +984,6 @@ from .phone_number_status import PhoneNumberStatus
 from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
 from .photo import Photo
-from .phrase import Phrase
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
 from .policy import Policy
@@ -1004,7 +1001,6 @@ from .presence_definition import PresenceDefinition
 from .presence_event_organization_presence import PresenceEventOrganizationPresence
 from .presence_event_user_presence import PresenceEventUserPresence
 from .presence_query_response import PresenceQueryResponse
-from .program import Program
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -1370,6 +1366,8 @@ from .site import Site
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skills_to_remove import SkillsToRemove
+from .sms_address import SmsAddress
+from .sms_address_entity_listing import SmsAddressEntityListing
 from .sms_address_provision import SmsAddressProvision
 from .sms_available_phone_number import SmsAvailablePhoneNumber
 from .sms_phone_number import SmsPhoneNumber
@@ -1441,7 +1439,6 @@ from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token import Token
 from .token_info import TokenInfo
-from .topic import Topic
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase

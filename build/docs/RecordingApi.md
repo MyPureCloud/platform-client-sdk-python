@@ -902,7 +902,7 @@ except ApiException as e:
 
 <a name="get_recording_jobs"></a>
 
-## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number)
+## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type)
 
 
 
@@ -931,10 +931,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'userId' # str | Sort by (optional) (default to userId)
+state = 'state_example' # str | Filter by state (optional)
+show_only_my_jobs = true # bool | Show only my jobs (optional)
+job_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)
 
 try:
     # Get the status of all jobs within the user's organization
-    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_recording_jobs: %s\n" % e
@@ -947,6 +951,10 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| Sort by | [optional] [default to userId]<br />**Values**: userId, dateCreated |
+| **state** | **str**| Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
+| **show_only_my_jobs** | **bool**| Show only my jobs | [optional]  |
+| **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
 {: class="table table-striped"}
 
 ### Return type

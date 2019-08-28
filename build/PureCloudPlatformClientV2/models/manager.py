@@ -56,7 +56,7 @@ class Manager(object):
     def value(self):
         """
         Gets the value of this Manager.
-        Identifier of the Manager
+        The ID of the manager.
 
         :return: The value of this Manager.
         :rtype: str
@@ -67,7 +67,7 @@ class Manager(object):
     def value(self, value):
         """
         Sets the value of this Manager.
-        Identifier of the Manager
+        The ID of the manager.
 
         :param value: The value of this Manager.
         :type: str

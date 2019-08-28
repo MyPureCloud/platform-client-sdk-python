@@ -42,17 +42,20 @@ class TokenInfo(object):
         self.swagger_types = {
             'organization': 'NamedEntity',
             'home_organization': 'NamedEntity',
+            'authorized_scope': 'list[str]',
             'o_auth_client': 'OrgOAuthClient'
         }
 
         self.attribute_map = {
             'organization': 'organization',
             'home_organization': 'homeOrganization',
+            'authorized_scope': 'authorizedScope',
             'o_auth_client': 'OAuthClient'
         }
 
         self._organization = None
         self._home_organization = None
+        self._authorized_scope = None
         self._o_auth_client = None
 
     @property
@@ -100,6 +103,29 @@ class TokenInfo(object):
         """
         
         self._home_organization = home_organization
+
+    @property
+    def authorized_scope(self):
+        """
+        Gets the authorized_scope of this TokenInfo.
+        The list of scopes authorized for the OAuth client
+
+        :return: The authorized_scope of this TokenInfo.
+        :rtype: list[str]
+        """
+        return self._authorized_scope
+
+    @authorized_scope.setter
+    def authorized_scope(self, authorized_scope):
+        """
+        Sets the authorized_scope of this TokenInfo.
+        The list of scopes authorized for the OAuth client
+
+        :param authorized_scope: The authorized_scope of this TokenInfo.
+        :type: list[str]
+        """
+        
+        self._authorized_scope = authorized_scope
 
     @property
     def o_auth_client(self):

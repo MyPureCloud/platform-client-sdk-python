@@ -12,6 +12,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversation_participant_flaggedreason**](ConversationsApi.html#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
+|[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
+|[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration|
+|[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
@@ -51,6 +54,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
+|[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
+|[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
+|[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
+|[**get_conversations_messaging_integrations_line**](ConversationsApi.html#get_conversations_messaging_integrations_line) | Get a list of LINE messenger Integrations|
+|[**get_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_line_integration_id) | Get a LINE messenger integration|
+|[**get_conversations_messaging_integrations_twitter**](ConversationsApi.html#get_conversations_messaging_integrations_twitter) | Get a list of Twitter Integrations|
+|[**get_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_twitter_integration_id) | Get a Twitter messaging integration|
+|[**get_conversations_messaging_sticker**](ConversationsApi.html#get_conversations_messaging_sticker) | Get a list of Messaging Stickers|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
@@ -107,9 +118,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
+|[**post_conversations_messaging_integrations_facebook**](ConversationsApi.html#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
+|[**post_conversations_messaging_integrations_line**](ConversationsApi.html#post_conversations_messaging_integrations_line) | Create a LINE messenger Integration|
+|[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
 |[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
+|[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
 {: class="table table-striped"}
 
 <a name="delete_conversation_participant_code"></a>
@@ -312,6 +327,156 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **attachment_id** | **str**| attachmentId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messaging_integrations_facebook_integration_id"></a>
+
+##  delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
+
+
+
+Delete a Facebook messaging integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete a Facebook messaging integration
+    api_instance.delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messaging_integrations_line_integration_id"></a>
+
+##  delete_conversations_messaging_integrations_line_integration_id(integration_id)
+
+
+
+Delete a LINE messenger integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete a LINE messenger integration
+    api_instance.delete_conversations_messaging_integrations_line_integration_id(integration_id)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_line_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messaging_integrations_twitter_integration_id"></a>
+
+##  delete_conversations_messaging_integrations_twitter_integration_id(integration_id)
+
+
+
+Delete a Twitter messaging integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete a Twitter messaging integration
+    api_instance.delete_conversations_messaging_integrations_twitter_integration_id(integration_id)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_twitter_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2306,6 +2471,426 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations"></a>
+
+## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Integrations
+    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_facebook"></a>
+
+## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Facebook Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/facebook 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Facebook Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_facebook_integration_id"></a>
+
+## [**FacebookIntegration**](FacebookIntegration.html) get_conversations_messaging_integrations_facebook_integration_id(integration_id)
+
+
+
+Get a Facebook messaging integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get a Facebook messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_facebook_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="get_conversations_messaging_integrations_line"></a>
+
+## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of LINE messenger Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/line 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of LINE messenger Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_line: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineIntegrationEntityListing**](LineIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_line_integration_id"></a>
+
+## [**LineIntegration**](LineIntegration.html) get_conversations_messaging_integrations_line_integration_id(integration_id)
+
+
+
+Get a LINE messenger integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get a LINE messenger integration
+    api_response = api_instance.get_conversations_messaging_integrations_line_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_line_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
+
+<a name="get_conversations_messaging_integrations_twitter"></a>
+
+## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Twitter Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Twitter Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_twitter_integration_id"></a>
+
+## [**TwitterIntegration**](TwitterIntegration.html) get_conversations_messaging_integrations_twitter_integration_id(integration_id)
+
+
+
+Get a Twitter messaging integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get a Twitter messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_twitter_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration.html)
+
+<a name="get_conversations_messaging_sticker"></a>
+
+## [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html) get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
+
+
+
+Get a list of Messaging Stickers
+
+
+
+Wraps GET /api/v2/conversations/messaging/stickers/{messengerType} 
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+messenger_type = 'messenger_type_example' # str | Messenger Type
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of Messaging Stickers
+    api_response = api_instance.get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_sticker: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messenger_type** | **str**| Messenger Type |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
 
 <a name="patch_conversation_participant"></a>
 
@@ -5275,6 +5860,159 @@ except ApiException as e:
 
 [**MessageConversation**](MessageConversation.html)
 
+<a name="post_conversations_messaging_integrations_facebook"></a>
+
+## [**FacebookIntegration**](FacebookIntegration.html) post_conversations_messaging_integrations_facebook(body)
+
+
+
+Create a Facebook Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/facebook 
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.FacebookIntegrationRequest() # FacebookIntegrationRequest | FacebookIntegrationRequest
+
+try:
+    # Create a Facebook Integration
+    api_response = api_instance.post_conversations_messaging_integrations_facebook(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_facebook: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="post_conversations_messaging_integrations_line"></a>
+
+## [**LineIntegration**](LineIntegration.html) post_conversations_messaging_integrations_line(body)
+
+
+
+Create a LINE messenger Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/line 
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.LineIntegrationRequest() # LineIntegrationRequest | LineIntegrationRequest
+
+try:
+    # Create a LINE messenger Integration
+    api_response = api_instance.post_conversations_messaging_integrations_line(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_line: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
+
+<a name="post_conversations_messaging_integrations_twitter"></a>
+
+## [**TwitterIntegration**](TwitterIntegration.html) post_conversations_messaging_integrations_twitter(body)
+
+
+
+Create a Twitter Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/twitter 
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.TwitterIntegrationRequest() # TwitterIntegrationRequest | TwitterIntegrationRequest
+
+try:
+    # Create a Twitter Integration
+    api_response = api_instance.post_conversations_messaging_integrations_twitter(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_twitter: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration.html)
+
 <a name="put_conversation_participant_flaggedreason"></a>
 
 ##  put_conversation_participant_flaggedreason(conversation_id, participant_id)
@@ -5433,4 +6171,57 @@ except ApiException as e:
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="put_conversations_messaging_integrations_line_integration_id"></a>
+
+## [**LineIntegration**](LineIntegration.html) put_conversations_messaging_integrations_line_integration_id(integration_id, body)
+
+
+
+Update a LINE messenger integration
+
+
+
+Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId} 
+
+Requires ANY permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.LineIntegrationRequest() # LineIntegrationRequest | LineIntegrationRequest
+
+try:
+    # Update a LINE messenger integration
+    api_response = api_instance.put_conversations_messaging_integrations_line_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->put_conversations_messaging_integrations_line_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
 

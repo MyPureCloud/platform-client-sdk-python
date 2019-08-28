@@ -56,7 +56,7 @@ class ScimV2PatchRequest(object):
     def schemas(self):
         """
         Gets the schemas of this ScimV2PatchRequest.
-        Schemas used in this patch request
+        A list of schemas used in the patch request.
 
         :return: The schemas of this ScimV2PatchRequest.
         :rtype: list[str]
@@ -67,7 +67,7 @@ class ScimV2PatchRequest(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimV2PatchRequest.
-        Schemas used in this patch request
+        A list of schemas used in the patch request.
 
         :param schemas: The schemas of this ScimV2PatchRequest.
         :type: list[str]

@@ -7,7 +7,7 @@ title: Manager
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **value** | **str** | Identifier of the Manager | [optional] |
+| **value** | **str** | The ID of the manager. | [optional] |
 | **ref** | **str** | URI for Manager User record. | [optional] |
 {: class="table table-striped"}
 

@@ -52,6 +52,7 @@ class ScimV2User(object):
             'photos': 'list[Photo]',
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
+            'roles': 'list[str]',
             'meta': 'ScimMetadata',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser'
         }
@@ -69,6 +70,7 @@ class ScimV2User(object):
             'photos': 'photos',
             'external_id': 'externalId',
             'groups': 'groups',
+            'roles': 'roles',
             'meta': 'meta',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'
         }
@@ -85,6 +87,7 @@ class ScimV2User(object):
         self._photos = None
         self._external_id = None
         self._groups = None
+        self._roles = None
         self._meta = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
 
@@ -138,7 +141,7 @@ class ScimV2User(object):
     def active(self):
         """
         Gets the active of this ScimV2User.
-        Active flag
+        Indicates whether the user's administrative status is active.
 
         :return: The active of this ScimV2User.
         :rtype: bool
@@ -149,7 +152,7 @@ class ScimV2User(object):
     def active(self, active):
         """
         Sets the active of this ScimV2User.
-        Active flag
+        Indicates whether the user's administrative status is active.
 
         :param active: The active of this ScimV2User.
         :type: bool
@@ -161,7 +164,7 @@ class ScimV2User(object):
     def user_name(self):
         """
         Gets the user_name of this ScimV2User.
-        User Name (Must be Unique) maps to PureCloud e-mail address
+        The user's PureCloud email address. Must be unique.
 
         :return: The user_name of this ScimV2User.
         :rtype: str
@@ -172,7 +175,7 @@ class ScimV2User(object):
     def user_name(self, user_name):
         """
         Sets the user_name of this ScimV2User.
-        User Name (Must be Unique) maps to PureCloud e-mail address
+        The user's PureCloud email address. Must be unique.
 
         :param user_name: The user_name of this ScimV2User.
         :type: str
@@ -184,7 +187,7 @@ class ScimV2User(object):
     def display_name(self):
         """
         Gets the display_name of this ScimV2User.
-        Display Name
+        The display name for the user.
 
         :return: The display_name of this ScimV2User.
         :rtype: str
@@ -195,7 +198,7 @@ class ScimV2User(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ScimV2User.
-        Display Name
+        The display name for the user.
 
         :param display_name: The display_name of this ScimV2User.
         :type: str
@@ -207,7 +210,7 @@ class ScimV2User(object):
     def password(self):
         """
         Gets the password of this ScimV2User.
-        Password (updateOnly)
+        A new password for a PureCloud user. Does not return an existing password.
 
         :return: The password of this ScimV2User.
         :rtype: str
@@ -218,7 +221,7 @@ class ScimV2User(object):
     def password(self, password):
         """
         Sets the password of this ScimV2User.
-        Password (updateOnly)
+        A new password for a PureCloud user. Does not return an existing password.
 
         :param password: The password of this ScimV2User.
         :type: str
@@ -230,7 +233,7 @@ class ScimV2User(object):
     def title(self):
         """
         Gets the title of this ScimV2User.
-        Title
+        The user's title.
 
         :return: The title of this ScimV2User.
         :rtype: str
@@ -241,7 +244,7 @@ class ScimV2User(object):
     def title(self, title):
         """
         Sets the title of this ScimV2User.
-        Title
+        The user's title.
 
         :param title: The title of this ScimV2User.
         :type: str
@@ -253,7 +256,7 @@ class ScimV2User(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this ScimV2User.
-        Phone numbers
+        A list of the user's phone numbers.
 
         :return: The phone_numbers of this ScimV2User.
         :rtype: list[ScimPhoneNumber]
@@ -264,7 +267,7 @@ class ScimV2User(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this ScimV2User.
-        Phone numbers
+        A list of the user's phone numbers.
 
         :param phone_numbers: The phone_numbers of this ScimV2User.
         :type: list[ScimPhoneNumber]
@@ -276,7 +279,7 @@ class ScimV2User(object):
     def emails(self):
         """
         Gets the emails of this ScimV2User.
-        Emails
+        A list of the user's email addresses.
 
         :return: The emails of this ScimV2User.
         :rtype: list[ScimEmail]
@@ -287,7 +290,7 @@ class ScimV2User(object):
     def emails(self, emails):
         """
         Sets the emails of this ScimV2User.
-        Emails
+        A list of the user's email addresses.
 
         :param emails: The emails of this ScimV2User.
         :type: list[ScimEmail]
@@ -299,7 +302,7 @@ class ScimV2User(object):
     def photos(self):
         """
         Gets the photos of this ScimV2User.
-        Photos
+        A list of the user's photos.
 
         :return: The photos of this ScimV2User.
         :rtype: list[Photo]
@@ -310,7 +313,7 @@ class ScimV2User(object):
     def photos(self, photos):
         """
         Sets the photos of this ScimV2User.
-        Photos
+        A list of the user's photos.
 
         :param photos: The photos of this ScimV2User.
         :type: list[Photo]
@@ -322,7 +325,7 @@ class ScimV2User(object):
     def external_id(self):
         """
         Gets the external_id of this ScimV2User.
-        External ID
+        The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
 
         :return: The external_id of this ScimV2User.
         :rtype: str
@@ -333,7 +336,7 @@ class ScimV2User(object):
     def external_id(self, external_id):
         """
         Sets the external_id of this ScimV2User.
-        External ID
+        The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
 
         :param external_id: The external_id of this ScimV2User.
         :type: str
@@ -345,7 +348,7 @@ class ScimV2User(object):
     def groups(self):
         """
         Gets the groups of this ScimV2User.
-        Group References
+        A list of groups that the user is a member of.
 
         :return: The groups of this ScimV2User.
         :rtype: list[ScimV2GroupReference]
@@ -356,13 +359,36 @@ class ScimV2User(object):
     def groups(self, groups):
         """
         Sets the groups of this ScimV2User.
-        Group References
+        A list of groups that the user is a member of.
 
         :param groups: The groups of this ScimV2User.
         :type: list[ScimV2GroupReference]
         """
         
         self._groups = groups
+
+    @property
+    def roles(self):
+        """
+        Gets the roles of this ScimV2User.
+        Roles
+
+        :return: The roles of this ScimV2User.
+        :rtype: list[str]
+        """
+        return self._roles
+
+    @roles.setter
+    def roles(self, roles):
+        """
+        Sets the roles of this ScimV2User.
+        Roles
+
+        :param roles: The roles of this ScimV2User.
+        :type: list[str]
+        """
+        
+        self._roles = roles
 
     @property
     def meta(self):

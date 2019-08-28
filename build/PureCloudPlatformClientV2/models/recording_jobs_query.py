@@ -42,17 +42,20 @@ class RecordingJobsQuery(object):
         self.swagger_types = {
             'action': 'str',
             'action_date': 'datetime',
+            'integration_id': 'str',
             'conversation_query': 'AsyncConversationQuery'
         }
 
         self.attribute_map = {
             'action': 'action',
             'action_date': 'actionDate',
+            'integration_id': 'integrationId',
             'conversation_query': 'conversationQuery'
         }
 
         self._action = None
         self._action_date = None
+        self._integration_id = None
         self._conversation_query = None
 
     @property
@@ -75,7 +78,7 @@ class RecordingJobsQuery(object):
         :param action: The action of this RecordingJobsQuery.
         :type: str
         """
-        allowed_values = ["DELETE"]
+        allowed_values = ["DELETE", "EXPORT"]
         if action.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for action -> " + action
             self._action = "outdated_sdk_version"
@@ -104,6 +107,29 @@ class RecordingJobsQuery(object):
         """
         
         self._action_date = action_date
+
+    @property
+    def integration_id(self):
+        """
+        Gets the integration_id of this RecordingJobsQuery.
+        Integration ID
+
+        :return: The integration_id of this RecordingJobsQuery.
+        :rtype: str
+        """
+        return self._integration_id
+
+    @integration_id.setter
+    def integration_id(self, integration_id):
+        """
+        Sets the integration_id of this RecordingJobsQuery.
+        Integration ID
+
+        :param integration_id: The integration_id of this RecordingJobsQuery.
+        :type: str
+        """
+        
+        self._integration_id = integration_id
 
     @property
     def conversation_query(self):

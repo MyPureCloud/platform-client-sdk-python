@@ -111,7 +111,7 @@ class ScimV2Group(object):
     def display_name(self):
         """
         Gets the display_name of this ScimV2Group.
-        Display Name
+        The display name for the group.
 
         :return: The display_name of this ScimV2Group.
         :rtype: str
@@ -122,7 +122,7 @@ class ScimV2Group(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ScimV2Group.
-        Display Name
+        The display name for the group.
 
         :param display_name: The display_name of this ScimV2Group.
         :type: str
@@ -134,7 +134,7 @@ class ScimV2Group(object):
     def members(self):
         """
         Gets the members of this ScimV2Group.
-        Scim Group Members
+        A list of members in a SCIM group.
 
         :return: The members of this ScimV2Group.
         :rtype: list[ScimV2MemberReference]
@@ -145,7 +145,7 @@ class ScimV2Group(object):
     def members(self, members):
         """
         Sets the members of this ScimV2Group.
-        Scim Group Members
+        A list of members in a SCIM group.
 
         :param members: The members of this ScimV2Group.
         :type: list[ScimV2MemberReference]

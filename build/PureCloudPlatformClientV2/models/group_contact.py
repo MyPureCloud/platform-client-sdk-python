@@ -41,6 +41,7 @@ class GroupContact(object):
         """
         self.swagger_types = {
             'address': 'str',
+            'extension': 'str',
             'display': 'str',
             'type': 'str',
             'media_type': 'str'
@@ -48,12 +49,14 @@ class GroupContact(object):
 
         self.attribute_map = {
             'address': 'address',
+            'extension': 'extension',
             'display': 'display',
             'type': 'type',
             'media_type': 'mediaType'
         }
 
         self._address = None
+        self._extension = None
         self._display = None
         self._type = None
         self._media_type = None
@@ -80,6 +83,29 @@ class GroupContact(object):
         """
         
         self._address = address
+
+    @property
+    def extension(self):
+        """
+        Gets the extension of this GroupContact.
+        Extension is set if the number is e164 valid
+
+        :return: The extension of this GroupContact.
+        :rtype: str
+        """
+        return self._extension
+
+    @extension.setter
+    def extension(self, extension):
+        """
+        Sets the extension of this GroupContact.
+        Extension is set if the number is e164 valid
+
+        :param extension: The extension of this GroupContact.
+        :type: str
+        """
+        
+        self._extension = extension
 
     @property
     def display(self):

@@ -62,7 +62,7 @@ class ScimMetadata(object):
     def resource_type(self):
         """
         Gets the resource_type of this ScimMetadata.
-        Resource type
+        The type of the resource.
 
         :return: The resource_type of this ScimMetadata.
         :rtype: str
@@ -73,7 +73,7 @@ class ScimMetadata(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ScimMetadata.
-        Resource type
+        The type of the resource.
 
         :param resource_type: The resource_type of this ScimMetadata.
         :type: str
@@ -89,7 +89,7 @@ class ScimMetadata(object):
     def last_modified(self):
         """
         Gets the last_modified of this ScimMetadata.
-        Last Modified ISO6501 (UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The last_modified of this ScimMetadata.
         :rtype: datetime
@@ -100,7 +100,7 @@ class ScimMetadata(object):
     def last_modified(self, last_modified):
         """
         Sets the last_modified of this ScimMetadata.
-        Last Modified ISO6501 (UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param last_modified: The last_modified of this ScimMetadata.
         :type: datetime
@@ -112,7 +112,7 @@ class ScimMetadata(object):
     def location(self):
         """
         Gets the location of this ScimMetadata.
-        URI location of resource
+        The URI of the resource.
 
         :return: The location of this ScimMetadata.
         :rtype: str
@@ -123,7 +123,7 @@ class ScimMetadata(object):
     def location(self, location):
         """
         Sets the location of this ScimMetadata.
-        URI location of resource
+        The URI of the resource.
 
         :param location: The location of this ScimMetadata.
         :type: str
@@ -135,7 +135,7 @@ class ScimMetadata(object):
     def version(self):
         """
         Gets the version of this ScimMetadata.
-        ETag version of resource [RFC7232]
+        The version of the resource. Matches the ETag HTTP response header.
 
         :return: The version of this ScimMetadata.
         :rtype: str
@@ -146,7 +146,7 @@ class ScimMetadata(object):
     def version(self, version):
         """
         Sets the version of this ScimMetadata.
-        ETag version of resource [RFC7232]
+        The version of the resource. Matches the ETag HTTP response header.
 
         :param version: The version of this ScimMetadata.
         :type: str

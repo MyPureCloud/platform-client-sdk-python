@@ -238,7 +238,7 @@ class DataSchema(object):
     def json_schema(self):
         """
         Gets the json_schema of this DataSchema.
-        The JSON schema defining the extension to the built-in entity type.
+        A JSON schema defining the extension to the built-in entity type.
 
         :return: The json_schema of this DataSchema.
         :rtype: JsonSchemaDocument
@@ -249,7 +249,7 @@ class DataSchema(object):
     def json_schema(self, json_schema):
         """
         Sets the json_schema of this DataSchema.
-        The JSON schema defining the extension to the built-in entity type.
+        A JSON schema defining the extension to the built-in entity type.
 
         :param json_schema: The json_schema of this DataSchema.
         :type: JsonSchemaDocument

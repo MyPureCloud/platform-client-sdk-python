@@ -56,6 +56,7 @@ class SmsPhoneNumber(object):
             'cancellation_date': 'datetime',
             'renewal_date': 'datetime',
             'auto_renewable': 'str',
+            'address_id': 'SmsAddress',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class SmsPhoneNumber(object):
             'cancellation_date': 'cancellationDate',
             'renewal_date': 'renewalDate',
             'auto_renewable': 'autoRenewable',
+            'address_id': 'addressId',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class SmsPhoneNumber(object):
         self._cancellation_date = None
         self._renewal_date = None
         self._auto_renewable = None
+        self._address_id = None
         self._self_uri = None
 
     @property
@@ -476,6 +479,29 @@ class SmsPhoneNumber(object):
             self._auto_renewable = "outdated_sdk_version"
         else:
             self._auto_renewable = auto_renewable
+
+    @property
+    def address_id(self):
+        """
+        Gets the address_id of this SmsPhoneNumber.
+        The id of an address attached to this phone number.
+
+        :return: The address_id of this SmsPhoneNumber.
+        :rtype: SmsAddress
+        """
+        return self._address_id
+
+    @address_id.setter
+    def address_id(self, address_id):
+        """
+        Sets the address_id of this SmsPhoneNumber.
+        The id of an address attached to this phone number.
+
+        :param address_id: The address_id of this SmsPhoneNumber.
+        :type: SmsAddress
+        """
+        
+        self._address_id = address_id
 
     @property
     def self_uri(self):
