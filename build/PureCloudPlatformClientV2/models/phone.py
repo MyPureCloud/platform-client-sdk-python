@@ -51,17 +51,17 @@ class Phone(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'site': 'UriReference',
-            'phone_base_settings': 'UriReference',
-            'line_base_settings': 'UriReference',
-            'phone_meta_base': 'UriReference',
+            'site': 'DomainEntityRef',
+            'phone_base_settings': 'DomainEntityRef',
+            'line_base_settings': 'DomainEntityRef',
+            'phone_meta_base': 'DomainEntityRef',
             'lines': 'list[Line]',
             'status': 'PhoneStatus',
             'secondary_status': 'PhoneStatus',
             'user_agent_info': 'UserAgentInfo',
             'properties': 'dict(str, object)',
             'capabilities': 'PhoneCapabilities',
-            'web_rtc_user': 'UriReference',
+            'web_rtc_user': 'DomainEntityRef',
             'primary_edge': 'Edge',
             'secondary_edge': 'Edge',
             'self_uri': 'str'
@@ -385,7 +385,7 @@ class Phone(object):
         The site associated to the phone.
 
         :return: The site of this Phone.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._site
 
@@ -396,7 +396,7 @@ class Phone(object):
         The site associated to the phone.
 
         :param site: The site of this Phone.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._site = site
@@ -408,7 +408,7 @@ class Phone(object):
         Phone Base Settings
 
         :return: The phone_base_settings of this Phone.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._phone_base_settings
 
@@ -419,7 +419,7 @@ class Phone(object):
         Phone Base Settings
 
         :param phone_base_settings: The phone_base_settings of this Phone.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._phone_base_settings = phone_base_settings
@@ -431,7 +431,7 @@ class Phone(object):
 
 
         :return: The line_base_settings of this Phone.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._line_base_settings
 
@@ -442,7 +442,7 @@ class Phone(object):
 
 
         :param line_base_settings: The line_base_settings of this Phone.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._line_base_settings = line_base_settings
@@ -454,7 +454,7 @@ class Phone(object):
 
 
         :return: The phone_meta_base of this Phone.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._phone_meta_base
 
@@ -465,7 +465,7 @@ class Phone(object):
 
 
         :param phone_meta_base: The phone_meta_base of this Phone.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._phone_meta_base = phone_meta_base
@@ -615,7 +615,7 @@ class Phone(object):
         This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
 
         :return: The web_rtc_user of this Phone.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._web_rtc_user
 
@@ -626,7 +626,7 @@ class Phone(object):
         This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
 
         :param web_rtc_user: The web_rtc_user of this Phone.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._web_rtc_user = web_rtc_user

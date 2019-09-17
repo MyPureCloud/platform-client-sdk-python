@@ -52,14 +52,14 @@ class Line(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'properties': 'dict(str, object)',
-            'edge_group': 'UriReference',
-            'template': 'UriReference',
-            'site': 'UriReference',
-            'line_base_settings': 'UriReference',
+            'edge_group': 'DomainEntityRef',
+            'template': 'DomainEntityRef',
+            'site': 'DomainEntityRef',
+            'line_base_settings': 'DomainEntityRef',
             'primary_edge': 'Edge',
             'secondary_edge': 'Edge',
-            'logged_in_user': 'UriReference',
-            'default_for_user': 'UriReference',
+            'logged_in_user': 'DomainEntityRef',
+            'default_for_user': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -396,7 +396,7 @@ class Line(object):
 
 
         :return: The edge_group of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge_group
 
@@ -407,7 +407,7 @@ class Line(object):
 
 
         :param edge_group: The edge_group of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge_group = edge_group
@@ -419,7 +419,7 @@ class Line(object):
 
 
         :return: The template of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._template
 
@@ -430,7 +430,7 @@ class Line(object):
 
 
         :param template: The template of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._template = template
@@ -442,7 +442,7 @@ class Line(object):
 
 
         :return: The site of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._site
 
@@ -453,7 +453,7 @@ class Line(object):
 
 
         :param site: The site of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._site = site
@@ -465,7 +465,7 @@ class Line(object):
 
 
         :return: The line_base_settings of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._line_base_settings
 
@@ -476,7 +476,7 @@ class Line(object):
 
 
         :param line_base_settings: The line_base_settings of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._line_base_settings = line_base_settings
@@ -534,7 +534,7 @@ class Line(object):
 
 
         :return: The logged_in_user of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._logged_in_user
 
@@ -545,7 +545,7 @@ class Line(object):
 
 
         :param logged_in_user: The logged_in_user of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._logged_in_user = logged_in_user
@@ -557,7 +557,7 @@ class Line(object):
 
 
         :return: The default_for_user of this Line.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._default_for_user
 
@@ -568,7 +568,7 @@ class Line(object):
 
 
         :param default_for_user: The default_for_user of this Line.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._default_for_user = default_for_user

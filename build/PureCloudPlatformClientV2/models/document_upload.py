@@ -41,7 +41,7 @@ class DocumentUpload(object):
         """
         self.swagger_types = {
             'name': 'str',
-            'workspace': 'UriReference',
+            'workspace': 'DomainEntityRef',
             'tags': 'list[str]',
             'tag_ids': 'list[str]'
         }
@@ -88,7 +88,7 @@ class DocumentUpload(object):
         The workspace the document will be uploaded to
 
         :return: The workspace of this DocumentUpload.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -99,7 +99,7 @@ class DocumentUpload(object):
         The workspace the document will be uploaded to
 
         :param workspace: The workspace of this DocumentUpload.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace

@@ -41,9 +41,9 @@ class CampaignInteraction(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'campaign': 'UriReference',
-            'agent': 'UriReference',
-            'contact': 'UriReference',
+            'campaign': 'DomainEntityRef',
+            'agent': 'DomainEntityRef',
+            'contact': 'DomainEntityRef',
             'destination_address': 'str',
             'active_preview_call': 'bool',
             'last_active_preview_wrapup_time': 'datetime',
@@ -51,8 +51,8 @@ class CampaignInteraction(object):
             'call_placed_time': 'datetime',
             'call_routed_time': 'datetime',
             'preview_connected_time': 'datetime',
-            'queue': 'UriReference',
-            'script': 'UriReference',
+            'queue': 'DomainEntityRef',
+            'script': 'DomainEntityRef',
             'disposition': 'str',
             'caller_name': 'str',
             'caller_address': 'str',
@@ -60,7 +60,7 @@ class CampaignInteraction(object):
             'conversation': 'ConversationBasic',
             'dialer_system_participant_id': 'str',
             'dialing_mode': 'str',
-            'skills': 'list[UriReference]'
+            'skills': 'list[DomainEntityRef]'
         }
 
         self.attribute_map = {
@@ -139,7 +139,7 @@ class CampaignInteraction(object):
 
 
         :return: The campaign of this CampaignInteraction.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._campaign
 
@@ -150,7 +150,7 @@ class CampaignInteraction(object):
 
 
         :param campaign: The campaign of this CampaignInteraction.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._campaign = campaign
@@ -162,7 +162,7 @@ class CampaignInteraction(object):
 
 
         :return: The agent of this CampaignInteraction.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._agent
 
@@ -173,7 +173,7 @@ class CampaignInteraction(object):
 
 
         :param agent: The agent of this CampaignInteraction.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._agent = agent
@@ -185,7 +185,7 @@ class CampaignInteraction(object):
 
 
         :return: The contact of this CampaignInteraction.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact
 
@@ -196,7 +196,7 @@ class CampaignInteraction(object):
 
 
         :param contact: The contact of this CampaignInteraction.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact = contact
@@ -369,7 +369,7 @@ class CampaignInteraction(object):
 
 
         :return: The queue of this CampaignInteraction.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -380,7 +380,7 @@ class CampaignInteraction(object):
 
 
         :param queue: The queue of this CampaignInteraction.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue
@@ -392,7 +392,7 @@ class CampaignInteraction(object):
 
 
         :return: The script of this CampaignInteraction.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._script
 
@@ -403,7 +403,7 @@ class CampaignInteraction(object):
 
 
         :param script: The script of this CampaignInteraction.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._script = script
@@ -580,7 +580,7 @@ class CampaignInteraction(object):
         Any skills that are attached to the call for routing
 
         :return: The skills of this CampaignInteraction.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._skills
 
@@ -591,7 +591,7 @@ class CampaignInteraction(object):
         Any skills that are attached to the call for routing
 
         :param skills: The skills of this CampaignInteraction.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._skills = skills

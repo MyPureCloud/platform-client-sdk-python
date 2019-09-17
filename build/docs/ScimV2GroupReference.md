@@ -7,10 +7,9 @@ title: ScimV2GroupReference
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta | [optional] |
-| **type** | **str** | SCIM Resource Type of member | [optional] |
+| **type** | **str** | The SCIM resource type. Can be user or group. | [optional] |
 | **value** | **str** | The ID of the group member. Can be userId or groupId. | [optional] |
-| **ref** | **str** | Ref to entity | [optional] |
+| **ref** | **str** | The reference URI of the SCIM resource. | [optional] |
 {: class="table table-striped"}
 
 

@@ -41,8 +41,8 @@ class TrunkMetrics(object):
         """
         self.swagger_types = {
             'event_time': 'datetime',
-            'logical_interface': 'UriReference',
-            'trunk': 'UriReference',
+            'logical_interface': 'DomainEntityRef',
+            'trunk': 'DomainEntityRef',
             'calls': 'TrunkMetricsCalls',
             'qos': 'TrunkMetricsQoS'
         }
@@ -91,7 +91,7 @@ class TrunkMetrics(object):
 
 
         :return: The logical_interface of this TrunkMetrics.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._logical_interface
 
@@ -102,7 +102,7 @@ class TrunkMetrics(object):
 
 
         :param logical_interface: The logical_interface of this TrunkMetrics.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._logical_interface = logical_interface
@@ -114,7 +114,7 @@ class TrunkMetrics(object):
 
 
         :return: The trunk of this TrunkMetrics.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._trunk
 
@@ -125,7 +125,7 @@ class TrunkMetrics(object):
 
 
         :param trunk: The trunk of this TrunkMetrics.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._trunk = trunk

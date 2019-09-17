@@ -45,6 +45,7 @@ from .aggregation_range import AggregationRange
 from .aggregation_result import AggregationResult
 from .aggregation_result_entry import AggregationResultEntry
 from .analytics_conversation import AnalyticsConversation
+from .analytics_conversation_async_query_response import AnalyticsConversationAsyncQueryResponse
 from .analytics_conversation_multi_get_response import AnalyticsConversationMultiGetResponse
 from .analytics_conversation_query_response import AnalyticsConversationQueryResponse
 from .analytics_conversation_segment import AnalyticsConversationSegment
@@ -97,6 +98,8 @@ from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
 from .assigned_wrapup_code import AssignedWrapupCode
 from .async_conversation_query import AsyncConversationQuery
+from .async_query_response import AsyncQueryResponse
+from .async_query_status import AsyncQueryStatus
 from .async_week_schedule_response import AsyncWeekScheduleResponse
 from .attachment import Attachment
 from .attempt_limits import AttemptLimits
@@ -587,6 +590,7 @@ from .domain_entity_listing import DomainEntityListing
 from .domain_entity_listing_evaluation_form import DomainEntityListingEvaluationForm
 from .domain_entity_listing_query_result import DomainEntityListingQueryResult
 from .domain_entity_listing_survey_form import DomainEntityListingSurveyForm
+from .domain_entity_ref import DomainEntityRef
 from .domain_logical_interface import DomainLogicalInterface
 from .domain_network_address import DomainNetworkAddress
 from .domain_network_command_response import DomainNetworkCommandResponse
@@ -1439,6 +1443,7 @@ from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token import Token
 from .token_info import TokenInfo
+from .transcript_property import TranscriptProperty
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase
@@ -1494,7 +1499,6 @@ from .update_notifications_response import UpdateNotificationsResponse
 from .update_scheduling_run_request import UpdateSchedulingRunRequest
 from .update_user import UpdateUser
 from .update_week_schedule_request import UpdateWeekScheduleRequest
-from .uri_reference import UriReference
 from .usage import Usage
 from .usage_item import UsageItem
 from .user import User
@@ -1646,6 +1650,9 @@ from .wfm_user_schedule_adherence_updated_topic_user_reference import WfmUserSch
 from .wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update import WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .whats_app_id import WhatsAppId
+from .whats_app_integration import WhatsAppIntegration
+from .whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
+from .whats_app_integration_update_request import WhatsAppIntegrationUpdateRequest
 from .widget_client_config import WidgetClientConfig
 from .widget_client_config_third_party import WidgetClientConfigThirdParty
 from .widget_client_config_v1 import WidgetClientConfigV1

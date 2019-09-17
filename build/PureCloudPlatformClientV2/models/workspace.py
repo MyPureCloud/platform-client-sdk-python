@@ -44,7 +44,7 @@ class Workspace(object):
             'name': 'str',
             'type': 'str',
             'is_current_user_workspace': 'bool',
-            'user': 'UriReference',
+            'user': 'DomainEntityRef',
             'bucket': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
@@ -185,7 +185,7 @@ class Workspace(object):
 
 
         :return: The user of this Workspace.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._user
 
@@ -196,7 +196,7 @@ class Workspace(object):
 
 
         :param user: The user of this Workspace.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._user = user

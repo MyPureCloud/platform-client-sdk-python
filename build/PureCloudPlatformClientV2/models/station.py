@@ -46,8 +46,8 @@ class Station(object):
             'status': 'str',
             'user_id': 'str',
             'web_rtc_user_id': 'str',
-            'primary_edge': 'UriReference',
-            'secondary_edge': 'UriReference',
+            'primary_edge': 'DomainEntityRef',
+            'secondary_edge': 'DomainEntityRef',
             'type': 'str',
             'line_appearance_id': 'str',
             'web_rtc_media_dscp': 'int',
@@ -237,7 +237,7 @@ class Station(object):
 
 
         :return: The primary_edge of this Station.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._primary_edge
 
@@ -248,7 +248,7 @@ class Station(object):
 
 
         :param primary_edge: The primary_edge of this Station.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._primary_edge = primary_edge
@@ -260,7 +260,7 @@ class Station(object):
 
 
         :return: The secondary_edge of this Station.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._secondary_edge
 
@@ -271,7 +271,7 @@ class Station(object):
 
 
         :param secondary_edge: The secondary_edge of this Station.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._secondary_edge = secondary_edge

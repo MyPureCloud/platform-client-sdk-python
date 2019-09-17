@@ -51,7 +51,7 @@ class DncList(object):
             'login_id': 'str',
             'dnc_codes': 'list[str]',
             'license_id': 'str',
-            'division': 'UriReference',
+            'division': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -349,7 +349,7 @@ class DncList(object):
         The division this DncList belongs to.
 
         :return: The division of this DncList.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._division
 
@@ -360,7 +360,7 @@ class DncList(object):
         The division this DncList belongs to.
 
         :param division: The division of this DncList.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._division = division

@@ -51,7 +51,7 @@ class TrunkBase(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'trunk_metabase': 'UriReference',
+            'trunk_metabase': 'DomainEntityRef',
             'properties': 'dict(str, object)',
             'trunk_type': 'str',
             'managed': 'bool',
@@ -358,7 +358,7 @@ class TrunkBase(object):
         The meta-base this trunk is based on.
 
         :return: The trunk_metabase of this TrunkBase.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._trunk_metabase
 
@@ -369,7 +369,7 @@ class TrunkBase(object):
         The meta-base this trunk is based on.
 
         :param trunk_metabase: The trunk_metabase of this TrunkBase.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._trunk_metabase = trunk_metabase

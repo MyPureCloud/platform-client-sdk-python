@@ -40,7 +40,7 @@ class TimeZoneMappingPreview(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'contact_list': 'UriReference',
+            'contact_list': 'DomainEntityRef',
             'contacts_per_time_zone': 'dict(str, int)',
             'contacts_mapped_using_zip_code': 'dict(str, int)',
             'contacts_mapped_to_a_single_zone': 'int',
@@ -80,7 +80,7 @@ class TimeZoneMappingPreview(object):
         The associated ContactList
 
         :return: The contact_list of this TimeZoneMappingPreview.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact_list
 
@@ -91,7 +91,7 @@ class TimeZoneMappingPreview(object):
         The associated ContactList
 
         :param contact_list: The contact_list of this TimeZoneMappingPreview.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact_list = contact_list

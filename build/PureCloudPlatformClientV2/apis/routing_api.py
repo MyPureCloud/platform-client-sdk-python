@@ -2028,13 +2028,14 @@ class RoutingApi(object):
         :param str sort_by: Sort by
         :param str name: Name
         :param bool active: Active
+        :param list[str] id: ID(s)
         :param list[str] division_id: Division ID(s)
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'active', 'division_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'name', 'active', 'id', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -2063,6 +2064,8 @@ class RoutingApi(object):
             query_params['name'] = params['name']
         if 'active' in params:
             query_params['active'] = params['active']
+        if 'id' in params:
+            query_params['id'] = params['id']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
 

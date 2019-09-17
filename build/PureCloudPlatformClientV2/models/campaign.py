@@ -45,23 +45,23 @@ class Campaign(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'UriReference',
-            'queue': 'UriReference',
+            'contact_list': 'DomainEntityRef',
+            'queue': 'DomainEntityRef',
             'dialing_mode': 'str',
-            'script': 'UriReference',
-            'edge_group': 'UriReference',
-            'site': 'UriReference',
+            'script': 'DomainEntityRef',
+            'edge_group': 'DomainEntityRef',
+            'site': 'DomainEntityRef',
             'campaign_status': 'str',
             'phone_columns': 'list[PhoneColumn]',
             'abandon_rate': 'float',
-            'dnc_lists': 'list[UriReference]',
-            'callable_time_set': 'UriReference',
-            'call_analysis_response_set': 'UriReference',
+            'dnc_lists': 'list[DomainEntityRef]',
+            'callable_time_set': 'DomainEntityRef',
+            'call_analysis_response_set': 'DomainEntityRef',
             'errors': 'list[RestErrorDetail]',
             'caller_name': 'str',
             'caller_address': 'str',
             'outbound_line_count': 'int',
-            'rule_sets': 'list[UriReference]',
+            'rule_sets': 'list[DomainEntityRef]',
             'skip_preview_disabled': 'bool',
             'preview_time_out_seconds': 'int',
             'always_running': 'bool',
@@ -70,8 +70,8 @@ class Campaign(object):
             'no_answer_timeout': 'int',
             'call_analysis_language': 'str',
             'priority': 'int',
-            'contact_list_filters': 'list[UriReference]',
-            'division': 'UriReference',
+            'contact_list_filters': 'list[DomainEntityRef]',
+            'division': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -267,7 +267,7 @@ class Campaign(object):
         The ContactList for this Campaign to dial.
 
         :return: The contact_list of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact_list
 
@@ -278,7 +278,7 @@ class Campaign(object):
         The ContactList for this Campaign to dial.
 
         :param contact_list: The contact_list of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact_list = contact_list
@@ -290,7 +290,7 @@ class Campaign(object):
         The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
 
         :return: The queue of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -301,7 +301,7 @@ class Campaign(object):
         The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
 
         :param queue: The queue of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue
@@ -340,7 +340,7 @@ class Campaign(object):
         The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
 
         :return: The script of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._script
 
@@ -351,7 +351,7 @@ class Campaign(object):
         The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
 
         :param script: The script of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._script = script
@@ -363,7 +363,7 @@ class Campaign(object):
         The EdgeGroup that will place the calls. Required for all dialing modes except preview.
 
         :return: The edge_group of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge_group
 
@@ -374,7 +374,7 @@ class Campaign(object):
         The EdgeGroup that will place the calls. Required for all dialing modes except preview.
 
         :param edge_group: The edge_group of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge_group = edge_group
@@ -386,7 +386,7 @@ class Campaign(object):
         The identifier of the site to be used for dialing; can be set in place of an edge group.
 
         :return: The site of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._site
 
@@ -397,7 +397,7 @@ class Campaign(object):
         The identifier of the site to be used for dialing; can be set in place of an edge group.
 
         :param site: The site of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._site = site
@@ -482,7 +482,7 @@ class Campaign(object):
         DncLists for this Campaign to check before placing a call.
 
         :return: The dnc_lists of this Campaign.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._dnc_lists
 
@@ -493,7 +493,7 @@ class Campaign(object):
         DncLists for this Campaign to check before placing a call.
 
         :param dnc_lists: The dnc_lists of this Campaign.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._dnc_lists = dnc_lists
@@ -505,7 +505,7 @@ class Campaign(object):
         The callable time set for this campaign to check before placing a call.
 
         :return: The callable_time_set of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._callable_time_set
 
@@ -516,7 +516,7 @@ class Campaign(object):
         The callable time set for this campaign to check before placing a call.
 
         :param callable_time_set: The callable_time_set of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._callable_time_set = callable_time_set
@@ -528,7 +528,7 @@ class Campaign(object):
         The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
 
         :return: The call_analysis_response_set of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._call_analysis_response_set
 
@@ -539,7 +539,7 @@ class Campaign(object):
         The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
 
         :param call_analysis_response_set: The call_analysis_response_set of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._call_analysis_response_set = call_analysis_response_set
@@ -643,7 +643,7 @@ class Campaign(object):
         Rule sets to be applied while this campaign is dialing.
 
         :return: The rule_sets of this Campaign.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._rule_sets
 
@@ -654,7 +654,7 @@ class Campaign(object):
         Rule sets to be applied while this campaign is dialing.
 
         :param rule_sets: The rule_sets of this Campaign.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._rule_sets = rule_sets
@@ -850,7 +850,7 @@ class Campaign(object):
         Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
 
         :return: The contact_list_filters of this Campaign.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._contact_list_filters
 
@@ -861,7 +861,7 @@ class Campaign(object):
         Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
 
         :param contact_list_filters: The contact_list_filters of this Campaign.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._contact_list_filters = contact_list_filters
@@ -873,7 +873,7 @@ class Campaign(object):
         The division this campaign belongs to.
 
         :return: The division of this Campaign.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._division
 
@@ -884,7 +884,7 @@ class Campaign(object):
         The division this campaign belongs to.
 
         :param division: The division of this Campaign.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._division = division

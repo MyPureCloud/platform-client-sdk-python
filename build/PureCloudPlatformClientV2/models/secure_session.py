@@ -41,7 +41,7 @@ class SecureSession(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'flow': 'UriReference',
+            'flow': 'DomainEntityRef',
             'user_data': 'str',
             'state': 'str',
             'source_participant_id': 'str',
@@ -97,7 +97,7 @@ class SecureSession(object):
         The flow to execute securely
 
         :return: The flow of this SecureSession.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._flow
 
@@ -108,7 +108,7 @@ class SecureSession(object):
         The flow to execute securely
 
         :param flow: The flow of this SecureSession.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._flow = flow

@@ -12,8 +12,8 @@ title: FaxDocument
 | **date_created** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_modified** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **content_uri** | **str** |  | [optional] |
-| **workspace** | [**UriReference**](UriReference.html) |  | [optional] |
-| **created_by** | [**UriReference**](UriReference.html) |  | [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
+| **created_by** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **content_type** | **str** |  | [optional] |
 | **content_length** | **int** |  | [optional] |
 | **filename** | **str** |  | [optional] |

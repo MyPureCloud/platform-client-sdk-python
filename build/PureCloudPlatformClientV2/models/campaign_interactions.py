@@ -40,7 +40,7 @@ class CampaignInteractions(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaign': 'UriReference',
+            'campaign': 'DomainEntityRef',
             'pending_interactions': 'list[CampaignInteraction]',
             'proceeding_interactions': 'list[CampaignInteraction]',
             'previewing_interactions': 'list[CampaignInteraction]',
@@ -71,7 +71,7 @@ class CampaignInteractions(object):
 
 
         :return: The campaign of this CampaignInteractions.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._campaign
 
@@ -82,7 +82,7 @@ class CampaignInteractions(object):
 
 
         :param campaign: The campaign of this CampaignInteractions.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._campaign = campaign

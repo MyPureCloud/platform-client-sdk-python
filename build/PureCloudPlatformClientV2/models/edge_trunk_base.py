@@ -51,7 +51,7 @@ class EdgeTrunkBase(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'trunk_metabase': 'UriReference',
+            'trunk_metabase': 'DomainEntityRef',
             'properties': 'dict(str, object)',
             'trunk_type': 'str',
             'self_uri': 'str'
@@ -355,7 +355,7 @@ class EdgeTrunkBase(object):
         The meta-base this trunk is based on.
 
         :return: The trunk_metabase of this EdgeTrunkBase.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._trunk_metabase
 
@@ -366,7 +366,7 @@ class EdgeTrunkBase(object):
         The meta-base this trunk is based on.
 
         :param trunk_metabase: The trunk_metabase of this EdgeTrunkBase.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._trunk_metabase = trunk_metabase

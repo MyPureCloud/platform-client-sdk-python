@@ -53,8 +53,8 @@ class ScimV2User(object):
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
             'roles': 'list[str]',
-            'meta': 'ScimMetadata',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser'
+            'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser',
+            'meta': 'ScimMetadata'
         }
 
         self.attribute_map = {
@@ -71,8 +71,8 @@ class ScimV2User(object):
             'external_id': 'externalId',
             'groups': 'groups',
             'roles': 'roles',
-            'meta': 'meta',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'
+            'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
+            'meta': 'meta'
         }
 
         self._id = None
@@ -88,14 +88,14 @@ class ScimV2User(object):
         self._external_id = None
         self._groups = None
         self._roles = None
-        self._meta = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
+        self._meta = None
 
     @property
     def id(self):
         """
         Gets the id of this ScimV2User.
-        SCIM Resource identifier
+        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
 
         :return: The id of this ScimV2User.
         :rtype: str
@@ -106,7 +106,7 @@ class ScimV2User(object):
     def id(self, id):
         """
         Sets the id of this ScimV2User.
-        SCIM Resource identifier
+        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
 
         :param id: The id of this ScimV2User.
         :type: str
@@ -118,7 +118,7 @@ class ScimV2User(object):
     def schemas(self):
         """
         Gets the schemas of this ScimV2User.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimV2User.
         :rtype: list[str]
@@ -129,7 +129,7 @@ class ScimV2User(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimV2User.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimV2User.
         :type: list[str]
@@ -371,7 +371,7 @@ class ScimV2User(object):
     def roles(self):
         """
         Gets the roles of this ScimV2User.
-        Roles
+        A list of roles assigned to the user.
 
         :return: The roles of this ScimV2User.
         :rtype: list[str]
@@ -382,36 +382,13 @@ class ScimV2User(object):
     def roles(self, roles):
         """
         Sets the roles of this ScimV2User.
-        Roles
+        A list of roles assigned to the user.
 
         :param roles: The roles of this ScimV2User.
         :type: list[str]
         """
         
         self._roles = roles
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2User.
-        Resource SCIM meta
-
-        :return: The meta of this ScimV2User.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2User.
-        Resource SCIM meta
-
-        :param meta: The meta of this ScimV2User.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     @property
     def urnietfparamsscimschemasextensionenterprise2_0_user(self):
@@ -435,6 +412,29 @@ class ScimV2User(object):
         """
         
         self._urnietfparamsscimschemasextensionenterprise2_0_user = urnietfparamsscimschemasextensionenterprise2_0_user
+
+    @property
+    def meta(self):
+        """
+        Gets the meta of this ScimV2User.
+        Resource SCIM meta
+
+        :return: The meta of this ScimV2User.
+        :rtype: ScimMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """
+        Sets the meta of this ScimV2User.
+        Resource SCIM meta
+
+        :param meta: The meta of this ScimV2User.
+        :type: ScimMetadata
+        """
+        
+        self._meta = meta
 
     def to_dict(self):
         """

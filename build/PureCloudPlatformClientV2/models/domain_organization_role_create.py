@@ -45,6 +45,7 @@ class DomainOrganizationRoleCreate(object):
             'description': 'str',
             'default_role_id': 'str',
             'permissions': 'list[str]',
+            'unused_permissions': 'list[str]',
             'permission_policies': 'list[DomainPermissionPolicy]',
             'user_count': 'int',
             'role_needs_update': 'bool',
@@ -59,6 +60,7 @@ class DomainOrganizationRoleCreate(object):
             'description': 'description',
             'default_role_id': 'defaultRoleId',
             'permissions': 'permissions',
+            'unused_permissions': 'unusedPermissions',
             'permission_policies': 'permissionPolicies',
             'user_count': 'userCount',
             'role_needs_update': 'roleNeedsUpdate',
@@ -72,6 +74,7 @@ class DomainOrganizationRoleCreate(object):
         self._description = None
         self._default_role_id = None
         self._permissions = None
+        self._unused_permissions = None
         self._permission_policies = None
         self._user_count = None
         self._role_needs_update = None
@@ -193,6 +196,29 @@ class DomainOrganizationRoleCreate(object):
         """
         
         self._permissions = permissions
+
+    @property
+    def unused_permissions(self):
+        """
+        Gets the unused_permissions of this DomainOrganizationRoleCreate.
+
+
+        :return: The unused_permissions of this DomainOrganizationRoleCreate.
+        :rtype: list[str]
+        """
+        return self._unused_permissions
+
+    @unused_permissions.setter
+    def unused_permissions(self, unused_permissions):
+        """
+        Sets the unused_permissions of this DomainOrganizationRoleCreate.
+
+
+        :param unused_permissions: The unused_permissions of this DomainOrganizationRoleCreate.
+        :type: list[str]
+        """
+        
+        self._unused_permissions = unused_permissions
 
     @property
     def permission_policies(self):

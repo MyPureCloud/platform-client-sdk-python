@@ -47,7 +47,7 @@ class SequenceSchedule(object):
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
             'time_zone': 'str',
-            'sequence': 'UriReference',
+            'sequence': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -241,7 +241,7 @@ class SequenceSchedule(object):
         The CampaignSequence that this SequenceSchedule is for.
 
         :return: The sequence of this SequenceSchedule.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._sequence
 
@@ -252,7 +252,7 @@ class SequenceSchedule(object):
         The CampaignSequence that this SequenceSchedule is for.
 
         :param sequence: The sequence of this SequenceSchedule.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._sequence = sequence

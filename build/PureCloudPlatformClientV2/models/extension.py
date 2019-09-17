@@ -52,8 +52,8 @@ class Extension(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'number': 'str',
-            'owner': 'UriReference',
-            'extension_pool': 'UriReference',
+            'owner': 'DomainEntityRef',
+            'extension_pool': 'DomainEntityRef',
             'owner_type': 'str',
             'self_uri': 'str'
         }
@@ -381,7 +381,7 @@ class Extension(object):
         A Uri reference to the owner of this extension, which is either a User or an IVR
 
         :return: The owner of this Extension.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._owner
 
@@ -392,7 +392,7 @@ class Extension(object):
         A Uri reference to the owner of this extension, which is either a User or an IVR
 
         :param owner: The owner of this Extension.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._owner = owner
@@ -404,7 +404,7 @@ class Extension(object):
 
 
         :return: The extension_pool of this Extension.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._extension_pool
 
@@ -415,7 +415,7 @@ class Extension(object):
 
 
         :param extension_pool: The extension_pool of this Extension.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._extension_pool = extension_pool

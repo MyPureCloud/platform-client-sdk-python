@@ -45,7 +45,7 @@ class WidgetDeployment(object):
             'description': 'str',
             'authentication_required': 'bool',
             'disabled': 'bool',
-            'flow': 'UriReference',
+            'flow': 'DomainEntityRef',
             'allowed_domains': 'list[str]',
             'client_type': 'str',
             'client_config': 'WidgetClientConfig',
@@ -198,7 +198,7 @@ class WidgetDeployment(object):
         The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
 
         :return: The flow of this WidgetDeployment.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._flow
 
@@ -209,7 +209,7 @@ class WidgetDeployment(object):
         The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
 
         :param flow: The flow of this WidgetDeployment.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._flow = flow

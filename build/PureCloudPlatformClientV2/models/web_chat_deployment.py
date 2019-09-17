@@ -48,7 +48,7 @@ class WebChatDeployment(object):
             'disabled': 'bool',
             'web_chat_config': 'WebChatConfig',
             'allowed_domains': 'list[str]',
-            'flow': 'UriReference',
+            'flow': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -267,7 +267,7 @@ class WebChatDeployment(object):
         The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
 
         :return: The flow of this WebChatDeployment.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._flow
 
@@ -278,7 +278,7 @@ class WebChatDeployment(object):
         The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
 
         :param flow: The flow of this WebChatDeployment.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._flow = flow

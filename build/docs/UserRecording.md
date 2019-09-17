@@ -12,8 +12,8 @@ title: UserRecording
 | **date_created** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_modified** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **content_uri** | **str** |  | [optional] |
-| **workspace** | [**UriReference**](UriReference.html) |  | [optional] |
-| **created_by** | [**UriReference**](UriReference.html) |  | [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
+| **created_by** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **conversation** | [**Conversation**](Conversation.html) |  | [optional] |
 | **content_length** | **int** |  | [optional] |
 | **duration_milliseconds** | **int** |  | [optional] |

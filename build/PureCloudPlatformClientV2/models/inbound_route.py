@@ -43,16 +43,16 @@ class InboundRoute(object):
             'id': 'str',
             'name': 'str',
             'pattern': 'str',
-            'queue': 'UriReference',
+            'queue': 'DomainEntityRef',
             'priority': 'int',
-            'skills': 'list[UriReference]',
-            'language': 'UriReference',
+            'skills': 'list[DomainEntityRef]',
+            'language': 'DomainEntityRef',
             'from_name': 'str',
             'from_email': 'str',
-            'flow': 'UriReference',
+            'flow': 'DomainEntityRef',
             'reply_email_address': 'QueueEmailAddress',
             'auto_bcc': 'list[EmailAddress]',
-            'spam_flow': 'UriReference',
+            'spam_flow': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -164,7 +164,7 @@ class InboundRoute(object):
         The queue to route the emails to.
 
         :return: The queue of this InboundRoute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -175,7 +175,7 @@ class InboundRoute(object):
         The queue to route the emails to.
 
         :param queue: The queue of this InboundRoute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue
@@ -210,7 +210,7 @@ class InboundRoute(object):
         The skills to use for routing.
 
         :return: The skills of this InboundRoute.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._skills
 
@@ -221,7 +221,7 @@ class InboundRoute(object):
         The skills to use for routing.
 
         :param skills: The skills of this InboundRoute.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._skills = skills
@@ -233,7 +233,7 @@ class InboundRoute(object):
         The language to use for routing.
 
         :return: The language of this InboundRoute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._language
 
@@ -244,7 +244,7 @@ class InboundRoute(object):
         The language to use for routing.
 
         :param language: The language of this InboundRoute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._language = language
@@ -302,7 +302,7 @@ class InboundRoute(object):
         The flow to use for processing the email.
 
         :return: The flow of this InboundRoute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._flow
 
@@ -313,7 +313,7 @@ class InboundRoute(object):
         The flow to use for processing the email.
 
         :param flow: The flow of this InboundRoute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._flow = flow
@@ -371,7 +371,7 @@ class InboundRoute(object):
         The flow to use for processing inbound emails that have been marked as spam.
 
         :return: The spam_flow of this InboundRoute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._spam_flow
 
@@ -382,7 +382,7 @@ class InboundRoute(object):
         The flow to use for processing inbound emails that have been marked as spam.
 
         :param spam_flow: The spam_flow of this InboundRoute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._spam_flow = spam_flow

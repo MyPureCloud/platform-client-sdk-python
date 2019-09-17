@@ -45,11 +45,11 @@ class FacebookIntegration(object):
             'app_id': 'str',
             'page_id': 'str',
             'status': 'str',
-            'recipient': 'UriReference',
+            'recipient': 'DomainEntityRef',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'created_by': 'UriReference',
-            'modified_by': 'UriReference',
+            'created_by': 'DomainEntityRef',
+            'modified_by': 'DomainEntityRef',
             'version': 'int',
             'self_uri': 'str'
         }
@@ -204,7 +204,7 @@ class FacebookIntegration(object):
         The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration
 
         :return: The recipient of this FacebookIntegration.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._recipient
 
@@ -215,7 +215,7 @@ class FacebookIntegration(object):
         The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration
 
         :param recipient: The recipient of this FacebookIntegration.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._recipient = recipient
@@ -273,7 +273,7 @@ class FacebookIntegration(object):
         User reference that created this Integration
 
         :return: The created_by of this FacebookIntegration.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -284,7 +284,7 @@ class FacebookIntegration(object):
         User reference that created this Integration
 
         :param created_by: The created_by of this FacebookIntegration.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by
@@ -296,7 +296,7 @@ class FacebookIntegration(object):
         User reference that last modified this Integration
 
         :return: The modified_by of this FacebookIntegration.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._modified_by
 
@@ -307,7 +307,7 @@ class FacebookIntegration(object):
         User reference that last modified this Integration
 
         :param modified_by: The modified_by of this FacebookIntegration.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._modified_by = modified_by

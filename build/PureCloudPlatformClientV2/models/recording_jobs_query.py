@@ -43,6 +43,7 @@ class RecordingJobsQuery(object):
             'action': 'str',
             'action_date': 'datetime',
             'integration_id': 'str',
+            'include_screen_recordings': 'bool',
             'conversation_query': 'AsyncConversationQuery'
         }
 
@@ -50,12 +51,14 @@ class RecordingJobsQuery(object):
             'action': 'action',
             'action_date': 'actionDate',
             'integration_id': 'integrationId',
+            'include_screen_recordings': 'includeScreenRecordings',
             'conversation_query': 'conversationQuery'
         }
 
         self._action = None
         self._action_date = None
         self._integration_id = None
+        self._include_screen_recordings = None
         self._conversation_query = None
 
     @property
@@ -112,7 +115,7 @@ class RecordingJobsQuery(object):
     def integration_id(self):
         """
         Gets the integration_id of this RecordingJobsQuery.
-        Integration ID
+        Integration ID (Required only for EXPORT action)
 
         :return: The integration_id of this RecordingJobsQuery.
         :rtype: str
@@ -123,13 +126,36 @@ class RecordingJobsQuery(object):
     def integration_id(self, integration_id):
         """
         Sets the integration_id of this RecordingJobsQuery.
-        Integration ID
+        Integration ID (Required only for EXPORT action)
 
         :param integration_id: The integration_id of this RecordingJobsQuery.
         :type: str
         """
         
         self._integration_id = integration_id
+
+    @property
+    def include_screen_recordings(self):
+        """
+        Gets the include_screen_recordings of this RecordingJobsQuery.
+        Include Screen recordings for export action, default value = true 
+
+        :return: The include_screen_recordings of this RecordingJobsQuery.
+        :rtype: bool
+        """
+        return self._include_screen_recordings
+
+    @include_screen_recordings.setter
+    def include_screen_recordings(self, include_screen_recordings):
+        """
+        Sets the include_screen_recordings of this RecordingJobsQuery.
+        Include Screen recordings for export action, default value = true 
+
+        :param include_screen_recordings: The include_screen_recordings of this RecordingJobsQuery.
+        :type: bool
+        """
+        
+        self._include_screen_recordings = include_screen_recordings
 
     @property
     def conversation_query(self):

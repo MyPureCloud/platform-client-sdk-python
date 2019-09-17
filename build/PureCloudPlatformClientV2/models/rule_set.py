@@ -45,8 +45,8 @@ class RuleSet(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'UriReference',
-            'queue': 'UriReference',
+            'contact_list': 'DomainEntityRef',
+            'queue': 'DomainEntityRef',
             'rules': 'list[DialerRule]',
             'self_uri': 'str'
         }
@@ -195,7 +195,7 @@ class RuleSet(object):
         A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
 
         :return: The contact_list of this RuleSet.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact_list
 
@@ -206,7 +206,7 @@ class RuleSet(object):
         A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
 
         :param contact_list: The contact_list of this RuleSet.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact_list = contact_list
@@ -218,7 +218,7 @@ class RuleSet(object):
         A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
 
         :return: The queue of this RuleSet.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -229,7 +229,7 @@ class RuleSet(object):
         A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
 
         :param queue: The queue of this RuleSet.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue

@@ -791,7 +791,7 @@ class Edge(object):
         :param status_code: The status_code of this Edge.
         :type: str
         """
-        allowed_values = ["NEW", "AWAITING_CONNECTION", "AWAITING_FINGERPRINT", "AWAITING_FINGERPRINT_VERIFICATION", "FINGERPRINT_VERIFIED", "AWAITING_BOOTSTRAP", "ACTIVE", "INACTIVE", "RMA", "UNPAIRING", "UNPAIRED"]
+        allowed_values = ["NEW", "AWAITING_CONNECTION", "AWAITING_FINGERPRINT", "AWAITING_FINGERPRINT_VERIFICATION", "FINGERPRINT_VERIFIED", "AWAITING_BOOTSTRAP", "ACTIVE", "INACTIVE", "RMA", "UNPAIRING", "UNPAIRED", "INITIALIZING"]
         if status_code.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status_code -> " + status_code
             self._status_code = "outdated_sdk_version"

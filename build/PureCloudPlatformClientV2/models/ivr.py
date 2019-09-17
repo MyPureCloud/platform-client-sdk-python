@@ -52,10 +52,10 @@ class IVR(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'dnis': 'list[str]',
-            'open_hours_flow': 'UriReference',
-            'closed_hours_flow': 'UriReference',
-            'holiday_hours_flow': 'UriReference',
-            'schedule_group': 'UriReference',
+            'open_hours_flow': 'DomainEntityRef',
+            'closed_hours_flow': 'DomainEntityRef',
+            'holiday_hours_flow': 'DomainEntityRef',
+            'schedule_group': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -384,7 +384,7 @@ class IVR(object):
         The Architect flow to execute during the hours an organization is open.
 
         :return: The open_hours_flow of this IVR.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._open_hours_flow
 
@@ -395,7 +395,7 @@ class IVR(object):
         The Architect flow to execute during the hours an organization is open.
 
         :param open_hours_flow: The open_hours_flow of this IVR.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._open_hours_flow = open_hours_flow
@@ -407,7 +407,7 @@ class IVR(object):
         The Architect flow to execute during the hours an organization is closed.
 
         :return: The closed_hours_flow of this IVR.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._closed_hours_flow
 
@@ -418,7 +418,7 @@ class IVR(object):
         The Architect flow to execute during the hours an organization is closed.
 
         :param closed_hours_flow: The closed_hours_flow of this IVR.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._closed_hours_flow = closed_hours_flow
@@ -430,7 +430,7 @@ class IVR(object):
         The Architect flow to execute during an organization's holiday hours.
 
         :return: The holiday_hours_flow of this IVR.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._holiday_hours_flow
 
@@ -441,7 +441,7 @@ class IVR(object):
         The Architect flow to execute during an organization's holiday hours.
 
         :param holiday_hours_flow: The holiday_hours_flow of this IVR.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._holiday_hours_flow = holiday_hours_flow
@@ -453,7 +453,7 @@ class IVR(object):
         The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
 
         :return: The schedule_group of this IVR.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._schedule_group
 
@@ -464,7 +464,7 @@ class IVR(object):
         The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
 
         :param schedule_group: The schedule_group of this IVR.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._schedule_group = schedule_group

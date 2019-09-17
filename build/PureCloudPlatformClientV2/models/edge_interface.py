@@ -45,7 +45,7 @@ class EdgeInterface(object):
             'name': 'str',
             'mac_address': 'str',
             'if_name': 'str',
-            'endpoints': 'list[UriReference]',
+            'endpoints': 'list[DomainEntityRef]',
             'line_types': 'list[str]',
             'address_family_id': 'str'
         }
@@ -192,7 +192,7 @@ class EdgeInterface(object):
 
 
         :return: The endpoints of this EdgeInterface.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._endpoints
 
@@ -203,7 +203,7 @@ class EdgeInterface(object):
 
 
         :param endpoints: The endpoints of this EdgeInterface.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._endpoints = endpoints

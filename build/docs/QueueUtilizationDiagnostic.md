@@ -7,7 +7,7 @@ title: QueueUtilizationDiagnostic
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **queue** | [**UriReference**](UriReference.html) | Identifier of the queue | [optional] |
+| **queue** | [**DomainEntityRef**](DomainEntityRef.html) | Identifier of the queue | [optional] |
 | **users_in_queue** | **int** | The number of users joined to the queue | [optional] |
 | **active_users_in_queue** | **int** | The number of users active on the queue | [optional] |
 | **users_on_queue** | **int** | The number of users with a status of on-queue | [optional] |

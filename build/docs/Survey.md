@@ -11,7 +11,7 @@ title: Survey
 | **name** | **str** |  | [optional] |
 | **conversation** | [**Conversation**](Conversation.html) |  | [optional] |
 | **survey_form** | [**SurveyForm**](SurveyForm.html) | Survey form used for this survey. | [optional] |
-| **agent** | [**UriReference**](UriReference.html) |  | [optional] |
+| **agent** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **status** | **str** |  | [optional] |
 | **queue** | [**QueueReference**](QueueReference.html) |  | [optional] |
 | **answers** | [**SurveyScoringSet**](SurveyScoringSet.html) |  | [optional] |

@@ -46,9 +46,9 @@ class EvaluatorActivityEntityListing(object):
             'total': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
-            'last_uri': 'str',
-            'previous_uri': 'str',
             'next_uri': 'str',
+            'previous_uri': 'str',
+            'last_uri': 'str',
             'page_count': 'int'
         }
 
@@ -59,9 +59,9 @@ class EvaluatorActivityEntityListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'last_uri': 'lastUri',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
+            'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
 
@@ -71,9 +71,9 @@ class EvaluatorActivityEntityListing(object):
         self._total = None
         self._first_uri = None
         self._self_uri = None
-        self._last_uri = None
-        self._previous_uri = None
         self._next_uri = None
+        self._previous_uri = None
+        self._last_uri = None
         self._page_count = None
 
     @property
@@ -215,27 +215,27 @@ class EvaluatorActivityEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def last_uri(self):
+    def next_uri(self):
         """
-        Gets the last_uri of this EvaluatorActivityEntityListing.
+        Gets the next_uri of this EvaluatorActivityEntityListing.
 
 
-        :return: The last_uri of this EvaluatorActivityEntityListing.
+        :return: The next_uri of this EvaluatorActivityEntityListing.
         :rtype: str
         """
-        return self._last_uri
+        return self._next_uri
 
-    @last_uri.setter
-    def last_uri(self, last_uri):
+    @next_uri.setter
+    def next_uri(self, next_uri):
         """
-        Sets the last_uri of this EvaluatorActivityEntityListing.
+        Sets the next_uri of this EvaluatorActivityEntityListing.
 
 
-        :param last_uri: The last_uri of this EvaluatorActivityEntityListing.
+        :param next_uri: The next_uri of this EvaluatorActivityEntityListing.
         :type: str
         """
         
-        self._last_uri = last_uri
+        self._next_uri = next_uri
 
     @property
     def previous_uri(self):
@@ -261,27 +261,27 @@ class EvaluatorActivityEntityListing(object):
         self._previous_uri = previous_uri
 
     @property
-    def next_uri(self):
+    def last_uri(self):
         """
-        Gets the next_uri of this EvaluatorActivityEntityListing.
+        Gets the last_uri of this EvaluatorActivityEntityListing.
 
 
-        :return: The next_uri of this EvaluatorActivityEntityListing.
+        :return: The last_uri of this EvaluatorActivityEntityListing.
         :rtype: str
         """
-        return self._next_uri
+        return self._last_uri
 
-    @next_uri.setter
-    def next_uri(self, next_uri):
+    @last_uri.setter
+    def last_uri(self, last_uri):
         """
-        Sets the next_uri of this EvaluatorActivityEntityListing.
+        Sets the last_uri of this EvaluatorActivityEntityListing.
 
 
-        :param next_uri: The next_uri of this EvaluatorActivityEntityListing.
+        :param last_uri: The last_uri of this EvaluatorActivityEntityListing.
         :type: str
         """
         
-        self._next_uri = next_uri
+        self._last_uri = last_uri
 
     @property
     def page_count(self):

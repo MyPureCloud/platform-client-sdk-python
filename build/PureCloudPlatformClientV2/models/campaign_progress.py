@@ -40,8 +40,8 @@ class CampaignProgress(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaign': 'UriReference',
-            'contact_list': 'UriReference',
+            'campaign': 'DomainEntityRef',
+            'contact_list': 'DomainEntityRef',
             'number_of_contacts_called': 'int',
             'total_number_of_contacts': 'int',
             'percentage': 'int'
@@ -68,7 +68,7 @@ class CampaignProgress(object):
         Identifier of the campaign
 
         :return: The campaign of this CampaignProgress.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._campaign
 
@@ -79,7 +79,7 @@ class CampaignProgress(object):
         Identifier of the campaign
 
         :param campaign: The campaign of this CampaignProgress.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._campaign = campaign
@@ -91,7 +91,7 @@ class CampaignProgress(object):
         Identifier of the contact list
 
         :return: The contact_list of this CampaignProgress.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact_list
 
@@ -102,7 +102,7 @@ class CampaignProgress(object):
         Identifier of the contact list
 
         :param contact_list: The contact_list of this CampaignProgress.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact_list = contact_list

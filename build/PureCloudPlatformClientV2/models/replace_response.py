@@ -43,7 +43,7 @@ class ReplaceResponse(object):
             'id': 'str',
             'name': 'str',
             'change_number': 'int',
-            'upload_status': 'UriReference',
+            'upload_status': 'DomainEntityRef',
             'upload_destination_uri': 'str',
             'upload_method': 'str'
         }
@@ -140,7 +140,7 @@ class ReplaceResponse(object):
 
 
         :return: The upload_status of this ReplaceResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._upload_status
 
@@ -151,7 +151,7 @@ class ReplaceResponse(object):
 
 
         :param upload_status: The upload_status of this ReplaceResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._upload_status = upload_status

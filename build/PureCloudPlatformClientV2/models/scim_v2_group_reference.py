@@ -40,52 +40,26 @@ class ScimV2GroupReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'meta': 'ScimMetadata',
             'type': 'str',
             'value': 'str',
             'ref': 'str'
         }
 
         self.attribute_map = {
-            'meta': 'meta',
             'type': 'type',
             'value': 'value',
             'ref': '$ref'
         }
 
-        self._meta = None
         self._type = None
         self._value = None
         self._ref = None
 
     @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2GroupReference.
-        Resource SCIM meta
-
-        :return: The meta of this ScimV2GroupReference.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2GroupReference.
-        Resource SCIM meta
-
-        :param meta: The meta of this ScimV2GroupReference.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
-
-    @property
     def type(self):
         """
         Gets the type of this ScimV2GroupReference.
-        SCIM Resource Type of member
+        The SCIM resource type. Can be user or group.
 
         :return: The type of this ScimV2GroupReference.
         :rtype: str
@@ -96,7 +70,7 @@ class ScimV2GroupReference(object):
     def type(self, type):
         """
         Sets the type of this ScimV2GroupReference.
-        SCIM Resource Type of member
+        The SCIM resource type. Can be user or group.
 
         :param type: The type of this ScimV2GroupReference.
         :type: str
@@ -135,7 +109,7 @@ class ScimV2GroupReference(object):
     def ref(self):
         """
         Gets the ref of this ScimV2GroupReference.
-        Ref to entity
+        The reference URI of the SCIM resource.
 
         :return: The ref of this ScimV2GroupReference.
         :rtype: str
@@ -146,7 +120,7 @@ class ScimV2GroupReference(object):
     def ref(self, ref):
         """
         Sets the ref of this ScimV2GroupReference.
-        Ref to entity
+        The reference URI of the SCIM resource.
 
         :param ref: The ref of this ScimV2GroupReference.
         :type: str

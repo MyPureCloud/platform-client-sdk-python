@@ -3985,7 +3985,7 @@ except ApiException as e:
 
 <a name="post_outbound_contactlist_export"></a>
 
-## [**UriReference**](UriReference.html) post_outbound_contactlist_export(contact_list_id)
+## [**DomainEntityRef**](DomainEntityRef.html) post_outbound_contactlist_export(contact_list_id)
 
 
 
@@ -4033,7 +4033,7 @@ except ApiException as e:
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+[**DomainEntityRef**](DomainEntityRef.html)
 
 <a name="post_outbound_contactlistfilters"></a>
 
@@ -4240,7 +4240,7 @@ void (empty response body)
 
 <a name="post_outbound_dnclist_export"></a>
 
-## [**UriReference**](UriReference.html) post_outbound_dnclist_export(dnc_list_id)
+## [**DomainEntityRef**](DomainEntityRef.html) post_outbound_dnclist_export(dnc_list_id)
 
 
 
@@ -4288,7 +4288,7 @@ except ApiException as e:
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+[**DomainEntityRef**](DomainEntityRef.html)
 
 <a name="post_outbound_dnclist_phonenumbers"></a>
 

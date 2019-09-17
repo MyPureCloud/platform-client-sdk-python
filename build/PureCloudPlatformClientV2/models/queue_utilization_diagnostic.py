@@ -40,7 +40,7 @@ class QueueUtilizationDiagnostic(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'queue': 'UriReference',
+            'queue': 'DomainEntityRef',
             'users_in_queue': 'int',
             'active_users_in_queue': 'int',
             'users_on_queue': 'int',
@@ -80,7 +80,7 @@ class QueueUtilizationDiagnostic(object):
         Identifier of the queue
 
         :return: The queue of this QueueUtilizationDiagnostic.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -91,7 +91,7 @@ class QueueUtilizationDiagnostic(object):
         Identifier of the queue
 
         :param queue: The queue of this QueueUtilizationDiagnostic.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue

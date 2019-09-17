@@ -42,7 +42,7 @@ class GDPRRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'created_by': 'UriReference',
+            'created_by': 'DomainEntityRef',
             'replacement_terms': 'list[ReplacementTerm]',
             'request_type': 'str',
             'created_date': 'datetime',
@@ -129,7 +129,7 @@ class GDPRRequest(object):
         The user that created this request
 
         :return: The created_by of this GDPRRequest.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -140,7 +140,7 @@ class GDPRRequest(object):
         The user that created this request
 
         :param created_by: The created_by of this GDPRRequest.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by

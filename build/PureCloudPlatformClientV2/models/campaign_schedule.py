@@ -47,7 +47,7 @@ class CampaignSchedule(object):
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
             'time_zone': 'str',
-            'campaign': 'UriReference',
+            'campaign': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -241,7 +241,7 @@ class CampaignSchedule(object):
         The Campaign that this CampaignSchedule is for.
 
         :return: The campaign of this CampaignSchedule.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._campaign
 
@@ -252,7 +252,7 @@ class CampaignSchedule(object):
         The Campaign that this CampaignSchedule is for.
 
         :param campaign: The campaign of this CampaignSchedule.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._campaign = campaign

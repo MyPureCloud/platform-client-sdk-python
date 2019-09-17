@@ -45,7 +45,7 @@ class CampaignSequence(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'campaigns': 'list[UriReference]',
+            'campaigns': 'list[DomainEntityRef]',
             'current_campaign': 'int',
             'status': 'str',
             'stop_message': 'str',
@@ -201,7 +201,7 @@ class CampaignSequence(object):
         The ordered list of Campaigns that this CampaignSequence will run.
 
         :return: The campaigns of this CampaignSequence.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._campaigns
 
@@ -212,7 +212,7 @@ class CampaignSequence(object):
         The ordered list of Campaigns that this CampaignSequence will run.
 
         :param campaigns: The campaigns of this CampaignSequence.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._campaigns = campaigns

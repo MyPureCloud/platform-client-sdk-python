@@ -665,7 +665,7 @@ This endpoint does not need any parameter.
 
 <a name="get_authorization_role"></a>
 
-## [**DomainOrganizationRole**](DomainOrganizationRole.html) get_authorization_role(role_id)
+## [**DomainOrganizationRole**](DomainOrganizationRole.html) get_authorization_role(role_id, expand=expand)
 
 
 
@@ -693,10 +693,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
     # Get a single organization role.
-    api_response = api_instance.get_authorization_role(role_id)
+    api_response = api_instance.get_authorization_role(role_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_role: %s\n" % e
@@ -708,6 +709,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: unusedPermissions |
 {: class="table table-striped"}
 
 ### Return type

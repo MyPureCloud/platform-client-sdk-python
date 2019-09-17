@@ -41,17 +41,20 @@ class UserAuthorization(object):
         """
         self.swagger_types = {
             'roles': 'list[DomainRole]',
+            'unused_roles': 'list[DomainRole]',
             'permissions': 'list[str]',
             'permission_policies': 'list[ResourcePermissionPolicy]'
         }
 
         self.attribute_map = {
             'roles': 'roles',
+            'unused_roles': 'unusedRoles',
             'permissions': 'permissions',
             'permission_policies': 'permissionPolicies'
         }
 
         self._roles = None
+        self._unused_roles = None
         self._permissions = None
         self._permission_policies = None
 
@@ -77,6 +80,29 @@ class UserAuthorization(object):
         """
         
         self._roles = roles
+
+    @property
+    def unused_roles(self):
+        """
+        Gets the unused_roles of this UserAuthorization.
+
+
+        :return: The unused_roles of this UserAuthorization.
+        :rtype: list[DomainRole]
+        """
+        return self._unused_roles
+
+    @unused_roles.setter
+    def unused_roles(self, unused_roles):
+        """
+        Sets the unused_roles of this UserAuthorization.
+
+
+        :param unused_roles: The unused_roles of this UserAuthorization.
+        :type: list[DomainRole]
+        """
+        
+        self._unused_roles = unused_roles
 
     @property
     def permissions(self):

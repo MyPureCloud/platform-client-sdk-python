@@ -47,9 +47,9 @@ class Document(object):
             'date_modified': 'datetime',
             'date_uploaded': 'datetime',
             'content_uri': 'str',
-            'workspace': 'UriReference',
-            'created_by': 'UriReference',
-            'uploaded_by': 'UriReference',
+            'workspace': 'DomainEntityRef',
+            'created_by': 'DomainEntityRef',
+            'uploaded_by': 'DomainEntityRef',
             'content_type': 'str',
             'content_length': 'int',
             'system_type': 'str',
@@ -62,7 +62,7 @@ class Document(object):
             'tag_values': 'list[TagValue]',
             'attributes': 'list[DocumentAttribute]',
             'thumbnails': 'list[DocumentThumbnail]',
-            'upload_status': 'UriReference',
+            'upload_status': 'DomainEntityRef',
             'upload_destination_uri': 'str',
             'upload_method': 'str',
             'lock_info': 'LockInfo',
@@ -307,7 +307,7 @@ class Document(object):
 
 
         :return: The workspace of this Document.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -318,7 +318,7 @@ class Document(object):
 
 
         :param workspace: The workspace of this Document.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace
@@ -330,7 +330,7 @@ class Document(object):
 
 
         :return: The created_by of this Document.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -341,7 +341,7 @@ class Document(object):
 
 
         :param created_by: The created_by of this Document.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by
@@ -353,7 +353,7 @@ class Document(object):
 
 
         :return: The uploaded_by of this Document.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._uploaded_by
 
@@ -364,7 +364,7 @@ class Document(object):
 
 
         :param uploaded_by: The uploaded_by of this Document.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._uploaded_by = uploaded_by
@@ -656,7 +656,7 @@ class Document(object):
 
 
         :return: The upload_status of this Document.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._upload_status
 
@@ -667,7 +667,7 @@ class Document(object):
 
 
         :param upload_status: The upload_status of this Document.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._upload_status = upload_status

@@ -40,10 +40,10 @@ class CallableContactsDiagnostic(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'attempt_limits': 'UriReference',
-            'dnc_lists': 'list[UriReference]',
-            'callable_time_set': 'UriReference',
-            'rule_sets': 'list[UriReference]'
+            'attempt_limits': 'DomainEntityRef',
+            'dnc_lists': 'list[DomainEntityRef]',
+            'callable_time_set': 'DomainEntityRef',
+            'rule_sets': 'list[DomainEntityRef]'
         }
 
         self.attribute_map = {
@@ -65,7 +65,7 @@ class CallableContactsDiagnostic(object):
         Attempt limits for the campaign's contact list
 
         :return: The attempt_limits of this CallableContactsDiagnostic.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._attempt_limits
 
@@ -76,7 +76,7 @@ class CallableContactsDiagnostic(object):
         Attempt limits for the campaign's contact list
 
         :param attempt_limits: The attempt_limits of this CallableContactsDiagnostic.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._attempt_limits = attempt_limits
@@ -88,7 +88,7 @@ class CallableContactsDiagnostic(object):
         Do not call lists for the campaign
 
         :return: The dnc_lists of this CallableContactsDiagnostic.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._dnc_lists
 
@@ -99,7 +99,7 @@ class CallableContactsDiagnostic(object):
         Do not call lists for the campaign
 
         :param dnc_lists: The dnc_lists of this CallableContactsDiagnostic.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._dnc_lists = dnc_lists
@@ -111,7 +111,7 @@ class CallableContactsDiagnostic(object):
         Callable time sets for the campaign
 
         :return: The callable_time_set of this CallableContactsDiagnostic.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._callable_time_set
 
@@ -122,7 +122,7 @@ class CallableContactsDiagnostic(object):
         Callable time sets for the campaign
 
         :param callable_time_set: The callable_time_set of this CallableContactsDiagnostic.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._callable_time_set = callable_time_set
@@ -134,7 +134,7 @@ class CallableContactsDiagnostic(object):
         Rule sets for the campaign
 
         :return: The rule_sets of this CallableContactsDiagnostic.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._rule_sets
 
@@ -145,7 +145,7 @@ class CallableContactsDiagnostic(object):
         Rule sets for the campaign
 
         :param rule_sets: The rule_sets of this CallableContactsDiagnostic.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._rule_sets = rule_sets

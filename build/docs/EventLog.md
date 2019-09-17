@@ -9,8 +9,8 @@ title: EventLog
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
-| **error_entity** | [**UriReference**](UriReference.html) |  | [optional] |
-| **related_entity** | [**UriReference**](UriReference.html) |  | [optional] |
+| **error_entity** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
+| **related_entity** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **timestamp** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **level** | **str** |  | [optional] |
 | **category** | **str** |  | [optional] |

@@ -56,7 +56,7 @@ class Photo(object):
     def value(self):
         """
         Gets the value of this Photo.
-        The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. 
+        The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG.
 
         :return: The value of this Photo.
         :rtype: str
@@ -67,7 +67,7 @@ class Photo(object):
     def value(self, value):
         """
         Sets the value of this Photo.
-        The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. 
+        The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG.
 
         :param value: The value of this Photo.
         :type: str

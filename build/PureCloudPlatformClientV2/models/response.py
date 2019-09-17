@@ -43,7 +43,7 @@ class Response(object):
             'id': 'str',
             'name': 'str',
             'version': 'int',
-            'libraries': 'list[UriReference]',
+            'libraries': 'list[DomainEntityRef]',
             'texts': 'list[ResponseText]',
             'created_by': 'User',
             'date_created': 'datetime',
@@ -155,7 +155,7 @@ class Response(object):
         One or more libraries response is associated with.
 
         :return: The libraries of this Response.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._libraries
 
@@ -166,7 +166,7 @@ class Response(object):
         One or more libraries response is associated with.
 
         :param libraries: The libraries of this Response.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._libraries = libraries

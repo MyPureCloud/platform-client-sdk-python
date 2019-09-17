@@ -43,11 +43,11 @@ class CreateShareResponse(object):
             'id': 'str',
             'name': 'str',
             'shared_entity_type': 'str',
-            'shared_entity': 'UriReference',
+            'shared_entity': 'DomainEntityRef',
             'member_type': 'str',
-            'member': 'UriReference',
-            'shared_by': 'UriReference',
-            'workspace': 'UriReference',
+            'member': 'DomainEntityRef',
+            'shared_by': 'DomainEntityRef',
+            'workspace': 'DomainEntityRef',
             'succeeded': 'list[Share]',
             'failed': 'list[Share]',
             'self_uri': 'str'
@@ -159,7 +159,7 @@ class CreateShareResponse(object):
 
 
         :return: The shared_entity of this CreateShareResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._shared_entity
 
@@ -170,7 +170,7 @@ class CreateShareResponse(object):
 
 
         :param shared_entity: The shared_entity of this CreateShareResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._shared_entity = shared_entity
@@ -209,7 +209,7 @@ class CreateShareResponse(object):
 
 
         :return: The member of this CreateShareResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._member
 
@@ -220,7 +220,7 @@ class CreateShareResponse(object):
 
 
         :param member: The member of this CreateShareResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._member = member
@@ -232,7 +232,7 @@ class CreateShareResponse(object):
 
 
         :return: The shared_by of this CreateShareResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._shared_by
 
@@ -243,7 +243,7 @@ class CreateShareResponse(object):
 
 
         :param shared_by: The shared_by of this CreateShareResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._shared_by = shared_by
@@ -255,7 +255,7 @@ class CreateShareResponse(object):
 
 
         :return: The workspace of this CreateShareResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -266,7 +266,7 @@ class CreateShareResponse(object):
 
 
         :param workspace: The workspace of this CreateShareResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace

@@ -40,8 +40,8 @@ class ConversationDivisionMembership(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'division': 'UriReference',
-            'entities': 'list[UriReference]'
+            'division': 'DomainEntityRef',
+            'entities': 'list[DomainEntityRef]'
         }
 
         self.attribute_map = {
@@ -59,7 +59,7 @@ class ConversationDivisionMembership(object):
         A division the conversation belongs to.
 
         :return: The division of this ConversationDivisionMembership.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._division
 
@@ -70,7 +70,7 @@ class ConversationDivisionMembership(object):
         A division the conversation belongs to.
 
         :param division: The division of this ConversationDivisionMembership.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._division = division
@@ -82,7 +82,7 @@ class ConversationDivisionMembership(object):
         The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
 
         :return: The entities of this ConversationDivisionMembership.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._entities
 
@@ -93,7 +93,7 @@ class ConversationDivisionMembership(object):
         The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
 
         :param entities: The entities of this ConversationDivisionMembership.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._entities = entities

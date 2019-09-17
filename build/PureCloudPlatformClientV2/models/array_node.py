@@ -45,20 +45,20 @@ class ArrayNode(object):
             'number': 'bool',
             'object': 'bool',
             'boolean': 'bool',
-            'floating_point_number': 'bool',
+            'missing_node': 'bool',
+            'value_node': 'bool',
+            'binary': 'bool',
+            'pojo': 'bool',
+            'container_node': 'bool',
+            'int': 'bool',
             'integral_number': 'bool',
             'short': 'bool',
-            'int': 'bool',
             'long': 'bool',
+            'floating_point_number': 'bool',
             'double': 'bool',
             'big_decimal': 'bool',
             'big_integer': 'bool',
             'textual': 'bool',
-            'binary': 'bool',
-            'value_node': 'bool',
-            'container_node': 'bool',
-            'missing_node': 'bool',
-            'pojo': 'bool',
             'array': 'bool',
             'null': 'bool'
         }
@@ -69,20 +69,20 @@ class ArrayNode(object):
             'number': 'number',
             'object': 'object',
             'boolean': 'boolean',
-            'floating_point_number': 'floatingPointNumber',
+            'missing_node': 'missingNode',
+            'value_node': 'valueNode',
+            'binary': 'binary',
+            'pojo': 'pojo',
+            'container_node': 'containerNode',
+            'int': 'int',
             'integral_number': 'integralNumber',
             'short': 'short',
-            'int': 'int',
             'long': 'long',
+            'floating_point_number': 'floatingPointNumber',
             'double': 'double',
             'big_decimal': 'bigDecimal',
             'big_integer': 'bigInteger',
             'textual': 'textual',
-            'binary': 'binary',
-            'value_node': 'valueNode',
-            'container_node': 'containerNode',
-            'missing_node': 'missingNode',
-            'pojo': 'pojo',
             'array': 'array',
             'null': 'null'
         }
@@ -92,20 +92,20 @@ class ArrayNode(object):
         self._number = None
         self._object = None
         self._boolean = None
-        self._floating_point_number = None
+        self._missing_node = None
+        self._value_node = None
+        self._binary = None
+        self._pojo = None
+        self._container_node = None
+        self._int = None
         self._integral_number = None
         self._short = None
-        self._int = None
         self._long = None
+        self._floating_point_number = None
         self._double = None
         self._big_decimal = None
         self._big_integer = None
         self._textual = None
-        self._binary = None
-        self._value_node = None
-        self._container_node = None
-        self._missing_node = None
-        self._pojo = None
         self._array = None
         self._null = None
 
@@ -229,27 +229,142 @@ class ArrayNode(object):
         self._boolean = boolean
 
     @property
-    def floating_point_number(self):
+    def missing_node(self):
         """
-        Gets the floating_point_number of this ArrayNode.
+        Gets the missing_node of this ArrayNode.
 
 
-        :return: The floating_point_number of this ArrayNode.
+        :return: The missing_node of this ArrayNode.
         :rtype: bool
         """
-        return self._floating_point_number
+        return self._missing_node
 
-    @floating_point_number.setter
-    def floating_point_number(self, floating_point_number):
+    @missing_node.setter
+    def missing_node(self, missing_node):
         """
-        Sets the floating_point_number of this ArrayNode.
+        Sets the missing_node of this ArrayNode.
 
 
-        :param floating_point_number: The floating_point_number of this ArrayNode.
+        :param missing_node: The missing_node of this ArrayNode.
         :type: bool
         """
         
-        self._floating_point_number = floating_point_number
+        self._missing_node = missing_node
+
+    @property
+    def value_node(self):
+        """
+        Gets the value_node of this ArrayNode.
+
+
+        :return: The value_node of this ArrayNode.
+        :rtype: bool
+        """
+        return self._value_node
+
+    @value_node.setter
+    def value_node(self, value_node):
+        """
+        Sets the value_node of this ArrayNode.
+
+
+        :param value_node: The value_node of this ArrayNode.
+        :type: bool
+        """
+        
+        self._value_node = value_node
+
+    @property
+    def binary(self):
+        """
+        Gets the binary of this ArrayNode.
+
+
+        :return: The binary of this ArrayNode.
+        :rtype: bool
+        """
+        return self._binary
+
+    @binary.setter
+    def binary(self, binary):
+        """
+        Sets the binary of this ArrayNode.
+
+
+        :param binary: The binary of this ArrayNode.
+        :type: bool
+        """
+        
+        self._binary = binary
+
+    @property
+    def pojo(self):
+        """
+        Gets the pojo of this ArrayNode.
+
+
+        :return: The pojo of this ArrayNode.
+        :rtype: bool
+        """
+        return self._pojo
+
+    @pojo.setter
+    def pojo(self, pojo):
+        """
+        Sets the pojo of this ArrayNode.
+
+
+        :param pojo: The pojo of this ArrayNode.
+        :type: bool
+        """
+        
+        self._pojo = pojo
+
+    @property
+    def container_node(self):
+        """
+        Gets the container_node of this ArrayNode.
+
+
+        :return: The container_node of this ArrayNode.
+        :rtype: bool
+        """
+        return self._container_node
+
+    @container_node.setter
+    def container_node(self, container_node):
+        """
+        Sets the container_node of this ArrayNode.
+
+
+        :param container_node: The container_node of this ArrayNode.
+        :type: bool
+        """
+        
+        self._container_node = container_node
+
+    @property
+    def int(self):
+        """
+        Gets the int of this ArrayNode.
+
+
+        :return: The int of this ArrayNode.
+        :rtype: bool
+        """
+        return self._int
+
+    @int.setter
+    def int(self, int):
+        """
+        Sets the int of this ArrayNode.
+
+
+        :param int: The int of this ArrayNode.
+        :type: bool
+        """
+        
+        self._int = int
 
     @property
     def integral_number(self):
@@ -298,29 +413,6 @@ class ArrayNode(object):
         self._short = short
 
     @property
-    def int(self):
-        """
-        Gets the int of this ArrayNode.
-
-
-        :return: The int of this ArrayNode.
-        :rtype: bool
-        """
-        return self._int
-
-    @int.setter
-    def int(self, int):
-        """
-        Sets the int of this ArrayNode.
-
-
-        :param int: The int of this ArrayNode.
-        :type: bool
-        """
-        
-        self._int = int
-
-    @property
     def long(self):
         """
         Gets the long of this ArrayNode.
@@ -342,6 +434,29 @@ class ArrayNode(object):
         """
         
         self._long = long
+
+    @property
+    def floating_point_number(self):
+        """
+        Gets the floating_point_number of this ArrayNode.
+
+
+        :return: The floating_point_number of this ArrayNode.
+        :rtype: bool
+        """
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        """
+        Sets the floating_point_number of this ArrayNode.
+
+
+        :param floating_point_number: The floating_point_number of this ArrayNode.
+        :type: bool
+        """
+        
+        self._floating_point_number = floating_point_number
 
     @property
     def double(self):
@@ -434,121 +549,6 @@ class ArrayNode(object):
         """
         
         self._textual = textual
-
-    @property
-    def binary(self):
-        """
-        Gets the binary of this ArrayNode.
-
-
-        :return: The binary of this ArrayNode.
-        :rtype: bool
-        """
-        return self._binary
-
-    @binary.setter
-    def binary(self, binary):
-        """
-        Sets the binary of this ArrayNode.
-
-
-        :param binary: The binary of this ArrayNode.
-        :type: bool
-        """
-        
-        self._binary = binary
-
-    @property
-    def value_node(self):
-        """
-        Gets the value_node of this ArrayNode.
-
-
-        :return: The value_node of this ArrayNode.
-        :rtype: bool
-        """
-        return self._value_node
-
-    @value_node.setter
-    def value_node(self, value_node):
-        """
-        Sets the value_node of this ArrayNode.
-
-
-        :param value_node: The value_node of this ArrayNode.
-        :type: bool
-        """
-        
-        self._value_node = value_node
-
-    @property
-    def container_node(self):
-        """
-        Gets the container_node of this ArrayNode.
-
-
-        :return: The container_node of this ArrayNode.
-        :rtype: bool
-        """
-        return self._container_node
-
-    @container_node.setter
-    def container_node(self, container_node):
-        """
-        Sets the container_node of this ArrayNode.
-
-
-        :param container_node: The container_node of this ArrayNode.
-        :type: bool
-        """
-        
-        self._container_node = container_node
-
-    @property
-    def missing_node(self):
-        """
-        Gets the missing_node of this ArrayNode.
-
-
-        :return: The missing_node of this ArrayNode.
-        :rtype: bool
-        """
-        return self._missing_node
-
-    @missing_node.setter
-    def missing_node(self, missing_node):
-        """
-        Sets the missing_node of this ArrayNode.
-
-
-        :param missing_node: The missing_node of this ArrayNode.
-        :type: bool
-        """
-        
-        self._missing_node = missing_node
-
-    @property
-    def pojo(self):
-        """
-        Gets the pojo of this ArrayNode.
-
-
-        :return: The pojo of this ArrayNode.
-        :rtype: bool
-        """
-        return self._pojo
-
-    @pojo.setter
-    def pojo(self, pojo):
-        """
-        Sets the pojo of this ArrayNode.
-
-
-        :param pojo: The pojo of this ArrayNode.
-        :type: bool
-        """
-        
-        self._pojo = pojo
 
     @property
     def array(self):

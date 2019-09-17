@@ -1,7 +1,7 @@
 ---
-title: UriReference
+title: DomainEntityRef
 ---
-## UriReference
+## DomainEntityRef
 
 ## Properties
 

@@ -41,7 +41,7 @@ class SurveyAssignment(object):
         """
         self.swagger_types = {
             'survey_form': 'PublishedSurveyFormReference',
-            'flow': 'UriReference',
+            'flow': 'DomainEntityRef',
             'invite_time_interval': 'str',
             'sending_user': 'str',
             'sending_domain': 'str'
@@ -91,7 +91,7 @@ class SurveyAssignment(object):
         The URI reference to the flow associated with this survey.
 
         :return: The flow of this SurveyAssignment.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._flow
 
@@ -102,7 +102,7 @@ class SurveyAssignment(object):
         The URI reference to the flow associated with this survey.
 
         :param flow: The flow of this SurveyAssignment.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._flow = flow

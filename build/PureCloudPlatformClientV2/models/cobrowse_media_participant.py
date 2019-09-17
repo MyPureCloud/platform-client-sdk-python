@@ -54,17 +54,17 @@ class CobrowseMediaParticipant(object):
             'held': 'bool',
             'wrapup_required': 'bool',
             'wrapup_prompt': 'str',
-            'user': 'UriReference',
-            'queue': 'UriReference',
+            'user': 'DomainEntityRef',
+            'queue': 'DomainEntityRef',
             'attributes': 'dict(str, str)',
             'error_info': 'ErrorBody',
-            'script': 'UriReference',
+            'script': 'DomainEntityRef',
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
             'alerting_timeout_ms': 'int',
             'provider': 'str',
-            'external_contact': 'UriReference',
-            'external_organization': 'UriReference',
+            'external_contact': 'DomainEntityRef',
+            'external_organization': 'DomainEntityRef',
             'wrapup': 'Wrapup',
             'peer': 'str',
             'flagged_reason': 'str',
@@ -492,7 +492,7 @@ class CobrowseMediaParticipant(object):
         The PureCloud user for this participant.
 
         :return: The user of this CobrowseMediaParticipant.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._user
 
@@ -503,7 +503,7 @@ class CobrowseMediaParticipant(object):
         The PureCloud user for this participant.
 
         :param user: The user of this CobrowseMediaParticipant.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._user = user
@@ -515,7 +515,7 @@ class CobrowseMediaParticipant(object):
         The PureCloud queue for this participant.
 
         :return: The queue of this CobrowseMediaParticipant.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue
 
@@ -526,7 +526,7 @@ class CobrowseMediaParticipant(object):
         The PureCloud queue for this participant.
 
         :param queue: The queue of this CobrowseMediaParticipant.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue = queue
@@ -584,7 +584,7 @@ class CobrowseMediaParticipant(object):
         The Engage script that should be used by this participant.
 
         :return: The script of this CobrowseMediaParticipant.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._script
 
@@ -595,7 +595,7 @@ class CobrowseMediaParticipant(object):
         The Engage script that should be used by this participant.
 
         :param script: The script of this CobrowseMediaParticipant.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._script = script
@@ -699,7 +699,7 @@ class CobrowseMediaParticipant(object):
         If this participant represents an external contact, then this will be the reference for the external contact.
 
         :return: The external_contact of this CobrowseMediaParticipant.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._external_contact
 
@@ -710,7 +710,7 @@ class CobrowseMediaParticipant(object):
         If this participant represents an external contact, then this will be the reference for the external contact.
 
         :param external_contact: The external_contact of this CobrowseMediaParticipant.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._external_contact = external_contact
@@ -722,7 +722,7 @@ class CobrowseMediaParticipant(object):
         If this participant represents an external org, then this will be the reference for the external org.
 
         :return: The external_organization of this CobrowseMediaParticipant.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._external_organization
 
@@ -733,7 +733,7 @@ class CobrowseMediaParticipant(object):
         If this participant represents an external org, then this will be the reference for the external org.
 
         :param external_organization: The external_organization of this CobrowseMediaParticipant.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._external_organization = external_organization

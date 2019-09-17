@@ -49,8 +49,8 @@ class OAuthClient(object):
             'role_ids': 'list[str]',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'created_by': 'UriReference',
-            'modified_by': 'UriReference',
+            'created_by': 'DomainEntityRef',
+            'modified_by': 'DomainEntityRef',
             'authorized_grant_type': 'str',
             'scope': 'list[str]',
             'role_divisions': 'list[RoleDivision]',
@@ -305,7 +305,7 @@ class OAuthClient(object):
         User that created this client
 
         :return: The created_by of this OAuthClient.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -316,7 +316,7 @@ class OAuthClient(object):
         User that created this client
 
         :param created_by: The created_by of this OAuthClient.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by
@@ -328,7 +328,7 @@ class OAuthClient(object):
         User that last modified this client
 
         :return: The modified_by of this OAuthClient.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._modified_by
 
@@ -339,7 +339,7 @@ class OAuthClient(object):
         User that last modified this client
 
         :param modified_by: The modified_by of this OAuthClient.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._modified_by = modified_by

@@ -40,8 +40,8 @@ class CampaignRuleActionEntities(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'campaigns': 'list[UriReference]',
-            'sequences': 'list[UriReference]',
+            'campaigns': 'list[DomainEntityRef]',
+            'sequences': 'list[DomainEntityRef]',
             'use_triggering_entity': 'bool'
         }
 
@@ -62,7 +62,7 @@ class CampaignRuleActionEntities(object):
         The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :return: The campaigns of this CampaignRuleActionEntities.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._campaigns
 
@@ -73,7 +73,7 @@ class CampaignRuleActionEntities(object):
         The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
 
         :param campaigns: The campaigns of this CampaignRuleActionEntities.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._campaigns = campaigns
@@ -85,7 +85,7 @@ class CampaignRuleActionEntities(object):
         The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :return: The sequences of this CampaignRuleActionEntities.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._sequences
 
@@ -96,7 +96,7 @@ class CampaignRuleActionEntities(object):
         The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
 
         :param sequences: The sequences of this CampaignRuleActionEntities.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._sequences = sequences

@@ -10,16 +10,16 @@ title: InboundRoute
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **pattern** | **str** | The search pattern that the mailbox name should match. | |
-| **queue** | [**UriReference**](UriReference.html) | The queue to route the emails to. | [optional] |
+| **queue** | [**DomainEntityRef**](DomainEntityRef.html) | The queue to route the emails to. | [optional] |
 | **priority** | **int** | The priority to use for routing. | [optional] |
-| **skills** | [**list[UriReference]**](UriReference.html) | The skills to use for routing. | [optional] |
-| **language** | [**UriReference**](UriReference.html) | The language to use for routing. | [optional] |
+| **skills** | [**list[DomainEntityRef]**](DomainEntityRef.html) | The skills to use for routing. | [optional] |
+| **language** | [**DomainEntityRef**](DomainEntityRef.html) | The language to use for routing. | [optional] |
 | **from_name** | **str** | The sender name to use for outgoing replies. | |
 | **from_email** | **str** | The sender email to use for outgoing replies. | |
-| **flow** | [**UriReference**](UriReference.html) | The flow to use for processing the email. | [optional] |
+| **flow** | [**DomainEntityRef**](DomainEntityRef.html) | The flow to use for processing the email. | [optional] |
 | **reply_email_address** | [**QueueEmailAddress**](QueueEmailAddress.html) | The route to use for email replies. | [optional] |
 | **auto_bcc** | [**list[EmailAddress]**](EmailAddress.html) | The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute. | [optional] |
-| **spam_flow** | [**UriReference**](UriReference.html) | The flow to use for processing inbound emails that have been marked as spam. | [optional] |
+| **spam_flow** | [**DomainEntityRef**](DomainEntityRef.html) | The flow to use for processing inbound emails that have been marked as spam. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

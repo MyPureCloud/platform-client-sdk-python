@@ -46,7 +46,8 @@ class CreateUser(object):
             'addresses': 'list[Contact]',
             'title': 'str',
             'password': 'str',
-            'division_id': 'str'
+            'division_id': 'str',
+            'state': 'str'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class CreateUser(object):
             'addresses': 'addresses',
             'title': 'title',
             'password': 'password',
-            'division_id': 'divisionId'
+            'division_id': 'divisionId',
+            'state': 'state'
         }
 
         self._name = None
@@ -66,6 +68,7 @@ class CreateUser(object):
         self._title = None
         self._password = None
         self._division_id = None
+        self._state = None
 
     @property
     def name(self):
@@ -227,6 +230,33 @@ class CreateUser(object):
         """
         
         self._division_id = division_id
+
+    @property
+    def state(self):
+        """
+        Gets the state of this CreateUser.
+        Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
+
+        :return: The state of this CreateUser.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this CreateUser.
+        Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
+
+        :param state: The state of this CreateUser.
+        :type: str
+        """
+        allowed_values = ["active", "inactive", "deleted"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for state -> " + state
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     def to_dict(self):
         """

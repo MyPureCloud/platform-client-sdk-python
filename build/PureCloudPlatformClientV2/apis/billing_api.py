@@ -48,8 +48,8 @@ class BillingApi(object):
 
     def get_billing_reports_billableusage(self, start_date, end_date, **kwargs):
         """
-        Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
-        
+        Get a report of the billable license usages
+        Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

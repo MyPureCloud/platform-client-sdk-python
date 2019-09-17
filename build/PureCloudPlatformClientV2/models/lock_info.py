@@ -40,7 +40,7 @@ class LockInfo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'locked_by': 'UriReference',
+            'locked_by': 'DomainEntityRef',
             'date_created': 'datetime',
             'date_expires': 'datetime',
             'action': 'str'
@@ -65,7 +65,7 @@ class LockInfo(object):
 
 
         :return: The locked_by of this LockInfo.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._locked_by
 
@@ -76,7 +76,7 @@ class LockInfo(object):
 
 
         :param locked_by: The locked_by of this LockInfo.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._locked_by = locked_by

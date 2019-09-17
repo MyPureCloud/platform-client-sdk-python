@@ -44,9 +44,9 @@ class Attribute(object):
             'name': 'str',
             'version': 'int',
             'description': 'str',
-            'created_by': 'UriReference',
+            'created_by': 'DomainEntityRef',
             'date_created': 'datetime',
-            'modified_by': 'UriReference',
+            'modified_by': 'DomainEntityRef',
             'date_modified': 'datetime',
             'self_uri': 'str'
         }
@@ -172,7 +172,7 @@ class Attribute(object):
 
 
         :return: The created_by of this Attribute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -183,7 +183,7 @@ class Attribute(object):
 
 
         :param created_by: The created_by of this Attribute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by
@@ -218,7 +218,7 @@ class Attribute(object):
 
 
         :return: The modified_by of this Attribute.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._modified_by
 
@@ -229,7 +229,7 @@ class Attribute(object):
 
 
         :param modified_by: The modified_by of this Attribute.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._modified_by = modified_by

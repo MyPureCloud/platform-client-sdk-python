@@ -40,8 +40,8 @@ class EmergencyCallFlow(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'emergency_flow': 'UriReference',
-            'ivrs': 'list[UriReference]'
+            'emergency_flow': 'DomainEntityRef',
+            'ivrs': 'list[DomainEntityRef]'
         }
 
         self.attribute_map = {
@@ -59,7 +59,7 @@ class EmergencyCallFlow(object):
         The call flow to execute in an emergency.
 
         :return: The emergency_flow of this EmergencyCallFlow.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._emergency_flow
 
@@ -70,7 +70,7 @@ class EmergencyCallFlow(object):
         The call flow to execute in an emergency.
 
         :param emergency_flow: The emergency_flow of this EmergencyCallFlow.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._emergency_flow = emergency_flow
@@ -82,7 +82,7 @@ class EmergencyCallFlow(object):
         The IVR(s) to route to the call flow during an emergency.
 
         :return: The ivrs of this EmergencyCallFlow.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._ivrs
 
@@ -93,7 +93,7 @@ class EmergencyCallFlow(object):
         The IVR(s) to route to the call flow during an emergency.
 
         :param ivrs: The ivrs of this EmergencyCallFlow.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._ivrs = ivrs

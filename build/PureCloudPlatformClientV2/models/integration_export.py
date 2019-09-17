@@ -40,7 +40,7 @@ class IntegrationExport(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'integration': 'UriReference',
+            'integration': 'DomainEntityRef',
             'should_export_screen_recordings': 'bool'
         }
 
@@ -59,7 +59,7 @@ class IntegrationExport(object):
         The aws-s3-recording-bulk-actions-integration that the policy uses for exports.
 
         :return: The integration of this IntegrationExport.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._integration
 
@@ -70,7 +70,7 @@ class IntegrationExport(object):
         The aws-s3-recording-bulk-actions-integration that the policy uses for exports.
 
         :param integration: The integration of this IntegrationExport.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._integration = integration
@@ -79,7 +79,7 @@ class IntegrationExport(object):
     def should_export_screen_recordings(self):
         """
         Gets the should_export_screen_recordings of this IntegrationExport.
-        True if the policy should export screen recordings in addition to the other conversation media. Default = true
+        True if the policy should export screen recordings in addition to the other conversation media. Default = false
 
         :return: The should_export_screen_recordings of this IntegrationExport.
         :rtype: bool
@@ -90,7 +90,7 @@ class IntegrationExport(object):
     def should_export_screen_recordings(self, should_export_screen_recordings):
         """
         Sets the should_export_screen_recordings of this IntegrationExport.
-        True if the policy should export screen recordings in addition to the other conversation media. Default = true
+        True if the policy should export screen recordings in addition to the other conversation media. Default = false
 
         :param should_export_screen_recordings: The should_export_screen_recordings of this IntegrationExport.
         :type: bool

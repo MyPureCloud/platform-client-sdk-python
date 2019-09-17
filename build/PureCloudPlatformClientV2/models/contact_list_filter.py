@@ -45,7 +45,7 @@ class ContactListFilter(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'contact_list': 'UriReference',
+            'contact_list': 'DomainEntityRef',
             'clauses': 'list[ContactListFilterClause]',
             'filter_type': 'str',
             'self_uri': 'str'
@@ -195,7 +195,7 @@ class ContactListFilter(object):
         The contact list the filter is based on.
 
         :return: The contact_list of this ContactListFilter.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._contact_list
 
@@ -206,7 +206,7 @@ class ContactListFilter(object):
         The contact list the filter is based on.
 
         :param contact_list: The contact_list of this ContactListFilter.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._contact_list = contact_list

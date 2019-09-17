@@ -45,6 +45,7 @@ from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
 from .models.analytics_conversation import AnalyticsConversation
+from .models.analytics_conversation_async_query_response import AnalyticsConversationAsyncQueryResponse
 from .models.analytics_conversation_multi_get_response import AnalyticsConversationMultiGetResponse
 from .models.analytics_conversation_query_response import AnalyticsConversationQueryResponse
 from .models.analytics_conversation_segment import AnalyticsConversationSegment
@@ -97,6 +98,8 @@ from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
 from .models.assigned_wrapup_code import AssignedWrapupCode
 from .models.async_conversation_query import AsyncConversationQuery
+from .models.async_query_response import AsyncQueryResponse
+from .models.async_query_status import AsyncQueryStatus
 from .models.async_week_schedule_response import AsyncWeekScheduleResponse
 from .models.attachment import Attachment
 from .models.attempt_limits import AttemptLimits
@@ -587,6 +590,7 @@ from .models.domain_entity_listing import DomainEntityListing
 from .models.domain_entity_listing_evaluation_form import DomainEntityListingEvaluationForm
 from .models.domain_entity_listing_query_result import DomainEntityListingQueryResult
 from .models.domain_entity_listing_survey_form import DomainEntityListingSurveyForm
+from .models.domain_entity_ref import DomainEntityRef
 from .models.domain_logical_interface import DomainLogicalInterface
 from .models.domain_network_address import DomainNetworkAddress
 from .models.domain_network_command_response import DomainNetworkCommandResponse
@@ -1439,6 +1443,7 @@ from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token import Token
 from .models.token_info import TokenInfo
+from .models.transcript_property import TranscriptProperty
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase
@@ -1494,7 +1499,6 @@ from .models.update_notifications_response import UpdateNotificationsResponse
 from .models.update_scheduling_run_request import UpdateSchedulingRunRequest
 from .models.update_user import UpdateUser
 from .models.update_week_schedule_request import UpdateWeekScheduleRequest
-from .models.uri_reference import UriReference
 from .models.usage import Usage
 from .models.usage_item import UsageItem
 from .models.user import User
@@ -1646,6 +1650,9 @@ from .models.wfm_user_schedule_adherence_updated_topic_user_reference import Wfm
 from .models.wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update import WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.whats_app_id import WhatsAppId
+from .models.whats_app_integration import WhatsAppIntegration
+from .models.whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
+from .models.whats_app_integration_update_request import WhatsAppIntegrationUpdateRequest
 from .models.widget_client_config import WidgetClientConfig
 from .models.widget_client_config_third_party import WidgetClientConfigThirdParty
 from .models.widget_client_config_v1 import WidgetClientConfigV1
@@ -1710,6 +1717,7 @@ from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
+from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
 from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi

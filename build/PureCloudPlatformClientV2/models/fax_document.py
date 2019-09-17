@@ -45,8 +45,8 @@ class FaxDocument(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'content_uri': 'str',
-            'workspace': 'UriReference',
-            'created_by': 'UriReference',
+            'workspace': 'DomainEntityRef',
+            'created_by': 'DomainEntityRef',
             'content_type': 'str',
             'content_length': 'int',
             'filename': 'str',
@@ -222,7 +222,7 @@ class FaxDocument(object):
 
 
         :return: The workspace of this FaxDocument.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -233,7 +233,7 @@ class FaxDocument(object):
 
 
         :param workspace: The workspace of this FaxDocument.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace
@@ -245,7 +245,7 @@ class FaxDocument(object):
 
 
         :return: The created_by of this FaxDocument.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -256,7 +256,7 @@ class FaxDocument(object):
 
 
         :param created_by: The created_by of this FaxDocument.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by

@@ -51,7 +51,7 @@ class EdgeLine(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'schema': 'UriReference',
+            'schema': 'DomainEntityRef',
             'properties': 'dict(str, object)',
             'edge': 'Edge',
             'edge_group': 'EdgeGroup',
@@ -370,7 +370,7 @@ class EdgeLine(object):
 
 
         :return: The schema of this EdgeLine.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._schema
 
@@ -381,7 +381,7 @@ class EdgeLine(object):
 
 
         :param schema: The schema of this EdgeLine.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._schema = schema

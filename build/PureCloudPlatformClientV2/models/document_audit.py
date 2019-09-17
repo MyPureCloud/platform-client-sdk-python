@@ -42,8 +42,8 @@ class DocumentAudit(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'user': 'UriReference',
-            'workspace': 'UriReference',
+            'user': 'DomainEntityRef',
+            'workspace': 'DomainEntityRef',
             'transaction_id': 'str',
             'transaction_initiator': 'bool',
             'application': 'str',
@@ -147,7 +147,7 @@ class DocumentAudit(object):
 
 
         :return: The user of this DocumentAudit.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._user
 
@@ -158,7 +158,7 @@ class DocumentAudit(object):
 
 
         :param user: The user of this DocumentAudit.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._user = user
@@ -170,7 +170,7 @@ class DocumentAudit(object):
 
 
         :return: The workspace of this DocumentAudit.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -181,7 +181,7 @@ class DocumentAudit(object):
 
 
         :param workspace: The workspace of this DocumentAudit.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace

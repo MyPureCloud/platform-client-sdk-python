@@ -45,14 +45,14 @@ class ContactList(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'version': 'int',
-            'division': 'UriReference',
+            'division': 'DomainEntityRef',
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
             'import_status': 'ImportStatus',
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
             'size': 'int',
-            'attempt_limits': 'UriReference',
+            'attempt_limits': 'DomainEntityRef',
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
             'self_uri': 'str'
@@ -216,7 +216,7 @@ class ContactList(object):
         The division this entity belongs to.
 
         :return: The division of this ContactList.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._division
 
@@ -227,7 +227,7 @@ class ContactList(object):
         The division this entity belongs to.
 
         :param division: The division of this ContactList.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._division = division
@@ -377,7 +377,7 @@ class ContactList(object):
         AttemptLimits for this ContactList.
 
         :return: The attempt_limits of this ContactList.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._attempt_limits
 
@@ -388,7 +388,7 @@ class ContactList(object):
         AttemptLimits for this ContactList.
 
         :param attempt_limits: The attempt_limits of this ContactList.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._attempt_limits = attempt_limits

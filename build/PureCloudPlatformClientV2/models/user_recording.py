@@ -45,8 +45,8 @@ class UserRecording(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'content_uri': 'str',
-            'workspace': 'UriReference',
-            'created_by': 'UriReference',
+            'workspace': 'DomainEntityRef',
+            'created_by': 'DomainEntityRef',
             'conversation': 'Conversation',
             'content_length': 'int',
             'duration_milliseconds': 'int',
@@ -207,7 +207,7 @@ class UserRecording(object):
 
 
         :return: The workspace of this UserRecording.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -218,7 +218,7 @@ class UserRecording(object):
 
 
         :param workspace: The workspace of this UserRecording.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace
@@ -230,7 +230,7 @@ class UserRecording(object):
 
 
         :return: The created_by of this UserRecording.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -241,7 +241,7 @@ class UserRecording(object):
 
 
         :param created_by: The created_by of this UserRecording.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by

@@ -44,7 +44,7 @@ class Survey(object):
             'name': 'str',
             'conversation': 'Conversation',
             'survey_form': 'SurveyForm',
-            'agent': 'UriReference',
+            'agent': 'DomainEntityRef',
             'status': 'str',
             'queue': 'QueueReference',
             'answers': 'SurveyScoringSet',
@@ -178,7 +178,7 @@ class Survey(object):
 
 
         :return: The agent of this Survey.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._agent
 
@@ -189,7 +189,7 @@ class Survey(object):
 
 
         :param agent: The agent of this Survey.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._agent = agent

@@ -53,9 +53,9 @@ class Endpoint(object):
             'created_by_app': 'str',
             'count': 'int',
             'properties': 'dict(str, object)',
-            'schema': 'UriReference',
+            'schema': 'DomainEntityRef',
             'enabled': 'bool',
-            'site': 'UriReference',
+            'site': 'DomainEntityRef',
             'dids': 'list[str]',
             'self_uri': 'str'
         }
@@ -410,7 +410,7 @@ class Endpoint(object):
         Schema
 
         :return: The schema of this Endpoint.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._schema
 
@@ -421,7 +421,7 @@ class Endpoint(object):
         Schema
 
         :param schema: The schema of this Endpoint.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._schema = schema
@@ -456,7 +456,7 @@ class Endpoint(object):
 
 
         :return: The site of this Endpoint.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._site
 
@@ -467,7 +467,7 @@ class Endpoint(object):
 
 
         :param site: The site of this Endpoint.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._site = site

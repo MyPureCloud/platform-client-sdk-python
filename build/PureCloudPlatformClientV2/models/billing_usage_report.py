@@ -44,6 +44,7 @@ class BillingUsageReport(object):
             'name': 'str',
             'start_date': 'datetime',
             'end_date': 'datetime',
+            'status': 'str',
             'usages': 'list[BillingUsage]',
             'self_uri': 'str'
         }
@@ -53,6 +54,7 @@ class BillingUsageReport(object):
             'name': 'name',
             'start_date': 'startDate',
             'end_date': 'endDate',
+            'status': 'status',
             'usages': 'usages',
             'self_uri': 'selfUri'
         }
@@ -61,6 +63,7 @@ class BillingUsageReport(object):
         self._name = None
         self._start_date = None
         self._end_date = None
+        self._status = None
         self._usages = None
         self._self_uri = None
 
@@ -155,6 +158,33 @@ class BillingUsageReport(object):
         """
         
         self._end_date = end_date
+
+    @property
+    def status(self):
+        """
+        Gets the status of this BillingUsageReport.
+        Generation status of report
+
+        :return: The status of this BillingUsageReport.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this BillingUsageReport.
+        Generation status of report
+
+        :param status: The status of this BillingUsageReport.
+        :type: str
+        """
+        allowed_values = ["InProgress", "Complete"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for status -> " + status
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def usages(self):

@@ -51,7 +51,7 @@ class PhoneBase(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'phone_meta_base': 'UriReference',
+            'phone_meta_base': 'DomainEntityRef',
             'lines': 'list[LineBase]',
             'properties': 'dict(str, object)',
             'capabilities': 'PhoneCapabilities',
@@ -358,7 +358,7 @@ class PhoneBase(object):
         A phone metabase is essentially a database for storing phone configuration settings, which simplifies the configuration process.
 
         :return: The phone_meta_base of this PhoneBase.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._phone_meta_base
 
@@ -369,7 +369,7 @@ class PhoneBase(object):
         A phone metabase is essentially a database for storing phone configuration settings, which simplifies the configuration process.
 
         :param phone_meta_base: The phone_meta_base of this PhoneBase.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._phone_meta_base = phone_meta_base

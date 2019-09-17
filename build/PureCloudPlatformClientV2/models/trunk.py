@@ -52,13 +52,13 @@ class Trunk(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'trunk_type': 'str',
-            'edge': 'UriReference',
-            'trunk_base': 'UriReference',
-            'trunk_metabase': 'UriReference',
-            'edge_group': 'UriReference',
+            'edge': 'DomainEntityRef',
+            'trunk_base': 'DomainEntityRef',
+            'trunk_metabase': 'DomainEntityRef',
+            'edge_group': 'DomainEntityRef',
             'in_service': 'bool',
             'enabled': 'bool',
-            'logical_interface': 'UriReference',
+            'logical_interface': 'DomainEntityRef',
             'connected_status': 'TrunkConnectedStatus',
             'options_status': 'list[TrunkMetricsOptions]',
             'registers_status': 'list[TrunkMetricsRegisters]',
@@ -421,7 +421,7 @@ class Trunk(object):
         The Edge using this trunk.
 
         :return: The edge of this Trunk.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge
 
@@ -432,7 +432,7 @@ class Trunk(object):
         The Edge using this trunk.
 
         :param edge: The edge of this Trunk.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge = edge
@@ -444,7 +444,7 @@ class Trunk(object):
         The trunk base configuration used on this trunk.
 
         :return: The trunk_base of this Trunk.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._trunk_base
 
@@ -455,7 +455,7 @@ class Trunk(object):
         The trunk base configuration used on this trunk.
 
         :param trunk_base: The trunk_base of this Trunk.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._trunk_base = trunk_base
@@ -467,7 +467,7 @@ class Trunk(object):
         The metabase used to create this trunk.
 
         :return: The trunk_metabase of this Trunk.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._trunk_metabase
 
@@ -478,7 +478,7 @@ class Trunk(object):
         The metabase used to create this trunk.
 
         :param trunk_metabase: The trunk_metabase of this Trunk.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._trunk_metabase = trunk_metabase
@@ -490,7 +490,7 @@ class Trunk(object):
         The edge group associated with this trunk.
 
         :return: The edge_group of this Trunk.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge_group
 
@@ -501,7 +501,7 @@ class Trunk(object):
         The edge group associated with this trunk.
 
         :param edge_group: The edge_group of this Trunk.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge_group = edge_group
@@ -559,7 +559,7 @@ class Trunk(object):
         The Logical Interface on the Edge to which the trunk is assigned.
 
         :return: The logical_interface of this Trunk.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._logical_interface
 
@@ -570,7 +570,7 @@ class Trunk(object):
         The Logical Interface on the Edge to which the trunk is assigned.
 
         :param logical_interface: The logical_interface of this Trunk.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._logical_interface = logical_interface

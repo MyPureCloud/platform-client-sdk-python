@@ -42,9 +42,9 @@ class WorkspaceMember(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'workspace': 'UriReference',
+            'workspace': 'DomainEntityRef',
             'member_type': 'str',
-            'member': 'UriReference',
+            'member': 'DomainEntityRef',
             'user': 'User',
             'group': 'Group',
             'security_profile': 'SecurityProfile',
@@ -126,7 +126,7 @@ class WorkspaceMember(object):
 
 
         :return: The workspace of this WorkspaceMember.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._workspace
 
@@ -137,7 +137,7 @@ class WorkspaceMember(object):
 
 
         :param workspace: The workspace of this WorkspaceMember.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._workspace = workspace
@@ -176,7 +176,7 @@ class WorkspaceMember(object):
 
 
         :return: The member of this WorkspaceMember.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._member
 
@@ -187,7 +187,7 @@ class WorkspaceMember(object):
 
 
         :param member: The member of this WorkspaceMember.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._member = member

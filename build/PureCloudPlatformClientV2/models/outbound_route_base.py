@@ -54,7 +54,7 @@ class OutboundRouteBase(object):
             'classification_types': 'list[str]',
             'enabled': 'bool',
             'distribution': 'str',
-            'external_trunk_bases': 'list[UriReference]',
+            'external_trunk_bases': 'list[DomainEntityRef]',
             'self_uri': 'str'
         }
 
@@ -431,7 +431,7 @@ class OutboundRouteBase(object):
         Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.
 
         :return: The external_trunk_bases of this OutboundRouteBase.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._external_trunk_bases
 
@@ -442,7 +442,7 @@ class OutboundRouteBase(object):
         Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.
 
         :param external_trunk_bases: The external_trunk_bases of this OutboundRouteBase.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._external_trunk_bases = external_trunk_bases

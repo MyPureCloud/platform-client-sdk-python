@@ -7,7 +7,7 @@ title: QueueEmailAddress
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **domain** | [**UriReference**](UriReference.html) |  | [optional] |
+| **domain** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **route** | [**InboundRoute**](InboundRoute.html) |  | [optional] |
 {: class="table table-striped"}
 

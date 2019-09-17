@@ -40,7 +40,7 @@ class QueueEmailAddress(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'domain': 'UriReference',
+            'domain': 'DomainEntityRef',
             'route': 'InboundRoute'
         }
 
@@ -59,7 +59,7 @@ class QueueEmailAddress(object):
 
 
         :return: The domain of this QueueEmailAddress.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._domain
 
@@ -70,7 +70,7 @@ class QueueEmailAddress(object):
 
 
         :param domain: The domain of this QueueEmailAddress.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._domain = domain

@@ -52,9 +52,9 @@ class ScheduleGroup(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'time_zone': 'str',
-            'open_schedules': 'list[UriReference]',
-            'closed_schedules': 'list[UriReference]',
-            'holiday_schedules': 'list[UriReference]',
+            'open_schedules': 'list[DomainEntityRef]',
+            'closed_schedules': 'list[DomainEntityRef]',
+            'holiday_schedules': 'list[DomainEntityRef]',
             'self_uri': 'str'
         }
 
@@ -381,7 +381,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is open.
 
         :return: The open_schedules of this ScheduleGroup.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._open_schedules
 
@@ -392,7 +392,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is open.
 
         :param open_schedules: The open_schedules of this ScheduleGroup.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._open_schedules = open_schedules
@@ -404,7 +404,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is closed.
 
         :return: The closed_schedules of this ScheduleGroup.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._closed_schedules
 
@@ -415,7 +415,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is closed.
 
         :param closed_schedules: The closed_schedules of this ScheduleGroup.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._closed_schedules = closed_schedules
@@ -427,7 +427,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is closed for the holidays.
 
         :return: The holiday_schedules of this ScheduleGroup.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._holiday_schedules
 
@@ -438,7 +438,7 @@ class ScheduleGroup(object):
         The schedules defining the hours an organization is closed for the holidays.
 
         :param holiday_schedules: The holiday_schedules of this ScheduleGroup.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._holiday_schedules = holiday_schedules

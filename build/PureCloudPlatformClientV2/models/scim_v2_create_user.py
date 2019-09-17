@@ -52,7 +52,6 @@ class ScimV2CreateUser(object):
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
             'roles': 'list[str]',
-            'meta': 'ScimMetadata',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser'
         }
 
@@ -69,7 +68,6 @@ class ScimV2CreateUser(object):
             'external_id': 'externalId',
             'groups': 'groups',
             'roles': 'roles',
-            'meta': 'meta',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'
         }
 
@@ -85,14 +83,13 @@ class ScimV2CreateUser(object):
         self._external_id = None
         self._groups = None
         self._roles = None
-        self._meta = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
 
     @property
     def schemas(self):
         """
         Gets the schemas of this ScimV2CreateUser.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimV2CreateUser.
         :rtype: list[str]
@@ -103,7 +100,7 @@ class ScimV2CreateUser(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimV2CreateUser.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimV2CreateUser.
         :type: list[str]
@@ -345,7 +342,7 @@ class ScimV2CreateUser(object):
     def roles(self):
         """
         Gets the roles of this ScimV2CreateUser.
-        Roles
+        A list of roles assigned to the user.
 
         :return: The roles of this ScimV2CreateUser.
         :rtype: list[str]
@@ -356,36 +353,13 @@ class ScimV2CreateUser(object):
     def roles(self, roles):
         """
         Sets the roles of this ScimV2CreateUser.
-        Roles
+        A list of roles assigned to the user.
 
         :param roles: The roles of this ScimV2CreateUser.
         :type: list[str]
         """
         
         self._roles = roles
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2CreateUser.
-        Resource SCIM meta
-
-        :return: The meta of this ScimV2CreateUser.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2CreateUser.
-        Resource SCIM meta
-
-        :param meta: The meta of this ScimV2CreateUser.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     @property
     def urnietfparamsscimschemasextensionenterprise2_0_user(self):

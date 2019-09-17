@@ -5984,7 +5984,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_list_id: ContactList ID (required)
-        :return: UriReference
+        :return: DomainEntityRef
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6041,7 +6041,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UriReference',
+                                            response_type='DomainEntityRef',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6374,7 +6374,7 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str dnc_list_id: DncList ID (required)
-        :return: UriReference
+        :return: DomainEntityRef
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6431,7 +6431,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UriReference',
+                                            response_type='DomainEntityRef',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

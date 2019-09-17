@@ -18,7 +18,7 @@ title: TrunkBase
 | **state** | **str** | Indicates if the resource is active, inactive, or deleted. | [optional] |
 | **modified_by_app** | **str** | The application that last modified the resource. | [optional] |
 | **created_by_app** | **str** | The application that created the resource. | [optional] |
-| **trunk_metabase** | [**UriReference**](UriReference.html) | The meta-base this trunk is based on. | |
+| **trunk_metabase** | [**DomainEntityRef**](DomainEntityRef.html) | The meta-base this trunk is based on. | |
 | **properties** | **dict(str, object)** |  | [optional] |
 | **trunk_type** | **str** | The type of this trunk base. | |
 | **managed** | **bool** | Is this trunk being managed remotely. This property is synchronized with the managed property of the Edge Group to which it is assigned. | [optional] |

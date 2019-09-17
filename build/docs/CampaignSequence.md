@@ -12,7 +12,7 @@ title: CampaignSequence
 | **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
-| **campaigns** | [**list[UriReference]**](UriReference.html) | The ordered list of Campaigns that this CampaignSequence will run. | |
+| **campaigns** | [**list[DomainEntityRef]**](DomainEntityRef.html) | The ordered list of Campaigns that this CampaignSequence will run. | |
 | **current_campaign** | **int** | A zero-based index indicating which Campaign this CampaignSequence is currently on. | |
 | **status** | **str** | The current status of the CampaignSequence. A CampaignSequence can be turned &#39;on&#39; or &#39;off&#39;. | |
 | **stop_message** | **str** | A message indicating if and why a CampaignSequence has stopped unexpectedly. | [optional] |

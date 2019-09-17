@@ -48,7 +48,7 @@ class PhoneStatus(object):
             'provision': 'ProvisionInfo',
             'line_statuses': 'list[LineStatus]',
             'phone_assignment_to_edge_type': 'str',
-            'edge': 'UriReference',
+            'edge': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -279,7 +279,7 @@ class PhoneStatus(object):
         The URI of the edge that provided this status information.
 
         :return: The edge of this PhoneStatus.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge
 
@@ -290,7 +290,7 @@ class PhoneStatus(object):
         The URI of the edge that provided this status information.
 
         :param edge: The edge of this PhoneStatus.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge = edge

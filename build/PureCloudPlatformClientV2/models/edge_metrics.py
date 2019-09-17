@@ -40,7 +40,7 @@ class EdgeMetrics(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'edge': 'UriReference',
+            'edge': 'DomainEntityRef',
             'event_time': 'datetime',
             'up_time_msec': 'int',
             'processors': 'list[EdgeMetricsProcessor]',
@@ -77,7 +77,7 @@ class EdgeMetrics(object):
 
 
         :return: The edge of this EdgeMetrics.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._edge
 
@@ -88,7 +88,7 @@ class EdgeMetrics(object):
 
 
         :param edge: The edge of this EdgeMetrics.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._edge = edge

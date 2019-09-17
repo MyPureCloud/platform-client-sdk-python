@@ -65,7 +65,7 @@ class ScimV2Group(object):
     def id(self):
         """
         Gets the id of this ScimV2Group.
-        SCIM Resource identifier
+        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
 
         :return: The id of this ScimV2Group.
         :rtype: str
@@ -76,7 +76,7 @@ class ScimV2Group(object):
     def id(self, id):
         """
         Sets the id of this ScimV2Group.
-        SCIM Resource identifier
+        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
 
         :param id: The id of this ScimV2Group.
         :type: str
@@ -88,7 +88,7 @@ class ScimV2Group(object):
     def schemas(self):
         """
         Gets the schemas of this ScimV2Group.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimV2Group.
         :rtype: list[str]
@@ -99,7 +99,7 @@ class ScimV2Group(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimV2Group.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimV2Group.
         :type: list[str]

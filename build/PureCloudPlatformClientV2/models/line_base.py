@@ -51,7 +51,7 @@ class LineBase(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'line_meta_base': 'UriReference',
+            'line_meta_base': 'DomainEntityRef',
             'properties': 'dict(str, object)',
             'self_uri': 'str'
         }
@@ -352,7 +352,7 @@ class LineBase(object):
 
 
         :return: The line_meta_base of this LineBase.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._line_meta_base
 
@@ -363,7 +363,7 @@ class LineBase(object):
 
 
         :param line_meta_base: The line_meta_base of this LineBase.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._line_meta_base = line_meta_base

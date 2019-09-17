@@ -40,7 +40,7 @@ class CreateCallbackResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'conversation': 'UriReference',
+            'conversation': 'DomainEntityRef',
             'callback_identifiers': 'list[CallbackIdentifier]'
         }
 
@@ -59,7 +59,7 @@ class CreateCallbackResponse(object):
         The conversation associated with the callback
 
         :return: The conversation of this CreateCallbackResponse.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._conversation
 
@@ -70,7 +70,7 @@ class CreateCallbackResponse(object):
         The conversation associated with the callback
 
         :param conversation: The conversation of this CreateCallbackResponse.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._conversation = conversation

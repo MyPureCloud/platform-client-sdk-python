@@ -82,7 +82,7 @@ class ScimPhoneNumber(object):
     def type(self):
         """
         Gets the type of this ScimPhoneNumber.
-        The type of phone number. 
+        The type of phone number.
 
         :return: The type of this ScimPhoneNumber.
         :rtype: str
@@ -93,7 +93,7 @@ class ScimPhoneNumber(object):
     def type(self, type):
         """
         Sets the type of this ScimPhoneNumber.
-        The type of phone number. 
+        The type of phone number.
 
         :param type: The type of this ScimPhoneNumber.
         :type: str

@@ -41,20 +41,17 @@ class ScimV2MemberReference(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'meta': 'ScimMetadata',
             'value': 'str',
             'ref': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'meta': 'meta',
             'value': 'value',
             'ref': '$ref'
         }
 
         self._type = None
-        self._meta = None
         self._value = None
         self._ref = None
 
@@ -62,7 +59,7 @@ class ScimV2MemberReference(object):
     def type(self):
         """
         Gets the type of this ScimV2MemberReference.
-        SCIM Resource Type of member
+        The SCIM resource type. Can be user or group.
 
         :return: The type of this ScimV2MemberReference.
         :rtype: str
@@ -73,7 +70,7 @@ class ScimV2MemberReference(object):
     def type(self, type):
         """
         Sets the type of this ScimV2MemberReference.
-        SCIM Resource Type of member
+        The SCIM resource type. Can be user or group.
 
         :param type: The type of this ScimV2MemberReference.
         :type: str
@@ -84,29 +81,6 @@ class ScimV2MemberReference(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2MemberReference.
-        Resource SCIM meta
-
-        :return: The meta of this ScimV2MemberReference.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2MemberReference.
-        Resource SCIM meta
-
-        :param meta: The meta of this ScimV2MemberReference.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     @property
     def value(self):
@@ -135,7 +109,7 @@ class ScimV2MemberReference(object):
     def ref(self):
         """
         Gets the ref of this ScimV2MemberReference.
-        Ref to entity
+        The reference URI of the SCIM resource.
 
         :return: The ref of this ScimV2MemberReference.
         :rtype: str
@@ -146,7 +120,7 @@ class ScimV2MemberReference(object):
     def ref(self, ref):
         """
         Sets the ref of this ScimV2MemberReference.
-        Ref to entity
+        The reference URI of the SCIM resource.
 
         :param ref: The ref of this ScimV2MemberReference.
         :type: str

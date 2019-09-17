@@ -42,8 +42,8 @@ class EventLog(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'error_entity': 'UriReference',
-            'related_entity': 'UriReference',
+            'error_entity': 'DomainEntityRef',
+            'related_entity': 'DomainEntityRef',
             'timestamp': 'datetime',
             'level': 'str',
             'category': 'str',
@@ -129,7 +129,7 @@ class EventLog(object):
 
 
         :return: The error_entity of this EventLog.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._error_entity
 
@@ -140,7 +140,7 @@ class EventLog(object):
 
 
         :param error_entity: The error_entity of this EventLog.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._error_entity = error_entity
@@ -152,7 +152,7 @@ class EventLog(object):
 
 
         :return: The related_entity of this EventLog.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._related_entity
 
@@ -163,7 +163,7 @@ class EventLog(object):
 
 
         :param related_entity: The related_entity of this EventLog.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._related_entity = related_entity

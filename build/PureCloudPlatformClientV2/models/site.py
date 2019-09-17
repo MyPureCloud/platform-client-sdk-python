@@ -51,8 +51,8 @@ class Site(object):
             'state': 'str',
             'modified_by_app': 'str',
             'created_by_app': 'str',
-            'primary_sites': 'list[UriReference]',
-            'secondary_sites': 'list[UriReference]',
+            'primary_sites': 'list[DomainEntityRef]',
+            'secondary_sites': 'list[DomainEntityRef]',
             'primary_edges': 'list[Edge]',
             'secondary_edges': 'list[Edge]',
             'addresses': 'list[Contact]',
@@ -376,7 +376,7 @@ class Site(object):
 
 
         :return: The primary_sites of this Site.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._primary_sites
 
@@ -387,7 +387,7 @@ class Site(object):
 
 
         :param primary_sites: The primary_sites of this Site.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._primary_sites = primary_sites
@@ -399,7 +399,7 @@ class Site(object):
 
 
         :return: The secondary_sites of this Site.
-        :rtype: list[UriReference]
+        :rtype: list[DomainEntityRef]
         """
         return self._secondary_sites
 
@@ -410,7 +410,7 @@ class Site(object):
 
 
         :param secondary_sites: The secondary_sites of this Site.
-        :type: list[UriReference]
+        :type: list[DomainEntityRef]
         """
         
         self._secondary_sites = secondary_sites

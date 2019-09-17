@@ -53,8 +53,8 @@ class Queue(object):
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
-            'queue_flow': 'UriReference',
-            'whisper_prompt': 'UriReference',
+            'queue_flow': 'DomainEntityRef',
+            'whisper_prompt': 'DomainEntityRef',
             'auto_answer_only': 'bool',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
@@ -422,7 +422,7 @@ class Queue(object):
         The in-queue flow to use for conversations waiting in queue.
 
         :return: The queue_flow of this Queue.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._queue_flow
 
@@ -433,7 +433,7 @@ class Queue(object):
         The in-queue flow to use for conversations waiting in queue.
 
         :param queue_flow: The queue_flow of this Queue.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._queue_flow = queue_flow
@@ -445,7 +445,7 @@ class Queue(object):
         The prompt used for whisper on the queue, if configured.
 
         :return: The whisper_prompt of this Queue.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._whisper_prompt
 
@@ -456,7 +456,7 @@ class Queue(object):
         The prompt used for whisper on the queue, if configured.
 
         :param whisper_prompt: The whisper_prompt of this Queue.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._whisper_prompt = whisper_prompt

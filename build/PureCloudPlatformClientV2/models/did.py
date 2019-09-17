@@ -52,8 +52,8 @@ class DID(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'phone_number': 'str',
-            'did_pool': 'UriReference',
-            'owner': 'UriReference',
+            'did_pool': 'DomainEntityRef',
+            'owner': 'DomainEntityRef',
             'owner_type': 'str',
             'self_uri': 'str'
         }
@@ -381,7 +381,7 @@ class DID(object):
 
 
         :return: The did_pool of this DID.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._did_pool
 
@@ -392,7 +392,7 @@ class DID(object):
 
 
         :param did_pool: The did_pool of this DID.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._did_pool = did_pool
@@ -404,7 +404,7 @@ class DID(object):
         A Uri reference to the owner of this DID, which is either a User or an IVR
 
         :return: The owner of this DID.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._owner
 
@@ -415,7 +415,7 @@ class DID(object):
         A Uri reference to the owner of this DID, which is either a User or an IVR
 
         :param owner: The owner of this DID.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._owner = owner

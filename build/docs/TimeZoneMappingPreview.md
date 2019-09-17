@@ -7,7 +7,7 @@ title: TimeZoneMappingPreview
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **contact_list** | [**UriReference**](UriReference.html) | The associated ContactList | [optional] |
+| **contact_list** | [**DomainEntityRef**](DomainEntityRef.html) | The associated ContactList | [optional] |
 | **contacts_per_time_zone** | **dict(str, int)** | The number of contacts per time zone that mapped to only that time zone | [optional] |
 | **contacts_mapped_using_zip_code** | **dict(str, int)** | The number of contacts per time zone that mapped to only that time zone and were mapped using the zip code column | [optional] |
 | **contacts_mapped_to_a_single_zone** | **int** | The total number of contacts that mapped to a single time zone | [optional] |

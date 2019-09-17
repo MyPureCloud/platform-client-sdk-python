@@ -45,7 +45,7 @@ class DataSchema(object):
             'version': 'int',
             'applies_to': 'list[str]',
             'enabled': 'bool',
-            'created_by': 'UriReference',
+            'created_by': 'DomainEntityRef',
             'date_created': 'datetime',
             'json_schema': 'JsonSchemaDocument',
             'self_uri': 'str'
@@ -195,7 +195,7 @@ class DataSchema(object):
         The URI of the user that created this schema.
 
         :return: The created_by of this DataSchema.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._created_by
 
@@ -206,7 +206,7 @@ class DataSchema(object):
         The URI of the user that created this schema.
 
         :param created_by: The created_by of this DataSchema.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._created_by = created_by

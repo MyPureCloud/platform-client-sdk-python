@@ -40,7 +40,7 @@ class RuleSetDiagnostic(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'rule_set': 'UriReference',
+            'rule_set': 'DomainEntityRef',
             'warnings': 'list[str]'
         }
 
@@ -59,7 +59,7 @@ class RuleSetDiagnostic(object):
         A campaign rule set
 
         :return: The rule_set of this RuleSetDiagnostic.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._rule_set
 
@@ -70,7 +70,7 @@ class RuleSetDiagnostic(object):
         A campaign rule set
 
         :param rule_set: The rule_set of this RuleSetDiagnostic.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._rule_set = rule_set

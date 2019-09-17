@@ -65,7 +65,7 @@ class ScimGroupListResponse(object):
     def total_results(self):
         """
         Gets the total_results of this ScimGroupListResponse.
-        Total Results
+        The total number of results.
 
         :return: The total_results of this ScimGroupListResponse.
         :rtype: int
@@ -76,7 +76,7 @@ class ScimGroupListResponse(object):
     def total_results(self, total_results):
         """
         Sets the total_results of this ScimGroupListResponse.
-        Total Results
+        The total number of results.
 
         :param total_results: The total_results of this ScimGroupListResponse.
         :type: int
@@ -88,7 +88,7 @@ class ScimGroupListResponse(object):
     def start_index(self):
         """
         Gets the start_index of this ScimGroupListResponse.
-        Start index
+        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
 
         :return: The start_index of this ScimGroupListResponse.
         :rtype: int
@@ -99,7 +99,7 @@ class ScimGroupListResponse(object):
     def start_index(self, start_index):
         """
         Sets the start_index of this ScimGroupListResponse.
-        Start index
+        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
 
         :param start_index: The start_index of this ScimGroupListResponse.
         :type: int
@@ -111,7 +111,7 @@ class ScimGroupListResponse(object):
     def items_per_page(self):
         """
         Gets the items_per_page of this ScimGroupListResponse.
-        Items per Page
+        The number of resources returned per page.
 
         :return: The items_per_page of this ScimGroupListResponse.
         :rtype: int
@@ -122,7 +122,7 @@ class ScimGroupListResponse(object):
     def items_per_page(self, items_per_page):
         """
         Sets the items_per_page of this ScimGroupListResponse.
-        Items per Page
+        The number of resources returned per page.
 
         :param items_per_page: The items_per_page of this ScimGroupListResponse.
         :type: int
@@ -157,7 +157,7 @@ class ScimGroupListResponse(object):
     def schemas(self):
         """
         Gets the schemas of this ScimGroupListResponse.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimGroupListResponse.
         :rtype: list[str]
@@ -168,7 +168,7 @@ class ScimGroupListResponse(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimGroupListResponse.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimGroupListResponse.
         :type: list[str]

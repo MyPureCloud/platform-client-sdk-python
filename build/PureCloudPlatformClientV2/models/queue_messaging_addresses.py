@@ -40,7 +40,7 @@ class QueueMessagingAddresses(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'sms_address': 'UriReference'
+            'sms_address': 'DomainEntityRef'
         }
 
         self.attribute_map = {
@@ -56,7 +56,7 @@ class QueueMessagingAddresses(object):
 
 
         :return: The sms_address of this QueueMessagingAddresses.
-        :rtype: UriReference
+        :rtype: DomainEntityRef
         """
         return self._sms_address
 
@@ -67,7 +67,7 @@ class QueueMessagingAddresses(object):
 
 
         :param sms_address: The sms_address of this QueueMessagingAddresses.
-        :type: UriReference
+        :type: DomainEntityRef
         """
         
         self._sms_address = sms_address
