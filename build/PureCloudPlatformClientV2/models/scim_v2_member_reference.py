@@ -75,7 +75,7 @@ class ScimV2MemberReference(object):
         :param type: The type of this ScimV2MemberReference.
         :type: str
         """
-        allowed_values = ["User", "Group", "ServiceProviderConfig"]
+        allowed_values = ["User", "Group", "ServiceProviderConfig", "ResourceType"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

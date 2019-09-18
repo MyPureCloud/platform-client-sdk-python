@@ -12,10 +12,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_scim_v2_user**](SCIMApi.html#delete_scim_v2_user) | Delete a user|
 |[**get_scim_group**](SCIMApi.html#get_scim_group) | Get a group|
 |[**get_scim_groups**](SCIMApi.html#get_scim_groups) | Get a list of groups|
+|[**get_scim_resourcetype**](SCIMApi.html#get_scim_resourcetype) | Get the SCIM configuration|
+|[**get_scim_resourcetypes**](SCIMApi.html#get_scim_resourcetypes) | Get the SCIM resource types|
+|[**get_scim_serviceproviderconfig**](SCIMApi.html#get_scim_serviceproviderconfig) | Get the SCIM configuration|
 |[**get_scim_user**](SCIMApi.html#get_scim_user) | Get a user|
 |[**get_scim_users**](SCIMApi.html#get_scim_users) | Get a list of users|
 |[**get_scim_v2_group**](SCIMApi.html#get_scim_v2_group) | Get a group|
 |[**get_scim_v2_groups**](SCIMApi.html#get_scim_v2_groups) | Get a list of groups|
+|[**get_scim_v2_resourcetype**](SCIMApi.html#get_scim_v2_resourcetype) | Get the SCIM configuration|
+|[**get_scim_v2_resourcetypes**](SCIMApi.html#get_scim_v2_resourcetypes) | Get the SCIM resource types|
 |[**get_scim_v2_serviceproviderconfig**](SCIMApi.html#get_scim_v2_serviceproviderconfig) | Get the SCIM configuration|
 |[**get_scim_v2_user**](SCIMApi.html#get_scim_v2_user) | Get a user|
 |[**get_scim_v2_users**](SCIMApi.html#get_scim_v2_users) | Get a list of users|
@@ -245,6 +250,147 @@ except ApiException as e:
 
 [**ScimGroupListResponse**](ScimGroupListResponse.html)
 
+<a name="get_scim_resourcetype"></a>
+
+## [**ScimConfigResourceType**](ScimConfigResourceType.html) get_scim_resourcetype(resource_type)
+
+
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/resourcetypes/{resourceType} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi()
+resource_type = 'resource_type_example' # str | The ID of a resource.
+
+try:
+    # Get the SCIM configuration
+    api_response = api_instance.get_scim_resourcetype(resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SCIMApi->get_scim_resourcetype: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **resource_type** | **str**| The ID of a resource. | <br />**Values**: User, Group, ServiceProviderConfig, ResourceType |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScimConfigResourceType**](ScimConfigResourceType.html)
+
+<a name="get_scim_resourcetypes"></a>
+
+## [**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html) get_scim_resourcetypes(filter=filter)
+
+
+
+Get the SCIM resource types
+
+
+
+Wraps GET /api/v2/scim/resourcetypes 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi()
+filter = 'displayName eq groupName' # str | Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+
+try:
+    # Get the SCIM resource types
+    api_response = api_instance.get_scim_resourcetypes(filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SCIMApi->get_scim_resourcetypes: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter** | **str**| Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html)
+
+<a name="get_scim_serviceproviderconfig"></a>
+
+## [**ScimServiceProviderConfig**](ScimServiceProviderConfig.html) get_scim_serviceproviderconfig(if_none_match=if_none_match)
+
+
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/serviceproviderconfig 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi()
+if_none_match = 'if_none_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
+
+try:
+    # Get the SCIM configuration
+    api_response = api_instance.get_scim_serviceproviderconfig(if_none_match=if_none_match)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SCIMApi->get_scim_serviceproviderconfig: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **if_none_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScimServiceProviderConfig**](ScimServiceProviderConfig.html)
+
 <a name="get_scim_user"></a>
 
 ## [**ScimV2User**](ScimV2User.html) get_scim_user(user_id, if_none_match=if_none_match)
@@ -462,6 +608,100 @@ except ApiException as e:
 ### Return type
 
 [**ScimGroupListResponse**](ScimGroupListResponse.html)
+
+<a name="get_scim_v2_resourcetype"></a>
+
+## [**ScimConfigResourceType**](ScimConfigResourceType.html) get_scim_v2_resourcetype(resource_type)
+
+
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/v2/resourcetypes/{resourceType} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi()
+resource_type = 'resource_type_example' # str | The ID of a resource.
+
+try:
+    # Get the SCIM configuration
+    api_response = api_instance.get_scim_v2_resourcetype(resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SCIMApi->get_scim_v2_resourcetype: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **resource_type** | **str**| The ID of a resource. | <br />**Values**: User, Group, ServiceProviderConfig, ResourceType |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScimConfigResourceType**](ScimConfigResourceType.html)
+
+<a name="get_scim_v2_resourcetypes"></a>
+
+## [**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html) get_scim_v2_resourcetypes(filter=filter)
+
+
+
+Get the SCIM resource types
+
+
+
+Wraps GET /api/v2/scim/v2/resourcetypes 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi()
+filter = 'displayName eq groupName' # str | Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+
+try:
+    # Get the SCIM resource types
+    api_response = api_instance.get_scim_v2_resourcetypes(filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SCIMApi->get_scim_v2_resourcetypes: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter** | **str**| Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html)
 
 <a name="get_scim_v2_serviceproviderconfig"></a>
 

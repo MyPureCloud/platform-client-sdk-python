@@ -42,6 +42,7 @@ class AnalyticsParticipant(object):
         self.swagger_types = {
             'participant_id': 'str',
             'participant_name': 'str',
+            'attributes': 'dict(str, str)',
             'user_id': 'str',
             'purpose': 'str',
             'external_contact_id': 'str',
@@ -53,6 +54,7 @@ class AnalyticsParticipant(object):
         self.attribute_map = {
             'participant_id': 'participantId',
             'participant_name': 'participantName',
+            'attributes': 'attributes',
             'user_id': 'userId',
             'purpose': 'purpose',
             'external_contact_id': 'externalContactId',
@@ -63,6 +65,7 @@ class AnalyticsParticipant(object):
 
         self._participant_id = None
         self._participant_name = None
+        self._attributes = None
         self._user_id = None
         self._purpose = None
         self._external_contact_id = None
@@ -117,6 +120,29 @@ class AnalyticsParticipant(object):
         self._participant_name = participant_name
 
     @property
+    def attributes(self):
+        """
+        Gets the attributes of this AnalyticsParticipant.
+        List of attributes associated to this participant
+
+        :return: The attributes of this AnalyticsParticipant.
+        :rtype: dict(str, str)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """
+        Sets the attributes of this AnalyticsParticipant.
+        List of attributes associated to this participant
+
+        :param attributes: The attributes of this AnalyticsParticipant.
+        :type: dict(str, str)
+        """
+        
+        self._attributes = attributes
+
+    @property
     def user_id(self):
         """
         Gets the user_id of this AnalyticsParticipant.
@@ -159,7 +185,7 @@ class AnalyticsParticipant(object):
         :param purpose: The purpose of this AnalyticsParticipant.
         :type: str
         """
-        allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external", "fax", "workflow", "campaign"]
+        allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external", "fax", "workflow", "campaign", "api"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for purpose -> " + purpose
             self._purpose = "outdated_sdk_version"

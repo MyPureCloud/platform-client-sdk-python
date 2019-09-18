@@ -41,11 +41,11 @@ class AsyncConversationQuery(object):
         """
         self.swagger_types = {
             'interval': 'str',
-            'conversation_filters': 'list[AnalyticsQueryFilter]',
-            'evaluation_filters': 'list[AnalyticsQueryFilter]',
-            'survey_filters': 'list[AnalyticsQueryFilter]',
-            'media_endpoint_stat_filters': 'list[AnalyticsQueryFilter]',
-            'segment_filters': 'list[AnalyticsQueryFilter]',
+            'conversation_filters': 'list[ConversationDetailQueryFilter]',
+            'segment_filters': 'list[SegmentDetailQueryFilter]',
+            'evaluation_filters': 'list[EvaluationDetailQueryFilter]',
+            'media_endpoint_stat_filters': 'list[MediaEndpointStatDetailQueryFilter]',
+            'survey_filters': 'list[SurveyDetailQueryFilter]',
             'order': 'str',
             'order_by': 'str',
             'limit': 'int'
@@ -54,10 +54,10 @@ class AsyncConversationQuery(object):
         self.attribute_map = {
             'interval': 'interval',
             'conversation_filters': 'conversationFilters',
-            'evaluation_filters': 'evaluationFilters',
-            'survey_filters': 'surveyFilters',
-            'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
             'segment_filters': 'segmentFilters',
+            'evaluation_filters': 'evaluationFilters',
+            'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
+            'survey_filters': 'surveyFilters',
             'order': 'order',
             'order_by': 'orderBy',
             'limit': 'limit'
@@ -65,10 +65,10 @@ class AsyncConversationQuery(object):
 
         self._interval = None
         self._conversation_filters = None
-        self._evaluation_filters = None
-        self._survey_filters = None
-        self._media_endpoint_stat_filters = None
         self._segment_filters = None
+        self._evaluation_filters = None
+        self._media_endpoint_stat_filters = None
+        self._survey_filters = None
         self._order = None
         self._order_by = None
         self._limit = None
@@ -103,7 +103,7 @@ class AsyncConversationQuery(object):
         Filters that target conversation-level data
 
         :return: The conversation_filters of this AsyncConversationQuery.
-        :rtype: list[AnalyticsQueryFilter]
+        :rtype: list[ConversationDetailQueryFilter]
         """
         return self._conversation_filters
 
@@ -114,79 +114,10 @@ class AsyncConversationQuery(object):
         Filters that target conversation-level data
 
         :param conversation_filters: The conversation_filters of this AsyncConversationQuery.
-        :type: list[AnalyticsQueryFilter]
+        :type: list[ConversationDetailQueryFilter]
         """
         
         self._conversation_filters = conversation_filters
-
-    @property
-    def evaluation_filters(self):
-        """
-        Gets the evaluation_filters of this AsyncConversationQuery.
-        Filters that target quality management evaluation-level data
-
-        :return: The evaluation_filters of this AsyncConversationQuery.
-        :rtype: list[AnalyticsQueryFilter]
-        """
-        return self._evaluation_filters
-
-    @evaluation_filters.setter
-    def evaluation_filters(self, evaluation_filters):
-        """
-        Sets the evaluation_filters of this AsyncConversationQuery.
-        Filters that target quality management evaluation-level data
-
-        :param evaluation_filters: The evaluation_filters of this AsyncConversationQuery.
-        :type: list[AnalyticsQueryFilter]
-        """
-        
-        self._evaluation_filters = evaluation_filters
-
-    @property
-    def survey_filters(self):
-        """
-        Gets the survey_filters of this AsyncConversationQuery.
-        Filters that target quality management survey-level data
-
-        :return: The survey_filters of this AsyncConversationQuery.
-        :rtype: list[AnalyticsQueryFilter]
-        """
-        return self._survey_filters
-
-    @survey_filters.setter
-    def survey_filters(self, survey_filters):
-        """
-        Sets the survey_filters of this AsyncConversationQuery.
-        Filters that target quality management survey-level data
-
-        :param survey_filters: The survey_filters of this AsyncConversationQuery.
-        :type: list[AnalyticsQueryFilter]
-        """
-        
-        self._survey_filters = survey_filters
-
-    @property
-    def media_endpoint_stat_filters(self):
-        """
-        Gets the media_endpoint_stat_filters of this AsyncConversationQuery.
-        Filters that target call quality of service data
-
-        :return: The media_endpoint_stat_filters of this AsyncConversationQuery.
-        :rtype: list[AnalyticsQueryFilter]
-        """
-        return self._media_endpoint_stat_filters
-
-    @media_endpoint_stat_filters.setter
-    def media_endpoint_stat_filters(self, media_endpoint_stat_filters):
-        """
-        Sets the media_endpoint_stat_filters of this AsyncConversationQuery.
-        Filters that target call quality of service data
-
-        :param media_endpoint_stat_filters: The media_endpoint_stat_filters of this AsyncConversationQuery.
-        :type: list[AnalyticsQueryFilter]
-        """
-        
-        self._media_endpoint_stat_filters = media_endpoint_stat_filters
 
     @property
     def segment_filters(self):
@@ -195,7 +126,7 @@ class AsyncConversationQuery(object):
         Filters that target individual segments within a conversation
 
         :return: The segment_filters of this AsyncConversationQuery.
-        :rtype: list[AnalyticsQueryFilter]
+        :rtype: list[SegmentDetailQueryFilter]
         """
         return self._segment_filters
 
@@ -206,10 +137,79 @@ class AsyncConversationQuery(object):
         Filters that target individual segments within a conversation
 
         :param segment_filters: The segment_filters of this AsyncConversationQuery.
-        :type: list[AnalyticsQueryFilter]
+        :type: list[SegmentDetailQueryFilter]
         """
         
         self._segment_filters = segment_filters
+
+    @property
+    def evaluation_filters(self):
+        """
+        Gets the evaluation_filters of this AsyncConversationQuery.
+        Filters that target evaluations
+
+        :return: The evaluation_filters of this AsyncConversationQuery.
+        :rtype: list[EvaluationDetailQueryFilter]
+        """
+        return self._evaluation_filters
+
+    @evaluation_filters.setter
+    def evaluation_filters(self, evaluation_filters):
+        """
+        Sets the evaluation_filters of this AsyncConversationQuery.
+        Filters that target evaluations
+
+        :param evaluation_filters: The evaluation_filters of this AsyncConversationQuery.
+        :type: list[EvaluationDetailQueryFilter]
+        """
+        
+        self._evaluation_filters = evaluation_filters
+
+    @property
+    def media_endpoint_stat_filters(self):
+        """
+        Gets the media_endpoint_stat_filters of this AsyncConversationQuery.
+        Filters that target mediaEndpointStats
+
+        :return: The media_endpoint_stat_filters of this AsyncConversationQuery.
+        :rtype: list[MediaEndpointStatDetailQueryFilter]
+        """
+        return self._media_endpoint_stat_filters
+
+    @media_endpoint_stat_filters.setter
+    def media_endpoint_stat_filters(self, media_endpoint_stat_filters):
+        """
+        Sets the media_endpoint_stat_filters of this AsyncConversationQuery.
+        Filters that target mediaEndpointStats
+
+        :param media_endpoint_stat_filters: The media_endpoint_stat_filters of this AsyncConversationQuery.
+        :type: list[MediaEndpointStatDetailQueryFilter]
+        """
+        
+        self._media_endpoint_stat_filters = media_endpoint_stat_filters
+
+    @property
+    def survey_filters(self):
+        """
+        Gets the survey_filters of this AsyncConversationQuery.
+        Filters that target surveys
+
+        :return: The survey_filters of this AsyncConversationQuery.
+        :rtype: list[SurveyDetailQueryFilter]
+        """
+        return self._survey_filters
+
+    @survey_filters.setter
+    def survey_filters(self, survey_filters):
+        """
+        Sets the survey_filters of this AsyncConversationQuery.
+        Filters that target surveys
+
+        :param survey_filters: The survey_filters of this AsyncConversationQuery.
+        :type: list[SurveyDetailQueryFilter]
+        """
+        
+        self._survey_filters = survey_filters
 
     @property
     def order(self):

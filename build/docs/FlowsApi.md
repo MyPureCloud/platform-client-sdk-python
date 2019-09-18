@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="post_analytics_flows_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
+## [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
 
 
 
@@ -41,7 +41,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.FlowsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.FlowAggregationQuery() # FlowAggregationQuery | query
 
 try:
     # Query for flow aggregates
@@ -56,16 +56,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
 
 <a name="post_analytics_flows_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_flows_observations_query(body)
+## [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html) post_analytics_flows_observations_query(body)
 
 
 
@@ -92,7 +92,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.FlowsApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.FlowObservationQuery() # FlowObservationQuery | query
 
 try:
     # Query for flow observations
@@ -107,10 +107,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 

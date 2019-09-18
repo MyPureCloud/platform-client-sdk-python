@@ -49,7 +49,8 @@ class RecordingJob(object):
             'total_processed_recordings': 'int',
             'percent_progress': 'int',
             'error_message': 'str',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'user': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class RecordingJob(object):
             'total_processed_recordings': 'totalProcessedRecordings',
             'percent_progress': 'percentProgress',
             'error_message': 'errorMessage',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'user': 'user'
         }
 
         self._id = None
@@ -75,6 +77,7 @@ class RecordingJob(object):
         self._percent_progress = None
         self._error_message = None
         self._self_uri = None
+        self._user = None
 
     @property
     def id(self):
@@ -309,6 +312,29 @@ class RecordingJob(object):
         """
         
         self._self_uri = self_uri
+
+    @property
+    def user(self):
+        """
+        Gets the user of this RecordingJob.
+        Details of the user created the job
+
+        :return: The user of this RecordingJob.
+        :rtype: AddressableEntityRef
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """
+        Sets the user of this RecordingJob.
+        Details of the user created the job
+
+        :param user: The user of this RecordingJob.
+        :type: AddressableEntityRef
+        """
+        
+        self._user = user
 
     def to_dict(self):
         """

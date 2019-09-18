@@ -169,7 +169,7 @@ class DataSchema(object):
     def enabled(self):
         """
         Gets the enabled of this DataSchema.
-        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists
+        The schema's enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.
 
         :return: The enabled of this DataSchema.
         :rtype: bool
@@ -180,7 +180,7 @@ class DataSchema(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this DataSchema.
-        The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists
+        The schema's enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.
 
         :param enabled: The enabled of this DataSchema.
         :type: bool

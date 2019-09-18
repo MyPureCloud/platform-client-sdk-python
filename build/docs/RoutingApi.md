@@ -2504,7 +2504,7 @@ except ApiException as e:
 
 <a name="post_analytics_queues_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_queues_observations_query(body)
+## [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html) post_analytics_queues_observations_query(body)
 
 
 
@@ -2531,7 +2531,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.QueueObservationQuery() # QueueObservationQuery | query
 
 try:
     # Query for queue observations
@@ -2546,12 +2546,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
 <a name="post_routing_email_domain_routes"></a>
 

@@ -3874,8 +3874,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: PresenceQueryResponse
+        :param UserAggregationQuery body: query (required)
+        :return: UserAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3932,7 +3932,7 @@ class UsersApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PresenceQueryResponse',
+                                            response_type='UserAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4030,8 +4030,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: ObservationQueryResponse
+        :param UserObservationQuery body: query (required)
+        :return: UserObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4088,7 +4088,7 @@ class UsersApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ObservationQueryResponse',
+                                            response_type='UserObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4111,7 +4111,7 @@ class UsersApi(object):
         :param str subject_id: Subject ID (user or group) (required)
         :param str division_id: the id of the division to which to make the grant (required)
         :param str role_id: the id of the role to grant (required)
-        :param str subject_type: what the type of the subject is, PC_GROUP or PC_USER
+        :param str subject_type: what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

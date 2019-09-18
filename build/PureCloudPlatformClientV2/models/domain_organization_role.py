@@ -201,7 +201,7 @@ class DomainOrganizationRole(object):
     def unused_permissions(self):
         """
         Gets the unused_permissions of this DomainOrganizationRole.
-
+        A collection of the permissions the role is not using
 
         :return: The unused_permissions of this DomainOrganizationRole.
         :rtype: list[str]
@@ -212,7 +212,7 @@ class DomainOrganizationRole(object):
     def unused_permissions(self, unused_permissions):
         """
         Sets the unused_permissions of this DomainOrganizationRole.
-
+        A collection of the permissions the role is not using
 
         :param unused_permissions: The unused_permissions of this DomainOrganizationRole.
         :type: list[str]

@@ -40,17 +40,64 @@ class ScimServiceProviderConfig(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'schemas': 'list[str]',
             'documentation_uri': 'str',
+            'patch': 'ScimServiceProviderConfigSimpleFeature',
+            'filter': 'ScimServiceProviderConfigFilterFeature',
+            'etag': 'ScimServiceProviderConfigSimpleFeature',
+            'sort': 'ScimServiceProviderConfigSimpleFeature',
+            'bulk': 'ScimServiceProviderConfigBulkFeature',
+            'change_password': 'ScimServiceProviderConfigSimpleFeature',
+            'authentication_schemes': 'list[ScimServiceProviderConfigAuthenticationScheme]',
             'meta': 'ScimMetadata'
         }
 
         self.attribute_map = {
+            'schemas': 'schemas',
             'documentation_uri': 'documentationUri',
+            'patch': 'patch',
+            'filter': 'filter',
+            'etag': 'etag',
+            'sort': 'sort',
+            'bulk': 'bulk',
+            'change_password': 'changePassword',
+            'authentication_schemes': 'authenticationSchemes',
             'meta': 'meta'
         }
 
+        self._schemas = None
         self._documentation_uri = None
+        self._patch = None
+        self._filter = None
+        self._etag = None
+        self._sort = None
+        self._bulk = None
+        self._change_password = None
+        self._authentication_schemes = None
         self._meta = None
+
+    @property
+    def schemas(self):
+        """
+        Gets the schemas of this ScimServiceProviderConfig.
+        schemas supported
+
+        :return: The schemas of this ScimServiceProviderConfig.
+        :rtype: list[str]
+        """
+        return self._schemas
+
+    @schemas.setter
+    def schemas(self, schemas):
+        """
+        Sets the schemas of this ScimServiceProviderConfig.
+        schemas supported
+
+        :param schemas: The schemas of this ScimServiceProviderConfig.
+        :type: list[str]
+        """
+        
+        self._schemas = schemas
 
     @property
     def documentation_uri(self):
@@ -76,10 +123,171 @@ class ScimServiceProviderConfig(object):
         self._documentation_uri = documentation_uri
 
     @property
+    def patch(self):
+        """
+        Gets the patch of this ScimServiceProviderConfig.
+        Patch support
+
+        :return: The patch of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigSimpleFeature
+        """
+        return self._patch
+
+    @patch.setter
+    def patch(self, patch):
+        """
+        Sets the patch of this ScimServiceProviderConfig.
+        Patch support
+
+        :param patch: The patch of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigSimpleFeature
+        """
+        
+        self._patch = patch
+
+    @property
+    def filter(self):
+        """
+        Gets the filter of this ScimServiceProviderConfig.
+        Filter support. Additional properties: maxResults
+
+        :return: The filter of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigFilterFeature
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """
+        Sets the filter of this ScimServiceProviderConfig.
+        Filter support. Additional properties: maxResults
+
+        :param filter: The filter of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigFilterFeature
+        """
+        
+        self._filter = filter
+
+    @property
+    def etag(self):
+        """
+        Gets the etag of this ScimServiceProviderConfig.
+        Entity Tag support
+
+        :return: The etag of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigSimpleFeature
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """
+        Sets the etag of this ScimServiceProviderConfig.
+        Entity Tag support
+
+        :param etag: The etag of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigSimpleFeature
+        """
+        
+        self._etag = etag
+
+    @property
+    def sort(self):
+        """
+        Gets the sort of this ScimServiceProviderConfig.
+        Sort support
+
+        :return: The sort of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigSimpleFeature
+        """
+        return self._sort
+
+    @sort.setter
+    def sort(self, sort):
+        """
+        Sets the sort of this ScimServiceProviderConfig.
+        Sort support
+
+        :param sort: The sort of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigSimpleFeature
+        """
+        
+        self._sort = sort
+
+    @property
+    def bulk(self):
+        """
+        Gets the bulk of this ScimServiceProviderConfig.
+        Bulk support
+
+        :return: The bulk of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigBulkFeature
+        """
+        return self._bulk
+
+    @bulk.setter
+    def bulk(self, bulk):
+        """
+        Sets the bulk of this ScimServiceProviderConfig.
+        Bulk support
+
+        :param bulk: The bulk of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigBulkFeature
+        """
+        
+        self._bulk = bulk
+
+    @property
+    def change_password(self):
+        """
+        Gets the change_password of this ScimServiceProviderConfig.
+        Change password
+
+        :return: The change_password of this ScimServiceProviderConfig.
+        :rtype: ScimServiceProviderConfigSimpleFeature
+        """
+        return self._change_password
+
+    @change_password.setter
+    def change_password(self, change_password):
+        """
+        Sets the change_password of this ScimServiceProviderConfig.
+        Change password
+
+        :param change_password: The change_password of this ScimServiceProviderConfig.
+        :type: ScimServiceProviderConfigSimpleFeature
+        """
+        
+        self._change_password = change_password
+
+    @property
+    def authentication_schemes(self):
+        """
+        Gets the authentication_schemes of this ScimServiceProviderConfig.
+        Authentication schemes supported.
+
+        :return: The authentication_schemes of this ScimServiceProviderConfig.
+        :rtype: list[ScimServiceProviderConfigAuthenticationScheme]
+        """
+        return self._authentication_schemes
+
+    @authentication_schemes.setter
+    def authentication_schemes(self, authentication_schemes):
+        """
+        Sets the authentication_schemes of this ScimServiceProviderConfig.
+        Authentication schemes supported.
+
+        :param authentication_schemes: The authentication_schemes of this ScimServiceProviderConfig.
+        :type: list[ScimServiceProviderConfigAuthenticationScheme]
+        """
+        
+        self._authentication_schemes = authentication_schemes
+
+    @property
     def meta(self):
         """
         Gets the meta of this ScimServiceProviderConfig.
-        Configuration SCIM meta data
+        Resource SCIM meta
 
         :return: The meta of this ScimServiceProviderConfig.
         :rtype: ScimMetadata
@@ -90,7 +298,7 @@ class ScimServiceProviderConfig(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimServiceProviderConfig.
-        Configuration SCIM meta data
+        Resource SCIM meta
 
         :param meta: The meta of this ScimServiceProviderConfig.
         :type: ScimMetadata

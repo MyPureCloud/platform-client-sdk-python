@@ -61,8 +61,8 @@ class FlowsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param FlowAggregationQuery body: query (required)
+        :return: FlowAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class FlowsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='FlowAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -139,8 +139,8 @@ class FlowsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: QualifierMappingObservationQueryResponse
+        :param FlowObservationQuery body: query (required)
+        :return: FlowObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -197,7 +197,7 @@ class FlowsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QualifierMappingObservationQueryResponse',
+                                            response_type='FlowObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

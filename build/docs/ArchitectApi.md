@@ -56,6 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flow_versions**](ArchitectApi.html#get_flow_versions) | Get flow version list|
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by id|
+|[**get_flows_datatable_import_job**](ArchitectApi.html#get_flows_datatable_import_job) | Returns the state information about an import job|
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable with the given id|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
@@ -2772,6 +2773,59 @@ except ApiException as e:
 ### Return type
 
 [**DataTable**](DataTable.html)
+
+<a name="get_flows_datatable_import_job"></a>
+
+## [**DataTableImportJob**](DataTableImportJob.html) get_flows_datatable_import_job(datatable_id, import_job_id)
+
+
+
+Returns the state information about an import job
+
+Returns the state information about an import job.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+import_job_id = 'import_job_id_example' # str | id of import job
+
+try:
+    # Returns the state information about an import job
+    api_response = api_instance.get_flows_datatable_import_job(datatable_id, import_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_datatable_import_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **import_job_id** | **str**| id of import job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTableImportJob**](DataTableImportJob.html)
 
 <a name="get_flows_datatable_row"></a>
 

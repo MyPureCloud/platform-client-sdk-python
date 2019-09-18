@@ -2151,7 +2151,7 @@ except ApiException as e:
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
+## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
 
 
 
@@ -2178,7 +2178,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.EvaluationAggregationQuery() # EvaluationAggregationQuery | query
 
 try:
     # Query for evaluation aggregates
@@ -2193,16 +2193,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="post_analytics_surveys_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
+## [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
 
 
 
@@ -2229,7 +2229,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.SurveyAggregationQuery() # SurveyAggregationQuery | query
 
 try:
     # Query for survey aggregates
@@ -2244,12 +2244,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
 
 <a name="post_quality_calibrations"></a>
 

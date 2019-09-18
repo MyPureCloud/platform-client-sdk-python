@@ -3253,8 +3253,8 @@ class QualityApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param EvaluationAggregationQuery body: query (required)
+        :return: EvaluationAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3311,7 +3311,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='EvaluationAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3331,8 +3331,8 @@ class QualityApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param SurveyAggregationQuery body: query (required)
+        :return: SurveyAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3389,7 +3389,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='SurveyAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

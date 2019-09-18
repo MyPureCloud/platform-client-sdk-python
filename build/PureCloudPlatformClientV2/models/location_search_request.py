@@ -45,6 +45,7 @@ class LocationSearchRequest(object):
             'page_size': 'int',
             'page_number': 'int',
             'sort': 'list[SearchSort]',
+            'expand': 'list[str]',
             'query': 'list[LocationSearchCriteria]'
         }
 
@@ -54,6 +55,7 @@ class LocationSearchRequest(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'sort': 'sort',
+            'expand': 'expand',
             'query': 'query'
         }
 
@@ -62,6 +64,7 @@ class LocationSearchRequest(object):
         self._page_size = None
         self._page_number = None
         self._sort = None
+        self._expand = None
         self._query = None
 
     @property
@@ -182,6 +185,29 @@ class LocationSearchRequest(object):
         """
         
         self._sort = sort
+
+    @property
+    def expand(self):
+        """
+        Gets the expand of this LocationSearchRequest.
+        Provides more details about a specified resource
+
+        :return: The expand of this LocationSearchRequest.
+        :rtype: list[str]
+        """
+        return self._expand
+
+    @expand.setter
+    def expand(self, expand):
+        """
+        Sets the expand of this LocationSearchRequest.
+        Provides more details about a specified resource
+
+        :param expand: The expand of this LocationSearchRequest.
+        :type: list[str]
+        """
+        
+        self._expand = expand
 
     @property
     def query(self):

@@ -25,8 +25,9 @@ Delete all auth tokens for the specified user.
 
 Wraps DELETE /api/v2/tokens/{userId} 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* oauth:token:delete
 
 ### Example
 

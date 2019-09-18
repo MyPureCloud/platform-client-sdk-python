@@ -85,7 +85,7 @@ class UserAuthorization(object):
     def unused_roles(self):
         """
         Gets the unused_roles of this UserAuthorization.
-
+        A collection of the roles the user is not using
 
         :return: The unused_roles of this UserAuthorization.
         :rtype: list[DomainRole]
@@ -96,7 +96,7 @@ class UserAuthorization(object):
     def unused_roles(self, unused_roles):
         """
         Sets the unused_roles of this UserAuthorization.
-
+        A collection of the roles the user is not using
 
         :param unused_roles: The unused_roles of this UserAuthorization.
         :type: list[DomainRole]

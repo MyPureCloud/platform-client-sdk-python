@@ -255,7 +255,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LocationsApi()
 q64 = 'q64_example' # str | q64
-expand = ['expand_example'] # list[str] | expand (optional)
+expand = ['expand_example'] # list[str] | Provides more details about a specified resource (optional)
 
 try:
     # Search locations using the q64 value returned from a previous search
@@ -271,7 +271,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str.html)| Provides more details about a specified resource | [optional] <br />**Values**: images |
 {: class="table table-striped"}
 
 ### Return type

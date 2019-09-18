@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_calls_history**](ConversationsApi.html#get_conversations_calls_history) | Get call history|
 |[**get_conversations_calls_maximumconferenceparties**](ConversationsApi.html#get_conversations_calls_maximumconferenceparties) | Get the maximum number of participants that this user can have on a conference|
 |[**get_conversations_chat**](ConversationsApi.html#get_conversations_chat) | Get chat conversation|
+|[**get_conversations_chat_message**](ConversationsApi.html#get_conversations_chat_message) | Get a web chat conversation message|
+|[**get_conversations_chat_messages**](ConversationsApi.html#get_conversations_chat_messages) | Get the messages of a chat conversation.|
 |[**get_conversations_chat_participant_wrapup**](ConversationsApi.html#get_conversations_chat_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_chat_participant_wrapupcodes**](ConversationsApi.html#get_conversations_chat_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_chats**](ConversationsApi.html#get_conversations_chats) | Get active chat conversations for the logged in user|
@@ -112,6 +114,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_callback_participant_replace**](ConversationsApi.html#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_callbacks**](ConversationsApi.html#post_conversations_callbacks) | Create a Callback|
 |[**post_conversations_calls**](ConversationsApi.html#post_conversations_calls) | Create a call conversation|
+|[**post_conversations_chat_communication_messages**](ConversationsApi.html#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
+|[**post_conversations_chat_communication_typing**](ConversationsApi.html#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
 |[**post_conversations_chat_participant_replace**](ConversationsApi.html#post_conversations_chat_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_chats**](ConversationsApi.html#post_conversations_chats) | Create a web chat conversation|
 |[**post_conversations_cobrowsesession_participant_replace**](ConversationsApi.html#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
@@ -1614,6 +1618,116 @@ except ApiException as e:
 ### Return type
 
 [**ChatConversation**](ChatConversation.html)
+
+<a name="get_conversations_chat_message"></a>
+
+## [**WebChatMessage**](WebChatMessage.html) get_conversations_chat_message(conversation_id, message_id)
+
+
+
+Get a web chat conversation message
+
+
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/messages/{messageId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Get a web chat conversation message
+    api_response = api_instance.get_conversations_chat_message(conversation_id, message_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_chat_message: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **message_id** | **str**| messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebChatMessage**](WebChatMessage.html)
+
+<a name="get_conversations_chat_messages"></a>
+
+## [**WebChatMessageEntityList**](WebChatMessageEntityList.html) get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
+
+
+
+Get the messages of a chat conversation.
+
+
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/messages 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+after = 'after_example' # str | If specified, get the messages chronologically after the id of this message (optional)
+before = 'before_example' # str | If specified, get the messages chronologically before the id of this message (optional)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+max_results = 100 # int | Limit the returned number of messages, up to a maximum of 100 (optional) (default to 100)
+
+try:
+    # Get the messages of a chat conversation.
+    api_response = api_instance.get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_chat_messages: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **after** | **str**| If specified, get the messages chronologically after the id of this message | [optional]  |
+| **before** | **str**| If specified, get the messages chronologically before the id of this message | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **max_results** | **int**| Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebChatMessageEntityList**](WebChatMessageEntityList.html)
 
 <a name="get_conversations_chat_participant_wrapup"></a>
 
@@ -4715,7 +4829,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
+## [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
 
 
 
@@ -4742,7 +4856,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.ConversationAggregationQuery() # ConversationAggregationQuery | query
 
 try:
     # Query for conversation aggregates
@@ -4757,12 +4871,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
 
 <a name="post_analytics_conversations_details_jobs"></a>
 
@@ -5548,6 +5662,112 @@ except ApiException as e:
 ### Return type
 
 [**CreateCallResponse**](CreateCallResponse.html)
+
+<a name="post_conversations_chat_communication_messages"></a>
+
+## [**WebChatMessage**](WebChatMessage.html) post_conversations_chat_communication_messages(conversation_id, communication_id, body)
+
+
+
+Send a message on behalf of a communication in a chat conversation.
+
+
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.CreateWebChatMessageRequest() # CreateWebChatMessageRequest | Message
+
+try:
+    # Send a message on behalf of a communication in a chat conversation.
+    api_response = api_instance.post_conversations_chat_communication_messages(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_chat_communication_messages: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest.html)| Message |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebChatMessage**](WebChatMessage.html)
+
+<a name="post_conversations_chat_communication_typing"></a>
+
+## [**WebChatTyping**](WebChatTyping.html) post_conversations_chat_communication_typing(conversation_id, communication_id)
+
+
+
+Send a typing-indicator on behalf of a communication in a chat conversation.
+
+
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+
+try:
+    # Send a typing-indicator on behalf of a communication in a chat conversation.
+    api_response = api_instance.post_conversations_chat_communication_typing(conversation_id, communication_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_chat_communication_typing: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebChatTyping**](WebChatTyping.html)
 
 <a name="post_conversations_chat_participant_replace"></a>
 

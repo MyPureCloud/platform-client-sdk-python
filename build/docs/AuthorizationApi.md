@@ -693,7 +693,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
-expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
 
 try:
     # Get a single organization role.
@@ -709,7 +709,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: unusedPermissions |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
 {: class="table table-striped"}
 
 ### Return type
@@ -1254,7 +1254,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
+| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
 | **body** | **list[str]**| Object Id List |  |
 {: class="table table-striped"}
 
@@ -1345,7 +1345,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 role_id = 'role_id_example' # str | Role ID
 body = PureCloudPlatformClientV2.SubjectDivisions() # SubjectDivisions | Subjects and Divisions
-subject_type = 'PC_USER' # str | what the type of the subject is, PC_GROUP or PC_USER (optional) (default to PC_USER)
+subject_type = 'PC_USER' # str | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
 
 try:
     # Bulk-grant subjects and divisions with an organization role.
@@ -1361,7 +1361,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
 | **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions |  |
-| **subject_type** | **str**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1557,7 +1557,7 @@ api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 division_id = 'division_id_example' # str | the id of the division to which to make the grant
 role_id = 'role_id_example' # str | the id of the role to grant
-subject_type = 'PC_USER' # str | what the type of the subject is, PC_GROUP or PC_USER (optional) (default to PC_USER)
+subject_type = 'PC_USER' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to PC_USER)
 
 try:
     # Make a grant of a role in a division
@@ -1574,7 +1574,7 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division to which to make the grant |  |
 | **role_id** | **str**| the id of the role to grant |  |
-| **subject_type** | **str**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

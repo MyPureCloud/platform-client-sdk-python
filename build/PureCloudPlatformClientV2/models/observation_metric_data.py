@@ -81,12 +81,8 @@ class ObservationMetricData(object):
         :param metric: The metric of this ObservationMetricData.
         :type: str
         """
-        allowed_values = ["tSegmentDuration", "tConversationDuration", "oTotalCriticalScore", "oTotalScore", "nEvaluations", "tAbandon", "tIvr", "tAnswered", "tFlowOut", "tAcd", "tTalk", "tHeld", "tTalkComplete", "tHeldComplete", "tAcw", "tHandle", "tContacting", "tDialing", "tWait", "tAgentRoutingStatus", "tOrganizationPresence", "tSystemPresence", "tUserResponseTime", "tAgentResponseTime", "tVoicemail", "nStateTransitionError", "nOffered", "nOverSla", "nTransferred", "nBlindTransferred", "nConsultTransferred", "nConsult", "nConnected", "tAlert", "tNotResponding", "nOutbound", "nOutboundAttempted", "nOutboundConnected", "nOutboundAbandoned", "nError", "oServiceTarget", "oServiceLevel", "tActive", "tInactive", "oActiveUsers", "oMemberUsers", "oActiveQueues", "oMemberQueues", "oInteracting", "oWaiting", "oOnQueueUsers", "oOffQueueUsers", "oUserPresences", "oUserRoutingStatuses", "nSurveysSent", "nSurveysStarted", "nSurveysAbandoned", "nSurveysExpired", "nSurveyErrors", "nSurveyResponses", "nSurveyAnswerResponses", "oSurveyTotalScore", "oSurveyQuestionGroupScore", "nSurveyQuestionGroupResponses", "oSurveyQuestionScore", "nSurveyQuestionResponses", "nSurveyNpsResponses", "nSurveyNpsPromoters", "nSurveyNpsDetractors", "nFlow", "tFlowDisconnect", "tFlowExit", "tFlow", "oFlow", "tFlowOutcome", "nFlowOutcome", "nFlowOutcomeFailed", "nWebActionsQualified", "nWebActionsOffered", "nWebActionsAccepted", "nWebActionsRejected", "nWebActionsTimedout", "nWebActionsErrored", "nWebActionsIgnored", "nWebActionsStarted", "nWebActionsEngaged"]
-        if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
-            self._metric = "outdated_sdk_version"
-        else:
-            self._metric = metric
+        
+        self._metric = metric
 
     @property
     def qualifier(self):

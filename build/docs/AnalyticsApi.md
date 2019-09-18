@@ -905,7 +905,7 @@ except ApiException as e:
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
+## [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
 
 
 
@@ -932,7 +932,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.ConversationAggregationQuery() # ConversationAggregationQuery | query
 
 try:
     # Query for conversation aggregates
@@ -947,12 +947,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
 
 <a name="post_analytics_conversations_details_jobs"></a>
 
@@ -1058,7 +1058,7 @@ except ApiException as e:
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
+## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
 
 
 
@@ -1085,7 +1085,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.EvaluationAggregationQuery() # EvaluationAggregationQuery | query
 
 try:
     # Query for evaluation aggregates
@@ -1100,16 +1100,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="post_analytics_flows_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
+## [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
 
 
 
@@ -1136,7 +1136,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.FlowAggregationQuery() # FlowAggregationQuery | query
 
 try:
     # Query for flow aggregates
@@ -1151,16 +1151,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
 
 <a name="post_analytics_flows_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_flows_observations_query(body)
+## [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html) post_analytics_flows_observations_query(body)
 
 
 
@@ -1187,7 +1187,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.FlowObservationQuery() # FlowObservationQuery | query
 
 try:
     # Query for flow observations
@@ -1202,16 +1202,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 
 <a name="post_analytics_queues_observations_query"></a>
 
-## [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) post_analytics_queues_observations_query(body)
+## [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html) post_analytics_queues_observations_query(body)
 
 
 
@@ -1238,7 +1238,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.QueueObservationQuery() # QueueObservationQuery | query
 
 try:
     # Query for queue observations
@@ -1253,12 +1253,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
 <a name="post_analytics_reporting_exports"></a>
 
@@ -1413,7 +1413,7 @@ except ApiException as e:
 
 <a name="post_analytics_surveys_aggregates_query"></a>
 
-## [**AggregateQueryResponse**](AggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
+## [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
 
 
 
@@ -1440,7 +1440,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.SurveyAggregationQuery() # SurveyAggregationQuery | query
 
 try:
     # Query for survey aggregates
@@ -1455,16 +1455,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
 
 <a name="post_analytics_users_aggregates_query"></a>
 
-## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
+## [**UserAggregateQueryResponse**](UserAggregateQueryResponse.html) post_analytics_users_aggregates_query(body)
 
 
 
@@ -1491,7 +1491,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.UserAggregationQuery() # UserAggregationQuery | query
 
 try:
     # Query for user aggregates
@@ -1506,12 +1506,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
 
 <a name="post_analytics_users_details_query"></a>
 
@@ -1566,7 +1566,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_observations_query"></a>
 
-## [**ObservationQueryResponse**](ObservationQueryResponse.html) post_analytics_users_observations_query(body)
+## [**UserObservationQueryResponse**](UserObservationQueryResponse.html) post_analytics_users_observations_query(body)
 
 
 
@@ -1593,7 +1593,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.UserObservationQuery() # UserObservationQuery | query
 
 try:
     # Query for user observations
@@ -1608,12 +1608,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
 
 <a name="put_analytics_reporting_schedule"></a>
 

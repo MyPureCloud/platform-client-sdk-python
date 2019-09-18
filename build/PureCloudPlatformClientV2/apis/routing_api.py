@@ -3802,8 +3802,8 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: QualifierMappingObservationQueryResponse
+        :param QueueObservationQuery body: query (required)
+        :return: QueueObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3860,7 +3860,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QualifierMappingObservationQueryResponse',
+                                            response_type='QueueObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

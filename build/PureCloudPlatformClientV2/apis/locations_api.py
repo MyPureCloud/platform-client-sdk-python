@@ -383,7 +383,7 @@ class LocationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str q64: q64 (required)
-        :param list[str] expand: expand
+        :param list[str] expand: Provides more details about a specified resource
         :return: LocationsSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.

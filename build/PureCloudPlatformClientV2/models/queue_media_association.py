@@ -40,23 +40,46 @@ class QueueMediaAssociation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'queue': 'QueueReference',
             'media_types': 'list[str]',
-            'id': 'str',
             'delete': 'bool'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'queue': 'queue',
             'media_types': 'mediaTypes',
-            'id': 'id',
             'delete': 'delete'
         }
 
+        self._id = None
         self._queue = None
         self._media_types = None
-        self._id = None
         self._delete = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this QueueMediaAssociation.
+        The reference ID for this QueueMediaAssociation
+
+        :return: The id of this QueueMediaAssociation.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this QueueMediaAssociation.
+        The reference ID for this QueueMediaAssociation
+
+        :param id: The id of this QueueMediaAssociation.
+        :type: str
+        """
+        
+        self._id = id
 
     @property
     def queue(self):
@@ -103,29 +126,6 @@ class QueueMediaAssociation(object):
         """
         
         self._media_types = media_types
-
-    @property
-    def id(self):
-        """
-        Gets the id of this QueueMediaAssociation.
-        The reference ID for this QueueMediaAssociation
-
-        :return: The id of this QueueMediaAssociation.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this QueueMediaAssociation.
-        The reference ID for this QueueMediaAssociation
-
-        :param id: The id of this QueueMediaAssociation.
-        :type: str
-        """
-        
-        self._id = id
 
     @property
     def delete(self):

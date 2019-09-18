@@ -12,6 +12,7 @@ title: LocationSearchRequest
 | **page_size** | **int** | The number of results per page | [optional] |
 | **page_number** | **int** | The page of resources you want to retrieve | [optional] |
 | **sort** | [**list[SearchSort]**](SearchSort.html) | Multi-value sort order, list of multiple sort values | [optional] |
+| **expand** | **list[str]** | Provides more details about a specified resource | [optional] |
 | **query** | [**list[LocationSearchCriteria]**](LocationSearchCriteria.html) |  | [optional] |
 {: class="table table-striped"}
 

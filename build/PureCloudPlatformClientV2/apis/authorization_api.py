@@ -1028,7 +1028,7 @@ class AuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str role_id: Role ID (required)
-        :param list[str] expand: Which fields, if any, to expand.
+        :param list[str] expand: Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
         :return: DomainOrganizationRole
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2034,7 +2034,7 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param str role_id: Role ID (required)
         :param SubjectDivisions body: Subjects and Divisions (required)
-        :param str subject_type: what the type of the subject is, PC_GROUP or PC_USER
+        :param str subject_type: what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2365,7 +2365,7 @@ class AuthorizationApi(object):
         :param str subject_id: Subject ID (user or group) (required)
         :param str division_id: the id of the division to which to make the grant (required)
         :param str role_id: the id of the role to grant (required)
-        :param str subject_type: what the type of the subject is, PC_GROUP or PC_USER
+        :param str subject_type: what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

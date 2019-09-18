@@ -2511,7 +2511,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_aggregates_query"></a>
 
-## [**PresenceQueryResponse**](PresenceQueryResponse.html) post_analytics_users_aggregates_query(body)
+## [**UserAggregateQueryResponse**](UserAggregateQueryResponse.html) post_analytics_users_aggregates_query(body)
 
 
 
@@ -2538,7 +2538,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
-body = PureCloudPlatformClientV2.AggregationQuery() # AggregationQuery | query
+body = PureCloudPlatformClientV2.UserAggregationQuery() # UserAggregationQuery | query
 
 try:
     # Query for user aggregates
@@ -2553,12 +2553,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
 
 <a name="post_analytics_users_details_query"></a>
 
@@ -2613,7 +2613,7 @@ except ApiException as e:
 
 <a name="post_analytics_users_observations_query"></a>
 
-## [**ObservationQueryResponse**](ObservationQueryResponse.html) post_analytics_users_observations_query(body)
+## [**UserObservationQueryResponse**](UserObservationQueryResponse.html) post_analytics_users_observations_query(body)
 
 
 
@@ -2640,7 +2640,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
-body = PureCloudPlatformClientV2.ObservationQuery() # ObservationQuery | query
+body = PureCloudPlatformClientV2.UserObservationQuery() # UserObservationQuery | query
 
 try:
     # Query for user observations
@@ -2655,12 +2655,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
 
 <a name="post_authorization_subject_division_role"></a>
 
@@ -2694,7 +2694,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 division_id = 'division_id_example' # str | the id of the division to which to make the grant
 role_id = 'role_id_example' # str | the id of the role to grant
-subject_type = 'PC_USER' # str | what the type of the subject is, PC_GROUP or PC_USER (optional) (default to PC_USER)
+subject_type = 'PC_USER' # str | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional) (default to PC_USER)
 
 try:
     # Make a grant of a role in a division
@@ -2711,7 +2711,7 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division to which to make the grant |  |
 | **role_id** | **str**| the id of the role to grant |  |
-| **subject_type** | **str**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+| **subject_type** | **str**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

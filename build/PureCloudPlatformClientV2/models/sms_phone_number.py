@@ -57,6 +57,7 @@ class SmsPhoneNumber(object):
             'renewal_date': 'datetime',
             'auto_renewable': 'str',
             'address_id': 'SmsAddress',
+            'short_code_billing_type': 'str',
             'self_uri': 'str'
         }
 
@@ -78,6 +79,7 @@ class SmsPhoneNumber(object):
             'renewal_date': 'renewalDate',
             'auto_renewable': 'autoRenewable',
             'address_id': 'addressId',
+            'short_code_billing_type': 'shortCodeBillingType',
             'self_uri': 'selfUri'
         }
 
@@ -98,6 +100,7 @@ class SmsPhoneNumber(object):
         self._renewal_date = None
         self._auto_renewable = None
         self._address_id = None
+        self._short_code_billing_type = None
         self._self_uri = None
 
     @property
@@ -502,6 +505,33 @@ class SmsPhoneNumber(object):
         """
         
         self._address_id = address_id
+
+    @property
+    def short_code_billing_type(self):
+        """
+        Gets the short_code_billing_type of this SmsPhoneNumber.
+        BillingType of this phone number, if the phoneNumberType is shortcode.
+
+        :return: The short_code_billing_type of this SmsPhoneNumber.
+        :rtype: str
+        """
+        return self._short_code_billing_type
+
+    @short_code_billing_type.setter
+    def short_code_billing_type(self, short_code_billing_type):
+        """
+        Sets the short_code_billing_type of this SmsPhoneNumber.
+        BillingType of this phone number, if the phoneNumberType is shortcode.
+
+        :param short_code_billing_type: The short_code_billing_type of this SmsPhoneNumber.
+        :type: str
+        """
+        allowed_values = ["Basic", "Vanity"]
+        if short_code_billing_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for short_code_billing_type -> " + short_code_billing_type
+            self._short_code_billing_type = "outdated_sdk_version"
+        else:
+            self._short_code_billing_type = short_code_billing_type
 
     @property
     def self_uri(self):

@@ -1393,8 +1393,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param ConversationAggregationQuery body: query (required)
+        :return: ConversationAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1451,7 +1451,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='ConversationAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1627,8 +1627,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param EvaluationAggregationQuery body: query (required)
+        :return: EvaluationAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1685,7 +1685,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='EvaluationAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1705,8 +1705,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param FlowAggregationQuery body: query (required)
+        :return: FlowAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1763,7 +1763,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='FlowAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1783,8 +1783,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: QualifierMappingObservationQueryResponse
+        :param FlowObservationQuery body: query (required)
+        :return: FlowObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1841,7 +1841,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QualifierMappingObservationQueryResponse',
+                                            response_type='FlowObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1861,8 +1861,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: QualifierMappingObservationQueryResponse
+        :param QueueObservationQuery body: query (required)
+        :return: QueueObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1919,7 +1919,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QualifierMappingObservationQueryResponse',
+                                            response_type='QueueObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2173,8 +2173,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: AggregateQueryResponse
+        :param SurveyAggregationQuery body: query (required)
+        :return: SurveyAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2231,7 +2231,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AggregateQueryResponse',
+                                            response_type='SurveyAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2251,8 +2251,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AggregationQuery body: query (required)
-        :return: PresenceQueryResponse
+        :param UserAggregationQuery body: query (required)
+        :return: UserAggregateQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2309,7 +2309,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PresenceQueryResponse',
+                                            response_type='UserAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2407,8 +2407,8 @@ class AnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ObservationQuery body: query (required)
-        :return: ObservationQueryResponse
+        :param UserObservationQuery body: query (required)
+        :return: UserObservationQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2465,7 +2465,7 @@ class AnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ObservationQueryResponse',
+                                            response_type='UserObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
