@@ -7,10 +7,10 @@ title: MessageInfo
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **localizable_message_code** | **str** |  | [optional] |
-| **message** | **str** |  | [optional] |
-| **message_with_params** | **str** |  | [optional] |
-| **message_params** | **dict(str, str)** |  | [optional] |
+| **localizable_message_code** | **str** | Key that can be used to localize the message. | [optional] |
+| **message** | **str** | Description of the message. | [optional] |
+| **message_with_params** | **str** | Message with template fields for variable replacement. | [optional] |
+| **message_params** | **dict(str, str)** | Map with fields for variable replacement. | [optional] |
 {: class="table table-striped"}
 
 

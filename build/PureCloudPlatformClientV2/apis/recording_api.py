@@ -810,7 +810,7 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
         :param str recording_id: Recording ID (required)
-        :return: Recording
+        :return: RecordingMetadata
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -872,7 +872,7 @@ class RecordingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Recording',
+                                            response_type='RecordingMetadata',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

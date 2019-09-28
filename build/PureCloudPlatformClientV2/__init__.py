@@ -898,13 +898,13 @@ from .models.local_encryption_configuration_listing import LocalEncryptionConfig
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
 from .models.location import Location
 from .models.location_address import LocationAddress
+from .models.location_create_update_definition import LocationCreateUpdateDefinition
 from .models.location_definition import LocationDefinition
 from .models.location_emergency_number import LocationEmergencyNumber
 from .models.location_entity_listing import LocationEntityListing
 from .models.location_image import LocationImage
 from .models.location_search_criteria import LocationSearchCriteria
 from .models.location_search_request import LocationSearchRequest
-from .models.location_update_definition import LocationUpdateDefinition
 from .models.locations_search_response import LocationsSearchResponse
 from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
@@ -1272,6 +1272,7 @@ from .models.recording_job import RecordingJob
 from .models.recording_job_entity_listing import RecordingJobEntityListing
 from .models.recording_jobs_query import RecordingJobsQuery
 from .models.recording_messaging_message import RecordingMessagingMessage
+from .models.recording_metadata import RecordingMetadata
 from .models.recording_settings import RecordingSettings
 from .models.region_time_zone import RegionTimeZone
 from .models.relationship import Relationship

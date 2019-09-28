@@ -10,6 +10,7 @@ title: Operation
 | **id** | **str** |  | [optional] |
 | **complete** | **bool** |  | [optional] |
 | **user** | [**User**](User.html) |  | [optional] |
+| **client** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **error_message** | **str** |  | [optional] |
 | **error_code** | **str** |  | [optional] |
 | **error_details** | [**list[Detail]**](Detail.html) |  | [optional] |

@@ -47,6 +47,7 @@ class FlowVersion(object):
             'type': 'str',
             'secure': 'bool',
             'created_by': 'User',
+            'created_by_client': 'DomainEntityRef',
             'configuration_uri': 'str',
             'date_created': 'int',
             'generation_id': 'str',
@@ -62,6 +63,7 @@ class FlowVersion(object):
             'type': 'type',
             'secure': 'secure',
             'created_by': 'createdBy',
+            'created_by_client': 'createdByClient',
             'configuration_uri': 'configurationUri',
             'date_created': 'dateCreated',
             'generation_id': 'generationId',
@@ -76,6 +78,7 @@ class FlowVersion(object):
         self._type = None
         self._secure = None
         self._created_by = None
+        self._created_by_client = None
         self._configuration_uri = None
         self._date_created = None
         self._generation_id = None
@@ -246,6 +249,29 @@ class FlowVersion(object):
         """
         
         self._created_by = created_by
+
+    @property
+    def created_by_client(self):
+        """
+        Gets the created_by_client of this FlowVersion.
+
+
+        :return: The created_by_client of this FlowVersion.
+        :rtype: DomainEntityRef
+        """
+        return self._created_by_client
+
+    @created_by_client.setter
+    def created_by_client(self, created_by_client):
+        """
+        Sets the created_by_client of this FlowVersion.
+
+
+        :param created_by_client: The created_by_client of this FlowVersion.
+        :type: DomainEntityRef
+        """
+        
+        self._created_by_client = created_by_client
 
     @property
     def configuration_uri(self):

@@ -65,7 +65,7 @@ class Location(object):
     def id(self):
         """
         Gets the id of this Location.
-
+        Unique identifier for the location
 
         :return: The id of this Location.
         :rtype: str
@@ -76,7 +76,7 @@ class Location(object):
     def id(self, id):
         """
         Sets the id of this Location.
-
+        Unique identifier for the location
 
         :param id: The id of this Location.
         :type: str
@@ -88,7 +88,7 @@ class Location(object):
     def floorplan_id(self):
         """
         Gets the floorplan_id of this Location.
-
+        Unique identifier for the location floorplan image
 
         :return: The floorplan_id of this Location.
         :rtype: str
@@ -99,7 +99,7 @@ class Location(object):
     def floorplan_id(self, floorplan_id):
         """
         Sets the floorplan_id of this Location.
-
+        Unique identifier for the location floorplan image
 
         :param floorplan_id: The floorplan_id of this Location.
         :type: str
@@ -111,7 +111,7 @@ class Location(object):
     def coordinates(self):
         """
         Gets the coordinates of this Location.
-
+        Users coordinates on the floorplan. Only used when floorplanImage is set
 
         :return: The coordinates of this Location.
         :rtype: dict(str, float)
@@ -122,7 +122,7 @@ class Location(object):
     def coordinates(self, coordinates):
         """
         Sets the coordinates of this Location.
-
+        Users coordinates on the floorplan. Only used when floorplanImage is set
 
         :param coordinates: The coordinates of this Location.
         :type: dict(str, float)
@@ -134,7 +134,7 @@ class Location(object):
     def notes(self):
         """
         Gets the notes of this Location.
-
+        Optional description on the users location
 
         :return: The notes of this Location.
         :rtype: str
@@ -145,7 +145,7 @@ class Location(object):
     def notes(self, notes):
         """
         Sets the notes of this Location.
-
+        Optional description on the users location
 
         :param notes: The notes of this Location.
         :type: str

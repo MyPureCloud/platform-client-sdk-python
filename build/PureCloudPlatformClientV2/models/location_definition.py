@@ -42,6 +42,7 @@ class LocationDefinition(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'contact_user': 'AddressableEntityRef',
             'emergency_number': 'LocationEmergencyNumber',
             'address': 'LocationAddress',
             'address_verified': 'bool',
@@ -57,6 +58,7 @@ class LocationDefinition(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'contact_user': 'contactUser',
             'emergency_number': 'emergencyNumber',
             'address': 'address',
             'address_verified': 'addressVerified',
@@ -71,6 +73,7 @@ class LocationDefinition(object):
 
         self._id = None
         self._name = None
+        self._contact_user = None
         self._emergency_number = None
         self._address = None
         self._address_verified = None
@@ -127,6 +130,29 @@ class LocationDefinition(object):
         """
         
         self._name = name
+
+    @property
+    def contact_user(self):
+        """
+        Gets the contact_user of this LocationDefinition.
+        Site contact for the location
+
+        :return: The contact_user of this LocationDefinition.
+        :rtype: AddressableEntityRef
+        """
+        return self._contact_user
+
+    @contact_user.setter
+    def contact_user(self, contact_user):
+        """
+        Sets the contact_user of this LocationDefinition.
+        Site contact for the location
+
+        :param contact_user: The contact_user of this LocationDefinition.
+        :type: AddressableEntityRef
+        """
+        
+        self._contact_user = contact_user
 
     @property
     def emergency_number(self):

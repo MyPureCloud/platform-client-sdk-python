@@ -464,7 +464,7 @@ class LocationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str location_id: Location ID (required)
-        :param LocationUpdateDefinition body: Location (required)
+        :param LocationCreateUpdateDefinition body: Location (required)
         :return: LocationDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -547,7 +547,7 @@ class LocationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param LocationDefinition body: Location (required)
+        :param LocationCreateUpdateDefinition body: Location (required)
         :return: LocationDefinition
                  If the method is called asynchronously,
                  returns the request thread.

@@ -2389,7 +2389,7 @@ class ConversationsApi(object):
     def get_conversations_chat_message(self, conversation_id, message_id, **kwargs):
         """
         Get a web chat conversation message
-        
+        The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2473,7 +2473,7 @@ class ConversationsApi(object):
     def get_conversations_chat_messages(self, conversation_id, **kwargs):
         """
         Get the messages of a chat conversation.
-        
+        The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

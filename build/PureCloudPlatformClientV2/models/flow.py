@@ -46,6 +46,7 @@ class Flow(object):
             'description': 'str',
             'type': 'str',
             'locked_user': 'User',
+            'locked_client': 'DomainEntityRef',
             'active': 'bool',
             'system': 'bool',
             'deleted': 'bool',
@@ -66,6 +67,7 @@ class Flow(object):
             'description': 'description',
             'type': 'type',
             'locked_user': 'lockedUser',
+            'locked_client': 'lockedClient',
             'active': 'active',
             'system': 'system',
             'deleted': 'deleted',
@@ -85,6 +87,7 @@ class Flow(object):
         self._description = None
         self._type = None
         self._locked_user = None
+        self._locked_client = None
         self._active = None
         self._system = None
         self._deleted = None
@@ -220,7 +223,7 @@ class Flow(object):
     def locked_user(self):
         """
         Gets the locked_user of this Flow.
-
+        User that has the flow locked.
 
         :return: The locked_user of this Flow.
         :rtype: User
@@ -231,13 +234,36 @@ class Flow(object):
     def locked_user(self, locked_user):
         """
         Sets the locked_user of this Flow.
-
+        User that has the flow locked.
 
         :param locked_user: The locked_user of this Flow.
         :type: User
         """
         
         self._locked_user = locked_user
+
+    @property
+    def locked_client(self):
+        """
+        Gets the locked_client of this Flow.
+        OAuth client that has the flow locked.
+
+        :return: The locked_client of this Flow.
+        :rtype: DomainEntityRef
+        """
+        return self._locked_client
+
+    @locked_client.setter
+    def locked_client(self, locked_client):
+        """
+        Sets the locked_client of this Flow.
+        OAuth client that has the flow locked.
+
+        :param locked_client: The locked_client of this Flow.
+        :type: DomainEntityRef
+        """
+        
+        self._locked_client = locked_client
 
     @property
     def active(self):

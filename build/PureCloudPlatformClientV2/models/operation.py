@@ -43,6 +43,7 @@ class Operation(object):
             'id': 'str',
             'complete': 'bool',
             'user': 'User',
+            'client': 'DomainEntityRef',
             'error_message': 'str',
             'error_code': 'str',
             'error_details': 'list[Detail]',
@@ -55,6 +56,7 @@ class Operation(object):
             'id': 'id',
             'complete': 'complete',
             'user': 'user',
+            'client': 'client',
             'error_message': 'errorMessage',
             'error_code': 'errorCode',
             'error_details': 'errorDetails',
@@ -66,6 +68,7 @@ class Operation(object):
         self._id = None
         self._complete = None
         self._user = None
+        self._client = None
         self._error_message = None
         self._error_code = None
         self._error_details = None
@@ -141,6 +144,29 @@ class Operation(object):
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this Operation.
+
+
+        :return: The client of this Operation.
+        :rtype: DomainEntityRef
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this Operation.
+
+
+        :param client: The client of this Operation.
+        :type: DomainEntityRef
+        """
+        
+        self._client = client
 
     @property
     def error_message(self):

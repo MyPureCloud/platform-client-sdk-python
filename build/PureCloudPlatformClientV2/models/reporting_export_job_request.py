@@ -48,7 +48,8 @@ class ReportingExportJobRequest(object):
             'view_type': 'str',
             'filter': 'ViewFilter',
             'read': 'bool',
-            'locale': 'str'
+            'locale': 'str',
+            'has_format_durations': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class ReportingExportJobRequest(object):
             'view_type': 'viewType',
             'filter': 'filter',
             'read': 'read',
-            'locale': 'locale'
+            'locale': 'locale',
+            'has_format_durations': 'hasFormatDurations'
         }
 
         self._name = None
@@ -72,6 +74,7 @@ class ReportingExportJobRequest(object):
         self._filter = None
         self._read = None
         self._locale = None
+        self._has_format_durations = None
 
     @property
     def name(self):
@@ -287,6 +290,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._locale = locale
+
+    @property
+    def has_format_durations(self):
+        """
+        Gets the has_format_durations of this ReportingExportJobRequest.
+        Indicates if durations are formatted in hh:mm:ss format instead of ms
+
+        :return: The has_format_durations of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._has_format_durations
+
+    @has_format_durations.setter
+    def has_format_durations(self, has_format_durations):
+        """
+        Sets the has_format_durations of this ReportingExportJobRequest.
+        Indicates if durations are formatted in hh:mm:ss format instead of ms
+
+        :param has_format_durations: The has_format_durations of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._has_format_durations = has_format_durations
 
     def to_dict(self):
         """

@@ -43,6 +43,7 @@ class HistoryListing(object):
             'id': 'str',
             'complete': 'bool',
             'user': 'User',
+            'client': 'DomainEntityRef',
             'error_message': 'str',
             'error_code': 'str',
             'error_details': 'list[Detail]',
@@ -65,6 +66,7 @@ class HistoryListing(object):
             'id': 'id',
             'complete': 'complete',
             'user': 'user',
+            'client': 'client',
             'error_message': 'errorMessage',
             'error_code': 'errorCode',
             'error_details': 'errorDetails',
@@ -86,6 +88,7 @@ class HistoryListing(object):
         self._id = None
         self._complete = None
         self._user = None
+        self._client = None
         self._error_message = None
         self._error_code = None
         self._error_details = None
@@ -171,6 +174,29 @@ class HistoryListing(object):
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this HistoryListing.
+
+
+        :return: The client of this HistoryListing.
+        :rtype: DomainEntityRef
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this HistoryListing.
+
+
+        :param client: The client of this HistoryListing.
+        :type: DomainEntityRef
+        """
+        
+        self._client = client
 
     @property
     def error_message(self):

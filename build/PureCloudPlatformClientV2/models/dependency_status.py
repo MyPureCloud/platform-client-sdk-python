@@ -43,6 +43,7 @@ class DependencyStatus(object):
             'id': 'str',
             'name': 'str',
             'user': 'User',
+            'client': 'DomainEntityRef',
             'build_id': 'str',
             'date_started': 'datetime',
             'date_completed': 'datetime',
@@ -55,6 +56,7 @@ class DependencyStatus(object):
             'id': 'id',
             'name': 'name',
             'user': 'user',
+            'client': 'client',
             'build_id': 'buildId',
             'date_started': 'dateStarted',
             'date_completed': 'dateCompleted',
@@ -66,6 +68,7 @@ class DependencyStatus(object):
         self._id = None
         self._name = None
         self._user = None
+        self._client = None
         self._build_id = None
         self._date_started = None
         self._date_completed = None
@@ -123,7 +126,7 @@ class DependencyStatus(object):
     def user(self):
         """
         Gets the user of this DependencyStatus.
-
+        User that initiated the build.
 
         :return: The user of this DependencyStatus.
         :rtype: User
@@ -134,13 +137,36 @@ class DependencyStatus(object):
     def user(self, user):
         """
         Sets the user of this DependencyStatus.
-
+        User that initiated the build.
 
         :param user: The user of this DependencyStatus.
         :type: User
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this DependencyStatus.
+        OAuth client that initiated the build.
+
+        :return: The client of this DependencyStatus.
+        :rtype: DomainEntityRef
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this DependencyStatus.
+        OAuth client that initiated the build.
+
+        :param client: The client of this DependencyStatus.
+        :type: DomainEntityRef
+        """
+        
+        self._client = client
 
     @property
     def build_id(self):

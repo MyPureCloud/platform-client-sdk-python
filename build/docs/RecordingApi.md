@@ -522,7 +522,7 @@ except ApiException as e:
 
 <a name="get_conversation_recordingmetadata_recording_id"></a>
 
-## [**Recording**](Recording.html) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
+## [**RecordingMetadata**](RecordingMetadata.html) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
 
 
 
@@ -570,7 +570,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**RecordingMetadata**](RecordingMetadata.html)
 
 <a name="get_conversation_recordings"></a>
 

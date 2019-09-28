@@ -5457,7 +5457,7 @@ class TelephonyProvidersEdgeApi(object):
 
     def get_telephony_providers_edges_site_numberplans(self, site_id, **kwargs):
         """
-        Get the list of Number Plans for this Site.
+        Get the list of Number Plans for this Site. Only fetches the first 200 records.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9657,7 +9657,7 @@ class TelephonyProvidersEdgeApi(object):
 
     def put_telephony_providers_edges_site_numberplans(self, site_id, body, **kwargs):
         """
-        Update the list of Number Plans.
+        Update the list of Number Plans. A user can update maximum 200 number plans at a time.
         
 
         This method makes a synchronous HTTP request by default. To make an

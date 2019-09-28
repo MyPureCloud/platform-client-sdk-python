@@ -62,7 +62,7 @@ class MessageInfo(object):
     def localizable_message_code(self):
         """
         Gets the localizable_message_code of this MessageInfo.
-
+        Key that can be used to localize the message.
 
         :return: The localizable_message_code of this MessageInfo.
         :rtype: str
@@ -73,7 +73,7 @@ class MessageInfo(object):
     def localizable_message_code(self, localizable_message_code):
         """
         Sets the localizable_message_code of this MessageInfo.
-
+        Key that can be used to localize the message.
 
         :param localizable_message_code: The localizable_message_code of this MessageInfo.
         :type: str
@@ -85,7 +85,7 @@ class MessageInfo(object):
     def message(self):
         """
         Gets the message of this MessageInfo.
-
+        Description of the message.
 
         :return: The message of this MessageInfo.
         :rtype: str
@@ -96,7 +96,7 @@ class MessageInfo(object):
     def message(self, message):
         """
         Sets the message of this MessageInfo.
-
+        Description of the message.
 
         :param message: The message of this MessageInfo.
         :type: str
@@ -108,7 +108,7 @@ class MessageInfo(object):
     def message_with_params(self):
         """
         Gets the message_with_params of this MessageInfo.
-
+        Message with template fields for variable replacement.
 
         :return: The message_with_params of this MessageInfo.
         :rtype: str
@@ -119,7 +119,7 @@ class MessageInfo(object):
     def message_with_params(self, message_with_params):
         """
         Sets the message_with_params of this MessageInfo.
-
+        Message with template fields for variable replacement.
 
         :param message_with_params: The message_with_params of this MessageInfo.
         :type: str
@@ -131,7 +131,7 @@ class MessageInfo(object):
     def message_params(self):
         """
         Gets the message_params of this MessageInfo.
-
+        Map with fields for variable replacement.
 
         :return: The message_params of this MessageInfo.
         :rtype: dict(str, str)
@@ -142,7 +142,7 @@ class MessageInfo(object):
     def message_params(self, message_params):
         """
         Sets the message_params of this MessageInfo.
-
+        Map with fields for variable replacement.
 
         :param message_params: The message_params of this MessageInfo.
         :type: dict(str, str)

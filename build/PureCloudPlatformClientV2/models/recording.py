@@ -220,7 +220,7 @@ class Recording(object):
     def start_time(self):
         """
         Gets the start_time of this Recording.
-
+        The start time of the recording. Null when there is no playable media.
 
         :return: The start_time of this Recording.
         :rtype: str
@@ -231,7 +231,7 @@ class Recording(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this Recording.
-
+        The start time of the recording. Null when there is no playable media.
 
         :param start_time: The start_time of this Recording.
         :type: str
@@ -243,7 +243,7 @@ class Recording(object):
     def end_time(self):
         """
         Gets the end_time of this Recording.
-
+        The end time of the recording. Null when there is no playable media.
 
         :return: The end_time of this Recording.
         :rtype: str
@@ -254,7 +254,7 @@ class Recording(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this Recording.
-
+        The end time of the recording. Null when there is no playable media.
 
         :param end_time: The end_time of this Recording.
         :type: str
@@ -431,7 +431,7 @@ class Recording(object):
     def media_uris(self):
         """
         Gets the media_uris of this Recording.
-        The different mediaUris for the recording.
+        The different mediaUris for the recording. Null when there is no playable media.
 
         :return: The media_uris of this Recording.
         :rtype: dict(str, MediaResult)
@@ -442,7 +442,7 @@ class Recording(object):
     def media_uris(self, media_uris):
         """
         Sets the media_uris of this Recording.
-        The different mediaUris for the recording.
+        The different mediaUris for the recording. Null when there is no playable media.
 
         :param media_uris: The media_uris of this Recording.
         :type: dict(str, MediaResult)
@@ -596,7 +596,7 @@ class Recording(object):
     def output_size_in_bytes(self):
         """
         Gets the output_size_in_bytes of this Recording.
-        Size of transcoded media in bytes
+        Size of transcoded media in bytes. 0 if there is no transcoded media.
 
         :return: The output_size_in_bytes of this Recording.
         :rtype: int
@@ -607,7 +607,7 @@ class Recording(object):
     def output_size_in_bytes(self, output_size_in_bytes):
         """
         Sets the output_size_in_bytes of this Recording.
-        Size of transcoded media in bytes
+        Size of transcoded media in bytes. 0 if there is no transcoded media.
 
         :param output_size_in_bytes: The output_size_in_bytes of this Recording.
         :type: int

@@ -74,7 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_physicalinterfaces) | Get physical interfaces for edges.|
 |[**get_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site) | Get a Site by ID.|
 |[**get_telephony_providers_edges_site_numberplan**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplan) | Get a Number Plan by ID.|
-|[**get_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans) | Get the list of Number Plans for this Site.|
+|[**get_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans) | Get the list of Number Plans for this Site. Only fetches the first 200 records.|
 |[**get_telephony_providers_edges_site_numberplans_classifications**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans_classifications) | Get a list of Classifications for this Site|
 |[**get_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroute) | Get an outbound route|
 |[**get_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroutes) | Get outbound routes|
@@ -125,7 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phone) | Update a Phone by ID|
 |[**put_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phonebasesetting) | Update a Phone Base Settings by ID|
 |[**put_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site) | Update a Site by ID.|
-|[**put_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_numberplans) | Update the list of Number Plans.|
+|[**put_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_numberplans) | Update the list of Number Plans. A user can update maximum 200 number plans at a time.|
 |[**put_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_outboundroute) | Update outbound route|
 |[**put_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_trunkbasesetting) | Update a Trunk Base Settings object by ID|
 {: class="table table-striped"}
@@ -3650,7 +3650,7 @@ except ApiException as e:
 
 
 
-Get the list of Number Plans for this Site.
+Get the list of Number Plans for this Site. Only fetches the first 200 records.
 
 
 
@@ -3676,7 +3676,7 @@ api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 site_id = 'site_id_example' # str | Site ID
 
 try:
-    # Get the list of Number Plans for this Site.
+    # Get the list of Number Plans for this Site. Only fetches the first 200 records.
     api_response = api_instance.get_telephony_providers_edges_site_numberplans(site_id)
     pprint(api_response)
 except ApiException as e:
@@ -6356,7 +6356,7 @@ except ApiException as e:
 
 
 
-Update the list of Number Plans.
+Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 
 
 
@@ -6383,7 +6383,7 @@ site_id = 'site_id_example' # str | Site ID
 body = [PureCloudPlatformClientV2.NumberPlan()] # list[NumberPlan] | List of number plans
 
 try:
-    # Update the list of Number Plans.
+    # Update the list of Number Plans. A user can update maximum 200 number plans at a time.
     api_response = api_instance.put_telephony_providers_edges_site_numberplans(site_id, body)
     pprint(api_response)
 except ApiException as e:

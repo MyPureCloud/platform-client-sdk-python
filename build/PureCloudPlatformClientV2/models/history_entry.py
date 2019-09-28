@@ -44,6 +44,7 @@ class HistoryEntry(object):
             'resource': 'str',
             'timestamp': 'datetime',
             'user': 'User',
+            'client': 'DomainEntityRef',
             'version': 'str',
             'secure': 'bool'
         }
@@ -53,6 +54,7 @@ class HistoryEntry(object):
             'resource': 'resource',
             'timestamp': 'timestamp',
             'user': 'user',
+            'client': 'client',
             'version': 'version',
             'secure': 'secure'
         }
@@ -61,6 +63,7 @@ class HistoryEntry(object):
         self._resource = None
         self._timestamp = None
         self._user = None
+        self._client = None
         self._version = None
         self._secure = None
 
@@ -141,7 +144,7 @@ class HistoryEntry(object):
     def user(self):
         """
         Gets the user of this HistoryEntry.
-
+        User associated with this entry.
 
         :return: The user of this HistoryEntry.
         :rtype: User
@@ -152,13 +155,36 @@ class HistoryEntry(object):
     def user(self, user):
         """
         Sets the user of this HistoryEntry.
-
+        User associated with this entry.
 
         :param user: The user of this HistoryEntry.
         :type: User
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this HistoryEntry.
+        OAuth client associated with this entry.
+
+        :return: The client of this HistoryEntry.
+        :rtype: DomainEntityRef
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this HistoryEntry.
+        OAuth client associated with this entry.
+
+        :param client: The client of this HistoryEntry.
+        :type: DomainEntityRef
+        """
+        
+        self._client = client
 
     @property
     def version(self):

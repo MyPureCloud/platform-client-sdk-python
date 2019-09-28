@@ -56,6 +56,7 @@ class ReportingExportJobResponse(object):
             'modified_date_time': 'datetime',
             'locale': 'str',
             'percentage_complete': 'float',
+            'has_format_durations': 'bool',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class ReportingExportJobResponse(object):
             'modified_date_time': 'modifiedDateTime',
             'locale': 'locale',
             'percentage_complete': 'percentageComplete',
+            'has_format_durations': 'hasFormatDurations',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class ReportingExportJobResponse(object):
         self._modified_date_time = None
         self._locale = None
         self._percentage_complete = None
+        self._has_format_durations = None
         self._self_uri = None
 
     @property
@@ -480,6 +483,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._percentage_complete = percentage_complete
+
+    @property
+    def has_format_durations(self):
+        """
+        Gets the has_format_durations of this ReportingExportJobResponse.
+        Indicates if durations are formatted in hh:mm:ss format instead of ms
+
+        :return: The has_format_durations of this ReportingExportJobResponse.
+        :rtype: bool
+        """
+        return self._has_format_durations
+
+    @has_format_durations.setter
+    def has_format_durations(self, has_format_durations):
+        """
+        Sets the has_format_durations of this ReportingExportJobResponse.
+        Indicates if durations are formatted in hh:mm:ss format instead of ms
+
+        :param has_format_durations: The has_format_durations of this ReportingExportJobResponse.
+        :type: bool
+        """
+        
+        self._has_format_durations = has_format_durations
 
     @property
     def self_uri(self):

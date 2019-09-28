@@ -23,6 +23,7 @@ title: ReportingExportJobResponse
 | **modified_date_time** | **datetime** | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | |
 | **locale** | **str** | The locale use for localization of the exported data, i.e. en-us, es-mx   | |
 | **percentage_complete** | **float** | The percentage of the job that has completed processing | |
+| **has_format_durations** | **bool** | Indicates if durations are formatted in hh:mm:ss format instead of ms | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

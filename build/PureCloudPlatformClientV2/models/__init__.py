@@ -898,13 +898,13 @@ from .local_encryption_configuration_listing import LocalEncryptionConfiguration
 from .local_encryption_key_request import LocalEncryptionKeyRequest
 from .location import Location
 from .location_address import LocationAddress
+from .location_create_update_definition import LocationCreateUpdateDefinition
 from .location_definition import LocationDefinition
 from .location_emergency_number import LocationEmergencyNumber
 from .location_entity_listing import LocationEntityListing
 from .location_image import LocationImage
 from .location_search_criteria import LocationSearchCriteria
 from .location_search_request import LocationSearchRequest
-from .location_update_definition import LocationUpdateDefinition
 from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
@@ -1272,6 +1272,7 @@ from .recording_job import RecordingJob
 from .recording_job_entity_listing import RecordingJobEntityListing
 from .recording_jobs_query import RecordingJobsQuery
 from .recording_messaging_message import RecordingMessagingMessage
+from .recording_metadata import RecordingMetadata
 from .recording_settings import RecordingSettings
 from .region_time_zone import RegionTimeZone
 from .relationship import Relationship
