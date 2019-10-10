@@ -43,6 +43,7 @@ class ArchitectFlowNotificationArchitectOperation(object):
             'id': 'str',
             'complete': 'bool',
             'user': 'ArchitectFlowNotificationUser',
+            'client': 'ArchitectFlowNotificationClient',
             'action_name': 'str',
             'action_status': 'str',
             'error_message': 'str',
@@ -55,6 +56,7 @@ class ArchitectFlowNotificationArchitectOperation(object):
             'id': 'id',
             'complete': 'complete',
             'user': 'user',
+            'client': 'client',
             'action_name': 'actionName',
             'action_status': 'actionStatus',
             'error_message': 'errorMessage',
@@ -66,6 +68,7 @@ class ArchitectFlowNotificationArchitectOperation(object):
         self._id = None
         self._complete = None
         self._user = None
+        self._client = None
         self._action_name = None
         self._action_status = None
         self._error_message = None
@@ -141,6 +144,29 @@ class ArchitectFlowNotificationArchitectOperation(object):
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this ArchitectFlowNotificationArchitectOperation.
+
+
+        :return: The client of this ArchitectFlowNotificationArchitectOperation.
+        :rtype: ArchitectFlowNotificationClient
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this ArchitectFlowNotificationArchitectOperation.
+
+
+        :param client: The client of this ArchitectFlowNotificationArchitectOperation.
+        :type: ArchitectFlowNotificationClient
+        """
+        
+        self._client = client
 
     @property
     def action_name(self):

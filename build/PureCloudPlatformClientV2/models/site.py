@@ -58,6 +58,7 @@ class Site(object):
             'addresses': 'list[Contact]',
             'edges': 'list[Edge]',
             'edge_auto_update_config': 'EdgeAutoUpdateConfig',
+            'media_regions_use_latency_based': 'bool',
             'location': 'LocationDefinition',
             'managed': 'bool',
             'ntp_settings': 'NTPSettings',
@@ -83,6 +84,7 @@ class Site(object):
             'addresses': 'addresses',
             'edges': 'edges',
             'edge_auto_update_config': 'edgeAutoUpdateConfig',
+            'media_regions_use_latency_based': 'mediaRegionsUseLatencyBased',
             'location': 'location',
             'managed': 'managed',
             'ntp_settings': 'ntpSettings',
@@ -107,6 +109,7 @@ class Site(object):
         self._addresses = None
         self._edges = None
         self._edge_auto_update_config = None
+        self._media_regions_use_latency_based = None
         self._location = None
         self._managed = None
         self._ntp_settings = None
@@ -529,6 +532,29 @@ class Site(object):
         """
         
         self._edge_auto_update_config = edge_auto_update_config
+
+    @property
+    def media_regions_use_latency_based(self):
+        """
+        Gets the media_regions_use_latency_based of this Site.
+
+
+        :return: The media_regions_use_latency_based of this Site.
+        :rtype: bool
+        """
+        return self._media_regions_use_latency_based
+
+    @media_regions_use_latency_based.setter
+    def media_regions_use_latency_based(self, media_regions_use_latency_based):
+        """
+        Sets the media_regions_use_latency_based of this Site.
+
+
+        :param media_regions_use_latency_based: The media_regions_use_latency_based of this Site.
+        :type: bool
+        """
+        
+        self._media_regions_use_latency_based = media_regions_use_latency_based
 
     @property
     def location(self):

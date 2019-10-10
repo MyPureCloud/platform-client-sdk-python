@@ -142,7 +142,7 @@ class ReportingExportJobRequest(object):
         :param export_format: The export_format of this ReportingExportJobRequest.
         :type: str
         """
-        allowed_values = ["CSV"]
+        allowed_values = ["CSV", "PDF"]
         if export_format.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for export_format -> " + export_format
             self._export_format = "outdated_sdk_version"

@@ -92,7 +92,7 @@ class RecordingJobsQuery(object):
     def action_date(self):
         """
         Gets the action_date of this RecordingJobsQuery.
-        The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the action will be performed. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The action_date of this RecordingJobsQuery.
         :rtype: datetime
@@ -103,7 +103,7 @@ class RecordingJobsQuery(object):
     def action_date(self, action_date):
         """
         Sets the action_date of this RecordingJobsQuery.
-        The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the action will be performed. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param action_date: The action_date of this RecordingJobsQuery.
         :type: datetime

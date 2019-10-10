@@ -39,6 +39,7 @@ from .search_api import SearchApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
+from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi
 from .tokens_api import TokensApi
 from .user_recordings_api import UserRecordingsApi

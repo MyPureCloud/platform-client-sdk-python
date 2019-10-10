@@ -63,10 +63,12 @@ from .models.analytics_user_details_query_response import AnalyticsUserDetailsQu
 from .models.analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
+from .models.architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
 from .models.architect_dependency_tracking_build_notification_dependency_tracking_build_notification import ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification
 from .models.architect_dependency_tracking_build_notification_home_organization import ArchitectDependencyTrackingBuildNotificationHomeOrganization
 from .models.architect_dependency_tracking_build_notification_user import ArchitectDependencyTrackingBuildNotificationUser
 from .models.architect_flow_notification_architect_operation import ArchitectFlowNotificationArchitectOperation
+from .models.architect_flow_notification_client import ArchitectFlowNotificationClient
 from .models.architect_flow_notification_error_detail import ArchitectFlowNotificationErrorDetail
 from .models.architect_flow_notification_error_message_params import ArchitectFlowNotificationErrorMessageParams
 from .models.architect_flow_notification_flow_notification import ArchitectFlowNotificationFlowNotification
@@ -74,12 +76,14 @@ from .models.architect_flow_notification_flow_version import ArchitectFlowNotifi
 from .models.architect_flow_notification_home_organization import ArchitectFlowNotificationHomeOrganization
 from .models.architect_flow_notification_user import ArchitectFlowNotificationUser
 from .models.architect_flow_outcome_notification_architect_operation import ArchitectFlowOutcomeNotificationArchitectOperation
+from .models.architect_flow_outcome_notification_client import ArchitectFlowOutcomeNotificationClient
 from .models.architect_flow_outcome_notification_error_detail import ArchitectFlowOutcomeNotificationErrorDetail
 from .models.architect_flow_outcome_notification_error_message_params import ArchitectFlowOutcomeNotificationErrorMessageParams
 from .models.architect_flow_outcome_notification_flow_outcome_notification import ArchitectFlowOutcomeNotificationFlowOutcomeNotification
 from .models.architect_flow_outcome_notification_home_organization import ArchitectFlowOutcomeNotificationHomeOrganization
 from .models.architect_flow_outcome_notification_user import ArchitectFlowOutcomeNotificationUser
 from .models.architect_prompt_notification_architect_operation import ArchitectPromptNotificationArchitectOperation
+from .models.architect_prompt_notification_client import ArchitectPromptNotificationClient
 from .models.architect_prompt_notification_error_detail import ArchitectPromptNotificationErrorDetail
 from .models.architect_prompt_notification_error_message_params import ArchitectPromptNotificationErrorMessageParams
 from .models.architect_prompt_notification_home_organization import ArchitectPromptNotificationHomeOrganization
@@ -479,7 +483,6 @@ from .models.did_pool_entity_listing import DIDPoolEntityListing
 from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_schema import DataSchema
 from .models.data_table import DataTable
-from .models.data_table_import_job import DataTableImportJob
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
 from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .models.date_range import DateRange
@@ -803,6 +806,7 @@ from .models.headcount_interval import HeadcountInterval
 from .models.help_link import HelpLink
 from .models.history_entry import HistoryEntry
 from .models.history_listing import HistoryListing
+from .models.homer_record import HomerRecord
 from .models.ivr import IVR
 from .models.ivr_entity_listing import IVREntityListing
 from .models.identity_now import IdentityNow
@@ -842,6 +846,8 @@ from .models.intraday_query_data_command import IntradayQueryDataCommand
 from .models.intraday_queue import IntradayQueue
 from .models.intraday_response import IntradayResponse
 from .models.intraday_schedule_data import IntradayScheduleData
+from .models.ip_address_range import IpAddressRange
+from .models.ip_address_range_listing import IpAddressRangeListing
 from .models.journey_action import JourneyAction
 from .models.journey_action_map import JourneyActionMap
 from .models.journey_context import JourneyContext
@@ -1328,6 +1334,7 @@ from .models.rule_set import RuleSet
 from .models.rule_set_diagnostic import RuleSetDiagnostic
 from .models.rule_set_entity_listing import RuleSetEntityListing
 from .models.run_now_response import RunNowResponse
+from .models.sip_search_public_request import SIPSearchPublicRequest
 from .models.sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .models.salesforce import Salesforce
 from .models.schedule import Schedule
@@ -1415,6 +1422,9 @@ from .models.short_term_forecast_response import ShortTermForecastResponse
 from .models.short_term_forecasting_settings import ShortTermForecastingSettings
 from .models.shrinkage_override import ShrinkageOverride
 from .models.shrinkage_overrides import ShrinkageOverrides
+from .models.signed_url_response import SignedUrlResponse
+from .models.sip_download_response import SipDownloadResponse
+from .models.sip_search_result import SipSearchResult
 from .models.site import Site
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
@@ -1795,6 +1805,7 @@ from .apis.search_api import SearchApi
 from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
+from .apis.telephony_api import TelephonyApi
 from .apis.telephony_providers_edge_api import TelephonyProvidersEdgeApi
 from .apis.tokens_api import TokensApi
 from .apis.user_recordings_api import UserRecordingsApi

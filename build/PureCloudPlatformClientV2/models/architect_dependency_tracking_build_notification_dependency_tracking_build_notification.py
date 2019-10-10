@@ -42,17 +42,20 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         self.swagger_types = {
             'status': 'str',
             'user': 'ArchitectDependencyTrackingBuildNotificationUser',
+            'client': 'ArchitectDependencyTrackingBuildNotificationClient',
             'start_time': 'datetime'
         }
 
         self.attribute_map = {
             'status': 'status',
             'user': 'user',
+            'client': 'client',
             'start_time': 'startTime'
         }
 
         self._status = None
         self._user = None
+        self._client = None
         self._start_time = None
 
     @property
@@ -100,6 +103,29 @@ class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotific
         """
         
         self._user = user
+
+    @property
+    def client(self):
+        """
+        Gets the client of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
+
+
+        :return: The client of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
+        :rtype: ArchitectDependencyTrackingBuildNotificationClient
+        """
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        """
+        Sets the client of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
+
+
+        :param client: The client of this ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.
+        :type: ArchitectDependencyTrackingBuildNotificationClient
+        """
+        
+        self._client = client
 
     @property
     def start_time(self):

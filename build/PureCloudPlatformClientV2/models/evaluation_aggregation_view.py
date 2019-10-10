@@ -78,7 +78,7 @@ class EvaluationAggregationView(object):
         :param target: The target of this EvaluationAggregationView.
         :type: str
         """
-        allowed_values = ["nEvaluations", "oTotalCriticalScore", "oTotalScore"]
+        allowed_values = ["nEvaluations", "nEvaluationsDeleted", "nEvaluationsRescored", "oTotalCriticalScore", "oTotalScore"]
         if target.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for target -> " + target
             self._target = "outdated_sdk_version"

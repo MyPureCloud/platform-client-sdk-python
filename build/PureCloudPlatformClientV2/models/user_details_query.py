@@ -43,10 +43,10 @@ class UserDetailsQuery(object):
             'interval': 'str',
             'user_filters': 'list[UserDetailQueryFilter]',
             'routing_status_filters': 'list[RoutingStatusDetailQueryFilter]',
+            'order': 'str',
             'presence_aggregations': 'list[AnalyticsQueryAggregation]',
             'routing_status_aggregations': 'list[AnalyticsQueryAggregation]',
             'paging': 'PagingSpec',
-            'order': 'str',
             'presence_detail_filters': 'list[PresenceDetailQueryFilter]'
         }
 
@@ -54,20 +54,20 @@ class UserDetailsQuery(object):
             'interval': 'interval',
             'user_filters': 'userFilters',
             'routing_status_filters': 'routingStatusFilters',
+            'order': 'order',
             'presence_aggregations': 'presenceAggregations',
             'routing_status_aggregations': 'routingStatusAggregations',
             'paging': 'paging',
-            'order': 'order',
             'presence_detail_filters': 'presenceDetailFilters'
         }
 
         self._interval = None
         self._user_filters = None
         self._routing_status_filters = None
+        self._order = None
         self._presence_aggregations = None
         self._routing_status_aggregations = None
         self._paging = None
-        self._order = None
         self._presence_detail_filters = None
 
     @property
@@ -140,6 +140,33 @@ class UserDetailsQuery(object):
         self._routing_status_filters = routing_status_filters
 
     @property
+    def order(self):
+        """
+        Gets the order of this UserDetailsQuery.
+        Sort the result set in ascending/descending order. Default is ascending
+
+        :return: The order of this UserDetailsQuery.
+        :rtype: str
+        """
+        return self._order
+
+    @order.setter
+    def order(self, order):
+        """
+        Sets the order of this UserDetailsQuery.
+        Sort the result set in ascending/descending order. Default is ascending
+
+        :param order: The order of this UserDetailsQuery.
+        :type: str
+        """
+        allowed_values = ["asc", "desc"]
+        if order.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for order -> " + order
+            self._order = "outdated_sdk_version"
+        else:
+            self._order = order
+
+    @property
     def presence_aggregations(self):
         """
         Gets the presence_aggregations of this UserDetailsQuery.
@@ -207,33 +234,6 @@ class UserDetailsQuery(object):
         """
         
         self._paging = paging
-
-    @property
-    def order(self):
-        """
-        Gets the order of this UserDetailsQuery.
-        Sort the result set in ascending/descending order. Default is ascending
-
-        :return: The order of this UserDetailsQuery.
-        :rtype: str
-        """
-        return self._order
-
-    @order.setter
-    def order(self, order):
-        """
-        Sets the order of this UserDetailsQuery.
-        Sort the result set in ascending/descending order. Default is ascending
-
-        :param order: The order of this UserDetailsQuery.
-        :type: str
-        """
-        allowed_values = ["asc", "desc"]
-        if order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for order -> " + order
-            self._order = "outdated_sdk_version"
-        else:
-            self._order = order
 
     @property
     def presence_detail_filters(self):

@@ -16,6 +16,7 @@ title: AsyncConversationQuery
 | **order** | **str** | Sort the result set in ascending/descending order. Default is ascending | [optional] |
 | **order_by** | **str** | Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart | [optional] |
 | **limit** | **int** | Specify number of results to be returned | [optional] |
+| **start_of_day_interval_matching** | **bool** | Add a filter to only include conversations that started after the beginning of the interval start date (UTC) | [optional] |
 {: class="table table-striped"}
 
 

@@ -21,6 +21,7 @@ title: TrusteeBillingOverview
 | **contract_amendment_date** | **datetime** | Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **contract_effective_date** | **datetime** | Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **contract_end_date** | **datetime** | Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **minimum_monthly_amount** | **str** | Minimum amount that will be charged for the month | [optional] |
 | **in_ramp_period** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

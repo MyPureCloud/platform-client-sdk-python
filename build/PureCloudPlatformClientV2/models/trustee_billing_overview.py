@@ -54,6 +54,7 @@ class TrusteeBillingOverview(object):
             'contract_amendment_date': 'datetime',
             'contract_effective_date': 'datetime',
             'contract_end_date': 'datetime',
+            'minimum_monthly_amount': 'str',
             'in_ramp_period': 'bool',
             'self_uri': 'str'
         }
@@ -73,6 +74,7 @@ class TrusteeBillingOverview(object):
             'contract_amendment_date': 'contractAmendmentDate',
             'contract_effective_date': 'contractEffectiveDate',
             'contract_end_date': 'contractEndDate',
+            'minimum_monthly_amount': 'minimumMonthlyAmount',
             'in_ramp_period': 'inRampPeriod',
             'self_uri': 'selfUri'
         }
@@ -91,6 +93,7 @@ class TrusteeBillingOverview(object):
         self._contract_amendment_date = None
         self._contract_effective_date = None
         self._contract_end_date = None
+        self._minimum_monthly_amount = None
         self._in_ramp_period = None
         self._self_uri = None
 
@@ -419,6 +422,29 @@ class TrusteeBillingOverview(object):
         """
         
         self._contract_end_date = contract_end_date
+
+    @property
+    def minimum_monthly_amount(self):
+        """
+        Gets the minimum_monthly_amount of this TrusteeBillingOverview.
+        Minimum amount that will be charged for the month
+
+        :return: The minimum_monthly_amount of this TrusteeBillingOverview.
+        :rtype: str
+        """
+        return self._minimum_monthly_amount
+
+    @minimum_monthly_amount.setter
+    def minimum_monthly_amount(self, minimum_monthly_amount):
+        """
+        Sets the minimum_monthly_amount of this TrusteeBillingOverview.
+        Minimum amount that will be charged for the month
+
+        :param minimum_monthly_amount: The minimum_monthly_amount of this TrusteeBillingOverview.
+        :type: str
+        """
+        
+        self._minimum_monthly_amount = minimum_monthly_amount
 
     @property
     def in_ramp_period(self):

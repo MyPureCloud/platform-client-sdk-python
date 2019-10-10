@@ -48,7 +48,8 @@ class AsyncConversationQuery(object):
             'survey_filters': 'list[SurveyDetailQueryFilter]',
             'order': 'str',
             'order_by': 'str',
-            'limit': 'int'
+            'limit': 'int',
+            'start_of_day_interval_matching': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class AsyncConversationQuery(object):
             'survey_filters': 'surveyFilters',
             'order': 'order',
             'order_by': 'orderBy',
-            'limit': 'limit'
+            'limit': 'limit',
+            'start_of_day_interval_matching': 'startOfDayIntervalMatching'
         }
 
         self._interval = None
@@ -72,6 +74,7 @@ class AsyncConversationQuery(object):
         self._order = None
         self._order_by = None
         self._limit = None
+        self._start_of_day_interval_matching = None
 
     @property
     def interval(self):
@@ -287,6 +290,29 @@ class AsyncConversationQuery(object):
         """
         
         self._limit = limit
+
+    @property
+    def start_of_day_interval_matching(self):
+        """
+        Gets the start_of_day_interval_matching of this AsyncConversationQuery.
+        Add a filter to only include conversations that started after the beginning of the interval start date (UTC)
+
+        :return: The start_of_day_interval_matching of this AsyncConversationQuery.
+        :rtype: bool
+        """
+        return self._start_of_day_interval_matching
+
+    @start_of_day_interval_matching.setter
+    def start_of_day_interval_matching(self, start_of_day_interval_matching):
+        """
+        Sets the start_of_day_interval_matching of this AsyncConversationQuery.
+        Add a filter to only include conversations that started after the beginning of the interval start date (UTC)
+
+        :param start_of_day_interval_matching: The start_of_day_interval_matching of this AsyncConversationQuery.
+        :type: bool
+        """
+        
+        self._start_of_day_interval_matching = start_of_day_interval_matching
 
     def to_dict(self):
         """

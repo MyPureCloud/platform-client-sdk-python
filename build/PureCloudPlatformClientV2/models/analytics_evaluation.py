@@ -49,8 +49,8 @@ class AnalyticsEvaluation(object):
             'context_id': 'str',
             'form_name': 'str',
             'calibration_id': 'str',
-            'o_total_score': 'int',
-            'o_total_critical_score': 'int'
+            'o_total_critical_score': 'int',
+            'o_total_score': 'int'
         }
 
         self.attribute_map = {
@@ -63,8 +63,8 @@ class AnalyticsEvaluation(object):
             'context_id': 'contextId',
             'form_name': 'formName',
             'calibration_id': 'calibrationId',
-            'o_total_score': 'oTotalScore',
-            'o_total_critical_score': 'oTotalCriticalScore'
+            'o_total_critical_score': 'oTotalCriticalScore',
+            'o_total_score': 'oTotalScore'
         }
 
         self._evaluation_id = None
@@ -76,8 +76,8 @@ class AnalyticsEvaluation(object):
         self._context_id = None
         self._form_name = None
         self._calibration_id = None
-        self._o_total_score = None
         self._o_total_critical_score = None
+        self._o_total_score = None
 
     @property
     def evaluation_id(self):
@@ -287,29 +287,6 @@ class AnalyticsEvaluation(object):
         self._calibration_id = calibration_id
 
     @property
-    def o_total_score(self):
-        """
-        Gets the o_total_score of this AnalyticsEvaluation.
-
-
-        :return: The o_total_score of this AnalyticsEvaluation.
-        :rtype: int
-        """
-        return self._o_total_score
-
-    @o_total_score.setter
-    def o_total_score(self, o_total_score):
-        """
-        Sets the o_total_score of this AnalyticsEvaluation.
-
-
-        :param o_total_score: The o_total_score of this AnalyticsEvaluation.
-        :type: int
-        """
-        
-        self._o_total_score = o_total_score
-
-    @property
     def o_total_critical_score(self):
         """
         Gets the o_total_critical_score of this AnalyticsEvaluation.
@@ -331,6 +308,29 @@ class AnalyticsEvaluation(object):
         """
         
         self._o_total_critical_score = o_total_critical_score
+
+    @property
+    def o_total_score(self):
+        """
+        Gets the o_total_score of this AnalyticsEvaluation.
+
+
+        :return: The o_total_score of this AnalyticsEvaluation.
+        :rtype: int
+        """
+        return self._o_total_score
+
+    @o_total_score.setter
+    def o_total_score(self, o_total_score):
+        """
+        Sets the o_total_score of this AnalyticsEvaluation.
+
+
+        :param o_total_score: The o_total_score of this AnalyticsEvaluation.
+        :type: int
+        """
+        
+        self._o_total_score = o_total_score
 
     def to_dict(self):
         """
