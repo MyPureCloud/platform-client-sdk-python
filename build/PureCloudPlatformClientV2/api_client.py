@@ -99,8 +99,7 @@ class ApiClient(object):
         """
         query_params = {}
         body = None
-        host = (self.host).split('.', 2)[1]
-        url = 'https://login.' + host + '.com/oauth/token'
+        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'client_credentials'}
 
@@ -132,8 +131,7 @@ class ApiClient(object):
 
         query_params = {}
         body = None
-        host = (self.host).split('.', 2)[1]
-        url = 'https://login.' + host + '.com/oauth/token'
+        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'urn:ietf:params:oauth:grant-type:saml2-bearer',
                        'orgName': org_name,
@@ -187,7 +185,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '64.0.0'
+        header_params['purecloud-sdk'] = '64.0.1'
 
         # path parameters
         if path_params:
