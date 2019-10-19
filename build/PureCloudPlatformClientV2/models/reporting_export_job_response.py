@@ -57,6 +57,7 @@ class ReportingExportJobResponse(object):
             'locale': 'str',
             'percentage_complete': 'float',
             'has_format_durations': 'bool',
+            'has_split_filters': 'bool',
             'self_uri': 'str'
         }
 
@@ -78,6 +79,7 @@ class ReportingExportJobResponse(object):
             'locale': 'locale',
             'percentage_complete': 'percentageComplete',
             'has_format_durations': 'hasFormatDurations',
+            'has_split_filters': 'hasSplitFilters',
             'self_uri': 'selfUri'
         }
 
@@ -98,6 +100,7 @@ class ReportingExportJobResponse(object):
         self._locale = None
         self._percentage_complete = None
         self._has_format_durations = None
+        self._has_split_filters = None
         self._self_uri = None
 
     @property
@@ -506,6 +509,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._has_format_durations = has_format_durations
+
+    @property
+    def has_split_filters(self):
+        """
+        Gets the has_split_filters of this ReportingExportJobResponse.
+        Indicates if filters will be split in aggregate detail exports
+
+        :return: The has_split_filters of this ReportingExportJobResponse.
+        :rtype: bool
+        """
+        return self._has_split_filters
+
+    @has_split_filters.setter
+    def has_split_filters(self, has_split_filters):
+        """
+        Sets the has_split_filters of this ReportingExportJobResponse.
+        Indicates if filters will be split in aggregate detail exports
+
+        :param has_split_filters: The has_split_filters of this ReportingExportJobResponse.
+        :type: bool
+        """
+        
+        self._has_split_filters = has_split_filters
 
     @property
     def self_uri(self):

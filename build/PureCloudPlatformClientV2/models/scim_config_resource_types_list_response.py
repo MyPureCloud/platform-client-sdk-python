@@ -88,7 +88,7 @@ class ScimConfigResourceTypesListResponse(object):
     def start_index(self):
         """
         Gets the start_index of this ScimConfigResourceTypesListResponse.
-        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
+        The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.
 
         :return: The start_index of this ScimConfigResourceTypesListResponse.
         :rtype: int
@@ -99,7 +99,7 @@ class ScimConfigResourceTypesListResponse(object):
     def start_index(self, start_index):
         """
         Sets the start_index of this ScimConfigResourceTypesListResponse.
-        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
+        The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.
 
         :param start_index: The start_index of this ScimConfigResourceTypesListResponse.
         :type: int
@@ -134,7 +134,7 @@ class ScimConfigResourceTypesListResponse(object):
     def resources(self):
         """
         Gets the resources of this ScimConfigResourceTypesListResponse.
-        Resources
+        The list of requested resources.
 
         :return: The resources of this ScimConfigResourceTypesListResponse.
         :rtype: list[ScimConfigResourceType]
@@ -145,7 +145,7 @@ class ScimConfigResourceTypesListResponse(object):
     def resources(self, resources):
         """
         Sets the resources of this ScimConfigResourceTypesListResponse.
-        Resources
+        The list of requested resources.
 
         :param resources: The resources of this ScimConfigResourceTypesListResponse.
         :type: list[ScimConfigResourceType]

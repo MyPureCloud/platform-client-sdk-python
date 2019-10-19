@@ -62,7 +62,7 @@ class ScimMetadata(object):
     def resource_type(self):
         """
         Gets the resource_type of this ScimMetadata.
-        The type of the resource.
+        The type of SCIM resource.
 
         :return: The resource_type of this ScimMetadata.
         :rtype: str
@@ -73,7 +73,7 @@ class ScimMetadata(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ScimMetadata.
-        The type of the resource.
+        The type of SCIM resource.
 
         :param resource_type: The resource_type of this ScimMetadata.
         :type: str
@@ -89,7 +89,7 @@ class ScimMetadata(object):
     def last_modified(self):
         """
         Gets the last_modified of this ScimMetadata.
-        The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last time that the resource was modified. Date time is represented as an ISO-8601 string, for example, yyyy-MM-ddTHH:mm:ss.SSSZ.
 
         :return: The last_modified of this ScimMetadata.
         :rtype: datetime
@@ -100,7 +100,7 @@ class ScimMetadata(object):
     def last_modified(self, last_modified):
         """
         Sets the last_modified of this ScimMetadata.
-        The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last time that the resource was modified. Date time is represented as an ISO-8601 string, for example, yyyy-MM-ddTHH:mm:ss.SSSZ.
 
         :param last_modified: The last_modified of this ScimMetadata.
         :type: datetime

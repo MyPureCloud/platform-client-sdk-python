@@ -53,7 +53,7 @@ class ScimServiceProviderConfigSimpleFeature(object):
     def supported(self):
         """
         Gets the supported of this ScimServiceProviderConfigSimpleFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :return: The supported of this ScimServiceProviderConfigSimpleFeature.
         :rtype: bool
@@ -64,7 +64,7 @@ class ScimServiceProviderConfigSimpleFeature(object):
     def supported(self, supported):
         """
         Sets the supported of this ScimServiceProviderConfigSimpleFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :param supported: The supported of this ScimServiceProviderConfigSimpleFeature.
         :type: bool

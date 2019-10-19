@@ -59,7 +59,7 @@ class ScimV2GroupReference(object):
     def type(self):
         """
         Gets the type of this ScimV2GroupReference.
-        The SCIM resource type. Can be user or group.
+        The type of SCIM resource.
 
         :return: The type of this ScimV2GroupReference.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimV2GroupReference(object):
     def type(self, type):
         """
         Sets the type of this ScimV2GroupReference.
-        The SCIM resource type. Can be user or group.
+        The type of SCIM resource.
 
         :param type: The type of this ScimV2GroupReference.
         :type: str
@@ -86,7 +86,7 @@ class ScimV2GroupReference(object):
     def value(self):
         """
         Gets the value of this ScimV2GroupReference.
-        The ID of the group member. Can be userId or groupId.
+        The ID of the group member. Can be \"userId\" or \"groupId\".
 
         :return: The value of this ScimV2GroupReference.
         :rtype: str
@@ -97,7 +97,7 @@ class ScimV2GroupReference(object):
     def value(self, value):
         """
         Sets the value of this ScimV2GroupReference.
-        The ID of the group member. Can be userId or groupId.
+        The ID of the group member. Can be \"userId\" or \"groupId\".
 
         :param value: The value of this ScimV2GroupReference.
         :type: str

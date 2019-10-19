@@ -88,7 +88,7 @@ class ScimGroupListResponse(object):
     def start_index(self):
         """
         Gets the start_index of this ScimGroupListResponse.
-        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
+        The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.
 
         :return: The start_index of this ScimGroupListResponse.
         :rtype: int
@@ -99,7 +99,7 @@ class ScimGroupListResponse(object):
     def start_index(self, start_index):
         """
         Sets the start_index of this ScimGroupListResponse.
-        The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.
+        The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.
 
         :param start_index: The start_index of this ScimGroupListResponse.
         :type: int
@@ -134,7 +134,7 @@ class ScimGroupListResponse(object):
     def resources(self):
         """
         Gets the resources of this ScimGroupListResponse.
-        Resources
+        The list of requested resources. If \"count\" is 0, then the list will be empty.
 
         :return: The resources of this ScimGroupListResponse.
         :rtype: list[ScimV2Group]
@@ -145,7 +145,7 @@ class ScimGroupListResponse(object):
     def resources(self, resources):
         """
         Sets the resources of this ScimGroupListResponse.
-        Resources
+        The list of requested resources. If \"count\" is 0, then the list will be empty.
 
         :param resources: The resources of this ScimGroupListResponse.
         :type: list[ScimV2Group]

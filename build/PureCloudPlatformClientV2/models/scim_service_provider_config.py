@@ -80,7 +80,7 @@ class ScimServiceProviderConfig(object):
     def schemas(self):
         """
         Gets the schemas of this ScimServiceProviderConfig.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimServiceProviderConfig.
         :rtype: list[str]
@@ -91,7 +91,7 @@ class ScimServiceProviderConfig(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimServiceProviderConfig.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimServiceProviderConfig.
         :type: list[str]
@@ -103,7 +103,7 @@ class ScimServiceProviderConfig(object):
     def documentation_uri(self):
         """
         Gets the documentation_uri of this ScimServiceProviderConfig.
-        Documentation
+        The HTTP-addressable URL that points to the service provider's documentation.
 
         :return: The documentation_uri of this ScimServiceProviderConfig.
         :rtype: str
@@ -114,7 +114,7 @@ class ScimServiceProviderConfig(object):
     def documentation_uri(self, documentation_uri):
         """
         Sets the documentation_uri of this ScimServiceProviderConfig.
-        Documentation
+        The HTTP-addressable URL that points to the service provider's documentation.
 
         :param documentation_uri: The documentation_uri of this ScimServiceProviderConfig.
         :type: str
@@ -126,7 +126,7 @@ class ScimServiceProviderConfig(object):
     def patch(self):
         """
         Gets the patch of this ScimServiceProviderConfig.
-        Patch support
+        \"patch\" configuration options.
 
         :return: The patch of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -137,7 +137,7 @@ class ScimServiceProviderConfig(object):
     def patch(self, patch):
         """
         Sets the patch of this ScimServiceProviderConfig.
-        Patch support
+        \"patch\" configuration options.
 
         :param patch: The patch of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -149,7 +149,7 @@ class ScimServiceProviderConfig(object):
     def filter(self):
         """
         Gets the filter of this ScimServiceProviderConfig.
-        Filter support. Additional properties: maxResults
+        \"filter\" configuration options.
 
         :return: The filter of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigFilterFeature
@@ -160,7 +160,7 @@ class ScimServiceProviderConfig(object):
     def filter(self, filter):
         """
         Sets the filter of this ScimServiceProviderConfig.
-        Filter support. Additional properties: maxResults
+        \"filter\" configuration options.
 
         :param filter: The filter of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigFilterFeature
@@ -172,7 +172,7 @@ class ScimServiceProviderConfig(object):
     def etag(self):
         """
         Gets the etag of this ScimServiceProviderConfig.
-        Entity Tag support
+        \"ETag\" configuration options.
 
         :return: The etag of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -183,7 +183,7 @@ class ScimServiceProviderConfig(object):
     def etag(self, etag):
         """
         Sets the etag of this ScimServiceProviderConfig.
-        Entity Tag support
+        \"ETag\" configuration options.
 
         :param etag: The etag of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -195,7 +195,7 @@ class ScimServiceProviderConfig(object):
     def sort(self):
         """
         Gets the sort of this ScimServiceProviderConfig.
-        Sort support
+        \"sort\" configuration options.
 
         :return: The sort of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -206,7 +206,7 @@ class ScimServiceProviderConfig(object):
     def sort(self, sort):
         """
         Sets the sort of this ScimServiceProviderConfig.
-        Sort support
+        \"sort\" configuration options.
 
         :param sort: The sort of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -218,7 +218,7 @@ class ScimServiceProviderConfig(object):
     def bulk(self):
         """
         Gets the bulk of this ScimServiceProviderConfig.
-        Bulk support
+        \"bulk\" configuration options.
 
         :return: The bulk of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigBulkFeature
@@ -229,7 +229,7 @@ class ScimServiceProviderConfig(object):
     def bulk(self, bulk):
         """
         Sets the bulk of this ScimServiceProviderConfig.
-        Bulk support
+        \"bulk\" configuration options.
 
         :param bulk: The bulk of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigBulkFeature
@@ -241,7 +241,7 @@ class ScimServiceProviderConfig(object):
     def change_password(self):
         """
         Gets the change_password of this ScimServiceProviderConfig.
-        Change password
+        \"changePassword\" configuration options.
 
         :return: The change_password of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -252,7 +252,7 @@ class ScimServiceProviderConfig(object):
     def change_password(self, change_password):
         """
         Sets the change_password of this ScimServiceProviderConfig.
-        Change password
+        \"changePassword\" configuration options.
 
         :param change_password: The change_password of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -264,7 +264,7 @@ class ScimServiceProviderConfig(object):
     def authentication_schemes(self):
         """
         Gets the authentication_schemes of this ScimServiceProviderConfig.
-        Authentication schemes supported.
+        The list of supported authentication schemes.
 
         :return: The authentication_schemes of this ScimServiceProviderConfig.
         :rtype: list[ScimServiceProviderConfigAuthenticationScheme]
@@ -275,7 +275,7 @@ class ScimServiceProviderConfig(object):
     def authentication_schemes(self, authentication_schemes):
         """
         Sets the authentication_schemes of this ScimServiceProviderConfig.
-        Authentication schemes supported.
+        The list of supported authentication schemes.
 
         :param authentication_schemes: The authentication_schemes of this ScimServiceProviderConfig.
         :type: list[ScimServiceProviderConfigAuthenticationScheme]

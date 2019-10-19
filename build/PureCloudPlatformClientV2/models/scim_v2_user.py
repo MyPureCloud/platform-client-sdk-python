@@ -95,7 +95,7 @@ class ScimV2User(object):
     def id(self):
         """
         Gets the id of this ScimV2User.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :return: The id of this ScimV2User.
         :rtype: str
@@ -106,7 +106,7 @@ class ScimV2User(object):
     def id(self, id):
         """
         Sets the id of this ScimV2User.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :param id: The id of this ScimV2User.
         :type: str
@@ -187,7 +187,7 @@ class ScimV2User(object):
     def display_name(self):
         """
         Gets the display_name of this ScimV2User.
-        The display name for the user.
+        The display name of the user.
 
         :return: The display_name of this ScimV2User.
         :rtype: str
@@ -198,7 +198,7 @@ class ScimV2User(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ScimV2User.
-        The display name for the user.
+        The display name of the user.
 
         :param display_name: The display_name of this ScimV2User.
         :type: str
@@ -210,7 +210,7 @@ class ScimV2User(object):
     def password(self):
         """
         Gets the password of this ScimV2User.
-        A new password for a PureCloud user. Does not return an existing password.
+        The new password for the PureCloud user. Does not return an existing password.
 
         :return: The password of this ScimV2User.
         :rtype: str
@@ -221,7 +221,7 @@ class ScimV2User(object):
     def password(self, password):
         """
         Sets the password of this ScimV2User.
-        A new password for a PureCloud user. Does not return an existing password.
+        The new password for the PureCloud user. Does not return an existing password.
 
         :param password: The password of this ScimV2User.
         :type: str
@@ -256,7 +256,7 @@ class ScimV2User(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this ScimV2User.
-        A list of the user's phone numbers.
+        The list of the user's phone numbers.
 
         :return: The phone_numbers of this ScimV2User.
         :rtype: list[ScimPhoneNumber]
@@ -267,7 +267,7 @@ class ScimV2User(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this ScimV2User.
-        A list of the user's phone numbers.
+        The list of the user's phone numbers.
 
         :param phone_numbers: The phone_numbers of this ScimV2User.
         :type: list[ScimPhoneNumber]
@@ -279,7 +279,7 @@ class ScimV2User(object):
     def emails(self):
         """
         Gets the emails of this ScimV2User.
-        A list of the user's email addresses.
+        The list of the user's email addresses.
 
         :return: The emails of this ScimV2User.
         :rtype: list[ScimEmail]
@@ -290,7 +290,7 @@ class ScimV2User(object):
     def emails(self, emails):
         """
         Sets the emails of this ScimV2User.
-        A list of the user's email addresses.
+        The list of the user's email addresses.
 
         :param emails: The emails of this ScimV2User.
         :type: list[ScimEmail]
@@ -302,7 +302,7 @@ class ScimV2User(object):
     def photos(self):
         """
         Gets the photos of this ScimV2User.
-        A list of the user's photos.
+        The list of the user's photos.
 
         :return: The photos of this ScimV2User.
         :rtype: list[Photo]
@@ -313,7 +313,7 @@ class ScimV2User(object):
     def photos(self, photos):
         """
         Sets the photos of this ScimV2User.
-        A list of the user's photos.
+        The list of the user's photos.
 
         :param photos: The photos of this ScimV2User.
         :type: list[Photo]
@@ -325,7 +325,7 @@ class ScimV2User(object):
     def external_id(self):
         """
         Gets the external_id of this ScimV2User.
-        The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
+        The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
 
         :return: The external_id of this ScimV2User.
         :rtype: str
@@ -336,7 +336,7 @@ class ScimV2User(object):
     def external_id(self, external_id):
         """
         Sets the external_id of this ScimV2User.
-        The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
+        The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
 
         :param external_id: The external_id of this ScimV2User.
         :type: str
@@ -348,7 +348,7 @@ class ScimV2User(object):
     def groups(self):
         """
         Gets the groups of this ScimV2User.
-        A list of groups that the user is a member of.
+        The list of groups that the user is a member of.
 
         :return: The groups of this ScimV2User.
         :rtype: list[ScimV2GroupReference]
@@ -359,7 +359,7 @@ class ScimV2User(object):
     def groups(self, groups):
         """
         Sets the groups of this ScimV2User.
-        A list of groups that the user is a member of.
+        The list of groups that the user is a member of.
 
         :param groups: The groups of this ScimV2User.
         :type: list[ScimV2GroupReference]
@@ -371,7 +371,7 @@ class ScimV2User(object):
     def roles(self):
         """
         Gets the roles of this ScimV2User.
-        A list of roles assigned to the user.
+        The list of roles assigned to the user.
 
         :return: The roles of this ScimV2User.
         :rtype: list[str]
@@ -382,7 +382,7 @@ class ScimV2User(object):
     def roles(self, roles):
         """
         Sets the roles of this ScimV2User.
-        A list of roles assigned to the user.
+        The list of roles assigned to the user.
 
         :param roles: The roles of this ScimV2User.
         :type: list[str]

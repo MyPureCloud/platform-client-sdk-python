@@ -59,7 +59,7 @@ class ScimPhoneNumber(object):
     def value(self):
         """
         Gets the value of this ScimPhoneNumber.
-        A phone number in E.164 format.
+        The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx.
 
         :return: The value of this ScimPhoneNumber.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimPhoneNumber(object):
     def value(self, value):
         """
         Sets the value of this ScimPhoneNumber.
-        A phone number in E.164 format.
+        The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx.
 
         :param value: The value of this ScimPhoneNumber.
         :type: str

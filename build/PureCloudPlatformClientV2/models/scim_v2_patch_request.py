@@ -56,7 +56,7 @@ class ScimV2PatchRequest(object):
     def schemas(self):
         """
         Gets the schemas of this ScimV2PatchRequest.
-        A list of schemas used in the patch request.
+        The list of schemas used in the PATCH request.
 
         :return: The schemas of this ScimV2PatchRequest.
         :rtype: list[str]
@@ -67,7 +67,7 @@ class ScimV2PatchRequest(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimV2PatchRequest.
-        A list of schemas used in the patch request.
+        The list of schemas used in the PATCH request.
 
         :param schemas: The schemas of this ScimV2PatchRequest.
         :type: list[str]
@@ -79,7 +79,7 @@ class ScimV2PatchRequest(object):
     def operations(self):
         """
         Gets the operations of this ScimV2PatchRequest.
-
+        The list of operations to perform for the PATCH request.
 
         :return: The operations of this ScimV2PatchRequest.
         :rtype: list[ScimV2PatchOperation]
@@ -90,7 +90,7 @@ class ScimV2PatchRequest(object):
     def operations(self, operations):
         """
         Sets the operations of this ScimV2PatchRequest.
-
+        The list of operations to perform for the PATCH request.
 
         :param operations: The operations of this ScimV2PatchRequest.
         :type: list[ScimV2PatchOperation]

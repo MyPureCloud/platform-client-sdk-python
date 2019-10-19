@@ -59,7 +59,7 @@ class ScimV2PatchOperation(object):
     def op(self):
         """
         Gets the op of this ScimV2PatchOperation.
-        The patch operation to perform.
+        The PATCH operation to perform.
 
         :return: The op of this ScimV2PatchOperation.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimV2PatchOperation(object):
     def op(self, op):
         """
         Sets the op of this ScimV2PatchOperation.
-        The patch operation to perform.
+        The PATCH operation to perform.
 
         :param op: The op of this ScimV2PatchOperation.
         :type: str
@@ -86,7 +86,7 @@ class ScimV2PatchOperation(object):
     def path(self):
         """
         Gets the path of this ScimV2PatchOperation.
-        The attribute path that describes the target of the operation. Required for a 'remove' operation.
+        The attribute path that describes the target of the operation. Required for a \"remove\" operation.
 
         :return: The path of this ScimV2PatchOperation.
         :rtype: str
@@ -97,7 +97,7 @@ class ScimV2PatchOperation(object):
     def path(self, path):
         """
         Sets the path of this ScimV2PatchOperation.
-        The attribute path that describes the target of the operation. Required for a 'remove' operation.
+        The attribute path that describes the target of the operation. Required for a \"remove\" operation.
 
         :param path: The path of this ScimV2PatchOperation.
         :type: str

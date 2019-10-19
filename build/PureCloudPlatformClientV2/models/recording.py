@@ -59,6 +59,7 @@ class Recording(object):
             'archive_date': 'datetime',
             'archive_medium': 'str',
             'delete_date': 'datetime',
+            'export_date': 'datetime',
             'output_duration_ms': 'int',
             'output_size_in_bytes': 'int',
             'max_allowed_restorations_for_org': 'int',
@@ -88,6 +89,7 @@ class Recording(object):
             'archive_date': 'archiveDate',
             'archive_medium': 'archiveMedium',
             'delete_date': 'deleteDate',
+            'export_date': 'exportDate',
             'output_duration_ms': 'outputDurationMs',
             'output_size_in_bytes': 'outputSizeInBytes',
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
@@ -116,6 +118,7 @@ class Recording(object):
         self._archive_date = None
         self._archive_medium = None
         self._delete_date = None
+        self._export_date = None
         self._output_duration_ms = None
         self._output_size_in_bytes = None
         self._max_allowed_restorations_for_org = None
@@ -568,6 +571,29 @@ class Recording(object):
         """
         
         self._delete_date = delete_date
+
+    @property
+    def export_date(self):
+        """
+        Gets the export_date of this Recording.
+        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The export_date of this Recording.
+        :rtype: datetime
+        """
+        return self._export_date
+
+    @export_date.setter
+    def export_date(self, export_date):
+        """
+        Sets the export_date of this Recording.
+        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param export_date: The export_date of this Recording.
+        :type: datetime
+        """
+        
+        self._export_date = export_date
 
     @property
     def output_duration_ms(self):

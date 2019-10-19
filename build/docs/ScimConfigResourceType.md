@@ -7,13 +7,13 @@ title: ScimConfigResourceType
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always. | [optional] |
-| **schemas** | **list[str]** | schemas supported | [optional] |
-| **name** | **str** | Resource name. | [optional] |
-| **description** | **str** | Resource description. | [optional] |
-| **schema** | **str** | The resource type&#39;s primary/base schema URI. | [optional] |
-| **schema_extensions** | [**list[ScimConfigResourceTypeSchemaExtension]**](ScimConfigResourceTypeSchemaExtension.html) | Resource extension schemas | [optional] |
-| **endpoint** | **str** | Resource HTTP endpoint. | [optional] |
+| **id** | **str** | The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;Mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;Returned\&quot; is set to \&quot;always\&quot;. | [optional] |
+| **schemas** | **list[str]** | The list of supported schemas. | [optional] |
+| **name** | **str** | The name of the resource type. | [optional] |
+| **description** | **str** | The description of the resource type. | [optional] |
+| **schema** | **str** | The URI of the primary or base schema for the resource type. | [optional] |
+| **schema_extensions** | [**list[ScimConfigResourceTypeSchemaExtension]**](ScimConfigResourceTypeSchemaExtension.html) | The list of schema extensions for the resource type. | [optional] |
+| **endpoint** | **str** | The HTTP-addressable endpoint of the resource type. Appears after the base URL. | [optional] |
 | **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta | [optional] |
 {: class="table table-striped"}
 

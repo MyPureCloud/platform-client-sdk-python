@@ -59,7 +59,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def supported(self):
         """
         Gets the supported of this ScimServiceProviderConfigBulkFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :return: The supported of this ScimServiceProviderConfigBulkFeature.
         :rtype: bool
@@ -70,7 +70,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def supported(self, supported):
         """
         Sets the supported of this ScimServiceProviderConfigBulkFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :param supported: The supported of this ScimServiceProviderConfigBulkFeature.
         :type: bool
@@ -82,7 +82,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def max_operations(self):
         """
         Gets the max_operations of this ScimServiceProviderConfigBulkFeature.
-        Maximum operations per bulk request.
+        The maximum number of operations for each bulk request.
 
         :return: The max_operations of this ScimServiceProviderConfigBulkFeature.
         :rtype: int
@@ -93,7 +93,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def max_operations(self, max_operations):
         """
         Sets the max_operations of this ScimServiceProviderConfigBulkFeature.
-        Maximum operations per bulk request.
+        The maximum number of operations for each bulk request.
 
         :param max_operations: The max_operations of this ScimServiceProviderConfigBulkFeature.
         :type: int
@@ -105,7 +105,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def max_payload_size(self):
         """
         Gets the max_payload_size of this ScimServiceProviderConfigBulkFeature.
-        Maximum payload size.
+        The maximum payload size.
 
         :return: The max_payload_size of this ScimServiceProviderConfigBulkFeature.
         :rtype: int
@@ -116,7 +116,7 @@ class ScimServiceProviderConfigBulkFeature(object):
     def max_payload_size(self, max_payload_size):
         """
         Sets the max_payload_size of this ScimServiceProviderConfigBulkFeature.
-        Maximum payload size.
+        The maximum payload size.
 
         :param max_payload_size: The max_payload_size of this ScimServiceProviderConfigBulkFeature.
         :type: int

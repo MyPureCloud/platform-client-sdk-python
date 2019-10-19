@@ -49,8 +49,10 @@ class AnalyticsEvaluation(object):
             'context_id': 'str',
             'form_name': 'str',
             'calibration_id': 'str',
-            'o_total_critical_score': 'int',
-            'o_total_score': 'int'
+            'rescored': 'bool',
+            'deleted': 'bool',
+            'o_total_score': 'int',
+            'o_total_critical_score': 'int'
         }
 
         self.attribute_map = {
@@ -63,8 +65,10 @@ class AnalyticsEvaluation(object):
             'context_id': 'contextId',
             'form_name': 'formName',
             'calibration_id': 'calibrationId',
-            'o_total_critical_score': 'oTotalCriticalScore',
-            'o_total_score': 'oTotalScore'
+            'rescored': 'rescored',
+            'deleted': 'deleted',
+            'o_total_score': 'oTotalScore',
+            'o_total_critical_score': 'oTotalCriticalScore'
         }
 
         self._evaluation_id = None
@@ -76,8 +80,10 @@ class AnalyticsEvaluation(object):
         self._context_id = None
         self._form_name = None
         self._calibration_id = None
-        self._o_total_critical_score = None
+        self._rescored = None
+        self._deleted = None
         self._o_total_score = None
+        self._o_total_critical_score = None
 
     @property
     def evaluation_id(self):
@@ -287,27 +293,50 @@ class AnalyticsEvaluation(object):
         self._calibration_id = calibration_id
 
     @property
-    def o_total_critical_score(self):
+    def rescored(self):
         """
-        Gets the o_total_critical_score of this AnalyticsEvaluation.
+        Gets the rescored of this AnalyticsEvaluation.
+        Whether this evaluation has ever been rescored
 
-
-        :return: The o_total_critical_score of this AnalyticsEvaluation.
-        :rtype: int
+        :return: The rescored of this AnalyticsEvaluation.
+        :rtype: bool
         """
-        return self._o_total_critical_score
+        return self._rescored
 
-    @o_total_critical_score.setter
-    def o_total_critical_score(self, o_total_critical_score):
+    @rescored.setter
+    def rescored(self, rescored):
         """
-        Sets the o_total_critical_score of this AnalyticsEvaluation.
+        Sets the rescored of this AnalyticsEvaluation.
+        Whether this evaluation has ever been rescored
 
-
-        :param o_total_critical_score: The o_total_critical_score of this AnalyticsEvaluation.
-        :type: int
+        :param rescored: The rescored of this AnalyticsEvaluation.
+        :type: bool
         """
         
-        self._o_total_critical_score = o_total_critical_score
+        self._rescored = rescored
+
+    @property
+    def deleted(self):
+        """
+        Gets the deleted of this AnalyticsEvaluation.
+        Whether this evaluation has been deleted
+
+        :return: The deleted of this AnalyticsEvaluation.
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """
+        Sets the deleted of this AnalyticsEvaluation.
+        Whether this evaluation has been deleted
+
+        :param deleted: The deleted of this AnalyticsEvaluation.
+        :type: bool
+        """
+        
+        self._deleted = deleted
 
     @property
     def o_total_score(self):
@@ -331,6 +360,29 @@ class AnalyticsEvaluation(object):
         """
         
         self._o_total_score = o_total_score
+
+    @property
+    def o_total_critical_score(self):
+        """
+        Gets the o_total_critical_score of this AnalyticsEvaluation.
+
+
+        :return: The o_total_critical_score of this AnalyticsEvaluation.
+        :rtype: int
+        """
+        return self._o_total_critical_score
+
+    @o_total_critical_score.setter
+    def o_total_critical_score(self, o_total_critical_score):
+        """
+        Sets the o_total_critical_score of this AnalyticsEvaluation.
+
+
+        :param o_total_critical_score: The o_total_critical_score of this AnalyticsEvaluation.
+        :type: int
+        """
+        
+        self._o_total_critical_score = o_total_critical_score
 
     def to_dict(self):
         """

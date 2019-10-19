@@ -47,7 +47,8 @@ class EvaluationAggregationQuery(object):
             'filter': 'EvaluationAggregateQueryFilter',
             'metrics': 'list[str]',
             'flatten_multivalued_dimensions': 'bool',
-            'views': 'list[EvaluationAggregationView]'
+            'views': 'list[EvaluationAggregationView]',
+            'alternate_time_dimension': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class EvaluationAggregationQuery(object):
             'filter': 'filter',
             'metrics': 'metrics',
             'flatten_multivalued_dimensions': 'flattenMultivaluedDimensions',
-            'views': 'views'
+            'views': 'views',
+            'alternate_time_dimension': 'alternateTimeDimension'
         }
 
         self._interval = None
@@ -69,6 +71,7 @@ class EvaluationAggregationQuery(object):
         self._metrics = None
         self._flatten_multivalued_dimensions = None
         self._views = None
+        self._alternate_time_dimension = None
 
     @property
     def interval(self):
@@ -253,6 +256,33 @@ class EvaluationAggregationQuery(object):
         """
         
         self._views = views
+
+    @property
+    def alternate_time_dimension(self):
+        """
+        Gets the alternate_time_dimension of this EvaluationAggregationQuery.
+        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+
+        :return: The alternate_time_dimension of this EvaluationAggregationQuery.
+        :rtype: str
+        """
+        return self._alternate_time_dimension
+
+    @alternate_time_dimension.setter
+    def alternate_time_dimension(self, alternate_time_dimension):
+        """
+        Sets the alternate_time_dimension of this EvaluationAggregationQuery.
+        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+
+        :param alternate_time_dimension: The alternate_time_dimension of this EvaluationAggregationQuery.
+        :type: str
+        """
+        allowed_values = ["calibrationId", "contextId", "conversationId", "divisionId", "evaluationCreatedDate", "evaluationId", "evaluatorId", "formId", "queueId", "rescind", "rescored", "userId"]
+        if alternate_time_dimension.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for alternate_time_dimension -> " + alternate_time_dimension
+            self._alternate_time_dimension = "outdated_sdk_version"
+        else:
+            self._alternate_time_dimension = alternate_time_dimension
 
     def to_dict(self):
         """

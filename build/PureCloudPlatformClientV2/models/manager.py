@@ -79,7 +79,7 @@ class Manager(object):
     def ref(self):
         """
         Gets the ref of this Manager.
-        The URI of the manager's user record.
+        The reference URI of the manager's user record.
 
         :return: The ref of this Manager.
         :rtype: str
@@ -90,7 +90,7 @@ class Manager(object):
     def ref(self, ref):
         """
         Sets the ref of this Manager.
-        The URI of the manager's user record.
+        The reference URI of the manager's user record.
 
         :param ref: The ref of this Manager.
         :type: str

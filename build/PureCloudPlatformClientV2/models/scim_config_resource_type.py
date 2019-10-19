@@ -74,7 +74,7 @@ class ScimConfigResourceType(object):
     def id(self):
         """
         Gets the id of this ScimConfigResourceType.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :return: The id of this ScimConfigResourceType.
         :rtype: str
@@ -85,7 +85,7 @@ class ScimConfigResourceType(object):
     def id(self, id):
         """
         Sets the id of this ScimConfigResourceType.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :param id: The id of this ScimConfigResourceType.
         :type: str
@@ -97,7 +97,7 @@ class ScimConfigResourceType(object):
     def schemas(self):
         """
         Gets the schemas of this ScimConfigResourceType.
-        schemas supported
+        The list of supported schemas.
 
         :return: The schemas of this ScimConfigResourceType.
         :rtype: list[str]
@@ -108,7 +108,7 @@ class ScimConfigResourceType(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimConfigResourceType.
-        schemas supported
+        The list of supported schemas.
 
         :param schemas: The schemas of this ScimConfigResourceType.
         :type: list[str]
@@ -120,7 +120,7 @@ class ScimConfigResourceType(object):
     def name(self):
         """
         Gets the name of this ScimConfigResourceType.
-        Resource name.
+        The name of the resource type.
 
         :return: The name of this ScimConfigResourceType.
         :rtype: str
@@ -131,7 +131,7 @@ class ScimConfigResourceType(object):
     def name(self, name):
         """
         Sets the name of this ScimConfigResourceType.
-        Resource name.
+        The name of the resource type.
 
         :param name: The name of this ScimConfigResourceType.
         :type: str
@@ -143,7 +143,7 @@ class ScimConfigResourceType(object):
     def description(self):
         """
         Gets the description of this ScimConfigResourceType.
-        Resource description.
+        The description of the resource type.
 
         :return: The description of this ScimConfigResourceType.
         :rtype: str
@@ -154,7 +154,7 @@ class ScimConfigResourceType(object):
     def description(self, description):
         """
         Sets the description of this ScimConfigResourceType.
-        Resource description.
+        The description of the resource type.
 
         :param description: The description of this ScimConfigResourceType.
         :type: str
@@ -166,7 +166,7 @@ class ScimConfigResourceType(object):
     def schema(self):
         """
         Gets the schema of this ScimConfigResourceType.
-        The resource type's primary/base schema URI.
+        The URI of the primary or base schema for the resource type.
 
         :return: The schema of this ScimConfigResourceType.
         :rtype: str
@@ -177,7 +177,7 @@ class ScimConfigResourceType(object):
     def schema(self, schema):
         """
         Sets the schema of this ScimConfigResourceType.
-        The resource type's primary/base schema URI.
+        The URI of the primary or base schema for the resource type.
 
         :param schema: The schema of this ScimConfigResourceType.
         :type: str
@@ -189,7 +189,7 @@ class ScimConfigResourceType(object):
     def schema_extensions(self):
         """
         Gets the schema_extensions of this ScimConfigResourceType.
-        Resource extension schemas
+        The list of schema extensions for the resource type.
 
         :return: The schema_extensions of this ScimConfigResourceType.
         :rtype: list[ScimConfigResourceTypeSchemaExtension]
@@ -200,7 +200,7 @@ class ScimConfigResourceType(object):
     def schema_extensions(self, schema_extensions):
         """
         Sets the schema_extensions of this ScimConfigResourceType.
-        Resource extension schemas
+        The list of schema extensions for the resource type.
 
         :param schema_extensions: The schema_extensions of this ScimConfigResourceType.
         :type: list[ScimConfigResourceTypeSchemaExtension]
@@ -212,7 +212,7 @@ class ScimConfigResourceType(object):
     def endpoint(self):
         """
         Gets the endpoint of this ScimConfigResourceType.
-        Resource HTTP endpoint.
+        The HTTP-addressable endpoint of the resource type. Appears after the base URL.
 
         :return: The endpoint of this ScimConfigResourceType.
         :rtype: str
@@ -223,7 +223,7 @@ class ScimConfigResourceType(object):
     def endpoint(self, endpoint):
         """
         Sets the endpoint of this ScimConfigResourceType.
-        Resource HTTP endpoint.
+        The HTTP-addressable endpoint of the resource type. Appears after the base URL.
 
         :param endpoint: The endpoint of this ScimConfigResourceType.
         :type: str

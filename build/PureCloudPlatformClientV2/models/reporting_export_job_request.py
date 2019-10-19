@@ -49,7 +49,8 @@ class ReportingExportJobRequest(object):
             'filter': 'ViewFilter',
             'read': 'bool',
             'locale': 'str',
-            'has_format_durations': 'bool'
+            'has_format_durations': 'bool',
+            'has_split_filters': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ReportingExportJobRequest(object):
             'filter': 'filter',
             'read': 'read',
             'locale': 'locale',
-            'has_format_durations': 'hasFormatDurations'
+            'has_format_durations': 'hasFormatDurations',
+            'has_split_filters': 'hasSplitFilters'
         }
 
         self._name = None
@@ -75,6 +77,7 @@ class ReportingExportJobRequest(object):
         self._read = None
         self._locale = None
         self._has_format_durations = None
+        self._has_split_filters = None
 
     @property
     def name(self):
@@ -313,6 +316,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._has_format_durations = has_format_durations
+
+    @property
+    def has_split_filters(self):
+        """
+        Gets the has_split_filters of this ReportingExportJobRequest.
+        Indicates if filters will be split in aggregate detail exports
+
+        :return: The has_split_filters of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._has_split_filters
+
+    @has_split_filters.setter
+    def has_split_filters(self, has_split_filters):
+        """
+        Sets the has_split_filters of this ReportingExportJobRequest.
+        Indicates if filters will be split in aggregate detail exports
+
+        :param has_split_filters: The has_split_filters of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._has_split_filters = has_split_filters
 
     def to_dict(self):
         """

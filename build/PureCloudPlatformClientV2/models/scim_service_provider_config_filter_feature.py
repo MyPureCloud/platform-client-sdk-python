@@ -56,7 +56,7 @@ class ScimServiceProviderConfigFilterFeature(object):
     def supported(self):
         """
         Gets the supported of this ScimServiceProviderConfigFilterFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :return: The supported of this ScimServiceProviderConfigFilterFeature.
         :rtype: bool
@@ -67,7 +67,7 @@ class ScimServiceProviderConfigFilterFeature(object):
     def supported(self, supported):
         """
         Sets the supported of this ScimServiceProviderConfigFilterFeature.
-        Indicates if configuration options is supported.
+        Indicates whether configuration options are supported.
 
         :param supported: The supported of this ScimServiceProviderConfigFilterFeature.
         :type: bool
@@ -79,7 +79,7 @@ class ScimServiceProviderConfigFilterFeature(object):
     def max_results(self):
         """
         Gets the max_results of this ScimServiceProviderConfigFilterFeature.
-        Maximum results returned from filtered query.
+        The maximum number of results returned from a filtered query.
 
         :return: The max_results of this ScimServiceProviderConfigFilterFeature.
         :rtype: int
@@ -90,7 +90,7 @@ class ScimServiceProviderConfigFilterFeature(object):
     def max_results(self, max_results):
         """
         Sets the max_results of this ScimServiceProviderConfigFilterFeature.
-        Maximum results returned from filtered query.
+        The maximum number of results returned from a filtered query.
 
         :param max_results: The max_results of this ScimServiceProviderConfigFilterFeature.
         :type: int

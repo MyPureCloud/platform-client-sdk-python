@@ -65,7 +65,7 @@ class ScimV2Group(object):
     def id(self):
         """
         Gets the id of this ScimV2Group.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :return: The id of this ScimV2Group.
         :rtype: str
@@ -76,7 +76,7 @@ class ScimV2Group(object):
     def id(self, id):
         """
         Sets the id of this ScimV2Group.
-        The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
 
         :param id: The id of this ScimV2Group.
         :type: str
@@ -111,7 +111,7 @@ class ScimV2Group(object):
     def display_name(self):
         """
         Gets the display_name of this ScimV2Group.
-        The display name for the group.
+        The display name of the group.
 
         :return: The display_name of this ScimV2Group.
         :rtype: str
@@ -122,7 +122,7 @@ class ScimV2Group(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ScimV2Group.
-        The display name for the group.
+        The display name of the group.
 
         :param display_name: The display_name of this ScimV2Group.
         :type: str
@@ -134,7 +134,7 @@ class ScimV2Group(object):
     def members(self):
         """
         Gets the members of this ScimV2Group.
-        A list of members in a SCIM group.
+        The list of members in the group.
 
         :return: The members of this ScimV2Group.
         :rtype: list[ScimV2MemberReference]
@@ -145,7 +145,7 @@ class ScimV2Group(object):
     def members(self, members):
         """
         Sets the members of this ScimV2Group.
-        A list of members in a SCIM group.
+        The list of members in the group.
 
         :param members: The members of this ScimV2Group.
         :type: list[ScimV2MemberReference]

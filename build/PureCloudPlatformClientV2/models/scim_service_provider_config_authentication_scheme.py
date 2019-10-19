@@ -68,7 +68,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def name(self):
         """
         Gets the name of this ScimServiceProviderConfigAuthenticationScheme.
-        Name
+        The name of the authentication scheme, for example, HTTP Basic.
 
         :return: The name of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: str
@@ -79,7 +79,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def name(self, name):
         """
         Sets the name of this ScimServiceProviderConfigAuthenticationScheme.
-        Name
+        The name of the authentication scheme, for example, HTTP Basic.
 
         :param name: The name of this ScimServiceProviderConfigAuthenticationScheme.
         :type: str
@@ -91,7 +91,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def description(self):
         """
         Gets the description of this ScimServiceProviderConfigAuthenticationScheme.
-        Description
+        The description of the authentication scheme.
 
         :return: The description of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: str
@@ -102,7 +102,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def description(self, description):
         """
         Sets the description of this ScimServiceProviderConfigAuthenticationScheme.
-        Description
+        The description of the authentication scheme.
 
         :param description: The description of this ScimServiceProviderConfigAuthenticationScheme.
         :type: str
@@ -114,7 +114,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def spec_uri(self):
         """
         Gets the spec_uri of this ScimServiceProviderConfigAuthenticationScheme.
-        An HTTP-addressable URL pointing to the authentication scheme's specification.
+        The HTTP-addressable URL that points to the authentication scheme's specification.
 
         :return: The spec_uri of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: str
@@ -125,7 +125,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def spec_uri(self, spec_uri):
         """
         Sets the spec_uri of this ScimServiceProviderConfigAuthenticationScheme.
-        An HTTP-addressable URL pointing to the authentication scheme's specification.
+        The HTTP-addressable URL that points to the authentication scheme's specification.
 
         :param spec_uri: The spec_uri of this ScimServiceProviderConfigAuthenticationScheme.
         :type: str
@@ -137,7 +137,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def documentation_uri(self):
         """
         Gets the documentation_uri of this ScimServiceProviderConfigAuthenticationScheme.
-        An HTTP-addressable URL pointing to the authentication scheme's usage documentation
+        The HTTP-addressable URL that points to the authentication scheme's usage documentation.
 
         :return: The documentation_uri of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: str
@@ -148,7 +148,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def documentation_uri(self, documentation_uri):
         """
         Sets the documentation_uri of this ScimServiceProviderConfigAuthenticationScheme.
-        An HTTP-addressable URL pointing to the authentication scheme's usage documentation
+        The HTTP-addressable URL that points to the authentication scheme's usage documentation.
 
         :param documentation_uri: The documentation_uri of this ScimServiceProviderConfigAuthenticationScheme.
         :type: str
@@ -160,7 +160,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def type(self):
         """
         Gets the type of this ScimServiceProviderConfigAuthenticationScheme.
-        The authentication type.
+        The type of authentication scheme.
 
         :return: The type of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: str
@@ -171,7 +171,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def type(self, type):
         """
         Sets the type of this ScimServiceProviderConfigAuthenticationScheme.
-        The authentication type.
+        The type of authentication scheme.
 
         :param type: The type of this ScimServiceProviderConfigAuthenticationScheme.
         :type: str
@@ -187,7 +187,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def primary(self):
         """
         Gets the primary of this ScimServiceProviderConfigAuthenticationScheme.
-        Indication of primary method of authentication.
+        Indicates the primary method of authentication.
 
         :return: The primary of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: bool
@@ -198,7 +198,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def primary(self, primary):
         """
         Sets the primary of this ScimServiceProviderConfigAuthenticationScheme.
-        Indication of primary method of authentication.
+        Indicates the primary method of authentication.
 
         :param primary: The primary of this ScimServiceProviderConfigAuthenticationScheme.
         :type: bool

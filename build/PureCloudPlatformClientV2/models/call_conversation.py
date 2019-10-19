@@ -45,6 +45,7 @@ class CallConversation(object):
             'participants': 'list[CallMediaParticipant]',
             'other_media_uris': 'list[str]',
             'recording_state': 'str',
+            'max_participants': 'int',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class CallConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'recording_state': 'recordingState',
+            'max_participants': 'maxParticipants',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class CallConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._recording_state = None
+        self._max_participants = None
         self._self_uri = None
 
     @property
@@ -182,6 +185,29 @@ class CallConversation(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def max_participants(self):
+        """
+        Gets the max_participants of this CallConversation.
+        If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
+
+        :return: The max_participants of this CallConversation.
+        :rtype: int
+        """
+        return self._max_participants
+
+    @max_participants.setter
+    def max_participants(self, max_participants):
+        """
+        Sets the max_participants of this CallConversation.
+        If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
+
+        :param max_participants: The max_participants of this CallConversation.
+        :type: int
+        """
+        
+        self._max_participants = max_participants
 
     @property
     def self_uri(self):
