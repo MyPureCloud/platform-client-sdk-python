@@ -42,18 +42,21 @@ class SchedulingSettings(object):
         self.swagger_types = {
             'max_occupancy_percent_for_deferred_work': 'int',
             'default_shrinkage_percent': 'float',
-            'shrinkage_overrides': 'ShrinkageOverrides'
+            'shrinkage_overrides': 'ShrinkageOverrides',
+            'planning_period': 'PlanningPeriodSettings'
         }
 
         self.attribute_map = {
             'max_occupancy_percent_for_deferred_work': 'maxOccupancyPercentForDeferredWork',
             'default_shrinkage_percent': 'defaultShrinkagePercent',
-            'shrinkage_overrides': 'shrinkageOverrides'
+            'shrinkage_overrides': 'shrinkageOverrides',
+            'planning_period': 'planningPeriod'
         }
 
         self._max_occupancy_percent_for_deferred_work = None
         self._default_shrinkage_percent = None
         self._shrinkage_overrides = None
+        self._planning_period = None
 
     @property
     def max_occupancy_percent_for_deferred_work(self):
@@ -123,6 +126,29 @@ class SchedulingSettings(object):
         """
         
         self._shrinkage_overrides = shrinkage_overrides
+
+    @property
+    def planning_period(self):
+        """
+        Gets the planning_period of this SchedulingSettings.
+        Planning period settings for scheduling
+
+        :return: The planning_period of this SchedulingSettings.
+        :rtype: PlanningPeriodSettings
+        """
+        return self._planning_period
+
+    @planning_period.setter
+    def planning_period(self, planning_period):
+        """
+        Sets the planning_period of this SchedulingSettings.
+        Planning period settings for scheduling
+
+        :param planning_period: The planning_period of this SchedulingSettings.
+        :type: PlanningPeriodSettings
+        """
+        
+        self._planning_period = planning_period
 
     def to_dict(self):
         """

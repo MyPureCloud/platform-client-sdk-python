@@ -52,6 +52,17 @@ class CreateWorkPlan(object):
             'constrain_minimum_time_between_shifts': 'bool',
             'minimum_time_between_shifts_minutes': 'int',
             'maximum_days': 'int',
+            'start_day_of_weekend': 'str',
+            'minimum_consecutive_time_off_per_week_minutes': 'int',
+            'constrain_maximum_consecutive_working_weekends': 'bool',
+            'maximum_consecutive_working_weekends': 'int',
+            'minimum_working_days_per_week': 'int',
+            'maximum_consecutive_working_days': 'int',
+            'minimum_shift_start_distance_minutes': 'int',
+            'minimum_days_off_per_planning_period': 'int',
+            'maximum_days_off_per_planning_period': 'int',
+            'minimum_paid_hours_per_planning_period': 'int',
+            'maximum_paid_hours_per_planning_period': 'int',
             'optional_days': 'SetWrapperDayOfWeek',
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[CreateWorkPlanShift]',
@@ -71,6 +82,17 @@ class CreateWorkPlan(object):
             'constrain_minimum_time_between_shifts': 'constrainMinimumTimeBetweenShifts',
             'minimum_time_between_shifts_minutes': 'minimumTimeBetweenShiftsMinutes',
             'maximum_days': 'maximumDays',
+            'start_day_of_weekend': 'startDayOfWeekend',
+            'minimum_consecutive_time_off_per_week_minutes': 'minimumConsecutiveTimeOffPerWeekMinutes',
+            'constrain_maximum_consecutive_working_weekends': 'constrainMaximumConsecutiveWorkingWeekends',
+            'maximum_consecutive_working_weekends': 'maximumConsecutiveWorkingWeekends',
+            'minimum_working_days_per_week': 'minimumWorkingDaysPerWeek',
+            'maximum_consecutive_working_days': 'maximumConsecutiveWorkingDays',
+            'minimum_shift_start_distance_minutes': 'minimumShiftStartDistanceMinutes',
+            'minimum_days_off_per_planning_period': 'minimumDaysOffPerPlanningPeriod',
+            'maximum_days_off_per_planning_period': 'maximumDaysOffPerPlanningPeriod',
+            'minimum_paid_hours_per_planning_period': 'minimumPaidHoursPerPlanningPeriod',
+            'maximum_paid_hours_per_planning_period': 'maximumPaidHoursPerPlanningPeriod',
             'optional_days': 'optionalDays',
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
@@ -89,6 +111,17 @@ class CreateWorkPlan(object):
         self._constrain_minimum_time_between_shifts = None
         self._minimum_time_between_shifts_minutes = None
         self._maximum_days = None
+        self._start_day_of_weekend = None
+        self._minimum_consecutive_time_off_per_week_minutes = None
+        self._constrain_maximum_consecutive_working_weekends = None
+        self._maximum_consecutive_working_weekends = None
+        self._minimum_working_days_per_week = None
+        self._maximum_consecutive_working_days = None
+        self._minimum_shift_start_distance_minutes = None
+        self._minimum_days_off_per_planning_period = None
+        self._maximum_days_off_per_planning_period = None
+        self._minimum_paid_hours_per_planning_period = None
+        self._maximum_paid_hours_per_planning_period = None
         self._optional_days = None
         self._shift_start_variances = None
         self._shifts = None
@@ -369,6 +402,263 @@ class CreateWorkPlan(object):
         """
         
         self._maximum_days = maximum_days
+
+    @property
+    def start_day_of_weekend(self):
+        """
+        Gets the start_day_of_weekend of this CreateWorkPlan.
+        The day of the week for which the weekend starts, such as Saturday
+
+        :return: The start_day_of_weekend of this CreateWorkPlan.
+        :rtype: str
+        """
+        return self._start_day_of_weekend
+
+    @start_day_of_weekend.setter
+    def start_day_of_weekend(self, start_day_of_weekend):
+        """
+        Sets the start_day_of_weekend of this CreateWorkPlan.
+        The day of the week for which the weekend starts, such as Saturday
+
+        :param start_day_of_weekend: The start_day_of_weekend of this CreateWorkPlan.
+        :type: str
+        """
+        allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        if start_day_of_weekend.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for start_day_of_weekend -> " + start_day_of_weekend
+            self._start_day_of_weekend = "outdated_sdk_version"
+        else:
+            self._start_day_of_weekend = start_day_of_weekend
+
+    @property
+    def minimum_consecutive_time_off_per_week_minutes(self):
+        """
+        Gets the minimum_consecutive_time_off_per_week_minutes of this CreateWorkPlan.
+        Minimum amount of consecutive time off per week that agents who are assigned this work plan are allowed to have off
+
+        :return: The minimum_consecutive_time_off_per_week_minutes of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._minimum_consecutive_time_off_per_week_minutes
+
+    @minimum_consecutive_time_off_per_week_minutes.setter
+    def minimum_consecutive_time_off_per_week_minutes(self, minimum_consecutive_time_off_per_week_minutes):
+        """
+        Sets the minimum_consecutive_time_off_per_week_minutes of this CreateWorkPlan.
+        Minimum amount of consecutive time off per week that agents who are assigned this work plan are allowed to have off
+
+        :param minimum_consecutive_time_off_per_week_minutes: The minimum_consecutive_time_off_per_week_minutes of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._minimum_consecutive_time_off_per_week_minutes = minimum_consecutive_time_off_per_week_minutes
+
+    @property
+    def constrain_maximum_consecutive_working_weekends(self):
+        """
+        Gets the constrain_maximum_consecutive_working_weekends of this CreateWorkPlan.
+        Whether to constrain the maximum consecutive working weekends
+
+        :return: The constrain_maximum_consecutive_working_weekends of this CreateWorkPlan.
+        :rtype: bool
+        """
+        return self._constrain_maximum_consecutive_working_weekends
+
+    @constrain_maximum_consecutive_working_weekends.setter
+    def constrain_maximum_consecutive_working_weekends(self, constrain_maximum_consecutive_working_weekends):
+        """
+        Sets the constrain_maximum_consecutive_working_weekends of this CreateWorkPlan.
+        Whether to constrain the maximum consecutive working weekends
+
+        :param constrain_maximum_consecutive_working_weekends: The constrain_maximum_consecutive_working_weekends of this CreateWorkPlan.
+        :type: bool
+        """
+        
+        self._constrain_maximum_consecutive_working_weekends = constrain_maximum_consecutive_working_weekends
+
+    @property
+    def maximum_consecutive_working_weekends(self):
+        """
+        Gets the maximum_consecutive_working_weekends of this CreateWorkPlan.
+        The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
+
+        :return: The maximum_consecutive_working_weekends of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._maximum_consecutive_working_weekends
+
+    @maximum_consecutive_working_weekends.setter
+    def maximum_consecutive_working_weekends(self, maximum_consecutive_working_weekends):
+        """
+        Sets the maximum_consecutive_working_weekends of this CreateWorkPlan.
+        The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
+
+        :param maximum_consecutive_working_weekends: The maximum_consecutive_working_weekends of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._maximum_consecutive_working_weekends = maximum_consecutive_working_weekends
+
+    @property
+    def minimum_working_days_per_week(self):
+        """
+        Gets the minimum_working_days_per_week of this CreateWorkPlan.
+        The minimum number of days that agents assigned to a work plan must work per week
+
+        :return: The minimum_working_days_per_week of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._minimum_working_days_per_week
+
+    @minimum_working_days_per_week.setter
+    def minimum_working_days_per_week(self, minimum_working_days_per_week):
+        """
+        Sets the minimum_working_days_per_week of this CreateWorkPlan.
+        The minimum number of days that agents assigned to a work plan must work per week
+
+        :param minimum_working_days_per_week: The minimum_working_days_per_week of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._minimum_working_days_per_week = minimum_working_days_per_week
+
+    @property
+    def maximum_consecutive_working_days(self):
+        """
+        Gets the maximum_consecutive_working_days of this CreateWorkPlan.
+        The maximum number of consecutive days that agents assigned to this work plan are allowed to work
+
+        :return: The maximum_consecutive_working_days of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._maximum_consecutive_working_days
+
+    @maximum_consecutive_working_days.setter
+    def maximum_consecutive_working_days(self, maximum_consecutive_working_days):
+        """
+        Sets the maximum_consecutive_working_days of this CreateWorkPlan.
+        The maximum number of consecutive days that agents assigned to this work plan are allowed to work
+
+        :param maximum_consecutive_working_days: The maximum_consecutive_working_days of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._maximum_consecutive_working_days = maximum_consecutive_working_days
+
+    @property
+    def minimum_shift_start_distance_minutes(self):
+        """
+        Gets the minimum_shift_start_distance_minutes of this CreateWorkPlan.
+        The time period in minutes for the duration between the start times of two consecutive working days
+
+        :return: The minimum_shift_start_distance_minutes of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._minimum_shift_start_distance_minutes
+
+    @minimum_shift_start_distance_minutes.setter
+    def minimum_shift_start_distance_minutes(self, minimum_shift_start_distance_minutes):
+        """
+        Sets the minimum_shift_start_distance_minutes of this CreateWorkPlan.
+        The time period in minutes for the duration between the start times of two consecutive working days
+
+        :param minimum_shift_start_distance_minutes: The minimum_shift_start_distance_minutes of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._minimum_shift_start_distance_minutes = minimum_shift_start_distance_minutes
+
+    @property
+    def minimum_days_off_per_planning_period(self):
+        """
+        Gets the minimum_days_off_per_planning_period of this CreateWorkPlan.
+        Minimum days off in the planning period
+
+        :return: The minimum_days_off_per_planning_period of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._minimum_days_off_per_planning_period
+
+    @minimum_days_off_per_planning_period.setter
+    def minimum_days_off_per_planning_period(self, minimum_days_off_per_planning_period):
+        """
+        Sets the minimum_days_off_per_planning_period of this CreateWorkPlan.
+        Minimum days off in the planning period
+
+        :param minimum_days_off_per_planning_period: The minimum_days_off_per_planning_period of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._minimum_days_off_per_planning_period = minimum_days_off_per_planning_period
+
+    @property
+    def maximum_days_off_per_planning_period(self):
+        """
+        Gets the maximum_days_off_per_planning_period of this CreateWorkPlan.
+        Maximum days off in the planning period
+
+        :return: The maximum_days_off_per_planning_period of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._maximum_days_off_per_planning_period
+
+    @maximum_days_off_per_planning_period.setter
+    def maximum_days_off_per_planning_period(self, maximum_days_off_per_planning_period):
+        """
+        Sets the maximum_days_off_per_planning_period of this CreateWorkPlan.
+        Maximum days off in the planning period
+
+        :param maximum_days_off_per_planning_period: The maximum_days_off_per_planning_period of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._maximum_days_off_per_planning_period = maximum_days_off_per_planning_period
+
+    @property
+    def minimum_paid_hours_per_planning_period(self):
+        """
+        Gets the minimum_paid_hours_per_planning_period of this CreateWorkPlan.
+        Minimum paid hours in the planning period
+
+        :return: The minimum_paid_hours_per_planning_period of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._minimum_paid_hours_per_planning_period
+
+    @minimum_paid_hours_per_planning_period.setter
+    def minimum_paid_hours_per_planning_period(self, minimum_paid_hours_per_planning_period):
+        """
+        Sets the minimum_paid_hours_per_planning_period of this CreateWorkPlan.
+        Minimum paid hours in the planning period
+
+        :param minimum_paid_hours_per_planning_period: The minimum_paid_hours_per_planning_period of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._minimum_paid_hours_per_planning_period = minimum_paid_hours_per_planning_period
+
+    @property
+    def maximum_paid_hours_per_planning_period(self):
+        """
+        Gets the maximum_paid_hours_per_planning_period of this CreateWorkPlan.
+        Maximum paid hours in the planning period
+
+        :return: The maximum_paid_hours_per_planning_period of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._maximum_paid_hours_per_planning_period
+
+    @maximum_paid_hours_per_planning_period.setter
+    def maximum_paid_hours_per_planning_period(self, maximum_paid_hours_per_planning_period):
+        """
+        Sets the maximum_paid_hours_per_planning_period of this CreateWorkPlan.
+        Maximum paid hours in the planning period
+
+        :param maximum_paid_hours_per_planning_period: The maximum_paid_hours_per_planning_period of this CreateWorkPlan.
+        :type: int
+        """
+        
+        self._maximum_paid_hours_per_planning_period = maximum_paid_hours_per_planning_period
 
     @property
     def optional_days(self):

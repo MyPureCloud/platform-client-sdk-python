@@ -1023,6 +1023,7 @@ from .phones_reboot import PhonesReboot
 from .photo import Photo
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
+from .planning_period_settings import PlanningPeriodSettings
 from .policy import Policy
 from .policy_actions import PolicyActions
 from .policy_conditions import PolicyConditions

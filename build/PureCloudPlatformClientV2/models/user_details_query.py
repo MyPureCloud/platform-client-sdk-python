@@ -42,33 +42,33 @@ class UserDetailsQuery(object):
         self.swagger_types = {
             'interval': 'str',
             'user_filters': 'list[UserDetailQueryFilter]',
+            'presence_filters': 'list[PresenceDetailQueryFilter]',
             'routing_status_filters': 'list[RoutingStatusDetailQueryFilter]',
             'order': 'str',
             'presence_aggregations': 'list[AnalyticsQueryAggregation]',
             'routing_status_aggregations': 'list[AnalyticsQueryAggregation]',
-            'paging': 'PagingSpec',
-            'presence_detail_filters': 'list[PresenceDetailQueryFilter]'
+            'paging': 'PagingSpec'
         }
 
         self.attribute_map = {
             'interval': 'interval',
             'user_filters': 'userFilters',
+            'presence_filters': 'presenceFilters',
             'routing_status_filters': 'routingStatusFilters',
             'order': 'order',
             'presence_aggregations': 'presenceAggregations',
             'routing_status_aggregations': 'routingStatusAggregations',
-            'paging': 'paging',
-            'presence_detail_filters': 'presenceDetailFilters'
+            'paging': 'paging'
         }
 
         self._interval = None
         self._user_filters = None
+        self._presence_filters = None
         self._routing_status_filters = None
         self._order = None
         self._presence_aggregations = None
         self._routing_status_aggregations = None
         self._paging = None
-        self._presence_detail_filters = None
 
     @property
     def interval(self):
@@ -115,6 +115,29 @@ class UserDetailsQuery(object):
         """
         
         self._user_filters = user_filters
+
+    @property
+    def presence_filters(self):
+        """
+        Gets the presence_filters of this UserDetailsQuery.
+        Filters that target system and organization presence-level data
+
+        :return: The presence_filters of this UserDetailsQuery.
+        :rtype: list[PresenceDetailQueryFilter]
+        """
+        return self._presence_filters
+
+    @presence_filters.setter
+    def presence_filters(self, presence_filters):
+        """
+        Sets the presence_filters of this UserDetailsQuery.
+        Filters that target system and organization presence-level data
+
+        :param presence_filters: The presence_filters of this UserDetailsQuery.
+        :type: list[PresenceDetailQueryFilter]
+        """
+        
+        self._presence_filters = presence_filters
 
     @property
     def routing_status_filters(self):
@@ -234,29 +257,6 @@ class UserDetailsQuery(object):
         """
         
         self._paging = paging
-
-    @property
-    def presence_detail_filters(self):
-        """
-        Gets the presence_detail_filters of this UserDetailsQuery.
-
-
-        :return: The presence_detail_filters of this UserDetailsQuery.
-        :rtype: list[PresenceDetailQueryFilter]
-        """
-        return self._presence_detail_filters
-
-    @presence_detail_filters.setter
-    def presence_detail_filters(self, presence_detail_filters):
-        """
-        Sets the presence_detail_filters of this UserDetailsQuery.
-
-
-        :param presence_detail_filters: The presence_detail_filters of this UserDetailsQuery.
-        :type: list[PresenceDetailQueryFilter]
-        """
-        
-        self._presence_detail_filters = presence_detail_filters
 
     def to_dict(self):
         """

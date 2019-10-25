@@ -14,7 +14,10 @@ title: CreateWorkPlanShift
 | **earliest_start_time_minutes_from_midnight** | **int** | Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true | [optional] |
 | **latest_start_time_minutes_from_midnight** | **int** | Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true | [optional] |
 | **constrain_stop_time** | **bool** | Whether the latest stop time constraint for the shift is enabled | [optional] |
+| **constrain_latest_stop_time** | **bool** | Whether the latest stop time constraint for the shift is enabled | [optional] |
 | **latest_stop_time_minutes_from_midnight** | **int** | Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime == true | [optional] |
+| **constrain_earliest_stop_time** | **bool** | Whether the earliest stop time constraint for the shift is enabled | [optional] |
+| **earliest_stop_time_minutes_from_midnight** | **int** | This is the earliest time a shift can end | [optional] |
 | **start_increment_minutes** | **int** | Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime == true | [optional] |
 | **flexible_paid_time** | **bool** | Whether the paid time setting for the shift is flexible | [optional] |
 | **exact_paid_time_minutes** | **int** | Exact paid time in minutes configured for the shift. Used if flexiblePaidTime == false | [optional] |
@@ -23,6 +26,10 @@ title: CreateWorkPlanShift
 | **constrain_contiguous_work_time** | **bool** | Whether the contiguous time constraint for the shift is enabled | [optional] |
 | **minimum_contiguous_work_time_minutes** | **int** | Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true | [optional] |
 | **maximum_contiguous_work_time_minutes** | **int** | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true | [optional] |
+| **synchronize_agents_schedules** | **bool** | Whether synchronization for agent is enabled | [optional] |
+| **synchronization_type** | **str** | This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true | [optional] |
+| **constrain_day_off** | **bool** | Whether day off rule is enabled | [optional] |
+| **day_off_rule** | **str** | The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true | [optional] |
 | **activities** | [**list[CreateWorkPlanActivity]**](CreateWorkPlanActivity.html) | Activities configured for this shift | [optional] |
 {: class="table table-striped"}
 
