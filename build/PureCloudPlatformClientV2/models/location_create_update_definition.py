@@ -41,37 +41,37 @@ class LocationCreateUpdateDefinition(object):
         """
         self.swagger_types = {
             'name': 'str',
-            'address': 'LocationAddress',
-            'emergency_number': 'LocationEmergencyNumber',
             'version': 'int',
             'state': 'str',
+            'path': 'list[str]',
+            'address_verified': 'bool',
             'notes': 'str',
             'contact_user': 'str',
-            'path': 'list[str]',
-            'address_verified': 'bool'
+            'emergency_number': 'LocationEmergencyNumber',
+            'address': 'LocationAddress'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'address': 'address',
-            'emergency_number': 'emergencyNumber',
             'version': 'version',
             'state': 'state',
+            'path': 'path',
+            'address_verified': 'addressVerified',
             'notes': 'notes',
             'contact_user': 'contactUser',
-            'path': 'path',
-            'address_verified': 'addressVerified'
+            'emergency_number': 'emergencyNumber',
+            'address': 'address'
         }
 
         self._name = None
-        self._address = None
-        self._emergency_number = None
         self._version = None
         self._state = None
-        self._notes = None
-        self._contact_user = None
         self._path = None
         self._address_verified = None
+        self._notes = None
+        self._contact_user = None
+        self._emergency_number = None
+        self._address = None
 
     @property
     def name(self):
@@ -97,56 +97,10 @@ class LocationCreateUpdateDefinition(object):
         self._name = name
 
     @property
-    def address(self):
-        """
-        Gets the address of this LocationCreateUpdateDefinition.
-
-
-        :return: The address of this LocationCreateUpdateDefinition.
-        :rtype: LocationAddress
-        """
-        return self._address
-
-    @address.setter
-    def address(self, address):
-        """
-        Sets the address of this LocationCreateUpdateDefinition.
-
-
-        :param address: The address of this LocationCreateUpdateDefinition.
-        :type: LocationAddress
-        """
-        
-        self._address = address
-
-    @property
-    def emergency_number(self):
-        """
-        Gets the emergency_number of this LocationCreateUpdateDefinition.
-
-
-        :return: The emergency_number of this LocationCreateUpdateDefinition.
-        :rtype: LocationEmergencyNumber
-        """
-        return self._emergency_number
-
-    @emergency_number.setter
-    def emergency_number(self, emergency_number):
-        """
-        Sets the emergency_number of this LocationCreateUpdateDefinition.
-
-
-        :param emergency_number: The emergency_number of this LocationCreateUpdateDefinition.
-        :type: LocationEmergencyNumber
-        """
-        
-        self._emergency_number = emergency_number
-
-    @property
     def version(self):
         """
         Gets the version of this LocationCreateUpdateDefinition.
-
+        Current version of the location
 
         :return: The version of this LocationCreateUpdateDefinition.
         :rtype: int
@@ -157,7 +111,7 @@ class LocationCreateUpdateDefinition(object):
     def version(self, version):
         """
         Sets the version of this LocationCreateUpdateDefinition.
-
+        Current version of the location
 
         :param version: The version of this LocationCreateUpdateDefinition.
         :type: int
@@ -193,10 +147,56 @@ class LocationCreateUpdateDefinition(object):
             self._state = state
 
     @property
+    def path(self):
+        """
+        Gets the path of this LocationCreateUpdateDefinition.
+        A list of ancestor ids
+
+        :return: The path of this LocationCreateUpdateDefinition.
+        :rtype: list[str]
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """
+        Sets the path of this LocationCreateUpdateDefinition.
+        A list of ancestor ids
+
+        :param path: The path of this LocationCreateUpdateDefinition.
+        :type: list[str]
+        """
+        
+        self._path = path
+
+    @property
+    def address_verified(self):
+        """
+        Gets the address_verified of this LocationCreateUpdateDefinition.
+
+
+        :return: The address_verified of this LocationCreateUpdateDefinition.
+        :rtype: bool
+        """
+        return self._address_verified
+
+    @address_verified.setter
+    def address_verified(self, address_verified):
+        """
+        Sets the address_verified of this LocationCreateUpdateDefinition.
+
+
+        :param address_verified: The address_verified of this LocationCreateUpdateDefinition.
+        :type: bool
+        """
+        
+        self._address_verified = address_verified
+
+    @property
     def notes(self):
         """
         Gets the notes of this LocationCreateUpdateDefinition.
-
+        Notes for the location
 
         :return: The notes of this LocationCreateUpdateDefinition.
         :rtype: str
@@ -207,7 +207,7 @@ class LocationCreateUpdateDefinition(object):
     def notes(self, notes):
         """
         Sets the notes of this LocationCreateUpdateDefinition.
-
+        Notes for the location
 
         :param notes: The notes of this LocationCreateUpdateDefinition.
         :type: str
@@ -239,50 +239,50 @@ class LocationCreateUpdateDefinition(object):
         self._contact_user = contact_user
 
     @property
-    def path(self):
+    def emergency_number(self):
         """
-        Gets the path of this LocationCreateUpdateDefinition.
+        Gets the emergency_number of this LocationCreateUpdateDefinition.
+        Emergency number for the location
 
-
-        :return: The path of this LocationCreateUpdateDefinition.
-        :rtype: list[str]
+        :return: The emergency_number of this LocationCreateUpdateDefinition.
+        :rtype: LocationEmergencyNumber
         """
-        return self._path
+        return self._emergency_number
 
-    @path.setter
-    def path(self, path):
+    @emergency_number.setter
+    def emergency_number(self, emergency_number):
         """
-        Sets the path of this LocationCreateUpdateDefinition.
+        Sets the emergency_number of this LocationCreateUpdateDefinition.
+        Emergency number for the location
 
-
-        :param path: The path of this LocationCreateUpdateDefinition.
-        :type: list[str]
+        :param emergency_number: The emergency_number of this LocationCreateUpdateDefinition.
+        :type: LocationEmergencyNumber
         """
         
-        self._path = path
+        self._emergency_number = emergency_number
 
     @property
-    def address_verified(self):
+    def address(self):
         """
-        Gets the address_verified of this LocationCreateUpdateDefinition.
+        Gets the address of this LocationCreateUpdateDefinition.
+        Address of the location
 
-
-        :return: The address_verified of this LocationCreateUpdateDefinition.
-        :rtype: bool
+        :return: The address of this LocationCreateUpdateDefinition.
+        :rtype: LocationAddress
         """
-        return self._address_verified
+        return self._address
 
-    @address_verified.setter
-    def address_verified(self, address_verified):
+    @address.setter
+    def address(self, address):
         """
-        Sets the address_verified of this LocationCreateUpdateDefinition.
+        Sets the address of this LocationCreateUpdateDefinition.
+        Address of the location
 
-
-        :param address_verified: The address_verified of this LocationCreateUpdateDefinition.
-        :type: bool
+        :param address: The address of this LocationCreateUpdateDefinition.
+        :type: LocationAddress
         """
         
-        self._address_verified = address_verified
+        self._address = address
 
     def to_dict(self):
         """

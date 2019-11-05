@@ -41,7 +41,7 @@ class WfmForecastModificationIntervalOffsetValue(object):
         """
         self.swagger_types = {
             'interval_index': 'int',
-            'value': 'int'
+            'value': 'float'
         }
 
         self.attribute_map = {
@@ -82,7 +82,7 @@ class WfmForecastModificationIntervalOffsetValue(object):
         The value to set for the given interval
 
         :return: The value of this WfmForecastModificationIntervalOffsetValue.
-        :rtype: int
+        :rtype: float
         """
         return self._value
 
@@ -93,7 +93,7 @@ class WfmForecastModificationIntervalOffsetValue(object):
         The value to set for the given interval
 
         :param value: The value of this WfmForecastModificationIntervalOffsetValue.
-        :type: int
+        :type: float
         """
         
         self._value = value

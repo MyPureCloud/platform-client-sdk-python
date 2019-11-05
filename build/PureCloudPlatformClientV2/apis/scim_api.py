@@ -611,13 +611,15 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
         :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'if_none_match']
+        all_params = ['user_id', 'attributes', 'excluded_attributes', 'if_none_match']
         all_params.append('callback')
 
         params = locals()
@@ -641,6 +643,10 @@ class SCIMApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
 
         header_params = {}
         if 'if_none_match' in params:
@@ -676,10 +682,10 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_users(self, filter, **kwargs):
+    def get_scim_users(self, **kwargs):
         """
         Get a list of users
-        
+        To return all active users, do not use a filter parameter. To return inactive users, set \"filter\" to \"active eq false\". By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \"attributes\" to \"id,active\" or \"excludeAttributes\" to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -687,19 +693,21 @@ class SCIMApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_scim_users(filter, callback=callback_function)
+        >>> thread = api.get_scim_users(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: Filters results. (required)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'start_index', 'count']
+        all_params = ['start_index', 'count', 'attributes', 'excluded_attributes', 'filter']
         all_params.append('callback')
 
         params = locals()
@@ -712,9 +720,6 @@ class SCIMApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'filter' is set
-        if ('filter' not in params) or (params['filter'] is None):
-            raise ValueError("Missing the required parameter `filter` when calling `get_scim_users`")
 
 
         resource_path = '/api/v2/scim/users'.replace('{format}', 'json')
@@ -725,6 +730,10 @@ class SCIMApi(object):
             query_params['startIndex'] = params['start_index']
         if 'count' in params:
             query_params['count'] = params['count']
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
         if 'filter' in params:
             query_params['filter'] = params['filter']
 
@@ -1166,13 +1175,15 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'if_none_match']
+        all_params = ['user_id', 'attributes', 'excluded_attributes', 'if_none_match']
         all_params.append('callback')
 
         params = locals()
@@ -1196,6 +1207,10 @@ class SCIMApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
 
         header_params = {}
         if 'if_none_match' in params:
@@ -1231,10 +1246,10 @@ class SCIMApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_scim_v2_users(self, filter, **kwargs):
+    def get_scim_v2_users(self, **kwargs):
         """
         Get a list of users
-        
+        To return all active users, do not use a filter parameter. To return inactive users, set \"filter\" to \"active eq false\". By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \"attributes\" to \"id,active\" or \"excludeAttributes\" to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1242,19 +1257,21 @@ class SCIMApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_scim_v2_users(filter, callback=callback_function)
+        >>> thread = api.get_scim_v2_users(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: Filters results. (required)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'start_index', 'count']
+        all_params = ['start_index', 'count', 'attributes', 'excluded_attributes', 'filter']
         all_params.append('callback')
 
         params = locals()
@@ -1267,9 +1284,6 @@ class SCIMApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'filter' is set
-        if ('filter' not in params) or (params['filter'] is None):
-            raise ValueError("Missing the required parameter `filter` when calling `get_scim_v2_users`")
 
 
         resource_path = '/api/v2/scim/v2/users'.replace('{format}', 'json')
@@ -1280,6 +1294,10 @@ class SCIMApi(object):
             query_params['startIndex'] = params['start_index']
         if 'count' in params:
             query_params['count'] = params['count']
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
         if 'filter' in params:
             query_params['filter'] = params['filter']
 

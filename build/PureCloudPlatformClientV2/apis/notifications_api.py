@@ -439,7 +439,7 @@ class NotificationsApi(object):
     def post_notifications_channels(self, **kwargs):
         """
         Create a new channel
-        There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
+        There is a limit of 10 channels per user/app combination. Creating an 11th channel will remove the channel with oldest last used date.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

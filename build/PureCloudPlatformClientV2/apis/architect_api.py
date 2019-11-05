@@ -3982,6 +3982,7 @@ class ArchitectApi(object):
         :param str publish_version_id: Publish version ID
         :param str editable_by: Editable by
         :param str locked_by: Locked by
+        :param str locked_by_client_id: Locked by client ID
         :param str secure: Secure
         :param bool deleted: Include deleted
         :param bool include_schemas: Include variable schemas
@@ -3993,7 +3994,7 @@ class ArchitectApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before', 'division_id']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'locked_by_client_id', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -4036,6 +4037,8 @@ class ArchitectApi(object):
             query_params['editableBy'] = params['editable_by']
         if 'locked_by' in params:
             query_params['lockedBy'] = params['locked_by']
+        if 'locked_by_client_id' in params:
+            query_params['lockedByClientId'] = params['locked_by_client_id']
         if 'secure' in params:
             query_params['secure'] = params['secure']
         if 'deleted' in params:

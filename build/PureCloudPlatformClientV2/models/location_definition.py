@@ -45,13 +45,16 @@ class LocationDefinition(object):
             'contact_user': 'AddressableEntityRef',
             'emergency_number': 'LocationEmergencyNumber',
             'address': 'LocationAddress',
-            'address_verified': 'bool',
             'state': 'str',
             'notes': 'str',
             'version': 'int',
             'path': 'list[str]',
             'profile_image': 'list[LocationImage]',
             'floorplan_image': 'list[LocationImage]',
+            'address_verification_details': 'LocationAddressVerificationDetails',
+            'address_verified': 'bool',
+            'address_stored': 'bool',
+            'images': 'str',
             'self_uri': 'str'
         }
 
@@ -61,13 +64,16 @@ class LocationDefinition(object):
             'contact_user': 'contactUser',
             'emergency_number': 'emergencyNumber',
             'address': 'address',
-            'address_verified': 'addressVerified',
             'state': 'state',
             'notes': 'notes',
             'version': 'version',
             'path': 'path',
             'profile_image': 'profileImage',
             'floorplan_image': 'floorplanImage',
+            'address_verification_details': 'addressVerificationDetails',
+            'address_verified': 'addressVerified',
+            'address_stored': 'addressStored',
+            'images': 'images',
             'self_uri': 'selfUri'
         }
 
@@ -76,13 +82,16 @@ class LocationDefinition(object):
         self._contact_user = None
         self._emergency_number = None
         self._address = None
-        self._address_verified = None
         self._state = None
         self._notes = None
         self._version = None
         self._path = None
         self._profile_image = None
         self._floorplan_image = None
+        self._address_verification_details = None
+        self._address_verified = None
+        self._address_stored = None
+        self._images = None
         self._self_uri = None
 
     @property
@@ -112,7 +121,7 @@ class LocationDefinition(object):
     def name(self):
         """
         Gets the name of this LocationDefinition.
-        The name of the Location.
+
 
         :return: The name of this LocationDefinition.
         :rtype: str
@@ -123,7 +132,7 @@ class LocationDefinition(object):
     def name(self, name):
         """
         Sets the name of this LocationDefinition.
-        The name of the Location.
+
 
         :param name: The name of this LocationDefinition.
         :type: str
@@ -135,7 +144,7 @@ class LocationDefinition(object):
     def contact_user(self):
         """
         Gets the contact_user of this LocationDefinition.
-        Site contact for the location
+        Site contact for the location entity
 
         :return: The contact_user of this LocationDefinition.
         :rtype: AddressableEntityRef
@@ -146,7 +155,7 @@ class LocationDefinition(object):
     def contact_user(self, contact_user):
         """
         Sets the contact_user of this LocationDefinition.
-        Site contact for the location
+        Site contact for the location entity
 
         :param contact_user: The contact_user of this LocationDefinition.
         :type: AddressableEntityRef
@@ -158,7 +167,7 @@ class LocationDefinition(object):
     def emergency_number(self):
         """
         Gets the emergency_number of this LocationDefinition.
-
+        Emergency number for the location entity
 
         :return: The emergency_number of this LocationDefinition.
         :rtype: LocationEmergencyNumber
@@ -169,7 +178,7 @@ class LocationDefinition(object):
     def emergency_number(self, emergency_number):
         """
         Sets the emergency_number of this LocationDefinition.
-
+        Emergency number for the location entity
 
         :param emergency_number: The emergency_number of this LocationDefinition.
         :type: LocationEmergencyNumber
@@ -201,33 +210,10 @@ class LocationDefinition(object):
         self._address = address
 
     @property
-    def address_verified(self):
-        """
-        Gets the address_verified of this LocationDefinition.
-
-
-        :return: The address_verified of this LocationDefinition.
-        :rtype: bool
-        """
-        return self._address_verified
-
-    @address_verified.setter
-    def address_verified(self, address_verified):
-        """
-        Sets the address_verified of this LocationDefinition.
-
-
-        :param address_verified: The address_verified of this LocationDefinition.
-        :type: bool
-        """
-        
-        self._address_verified = address_verified
-
-    @property
     def state(self):
         """
         Gets the state of this LocationDefinition.
-        Current activity status of the location.
+        Current state of the location entity
 
         :return: The state of this LocationDefinition.
         :rtype: str
@@ -238,7 +224,7 @@ class LocationDefinition(object):
     def state(self, state):
         """
         Sets the state of this LocationDefinition.
-        Current activity status of the location.
+        Current state of the location entity
 
         :param state: The state of this LocationDefinition.
         :type: str
@@ -254,7 +240,7 @@ class LocationDefinition(object):
     def notes(self):
         """
         Gets the notes of this LocationDefinition.
-
+        Notes for the location entity
 
         :return: The notes of this LocationDefinition.
         :rtype: str
@@ -265,7 +251,7 @@ class LocationDefinition(object):
     def notes(self, notes):
         """
         Sets the notes of this LocationDefinition.
-
+        Notes for the location entity
 
         :param notes: The notes of this LocationDefinition.
         :type: str
@@ -277,7 +263,7 @@ class LocationDefinition(object):
     def version(self):
         """
         Gets the version of this LocationDefinition.
-
+        Current version of the location entity, value to be supplied should be retrieved by a GET or on create/update response
 
         :return: The version of this LocationDefinition.
         :rtype: int
@@ -288,7 +274,7 @@ class LocationDefinition(object):
     def version(self, version):
         """
         Sets the version of this LocationDefinition.
-
+        Current version of the location entity, value to be supplied should be retrieved by a GET or on create/update response
 
         :param version: The version of this LocationDefinition.
         :type: int
@@ -323,7 +309,7 @@ class LocationDefinition(object):
     def profile_image(self):
         """
         Gets the profile_image of this LocationDefinition.
-        Profile image set for the location
+        Profile image of the location entity, retrieved with ?expand=images query parameter
 
         :return: The profile_image of this LocationDefinition.
         :rtype: list[LocationImage]
@@ -334,7 +320,7 @@ class LocationDefinition(object):
     def profile_image(self, profile_image):
         """
         Sets the profile_image of this LocationDefinition.
-        Profile image set for the location
+        Profile image of the location entity, retrieved with ?expand=images query parameter
 
         :param profile_image: The profile_image of this LocationDefinition.
         :type: list[LocationImage]
@@ -346,7 +332,7 @@ class LocationDefinition(object):
     def floorplan_image(self):
         """
         Gets the floorplan_image of this LocationDefinition.
-
+        Floorplan images of the location entity, retrieved with ?expand=images query parameter
 
         :return: The floorplan_image of this LocationDefinition.
         :rtype: list[LocationImage]
@@ -357,13 +343,105 @@ class LocationDefinition(object):
     def floorplan_image(self, floorplan_image):
         """
         Sets the floorplan_image of this LocationDefinition.
-
+        Floorplan images of the location entity, retrieved with ?expand=images query parameter
 
         :param floorplan_image: The floorplan_image of this LocationDefinition.
         :type: list[LocationImage]
         """
         
         self._floorplan_image = floorplan_image
+
+    @property
+    def address_verification_details(self):
+        """
+        Gets the address_verification_details of this LocationDefinition.
+        Address verification information, retrieve dwith the ?expand=addressVerificationDetails query parameter
+
+        :return: The address_verification_details of this LocationDefinition.
+        :rtype: LocationAddressVerificationDetails
+        """
+        return self._address_verification_details
+
+    @address_verification_details.setter
+    def address_verification_details(self, address_verification_details):
+        """
+        Sets the address_verification_details of this LocationDefinition.
+        Address verification information, retrieve dwith the ?expand=addressVerificationDetails query parameter
+
+        :param address_verification_details: The address_verification_details of this LocationDefinition.
+        :type: LocationAddressVerificationDetails
+        """
+        
+        self._address_verification_details = address_verification_details
+
+    @property
+    def address_verified(self):
+        """
+        Gets the address_verified of this LocationDefinition.
+        Boolean field which states if the address has been verified as an actual address
+
+        :return: The address_verified of this LocationDefinition.
+        :rtype: bool
+        """
+        return self._address_verified
+
+    @address_verified.setter
+    def address_verified(self, address_verified):
+        """
+        Sets the address_verified of this LocationDefinition.
+        Boolean field which states if the address has been verified as an actual address
+
+        :param address_verified: The address_verified of this LocationDefinition.
+        :type: bool
+        """
+        
+        self._address_verified = address_verified
+
+    @property
+    def address_stored(self):
+        """
+        Gets the address_stored of this LocationDefinition.
+        Boolean field which states if the address has been stored for E911
+
+        :return: The address_stored of this LocationDefinition.
+        :rtype: bool
+        """
+        return self._address_stored
+
+    @address_stored.setter
+    def address_stored(self, address_stored):
+        """
+        Sets the address_stored of this LocationDefinition.
+        Boolean field which states if the address has been stored for E911
+
+        :param address_stored: The address_stored of this LocationDefinition.
+        :type: bool
+        """
+        
+        self._address_stored = address_stored
+
+    @property
+    def images(self):
+        """
+        Gets the images of this LocationDefinition.
+
+
+        :return: The images of this LocationDefinition.
+        :rtype: str
+        """
+        return self._images
+
+    @images.setter
+    def images(self, images):
+        """
+        Sets the images of this LocationDefinition.
+
+
+        :param images: The images of this LocationDefinition.
+        :type: str
+        """
+        
+        self._images = images
 
     @property
     def self_uri(self):

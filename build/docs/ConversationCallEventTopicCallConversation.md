@@ -12,6 +12,7 @@ title: ConversationCallEventTopicCallConversation
 | **participants** | [**list[ConversationCallEventTopicCallMediaParticipant]**](ConversationCallEventTopicCallMediaParticipant.html) |  | [optional] |
 | **other_media_uris** | **list[str]** |  | [optional] |
 | **recording_state** | **str** |  | [optional] |
+| **max_participants** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

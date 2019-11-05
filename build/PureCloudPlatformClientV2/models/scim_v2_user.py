@@ -394,7 +394,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensionenterprise2_0_user(self):
         """
         Gets the urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
-
+        SCIM enterprise user attributes
 
         :return: The urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
         :rtype: ScimV2EnterpriseUser
@@ -405,7 +405,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensionenterprise2_0_user(self, urnietfparamsscimschemasextensionenterprise2_0_user):
         """
         Sets the urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
-
+        SCIM enterprise user attributes
 
         :param urnietfparamsscimschemasextensionenterprise2_0_user: The urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
         :type: ScimV2EnterpriseUser

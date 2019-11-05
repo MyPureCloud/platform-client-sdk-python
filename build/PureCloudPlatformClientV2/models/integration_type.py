@@ -62,6 +62,7 @@ class IntegrationType(object):
             'non_installable': 'bool',
             'max_instances': 'int',
             'user_permissions': 'list[str]',
+            'vendor_o_auth_client_ids': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -88,6 +89,7 @@ class IntegrationType(object):
             'non_installable': 'nonInstallable',
             'max_instances': 'maxInstances',
             'user_permissions': 'userPermissions',
+            'vendor_o_auth_client_ids': 'vendorOAuthClientIds',
             'self_uri': 'selfUri'
         }
 
@@ -113,6 +115,7 @@ class IntegrationType(object):
         self._non_installable = None
         self._max_instances = None
         self._user_permissions = None
+        self._vendor_o_auth_client_ids = None
         self._self_uri = None
 
     @property
@@ -620,6 +623,29 @@ class IntegrationType(object):
         """
         
         self._user_permissions = user_permissions
+
+    @property
+    def vendor_o_auth_client_ids(self):
+        """
+        Gets the vendor_o_auth_client_ids of this IntegrationType.
+        List of OAuth Client IDs that must be authorized when the integration is created.
+
+        :return: The vendor_o_auth_client_ids of this IntegrationType.
+        :rtype: list[str]
+        """
+        return self._vendor_o_auth_client_ids
+
+    @vendor_o_auth_client_ids.setter
+    def vendor_o_auth_client_ids(self, vendor_o_auth_client_ids):
+        """
+        Sets the vendor_o_auth_client_ids of this IntegrationType.
+        List of OAuth Client IDs that must be authorized when the integration is created.
+
+        :param vendor_o_auth_client_ids: The vendor_o_auth_client_ids of this IntegrationType.
+        :type: list[str]
+        """
+        
+        self._vendor_o_auth_client_ids = vendor_o_auth_client_ids
 
     @property
     def self_uri(self):

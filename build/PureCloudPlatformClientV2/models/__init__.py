@@ -904,6 +904,7 @@ from .local_encryption_configuration_listing import LocalEncryptionConfiguration
 from .local_encryption_key_request import LocalEncryptionKeyRequest
 from .location import Location
 from .location_address import LocationAddress
+from .location_address_verification_details import LocationAddressVerificationDetails
 from .location_create_update_definition import LocationCreateUpdateDefinition
 from .location_definition import LocationDefinition
 from .location_emergency_number import LocationEmergencyNumber
@@ -1320,6 +1321,8 @@ from .retention_duration import RetentionDuration
 from .reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
 from .ring import Ring
 from .role_division import RoleDivision
+from .role_division_grants import RoleDivisionGrants
+from .role_division_pair import RoleDivisionPair
 from .route_group import RouteGroup
 from .route_group_attributes import RouteGroupAttributes
 from .route_group_list import RouteGroupList

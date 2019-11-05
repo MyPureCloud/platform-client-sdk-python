@@ -904,6 +904,7 @@ from .models.local_encryption_configuration_listing import LocalEncryptionConfig
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
 from .models.location import Location
 from .models.location_address import LocationAddress
+from .models.location_address_verification_details import LocationAddressVerificationDetails
 from .models.location_create_update_definition import LocationCreateUpdateDefinition
 from .models.location_definition import LocationDefinition
 from .models.location_emergency_number import LocationEmergencyNumber
@@ -1320,6 +1321,8 @@ from .models.retention_duration import RetentionDuration
 from .models.reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
 from .models.ring import Ring
 from .models.role_division import RoleDivision
+from .models.role_division_grants import RoleDivisionGrants
+from .models.role_division_pair import RoleDivisionPair
 from .models.route_group import RouteGroup
 from .models.route_group_attributes import RouteGroupAttributes
 from .models.route_group_list import RouteGroupList

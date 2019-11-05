@@ -57,6 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
+|[**post_authorization_subject_bulkadd**](UsersApi.html#post_authorization_subject_bulkadd) | Bulk-grant roles and divisions to a subject.|
+|[**post_authorization_subject_bulkremove**](UsersApi.html#post_authorization_subject_bulkremove) | Bulk-remove grants from a subject.|
 |[**post_authorization_subject_division_role**](UsersApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
 |[**post_user_externalid**](UsersApi.html#post_user_externalid) | Create mapping between external identifier and user. Limit 100 per entity.|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
@@ -2661,6 +2663,112 @@ except ApiException as e:
 ### Return type
 
 [**UserObservationQueryResponse**](UserObservationQueryResponse.html)
+
+<a name="post_authorization_subject_bulkadd"></a>
+
+##  post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
+
+
+
+Bulk-grant roles and divisions to a subject.
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
+subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+
+try:
+    # Bulk-grant roles and divisions to a subject.
+    api_instance.post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_authorization_subject_bulkadd: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_authorization_subject_bulkremove"></a>
+
+##  post_authorization_subject_bulkremove(subject_id, body)
+
+
+
+Bulk-remove grants from a subject.
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove 
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
+
+try:
+    # Bulk-remove grants from a subject.
+    api_instance.post_authorization_subject_bulkremove(subject_id, body)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_authorization_subject_bulkremove: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_authorization_subject_division_role"></a>
 

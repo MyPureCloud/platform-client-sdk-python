@@ -44,7 +44,8 @@ class ConversationCallEventTopicCallConversation(object):
             'name': 'str',
             'participants': 'list[ConversationCallEventTopicCallMediaParticipant]',
             'other_media_uris': 'list[str]',
-            'recording_state': 'str'
+            'recording_state': 'str',
+            'max_participants': 'int'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class ConversationCallEventTopicCallConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
-            'recording_state': 'recordingState'
+            'recording_state': 'recordingState',
+            'max_participants': 'maxParticipants'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class ConversationCallEventTopicCallConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._recording_state = None
+        self._max_participants = None
 
     @property
     def id(self):
@@ -179,6 +182,29 @@ class ConversationCallEventTopicCallConversation(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def max_participants(self):
+        """
+        Gets the max_participants of this ConversationCallEventTopicCallConversation.
+
+
+        :return: The max_participants of this ConversationCallEventTopicCallConversation.
+        :rtype: int
+        """
+        return self._max_participants
+
+    @max_participants.setter
+    def max_participants(self, max_participants):
+        """
+        Sets the max_participants of this ConversationCallEventTopicCallConversation.
+
+
+        :param max_participants: The max_participants of this ConversationCallEventTopicCallConversation.
+        :type: int
+        """
+        
+        self._max_participants = max_participants
 
     def to_dict(self):
         """
