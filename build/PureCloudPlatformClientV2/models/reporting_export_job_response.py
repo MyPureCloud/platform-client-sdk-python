@@ -58,6 +58,7 @@ class ReportingExportJobResponse(object):
             'percentage_complete': 'float',
             'has_format_durations': 'bool',
             'has_split_filters': 'bool',
+            'selected_columns': 'list[SelectedColumns]',
             'self_uri': 'str'
         }
 
@@ -80,6 +81,7 @@ class ReportingExportJobResponse(object):
             'percentage_complete': 'percentageComplete',
             'has_format_durations': 'hasFormatDurations',
             'has_split_filters': 'hasSplitFilters',
+            'selected_columns': 'selectedColumns',
             'self_uri': 'selfUri'
         }
 
@@ -101,6 +103,7 @@ class ReportingExportJobResponse(object):
         self._percentage_complete = None
         self._has_format_durations = None
         self._has_split_filters = None
+        self._selected_columns = None
         self._self_uri = None
 
     @property
@@ -532,6 +535,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._has_split_filters = has_split_filters
+
+    @property
+    def selected_columns(self):
+        """
+        Gets the selected_columns of this ReportingExportJobResponse.
+        The list of ordered selected columns from the export view by the user
+
+        :return: The selected_columns of this ReportingExportJobResponse.
+        :rtype: list[SelectedColumns]
+        """
+        return self._selected_columns
+
+    @selected_columns.setter
+    def selected_columns(self, selected_columns):
+        """
+        Sets the selected_columns of this ReportingExportJobResponse.
+        The list of ordered selected columns from the export view by the user
+
+        :param selected_columns: The selected_columns of this ReportingExportJobResponse.
+        :type: list[SelectedColumns]
+        """
+        
+        self._selected_columns = selected_columns
 
     @property
     def self_uri(self):

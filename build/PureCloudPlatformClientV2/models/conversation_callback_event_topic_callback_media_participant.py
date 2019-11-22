@@ -71,6 +71,8 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'journey_context': 'ConversationCallbackEventTopicJourneyContext',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime',
             'outbound_preview': 'ConversationCallbackEventTopicDialerPreview',
             'voicemail': 'ConversationCallbackEventTopicVoicemail',
             'callback_numbers': 'list[str]',
@@ -113,6 +115,8 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -154,6 +158,8 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._screen_recording_state = None
         self._flagged_reason = None
         self._journey_context = None
+        self._start_acw_time = None
+        self._end_acw_time = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -891,6 +897,52 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The start_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param start_acw_time: The start_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The end_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param end_acw_time: The end_acw_time of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     @property
     def outbound_preview(self):

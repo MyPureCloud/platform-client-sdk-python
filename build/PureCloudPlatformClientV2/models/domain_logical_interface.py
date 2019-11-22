@@ -70,6 +70,9 @@ class DomainLogicalInterface(object):
             'inherit_phone_trunk_bases_i_pv4': 'bool',
             'inherit_phone_trunk_bases_i_pv6': 'bool',
             'use_for_internal_edge_communication': 'bool',
+            'use_for_indirect_edge_communication': 'bool',
+            'use_for_cloud_proxy_edge_communication': 'bool',
+            'public_nat_ip_address': 'str',
             'external_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'phone_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'trace_enabled': 'bool',
@@ -109,6 +112,9 @@ class DomainLogicalInterface(object):
             'inherit_phone_trunk_bases_i_pv4': 'inheritPhoneTrunkBasesIPv4',
             'inherit_phone_trunk_bases_i_pv6': 'inheritPhoneTrunkBasesIPv6',
             'use_for_internal_edge_communication': 'useForInternalEdgeCommunication',
+            'use_for_indirect_edge_communication': 'useForIndirectEdgeCommunication',
+            'use_for_cloud_proxy_edge_communication': 'useForCloudProxyEdgeCommunication',
+            'public_nat_ip_address': 'publicNatIpAddress',
             'external_trunk_base_assignments': 'externalTrunkBaseAssignments',
             'phone_trunk_base_assignments': 'phoneTrunkBaseAssignments',
             'trace_enabled': 'traceEnabled',
@@ -147,6 +153,9 @@ class DomainLogicalInterface(object):
         self._inherit_phone_trunk_bases_i_pv4 = None
         self._inherit_phone_trunk_bases_i_pv6 = None
         self._use_for_internal_edge_communication = None
+        self._use_for_indirect_edge_communication = None
+        self._use_for_cloud_proxy_edge_communication = None
+        self._public_nat_ip_address = None
         self._external_trunk_base_assignments = None
         self._phone_trunk_base_assignments = None
         self._trace_enabled = None
@@ -855,6 +864,75 @@ class DomainLogicalInterface(object):
         """
         
         self._use_for_internal_edge_communication = use_for_internal_edge_communication
+
+    @property
+    def use_for_indirect_edge_communication(self):
+        """
+        Gets the use_for_indirect_edge_communication of this DomainLogicalInterface.
+        Site Interconnects using the \"Indirect\" method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.
+
+        :return: The use_for_indirect_edge_communication of this DomainLogicalInterface.
+        :rtype: bool
+        """
+        return self._use_for_indirect_edge_communication
+
+    @use_for_indirect_edge_communication.setter
+    def use_for_indirect_edge_communication(self, use_for_indirect_edge_communication):
+        """
+        Sets the use_for_indirect_edge_communication of this DomainLogicalInterface.
+        Site Interconnects using the \"Indirect\" method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.
+
+        :param use_for_indirect_edge_communication: The use_for_indirect_edge_communication of this DomainLogicalInterface.
+        :type: bool
+        """
+        
+        self._use_for_indirect_edge_communication = use_for_indirect_edge_communication
+
+    @property
+    def use_for_cloud_proxy_edge_communication(self):
+        """
+        Gets the use_for_cloud_proxy_edge_communication of this DomainLogicalInterface.
+        Site Interconnects using the \"Cloud Proxy\" method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.
+
+        :return: The use_for_cloud_proxy_edge_communication of this DomainLogicalInterface.
+        :rtype: bool
+        """
+        return self._use_for_cloud_proxy_edge_communication
+
+    @use_for_cloud_proxy_edge_communication.setter
+    def use_for_cloud_proxy_edge_communication(self, use_for_cloud_proxy_edge_communication):
+        """
+        Sets the use_for_cloud_proxy_edge_communication of this DomainLogicalInterface.
+        Site Interconnects using the \"Cloud Proxy\" method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.
+
+        :param use_for_cloud_proxy_edge_communication: The use_for_cloud_proxy_edge_communication of this DomainLogicalInterface.
+        :type: bool
+        """
+        
+        self._use_for_cloud_proxy_edge_communication = use_for_cloud_proxy_edge_communication
+
+    @property
+    def public_nat_ip_address(self):
+        """
+        Gets the public_nat_ip_address of this DomainLogicalInterface.
+        NENT IP Address
+
+        :return: The public_nat_ip_address of this DomainLogicalInterface.
+        :rtype: str
+        """
+        return self._public_nat_ip_address
+
+    @public_nat_ip_address.setter
+    def public_nat_ip_address(self, public_nat_ip_address):
+        """
+        Sets the public_nat_ip_address of this DomainLogicalInterface.
+        NENT IP Address
+
+        :param public_nat_ip_address: The public_nat_ip_address of this DomainLogicalInterface.
+        :type: str
+        """
+        
+        self._public_nat_ip_address = public_nat_ip_address
 
     @property
     def external_trunk_base_assignments(self):

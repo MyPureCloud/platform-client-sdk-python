@@ -80,7 +80,9 @@ class ParticipantBasic(object):
             'videos': 'list[Video]',
             'evaluations': 'list[Evaluation]',
             'screen_recording_state': 'str',
-            'flagged_reason': 'str'
+            'flagged_reason': 'str',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -124,7 +126,9 @@ class ParticipantBasic(object):
             'videos': 'videos',
             'evaluations': 'evaluations',
             'screen_recording_state': 'screenRecordingState',
-            'flagged_reason': 'flaggedReason'
+            'flagged_reason': 'flaggedReason',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime'
         }
 
         self._id = None
@@ -168,6 +172,8 @@ class ParticipantBasic(object):
         self._evaluations = None
         self._screen_recording_state = None
         self._flagged_reason = None
+        self._start_acw_time = None
+        self._end_acw_time = None
 
     @property
     def id(self):
@@ -1123,6 +1129,52 @@ class ParticipantBasic(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this ParticipantBasic.
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_acw_time of this ParticipantBasic.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this ParticipantBasic.
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_acw_time: The start_acw_time of this ParticipantBasic.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this ParticipantBasic.
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The end_acw_time of this ParticipantBasic.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this ParticipantBasic.
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param end_acw_time: The end_acw_time of this ParticipantBasic.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     def to_dict(self):
         """

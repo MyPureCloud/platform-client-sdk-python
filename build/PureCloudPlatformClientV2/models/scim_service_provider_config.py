@@ -126,7 +126,7 @@ class ScimServiceProviderConfig(object):
     def patch(self):
         """
         Gets the patch of this ScimServiceProviderConfig.
-        \"patch\" configuration options.
+        The \"patch\" configuration options.
 
         :return: The patch of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -137,7 +137,7 @@ class ScimServiceProviderConfig(object):
     def patch(self, patch):
         """
         Sets the patch of this ScimServiceProviderConfig.
-        \"patch\" configuration options.
+        The \"patch\" configuration options.
 
         :param patch: The patch of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -149,7 +149,7 @@ class ScimServiceProviderConfig(object):
     def filter(self):
         """
         Gets the filter of this ScimServiceProviderConfig.
-        \"filter\" configuration options.
+        The \"filter\" configuration options.
 
         :return: The filter of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigFilterFeature
@@ -160,7 +160,7 @@ class ScimServiceProviderConfig(object):
     def filter(self, filter):
         """
         Sets the filter of this ScimServiceProviderConfig.
-        \"filter\" configuration options.
+        The \"filter\" configuration options.
 
         :param filter: The filter of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigFilterFeature
@@ -172,7 +172,7 @@ class ScimServiceProviderConfig(object):
     def etag(self):
         """
         Gets the etag of this ScimServiceProviderConfig.
-        \"ETag\" configuration options.
+        The \"etag\" configuration options.
 
         :return: The etag of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -183,7 +183,7 @@ class ScimServiceProviderConfig(object):
     def etag(self, etag):
         """
         Sets the etag of this ScimServiceProviderConfig.
-        \"ETag\" configuration options.
+        The \"etag\" configuration options.
 
         :param etag: The etag of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -195,7 +195,7 @@ class ScimServiceProviderConfig(object):
     def sort(self):
         """
         Gets the sort of this ScimServiceProviderConfig.
-        \"sort\" configuration options.
+        The \"sort\" configuration options.
 
         :return: The sort of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -206,7 +206,7 @@ class ScimServiceProviderConfig(object):
     def sort(self, sort):
         """
         Sets the sort of this ScimServiceProviderConfig.
-        \"sort\" configuration options.
+        The \"sort\" configuration options.
 
         :param sort: The sort of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature
@@ -218,7 +218,7 @@ class ScimServiceProviderConfig(object):
     def bulk(self):
         """
         Gets the bulk of this ScimServiceProviderConfig.
-        \"bulk\" configuration options.
+        The \"bulk\" configuration options.
 
         :return: The bulk of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigBulkFeature
@@ -229,7 +229,7 @@ class ScimServiceProviderConfig(object):
     def bulk(self, bulk):
         """
         Sets the bulk of this ScimServiceProviderConfig.
-        \"bulk\" configuration options.
+        The \"bulk\" configuration options.
 
         :param bulk: The bulk of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigBulkFeature
@@ -241,7 +241,7 @@ class ScimServiceProviderConfig(object):
     def change_password(self):
         """
         Gets the change_password of this ScimServiceProviderConfig.
-        \"changePassword\" configuration options.
+        The \"changePassword\" configuration options.
 
         :return: The change_password of this ScimServiceProviderConfig.
         :rtype: ScimServiceProviderConfigSimpleFeature
@@ -252,7 +252,7 @@ class ScimServiceProviderConfig(object):
     def change_password(self, change_password):
         """
         Sets the change_password of this ScimServiceProviderConfig.
-        \"changePassword\" configuration options.
+        The \"changePassword\" configuration options.
 
         :param change_password: The change_password of this ScimServiceProviderConfig.
         :type: ScimServiceProviderConfigSimpleFeature

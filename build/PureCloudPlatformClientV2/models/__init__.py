@@ -327,6 +327,7 @@ from .conversation_cobrowse_event_topic_journey_customer_session import Conversa
 from .conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .conversation_detail_query_clause import ConversationDetailQueryClause
 from .conversation_detail_query_filter import ConversationDetailQueryFilter
 from .conversation_detail_query_predicate import ConversationDetailQueryPredicate
@@ -905,13 +906,14 @@ from .local_encryption_key_request import LocalEncryptionKeyRequest
 from .location import Location
 from .location_address import LocationAddress
 from .location_address_verification_details import LocationAddressVerificationDetails
-from .location_create_update_definition import LocationCreateUpdateDefinition
+from .location_create_definition import LocationCreateDefinition
 from .location_definition import LocationDefinition
 from .location_emergency_number import LocationEmergencyNumber
 from .location_entity_listing import LocationEntityListing
 from .location_image import LocationImage
 from .location_search_criteria import LocationSearchCriteria
 from .location_search_request import LocationSearchRequest
+from .location_update_definition import LocationUpdateDefinition
 from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
@@ -936,6 +938,7 @@ from .message_conversation import MessageConversation
 from .message_conversation_entity_listing import MessageConversationEntityListing
 from .message_data import MessageData
 from .message_details import MessageDetails
+from .message_evaluation import MessageEvaluation
 from .message_info import MessageInfo
 from .message_media import MessageMedia
 from .message_media_attachment import MessageMediaAttachment
@@ -1269,6 +1272,7 @@ from .queue_observation_query_response import QueueObservationQueryResponse
 from .queue_reference import QueueReference
 from .queue_request import QueueRequest
 from .queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
+from .queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .reaction import Reaction
 from .recall_entry import RecallEntry
@@ -1398,6 +1402,7 @@ from .segment import Segment
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
+from .selected_columns import SelectedColumns
 from .sequence_schedule import SequenceSchedule
 from .server_date import ServerDate
 from .service_context import ServiceContext
@@ -1597,7 +1602,6 @@ from .user_details_query import UserDetailsQuery
 from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing
 from .user_expands import UserExpands
-from .user_external_identifier import UserExternalIdentifier
 from .user_greeting_event_greeting import UserGreetingEventGreeting
 from .user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner

@@ -44,6 +44,8 @@ class FlowDivisionView(object):
             'name': 'str',
             'division': 'WritableDivision',
             'type': 'str',
+            'input_schema': 'JsonSchemaDocument',
+            'output_schema': 'JsonSchemaDocument',
             'self_uri': 'str'
         }
 
@@ -52,6 +54,8 @@ class FlowDivisionView(object):
             'name': 'name',
             'division': 'division',
             'type': 'type',
+            'input_schema': 'inputSchema',
+            'output_schema': 'outputSchema',
             'self_uri': 'selfUri'
         }
 
@@ -59,6 +63,8 @@ class FlowDivisionView(object):
         self._name = None
         self._division = None
         self._type = None
+        self._input_schema = None
+        self._output_schema = None
         self._self_uri = None
 
     @property
@@ -156,6 +162,52 @@ class FlowDivisionView(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def input_schema(self):
+        """
+        Gets the input_schema of this FlowDivisionView.
+        json schema describing the inputs for the flow
+
+        :return: The input_schema of this FlowDivisionView.
+        :rtype: JsonSchemaDocument
+        """
+        return self._input_schema
+
+    @input_schema.setter
+    def input_schema(self, input_schema):
+        """
+        Sets the input_schema of this FlowDivisionView.
+        json schema describing the inputs for the flow
+
+        :param input_schema: The input_schema of this FlowDivisionView.
+        :type: JsonSchemaDocument
+        """
+        
+        self._input_schema = input_schema
+
+    @property
+    def output_schema(self):
+        """
+        Gets the output_schema of this FlowDivisionView.
+        json schema describing the outputs for the flow
+
+        :return: The output_schema of this FlowDivisionView.
+        :rtype: JsonSchemaDocument
+        """
+        return self._output_schema
+
+    @output_schema.setter
+    def output_schema(self, output_schema):
+        """
+        Sets the output_schema of this FlowDivisionView.
+        json schema describing the outputs for the flow
+
+        :param output_schema: The output_schema of this FlowDivisionView.
+        :type: JsonSchemaDocument
+        """
+        
+        self._output_schema = output_schema
 
     @property
     def self_uri(self):

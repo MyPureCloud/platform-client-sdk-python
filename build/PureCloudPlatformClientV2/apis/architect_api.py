@@ -4452,12 +4452,13 @@ class ArchitectApi(object):
         :param str published_after: Published after
         :param str published_before: Published before
         :param list[str] division_id: division ID(s)
+        :param bool include_schemas: Include variable schemas
         :return: FlowDivisionViewEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'publish_version_id', 'published_after', 'published_before', 'division_id']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'publish_version_id', 'published_after', 'published_before', 'division_id', 'include_schemas']
         all_params.append('callback')
 
         params = locals()
@@ -4498,6 +4499,8 @@ class ArchitectApi(object):
             query_params['publishedBefore'] = params['published_before']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
+        if 'include_schemas' in params:
+            query_params['includeSchemas'] = params['include_schemas']
 
         header_params = {}
 

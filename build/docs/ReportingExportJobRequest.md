@@ -18,6 +18,7 @@ title: ReportingExportJobRequest
 | **locale** | **str** | The locale use for localization of the exported data, i.e. en-us, es-mx   | |
 | **has_format_durations** | **bool** | Indicates if durations are formatted in hh:mm:ss format instead of ms | [optional] |
 | **has_split_filters** | **bool** | Indicates if filters will be split in aggregate detail exports | [optional] |
+| **selected_columns** | [**list[SelectedColumns]**](SelectedColumns.html) | The list of ordered selected columns from the export view by the user | [optional] |
 {: class="table table-striped"}
 
 

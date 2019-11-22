@@ -327,6 +327,7 @@ from .models.conversation_cobrowse_event_topic_journey_customer_session import C
 from .models.conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .models.conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .models.conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
 from .models.conversation_detail_query_predicate import ConversationDetailQueryPredicate
@@ -905,13 +906,14 @@ from .models.local_encryption_key_request import LocalEncryptionKeyRequest
 from .models.location import Location
 from .models.location_address import LocationAddress
 from .models.location_address_verification_details import LocationAddressVerificationDetails
-from .models.location_create_update_definition import LocationCreateUpdateDefinition
+from .models.location_create_definition import LocationCreateDefinition
 from .models.location_definition import LocationDefinition
 from .models.location_emergency_number import LocationEmergencyNumber
 from .models.location_entity_listing import LocationEntityListing
 from .models.location_image import LocationImage
 from .models.location_search_criteria import LocationSearchCriteria
 from .models.location_search_request import LocationSearchRequest
+from .models.location_update_definition import LocationUpdateDefinition
 from .models.locations_search_response import LocationsSearchResponse
 from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
@@ -936,6 +938,7 @@ from .models.message_conversation import MessageConversation
 from .models.message_conversation_entity_listing import MessageConversationEntityListing
 from .models.message_data import MessageData
 from .models.message_details import MessageDetails
+from .models.message_evaluation import MessageEvaluation
 from .models.message_info import MessageInfo
 from .models.message_media import MessageMedia
 from .models.message_media_attachment import MessageMediaAttachment
@@ -1269,6 +1272,7 @@ from .models.queue_observation_query_response import QueueObservationQueryRespon
 from .models.queue_reference import QueueReference
 from .models.queue_request import QueueRequest
 from .models.queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
+from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry
@@ -1398,6 +1402,7 @@ from .models.segment import Segment
 from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
+from .models.selected_columns import SelectedColumns
 from .models.sequence_schedule import SequenceSchedule
 from .models.server_date import ServerDate
 from .models.service_context import ServiceContext
@@ -1597,7 +1602,6 @@ from .models.user_details_query import UserDetailsQuery
 from .models.user_device import UserDevice
 from .models.user_entity_listing import UserEntityListing
 from .models.user_expands import UserExpands
-from .models.user_external_identifier import UserExternalIdentifier
 from .models.user_greeting_event_greeting import UserGreetingEventGreeting
 from .models.user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .models.user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner

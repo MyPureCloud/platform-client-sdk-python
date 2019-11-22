@@ -1341,7 +1341,7 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active, id=id, division_id=division_id)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, division_id=division_id)
 
 
 
@@ -1372,13 +1372,12 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 name = 'name_example' # str | Name (optional)
-active = true # bool | Active (optional)
 id = ['id_example'] # list[str] | ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, active=active, id=id, division_id=division_id)
+    api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RoutingApi->get_routing_queues: %s\n" % e
@@ -1393,7 +1392,6 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 | **name** | **str**| Name | [optional]  |
-| **active** | **bool**| Active | [optional]  |
 | **id** | [**list[str]**](str.html)| ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
 {: class="table table-striped"}

@@ -308,7 +308,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LocationsApi()
 location_id = 'location_id_example' # str | Location ID
-body = PureCloudPlatformClientV2.LocationCreateUpdateDefinition() # LocationCreateUpdateDefinition | Location
+body = PureCloudPlatformClientV2.LocationUpdateDefinition() # LocationUpdateDefinition | Location
 
 try:
     # Update a location
@@ -324,7 +324,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
-| **body** | [**LocationCreateUpdateDefinition**](LocationCreateUpdateDefinition.html)| Location |  |
+| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition.html)| Location |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -360,7 +360,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LocationsApi()
-body = PureCloudPlatformClientV2.LocationCreateUpdateDefinition() # LocationCreateUpdateDefinition | Location
+body = PureCloudPlatformClientV2.LocationCreateDefinition() # LocationCreateDefinition | Location
 
 try:
     # Create a location
@@ -375,7 +375,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationCreateUpdateDefinition**](LocationCreateUpdateDefinition.html)| Location |  |
+| **body** | [**LocationCreateDefinition**](LocationCreateDefinition.html)| Location |  |
 {: class="table table-striped"}
 
 ### Return type

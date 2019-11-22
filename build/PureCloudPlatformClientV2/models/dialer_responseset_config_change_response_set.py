@@ -46,6 +46,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
             'date_modified': 'datetime',
             'version': 'int',
             'responses': 'dict(str, DialerResponsesetConfigChangeReaction)',
+            'beep_detection_enabled': 'bool',
             'additional_properties': 'object'
         }
 
@@ -56,6 +57,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'responses': 'responses',
+            'beep_detection_enabled': 'beepDetectionEnabled',
             'additional_properties': 'additionalProperties'
         }
 
@@ -65,6 +67,7 @@ class DialerResponsesetConfigChangeResponseSet(object):
         self._date_modified = None
         self._version = None
         self._responses = None
+        self._beep_detection_enabled = None
         self._additional_properties = None
 
     @property
@@ -204,6 +207,29 @@ class DialerResponsesetConfigChangeResponseSet(object):
         """
         
         self._responses = responses
+
+    @property
+    def beep_detection_enabled(self):
+        """
+        Gets the beep_detection_enabled of this DialerResponsesetConfigChangeResponseSet.
+
+
+        :return: The beep_detection_enabled of this DialerResponsesetConfigChangeResponseSet.
+        :rtype: bool
+        """
+        return self._beep_detection_enabled
+
+    @beep_detection_enabled.setter
+    def beep_detection_enabled(self, beep_detection_enabled):
+        """
+        Sets the beep_detection_enabled of this DialerResponsesetConfigChangeResponseSet.
+
+
+        :param beep_detection_enabled: The beep_detection_enabled of this DialerResponsesetConfigChangeResponseSet.
+        :type: bool
+        """
+        
+        self._beep_detection_enabled = beep_detection_enabled
 
     @property
     def additional_properties(self):

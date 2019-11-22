@@ -46,6 +46,7 @@ class SmsPhoneNumber(object):
             'phone_number_type': 'str',
             'provisioned_through_pure_cloud': 'bool',
             'phone_number_status': 'str',
+            'capabilities': 'list[str]',
             'country_code': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
@@ -68,6 +69,7 @@ class SmsPhoneNumber(object):
             'phone_number_type': 'phoneNumberType',
             'provisioned_through_pure_cloud': 'provisionedThroughPureCloud',
             'phone_number_status': 'phoneNumberStatus',
+            'capabilities': 'capabilities',
             'country_code': 'countryCode',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
@@ -89,6 +91,7 @@ class SmsPhoneNumber(object):
         self._phone_number_type = None
         self._provisioned_through_pure_cloud = None
         self._phone_number_status = None
+        self._capabilities = None
         self._country_code = None
         self._date_created = None
         self._date_modified = None
@@ -248,6 +251,29 @@ class SmsPhoneNumber(object):
             self._phone_number_status = "outdated_sdk_version"
         else:
             self._phone_number_status = phone_number_status
+
+    @property
+    def capabilities(self):
+        """
+        Gets the capabilities of this SmsPhoneNumber.
+        The capabilities of the phone number available for provisioning.
+
+        :return: The capabilities of this SmsPhoneNumber.
+        :rtype: list[str]
+        """
+        return self._capabilities
+
+    @capabilities.setter
+    def capabilities(self, capabilities):
+        """
+        Sets the capabilities of this SmsPhoneNumber.
+        The capabilities of the phone number available for provisioning.
+
+        :param capabilities: The capabilities of this SmsPhoneNumber.
+        :type: list[str]
+        """
+        
+        self._capabilities = capabilities
 
     @property
     def country_code(self):

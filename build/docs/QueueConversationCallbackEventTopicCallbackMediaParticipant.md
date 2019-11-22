@@ -38,6 +38,8 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | **screen_recording_state** | **str** |  | [optional] |
 | **flagged_reason** | **str** |  | [optional] |
 | **journey_context** | [**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html) |  | [optional] |
+| **start_acw_time** | **datetime** |  | [optional] |
+| **end_acw_time** | **datetime** |  | [optional] |
 | **outbound_preview** | [**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html) |  | [optional] |
 | **voicemail** | [**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html) |  | [optional] |
 | **callback_numbers** | **list[str]** |  | [optional] |

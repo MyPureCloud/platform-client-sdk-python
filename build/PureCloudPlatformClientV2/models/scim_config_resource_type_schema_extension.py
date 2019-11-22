@@ -56,7 +56,7 @@ class ScimConfigResourceTypeSchemaExtension(object):
     def schema(self):
         """
         Gets the schema of this ScimConfigResourceTypeSchemaExtension.
-        The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema. 
+        The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema.
 
         :return: The schema of this ScimConfigResourceTypeSchemaExtension.
         :rtype: str
@@ -67,7 +67,7 @@ class ScimConfigResourceTypeSchemaExtension(object):
     def schema(self, schema):
         """
         Sets the schema of this ScimConfigResourceTypeSchemaExtension.
-        The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema. 
+        The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema.
 
         :param schema: The schema of this ScimConfigResourceTypeSchemaExtension.
         :type: str

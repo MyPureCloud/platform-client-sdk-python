@@ -2948,7 +2948,7 @@ except ApiException as e:
 
 <a name="get_flows_divisionviews"></a>
 
-## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
+## [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html) get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id, include_schemas=include_schemas)
 
 
 
@@ -2986,10 +2986,11 @@ publish_version_id = 'publish_version_id_example' # str | Publish version ID (op
 published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
 published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
 division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
+include_schemas = false # bool | Include variable schemas (optional) (default to false)
 
 try:
     # Get a pageable list of basic flow information objects filterable by query parameters.
-    api_response = api_instance.get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id)
+    api_response = api_instance.get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id, include_schemas=include_schemas)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
@@ -3011,6 +3012,7 @@ except ApiException as e:
 | **published_after** | **str**| Published after | [optional]  |
 | **published_before** | **str**| Published before | [optional]  |
 | **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
+| **include_schemas** | **bool**| Include variable schemas | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

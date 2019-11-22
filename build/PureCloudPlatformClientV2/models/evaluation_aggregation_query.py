@@ -277,7 +277,7 @@ class EvaluationAggregationQuery(object):
         :param alternate_time_dimension: The alternate_time_dimension of this EvaluationAggregationQuery.
         :type: str
         """
-        allowed_values = ["calibrationId", "contextId", "conversationId", "divisionId", "evaluationCreatedDate", "evaluationId", "evaluatorId", "formId", "queueId", "rescind", "rescored", "userId"]
+        allowed_values = ["evaluationCreatedDate", "eventTime"]
         if alternate_time_dimension.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for alternate_time_dimension -> " + alternate_time_dimension
             self._alternate_time_dimension = "outdated_sdk_version"

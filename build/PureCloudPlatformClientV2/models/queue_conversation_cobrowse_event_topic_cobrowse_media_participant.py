@@ -71,6 +71,8 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'journey_context': 'QueueConversationCobrowseEventTopicJourneyContext',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -110,6 +112,8 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -148,6 +152,8 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._screen_recording_state = None
         self._flagged_reason = None
         self._journey_context = None
+        self._start_acw_time = None
+        self._end_acw_time = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -882,6 +888,52 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The start_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param start_acw_time: The start_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The end_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param end_acw_time: The end_acw_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     @property
     def cobrowse_session_id(self):

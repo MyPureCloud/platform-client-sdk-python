@@ -907,7 +907,7 @@ class QualityApi(object):
     def get_quality_conversation_audits(self, conversation_id, **kwargs):
         """
         Get audits for conversation or recording
-        
+        Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4429,7 +4429,7 @@ class QualityApi(object):
     def put_quality_conversation_evaluation(self, conversation_id, evaluation_id, body, **kwargs):
         """
         Update an evaluation
-        
+        The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

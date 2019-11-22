@@ -57,6 +57,8 @@ class QueueConversationVideoEventTopicParticipant(object):
             'wrapup_prompt': 'str',
             'wrapup_timeout_ms': 'int',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime',
             'conversation_routing_data': 'QueueConversationVideoEventTopicConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
@@ -93,6 +95,8 @@ class QueueConversationVideoEventTopicParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'wrapup_timeout_ms': 'wrapupTimeoutMs',
             'wrapup': 'wrapup',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime',
             'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
@@ -128,6 +132,8 @@ class QueueConversationVideoEventTopicParticipant(object):
         self._wrapup_prompt = None
         self._wrapup_timeout_ms = None
         self._wrapup = None
+        self._start_acw_time = None
+        self._end_acw_time = None
         self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
@@ -535,6 +541,52 @@ class QueueConversationVideoEventTopicParticipant(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this QueueConversationVideoEventTopicParticipant.
+
+
+        :return: The start_acw_time of this QueueConversationVideoEventTopicParticipant.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this QueueConversationVideoEventTopicParticipant.
+
+
+        :param start_acw_time: The start_acw_time of this QueueConversationVideoEventTopicParticipant.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this QueueConversationVideoEventTopicParticipant.
+
+
+        :return: The end_acw_time of this QueueConversationVideoEventTopicParticipant.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this QueueConversationVideoEventTopicParticipant.
+
+
+        :param end_acw_time: The end_acw_time of this QueueConversationVideoEventTopicParticipant.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     @property
     def conversation_routing_data(self):

@@ -50,7 +50,8 @@ class ReportingExportJobRequest(object):
             'read': 'bool',
             'locale': 'str',
             'has_format_durations': 'bool',
-            'has_split_filters': 'bool'
+            'has_split_filters': 'bool',
+            'selected_columns': 'list[SelectedColumns]'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class ReportingExportJobRequest(object):
             'read': 'read',
             'locale': 'locale',
             'has_format_durations': 'hasFormatDurations',
-            'has_split_filters': 'hasSplitFilters'
+            'has_split_filters': 'hasSplitFilters',
+            'selected_columns': 'selectedColumns'
         }
 
         self._name = None
@@ -78,6 +80,7 @@ class ReportingExportJobRequest(object):
         self._locale = None
         self._has_format_durations = None
         self._has_split_filters = None
+        self._selected_columns = None
 
     @property
     def name(self):
@@ -339,6 +342,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._has_split_filters = has_split_filters
+
+    @property
+    def selected_columns(self):
+        """
+        Gets the selected_columns of this ReportingExportJobRequest.
+        The list of ordered selected columns from the export view by the user
+
+        :return: The selected_columns of this ReportingExportJobRequest.
+        :rtype: list[SelectedColumns]
+        """
+        return self._selected_columns
+
+    @selected_columns.setter
+    def selected_columns(self, selected_columns):
+        """
+        Sets the selected_columns of this ReportingExportJobRequest.
+        The list of ordered selected columns from the export view by the user
+
+        :param selected_columns: The selected_columns of this ReportingExportJobRequest.
+        :type: list[SelectedColumns]
+        """
+        
+        self._selected_columns = selected_columns
 
     def to_dict(self):
         """

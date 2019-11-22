@@ -70,6 +70,8 @@ class CobrowseMediaParticipant(object):
             'flagged_reason': 'str',
             'journey_context': 'JourneyContext',
             'conversation_routing_data': 'ConversationRoutingData',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'controlling': 'list[str]',
@@ -108,6 +110,8 @@ class CobrowseMediaParticipant(object):
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
             'conversation_routing_data': 'conversationRoutingData',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'controlling': 'controlling',
@@ -145,6 +149,8 @@ class CobrowseMediaParticipant(object):
         self._flagged_reason = None
         self._journey_context = None
         self._conversation_routing_data = None
+        self._start_acw_time = None
+        self._end_acw_time = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._controlling = None
@@ -856,6 +862,52 @@ class CobrowseMediaParticipant(object):
         """
         
         self._conversation_routing_data = conversation_routing_data
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this CobrowseMediaParticipant.
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The start_acw_time of this CobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this CobrowseMediaParticipant.
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param start_acw_time: The start_acw_time of this CobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this CobrowseMediaParticipant.
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The end_acw_time of this CobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this CobrowseMediaParticipant.
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param end_acw_time: The end_acw_time of this CobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     @property
     def cobrowse_session_id(self):

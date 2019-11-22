@@ -43,23 +43,23 @@ class WebChatMessageEntityList(object):
             'page_size': 'int',
             'entities': 'list[WebChatMessage]',
             'previous_page': 'str',
-            'next': 'str',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'next': 'str'
         }
 
         self.attribute_map = {
             'page_size': 'pageSize',
             'entities': 'entities',
             'previous_page': 'previousPage',
-            'next': 'next',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'next': 'next'
         }
 
         self._page_size = None
         self._entities = None
         self._previous_page = None
-        self._next = None
         self._self_uri = None
+        self._next = None
 
     @property
     def page_size(self):
@@ -131,29 +131,6 @@ class WebChatMessageEntityList(object):
         self._previous_page = previous_page
 
     @property
-    def next(self):
-        """
-        Gets the next of this WebChatMessageEntityList.
-
-
-        :return: The next of this WebChatMessageEntityList.
-        :rtype: str
-        """
-        return self._next
-
-    @next.setter
-    def next(self, next):
-        """
-        Sets the next of this WebChatMessageEntityList.
-
-
-        :param next: The next of this WebChatMessageEntityList.
-        :type: str
-        """
-        
-        self._next = next
-
-    @property
     def self_uri(self):
         """
         Gets the self_uri of this WebChatMessageEntityList.
@@ -175,6 +152,29 @@ class WebChatMessageEntityList(object):
         """
         
         self._self_uri = self_uri
+
+    @property
+    def next(self):
+        """
+        Gets the next of this WebChatMessageEntityList.
+
+
+        :return: The next of this WebChatMessageEntityList.
+        :rtype: str
+        """
+        return self._next
+
+    @next.setter
+    def next(self, next):
+        """
+        Sets the next of this WebChatMessageEntityList.
+
+
+        :param next: The next of this WebChatMessageEntityList.
+        :type: str
+        """
+        
+        self._next = next
 
     def to_dict(self):
         """

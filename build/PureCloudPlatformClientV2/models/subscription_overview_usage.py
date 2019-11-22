@@ -49,7 +49,9 @@ class SubscriptionOverviewUsage(object):
             'prepay_quantity': 'str',
             'prepay_price': 'str',
             'usage_notes': 'str',
-            'is_cancellable': 'bool'
+            'is_cancellable': 'bool',
+            'bundle_quantity': 'str',
+            'is_third_party': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class SubscriptionOverviewUsage(object):
             'prepay_quantity': 'prepayQuantity',
             'prepay_price': 'prepayPrice',
             'usage_notes': 'usageNotes',
-            'is_cancellable': 'isCancellable'
+            'is_cancellable': 'isCancellable',
+            'bundle_quantity': 'bundleQuantity',
+            'is_third_party': 'isThirdParty'
         }
 
         self._name = None
@@ -75,6 +79,8 @@ class SubscriptionOverviewUsage(object):
         self._prepay_price = None
         self._usage_notes = None
         self._is_cancellable = None
+        self._bundle_quantity = None
+        self._is_third_party = None
 
     @property
     def name(self):
@@ -305,6 +311,52 @@ class SubscriptionOverviewUsage(object):
         """
         
         self._is_cancellable = is_cancellable
+
+    @property
+    def bundle_quantity(self):
+        """
+        Gets the bundle_quantity of this SubscriptionOverviewUsage.
+        Quantity multiplier for this charge
+
+        :return: The bundle_quantity of this SubscriptionOverviewUsage.
+        :rtype: str
+        """
+        return self._bundle_quantity
+
+    @bundle_quantity.setter
+    def bundle_quantity(self, bundle_quantity):
+        """
+        Sets the bundle_quantity of this SubscriptionOverviewUsage.
+        Quantity multiplier for this charge
+
+        :param bundle_quantity: The bundle_quantity of this SubscriptionOverviewUsage.
+        :type: str
+        """
+        
+        self._bundle_quantity = bundle_quantity
+
+    @property
+    def is_third_party(self):
+        """
+        Gets the is_third_party of this SubscriptionOverviewUsage.
+        A charge from a third party entity
+
+        :return: The is_third_party of this SubscriptionOverviewUsage.
+        :rtype: bool
+        """
+        return self._is_third_party
+
+    @is_third_party.setter
+    def is_third_party(self, is_third_party):
+        """
+        Sets the is_third_party of this SubscriptionOverviewUsage.
+        A charge from a third party entity
+
+        :param is_third_party: The is_third_party of this SubscriptionOverviewUsage.
+        :type: bool
+        """
+        
+        self._is_third_party = is_third_party
 
     def to_dict(self):
         """

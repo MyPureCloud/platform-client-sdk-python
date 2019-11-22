@@ -71,6 +71,8 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'journey_context': 'ConversationChatEventTopicJourneyContext',
+            'start_acw_time': 'datetime',
+            'end_acw_time': 'datetime',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -107,6 +109,8 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'journey_context': 'journeyContext',
+            'start_acw_time': 'startAcwTime',
+            'end_acw_time': 'endAcwTime',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -142,6 +146,8 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         self._screen_recording_state = None
         self._flagged_reason = None
         self._journey_context = None
+        self._start_acw_time = None
+        self._end_acw_time = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -873,6 +879,52 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def start_acw_time(self):
+        """
+        Gets the start_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The start_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+        :rtype: datetime
+        """
+        return self._start_acw_time
+
+    @start_acw_time.setter
+    def start_acw_time(self, start_acw_time):
+        """
+        Sets the start_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :param start_acw_time: The start_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+        :type: datetime
+        """
+        
+        self._start_acw_time = start_acw_time
+
+    @property
+    def end_acw_time(self):
+        """
+        Gets the end_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The end_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+        :rtype: datetime
+        """
+        return self._end_acw_time
+
+    @end_acw_time.setter
+    def end_acw_time(self, end_acw_time):
+        """
+        Sets the end_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :param end_acw_time: The end_acw_time of this ConversationChatEventTopicChatMediaParticipant.
+        :type: datetime
+        """
+        
+        self._end_acw_time = end_acw_time
 
     @property
     def room_id(self):
