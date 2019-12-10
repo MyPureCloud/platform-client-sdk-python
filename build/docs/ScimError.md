@@ -7,10 +7,10 @@ title: ScimError
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **status** | **str** | HTTP Status Code | [optional] |
-| **scim_type** | **str** | Optional SCIM Error Type when httpStatus is 400 error | [optional] |
-| **detail** | **str** | Optional detailed error description | [optional] |
-| **schemas** | **list[str]** | Schemas for the SCIM Error | [optional] |
+| **status** | **str** | The HTTP status code returned for the SCIM error. | [optional] |
+| **scim_type** | **str** | The type of SCIM error when httpStatus is a \&quot;400\&quot; error. | [optional] |
+| **detail** | **str** | The detailed description of the SCIM error. | [optional] |
+| **schemas** | **list[str]** | The list of schemas for the SCIM error. | [optional] |
 {: class="table table-striped"}
 
 

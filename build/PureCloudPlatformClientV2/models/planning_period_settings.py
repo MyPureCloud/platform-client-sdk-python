@@ -41,7 +41,7 @@ class PlanningPeriodSettings(object):
         """
         self.swagger_types = {
             'week_count': 'int',
-            'start_date': 'datetime'
+            'start_date': 'date'
         }
 
         self.attribute_map = {
@@ -79,10 +79,10 @@ class PlanningPeriodSettings(object):
     def start_date(self):
         """
         Gets the start_date of this PlanningPeriodSettings.
-        Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :return: The start_date of this PlanningPeriodSettings.
-        :rtype: datetime
+        :rtype: date
         """
         return self._start_date
 
@@ -90,10 +90,10 @@ class PlanningPeriodSettings(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this PlanningPeriodSettings.
-        Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :param start_date: The start_date of this PlanningPeriodSettings.
-        :type: datetime
+        :type: date
         """
         
         self._start_date = start_date

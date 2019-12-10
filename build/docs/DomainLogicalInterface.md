@@ -26,6 +26,8 @@ title: DomainLogicalInterface
 | **physical_adapter_id** | **str** | Physical Adapter Id | |
 | **if_status** | **str** |  | [optional] |
 | **interface_type** | **str** | The type of this network interface. | [optional] |
+| **public_nat_address_ip_v4** | **str** | IPv4 NENT IP Address | [optional] |
+| **public_nat_address_ip_v6** | **str** | IPv6 NENT IP Address | [optional] |
 | **routes** | [**list[DomainNetworkRoute]**](DomainNetworkRoute.html) | The list of routes assigned to this interface. | [optional] |
 | **addresses** | [**list[DomainNetworkAddress]**](DomainNetworkAddress.html) | The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list. | [optional] |
 | **ipv4_capabilities** | [**DomainCapabilities**](DomainCapabilities.html) | IPv4 interface settings. | [optional] |
@@ -39,7 +41,6 @@ title: DomainLogicalInterface
 | **use_for_internal_edge_communication** | **bool** | This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group. | [optional] |
 | **use_for_indirect_edge_communication** | **bool** | Site Interconnects using the \&quot;Indirect\&quot; method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end. | [optional] |
 | **use_for_cloud_proxy_edge_communication** | **bool** | Site Interconnects using the \&quot;Cloud Proxy\&quot; method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option. | [optional] |
-| **public_nat_ip_address** | **str** | NENT IP Address | [optional] |
 | **external_trunk_base_assignments** | [**list[TrunkBaseAssignment]**](TrunkBaseAssignment.html) | External trunk base settings to use for external communication from this interface. | [optional] |
 | **phone_trunk_base_assignments** | [**list[TrunkBaseAssignment]**](TrunkBaseAssignment.html) | Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true. | [optional] |
 | **trace_enabled** | **bool** |  | [optional] |

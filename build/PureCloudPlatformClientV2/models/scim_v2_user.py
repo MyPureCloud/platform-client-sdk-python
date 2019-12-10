@@ -394,7 +394,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensionenterprise2_0_user(self):
         """
         Gets the urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
-        SCIM enterprise user attributes
+        The URI of the schema for the enterprise user.
 
         :return: The urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
         :rtype: ScimV2EnterpriseUser
@@ -405,7 +405,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensionenterprise2_0_user(self, urnietfparamsscimschemasextensionenterprise2_0_user):
         """
         Sets the urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
-        SCIM enterprise user attributes
+        The URI of the schema for the enterprise user.
 
         :param urnietfparamsscimschemasextensionenterprise2_0_user: The urnietfparamsscimschemasextensionenterprise2_0_user of this ScimV2User.
         :type: ScimV2EnterpriseUser
@@ -417,7 +417,7 @@ class ScimV2User(object):
     def meta(self):
         """
         Gets the meta of this ScimV2User.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :return: The meta of this ScimV2User.
         :rtype: ScimMetadata
@@ -428,7 +428,7 @@ class ScimV2User(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2User.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :param meta: The meta of this ScimV2User.
         :type: ScimMetadata

@@ -18,8 +18,6 @@ title: WorkPlanActivity
 | **start_time_increment_minutes** | **int** | Increment in offset minutes that would contribute to different possible start times for the activity | [optional] |
 | **counts_as_paid_time** | **bool** | Whether the activity is paid | [optional] |
 | **counts_as_contiguous_work_time** | **bool** | Whether the activity duration is counted towards contiguous work time | [optional] |
-| **minimum_length_from_shift_start_minutes** | **int** | The minimum duration between shift start and shift item (e.g., break or meal) start in minutes | [optional] |
-| **minimum_length_from_shift_end_minutes** | **int** | The minimum duration between shift item (e.g., break or meal) end and shift end in minutes | [optional] |
 | **id** | **str** | ID of the activity. This is required only for the case of updating an existing activity | [optional] |
 | **delete** | **bool** | If marked true for updating an existing activity, the activity will be permanently deleted | [optional] |
 {: class="table table-striped"}

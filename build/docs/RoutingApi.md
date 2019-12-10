@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
 |[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.|
 |[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
+|[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_address**](RoutingApi.html#get_routing_sms_address) | Get an Address by Id for SMS|
@@ -50,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number OR joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
+|[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
 |[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
@@ -1578,6 +1580,52 @@ except ApiException as e:
 
 [**UserQueueEntityListing**](UserQueueEntityListing.html)
 
+<a name="get_routing_settings_contactcenter"></a>
+
+## [**ContactCenterSettings**](ContactCenterSettings.html) get_routing_settings_contactcenter()
+
+
+
+Get Contact Center Settings
+
+
+
+Wraps GET /api/v2/routing/settings/contactcenter 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get Contact Center Settings
+    api_response = api_instance.get_routing_settings_contactcenter()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_settings_contactcenter: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactCenterSettings**](ContactCenterSettings.html)
+
 <a name="get_routing_skill"></a>
 
 ## [**RoutingSkill**](RoutingSkill.html) get_routing_skill(skill_id)
@@ -2336,6 +2384,56 @@ except ApiException as e:
 ### Return type
 
 [**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+
+<a name="patch_routing_settings_contactcenter"></a>
+
+##  patch_routing_settings_contactcenter(body)
+
+
+
+Update Contact Center Settings
+
+
+
+Wraps PATCH /api/v2/routing/settings/contactcenter 
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.ContactCenterSettings() # ContactCenterSettings | Contact Center Settings
+
+try:
+    # Update Contact Center Settings
+    api_instance.patch_routing_settings_contactcenter(body)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_routing_settings_contactcenter: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactCenterSettings**](ContactCenterSettings.html)| Contact Center Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="patch_user_routinglanguage"></a>
 

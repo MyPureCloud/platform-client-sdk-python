@@ -51,7 +51,8 @@ class ReportingExportJobRequest(object):
             'locale': 'str',
             'has_format_durations': 'bool',
             'has_split_filters': 'bool',
-            'selected_columns': 'list[SelectedColumns]'
+            'selected_columns': 'list[SelectedColumns]',
+            'has_custom_participant_attributes': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class ReportingExportJobRequest(object):
             'locale': 'locale',
             'has_format_durations': 'hasFormatDurations',
             'has_split_filters': 'hasSplitFilters',
-            'selected_columns': 'selectedColumns'
+            'selected_columns': 'selectedColumns',
+            'has_custom_participant_attributes': 'hasCustomParticipantAttributes'
         }
 
         self._name = None
@@ -81,6 +83,7 @@ class ReportingExportJobRequest(object):
         self._has_format_durations = None
         self._has_split_filters = None
         self._selected_columns = None
+        self._has_custom_participant_attributes = None
 
     @property
     def name(self):
@@ -365,6 +368,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._selected_columns = selected_columns
+
+    @property
+    def has_custom_participant_attributes(self):
+        """
+        Gets the has_custom_participant_attributes of this ReportingExportJobRequest.
+        Indicates if custom participant attributes will be exported
+
+        :return: The has_custom_participant_attributes of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._has_custom_participant_attributes
+
+    @has_custom_participant_attributes.setter
+    def has_custom_participant_attributes(self, has_custom_participant_attributes):
+        """
+        Sets the has_custom_participant_attributes of this ReportingExportJobRequest.
+        Indicates if custom participant attributes will be exported
+
+        :param has_custom_participant_attributes: The has_custom_participant_attributes of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._has_custom_participant_attributes = has_custom_participant_attributes
 
     def to_dict(self):
         """

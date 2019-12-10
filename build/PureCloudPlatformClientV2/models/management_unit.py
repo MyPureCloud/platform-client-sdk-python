@@ -45,7 +45,7 @@ class ManagementUnit(object):
             'division': 'Division',
             'start_day_of_week': 'str',
             'time_zone': 'str',
-            'settings': 'ManagementUnitSettings',
+            'settings': 'ManagementUnitSettingsResponse',
             'metadata': 'WfmVersionedEntityMetadata',
             'version': 'int',
             'date_modified': 'datetime',
@@ -205,7 +205,7 @@ class ManagementUnit(object):
         The configuration settings for this management unit
 
         :return: The settings of this ManagementUnit.
-        :rtype: ManagementUnitSettings
+        :rtype: ManagementUnitSettingsResponse
         """
         return self._settings
 
@@ -216,7 +216,7 @@ class ManagementUnit(object):
         The configuration settings for this management unit
 
         :param settings: The settings of this ManagementUnit.
-        :type: ManagementUnitSettings
+        :type: ManagementUnitSettingsResponse
         """
         
         self._settings = settings

@@ -54,6 +54,7 @@ class RecordingMetadata(object):
             'archive_medium': 'str',
             'delete_date': 'datetime',
             'export_date': 'datetime',
+            'exported_date': 'datetime',
             'max_allowed_restorations_for_org': 'int',
             'remaining_restorations_allowed_for_org': 'int',
             'session_id': 'str',
@@ -75,6 +76,7 @@ class RecordingMetadata(object):
             'archive_medium': 'archiveMedium',
             'delete_date': 'deleteDate',
             'export_date': 'exportDate',
+            'exported_date': 'exportedDate',
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
             'remaining_restorations_allowed_for_org': 'remainingRestorationsAllowedForOrg',
             'session_id': 'sessionId',
@@ -95,6 +97,7 @@ class RecordingMetadata(object):
         self._archive_medium = None
         self._delete_date = None
         self._export_date = None
+        self._exported_date = None
         self._max_allowed_restorations_for_org = None
         self._remaining_restorations_allowed_for_org = None
         self._session_id = None
@@ -429,6 +432,29 @@ class RecordingMetadata(object):
         """
         
         self._export_date = export_date
+
+    @property
+    def exported_date(self):
+        """
+        Gets the exported_date of this RecordingMetadata.
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The exported_date of this RecordingMetadata.
+        :rtype: datetime
+        """
+        return self._exported_date
+
+    @exported_date.setter
+    def exported_date(self, exported_date):
+        """
+        Sets the exported_date of this RecordingMetadata.
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param exported_date: The exported_date of this RecordingMetadata.
+        :type: datetime
+        """
+        
+        self._exported_date = exported_date
 
     @property
     def max_allowed_restorations_for_org(self):

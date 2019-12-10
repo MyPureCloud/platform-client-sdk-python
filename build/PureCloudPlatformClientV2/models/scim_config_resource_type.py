@@ -235,7 +235,7 @@ class ScimConfigResourceType(object):
     def meta(self):
         """
         Gets the meta of this ScimConfigResourceType.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :return: The meta of this ScimConfigResourceType.
         :rtype: ScimMetadata
@@ -246,7 +246,7 @@ class ScimConfigResourceType(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimConfigResourceType.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :param meta: The meta of this ScimConfigResourceType.
         :type: ScimMetadata

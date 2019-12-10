@@ -59,6 +59,7 @@ class ReportingExportJobResponse(object):
             'has_format_durations': 'bool',
             'has_split_filters': 'bool',
             'selected_columns': 'list[SelectedColumns]',
+            'has_custom_participant_attributes': 'bool',
             'self_uri': 'str'
         }
 
@@ -82,6 +83,7 @@ class ReportingExportJobResponse(object):
             'has_format_durations': 'hasFormatDurations',
             'has_split_filters': 'hasSplitFilters',
             'selected_columns': 'selectedColumns',
+            'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
             'self_uri': 'selfUri'
         }
 
@@ -104,6 +106,7 @@ class ReportingExportJobResponse(object):
         self._has_format_durations = None
         self._has_split_filters = None
         self._selected_columns = None
+        self._has_custom_participant_attributes = None
         self._self_uri = None
 
     @property
@@ -558,6 +561,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._selected_columns = selected_columns
+
+    @property
+    def has_custom_participant_attributes(self):
+        """
+        Gets the has_custom_participant_attributes of this ReportingExportJobResponse.
+        Indicates if custom participant attributes will be exported
+
+        :return: The has_custom_participant_attributes of this ReportingExportJobResponse.
+        :rtype: bool
+        """
+        return self._has_custom_participant_attributes
+
+    @has_custom_participant_attributes.setter
+    def has_custom_participant_attributes(self, has_custom_participant_attributes):
+        """
+        Sets the has_custom_participant_attributes of this ReportingExportJobResponse.
+        Indicates if custom participant attributes will be exported
+
+        :param has_custom_participant_attributes: The has_custom_participant_attributes of this ReportingExportJobResponse.
+        :type: bool
+        """
+        
+        self._has_custom_participant_attributes = has_custom_participant_attributes
 
     @property
     def self_uri(self):

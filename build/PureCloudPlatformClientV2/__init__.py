@@ -231,6 +231,7 @@ from .models.consuming_resources_entity_listing import ConsumingResourcesEntityL
 from .models.contact import Contact
 from .models.contact_address import ContactAddress
 from .models.contact_callback_request import ContactCallbackRequest
+from .models.contact_center_settings import ContactCenterSettings
 from .models.contact_column_time_zone import ContactColumnTimeZone
 from .models.contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .models.contact_list import ContactList
@@ -452,7 +453,7 @@ from .models.create_callback_response import CreateCallbackResponse
 from .models.create_email_request import CreateEmailRequest
 from .models.create_integration_request import CreateIntegrationRequest
 from .models.create_management_unit_api_request import CreateManagementUnitApiRequest
-from .models.create_management_unit_settings import CreateManagementUnitSettings
+from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .models.create_queue_media_association_request import CreateQueueMediaAssociationRequest
 from .models.create_queue_request import CreateQueueRequest
@@ -919,7 +920,8 @@ from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
-from .models.management_unit_settings import ManagementUnitSettings
+from .models.management_unit_settings_request import ManagementUnitSettingsRequest
+from .models.management_unit_settings_response import ManagementUnitSettingsResponse
 from .models.manager import Manager
 from .models.max_participants import MaxParticipants
 from .models.media_endpoint_stat_detail_query_clause import MediaEndpointStatDetailQueryClause
@@ -1354,7 +1356,8 @@ from .models.schedule_interval import ScheduleInterval
 from .models.scheduling_processing_error import SchedulingProcessingError
 from .models.scheduling_run_list_response import SchedulingRunListResponse
 from .models.scheduling_run_response import SchedulingRunResponse
-from .models.scheduling_settings import SchedulingSettings
+from .models.scheduling_settings_request import SchedulingSettingsRequest
+from .models.scheduling_settings_response import SchedulingSettingsResponse
 from .models.scheduling_status_response import SchedulingStatusResponse
 from .models.schema_category import SchemaCategory
 from .models.schema_category_entity_listing import SchemaCategoryEntityListing
@@ -1655,6 +1658,7 @@ from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
+from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.vendor_connection_request import VendorConnectionRequest
 from .models.video import Video
 from .models.view_filter import ViewFilter

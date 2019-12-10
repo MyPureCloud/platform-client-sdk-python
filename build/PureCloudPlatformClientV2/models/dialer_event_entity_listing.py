@@ -44,8 +44,8 @@ class DialerEventEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'self_uri': 'str',
             'first_uri': 'str',
+            'self_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
             'previous_uri': 'str',
@@ -57,8 +57,8 @@ class DialerEventEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'self_uri': 'selfUri',
             'first_uri': 'firstUri',
+            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'previous_uri': 'previousUri',
@@ -69,8 +69,8 @@ class DialerEventEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._self_uri = None
         self._first_uri = None
+        self._self_uri = None
         self._next_uri = None
         self._last_uri = None
         self._previous_uri = None
@@ -169,29 +169,6 @@ class DialerEventEntityListing(object):
         self._total = total
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this DialerEventEntityListing.
-
-
-        :return: The self_uri of this DialerEventEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this DialerEventEntityListing.
-
-
-        :param self_uri: The self_uri of this DialerEventEntityListing.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
-
-    @property
     def first_uri(self):
         """
         Gets the first_uri of this DialerEventEntityListing.
@@ -213,6 +190,29 @@ class DialerEventEntityListing(object):
         """
         
         self._first_uri = first_uri
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this DialerEventEntityListing.
+
+
+        :return: The self_uri of this DialerEventEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this DialerEventEntityListing.
+
+
+        :param self_uri: The self_uri of this DialerEventEntityListing.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def next_uri(self):

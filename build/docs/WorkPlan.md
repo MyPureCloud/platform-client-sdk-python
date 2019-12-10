@@ -20,17 +20,7 @@ title: WorkPlan
 | **constrain_minimum_time_between_shifts** | **bool** | Whether the minimum time between shifts constraint is enabled for this work plan | [optional] |
 | **minimum_time_between_shifts_minutes** | **int** | Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts == true | [optional] |
 | **maximum_days** | **int** | Maximum number days in a week allowed to be scheduled for this work plan | [optional] |
-| **start_day_of_weekend** | **str** | The day of the week for which the weekend starts, such as Saturday | [optional] |
-| **minimum_consecutive_time_off_per_week_minutes** | **int** | Minimum amount of consecutive time off per week that agents who are assigned this work plan are allowed to have off | [optional] |
-| **constrain_maximum_consecutive_working_weekends** | **bool** | Whether to constrain the maximum consecutive working weekends | [optional] |
-| **maximum_consecutive_working_weekends** | **int** | The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work | [optional] |
 | **minimum_working_days_per_week** | **int** | The minimum number of days that agents assigned to a work plan must work per week | [optional] |
-| **maximum_consecutive_working_days** | **int** | The maximum number of consecutive days that agents assigned to this work plan are allowed to work | [optional] |
-| **minimum_shift_start_distance_minutes** | **int** | The time period in minutes for the duration between the start times of two consecutive working days | [optional] |
-| **minimum_days_off_per_planning_period** | **int** | Minimum days off in the planning period | [optional] |
-| **maximum_days_off_per_planning_period** | **int** | Maximum days off in the planning period | [optional] |
-| **minimum_paid_hours_per_planning_period** | **int** | Minimum paid hours in the planning period | [optional] |
-| **maximum_paid_hours_per_planning_period** | **int** | Maximum paid hours in the planning period | [optional] |
 | **optional_days** | [**SetWrapperDayOfWeek**](SetWrapperDayOfWeek.html) | Optional days to schedule for this work plan | [optional] |
 | **shift_start_variances** | [**ListWrapperShiftStartVariance**](ListWrapperShiftStartVariance.html) | Variance in minutes among start times of shifts in this work plan | [optional] |
 | **shifts** | [**list[WorkPlanShift]**](WorkPlanShift.html) | Shifts in this work plan | [optional] |

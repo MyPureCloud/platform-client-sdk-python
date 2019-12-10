@@ -59,6 +59,8 @@ class DomainLogicalInterface(object):
             'physical_adapter_id': 'str',
             'if_status': 'str',
             'interface_type': 'str',
+            'public_nat_address_ip_v4': 'str',
+            'public_nat_address_ip_v6': 'str',
             'routes': 'list[DomainNetworkRoute]',
             'addresses': 'list[DomainNetworkAddress]',
             'ipv4_capabilities': 'DomainCapabilities',
@@ -72,7 +74,6 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'bool',
             'use_for_indirect_edge_communication': 'bool',
             'use_for_cloud_proxy_edge_communication': 'bool',
-            'public_nat_ip_address': 'str',
             'external_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'phone_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'trace_enabled': 'bool',
@@ -101,6 +102,8 @@ class DomainLogicalInterface(object):
             'physical_adapter_id': 'physicalAdapterId',
             'if_status': 'ifStatus',
             'interface_type': 'interfaceType',
+            'public_nat_address_ip_v4': 'publicNatAddressIpV4',
+            'public_nat_address_ip_v6': 'publicNatAddressIpV6',
             'routes': 'routes',
             'addresses': 'addresses',
             'ipv4_capabilities': 'ipv4Capabilities',
@@ -114,7 +117,6 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'useForInternalEdgeCommunication',
             'use_for_indirect_edge_communication': 'useForIndirectEdgeCommunication',
             'use_for_cloud_proxy_edge_communication': 'useForCloudProxyEdgeCommunication',
-            'public_nat_ip_address': 'publicNatIpAddress',
             'external_trunk_base_assignments': 'externalTrunkBaseAssignments',
             'phone_trunk_base_assignments': 'phoneTrunkBaseAssignments',
             'trace_enabled': 'traceEnabled',
@@ -142,6 +144,8 @@ class DomainLogicalInterface(object):
         self._physical_adapter_id = None
         self._if_status = None
         self._interface_type = None
+        self._public_nat_address_ip_v4 = None
+        self._public_nat_address_ip_v6 = None
         self._routes = None
         self._addresses = None
         self._ipv4_capabilities = None
@@ -155,7 +159,6 @@ class DomainLogicalInterface(object):
         self._use_for_internal_edge_communication = None
         self._use_for_indirect_edge_communication = None
         self._use_for_cloud_proxy_edge_communication = None
-        self._public_nat_ip_address = None
         self._external_trunk_base_assignments = None
         self._phone_trunk_base_assignments = None
         self._trace_enabled = None
@@ -609,6 +612,52 @@ class DomainLogicalInterface(object):
             self._interface_type = interface_type
 
     @property
+    def public_nat_address_ip_v4(self):
+        """
+        Gets the public_nat_address_ip_v4 of this DomainLogicalInterface.
+        IPv4 NENT IP Address
+
+        :return: The public_nat_address_ip_v4 of this DomainLogicalInterface.
+        :rtype: str
+        """
+        return self._public_nat_address_ip_v4
+
+    @public_nat_address_ip_v4.setter
+    def public_nat_address_ip_v4(self, public_nat_address_ip_v4):
+        """
+        Sets the public_nat_address_ip_v4 of this DomainLogicalInterface.
+        IPv4 NENT IP Address
+
+        :param public_nat_address_ip_v4: The public_nat_address_ip_v4 of this DomainLogicalInterface.
+        :type: str
+        """
+        
+        self._public_nat_address_ip_v4 = public_nat_address_ip_v4
+
+    @property
+    def public_nat_address_ip_v6(self):
+        """
+        Gets the public_nat_address_ip_v6 of this DomainLogicalInterface.
+        IPv6 NENT IP Address
+
+        :return: The public_nat_address_ip_v6 of this DomainLogicalInterface.
+        :rtype: str
+        """
+        return self._public_nat_address_ip_v6
+
+    @public_nat_address_ip_v6.setter
+    def public_nat_address_ip_v6(self, public_nat_address_ip_v6):
+        """
+        Sets the public_nat_address_ip_v6 of this DomainLogicalInterface.
+        IPv6 NENT IP Address
+
+        :param public_nat_address_ip_v6: The public_nat_address_ip_v6 of this DomainLogicalInterface.
+        :type: str
+        """
+        
+        self._public_nat_address_ip_v6 = public_nat_address_ip_v6
+
+    @property
     def routes(self):
         """
         Gets the routes of this DomainLogicalInterface.
@@ -910,29 +959,6 @@ class DomainLogicalInterface(object):
         """
         
         self._use_for_cloud_proxy_edge_communication = use_for_cloud_proxy_edge_communication
-
-    @property
-    def public_nat_ip_address(self):
-        """
-        Gets the public_nat_ip_address of this DomainLogicalInterface.
-        NENT IP Address
-
-        :return: The public_nat_ip_address of this DomainLogicalInterface.
-        :rtype: str
-        """
-        return self._public_nat_ip_address
-
-    @public_nat_ip_address.setter
-    def public_nat_ip_address(self, public_nat_ip_address):
-        """
-        Sets the public_nat_ip_address of this DomainLogicalInterface.
-        NENT IP Address
-
-        :param public_nat_ip_address: The public_nat_ip_address of this DomainLogicalInterface.
-        :type: str
-        """
-        
-        self._public_nat_ip_address = public_nat_ip_address
 
     @property
     def external_trunk_base_assignments(self):

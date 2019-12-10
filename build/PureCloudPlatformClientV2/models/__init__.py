@@ -231,6 +231,7 @@ from .consuming_resources_entity_listing import ConsumingResourcesEntityListing
 from .contact import Contact
 from .contact_address import ContactAddress
 from .contact_callback_request import ContactCallbackRequest
+from .contact_center_settings import ContactCenterSettings
 from .contact_column_time_zone import ContactColumnTimeZone
 from .contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .contact_list import ContactList
@@ -452,7 +453,7 @@ from .create_callback_response import CreateCallbackResponse
 from .create_email_request import CreateEmailRequest
 from .create_integration_request import CreateIntegrationRequest
 from .create_management_unit_api_request import CreateManagementUnitApiRequest
-from .create_management_unit_settings import CreateManagementUnitSettings
+from .create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .create_queue_media_association_request import CreateQueueMediaAssociationRequest
 from .create_queue_request import CreateQueueRequest
@@ -919,7 +920,8 @@ from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
-from .management_unit_settings import ManagementUnitSettings
+from .management_unit_settings_request import ManagementUnitSettingsRequest
+from .management_unit_settings_response import ManagementUnitSettingsResponse
 from .manager import Manager
 from .max_participants import MaxParticipants
 from .media_endpoint_stat_detail_query_clause import MediaEndpointStatDetailQueryClause
@@ -1354,7 +1356,8 @@ from .schedule_interval import ScheduleInterval
 from .scheduling_processing_error import SchedulingProcessingError
 from .scheduling_run_list_response import SchedulingRunListResponse
 from .scheduling_run_response import SchedulingRunResponse
-from .scheduling_settings import SchedulingSettings
+from .scheduling_settings_request import SchedulingSettingsRequest
+from .scheduling_settings_response import SchedulingSettingsResponse
 from .scheduling_status_response import SchedulingStatusResponse
 from .schema_category import SchemaCategory
 from .schema_category_entity_listing import SchemaCategoryEntityListing
@@ -1655,6 +1658,7 @@ from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
+from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .vendor_connection_request import VendorConnectionRequest
 from .video import Video
 from .view_filter import ViewFilter

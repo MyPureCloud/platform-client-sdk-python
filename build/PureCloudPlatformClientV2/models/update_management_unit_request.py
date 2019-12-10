@@ -42,7 +42,7 @@ class UpdateManagementUnitRequest(object):
         self.swagger_types = {
             'name': 'str',
             'division_id': 'str',
-            'settings': 'ManagementUnitSettings'
+            'settings': 'ManagementUnitSettingsRequest'
         }
 
         self.attribute_map = {
@@ -108,7 +108,7 @@ class UpdateManagementUnitRequest(object):
         Updated settings for the management unit
 
         :return: The settings of this UpdateManagementUnitRequest.
-        :rtype: ManagementUnitSettings
+        :rtype: ManagementUnitSettingsRequest
         """
         return self._settings
 
@@ -119,7 +119,7 @@ class UpdateManagementUnitRequest(object):
         Updated settings for the management unit
 
         :param settings: The settings of this UpdateManagementUnitRequest.
-        :type: ManagementUnitSettings
+        :type: ManagementUnitSettingsRequest
         """
         
         self._settings = settings

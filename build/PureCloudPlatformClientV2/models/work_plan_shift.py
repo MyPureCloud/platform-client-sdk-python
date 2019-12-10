@@ -49,8 +49,6 @@ class WorkPlanShift(object):
             'constrain_stop_time': 'bool',
             'constrain_latest_stop_time': 'bool',
             'latest_stop_time_minutes_from_midnight': 'int',
-            'constrain_earliest_stop_time': 'bool',
-            'earliest_stop_time_minutes_from_midnight': 'int',
             'start_increment_minutes': 'int',
             'flexible_paid_time': 'bool',
             'exact_paid_time_minutes': 'int',
@@ -59,10 +57,6 @@ class WorkPlanShift(object):
             'constrain_contiguous_work_time': 'bool',
             'minimum_contiguous_work_time_minutes': 'int',
             'maximum_contiguous_work_time_minutes': 'int',
-            'synchronize_agents_schedules': 'bool',
-            'synchronization_type': 'str',
-            'constrain_day_off': 'bool',
-            'day_off_rule': 'str',
             'activities': 'list[WorkPlanActivity]',
             'id': 'str',
             'delete': 'bool'
@@ -78,8 +72,6 @@ class WorkPlanShift(object):
             'constrain_stop_time': 'constrainStopTime',
             'constrain_latest_stop_time': 'constrainLatestStopTime',
             'latest_stop_time_minutes_from_midnight': 'latestStopTimeMinutesFromMidnight',
-            'constrain_earliest_stop_time': 'constrainEarliestStopTime',
-            'earliest_stop_time_minutes_from_midnight': 'earliestStopTimeMinutesFromMidnight',
             'start_increment_minutes': 'startIncrementMinutes',
             'flexible_paid_time': 'flexiblePaidTime',
             'exact_paid_time_minutes': 'exactPaidTimeMinutes',
@@ -88,10 +80,6 @@ class WorkPlanShift(object):
             'constrain_contiguous_work_time': 'constrainContiguousWorkTime',
             'minimum_contiguous_work_time_minutes': 'minimumContiguousWorkTimeMinutes',
             'maximum_contiguous_work_time_minutes': 'maximumContiguousWorkTimeMinutes',
-            'synchronize_agents_schedules': 'synchronizeAgentsSchedules',
-            'synchronization_type': 'synchronizationType',
-            'constrain_day_off': 'constrainDayOff',
-            'day_off_rule': 'dayOffRule',
             'activities': 'activities',
             'id': 'id',
             'delete': 'delete'
@@ -106,8 +94,6 @@ class WorkPlanShift(object):
         self._constrain_stop_time = None
         self._constrain_latest_stop_time = None
         self._latest_stop_time_minutes_from_midnight = None
-        self._constrain_earliest_stop_time = None
-        self._earliest_stop_time_minutes_from_midnight = None
         self._start_increment_minutes = None
         self._flexible_paid_time = None
         self._exact_paid_time_minutes = None
@@ -116,10 +102,6 @@ class WorkPlanShift(object):
         self._constrain_contiguous_work_time = None
         self._minimum_contiguous_work_time_minutes = None
         self._maximum_contiguous_work_time_minutes = None
-        self._synchronize_agents_schedules = None
-        self._synchronization_type = None
-        self._constrain_day_off = None
-        self._day_off_rule = None
         self._activities = None
         self._id = None
         self._delete = None
@@ -332,52 +314,6 @@ class WorkPlanShift(object):
         self._latest_stop_time_minutes_from_midnight = latest_stop_time_minutes_from_midnight
 
     @property
-    def constrain_earliest_stop_time(self):
-        """
-        Gets the constrain_earliest_stop_time of this WorkPlanShift.
-        Whether the earliest stop time constraint for the shift is enabled
-
-        :return: The constrain_earliest_stop_time of this WorkPlanShift.
-        :rtype: bool
-        """
-        return self._constrain_earliest_stop_time
-
-    @constrain_earliest_stop_time.setter
-    def constrain_earliest_stop_time(self, constrain_earliest_stop_time):
-        """
-        Sets the constrain_earliest_stop_time of this WorkPlanShift.
-        Whether the earliest stop time constraint for the shift is enabled
-
-        :param constrain_earliest_stop_time: The constrain_earliest_stop_time of this WorkPlanShift.
-        :type: bool
-        """
-        
-        self._constrain_earliest_stop_time = constrain_earliest_stop_time
-
-    @property
-    def earliest_stop_time_minutes_from_midnight(self):
-        """
-        Gets the earliest_stop_time_minutes_from_midnight of this WorkPlanShift.
-        This is the earliest time a shift can end
-
-        :return: The earliest_stop_time_minutes_from_midnight of this WorkPlanShift.
-        :rtype: int
-        """
-        return self._earliest_stop_time_minutes_from_midnight
-
-    @earliest_stop_time_minutes_from_midnight.setter
-    def earliest_stop_time_minutes_from_midnight(self, earliest_stop_time_minutes_from_midnight):
-        """
-        Sets the earliest_stop_time_minutes_from_midnight of this WorkPlanShift.
-        This is the earliest time a shift can end
-
-        :param earliest_stop_time_minutes_from_midnight: The earliest_stop_time_minutes_from_midnight of this WorkPlanShift.
-        :type: int
-        """
-        
-        self._earliest_stop_time_minutes_from_midnight = earliest_stop_time_minutes_from_midnight
-
-    @property
     def start_increment_minutes(self):
         """
         Gets the start_increment_minutes of this WorkPlanShift.
@@ -560,106 +496,6 @@ class WorkPlanShift(object):
         """
         
         self._maximum_contiguous_work_time_minutes = maximum_contiguous_work_time_minutes
-
-    @property
-    def synchronize_agents_schedules(self):
-        """
-        Gets the synchronize_agents_schedules of this WorkPlanShift.
-        Whether synchronization for agent is enabled
-
-        :return: The synchronize_agents_schedules of this WorkPlanShift.
-        :rtype: bool
-        """
-        return self._synchronize_agents_schedules
-
-    @synchronize_agents_schedules.setter
-    def synchronize_agents_schedules(self, synchronize_agents_schedules):
-        """
-        Sets the synchronize_agents_schedules of this WorkPlanShift.
-        Whether synchronization for agent is enabled
-
-        :param synchronize_agents_schedules: The synchronize_agents_schedules of this WorkPlanShift.
-        :type: bool
-        """
-        
-        self._synchronize_agents_schedules = synchronize_agents_schedules
-
-    @property
-    def synchronization_type(self):
-        """
-        Gets the synchronization_type of this WorkPlanShift.
-        This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true
-
-        :return: The synchronization_type of this WorkPlanShift.
-        :rtype: str
-        """
-        return self._synchronization_type
-
-    @synchronization_type.setter
-    def synchronization_type(self, synchronization_type):
-        """
-        Sets the synchronization_type of this WorkPlanShift.
-        This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true
-
-        :param synchronization_type: The synchronization_type of this WorkPlanShift.
-        :type: str
-        """
-        allowed_values = ["ShiftStart", "ShiftStartAndPaidDuration"]
-        if synchronization_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for synchronization_type -> " + synchronization_type
-            self._synchronization_type = "outdated_sdk_version"
-        else:
-            self._synchronization_type = synchronization_type
-
-    @property
-    def constrain_day_off(self):
-        """
-        Gets the constrain_day_off of this WorkPlanShift.
-        Whether day off rule is enabled
-
-        :return: The constrain_day_off of this WorkPlanShift.
-        :rtype: bool
-        """
-        return self._constrain_day_off
-
-    @constrain_day_off.setter
-    def constrain_day_off(self, constrain_day_off):
-        """
-        Sets the constrain_day_off of this WorkPlanShift.
-        Whether day off rule is enabled
-
-        :param constrain_day_off: The constrain_day_off of this WorkPlanShift.
-        :type: bool
-        """
-        
-        self._constrain_day_off = constrain_day_off
-
-    @property
-    def day_off_rule(self):
-        """
-        Gets the day_off_rule of this WorkPlanShift.
-        The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
-
-        :return: The day_off_rule of this WorkPlanShift.
-        :rtype: str
-        """
-        return self._day_off_rule
-
-    @day_off_rule.setter
-    def day_off_rule(self, day_off_rule):
-        """
-        Sets the day_off_rule of this WorkPlanShift.
-        The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
-
-        :param day_off_rule: The day_off_rule of this WorkPlanShift.
-        :type: str
-        """
-        allowed_values = ["NextDayOff", "PreviousDayOff"]
-        if day_off_rule.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for day_off_rule -> " + day_off_rule
-            self._day_off_rule = "outdated_sdk_version"
-        else:
-            self._day_off_rule = day_off_rule
 
     @property
     def activities(self):

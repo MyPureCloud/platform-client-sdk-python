@@ -43,7 +43,7 @@ class CreateManagementUnitApiRequest(object):
             'name': 'str',
             'time_zone': 'str',
             'start_day_of_week': 'str',
-            'settings': 'CreateManagementUnitSettings',
+            'settings': 'CreateManagementUnitSettingsRequest',
             'division_id': 'str'
         }
 
@@ -141,7 +141,7 @@ class CreateManagementUnitApiRequest(object):
         The configuration for the management unit.  If omitted, reasonable defaults will be assigned
 
         :return: The settings of this CreateManagementUnitApiRequest.
-        :rtype: CreateManagementUnitSettings
+        :rtype: CreateManagementUnitSettingsRequest
         """
         return self._settings
 
@@ -152,7 +152,7 @@ class CreateManagementUnitApiRequest(object):
         The configuration for the management unit.  If omitted, reasonable defaults will be assigned
 
         :param settings: The settings of this CreateManagementUnitApiRequest.
-        :type: CreateManagementUnitSettings
+        :type: CreateManagementUnitSettingsRequest
         """
         
         self._settings = settings

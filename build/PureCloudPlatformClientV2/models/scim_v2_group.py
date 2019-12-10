@@ -157,7 +157,7 @@ class ScimV2Group(object):
     def meta(self):
         """
         Gets the meta of this ScimV2Group.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :return: The meta of this ScimV2Group.
         :rtype: ScimMetadata
@@ -168,7 +168,7 @@ class ScimV2Group(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2Group.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :param meta: The meta of this ScimV2Group.
         :type: ScimMetadata

@@ -287,7 +287,7 @@ class ScimServiceProviderConfig(object):
     def meta(self):
         """
         Gets the meta of this ScimServiceProviderConfig.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :return: The meta of this ScimServiceProviderConfig.
         :rtype: ScimMetadata
@@ -298,7 +298,7 @@ class ScimServiceProviderConfig(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimServiceProviderConfig.
-        Resource SCIM meta
+        The metadata of the SCIM resource.
 
         :param meta: The meta of this ScimServiceProviderConfig.
         :type: ScimMetadata

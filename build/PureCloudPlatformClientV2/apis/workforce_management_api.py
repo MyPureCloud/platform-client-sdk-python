@@ -1631,7 +1631,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :return: ManagementUnitSettings
+        :return: ManagementUnitSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1688,7 +1688,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ManagementUnitSettings',
+                                            response_type='ManagementUnitSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3620,8 +3620,8 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param ManagementUnitSettings body: config
-        :return: ManagementUnitSettings
+        :param ManagementUnitSettingsRequest body: config
+        :return: ManagementUnitSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3680,7 +3680,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ManagementUnitSettings',
+                                            response_type='ManagementUnitSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

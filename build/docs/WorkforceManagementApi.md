@@ -1159,7 +1159,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_settings"></a>
 
-## [**ManagementUnitSettings**](ManagementUnitSettings.html) get_workforcemanagement_managementunit_settings(mu_id)
+## [**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html) get_workforcemanagement_managementunit_settings(mu_id)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1206,7 +1206,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ManagementUnitSettings**](ManagementUnitSettings.html)
+[**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html)
 
 <a name="get_workforcemanagement_managementunit_shifttrades_matched"></a>
 
@@ -2454,7 +2454,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit_settings"></a>
 
-## [**ManagementUnitSettings**](ManagementUnitSettings.html) patch_workforcemanagement_managementunit_settings(mu_id, body=body)
+## [**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html) patch_workforcemanagement_managementunit_settings(mu_id, body=body)
 
 
 
@@ -2482,7 +2482,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-body = PureCloudPlatformClientV2.ManagementUnitSettings() # ManagementUnitSettings | config (optional)
+body = PureCloudPlatformClientV2.ManagementUnitSettingsRequest() # ManagementUnitSettingsRequest | config (optional)
 
 try:
     # Update the settings for the requested management unit
@@ -2498,12 +2498,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**ManagementUnitSettings**](ManagementUnitSettings.html)| config | [optional]  |
+| **body** | [**ManagementUnitSettingsRequest**](ManagementUnitSettingsRequest.html)| config | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ManagementUnitSettings**](ManagementUnitSettings.html)
+[**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html)
 
 <a name="patch_workforcemanagement_managementunit_user_timeoffrequest"></a>
 

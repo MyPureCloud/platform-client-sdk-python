@@ -62,7 +62,7 @@ class ScimError(object):
     def status(self):
         """
         Gets the status of this ScimError.
-        HTTP Status Code
+        The HTTP status code returned for the SCIM error.
 
         :return: The status of this ScimError.
         :rtype: str
@@ -73,7 +73,7 @@ class ScimError(object):
     def status(self, status):
         """
         Sets the status of this ScimError.
-        HTTP Status Code
+        The HTTP status code returned for the SCIM error.
 
         :param status: The status of this ScimError.
         :type: str
@@ -85,7 +85,7 @@ class ScimError(object):
     def scim_type(self):
         """
         Gets the scim_type of this ScimError.
-        Optional SCIM Error Type when httpStatus is 400 error
+        The type of SCIM error when httpStatus is a \"400\" error.
 
         :return: The scim_type of this ScimError.
         :rtype: str
@@ -96,7 +96,7 @@ class ScimError(object):
     def scim_type(self, scim_type):
         """
         Sets the scim_type of this ScimError.
-        Optional SCIM Error Type when httpStatus is 400 error
+        The type of SCIM error when httpStatus is a \"400\" error.
 
         :param scim_type: The scim_type of this ScimError.
         :type: str
@@ -112,7 +112,7 @@ class ScimError(object):
     def detail(self):
         """
         Gets the detail of this ScimError.
-        Optional detailed error description
+        The detailed description of the SCIM error.
 
         :return: The detail of this ScimError.
         :rtype: str
@@ -123,7 +123,7 @@ class ScimError(object):
     def detail(self, detail):
         """
         Sets the detail of this ScimError.
-        Optional detailed error description
+        The detailed description of the SCIM error.
 
         :param detail: The detail of this ScimError.
         :type: str
@@ -135,7 +135,7 @@ class ScimError(object):
     def schemas(self):
         """
         Gets the schemas of this ScimError.
-        Schemas for the SCIM Error
+        The list of schemas for the SCIM error.
 
         :return: The schemas of this ScimError.
         :rtype: list[str]
@@ -146,7 +146,7 @@ class ScimError(object):
     def schemas(self, schemas):
         """
         Sets the schemas of this ScimError.
-        Schemas for the SCIM Error
+        The list of schemas for the SCIM error.
 
         :param schemas: The schemas of this ScimError.
         :type: list[str]

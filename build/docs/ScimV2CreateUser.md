@@ -19,7 +19,7 @@ title: ScimV2CreateUser
 | **external_id** | **str** | The external ID of the user. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;. | [optional] |
 | **groups** | [**list[ScimV2GroupReference]**](ScimV2GroupReference.html) | The list of groups that the user is a member of. | [optional] |
 | **roles** | **list[str]** | The list of roles assigned to the user. | [optional] |
-| **urnietfparamsscimschemasextensionenterprise2_0_user** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) | SCIM enterprise user attributes | [optional] |
+| **urnietfparamsscimschemasextensionenterprise2_0_user** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) | The URI of the schema for the enterprise user. | [optional] |
 {: class="table table-striped"}
 
 

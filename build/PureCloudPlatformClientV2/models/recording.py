@@ -60,6 +60,7 @@ class Recording(object):
             'archive_medium': 'str',
             'delete_date': 'datetime',
             'export_date': 'datetime',
+            'exported_date': 'datetime',
             'output_duration_ms': 'int',
             'output_size_in_bytes': 'int',
             'max_allowed_restorations_for_org': 'int',
@@ -90,6 +91,7 @@ class Recording(object):
             'archive_medium': 'archiveMedium',
             'delete_date': 'deleteDate',
             'export_date': 'exportDate',
+            'exported_date': 'exportedDate',
             'output_duration_ms': 'outputDurationMs',
             'output_size_in_bytes': 'outputSizeInBytes',
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
@@ -119,6 +121,7 @@ class Recording(object):
         self._archive_medium = None
         self._delete_date = None
         self._export_date = None
+        self._exported_date = None
         self._output_duration_ms = None
         self._output_size_in_bytes = None
         self._max_allowed_restorations_for_org = None
@@ -594,6 +597,29 @@ class Recording(object):
         """
         
         self._export_date = export_date
+
+    @property
+    def exported_date(self):
+        """
+        Gets the exported_date of this Recording.
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The exported_date of this Recording.
+        :rtype: datetime
+        """
+        return self._exported_date
+
+    @exported_date.setter
+    def exported_date(self, exported_date):
+        """
+        Sets the exported_date of this Recording.
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param exported_date: The exported_date of this Recording.
+        :type: datetime
+        """
+        
+        self._exported_date = exported_date
 
     @property
     def output_duration_ms(self):

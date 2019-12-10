@@ -115,7 +115,7 @@ class RecordingJobsQuery(object):
     def integration_id(self):
         """
         Gets the integration_id of this RecordingJobsQuery.
-        IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is for EXPORT only
+        IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
 
         :return: The integration_id of this RecordingJobsQuery.
         :rtype: str
@@ -126,7 +126,7 @@ class RecordingJobsQuery(object):
     def integration_id(self, integration_id):
         """
         Sets the integration_id of this RecordingJobsQuery.
-        IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is for EXPORT only
+        IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
 
         :param integration_id: The integration_id of this RecordingJobsQuery.
         :type: str
