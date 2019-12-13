@@ -51,6 +51,7 @@ class ShiftTradeSettings(object):
             'requires_matching_queues': 'bool',
             'requires_matching_languages': 'bool',
             'requires_matching_skills': 'bool',
+            'requires_matching_planning_groups': 'bool',
             'activity_category_rules': 'list[ShiftTradeActivityRule]'
         }
 
@@ -66,6 +67,7 @@ class ShiftTradeSettings(object):
             'requires_matching_queues': 'requiresMatchingQueues',
             'requires_matching_languages': 'requiresMatchingLanguages',
             'requires_matching_skills': 'requiresMatchingSkills',
+            'requires_matching_planning_groups': 'requiresMatchingPlanningGroups',
             'activity_category_rules': 'activityCategoryRules'
         }
 
@@ -80,6 +82,7 @@ class ShiftTradeSettings(object):
         self._requires_matching_queues = None
         self._requires_matching_languages = None
         self._requires_matching_skills = None
+        self._requires_matching_planning_groups = None
         self._activity_category_rules = None
 
     @property
@@ -350,6 +353,29 @@ class ShiftTradeSettings(object):
         """
         
         self._requires_matching_skills = requires_matching_skills
+
+    @property
+    def requires_matching_planning_groups(self):
+        """
+        Gets the requires_matching_planning_groups of this ShiftTradeSettings.
+        Whether to constrain shift trades to agents with matching planning groups
+
+        :return: The requires_matching_planning_groups of this ShiftTradeSettings.
+        :rtype: bool
+        """
+        return self._requires_matching_planning_groups
+
+    @requires_matching_planning_groups.setter
+    def requires_matching_planning_groups(self, requires_matching_planning_groups):
+        """
+        Sets the requires_matching_planning_groups of this ShiftTradeSettings.
+        Whether to constrain shift trades to agents with matching planning groups
+
+        :param requires_matching_planning_groups: The requires_matching_planning_groups of this ShiftTradeSettings.
+        :type: bool
+        """
+        
+        self._requires_matching_planning_groups = requires_matching_planning_groups
 
     @property
     def activity_category_rules(self):

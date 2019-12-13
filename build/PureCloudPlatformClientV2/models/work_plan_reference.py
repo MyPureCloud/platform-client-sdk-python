@@ -40,20 +40,26 @@ class WorkPlanReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'management_unit': 'ManagementUnitReference',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'management_unit': 'managementUnit',
+            'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._management_unit = None
+        self._self_uri = None
 
     @property
     def id(self):
         """
         Gets the id of this WorkPlanReference.
-        The ID of the work plan
+        The globally unique identifier for the object.
 
         :return: The id of this WorkPlanReference.
         :rtype: str
@@ -64,13 +70,59 @@ class WorkPlanReference(object):
     def id(self, id):
         """
         Sets the id of this WorkPlanReference.
-        The ID of the work plan
+        The globally unique identifier for the object.
 
         :param id: The id of this WorkPlanReference.
         :type: str
         """
         
         self._id = id
+
+    @property
+    def management_unit(self):
+        """
+        Gets the management_unit of this WorkPlanReference.
+        The management unit to which this work plan belongs.  Nullable in some routes
+
+        :return: The management_unit of this WorkPlanReference.
+        :rtype: ManagementUnitReference
+        """
+        return self._management_unit
+
+    @management_unit.setter
+    def management_unit(self, management_unit):
+        """
+        Sets the management_unit of this WorkPlanReference.
+        The management unit to which this work plan belongs.  Nullable in some routes
+
+        :param management_unit: The management_unit of this WorkPlanReference.
+        :type: ManagementUnitReference
+        """
+        
+        self._management_unit = management_unit
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this WorkPlanReference.
+        The URI for this object
+
+        :return: The self_uri of this WorkPlanReference.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this WorkPlanReference.
+        The URI for this object
+
+        :param self_uri: The self_uri of this WorkPlanReference.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

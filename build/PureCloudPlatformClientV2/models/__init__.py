@@ -134,6 +134,7 @@ from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
 from .biography import Biography
+from .bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .bullseye import Bullseye
 from .business_unit_reference import BusinessUnitReference
 from .calibration import Calibration
@@ -920,6 +921,7 @@ from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
+from .management_unit_reference import ManagementUnitReference
 from .management_unit_settings_request import ManagementUnitSettingsRequest
 from .management_unit_settings_response import ManagementUnitSettingsResponse
 from .manager import Manager
@@ -1406,6 +1408,8 @@ from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
 from .selected_columns import SelectedColumns
+from .send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
+from .send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
 from .sequence_schedule import SequenceSchedule
 from .server_date import ServerDate
 from .service_context import ServiceContext
@@ -1525,6 +1529,7 @@ from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token import Token
 from .token_info import TokenInfo
 from .transcript_property import TranscriptProperty
+from .transcription_settings import TranscriptionSettings
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase
@@ -1749,6 +1754,7 @@ from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .whats_app_id import WhatsAppId
 from .whats_app_integration import WhatsAppIntegration
 from .whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
+from .whats_app_integration_request import WhatsAppIntegrationRequest
 from .whats_app_integration_update_request import WhatsAppIntegrationUpdateRequest
 from .widget_client_config import WidgetClientConfig
 from .widget_client_config_third_party import WidgetClientConfigThirdParty

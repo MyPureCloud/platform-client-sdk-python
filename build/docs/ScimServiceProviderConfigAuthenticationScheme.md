@@ -12,7 +12,7 @@ title: ScimServiceProviderConfigAuthenticationScheme
 | **spec_uri** | **str** | The HTTP-addressable URL that points to the authentication scheme&#39;s specification. | [optional] |
 | **documentation_uri** | **str** | The HTTP-addressable URL that points to the authentication scheme&#39;s usage documentation. | [optional] |
 | **type** | **str** | The type of authentication scheme. | |
-| **primary** | **bool** | Indicates the primary method of authentication. | [optional] |
+| **primary** | **bool** | Indicates whether this authentication scheme is the primary method of authentication. | [optional] |
 {: class="table table-striped"}
 
 

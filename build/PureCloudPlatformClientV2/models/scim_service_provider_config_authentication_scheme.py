@@ -187,7 +187,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def primary(self):
         """
         Gets the primary of this ScimServiceProviderConfigAuthenticationScheme.
-        Indicates the primary method of authentication.
+        Indicates whether this authentication scheme is the primary method of authentication.
 
         :return: The primary of this ScimServiceProviderConfigAuthenticationScheme.
         :rtype: bool
@@ -198,7 +198,7 @@ class ScimServiceProviderConfigAuthenticationScheme(object):
     def primary(self, primary):
         """
         Sets the primary of this ScimServiceProviderConfigAuthenticationScheme.
-        Indicates the primary method of authentication.
+        Indicates whether this authentication scheme is the primary method of authentication.
 
         :param primary: The primary of this ScimServiceProviderConfigAuthenticationScheme.
         :type: bool

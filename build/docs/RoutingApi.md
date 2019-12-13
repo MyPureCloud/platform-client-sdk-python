@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.|
 |[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
 |[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
+|[**get_routing_settings_transcription**](RoutingApi.html#get_routing_settings_transcription) | Get Transcription Settings|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
 |[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
 |[**get_routing_sms_address**](RoutingApi.html#get_routing_sms_address) | Get an Address by Id for SMS|
@@ -71,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
 |[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
 |[**put_routing_queue**](RoutingApi.html#put_routing_queue) | Update a queue|
+|[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the utilization settings.|
 |[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
@@ -1625,6 +1627,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ContactCenterSettings**](ContactCenterSettings.html)
+
+<a name="get_routing_settings_transcription"></a>
+
+## [**TranscriptionSettings**](TranscriptionSettings.html) get_routing_settings_transcription()
+
+
+
+Get Transcription Settings
+
+
+
+Wraps GET /api/v2/routing/settings/transcription 
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get Transcription Settings
+    api_response = api_instance.get_routing_settings_transcription()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_settings_transcription: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="get_routing_skill"></a>
 
@@ -3434,6 +3483,57 @@ except ApiException as e:
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="put_routing_settings_transcription"></a>
+
+## [**TranscriptionSettings**](TranscriptionSettings.html) put_routing_settings_transcription(body)
+
+
+
+Update Transcription Settings
+
+
+
+Wraps PUT /api/v2/routing/settings/transcription 
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.TranscriptionSettings() # TranscriptionSettings | Organization Settings
+
+try:
+    # Update Transcription Settings
+    api_response = api_instance.put_routing_settings_transcription(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->put_routing_settings_transcription: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="put_routing_sms_phonenumber"></a>
 

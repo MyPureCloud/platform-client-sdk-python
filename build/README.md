@@ -61,7 +61,7 @@ If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypure
 
 ```{"language":"python"}
 region = PureCloudRegionHosts.us_east_1
-PureCloudPlatformClientV2.configuration.host = region.get_api_host
+PureCloudPlatformClientV2.configuration.host = region.get_api_host()
 ```
 
 ### Connect to a Proxy Server

@@ -89,7 +89,8 @@ class AnalyticsSession(object):
             'journey_action_map_id': 'str',
             'journey_action_map_version': 'str',
             'protocol_call_id': 'str',
-            'provider': 'str'
+            'provider': 'str',
+            'remote': 'str'
         }
 
         self.attribute_map = {
@@ -142,7 +143,8 @@ class AnalyticsSession(object):
             'journey_action_map_id': 'journeyActionMapId',
             'journey_action_map_version': 'journeyActionMapVersion',
             'protocol_call_id': 'protocolCallId',
-            'provider': 'provider'
+            'provider': 'provider',
+            'remote': 'remote'
         }
 
         self._media_type = None
@@ -195,6 +197,7 @@ class AnalyticsSession(object):
         self._journey_action_map_version = None
         self._protocol_call_id = None
         self._provider = None
+        self._remote = None
 
     @property
     def media_type(self):
@@ -1357,6 +1360,29 @@ class AnalyticsSession(object):
         """
         
         self._provider = provider
+
+    @property
+    def remote(self):
+        """
+        Gets the remote of this AnalyticsSession.
+        Name, phone number, or email address of the remote party.
+
+        :return: The remote of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._remote
+
+    @remote.setter
+    def remote(self, remote):
+        """
+        Sets the remote of this AnalyticsSession.
+        Name, phone number, or email address of the remote party.
+
+        :param remote: The remote of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._remote = remote
 
     def to_dict(self):
         """

@@ -43,6 +43,7 @@ class ScimV2Group(object):
             'id': 'str',
             'schemas': 'list[str]',
             'display_name': 'str',
+            'external_id': 'str',
             'members': 'list[ScimV2MemberReference]',
             'meta': 'ScimMetadata'
         }
@@ -51,6 +52,7 @@ class ScimV2Group(object):
             'id': 'id',
             'schemas': 'schemas',
             'display_name': 'displayName',
+            'external_id': 'externalId',
             'members': 'members',
             'meta': 'meta'
         }
@@ -58,6 +60,7 @@ class ScimV2Group(object):
         self._id = None
         self._schemas = None
         self._display_name = None
+        self._external_id = None
         self._members = None
         self._meta = None
 
@@ -129,6 +132,29 @@ class ScimV2Group(object):
         """
         
         self._display_name = display_name
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this ScimV2Group.
+        The external ID of the group. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
+
+        :return: The external_id of this ScimV2Group.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this ScimV2Group.
+        The external ID of the group. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
+
+        :param external_id: The external_id of this ScimV2Group.
+        :type: str
+        """
+        
+        self._external_id = external_id
 
     @property
     def members(self):

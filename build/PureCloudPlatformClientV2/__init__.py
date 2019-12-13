@@ -134,6 +134,7 @@ from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
 from .models.biography import Biography
+from .models.bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .models.bullseye import Bullseye
 from .models.business_unit_reference import BusinessUnitReference
 from .models.calibration import Calibration
@@ -920,6 +921,7 @@ from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
+from .models.management_unit_reference import ManagementUnitReference
 from .models.management_unit_settings_request import ManagementUnitSettingsRequest
 from .models.management_unit_settings_response import ManagementUnitSettingsResponse
 from .models.manager import Manager
@@ -1406,6 +1408,8 @@ from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
 from .models.selected_columns import SelectedColumns
+from .models.send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
+from .models.send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
 from .models.sequence_schedule import SequenceSchedule
 from .models.server_date import ServerDate
 from .models.service_context import ServiceContext
@@ -1525,6 +1529,7 @@ from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token import Token
 from .models.token_info import TokenInfo
 from .models.transcript_property import TranscriptProperty
+from .models.transcription_settings import TranscriptionSettings
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase
@@ -1749,6 +1754,7 @@ from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.whats_app_id import WhatsAppId
 from .models.whats_app_integration import WhatsAppIntegration
 from .models.whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
+from .models.whats_app_integration_request import WhatsAppIntegrationRequest
 from .models.whats_app_integration_update_request import WhatsAppIntegrationUpdateRequest
 from .models.widget_client_config import WidgetClientConfig
 from .models.widget_client_config_third_party import WidgetClientConfigThirdParty

@@ -18,6 +18,7 @@ title: ShiftTradeSettings
 | **requires_matching_queues** | **bool** | Whether to constrain shift trades to agents with matching queues | [optional] |
 | **requires_matching_languages** | **bool** | Whether to constrain shift trades to agents with matching languages | [optional] |
 | **requires_matching_skills** | **bool** | Whether to constrain shift trades to agents with matching skills | [optional] |
+| **requires_matching_planning_groups** | **bool** | Whether to constrain shift trades to agents with matching planning groups | [optional] |
 | **activity_category_rules** | [**list[ShiftTradeActivityRule]**](ShiftTradeActivityRule.html) | Rules that specify what to do with activity categories that are part of a shift defined in a trade | [optional] |
 {: class="table table-striped"}
 

@@ -58,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
 |[**post_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_activitycodes) | Create a new activity code|
+|[**post_workforcemanagement_managementunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_agentschedules_search) | Query published schedules for given given time range for set of users|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_intraday) | Get intraday data for the given date for the requested queueIds|
 |[**post_workforcemanagement_managementunit_move**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_move) | Move the requested management unit to a new business unit|
@@ -962,7 +963,7 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedul
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 ### Example
 
@@ -2356,7 +2357,7 @@ Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/sched
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 ### Example
 
@@ -2834,6 +2835,60 @@ except ApiException as e:
 ### Return type
 
 [**ActivityCode**](ActivityCode.html)
+
+<a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
+
+## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body)
+
+
+
+Query published schedules for given given time range for set of users
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search 
+
+Requires ANY permissions: 
+
+* wfm:publishedSchedule:view
+* wfm:schedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
+
+try:
+    # Query published schedules for given given time range for set of users
+    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserScheduleContainer**](UserScheduleContainer.html)
 
 <a name="post_workforcemanagement_managementunit_historicaladherencequery"></a>
 
@@ -3335,7 +3390,7 @@ Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/
 
 Requires ANY permissions: 
 
-* wfm:schedule:edit
+* wfm:schedule:generate
 
 ### Example
 
