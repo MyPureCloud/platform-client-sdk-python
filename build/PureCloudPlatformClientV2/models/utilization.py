@@ -53,7 +53,7 @@ class Utilization(object):
     def utilization(self):
         """
         Gets the utilization of this Utilization.
-        Map of media types to utilization settings.  Map keys can be: call, chat, email, or socialExpression
+        Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
 
         :return: The utilization of this Utilization.
         :rtype: dict(str, OrgMediaUtilization)
@@ -64,7 +64,7 @@ class Utilization(object):
     def utilization(self, utilization):
         """
         Sets the utilization of this Utilization.
-        Map of media types to utilization settings.  Map keys can be: call, chat, email, or socialExpression
+        Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
 
         :param utilization: The utilization of this Utilization.
         :type: dict(str, OrgMediaUtilization)

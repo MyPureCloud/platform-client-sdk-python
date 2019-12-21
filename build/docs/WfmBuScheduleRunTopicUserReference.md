@@ -1,13 +1,13 @@
 ---
-title: ConversationDeletionProtectionQuery
+title: WfmBuScheduleRunTopicUserReference
 ---
-## ConversationDeletionProtectionQuery
+## WfmBuScheduleRunTopicUserReference
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **conversation_ids** | **list[str]** | list of ConversationIds | |
+| **id** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

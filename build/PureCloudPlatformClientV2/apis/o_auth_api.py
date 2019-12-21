@@ -124,6 +124,156 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_oauth_authorization(self, client_id, **kwargs):
+        """
+        Get a client that is authorized by the resource owner
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_authorization(client_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str client_id: The ID of client (required)
+        :return: OAuthAuthorization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['client_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_authorization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `get_oauth_authorization`")
+
+
+        resource_path = '/api/v2/oauth/authorizations/{clientId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OAuthAuthorization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_oauth_authorizations(self, **kwargs):
+        """
+        List clients that are authorized by the resource owner
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_authorizations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: OAuthAuthorizationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_authorizations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/oauth/authorizations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OAuthAuthorizationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_oauth_client(self, client_id, **kwargs):
         """
         Get OAuth Client
@@ -270,6 +420,162 @@ class OAuthApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OAuthClientEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_oauth_scope(self, scope_id, **kwargs):
+        """
+        An OAuth scope
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_scope(scope_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scope_id: Scope ID (required)
+        :param str accept_language: The language with which to display the scope description.
+        :return: OAuthScope
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scope_id', 'accept_language']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_scope" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scope_id' is set
+        if ('scope_id' not in params) or (params['scope_id'] is None):
+            raise ValueError("Missing the required parameter `scope_id` when calling `get_oauth_scope`")
+
+
+        resource_path = '/api/v2/oauth/scopes/{scopeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scope_id' in params:
+            path_params['scopeId'] = params['scope_id']
+
+        query_params = {}
+
+        header_params = {}
+        if 'accept_language' in params:
+            header_params['Accept-Language'] = params['accept_language']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OAuthScope',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_oauth_scopes(self, **kwargs):
+        """
+        The list of OAuth scopes
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_oauth_scopes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str accept_language: The language with which to display the scope descriptions.
+        :return: OAuthScopeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['accept_language']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_oauth_scopes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/oauth/scopes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+        if 'accept_language' in params:
+            header_params['Accept-Language'] = params['accept_language']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OAuthScopeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_users_details_job**](UsersApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
 |[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
@@ -15,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
+|[**get_analytics_users_details_job**](UsersApi.html#get_analytics_users_details_job) | Get status for async query for user details|
+|[**get_analytics_users_details_job_results**](UsersApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
 |[**get_authorization_divisionspermitted_me**](UsersApi.html#get_authorization_divisionspermitted_me) | Returns whether or not current user can perform the specified action(s).|
 |[**get_authorization_divisionspermitted_subject_id**](UsersApi.html#get_authorization_divisionspermitted_subject_id) | Returns whether or not specified user can perform the specified action(s).|
 |[**get_authorization_subject**](UsersApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
@@ -51,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
+|[**post_analytics_users_details_jobs**](UsersApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**post_authorization_subject_bulkadd**](UsersApi.html#post_authorization_subject_bulkadd) | Bulk-grant roles and divisions to a subject.|
@@ -73,6 +77,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_associatedstation_station_id**](UsersApi.html#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](UsersApi.html#put_user_station_defaultstation_station_id) | Set default station|
 {: class="table table-striped"}
+
+<a name="delete_analytics_users_details_job"></a>
+
+##  delete_analytics_users_details_job(job_id)
+
+
+
+Delete/cancel an async request
+
+
+
+Wraps DELETE /api/v2/analytics/users/details/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request
+    api_instance.delete_analytics_users_details_job(job_id)
+except ApiException as e:
+    print "Exception when calling UsersApi->delete_analytics_users_details_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_authorization_subject_division_role"></a>
 
@@ -433,6 +487,110 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_analytics_users_details_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_details_job(job_id)
+
+
+
+Get status for async query for user details
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for user details
+    api_response = api_instance.get_analytics_users_details_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_analytics_users_details_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_users_details_job_results"></a>
+
+## [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html) get_analytics_users_details_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async query
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+
+try:
+    # Fetch a page of results for an async query
+    api_response = api_instance.get_analytics_users_details_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_analytics_users_details_job_results: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
 
 <a name="get_authorization_divisionspermitted_me"></a>
 
@@ -2346,6 +2504,57 @@ except ApiException as e:
 ### Return type
 
 [**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
+
+<a name="post_analytics_users_details_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_users_details_jobs(body)
+
+
+
+Query for user details asynchronously
+
+
+
+Wraps POST /api/v2/analytics/users/details/jobs 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.AsyncUserDetailsQuery() # AsyncUserDetailsQuery | query
+
+try:
+    # Query for user details asynchronously
+    api_response = api_instance.post_analytics_users_details_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->post_analytics_users_details_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AsyncUserDetailsQuery**](AsyncUserDetailsQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_users_details_query"></a>
 

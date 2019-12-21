@@ -16,7 +16,7 @@ title: ReportSchedule
 | **description** | **str** |  | [optional] |
 | **time_zone** | **str** |  | [optional] |
 | **time_period** | **str** |  | [optional] |
-| **interval** | **str** | Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] |
+| **interval** | **str** | Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | |
 | **report_format** | **str** |  | [optional] |
 | **locale** | **str** |  | [optional] |
 | **enabled** | **bool** |  | [optional] |

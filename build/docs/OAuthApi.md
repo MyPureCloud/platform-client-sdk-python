@@ -9,8 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_oauth_client**](OAuthApi.html#delete_oauth_client) | Delete OAuth Client|
+|[**get_oauth_authorization**](OAuthApi.html#get_oauth_authorization) | Get a client that is authorized by the resource owner|
+|[**get_oauth_authorizations**](OAuthApi.html#get_oauth_authorizations) | List clients that are authorized by the resource owner|
 |[**get_oauth_client**](OAuthApi.html#get_oauth_client) | Get OAuth Client|
 |[**get_oauth_clients**](OAuthApi.html#get_oauth_clients) | The list of OAuth clients|
+|[**get_oauth_scope**](OAuthApi.html#get_oauth_scope) | An OAuth scope|
+|[**get_oauth_scopes**](OAuthApi.html#get_oauth_scopes) | The list of OAuth scopes|
 |[**post_oauth_client_secret**](OAuthApi.html#post_oauth_client_secret) | Regenerate Client Secret|
 |[**post_oauth_clients**](OAuthApi.html#post_oauth_clients) | Create OAuth client|
 |[**put_oauth_client**](OAuthApi.html#put_oauth_client) | Update OAuth Client|
@@ -65,6 +69,104 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_oauth_authorization"></a>
+
+## [**OAuthAuthorization**](OAuthAuthorization.html) get_oauth_authorization(client_id)
+
+
+
+Get a client that is authorized by the resource owner
+
+
+
+Wraps GET /api/v2/oauth/authorizations/{clientId} 
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OAuthApi()
+client_id = 'client_id_example' # str | The ID of client
+
+try:
+    # Get a client that is authorized by the resource owner
+    api_response = api_instance.get_oauth_authorization(client_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OAuthApi->get_oauth_authorization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **client_id** | **str**| The ID of client |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OAuthAuthorization**](OAuthAuthorization.html)
+
+<a name="get_oauth_authorizations"></a>
+
+## [**OAuthAuthorizationListing**](OAuthAuthorizationListing.html) get_oauth_authorizations()
+
+
+
+List clients that are authorized by the resource owner
+
+
+
+Wraps GET /api/v2/oauth/authorizations 
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OAuthApi()
+
+try:
+    # List clients that are authorized by the resource owner
+    api_response = api_instance.get_oauth_authorizations()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OAuthApi->get_oauth_authorizations: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**OAuthAuthorizationListing**](OAuthAuthorizationListing.html)
 
 <a name="get_oauth_client"></a>
 
@@ -163,6 +265,108 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OAuthClientEntityListing**](OAuthClientEntityListing.html)
+
+<a name="get_oauth_scope"></a>
+
+## [**OAuthScope**](OAuthScope.html) get_oauth_scope(scope_id, accept_language=accept_language)
+
+
+
+An OAuth scope
+
+
+
+Wraps GET /api/v2/oauth/scopes/{scopeId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OAuthApi()
+scope_id = 'scope_id_example' # str | Scope ID
+accept_language = 'en-us' # str | The language with which to display the scope description. (optional) (default to en-us)
+
+try:
+    # An OAuth scope
+    api_response = api_instance.get_oauth_scope(scope_id, accept_language=accept_language)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OAuthApi->get_oauth_scope: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scope_id** | **str**| Scope ID |  |
+| **accept_language** | **str**| The language with which to display the scope description. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+[**OAuthScope**](OAuthScope.html)
+
+<a name="get_oauth_scopes"></a>
+
+## [**OAuthScopeListing**](OAuthScopeListing.html) get_oauth_scopes(accept_language=accept_language)
+
+
+
+The list of OAuth scopes
+
+
+
+Wraps GET /api/v2/oauth/scopes 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OAuthApi()
+accept_language = 'en-us' # str | The language with which to display the scope descriptions. (optional) (default to en-us)
+
+try:
+    # The list of OAuth scopes
+    api_response = api_instance.get_oauth_scopes(accept_language=accept_language)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OAuthApi->get_oauth_scopes: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **accept_language** | **str**| The language with which to display the scope descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+[**OAuthScopeListing**](OAuthScopeListing.html)
 
 <a name="post_oauth_client_secret"></a>
 

@@ -41,7 +41,7 @@ class ReportingExportJobRequest(object):
         """
         self.swagger_types = {
             'name': 'str',
-            'time_zone': 'TimeZone',
+            'time_zone': 'str',
             'export_format': 'str',
             'interval': 'str',
             'period': 'str',
@@ -112,10 +112,10 @@ class ReportingExportJobRequest(object):
     def time_zone(self):
         """
         Gets the time_zone of this ReportingExportJobRequest.
-        The requested timezone of the exported data
+        The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone of this ReportingExportJobRequest.
-        :rtype: TimeZone
+        :rtype: str
         """
         return self._time_zone
 
@@ -123,10 +123,10 @@ class ReportingExportJobRequest(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this ReportingExportJobRequest.
-        The requested timezone of the exported data
+        The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone: The time_zone of this ReportingExportJobRequest.
-        :type: TimeZone
+        :type: str
         """
         
         self._time_zone = time_zone

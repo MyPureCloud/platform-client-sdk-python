@@ -45,10 +45,10 @@ class LibraryEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
-            'self_uri': 'str',
-            'next_uri': 'str',
-            'last_uri': 'str',
             'previous_uri': 'str',
+            'last_uri': 'str',
+            'next_uri': 'str',
+            'self_uri': 'str',
             'page_count': 'int'
         }
 
@@ -58,10 +58,10 @@ class LibraryEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
-            'self_uri': 'selfUri',
-            'next_uri': 'nextUri',
-            'last_uri': 'lastUri',
             'previous_uri': 'previousUri',
+            'last_uri': 'lastUri',
+            'next_uri': 'nextUri',
+            'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
 
@@ -70,10 +70,10 @@ class LibraryEntityListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
-        self._self_uri = None
-        self._next_uri = None
-        self._last_uri = None
         self._previous_uri = None
+        self._last_uri = None
+        self._next_uri = None
+        self._self_uri = None
         self._page_count = None
 
     @property
@@ -192,50 +192,27 @@ class LibraryEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def self_uri(self):
+    def previous_uri(self):
         """
-        Gets the self_uri of this LibraryEntityListing.
+        Gets the previous_uri of this LibraryEntityListing.
 
 
-        :return: The self_uri of this LibraryEntityListing.
+        :return: The previous_uri of this LibraryEntityListing.
         :rtype: str
         """
-        return self._self_uri
+        return self._previous_uri
 
-    @self_uri.setter
-    def self_uri(self, self_uri):
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
         """
-        Sets the self_uri of this LibraryEntityListing.
+        Sets the previous_uri of this LibraryEntityListing.
 
 
-        :param self_uri: The self_uri of this LibraryEntityListing.
+        :param previous_uri: The previous_uri of this LibraryEntityListing.
         :type: str
         """
         
-        self._self_uri = self_uri
-
-    @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this LibraryEntityListing.
-
-
-        :return: The next_uri of this LibraryEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this LibraryEntityListing.
-
-
-        :param next_uri: The next_uri of this LibraryEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
+        self._previous_uri = previous_uri
 
     @property
     def last_uri(self):
@@ -261,27 +238,50 @@ class LibraryEntityListing(object):
         self._last_uri = last_uri
 
     @property
-    def previous_uri(self):
+    def next_uri(self):
         """
-        Gets the previous_uri of this LibraryEntityListing.
+        Gets the next_uri of this LibraryEntityListing.
 
 
-        :return: The previous_uri of this LibraryEntityListing.
+        :return: The next_uri of this LibraryEntityListing.
         :rtype: str
         """
-        return self._previous_uri
+        return self._next_uri
 
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
+    @next_uri.setter
+    def next_uri(self, next_uri):
         """
-        Sets the previous_uri of this LibraryEntityListing.
+        Sets the next_uri of this LibraryEntityListing.
 
 
-        :param previous_uri: The previous_uri of this LibraryEntityListing.
+        :param next_uri: The next_uri of this LibraryEntityListing.
         :type: str
         """
         
-        self._previous_uri = previous_uri
+        self._next_uri = next_uri
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this LibraryEntityListing.
+
+
+        :return: The self_uri of this LibraryEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this LibraryEntityListing.
+
+
+        :param self_uri: The self_uri of this LibraryEntityListing.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def page_count(self):

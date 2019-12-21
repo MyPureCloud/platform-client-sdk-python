@@ -81,7 +81,7 @@ class AsyncQueryStatus(object):
         :param state: The state of this AsyncQueryStatus.
         :type: str
         """
-        allowed_values = ["PENDING", "FAILED", "CANCELLED", "FULFILLED", "EXPIRED"]
+        allowed_values = ["QUEUED", "PENDING", "FAILED", "CANCELLED", "FULFILLED", "EXPIRED"]
         if state.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for state -> " + state
             self._state = "outdated_sdk_version"

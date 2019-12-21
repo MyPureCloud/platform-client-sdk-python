@@ -1,7 +1,7 @@
 ---
-title: QueueUserEventTopicUserReference
+title: WfmBuScheduleTopicManagementUnit
 ---
-## QueueUserEventTopicUserReference
+## WfmBuScheduleTopicManagementUnit
 
 ## Properties
 

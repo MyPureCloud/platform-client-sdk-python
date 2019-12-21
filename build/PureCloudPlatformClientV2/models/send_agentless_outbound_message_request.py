@@ -62,7 +62,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def from_address(self):
         """
         Gets the from_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number. The phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
+        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
 
         :return: The from_address of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -73,7 +73,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def from_address(self, from_address):
         """
         Sets the from_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number. The phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
+        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
 
         :param from_address: The from_address of this SendAgentlessOutboundMessageRequest.
         :type: str

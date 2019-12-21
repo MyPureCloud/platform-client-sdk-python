@@ -18,8 +18,8 @@ title: Schedule
 | **state** | **str** | Indicates if the resource is active, inactive, or deleted. | [optional] |
 | **modified_by_app** | **str** | The application that last modified the resource. | [optional] |
 | **created_by_app** | **str** | The application that created the resource. | [optional] |
-| **start** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | [optional] |
-| **end** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | [optional] |
+| **start** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | |
+| **end** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | |
 | **rrule** | **str** | An iCal Recurrence Rule (RRULE) string. | |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
