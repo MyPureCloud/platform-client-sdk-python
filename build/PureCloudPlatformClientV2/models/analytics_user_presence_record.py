@@ -43,23 +43,20 @@ class AnalyticsUserPresenceRecord(object):
             'start_time': 'datetime',
             'end_time': 'datetime',
             'system_presence': 'str',
-            'organization_presence_id': 'str',
-            'duration_milliseconds': 'int'
+            'organization_presence_id': 'str'
         }
 
         self.attribute_map = {
             'start_time': 'startTime',
             'end_time': 'endTime',
             'system_presence': 'systemPresence',
-            'organization_presence_id': 'organizationPresenceId',
-            'duration_milliseconds': 'durationMilliseconds'
+            'organization_presence_id': 'organizationPresenceId'
         }
 
         self._start_time = None
         self._end_time = None
         self._system_presence = None
         self._organization_presence_id = None
-        self._duration_milliseconds = None
 
     @property
     def start_time(self):
@@ -156,29 +153,6 @@ class AnalyticsUserPresenceRecord(object):
         """
         
         self._organization_presence_id = organization_presence_id
-
-    @property
-    def duration_milliseconds(self):
-        """
-        Gets the duration_milliseconds of this AnalyticsUserPresenceRecord.
-        The duration of the status (in milliseconds)
-
-        :return: The duration_milliseconds of this AnalyticsUserPresenceRecord.
-        :rtype: int
-        """
-        return self._duration_milliseconds
-
-    @duration_milliseconds.setter
-    def duration_milliseconds(self, duration_milliseconds):
-        """
-        Sets the duration_milliseconds of this AnalyticsUserPresenceRecord.
-        The duration of the status (in milliseconds)
-
-        :param duration_milliseconds: The duration_milliseconds of this AnalyticsUserPresenceRecord.
-        :type: int
-        """
-        
-        self._duration_milliseconds = duration_milliseconds
 
     def to_dict(self):
         """

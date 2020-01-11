@@ -2838,7 +2838,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
 
-## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body)
+## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
 
 
 
@@ -2868,10 +2868,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Query published schedules for given given time range for set of users
-    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e
@@ -2884,6 +2886,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

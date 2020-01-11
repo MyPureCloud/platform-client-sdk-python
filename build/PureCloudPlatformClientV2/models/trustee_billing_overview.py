@@ -42,7 +42,7 @@ class TrusteeBillingOverview(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'organization': 'Entity',
+            'organization': 'NamedEntity',
             'currency': 'str',
             'enabled_products': 'list[str]',
             'subscription_type': 'str',
@@ -150,7 +150,7 @@ class TrusteeBillingOverview(object):
         Organization
 
         :return: The organization of this TrusteeBillingOverview.
-        :rtype: Entity
+        :rtype: NamedEntity
         """
         return self._organization
 
@@ -161,7 +161,7 @@ class TrusteeBillingOverview(object):
         Organization
 
         :param organization: The organization of this TrusteeBillingOverview.
-        :type: Entity
+        :type: NamedEntity
         """
         
         self._organization = organization

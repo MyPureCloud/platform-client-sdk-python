@@ -47,7 +47,8 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'shift_trade': 'WfmUserNotificationTopicShiftTradeNotification',
             'time_off_request': 'WfmUserNotificationTopicTimeOffRequestNotification',
             'agent_notification': 'bool',
-            'other_notification_ids_in_group': 'list[str]'
+            'other_notification_ids_in_group': 'list[str]',
+            'marked_as_read': 'bool'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class WfmUserNotificationTopicWfmUserNotification(object):
             'shift_trade': 'shiftTrade',
             'time_off_request': 'timeOffRequest',
             'agent_notification': 'agentNotification',
-            'other_notification_ids_in_group': 'otherNotificationIdsInGroup'
+            'other_notification_ids_in_group': 'otherNotificationIdsInGroup',
+            'marked_as_read': 'markedAsRead'
         }
 
         self._id = None
@@ -69,6 +71,7 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         self._time_off_request = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
+        self._marked_as_read = None
 
     @property
     def id(self):
@@ -257,6 +260,29 @@ class WfmUserNotificationTopicWfmUserNotification(object):
         """
         
         self._other_notification_ids_in_group = other_notification_ids_in_group
+
+    @property
+    def marked_as_read(self):
+        """
+        Gets the marked_as_read of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :return: The marked_as_read of this WfmUserNotificationTopicWfmUserNotification.
+        :rtype: bool
+        """
+        return self._marked_as_read
+
+    @marked_as_read.setter
+    def marked_as_read(self, marked_as_read):
+        """
+        Sets the marked_as_read of this WfmUserNotificationTopicWfmUserNotification.
+
+
+        :param marked_as_read: The marked_as_read of this WfmUserNotificationTopicWfmUserNotification.
+        :type: bool
+        """
+        
+        self._marked_as_read = marked_as_read
 
     def to_dict(self):
         """

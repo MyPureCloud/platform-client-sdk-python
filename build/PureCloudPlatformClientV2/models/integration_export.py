@@ -79,7 +79,7 @@ class IntegrationExport(object):
     def should_export_screen_recordings(self):
         """
         Gets the should_export_screen_recordings of this IntegrationExport.
-        True if the policy should export screen recordings in addition to the other conversation media. Default = false
+        True if the policy should export screen recordings in addition to the other conversation media. Default = true
 
         :return: The should_export_screen_recordings of this IntegrationExport.
         :rtype: bool
@@ -90,7 +90,7 @@ class IntegrationExport(object):
     def should_export_screen_recordings(self, should_export_screen_recordings):
         """
         Sets the should_export_screen_recordings of this IntegrationExport.
-        True if the policy should export screen recordings in addition to the other conversation media. Default = false
+        True if the policy should export screen recordings in addition to the other conversation media. Default = true
 
         :param should_export_screen_recordings: The should_export_screen_recordings of this IntegrationExport.
         :type: bool

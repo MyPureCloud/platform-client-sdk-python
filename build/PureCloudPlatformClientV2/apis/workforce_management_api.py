@@ -4218,12 +4218,14 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param BuSearchAgentSchedulesRequest body: body
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
         :return: UserScheduleContainer
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['mu_id', 'body', 'force_async', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -4247,6 +4249,10 @@ class WorkforceManagementApi(object):
             path_params['muId'] = params['mu_id']
 
         query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 

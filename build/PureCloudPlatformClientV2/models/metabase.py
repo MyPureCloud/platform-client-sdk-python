@@ -362,7 +362,7 @@ class Metabase(object):
         :param type: The type of this Metabase.
         :type: str
         """
-        allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION", "TIE"]
+        allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION", "TIE", "TIE_DIRECT", "TIE_INDIRECT", "TIE_CLOUD_PROXY"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

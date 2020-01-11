@@ -42,21 +42,18 @@ class AnalyticsRoutingStatusRecord(object):
         self.swagger_types = {
             'start_time': 'datetime',
             'end_time': 'datetime',
-            'routing_status': 'str',
-            'duration_milliseconds': 'int'
+            'routing_status': 'str'
         }
 
         self.attribute_map = {
             'start_time': 'startTime',
             'end_time': 'endTime',
-            'routing_status': 'routingStatus',
-            'duration_milliseconds': 'durationMilliseconds'
+            'routing_status': 'routingStatus'
         }
 
         self._start_time = None
         self._end_time = None
         self._routing_status = None
-        self._duration_milliseconds = None
 
     @property
     def start_time(self):
@@ -130,29 +127,6 @@ class AnalyticsRoutingStatusRecord(object):
             self._routing_status = "outdated_sdk_version"
         else:
             self._routing_status = routing_status
-
-    @property
-    def duration_milliseconds(self):
-        """
-        Gets the duration_milliseconds of this AnalyticsRoutingStatusRecord.
-        The duration of the status (in milliseconds)
-
-        :return: The duration_milliseconds of this AnalyticsRoutingStatusRecord.
-        :rtype: int
-        """
-        return self._duration_milliseconds
-
-    @duration_milliseconds.setter
-    def duration_milliseconds(self, duration_milliseconds):
-        """
-        Sets the duration_milliseconds of this AnalyticsRoutingStatusRecord.
-        The duration of the status (in milliseconds)
-
-        :param duration_milliseconds: The duration_milliseconds of this AnalyticsRoutingStatusRecord.
-        :type: int
-        """
-        
-        self._duration_milliseconds = duration_milliseconds
 
     def to_dict(self):
         """
