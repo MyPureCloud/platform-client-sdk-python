@@ -62,12 +62,13 @@ class AuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str division_id: Division ID (required)
+        :param bool force: Force delete this division as well as the grants and objects associated with it
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['division_id']
+        all_params = ['division_id', 'force']
         all_params.append('callback')
 
         params = locals()
@@ -91,6 +92,8 @@ class AuthorizationApi(object):
             path_params['divisionId'] = params['division_id']
 
         query_params = {}
+        if 'force' in params:
+            query_params['force'] = params['force']
 
         header_params = {}
 

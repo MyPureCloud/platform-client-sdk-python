@@ -41,16 +41,19 @@ class TrustMemberCreate(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'role_ids': 'list[str]'
+            'role_ids': 'list[str]',
+            'role_divisions': 'RoleDivisionGrants'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'role_ids': 'roleIds'
+            'role_ids': 'roleIds',
+            'role_divisions': 'roleDivisions'
         }
 
         self._id = None
         self._role_ids = None
+        self._role_divisions = None
 
     @property
     def id(self):
@@ -79,7 +82,7 @@ class TrustMemberCreate(object):
     def role_ids(self):
         """
         Gets the role_ids of this TrustMemberCreate.
-        The list of trustor organization roles granting this user or group access.
+        The list of roles to be granted to this user or group. Roles will be granted in all divisions.
 
         :return: The role_ids of this TrustMemberCreate.
         :rtype: list[str]
@@ -90,13 +93,36 @@ class TrustMemberCreate(object):
     def role_ids(self, role_ids):
         """
         Sets the role_ids of this TrustMemberCreate.
-        The list of trustor organization roles granting this user or group access.
+        The list of roles to be granted to this user or group. Roles will be granted in all divisions.
 
         :param role_ids: The role_ids of this TrustMemberCreate.
         :type: list[str]
         """
         
         self._role_ids = role_ids
+
+    @property
+    def role_divisions(self):
+        """
+        Gets the role_divisions of this TrustMemberCreate.
+        The list of trustor organization roles granting this user or group access paired with the divisions for those roles.
+
+        :return: The role_divisions of this TrustMemberCreate.
+        :rtype: RoleDivisionGrants
+        """
+        return self._role_divisions
+
+    @role_divisions.setter
+    def role_divisions(self, role_divisions):
+        """
+        Sets the role_divisions of this TrustMemberCreate.
+        The list of trustor organization roles granting this user or group access paired with the divisions for those roles.
+
+        :param role_divisions: The role_divisions of this TrustMemberCreate.
+        :type: RoleDivisionGrants
+        """
+        
+        self._role_divisions = role_divisions
 
     def to_dict(self):
         """

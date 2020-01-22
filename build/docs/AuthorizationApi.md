@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_authorization_division"></a>
 
-##  delete_authorization_division(division_id)
+##  delete_authorization_division(division_id, force=force)
 
 
 
@@ -77,10 +77,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 division_id = 'division_id_example' # str | Division ID
+force = false # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to false)
 
 try:
     # Delete a division.
-    api_instance.delete_authorization_division(division_id)
+    api_instance.delete_authorization_division(division_id, force=force)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->delete_authorization_division: %s\n" % e
 ```
@@ -91,6 +92,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
+| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -517,7 +519,7 @@ except ApiException as e:
 
 ## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Returns whether or not specified user can perform the specified action(s).
 

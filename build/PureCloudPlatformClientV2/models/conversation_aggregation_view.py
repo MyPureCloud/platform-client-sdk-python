@@ -78,7 +78,7 @@ class ConversationAggregationView(object):
         :param target: The target of this ConversationAggregationView.
         :type: str
         """
-        allowed_values = ["nBlindTransferred", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nStateTransitionError", "nTransferred", "oInteracting", "oServiceLevel", "oServiceTarget", "oWaiting", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tDialing", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tNotResponding", "tShortAbandon", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail", "tWait"]
+        allowed_values = ["nBlindTransferred", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nStateTransitionError", "nTransferred", "oInteracting", "oServiceLevel", "oServiceTarget", "oWaiting", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tDialing", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tNotResponding", "tShortAbandon", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail", "tWait"]
         if target.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for target -> " + target
             self._target = "outdated_sdk_version"

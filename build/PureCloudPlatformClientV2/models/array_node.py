@@ -43,8 +43,8 @@ class ArrayNode(object):
             'node_type': 'str',
             'float': 'bool',
             'number': 'bool',
-            'object': 'bool',
             'boolean': 'bool',
+            'object': 'bool',
             'value_node': 'bool',
             'container_node': 'bool',
             'missing_node': 'bool',
@@ -67,8 +67,8 @@ class ArrayNode(object):
             'node_type': 'nodeType',
             'float': 'float',
             'number': 'number',
-            'object': 'object',
             'boolean': 'boolean',
+            'object': 'object',
             'value_node': 'valueNode',
             'container_node': 'containerNode',
             'missing_node': 'missingNode',
@@ -90,8 +90,8 @@ class ArrayNode(object):
         self._node_type = None
         self._float = None
         self._number = None
-        self._object = None
         self._boolean = None
+        self._object = None
         self._value_node = None
         self._container_node = None
         self._missing_node = None
@@ -183,29 +183,6 @@ class ArrayNode(object):
         self._number = number
 
     @property
-    def object(self):
-        """
-        Gets the object of this ArrayNode.
-
-
-        :return: The object of this ArrayNode.
-        :rtype: bool
-        """
-        return self._object
-
-    @object.setter
-    def object(self, object):
-        """
-        Sets the object of this ArrayNode.
-
-
-        :param object: The object of this ArrayNode.
-        :type: bool
-        """
-        
-        self._object = object
-
-    @property
     def boolean(self):
         """
         Gets the boolean of this ArrayNode.
@@ -227,6 +204,29 @@ class ArrayNode(object):
         """
         
         self._boolean = boolean
+
+    @property
+    def object(self):
+        """
+        Gets the object of this ArrayNode.
+
+
+        :return: The object of this ArrayNode.
+        :rtype: bool
+        """
+        return self._object
+
+    @object.setter
+    def object(self, object):
+        """
+        Sets the object of this ArrayNode.
+
+
+        :param object: The object of this ArrayNode.
+        :type: bool
+        """
+        
+        self._object = object
 
     @property
     def value_node(self):

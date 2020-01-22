@@ -10,8 +10,8 @@ title: JsonNode
 | **node_type** | **str** |  | [optional] |
 | **float** | **bool** |  | [optional] |
 | **number** | **bool** |  | [optional] |
-| **object** | **bool** |  | [optional] |
 | **boolean** | **bool** |  | [optional] |
+| **object** | **bool** |  | [optional] |
 | **value_node** | **bool** |  | [optional] |
 | **container_node** | **bool** |  | [optional] |
 | **missing_node** | **bool** |  | [optional] |

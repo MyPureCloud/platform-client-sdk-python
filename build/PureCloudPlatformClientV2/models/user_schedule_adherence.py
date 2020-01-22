@@ -56,6 +56,7 @@ class UserScheduleAdherence(object):
             'presence_update_time': 'datetime',
             'active_queues': 'list[QueueReference]',
             'active_queues_modified_time': 'datetime',
+            'removed_from_management_unit': 'bool',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class UserScheduleAdherence(object):
             'presence_update_time': 'presenceUpdateTime',
             'active_queues': 'activeQueues',
             'active_queues_modified_time': 'activeQueuesModifiedTime',
+            'removed_from_management_unit': 'removedFromManagementUnit',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class UserScheduleAdherence(object):
         self._presence_update_time = None
         self._active_queues = None
         self._active_queues_modified_time = None
+        self._removed_from_management_unit = None
         self._self_uri = None
 
     @property
@@ -488,6 +491,29 @@ class UserScheduleAdherence(object):
         """
         
         self._active_queues_modified_time = active_queues_modified_time
+
+    @property
+    def removed_from_management_unit(self):
+        """
+        Gets the removed_from_management_unit of this UserScheduleAdherence.
+        For notification purposes. Used to indicate that a user was removed from the management unit
+
+        :return: The removed_from_management_unit of this UserScheduleAdherence.
+        :rtype: bool
+        """
+        return self._removed_from_management_unit
+
+    @removed_from_management_unit.setter
+    def removed_from_management_unit(self, removed_from_management_unit):
+        """
+        Sets the removed_from_management_unit of this UserScheduleAdherence.
+        For notification purposes. Used to indicate that a user was removed from the management unit
+
+        :param removed_from_management_unit: The removed_from_management_unit of this UserScheduleAdherence.
+        :type: bool
+        """
+        
+        self._removed_from_management_unit = removed_from_management_unit
 
     @property
     def self_uri(self):

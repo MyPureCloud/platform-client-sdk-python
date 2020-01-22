@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_orgauthorization_trustees_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustees_audits) | Get Org Trustee Audits|
 |[**post_orgauthorization_trustor_audits**](OrganizationAuthorizationApi.html#post_orgauthorization_trustor_audits) | Get Org Trustor Audits|
 |[**put_orgauthorization_trustee**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee) | Update Org Trust|
+|[**put_orgauthorization_trustee_user_roledivisions**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roledivisions) | Update Trustee User Roles|
 |[**put_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#put_orgauthorization_trustee_user_roles) | Update Trustee User Roles|
 |[**put_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#put_orgauthorization_trustor_user) | Add a Trustee user to the trust.|
 {: class="table table-striped"}
@@ -1144,6 +1145,61 @@ except ApiException as e:
 ### Return type
 
 [**Trustee**](Trustee.html)
+
+<a name="put_orgauthorization_trustee_user_roledivisions"></a>
+
+## [**UserAuthorization**](UserAuthorization.html) put_orgauthorization_trustee_user_roledivisions(trustee_org_id, trustee_user_id, body)
+
+
+
+Update Trustee User Roles
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions 
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+trustee_org_id = 'trustee_org_id_example' # str | Trustee Organization Id
+trustee_user_id = 'trustee_user_id_example' # str | Trustee User Id
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Set of roles with corresponding divisions to apply
+
+try:
+    # Update Trustee User Roles
+    api_response = api_instance.put_orgauthorization_trustee_user_roledivisions(trustee_org_id, trustee_user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roledivisions: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trustee_org_id** | **str**| Trustee Organization Id |  |
+| **trustee_user_id** | **str**| Trustee User Id |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Set of roles with corresponding divisions to apply |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
 
 <a name="put_orgauthorization_trustee_user_roles"></a>
 

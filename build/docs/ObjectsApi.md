@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_authorization_division"></a>
 
-##  delete_authorization_division(division_id)
+##  delete_authorization_division(division_id, force=force)
 
 
 
@@ -48,10 +48,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
+force = false # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to false)
 
 try:
     # Delete a division.
-    api_instance.delete_authorization_division(division_id)
+    api_instance.delete_authorization_division(division_id, force=force)
 except ApiException as e:
     print "Exception when calling ObjectsApi->delete_authorization_division: %s\n" % e
 ```
@@ -62,6 +63,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
+| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

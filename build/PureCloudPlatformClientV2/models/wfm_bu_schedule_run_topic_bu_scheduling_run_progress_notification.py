@@ -40,26 +40,47 @@ class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'status': 'str',
             'operation_id': 'str',
-            'state': 'str',
-            'percent_complete': 'float',
-            'intraday_rescheduling': 'bool',
-            'run': 'WfmBuScheduleRunTopicBuScheduleRun'
+            'result': 'WfmBuScheduleRunTopicBuScheduleRun'
         }
 
         self.attribute_map = {
+            'status': 'status',
             'operation_id': 'operationId',
-            'state': 'state',
-            'percent_complete': 'percentComplete',
-            'intraday_rescheduling': 'intradayRescheduling',
-            'run': 'run'
+            'result': 'result'
         }
 
+        self._status = None
         self._operation_id = None
-        self._state = None
-        self._percent_complete = None
-        self._intraday_rescheduling = None
-        self._run = None
+        self._result = None
+
+    @property
+    def status(self):
+        """
+        Gets the status of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+
+
+        :return: The status of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+
+
+        :param status: The status of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        :type: str
+        """
+        allowed_values = ["Processing", "Complete", "Canceled", "Error"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for status -> " + status
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def operation_id(self):
@@ -85,100 +106,27 @@ class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification(object):
         self._operation_id = operation_id
 
     @property
-    def state(self):
+    def result(self):
         """
-        Gets the state of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        Gets the result of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
 
 
-        :return: The state of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """
-        Sets the state of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :param state: The state of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :type: str
-        """
-        allowed_values = ["None", "Queued", "Scheduling", "Canceled", "Failed", "Complete"]
-        if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
-            self._state = "outdated_sdk_version"
-        else:
-            self._state = state
-
-    @property
-    def percent_complete(self):
-        """
-        Gets the percent_complete of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :return: The percent_complete of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :rtype: float
-        """
-        return self._percent_complete
-
-    @percent_complete.setter
-    def percent_complete(self, percent_complete):
-        """
-        Sets the percent_complete of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :param percent_complete: The percent_complete of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :type: float
-        """
-        
-        self._percent_complete = percent_complete
-
-    @property
-    def intraday_rescheduling(self):
-        """
-        Gets the intraday_rescheduling of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :return: The intraday_rescheduling of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :rtype: bool
-        """
-        return self._intraday_rescheduling
-
-    @intraday_rescheduling.setter
-    def intraday_rescheduling(self, intraday_rescheduling):
-        """
-        Sets the intraday_rescheduling of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :param intraday_rescheduling: The intraday_rescheduling of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-        :type: bool
-        """
-        
-        self._intraday_rescheduling = intraday_rescheduling
-
-    @property
-    def run(self):
-        """
-        Gets the run of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
-
-
-        :return: The run of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        :return: The result of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
         :rtype: WfmBuScheduleRunTopicBuScheduleRun
         """
-        return self._run
+        return self._result
 
-    @run.setter
-    def run(self, run):
+    @result.setter
+    def result(self, result):
         """
-        Sets the run of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        Sets the result of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
 
 
-        :param run: The run of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
+        :param result: The result of this WfmBuScheduleRunTopicBuSchedulingRunProgressNotification.
         :type: WfmBuScheduleRunTopicBuScheduleRun
         """
         
-        self._run = run
+        self._result = result
 
     def to_dict(self):
         """

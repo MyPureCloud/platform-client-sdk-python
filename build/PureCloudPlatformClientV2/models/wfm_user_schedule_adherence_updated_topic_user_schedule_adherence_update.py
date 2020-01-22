@@ -53,7 +53,8 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
             'adherence_change_time': 'datetime',
             'presence_update_time': 'datetime',
             'active_queues': 'list[WfmUserScheduleAdherenceUpdatedTopicQueueReference]',
-            'active_queues_modified_time': 'datetime'
+            'active_queues_modified_time': 'datetime',
+            'removed_from_management_unit': 'bool'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
             'adherence_change_time': 'adherenceChangeTime',
             'presence_update_time': 'presenceUpdateTime',
             'active_queues': 'activeQueues',
-            'active_queues_modified_time': 'activeQueuesModifiedTime'
+            'active_queues_modified_time': 'activeQueuesModifiedTime',
+            'removed_from_management_unit': 'removedFromManagementUnit'
         }
 
         self._user = None
@@ -87,6 +89,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         self._presence_update_time = None
         self._active_queues = None
         self._active_queues_modified_time = None
+        self._removed_from_management_unit = None
 
     @property
     def user(self):
@@ -417,6 +420,29 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._active_queues_modified_time = active_queues_modified_time
+
+    @property
+    def removed_from_management_unit(self):
+        """
+        Gets the removed_from_management_unit of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The removed_from_management_unit of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :rtype: bool
+        """
+        return self._removed_from_management_unit
+
+    @removed_from_management_unit.setter
+    def removed_from_management_unit(self, removed_from_management_unit):
+        """
+        Sets the removed_from_management_unit of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :param removed_from_management_unit: The removed_from_management_unit of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :type: bool
+        """
+        
+        self._removed_from_management_unit = removed_from_management_unit
 
     def to_dict(self):
         """

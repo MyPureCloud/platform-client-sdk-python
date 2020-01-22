@@ -41,26 +41,35 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'percent_complete': 'float',
+            'intraday_rescheduling': 'bool',
+            'state': 'str',
             'week_count': 'int',
             'schedule': 'WfmBuScheduleRunTopicBuScheduleReference',
-            'scheduling_canceled_by_user': 'WfmBuScheduleRunTopicUserReference',
+            'scheduling_canceled_by': 'WfmBuScheduleRunTopicUserReference',
             'scheduling_completed_time': 'str',
             'message_count': 'int'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'percent_complete': 'percentComplete',
+            'intraday_rescheduling': 'intradayRescheduling',
+            'state': 'state',
             'week_count': 'weekCount',
             'schedule': 'schedule',
-            'scheduling_canceled_by_user': 'schedulingCanceledByUser',
+            'scheduling_canceled_by': 'schedulingCanceledBy',
             'scheduling_completed_time': 'schedulingCompletedTime',
             'message_count': 'messageCount'
         }
 
         self._id = None
+        self._percent_complete = None
+        self._intraday_rescheduling = None
+        self._state = None
         self._week_count = None
         self._schedule = None
-        self._scheduling_canceled_by_user = None
+        self._scheduling_canceled_by = None
         self._scheduling_completed_time = None
         self._message_count = None
 
@@ -86,6 +95,79 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         """
         
         self._id = id
+
+    @property
+    def percent_complete(self):
+        """
+        Gets the percent_complete of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :return: The percent_complete of this WfmBuScheduleRunTopicBuScheduleRun.
+        :rtype: float
+        """
+        return self._percent_complete
+
+    @percent_complete.setter
+    def percent_complete(self, percent_complete):
+        """
+        Sets the percent_complete of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :param percent_complete: The percent_complete of this WfmBuScheduleRunTopicBuScheduleRun.
+        :type: float
+        """
+        
+        self._percent_complete = percent_complete
+
+    @property
+    def intraday_rescheduling(self):
+        """
+        Gets the intraday_rescheduling of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :return: The intraday_rescheduling of this WfmBuScheduleRunTopicBuScheduleRun.
+        :rtype: bool
+        """
+        return self._intraday_rescheduling
+
+    @intraday_rescheduling.setter
+    def intraday_rescheduling(self, intraday_rescheduling):
+        """
+        Sets the intraday_rescheduling of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :param intraday_rescheduling: The intraday_rescheduling of this WfmBuScheduleRunTopicBuScheduleRun.
+        :type: bool
+        """
+        
+        self._intraday_rescheduling = intraday_rescheduling
+
+    @property
+    def state(self):
+        """
+        Gets the state of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :return: The state of this WfmBuScheduleRunTopicBuScheduleRun.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this WfmBuScheduleRunTopicBuScheduleRun.
+
+
+        :param state: The state of this WfmBuScheduleRunTopicBuScheduleRun.
+        :type: str
+        """
+        allowed_values = ["None", "Queued", "Scheduling", "Canceled", "Failed", "Complete"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for state -> " + state
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     @property
     def week_count(self):
@@ -134,27 +216,27 @@ class WfmBuScheduleRunTopicBuScheduleRun(object):
         self._schedule = schedule
 
     @property
-    def scheduling_canceled_by_user(self):
+    def scheduling_canceled_by(self):
         """
-        Gets the scheduling_canceled_by_user of this WfmBuScheduleRunTopicBuScheduleRun.
+        Gets the scheduling_canceled_by of this WfmBuScheduleRunTopicBuScheduleRun.
 
 
-        :return: The scheduling_canceled_by_user of this WfmBuScheduleRunTopicBuScheduleRun.
+        :return: The scheduling_canceled_by of this WfmBuScheduleRunTopicBuScheduleRun.
         :rtype: WfmBuScheduleRunTopicUserReference
         """
-        return self._scheduling_canceled_by_user
+        return self._scheduling_canceled_by
 
-    @scheduling_canceled_by_user.setter
-    def scheduling_canceled_by_user(self, scheduling_canceled_by_user):
+    @scheduling_canceled_by.setter
+    def scheduling_canceled_by(self, scheduling_canceled_by):
         """
-        Sets the scheduling_canceled_by_user of this WfmBuScheduleRunTopicBuScheduleRun.
+        Sets the scheduling_canceled_by of this WfmBuScheduleRunTopicBuScheduleRun.
 
 
-        :param scheduling_canceled_by_user: The scheduling_canceled_by_user of this WfmBuScheduleRunTopicBuScheduleRun.
+        :param scheduling_canceled_by: The scheduling_canceled_by of this WfmBuScheduleRunTopicBuScheduleRun.
         :type: WfmBuScheduleRunTopicUserReference
         """
         
-        self._scheduling_canceled_by_user = scheduling_canceled_by_user
+        self._scheduling_canceled_by = scheduling_canceled_by
 
     @property
     def scheduling_completed_time(self):

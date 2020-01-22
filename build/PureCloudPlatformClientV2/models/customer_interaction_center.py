@@ -42,8 +42,8 @@ class CustomerInteractionCenter(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'issuer_uri': 'str',
             'certificate': 'str',
+            'issuer_uri': 'str',
             'sso_target_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
@@ -52,8 +52,8 @@ class CustomerInteractionCenter(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'issuer_uri': 'issuerURI',
             'certificate': 'certificate',
+            'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
@@ -61,8 +61,8 @@ class CustomerInteractionCenter(object):
 
         self._id = None
         self._name = None
-        self._issuer_uri = None
         self._certificate = None
+        self._issuer_uri = None
         self._sso_target_uri = None
         self._disabled = None
         self._self_uri = None
@@ -114,29 +114,6 @@ class CustomerInteractionCenter(object):
         self._name = name
 
     @property
-    def issuer_uri(self):
-        """
-        Gets the issuer_uri of this CustomerInteractionCenter.
-
-
-        :return: The issuer_uri of this CustomerInteractionCenter.
-        :rtype: str
-        """
-        return self._issuer_uri
-
-    @issuer_uri.setter
-    def issuer_uri(self, issuer_uri):
-        """
-        Sets the issuer_uri of this CustomerInteractionCenter.
-
-
-        :param issuer_uri: The issuer_uri of this CustomerInteractionCenter.
-        :type: str
-        """
-        
-        self._issuer_uri = issuer_uri
-
-    @property
     def certificate(self):
         """
         Gets the certificate of this CustomerInteractionCenter.
@@ -158,6 +135,29 @@ class CustomerInteractionCenter(object):
         """
         
         self._certificate = certificate
+
+    @property
+    def issuer_uri(self):
+        """
+        Gets the issuer_uri of this CustomerInteractionCenter.
+
+
+        :return: The issuer_uri of this CustomerInteractionCenter.
+        :rtype: str
+        """
+        return self._issuer_uri
+
+    @issuer_uri.setter
+    def issuer_uri(self, issuer_uri):
+        """
+        Sets the issuer_uri of this CustomerInteractionCenter.
+
+
+        :param issuer_uri: The issuer_uri of this CustomerInteractionCenter.
+        :type: str
+        """
+        
+        self._issuer_uri = issuer_uri
 
     @property
     def sso_target_uri(self):

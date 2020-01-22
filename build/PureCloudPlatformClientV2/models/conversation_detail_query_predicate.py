@@ -138,7 +138,7 @@ class ConversationDetailQueryPredicate(object):
         :param metric: The metric of this ConversationDetailQueryPredicate.
         :type: str
         """
-        allowed_values = ["nBlindTransferred", "nConnected", "nConsult", "nConsultTransferred", "nError", "nFlow", "nFlowOutcome", "nFlowOutcomeFailed", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nStateTransitionError", "nTransferred", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tConversationDuration", "tDialing", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOut", "tFlowOutcome", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tNotResponding", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
+        allowed_values = ["nBlindTransferred", "nConnected", "nConsult", "nConsultTransferred", "nError", "nFlow", "nFlowOutcome", "nFlowOutcomeFailed", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nStateTransitionError", "nTransferred", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tConversationDuration", "tDialing", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOut", "tFlowOutcome", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tNotResponding", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for metric -> " + metric
             self._metric = "outdated_sdk_version"

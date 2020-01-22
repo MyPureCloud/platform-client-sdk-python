@@ -90,7 +90,8 @@ class AnalyticsSession(object):
             'journey_action_map_version': 'str',
             'protocol_call_id': 'str',
             'provider': 'str',
-            'remote': 'str'
+            'remote': 'str',
+            'media_count': 'int'
         }
 
         self.attribute_map = {
@@ -144,7 +145,8 @@ class AnalyticsSession(object):
             'journey_action_map_version': 'journeyActionMapVersion',
             'protocol_call_id': 'protocolCallId',
             'provider': 'provider',
-            'remote': 'remote'
+            'remote': 'remote',
+            'media_count': 'mediaCount'
         }
 
         self._media_type = None
@@ -198,6 +200,7 @@ class AnalyticsSession(object):
         self._protocol_call_id = None
         self._provider = None
         self._remote = None
+        self._media_count = None
 
     @property
     def media_type(self):
@@ -1383,6 +1386,29 @@ class AnalyticsSession(object):
         """
         
         self._remote = remote
+
+    @property
+    def media_count(self):
+        """
+        Gets the media_count of this AnalyticsSession.
+        Count of any media (images, files, etc) included in this session
+
+        :return: The media_count of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._media_count
+
+    @media_count.setter
+    def media_count(self, media_count):
+        """
+        Sets the media_count of this AnalyticsSession.
+        Count of any media (images, files, etc) included in this session
+
+        :param media_count: The media_count of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._media_count = media_count
 
     def to_dict(self):
         """
