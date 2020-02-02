@@ -42,36 +42,36 @@ class AnalyticsParticipant(object):
         self.swagger_types = {
             'participant_id': 'str',
             'participant_name': 'str',
-            'attributes': 'dict(str, str)',
             'user_id': 'str',
             'purpose': 'str',
             'external_contact_id': 'str',
             'external_organization_id': 'str',
             'flagged_reason': 'str',
-            'sessions': 'list[AnalyticsSession]'
+            'sessions': 'list[AnalyticsSession]',
+            'attributes': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'participant_id': 'participantId',
             'participant_name': 'participantName',
-            'attributes': 'attributes',
             'user_id': 'userId',
             'purpose': 'purpose',
             'external_contact_id': 'externalContactId',
             'external_organization_id': 'externalOrganizationId',
             'flagged_reason': 'flaggedReason',
-            'sessions': 'sessions'
+            'sessions': 'sessions',
+            'attributes': 'attributes'
         }
 
         self._participant_id = None
         self._participant_name = None
-        self._attributes = None
         self._user_id = None
         self._purpose = None
         self._external_contact_id = None
         self._external_organization_id = None
         self._flagged_reason = None
         self._sessions = None
+        self._attributes = None
 
     @property
     def participant_id(self):
@@ -118,29 +118,6 @@ class AnalyticsParticipant(object):
         """
         
         self._participant_name = participant_name
-
-    @property
-    def attributes(self):
-        """
-        Gets the attributes of this AnalyticsParticipant.
-        List of attributes associated to this participant
-
-        :return: The attributes of this AnalyticsParticipant.
-        :rtype: dict(str, str)
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """
-        Sets the attributes of this AnalyticsParticipant.
-        List of attributes associated to this participant
-
-        :param attributes: The attributes of this AnalyticsParticipant.
-        :type: dict(str, str)
-        """
-        
-        self._attributes = attributes
 
     @property
     def user_id(self):
@@ -287,6 +264,29 @@ class AnalyticsParticipant(object):
         """
         
         self._sessions = sessions
+
+    @property
+    def attributes(self):
+        """
+        Gets the attributes of this AnalyticsParticipant.
+        List of attributes associated to this participant
+
+        :return: The attributes of this AnalyticsParticipant.
+        :rtype: dict(str, str)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """
+        Sets the attributes of this AnalyticsParticipant.
+        List of attributes associated to this participant
+
+        :param attributes: The attributes of this AnalyticsParticipant.
+        :type: dict(str, str)
+        """
+        
+        self._attributes = attributes
 
     def to_dict(self):
         """

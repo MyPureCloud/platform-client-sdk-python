@@ -40,7 +40,7 @@ class Utilization(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'utilization': 'dict(str, OrgMediaUtilization)'
+            'utilization': 'dict(str, MediaUtilization)'
         }
 
         self.attribute_map = {
@@ -53,10 +53,10 @@ class Utilization(object):
     def utilization(self):
         """
         Gets the utilization of this Utilization.
-        Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
+        Map of media type to utilization settings.  Valid media types include call, callback, chat, email, and message.
 
         :return: The utilization of this Utilization.
-        :rtype: dict(str, OrgMediaUtilization)
+        :rtype: dict(str, MediaUtilization)
         """
         return self._utilization
 
@@ -64,10 +64,10 @@ class Utilization(object):
     def utilization(self, utilization):
         """
         Sets the utilization of this Utilization.
-        Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
+        Map of media type to utilization settings.  Valid media types include call, callback, chat, email, and message.
 
         :param utilization: The utilization of this Utilization.
-        :type: dict(str, OrgMediaUtilization)
+        :type: dict(str, MediaUtilization)
         """
         
         self._utilization = utilization

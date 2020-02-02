@@ -71,6 +71,7 @@ class UserMe(object):
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
             'language_preference': 'str',
+            'last_token_issued': 'OAuthLastTokenIssued',
             'date': 'ServerDate',
             'geolocation_settings': 'GeolocationSettings',
             'organization': 'Organization',
@@ -121,6 +122,7 @@ class UserMe(object):
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
             'language_preference': 'languagePreference',
+            'last_token_issued': 'lastTokenIssued',
             'date': 'date',
             'geolocation_settings': 'geolocationSettings',
             'organization': 'organization',
@@ -170,6 +172,7 @@ class UserMe(object):
         self._languages = None
         self._acd_auto_answer = None
         self._language_preference = None
+        self._last_token_issued = None
         self._date = None
         self._geolocation_settings = None
         self._organization = None
@@ -903,6 +906,29 @@ class UserMe(object):
         """
         
         self._language_preference = language_preference
+
+    @property
+    def last_token_issued(self):
+        """
+        Gets the last_token_issued of this UserMe.
+
+
+        :return: The last_token_issued of this UserMe.
+        :rtype: OAuthLastTokenIssued
+        """
+        return self._last_token_issued
+
+    @last_token_issued.setter
+    def last_token_issued(self, last_token_issued):
+        """
+        Sets the last_token_issued of this UserMe.
+
+
+        :param last_token_issued: The last_token_issued of this UserMe.
+        :type: OAuthLastTokenIssued
+        """
+        
+        self._last_token_issued = last_token_issued
 
     @property
     def date(self):

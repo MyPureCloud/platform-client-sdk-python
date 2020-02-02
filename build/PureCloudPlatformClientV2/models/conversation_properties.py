@@ -48,6 +48,7 @@ class ConversationProperties(object):
             'is_cobrowse': 'bool',
             'is_voicemail': 'bool',
             'is_flagged': 'bool',
+            'is_monitored': 'bool',
             'filter_wrap_up_notes': 'bool',
             'match_all': 'bool'
         }
@@ -61,6 +62,7 @@ class ConversationProperties(object):
             'is_cobrowse': 'isCobrowse',
             'is_voicemail': 'isVoicemail',
             'is_flagged': 'isFlagged',
+            'is_monitored': 'isMonitored',
             'filter_wrap_up_notes': 'filterWrapUpNotes',
             'match_all': 'matchAll'
         }
@@ -73,6 +75,7 @@ class ConversationProperties(object):
         self._is_cobrowse = None
         self._is_voicemail = None
         self._is_flagged = None
+        self._is_monitored = None
         self._filter_wrap_up_notes = None
         self._match_all = None
 
@@ -259,6 +262,29 @@ class ConversationProperties(object):
         """
         
         self._is_flagged = is_flagged
+
+    @property
+    def is_monitored(self):
+        """
+        Gets the is_monitored of this ConversationProperties.
+        Indicates filtering for monitored
+
+        :return: The is_monitored of this ConversationProperties.
+        :rtype: bool
+        """
+        return self._is_monitored
+
+    @is_monitored.setter
+    def is_monitored(self, is_monitored):
+        """
+        Sets the is_monitored of this ConversationProperties.
+        Indicates filtering for monitored
+
+        :param is_monitored: The is_monitored of this ConversationProperties.
+        :type: bool
+        """
+        
+        self._is_monitored = is_monitored
 
     @property
     def filter_wrap_up_notes(self):

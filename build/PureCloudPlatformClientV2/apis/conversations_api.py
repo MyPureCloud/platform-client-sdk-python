@@ -794,7 +794,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
-        :return: AnalyticsConversation
+        :return: AnalyticsConversationWithoutAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -851,7 +851,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AnalyticsConversation',
+                                            response_type='AnalyticsConversationWithoutAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -872,7 +872,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] id: Comma-separated conversation ids
-        :return: AnalyticsConversationMultiGetResponse
+        :return: AnalyticsConversationWithoutAttributesMultiGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -926,7 +926,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AnalyticsConversationMultiGetResponse',
+                                            response_type='AnalyticsConversationWithoutAttributesMultiGetResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

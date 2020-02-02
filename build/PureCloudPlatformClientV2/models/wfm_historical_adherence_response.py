@@ -42,17 +42,20 @@ class WfmHistoricalAdherenceResponse(object):
         self.swagger_types = {
             'id': 'str',
             'download_url': 'str',
+            'download_urls': 'list[str]',
             'query_state': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'download_url': 'downloadUrl',
+            'download_urls': 'downloadUrls',
             'query_state': 'queryState'
         }
 
         self._id = None
         self._download_url = None
+        self._download_urls = None
         self._query_state = None
 
     @property
@@ -82,7 +85,7 @@ class WfmHistoricalAdherenceResponse(object):
     def download_url(self):
         """
         Gets the download_url of this WfmHistoricalAdherenceResponse.
-        The uri to query to GET the results of the Historical Adherence query. This will return unpopulated but will be populated in the notification
+        Deprecated. Use downloadUrls instead.
 
         :return: The download_url of this WfmHistoricalAdherenceResponse.
         :rtype: str
@@ -93,13 +96,36 @@ class WfmHistoricalAdherenceResponse(object):
     def download_url(self, download_url):
         """
         Sets the download_url of this WfmHistoricalAdherenceResponse.
-        The uri to query to GET the results of the Historical Adherence query. This will return unpopulated but will be populated in the notification
+        Deprecated. Use downloadUrls instead.
 
         :param download_url: The download_url of this WfmHistoricalAdherenceResponse.
         :type: str
         """
         
         self._download_url = download_url
+
+    @property
+    def download_urls(self):
+        """
+        Gets the download_urls of this WfmHistoricalAdherenceResponse.
+        The uri list to GET the results of the Historical Adherence query. For notification purposes only
+
+        :return: The download_urls of this WfmHistoricalAdherenceResponse.
+        :rtype: list[str]
+        """
+        return self._download_urls
+
+    @download_urls.setter
+    def download_urls(self, download_urls):
+        """
+        Sets the download_urls of this WfmHistoricalAdherenceResponse.
+        The uri list to GET the results of the Historical Adherence query. For notification purposes only
+
+        :param download_urls: The download_urls of this WfmHistoricalAdherenceResponse.
+        :type: list[str]
+        """
+        
+        self._download_urls = download_urls
 
     @property
     def query_state(self):

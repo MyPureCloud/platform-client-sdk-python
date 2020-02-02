@@ -59,8 +59,16 @@ class ViewFilter(object):
             'outbound_campaign_ids': 'list[str]',
             'outbound_contact_list_ids': 'list[str]',
             'contact_ids': 'list[str]',
+            'external_contact_ids': 'list[str]',
+            'external_org_ids': 'list[str]',
             'ani_list': 'list[str]',
             'durations_milliseconds': 'list[NumericRange]',
+            'acd_durations_milliseconds': 'list[NumericRange]',
+            'talk_durations_milliseconds': 'list[NumericRange]',
+            'acw_durations_milliseconds': 'list[NumericRange]',
+            'handle_durations_milliseconds': 'list[NumericRange]',
+            'hold_durations_milliseconds': 'list[NumericRange]',
+            'abandon_durations_milliseconds': 'list[NumericRange]',
             'evaluation_score': 'NumericRange',
             'evaluation_critical_score': 'NumericRange',
             'evaluation_form_ids': 'list[str]',
@@ -135,8 +143,16 @@ class ViewFilter(object):
             'outbound_campaign_ids': 'outboundCampaignIds',
             'outbound_contact_list_ids': 'outboundContactListIds',
             'contact_ids': 'contactIds',
+            'external_contact_ids': 'externalContactIds',
+            'external_org_ids': 'externalOrgIds',
             'ani_list': 'aniList',
             'durations_milliseconds': 'durationsMilliseconds',
+            'acd_durations_milliseconds': 'acdDurationsMilliseconds',
+            'talk_durations_milliseconds': 'talkDurationsMilliseconds',
+            'acw_durations_milliseconds': 'acwDurationsMilliseconds',
+            'handle_durations_milliseconds': 'handleDurationsMilliseconds',
+            'hold_durations_milliseconds': 'holdDurationsMilliseconds',
+            'abandon_durations_milliseconds': 'abandonDurationsMilliseconds',
             'evaluation_score': 'evaluationScore',
             'evaluation_critical_score': 'evaluationCriticalScore',
             'evaluation_form_ids': 'evaluationFormIds',
@@ -210,8 +226,16 @@ class ViewFilter(object):
         self._outbound_campaign_ids = None
         self._outbound_contact_list_ids = None
         self._contact_ids = None
+        self._external_contact_ids = None
+        self._external_org_ids = None
         self._ani_list = None
         self._durations_milliseconds = None
+        self._acd_durations_milliseconds = None
+        self._talk_durations_milliseconds = None
+        self._acw_durations_milliseconds = None
+        self._handle_durations_milliseconds = None
+        self._hold_durations_milliseconds = None
+        self._abandon_durations_milliseconds = None
         self._evaluation_score = None
         self._evaluation_critical_score = None
         self._evaluation_form_ids = None
@@ -703,6 +727,52 @@ class ViewFilter(object):
         self._contact_ids = contact_ids
 
     @property
+    def external_contact_ids(self):
+        """
+        Gets the external_contact_ids of this ViewFilter.
+        The external contact ids are used to filter the view
+
+        :return: The external_contact_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._external_contact_ids
+
+    @external_contact_ids.setter
+    def external_contact_ids(self, external_contact_ids):
+        """
+        Sets the external_contact_ids of this ViewFilter.
+        The external contact ids are used to filter the view
+
+        :param external_contact_ids: The external_contact_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._external_contact_ids = external_contact_ids
+
+    @property
+    def external_org_ids(self):
+        """
+        Gets the external_org_ids of this ViewFilter.
+        The external org ids are used to filter the view
+
+        :return: The external_org_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._external_org_ids
+
+    @external_org_ids.setter
+    def external_org_ids(self, external_org_ids):
+        """
+        Sets the external_org_ids of this ViewFilter.
+        The external org ids are used to filter the view
+
+        :param external_org_ids: The external_org_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._external_org_ids = external_org_ids
+
+    @property
     def ani_list(self):
         """
         Gets the ani_list of this ViewFilter.
@@ -747,6 +817,144 @@ class ViewFilter(object):
         """
         
         self._durations_milliseconds = durations_milliseconds
+
+    @property
+    def acd_durations_milliseconds(self):
+        """
+        Gets the acd_durations_milliseconds of this ViewFilter.
+        The acd durations in milliseconds used to filter the view
+
+        :return: The acd_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._acd_durations_milliseconds
+
+    @acd_durations_milliseconds.setter
+    def acd_durations_milliseconds(self, acd_durations_milliseconds):
+        """
+        Sets the acd_durations_milliseconds of this ViewFilter.
+        The acd durations in milliseconds used to filter the view
+
+        :param acd_durations_milliseconds: The acd_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._acd_durations_milliseconds = acd_durations_milliseconds
+
+    @property
+    def talk_durations_milliseconds(self):
+        """
+        Gets the talk_durations_milliseconds of this ViewFilter.
+        The talk durations in milliseconds used to filter the view
+
+        :return: The talk_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._talk_durations_milliseconds
+
+    @talk_durations_milliseconds.setter
+    def talk_durations_milliseconds(self, talk_durations_milliseconds):
+        """
+        Sets the talk_durations_milliseconds of this ViewFilter.
+        The talk durations in milliseconds used to filter the view
+
+        :param talk_durations_milliseconds: The talk_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._talk_durations_milliseconds = talk_durations_milliseconds
+
+    @property
+    def acw_durations_milliseconds(self):
+        """
+        Gets the acw_durations_milliseconds of this ViewFilter.
+        The acw durations in milliseconds used to filter the view
+
+        :return: The acw_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._acw_durations_milliseconds
+
+    @acw_durations_milliseconds.setter
+    def acw_durations_milliseconds(self, acw_durations_milliseconds):
+        """
+        Sets the acw_durations_milliseconds of this ViewFilter.
+        The acw durations in milliseconds used to filter the view
+
+        :param acw_durations_milliseconds: The acw_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._acw_durations_milliseconds = acw_durations_milliseconds
+
+    @property
+    def handle_durations_milliseconds(self):
+        """
+        Gets the handle_durations_milliseconds of this ViewFilter.
+        The handle durations in milliseconds used to filter the view
+
+        :return: The handle_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._handle_durations_milliseconds
+
+    @handle_durations_milliseconds.setter
+    def handle_durations_milliseconds(self, handle_durations_milliseconds):
+        """
+        Sets the handle_durations_milliseconds of this ViewFilter.
+        The handle durations in milliseconds used to filter the view
+
+        :param handle_durations_milliseconds: The handle_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._handle_durations_milliseconds = handle_durations_milliseconds
+
+    @property
+    def hold_durations_milliseconds(self):
+        """
+        Gets the hold_durations_milliseconds of this ViewFilter.
+        The hold durations in milliseconds used to filter the view
+
+        :return: The hold_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._hold_durations_milliseconds
+
+    @hold_durations_milliseconds.setter
+    def hold_durations_milliseconds(self, hold_durations_milliseconds):
+        """
+        Sets the hold_durations_milliseconds of this ViewFilter.
+        The hold durations in milliseconds used to filter the view
+
+        :param hold_durations_milliseconds: The hold_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._hold_durations_milliseconds = hold_durations_milliseconds
+
+    @property
+    def abandon_durations_milliseconds(self):
+        """
+        Gets the abandon_durations_milliseconds of this ViewFilter.
+        The abandon durations in milliseconds used to filter the view
+
+        :return: The abandon_durations_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._abandon_durations_milliseconds
+
+    @abandon_durations_milliseconds.setter
+    def abandon_durations_milliseconds(self, abandon_durations_milliseconds):
+        """
+        Sets the abandon_durations_milliseconds of this ViewFilter.
+        The abandon durations in milliseconds used to filter the view
+
+        :param abandon_durations_milliseconds: The abandon_durations_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+        self._abandon_durations_milliseconds = abandon_durations_milliseconds
 
     @property
     def evaluation_score(self):

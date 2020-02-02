@@ -38,6 +38,7 @@ title: User
 | **languages** | [**list[UserRoutingLanguage]**](UserRoutingLanguage.html) | Routing (ACD) languages possessed by the user | [optional] |
 | **acd_auto_answer** | **bool** | acd auto answer | [optional] |
 | **language_preference** | **str** | preferred language by the user | [optional] |
+| **last_token_issued** | [**OAuthLastTokenIssued**](OAuthLastTokenIssued.html) |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -42,17 +42,20 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         self.swagger_types = {
             'id': 'str',
             'download_url': 'str',
+            'download_urls': 'list[str]',
             'query_state': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'download_url': 'downloadUrl',
+            'download_urls': 'downloadUrls',
             'query_state': 'queryState'
         }
 
         self._id = None
         self._download_url = None
+        self._download_urls = None
         self._query_state = None
 
     @property
@@ -100,6 +103,29 @@ class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalcu
         """
         
         self._download_url = download_url
+
+    @property
+    def download_urls(self):
+        """
+        Gets the download_urls of this WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.
+
+
+        :return: The download_urls of this WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.
+        :rtype: list[str]
+        """
+        return self._download_urls
+
+    @download_urls.setter
+    def download_urls(self, download_urls):
+        """
+        Sets the download_urls of this WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.
+
+
+        :param download_urls: The download_urls of this WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.
+        :type: list[str]
+        """
+        
+        self._download_urls = download_urls
 
     @property
     def query_state(self):

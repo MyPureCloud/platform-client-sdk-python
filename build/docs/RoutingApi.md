@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
-|[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete utilization settings and revert to system defaults.|
+|[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
 |[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
 |[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](RoutingApi.html#delete_user_routingskill) | Remove routing skill from user|
@@ -45,14 +45,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
 |[**get_routing_sms_phonenumber**](RoutingApi.html#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
 |[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
-|[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the utilization settings.|
+|[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the organization-wide max utilization settings.|
 |[**get_routing_wrapupcode**](RoutingApi.html#get_routing_wrapupcode) | Get details about this wrap-up code.|
 |[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
+|[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number OR joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
 |[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
+|[**patch_user_queue**](RoutingApi.html#patch_user_queue) | Join or unjoin a queue for a user|
+|[**patch_user_queues**](RoutingApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
 |[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
@@ -74,7 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_queue**](RoutingApi.html#put_routing_queue) | Update a queue|
 |[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
-|[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the utilization settings.|
+|[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
 |[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
 |[**put_user_routingskills_bulk**](RoutingApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
@@ -444,7 +447,7 @@ void (empty response body)
 
 
 
-Delete utilization settings and revert to system defaults.
+Delete the organization-wide max utilization settings and revert to the system default.
 
 
 
@@ -469,7 +472,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 
 try:
-    # Delete utilization settings and revert to system defaults.
+    # Delete the organization-wide max utilization settings and revert to the system default.
     api_instance.delete_routing_utilization()
 except ApiException as e:
     print "Exception when calling RoutingApi->delete_routing_utilization: %s\n" % e
@@ -1274,7 +1277,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -2064,7 +2067,7 @@ except ApiException as e:
 
 
 
-Get the utilization settings.
+Get the organization-wide max utilization settings.
 
 
 
@@ -2090,7 +2093,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 
 try:
-    # Get the utilization settings.
+    # Get the organization-wide max utilization settings.
     api_response = api_instance.get_routing_utilization()
     pprint(api_response)
 except ApiException as e:
@@ -2213,6 +2216,66 @@ except ApiException as e:
 ### Return type
 
 [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+
+<a name="get_user_queues"></a>
+
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
+
+
+
+Get queues for user
+
+
+
+Wraps GET /api/v2/users/{userId}/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:queue:join
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+joined = true # bool | Is joined to the queue (optional) (default to true)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+
+try:
+    # Get queues for user
+    api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_user_queues: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **joined** | **bool**| Is joined to the queue | [optional] [default to true] |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="get_user_routinglanguages"></a>
 
@@ -2483,6 +2546,116 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="patch_user_queue"></a>
+
+## [**UserQueue**](UserQueue.html) patch_user_queue(queue_id, user_id, body)
+
+
+
+Join or unjoin a queue for a user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/queues/{queueId} 
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue ID
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.UserQueue() # UserQueue | Queue Member
+
+try:
+    # Join or unjoin a queue for a user
+    api_response = api_instance.patch_user_queue(queue_id, user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_user_queue: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+| **user_id** | **str**| User ID |  |
+| **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueue**](UserQueue.html)
+
+<a name="patch_user_queues"></a>
+
+## [**UserQueueEntityListing**](UserQueueEntityListing.html) patch_user_queues(user_id, body, division_id=division_id)
+
+
+
+Join or unjoin a set of queues for a user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/queues 
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = [PureCloudPlatformClientV2.UserQueue()] # list[UserQueue] | User Queues
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+
+try:
+    # Join or unjoin a set of queues for a user
+    api_response = api_instance.patch_user_queues(user_id, body, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_user_queues: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**list[UserQueue]**](UserQueue.html)| User Queues |  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="patch_user_routinglanguage"></a>
 
@@ -3594,7 +3767,7 @@ except ApiException as e:
 
 
 
-Update the utilization settings.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
 
 
@@ -3620,7 +3793,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
 
 try:
-    # Update the utilization settings.
+    # Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
     api_response = api_instance.put_routing_utilization(body)
     pprint(api_response)
 except ApiException as e:

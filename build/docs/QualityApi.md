@@ -665,7 +665,7 @@ expand = ['expand_example'] # list[str] | variable name requested by expand list
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 recording_id = 'recording_id_example' # str | id of the recording (optional)
-entity_type = 'RECORDING' # str | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional) (default to RECORDING)
+entity_type = 'Recording' # str | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional) (default to Recording)
 
 try:
     # Get audits for conversation or recording
@@ -688,7 +688,7 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **recording_id** | **str**| id of the recording | [optional]  |
-| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
+| **entity_type** | **str**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to Recording] |
 {: class="table table-striped"}
 
 ### Return type

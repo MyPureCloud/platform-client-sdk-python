@@ -55,6 +55,7 @@ class Flow(object):
             'input_schema': 'object',
             'output_schema': 'object',
             'checked_in_version': 'FlowVersion',
+            'debug_version': 'FlowVersion',
             'published_by': 'User',
             'current_operation': 'Operation',
             'self_uri': 'str'
@@ -76,6 +77,7 @@ class Flow(object):
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
             'checked_in_version': 'checkedInVersion',
+            'debug_version': 'debugVersion',
             'published_by': 'publishedBy',
             'current_operation': 'currentOperation',
             'self_uri': 'selfUri'
@@ -96,6 +98,7 @@ class Flow(object):
         self._input_schema = None
         self._output_schema = None
         self._checked_in_version = None
+        self._debug_version = None
         self._published_by = None
         self._current_operation = None
         self._self_uri = None
@@ -448,6 +451,29 @@ class Flow(object):
         """
         
         self._checked_in_version = checked_in_version
+
+    @property
+    def debug_version(self):
+        """
+        Gets the debug_version of this Flow.
+
+
+        :return: The debug_version of this Flow.
+        :rtype: FlowVersion
+        """
+        return self._debug_version
+
+    @debug_version.setter
+    def debug_version(self, debug_version):
+        """
+        Sets the debug_version of this Flow.
+
+
+        :param debug_version: The debug_version of this Flow.
+        :type: FlowVersion
+        """
+        
+        self._debug_version = debug_version
 
     @property
     def published_by(self):

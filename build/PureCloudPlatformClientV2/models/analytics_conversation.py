@@ -46,10 +46,10 @@ class AnalyticsConversation(object):
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
             'originating_direction': 'str',
-            'participants': 'list[AnalyticsParticipant]',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
-            'division_ids': 'list[str]'
+            'division_ids': 'list[str]',
+            'participants': 'list[AnalyticsParticipant]'
         }
 
         self.attribute_map = {
@@ -59,10 +59,10 @@ class AnalyticsConversation(object):
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
             'originating_direction': 'originatingDirection',
-            'participants': 'participants',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
-            'division_ids': 'divisionIds'
+            'division_ids': 'divisionIds',
+            'participants': 'participants'
         }
 
         self._conversation_id = None
@@ -71,10 +71,10 @@ class AnalyticsConversation(object):
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
         self._originating_direction = None
-        self._participants = None
         self._evaluations = None
         self._surveys = None
         self._division_ids = None
+        self._participants = None
 
     @property
     def conversation_id(self):
@@ -219,29 +219,6 @@ class AnalyticsConversation(object):
             self._originating_direction = originating_direction
 
     @property
-    def participants(self):
-        """
-        Gets the participants of this AnalyticsConversation.
-        Participants in the conversation
-
-        :return: The participants of this AnalyticsConversation.
-        :rtype: list[AnalyticsParticipant]
-        """
-        return self._participants
-
-    @participants.setter
-    def participants(self, participants):
-        """
-        Sets the participants of this AnalyticsConversation.
-        Participants in the conversation
-
-        :param participants: The participants of this AnalyticsConversation.
-        :type: list[AnalyticsParticipant]
-        """
-        
-        self._participants = participants
-
-    @property
     def evaluations(self):
         """
         Gets the evaluations of this AnalyticsConversation.
@@ -309,6 +286,29 @@ class AnalyticsConversation(object):
         """
         
         self._division_ids = division_ids
+
+    @property
+    def participants(self):
+        """
+        Gets the participants of this AnalyticsConversation.
+        Participants in the conversation
+
+        :return: The participants of this AnalyticsConversation.
+        :rtype: list[AnalyticsParticipant]
+        """
+        return self._participants
+
+    @participants.setter
+    def participants(self, participants):
+        """
+        Sets the participants of this AnalyticsConversation.
+        Participants in the conversation
+
+        :param participants: The participants of this AnalyticsConversation.
+        :type: list[AnalyticsParticipant]
+        """
+        
+        self._participants = participants
 
     def to_dict(self):
         """

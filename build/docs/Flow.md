@@ -22,6 +22,7 @@ title: Flow
 | **input_schema** | **object** | json schema describing the inputs for the flow | [optional] |
 | **output_schema** | **object** | json schema describing the outputs for the flow | [optional] |
 | **checked_in_version** | [**FlowVersion**](FlowVersion.html) |  | [optional] |
+| **debug_version** | [**FlowVersion**](FlowVersion.html) |  | [optional] |
 | **published_by** | [**User**](User.html) |  | [optional] |
 | **current_operation** | [**Operation**](Operation.html) |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |

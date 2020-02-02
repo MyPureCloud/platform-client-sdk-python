@@ -71,6 +71,7 @@ class TrustUser(object):
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
             'language_preference': 'str',
+            'last_token_issued': 'OAuthLastTokenIssued',
             'trust_user_details': 'TrustUserDetails'
         }
 
@@ -106,6 +107,7 @@ class TrustUser(object):
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
             'language_preference': 'languagePreference',
+            'last_token_issued': 'lastTokenIssued',
             'trust_user_details': 'trustUserDetails'
         }
 
@@ -140,6 +142,7 @@ class TrustUser(object):
         self._languages = None
         self._acd_auto_answer = None
         self._language_preference = None
+        self._last_token_issued = None
         self._trust_user_details = None
 
     @property
@@ -858,6 +861,29 @@ class TrustUser(object):
         """
         
         self._language_preference = language_preference
+
+    @property
+    def last_token_issued(self):
+        """
+        Gets the last_token_issued of this TrustUser.
+
+
+        :return: The last_token_issued of this TrustUser.
+        :rtype: OAuthLastTokenIssued
+        """
+        return self._last_token_issued
+
+    @last_token_issued.setter
+    def last_token_issued(self, last_token_issued):
+        """
+        Sets the last_token_issued of this TrustUser.
+
+
+        :param last_token_issued: The last_token_issued of this TrustUser.
+        :type: OAuthLastTokenIssued
+        """
+        
+        self._last_token_issued = last_token_issued
 
     @property
     def trust_user_details(self):

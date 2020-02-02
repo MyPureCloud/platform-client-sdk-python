@@ -46,12 +46,15 @@ class FlowVersion(object):
             'configuration_version': 'str',
             'type': 'str',
             'secure': 'bool',
+            'debug': 'bool',
             'created_by': 'User',
             'created_by_client': 'DomainEntityRef',
             'configuration_uri': 'str',
             'date_created': 'int',
             'generation_id': 'str',
             'publish_result_uri': 'str',
+            'input_schema': 'JsonSchemaDocument',
+            'output_schema': 'JsonSchemaDocument',
             'self_uri': 'str'
         }
 
@@ -62,12 +65,15 @@ class FlowVersion(object):
             'configuration_version': 'configurationVersion',
             'type': 'type',
             'secure': 'secure',
+            'debug': 'debug',
             'created_by': 'createdBy',
             'created_by_client': 'createdByClient',
             'configuration_uri': 'configurationUri',
             'date_created': 'dateCreated',
             'generation_id': 'generationId',
             'publish_result_uri': 'publishResultUri',
+            'input_schema': 'inputSchema',
+            'output_schema': 'outputSchema',
             'self_uri': 'selfUri'
         }
 
@@ -77,12 +83,15 @@ class FlowVersion(object):
         self._configuration_version = None
         self._type = None
         self._secure = None
+        self._debug = None
         self._created_by = None
         self._created_by_client = None
         self._configuration_uri = None
         self._date_created = None
         self._generation_id = None
         self._publish_result_uri = None
+        self._input_schema = None
+        self._output_schema = None
         self._self_uri = None
 
     @property
@@ -228,6 +237,29 @@ class FlowVersion(object):
         self._secure = secure
 
     @property
+    def debug(self):
+        """
+        Gets the debug of this FlowVersion.
+
+
+        :return: The debug of this FlowVersion.
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """
+        Sets the debug of this FlowVersion.
+
+
+        :param debug: The debug of this FlowVersion.
+        :type: bool
+        """
+        
+        self._debug = debug
+
+    @property
     def created_by(self):
         """
         Gets the created_by of this FlowVersion.
@@ -364,6 +396,52 @@ class FlowVersion(object):
         """
         
         self._publish_result_uri = publish_result_uri
+
+    @property
+    def input_schema(self):
+        """
+        Gets the input_schema of this FlowVersion.
+
+
+        :return: The input_schema of this FlowVersion.
+        :rtype: JsonSchemaDocument
+        """
+        return self._input_schema
+
+    @input_schema.setter
+    def input_schema(self, input_schema):
+        """
+        Sets the input_schema of this FlowVersion.
+
+
+        :param input_schema: The input_schema of this FlowVersion.
+        :type: JsonSchemaDocument
+        """
+        
+        self._input_schema = input_schema
+
+    @property
+    def output_schema(self):
+        """
+        Gets the output_schema of this FlowVersion.
+
+
+        :return: The output_schema of this FlowVersion.
+        :rtype: JsonSchemaDocument
+        """
+        return self._output_schema
+
+    @output_schema.setter
+    def output_schema(self, output_schema):
+        """
+        Sets the output_schema of this FlowVersion.
+
+
+        :param output_schema: The output_schema of this FlowVersion.
+        :type: JsonSchemaDocument
+        """
+        
+        self._output_schema = output_schema
 
     @property
     def self_uri(self):

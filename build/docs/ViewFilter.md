@@ -26,8 +26,16 @@ title: ViewFilter
 | **outbound_campaign_ids** | **list[str]** | The outbound campaign ids are used to filter the view | [optional] |
 | **outbound_contact_list_ids** | **list[str]** | The outbound contact list ids are used to filter the view | [optional] |
 | **contact_ids** | **list[str]** | The contact ids are used to filter the view | [optional] |
+| **external_contact_ids** | **list[str]** | The external contact ids are used to filter the view | [optional] |
+| **external_org_ids** | **list[str]** | The external org ids are used to filter the view | [optional] |
 | **ani_list** | **list[str]** | The ani list ids are used to filter the view | [optional] |
 | **durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The durations in milliseconds used to filter the view | [optional] |
+| **acd_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The acd durations in milliseconds used to filter the view | [optional] |
+| **talk_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The talk durations in milliseconds used to filter the view | [optional] |
+| **acw_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The acw durations in milliseconds used to filter the view | [optional] |
+| **handle_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The handle durations in milliseconds used to filter the view | [optional] |
+| **hold_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The hold durations in milliseconds used to filter the view | [optional] |
+| **abandon_durations_milliseconds** | [**list[NumericRange]**](NumericRange.html) | The abandon durations in milliseconds used to filter the view | [optional] |
 | **evaluation_score** | [**NumericRange**](NumericRange.html) | The evaluationScore is used to filter the view | [optional] |
 | **evaluation_critical_score** | [**NumericRange**](NumericRange.html) | The evaluationCriticalScore is used to filter the view | [optional] |
 | **evaluation_form_ids** | **list[str]** | The evaluation form ids are used to filter the view | [optional] |

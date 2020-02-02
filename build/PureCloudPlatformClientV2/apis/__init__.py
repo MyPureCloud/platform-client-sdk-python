@@ -21,7 +21,6 @@ from .integrations_api import IntegrationsApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
-from .messaging_api import MessagingApi
 from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi

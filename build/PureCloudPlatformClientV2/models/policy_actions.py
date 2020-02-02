@@ -50,7 +50,8 @@ class PolicyActions(object):
             'assign_surveys': 'list[SurveyAssignment]',
             'retention_duration': 'RetentionDuration',
             'initiate_screen_recording': 'InitiateScreenRecording',
-            'media_transcriptions': 'list[MediaTranscription]'
+            'media_transcriptions': 'list[MediaTranscription]',
+            'integration_export': 'IntegrationExport'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class PolicyActions(object):
             'assign_surveys': 'assignSurveys',
             'retention_duration': 'retentionDuration',
             'initiate_screen_recording': 'initiateScreenRecording',
-            'media_transcriptions': 'mediaTranscriptions'
+            'media_transcriptions': 'mediaTranscriptions',
+            'integration_export': 'integrationExport'
         }
 
         self._retain_recording = None
@@ -78,6 +80,7 @@ class PolicyActions(object):
         self._retention_duration = None
         self._initiate_screen_recording = None
         self._media_transcriptions = None
+        self._integration_export = None
 
     @property
     def retain_recording(self):
@@ -331,6 +334,29 @@ class PolicyActions(object):
         """
         
         self._media_transcriptions = media_transcriptions
+
+    @property
+    def integration_export(self):
+        """
+        Gets the integration_export of this PolicyActions.
+        Policy action for exporting recordings using an integration to 3rd party s3.
+
+        :return: The integration_export of this PolicyActions.
+        :rtype: IntegrationExport
+        """
+        return self._integration_export
+
+    @integration_export.setter
+    def integration_export(self, integration_export):
+        """
+        Sets the integration_export of this PolicyActions.
+        Policy action for exporting recordings using an integration to 3rd party s3.
+
+        :param integration_export: The integration_export of this PolicyActions.
+        :type: IntegrationExport
+        """
+        
+        self._integration_export = integration_export
 
     def to_dict(self):
         """
