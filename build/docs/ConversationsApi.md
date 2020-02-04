@@ -6354,7 +6354,7 @@ except ApiException as e:
 
 Get messages in batch
 
-
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
 
@@ -6375,7 +6375,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-conversation_id = 'conversation_id_example' # str | conversationId
+conversation_id = 'conversation_id_example' # str | 
 body = [PureCloudPlatformClientV2.list[str]()] # list[str] | messageIds (optional)
 
 try:
@@ -6391,7 +6391,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| conversationId |  |
+| **conversation_id** | **str**|  |  |
 | **body** | **list[str]**| messageIds | [optional]  |
 {: class="table table-striped"}
 

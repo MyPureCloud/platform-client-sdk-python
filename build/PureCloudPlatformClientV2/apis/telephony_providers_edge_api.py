@@ -1600,6 +1600,318 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_telephony_providers_edge_diagnostic_nslookup(self, edge_id, **kwargs):
+        """
+        Get networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edge_diagnostic_nslookup(edge_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :return: EdgeNetworkDiagnosticResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edge_diagnostic_nslookup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_diagnostic_nslookup`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnosticResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_providers_edge_diagnostic_ping(self, edge_id, **kwargs):
+        """
+        Get networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edge_diagnostic_ping(edge_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :return: EdgeNetworkDiagnosticResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edge_diagnostic_ping" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_diagnostic_ping`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnosticResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_providers_edge_diagnostic_route(self, edge_id, **kwargs):
+        """
+        Get networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edge_diagnostic_route(edge_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :return: EdgeNetworkDiagnosticResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edge_diagnostic_route" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_diagnostic_route`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnosticResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_providers_edge_diagnostic_tracepath(self, edge_id, **kwargs):
+        """
+        Get networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edge_diagnostic_tracepath(edge_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :return: EdgeNetworkDiagnosticResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edge_diagnostic_tracepath" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `get_telephony_providers_edge_diagnostic_tracepath`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnosticResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_telephony_providers_edge_line(self, edge_id, line_id, **kwargs):
         """
         Get line
@@ -6699,6 +7011,342 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TrunkRecordingEnabledCount',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edge_diagnostic_nslookup(self, edge_id, body, **kwargs):
+        """
+        Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edge_diagnostic_nslookup(edge_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :param EdgeNetworkDiagnosticRequest body: request payload to get network diagnostic (required)
+        :return: EdgeNetworkDiagnostic
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edge_diagnostic_nslookup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `post_telephony_providers_edge_diagnostic_nslookup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edge_diagnostic_nslookup`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnostic',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edge_diagnostic_ping(self, edge_id, body, **kwargs):
+        """
+        Ping Request command to collect networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edge_diagnostic_ping(edge_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :param EdgeNetworkDiagnosticRequest body: request payload to get network diagnostic (required)
+        :return: EdgeNetworkDiagnostic
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edge_diagnostic_ping" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `post_telephony_providers_edge_diagnostic_ping`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edge_diagnostic_ping`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnostic',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edge_diagnostic_route(self, edge_id, body, **kwargs):
+        """
+        Route request command to collect networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edge_diagnostic_route(edge_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :param EdgeNetworkDiagnosticRequest body: request payload to get network diagnostic (required)
+        :return: EdgeNetworkDiagnostic
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edge_diagnostic_route" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `post_telephony_providers_edge_diagnostic_route`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edge_diagnostic_route`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnostic',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edge_diagnostic_tracepath(self, edge_id, body, **kwargs):
+        """
+        Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edge_diagnostic_tracepath(edge_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :param EdgeNetworkDiagnosticRequest body: request payload to get network diagnostic (required)
+        :return: EdgeNetworkDiagnostic
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edge_diagnostic_tracepath" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `post_telephony_providers_edge_diagnostic_tracepath`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edge_diagnostic_tracepath`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeNetworkDiagnostic',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

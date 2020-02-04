@@ -9991,7 +9991,7 @@ class ConversationsApi(object):
     def post_conversations_message_messages_bulk(self, conversation_id, **kwargs):
         """
         Get messages in batch
-        
+        The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10003,7 +10003,7 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str conversation_id: conversationId (required)
+        :param str conversation_id:  (required)
         :param list[str] body: messageIds
         :return: TextMessageListing
                  If the method is called asynchronously,

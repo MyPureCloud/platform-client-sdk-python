@@ -649,6 +649,9 @@ from .edge_metrics_memory import EdgeMetricsMemory
 from .edge_metrics_network import EdgeMetricsNetwork
 from .edge_metrics_processor import EdgeMetricsProcessor
 from .edge_metrics_subsystem import EdgeMetricsSubsystem
+from .edge_network_diagnostic import EdgeNetworkDiagnostic
+from .edge_network_diagnostic_request import EdgeNetworkDiagnosticRequest
+from .edge_network_diagnostic_response import EdgeNetworkDiagnosticResponse
 from .edge_reboot_parameters import EdgeRebootParameters
 from .edge_service_state_request import EdgeServiceStateRequest
 from .edge_trunk_base import EdgeTrunkBase

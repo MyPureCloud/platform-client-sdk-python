@@ -649,6 +649,9 @@ from .models.edge_metrics_memory import EdgeMetricsMemory
 from .models.edge_metrics_network import EdgeMetricsNetwork
 from .models.edge_metrics_processor import EdgeMetricsProcessor
 from .models.edge_metrics_subsystem import EdgeMetricsSubsystem
+from .models.edge_network_diagnostic import EdgeNetworkDiagnostic
+from .models.edge_network_diagnostic_request import EdgeNetworkDiagnosticRequest
+from .models.edge_network_diagnostic_response import EdgeNetworkDiagnosticResponse
 from .models.edge_reboot_parameters import EdgeRebootParameters
 from .models.edge_service_state_request import EdgeServiceStateRequest
 from .models.edge_trunk_base import EdgeTrunkBase
@@ -1851,6 +1854,7 @@ from .apis.integrations_api import IntegrationsApi
 from .apis.languages_api import LanguagesApi
 from .apis.license_api import LicenseApi
 from .apis.locations_api import LocationsApi
+from .apis.messaging_api import MessagingApi
 from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi

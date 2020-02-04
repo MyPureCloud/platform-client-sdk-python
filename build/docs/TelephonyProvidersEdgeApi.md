@@ -27,6 +27,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id) | Get a json schema (Deprecated)|
 |[**get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id**](TelephonyProvidersEdgeApi.html#get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id) | Get metadata for a schema (Deprecated)|
 |[**get_telephony_providers_edge**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge) | Get edge.|
+|[**get_telephony_providers_edge_diagnostic_nslookup**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_nslookup) | Get networking-related information from an Edge for a target IP or host.|
+|[**get_telephony_providers_edge_diagnostic_ping**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_ping) | Get networking-related information from an Edge for a target IP or host.|
+|[**get_telephony_providers_edge_diagnostic_route**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_route) | Get networking-related information from an Edge for a target IP or host.|
+|[**get_telephony_providers_edge_diagnostic_tracepath**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_diagnostic_tracepath) | Get networking-related information from an Edge for a target IP or host.|
 |[**get_telephony_providers_edge_line**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_line) | Get line|
 |[**get_telephony_providers_edge_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_lines) | Get the list of lines.|
 |[**get_telephony_providers_edge_logicalinterface**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_logicalinterface) | Get an edge logical interface|
@@ -89,6 +93,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
 |[**get_telephony_providers_edges_trunks_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks_metrics) | Get the metrics for a list of trunks.|
 |[**get_telephony_providers_edges_trunkswithrecording**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkswithrecording) | Get Counts of trunks that have recording disabled or enabled|
+|[**post_telephony_providers_edge_diagnostic_nslookup**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_nslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host.|
+|[**post_telephony_providers_edge_diagnostic_ping**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_ping) | Ping Request command to collect networking-related information from an Edge for a target IP or host.|
+|[**post_telephony_providers_edge_diagnostic_route**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_route) | Route request command to collect networking-related information from an Edge for a target IP or host.|
+|[**post_telephony_providers_edge_diagnostic_tracepath**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_tracepath) | Tracepath request command to collect networking-related information from an Edge for a target IP or host.|
 |[**post_telephony_providers_edge_logicalinterfaces**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logicalinterfaces) | Create an edge logical interface.|
 |[**post_telephony_providers_edge_logs_job_upload**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logs_job_upload) | Request that the specified fileIds be uploaded from the Edge.|
 |[**post_telephony_providers_edge_logs_jobs**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_logs_jobs) | Create a job to upload a list of Edge logs.|
@@ -1111,6 +1119,210 @@ except ApiException as e:
 ### Return type
 
 [**Edge**](Edge.html)
+
+<a name="get_telephony_providers_edge_diagnostic_nslookup"></a>
+
+## [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html) get_telephony_providers_edge_diagnostic_nslookup(edge_id)
+
+
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.get_telephony_providers_edge_diagnostic_nslookup(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_nslookup: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
+
+<a name="get_telephony_providers_edge_diagnostic_ping"></a>
+
+## [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html) get_telephony_providers_edge_diagnostic_ping(edge_id)
+
+
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.get_telephony_providers_edge_diagnostic_ping(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_ping: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
+
+<a name="get_telephony_providers_edge_diagnostic_route"></a>
+
+## [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html) get_telephony_providers_edge_diagnostic_route(edge_id)
+
+
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.get_telephony_providers_edge_diagnostic_route(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_route: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
+
+<a name="get_telephony_providers_edge_diagnostic_tracepath"></a>
+
+## [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html) get_telephony_providers_edge_diagnostic_tracepath(edge_id)
+
+
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+
+try:
+    # Get networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.get_telephony_providers_edge_diagnostic_tracepath(edge_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_tracepath: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
 
 <a name="get_telephony_providers_edge_line"></a>
 
@@ -4469,6 +4681,218 @@ except ApiException as e:
 ### Return type
 
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
+
+<a name="post_telephony_providers_edge_diagnostic_nslookup"></a>
+
+## [**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html) post_telephony_providers_edge_diagnostic_nslookup(edge_id, body)
+
+
+
+Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+body = PureCloudPlatformClientV2.EdgeNetworkDiagnosticRequest() # EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+
+try:
+    # Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.post_telephony_providers_edge_diagnostic_nslookup(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_nslookup: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+| **body** | [**EdgeNetworkDiagnosticRequest**](EdgeNetworkDiagnosticRequest.html)| request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html)
+
+<a name="post_telephony_providers_edge_diagnostic_ping"></a>
+
+## [**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html) post_telephony_providers_edge_diagnostic_ping(edge_id, body)
+
+
+
+Ping Request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+body = PureCloudPlatformClientV2.EdgeNetworkDiagnosticRequest() # EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+
+try:
+    # Ping Request command to collect networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.post_telephony_providers_edge_diagnostic_ping(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_ping: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+| **body** | [**EdgeNetworkDiagnosticRequest**](EdgeNetworkDiagnosticRequest.html)| request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html)
+
+<a name="post_telephony_providers_edge_diagnostic_route"></a>
+
+## [**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html) post_telephony_providers_edge_diagnostic_route(edge_id, body)
+
+
+
+Route request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+body = PureCloudPlatformClientV2.EdgeNetworkDiagnosticRequest() # EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+
+try:
+    # Route request command to collect networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.post_telephony_providers_edge_diagnostic_route(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_route: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+| **body** | [**EdgeNetworkDiagnosticRequest**](EdgeNetworkDiagnosticRequest.html)| request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html)
+
+<a name="post_telephony_providers_edge_diagnostic_tracepath"></a>
+
+## [**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html) post_telephony_providers_edge_diagnostic_tracepath(edge_id, body)
+
+
+
+Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+body = PureCloudPlatformClientV2.EdgeNetworkDiagnosticRequest() # EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+
+try:
+    # Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+    api_response = api_instance.post_telephony_providers_edge_diagnostic_tracepath(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_tracepath: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+| **body** | [**EdgeNetworkDiagnosticRequest**](EdgeNetworkDiagnosticRequest.html)| request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeNetworkDiagnostic**](EdgeNetworkDiagnostic.html)
 
 <a name="post_telephony_providers_edge_logicalinterfaces"></a>
 
