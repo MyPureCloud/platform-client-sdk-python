@@ -446,6 +446,7 @@ from .conversation_video_event_topic_uri_reference import ConversationVideoEvent
 from .conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
+from .copy_attachments_request import CopyAttachmentsRequest
 from .copy_short_term_forecast_request import CopyShortTermForecastRequest
 from .copy_voicemail_message import CopyVoicemailMessage
 from .copy_week_schedule_request import CopyWeekScheduleRequest
@@ -681,6 +682,7 @@ from .endpoint import Endpoint
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
+from .error_info import ErrorInfo
 from .estimated_wait_time_predictions import EstimatedWaitTimePredictions
 from .evaluation import Evaluation
 from .evaluation_aggregate_data_container import EvaluationAggregateDataContainer
@@ -929,6 +931,7 @@ from .location_update_definition import LocationUpdateDefinition
 from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
+from .mail_from_result import MailFromResult
 from .management_unit import ManagementUnit
 from .management_unit_listing import ManagementUnitListing
 from .management_unit_reference import ManagementUnitReference
@@ -967,6 +970,7 @@ from .messaging_integration import MessagingIntegration
 from .messaging_integration_entity_listing import MessagingIntegrationEntityListing
 from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
+from .messaging_template import MessagingTemplate
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -1299,6 +1303,7 @@ from .reaction import Reaction
 from .recall_entry import RecallEntry
 from .recipient import Recipient
 from .recipient_listing import RecipientListing
+from .record import Record
 from .recording import Recording
 from .recording_email_message import RecordingEmailMessage
 from .recording_job import RecordingJob
@@ -1323,6 +1328,8 @@ from .reporting_data_export_topic_data_export_notification import ReportingDataE
 from .reporting_export_job_listing import ReportingExportJobListing
 from .reporting_export_job_request import ReportingExportJobRequest
 from .reporting_export_job_response import ReportingExportJobResponse
+from .reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
+from .reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
 from .request_config import RequestConfig
 from .reschedule_request import RescheduleRequest
 from .reschedule_result import RescheduleResult
@@ -1353,6 +1360,7 @@ from .route_group_attributes import RouteGroupAttributes
 from .route_group_list import RouteGroupList
 from .routing_data import RoutingData
 from .routing_rule import RoutingRule
+from .routing_settings import RoutingSettings
 from .routing_skill import RoutingSkill
 from .routing_skill_reference import RoutingSkillReference
 from .routing_status import RoutingStatus
@@ -1394,7 +1402,11 @@ from .scim_service_provider_config_authentication_scheme import ScimServiceProvi
 from .scim_service_provider_config_bulk_feature import ScimServiceProviderConfigBulkFeature
 from .scim_service_provider_config_filter_feature import ScimServiceProviderConfigFilterFeature
 from .scim_service_provider_config_simple_feature import ScimServiceProviderConfigSimpleFeature
+from .scim_user_extensions import ScimUserExtensions
 from .scim_user_list_response import ScimUserListResponse
+from .scim_user_role import ScimUserRole
+from .scim_user_routing_language import ScimUserRoutingLanguage
+from .scim_user_routing_skill import ScimUserRoutingSkill
 from .scim_v2_create_user import ScimV2CreateUser
 from .scim_v2_enterprise_user import ScimV2EnterpriseUser
 from .scim_v2_group import ScimV2Group
@@ -1402,6 +1414,9 @@ from .scim_v2_group_reference import ScimV2GroupReference
 from .scim_v2_member_reference import ScimV2MemberReference
 from .scim_v2_patch_operation import ScimV2PatchOperation
 from .scim_v2_patch_request import ScimV2PatchRequest
+from .scim_v2_schema_attribute import ScimV2SchemaAttribute
+from .scim_v2_schema_definition import ScimV2SchemaDefinition
+from .scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .scim_v2_user import ScimV2User
 from .scorable_survey import ScorableSurvey
 from .scored_agent import ScoredAgent

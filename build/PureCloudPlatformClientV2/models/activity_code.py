@@ -41,6 +41,7 @@ class ActivityCode(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'self_uri': 'str',
             'name': 'str',
             'is_active': 'bool',
             'is_default': 'bool',
@@ -49,12 +50,12 @@ class ActivityCode(object):
             'counts_as_paid_time': 'bool',
             'counts_as_work_time': 'bool',
             'agent_time_off_selectable': 'bool',
-            'metadata': 'WfmVersionedEntityMetadata',
-            'self_uri': 'str'
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'self_uri': 'selfUri',
             'name': 'name',
             'is_active': 'isActive',
             'is_default': 'isDefault',
@@ -63,11 +64,11 @@ class ActivityCode(object):
             'counts_as_paid_time': 'countsAsPaidTime',
             'counts_as_work_time': 'countsAsWorkTime',
             'agent_time_off_selectable': 'agentTimeOffSelectable',
-            'metadata': 'metadata',
-            'self_uri': 'selfUri'
+            'metadata': 'metadata'
         }
 
         self._id = None
+        self._self_uri = None
         self._name = None
         self._is_active = None
         self._is_default = None
@@ -77,7 +78,6 @@ class ActivityCode(object):
         self._counts_as_work_time = None
         self._agent_time_off_selectable = None
         self._metadata = None
-        self._self_uri = None
 
     @property
     def id(self):
@@ -101,6 +101,29 @@ class ActivityCode(object):
         """
         
         self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ActivityCode.
+        The URI for this object
+
+        :return: The self_uri of this ActivityCode.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ActivityCode.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ActivityCode.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def name(self):
@@ -312,29 +335,6 @@ class ActivityCode(object):
         """
         
         self._metadata = metadata
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ActivityCode.
-        The URI for this object
-
-        :return: The self_uri of this ActivityCode.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ActivityCode.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ActivityCode.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

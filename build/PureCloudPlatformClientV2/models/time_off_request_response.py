@@ -41,7 +41,7 @@ class TimeOffRequestResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'user': 'User',
+            'user': 'UserReference',
             'is_full_day_request': 'bool',
             'marked_as_read': 'bool',
             'activity_code_id': 'str',
@@ -50,9 +50,9 @@ class TimeOffRequestResponse(object):
             'full_day_management_unit_dates': 'list[str]',
             'daily_duration_minutes': 'int',
             'notes': 'str',
-            'submitted_by': 'User',
+            'submitted_by': 'UserReference',
             'submitted_date': 'datetime',
-            'reviewed_by': 'User',
+            'reviewed_by': 'UserReference',
             'reviewed_date': 'datetime',
             'modified_by': 'UserReference',
             'modified_date': 'datetime',
@@ -130,7 +130,7 @@ class TimeOffRequestResponse(object):
         The user associated with this time off request
 
         :return: The user of this TimeOffRequestResponse.
-        :rtype: User
+        :rtype: UserReference
         """
         return self._user
 
@@ -141,7 +141,7 @@ class TimeOffRequestResponse(object):
         The user associated with this time off request
 
         :param user: The user of this TimeOffRequestResponse.
-        :type: User
+        :type: UserReference
         """
         
         self._user = user
@@ -341,7 +341,7 @@ class TimeOffRequestResponse(object):
         The user who submitted this time off request
 
         :return: The submitted_by of this TimeOffRequestResponse.
-        :rtype: User
+        :rtype: UserReference
         """
         return self._submitted_by
 
@@ -352,7 +352,7 @@ class TimeOffRequestResponse(object):
         The user who submitted this time off request
 
         :param submitted_by: The submitted_by of this TimeOffRequestResponse.
-        :type: User
+        :type: UserReference
         """
         
         self._submitted_by = submitted_by
@@ -387,7 +387,7 @@ class TimeOffRequestResponse(object):
         The user who reviewed this time off request
 
         :return: The reviewed_by of this TimeOffRequestResponse.
-        :rtype: User
+        :rtype: UserReference
         """
         return self._reviewed_by
 
@@ -398,7 +398,7 @@ class TimeOffRequestResponse(object):
         The user who reviewed this time off request
 
         :param reviewed_by: The reviewed_by of this TimeOffRequestResponse.
-        :type: User
+        :type: UserReference
         """
         
         self._reviewed_by = reviewed_by

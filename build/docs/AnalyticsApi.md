@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
+|[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
 |[**get_analytics_reporting_report_id_metadata**](AnalyticsApi.html#get_analytics_reporting_report_id_metadata) | Get a reporting metadata.|
 |[**get_analytics_reporting_reportformats**](AnalyticsApi.html#get_analytics_reporting_reportformats) | Get a list of report formats|
@@ -447,6 +448,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ReportingExportJobListing**](ReportingExportJobListing.html)
+
+<a name="get_analytics_reporting_exports_metadata"></a>
+
+## [**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html) get_analytics_reporting_exports_metadata()
+
+
+
+Get all export metadata
+
+
+
+Wraps GET /api/v2/analytics/reporting/exports/metadata 
+
+Requires ANY permissions: 
+
+* analytics:dataExport:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+
+try:
+    # Get all export metadata
+    api_response = api_instance.get_analytics_reporting_exports_metadata()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->get_analytics_reporting_exports_metadata: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html)
 
 <a name="get_analytics_reporting_metadata"></a>
 

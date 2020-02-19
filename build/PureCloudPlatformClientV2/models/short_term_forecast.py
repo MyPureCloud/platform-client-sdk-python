@@ -41,6 +41,7 @@ class ShortTermForecast(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'self_uri': 'str',
             'week_date': 'str',
             'description': 'str',
             'creation_method': 'str',
@@ -48,12 +49,12 @@ class ShortTermForecast(object):
             'source_data': 'ListWrapperForecastSourceDayPointer',
             'reference_start_date': 'datetime',
             'modifications': 'ListWrapperWfmForecastModification',
-            'generation_results': 'ForecastGenerationResult',
-            'self_uri': 'str'
+            'generation_results': 'ForecastGenerationResult'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'self_uri': 'selfUri',
             'week_date': 'weekDate',
             'description': 'description',
             'creation_method': 'creationMethod',
@@ -61,11 +62,11 @@ class ShortTermForecast(object):
             'source_data': 'sourceData',
             'reference_start_date': 'referenceStartDate',
             'modifications': 'modifications',
-            'generation_results': 'generationResults',
-            'self_uri': 'selfUri'
+            'generation_results': 'generationResults'
         }
 
         self._id = None
+        self._self_uri = None
         self._week_date = None
         self._description = None
         self._creation_method = None
@@ -74,13 +75,12 @@ class ShortTermForecast(object):
         self._reference_start_date = None
         self._modifications = None
         self._generation_results = None
-        self._self_uri = None
 
     @property
     def id(self):
         """
         Gets the id of this ShortTermForecast.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :return: The id of this ShortTermForecast.
         :rtype: str
@@ -91,13 +91,36 @@ class ShortTermForecast(object):
     def id(self, id):
         """
         Sets the id of this ShortTermForecast.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :param id: The id of this ShortTermForecast.
         :type: str
         """
         
         self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ShortTermForecast.
+        The URI for this object
+
+        :return: The self_uri of this ShortTermForecast.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ShortTermForecast.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ShortTermForecast.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def week_date(self):
@@ -286,29 +309,6 @@ class ShortTermForecast(object):
         """
         
         self._generation_results = generation_results
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ShortTermForecast.
-        The URI for this object
-
-        :return: The self_uri of this ShortTermForecast.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ShortTermForecast.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ShortTermForecast.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

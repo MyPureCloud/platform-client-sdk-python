@@ -50,7 +50,7 @@ class CallBasic(object):
             'held': 'bool',
             'recording_id': 'str',
             'segments': 'list[Segment]',
-            'error_info': 'ErrorBody',
+            'error_info': 'ErrorInfo',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
             'document_id': 'str',
@@ -370,7 +370,7 @@ class CallBasic(object):
 
 
         :return: The error_info of this CallBasic.
-        :rtype: ErrorBody
+        :rtype: ErrorInfo
         """
         return self._error_info
 
@@ -381,7 +381,7 @@ class CallBasic(object):
 
 
         :param error_info: The error_info of this CallBasic.
-        :type: ErrorBody
+        :type: ErrorInfo
         """
         
         self._error_info = error_info

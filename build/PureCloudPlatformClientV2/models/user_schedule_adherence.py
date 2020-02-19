@@ -42,7 +42,7 @@ class UserScheduleAdherence(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'user': 'User',
+            'user': 'UserReference',
             'management_unit': 'ManagementUnit',
             'scheduled_activity_category': 'str',
             'system_presence': 'str',
@@ -153,7 +153,7 @@ class UserScheduleAdherence(object):
         The user for whom this status applies
 
         :return: The user of this UserScheduleAdherence.
-        :rtype: User
+        :rtype: UserReference
         """
         return self._user
 
@@ -164,7 +164,7 @@ class UserScheduleAdherence(object):
         The user for whom this status applies
 
         :param user: The user of this UserScheduleAdherence.
-        :type: User
+        :type: UserReference
         """
         
         self._user = user

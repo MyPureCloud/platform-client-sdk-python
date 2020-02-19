@@ -242,7 +242,7 @@ class CreateWorkPlanShift(object):
     def constrain_stop_time(self):
         """
         Gets the constrain_stop_time of this CreateWorkPlanShift.
-        Whether the latest stop time constraint for the shift is enabled
+        Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead
 
         :return: The constrain_stop_time of this CreateWorkPlanShift.
         :rtype: bool
@@ -253,7 +253,7 @@ class CreateWorkPlanShift(object):
     def constrain_stop_time(self, constrain_stop_time):
         """
         Sets the constrain_stop_time of this CreateWorkPlanShift.
-        Whether the latest stop time constraint for the shift is enabled
+        Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead
 
         :param constrain_stop_time: The constrain_stop_time of this CreateWorkPlanShift.
         :type: bool

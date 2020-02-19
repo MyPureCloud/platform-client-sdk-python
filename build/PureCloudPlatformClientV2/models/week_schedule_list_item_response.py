@@ -41,34 +41,34 @@ class WeekScheduleListItemResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'self_uri': 'str',
             'week_date': 'str',
             'description': 'str',
             'published': 'bool',
             'generation_results': 'WeekScheduleGenerationResult',
             'short_term_forecast': 'ShortTermForecastReference',
-            'metadata': 'WfmVersionedEntityMetadata',
-            'self_uri': 'str'
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'self_uri': 'selfUri',
             'week_date': 'weekDate',
             'description': 'description',
             'published': 'published',
             'generation_results': 'generationResults',
             'short_term_forecast': 'shortTermForecast',
-            'metadata': 'metadata',
-            'self_uri': 'selfUri'
+            'metadata': 'metadata'
         }
 
         self._id = None
+        self._self_uri = None
         self._week_date = None
         self._description = None
         self._published = None
         self._generation_results = None
         self._short_term_forecast = None
         self._metadata = None
-        self._self_uri = None
 
     @property
     def id(self):
@@ -92,6 +92,29 @@ class WeekScheduleListItemResponse(object):
         """
         
         self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this WeekScheduleListItemResponse.
+        The URI for this object
+
+        :return: The self_uri of this WeekScheduleListItemResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this WeekScheduleListItemResponse.
+        The URI for this object
+
+        :param self_uri: The self_uri of this WeekScheduleListItemResponse.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def week_date(self):
@@ -230,29 +253,6 @@ class WeekScheduleListItemResponse(object):
         """
         
         self._metadata = metadata
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this WeekScheduleListItemResponse.
-        The URI for this object
-
-        :return: The self_uri of this WeekScheduleListItemResponse.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this WeekScheduleListItemResponse.
-        The URI for this object
-
-        :param self_uri: The self_uri of this WeekScheduleListItemResponse.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

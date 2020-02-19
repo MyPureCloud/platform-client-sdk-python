@@ -446,6 +446,7 @@ from .models.conversation_video_event_topic_uri_reference import ConversationVid
 from .models.conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .models.conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .models.conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
+from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_short_term_forecast_request import CopyShortTermForecastRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.copy_week_schedule_request import CopyWeekScheduleRequest
@@ -681,6 +682,7 @@ from .models.endpoint import Endpoint
 from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails
+from .models.error_info import ErrorInfo
 from .models.estimated_wait_time_predictions import EstimatedWaitTimePredictions
 from .models.evaluation import Evaluation
 from .models.evaluation_aggregate_data_container import EvaluationAggregateDataContainer
@@ -929,6 +931,7 @@ from .models.location_update_definition import LocationUpdateDefinition
 from .models.locations_search_response import LocationsSearchResponse
 from .models.lock_info import LockInfo
 from .models.logical_interface_entity_listing import LogicalInterfaceEntityListing
+from .models.mail_from_result import MailFromResult
 from .models.management_unit import ManagementUnit
 from .models.management_unit_listing import ManagementUnitListing
 from .models.management_unit_reference import ManagementUnitReference
@@ -967,6 +970,7 @@ from .models.messaging_integration import MessagingIntegration
 from .models.messaging_integration_entity_listing import MessagingIntegrationEntityListing
 from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
+from .models.messaging_template import MessagingTemplate
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
@@ -1299,6 +1303,7 @@ from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry
 from .models.recipient import Recipient
 from .models.recipient_listing import RecipientListing
+from .models.record import Record
 from .models.recording import Recording
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_job import RecordingJob
@@ -1323,6 +1328,8 @@ from .models.reporting_data_export_topic_data_export_notification import Reporti
 from .models.reporting_export_job_listing import ReportingExportJobListing
 from .models.reporting_export_job_request import ReportingExportJobRequest
 from .models.reporting_export_job_response import ReportingExportJobResponse
+from .models.reporting_export_metadata_job_listing import ReportingExportMetadataJobListing
+from .models.reporting_export_metadata_job_response import ReportingExportMetadataJobResponse
 from .models.request_config import RequestConfig
 from .models.reschedule_request import RescheduleRequest
 from .models.reschedule_result import RescheduleResult
@@ -1353,6 +1360,7 @@ from .models.route_group_attributes import RouteGroupAttributes
 from .models.route_group_list import RouteGroupList
 from .models.routing_data import RoutingData
 from .models.routing_rule import RoutingRule
+from .models.routing_settings import RoutingSettings
 from .models.routing_skill import RoutingSkill
 from .models.routing_skill_reference import RoutingSkillReference
 from .models.routing_status import RoutingStatus
@@ -1394,7 +1402,11 @@ from .models.scim_service_provider_config_authentication_scheme import ScimServi
 from .models.scim_service_provider_config_bulk_feature import ScimServiceProviderConfigBulkFeature
 from .models.scim_service_provider_config_filter_feature import ScimServiceProviderConfigFilterFeature
 from .models.scim_service_provider_config_simple_feature import ScimServiceProviderConfigSimpleFeature
+from .models.scim_user_extensions import ScimUserExtensions
 from .models.scim_user_list_response import ScimUserListResponse
+from .models.scim_user_role import ScimUserRole
+from .models.scim_user_routing_language import ScimUserRoutingLanguage
+from .models.scim_user_routing_skill import ScimUserRoutingSkill
 from .models.scim_v2_create_user import ScimV2CreateUser
 from .models.scim_v2_enterprise_user import ScimV2EnterpriseUser
 from .models.scim_v2_group import ScimV2Group
@@ -1402,6 +1414,9 @@ from .models.scim_v2_group_reference import ScimV2GroupReference
 from .models.scim_v2_member_reference import ScimV2MemberReference
 from .models.scim_v2_patch_operation import ScimV2PatchOperation
 from .models.scim_v2_patch_request import ScimV2PatchRequest
+from .models.scim_v2_schema_attribute import ScimV2SchemaAttribute
+from .models.scim_v2_schema_definition import ScimV2SchemaDefinition
+from .models.scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .models.scim_v2_user import ScimV2User
 from .models.scorable_survey import ScorableSurvey
 from .models.scored_agent import ScoredAgent

@@ -120,7 +120,11 @@ class ViewFilter(object):
             'has_journey_action_map_id': 'bool',
             'has_journey_visit_id': 'bool',
             'oauth_client_ids': 'list[str]',
-            'api_operations': 'list[str]'
+            'api_operations': 'list[str]',
+            'has_media': 'bool',
+            'role_ids': 'list[str]',
+            'reports_tos': 'list[str]',
+            'location_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -204,7 +208,11 @@ class ViewFilter(object):
             'has_journey_action_map_id': 'hasJourneyActionMapId',
             'has_journey_visit_id': 'hasJourneyVisitId',
             'oauth_client_ids': 'oauthClientIds',
-            'api_operations': 'apiOperations'
+            'api_operations': 'apiOperations',
+            'has_media': 'hasMedia',
+            'role_ids': 'roleIds',
+            'reports_tos': 'reportsTos',
+            'location_ids': 'locationIds'
         }
 
         self._media_types = None
@@ -288,6 +296,10 @@ class ViewFilter(object):
         self._has_journey_visit_id = None
         self._oauth_client_ids = None
         self._api_operations = None
+        self._has_media = None
+        self._role_ids = None
+        self._reports_tos = None
+        self._location_ids = None
 
     @property
     def media_types(self):
@@ -2163,6 +2175,98 @@ class ViewFilter(object):
         """
         
         self._api_operations = api_operations
+
+    @property
+    def has_media(self):
+        """
+        Gets the has_media of this ViewFilter.
+        Indicates filtering for presence of MMS media
+
+        :return: The has_media of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_media
+
+    @has_media.setter
+    def has_media(self, has_media):
+        """
+        Sets the has_media of this ViewFilter.
+        Indicates filtering for presence of MMS media
+
+        :param has_media: The has_media of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_media = has_media
+
+    @property
+    def role_ids(self):
+        """
+        Gets the role_ids of this ViewFilter.
+        The role Ids used to filter the view
+
+        :return: The role_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._role_ids
+
+    @role_ids.setter
+    def role_ids(self, role_ids):
+        """
+        Sets the role_ids of this ViewFilter.
+        The role Ids used to filter the view
+
+        :param role_ids: The role_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._role_ids = role_ids
+
+    @property
+    def reports_tos(self):
+        """
+        Gets the reports_tos of this ViewFilter.
+        The report to user IDs used to filter the view
+
+        :return: The reports_tos of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._reports_tos
+
+    @reports_tos.setter
+    def reports_tos(self, reports_tos):
+        """
+        Sets the reports_tos of this ViewFilter.
+        The report to user IDs used to filter the view
+
+        :param reports_tos: The reports_tos of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._reports_tos = reports_tos
+
+    @property
+    def location_ids(self):
+        """
+        Gets the location_ids of this ViewFilter.
+        The location Ids used to filter the view
+
+        :return: The location_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._location_ids
+
+    @location_ids.setter
+    def location_ids(self, location_ids):
+        """
+        Sets the location_ids of this ViewFilter.
+        The location Ids used to filter the view
+
+        :param location_ids: The location_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._location_ids = location_ids
 
     def to_dict(self):
         """

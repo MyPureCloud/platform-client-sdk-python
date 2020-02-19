@@ -45,6 +45,7 @@ class Library(object):
             'version': 'int',
             'created_by': 'User',
             'date_created': 'datetime',
+            'response_type': 'str',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class Library(object):
             'version': 'version',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
+            'response_type': 'responseType',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class Library(object):
         self._version = None
         self._created_by = None
         self._date_created = None
+        self._response_type = None
         self._self_uri = None
 
     @property
@@ -114,7 +117,7 @@ class Library(object):
     def version(self):
         """
         Gets the version of this Library.
-
+        Current version for this resource.
 
         :return: The version of this Library.
         :rtype: int
@@ -125,7 +128,7 @@ class Library(object):
     def version(self, version):
         """
         Sets the version of this Library.
-
+        Current version for this resource.
 
         :param version: The version of this Library.
         :type: int
@@ -137,7 +140,7 @@ class Library(object):
     def created_by(self):
         """
         Gets the created_by of this Library.
-
+        User that created the library.
 
         :return: The created_by of this Library.
         :rtype: User
@@ -148,7 +151,7 @@ class Library(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Library.
-
+        User that created the library.
 
         :param created_by: The created_by of this Library.
         :type: User
@@ -160,7 +163,7 @@ class Library(object):
     def date_created(self):
         """
         Gets the date_created of this Library.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The date_created of this Library.
         :rtype: datetime
@@ -171,13 +174,40 @@ class Library(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Library.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param date_created: The date_created of this Library.
         :type: datetime
         """
         
         self._date_created = date_created
+
+    @property
+    def response_type(self):
+        """
+        Gets the response_type of this Library.
+        The response type for the library. If set, only response's of this type may be added to this library.
+
+        :return: The response_type of this Library.
+        :rtype: str
+        """
+        return self._response_type
+
+    @response_type.setter
+    def response_type(self, response_type):
+        """
+        Sets the response_type of this Library.
+        The response type for the library. If set, only response's of this type may be added to this library.
+
+        :param response_type: The response_type of this Library.
+        :type: str
+        """
+        allowed_values = ["MessagingTemplate"]
+        if response_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for response_type -> " + response_type
+            self._response_type = "outdated_sdk_version"
+        else:
+            self._response_type = response_type
 
     @property
     def self_uri(self):

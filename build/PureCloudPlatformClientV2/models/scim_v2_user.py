@@ -52,8 +52,9 @@ class ScimV2User(object):
             'photos': 'list[Photo]',
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
-            'roles': 'list[str]',
+            'roles': 'list[ScimUserRole]',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser',
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'ScimUserExtensions',
             'meta': 'ScimMetadata'
         }
 
@@ -72,6 +73,7 @@ class ScimV2User(object):
             'groups': 'groups',
             'roles': 'roles',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User',
             'meta': 'meta'
         }
 
@@ -89,6 +91,7 @@ class ScimV2User(object):
         self._groups = None
         self._roles = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
+        self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = None
         self._meta = None
 
     @property
@@ -374,7 +377,7 @@ class ScimV2User(object):
         The list of roles assigned to the user.
 
         :return: The roles of this ScimV2User.
-        :rtype: list[str]
+        :rtype: list[ScimUserRole]
         """
         return self._roles
 
@@ -385,7 +388,7 @@ class ScimV2User(object):
         The list of roles assigned to the user.
 
         :param roles: The roles of this ScimV2User.
-        :type: list[str]
+        :type: list[ScimUserRole]
         """
         
         self._roles = roles
@@ -412,6 +415,29 @@ class ScimV2User(object):
         """
         
         self._urnietfparamsscimschemasextensionenterprise2_0_user = urnietfparamsscimschemasextensionenterprise2_0_user
+
+    @property
+    def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self):
+        """
+        Gets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
+
+
+        :return: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
+        :rtype: ScimUserExtensions
+        """
+        return self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
+
+    @urnietfparamsscimschemasextensiongenesyspurecloud2_0_user.setter
+    def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self, urnietfparamsscimschemasextensiongenesyspurecloud2_0_user):
+        """
+        Sets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
+
+
+        :param urnietfparamsscimschemasextensiongenesyspurecloud2_0_user: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
+        :type: ScimUserExtensions
+        """
+        
+        self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
 
     @property
     def meta(self):

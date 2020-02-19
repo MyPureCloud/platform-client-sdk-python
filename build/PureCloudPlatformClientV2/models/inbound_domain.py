@@ -44,6 +44,8 @@ class InboundDomain(object):
             'name': 'str',
             'mx_record_status': 'str',
             'sub_domain': 'bool',
+            'mail_from_settings': 'MailFromResult',
+            'custom_smtp_server': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -52,6 +54,8 @@ class InboundDomain(object):
             'name': 'name',
             'mx_record_status': 'mxRecordStatus',
             'sub_domain': 'subDomain',
+            'mail_from_settings': 'mailFromSettings',
+            'custom_smtp_server': 'customSMTPServer',
             'self_uri': 'selfUri'
         }
 
@@ -59,6 +63,8 @@ class InboundDomain(object):
         self._name = None
         self._mx_record_status = None
         self._sub_domain = None
+        self._mail_from_settings = None
+        self._custom_smtp_server = None
         self._self_uri = None
 
     @property
@@ -156,6 +162,52 @@ class InboundDomain(object):
         """
         
         self._sub_domain = sub_domain
+
+    @property
+    def mail_from_settings(self):
+        """
+        Gets the mail_from_settings of this InboundDomain.
+        The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
+
+        :return: The mail_from_settings of this InboundDomain.
+        :rtype: MailFromResult
+        """
+        return self._mail_from_settings
+
+    @mail_from_settings.setter
+    def mail_from_settings(self, mail_from_settings):
+        """
+        Sets the mail_from_settings of this InboundDomain.
+        The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
+
+        :param mail_from_settings: The mail_from_settings of this InboundDomain.
+        :type: MailFromResult
+        """
+        
+        self._mail_from_settings = mail_from_settings
+
+    @property
+    def custom_smtp_server(self):
+        """
+        Gets the custom_smtp_server of this InboundDomain.
+        The custom SMTP server integration to use when sending outbound emails from this domain.
+
+        :return: The custom_smtp_server of this InboundDomain.
+        :rtype: DomainEntityRef
+        """
+        return self._custom_smtp_server
+
+    @custom_smtp_server.setter
+    def custom_smtp_server(self, custom_smtp_server):
+        """
+        Sets the custom_smtp_server of this InboundDomain.
+        The custom SMTP server integration to use when sending outbound emails from this domain.
+
+        :param custom_smtp_server: The custom_smtp_server of this InboundDomain.
+        :type: DomainEntityRef
+        """
+        
+        self._custom_smtp_server = custom_smtp_server
 
     @property
     def self_uri(self):

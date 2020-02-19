@@ -41,28 +41,28 @@ class ShortTermForecastReference(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'self_uri': 'str',
             'week_date': 'str',
-            'description': 'str',
-            'self_uri': 'str'
+            'description': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'self_uri': 'selfUri',
             'week_date': 'weekDate',
-            'description': 'description',
-            'self_uri': 'selfUri'
+            'description': 'description'
         }
 
         self._id = None
+        self._self_uri = None
         self._week_date = None
         self._description = None
-        self._self_uri = None
 
     @property
     def id(self):
         """
         Gets the id of this ShortTermForecastReference.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :return: The id of this ShortTermForecastReference.
         :rtype: str
@@ -73,13 +73,36 @@ class ShortTermForecastReference(object):
     def id(self, id):
         """
         Sets the id of this ShortTermForecastReference.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :param id: The id of this ShortTermForecastReference.
         :type: str
         """
         
         self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ShortTermForecastReference.
+        The URI for this object
+
+        :return: The self_uri of this ShortTermForecastReference.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ShortTermForecastReference.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ShortTermForecastReference.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def week_date(self):
@@ -126,29 +149,6 @@ class ShortTermForecastReference(object):
         """
         
         self._description = description
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ShortTermForecastReference.
-        The URI for this object
-
-        :return: The self_uri of this ShortTermForecastReference.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ShortTermForecastReference.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ShortTermForecastReference.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

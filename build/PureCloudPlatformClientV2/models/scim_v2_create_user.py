@@ -51,8 +51,9 @@ class ScimV2CreateUser(object):
             'photos': 'list[Photo]',
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
-            'roles': 'list[str]',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser'
+            'roles': 'list[ScimUserRole]',
+            'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser',
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'ScimUserExtensions'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class ScimV2CreateUser(object):
             'external_id': 'externalId',
             'groups': 'groups',
             'roles': 'roles',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'
+            'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User'
         }
 
         self._schemas = None
@@ -84,6 +86,7 @@ class ScimV2CreateUser(object):
         self._groups = None
         self._roles = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
+        self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = None
 
     @property
     def schemas(self):
@@ -345,7 +348,7 @@ class ScimV2CreateUser(object):
         The list of roles assigned to the user.
 
         :return: The roles of this ScimV2CreateUser.
-        :rtype: list[str]
+        :rtype: list[ScimUserRole]
         """
         return self._roles
 
@@ -356,7 +359,7 @@ class ScimV2CreateUser(object):
         The list of roles assigned to the user.
 
         :param roles: The roles of this ScimV2CreateUser.
-        :type: list[str]
+        :type: list[ScimUserRole]
         """
         
         self._roles = roles
@@ -383,6 +386,29 @@ class ScimV2CreateUser(object):
         """
         
         self._urnietfparamsscimschemasextensionenterprise2_0_user = urnietfparamsscimschemasextensionenterprise2_0_user
+
+    @property
+    def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self):
+        """
+        Gets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
+
+
+        :return: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
+        :rtype: ScimUserExtensions
+        """
+        return self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
+
+    @urnietfparamsscimschemasextensiongenesyspurecloud2_0_user.setter
+    def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self, urnietfparamsscimschemasextensiongenesyspurecloud2_0_user):
+        """
+        Sets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
+
+
+        :param urnietfparamsscimschemasextensiongenesyspurecloud2_0_user: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
+        :type: ScimUserExtensions
+        """
+        
+        self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
 
     def to_dict(self):
         """

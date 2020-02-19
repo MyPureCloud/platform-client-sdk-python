@@ -138,7 +138,7 @@ void (empty response body)
 
 ##  delete_workforcemanagement_managementunit_activitycode(mu_id, ac_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Deletes an activity code
 
@@ -190,7 +190,7 @@ void (empty response body)
 
 ##  delete_workforcemanagement_managementunit_scheduling_run(management_unit_id, run_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Cancel a schedule run
 
@@ -242,7 +242,7 @@ void (empty response body)
 
 ##  delete_workforcemanagement_managementunit_servicegoalgroup(management_unit_id, service_goal_group_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete a service goal group
 
@@ -294,7 +294,7 @@ void (empty response body)
 
 ##  delete_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete a schedule
 
@@ -348,7 +348,7 @@ void (empty response body)
 
 ##  delete_workforcemanagement_managementunit_week_shorttermforecast(management_unit_id, week_date_id, forecast_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete a short term forecast
 
@@ -651,7 +651,7 @@ except ApiException as e:
 
 ## [**ActivityCode**](ActivityCode.html) get_workforcemanagement_managementunit_activitycode(mu_id, ac_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get an activity code
 
@@ -704,7 +704,7 @@ except ApiException as e:
 
 ## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(mu_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get activity codes
 
@@ -847,7 +847,7 @@ except ApiException as e:
 
 ## [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html) get_workforcemanagement_managementunit_intraday_queues(mu_id, date)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get intraday queues for the given date
 
@@ -900,7 +900,7 @@ except ApiException as e:
 
 ## [**SchedulingRunResponse**](SchedulingRunResponse.html) get_workforcemanagement_managementunit_scheduling_run(management_unit_id, run_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Gets the status for a specific scheduling run
 
@@ -953,7 +953,7 @@ except ApiException as e:
 
 ## [**RescheduleResult**](RescheduleResult.html) get_workforcemanagement_managementunit_scheduling_run_result(management_unit_id, run_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Gets the result of a specific scheduling run
 
@@ -1006,7 +1006,7 @@ except ApiException as e:
 
 ## [**SchedulingRunListResponse**](SchedulingRunListResponse.html) get_workforcemanagement_managementunit_scheduling_runs(management_unit_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the status of all the ongoing schedule runs
 
@@ -1057,7 +1057,7 @@ except ApiException as e:
 
 ## [**ServiceGoalGroup**](ServiceGoalGroup.html) get_workforcemanagement_managementunit_servicegoalgroup(management_unit_id, service_goal_group_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get a service goal group
 
@@ -1110,7 +1110,7 @@ except ApiException as e:
 
 ## [**ServiceGoalGroupList**](ServiceGoalGroupList.html) get_workforcemanagement_managementunit_servicegoalgroups(management_unit_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get service goal groups
 
@@ -1483,7 +1483,7 @@ except ApiException as e:
 
 ## [**WeekScheduleResponse**](WeekScheduleResponse.html) get_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id, expand=expand, force_download_service=force_download_service)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get a week schedule
 
@@ -1543,7 +1543,7 @@ except ApiException as e:
 
 ## [**WeekScheduleGenerationResult**](WeekScheduleGenerationResult.html) get_workforcemanagement_managementunit_week_schedule_generationresults(management_unit_id, week_id, schedule_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get week schedule generation results
 
@@ -1599,7 +1599,7 @@ except ApiException as e:
 
 ## [**WeekScheduleListResponse**](WeekScheduleListResponse.html) get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the list of schedules in a week in management unit
 
@@ -1659,7 +1659,7 @@ except ApiException as e:
 
 ## [**ForecastResultResponse**](ForecastResultResponse.html) get_workforcemanagement_managementunit_week_shorttermforecast_final(management_unit_id, week_date_id, forecast_id, force_download_service=force_download_service)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the final result of a short term forecast calculation with modifications applied
 
@@ -1716,7 +1716,7 @@ except ApiException as e:
 
 ## [**ShortTermForecastListResponse**](ShortTermForecastListResponse.html) get_workforcemanagement_managementunit_week_shorttermforecasts(management_unit_id, week_date_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get short term forecasts
 
@@ -2292,7 +2292,7 @@ except ApiException as e:
 
 ## [**ActivityCode**](ActivityCode.html) patch_workforcemanagement_managementunit_activitycode(mu_id, ac_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update an activity code
 
@@ -2347,7 +2347,7 @@ except ApiException as e:
 
 ## [**RescheduleResult**](RescheduleResult.html) patch_workforcemanagement_managementunit_scheduling_run(management_unit_id, run_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
 
@@ -2402,7 +2402,7 @@ except ApiException as e:
 
 ## [**ServiceGoalGroup**](ServiceGoalGroup.html) patch_workforcemanagement_managementunit_servicegoalgroup(management_unit_id, service_goal_group_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update a service goal group
 
@@ -2457,7 +2457,7 @@ except ApiException as e:
 
 ## [**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html) patch_workforcemanagement_managementunit_settings(mu_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update the settings for the requested management unit
 
@@ -2567,7 +2567,7 @@ except ApiException as e:
 
 ## [**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html) patch_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id, force_async=force_async, force_download_service=force_download_service, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update a week schedule
 
@@ -2787,7 +2787,7 @@ except ApiException as e:
 
 ## [**ActivityCode**](ActivityCode.html) post_workforcemanagement_managementunit_activitycodes(mu_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create a new activity code
 
@@ -2951,7 +2951,7 @@ except ApiException as e:
 
 ## [**IntradayResponse**](IntradayResponse.html) post_workforcemanagement_managementunit_intraday(mu_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get intraday data for the given date for the requested queueIds
 
@@ -3057,7 +3057,7 @@ except ApiException as e:
 
 ## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Query published schedules for given given time range for set of users
 
@@ -3111,7 +3111,7 @@ except ApiException as e:
 
 ## [**ServiceGoalGroup**](ServiceGoalGroup.html) post_workforcemanagement_managementunit_servicegoalgroups(management_unit_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create a new service goal group
 
@@ -3217,7 +3217,7 @@ except ApiException as e:
 
 ## [**TimeOffRequestEntityList**](TimeOffRequestEntityList.html) post_workforcemanagement_managementunit_timeoffrequests_fetchdetails(mu_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Gets a list of time off requests from lookup ids
 
@@ -3323,7 +3323,7 @@ except ApiException as e:
 
 ## [**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html) post_workforcemanagement_managementunit_week_schedule_copy(management_unit_id, week_id, schedule_id, force_async=force_async, force_download_service=force_download_service, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Copy a week schedule
 
@@ -3384,7 +3384,7 @@ except ApiException as e:
 
 ## [**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html) post_workforcemanagement_managementunit_week_schedule_reschedule(management_unit_id, week_id, schedule_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
 
@@ -3441,7 +3441,7 @@ except ApiException as e:
 
 ## [**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html) post_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, force_async=force_async, force_download_service=force_download_service, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
 
@@ -3500,7 +3500,7 @@ except ApiException as e:
 
 ## [**GenerateWeekScheduleResponse**](GenerateWeekScheduleResponse.html) post_workforcemanagement_managementunit_week_schedules_generate(management_unit_id, week_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Generate a week schedule
 
@@ -3555,7 +3555,7 @@ except ApiException as e:
 
 ## [**PartialUploadResponse**](PartialUploadResponse.html) post_workforcemanagement_managementunit_week_schedules_partialupload(management_unit_id, week_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Partial upload of user schedules where activity count is greater than 17500
 
@@ -3611,7 +3611,7 @@ except ApiException as e:
 
 ## [**ShortTermForecastResponse**](ShortTermForecastResponse.html) post_workforcemanagement_managementunit_week_shorttermforecast_copy(management_unit_id, week_date_id, forecast_id, body, force_async=force_async)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Copy a short term forecast
 
@@ -3670,7 +3670,7 @@ except ApiException as e:
 
 ## [**ShortTermForecastResponse**](ShortTermForecastResponse.html) post_workforcemanagement_managementunit_week_shorttermforecasts(management_unit_id, week_date_id, body, force_async=force_async)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Import a short term forecast
 
@@ -3727,7 +3727,7 @@ except ApiException as e:
 
 ## [**GenerateShortTermForecastResponse**](GenerateShortTermForecastResponse.html) post_workforcemanagement_managementunit_week_shorttermforecasts_generate(management_unit_id, week_date_id, body, force_async=force_async)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Generate a short term forecast
 
@@ -3784,7 +3784,7 @@ except ApiException as e:
 
 ## [**PartialUploadResponse**](PartialUploadResponse.html) post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload(management_unit_id, week_date_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Import a short term forecast
 
@@ -4048,7 +4048,7 @@ except ApiException as e:
 
 ## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_schedules(body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get published schedule for the current user
 
@@ -4059,7 +4059,6 @@ Wraps POST /api/v2/workforcemanagement/schedules
 Requires ANY permissions: 
 
 * wfm:agentSchedule:view
-* wfm:publishedSchedule:view
 
 ### Example
 

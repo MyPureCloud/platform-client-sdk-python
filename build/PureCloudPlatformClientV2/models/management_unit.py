@@ -152,7 +152,7 @@ class ManagementUnit(object):
     def start_day_of_week(self):
         """
         Gets the start_day_of_week of this ManagementUnit.
-        Start day of week for scheduling and forecasting purposes
+        Start day of week for scheduling and forecasting purposes. Moving to Business Unit
 
         :return: The start_day_of_week of this ManagementUnit.
         :rtype: str
@@ -163,7 +163,7 @@ class ManagementUnit(object):
     def start_day_of_week(self, start_day_of_week):
         """
         Sets the start_day_of_week of this ManagementUnit.
-        Start day of week for scheduling and forecasting purposes
+        Start day of week for scheduling and forecasting purposes. Moving to Business Unit
 
         :param start_day_of_week: The start_day_of_week of this ManagementUnit.
         :type: str
@@ -179,7 +179,7 @@ class ManagementUnit(object):
     def time_zone(self):
         """
         Gets the time_zone of this ManagementUnit.
-        The time zone for the management unit in standard Olson format
+        The time zone for the management unit in standard Olson format.  Moving to Business Unit
 
         :return: The time_zone of this ManagementUnit.
         :rtype: str
@@ -190,7 +190,7 @@ class ManagementUnit(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this ManagementUnit.
-        The time zone for the management unit in standard Olson format
+        The time zone for the management unit in standard Olson format.  Moving to Business Unit
 
         :param time_zone: The time_zone of this ManagementUnit.
         :type: str

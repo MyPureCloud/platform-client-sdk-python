@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
 |[**delete_routing_queue_user**](RoutingApi.html#delete_routing_queue_user) | Delete queue member|
 |[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
+|[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
 |[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.|
 |[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
+|[**get_routing_settings**](RoutingApi.html#get_routing_settings) | Get an organization&#39;s routing settings|
 |[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
 |[**get_routing_settings_transcription**](RoutingApi.html#get_routing_settings_transcription) | Get Transcription Settings|
 |[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
@@ -75,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
 |[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
 |[**put_routing_queue**](RoutingApi.html#put_routing_queue) | Update a queue|
+|[**put_routing_settings**](RoutingApi.html#put_routing_settings) | Update an organization&#39;s routing settings|
 |[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
@@ -335,6 +338,52 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **code_id** | **str**| Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_settings"></a>
+
+##  delete_routing_settings()
+
+
+
+Delete an organization's routing settings
+
+
+
+Wraps DELETE /api/v2/routing/settings 
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Delete an organization's routing settings
+    api_instance.delete_routing_settings()
+except ApiException as e:
+    print "Exception when calling RoutingApi->delete_routing_settings: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 {: class="table table-striped"}
 
 ### Return type
@@ -1584,6 +1633,52 @@ except ApiException as e:
 ### Return type
 
 [**UserQueueEntityListing**](UserQueueEntityListing.html)
+
+<a name="get_routing_settings"></a>
+
+## [**RoutingSettings**](RoutingSettings.html) get_routing_settings()
+
+
+
+Get an organization's routing settings
+
+
+
+Wraps GET /api/v2/routing/settings 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get an organization's routing settings
+    api_response = api_instance.get_routing_settings()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_settings: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingSettings**](RoutingSettings.html)
 
 <a name="get_routing_settings_contactcenter"></a>
 
@@ -3656,6 +3751,57 @@ except ApiException as e:
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="put_routing_settings"></a>
+
+## [**RoutingSettings**](RoutingSettings.html) put_routing_settings(body)
+
+
+
+Update an organization's routing settings
+
+
+
+Wraps PUT /api/v2/routing/settings 
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.RoutingSettings() # RoutingSettings | Organization Settings
+
+try:
+    # Update an organization's routing settings
+    api_response = api_instance.put_routing_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->put_routing_settings: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RoutingSettings**](RoutingSettings.html)| Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingSettings**](RoutingSettings.html)
 
 <a name="put_routing_settings_transcription"></a>
 

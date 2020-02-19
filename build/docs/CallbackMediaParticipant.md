@@ -24,7 +24,7 @@ title: CallbackMediaParticipant
 | **user** | [**DomainEntityRef**](DomainEntityRef.html) | The PureCloud user for this participant. | [optional] |
 | **queue** | [**DomainEntityRef**](DomainEntityRef.html) | The PureCloud queue for this participant. | [optional] |
 | **attributes** | **dict(str, str)** | A list of ad-hoc attributes for the participant. | [optional] |
-| **error_info** | [**ErrorBody**](ErrorBody.html) | If the conversation ends in error, contains additional error details. | [optional] |
+| **error_info** | [**ErrorInfo**](ErrorInfo.html) | If the conversation ends in error, contains additional error details. | [optional] |
 | **script** | [**DomainEntityRef**](DomainEntityRef.html) | The Engage script that should be used by this participant. | [optional] |
 | **wrapup_timeout_ms** | **int** | The amount of time the participant has to complete wrap-up. | [optional] |
 | **wrapup_skipped** | **bool** | Value is true when the participant has skipped wrap-up. | [optional] |

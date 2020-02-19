@@ -41,19 +41,19 @@ class WeekScheduleReference(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'week_date': 'str',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'week_date': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'week_date': 'weekDate',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'week_date': 'weekDate'
         }
 
         self._id = None
-        self._week_date = None
         self._self_uri = None
+        self._week_date = None
 
     @property
     def id(self):
@@ -79,29 +79,6 @@ class WeekScheduleReference(object):
         self._id = id
 
     @property
-    def week_date(self):
-        """
-        Gets the week_date of this WeekScheduleReference.
-        First day of this week schedule in yyyy-MM-dd format
-
-        :return: The week_date of this WeekScheduleReference.
-        :rtype: str
-        """
-        return self._week_date
-
-    @week_date.setter
-    def week_date(self, week_date):
-        """
-        Sets the week_date of this WeekScheduleReference.
-        First day of this week schedule in yyyy-MM-dd format
-
-        :param week_date: The week_date of this WeekScheduleReference.
-        :type: str
-        """
-        
-        self._week_date = week_date
-
-    @property
     def self_uri(self):
         """
         Gets the self_uri of this WeekScheduleReference.
@@ -123,6 +100,29 @@ class WeekScheduleReference(object):
         """
         
         self._self_uri = self_uri
+
+    @property
+    def week_date(self):
+        """
+        Gets the week_date of this WeekScheduleReference.
+        First day of this week schedule in yyyy-MM-dd format
+
+        :return: The week_date of this WeekScheduleReference.
+        :rtype: str
+        """
+        return self._week_date
+
+    @week_date.setter
+    def week_date(self, week_date):
+        """
+        Sets the week_date of this WeekScheduleReference.
+        First day of this week schedule in yyyy-MM-dd format
+
+        :param week_date: The week_date of this WeekScheduleReference.
+        :type: str
+        """
+        
+        self._week_date = week_date
 
     def to_dict(self):
         """

@@ -88,7 +88,7 @@ class CreateManagementUnitSettingsRequest(object):
     def short_term_forecasting(self):
         """
         Gets the short_term_forecasting of this CreateManagementUnitSettingsRequest.
-        Short term forecasting settings for this management unit
+        Short term forecasting settings for this management unit.  Moving to Business Unit
 
         :return: The short_term_forecasting of this CreateManagementUnitSettingsRequest.
         :rtype: ShortTermForecastingSettings
@@ -99,7 +99,7 @@ class CreateManagementUnitSettingsRequest(object):
     def short_term_forecasting(self, short_term_forecasting):
         """
         Sets the short_term_forecasting of this CreateManagementUnitSettingsRequest.
-        Short term forecasting settings for this management unit
+        Short term forecasting settings for this management unit.  Moving to Business Unit
 
         :param short_term_forecasting: The short_term_forecasting of this CreateManagementUnitSettingsRequest.
         :type: ShortTermForecastingSettings

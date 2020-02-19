@@ -8,6 +8,7 @@ title: WeekSchedule
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **self_uri** | **str** | The URI for this object | [optional] |
 | **week_date** | **str** | First day of this week schedule in yyyy-MM-dd format | [optional] |
 | **description** | **str** | Description of the week schedule | [optional] |
 | **published** | **bool** | Whether the week schedule is published | [optional] |
@@ -17,7 +18,6 @@ title: WeekSchedule
 | **user_schedules** | [**dict(str, UserSchedule)**](UserSchedule.html) | User schedules in the week | [optional] |
 | **headcount_forecast** | [**HeadcountForecast**](HeadcountForecast.html) | Headcount information for the week schedule | [optional] |
 | **agent_schedules_version** | **int** | Version of agent schedules in the week schedule | [optional] |
-| **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 
 

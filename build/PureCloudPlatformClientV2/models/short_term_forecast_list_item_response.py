@@ -41,34 +41,34 @@ class ShortTermForecastListItemResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'self_uri': 'str',
             'week_date': 'str',
             'description': 'str',
             'creation_method': 'str',
-            'metadata': 'WfmVersionedEntityMetadata',
-            'self_uri': 'str'
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'self_uri': 'selfUri',
             'week_date': 'weekDate',
             'description': 'description',
             'creation_method': 'creationMethod',
-            'metadata': 'metadata',
-            'self_uri': 'selfUri'
+            'metadata': 'metadata'
         }
 
         self._id = None
+        self._self_uri = None
         self._week_date = None
         self._description = None
         self._creation_method = None
         self._metadata = None
-        self._self_uri = None
 
     @property
     def id(self):
         """
         Gets the id of this ShortTermForecastListItemResponse.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :return: The id of this ShortTermForecastListItemResponse.
         :rtype: str
@@ -79,13 +79,36 @@ class ShortTermForecastListItemResponse(object):
     def id(self, id):
         """
         Sets the id of this ShortTermForecastListItemResponse.
-        The id of the short term forecast
+        The globally unique identifier for the object.
 
         :param id: The id of this ShortTermForecastListItemResponse.
         :type: str
         """
         
         self._id = id
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ShortTermForecastListItemResponse.
+        The URI for this object
+
+        :return: The self_uri of this ShortTermForecastListItemResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ShortTermForecastListItemResponse.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ShortTermForecastListItemResponse.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     @property
     def week_date(self):
@@ -182,29 +205,6 @@ class ShortTermForecastListItemResponse(object):
         """
         
         self._metadata = metadata
-
-    @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ShortTermForecastListItemResponse.
-        The URI for this object
-
-        :return: The self_uri of this ShortTermForecastListItemResponse.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ShortTermForecastListItemResponse.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ShortTermForecastListItemResponse.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

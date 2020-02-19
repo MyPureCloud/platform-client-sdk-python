@@ -386,13 +386,15 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'if_none_match']
+        all_params = ['group_id', 'attributes', 'excluded_attributes', 'if_none_match']
         all_params.append('callback')
 
         params = locals()
@@ -416,6 +418,10 @@ class SCIMApi(object):
             path_params['groupId'] = params['group_id']
 
         query_params = {}
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
 
         header_params = {}
         if 'if_none_match' in params:
@@ -468,13 +474,15 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
         :param str filter: Filters results.
         :return: ScimGroupListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['start_index', 'count', 'filter']
+        all_params = ['start_index', 'count', 'attributes', 'excluded_attributes', 'filter']
         all_params.append('callback')
 
         params = locals()
@@ -497,6 +505,10 @@ class SCIMApi(object):
             query_params['startIndex'] = params['start_index']
         if 'count' in params:
             query_params['count'] = params['count']
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
         if 'filter' in params:
             query_params['filter'] = params['filter']
 
@@ -596,7 +608,7 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -668,7 +680,160 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScimConfigResourceTypesListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scim_schema(self, schema_id, **kwargs):
+        """
+        Get the SCIM schema by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scim_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: The ID of a schema. (required)
+        :return: ScimConfigResourceType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scim_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_scim_schema`")
+
+
+        resource_path = '/api/v2/scim/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/scim+json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json', 'application/scim+json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScimConfigResourceType',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scim_schemas(self, **kwargs):
+        """
+        Get the SCIM schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scim_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter: Filtered results are invalid and will result in a 403 (Unauthorized) return.
+        :return: ScimConfigResourceTypesListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scim_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/scim/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter' in params:
+            query_params['filter'] = params['filter']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/scim+json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json', 'application/scim+json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -743,7 +908,7 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -773,8 +938,8 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
@@ -861,8 +1026,8 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,
@@ -947,13 +1112,15 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
         :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'if_none_match']
+        all_params = ['group_id', 'attributes', 'excluded_attributes', 'if_none_match']
         all_params.append('callback')
 
         params = locals()
@@ -977,6 +1144,10 @@ class SCIMApi(object):
             path_params['groupId'] = params['group_id']
 
         query_params = {}
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
 
         header_params = {}
         if 'if_none_match' in params:
@@ -1030,12 +1201,14 @@ class SCIMApi(object):
         :param str filter: Filters results. (required)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
         :return: ScimGroupListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'start_index', 'count']
+        all_params = ['filter', 'start_index', 'count', 'attributes', 'excluded_attributes']
         all_params.append('callback')
 
         params = locals()
@@ -1061,6 +1234,10 @@ class SCIMApi(object):
             query_params['startIndex'] = params['start_index']
         if 'count' in params:
             query_params['count'] = params['count']
+        if 'attributes' in params:
+            query_params['attributes'] = params['attributes']
+        if 'excluded_attributes' in params:
+            query_params['excludedAttributes'] = params['excluded_attributes']
         if 'filter' in params:
             query_params['filter'] = params['filter']
 
@@ -1160,7 +1337,7 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1232,7 +1409,7 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1242,6 +1419,159 @@ class SCIMApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ScimConfigResourceTypesListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scim_v2_schema(self, schema_id, **kwargs):
+        """
+        Get the SCIM schema by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scim_v2_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: The ID of a schema. (required)
+        :return: ScimV2SchemaDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scim_v2_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_scim_v2_schema`")
+
+
+        resource_path = '/api/v2/scim/v2/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/scim+json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json', 'application/scim+json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScimV2SchemaDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scim_v2_schemas(self, **kwargs):
+        """
+        Get the SCIM schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scim_v2_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter: Filtered results are invalid and will result in a 403 (Unauthorized) return.
+        :return: ScimV2SchemaListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scim_v2_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/scim/v2/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter' in params:
+            query_params['filter'] = params['filter']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/scim+json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json', 'application/scim+json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScimV2SchemaListResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1307,7 +1637,7 @@ class SCIMApi(object):
             select_header_content_type(['application/json', 'application/scim+json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['PureCloud OAuth']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1337,8 +1667,8 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
@@ -1425,8 +1755,8 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,

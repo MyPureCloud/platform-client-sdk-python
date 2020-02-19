@@ -122,6 +122,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_cobrowsesession_participant_replace**](ConversationsApi.html#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_email_inboundmessages**](ConversationsApi.html#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
 |[**post_conversations_email_messages**](ConversationsApi.html#post_conversations_email_messages) | Send an email reply|
+|[**post_conversations_email_messages_draft_attachments_copy**](ConversationsApi.html#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
@@ -6078,6 +6079,58 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **body** | [**EmailMessage**](EmailMessage.html)| Reply |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailMessage**](EmailMessage.html)
+
+<a name="post_conversations_email_messages_draft_attachments_copy"></a>
+
+## [**EmailMessage**](EmailMessage.html) post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
+
+
+
+Copy attachments from an email message to the current draft.
+
+
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.CopyAttachmentsRequest() # CopyAttachmentsRequest | Copy Attachment Request
+
+try:
+    # Copy attachments from an email message to the current draft.
+    api_response = api_instance.post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversations_email_messages_draft_attachments_copy: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**CopyAttachmentsRequest**](CopyAttachmentsRequest.html)| Copy Attachment Request |  |
 {: class="table table-striped"}
 
 ### Return type

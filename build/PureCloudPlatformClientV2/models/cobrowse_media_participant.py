@@ -57,7 +57,7 @@ class CobrowseMediaParticipant(object):
             'user': 'DomainEntityRef',
             'queue': 'DomainEntityRef',
             'attributes': 'dict(str, str)',
-            'error_info': 'ErrorBody',
+            'error_info': 'ErrorInfo',
             'script': 'DomainEntityRef',
             'wrapup_timeout_ms': 'int',
             'wrapup_skipped': 'bool',
@@ -567,7 +567,7 @@ class CobrowseMediaParticipant(object):
         If the conversation ends in error, contains additional error details.
 
         :return: The error_info of this CobrowseMediaParticipant.
-        :rtype: ErrorBody
+        :rtype: ErrorInfo
         """
         return self._error_info
 
@@ -578,7 +578,7 @@ class CobrowseMediaParticipant(object):
         If the conversation ends in error, contains additional error details.
 
         :param error_info: The error_info of this CobrowseMediaParticipant.
-        :type: ErrorBody
+        :type: ErrorInfo
         """
         
         self._error_info = error_info

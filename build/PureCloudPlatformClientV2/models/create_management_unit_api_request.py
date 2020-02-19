@@ -44,7 +44,8 @@ class CreateManagementUnitApiRequest(object):
             'time_zone': 'str',
             'start_day_of_week': 'str',
             'settings': 'CreateManagementUnitSettingsRequest',
-            'division_id': 'str'
+            'division_id': 'str',
+            'business_unit_id': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class CreateManagementUnitApiRequest(object):
             'time_zone': 'timeZone',
             'start_day_of_week': 'startDayOfWeek',
             'settings': 'settings',
-            'division_id': 'divisionId'
+            'division_id': 'divisionId',
+            'business_unit_id': 'businessUnitId'
         }
 
         self._name = None
@@ -60,6 +62,7 @@ class CreateManagementUnitApiRequest(object):
         self._start_day_of_week = None
         self._settings = None
         self._division_id = None
+        self._business_unit_id = None
 
     @property
     def name(self):
@@ -88,7 +91,7 @@ class CreateManagementUnitApiRequest(object):
     def time_zone(self):
         """
         Gets the time_zone of this CreateManagementUnitApiRequest.
-        The default time zone to use for this management unit
+        The default time zone to use for this management unit.  Moving to Business Unit
 
         :return: The time_zone of this CreateManagementUnitApiRequest.
         :rtype: str
@@ -99,7 +102,7 @@ class CreateManagementUnitApiRequest(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this CreateManagementUnitApiRequest.
-        The default time zone to use for this management unit
+        The default time zone to use for this management unit.  Moving to Business Unit
 
         :param time_zone: The time_zone of this CreateManagementUnitApiRequest.
         :type: str
@@ -111,7 +114,7 @@ class CreateManagementUnitApiRequest(object):
     def start_day_of_week(self):
         """
         Gets the start_day_of_week of this CreateManagementUnitApiRequest.
-        The configured first day of the week for scheduling and forecasting purposes
+        The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
 
         :return: The start_day_of_week of this CreateManagementUnitApiRequest.
         :rtype: str
@@ -122,7 +125,7 @@ class CreateManagementUnitApiRequest(object):
     def start_day_of_week(self, start_day_of_week):
         """
         Sets the start_day_of_week of this CreateManagementUnitApiRequest.
-        The configured first day of the week for scheduling and forecasting purposes
+        The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
 
         :param start_day_of_week: The start_day_of_week of this CreateManagementUnitApiRequest.
         :type: str
@@ -179,6 +182,29 @@ class CreateManagementUnitApiRequest(object):
         """
         
         self._division_id = division_id
+
+    @property
+    def business_unit_id(self):
+        """
+        Gets the business_unit_id of this CreateManagementUnitApiRequest.
+        The id of the business unit to which this management unit belongs.  Required after business unit launch
+
+        :return: The business_unit_id of this CreateManagementUnitApiRequest.
+        :rtype: str
+        """
+        return self._business_unit_id
+
+    @business_unit_id.setter
+    def business_unit_id(self, business_unit_id):
+        """
+        Sets the business_unit_id of this CreateManagementUnitApiRequest.
+        The id of the business unit to which this management unit belongs.  Required after business unit launch
+
+        :param business_unit_id: The business_unit_id of this CreateManagementUnitApiRequest.
+        :type: str
+        """
+        
+        self._business_unit_id = business_unit_id
 
     def to_dict(self):
         """

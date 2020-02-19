@@ -50,6 +50,8 @@ class Response(object):
             'interaction_type': 'str',
             'substitutions': 'list[ResponseSubstitution]',
             'substitutions_schema': 'JsonSchemaDocument',
+            'response_type': 'str',
+            'messaging_template': 'MessagingTemplate',
             'self_uri': 'str'
         }
 
@@ -64,6 +66,8 @@ class Response(object):
             'interaction_type': 'interactionType',
             'substitutions': 'substitutions',
             'substitutions_schema': 'substitutionsSchema',
+            'response_type': 'responseType',
+            'messaging_template': 'messagingTemplate',
             'self_uri': 'selfUri'
         }
 
@@ -77,6 +81,8 @@ class Response(object):
         self._interaction_type = None
         self._substitutions = None
         self._substitutions_schema = None
+        self._response_type = None
+        self._messaging_template = None
         self._self_uri = None
 
     @property
@@ -312,6 +318,56 @@ class Response(object):
         """
         
         self._substitutions_schema = substitutions_schema
+
+    @property
+    def response_type(self):
+        """
+        Gets the response_type of this Response.
+        The response type represented by the response
+
+        :return: The response_type of this Response.
+        :rtype: str
+        """
+        return self._response_type
+
+    @response_type.setter
+    def response_type(self, response_type):
+        """
+        Sets the response_type of this Response.
+        The response type represented by the response
+
+        :param response_type: The response_type of this Response.
+        :type: str
+        """
+        allowed_values = ["MessagingTemplate"]
+        if response_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for response_type -> " + response_type
+            self._response_type = "outdated_sdk_version"
+        else:
+            self._response_type = response_type
+
+    @property
+    def messaging_template(self):
+        """
+        Gets the messaging_template of this Response.
+        The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+
+        :return: The messaging_template of this Response.
+        :rtype: MessagingTemplate
+        """
+        return self._messaging_template
+
+    @messaging_template.setter
+    def messaging_template(self, messaging_template):
+        """
+        Sets the messaging_template of this Response.
+        The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+
+        :param messaging_template: The messaging_template of this Response.
+        :type: MessagingTemplate
+        """
+        
+        self._messaging_template = messaging_template
 
     @property
     def self_uri(self):
