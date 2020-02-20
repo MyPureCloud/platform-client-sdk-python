@@ -3079,7 +3079,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_surveys_scorable(self, **kwargs):
+    def get_quality_surveys_scorable(self, customer_survey_url, **kwargs):
         """
         Get a survey as an end-customer, for the purposes of scoring it.
         
@@ -3090,11 +3090,11 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_quality_surveys_scorable(callback=callback_function)
+        >>> thread = api.get_quality_surveys_scorable(customer_survey_url, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str customer_survey_url: customerSurveyUrl
+        :param str customer_survey_url: customerSurveyUrl (required)
         :return: ScorableSurvey
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3113,6 +3113,9 @@ class QualityApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'customer_survey_url' is set
+        if ('customer_survey_url' not in params) or (params['customer_survey_url'] is None):
+            raise ValueError("Missing the required parameter `customer_survey_url` when calling `get_quality_surveys_scorable`")
 
 
         resource_path = '/api/v2/quality/surveys/scorable'.replace('{format}', 'json')

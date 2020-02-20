@@ -2071,7 +2071,7 @@ except ApiException as e:
 
 <a name="get_quality_surveys_scorable"></a>
 
-## [**ScorableSurvey**](ScorableSurvey.html) get_quality_surveys_scorable(customer_survey_url=customer_survey_url)
+## [**ScorableSurvey**](ScorableSurvey.html) get_quality_surveys_scorable(customer_survey_url)
 
 
 
@@ -2094,11 +2094,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
-customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl (optional)
+customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl
 
 try:
     # Get a survey as an end-customer, for the purposes of scoring it.
-    api_response = api_instance.get_quality_surveys_scorable(customer_survey_url=customer_survey_url)
+    api_response = api_instance.get_quality_surveys_scorable(customer_survey_url)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_surveys_scorable: %s\n" % e
@@ -2109,7 +2109,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **customer_survey_url** | **str**| customerSurveyUrl | [optional]  |
+| **customer_survey_url** | **str**| customerSurveyUrl |  |
 {: class="table table-striped"}
 
 ### Return type
