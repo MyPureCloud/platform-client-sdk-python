@@ -57,6 +57,7 @@ class Evaluation(object):
             'media_type': 'list[str]',
             'rescore': 'bool',
             'conversation_date': 'datetime',
+            'conversation_end_date': 'datetime',
             'never_release': 'bool',
             'resource_id': 'str',
             'resource_type': 'str',
@@ -83,6 +84,7 @@ class Evaluation(object):
             'media_type': 'mediaType',
             'rescore': 'rescore',
             'conversation_date': 'conversationDate',
+            'conversation_end_date': 'conversationEndDate',
             'never_release': 'neverRelease',
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
@@ -108,6 +110,7 @@ class Evaluation(object):
         self._media_type = None
         self._rescore = None
         self._conversation_date = None
+        self._conversation_end_date = None
         self._never_release = None
         self._resource_id = None
         self._resource_type = None
@@ -509,6 +512,29 @@ class Evaluation(object):
         """
         
         self._conversation_date = conversation_date
+
+    @property
+    def conversation_end_date(self):
+        """
+        Gets the conversation_end_date of this Evaluation.
+        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The conversation_end_date of this Evaluation.
+        :rtype: datetime
+        """
+        return self._conversation_end_date
+
+    @conversation_end_date.setter
+    def conversation_end_date(self, conversation_end_date):
+        """
+        Sets the conversation_end_date of this Evaluation.
+        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param conversation_end_date: The conversation_end_date of this Evaluation.
+        :type: datetime
+        """
+        
+        self._conversation_end_date = conversation_end_date
 
     @property
     def never_release(self):

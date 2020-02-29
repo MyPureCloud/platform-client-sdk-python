@@ -1026,12 +1026,13 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str job_id: jobId (required)
         :param str cursor: Indicates where to resume query results (not required for first page)
+        :param int page_size: The desired maximum number of results
         :return: AnalyticsConversationAsyncQueryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['job_id', 'cursor']
+        all_params = ['job_id', 'cursor', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -1057,6 +1058,8 @@ class ConversationsApi(object):
         query_params = {}
         if 'cursor' in params:
             query_params['cursor'] = params['cursor']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
 
         header_params = {}
 

@@ -317,7 +317,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program"]
+        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for entity_type -> " + entity_type
             self._entity_type = "outdated_sdk_version"

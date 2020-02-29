@@ -541,7 +541,7 @@ except ApiException as e:
 
 <a name="get_analytics_users_details_job_results"></a>
 
-## [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html) get_analytics_users_details_job_results(job_id, cursor=cursor)
+## [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html) get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
 
 
 
@@ -570,10 +570,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 job_id = 'job_id_example' # str | jobId
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+page_size = 56 # int | The desired maximum number of results (optional)
 
 try:
     # Fetch a page of results for an async query
-    api_response = api_instance.get_analytics_users_details_job_results(job_id, cursor=cursor)
+    api_response = api_instance.get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_analytics_users_details_job_results: %s\n" % e
@@ -586,6 +587,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
+| **page_size** | **int**| The desired maximum number of results | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

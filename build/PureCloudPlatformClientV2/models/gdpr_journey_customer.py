@@ -56,7 +56,7 @@ class GDPRJourneyCustomer(object):
     def type(self):
         """
         Gets the type of this GDPRJourneyCustomer.
-        The type of the customerId within the Journey System (e.g. cookie).
+        The type of the customerId within the Journey System (e.g. cookie). Required if `id` is defined.
 
         :return: The type of this GDPRJourneyCustomer.
         :rtype: str
@@ -67,7 +67,7 @@ class GDPRJourneyCustomer(object):
     def type(self, type):
         """
         Sets the type of this GDPRJourneyCustomer.
-        The type of the customerId within the Journey System (e.g. cookie).
+        The type of the customerId within the Journey System (e.g. cookie). Required if `id` is defined.
 
         :param type: The type of this GDPRJourneyCustomer.
         :type: str
@@ -79,7 +79,7 @@ class GDPRJourneyCustomer(object):
     def id(self):
         """
         Gets the id of this GDPRJourneyCustomer.
-        An ID of a customer within the Journey System at a point-in-time.
+        An ID of a customer within the Journey System at a point-in-time. Required if `type` is defined.
 
         :return: The id of this GDPRJourneyCustomer.
         :rtype: str
@@ -90,7 +90,7 @@ class GDPRJourneyCustomer(object):
     def id(self, id):
         """
         Sets the id of this GDPRJourneyCustomer.
-        An ID of a customer within the Journey System at a point-in-time.
+        An ID of a customer within the Journey System at a point-in-time. Required if `type` is defined.
 
         :param id: The id of this GDPRJourneyCustomer.
         :type: str

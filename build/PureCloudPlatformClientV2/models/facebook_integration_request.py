@@ -189,7 +189,7 @@ class FacebookIntegrationRequest(object):
     def app_id(self):
         """
         Gets the app_id of this FacebookIntegrationRequest.
-        The app Id of a facebook app
+        The app Id of a facebook app. The appId is required when a customer wants to use their own approved facebook app.
 
         :return: The app_id of this FacebookIntegrationRequest.
         :rtype: str
@@ -200,7 +200,7 @@ class FacebookIntegrationRequest(object):
     def app_id(self, app_id):
         """
         Sets the app_id of this FacebookIntegrationRequest.
-        The app Id of a facebook app
+        The app Id of a facebook app. The appId is required when a customer wants to use their own approved facebook app.
 
         :param app_id: The app_id of this FacebookIntegrationRequest.
         :type: str
@@ -212,7 +212,7 @@ class FacebookIntegrationRequest(object):
     def app_secret(self):
         """
         Gets the app_secret of this FacebookIntegrationRequest.
-        The app Secret of a facebook app
+        The app Secret of a facebook app. The appSecret is required when appId is provided.
 
         :return: The app_secret of this FacebookIntegrationRequest.
         :rtype: str
@@ -223,7 +223,7 @@ class FacebookIntegrationRequest(object):
     def app_secret(self, app_secret):
         """
         Sets the app_secret of this FacebookIntegrationRequest.
-        The app Secret of a facebook app
+        The app Secret of a facebook app. The appSecret is required when appId is provided.
 
         :param app_secret: The app_secret of this FacebookIntegrationRequest.
         :type: str
