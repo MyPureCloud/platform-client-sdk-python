@@ -52,6 +52,7 @@ class Organization(object):
             'default_site_id': 'str',
             'support_uri': 'str',
             'voicemail_enabled': 'bool',
+            'product_platform': 'str',
             'self_uri': 'str',
             'features': 'dict(str, bool)'
         }
@@ -69,6 +70,7 @@ class Organization(object):
             'default_site_id': 'defaultSiteId',
             'support_uri': 'supportURI',
             'voicemail_enabled': 'voicemailEnabled',
+            'product_platform': 'productPlatform',
             'self_uri': 'selfUri',
             'features': 'features'
         }
@@ -85,6 +87,7 @@ class Organization(object):
         self._default_site_id = None
         self._support_uri = None
         self._voicemail_enabled = None
+        self._product_platform = None
         self._self_uri = None
         self._features = None
 
@@ -367,6 +370,33 @@ class Organization(object):
         """
         
         self._voicemail_enabled = voicemail_enabled
+
+    @property
+    def product_platform(self):
+        """
+        Gets the product_platform of this Organization.
+        Organizations Originating Platform.
+
+        :return: The product_platform of this Organization.
+        :rtype: str
+        """
+        return self._product_platform
+
+    @product_platform.setter
+    def product_platform(self, product_platform):
+        """
+        Sets the product_platform of this Organization.
+        Organizations Originating Platform.
+
+        :param product_platform: The product_platform of this Organization.
+        :type: str
+        """
+        allowed_values = ["PureCloud", "PureEngage", "PureEngageCloud", "PureConnect", "PureConnectCloud", "Unknown"]
+        if product_platform.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for product_platform -> " + product_platform
+            self._product_platform = "outdated_sdk_version"
+        else:
+            self._product_platform = product_platform
 
     @property
     def self_uri(self):

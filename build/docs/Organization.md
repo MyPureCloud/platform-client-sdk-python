@@ -19,6 +19,7 @@ title: Organization
 | **default_site_id** | **str** |  | [optional] |
 | **support_uri** | **str** | Email address where support tickets are sent to. | [optional] |
 | **voicemail_enabled** | **bool** |  | [optional] |
+| **product_platform** | **str** | Organizations Originating Platform. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 | **features** | **dict(str, bool)** | The state of features available for the organization. | [optional] |
 {: class="table table-striped"}

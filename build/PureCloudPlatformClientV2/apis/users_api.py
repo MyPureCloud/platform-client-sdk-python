@@ -214,6 +214,84 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_routing_user_utilization(self, user_id, **kwargs):
+        """
+        Delete the user's max utilization settings and revert to the organization-wide default.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_user_utilization(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_user_utilization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_routing_user_utilization`")
+
+
+        resource_path = '/api/v2/routing/users/{userId}/utilization'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_user(self, user_id, **kwargs):
         """
         Delete user
@@ -858,8 +936,8 @@ class UsersApi(object):
 
     def get_authorization_divisionspermitted_me(self, permission, **kwargs):
         """
-        Returns whether or not current user can perform the specified action(s).
-        
+        Returns which divisions the current user has the given permission in.
+        This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -937,10 +1015,184 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_authorization_divisionspermitted_paged_me(self, permission, **kwargs):
+        """
+        Returns which divisions the current user has the given permission in.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisionspermitted_paged_me(permission, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str permission: The permission string, including the object to access, e.g. routing:queue:view (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: DivsPermittedEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['permission', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisionspermitted_paged_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'permission' is set
+        if ('permission' not in params) or (params['permission'] is None):
+            raise ValueError("Missing the required parameter `permission` when calling `get_authorization_divisionspermitted_paged_me`")
+
+
+        resource_path = '/api/v2/authorization/divisionspermitted/paged/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'permission' in params:
+            query_params['permission'] = params['permission']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DivsPermittedEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisionspermitted_paged_subject_id(self, subject_id, permission, **kwargs):
+        """
+        Returns which divisions the specified user has the given permission in.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: Subject ID (user or group) (required)
+        :param str permission: The permission string, including the object to access, e.g. routing:queue:view (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: DivsPermittedEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id', 'permission', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisionspermitted_paged_subject_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_authorization_divisionspermitted_paged_subject_id`")
+        # verify the required parameter 'permission' is set
+        if ('permission' not in params) or (params['permission'] is None):
+            raise ValueError("Missing the required parameter `permission` when calling `get_authorization_divisionspermitted_paged_subject_id`")
+
+
+        resource_path = '/api/v2/authorization/divisionspermitted/paged/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
+        if 'permission' in params:
+            query_params['permission'] = params['permission']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DivsPermittedEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_authorization_divisionspermitted_subject_id(self, subject_id, permission, **kwargs):
         """
-        Returns whether or not specified user can perform the specified action(s).
-        
+        Returns which divisions the specified user has the given permission in.
+        This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1338,6 +1590,84 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserProfileEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_user_utilization(self, user_id, **kwargs):
+        """
+        Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_user_utilization(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :return: Utilization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_user_utilization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_routing_user_utilization`")
+
+
+        resource_path = '/api/v2/routing/users/{userId}/utilization'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Utilization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4899,6 +5229,90 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UsersSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_routing_user_utilization(self, user_id, body, **kwargs):
+        """
+        Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_user_utilization(user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param Utilization body: utilization (required)
+        :return: Utilization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_user_utilization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `put_routing_user_utilization`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_user_utilization`")
+
+
+        resource_path = '/api/v2/routing/users/{userId}/utilization'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Utilization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

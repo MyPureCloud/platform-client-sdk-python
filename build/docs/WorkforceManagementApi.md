@@ -2838,7 +2838,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
 
-## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
+## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
 
 
 
@@ -2892,7 +2892,7 @@ except ApiException as e:
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
 
 <a name="post_workforcemanagement_managementunit_historicaladherencequery"></a>
 

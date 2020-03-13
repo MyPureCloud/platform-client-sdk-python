@@ -143,6 +143,14 @@ from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
 from .models.biography import Biography
+from .models.bu_agent_schedule_activity import BuAgentScheduleActivity
+from .models.bu_agent_schedule_published_schedule_reference import BuAgentSchedulePublishedScheduleReference
+from .models.bu_agent_schedule_search_response import BuAgentScheduleSearchResponse
+from .models.bu_agent_schedule_shift import BuAgentScheduleShift
+from .models.bu_agent_schedules_search_response import BuAgentSchedulesSearchResponse
+from .models.bu_async_agent_schedules_search_response import BuAsyncAgentSchedulesSearchResponse
+from .models.bu_full_day_time_off_marker import BuFullDayTimeOffMarker
+from .models.bu_schedule_reference import BuScheduleReference
 from .models.bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .models.bullseye import Bullseye
 from .models.business_unit_reference import BusinessUnitReference
@@ -495,6 +503,8 @@ from .models.did_pool_entity_listing import DIDPoolEntityListing
 from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_schema import DataSchema
 from .models.data_table import DataTable
+from .models.data_table_export_job import DataTableExportJob
+from .models.data_table_import_job import DataTableImportJob
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
 from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .models.date_range import DateRange
@@ -580,6 +590,7 @@ from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disconnect_reason import DisconnectReason
 from .models.division import Division
+from .models.divs_permitted_entity_listing import DivsPermittedEntityListing
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate
 from .models.dnc_list_division_view import DncListDivisionView
@@ -679,6 +690,7 @@ from .models.empty import Empty
 from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
+from .models.entity_listing import EntityListing
 from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails

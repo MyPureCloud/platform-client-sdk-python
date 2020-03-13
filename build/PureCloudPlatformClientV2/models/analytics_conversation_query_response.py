@@ -40,40 +40,17 @@ class AnalyticsConversationQueryResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'conversations': 'list[AnalyticsConversation]',
-            'aggregations': 'list[AggregationResult]'
+            'aggregations': 'list[AggregationResult]',
+            'conversations': 'list[AnalyticsConversationWithoutAttributes]'
         }
 
         self.attribute_map = {
-            'conversations': 'conversations',
-            'aggregations': 'aggregations'
+            'aggregations': 'aggregations',
+            'conversations': 'conversations'
         }
 
-        self._conversations = None
         self._aggregations = None
-
-    @property
-    def conversations(self):
-        """
-        Gets the conversations of this AnalyticsConversationQueryResponse.
-
-
-        :return: The conversations of this AnalyticsConversationQueryResponse.
-        :rtype: list[AnalyticsConversation]
-        """
-        return self._conversations
-
-    @conversations.setter
-    def conversations(self, conversations):
-        """
-        Sets the conversations of this AnalyticsConversationQueryResponse.
-
-
-        :param conversations: The conversations of this AnalyticsConversationQueryResponse.
-        :type: list[AnalyticsConversation]
-        """
-        
-        self._conversations = conversations
+        self._conversations = None
 
     @property
     def aggregations(self):
@@ -97,6 +74,29 @@ class AnalyticsConversationQueryResponse(object):
         """
         
         self._aggregations = aggregations
+
+    @property
+    def conversations(self):
+        """
+        Gets the conversations of this AnalyticsConversationQueryResponse.
+
+
+        :return: The conversations of this AnalyticsConversationQueryResponse.
+        :rtype: list[AnalyticsConversationWithoutAttributes]
+        """
+        return self._conversations
+
+    @conversations.setter
+    def conversations(self, conversations):
+        """
+        Sets the conversations of this AnalyticsConversationQueryResponse.
+
+
+        :param conversations: The conversations of this AnalyticsConversationQueryResponse.
+        :type: list[AnalyticsConversationWithoutAttributes]
+        """
+        
+        self._conversations = conversations
 
     def to_dict(self):
         """

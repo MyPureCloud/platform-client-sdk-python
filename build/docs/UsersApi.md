@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_analytics_users_details_job**](UsersApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
+|[**delete_routing_user_utilization**](UsersApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
 |[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
 |[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
@@ -18,12 +19,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
 |[**get_analytics_users_details_job**](UsersApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](UsersApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
-|[**get_authorization_divisionspermitted_me**](UsersApi.html#get_authorization_divisionspermitted_me) | Returns whether or not current user can perform the specified action(s).|
-|[**get_authorization_divisionspermitted_subject_id**](UsersApi.html#get_authorization_divisionspermitted_subject_id) | Returns whether or not specified user can perform the specified action(s).|
+|[**get_authorization_divisionspermitted_me**](UsersApi.html#get_authorization_divisionspermitted_me) | Returns which divisions the current user has the given permission in.|
+|[**get_authorization_divisionspermitted_paged_me**](UsersApi.html#get_authorization_divisionspermitted_paged_me) | Returns which divisions the current user has the given permission in.|
+|[**get_authorization_divisionspermitted_paged_subject_id**](UsersApi.html#get_authorization_divisionspermitted_paged_subject_id) | Returns which divisions the specified user has the given permission in.|
+|[**get_authorization_divisionspermitted_subject_id**](UsersApi.html#get_authorization_divisionspermitted_subject_id) | Returns which divisions the specified user has the given permission in.|
 |[**get_authorization_subject**](UsersApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
 |[**get_authorization_subjects_me**](UsersApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
 |[**get_fieldconfig**](UsersApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_profiles_users**](UsersApi.html#get_profiles_users) | Get a user profile listing|
+|[**get_routing_user_utilization**](UsersApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
 |[**get_user**](UsersApi.html#get_user) | Get user.|
 |[**get_user_adjacents**](UsersApi.html#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](UsersApi.html#get_user_callforwarding) | Get a user&#39;s CallForwarding|
@@ -67,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users**](UsersApi.html#post_users) | Create user|
 |[**post_users_me_password**](UsersApi.html#post_users_me_password) | Change your password|
 |[**post_users_search**](UsersApi.html#post_users_search) | Search users|
+|[**put_routing_user_utilization**](UsersApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_user_callforwarding**](UsersApi.html#put_user_callforwarding) | Update a user&#39;s CallForwarding|
 |[**put_user_outofoffice**](UsersApi.html#put_user_outofoffice) | Update an OutOfOffice|
 |[**put_user_profileskills**](UsersApi.html#put_user_profileskills) | Update profile skills for a user|
@@ -176,6 +181,56 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division of the grant |  |
 | **role_id** | **str**| the id of the role of the grant |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_user_utilization"></a>
+
+##  delete_routing_user_utilization(user_id)
+
+
+
+Delete the user's max utilization settings and revert to the organization-wide default.
+
+
+
+Wraps DELETE /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Delete the user's max utilization settings and revert to the organization-wide default.
+    api_instance.delete_routing_user_utilization(user_id)
+except ApiException as e:
+    print "Exception when calling UsersApi->delete_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -598,11 +653,11 @@ except ApiException as e:
 
 ## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_me(permission, name=name)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Returns which divisions the current user has the given permission in.
 
-Returns whether or not current user can perform the specified action(s).
-
-
+This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
 Wraps GET /api/v2/authorization/divisionspermitted/me 
 
@@ -626,7 +681,7 @@ permission = 'permission_example' # str | The permission string, including the o
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
-    # Returns whether or not current user can perform the specified action(s).
+    # Returns which divisions the current user has the given permission in.
     api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
     pprint(api_response)
 except ApiException as e:
@@ -646,15 +701,125 @@ except ApiException as e:
 
 [**list[AuthzDivision]**](AuthzDivision.html)
 
+<a name="get_authorization_divisionspermitted_paged_me"></a>
+
+## [**DivsPermittedEntityListing**](DivsPermittedEntityListing.html) get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
+
+
+
+Returns which divisions the current user has the given permission in.
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/paged/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Returns which divisions the current user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_divisionspermitted_paged_me: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+
+<a name="get_authorization_divisionspermitted_paged_subject_id"></a>
+
+## [**DivsPermittedEntityListing**](DivsPermittedEntityListing.html) get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
+
+
+
+Returns which divisions the specified user has the given permission in.
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Returns which divisions the specified user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+
 <a name="get_authorization_divisionspermitted_subject_id"></a>
 
 ## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-Returns whether or not specified user can perform the specified action(s).
+Returns which divisions the specified user has the given permission in.
 
-
+This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 
 Wraps GET /api/v2/authorization/divisionspermitted/{subjectId} 
 
@@ -679,7 +844,7 @@ permission = 'permission_example' # str | The permission string, including the o
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
-    # Returns whether or not specified user can perform the specified action(s).
+    # Returns which divisions the specified user has the given permission in.
     api_response = api_instance.get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
     pprint(api_response)
 except ApiException as e:
@@ -906,6 +1071,58 @@ except ApiException as e:
 ### Return type
 
 [**UserProfileEntityListing**](UserProfileEntityListing.html)
+
+<a name="get_routing_user_utilization"></a>
+
+## [**Utilization**](Utilization.html) get_routing_user_utilization(user_id)
+
+
+
+Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+
+
+
+Wraps GET /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+* routing:utilization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+    api_response = api_instance.get_routing_user_utilization(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Utilization**](Utilization.html)
 
 <a name="get_user"></a>
 
@@ -3182,6 +3399,59 @@ except ApiException as e:
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="put_routing_user_utilization"></a>
+
+## [**Utilization**](Utilization.html) put_routing_user_utilization(user_id, body)
+
+
+
+Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+
+
+
+Wraps PUT /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
+
+try:
+    # Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+    api_response = api_instance.put_routing_user_utilization(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->put_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**Utilization**](Utilization.html)| utilization |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Utilization**](Utilization.html)
 
 <a name="put_user_callforwarding"></a>
 

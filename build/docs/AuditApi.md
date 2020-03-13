@@ -66,7 +66,7 @@ except ApiException as e:
 
 <a name="get_audits_query_transaction_id_results"></a>
 
-## [**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse.html) get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size)
+## [**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse.html) get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
 
 
 
@@ -96,10 +96,11 @@ api_instance = PureCloudPlatformClientV2.AuditApi()
 transaction_id = 'transaction_id_example' # str | Transaction ID
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get results of audit query
-    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size)
+    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\n" % e
@@ -113,6 +114,7 @@ except ApiException as e:
 | **transaction_id** | **str**| Transaction ID |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 {: class="table table-striped"}
 
 ### Return type

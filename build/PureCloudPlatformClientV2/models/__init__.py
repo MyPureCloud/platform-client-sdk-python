@@ -143,6 +143,14 @@ from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
 from .biography import Biography
+from .bu_agent_schedule_activity import BuAgentScheduleActivity
+from .bu_agent_schedule_published_schedule_reference import BuAgentSchedulePublishedScheduleReference
+from .bu_agent_schedule_search_response import BuAgentScheduleSearchResponse
+from .bu_agent_schedule_shift import BuAgentScheduleShift
+from .bu_agent_schedules_search_response import BuAgentSchedulesSearchResponse
+from .bu_async_agent_schedules_search_response import BuAsyncAgentSchedulesSearchResponse
+from .bu_full_day_time_off_marker import BuFullDayTimeOffMarker
+from .bu_schedule_reference import BuScheduleReference
 from .bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .bullseye import Bullseye
 from .business_unit_reference import BusinessUnitReference
@@ -495,6 +503,8 @@ from .did_pool_entity_listing import DIDPoolEntityListing
 from .data_action_condition_predicate import DataActionConditionPredicate
 from .data_schema import DataSchema
 from .data_table import DataTable
+from .data_table_export_job import DataTableExportJob
+from .data_table_import_job import DataTableImportJob
 from .data_table_row_entity_listing import DataTableRowEntityListing
 from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .date_range import DateRange
@@ -580,6 +590,7 @@ from .digits import Digits
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disconnect_reason import DisconnectReason
 from .division import Division
+from .divs_permitted_entity_listing import DivsPermittedEntityListing
 from .dnc_list import DncList
 from .dnc_list_create import DncListCreate
 from .dnc_list_division_view import DncListDivisionView
@@ -679,6 +690,7 @@ from .empty import Empty
 from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
+from .entity_listing import EntityListing
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails

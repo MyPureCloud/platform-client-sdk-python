@@ -42,6 +42,7 @@ class EvaluationScoringSet(object):
         self.swagger_types = {
             'total_score': 'float',
             'total_critical_score': 'float',
+            'total_non_critical_score': 'float',
             'question_group_scores': 'list[EvaluationQuestionGroupScore]',
             'any_failed_kill_questions': 'bool',
             'comments': 'str',
@@ -51,6 +52,7 @@ class EvaluationScoringSet(object):
         self.attribute_map = {
             'total_score': 'totalScore',
             'total_critical_score': 'totalCriticalScore',
+            'total_non_critical_score': 'totalNonCriticalScore',
             'question_group_scores': 'questionGroupScores',
             'any_failed_kill_questions': 'anyFailedKillQuestions',
             'comments': 'comments',
@@ -59,6 +61,7 @@ class EvaluationScoringSet(object):
 
         self._total_score = None
         self._total_critical_score = None
+        self._total_non_critical_score = None
         self._question_group_scores = None
         self._any_failed_kill_questions = None
         self._comments = None
@@ -109,6 +112,29 @@ class EvaluationScoringSet(object):
         """
         
         self._total_critical_score = total_critical_score
+
+    @property
+    def total_non_critical_score(self):
+        """
+        Gets the total_non_critical_score of this EvaluationScoringSet.
+
+
+        :return: The total_non_critical_score of this EvaluationScoringSet.
+        :rtype: float
+        """
+        return self._total_non_critical_score
+
+    @total_non_critical_score.setter
+    def total_non_critical_score(self, total_non_critical_score):
+        """
+        Sets the total_non_critical_score of this EvaluationScoringSet.
+
+
+        :param total_non_critical_score: The total_non_critical_score of this EvaluationScoringSet.
+        :type: float
+        """
+        
+        self._total_non_critical_score = total_non_critical_score
 
     @property
     def question_group_scores(self):

@@ -46,10 +46,14 @@ class EvaluationQuestionGroupScore(object):
             'marked_na': 'bool',
             'total_critical_score': 'float',
             'max_total_critical_score': 'float',
+            'total_non_critical_score': 'float',
+            'max_total_non_critical_score': 'float',
             'total_score_unweighted': 'float',
             'max_total_score_unweighted': 'float',
             'total_critical_score_unweighted': 'float',
             'max_total_critical_score_unweighted': 'float',
+            'total_non_critical_score_unweighted': 'float',
+            'max_total_non_critical_score_unweighted': 'float',
             'question_scores': 'list[EvaluationQuestionScore]'
         }
 
@@ -60,10 +64,14 @@ class EvaluationQuestionGroupScore(object):
             'marked_na': 'markedNA',
             'total_critical_score': 'totalCriticalScore',
             'max_total_critical_score': 'maxTotalCriticalScore',
+            'total_non_critical_score': 'totalNonCriticalScore',
+            'max_total_non_critical_score': 'maxTotalNonCriticalScore',
             'total_score_unweighted': 'totalScoreUnweighted',
             'max_total_score_unweighted': 'maxTotalScoreUnweighted',
             'total_critical_score_unweighted': 'totalCriticalScoreUnweighted',
             'max_total_critical_score_unweighted': 'maxTotalCriticalScoreUnweighted',
+            'total_non_critical_score_unweighted': 'totalNonCriticalScoreUnweighted',
+            'max_total_non_critical_score_unweighted': 'maxTotalNonCriticalScoreUnweighted',
             'question_scores': 'questionScores'
         }
 
@@ -73,10 +81,14 @@ class EvaluationQuestionGroupScore(object):
         self._marked_na = None
         self._total_critical_score = None
         self._max_total_critical_score = None
+        self._total_non_critical_score = None
+        self._max_total_non_critical_score = None
         self._total_score_unweighted = None
         self._max_total_score_unweighted = None
         self._total_critical_score_unweighted = None
         self._max_total_critical_score_unweighted = None
+        self._total_non_critical_score_unweighted = None
+        self._max_total_non_critical_score_unweighted = None
         self._question_scores = None
 
     @property
@@ -218,6 +230,52 @@ class EvaluationQuestionGroupScore(object):
         self._max_total_critical_score = max_total_critical_score
 
     @property
+    def total_non_critical_score(self):
+        """
+        Gets the total_non_critical_score of this EvaluationQuestionGroupScore.
+
+
+        :return: The total_non_critical_score of this EvaluationQuestionGroupScore.
+        :rtype: float
+        """
+        return self._total_non_critical_score
+
+    @total_non_critical_score.setter
+    def total_non_critical_score(self, total_non_critical_score):
+        """
+        Sets the total_non_critical_score of this EvaluationQuestionGroupScore.
+
+
+        :param total_non_critical_score: The total_non_critical_score of this EvaluationQuestionGroupScore.
+        :type: float
+        """
+        
+        self._total_non_critical_score = total_non_critical_score
+
+    @property
+    def max_total_non_critical_score(self):
+        """
+        Gets the max_total_non_critical_score of this EvaluationQuestionGroupScore.
+
+
+        :return: The max_total_non_critical_score of this EvaluationQuestionGroupScore.
+        :rtype: float
+        """
+        return self._max_total_non_critical_score
+
+    @max_total_non_critical_score.setter
+    def max_total_non_critical_score(self, max_total_non_critical_score):
+        """
+        Sets the max_total_non_critical_score of this EvaluationQuestionGroupScore.
+
+
+        :param max_total_non_critical_score: The max_total_non_critical_score of this EvaluationQuestionGroupScore.
+        :type: float
+        """
+        
+        self._max_total_non_critical_score = max_total_non_critical_score
+
+    @property
     def total_score_unweighted(self):
         """
         Gets the total_score_unweighted of this EvaluationQuestionGroupScore.
@@ -308,6 +366,52 @@ class EvaluationQuestionGroupScore(object):
         """
         
         self._max_total_critical_score_unweighted = max_total_critical_score_unweighted
+
+    @property
+    def total_non_critical_score_unweighted(self):
+        """
+        Gets the total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+
+
+        :return: The total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+        :rtype: float
+        """
+        return self._total_non_critical_score_unweighted
+
+    @total_non_critical_score_unweighted.setter
+    def total_non_critical_score_unweighted(self, total_non_critical_score_unweighted):
+        """
+        Sets the total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+
+
+        :param total_non_critical_score_unweighted: The total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+        :type: float
+        """
+        
+        self._total_non_critical_score_unweighted = total_non_critical_score_unweighted
+
+    @property
+    def max_total_non_critical_score_unweighted(self):
+        """
+        Gets the max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+
+
+        :return: The max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+        :rtype: float
+        """
+        return self._max_total_non_critical_score_unweighted
+
+    @max_total_non_critical_score_unweighted.setter
+    def max_total_non_critical_score_unweighted(self, max_total_non_critical_score_unweighted):
+        """
+        Sets the max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+
+
+        :param max_total_non_critical_score_unweighted: The max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
+        :type: float
+        """
+        
+        self._max_total_non_critical_score_unweighted = max_total_non_critical_score_unweighted
 
     @property
     def question_scores(self):

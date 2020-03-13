@@ -4220,7 +4220,7 @@ class WorkforceManagementApi(object):
         :param BuSearchAgentSchedulesRequest body: body
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
-        :return: UserScheduleContainer
+        :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4283,7 +4283,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UserScheduleContainer',
+                                            response_type='BuAsyncAgentSchedulesSearchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

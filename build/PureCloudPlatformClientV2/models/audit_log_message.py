@@ -41,7 +41,7 @@ class AuditLogMessage(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'user': 'AddressableEntityRef',
+            'user': 'DomainEntityRef',
             'client': 'AddressableEntityRef',
             'remote_ip': 'list[str]',
             'service_name': 'str',
@@ -112,7 +112,7 @@ class AuditLogMessage(object):
         User associated with this audit message.
 
         :return: The user of this AuditLogMessage.
-        :rtype: AddressableEntityRef
+        :rtype: DomainEntityRef
         """
         return self._user
 
@@ -123,7 +123,7 @@ class AuditLogMessage(object):
         User associated with this audit message.
 
         :param user: The user of this AuditLogMessage.
-        :type: AddressableEntityRef
+        :type: DomainEntityRef
         """
         
         self._user = user

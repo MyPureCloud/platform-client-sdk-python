@@ -56,6 +56,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flow_versions**](ArchitectApi.html#get_flow_versions) | Get flow version list|
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by id|
+|[**get_flows_datatable_export_job**](ArchitectApi.html#get_flows_datatable_export_job) | Returns the state information about an export job|
+|[**get_flows_datatable_import_job**](ArchitectApi.html#get_flows_datatable_import_job) | Returns the state information about an import job|
+|[**get_flows_datatable_import_jobs**](ArchitectApi.html#get_flows_datatable_import_jobs) | Get all recent import jobs|
 |[**get_flows_datatable_row**](ArchitectApi.html#get_flows_datatable_row) | Returns a specific row for the datatable|
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable with the given id|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
@@ -80,6 +83,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_actions_publish**](ArchitectApi.html#post_flows_actions_publish) | Publish flow|
 |[**post_flows_actions_revert**](ArchitectApi.html#post_flows_actions_revert) | Revert flow|
 |[**post_flows_actions_unlock**](ArchitectApi.html#post_flows_actions_unlock) | Unlock flow|
+|[**post_flows_datatable_export_jobs**](ArchitectApi.html#post_flows_datatable_export_jobs) | Begin an export process for exporting all rows from a datatable|
+|[**post_flows_datatable_import_jobs**](ArchitectApi.html#post_flows_datatable_import_jobs) | Begin an import process for importing rows into a datatable|
 |[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry for the datatable.|
 |[**post_flows_datatables**](ArchitectApi.html#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
 |[**post_flows_outcomes**](ArchitectApi.html#post_flows_outcomes) | Create a flow outcome|
@@ -2775,6 +2780,167 @@ except ApiException as e:
 
 [**DataTable**](DataTable.html)
 
+<a name="get_flows_datatable_export_job"></a>
+
+## [**DataTableExportJob**](DataTableExportJob.html) get_flows_datatable_export_job(datatable_id, export_job_id)
+
+
+
+Returns the state information about an export job
+
+Returns the state information about an export job.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+export_job_id = 'export_job_id_example' # str | id of export job
+
+try:
+    # Returns the state information about an export job
+    api_response = api_instance.get_flows_datatable_export_job(datatable_id, export_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_datatable_export_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **export_job_id** | **str**| id of export job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTableExportJob**](DataTableExportJob.html)
+
+<a name="get_flows_datatable_import_job"></a>
+
+## [**DataTableImportJob**](DataTableImportJob.html) get_flows_datatable_import_job(datatable_id, import_job_id)
+
+
+
+Returns the state information about an import job
+
+Returns the state information about an import job.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+import_job_id = 'import_job_id_example' # str | id of import job
+
+try:
+    # Returns the state information about an import job
+    api_response = api_instance.get_flows_datatable_import_job(datatable_id, import_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_datatable_import_job: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **import_job_id** | **str**| id of import job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTableImportJob**](DataTableImportJob.html)
+
+<a name="get_flows_datatable_import_jobs"></a>
+
+## [**EntityListing**](EntityListing.html) get_flows_datatable_import_jobs(datatable_id, page_number=page_number, page_size=page_size)
+
+
+
+Get all recent import jobs
+
+Get all recent import jobs
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs 
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get all recent import jobs
+    api_response = api_instance.get_flows_datatable_import_jobs(datatable_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_datatable_import_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
+
 <a name="get_flows_datatable_row"></a>
 
 ## [**dict(str, object)**](dict.html) get_flows_datatable_row(datatable_id, row_id, showbrief=showbrief)
@@ -4057,6 +4223,110 @@ except ApiException as e:
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="post_flows_datatable_export_jobs"></a>
+
+## [**DataTableExportJob**](DataTableExportJob.html) post_flows_datatable_export_jobs(datatable_id)
+
+
+
+Begin an export process for exporting all rows from a datatable
+
+Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+
+Wraps POST /api/v2/flows/datatables/{datatableId}/export/jobs 
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+
+try:
+    # Begin an export process for exporting all rows from a datatable
+    api_response = api_instance.post_flows_datatable_export_jobs(datatable_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_flows_datatable_export_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTableExportJob**](DataTableExportJob.html)
+
+<a name="post_flows_datatable_import_jobs"></a>
+
+## [**DataTableImportJob**](DataTableImportJob.html) post_flows_datatable_import_jobs(datatable_id, body)
+
+
+
+Begin an import process for importing rows into a datatable
+
+Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+
+Wraps POST /api/v2/flows/datatables/{datatableId}/import/jobs 
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+datatable_id = 'datatable_id_example' # str | id of datatable
+body = PureCloudPlatformClientV2.DataTableImportJob() # DataTableImportJob | import job information
+
+try:
+    # Begin an import process for importing rows into a datatable
+    api_response = api_instance.post_flows_datatable_import_jobs(datatable_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_flows_datatable_import_jobs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **datatable_id** | **str**| id of datatable |  |
+| **body** | [**DataTableImportJob**](DataTableImportJob.html)| import job information |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DataTableImportJob**](DataTableImportJob.html)
 
 <a name="post_flows_datatable_rows"></a>
 

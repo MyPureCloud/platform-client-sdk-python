@@ -43,6 +43,7 @@ class CampaignProgress(object):
             'campaign': 'DomainEntityRef',
             'contact_list': 'DomainEntityRef',
             'number_of_contacts_called': 'int',
+            'number_of_contacts_messaged': 'int',
             'total_number_of_contacts': 'int',
             'percentage': 'int'
         }
@@ -51,6 +52,7 @@ class CampaignProgress(object):
             'campaign': 'campaign',
             'contact_list': 'contactList',
             'number_of_contacts_called': 'numberOfContactsCalled',
+            'number_of_contacts_messaged': 'numberOfContactsMessaged',
             'total_number_of_contacts': 'totalNumberOfContacts',
             'percentage': 'percentage'
         }
@@ -58,6 +60,7 @@ class CampaignProgress(object):
         self._campaign = None
         self._contact_list = None
         self._number_of_contacts_called = None
+        self._number_of_contacts_messaged = None
         self._total_number_of_contacts = None
         self._percentage = None
 
@@ -111,7 +114,7 @@ class CampaignProgress(object):
     def number_of_contacts_called(self):
         """
         Gets the number_of_contacts_called of this CampaignProgress.
-        Number of contacts processed during the campaign
+        Number of contacts called during the campaign
 
         :return: The number_of_contacts_called of this CampaignProgress.
         :rtype: int
@@ -122,13 +125,36 @@ class CampaignProgress(object):
     def number_of_contacts_called(self, number_of_contacts_called):
         """
         Sets the number_of_contacts_called of this CampaignProgress.
-        Number of contacts processed during the campaign
+        Number of contacts called during the campaign
 
         :param number_of_contacts_called: The number_of_contacts_called of this CampaignProgress.
         :type: int
         """
         
         self._number_of_contacts_called = number_of_contacts_called
+
+    @property
+    def number_of_contacts_messaged(self):
+        """
+        Gets the number_of_contacts_messaged of this CampaignProgress.
+        Number of contacts messaged during the campaign
+
+        :return: The number_of_contacts_messaged of this CampaignProgress.
+        :rtype: int
+        """
+        return self._number_of_contacts_messaged
+
+    @number_of_contacts_messaged.setter
+    def number_of_contacts_messaged(self, number_of_contacts_messaged):
+        """
+        Sets the number_of_contacts_messaged of this CampaignProgress.
+        Number of contacts messaged during the campaign
+
+        :param number_of_contacts_messaged: The number_of_contacts_messaged of this CampaignProgress.
+        :type: int
+        """
+        
+        self._number_of_contacts_messaged = number_of_contacts_messaged
 
     @property
     def total_number_of_contacts(self):

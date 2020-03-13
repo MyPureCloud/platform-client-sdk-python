@@ -43,20 +43,26 @@ class AvailableTopic(object):
             'description': 'str',
             'id': 'str',
             'requires_permissions': 'list[str]',
-            'schema': 'dict(str, object)'
+            'schema': 'dict(str, object)',
+            'requires_current_user': 'bool',
+            'requires_current_user_or_permission': 'bool'
         }
 
         self.attribute_map = {
             'description': 'description',
             'id': 'id',
             'requires_permissions': 'requiresPermissions',
-            'schema': 'schema'
+            'schema': 'schema',
+            'requires_current_user': 'requiresCurrentUser',
+            'requires_current_user_or_permission': 'requiresCurrentUserOrPermission'
         }
 
         self._description = None
         self._id = None
         self._requires_permissions = None
         self._schema = None
+        self._requires_current_user = None
+        self._requires_current_user_or_permission = None
 
     @property
     def description(self):
@@ -108,7 +114,7 @@ class AvailableTopic(object):
     def requires_permissions(self):
         """
         Gets the requires_permissions of this AvailableTopic.
-
+        Permissions required to subscribe to the topic
 
         :return: The requires_permissions of this AvailableTopic.
         :rtype: list[str]
@@ -119,7 +125,7 @@ class AvailableTopic(object):
     def requires_permissions(self, requires_permissions):
         """
         Sets the requires_permissions of this AvailableTopic.
-
+        Permissions required to subscribe to the topic
 
         :param requires_permissions: The requires_permissions of this AvailableTopic.
         :type: list[str]
@@ -149,6 +155,52 @@ class AvailableTopic(object):
         """
         
         self._schema = schema
+
+    @property
+    def requires_current_user(self):
+        """
+        Gets the requires_current_user of this AvailableTopic.
+        True if the topic user ID is required to match the subscribing user ID
+
+        :return: The requires_current_user of this AvailableTopic.
+        :rtype: bool
+        """
+        return self._requires_current_user
+
+    @requires_current_user.setter
+    def requires_current_user(self, requires_current_user):
+        """
+        Sets the requires_current_user of this AvailableTopic.
+        True if the topic user ID is required to match the subscribing user ID
+
+        :param requires_current_user: The requires_current_user of this AvailableTopic.
+        :type: bool
+        """
+        
+        self._requires_current_user = requires_current_user
+
+    @property
+    def requires_current_user_or_permission(self):
+        """
+        Gets the requires_current_user_or_permission of this AvailableTopic.
+        True if permissions are only required when the topic user ID does not match the subscribing user ID
+
+        :return: The requires_current_user_or_permission of this AvailableTopic.
+        :rtype: bool
+        """
+        return self._requires_current_user_or_permission
+
+    @requires_current_user_or_permission.setter
+    def requires_current_user_or_permission(self, requires_current_user_or_permission):
+        """
+        Sets the requires_current_user_or_permission of this AvailableTopic.
+        True if permissions are only required when the topic user ID does not match the subscribing user ID
+
+        :param requires_current_user_or_permission: The requires_current_user_or_permission of this AvailableTopic.
+        :type: bool
+        """
+        
+        self._requires_current_user_or_permission = requires_current_user_or_permission
 
     def to_dict(self):
         """

@@ -81,13 +81,6 @@ class ViewFilter(object):
             'survey_form_ids': 'list[str]',
             'survey_total_score': 'NumericRange',
             'survey_nps_score': 'NumericRange',
-            'show_secondary_status': 'bool',
-            'agent_duration_sort_order': 'str',
-            'waiting_duration_sort_order': 'str',
-            'interacting_duration_sort_order': 'str',
-            'agent_name': 'str',
-            'skills_list': 'list[str]',
-            'language_list': 'list[str]',
             'mos': 'NumericRange',
             'survey_question_group_score': 'NumericRange',
             'survey_promoter_score': 'NumericRange',
@@ -105,7 +98,6 @@ class ViewFilter(object):
             'is_consulted': 'bool',
             'is_consult_transferred': 'bool',
             'remote_participants': 'list[str]',
-            'status_list': 'list[str]',
             'flow_ids': 'list[str]',
             'flow_outcome_ids': 'list[str]',
             'flow_outcome_values': 'list[str]',
@@ -119,8 +111,6 @@ class ViewFilter(object):
             'has_journey_customer_id': 'bool',
             'has_journey_action_map_id': 'bool',
             'has_journey_visit_id': 'bool',
-            'oauth_client_ids': 'list[str]',
-            'api_operations': 'list[str]',
             'has_media': 'bool',
             'role_ids': 'list[str]',
             'reports_tos': 'list[str]',
@@ -169,13 +159,6 @@ class ViewFilter(object):
             'survey_form_ids': 'surveyFormIds',
             'survey_total_score': 'surveyTotalScore',
             'survey_nps_score': 'surveyNpsScore',
-            'show_secondary_status': 'showSecondaryStatus',
-            'agent_duration_sort_order': 'agentDurationSortOrder',
-            'waiting_duration_sort_order': 'waitingDurationSortOrder',
-            'interacting_duration_sort_order': 'interactingDurationSortOrder',
-            'agent_name': 'agentName',
-            'skills_list': 'skillsList',
-            'language_list': 'languageList',
             'mos': 'mos',
             'survey_question_group_score': 'surveyQuestionGroupScore',
             'survey_promoter_score': 'surveyPromoterScore',
@@ -193,7 +176,6 @@ class ViewFilter(object):
             'is_consulted': 'isConsulted',
             'is_consult_transferred': 'isConsultTransferred',
             'remote_participants': 'remoteParticipants',
-            'status_list': 'statusList',
             'flow_ids': 'flowIds',
             'flow_outcome_ids': 'flowOutcomeIds',
             'flow_outcome_values': 'flowOutcomeValues',
@@ -207,8 +189,6 @@ class ViewFilter(object):
             'has_journey_customer_id': 'hasJourneyCustomerId',
             'has_journey_action_map_id': 'hasJourneyActionMapId',
             'has_journey_visit_id': 'hasJourneyVisitId',
-            'oauth_client_ids': 'oauthClientIds',
-            'api_operations': 'apiOperations',
             'has_media': 'hasMedia',
             'role_ids': 'roleIds',
             'reports_tos': 'reportsTos',
@@ -256,13 +236,6 @@ class ViewFilter(object):
         self._survey_form_ids = None
         self._survey_total_score = None
         self._survey_nps_score = None
-        self._show_secondary_status = None
-        self._agent_duration_sort_order = None
-        self._waiting_duration_sort_order = None
-        self._interacting_duration_sort_order = None
-        self._agent_name = None
-        self._skills_list = None
-        self._language_list = None
         self._mos = None
         self._survey_question_group_score = None
         self._survey_promoter_score = None
@@ -280,7 +253,6 @@ class ViewFilter(object):
         self._is_consulted = None
         self._is_consult_transferred = None
         self._remote_participants = None
-        self._status_list = None
         self._flow_ids = None
         self._flow_outcome_ids = None
         self._flow_outcome_values = None
@@ -294,8 +266,6 @@ class ViewFilter(object):
         self._has_journey_customer_id = None
         self._has_journey_action_map_id = None
         self._has_journey_visit_id = None
-        self._oauth_client_ids = None
-        self._api_operations = None
         self._has_media = None
         self._role_ids = None
         self._reports_tos = None
@@ -1245,179 +1215,6 @@ class ViewFilter(object):
         self._survey_nps_score = survey_nps_score
 
     @property
-    def show_secondary_status(self):
-        """
-        Gets the show_secondary_status of this ViewFilter.
-        Indicates if the Secondary Status should be shown
-
-        :return: The show_secondary_status of this ViewFilter.
-        :rtype: bool
-        """
-        return self._show_secondary_status
-
-    @show_secondary_status.setter
-    def show_secondary_status(self, show_secondary_status):
-        """
-        Sets the show_secondary_status of this ViewFilter.
-        Indicates if the Secondary Status should be shown
-
-        :param show_secondary_status: The show_secondary_status of this ViewFilter.
-        :type: bool
-        """
-        
-        self._show_secondary_status = show_secondary_status
-
-    @property
-    def agent_duration_sort_order(self):
-        """
-        Gets the agent_duration_sort_order of this ViewFilter.
-        Provides the agent duration sort order
-
-        :return: The agent_duration_sort_order of this ViewFilter.
-        :rtype: str
-        """
-        return self._agent_duration_sort_order
-
-    @agent_duration_sort_order.setter
-    def agent_duration_sort_order(self, agent_duration_sort_order):
-        """
-        Sets the agent_duration_sort_order of this ViewFilter.
-        Provides the agent duration sort order
-
-        :param agent_duration_sort_order: The agent_duration_sort_order of this ViewFilter.
-        :type: str
-        """
-        allowed_values = ["ascending", "descending"]
-        if agent_duration_sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for agent_duration_sort_order -> " + agent_duration_sort_order
-            self._agent_duration_sort_order = "outdated_sdk_version"
-        else:
-            self._agent_duration_sort_order = agent_duration_sort_order
-
-    @property
-    def waiting_duration_sort_order(self):
-        """
-        Gets the waiting_duration_sort_order of this ViewFilter.
-        Provides the waiting duration sort order
-
-        :return: The waiting_duration_sort_order of this ViewFilter.
-        :rtype: str
-        """
-        return self._waiting_duration_sort_order
-
-    @waiting_duration_sort_order.setter
-    def waiting_duration_sort_order(self, waiting_duration_sort_order):
-        """
-        Sets the waiting_duration_sort_order of this ViewFilter.
-        Provides the waiting duration sort order
-
-        :param waiting_duration_sort_order: The waiting_duration_sort_order of this ViewFilter.
-        :type: str
-        """
-        allowed_values = ["ascending", "descending"]
-        if waiting_duration_sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for waiting_duration_sort_order -> " + waiting_duration_sort_order
-            self._waiting_duration_sort_order = "outdated_sdk_version"
-        else:
-            self._waiting_duration_sort_order = waiting_duration_sort_order
-
-    @property
-    def interacting_duration_sort_order(self):
-        """
-        Gets the interacting_duration_sort_order of this ViewFilter.
-        Provides the interacting duration sort order
-
-        :return: The interacting_duration_sort_order of this ViewFilter.
-        :rtype: str
-        """
-        return self._interacting_duration_sort_order
-
-    @interacting_duration_sort_order.setter
-    def interacting_duration_sort_order(self, interacting_duration_sort_order):
-        """
-        Sets the interacting_duration_sort_order of this ViewFilter.
-        Provides the interacting duration sort order
-
-        :param interacting_duration_sort_order: The interacting_duration_sort_order of this ViewFilter.
-        :type: str
-        """
-        allowed_values = ["ascending", "descending"]
-        if interacting_duration_sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for interacting_duration_sort_order -> " + interacting_duration_sort_order
-            self._interacting_duration_sort_order = "outdated_sdk_version"
-        else:
-            self._interacting_duration_sort_order = interacting_duration_sort_order
-
-    @property
-    def agent_name(self):
-        """
-        Gets the agent_name of this ViewFilter.
-        Displays the Agent name as provided by the user
-
-        :return: The agent_name of this ViewFilter.
-        :rtype: str
-        """
-        return self._agent_name
-
-    @agent_name.setter
-    def agent_name(self, agent_name):
-        """
-        Sets the agent_name of this ViewFilter.
-        Displays the Agent name as provided by the user
-
-        :param agent_name: The agent_name of this ViewFilter.
-        :type: str
-        """
-        
-        self._agent_name = agent_name
-
-    @property
-    def skills_list(self):
-        """
-        Gets the skills_list of this ViewFilter.
-        The list of skill strings as free form text
-
-        :return: The skills_list of this ViewFilter.
-        :rtype: list[str]
-        """
-        return self._skills_list
-
-    @skills_list.setter
-    def skills_list(self, skills_list):
-        """
-        Sets the skills_list of this ViewFilter.
-        The list of skill strings as free form text
-
-        :param skills_list: The skills_list of this ViewFilter.
-        :type: list[str]
-        """
-        
-        self._skills_list = skills_list
-
-    @property
-    def language_list(self):
-        """
-        Gets the language_list of this ViewFilter.
-        The list of language strings as free form text
-
-        :return: The language_list of this ViewFilter.
-        :rtype: list[str]
-        """
-        return self._language_list
-
-    @language_list.setter
-    def language_list(self, language_list):
-        """
-        Sets the language_list of this ViewFilter.
-        The list of language strings as free form text
-
-        :param language_list: The language_list of this ViewFilter.
-        :type: list[str]
-        """
-        
-        self._language_list = language_list
-
-    @property
     def mos(self):
         """
         Gets the mos of this ViewFilter.
@@ -1809,29 +1606,6 @@ class ViewFilter(object):
         self._remote_participants = remote_participants
 
     @property
-    def status_list(self):
-        """
-        Gets the status_list of this ViewFilter.
-        A list of status for the configuration view
-
-        :return: The status_list of this ViewFilter.
-        :rtype: list[str]
-        """
-        return self._status_list
-
-    @status_list.setter
-    def status_list(self, status_list):
-        """
-        Sets the status_list of this ViewFilter.
-        A list of status for the configuration view
-
-        :param status_list: The status_list of this ViewFilter.
-        :type: list[str]
-        """
-        
-        self._status_list = status_list
-
-    @property
     def flow_ids(self):
         """
         Gets the flow_ids of this ViewFilter.
@@ -2129,52 +1903,6 @@ class ViewFilter(object):
         """
         
         self._has_journey_visit_id = has_journey_visit_id
-
-    @property
-    def oauth_client_ids(self):
-        """
-        Gets the oauth_client_ids of this ViewFilter.
-        A list of OAuth client IDs
-
-        :return: The oauth_client_ids of this ViewFilter.
-        :rtype: list[str]
-        """
-        return self._oauth_client_ids
-
-    @oauth_client_ids.setter
-    def oauth_client_ids(self, oauth_client_ids):
-        """
-        Sets the oauth_client_ids of this ViewFilter.
-        A list of OAuth client IDs
-
-        :param oauth_client_ids: The oauth_client_ids of this ViewFilter.
-        :type: list[str]
-        """
-        
-        self._oauth_client_ids = oauth_client_ids
-
-    @property
-    def api_operations(self):
-        """
-        Gets the api_operations of this ViewFilter.
-        A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
-
-        :return: The api_operations of this ViewFilter.
-        :rtype: list[str]
-        """
-        return self._api_operations
-
-    @api_operations.setter
-    def api_operations(self, api_operations):
-        """
-        Sets the api_operations of this ViewFilter.
-        A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
-
-        :param api_operations: The api_operations of this ViewFilter.
-        :type: list[str]
-        """
-        
-        self._api_operations = api_operations
 
     @property
     def has_media(self):

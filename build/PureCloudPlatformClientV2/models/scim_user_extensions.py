@@ -56,7 +56,7 @@ class ScimUserExtensions(object):
     def routing_skills(self):
         """
         Gets the routing_skills of this ScimUserExtensions.
-        Routing Skills assigned to user.
+        Routing Skills assigned to user. No more than 50 skills may be assigned to a user.
 
         :return: The routing_skills of this ScimUserExtensions.
         :rtype: list[ScimUserRoutingSkill]
@@ -67,7 +67,7 @@ class ScimUserExtensions(object):
     def routing_skills(self, routing_skills):
         """
         Sets the routing_skills of this ScimUserExtensions.
-        Routing Skills assigned to user.
+        Routing Skills assigned to user. No more than 50 skills may be assigned to a user.
 
         :param routing_skills: The routing_skills of this ScimUserExtensions.
         :type: list[ScimUserRoutingSkill]
@@ -79,7 +79,7 @@ class ScimUserExtensions(object):
     def routing_languages(self):
         """
         Gets the routing_languages of this ScimUserExtensions.
-        Routing Languages assigned to user
+        Routing Languages assigned to user. No more than 50 languages may be assigned to a user.
 
         :return: The routing_languages of this ScimUserExtensions.
         :rtype: list[ScimUserRoutingLanguage]
@@ -90,7 +90,7 @@ class ScimUserExtensions(object):
     def routing_languages(self, routing_languages):
         """
         Sets the routing_languages of this ScimUserExtensions.
-        Routing Languages assigned to user
+        Routing Languages assigned to user. No more than 50 languages may be assigned to a user.
 
         :param routing_languages: The routing_languages of this ScimUserExtensions.
         :type: list[ScimUserRoutingLanguage]

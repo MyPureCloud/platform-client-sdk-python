@@ -4165,6 +4165,258 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_datatable_export_job(self, datatable_id, export_job_id, **kwargs):
+        """
+        Returns the state information about an export job
+        Returns the state information about an export job.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable_export_job(datatable_id, export_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str export_job_id: id of export job (required)
+        :return: DataTableExportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'export_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable_export_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable_export_job`")
+        # verify the required parameter 'export_job_id' is set
+        if ('export_job_id' not in params) or (params['export_job_id'] is None):
+            raise ValueError("Missing the required parameter `export_job_id` when calling `get_flows_datatable_export_job`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+        if 'export_job_id' in params:
+            path_params['exportJobId'] = params['export_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTableExportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatable_import_job(self, datatable_id, import_job_id, **kwargs):
+        """
+        Returns the state information about an import job
+        Returns the state information about an import job.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable_import_job(datatable_id, import_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param str import_job_id: id of import job (required)
+        :return: DataTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'import_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable_import_job`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `get_flows_datatable_import_job`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTableImportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_datatable_import_jobs(self, datatable_id, **kwargs):
+        """
+        Get all recent import jobs
+        Get all recent import jobs
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_datatable_import_jobs(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: EntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_datatable_import_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `get_flows_datatable_import_jobs`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/import/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_flows_datatable_row(self, datatable_id, row_id, **kwargs):
         """
         Returns a specific row for the datatable
@@ -6123,6 +6375,168 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Flow',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_flows_datatable_export_jobs(self, datatable_id, **kwargs):
+        """
+        Begin an export process for exporting all rows from a datatable
+        Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_datatable_export_jobs(datatable_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :return: DataTableExportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_datatable_export_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `post_flows_datatable_export_jobs`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/export/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTableExportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_flows_datatable_import_jobs(self, datatable_id, body, **kwargs):
+        """
+        Begin an import process for importing rows into a datatable
+        Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_datatable_import_jobs(datatable_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param DataTableImportJob body: import job information (required)
+        :return: DataTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_datatable_import_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `post_flows_datatable_import_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows_datatable_import_jobs`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/import/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTableImportJob',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

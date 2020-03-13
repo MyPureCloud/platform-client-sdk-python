@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
+|[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
 |[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
 |[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
@@ -47,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
 |[**get_routing_sms_phonenumber**](RoutingApi.html#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
 |[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
+|[**get_routing_user_utilization**](RoutingApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
 |[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the organization-wide max utilization settings.|
 |[**get_routing_wrapupcode**](RoutingApi.html#get_routing_wrapupcode) | Get details about this wrap-up code.|
 |[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
@@ -80,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_settings**](RoutingApi.html#put_routing_settings) | Update an organization&#39;s routing settings|
 |[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
+|[**put_routing_user_utilization**](RoutingApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
 |[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
@@ -484,6 +487,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_user_utilization"></a>
+
+##  delete_routing_user_utilization(user_id)
+
+
+
+Delete the user's max utilization settings and revert to the organization-wide default.
+
+
+
+Wraps DELETE /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Delete the user's max utilization settings and revert to the organization-wide default.
+    api_instance.delete_routing_user_utilization(user_id)
+except ApiException as e:
+    print "Exception when calling RoutingApi->delete_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2155,6 +2208,58 @@ except ApiException as e:
 ### Return type
 
 [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
+
+<a name="get_routing_user_utilization"></a>
+
+## [**Utilization**](Utilization.html) get_routing_user_utilization(user_id)
+
+
+
+Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+
+
+
+Wraps GET /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+* routing:utilization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+    api_response = api_instance.get_routing_user_utilization(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->get_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Utilization**](Utilization.html)
 
 <a name="get_routing_utilization"></a>
 
@@ -3906,6 +4011,59 @@ except ApiException as e:
 ### Return type
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="put_routing_user_utilization"></a>
+
+## [**Utilization**](Utilization.html) put_routing_user_utilization(user_id, body)
+
+
+
+Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+
+
+
+Wraps PUT /api/v2/routing/users/{userId}/utilization 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
+
+try:
+    # Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+    api_response = api_instance.put_routing_user_utilization(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->put_routing_user_utilization: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**Utilization**](Utilization.html)| utilization |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Utilization**](Utilization.html)
 
 <a name="put_routing_utilization"></a>
 

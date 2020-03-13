@@ -16,8 +16,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_divisions**](AuthorizationApi.html#get_authorization_divisions) | Retrieve a list of all divisions defined for the organization|
 |[**get_authorization_divisions_home**](AuthorizationApi.html#get_authorization_divisions_home) | Retrieve the home division for the organization.|
 |[**get_authorization_divisions_limit**](AuthorizationApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
-|[**get_authorization_divisionspermitted_me**](AuthorizationApi.html#get_authorization_divisionspermitted_me) | Returns whether or not current user can perform the specified action(s).|
-|[**get_authorization_divisionspermitted_subject_id**](AuthorizationApi.html#get_authorization_divisionspermitted_subject_id) | Returns whether or not specified user can perform the specified action(s).|
+|[**get_authorization_divisionspermitted_me**](AuthorizationApi.html#get_authorization_divisionspermitted_me) | Returns which divisions the current user has the given permission in.|
+|[**get_authorization_divisionspermitted_paged_me**](AuthorizationApi.html#get_authorization_divisionspermitted_paged_me) | Returns which divisions the current user has the given permission in.|
+|[**get_authorization_divisionspermitted_paged_subject_id**](AuthorizationApi.html#get_authorization_divisionspermitted_paged_subject_id) | Returns which divisions the specified user has the given permission in.|
+|[**get_authorization_divisionspermitted_subject_id**](AuthorizationApi.html#get_authorization_divisionspermitted_subject_id) | Returns which divisions the specified user has the given permission in.|
 |[**get_authorization_permissions**](AuthorizationApi.html#get_authorization_permissions) | Get all permissions.|
 |[**get_authorization_products**](AuthorizationApi.html#get_authorization_products) | Get the list of enabled products|
 |[**get_authorization_role**](AuthorizationApi.html#get_authorization_role) | Get a single organization role.|
@@ -467,11 +469,11 @@ This endpoint does not need any parameter.
 
 ## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_me(permission, name=name)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Returns which divisions the current user has the given permission in.
 
-Returns whether or not current user can perform the specified action(s).
-
-
+This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
 Wraps GET /api/v2/authorization/divisionspermitted/me 
 
@@ -495,7 +497,7 @@ permission = 'permission_example' # str | The permission string, including the o
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
-    # Returns whether or not current user can perform the specified action(s).
+    # Returns which divisions the current user has the given permission in.
     api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
     pprint(api_response)
 except ApiException as e:
@@ -515,15 +517,125 @@ except ApiException as e:
 
 [**list[AuthzDivision]**](AuthzDivision.html)
 
+<a name="get_authorization_divisionspermitted_paged_me"></a>
+
+## [**DivsPermittedEntityListing**](DivsPermittedEntityListing.html) get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
+
+
+
+Returns which divisions the current user has the given permission in.
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/paged/me 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Returns which divisions the current user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_me: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+
+<a name="get_authorization_divisionspermitted_paged_subject_id"></a>
+
+## [**DivsPermittedEntityListing**](DivsPermittedEntityListing.html) get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
+
+
+
+Returns which divisions the specified user has the given permission in.
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId} 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+permission = 'permission_example' # str | The permission string, including the object to access, e.g. routing:queue:view
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Returns which divisions the specified user has the given permission in.
+    api_response = api_instance.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **permission** | **str**| The permission string, including the object to access, e.g. routing:queue:view |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+
 <a name="get_authorization_divisionspermitted_subject_id"></a>
 
 ## [**list[AuthzDivision]**](AuthzDivision.html) get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-Returns whether or not specified user can perform the specified action(s).
+Returns which divisions the specified user has the given permission in.
 
-
+This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 
 Wraps GET /api/v2/authorization/divisionspermitted/{subjectId} 
 
@@ -548,7 +660,7 @@ permission = 'permission_example' # str | The permission string, including the o
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
-    # Returns whether or not specified user can perform the specified action(s).
+    # Returns which divisions the specified user has the given permission in.
     api_response = api_instance.get_authorization_divisionspermitted_subject_id(subject_id, permission, name=name)
     pprint(api_response)
 except ApiException as e:

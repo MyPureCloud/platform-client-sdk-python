@@ -142,12 +142,13 @@ class AuditApi(object):
         :param str transaction_id: Transaction ID (required)
         :param str cursor: Indicates where to resume query results (not required for first page)
         :param int page_size: Page size
+        :param list[str] expand: Which fields, if any, to expand
         :return: AuditQueryExecutionResultsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['transaction_id', 'cursor', 'page_size']
+        all_params = ['transaction_id', 'cursor', 'page_size', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -175,6 +176,8 @@ class AuditApi(object):
             query_params['cursor'] = params['cursor']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

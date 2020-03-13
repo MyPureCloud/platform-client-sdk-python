@@ -47,6 +47,7 @@ class AnalyticsParticipantWithoutAttributes(object):
             'external_contact_id': 'str',
             'external_organization_id': 'str',
             'flagged_reason': 'str',
+            'team_id': 'str',
             'sessions': 'list[AnalyticsSession]'
         }
 
@@ -58,6 +59,7 @@ class AnalyticsParticipantWithoutAttributes(object):
             'external_contact_id': 'externalContactId',
             'external_organization_id': 'externalOrganizationId',
             'flagged_reason': 'flaggedReason',
+            'team_id': 'teamId',
             'sessions': 'sessions'
         }
 
@@ -68,6 +70,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         self._external_contact_id = None
         self._external_organization_id = None
         self._flagged_reason = None
+        self._team_id = None
         self._sessions = None
 
     @property
@@ -238,6 +241,29 @@ class AnalyticsParticipantWithoutAttributes(object):
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason
+
+    @property
+    def team_id(self):
+        """
+        Gets the team_id of this AnalyticsParticipantWithoutAttributes.
+        The team id the user is a member of
+
+        :return: The team_id of this AnalyticsParticipantWithoutAttributes.
+        :rtype: str
+        """
+        return self._team_id
+
+    @team_id.setter
+    def team_id(self, team_id):
+        """
+        Sets the team_id of this AnalyticsParticipantWithoutAttributes.
+        The team id the user is a member of
+
+        :param team_id: The team_id of this AnalyticsParticipantWithoutAttributes.
+        :type: str
+        """
+        
+        self._team_id = team_id
 
     @property
     def sessions(self):

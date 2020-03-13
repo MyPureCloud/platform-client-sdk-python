@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_license_toggle**](LicenseApi.html#get_license_toggle) | Get PureCloud license feature toggle value.|
 |[**get_license_user**](LicenseApi.html#get_license_user) | Get licenses for specified user.|
 |[**get_license_users**](LicenseApi.html#get_license_users) | Get a page of users and their licenses|
+|[**post_license_infer**](LicenseApi.html#post_license_infer) | Get a list of licenses inferred based on a list of roleIds|
 |[**post_license_organization**](LicenseApi.html#post_license_organization) | Update the organization&#39;s license assignments in a batch.|
 |[**post_license_toggle**](LicenseApi.html#post_license_toggle) | Switch PureCloud license feature toggle value.|
 |[**post_license_users**](LicenseApi.html#post_license_users) | Fetch user licenses in a batch.|
@@ -269,6 +270,56 @@ except ApiException as e:
 ### Return type
 
 [**UserLicensesEntityListing**](UserLicensesEntityListing.html)
+
+<a name="post_license_infer"></a>
+
+## list[str]** post_license_infer(body=body)
+
+
+
+Get a list of licenses inferred based on a list of roleIds
+
+
+
+Wraps POST /api/v2/license/infer 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LicenseApi()
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | The roleIds to use while inferring licenses (optional)
+
+try:
+    # Get a list of licenses inferred based on a list of roleIds
+    api_response = api_instance.post_license_infer(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling LicenseApi->post_license_infer: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **list[str]**| The roleIds to use while inferring licenses | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**list[str]**
 
 <a name="post_license_organization"></a>
 
