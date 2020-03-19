@@ -55,6 +55,7 @@ class ObservationValue(object):
             'address_to': 'str',
             'ani': 'str',
             'dnis': 'str',
+            'team_id': 'str',
             'scored_agents': 'list[AnalyticsScoredAgent]'
         }
 
@@ -74,6 +75,7 @@ class ObservationValue(object):
             'address_to': 'addressTo',
             'ani': 'ani',
             'dnis': 'dnis',
+            'team_id': 'teamId',
             'scored_agents': 'scoredAgents'
         }
 
@@ -92,6 +94,7 @@ class ObservationValue(object):
         self._address_to = None
         self._ani = None
         self._dnis = None
+        self._team_id = None
         self._scored_agents = None
 
     @property
@@ -442,6 +445,29 @@ class ObservationValue(object):
         """
         
         self._dnis = dnis
+
+    @property
+    def team_id(self):
+        """
+        Gets the team_id of this ObservationValue.
+        The team Id the user is a member of
+
+        :return: The team_id of this ObservationValue.
+        :rtype: str
+        """
+        return self._team_id
+
+    @team_id.setter
+    def team_id(self, team_id):
+        """
+        Sets the team_id of this ObservationValue.
+        The team Id the user is a member of
+
+        :param team_id: The team_id of this ObservationValue.
+        :type: str
+        """
+        
+        self._team_id = team_id
 
     @property
     def scored_agents(self):

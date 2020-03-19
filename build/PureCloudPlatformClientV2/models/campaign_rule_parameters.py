@@ -155,7 +155,7 @@ class CampaignRuleParameters(object):
         :param dialing_mode: The dialing_mode of this CampaignRuleParameters.
         :type: str
         """
-        allowed_values = ["agentless", "preview", "power", "predictive", "progressive"]
+        allowed_values = ["agentless", "preview", "power", "predictive", "progressive", "external"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for dialing_mode -> " + dialing_mode
             self._dialing_mode = "outdated_sdk_version"

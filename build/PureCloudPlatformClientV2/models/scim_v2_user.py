@@ -49,7 +49,6 @@ class ScimV2User(object):
             'title': 'str',
             'phone_numbers': 'list[ScimPhoneNumber]',
             'emails': 'list[ScimEmail]',
-            'photos': 'list[Photo]',
             'external_id': 'str',
             'groups': 'list[ScimV2GroupReference]',
             'roles': 'list[ScimUserRole]',
@@ -68,7 +67,6 @@ class ScimV2User(object):
             'title': 'title',
             'phone_numbers': 'phoneNumbers',
             'emails': 'emails',
-            'photos': 'photos',
             'external_id': 'externalId',
             'groups': 'groups',
             'roles': 'roles',
@@ -86,7 +84,6 @@ class ScimV2User(object):
         self._title = None
         self._phone_numbers = None
         self._emails = None
-        self._photos = None
         self._external_id = None
         self._groups = None
         self._roles = None
@@ -300,29 +297,6 @@ class ScimV2User(object):
         """
         
         self._emails = emails
-
-    @property
-    def photos(self):
-        """
-        Gets the photos of this ScimV2User.
-        The list of the user's photos.
-
-        :return: The photos of this ScimV2User.
-        :rtype: list[Photo]
-        """
-        return self._photos
-
-    @photos.setter
-    def photos(self, photos):
-        """
-        Sets the photos of this ScimV2User.
-        The list of the user's photos.
-
-        :param photos: The photos of this ScimV2User.
-        :type: list[Photo]
-        """
-        
-        self._photos = photos
 
     @property
     def external_id(self):

@@ -15,7 +15,6 @@ title: ScimV2CreateUser
 | **title** | **str** | The user&#39;s title. | [optional] |
 | **phone_numbers** | [**list[ScimPhoneNumber]**](ScimPhoneNumber.html) | The list of the user&#39;s phone numbers. | [optional] |
 | **emails** | [**list[ScimEmail]**](ScimEmail.html) | The list of the user&#39;s email addresses. | [optional] |
-| **photos** | [**list[Photo]**](Photo.html) | The list of the user&#39;s photos. | [optional] |
 | **external_id** | **str** | The external ID of the user. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;. | [optional] |
 | **groups** | [**list[ScimV2GroupReference]**](ScimV2GroupReference.html) | The list of groups that the user is a member of. | [optional] |
 | **roles** | [**list[ScimUserRole]**](ScimUserRole.html) | The list of roles assigned to the user. | [optional] |

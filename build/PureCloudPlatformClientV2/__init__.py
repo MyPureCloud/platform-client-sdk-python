@@ -1061,7 +1061,6 @@ from .models.phone_number_column import PhoneNumberColumn
 from .models.phone_number_status import PhoneNumberStatus
 from .models.phone_status import PhoneStatus
 from .models.phones_reboot import PhonesReboot
-from .models.photo import Photo
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
 from .models.planning_period_settings import PlanningPeriodSettings
@@ -1745,6 +1744,10 @@ from .models.week_schedule_list_response import WeekScheduleListResponse
 from .models.week_schedule_reference import WeekScheduleReference
 from .models.week_schedule_response import WeekScheduleResponse
 from .models.week_shift_trade_matches_summary_response import WeekShiftTradeMatchesSummaryResponse
+from .models.wem_coaching_appointment_topic_coaching_appointment_conversation import WemCoachingAppointmentTopicCoachingAppointmentConversation
+from .models.wem_coaching_appointment_topic_coaching_appointment_document import WemCoachingAppointmentTopicCoachingAppointmentDocument
+from .models.wem_coaching_appointment_topic_coaching_appointment_notification import WemCoachingAppointmentTopicCoachingAppointmentNotification
+from .models.wem_coaching_appointment_topic_user_reference import WemCoachingAppointmentTopicUserReference
 from .models.wfm_abandon_rate import WfmAbandonRate
 from .models.wfm_agent import WfmAgent
 from .models.wfm_agent_schedule_update_topic_user_reference import WfmAgentScheduleUpdateTopicUserReference
