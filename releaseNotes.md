@@ -3,7 +3,7 @@ Platform API version: 3829
 
 # SDK Changes
 
-* Fixed region host enums for new regions
+* API-4992 Add authenticated proxy support
 
 # Major Changes (0 changes)
 

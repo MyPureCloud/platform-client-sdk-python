@@ -104,6 +104,12 @@ class Configuration(object):
         # proxy
         self.proxy = None
 
+        # proxy username
+        self.proxy_username = None
+
+        # proxy password
+        self.proxy_password = None
+
     @property
     def logger_file(self):
         """
@@ -249,5 +255,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 79.0.1".\
+               "SDK Package Version: 79.1.0".\
                format(env=sys.platform, pyversion=sys.version)

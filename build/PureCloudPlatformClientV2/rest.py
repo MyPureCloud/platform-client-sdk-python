@@ -97,18 +97,24 @@ class RESTClientObject(object):
         # key file
         key_file = Configuration().key_file
 
-       # proxy
+        # proxy
         proxy = Configuration().proxy
+        proxy_username = Configuration().proxy_username
+        proxy_password = Configuration().proxy_password
 
         # https pool manager
         if proxy:
+            headers = None
+            if proxy_username and proxy_password:
+                headers = urllib3.make_headers(proxy_basic_auth=proxy_username + ':' + proxy_password)
             self.pool_manager = urllib3.ProxyManager(
                 num_pools=pools_size,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
                 cert_file=cert_file,
                 key_file=key_file,
-                proxy_url=proxy
+                proxy_url=proxy,
+                proxy_headers=headers
             )
         else:
             self.pool_manager = urllib3.PoolManager(

@@ -72,6 +72,13 @@ If connecting to a proxy server, set the the address of your proxy server as fol
 PureCloudPlatformClientV2.configuration.proxy = 'YOUR_PROXY_URL'
 ```
 
+If your proxy server requires authentication, set the username and password as follows:
+
+```{"language":"python"}
+PureCloudPlatformClientV2.configuration.proxy_username = 'YOUR_PROXY_USERNAME'
+PureCloudPlatformClientV2.configuration.proxy_password = 'YOUR_PROXY_PASSWORD'
+```
+
 The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is given.
 
 ### Making Requests
