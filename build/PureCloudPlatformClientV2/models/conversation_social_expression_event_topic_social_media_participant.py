@@ -56,6 +56,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'ConversationSocialExpressionEventTopicUriReference',
             'queue': 'ConversationSocialExpressionEventTopicUriReference',
+            'team': 'ConversationSocialExpressionEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ConversationSocialExpressionEventTopicErrorBody',
             'script': 'ConversationSocialExpressionEventTopicUriReference',
@@ -96,6 +97,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -135,6 +137,7 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -536,6 +539,29 @@ class ConversationSocialExpressionEventTopicSocialMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+
+
+        :return: The team of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+        :rtype: ConversationSocialExpressionEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+
+
+        :param team: The team of this ConversationSocialExpressionEventTopicSocialMediaParticipant.
+        :type: ConversationSocialExpressionEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

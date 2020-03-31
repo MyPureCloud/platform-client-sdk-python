@@ -56,6 +56,7 @@ class ChatMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'DomainEntityRef',
             'queue': 'DomainEntityRef',
+            'team': 'DomainEntityRef',
             'attributes': 'dict(str, str)',
             'error_info': 'ErrorInfo',
             'script': 'DomainEntityRef',
@@ -93,6 +94,7 @@ class ChatMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -129,6 +131,7 @@ class ChatMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -527,6 +530,29 @@ class ChatMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ChatMediaParticipant.
+        The PureCloud team for this participant.
+
+        :return: The team of this ChatMediaParticipant.
+        :rtype: DomainEntityRef
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ChatMediaParticipant.
+        The PureCloud team for this participant.
+
+        :param team: The team of this ChatMediaParticipant.
+        :type: DomainEntityRef
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

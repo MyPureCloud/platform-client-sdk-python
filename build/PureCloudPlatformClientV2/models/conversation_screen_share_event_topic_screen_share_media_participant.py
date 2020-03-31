@@ -56,6 +56,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'ConversationScreenShareEventTopicUriReference',
             'queue': 'ConversationScreenShareEventTopicUriReference',
+            'team': 'ConversationScreenShareEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ConversationScreenShareEventTopicErrorBody',
             'script': 'ConversationScreenShareEventTopicUriReference',
@@ -95,6 +96,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -133,6 +135,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -533,6 +536,29 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The team of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: ConversationScreenShareEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param team: The team of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: ConversationScreenShareEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

@@ -45,11 +45,11 @@ class ManagementUnitListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
-            'self_uri': 'str',
             'next_uri': 'str',
-            'previous_uri': 'str',
+            'page_count': 'int',
             'last_uri': 'str',
-            'page_count': 'int'
+            'previous_uri': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -58,11 +58,11 @@ class ManagementUnitListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
-            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'previous_uri': 'previousUri',
+            'page_count': 'pageCount',
             'last_uri': 'lastUri',
-            'page_count': 'pageCount'
+            'previous_uri': 'previousUri',
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
@@ -70,11 +70,11 @@ class ManagementUnitListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
-        self._self_uri = None
         self._next_uri = None
-        self._previous_uri = None
-        self._last_uri = None
         self._page_count = None
+        self._last_uri = None
+        self._previous_uri = None
+        self._self_uri = None
 
     @property
     def entities(self):
@@ -192,29 +192,6 @@ class ManagementUnitListing(object):
         self._first_uri = first_uri
 
     @property
-    def self_uri(self):
-        """
-        Gets the self_uri of this ManagementUnitListing.
-
-
-        :return: The self_uri of this ManagementUnitListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri):
-        """
-        Sets the self_uri of this ManagementUnitListing.
-
-
-        :param self_uri: The self_uri of this ManagementUnitListing.
-        :type: str
-        """
-        
-        self._self_uri = self_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this ManagementUnitListing.
@@ -238,27 +215,27 @@ class ManagementUnitListing(object):
         self._next_uri = next_uri
 
     @property
-    def previous_uri(self):
+    def page_count(self):
         """
-        Gets the previous_uri of this ManagementUnitListing.
+        Gets the page_count of this ManagementUnitListing.
 
 
-        :return: The previous_uri of this ManagementUnitListing.
-        :rtype: str
+        :return: The page_count of this ManagementUnitListing.
+        :rtype: int
         """
-        return self._previous_uri
+        return self._page_count
 
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
+    @page_count.setter
+    def page_count(self, page_count):
         """
-        Sets the previous_uri of this ManagementUnitListing.
+        Sets the page_count of this ManagementUnitListing.
 
 
-        :param previous_uri: The previous_uri of this ManagementUnitListing.
-        :type: str
+        :param page_count: The page_count of this ManagementUnitListing.
+        :type: int
         """
         
-        self._previous_uri = previous_uri
+        self._page_count = page_count
 
     @property
     def last_uri(self):
@@ -284,27 +261,50 @@ class ManagementUnitListing(object):
         self._last_uri = last_uri
 
     @property
-    def page_count(self):
+    def previous_uri(self):
         """
-        Gets the page_count of this ManagementUnitListing.
+        Gets the previous_uri of this ManagementUnitListing.
 
 
-        :return: The page_count of this ManagementUnitListing.
-        :rtype: int
+        :return: The previous_uri of this ManagementUnitListing.
+        :rtype: str
         """
-        return self._page_count
+        return self._previous_uri
 
-    @page_count.setter
-    def page_count(self, page_count):
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
         """
-        Sets the page_count of this ManagementUnitListing.
+        Sets the previous_uri of this ManagementUnitListing.
 
 
-        :param page_count: The page_count of this ManagementUnitListing.
-        :type: int
+        :param previous_uri: The previous_uri of this ManagementUnitListing.
+        :type: str
         """
         
-        self._page_count = page_count
+        self._previous_uri = previous_uri
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this ManagementUnitListing.
+
+
+        :return: The self_uri of this ManagementUnitListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this ManagementUnitListing.
+
+
+        :param self_uri: The self_uri of this ManagementUnitListing.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

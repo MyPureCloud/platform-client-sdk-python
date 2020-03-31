@@ -56,6 +56,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'ConversationCallbackEventTopicUriReference',
             'queue': 'ConversationCallbackEventTopicUriReference',
+            'team': 'ConversationCallbackEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ConversationCallbackEventTopicErrorBody',
             'script': 'ConversationCallbackEventTopicUriReference',
@@ -100,6 +101,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -143,6 +145,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -548,6 +551,29 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The team of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: ConversationCallbackEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param team: The team of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: ConversationCallbackEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

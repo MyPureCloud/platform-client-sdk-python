@@ -232,7 +232,7 @@ Get interaction stats alert list.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:view
 

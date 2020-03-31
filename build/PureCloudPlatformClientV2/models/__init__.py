@@ -1309,6 +1309,7 @@ from .queue_observation_query_response import QueueObservationQueryResponse
 from .queue_reference import QueueReference
 from .queue_request import QueueRequest
 from .queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
+from .queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .reaction import Reaction
 from .recall_entry import RecallEntry

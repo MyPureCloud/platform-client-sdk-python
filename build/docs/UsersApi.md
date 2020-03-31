@@ -12,7 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_routing_user_utilization**](UsersApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
-|[**delete_user_roles**](UsersApi.html#delete_user_roles) | Removes all the roles from the user.|
 |[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
@@ -287,56 +286,6 @@ except ApiException as e:
 ### Return type
 
 [**Empty**](Empty.html)
-
-<a name="delete_user_roles"></a>
-
-##  delete_user_roles(user_id)
-
-
-
-Removes all the roles from the user.
-
-
-
-Wraps DELETE /api/v2/users/{userId}/roles 
-
-Requires ANY permissions: 
-
-* authorization:grant:delete
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.UsersApi()
-user_id = 'user_id_example' # str | User ID
-
-try:
-    # Removes all the roles from the user.
-    api_instance.delete_user_roles(user_id)
-except ApiException as e:
-    print "Exception when calling UsersApi->delete_user_roles: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="delete_user_routinglanguage"></a>
 

@@ -56,6 +56,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'QueueConversationCallbackEventTopicUriReference',
             'queue': 'QueueConversationCallbackEventTopicUriReference',
+            'team': 'QueueConversationCallbackEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'QueueConversationCallbackEventTopicErrorBody',
             'script': 'QueueConversationCallbackEventTopicUriReference',
@@ -100,6 +101,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -143,6 +145,7 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -548,6 +551,29 @@ class QueueConversationCallbackEventTopicCallbackMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The team of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: QueueConversationCallbackEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param team: The team of this QueueConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: QueueConversationCallbackEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

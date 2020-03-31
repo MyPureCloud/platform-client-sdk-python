@@ -51,6 +51,7 @@ class ParticipantBasic(object):
             'external_organization_id': 'str',
             'queue_id': 'str',
             'group_id': 'str',
+            'team_id': 'str',
             'queue_name': 'str',
             'purpose': 'str',
             'participant_type': 'str',
@@ -97,6 +98,7 @@ class ParticipantBasic(object):
             'external_organization_id': 'externalOrganizationId',
             'queue_id': 'queueId',
             'group_id': 'groupId',
+            'team_id': 'teamId',
             'queue_name': 'queueName',
             'purpose': 'purpose',
             'participant_type': 'participantType',
@@ -142,6 +144,7 @@ class ParticipantBasic(object):
         self._external_organization_id = None
         self._queue_id = None
         self._group_id = None
+        self._team_id = None
         self._queue_name = None
         self._purpose = None
         self._participant_type = None
@@ -427,6 +430,29 @@ class ParticipantBasic(object):
         """
         
         self._group_id = group_id
+
+    @property
+    def team_id(self):
+        """
+        Gets the team_id of this ParticipantBasic.
+        The team id that this participant is a member of when added to the conversation.
+
+        :return: The team_id of this ParticipantBasic.
+        :rtype: str
+        """
+        return self._team_id
+
+    @team_id.setter
+    def team_id(self, team_id):
+        """
+        Sets the team_id of this ParticipantBasic.
+        The team id that this participant is a member of when added to the conversation.
+
+        :param team_id: The team_id of this ParticipantBasic.
+        :type: str
+        """
+        
+        self._team_id = team_id
 
     @property
     def queue_name(self):

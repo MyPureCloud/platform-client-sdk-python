@@ -91,7 +91,8 @@ class AnalyticsSession(object):
             'protocol_call_id': 'str',
             'provider': 'str',
             'remote': 'str',
-            'media_count': 'int'
+            'media_count': 'int',
+            'flow_out_type': 'str'
         }
 
         self.attribute_map = {
@@ -146,7 +147,8 @@ class AnalyticsSession(object):
             'protocol_call_id': 'protocolCallId',
             'provider': 'provider',
             'remote': 'remote',
-            'media_count': 'mediaCount'
+            'media_count': 'mediaCount',
+            'flow_out_type': 'flowOutType'
         }
 
         self._media_type = None
@@ -201,6 +203,7 @@ class AnalyticsSession(object):
         self._provider = None
         self._remote = None
         self._media_count = None
+        self._flow_out_type = None
 
     @property
     def media_type(self):
@@ -1409,6 +1412,29 @@ class AnalyticsSession(object):
         """
         
         self._media_count = media_count
+
+    @property
+    def flow_out_type(self):
+        """
+        Gets the flow_out_type of this AnalyticsSession.
+        Type of flow out that occurred, e.g. voicemail, callback, or acd
+
+        :return: The flow_out_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._flow_out_type
+
+    @flow_out_type.setter
+    def flow_out_type(self, flow_out_type):
+        """
+        Sets the flow_out_type of this AnalyticsSession.
+        Type of flow out that occurred, e.g. voicemail, callback, or acd
+
+        :param flow_out_type: The flow_out_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._flow_out_type = flow_out_type
 
     def to_dict(self):
         """

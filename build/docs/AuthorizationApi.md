@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_authorization_division**](AuthorizationApi.html#delete_authorization_division) | Delete a division.|
 |[**delete_authorization_role**](AuthorizationApi.html#delete_authorization_role) | Delete an organization role.|
 |[**delete_authorization_subject_division_role**](AuthorizationApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
-|[**delete_user_roles**](AuthorizationApi.html#delete_user_roles) | Removes all the roles from the user.|
 |[**get_authorization_division**](AuthorizationApi.html#get_authorization_division) | Returns an authorization division.|
 |[**get_authorization_divisions**](AuthorizationApi.html#get_authorization_divisions) | Retrieve a list of all divisions defined for the organization|
 |[**get_authorization_divisions_home**](AuthorizationApi.html#get_authorization_divisions_home) | Retrieve the home division for the organization.|
@@ -199,56 +198,6 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division of the grant |  |
 | **role_id** | **str**| the id of the role of the grant |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_user_roles"></a>
-
-##  delete_user_roles(user_id)
-
-
-
-Removes all the roles from the user.
-
-
-
-Wraps DELETE /api/v2/users/{userId}/roles 
-
-Requires ANY permissions: 
-
-* authorization:grant:delete
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AuthorizationApi()
-user_id = 'user_id_example' # str | User ID
-
-try:
-    # Removes all the roles from the user.
-    api_instance.delete_user_roles(user_id)
-except ApiException as e:
-    print "Exception when calling AuthorizationApi->delete_user_roles: %s\n" % e
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -56,6 +56,7 @@ class CallbackMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'DomainEntityRef',
             'queue': 'DomainEntityRef',
+            'team': 'DomainEntityRef',
             'attributes': 'dict(str, str)',
             'error_info': 'ErrorInfo',
             'script': 'DomainEntityRef',
@@ -99,6 +100,7 @@ class CallbackMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -141,6 +143,7 @@ class CallbackMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -545,6 +548,29 @@ class CallbackMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this CallbackMediaParticipant.
+        The PureCloud team for this participant.
+
+        :return: The team of this CallbackMediaParticipant.
+        :rtype: DomainEntityRef
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this CallbackMediaParticipant.
+        The PureCloud team for this participant.
+
+        :param team: The team of this CallbackMediaParticipant.
+        :type: DomainEntityRef
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

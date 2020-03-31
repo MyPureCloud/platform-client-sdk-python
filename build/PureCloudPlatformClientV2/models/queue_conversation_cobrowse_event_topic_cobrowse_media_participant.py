@@ -56,6 +56,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'QueueConversationCobrowseEventTopicUriReference',
             'queue': 'QueueConversationCobrowseEventTopicUriReference',
+            'team': 'QueueConversationCobrowseEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'QueueConversationCobrowseEventTopicErrorBody',
             'script': 'QueueConversationCobrowseEventTopicUriReference',
@@ -97,6 +98,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -137,6 +139,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -539,6 +542,29 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The team of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: QueueConversationCobrowseEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param team: The team of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: QueueConversationCobrowseEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

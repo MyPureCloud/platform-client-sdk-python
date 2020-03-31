@@ -56,6 +56,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'ConversationChatEventTopicUriReference',
             'queue': 'ConversationChatEventTopicUriReference',
+            'team': 'ConversationChatEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ConversationChatEventTopicErrorBody',
             'script': 'ConversationChatEventTopicUriReference',
@@ -94,6 +95,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -131,6 +133,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -530,6 +533,29 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The team of this ConversationChatEventTopicChatMediaParticipant.
+        :rtype: ConversationChatEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :param team: The team of this ConversationChatEventTopicChatMediaParticipant.
+        :type: ConversationChatEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

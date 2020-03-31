@@ -49,6 +49,7 @@ class ConversationEventTopicParticipant(object):
             'name': 'str',
             'queue_id': 'str',
             'group_id': 'str',
+            'team_id': 'str',
             'purpose': 'str',
             'consult_participant_id': 'str',
             'address': 'str',
@@ -87,6 +88,7 @@ class ConversationEventTopicParticipant(object):
             'name': 'name',
             'queue_id': 'queueId',
             'group_id': 'groupId',
+            'team_id': 'teamId',
             'purpose': 'purpose',
             'consult_participant_id': 'consultParticipantId',
             'address': 'address',
@@ -124,6 +126,7 @@ class ConversationEventTopicParticipant(object):
         self._name = None
         self._queue_id = None
         self._group_id = None
+        self._team_id = None
         self._purpose = None
         self._consult_participant_id = None
         self._address = None
@@ -357,6 +360,29 @@ class ConversationEventTopicParticipant(object):
         """
         
         self._group_id = group_id
+
+    @property
+    def team_id(self):
+        """
+        Gets the team_id of this ConversationEventTopicParticipant.
+
+
+        :return: The team_id of this ConversationEventTopicParticipant.
+        :rtype: str
+        """
+        return self._team_id
+
+    @team_id.setter
+    def team_id(self, team_id):
+        """
+        Sets the team_id of this ConversationEventTopicParticipant.
+
+
+        :param team_id: The team_id of this ConversationEventTopicParticipant.
+        :type: str
+        """
+        
+        self._team_id = team_id
 
     @property
     def purpose(self):

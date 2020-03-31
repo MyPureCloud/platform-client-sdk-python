@@ -56,6 +56,7 @@ class ConversationEmailEventTopicEmailMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'ConversationEmailEventTopicUriReference',
             'queue': 'ConversationEmailEventTopicUriReference',
+            'team': 'ConversationEmailEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'ConversationEmailEventTopicErrorBody',
             'script': 'ConversationEmailEventTopicUriReference',
@@ -98,6 +99,7 @@ class ConversationEmailEventTopicEmailMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -139,6 +141,7 @@ class ConversationEmailEventTopicEmailMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -542,6 +545,29 @@ class ConversationEmailEventTopicEmailMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this ConversationEmailEventTopicEmailMediaParticipant.
+
+
+        :return: The team of this ConversationEmailEventTopicEmailMediaParticipant.
+        :rtype: ConversationEmailEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this ConversationEmailEventTopicEmailMediaParticipant.
+
+
+        :param team: The team of this ConversationEmailEventTopicEmailMediaParticipant.
+        :type: ConversationEmailEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

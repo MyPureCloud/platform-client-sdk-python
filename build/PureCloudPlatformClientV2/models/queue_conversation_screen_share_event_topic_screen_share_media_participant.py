@@ -56,6 +56,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'wrapup_prompt': 'str',
             'user': 'QueueConversationScreenShareEventTopicUriReference',
             'queue': 'QueueConversationScreenShareEventTopicUriReference',
+            'team': 'QueueConversationScreenShareEventTopicUriReference',
             'attributes': 'dict(str, str)',
             'error_info': 'QueueConversationScreenShareEventTopicErrorBody',
             'script': 'QueueConversationScreenShareEventTopicUriReference',
@@ -95,6 +96,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'wrapup_prompt': 'wrapupPrompt',
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'attributes': 'attributes',
             'error_info': 'errorInfo',
             'script': 'script',
@@ -133,6 +135,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._wrapup_prompt = None
         self._user = None
         self._queue = None
+        self._team = None
         self._attributes = None
         self._error_info = None
         self._script = None
@@ -533,6 +536,29 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         """
         
         self._queue = queue
+
+    @property
+    def team(self):
+        """
+        Gets the team of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The team of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: QueueConversationScreenShareEventTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param team: The team of this QueueConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: QueueConversationScreenShareEventTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def attributes(self):

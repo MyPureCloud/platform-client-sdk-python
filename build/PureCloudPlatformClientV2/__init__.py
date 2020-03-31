@@ -1309,6 +1309,7 @@ from .models.queue_observation_query_response import QueueObservationQueryRespon
 from .models.queue_reference import QueueReference
 from .models.queue_request import QueueRequest
 from .models.queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
+from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.reaction import Reaction
 from .models.recall_entry import RecallEntry

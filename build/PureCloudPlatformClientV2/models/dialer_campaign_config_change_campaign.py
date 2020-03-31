@@ -72,6 +72,7 @@ class DialerCampaignConfigChangeCampaign(object):
             'priority': 'int',
             'contact_list_filters': 'list[DialerCampaignConfigChangeUriReference]',
             'division': 'DialerCampaignConfigChangeUriReference',
+            'agent_owned_column': 'str',
             'additional_properties': 'object'
         }
 
@@ -108,6 +109,7 @@ class DialerCampaignConfigChangeCampaign(object):
             'priority': 'priority',
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
+            'agent_owned_column': 'agentOwnedColumn',
             'additional_properties': 'additionalProperties'
         }
 
@@ -143,6 +145,7 @@ class DialerCampaignConfigChangeCampaign(object):
         self._priority = None
         self._contact_list_filters = None
         self._division = None
+        self._agent_owned_column = None
         self._additional_properties = None
 
     @property
@@ -888,6 +891,29 @@ class DialerCampaignConfigChangeCampaign(object):
         """
         
         self._division = division
+
+    @property
+    def agent_owned_column(self):
+        """
+        Gets the agent_owned_column of this DialerCampaignConfigChangeCampaign.
+
+
+        :return: The agent_owned_column of this DialerCampaignConfigChangeCampaign.
+        :rtype: str
+        """
+        return self._agent_owned_column
+
+    @agent_owned_column.setter
+    def agent_owned_column(self, agent_owned_column):
+        """
+        Sets the agent_owned_column of this DialerCampaignConfigChangeCampaign.
+
+
+        :param agent_owned_column: The agent_owned_column of this DialerCampaignConfigChangeCampaign.
+        :type: str
+        """
+        
+        self._agent_owned_column = agent_owned_column
 
     @property
     def additional_properties(self):
