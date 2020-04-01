@@ -67,6 +67,7 @@ class User(object):
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
             'groups': 'list[Group]',
+            'team': 'Team',
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
@@ -103,6 +104,7 @@ class User(object):
             'profile_skills': 'profileSkills',
             'locations': 'locations',
             'groups': 'groups',
+            'team': 'team',
             'skills': 'skills',
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
@@ -138,6 +140,7 @@ class User(object):
         self._profile_skills = None
         self._locations = None
         self._groups = None
+        self._team = None
         self._skills = None
         self._languages = None
         self._acd_auto_answer = None
@@ -769,6 +772,29 @@ class User(object):
         """
         
         self._groups = groups
+
+    @property
+    def team(self):
+        """
+        Gets the team of this User.
+        The team the user is a member of
+
+        :return: The team of this User.
+        :rtype: Team
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this User.
+        The team the user is a member of
+
+        :param team: The team of this User.
+        :type: Team
+        """
+        
+        self._team = team
 
     @property
     def skills(self):

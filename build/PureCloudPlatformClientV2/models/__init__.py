@@ -1551,6 +1551,7 @@ from .system_prompt_entity_listing import SystemPromptEntityListing
 from .tag_query_request import TagQueryRequest
 from .tag_value import TagValue
 from .tag_value_entity_listing import TagValueEntityListing
+from .team import Team
 from .term_attribute import TermAttribute
 from .test_execution_operation_result import TestExecutionOperationResult
 from .test_execution_result import TestExecutionResult

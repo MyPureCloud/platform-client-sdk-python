@@ -1551,6 +1551,7 @@ from .models.system_prompt_entity_listing import SystemPromptEntityListing
 from .models.tag_query_request import TagQueryRequest
 from .models.tag_value import TagValue
 from .models.tag_value_entity_listing import TagValueEntityListing
+from .models.team import Team
 from .models.term_attribute import TermAttribute
 from .models.test_execution_operation_result import TestExecutionOperationResult
 from .models.test_execution_result import TestExecutionResult
