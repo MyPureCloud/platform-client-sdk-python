@@ -76,6 +76,7 @@ class ViewFilter(object):
             'evaluator_ids': 'list[str]',
             'transferred': 'bool',
             'abandoned': 'bool',
+            'answered': 'bool',
             'message_types': 'list[str]',
             'division_ids': 'list[str]',
             'survey_form_ids': 'list[str]',
@@ -114,7 +115,9 @@ class ViewFilter(object):
             'has_media': 'bool',
             'role_ids': 'list[str]',
             'reports_tos': 'list[str]',
-            'location_ids': 'list[str]'
+            'location_ids': 'list[str]',
+            'flow_out_types': 'list[str]',
+            'provider_list': 'list[str]'
         }
 
         self.attribute_map = {
@@ -154,6 +157,7 @@ class ViewFilter(object):
             'evaluator_ids': 'evaluatorIds',
             'transferred': 'transferred',
             'abandoned': 'abandoned',
+            'answered': 'answered',
             'message_types': 'messageTypes',
             'division_ids': 'divisionIds',
             'survey_form_ids': 'surveyFormIds',
@@ -192,7 +196,9 @@ class ViewFilter(object):
             'has_media': 'hasMedia',
             'role_ids': 'roleIds',
             'reports_tos': 'reportsTos',
-            'location_ids': 'locationIds'
+            'location_ids': 'locationIds',
+            'flow_out_types': 'flowOutTypes',
+            'provider_list': 'providerList'
         }
 
         self._media_types = None
@@ -231,6 +237,7 @@ class ViewFilter(object):
         self._evaluator_ids = None
         self._transferred = None
         self._abandoned = None
+        self._answered = None
         self._message_types = None
         self._division_ids = None
         self._survey_form_ids = None
@@ -270,6 +277,8 @@ class ViewFilter(object):
         self._role_ids = None
         self._reports_tos = None
         self._location_ids = None
+        self._flow_out_types = None
+        self._provider_list = None
 
     @property
     def media_types(self):
@@ -1098,6 +1107,29 @@ class ViewFilter(object):
         """
         
         self._abandoned = abandoned
+
+    @property
+    def answered(self):
+        """
+        Gets the answered of this ViewFilter.
+        Indicates filtering for answered interactions
+
+        :return: The answered of this ViewFilter.
+        :rtype: bool
+        """
+        return self._answered
+
+    @answered.setter
+    def answered(self, answered):
+        """
+        Sets the answered of this ViewFilter.
+        Indicates filtering for answered interactions
+
+        :param answered: The answered of this ViewFilter.
+        :type: bool
+        """
+        
+        self._answered = answered
 
     @property
     def message_types(self):
@@ -1995,6 +2027,52 @@ class ViewFilter(object):
         """
         
         self._location_ids = location_ids
+
+    @property
+    def flow_out_types(self):
+        """
+        Gets the flow_out_types of this ViewFilter.
+        A list of flow out types
+
+        :return: The flow_out_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_out_types
+
+    @flow_out_types.setter
+    def flow_out_types(self, flow_out_types):
+        """
+        Sets the flow_out_types of this ViewFilter.
+        A list of flow out types
+
+        :param flow_out_types: The flow_out_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_out_types = flow_out_types
+
+    @property
+    def provider_list(self):
+        """
+        Gets the provider_list of this ViewFilter.
+        A list of providers
+
+        :return: The provider_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._provider_list
+
+    @provider_list.setter
+    def provider_list(self, provider_list):
+        """
+        Sets the provider_list of this ViewFilter.
+        A list of providers
+
+        :param provider_list: The provider_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._provider_list = provider_list
 
     def to_dict(self):
         """

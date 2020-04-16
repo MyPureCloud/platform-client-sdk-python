@@ -1832,6 +1832,7 @@ from .models.wfm_user_schedule_adherence_updated_topic_queue_reference import Wf
 from .models.wfm_user_schedule_adherence_updated_topic_user_reference import WfmUserScheduleAdherenceUpdatedTopicUserReference
 from .models.wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update import WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
+from .models.whats_app_definition import WhatsAppDefinition
 from .models.whats_app_id import WhatsAppId
 from .models.whats_app_integration import WhatsAppIntegration
 from .models.whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
@@ -1886,7 +1887,6 @@ from .apis.integrations_api import IntegrationsApi
 from .apis.languages_api import LanguagesApi
 from .apis.license_api import LicenseApi
 from .apis.locations_api import LocationsApi
-from .apis.messaging_api import MessagingApi
 from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi

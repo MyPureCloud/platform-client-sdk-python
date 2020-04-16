@@ -43,6 +43,7 @@ title: ViewFilter
 | **evaluator_ids** | **list[str]** | The evaluator ids are used to filter the view | [optional] |
 | **transferred** | **bool** | Indicates filtering for transfers | [optional] |
 | **abandoned** | **bool** | Indicates filtering for abandons | [optional] |
+| **answered** | **bool** | Indicates filtering for answered interactions | [optional] |
 | **message_types** | **list[str]** | The message media types used to filter the view | [optional] |
 | **division_ids** | **list[str]** | The divison Ids used to filter the view | [optional] |
 | **survey_form_ids** | **list[str]** | The survey form ids used to filter the view | [optional] |
@@ -82,6 +83,8 @@ title: ViewFilter
 | **role_ids** | **list[str]** | The role Ids used to filter the view | [optional] |
 | **reports_tos** | **list[str]** | The report to user IDs used to filter the view | [optional] |
 | **location_ids** | **list[str]** | The location Ids used to filter the view | [optional] |
+| **flow_out_types** | **list[str]** | A list of flow out types | [optional] |
+| **provider_list** | **list[str]** | A list of providers | [optional] |
 {: class="table table-striped"}
 
 

@@ -787,7 +787,7 @@ class AuthorizationApi(object):
     def get_authorization_divisionspermitted_paged_subject_id(self, subject_id, permission, **kwargs):
         """
         Returns which divisions the specified user has the given permission in.
-        
+        This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

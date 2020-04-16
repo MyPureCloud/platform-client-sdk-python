@@ -42,7 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_externalcontacts_contact"></a>
 
-##  delete_externalcontacts_contact(contact_id)
+## [**Empty**](Empty.html) delete_externalcontacts_contact(contact_id)
 
 
 
@@ -73,7 +73,8 @@ contact_id = 'contact_id_example' # str | ExternalContact ID
 
 try:
     # Delete an external contact
-    api_instance.delete_externalcontacts_contact(contact_id)
+    api_response = api_instance.delete_externalcontacts_contact(contact_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact: %s\n" % e
 ```
@@ -88,11 +89,11 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**Empty**](Empty.html)
 
 <a name="delete_externalcontacts_contact_note"></a>
 
-##  delete_externalcontacts_contact_note(contact_id, note_id)
+## [**Empty**](Empty.html) delete_externalcontacts_contact_note(contact_id, note_id)
 
 
 
@@ -124,7 +125,8 @@ note_id = 'note_id_example' # str | Note Id
 
 try:
     # Delete a note for an external contact
-    api_instance.delete_externalcontacts_contact_note(contact_id, note_id)
+    api_response = api_instance.delete_externalcontacts_contact_note(contact_id, note_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact_note: %s\n" % e
 ```
@@ -140,11 +142,11 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**Empty**](Empty.html)
 
 <a name="delete_externalcontacts_organization"></a>
 
-##  delete_externalcontacts_organization(external_organization_id)
+## [**Empty**](Empty.html) delete_externalcontacts_organization(external_organization_id)
 
 
 
@@ -175,7 +177,8 @@ external_organization_id = 'external_organization_id_example' # str | External O
 
 try:
     # Delete an external organization
-    api_instance.delete_externalcontacts_organization(external_organization_id)
+    api_response = api_instance.delete_externalcontacts_organization(external_organization_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization: %s\n" % e
 ```
@@ -190,11 +193,11 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**Empty**](Empty.html)
 
 <a name="delete_externalcontacts_organization_note"></a>
 
-##  delete_externalcontacts_organization_note(external_organization_id, note_id)
+## [**Empty**](Empty.html) delete_externalcontacts_organization_note(external_organization_id, note_id)
 
 
 
@@ -226,7 +229,8 @@ note_id = 'note_id_example' # str | Note Id
 
 try:
     # Delete a note for an external organization
-    api_instance.delete_externalcontacts_organization_note(external_organization_id, note_id)
+    api_response = api_instance.delete_externalcontacts_organization_note(external_organization_id, note_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_note: %s\n" % e
 ```
@@ -242,7 +246,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**Empty**](Empty.html)
 
 <a name="delete_externalcontacts_organization_trustor"></a>
 
@@ -296,7 +300,7 @@ void (empty response body)
 
 <a name="delete_externalcontacts_relationship"></a>
 
-##  delete_externalcontacts_relationship(relationship_id)
+## [**Empty**](Empty.html) delete_externalcontacts_relationship(relationship_id)
 
 
 
@@ -327,7 +331,8 @@ relationship_id = 'relationship_id_example' # str | Relationship Id
 
 try:
     # Delete a relationship
-    api_instance.delete_externalcontacts_relationship(relationship_id)
+    api_response = api_instance.delete_externalcontacts_relationship(relationship_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->delete_externalcontacts_relationship: %s\n" % e
 ```
@@ -342,7 +347,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**Empty**](Empty.html)
 
 <a name="get_externalcontacts_contact"></a>
 

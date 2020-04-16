@@ -323,7 +323,7 @@ class Response(object):
     def response_type(self):
         """
         Gets the response_type of this Response.
-        The response type represented by the response
+        The response type represented by the response.
 
         :return: The response_type of this Response.
         :rtype: str
@@ -334,7 +334,7 @@ class Response(object):
     def response_type(self, response_type):
         """
         Sets the response_type of this Response.
-        The response type represented by the response
+        The response type represented by the response.
 
         :param response_type: The response_type of this Response.
         :type: str
@@ -350,7 +350,7 @@ class Response(object):
     def messaging_template(self):
         """
         Gets the messaging_template of this Response.
-        The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+        An optional messaging template definition for responseType.MessagingTemplate.
 
         :return: The messaging_template of this Response.
         :rtype: MessagingTemplate
@@ -361,7 +361,7 @@ class Response(object):
     def messaging_template(self, messaging_template):
         """
         Sets the messaging_template of this Response.
-        The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+        An optional messaging template definition for responseType.MessagingTemplate.
 
         :param messaging_template: The messaging_template of this Response.
         :type: MessagingTemplate

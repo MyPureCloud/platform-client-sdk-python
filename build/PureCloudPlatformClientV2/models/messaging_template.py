@@ -40,89 +40,37 @@ class MessagingTemplate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'name': 'str',
-            'namespace': 'str',
-            'language': 'str'
+            'whats_app': 'WhatsAppDefinition'
         }
 
         self.attribute_map = {
-            'name': 'name',
-            'namespace': 'namespace',
-            'language': 'language'
+            'whats_app': 'whatsApp'
         }
 
-        self._name = None
-        self._namespace = None
-        self._language = None
+        self._whats_app = None
 
     @property
-    def name(self):
+    def whats_app(self):
         """
-        Gets the name of this MessagingTemplate.
-        The messaging template name.
+        Gets the whats_app of this MessagingTemplate.
+        Defines a messaging template for a WhatsApp messaging channel
 
-        :return: The name of this MessagingTemplate.
-        :rtype: str
+        :return: The whats_app of this MessagingTemplate.
+        :rtype: WhatsAppDefinition
         """
-        return self._name
+        return self._whats_app
 
-    @name.setter
-    def name(self, name):
+    @whats_app.setter
+    def whats_app(self, whats_app):
         """
-        Sets the name of this MessagingTemplate.
-        The messaging template name.
+        Sets the whats_app of this MessagingTemplate.
+        Defines a messaging template for a WhatsApp messaging channel
 
-        :param name: The name of this MessagingTemplate.
-        :type: str
+        :param whats_app: The whats_app of this MessagingTemplate.
+        :type: WhatsAppDefinition
         """
         
-        self._name = name
-
-    @property
-    def namespace(self):
-        """
-        Gets the namespace of this MessagingTemplate.
-        The messaging template namespace.
-
-        :return: The namespace of this MessagingTemplate.
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """
-        Sets the namespace of this MessagingTemplate.
-        The messaging template namespace.
-
-        :param namespace: The namespace of this MessagingTemplate.
-        :type: str
-        """
-        
-        self._namespace = namespace
-
-    @property
-    def language(self):
-        """
-        Gets the language of this MessagingTemplate.
-        The messaging template language. For example, 'en-US'
-
-        :return: The language of this MessagingTemplate.
-        :rtype: str
-        """
-        return self._language
-
-    @language.setter
-    def language(self, language):
-        """
-        Sets the language of this MessagingTemplate.
-        The messaging template language. For example, 'en-US'
-
-        :param language: The language of this MessagingTemplate.
-        :type: str
-        """
-        
-        self._language = language
+        self._whats_app = whats_app
 
     def to_dict(self):
         """

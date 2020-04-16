@@ -186,7 +186,7 @@ class Library(object):
     def response_type(self):
         """
         Gets the response_type of this Library.
-        The response type for the library. If set, only response's of this type may be added to this library.
+        This value is deprecated. Responses representing message templates may be added to any library.
 
         :return: The response_type of this Library.
         :rtype: str
@@ -197,7 +197,7 @@ class Library(object):
     def response_type(self, response_type):
         """
         Sets the response_type of this Library.
-        The response type for the library. If set, only response's of this type may be added to this library.
+        This value is deprecated. Responses representing message templates may be added to any library.
 
         :param response_type: The response_type of this Library.
         :type: str

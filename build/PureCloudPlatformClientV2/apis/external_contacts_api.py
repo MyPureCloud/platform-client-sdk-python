@@ -62,7 +62,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :return: None
+        :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='Empty',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -141,7 +141,7 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact Id (required)
         :param str note_id: Note Id (required)
-        :return: None
+        :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -203,7 +203,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='Empty',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -224,7 +224,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :return: None
+        :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,7 +281,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='Empty',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -303,7 +303,7 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization Id (required)
         :param str note_id: Note Id (required)
-        :return: None
+        :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -365,7 +365,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='Empty',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -464,7 +464,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str relationship_id: Relationship Id (required)
-        :return: None
+        :return: Empty
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -521,7 +521,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='Empty',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

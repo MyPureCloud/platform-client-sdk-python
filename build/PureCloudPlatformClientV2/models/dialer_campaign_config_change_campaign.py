@@ -329,7 +329,7 @@ class DialerCampaignConfigChangeCampaign(object):
         :param dialing_mode: The dialing_mode of this DialerCampaignConfigChangeCampaign.
         :type: str
         """
-        allowed_values = ["AGENTLESS", "PREVIEW", "POWER", "PREDICTIVE", "PROGRESSIVE"]
+        allowed_values = ["AGENTLESS", "EXTERNAL", "PREVIEW", "POWER", "PREDICTIVE", "PROGRESSIVE"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for dialing_mode -> " + dialing_mode
             self._dialing_mode = "outdated_sdk_version"
