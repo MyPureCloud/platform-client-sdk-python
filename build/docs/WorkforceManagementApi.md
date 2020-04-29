@@ -3959,7 +3959,7 @@ except ApiException as e:
 
 Add a management unit
 
-
+It may take a minute or two for a new management unit to be available for api operations
 
 Wraps POST /api/v2/workforcemanagement/managementunits 
 

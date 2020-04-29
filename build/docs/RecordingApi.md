@@ -42,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation|
 |[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
 |[**post_recording_recordingkeys**](RecordingApi.html#post_recording_recordingkeys) | Create encryption key|
+|[**post_recordings_deletionprotection**](RecordingApi.html#post_recordings_deletionprotection) | Get a list of conversations with protected recordings|
 |[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
 |[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
@@ -50,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
 |[**put_recording_settings**](RecordingApi.html#put_recording_settings) | Update the Recording Settings for the Organization|
+|[**put_recordings_deletionprotection**](RecordingApi.html#put_recordings_deletionprotection) | Apply or revoke recording protection for conversations|
 {: class="table table-striped"}
 
 <a name="delete_conversation_recording_annotation"></a>
@@ -169,7 +171,7 @@ Delete the recording bulk job
 
 Wraps DELETE /api/v2/recording/jobs/{jobId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:delete
 
@@ -867,7 +869,7 @@ Get the status of the job associated with the job id.
 
 Wraps GET /api/v2/recording/jobs/{jobId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:view
 
@@ -918,7 +920,7 @@ Get the status of all jobs within the user's organization
 
 Wraps GET /api/v2/recording/jobs 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:view
 
@@ -1612,7 +1614,7 @@ Create a recording bulk job
 
 Wraps POST /api/v2/recording/jobs 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:add
 
@@ -1851,6 +1853,56 @@ This endpoint does not need any parameter.
 
 [**EncryptionKey**](EncryptionKey.html)
 
+<a name="post_recordings_deletionprotection"></a>
+
+## [**list[AddressableEntityRef]**](AddressableEntityRef.html) post_recordings_deletionprotection(body)
+
+
+
+Get a list of conversations with protected recordings
+
+
+
+Wraps POST /api/v2/recordings/deletionprotection 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.ConversationDeletionProtectionQuery() # ConversationDeletionProtectionQuery | conversationIds
+
+try:
+    # Get a list of conversations with protected recordings
+    api_response = api_instance.post_recordings_deletionprotection(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RecordingApi->post_recordings_deletionprotection: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)| conversationIds |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[AddressableEntityRef]**](AddressableEntityRef.html)
+
 <a name="put_conversation_recording"></a>
 
 ## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body)
@@ -2030,7 +2082,7 @@ Execute the recording bulk job
 
 Wraps PUT /api/v2/recording/jobs/{jobId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:edit
 
@@ -2278,4 +2330,57 @@ except ApiException as e:
 ### Return type
 
 [**RecordingSettings**](RecordingSettings.html)
+
+<a name="put_recordings_deletionprotection"></a>
+
+##  put_recordings_deletionprotection(protect=protect, body=body)
+
+
+
+Apply or revoke recording protection for conversations
+
+
+
+Wraps PUT /api/v2/recordings/deletionprotection 
+
+Requires ANY permissions: 
+
+* recording:deletionProtection:apply
+* recording:deletionProtection:revoke
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+protect = true # bool | Check for apply, uncheck for revoke (each action requires the respective permission) (optional) (default to true)
+body = PureCloudPlatformClientV2.ConversationDeletionProtectionQuery() # ConversationDeletionProtectionQuery |  (optional)
+
+try:
+    # Apply or revoke recording protection for conversations
+    api_instance.put_recordings_deletionprotection(protect=protect, body=body)
+except ApiException as e:
+    print "Exception when calling RecordingApi->put_recordings_deletionprotection: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **protect** | **bool**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 

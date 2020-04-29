@@ -406,7 +406,7 @@ except ApiException as e:
 
 <a name="get_analytics_reporting_exports"></a>
 
-## [**ReportingExportJobListing**](ReportingExportJobListing.html) get_analytics_reporting_exports()
+## [**ReportingExportJobListing**](ReportingExportJobListing.html) get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
 
 
 
@@ -416,7 +416,7 @@ Get all view export requests for a user
 
 Wraps GET /api/v2/analytics/reporting/exports 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -433,10 +433,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
 
 try:
     # Get all view export requests for a user
-    api_response = api_instance.get_analytics_reporting_exports()
+    api_response = api_instance.get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AnalyticsApi->get_analytics_reporting_exports: %s\n" % e
@@ -444,7 +446,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -463,7 +469,7 @@ Get all export metadata
 
 Wraps GET /api/v2/analytics/reporting/exports/metadata 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -1484,7 +1490,7 @@ Generate a view export request
 
 Wraps POST /api/v2/analytics/reporting/exports 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:add
 

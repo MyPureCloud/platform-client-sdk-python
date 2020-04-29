@@ -48,8 +48,8 @@ class ManagementUnit(object):
             'settings': 'ManagementUnitSettingsResponse',
             'metadata': 'WfmVersionedEntityMetadata',
             'version': 'int',
-            'modified_by': 'UserReference',
             'date_modified': 'datetime',
+            'modified_by': 'UserReference',
             'self_uri': 'str'
         }
 
@@ -62,8 +62,8 @@ class ManagementUnit(object):
             'settings': 'settings',
             'metadata': 'metadata',
             'version': 'version',
-            'modified_by': 'modifiedBy',
             'date_modified': 'dateModified',
+            'modified_by': 'modifiedBy',
             'self_uri': 'selfUri'
         }
 
@@ -75,8 +75,8 @@ class ManagementUnit(object):
         self._settings = None
         self._metadata = None
         self._version = None
-        self._modified_by = None
         self._date_modified = None
+        self._modified_by = None
         self._self_uri = None
 
     @property
@@ -268,29 +268,6 @@ class ManagementUnit(object):
         self._version = version
 
     @property
-    def modified_by(self):
-        """
-        Gets the modified_by of this ManagementUnit.
-        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
-
-        :return: The modified_by of this ManagementUnit.
-        :rtype: UserReference
-        """
-        return self._modified_by
-
-    @modified_by.setter
-    def modified_by(self, modified_by):
-        """
-        Sets the modified_by of this ManagementUnit.
-        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
-
-        :param modified_by: The modified_by of this ManagementUnit.
-        :type: UserReference
-        """
-        
-        self._modified_by = modified_by
-
-    @property
     def date_modified(self):
         """
         Gets the date_modified of this ManagementUnit.
@@ -312,6 +289,29 @@ class ManagementUnit(object):
         """
         
         self._date_modified = date_modified
+
+    @property
+    def modified_by(self):
+        """
+        Gets the modified_by of this ManagementUnit.
+        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
+
+        :return: The modified_by of this ManagementUnit.
+        :rtype: UserReference
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by):
+        """
+        Sets the modified_by of this ManagementUnit.
+        The user who last modified this entity.  Deprecated, use field from settings.metadata instead
+
+        :param modified_by: The modified_by of this ManagementUnit.
+        :type: UserReference
+        """
+        
+        self._modified_by = modified_by
 
     @property
     def self_uri(self):

@@ -3197,7 +3197,7 @@ Returns a specified flow outcome
 
 Wraps GET /api/v2/flows/outcomes/{flowOutcomeId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * architect:flowOutcome:view
 
@@ -3248,7 +3248,7 @@ Multiple IDs can be specified, in which case all matching flow outcomes will be 
 
 Wraps GET /api/v2/flows/outcomes 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * architect:flowOutcome:view
 
@@ -4444,7 +4444,7 @@ Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 
 Wraps POST /api/v2/flows/outcomes 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * architect:flowOutcome:add
 
@@ -5033,7 +5033,7 @@ Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flo
 
 Wraps PUT /api/v2/flows/outcomes/{flowOutcomeId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * architect:flowOutcome:edit
 

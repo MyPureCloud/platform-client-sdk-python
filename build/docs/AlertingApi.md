@@ -33,7 +33,7 @@ Delete an interaction stats alert
 
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:delete
 
@@ -83,7 +83,7 @@ Delete an interaction stats rule.
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:delete
 
@@ -179,7 +179,7 @@ Get an interaction stats alert
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:view
 
@@ -329,7 +329,7 @@ Get an interaction stats rule.
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:view
 
@@ -382,7 +382,7 @@ Get an interaction stats rule list.
 
 Wraps GET /api/v2/alerting/interactionstats/rules 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:view
 
@@ -433,7 +433,7 @@ Create an interaction stats rule.
 
 Wraps POST /api/v2/alerting/interactionstats/rules 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:add
 
@@ -486,7 +486,7 @@ Update an interaction stats alert read status
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:edit
 
@@ -541,7 +541,7 @@ Update an interaction stats rule
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:edit
 

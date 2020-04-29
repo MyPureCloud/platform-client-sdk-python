@@ -5941,7 +5941,7 @@ class WorkforceManagementApi(object):
     def post_workforcemanagement_managementunits(self, **kwargs):
         """
         Add a management unit
-        
+        It may take a minute or two for a new management unit to be available for api operations
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

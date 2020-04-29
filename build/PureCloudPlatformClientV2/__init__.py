@@ -346,6 +346,7 @@ from .models.conversation_cobrowse_event_topic_journey_customer_session import C
 from .models.conversation_cobrowse_event_topic_scored_agent import ConversationCobrowseEventTopicScoredAgent
 from .models.conversation_cobrowse_event_topic_uri_reference import ConversationCobrowseEventTopicUriReference
 from .models.conversation_cobrowse_event_topic_wrapup import ConversationCobrowseEventTopicWrapup
+from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
 from .models.conversation_detail_query_predicate import ConversationDetailQueryPredicate
@@ -735,6 +736,7 @@ from .models.external_contact import ExternalContact
 from .models.external_data_source import ExternalDataSource
 from .models.external_organization import ExternalOrganization
 from .models.external_organization_listing import ExternalOrganizationListing
+from .models.facebook_app_credentials import FacebookAppCredentials
 from .models.facebook_id import FacebookId
 from .models.facebook_integration import FacebookIntegration
 from .models.facebook_integration_entity_listing import FacebookIntegrationEntityListing
@@ -1641,6 +1643,9 @@ from .models.user_aggregate_query_predicate import UserAggregateQueryPredicate
 from .models.user_aggregate_query_response import UserAggregateQueryResponse
 from .models.user_aggregation_query import UserAggregationQuery
 from .models.user_aggregation_view import UserAggregationView
+from .models.user_app import UserApp
+from .models.user_app_configuration_info import UserAppConfigurationInfo
+from .models.user_app_entity_listing import UserAppEntityListing
 from .models.user_authorization import UserAuthorization
 from .models.user_conversation_summary import UserConversationSummary
 from .models.user_conversations_event_media_summary import UserConversationsEventMediaSummary

@@ -158,6 +158,7 @@ Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:delete
 * externalContacts:externalOrganization:delete
 
 ### Example
@@ -589,6 +590,7 @@ Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example
@@ -760,6 +762,7 @@ Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example
@@ -819,6 +822,7 @@ Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relati
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example
@@ -878,6 +882,7 @@ Wraps GET /api/v2/externalcontacts/organizations
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example
@@ -1151,6 +1156,7 @@ Wraps POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example
@@ -1204,6 +1210,7 @@ Wraps POST /api/v2/externalcontacts/organizations
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:add
 * externalContacts:externalOrganization:add
 
 ### Example
@@ -1466,6 +1473,7 @@ Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Requires ANY permissions: 
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example

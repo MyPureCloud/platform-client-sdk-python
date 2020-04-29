@@ -60,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
+|[**get_conversations_messaging_facebook_app**](ConversationsApi.html#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
 |[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
 |[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
 |[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
@@ -410,7 +411,7 @@ Delete a Facebook messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:delete
 
@@ -460,7 +461,7 @@ Delete a LINE messenger integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:delete
 
@@ -510,7 +511,7 @@ Delete a Twitter messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:delete
 
@@ -560,7 +561,7 @@ Delete a WhatsApp messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:delete
 
@@ -2804,6 +2805,53 @@ This endpoint does not need any parameter.
 
 [**MessageConversationEntityListing**](MessageConversationEntityListing.html)
 
+<a name="get_conversations_messaging_facebook_app"></a>
+
+## [**FacebookAppCredentials**](FacebookAppCredentials.html) get_conversations_messaging_facebook_app()
+
+
+
+Get Genesys Facebook App Id
+
+
+
+Wraps GET /api/v2/conversations/messaging/facebook/app 
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get Genesys Facebook App Id
+    api_response = api_instance.get_conversations_messaging_facebook_app()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_conversations_messaging_facebook_app: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**FacebookAppCredentials**](FacebookAppCredentials.html)
+
 <a name="get_conversations_messaging_integrations"></a>
 
 ## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
@@ -2816,7 +2864,7 @@ Get a list of Integrations
 
 Wraps GET /api/v2/conversations/messaging/integrations 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -2869,7 +2917,7 @@ Get a list of Facebook Integrations
 
 Wraps GET /api/v2/conversations/messaging/integrations/facebook 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -2922,7 +2970,7 @@ Get a Facebook messaging integration
 
 Wraps GET /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -2973,7 +3021,7 @@ Get a list of LINE messenger Integrations
 
 Wraps GET /api/v2/conversations/messaging/integrations/line 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3026,7 +3074,7 @@ Get a LINE messenger integration
 
 Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3077,7 +3125,7 @@ Get a list of Twitter Integrations
 
 Wraps GET /api/v2/conversations/messaging/integrations/twitter 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3130,7 +3178,7 @@ Get a Twitter messaging integration
 
 Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3181,7 +3229,7 @@ Get a list of WhatsApp Integrations
 
 Wraps GET /api/v2/conversations/messaging/integrations/whatsapp 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3234,7 +3282,7 @@ Get a WhatsApp messaging integration
 
 Wraps GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:view
 
@@ -3285,7 +3333,7 @@ Get a list of Messaging Stickers
 
 Wraps GET /api/v2/conversations/messaging/stickers/{messengerType} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:message:create
 
@@ -4790,7 +4838,7 @@ The following steps are required in order to fully activate a Whatsapp Integrati
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:edit
 
@@ -5100,7 +5148,7 @@ Create a new callback for the specified participant on the conversation.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:callback:create
 
@@ -5630,7 +5678,7 @@ Create a Callback
 
 Wraps POST /api/v2/conversations/callbacks 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:callback:create
 
@@ -5891,7 +5939,7 @@ Create a web chat conversation
 
 Wraps POST /api/v2/conversations/chats 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:webchat:create
 
@@ -6305,7 +6353,7 @@ Send message
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:message:create
 
@@ -6360,7 +6408,7 @@ Create media
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:message:create
 
@@ -6519,7 +6567,7 @@ If there is an existing conversation between the remote address and the address 
 
 Wraps POST /api/v2/conversations/messages 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:message:create
 
@@ -6570,7 +6618,7 @@ Send an agentlesss (api participant) outbound message using a client credential 
 
 Wraps POST /api/v2/conversations/messages/agentless 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * conversation:message:create
 
@@ -6621,7 +6669,7 @@ Create a Facebook Integration
 
 Wraps POST /api/v2/conversations/messaging/integrations/facebook 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:add
 
@@ -6672,7 +6720,7 @@ Create a LINE messenger Integration
 
 Wraps POST /api/v2/conversations/messaging/integrations/line 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:add
 
@@ -6723,7 +6771,7 @@ Create a Twitter Integration
 
 Wraps POST /api/v2/conversations/messaging/integrations/twitter 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:add
 
@@ -6774,7 +6822,7 @@ Create a WhatsApp Integration
 
 Wraps POST /api/v2/conversations/messaging/integrations/whatsapp 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:whatsappIntegration:add
 
@@ -6984,7 +7032,7 @@ Update a LINE messenger integration
 
 Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * messaging:integration:edit
 

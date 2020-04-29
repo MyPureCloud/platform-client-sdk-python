@@ -42,6 +42,10 @@ class WebChatMemberInfo(object):
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
+            'first_name': 'str',
+            'last_name': 'str',
+            'email': 'str',
+            'phone_number': 'str',
             'avatar_image_url': 'str',
             'role': 'str',
             'join_date': 'datetime',
@@ -54,6 +58,10 @@ class WebChatMemberInfo(object):
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
+            'first_name': 'firstName',
+            'last_name': 'lastName',
+            'email': 'email',
+            'phone_number': 'phoneNumber',
             'avatar_image_url': 'avatarImageUrl',
             'role': 'role',
             'join_date': 'joinDate',
@@ -65,6 +73,10 @@ class WebChatMemberInfo(object):
 
         self._id = None
         self._display_name = None
+        self._first_name = None
+        self._last_name = None
+        self._email = None
+        self._phone_number = None
         self._avatar_image_url = None
         self._role = None
         self._join_date = None
@@ -118,6 +130,98 @@ class WebChatMemberInfo(object):
         """
         
         self._display_name = display_name
+
+    @property
+    def first_name(self):
+        """
+        Gets the first_name of this WebChatMemberInfo.
+        The first name of the member.
+
+        :return: The first_name of this WebChatMemberInfo.
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """
+        Sets the first_name of this WebChatMemberInfo.
+        The first name of the member.
+
+        :param first_name: The first_name of this WebChatMemberInfo.
+        :type: str
+        """
+        
+        self._first_name = first_name
+
+    @property
+    def last_name(self):
+        """
+        Gets the last_name of this WebChatMemberInfo.
+        The last name of the member.
+
+        :return: The last_name of this WebChatMemberInfo.
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """
+        Sets the last_name of this WebChatMemberInfo.
+        The last name of the member.
+
+        :param last_name: The last_name of this WebChatMemberInfo.
+        :type: str
+        """
+        
+        self._last_name = last_name
+
+    @property
+    def email(self):
+        """
+        Gets the email of this WebChatMemberInfo.
+        The email address of the member.
+
+        :return: The email of this WebChatMemberInfo.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this WebChatMemberInfo.
+        The email address of the member.
+
+        :param email: The email of this WebChatMemberInfo.
+        :type: str
+        """
+        
+        self._email = email
+
+    @property
+    def phone_number(self):
+        """
+        Gets the phone_number of this WebChatMemberInfo.
+        The phone number of the member.
+
+        :return: The phone_number of this WebChatMemberInfo.
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        """
+        Sets the phone_number of this WebChatMemberInfo.
+        The phone number of the member.
+
+        :param phone_number: The phone_number of this WebChatMemberInfo.
+        :type: str
+        """
+        
+        self._phone_number = phone_number
 
     @property
     def avatar_image_url(self):

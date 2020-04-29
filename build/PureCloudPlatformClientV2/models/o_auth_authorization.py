@@ -47,6 +47,7 @@ class OAuthAuthorization(object):
             'date_modified': 'datetime',
             'created_by': 'DomainEntityRef',
             'modified_by': 'DomainEntityRef',
+            'pending': 'bool',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class OAuthAuthorization(object):
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
+            'pending': 'pending',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class OAuthAuthorization(object):
         self._date_modified = None
         self._created_by = None
         self._modified_by = None
+        self._pending = None
         self._self_uri = None
 
     @property
@@ -230,6 +233,29 @@ class OAuthAuthorization(object):
         """
         
         self._modified_by = modified_by
+
+    @property
+    def pending(self):
+        """
+        Gets the pending of this OAuthAuthorization.
+
+
+        :return: The pending of this OAuthAuthorization.
+        :rtype: bool
+        """
+        return self._pending
+
+    @pending.setter
+    def pending(self, pending):
+        """
+        Sets the pending of this OAuthAuthorization.
+
+
+        :param pending: The pending of this OAuthAuthorization.
+        :type: bool
+        """
+        
+        self._pending = pending
 
     @property
     def self_uri(self):

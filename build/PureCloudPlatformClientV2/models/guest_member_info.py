@@ -41,17 +41,29 @@ class GuestMemberInfo(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'first_name': 'str',
+            'last_name': 'str',
+            'email': 'str',
+            'phone_number': 'str',
             'avatar_image_url': 'str',
             'custom_fields': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'first_name': 'firstName',
+            'last_name': 'lastName',
+            'email': 'email',
+            'phone_number': 'phoneNumber',
             'avatar_image_url': 'avatarImageUrl',
             'custom_fields': 'customFields'
         }
 
         self._display_name = None
+        self._first_name = None
+        self._last_name = None
+        self._email = None
+        self._phone_number = None
         self._avatar_image_url = None
         self._custom_fields = None
 
@@ -77,6 +89,98 @@ class GuestMemberInfo(object):
         """
         
         self._display_name = display_name
+
+    @property
+    def first_name(self):
+        """
+        Gets the first_name of this GuestMemberInfo.
+        The first name to use for the guest member in the conversation.
+
+        :return: The first_name of this GuestMemberInfo.
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """
+        Sets the first_name of this GuestMemberInfo.
+        The first name to use for the guest member in the conversation.
+
+        :param first_name: The first_name of this GuestMemberInfo.
+        :type: str
+        """
+        
+        self._first_name = first_name
+
+    @property
+    def last_name(self):
+        """
+        Gets the last_name of this GuestMemberInfo.
+        The last name to use for the guest member in the conversation.
+
+        :return: The last_name of this GuestMemberInfo.
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """
+        Sets the last_name of this GuestMemberInfo.
+        The last name to use for the guest member in the conversation.
+
+        :param last_name: The last_name of this GuestMemberInfo.
+        :type: str
+        """
+        
+        self._last_name = last_name
+
+    @property
+    def email(self):
+        """
+        Gets the email of this GuestMemberInfo.
+        The email address to use for the guest member in the conversation.
+
+        :return: The email of this GuestMemberInfo.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this GuestMemberInfo.
+        The email address to use for the guest member in the conversation.
+
+        :param email: The email of this GuestMemberInfo.
+        :type: str
+        """
+        
+        self._email = email
+
+    @property
+    def phone_number(self):
+        """
+        Gets the phone_number of this GuestMemberInfo.
+        The phone number to use for the guest member in the conversation.
+
+        :return: The phone_number of this GuestMemberInfo.
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        """
+        Sets the phone_number of this GuestMemberInfo.
+        The phone number to use for the guest member in the conversation.
+
+        :param phone_number: The phone_number of this GuestMemberInfo.
+        :type: str
+        """
+        
+        self._phone_number = phone_number
 
     @property
     def avatar_image_url(self):
