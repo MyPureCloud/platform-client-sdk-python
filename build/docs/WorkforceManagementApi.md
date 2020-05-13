@@ -8,6 +8,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_workforcemanagement_businessunit**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit) | Delete business unit|
+|[**delete_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_activitycode) | Deletes an activity code|
+|[**delete_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_planninggroup) | Deletes the planning group|
+|[**delete_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_scheduling_run) | Cancel a scheduling run|
+|[**delete_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_servicegoaltemplate) | Delete a service goal template|
+|[**delete_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_schedule) | Delete a schedule|
+|[**delete_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_shorttermforecast) | Delete a short term forecast|
 |[**delete_workforcemanagement_managementunit**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit) | Delete management unit|
 |[**delete_workforcemanagement_managementunit_activitycode**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_activitycode) | Deletes an activity code|
 |[**delete_workforcemanagement_managementunit_scheduling_run**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_scheduling_run) | Cancel a schedule run|
@@ -17,10 +24,35 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
+|[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
+|[**get_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycode) | Get an activity code|
+|[**get_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycodes) | Get activity codes|
+|[**get_workforcemanagement_businessunit_intraday_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
+|[**get_workforcemanagement_businessunit_managementunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
+|[**get_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
+|[**get_workforcemanagement_businessunit_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_planninggroups) | Gets list of planning groups|
+|[**get_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_scheduling_run) | Get a scheduling run|
+|[**get_workforcemanagement_businessunit_scheduling_run_result**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_scheduling_run_result) | Get the result of a rescheduling operation|
+|[**get_workforcemanagement_businessunit_scheduling_runs**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_scheduling_runs) | Get the list of scheduling runs|
+|[**get_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_servicegoaltemplate) | Get a service goal template|
+|[**get_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_servicegoaltemplates) | Gets list of service goal templates|
+|[**get_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route|
+|[**get_workforcemanagement_businessunit_week_schedule_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_generationresults) | Get the generation results for a generated schedule|
+|[**get_workforcemanagement_businessunit_week_schedule_headcountforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_headcountforecast) | Get the headcount forecast by planning group for the schedule|
+|[**get_workforcemanagement_businessunit_week_schedules**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedules) | Get the list of week schedules for the specified week|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast) | Get a short term forecast|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast_data**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_data) | Get the result of a short term forecast calculation|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_generationresults) | Gets the forecast generation results|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups) | Gets the forecast planning group snapshot|
+|[**get_workforcemanagement_businessunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecasts) | Get short term forecasts|
+|[**get_workforcemanagement_businessunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunits) | Get business units|
+|[**get_workforcemanagement_businessunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_businessunits_divisionviews) | Get business units across divisions|
 |[**get_workforcemanagement_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_managementunit) | Get management unit|
 |[**get_workforcemanagement_managementunit_activitycode**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycode) | Get an activity code|
 |[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Get activity codes|
+|[**get_workforcemanagement_managementunit_adherence**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_adherence) | Get a list of user schedule adherence records for the requested management unit|
 |[**get_workforcemanagement_managementunit_agent**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_agent) | Get data for agent in the management unit|
+|[**get_workforcemanagement_managementunit_agent_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_agent_shifttrades) | Gets all the shift trades for a given agent|
 |[**get_workforcemanagement_managementunit_intraday_queues**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_intraday_queues) | Get intraday queues for the given date|
 |[**get_workforcemanagement_managementunit_scheduling_run**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_scheduling_run) | Gets the status for a specific scheduling run|
 |[**get_workforcemanagement_managementunit_scheduling_run_result**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_scheduling_run_result) | Gets the result of a specific scheduling run|
@@ -36,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunit_week_schedule**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_schedule) | Get a week schedule|
 |[**get_workforcemanagement_managementunit_week_schedule_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_schedule_generationresults) | Get week schedule generation results|
 |[**get_workforcemanagement_managementunit_week_schedules**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_schedules) | Get the list of schedules in a week in management unit|
+|[**get_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_shifttrades) | Gets all the shift trades for a given week|
 |[**get_workforcemanagement_managementunit_week_shorttermforecast_final**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_shorttermforecast_final) | Get the final result of a short term forecast calculation with modifications applied|
 |[**get_workforcemanagement_managementunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_shorttermforecasts) | Get short term forecasts|
 |[**get_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplan) | Get a work plan|
@@ -47,6 +80,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
+|[**patch_workforcemanagement_businessunit**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit) | Update business unit|
+|[**patch_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
+|[**patch_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
+|[**patch_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
+|[**patch_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
 |[**patch_workforcemanagement_managementunit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_activitycode) | Update an activity code|
 |[**patch_workforcemanagement_managementunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_scheduling_run) | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started|
@@ -54,9 +92,24 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_settings**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_settings) | Update the settings for the requested management unit|
 |[**patch_workforcemanagement_managementunit_user_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_user_timeoffrequest) | Update a time off request|
 |[**patch_workforcemanagement_managementunit_week_schedule**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_week_schedule) | Update a week schedule|
+|[**patch_workforcemanagement_managementunit_week_shifttrade**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_week_shifttrade) | Updates a shift trade. This route can only be called by the initiating agent|
 |[**patch_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
+|[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
+|[**post_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
+|[**post_workforcemanagement_businessunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
+|[**post_workforcemanagement_businessunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
+|[**post_workforcemanagement_businessunit_planninggroups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
+|[**post_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
+|[**post_workforcemanagement_businessunit_week_schedule_agentschedules_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_agentschedules_query) | Loads agent schedule data from the schedule. Used in combination with the metadata route|
+|[**post_workforcemanagement_businessunit_week_schedule_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_copy) | Copy a schedule|
+|[**post_workforcemanagement_businessunit_week_schedule_reschedule**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_reschedule) | Start a rescheduling run|
+|[**post_workforcemanagement_businessunit_week_schedules**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules) | Create a blank schedule|
+|[**post_workforcemanagement_businessunit_week_schedules_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedules_generate) | Generate a schedule|
+|[**post_workforcemanagement_businessunit_week_shorttermforecast_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecast_copy) | Copy a short term forecast|
+|[**post_workforcemanagement_businessunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_generate) | Generate a short term forecast|
+|[**post_workforcemanagement_businessunits**](WorkforceManagementApi.html#post_workforcemanagement_businessunits) | Add a new business unit|
 |[**post_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_activitycodes) | Create a new activity code|
 |[**post_workforcemanagement_managementunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_agentschedules_search) | Query published schedules for given given time range for set of users|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
@@ -72,6 +125,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_week_schedules**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_schedules) | Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500|
 |[**post_workforcemanagement_managementunit_week_schedules_generate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_schedules_generate) | Generate a week schedule|
 |[**post_workforcemanagement_managementunit_week_schedules_partialupload**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_schedules_partialupload) | Partial upload of user schedules where activity count is greater than 17500|
+|[**post_workforcemanagement_managementunit_week_shifttrade_match**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrade_match) | Matches a shift trade. This route can only be called by the receiving agent|
+|[**post_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades) | Adds a shift trade|
+|[**post_workforcemanagement_managementunit_week_shifttrades_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_search) | Searches for potential shift trade matches for the current agent|
+|[**post_workforcemanagement_managementunit_week_shifttrades_state_bulk**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_state_bulk) | Updates the state of a batch of shift trades|
 |[**post_workforcemanagement_managementunit_week_shorttermforecast_copy**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shorttermforecast_copy) | Copy a short term forecast|
 |[**post_workforcemanagement_managementunit_week_shorttermforecasts**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shorttermforecasts) | Import a short term forecast|
 |[**post_workforcemanagement_managementunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shorttermforecasts_generate) | Generate a short term forecast|
@@ -83,6 +140,373 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_schedules**](WorkforceManagementApi.html#post_workforcemanagement_schedules) | Get published schedule for the current user|
 |[**post_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests) | Create a time off request for the current user|
 {: class="table table-striped"}
+
+<a name="delete_workforcemanagement_businessunit"></a>
+
+##  delete_workforcemanagement_businessunit(business_unit_id)
+
+
+
+Delete business unit
+
+A business unit cannot be deleted if it contains one or more management units
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId} 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+
+try:
+    # Delete business unit
+    api_instance.delete_workforcemanagement_businessunit(business_unit_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_activitycode"></a>
+
+##  delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+
+
+
+Deletes an activity code
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+ac_id = 'ac_id_example' # str | The ID of the activity code to delete
+
+try:
+    # Deletes an activity code
+    api_instance.delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_activitycode: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **ac_id** | **str**| The ID of the activity code to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_planninggroup"></a>
+
+##  delete_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
+
+
+
+Deletes the planning group
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:planningGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+planning_group_id = 'planning_group_id_example' # str | The ID of a planning group to delete
+
+try:
+    # Deletes the planning group
+    api_instance.delete_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_planninggroup: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **planning_group_id** | **str**| The ID of a planning group to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_scheduling_run"></a>
+
+##  delete_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+
+
+
+Cancel a scheduling run
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+
+try:
+    # Cancel a scheduling run
+    api_instance.delete_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **run_id** | **str**| The ID of the schedule run |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_servicegoaltemplate"></a>
+
+##  delete_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+
+
+
+Delete a service goal template
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
+
+Requires ANY permissions: 
+
+* wfm:serviceGoalTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+service_goal_template_id = 'service_goal_template_id_example' # str | The ID of the service goal template to delete
+
+try:
+    # Delete a service goal template
+    api_instance.delete_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **service_goal_template_id** | **str**| The ID of the service goal template to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_week_schedule"></a>
+
+## [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html) delete_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+
+
+
+Delete a schedule
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+
+try:
+    # Delete a schedule
+    api_response = api_instance.delete_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_schedule: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="delete_workforcemanagement_businessunit_week_shorttermforecast"></a>
+
+##  delete_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id)
+
+
+
+Delete a short term forecast
+
+Must not be tied to any schedules
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+
+try:
+    # Delete a short term forecast
+    api_instance.delete_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_workforcemanagement_managementunit"></a>
 
@@ -552,6 +976,1353 @@ except ApiException as e:
 
 [**ModelingStatusResponse**](ModelingStatusResponse.html)
 
+<a name="get_workforcemanagement_businessunit"></a>
+
+## [**BusinessUnit**](BusinessUnit.html) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
+
+
+
+Get business unit
+
+Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId} 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:add
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
+* wfm:agent:edit
+* wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:add
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
+* wfm:publishedSchedule:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:add
+* wfm:schedule:delete
+* wfm:schedule:edit
+* wfm:schedule:generate
+* wfm:schedule:view
+* wfm:serviceGoalTemplate:add
+* wfm:serviceGoalTemplate:delete
+* wfm:serviceGoalTemplate:edit
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:add
+* wfm:planningGroup:delete
+* wfm:planningGroup:edit
+* wfm:planningGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
+* wfm:shortTermForecast:add
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+expand = ['expand_example'] # list[str] |  (optional)
+
+try:
+    # Get business unit
+    api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnit**](BusinessUnit.html)
+
+<a name="get_workforcemanagement_businessunit_activitycode"></a>
+
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) get_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+
+
+
+Get an activity code
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+ac_id = 'ac_id_example' # str | The ID of the activity code to fetch
+
+try:
+    # Get an activity code
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycode: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **ac_id** | **str**| The ID of the activity code to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="get_workforcemanagement_businessunit_activitycodes"></a>
+
+## [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html) get_workforcemanagement_businessunit_activitycodes(bu_id)
+
+
+
+Get activity codes
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:activityCode:add
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
+* wfm:agent:edit
+* wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:add
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:add
+* wfm:schedule:delete
+* wfm:schedule:edit
+* wfm:schedule:generate
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+* wfm:serviceGoalTemplate:add
+* wfm:serviceGoalTemplate:delete
+* wfm:serviceGoalTemplate:edit
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:add
+* wfm:planningGroup:delete
+* wfm:planningGroup:edit
+* wfm:planningGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:shortTermForecast:add
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+
+try:
+    # Get activity codes
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(bu_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycodes: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html)
+
+<a name="get_workforcemanagement_businessunit_intraday_planninggroups"></a>
+
+## [**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing.html) get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)
+
+
+
+Get intraday planning groups for the given date
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups 
+
+Requires ANY permissions: 
+
+* wfm:intraday:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit
+date = '2013-10-20' # date | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get intraday planning groups for the given date
+    api_response = api_instance.get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_intraday_planninggroups: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit |  |
+| **date** | **date**| yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing.html)
+
+<a name="get_workforcemanagement_businessunit_managementunits"></a>
+
+## [**ManagementUnitListing**](ManagementUnitListing.html) get_workforcemanagement_businessunit_managementunits(business_unit_id, feature=feature, division_id=division_id)
+
+
+
+Get all authorized management units in the business unit
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+feature = 'feature_example' # str |  (optional)
+division_id = 'division_id_example' # str |  (optional)
+
+try:
+    # Get all authorized management units in the business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_managementunits(business_unit_id, feature=feature, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_managementunits: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+| **division_id** | **str**|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ManagementUnitListing**](ManagementUnitListing.html)
+
+<a name="get_workforcemanagement_businessunit_planninggroup"></a>
+
+## [**PlanningGroup**](PlanningGroup.html) get_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
+
+
+
+Get a planning group
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:planningGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+planning_group_id = 'planning_group_id_example' # str | The ID of a planning group to fetch
+
+try:
+    # Get a planning group
+    api_response = api_instance.get_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroup: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **planning_group_id** | **str**| The ID of a planning group to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PlanningGroup**](PlanningGroup.html)
+
+<a name="get_workforcemanagement_businessunit_planninggroups"></a>
+
+## [**PlanningGroupList**](PlanningGroupList.html) get_workforcemanagement_businessunit_planninggroups(business_unit_id)
+
+
+
+Gets list of planning groups
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups 
+
+Requires ANY permissions: 
+
+* wfm:planningGroup:view
+* wfm:shortTermForecast:view
+* wfm:intraday:view
+* wfm:agent:view
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+
+try:
+    # Gets list of planning groups
+    api_response = api_instance.get_workforcemanagement_businessunit_planninggroups(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroups: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PlanningGroupList**](PlanningGroupList.html)
+
+<a name="get_workforcemanagement_businessunit_scheduling_run"></a>
+
+## [**BuScheduleRun**](BuScheduleRun.html) get_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+
+
+
+Get a scheduling run
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+
+try:
+    # Get a scheduling run
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **run_id** | **str**| The ID of the schedule run |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuScheduleRun**](BuScheduleRun.html)
+
+<a name="get_workforcemanagement_businessunit_scheduling_run_result"></a>
+
+## [**BuRescheduleResult**](BuRescheduleResult.html) get_workforcemanagement_businessunit_scheduling_run_result(business_unit_id, run_id, management_unit_ids, expand)
+
+
+
+Get the result of a rescheduling operation
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+* wfm:schedule:generate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+management_unit_ids = ['management_unit_ids_example'] # list[str] | The IDs of the management units for which to fetch the reschedule results
+expand = ['expand_example'] # list[str] | The fields to expand. Omitting will return an empty response
+
+try:
+    # Get the result of a rescheduling operation
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run_result(business_unit_id, run_id, management_unit_ids, expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run_result: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **run_id** | **str**| The ID of the schedule run |  |
+| **management_unit_ids** | [**list[str]**](str.html)| The IDs of the management units for which to fetch the reschedule results |  |
+| **expand** | [**list[str]**](str.html)| The fields to expand. Omitting will return an empty response | <br />**Values**: headcountForecast, generationResults, agentSchedules |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuRescheduleResult**](BuRescheduleResult.html)
+
+<a name="get_workforcemanagement_businessunit_scheduling_runs"></a>
+
+## [**BuScheduleRunListing**](BuScheduleRunListing.html) get_workforcemanagement_businessunit_scheduling_runs(business_unit_id)
+
+
+
+Get the list of scheduling runs
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get the list of scheduling runs
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduling_runs(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_runs: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuScheduleRunListing**](BuScheduleRunListing.html)
+
+<a name="get_workforcemanagement_businessunit_servicegoaltemplate"></a>
+
+## [**ServiceGoalTemplate**](ServiceGoalTemplate.html) get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+
+
+
+Get a service goal template
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
+
+Requires ANY permissions: 
+
+* wfm:serviceGoalTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+service_goal_template_id = 'service_goal_template_id_example' # str | The ID of a service goal template to fetch
+
+try:
+    # Get a service goal template
+    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **service_goal_template_id** | **str**| The ID of a service goal template to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+
+<a name="get_workforcemanagement_businessunit_servicegoaltemplates"></a>
+
+## [**ServiceGoalTemplateList**](ServiceGoalTemplateList.html) get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id)
+
+
+
+Gets list of service goal templates
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates 
+
+Requires ANY permissions: 
+
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:view
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+
+try:
+    # Gets list of service goal templates
+    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ServiceGoalTemplateList**](ServiceGoalTemplateList.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedule"></a>
+
+## [**BuScheduleMetadata**](BuScheduleMetadata.html) get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+
+
+
+Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+
+try:
+    # Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuScheduleMetadata**](BuScheduleMetadata.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedule_generationresults"></a>
+
+## [**ScheduleGenerationResult**](ScheduleGenerationResult.html) get_workforcemanagement_businessunit_week_schedule_generationresults(business_unit_id, week_id, schedule_id)
+
+
+
+Get the generation results for a generated schedule
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+
+try:
+    # Get the generation results for a generated schedule
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_generationresults(business_unit_id, week_id, schedule_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_generationresults: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGenerationResult**](ScheduleGenerationResult.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedule_headcountforecast"></a>
+
+## [**BuHeadcountForecastResponse**](BuHeadcountForecastResponse.html) get_workforcemanagement_businessunit_week_schedule_headcountforecast(business_unit_id, week_id, schedule_id, force_download=force_download)
+
+
+
+Get the headcount forecast by planning group for the schedule
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+force_download = true # bool | Whether to force the result to come via download url.  For testing purposes only (optional)
+
+try:
+    # Get the headcount forecast by planning group for the schedule
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_headcountforecast(business_unit_id, week_id, schedule_id, force_download=force_download)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_headcountforecast: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **force_download** | **bool**| Whether to force the result to come via download url.  For testing purposes only | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuHeadcountForecastResponse**](BuHeadcountForecastResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedules"></a>
+
+## [**BuScheduleListing**](BuScheduleListing.html) get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
+
+
+
+Get the list of week schedules for the specified week
+
+Use \"recent\" for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' to get recent schedules
+include_only_published = true # bool | includeOnlyPublished (optional)
+expand = 'expand_example' # str | expand (optional)
+
+try:
+    # Get the list of week schedules for the specified week
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedules: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules |  |
+| **include_only_published** | **bool**| includeOnlyPublished | [optional]  |
+| **expand** | **str**| expand | [optional] <br />**Values**: forecast.description |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuScheduleListing**](BuScheduleListing.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast"></a>
+
+## [**BuShortTermForecast**](BuShortTermForecast.html) get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)
+
+
+
+Get a short term forecast
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+expand = ['expand_example'] # list[str] |  (optional)
+
+try:
+    # Get a short term forecast
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: planningGroups, generationResults |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuShortTermForecast**](BuShortTermForecast.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast_data"></a>
+
+## [**BuForecastResultResponse**](BuForecastResultResponse.html) get_workforcemanagement_businessunit_week_shorttermforecast_data(business_unit_id, week_date_id, forecast_id, week_number=week_number, force_download_service=force_download_service)
+
+
+
+Get the result of a short term forecast calculation
+
+Includes modifications unless you pass the doNotApplyModifications query parameter
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+week_number = 56 # int | The week number to fetch (for multi-week forecasts) (optional)
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Get the result of a short term forecast calculation
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_data(business_unit_id, week_date_id, forecast_id, week_number=week_number, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_data: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+| **week_number** | **int**| The week number to fetch (for multi-week forecasts) | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuForecastResultResponse**](BuForecastResultResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast_generationresults"></a>
+
+## [**BuForecastGenerationResult**](BuForecastGenerationResult.html) get_workforcemanagement_businessunit_week_shorttermforecast_generationresults(business_unit_id, week_date_id, forecast_id)
+
+
+
+Gets the forecast generation results
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+
+try:
+    # Gets the forecast generation results
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_generationresults(business_unit_id, week_date_id, forecast_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_generationresults: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuForecastGenerationResult**](BuForecastGenerationResult.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups"></a>
+
+## [**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse.html) get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(business_unit_id, week_date_id, forecast_id)
+
+
+
+Gets the forecast planning group snapshot
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+
+try:
+    # Gets the forecast planning group snapshot
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(business_unit_id, week_date_id, forecast_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecasts"></a>
+
+## [**BuShortTermForecastListing**](BuShortTermForecastListing.html) get_workforcemanagement_businessunit_week_shorttermforecasts(business_unit_id, week_date_id)
+
+
+
+Get short term forecasts
+
+Use \"recent\" for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+* wfm:shortTermForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = 'week_date_id_example' # str | The week start date of the forecast in yyyy-MM-dd format or 'recent' to fetch recent forecasts
+
+try:
+    # Get short term forecasts
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecasts(business_unit_id, week_date_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecasts: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **str**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuShortTermForecastListing**](BuShortTermForecastListing.html)
+
+<a name="get_workforcemanagement_businessunits"></a>
+
+## [**BusinessUnitListing**](BusinessUnitListing.html) get_workforcemanagement_businessunits(feature=feature, division_id=division_id)
+
+
+
+Get business units
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+feature = 'feature_example' # str |  (optional)
+division_id = 'division_id_example' # str |  (optional)
+
+try:
+    # Get business units
+    api_response = api_instance.get_workforcemanagement_businessunits(feature=feature, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+| **division_id** | **str**|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitListing**](BusinessUnitListing.html)
+
+<a name="get_workforcemanagement_businessunits_divisionviews"></a>
+
+## [**BusinessUnitListing**](BusinessUnitListing.html) get_workforcemanagement_businessunits_divisionviews(division_id=division_id)
+
+
+
+Get business units across divisions
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/divisionviews 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+division_id = ['division_id_example'] # list[str] | The divisionIds to filter by. If omitted, will return business units in all divisions (optional)
+
+try:
+    # Get business units across divisions
+    api_response = api_instance.get_workforcemanagement_businessunits_divisionviews(division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits_divisionviews: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | [**list[str]**](str.html)| The divisionIds to filter by. If omitted, will return business units in all divisions | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitListing**](BusinessUnitListing.html)
+
 <a name="get_workforcemanagement_managementunit"></a>
 
 ## [**ManagementUnit**](ManagementUnit.html) get_workforcemanagement_managementunit(mu_id, expand=expand)
@@ -798,6 +2569,59 @@ except ApiException as e:
 
 [**ActivityCodeContainer**](ActivityCodeContainer.html)
 
+<a name="get_workforcemanagement_managementunit_adherence"></a>
+
+## [**UserScheduleAdherenceListing**](UserScheduleAdherenceListing.html) get_workforcemanagement_managementunit_adherence(management_unit_id, force_download_service=force_download_service)
+
+
+
+Get a list of user schedule adherence records for the requested management unit
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence 
+
+Requires ANY permissions: 
+
+* wfm:realtimeAdherence:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit.
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Get a list of user schedule adherence records for the requested management unit
+    api_response = api_instance.get_workforcemanagement_managementunit_adherence(management_unit_id, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_adherence: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit. |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserScheduleAdherenceListing**](UserScheduleAdherenceListing.html)
+
 <a name="get_workforcemanagement_managementunit_agent"></a>
 
 ## [**WfmAgent**](WfmAgent.html) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id)
@@ -850,6 +2674,60 @@ except ApiException as e:
 ### Return type
 
 [**WfmAgent**](WfmAgent.html)
+
+<a name="get_workforcemanagement_managementunit_agent_shifttrades"></a>
+
+## [**ShiftTradeListResponse**](ShiftTradeListResponse.html) get_workforcemanagement_managementunit_agent_shifttrades(management_unit_id, agent_id)
+
+
+
+Gets all the shift trades for a given agent
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+agent_id = 'agent_id_example' # str | The agent id
+
+try:
+    # Gets all the shift trades for a given agent
+    api_response = api_instance.get_workforcemanagement_managementunit_agent_shifttrades(management_unit_id, agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent_shifttrades: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **agent_id** | **str**| The agent id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ShiftTradeListResponse**](ShiftTradeListResponse.html)
 
 <a name="get_workforcemanagement_managementunit_intraday_queues"></a>
 
@@ -1663,6 +3541,62 @@ except ApiException as e:
 
 [**WeekScheduleListResponse**](WeekScheduleListResponse.html)
 
+<a name="get_workforcemanagement_managementunit_week_shifttrades"></a>
+
+## [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse.html) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches)
+
+
+
+Gets all the shift trades for a given week
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+evaluate_matches = true # bool | Whether to evaluate the matches for violations (optional) (default to true)
+
+try:
+    # Gets all the shift trades for a given week
+    api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shifttrades: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**WeekShiftTradeListResponse**](WeekShiftTradeListResponse.html)
+
 <a name="get_workforcemanagement_managementunit_week_shorttermforecast_final"></a>
 
 ## [**ForecastResultResponse**](ForecastResultResponse.html) get_workforcemanagement_managementunit_week_shorttermforecast_final(management_unit_id, week_date_id, forecast_id, force_download_service=force_download_service)
@@ -2243,6 +4177,278 @@ except ApiException as e:
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="patch_workforcemanagement_businessunit"></a>
+
+## [**BusinessUnit**](BusinessUnit.html) patch_workforcemanagement_businessunit(business_unit_id, body=body)
+
+
+
+Update business unit
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId} 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+body = PureCloudPlatformClientV2.UpdateBusinessUnitRequest() # UpdateBusinessUnitRequest | body (optional)
+
+try:
+    # Update business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnit**](BusinessUnit.html)
+
+<a name="patch_workforcemanagement_businessunit_activitycode"></a>
+
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, body=body)
+
+
+
+Update an activity code
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+ac_id = 'ac_id_example' # str | The ID of the activity code to update
+body = PureCloudPlatformClientV2.UpdateActivityCodeRequest() # UpdateActivityCodeRequest | body (optional)
+
+try:
+    # Update an activity code
+    api_response = api_instance.patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activitycode: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **ac_id** | **str**| The ID of the activity code to update |  |
+| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="patch_workforcemanagement_businessunit_planninggroup"></a>
+
+## [**PlanningGroup**](PlanningGroup.html) patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body=body)
+
+
+
+Updates the planning group
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:planningGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+planning_group_id = 'planning_group_id_example' # str | The ID of a planning group to update
+body = PureCloudPlatformClientV2.UpdatePlanningGroupRequest() # UpdatePlanningGroupRequest | body (optional)
+
+try:
+    # Updates the planning group
+    api_response = api_instance.patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_planninggroup: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **planning_group_id** | **str**| The ID of a planning group to update |  |
+| **body** | [**UpdatePlanningGroupRequest**](UpdatePlanningGroupRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PlanningGroup**](PlanningGroup.html)
+
+<a name="patch_workforcemanagement_businessunit_scheduling_run"></a>
+
+##  patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body=body)
+
+
+
+Mark a schedule run as applied
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+body = PureCloudPlatformClientV2.PatchBuScheduleRunRequest() # PatchBuScheduleRunRequest | body (optional)
+
+try:
+    # Mark a schedule run as applied
+    api_instance.patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body=body)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **run_id** | **str**| The ID of the schedule run |  |
+| **body** | [**PatchBuScheduleRunRequest**](PatchBuScheduleRunRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="patch_workforcemanagement_businessunit_servicegoaltemplate"></a>
+
+## [**ServiceGoalTemplate**](ServiceGoalTemplate.html) patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body=body)
+
+
+
+Updates a service goal template
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
+
+Requires ANY permissions: 
+
+* wfm:serviceGoalTemplate:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+service_goal_template_id = 'service_goal_template_id_example' # str | The ID of a service goal template to update
+body = PureCloudPlatformClientV2.UpdateServiceGoalTemplate() # UpdateServiceGoalTemplate | body (optional)
+
+try:
+    # Updates a service goal template
+    api_response = api_instance.patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **service_goal_template_id** | **str**| The ID of a service goal template to update |  |
+| **body** | [**UpdateServiceGoalTemplate**](UpdateServiceGoalTemplate.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+
 <a name="patch_workforcemanagement_managementunit"></a>
 
 ## [**ManagementUnit**](ManagementUnit.html) patch_workforcemanagement_managementunit(mu_id, body=body)
@@ -2632,6 +4838,63 @@ except ApiException as e:
 
 [**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html)
 
+<a name="patch_workforcemanagement_managementunit_week_shifttrade"></a>
+
+## [**ShiftTradeResponse**](ShiftTradeResponse.html) patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id)
+
+
+
+Updates a shift trade. This route can only be called by the initiating agent
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.PatchShiftTradeRequest() # PatchShiftTradeRequest | body
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+
+try:
+    # Updates a shift trade. This route can only be called by the initiating agent
+    api_response = api_instance.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_shifttrade: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body |  |
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ShiftTradeResponse**](ShiftTradeResponse.html)
+
 <a name="patch_workforcemanagement_managementunit_workplan"></a>
 
 ## [**WorkPlan**](WorkPlan.html) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body)
@@ -2790,6 +5053,782 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="post_workforcemanagement_agentschedules_mine"></a>
+
+## [**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse.html) post_workforcemanagement_agentschedules_mine(body=body)
+
+
+
+Get published schedule for the current user
+
+
+
+Wraps POST /api/v2/workforcemanagement/agentschedules/mine 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.BuGetCurrentAgentScheduleRequest() # BuGetCurrentAgentScheduleRequest | body (optional)
+
+try:
+    # Get published schedule for the current user
+    api_response = api_instance.post_workforcemanagement_agentschedules_mine(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_agentschedules_mine: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse.html)
+
+<a name="post_workforcemanagement_businessunit_activitycodes"></a>
+
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) post_workforcemanagement_businessunit_activitycodes(bu_id, body=body)
+
+
+
+Create a new activity code
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{buId}/activitycodes 
+
+Requires ANY permissions: 
+
+* wfm:activityCode:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+body = PureCloudPlatformClientV2.CreateActivityCodeRequest() # CreateActivityCodeRequest | body (optional)
+
+try:
+    # Create a new activity code
+    api_response = api_instance.post_workforcemanagement_businessunit_activitycodes(bu_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activitycodes: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="post_workforcemanagement_businessunit_agentschedules_search"></a>
+
+## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+
+
+
+Search published schedules
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Search published schedules
+    api_response = api_instance.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_agentschedules_search: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
+
+<a name="post_workforcemanagement_businessunit_intraday"></a>
+
+## [**AsyncIntradayResponse**](AsyncIntradayResponse.html) post_workforcemanagement_businessunit_intraday(business_unit_id, force_async=force_async, body=body)
+
+
+
+Get intraday data for the given date for the requested planningGroupIds
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday 
+
+Requires ANY permissions: 
+
+* wfm:intraday:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+body = PureCloudPlatformClientV2.IntradayPlanningGroupRequest() # IntradayPlanningGroupRequest | body (optional)
+
+try:
+    # Get intraday data for the given date for the requested planningGroupIds
+    api_response = api_instance.post_workforcemanagement_businessunit_intraday(business_unit_id, force_async=force_async, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_intraday: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+| **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncIntradayResponse**](AsyncIntradayResponse.html)
+
+<a name="post_workforcemanagement_businessunit_planninggroups"></a>
+
+## [**PlanningGroup**](PlanningGroup.html) post_workforcemanagement_businessunit_planninggroups(business_unit_id, body=body)
+
+
+
+Adds a new planning group
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups 
+
+Requires ANY permissions: 
+
+* wfm:planningGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+body = PureCloudPlatformClientV2.CreatePlanningGroupRequest() # CreatePlanningGroupRequest | body (optional)
+
+try:
+    # Adds a new planning group
+    api_response = api_instance.post_workforcemanagement_businessunit_planninggroups(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_planninggroups: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **body** | [**CreatePlanningGroupRequest**](CreatePlanningGroupRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PlanningGroup**](PlanningGroup.html)
+
+<a name="post_workforcemanagement_businessunit_servicegoaltemplates"></a>
+
+## [**ServiceGoalTemplate**](ServiceGoalTemplate.html) post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, body=body)
+
+
+
+Adds a new service goal template
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates 
+
+Requires ANY permissions: 
+
+* wfm:serviceGoalTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+body = PureCloudPlatformClientV2.CreateServiceGoalTemplate() # CreateServiceGoalTemplate | body (optional)
+
+try:
+    # Adds a new service goal template
+    api_response = api_instance.post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit. |  |
+| **body** | [**CreateServiceGoalTemplate**](CreateServiceGoalTemplate.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_agentschedules_query"></a>
+
+## [**BuAsyncAgentSchedulesQueryResponse**](BuAsyncAgentSchedulesQueryResponse.html) post_workforcemanagement_businessunit_week_schedule_agentschedules_query(business_unit_id, week_id, schedule_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+
+Loads agent schedule data from the schedule. Used in combination with the metadata route
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+body = PureCloudPlatformClientV2.BuQueryAgentSchedulesRequest() # BuQueryAgentSchedulesRequest | body
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+
+try:
+    # Loads agent schedule data from the schedule. Used in combination with the metadata route
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_agentschedules_query(business_unit_id, week_id, schedule_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_agentschedules_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **body** | [**BuQueryAgentSchedulesRequest**](BuQueryAgentSchedulesRequest.html)| body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncAgentSchedulesQueryResponse**](BuAsyncAgentSchedulesQueryResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_copy"></a>
+
+## [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html) post_workforcemanagement_businessunit_week_schedule_copy(business_unit_id, week_id, schedule_id, body)
+
+
+
+Copy a schedule
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule to copy
+body = PureCloudPlatformClientV2.BuCopyScheduleRequest() # BuCopyScheduleRequest | body
+
+try:
+    # Copy a schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_copy(business_unit_id, week_id, schedule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_copy: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule to copy |  |
+| **body** | [**BuCopyScheduleRequest**](BuCopyScheduleRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_reschedule"></a>
+
+## [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html) post_workforcemanagement_businessunit_week_schedule_reschedule(business_unit_id, week_id, schedule_id, body)
+
+
+
+Start a rescheduling run
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+body = PureCloudPlatformClientV2.BuRescheduleRequest() # BuRescheduleRequest | body
+
+try:
+    # Start a rescheduling run
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_reschedule(business_unit_id, week_id, schedule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_reschedule: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **body** | [**BuRescheduleRequest**](BuRescheduleRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedules"></a>
+
+## [**BuScheduleMetadata**](BuScheduleMetadata.html) post_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, body)
+
+
+
+Create a blank schedule
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.BuCreateBlankScheduleRequest() # BuCreateBlankScheduleRequest | body
+
+try:
+    # Create a blank schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**BuCreateBlankScheduleRequest**](BuCreateBlankScheduleRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuScheduleMetadata**](BuScheduleMetadata.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedules_generate"></a>
+
+## [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html) post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)
+
+
+
+Generate a schedule
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate 
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.BuGenerateScheduleRequest() # BuGenerateScheduleRequest | body
+
+try:
+    # Generate a schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules_generate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**BuGenerateScheduleRequest**](BuGenerateScheduleRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_shorttermforecast_copy"></a>
+
+## [**AsyncForecastOperationResult**](AsyncForecastOperationResult.html) post_workforcemanagement_businessunit_week_shorttermforecast_copy(business_unit_id, week_date_id, forecast_id, body, force_async=force_async)
+
+
+
+Copy a short term forecast
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast to copy
+body = PureCloudPlatformClientV2.CopyBuForecastRequest() # CopyBuForecastRequest | body
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+
+try:
+    # Copy a short term forecast
+    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecast_copy(business_unit_id, week_date_id, forecast_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecast_copy: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast to copy |  |
+| **body** | [**CopyBuForecastRequest**](CopyBuForecastRequest.html)| body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+
+<a name="post_workforcemanagement_businessunit_week_shorttermforecasts_generate"></a>
+
+## [**AsyncForecastOperationResult**](AsyncForecastOperationResult.html) post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)
+
+
+
+Generate a short term forecast
+
+
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate 
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The business unit ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | 
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+
+try:
+    # Generate a short term forecast
+    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The business unit ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)|  |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+
+<a name="post_workforcemanagement_businessunits"></a>
+
+## [**BusinessUnit**](BusinessUnit.html) post_workforcemanagement_businessunits(body=body)
+
+
+
+Add a new business unit
+
+It may take a minute or two for a new business unit to be available for api operations
+
+Wraps POST /api/v2/workforcemanagement/businessunits 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.CreateBusinessUnitRequest() # CreateBusinessUnitRequest | body (optional)
+
+try:
+    # Add a new business unit
+    api_response = api_instance.post_workforcemanagement_businessunits(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunits: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BusinessUnit**](BusinessUnit.html)
 
 <a name="post_workforcemanagement_managementunit_activitycodes"></a>
 
@@ -3614,6 +6653,231 @@ except ApiException as e:
 ### Return type
 
 [**PartialUploadResponse**](PartialUploadResponse.html)
+
+<a name="post_workforcemanagement_managementunit_week_shifttrade_match"></a>
+
+## [**MatchShiftTradeResponse**](MatchShiftTradeResponse.html) post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id)
+
+
+
+Matches a shift trade. This route can only be called by the receiving agent
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.MatchShiftTradeRequest() # MatchShiftTradeRequest | body
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+
+try:
+    # Matches a shift trade. This route can only be called by the receiving agent
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrade_match: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body |  |
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MatchShiftTradeResponse**](MatchShiftTradeResponse.html)
+
+<a name="post_workforcemanagement_managementunit_week_shifttrades"></a>
+
+## [**ShiftTradeResponse**](ShiftTradeResponse.html) post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
+
+
+
+Adds a shift trade
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.AddShiftTradeRequest() # AddShiftTradeRequest | body
+
+try:
+    # Adds a shift trade
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ShiftTradeResponse**](ShiftTradeResponse.html)
+
+<a name="post_workforcemanagement_managementunit_week_shifttrades_search"></a>
+
+## [**SearchShiftTradesResponse**](SearchShiftTradesResponse.html) post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body)
+
+
+
+Searches for potential shift trade matches for the current agent
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.SearchShiftTradesRequest() # SearchShiftTradesRequest | body
+
+try:
+    # Searches for potential shift trade matches for the current agent
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_search: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SearchShiftTradesResponse**](SearchShiftTradesResponse.html)
+
+<a name="post_workforcemanagement_managementunit_week_shifttrades_state_bulk"></a>
+
+## [**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse.html) post_workforcemanagement_managementunit_week_shifttrades_state_bulk(management_unit_id, week_date_id, body, force_async=force_async)
+
+
+
+Updates the state of a batch of shift trades
+
+Admin functionality is not supported with \"mine\".
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+body = PureCloudPlatformClientV2.BulkShiftTradeStateUpdateRequest() # BulkShiftTradeStateUpdateRequest | body
+force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+
+try:
+    # Updates the state of a batch of shift trades
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_state_bulk(management_unit_id, week_date_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_state_bulk: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest.html)| body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse.html)
 
 <a name="post_workforcemanagement_managementunit_week_shorttermforecast_copy"></a>
 

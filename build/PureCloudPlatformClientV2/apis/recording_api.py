@@ -468,12 +468,13 @@ class RecordingApi(object):
         :param str format_id: The desired media format.
         :param bool download: requesting a download format of the recording
         :param str file_name: the name of the downloaded fileName
+        :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
         :return: Recording
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'recording_id', 'format_id', 'download', 'file_name']
+        all_params = ['conversation_id', 'recording_id', 'format_id', 'download', 'file_name', 'locale']
         all_params.append('callback')
 
         params = locals()
@@ -508,6 +509,8 @@ class RecordingApi(object):
             query_params['download'] = params['download']
         if 'file_name' in params:
             query_params['fileName'] = params['file_name']
+        if 'locale' in params:
+            query_params['locale'] = params['locale']
 
         header_params = {}
 
@@ -1058,12 +1061,13 @@ class RecordingApi(object):
         :param str format_id: The desired media format.
         :param bool download: requesting a download format of the recording
         :param str file_name: the name of the downloaded fileName
+        :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
         :return: Recording
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['orphan_id', 'format_id', 'download', 'file_name']
+        all_params = ['orphan_id', 'format_id', 'download', 'file_name', 'locale']
         all_params.append('callback')
 
         params = locals()
@@ -1093,6 +1097,8 @@ class RecordingApi(object):
             query_params['download'] = params['download']
         if 'file_name' in params:
             query_params['fileName'] = params['file_name']
+        if 'locale' in params:
+            query_params['locale'] = params['locale']
 
         header_params = {}
 
@@ -3165,8 +3171,8 @@ class RecordingApi(object):
 
     def put_recording_job(self, job_id, body, **kwargs):
         """
-        Execute the recording bulk job
-        
+        Execute the recording bulk job.
+        A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

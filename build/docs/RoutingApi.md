@@ -55,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
+|[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number OR joined status for a User in a Queue|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
 |[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
@@ -65,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
+|[**post_routing_email_domain_testconnection**](RoutingApi.html#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
 |[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
 |[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | Bulk add or delete up to 100 queue members|
@@ -2589,6 +2591,59 @@ except ApiException as e:
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
 
+<a name="patch_routing_email_domain"></a>
+
+## [**InboundDomain**](InboundDomain.html) patch_routing_email_domain(domain_id, body)
+
+
+
+Update domain settings
+
+
+
+Wraps PATCH /api/v2/routing/email/domains/{domainId} 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.InboundDomainPatchRequest() # InboundDomainPatchRequest | Domain settings
+
+try:
+    # Update domain settings
+    api_response = api_instance.patch_routing_email_domain(domain_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->patch_routing_email_domain: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InboundDomain**](InboundDomain.html)
+
 <a name="patch_routing_queue_user"></a>
 
 ## [**QueueMember**](QueueMember.html) patch_routing_queue_user(queue_id, member_id, body)
@@ -3123,6 +3178,59 @@ except ApiException as e:
 ### Return type
 
 [**InboundRoute**](InboundRoute.html)
+
+<a name="post_routing_email_domain_testconnection"></a>
+
+## [**TestMessage**](TestMessage.html) post_routing_email_domain_testconnection(domain_id, body=body)
+
+
+
+Tests the custom SMTP server integration connection set on this domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.TestMessage() # TestMessage | TestMessage (optional)
+
+try:
+    # Tests the custom SMTP server integration connection set on this domain
+    api_response = api_instance.post_routing_email_domain_testconnection(domain_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling RoutingApi->post_routing_email_domain_testconnection: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**TestMessage**](TestMessage.html)| TestMessage | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TestMessage**](TestMessage.html)
 
 <a name="post_routing_email_domains"></a>
 

@@ -2421,7 +2421,7 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
         :param str trustor_id: Trustor ID (required)
-        :return: ExternalOrganization
+        :return: ExternalOrganizationTrustorLink
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2483,7 +2483,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ExternalOrganization',
+                                            response_type='ExternalOrganizationTrustorLink',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -46,7 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
 |[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
-|[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job|
+|[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job.|
 |[**put_recording_localkeys_setting**](RecordingApi.html#put_recording_localkeys_setting) | Update the local encryption settings|
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
@@ -311,7 +311,7 @@ void (empty response body)
 
 <a name="get_conversation_recording"></a>
 
-## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name)
+## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
 
 
 
@@ -343,10 +343,11 @@ recording_id = 'recording_id_example' # str | Recording ID
 format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
 download = false # bool | requesting a download format of the recording (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
+locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 
 try:
     # Gets a specific recording.
-    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name)
+    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recording: %s\n" % e
@@ -362,6 +363,7 @@ except ApiException as e:
 | **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
+| **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -687,7 +689,7 @@ except ApiException as e:
 
 <a name="get_orphanrecording_media"></a>
 
-## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name)
+## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
 
 
 
@@ -718,10 +720,11 @@ orphan_id = 'orphan_id_example' # str | Orphan ID
 format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
 download = false # bool | requesting a download format of the recording (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
+locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 
 try:
     # Gets the media of a single orphan recording
-    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name)
+    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e
@@ -736,6 +739,7 @@ except ApiException as e:
 | **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
+| **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2076,15 +2080,17 @@ except ApiException as e:
 
 
 
-Execute the recording bulk job
+Execute the recording bulk job.
 
-
+A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
 Wraps PUT /api/v2/recording/jobs/{jobId} 
 
 Requires ALL permissions: 
 
 * recording:job:edit
+* recording:recording:editRetention
+* recording:screenRecording:editRetention
 
 ### Example
 
@@ -2103,7 +2109,7 @@ job_id = 'job_id_example' # str | jobId
 body = PureCloudPlatformClientV2.ExecuteRecordingJobsQuery() # ExecuteRecordingJobsQuery | query
 
 try:
-    # Execute the recording bulk job
+    # Execute the recording bulk job.
     api_response = api_instance.put_recording_job(job_id, body)
     pprint(api_response)
 except ApiException as e:

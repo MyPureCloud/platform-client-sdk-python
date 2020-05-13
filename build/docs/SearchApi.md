@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_documentation_gkn_search**](SearchApi.html#post_documentation_gkn_search) | Search gkn documentation|
 |[**post_documentation_search**](SearchApi.html#post_documentation_search) | Search documentation|
 |[**post_groups_search**](SearchApi.html#post_groups_search) | Search groups|
+|[**post_knowledge_knowledgebase_search**](SearchApi.html#post_knowledge_knowledgebase_search) | Search Documents|
 |[**post_locations_search**](SearchApi.html#post_locations_search) | Search locations|
 |[**post_search**](SearchApi.html#post_search) | Search resources.|
 |[**post_search_suggest**](SearchApi.html#post_search_suggest) | Suggest resources.|
@@ -579,6 +580,59 @@ except ApiException as e:
 ### Return type
 
 [**GroupsSearchResponse**](GroupsSearchResponse.html)
+
+<a name="post_knowledge_knowledgebase_search"></a>
+
+## [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
+
+
+
+Search Documents
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeSearchRequest() # KnowledgeSearchRequest |  (optional)
+
+try:
+    # Search Documents
+    api_response = api_instance.post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SearchApi->post_knowledge_knowledgebase_search: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
 
 <a name="post_locations_search"></a>
 

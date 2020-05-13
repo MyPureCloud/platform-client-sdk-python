@@ -1570,7 +1570,7 @@ except ApiException as e:
 
 <a name="put_externalcontacts_organization_trustor_trustor_id"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
+## [**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
 
 
 
@@ -1619,7 +1619,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+[**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html)
 
 <a name="put_externalcontacts_relationship"></a>
 

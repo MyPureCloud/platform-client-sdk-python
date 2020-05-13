@@ -41,16 +41,19 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
         """
         self.swagger_types = {
             'user_details': 'list[AnalyticsUserDetail]',
-            'cursor': 'str'
+            'cursor': 'str',
+            'data_availability_date': 'datetime'
         }
 
         self.attribute_map = {
             'user_details': 'userDetails',
-            'cursor': 'cursor'
+            'cursor': 'cursor',
+            'data_availability_date': 'dataAvailabilityDate'
         }
 
         self._user_details = None
         self._cursor = None
+        self._data_availability_date = None
 
     @property
     def user_details(self):
@@ -97,6 +100,29 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
         """
         
         self._cursor = cursor
+
+    @property
+    def data_availability_date(self):
+        """
+        Gets the data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
+        :rtype: datetime
+        """
+        return self._data_availability_date
+
+    @data_availability_date.setter
+    def data_availability_date(self, data_availability_date):
+        """
+        Sets the data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param data_availability_date: The data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
+        :type: datetime
+        """
+        
+        self._data_availability_date = data_availability_date
 
     def to_dict(self):
         """

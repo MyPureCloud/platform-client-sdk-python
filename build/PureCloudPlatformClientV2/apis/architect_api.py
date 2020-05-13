@@ -1378,6 +1378,7 @@ class ArchitectApi(object):
         :param str id: Consumed object ID (required)
         :param str object_type: Consumed object type (required)
         :param list[str] resource_type: Types of consuming resources to show.  Only versioned types are allowed here.
+        :param str version: Object version
         :param int page_number: Page number
         :param int page_size: Page size
         :param str flow_filter: Show only checkedIn or published flows
@@ -1386,7 +1387,7 @@ class ArchitectApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'object_type', 'resource_type', 'page_number', 'page_size', 'flow_filter']
+        all_params = ['id', 'object_type', 'resource_type', 'version', 'page_number', 'page_size', 'flow_filter']
         all_params.append('callback')
 
         params = locals()
@@ -1417,6 +1418,8 @@ class ArchitectApi(object):
             query_params['objectType'] = params['object_type']
         if 'resource_type' in params:
             query_params['resourceType'] = params['resource_type']
+        if 'version' in params:
+            query_params['version'] = params['version']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
@@ -1571,12 +1574,13 @@ class ArchitectApi(object):
         :param bool consuming_resources: Include resources that consume this item
         :param list[str] consumed_resource_type: Types of consumed resources to return, if consumed resources are requested
         :param list[str] consuming_resource_type: Types of consuming resources to return, if consuming resources are requested
+        :param bool consumed_resource_request: Indicate that this is going to look up a consumed resource object
         :return: DependencyObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'version', 'object_type', 'consumed_resources', 'consuming_resources', 'consumed_resource_type', 'consuming_resource_type']
+        all_params = ['id', 'version', 'object_type', 'consumed_resources', 'consuming_resources', 'consumed_resource_type', 'consuming_resource_type', 'consumed_resource_request']
         all_params.append('callback')
 
         params = locals()
@@ -1612,6 +1616,8 @@ class ArchitectApi(object):
             query_params['consumedResourceType'] = params['consumed_resource_type']
         if 'consuming_resource_type' in params:
             query_params['consumingResourceType'] = params['consuming_resource_type']
+        if 'consumed_resource_request' in params:
+            query_params['consumedResourceRequest'] = params['consumed_resource_request']
 
         header_params = {}
 

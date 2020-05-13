@@ -42,7 +42,7 @@ class ShiftTradeResponse(object):
         self.swagger_types = {
             'id': 'str',
             'week_date': 'date',
-            'schedule': 'WeekScheduleReference',
+            'schedule': 'BuScheduleReferenceForMuRoute',
             'state': 'str',
             'initiating_user': 'UserReference',
             'initiating_shift_id': 'str',
@@ -150,10 +150,10 @@ class ShiftTradeResponse(object):
     def schedule(self):
         """
         Gets the schedule of this ShiftTradeResponse.
-        The ID of the associated schedule
+        A reference to the associated schedule
 
         :return: The schedule of this ShiftTradeResponse.
-        :rtype: WeekScheduleReference
+        :rtype: BuScheduleReferenceForMuRoute
         """
         return self._schedule
 
@@ -161,10 +161,10 @@ class ShiftTradeResponse(object):
     def schedule(self, schedule):
         """
         Sets the schedule of this ShiftTradeResponse.
-        The ID of the associated schedule
+        A reference to the associated schedule
 
         :param schedule: The schedule of this ShiftTradeResponse.
-        :type: WeekScheduleReference
+        :type: BuScheduleReferenceForMuRoute
         """
         
         self._schedule = schedule

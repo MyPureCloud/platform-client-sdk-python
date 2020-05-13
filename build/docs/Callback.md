@@ -19,6 +19,7 @@ title: Callback
 | **callback_numbers** | **list[str]** | The phone number(s) to use to place the callback. | [optional] |
 | **callback_user_name** | **str** | The name of the user requesting a callback. | [optional] |
 | **script_id** | **str** | The UUID of the script to use. | [optional] |
+| **external_campaign** | **bool** | True if the call for the callback uses external dialing. | [optional] |
 | **skip_enabled** | **bool** | True if the ability to skip a callback should be enabled. | [optional] |
 | **timeout_seconds** | **int** | The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled. | [optional] |
 | **start_alerting_time** | **datetime** | The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |

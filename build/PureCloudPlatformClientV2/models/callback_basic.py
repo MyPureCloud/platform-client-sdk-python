@@ -52,6 +52,7 @@ class CallbackBasic(object):
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'script_id': 'str',
+            'external_campaign': 'bool',
             'skip_enabled': 'bool',
             'timeout_seconds': 'int',
             'start_alerting_time': 'datetime',
@@ -76,6 +77,7 @@ class CallbackBasic(object):
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'script_id': 'scriptId',
+            'external_campaign': 'externalCampaign',
             'skip_enabled': 'skipEnabled',
             'timeout_seconds': 'timeoutSeconds',
             'start_alerting_time': 'startAlertingTime',
@@ -99,6 +101,7 @@ class CallbackBasic(object):
         self._callback_numbers = None
         self._callback_user_name = None
         self._script_id = None
+        self._external_campaign = None
         self._skip_enabled = None
         self._timeout_seconds = None
         self._start_alerting_time = None
@@ -396,6 +399,29 @@ class CallbackBasic(object):
         """
         
         self._script_id = script_id
+
+    @property
+    def external_campaign(self):
+        """
+        Gets the external_campaign of this CallbackBasic.
+        True if the call for the callback uses external dialing.
+
+        :return: The external_campaign of this CallbackBasic.
+        :rtype: bool
+        """
+        return self._external_campaign
+
+    @external_campaign.setter
+    def external_campaign(self, external_campaign):
+        """
+        Sets the external_campaign of this CallbackBasic.
+        True if the call for the callback uses external dialing.
+
+        :param external_campaign: The external_campaign of this CallbackBasic.
+        :type: bool
+        """
+        
+        self._external_campaign = external_campaign
 
     @property
     def skip_enabled(self):

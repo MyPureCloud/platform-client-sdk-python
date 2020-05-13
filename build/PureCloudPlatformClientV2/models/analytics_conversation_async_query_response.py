@@ -41,15 +41,18 @@ class AnalyticsConversationAsyncQueryResponse(object):
         """
         self.swagger_types = {
             'cursor': 'str',
+            'data_availability_date': 'datetime',
             'conversations': 'list[AnalyticsConversation]'
         }
 
         self.attribute_map = {
             'cursor': 'cursor',
+            'data_availability_date': 'dataAvailabilityDate',
             'conversations': 'conversations'
         }
 
         self._cursor = None
+        self._data_availability_date = None
         self._conversations = None
 
     @property
@@ -74,6 +77,29 @@ class AnalyticsConversationAsyncQueryResponse(object):
         """
         
         self._cursor = cursor
+
+    @property
+    def data_availability_date(self):
+        """
+        Gets the data_availability_date of this AnalyticsConversationAsyncQueryResponse.
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The data_availability_date of this AnalyticsConversationAsyncQueryResponse.
+        :rtype: datetime
+        """
+        return self._data_availability_date
+
+    @data_availability_date.setter
+    def data_availability_date(self, data_availability_date):
+        """
+        Sets the data_availability_date of this AnalyticsConversationAsyncQueryResponse.
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param data_availability_date: The data_availability_date of this AnalyticsConversationAsyncQueryResponse.
+        :type: datetime
+        """
+        
+        self._data_availability_date = data_availability_date
 
     @property
     def conversations(self):

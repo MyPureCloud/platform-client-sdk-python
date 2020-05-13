@@ -77,6 +77,7 @@ class CallbackMediaParticipant(object):
             'voicemail': 'Voicemail',
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
+            'external_campaign': 'bool',
             'skip_enabled': 'bool',
             'timeout_seconds': 'int',
             'automated_callback_config_id': 'str',
@@ -121,6 +122,7 @@ class CallbackMediaParticipant(object):
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
+            'external_campaign': 'externalCampaign',
             'skip_enabled': 'skipEnabled',
             'timeout_seconds': 'timeoutSeconds',
             'automated_callback_config_id': 'automatedCallbackConfigId',
@@ -164,6 +166,7 @@ class CallbackMediaParticipant(object):
         self._voicemail = None
         self._callback_numbers = None
         self._callback_user_name = None
+        self._external_campaign = None
         self._skip_enabled = None
         self._timeout_seconds = None
         self._automated_callback_config_id = None
@@ -1037,10 +1040,33 @@ class CallbackMediaParticipant(object):
         self._callback_user_name = callback_user_name
 
     @property
+    def external_campaign(self):
+        """
+        Gets the external_campaign of this CallbackMediaParticipant.
+        True if the call for the callback uses external dialing.
+
+        :return: The external_campaign of this CallbackMediaParticipant.
+        :rtype: bool
+        """
+        return self._external_campaign
+
+    @external_campaign.setter
+    def external_campaign(self, external_campaign):
+        """
+        Sets the external_campaign of this CallbackMediaParticipant.
+        True if the call for the callback uses external dialing.
+
+        :param external_campaign: The external_campaign of this CallbackMediaParticipant.
+        :type: bool
+        """
+        
+        self._external_campaign = external_campaign
+
+    @property
     def skip_enabled(self):
         """
         Gets the skip_enabled of this CallbackMediaParticipant.
-        If true, the callback can be skipped
+        If true, the callback can be skipped.
 
         :return: The skip_enabled of this CallbackMediaParticipant.
         :rtype: bool
@@ -1051,7 +1077,7 @@ class CallbackMediaParticipant(object):
     def skip_enabled(self, skip_enabled):
         """
         Sets the skip_enabled of this CallbackMediaParticipant.
-        If true, the callback can be skipped
+        If true, the callback can be skipped.
 
         :param skip_enabled: The skip_enabled of this CallbackMediaParticipant.
         :type: bool

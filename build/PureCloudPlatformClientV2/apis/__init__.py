@@ -18,6 +18,7 @@ from .greetings_api import GreetingsApi
 from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .integrations_api import IntegrationsApi
+from .knowledge_api import KnowledgeApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
@@ -36,7 +37,6 @@ from .routing_api import RoutingApi
 from .scim_api import SCIMApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
-from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
 from .telephony_api import TelephonyApi

@@ -42,18 +42,21 @@ class AdditionalMessage(object):
         self.swagger_types = {
             'text_body': 'str',
             'media_ids': 'list[str]',
-            'sticker_ids': 'list[str]'
+            'sticker_ids': 'list[str]',
+            'messaging_template': 'MessagingTemplateRequest'
         }
 
         self.attribute_map = {
             'text_body': 'textBody',
             'media_ids': 'mediaIds',
-            'sticker_ids': 'stickerIds'
+            'sticker_ids': 'stickerIds',
+            'messaging_template': 'messagingTemplate'
         }
 
         self._text_body = None
         self._media_ids = None
         self._sticker_ids = None
+        self._messaging_template = None
 
     @property
     def text_body(self):
@@ -123,6 +126,29 @@ class AdditionalMessage(object):
         """
         
         self._sticker_ids = sticker_ids
+
+    @property
+    def messaging_template(self):
+        """
+        Gets the messaging_template of this AdditionalMessage.
+        The messaging template use to send a predefined canned response with the message
+
+        :return: The messaging_template of this AdditionalMessage.
+        :rtype: MessagingTemplateRequest
+        """
+        return self._messaging_template
+
+    @messaging_template.setter
+    def messaging_template(self, messaging_template):
+        """
+        Sets the messaging_template of this AdditionalMessage.
+        The messaging template use to send a predefined canned response with the message
+
+        :param messaging_template: The messaging_template of this AdditionalMessage.
+        :type: MessagingTemplateRequest
+        """
+        
+        self._messaging_template = messaging_template
 
     def to_dict(self):
         """

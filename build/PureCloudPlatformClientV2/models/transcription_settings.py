@@ -41,16 +41,19 @@ class TranscriptionSettings(object):
         """
         self.swagger_types = {
             'transcription': 'str',
-            'transcription_confidence_threshold': 'int'
+            'transcription_confidence_threshold': 'int',
+            'content_search_enabled': 'bool'
         }
 
         self.attribute_map = {
             'transcription': 'transcription',
-            'transcription_confidence_threshold': 'transcriptionConfidenceThreshold'
+            'transcription_confidence_threshold': 'transcriptionConfidenceThreshold',
+            'content_search_enabled': 'contentSearchEnabled'
         }
 
         self._transcription = None
         self._transcription_confidence_threshold = None
+        self._content_search_enabled = None
 
     @property
     def transcription(self):
@@ -101,6 +104,29 @@ class TranscriptionSettings(object):
         """
         
         self._transcription_confidence_threshold = transcription_confidence_threshold
+
+    @property
+    def content_search_enabled(self):
+        """
+        Gets the content_search_enabled of this TranscriptionSettings.
+        Setting to enable/disable content search
+
+        :return: The content_search_enabled of this TranscriptionSettings.
+        :rtype: bool
+        """
+        return self._content_search_enabled
+
+    @content_search_enabled.setter
+    def content_search_enabled(self, content_search_enabled):
+        """
+        Sets the content_search_enabled of this TranscriptionSettings.
+        Setting to enable/disable content search
+
+        :param content_search_enabled: The content_search_enabled of this TranscriptionSettings.
+        :type: bool
+        """
+        
+        self._content_search_enabled = content_search_enabled
 
     def to_dict(self):
         """
