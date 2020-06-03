@@ -64,7 +64,8 @@ class Call(object):
             'peer_id': 'str',
             'uui_data': 'str',
             'pcSelf': 'Address',
-            'other': 'Address'
+            'other': 'Address',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -92,7 +93,8 @@ class Call(object):
             'peer_id': 'peerId',
             'uui_data': 'uuiData',
             'pcSelf': 'self',
-            'other': 'other'
+            'other': 'other',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -120,6 +122,7 @@ class Call(object):
         self._uui_data = None
         self._pcSelf = None
         self._other = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -711,6 +714,29 @@ class Call(object):
         """
         
         self._other = other
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this Call.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this Call.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this Call.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this Call.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

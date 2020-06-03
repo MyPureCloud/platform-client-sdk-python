@@ -56,7 +56,8 @@ class SocialExpression(object):
             'disconnected_time': 'datetime',
             'provider': 'str',
             'script_id': 'str',
-            'peer_id': 'str'
+            'peer_id': 'str',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -76,7 +77,8 @@ class SocialExpression(object):
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
             'script_id': 'scriptId',
-            'peer_id': 'peerId'
+            'peer_id': 'peerId',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -96,6 +98,7 @@ class SocialExpression(object):
         self._provider = None
         self._script_id = None
         self._peer_id = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -495,6 +498,29 @@ class SocialExpression(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this SocialExpression.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this SocialExpression.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this SocialExpression.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this SocialExpression.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

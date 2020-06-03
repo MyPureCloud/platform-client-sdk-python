@@ -52,6 +52,7 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
             'callback_user_name': 'str',
             'script_id': 'str',
             'peer_id': 'str',
+            'external_campaign': 'bool',
             'skip_enabled': 'bool',
             'provider': 'str',
             'timeout_seconds': 'int',
@@ -75,6 +76,7 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
             'callback_user_name': 'callbackUserName',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
+            'external_campaign': 'externalCampaign',
             'skip_enabled': 'skipEnabled',
             'provider': 'provider',
             'timeout_seconds': 'timeoutSeconds',
@@ -97,6 +99,7 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
         self._callback_user_name = None
         self._script_id = None
         self._peer_id = None
+        self._external_campaign = None
         self._skip_enabled = None
         self._provider = None
         self._timeout_seconds = None
@@ -393,6 +396,29 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def external_campaign(self):
+        """
+        Gets the external_campaign of this QueueConversationSocialExpressionEventTopicCallback.
+
+
+        :return: The external_campaign of this QueueConversationSocialExpressionEventTopicCallback.
+        :rtype: bool
+        """
+        return self._external_campaign
+
+    @external_campaign.setter
+    def external_campaign(self, external_campaign):
+        """
+        Sets the external_campaign of this QueueConversationSocialExpressionEventTopicCallback.
+
+
+        :param external_campaign: The external_campaign of this QueueConversationSocialExpressionEventTopicCallback.
+        :type: bool
+        """
+        
+        self._external_campaign = external_campaign
 
     @property
     def skip_enabled(self):

@@ -938,7 +938,7 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
         :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
@@ -1026,7 +1026,7 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
         :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
@@ -1667,7 +1667,7 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
         :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
@@ -1755,7 +1755,7 @@ class SCIMApi(object):
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
         :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes ant the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
         :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse

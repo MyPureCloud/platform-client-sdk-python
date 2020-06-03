@@ -60,7 +60,8 @@ class Message(object):
             'peer_id': 'str',
             'to_address': 'Address',
             'from_address': 'Address',
-            'messages': 'list[MessageDetails]'
+            'messages': 'list[MessageDetails]',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -84,7 +85,8 @@ class Message(object):
             'peer_id': 'peerId',
             'to_address': 'toAddress',
             'from_address': 'fromAddress',
-            'messages': 'messages'
+            'messages': 'messages',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -108,6 +110,7 @@ class Message(object):
         self._to_address = None
         self._from_address = None
         self._messages = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -607,6 +610,29 @@ class Message(object):
         """
         
         self._messages = messages
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this Message.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this Message.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this Message.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this Message.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

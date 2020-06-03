@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
 |[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
+|[**delete_routing_sms_address**](RoutingApi.html#delete_routing_sms_address) | Delete an Address by Id for SMS|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
 |[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
@@ -439,6 +440,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_id** | **str**| Skill ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_sms_address"></a>
+
+##  delete_routing_sms_address(address_id)
+
+
+
+Delete an Address by Id for SMS
+
+
+
+Wraps DELETE /api/v2/routing/sms/addresses/{addressId} 
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+address_id = 'address_id_example' # str | Address ID
+
+try:
+    # Delete an Address by Id for SMS
+    api_instance.delete_routing_sms_address(address_id)
+except ApiException as e:
+    print "Exception when calling RoutingApi->delete_routing_sms_address: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **address_id** | **str**| Address ID |  |
 {: class="table table-striped"}
 
 ### Return type

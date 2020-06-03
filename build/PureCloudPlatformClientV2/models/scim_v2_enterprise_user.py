@@ -42,18 +42,21 @@ class ScimV2EnterpriseUser(object):
         self.swagger_types = {
             'division': 'str',
             'department': 'str',
-            'manager': 'Manager'
+            'manager': 'Manager',
+            'employee_number': 'str'
         }
 
         self.attribute_map = {
             'division': 'division',
             'department': 'department',
-            'manager': 'manager'
+            'manager': 'manager',
+            'employee_number': 'employeeNumber'
         }
 
         self._division = None
         self._department = None
         self._manager = None
+        self._employee_number = None
 
     @property
     def division(self):
@@ -123,6 +126,29 @@ class ScimV2EnterpriseUser(object):
         """
         
         self._manager = manager
+
+    @property
+    def employee_number(self):
+        """
+        Gets the employee_number of this ScimV2EnterpriseUser.
+        The users employee number.
+
+        :return: The employee_number of this ScimV2EnterpriseUser.
+        :rtype: str
+        """
+        return self._employee_number
+
+    @employee_number.setter
+    def employee_number(self, employee_number):
+        """
+        Sets the employee_number of this ScimV2EnterpriseUser.
+        The users employee number.
+
+        :param employee_number: The employee_number of this ScimV2EnterpriseUser.
+        :type: str
+        """
+        
+        self._employee_number = employee_number
 
     def to_dict(self):
         """

@@ -51,7 +51,8 @@ class Screenshare(object):
             'disconnected_time': 'datetime',
             'provider': 'str',
             'peer_id': 'str',
-            'segments': 'list[Segment]'
+            'segments': 'list[Segment]',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class Screenshare(object):
             'disconnected_time': 'disconnectedTime',
             'provider': 'provider',
             'peer_id': 'peerId',
-            'segments': 'segments'
+            'segments': 'segments',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -81,6 +83,7 @@ class Screenshare(object):
         self._provider = None
         self._peer_id = None
         self._segments = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -365,6 +368,29 @@ class Screenshare(object):
         """
         
         self._segments = segments
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this Screenshare.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this Screenshare.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this Screenshare.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this Screenshare.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

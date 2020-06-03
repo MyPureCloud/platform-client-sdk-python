@@ -46,6 +46,8 @@ class FlowDivisionView(object):
             'type': 'str',
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
+            'published_version': 'FlowVersion',
+            'debug_version': 'FlowVersion',
             'self_uri': 'str'
         }
 
@@ -56,6 +58,8 @@ class FlowDivisionView(object):
             'type': 'type',
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
+            'published_version': 'publishedVersion',
+            'debug_version': 'debugVersion',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +69,8 @@ class FlowDivisionView(object):
         self._type = None
         self._input_schema = None
         self._output_schema = None
+        self._published_version = None
+        self._debug_version = None
         self._self_uri = None
 
     @property
@@ -208,6 +214,52 @@ class FlowDivisionView(object):
         """
         
         self._output_schema = output_schema
+
+    @property
+    def published_version(self):
+        """
+        Gets the published_version of this FlowDivisionView.
+        published version information if there is a published version
+
+        :return: The published_version of this FlowDivisionView.
+        :rtype: FlowVersion
+        """
+        return self._published_version
+
+    @published_version.setter
+    def published_version(self, published_version):
+        """
+        Sets the published_version of this FlowDivisionView.
+        published version information if there is a published version
+
+        :param published_version: The published_version of this FlowDivisionView.
+        :type: FlowVersion
+        """
+        
+        self._published_version = published_version
+
+    @property
+    def debug_version(self):
+        """
+        Gets the debug_version of this FlowDivisionView.
+        debug version information if there is a debug version
+
+        :return: The debug_version of this FlowDivisionView.
+        :rtype: FlowVersion
+        """
+        return self._debug_version
+
+    @debug_version.setter
+    def debug_version(self, debug_version):
+        """
+        Sets the debug_version of this FlowDivisionView.
+        debug version information if there is a debug version
+
+        :param debug_version: The debug_version of this FlowDivisionView.
+        :type: FlowVersion
+        """
+        
+        self._debug_version = debug_version
 
     @property
     def self_uri(self):

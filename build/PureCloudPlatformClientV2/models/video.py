@@ -54,7 +54,8 @@ class Video(object):
             'provider': 'str',
             'peer_id': 'str',
             'msids': 'list[str]',
-            'pcSelf': 'Address'
+            'pcSelf': 'Address',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class Video(object):
             'provider': 'provider',
             'peer_id': 'peerId',
             'msids': 'msids',
-            'pcSelf': 'self'
+            'pcSelf': 'self',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -90,6 +92,7 @@ class Video(object):
         self._peer_id = None
         self._msids = None
         self._pcSelf = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -443,6 +446,29 @@ class Video(object):
         """
         
         self._pcSelf = pcSelf
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this Video.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this Video.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this Video.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this Video.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

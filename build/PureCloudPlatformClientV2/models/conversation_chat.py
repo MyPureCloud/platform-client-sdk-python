@@ -56,7 +56,8 @@ class ConversationChat(object):
             'script_id': 'str',
             'peer_id': 'str',
             'avatar_image_url': 'str',
-            'journey_context': 'JourneyContext'
+            'journey_context': 'JourneyContext',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -76,7 +77,8 @@ class ConversationChat(object):
             'script_id': 'scriptId',
             'peer_id': 'peerId',
             'avatar_image_url': 'avatarImageUrl',
-            'journey_context': 'journeyContext'
+            'journey_context': 'journeyContext',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -96,6 +98,7 @@ class ConversationChat(object):
         self._peer_id = None
         self._avatar_image_url = None
         self._journey_context = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -499,6 +502,29 @@ class ConversationChat(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this ConversationChat.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this ConversationChat.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this ConversationChat.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this ConversationChat.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

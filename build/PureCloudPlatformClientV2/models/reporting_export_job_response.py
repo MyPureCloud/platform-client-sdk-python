@@ -60,6 +60,8 @@ class ReportingExportJobResponse(object):
             'has_split_filters': 'bool',
             'selected_columns': 'list[SelectedColumns]',
             'has_custom_participant_attributes': 'bool',
+            'recipient_emails': 'list[str]',
+            'email_statuses': 'dict(str, str)',
             'self_uri': 'str'
         }
 
@@ -84,6 +86,8 @@ class ReportingExportJobResponse(object):
             'has_split_filters': 'hasSplitFilters',
             'selected_columns': 'selectedColumns',
             'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
+            'recipient_emails': 'recipientEmails',
+            'email_statuses': 'emailStatuses',
             'self_uri': 'selfUri'
         }
 
@@ -107,6 +111,8 @@ class ReportingExportJobResponse(object):
         self._has_split_filters = None
         self._selected_columns = None
         self._has_custom_participant_attributes = None
+        self._recipient_emails = None
+        self._email_statuses = None
         self._self_uri = None
 
     @property
@@ -584,6 +590,52 @@ class ReportingExportJobResponse(object):
         """
         
         self._has_custom_participant_attributes = has_custom_participant_attributes
+
+    @property
+    def recipient_emails(self):
+        """
+        Gets the recipient_emails of this ReportingExportJobResponse.
+        The list of email recipients for the exports
+
+        :return: The recipient_emails of this ReportingExportJobResponse.
+        :rtype: list[str]
+        """
+        return self._recipient_emails
+
+    @recipient_emails.setter
+    def recipient_emails(self, recipient_emails):
+        """
+        Sets the recipient_emails of this ReportingExportJobResponse.
+        The list of email recipients for the exports
+
+        :param recipient_emails: The recipient_emails of this ReportingExportJobResponse.
+        :type: list[str]
+        """
+        
+        self._recipient_emails = recipient_emails
+
+    @property
+    def email_statuses(self):
+        """
+        Gets the email_statuses of this ReportingExportJobResponse.
+        The status of individual email addresses as a map
+
+        :return: The email_statuses of this ReportingExportJobResponse.
+        :rtype: dict(str, str)
+        """
+        return self._email_statuses
+
+    @email_statuses.setter
+    def email_statuses(self, email_statuses):
+        """
+        Sets the email_statuses of this ReportingExportJobResponse.
+        The status of individual email addresses as a map
+
+        :param email_statuses: The email_statuses of this ReportingExportJobResponse.
+        :type: dict(str, str)
+        """
+        
+        self._email_statuses = email_statuses
 
     @property
     def self_uri(self):

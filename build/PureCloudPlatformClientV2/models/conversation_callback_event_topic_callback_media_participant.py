@@ -79,6 +79,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'callback_numbers': 'list[str]',
             'callback_user_name': 'str',
             'skip_enabled': 'bool',
+            'external_campaign': 'bool',
             'timeout_seconds': 'int',
             'callback_scheduled_time': 'datetime',
             'automated_callback_config_id': 'str'
@@ -124,6 +125,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'callback_numbers': 'callbackNumbers',
             'callback_user_name': 'callbackUserName',
             'skip_enabled': 'skipEnabled',
+            'external_campaign': 'externalCampaign',
             'timeout_seconds': 'timeoutSeconds',
             'callback_scheduled_time': 'callbackScheduledTime',
             'automated_callback_config_id': 'automatedCallbackConfigId'
@@ -168,6 +170,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._callback_numbers = None
         self._callback_user_name = None
         self._skip_enabled = None
+        self._external_campaign = None
         self._timeout_seconds = None
         self._callback_scheduled_time = None
         self._automated_callback_config_id = None
@@ -1084,6 +1087,29 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         """
         
         self._skip_enabled = skip_enabled
+
+    @property
+    def external_campaign(self):
+        """
+        Gets the external_campaign of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The external_campaign of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: bool
+        """
+        return self._external_campaign
+
+    @external_campaign.setter
+    def external_campaign(self, external_campaign):
+        """
+        Sets the external_campaign of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param external_campaign: The external_campaign of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: bool
+        """
+        
+        self._external_campaign = external_campaign
 
     @property
     def timeout_seconds(self):

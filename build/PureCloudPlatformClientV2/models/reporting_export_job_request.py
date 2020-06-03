@@ -52,7 +52,8 @@ class ReportingExportJobRequest(object):
             'has_format_durations': 'bool',
             'has_split_filters': 'bool',
             'selected_columns': 'list[SelectedColumns]',
-            'has_custom_participant_attributes': 'bool'
+            'has_custom_participant_attributes': 'bool',
+            'recipient_emails': 'list[str]'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class ReportingExportJobRequest(object):
             'has_format_durations': 'hasFormatDurations',
             'has_split_filters': 'hasSplitFilters',
             'selected_columns': 'selectedColumns',
-            'has_custom_participant_attributes': 'hasCustomParticipantAttributes'
+            'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
+            'recipient_emails': 'recipientEmails'
         }
 
         self._name = None
@@ -84,6 +86,7 @@ class ReportingExportJobRequest(object):
         self._has_split_filters = None
         self._selected_columns = None
         self._has_custom_participant_attributes = None
+        self._recipient_emails = None
 
     @property
     def name(self):
@@ -391,6 +394,29 @@ class ReportingExportJobRequest(object):
         """
         
         self._has_custom_participant_attributes = has_custom_participant_attributes
+
+    @property
+    def recipient_emails(self):
+        """
+        Gets the recipient_emails of this ReportingExportJobRequest.
+        The list of email recipients for the exports
+
+        :return: The recipient_emails of this ReportingExportJobRequest.
+        :rtype: list[str]
+        """
+        return self._recipient_emails
+
+    @recipient_emails.setter
+    def recipient_emails(self, recipient_emails):
+        """
+        Sets the recipient_emails of this ReportingExportJobRequest.
+        The list of email recipients for the exports
+
+        :param recipient_emails: The recipient_emails of this ReportingExportJobRequest.
+        :type: list[str]
+        """
+        
+        self._recipient_emails = recipient_emails
 
     def to_dict(self):
         """

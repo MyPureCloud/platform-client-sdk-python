@@ -61,7 +61,8 @@ class Callback(object):
             'callback_scheduled_time': 'datetime',
             'automated_callback_config_id': 'str',
             'provider': 'str',
-            'peer_id': 'str'
+            'peer_id': 'str',
+            'wrapup': 'Wrapup'
         }
 
         self.attribute_map = {
@@ -86,7 +87,8 @@ class Callback(object):
             'callback_scheduled_time': 'callbackScheduledTime',
             'automated_callback_config_id': 'automatedCallbackConfigId',
             'provider': 'provider',
-            'peer_id': 'peerId'
+            'peer_id': 'peerId',
+            'wrapup': 'wrapup'
         }
 
         self._state = None
@@ -111,6 +113,7 @@ class Callback(object):
         self._automated_callback_config_id = None
         self._provider = None
         self._peer_id = None
+        self._wrapup = None
 
     @property
     def state(self):
@@ -629,6 +632,29 @@ class Callback(object):
         """
         
         self._peer_id = peer_id
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this Callback.
+        Call wrap up or disposition data.
+
+        :return: The wrapup of this Callback.
+        :rtype: Wrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this Callback.
+        Call wrap up or disposition data.
+
+        :param wrapup: The wrapup of this Callback.
+        :type: Wrapup
+        """
+        
+        self._wrapup = wrapup
 
     def to_dict(self):
         """

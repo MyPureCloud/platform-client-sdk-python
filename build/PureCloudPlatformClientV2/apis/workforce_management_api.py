@@ -720,7 +720,7 @@ class WorkforceManagementApi(object):
 
     def delete_workforcemanagement_managementunit_activitycode(self, mu_id, ac_id, **kwargs):
         """
-        Deletes an activity code
+        Deprecated/Gone: Use the new business unit activity code resources
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -804,7 +804,7 @@ class WorkforceManagementApi(object):
 
     def delete_workforcemanagement_managementunit_scheduling_run(self, management_unit_id, run_id, **kwargs):
         """
-        Cancel a schedule run
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -817,7 +817,7 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit. (required)
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit. (required)
         :param str run_id: The ID of the schedule run (required)
         :return: None
                  If the method is called asynchronously,
@@ -888,7 +888,7 @@ class WorkforceManagementApi(object):
 
     def delete_workforcemanagement_managementunit_servicegoalgroup(self, management_unit_id, service_goal_group_id, **kwargs):
         """
-        Delete a service goal group
+        Gone. Replaced with service goal templates and planning groups under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -901,8 +901,8 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param str service_goal_group_id: The ID of the service goal group to delete (required)
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str service_goal_group_id: Gone. The ID of the service goal group to delete (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -972,7 +972,7 @@ class WorkforceManagementApi(object):
 
     def delete_workforcemanagement_managementunit_week_schedule(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Delete a schedule
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -987,7 +987,7 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param str schedule_id: The ID of theschedule to delete (required)
+        :param str schedule_id: Gone/deprecated. The ID of the schedule to delete (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1062,8 +1062,8 @@ class WorkforceManagementApi(object):
 
     def delete_workforcemanagement_managementunit_week_shorttermforecast(self, management_unit_id, week_date_id, forecast_id, **kwargs):
         """
-        Delete a short term forecast
-        Must not be tied to any schedules
+        Gone. Use equivalent business unit resource instead
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1075,9 +1075,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param str forecast_id: The ID of the forecast (required)
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :param str forecast_id: (Gone/Deprecated): The ID of the forecast (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3844,9 +3844,9 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_intraday_queues(self, mu_id, date, **kwargs):
+    def get_workforcemanagement_managementunit_intraday_queues(self, mu_id, **kwargs):
         """
-        Get intraday queues for the given date
+        Gone.  Moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3855,18 +3855,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_intraday_queues(mu_id, date, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_intraday_queues(mu_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The management unit ID of the management unit (required)
-        :param str date: yyyy-MM-dd date string interpreted in the configured management unit time zone (required)
-        :return: WfmIntradayQueueListing
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'date']
+        all_params = ['mu_id']
         all_params.append('callback')
 
         params = locals()
@@ -3882,9 +3881,6 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'mu_id' is set
         if ('mu_id' not in params) or (params['mu_id'] is None):
             raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_intraday_queues`")
-        # verify the required parameter 'date' is set
-        if ('date' not in params) or (params['date'] is None):
-            raise ValueError("Missing the required parameter `date` when calling `get_workforcemanagement_managementunit_intraday_queues`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues'.replace('{format}', 'json')
@@ -3893,8 +3889,6 @@ class WorkforceManagementApi(object):
             path_params['muId'] = params['mu_id']
 
         query_params = {}
-        if 'date' in params:
-            query_params['date'] = params['date']
 
         header_params = {}
 
@@ -3923,14 +3917,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WfmIntradayQueueListing',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_scheduling_run(self, management_unit_id, run_id, **kwargs):
         """
-        Gets the status for a specific scheduling run
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3943,9 +3937,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit. (required)
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit. (required)
         :param str run_id: The ID of the schedule run (required)
-        :return: SchedulingRunResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4007,14 +4001,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SchedulingRunResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_scheduling_run_result(self, management_unit_id, run_id, **kwargs):
         """
-        Gets the result of a specific scheduling run
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4027,9 +4021,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit. (required)
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit. (required)
         :param str run_id: The ID of the schedule run (required)
-        :return: RescheduleResult
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4091,14 +4085,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='RescheduleResult',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_scheduling_runs(self, management_unit_id, **kwargs):
         """
-        Get the status of all the ongoing schedule runs
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4111,8 +4105,8 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit. (required)
-        :return: SchedulingRunListResponse
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit. (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4169,14 +4163,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SchedulingRunListResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_servicegoalgroup(self, management_unit_id, service_goal_group_id, **kwargs):
         """
-        Get a service goal group
+        Gone. Replaced with service goal templates and planning groups under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4189,9 +4183,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param str service_goal_group_id: The ID of the service goal group to fetch (required)
-        :return: ServiceGoalGroup
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str service_goal_group_id: Gone.  The ID of the service goal group to fetch (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4253,14 +4247,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ServiceGoalGroup',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_servicegoalgroups(self, management_unit_id, **kwargs):
         """
-        Get service goal groups
+        Gone. Replaced with service goal templates and planning groups under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4273,8 +4267,8 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :return: ServiceGoalGroupList
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4331,14 +4325,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ServiceGoalGroupList',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_settings(self, mu_id, **kwargs):
         """
-        Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
+        Gone. Get management unit settings via expand parameters on the GET management unit
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4352,7 +4346,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :return: ManagementUnitSettingsResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4409,7 +4403,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ManagementUnitSettingsResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4827,7 +4821,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_week_schedule(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Get a week schedule
+        Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4923,7 +4917,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_week_schedule_generationresults(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Get week schedule generation results
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4938,8 +4932,8 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param str schedule_id: The ID of the schedule to fetch generation results (required)
-        :return: WeekScheduleGenerationResult
+        :param str schedule_id: Gone/deprecated. The ID of the schedule to fetch generation results (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5006,14 +5000,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WeekScheduleGenerationResult',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_week_schedules(self, management_unit_id, week_id, **kwargs):
         """
-        Get the list of schedules in a week in management unit
+        Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -5193,7 +5187,7 @@ class WorkforceManagementApi(object):
 
     def get_workforcemanagement_managementunit_week_shorttermforecast_final(self, management_unit_id, week_date_id, forecast_id, **kwargs):
         """
-        Get the final result of a short term forecast calculation with modifications applied
+        Gone. Use equivalent business unit resource instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -5206,16 +5200,15 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param str forecast_id: The ID of the forecast (required)
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
-        :return: ForecastResultResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :param str forecast_id: (Gone/Deprecated): The ID of the forecast (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'forecast_id', 'force_download_service']
+        all_params = ['management_unit_id', 'week_date_id', 'forecast_id']
         all_params.append('callback')
 
         params = locals()
@@ -5249,8 +5242,6 @@ class WorkforceManagementApi(object):
             path_params['forecastId'] = params['forecast_id']
 
         query_params = {}
-        if 'force_download_service' in params:
-            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -5279,15 +5270,15 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ForecastResultResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_workforcemanagement_managementunit_week_shorttermforecasts(self, management_unit_id, week_date_id, **kwargs):
         """
-        Get short term forecasts
-        Use \"recent\" for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date
+        Gone. Use equivalent business unit resource instead
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5299,9 +5290,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :return: ShortTermForecastListResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5363,7 +5354,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ShortTermForecastListResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6582,7 +6573,7 @@ class WorkforceManagementApi(object):
 
     def patch_workforcemanagement_managementunit_activitycode(self, mu_id, ac_id, **kwargs):
         """
-        Update an activity code
+        Deprecated/Gone: Use the new business unit activity code resources
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6598,7 +6589,7 @@ class WorkforceManagementApi(object):
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str ac_id: The ID of the activity code to update (required)
         :param UpdateActivityCodeRequest body: body
-        :return: ActivityCode
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6662,14 +6653,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ActivityCode',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def patch_workforcemanagement_managementunit_scheduling_run(self, management_unit_id, run_id, **kwargs):
         """
-        Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6682,10 +6673,10 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit. (required)
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit. (required)
         :param str run_id: The ID of the schedule run (required)
         :param UpdateSchedulingRunRequest body: body
-        :return: RescheduleResult
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6749,14 +6740,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='RescheduleResult',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def patch_workforcemanagement_managementunit_servicegoalgroup(self, management_unit_id, service_goal_group_id, **kwargs):
         """
-        Update a service goal group
+        Gone. Replaced with service goal templates and planning groups under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6769,15 +6760,14 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param str service_goal_group_id: The ID of the service goal group to update (required)
-        :param ServiceGoalGroup body: body
-        :return: ServiceGoalGroup
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str service_goal_group_id: Gone. The ID of the service goal group to update (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'service_goal_group_id', 'body']
+        all_params = ['management_unit_id', 'service_goal_group_id']
         all_params.append('callback')
 
         params = locals()
@@ -6813,8 +6803,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6836,14 +6824,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ServiceGoalGroup',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def patch_workforcemanagement_managementunit_settings(self, mu_id, **kwargs):
         """
-        Update the settings for the requested management unit
+        Gone. Update settings by PATCHing the management unit
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6857,13 +6845,12 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param ManagementUnitSettingsRequest body: config
-        :return: ManagementUnitSettingsResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['mu_id']
         all_params.append('callback')
 
         params = locals()
@@ -6894,8 +6881,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6917,7 +6902,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ManagementUnitSettingsResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7017,7 +7002,7 @@ class WorkforceManagementApi(object):
 
     def patch_workforcemanagement_managementunit_week_schedule(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Update a week schedule
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7032,16 +7017,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param str schedule_id: The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500 (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
-        :param UpdateWeekScheduleRequest body: body
-        :return: AsyncWeekScheduleResponse
+        :param str schedule_id: Gone/deprecated. The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500 (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'schedule_id', 'force_async', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'week_id', 'schedule_id']
         all_params.append('callback')
 
         params = locals()
@@ -7075,10 +7057,6 @@ class WorkforceManagementApi(object):
             path_params['scheduleId'] = params['schedule_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
-        if 'force_download_service' in params:
-            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -7086,8 +7064,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -7109,7 +7085,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AsyncWeekScheduleResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8685,7 +8661,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_managementunit_activitycodes(self, mu_id, **kwargs):
         """
-        Create a new activity code
+        Deprecated/Gone: Use the new business unit activity code resources
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8699,13 +8675,12 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param CreateActivityCodeRequest body: body
-        :return: ActivityCode
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['mu_id']
         all_params.append('callback')
 
         params = locals()
@@ -8736,8 +8711,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -8759,7 +8732,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ActivityCode',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8934,7 +8907,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_managementunit_intraday(self, mu_id, **kwargs):
         """
-        Get intraday data for the given date for the requested queueIds
+        Gone.  Moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8948,13 +8921,12 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The management unit ID of the management unit (required)
-        :param IntradayQueryDataCommand body: body
-        :return: IntradayResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['mu_id']
         all_params.append('callback')
 
         params = locals()
@@ -8985,8 +8957,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9008,7 +8978,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IntradayResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9177,7 +9147,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_managementunit_servicegoalgroups(self, management_unit_id, **kwargs):
         """
-        Create a new service goal group
+        Gone. Replaced with service goal templates and planning groups under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9190,14 +9160,13 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param CreateServiceGoalGroupRequest body: body
-        :return: ServiceGoalGroup
+        :param str management_unit_id: (Deprecated/gone): The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'body']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -9228,8 +9197,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9251,7 +9218,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ServiceGoalGroup',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9339,7 +9306,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_managementunit_timeoffrequests_fetchdetails(self, mu_id, **kwargs):
         """
-        Gets a list of time off requests from lookup ids
+        Gone.  All data is now returned in the query route
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9353,8 +9320,8 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param TimeOffRequestLookupList body: body
-        :return: TimeOffRequestEntityList
+        :param TimeOffRequestListing body: body
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -9413,7 +9380,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='TimeOffRequestEntityList',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9435,7 +9402,7 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param TimeOffRequestQueryBody body: body
-        :return: TimeOffRequestLookupList
+        :return: TimeOffRequestListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -9494,14 +9461,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='TimeOffRequestLookupList',
+                                            response_type='TimeOffRequestListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def post_workforcemanagement_managementunit_week_schedule_copy(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Copy a week schedule
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9516,16 +9483,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param str schedule_id: The ID of the schedule to copy from (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
-        :param CopyWeekScheduleRequest body: body
-        :return: AsyncWeekScheduleResponse
+        :param str schedule_id: Gone/deprecated. The ID of the schedule to copy from (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'schedule_id', 'force_async', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'week_id', 'schedule_id']
         all_params.append('callback')
 
         params = locals()
@@ -9559,10 +9523,6 @@ class WorkforceManagementApi(object):
             path_params['scheduleId'] = params['schedule_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
-        if 'force_download_service' in params:
-            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -9570,8 +9530,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9593,14 +9551,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AsyncWeekScheduleResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def post_workforcemanagement_managementunit_week_schedule_reschedule(self, management_unit_id, week_id, schedule_id, **kwargs):
         """
-        Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9615,14 +9573,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param str schedule_id: The ID of the schedule to re-optimize (required)
-        :param RescheduleRequest body: body
-        :return: AsyncWeekScheduleResponse
+        :param str schedule_id: Gone/deprecated. The ID of the schedule to re-optimize (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'schedule_id', 'body']
+        all_params = ['management_unit_id', 'week_id', 'schedule_id']
         all_params.append('callback')
 
         params = locals()
@@ -9663,8 +9620,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9686,14 +9641,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AsyncWeekScheduleResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def post_workforcemanagement_managementunit_week_schedules(self, management_unit_id, week_id, **kwargs):
         """
-        Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9708,15 +9663,12 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
-        :param ImportWeekScheduleRequest body: body
-        :return: AsyncWeekScheduleResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'force_async', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'week_id']
         all_params.append('callback')
 
         params = locals()
@@ -9745,10 +9697,6 @@ class WorkforceManagementApi(object):
             path_params['weekId'] = params['week_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
-        if 'force_download_service' in params:
-            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -9756,8 +9704,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9779,14 +9725,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AsyncWeekScheduleResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def post_workforcemanagement_managementunit_week_schedules_generate(self, management_unit_id, week_id, **kwargs):
         """
-        Generate a week schedule
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9801,13 +9747,12 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param GenerateWeekScheduleRequest body: body
-        :return: GenerateWeekScheduleResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'body']
+        all_params = ['management_unit_id', 'week_id']
         all_params.append('callback')
 
         params = locals()
@@ -9843,8 +9788,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9866,14 +9809,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='GenerateWeekScheduleResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def post_workforcemanagement_managementunit_week_schedules_partialupload(self, management_unit_id, week_id, **kwargs):
         """
-        Partial upload of user schedules where activity count is greater than 17500
+        Gone.  Scheduling has moved under business units
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -9888,13 +9831,12 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format. (required)
-        :param UserSchedulesPartialUploadRequest body: body
-        :return: PartialUploadResponse
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_id', 'body']
+        all_params = ['management_unit_id', 'week_id']
         all_params.append('callback')
 
         params = locals()
@@ -9930,8 +9872,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9953,7 +9893,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PartialUploadResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10327,9 +10267,9 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_week_shorttermforecast_copy(self, management_unit_id, week_date_id, forecast_id, body, **kwargs):
+    def post_workforcemanagement_managementunit_week_shorttermforecast_copy(self, management_unit_id, week_date_id, forecast_id, **kwargs):
         """
-        Copy a short term forecast
+        Gone. Use equivalent business unit resource instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -10338,21 +10278,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecast_copy(management_unit_id, week_date_id, forecast_id, body, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecast_copy(management_unit_id, week_date_id, forecast_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param str forecast_id: The ID of the forecast to copy (required)
-        :param CopyShortTermForecastRequest body: body (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :return: ShortTermForecastResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :param str forecast_id: (Gone/Deprecated): The ID of the forecast (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'forecast_id', 'body', 'force_async']
+        all_params = ['management_unit_id', 'week_date_id', 'forecast_id']
         all_params.append('callback')
 
         params = locals()
@@ -10374,9 +10312,6 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'forecast_id' is set
         if ('forecast_id' not in params) or (params['forecast_id'] is None):
             raise ValueError("Missing the required parameter `forecast_id` when calling `post_workforcemanagement_managementunit_week_shorttermforecast_copy`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shorttermforecast_copy`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy'.replace('{format}', 'json')
@@ -10389,8 +10324,6 @@ class WorkforceManagementApi(object):
             path_params['forecastId'] = params['forecast_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
 
         header_params = {}
 
@@ -10398,8 +10331,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10421,14 +10352,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ShortTermForecastResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_week_shorttermforecasts(self, management_unit_id, week_date_id, body, **kwargs):
+    def post_workforcemanagement_managementunit_week_shorttermforecasts(self, management_unit_id, week_date_id, **kwargs):
         """
-        Import a short term forecast
+        Gone. Use equivalent business unit resource instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -10437,20 +10368,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts(management_unit_id, week_date_id, body, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts(management_unit_id, week_date_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param ImportShortTermForecastRequest body: body (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :return: ShortTermForecastResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'body', 'force_async']
+        all_params = ['management_unit_id', 'week_date_id']
         all_params.append('callback')
 
         params = locals()
@@ -10469,9 +10398,6 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'week_date_id' is set
         if ('week_date_id' not in params) or (params['week_date_id'] is None):
             raise ValueError("Missing the required parameter `week_date_id` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts'.replace('{format}', 'json')
@@ -10482,8 +10408,6 @@ class WorkforceManagementApi(object):
             path_params['weekDateId'] = params['week_date_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
 
         header_params = {}
 
@@ -10491,8 +10415,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10514,14 +10436,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ShortTermForecastResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_week_shorttermforecasts_generate(self, management_unit_id, week_date_id, body, **kwargs):
+    def post_workforcemanagement_managementunit_week_shorttermforecasts_generate(self, management_unit_id, week_date_id, **kwargs):
         """
-        Generate a short term forecast
+        Gone. Use equivalent business unit resource instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -10530,20 +10452,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts_generate(management_unit_id, week_date_id, body, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts_generate(management_unit_id, week_date_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param GenerateShortTermForecastRequest body:  (required)
-        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :return: GenerateShortTermForecastResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'body', 'force_async']
+        all_params = ['management_unit_id', 'week_date_id']
         all_params.append('callback')
 
         params = locals()
@@ -10562,9 +10482,6 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'week_date_id' is set
         if ('week_date_id' not in params) or (params['week_date_id'] is None):
             raise ValueError("Missing the required parameter `week_date_id` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts_generate`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts_generate`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate'.replace('{format}', 'json')
@@ -10575,8 +10492,6 @@ class WorkforceManagementApi(object):
             path_params['weekDateId'] = params['week_date_id']
 
         query_params = {}
-        if 'force_async' in params:
-            query_params['forceAsync'] = params['force_async']
 
         header_params = {}
 
@@ -10584,8 +10499,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10607,14 +10520,14 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='GenerateShortTermForecastResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload(self, management_unit_id, week_date_id, body, **kwargs):
+    def post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload(self, management_unit_id, week_date_id, **kwargs):
         """
-        Import a short term forecast
+        Gone. Use equivalent business unit resource instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -10623,19 +10536,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload(management_unit_id, week_date_id, body, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload(management_unit_id, week_date_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The management unit ID of the management unit to which the forecast belongs (required)
-        :param str week_date_id: The week start date of the forecast in yyyy-MM-dd format (required)
-        :param RouteGroupList body: body (required)
-        :return: PartialUploadResponse
+        :param str management_unit_id: (Deprecated/gone): The id of the management unit. (required)
+        :param str week_date_id: (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'body']
+        all_params = ['management_unit_id', 'week_date_id']
         all_params.append('callback')
 
         params = locals()
@@ -10654,9 +10566,6 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'week_date_id' is set
         if ('week_date_id' not in params) or (params['week_date_id'] is None):
             raise ValueError("Missing the required parameter `week_date_id` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/partialupload'.replace('{format}', 'json')
@@ -10674,8 +10583,6 @@ class WorkforceManagementApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10697,7 +10604,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PartialUploadResponse',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

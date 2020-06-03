@@ -180,7 +180,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         :param failure_reason: The failure_reason of this BulkUpdateShiftTradeStateResultItem.
         :type: str
         """
-        allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftNotFound", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftNotFound", "ScheduleNotPublished", "TransitionNotAllowed"]
+        allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftHasExternalActivities", "InitiatingAgentShiftNotFound", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftHasExternalActivities", "ReceivingAgentShiftNotFound", "ScheduleNotPublished", "TransitionNotAllowed"]
         if failure_reason.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for failure_reason -> " + failure_reason
             self._failure_reason = "outdated_sdk_version"

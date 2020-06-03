@@ -10,8 +10,9 @@ title: DialogflowAgent
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **project** | [**DialogflowProject**](DialogflowProject.html) | The project this Dialogflow agent belongs to | [optional] |
-| **languages** | **list[str]** | The target languages of the Dialogflow agent | [optional] |
-| **intents** | [**list[DialogflowIntent]**](DialogflowIntent.html) | An array of Intents associated with this bot alias | [optional] |
+| **languages** | **list[str]** | The supported languages of the Dialogflow agent | [optional] |
+| **intents** | [**list[DialogflowIntent]**](DialogflowIntent.html) | An array of Intents associated with this agent | [optional] |
+| **environments** | **list[str]** | Available environments for this agent | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

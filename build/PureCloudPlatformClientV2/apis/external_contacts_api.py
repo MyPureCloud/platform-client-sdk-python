@@ -208,6 +208,84 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_externalcontacts_contacts_schema(self, schema_id, **kwargs):
+        """
+        Delete a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_externalcontacts_contacts_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_externalcontacts_contacts_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `delete_externalcontacts_contacts_schema`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_externalcontacts_organization(self, external_organization_id, **kwargs):
         """
         Delete an external organization
@@ -871,6 +949,318 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_externalcontacts_contacts_schema(self, schema_id, **kwargs):
+        """
+        Get a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_contacts_schema`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_schema_version(self, schema_id, version_id, **kwargs):
+        """
+        Get a specific version of a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schema_version(schema_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str version_id: Schema version (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schema_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_contacts_schema_version`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_externalcontacts_contacts_schema_version`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_schema_versions(self, schema_id, **kwargs):
+        """
+        Get all versions of an external contact's schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schema_versions(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schema_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_contacts_schema_versions`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_schemas(self, **kwargs):
+        """
+        Get a list of schemas.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: DataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_externalcontacts_organization(self, external_organization_id, **kwargs):
         """
         Fetch an external organization
@@ -1408,6 +1798,318 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_externalcontacts_organizations_schema(self, schema_id, **kwargs):
+        """
+        Get a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_organizations_schema`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schema_version(self, schema_id, version_id, **kwargs):
+        """
+        Get a specific version of a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schema_version(schema_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str version_id: Schema version (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schema_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_organizations_schema_version`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_externalcontacts_organizations_schema_version`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schema_versions(self, schema_id, **kwargs):
+        """
+        Get all versions of an external organization's schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schema_versions(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schema_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_externalcontacts_organizations_schema_versions`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schemas(self, **kwargs):
+        """
+        Get a list of schemas.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: DataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_externalcontacts_relationship(self, relationship_id, **kwargs):
         """
         Fetch a relationship
@@ -1732,6 +2434,84 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_externalcontacts_contacts_schemas(self, body, **kwargs):
+        """
+        Create a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_contacts_schemas(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DataSchema body: Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_contacts_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contacts_schemas`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_organization_notes(self, external_organization_id, body, **kwargs):
         """
         Create a note for an external organization
@@ -1890,6 +2670,84 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalOrganization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_organizations_schemas(self, body, **kwargs):
+        """
+        Create a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_organizations_schemas(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DataSchema body: Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_organizations_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_organizations_schemas`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2142,6 +3000,90 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Note',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_contacts_schema(self, schema_id, body, **kwargs):
+        """
+        Update a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_contacts_schema(schema_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param DataSchema body: Data Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_contacts_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `put_externalcontacts_contacts_schema`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_contacts_schema`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2484,6 +3426,90 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalOrganizationTrustorLink',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_organizations_schema(self, schema_id, body, **kwargs):
+        """
+        Update a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_organizations_schema(schema_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param DataSchema body: Data Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_organizations_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `put_externalcontacts_organizations_schema`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_organizations_schema`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

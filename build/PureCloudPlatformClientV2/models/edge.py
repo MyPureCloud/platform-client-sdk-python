@@ -848,7 +848,7 @@ class Edge(object):
     def software_status(self):
         """
         Gets the software_status of this Edge.
-
+        Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.
 
         :return: The software_status of this Edge.
         :rtype: DomainEdgeSoftwareUpdateDto
@@ -859,7 +859,7 @@ class Edge(object):
     def software_status(self, software_status):
         """
         Sets the software_status of this Edge.
-
+        Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.
 
         :param software_status: The software_status of this Edge.
         :type: DomainEdgeSoftwareUpdateDto

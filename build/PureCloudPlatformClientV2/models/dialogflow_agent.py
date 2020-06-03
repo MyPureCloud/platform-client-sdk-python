@@ -45,6 +45,7 @@ class DialogflowAgent(object):
             'project': 'DialogflowProject',
             'languages': 'list[str]',
             'intents': 'list[DialogflowIntent]',
+            'environments': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -54,6 +55,7 @@ class DialogflowAgent(object):
             'project': 'project',
             'languages': 'languages',
             'intents': 'intents',
+            'environments': 'environments',
             'self_uri': 'selfUri'
         }
 
@@ -62,6 +64,7 @@ class DialogflowAgent(object):
         self._project = None
         self._languages = None
         self._intents = None
+        self._environments = None
         self._self_uri = None
 
     @property
@@ -137,7 +140,7 @@ class DialogflowAgent(object):
     def languages(self):
         """
         Gets the languages of this DialogflowAgent.
-        The target languages of the Dialogflow agent
+        The supported languages of the Dialogflow agent
 
         :return: The languages of this DialogflowAgent.
         :rtype: list[str]
@@ -148,7 +151,7 @@ class DialogflowAgent(object):
     def languages(self, languages):
         """
         Sets the languages of this DialogflowAgent.
-        The target languages of the Dialogflow agent
+        The supported languages of the Dialogflow agent
 
         :param languages: The languages of this DialogflowAgent.
         :type: list[str]
@@ -160,7 +163,7 @@ class DialogflowAgent(object):
     def intents(self):
         """
         Gets the intents of this DialogflowAgent.
-        An array of Intents associated with this bot alias
+        An array of Intents associated with this agent
 
         :return: The intents of this DialogflowAgent.
         :rtype: list[DialogflowIntent]
@@ -171,13 +174,36 @@ class DialogflowAgent(object):
     def intents(self, intents):
         """
         Sets the intents of this DialogflowAgent.
-        An array of Intents associated with this bot alias
+        An array of Intents associated with this agent
 
         :param intents: The intents of this DialogflowAgent.
         :type: list[DialogflowIntent]
         """
         
         self._intents = intents
+
+    @property
+    def environments(self):
+        """
+        Gets the environments of this DialogflowAgent.
+        Available environments for this agent
+
+        :return: The environments of this DialogflowAgent.
+        :rtype: list[str]
+        """
+        return self._environments
+
+    @environments.setter
+    def environments(self, environments):
+        """
+        Sets the environments of this DialogflowAgent.
+        Available environments for this agent
+
+        :param environments: The environments of this DialogflowAgent.
+        :type: list[str]
+        """
+        
+        self._environments = environments
 
     @property
     def self_uri(self):

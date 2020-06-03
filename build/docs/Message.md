@@ -28,6 +28,7 @@ title: Message
 | **to_address** | [**Address**](Address.html) | Address and name data for a call endpoint. | [optional] |
 | **from_address** | [**Address**](Address.html) | Address and name data for a call endpoint. | [optional] |
 | **messages** | [**list[MessageDetails]**](MessageDetails.html) | The messages sent on this communication channel. | [optional] |
+| **wrapup** | [**Wrapup**](Wrapup.html) | Call wrap up or disposition data. | [optional] |
 {: class="table table-striped"}
 
 

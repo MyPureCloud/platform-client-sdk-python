@@ -9,6 +9,7 @@ from .authorization_api import AuthorizationApi
 from .billing_api import BillingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
+from .data_extensions_api import DataExtensionsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
 from .flows_api import FlowsApi
@@ -19,6 +20,7 @@ from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .integrations_api import IntegrationsApi
 from .knowledge_api import KnowledgeApi
+from .language_understanding_api import LanguageUnderstandingApi
 from .languages_api import LanguagesApi
 from .license_api import LicenseApi
 from .locations_api import LocationsApi
@@ -42,6 +44,7 @@ from .suggest_api import SuggestApi
 from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi
 from .tokens_api import TokensApi
+from .uploads_api import UploadsApi
 from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
 from .utilities_api import UtilitiesApi
