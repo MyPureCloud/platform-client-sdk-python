@@ -29,6 +29,7 @@ title: ConversationEventTopicCall
 | **disconnect_reasons** | [**list[ConversationEventTopicDisconnectReason]**](ConversationEventTopicDisconnectReason.html) |  | [optional] |
 | **fax_status** | [**ConversationEventTopicFaxStatus**](ConversationEventTopicFaxStatus.html) |  | [optional] |
 | **uui_data** | **str** |  | [optional] |
+| **wrapup** | [**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

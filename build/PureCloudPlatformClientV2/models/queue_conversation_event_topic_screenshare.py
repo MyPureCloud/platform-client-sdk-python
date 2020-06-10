@@ -51,6 +51,7 @@ class QueueConversationEventTopicScreenshare(object):
             'disconnect_type': 'str',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
+            'wrapup': 'QueueConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -66,6 +67,7 @@ class QueueConversationEventTopicScreenshare(object):
             'disconnect_type': 'disconnectType',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -80,6 +82,7 @@ class QueueConversationEventTopicScreenshare(object):
         self._disconnect_type = None
         self._connected_time = None
         self._disconnected_time = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -342,6 +345,29 @@ class QueueConversationEventTopicScreenshare(object):
         """
         
         self._disconnected_time = disconnected_time
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationEventTopicScreenshare.
+
+
+        :return: The wrapup of this QueueConversationEventTopicScreenshare.
+        :rtype: QueueConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationEventTopicScreenshare.
+
+
+        :param wrapup: The wrapup of this QueueConversationEventTopicScreenshare.
+        :type: QueueConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

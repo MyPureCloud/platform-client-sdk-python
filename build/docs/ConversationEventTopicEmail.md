@@ -25,6 +25,7 @@ title: ConversationEventTopicEmail
 | **direction** | **str** |  | [optional] |
 | **draft_attachments** | [**list[ConversationEventTopicAttachment]**](ConversationEventTopicAttachment.html) |  | [optional] |
 | **spam** | **bool** |  | [optional] |
+| **wrapup** | [**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

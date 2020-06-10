@@ -54,6 +54,7 @@ class ConversationEventTopicVideo(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'msids': 'list[str]',
+            'wrapup': 'ConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -72,6 +73,7 @@ class ConversationEventTopicVideo(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'msids': 'msids',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -89,6 +91,7 @@ class ConversationEventTopicVideo(object):
         self._connected_time = None
         self._disconnected_time = None
         self._msids = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -420,6 +423,29 @@ class ConversationEventTopicVideo(object):
         """
         
         self._msids = msids
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this ConversationEventTopicVideo.
+
+
+        :return: The wrapup of this ConversationEventTopicVideo.
+        :rtype: ConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this ConversationEventTopicVideo.
+
+
+        :param wrapup: The wrapup of this ConversationEventTopicVideo.
+        :type: ConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

@@ -62,6 +62,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'disconnect_reasons': 'list[QueueConversationSocialExpressionEventTopicDisconnectReason]',
             'fax_status': 'QueueConversationSocialExpressionEventTopicFaxStatus',
             'uui_data': 'str',
+            'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -88,6 +89,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
             'uui_data': 'uuiData',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -113,6 +115,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         self._disconnect_reasons = None
         self._fax_status = None
         self._uui_data = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -636,6 +639,29 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :return: The wrapup of this QueueConversationSocialExpressionEventTopicCall.
+        :rtype: QueueConversationSocialExpressionEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :param wrapup: The wrapup of this QueueConversationSocialExpressionEventTopicCall.
+        :type: QueueConversationSocialExpressionEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

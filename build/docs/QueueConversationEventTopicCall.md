@@ -29,6 +29,7 @@ title: QueueConversationEventTopicCall
 | **disconnect_reasons** | [**list[QueueConversationEventTopicDisconnectReason]**](QueueConversationEventTopicDisconnectReason.html) |  | [optional] |
 | **fax_status** | [**QueueConversationEventTopicFaxStatus**](QueueConversationEventTopicFaxStatus.html) |  | [optional] |
 | **uui_data** | **str** |  | [optional] |
+| **wrapup** | [**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

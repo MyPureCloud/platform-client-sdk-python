@@ -53,6 +53,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'journey_context': 'QueueConversationSocialExpressionEventTopicJourneyContext',
+            'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -70,6 +71,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'journey_context': 'journeyContext',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -86,6 +88,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         self._connected_time = None
         self._disconnected_time = None
         self._journey_context = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -394,6 +397,29 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :return: The wrapup of this QueueConversationSocialExpressionEventTopicChat.
+        :rtype: QueueConversationSocialExpressionEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :param wrapup: The wrapup of this QueueConversationSocialExpressionEventTopicChat.
+        :type: QueueConversationSocialExpressionEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

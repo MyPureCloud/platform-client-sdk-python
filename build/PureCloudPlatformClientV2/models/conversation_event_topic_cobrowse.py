@@ -55,6 +55,7 @@ class ConversationEventTopicCobrowse(object):
             'provider_event_time': 'datetime',
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
+            'wrapup': 'ConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -74,6 +75,7 @@ class ConversationEventTopicCobrowse(object):
             'provider_event_time': 'providerEventTime',
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -92,6 +94,7 @@ class ConversationEventTopicCobrowse(object):
         self._provider_event_time = None
         self._connected_time = None
         self._disconnected_time = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -446,6 +449,29 @@ class ConversationEventTopicCobrowse(object):
         """
         
         self._disconnected_time = disconnected_time
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this ConversationEventTopicCobrowse.
+
+
+        :return: The wrapup of this ConversationEventTopicCobrowse.
+        :rtype: ConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this ConversationEventTopicCobrowse.
+
+
+        :param wrapup: The wrapup of this ConversationEventTopicCobrowse.
+        :type: ConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

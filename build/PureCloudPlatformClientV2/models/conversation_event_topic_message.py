@@ -57,6 +57,7 @@ class ConversationEventTopicMessage(object):
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
+            'wrapup': 'ConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -78,6 +79,7 @@ class ConversationEventTopicMessage(object):
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -98,6 +100,7 @@ class ConversationEventTopicMessage(object):
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -502,6 +505,29 @@ class ConversationEventTopicMessage(object):
         """
         
         self._recipient_type = recipient_type
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this ConversationEventTopicMessage.
+
+
+        :return: The wrapup of this ConversationEventTopicMessage.
+        :rtype: ConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this ConversationEventTopicMessage.
+
+
+        :param wrapup: The wrapup of this ConversationEventTopicMessage.
+        :type: ConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

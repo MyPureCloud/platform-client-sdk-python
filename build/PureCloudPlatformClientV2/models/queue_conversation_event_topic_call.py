@@ -62,6 +62,7 @@ class QueueConversationEventTopicCall(object):
             'disconnect_reasons': 'list[QueueConversationEventTopicDisconnectReason]',
             'fax_status': 'QueueConversationEventTopicFaxStatus',
             'uui_data': 'str',
+            'wrapup': 'QueueConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -88,6 +89,7 @@ class QueueConversationEventTopicCall(object):
             'disconnect_reasons': 'disconnectReasons',
             'fax_status': 'faxStatus',
             'uui_data': 'uuiData',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -113,6 +115,7 @@ class QueueConversationEventTopicCall(object):
         self._disconnect_reasons = None
         self._fax_status = None
         self._uui_data = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -636,6 +639,29 @@ class QueueConversationEventTopicCall(object):
         """
         
         self._uui_data = uui_data
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationEventTopicCall.
+
+
+        :return: The wrapup of this QueueConversationEventTopicCall.
+        :rtype: QueueConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationEventTopicCall.
+
+
+        :param wrapup: The wrapup of this QueueConversationEventTopicCall.
+        :type: QueueConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

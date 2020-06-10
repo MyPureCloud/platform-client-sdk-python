@@ -60,6 +60,7 @@ class QueueConversationEventTopicCallback(object):
             'disconnected_time': 'datetime',
             'callback_scheduled_time': 'datetime',
             'automated_callback_config_id': 'str',
+            'wrapup': 'QueueConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -84,6 +85,7 @@ class QueueConversationEventTopicCallback(object):
             'disconnected_time': 'disconnectedTime',
             'callback_scheduled_time': 'callbackScheduledTime',
             'automated_callback_config_id': 'automatedCallbackConfigId',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -107,6 +109,7 @@ class QueueConversationEventTopicCallback(object):
         self._disconnected_time = None
         self._callback_scheduled_time = None
         self._automated_callback_config_id = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -580,6 +583,29 @@ class QueueConversationEventTopicCallback(object):
         """
         
         self._automated_callback_config_id = automated_callback_config_id
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationEventTopicCallback.
+
+
+        :return: The wrapup of this QueueConversationEventTopicCallback.
+        :rtype: QueueConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationEventTopicCallback.
+
+
+        :param wrapup: The wrapup of this QueueConversationEventTopicCallback.
+        :type: QueueConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

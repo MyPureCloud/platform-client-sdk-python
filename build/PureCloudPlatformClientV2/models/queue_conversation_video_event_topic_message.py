@@ -57,6 +57,7 @@ class QueueConversationVideoEventTopicMessage(object):
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
+            'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -78,6 +79,7 @@ class QueueConversationVideoEventTopicMessage(object):
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -98,6 +100,7 @@ class QueueConversationVideoEventTopicMessage(object):
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -502,6 +505,29 @@ class QueueConversationVideoEventTopicMessage(object):
         """
         
         self._recipient_type = recipient_type
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationVideoEventTopicMessage.
+
+
+        :return: The wrapup of this QueueConversationVideoEventTopicMessage.
+        :rtype: QueueConversationVideoEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationVideoEventTopicMessage.
+
+
+        :param wrapup: The wrapup of this QueueConversationVideoEventTopicMessage.
+        :type: QueueConversationVideoEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

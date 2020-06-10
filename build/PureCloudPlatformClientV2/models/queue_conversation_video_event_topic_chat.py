@@ -53,6 +53,7 @@ class QueueConversationVideoEventTopicChat(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'journey_context': 'QueueConversationVideoEventTopicJourneyContext',
+            'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -70,6 +71,7 @@ class QueueConversationVideoEventTopicChat(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'journey_context': 'journeyContext',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -86,6 +88,7 @@ class QueueConversationVideoEventTopicChat(object):
         self._connected_time = None
         self._disconnected_time = None
         self._journey_context = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -394,6 +397,29 @@ class QueueConversationVideoEventTopicChat(object):
         """
         
         self._journey_context = journey_context
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this QueueConversationVideoEventTopicChat.
+
+
+        :return: The wrapup of this QueueConversationVideoEventTopicChat.
+        :rtype: QueueConversationVideoEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this QueueConversationVideoEventTopicChat.
+
+
+        :param wrapup: The wrapup of this QueueConversationVideoEventTopicChat.
+        :type: QueueConversationVideoEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):

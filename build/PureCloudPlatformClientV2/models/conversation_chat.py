@@ -289,7 +289,7 @@ class ConversationChat(object):
         :param disconnect_type: The disconnect_type of this ConversationChat.
         :type: str
         """
-        allowed_values = ["endpoint", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "error", "peer", "other", "uncallable"]
+        allowed_values = ["endpoint", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "error", "peer", "other", "uncallable", "timeout"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for disconnect_type -> " + disconnect_type
             self._disconnect_type = "outdated_sdk_version"

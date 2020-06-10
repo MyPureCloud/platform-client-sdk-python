@@ -58,6 +58,7 @@ class ConversationEventTopicEmail(object):
             'direction': 'str',
             'draft_attachments': 'list[ConversationEventTopicAttachment]',
             'spam': 'bool',
+            'wrapup': 'ConversationEventTopicWrapup',
             'additional_properties': 'object'
         }
 
@@ -80,6 +81,7 @@ class ConversationEventTopicEmail(object):
             'direction': 'direction',
             'draft_attachments': 'draftAttachments',
             'spam': 'spam',
+            'wrapup': 'wrapup',
             'additional_properties': 'additionalProperties'
         }
 
@@ -101,6 +103,7 @@ class ConversationEventTopicEmail(object):
         self._direction = None
         self._draft_attachments = None
         self._spam = None
+        self._wrapup = None
         self._additional_properties = None
 
     @property
@@ -528,6 +531,29 @@ class ConversationEventTopicEmail(object):
         """
         
         self._spam = spam
+
+    @property
+    def wrapup(self):
+        """
+        Gets the wrapup of this ConversationEventTopicEmail.
+
+
+        :return: The wrapup of this ConversationEventTopicEmail.
+        :rtype: ConversationEventTopicWrapup
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup):
+        """
+        Sets the wrapup of this ConversationEventTopicEmail.
+
+
+        :param wrapup: The wrapup of this ConversationEventTopicEmail.
+        :type: ConversationEventTopicWrapup
+        """
+        
+        self._wrapup = wrapup
 
     @property
     def additional_properties(self):
