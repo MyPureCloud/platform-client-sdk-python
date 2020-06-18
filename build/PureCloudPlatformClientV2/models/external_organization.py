@@ -58,6 +58,8 @@ class ExternalOrganization(object):
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'trustor': 'Trustor',
+            'schema': 'DataSchema',
+            'custom_fields': 'dict(str, object)',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -81,6 +83,8 @@ class ExternalOrganization(object):
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'trustor': 'trustor',
+            'schema': 'schema',
+            'custom_fields': 'customFields',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -103,6 +107,8 @@ class ExternalOrganization(object):
         self._modify_date = None
         self._create_date = None
         self._trustor = None
+        self._schema = None
+        self._custom_fields = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -519,6 +525,52 @@ class ExternalOrganization(object):
         """
         
         self._trustor = trustor
+
+    @property
+    def schema(self):
+        """
+        Gets the schema of this ExternalOrganization.
+        The schema defining custom fields for this contact
+
+        :return: The schema of this ExternalOrganization.
+        :rtype: DataSchema
+        """
+        return self._schema
+
+    @schema.setter
+    def schema(self, schema):
+        """
+        Sets the schema of this ExternalOrganization.
+        The schema defining custom fields for this contact
+
+        :param schema: The schema of this ExternalOrganization.
+        :type: DataSchema
+        """
+        
+        self._schema = schema
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ExternalOrganization.
+        Custom fields defined in the schema referenced by schemaId and schemaVersion.
+
+        :return: The custom_fields of this ExternalOrganization.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ExternalOrganization.
+        Custom fields defined in the schema referenced by schemaId and schemaVersion.
+
+        :param custom_fields: The custom_fields of this ExternalOrganization.
+        :type: dict(str, object)
+        """
+        
+        self._custom_fields = custom_fields
 
     @property
     def external_data_sources(self):

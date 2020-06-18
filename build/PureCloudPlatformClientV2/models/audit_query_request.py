@@ -42,18 +42,21 @@ class AuditQueryRequest(object):
         self.swagger_types = {
             'interval': 'str',
             'service_name': 'str',
-            'filters': 'list[AuditQueryFilter]'
+            'filters': 'list[AuditQueryFilter]',
+            'sort': 'list[AuditQuerySort]'
         }
 
         self.attribute_map = {
             'interval': 'interval',
             'service_name': 'serviceName',
-            'filters': 'filters'
+            'filters': 'filters',
+            'sort': 'sort'
         }
 
         self._interval = None
         self._service_name = None
         self._filters = None
+        self._sort = None
 
     @property
     def interval(self):
@@ -127,6 +130,29 @@ class AuditQueryRequest(object):
         """
         
         self._filters = filters
+
+    @property
+    def sort(self):
+        """
+        Gets the sort of this AuditQueryRequest.
+        Sort parameter for the query.
+
+        :return: The sort of this AuditQueryRequest.
+        :rtype: list[AuditQuerySort]
+        """
+        return self._sort
+
+    @sort.setter
+    def sort(self, sort):
+        """
+        Sets the sort of this AuditQueryRequest.
+        Sort parameter for the query.
+
+        :param sort: The sort of this AuditQueryRequest.
+        :type: list[AuditQuerySort]
+        """
+        
+        self._sort = sort
 
     def to_dict(self):
         """

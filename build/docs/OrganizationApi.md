@@ -10,10 +10,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_fieldconfig**](OrganizationApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_organizations_embeddedintegration**](OrganizationApi.html#get_organizations_embeddedintegration) | Get the list of domains that will be allowed to embed PureCloud applications|
+|[**get_organizations_ipaddressauthentication**](OrganizationApi.html#get_organizations_ipaddressauthentication) | Get organization IP address whitelist settings|
 |[**get_organizations_me**](OrganizationApi.html#get_organizations_me) | Get organization.|
 |[**get_organizations_whitelist**](OrganizationApi.html#get_organizations_whitelist) | Use PUT /api/v2/organizations/embeddedintegration instead|
 |[**patch_organizations_feature**](OrganizationApi.html#patch_organizations_feature) | Update organization|
 |[**put_organizations_embeddedintegration**](OrganizationApi.html#put_organizations_embeddedintegration) | Update the list of domains that will be allowed to embed PureCloud applications|
+|[**put_organizations_ipaddressauthentication**](OrganizationApi.html#put_organizations_ipaddressauthentication) | Update organization IP address whitelist settings|
 |[**put_organizations_me**](OrganizationApi.html#put_organizations_me) | Update organization.|
 |[**put_organizations_whitelist**](OrganizationApi.html#put_organizations_whitelist) | Use PUT /api/v2/organizations/embeddedintegration instead|
 {: class="table table-striped"}
@@ -113,6 +115,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**EmbeddedIntegration**](EmbeddedIntegration.html)
+
+<a name="get_organizations_ipaddressauthentication"></a>
+
+## [**IpAddressAuthentication**](IpAddressAuthentication.html) get_organizations_ipaddressauthentication()
+
+
+
+Get organization IP address whitelist settings
+
+
+
+Wraps GET /api/v2/organizations/ipaddressauthentication 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+
+try:
+    # Get organization IP address whitelist settings
+    api_response = api_instance.get_organizations_ipaddressauthentication()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OrganizationApi->get_organizations_ipaddressauthentication: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**IpAddressAuthentication**](IpAddressAuthentication.html)
 
 <a name="get_organizations_me"></a>
 
@@ -309,6 +358,57 @@ except ApiException as e:
 ### Return type
 
 [**EmbeddedIntegration**](EmbeddedIntegration.html)
+
+<a name="put_organizations_ipaddressauthentication"></a>
+
+## [**IpAddressAuthentication**](IpAddressAuthentication.html) put_organizations_ipaddressauthentication(body)
+
+
+
+Update organization IP address whitelist settings
+
+
+
+Wraps PUT /api/v2/organizations/ipaddressauthentication 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+body = PureCloudPlatformClientV2.IpAddressAuthentication() # IpAddressAuthentication | IP address Whitelist settings
+
+try:
+    # Update organization IP address whitelist settings
+    api_response = api_instance.put_organizations_ipaddressauthentication(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OrganizationApi->put_organizations_ipaddressauthentication: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**IpAddressAuthentication**](IpAddressAuthentication.html)| IP address Whitelist settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IpAddressAuthentication**](IpAddressAuthentication.html)
 
 <a name="put_organizations_me"></a>
 

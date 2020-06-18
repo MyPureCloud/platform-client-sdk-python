@@ -17,6 +17,7 @@ title: UserQueue
 | **created_by** | **str** | The ID of the user that created the queue. | [optional] |
 | **member_count** | **int** | The number of users in the queue. | [optional] |
 | **media_settings** | [**dict(str, MediaSetting)**](MediaSetting.html) | The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM | [optional] |
+| **routing_rules** | [**list[RoutingRule]**](RoutingRule.html) | The routing rules for the queue, used for routing to known or preferred agents. | [optional] |
 | **bullseye** | [**Bullseye**](Bullseye.html) | The bulls-eye settings for the queue. | [optional] |
 | **acw_settings** | [**AcwSettings**](AcwSettings.html) | The ACW settings for the queue. | [optional] |
 | **skill_evaluation_method** | **str** | The skill evaluation method to use when routing conversations. | [optional] |

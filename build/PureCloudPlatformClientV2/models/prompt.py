@@ -137,7 +137,7 @@ class Prompt(object):
     def resources(self):
         """
         Gets the resources of this Prompt.
-
+        List of resources associated with this prompt
 
         :return: The resources of this Prompt.
         :rtype: list[PromptAsset]
@@ -148,7 +148,7 @@ class Prompt(object):
     def resources(self, resources):
         """
         Sets the resources of this Prompt.
-
+        List of resources associated with this prompt
 
         :param resources: The resources of this Prompt.
         :type: list[PromptAsset]
@@ -160,7 +160,7 @@ class Prompt(object):
     def current_operation(self):
         """
         Gets the current_operation of this Prompt.
-
+        Current prompt operation status
 
         :return: The current_operation of this Prompt.
         :rtype: Operation
@@ -171,7 +171,7 @@ class Prompt(object):
     def current_operation(self, current_operation):
         """
         Sets the current_operation of this Prompt.
-
+        Current prompt operation status
 
         :param current_operation: The current_operation of this Prompt.
         :type: Operation

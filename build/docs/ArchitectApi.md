@@ -63,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatable_rows**](ArchitectApi.html#get_flows_datatable_rows) | Returns the rows for the datatable with the given id|
 |[**get_flows_datatables**](ArchitectApi.html#get_flows_datatables) | Retrieve a list of datatables for the org|
 |[**get_flows_divisionviews**](ArchitectApi.html#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
+|[**get_flows_execution**](ArchitectApi.html#get_flows_execution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.|
 |[**get_flows_outcome**](ArchitectApi.html#get_flows_outcome) | Get a flow outcome|
 |[**get_flows_outcomes**](ArchitectApi.html#get_flows_outcomes) | Get a pageable list of flow outcomes, filtered by query parameters|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
@@ -87,6 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_datatable_import_jobs**](ArchitectApi.html#post_flows_datatable_import_jobs) | Begin an import process for importing rows into a datatable|
 |[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry for the datatable.|
 |[**post_flows_datatables**](ArchitectApi.html#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
+|[**post_flows_executions**](ArchitectApi.html#post_flows_executions) | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.|
 |[**post_flows_outcomes**](ArchitectApi.html#post_flows_outcomes) | Create a flow outcome|
 |[**put_architect_emergencygroup**](ArchitectApi.html#put_architect_emergencygroup) | Updates a emergency group by ID|
 |[**put_architect_ivr**](ArchitectApi.html#put_architect_ivr) | Update an IVR Config.|
@@ -3189,6 +3191,57 @@ except ApiException as e:
 
 [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html)
 
+<a name="get_flows_execution"></a>
+
+## [**FlowRuntimeExecution**](FlowRuntimeExecution.html) get_flows_execution(flow_execution_id)
+
+
+
+Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+
+
+
+Wraps GET /api/v2/flows/executions/{flowExecutionId} 
+
+Requires ANY permissions: 
+
+* architect:flowExecution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_execution_id = 'flow_execution_id_example' # str | flow execution ID
+
+try:
+    # Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+    api_response = api_instance.get_flows_execution(flow_execution_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->get_flows_execution: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_execution_id** | **str**| flow execution ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowRuntimeExecution**](FlowRuntimeExecution.html)
+
 <a name="get_flows_outcome"></a>
 
 ## [**FlowOutcome**](FlowOutcome.html) get_flows_outcome(flow_outcome_id)
@@ -4435,6 +4488,57 @@ except ApiException as e:
 ### Return type
 
 [**DataTable**](DataTable.html)
+
+<a name="post_flows_executions"></a>
+
+## [**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html) post_flows_executions(flow_launch_request)
+
+
+
+Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
+
+The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+
+Wraps POST /api/v2/flows/executions 
+
+Requires ANY permissions: 
+
+* architect:flow:launch
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_launch_request = PureCloudPlatformClientV2.FlowExecutionLaunchRequest() # FlowExecutionLaunchRequest | 
+
+try:
+    # Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
+    api_response = api_instance.post_flows_executions(flow_launch_request)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ArchitectApi->post_flows_executions: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_launch_request** | [**FlowExecutionLaunchRequest**](FlowExecutionLaunchRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html)
 
 <a name="post_flows_outcomes"></a>
 

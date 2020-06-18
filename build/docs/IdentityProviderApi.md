@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_identityproviders_adfs**](IdentityProviderApi.html#delete_identityproviders_adfs) | Delete ADFS Identity Provider|
 |[**delete_identityproviders_cic**](IdentityProviderApi.html#delete_identityproviders_cic) | Delete Customer Interaction Center (CIC) Identity Provider|
+|[**delete_identityproviders_generic**](IdentityProviderApi.html#delete_identityproviders_generic) | Delete Generic SAML Identity Provider|
 |[**delete_identityproviders_gsuite**](IdentityProviderApi.html#delete_identityproviders_gsuite) | Delete G Suite Identity Provider|
 |[**delete_identityproviders_identitynow**](IdentityProviderApi.html#delete_identityproviders_identitynow) | Delete IdentityNow Provider|
 |[**delete_identityproviders_okta**](IdentityProviderApi.html#delete_identityproviders_okta) | Delete Okta Identity Provider|
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_identityproviders**](IdentityProviderApi.html#get_identityproviders) | The list of identity providers|
 |[**get_identityproviders_adfs**](IdentityProviderApi.html#get_identityproviders_adfs) | Get ADFS Identity Provider|
 |[**get_identityproviders_cic**](IdentityProviderApi.html#get_identityproviders_cic) | Get Customer Interaction Center (CIC) Identity Provider|
+|[**get_identityproviders_generic**](IdentityProviderApi.html#get_identityproviders_generic) | Get Generic SAML Identity Provider|
 |[**get_identityproviders_gsuite**](IdentityProviderApi.html#get_identityproviders_gsuite) | Get G Suite Identity Provider|
 |[**get_identityproviders_identitynow**](IdentityProviderApi.html#get_identityproviders_identitynow) | Get IdentityNow Provider|
 |[**get_identityproviders_okta**](IdentityProviderApi.html#get_identityproviders_okta) | Get Okta Identity Provider|
@@ -31,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_identityproviders_salesforce**](IdentityProviderApi.html#get_identityproviders_salesforce) | Get Salesforce Identity Provider|
 |[**put_identityproviders_adfs**](IdentityProviderApi.html#put_identityproviders_adfs) | Update/Create ADFS Identity Provider|
 |[**put_identityproviders_cic**](IdentityProviderApi.html#put_identityproviders_cic) | Update/Create Customer Interaction Center (CIC) Identity Provider|
+|[**put_identityproviders_generic**](IdentityProviderApi.html#put_identityproviders_generic) | Update/Create Generic SAML Identity Provider|
 |[**put_identityproviders_gsuite**](IdentityProviderApi.html#put_identityproviders_gsuite) | Update/Create G Suite Identity Provider|
 |[**put_identityproviders_identitynow**](IdentityProviderApi.html#put_identityproviders_identitynow) | Update/Create IdentityNow Provider|
 |[**put_identityproviders_okta**](IdentityProviderApi.html#put_identityproviders_okta) | Update/Create Okta Identity Provider|
@@ -124,6 +127,53 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling IdentityProviderApi->delete_identityproviders_cic: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
+
+<a name="delete_identityproviders_generic"></a>
+
+## [**Empty**](Empty.html) delete_identityproviders_generic()
+
+
+
+Delete Generic SAML Identity Provider
+
+
+
+Wraps DELETE /api/v2/identityproviders/generic 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+
+try:
+    # Delete Generic SAML Identity Provider
+    api_response = api_instance.delete_identityproviders_generic()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IdentityProviderApi->delete_identityproviders_generic: %s\n" % e
 ```
 
 ### Parameters
@@ -652,6 +702,53 @@ This endpoint does not need any parameter.
 
 [**CustomerInteractionCenter**](CustomerInteractionCenter.html)
 
+<a name="get_identityproviders_generic"></a>
+
+## [**GenericSAML**](GenericSAML.html) get_identityproviders_generic()
+
+
+
+Get Generic SAML Identity Provider
+
+
+
+Wraps GET /api/v2/identityproviders/generic 
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+
+try:
+    # Get Generic SAML Identity Provider
+    api_response = api_instance.get_identityproviders_generic()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IdentityProviderApi->get_identityproviders_generic: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**GenericSAML**](GenericSAML.html)
+
 <a name="get_identityproviders_gsuite"></a>
 
 ## [**GSuite**](GSuite.html) get_identityproviders_gsuite()
@@ -1126,6 +1223,58 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OAuthProvider**](OAuthProvider.html)
+
+<a name="put_identityproviders_generic"></a>
+
+## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_generic(body)
+
+
+
+Update/Create Generic SAML Identity Provider
+
+
+
+Wraps PUT /api/v2/identityproviders/generic 
+
+Requires ANY permissions: 
+
+* sso:provider:add
+* sso:provider:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+body = PureCloudPlatformClientV2.GenericSAML() # GenericSAML | Provider
+
+try:
+    # Update/Create Generic SAML Identity Provider
+    api_response = api_instance.put_identityproviders_generic(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling IdentityProviderApi->put_identityproviders_generic: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GenericSAML**](GenericSAML.html)| Provider |  |
 {: class="table table-striped"}
 
 ### Return type

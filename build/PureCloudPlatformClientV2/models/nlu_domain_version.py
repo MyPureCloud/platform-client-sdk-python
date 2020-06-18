@@ -49,6 +49,7 @@ class NluDomainVersion(object):
             'date_trained': 'datetime',
             'date_published': 'datetime',
             'training_status': 'str',
+            'evaluation_status': 'str',
             'intents': 'list[IntentDefinition]',
             'entity_types': 'list[NamedEntityTypeDefinition]',
             'self_uri': 'str'
@@ -64,6 +65,7 @@ class NluDomainVersion(object):
             'date_trained': 'dateTrained',
             'date_published': 'datePublished',
             'training_status': 'trainingStatus',
+            'evaluation_status': 'evaluationStatus',
             'intents': 'intents',
             'entity_types': 'entityTypes',
             'self_uri': 'selfUri'
@@ -78,6 +80,7 @@ class NluDomainVersion(object):
         self._date_trained = None
         self._date_published = None
         self._training_status = None
+        self._evaluation_status = None
         self._intents = None
         self._entity_types = None
         self._self_uri = None
@@ -292,6 +295,33 @@ class NluDomainVersion(object):
             self._training_status = "outdated_sdk_version"
         else:
             self._training_status = training_status
+
+    @property
+    def evaluation_status(self):
+        """
+        Gets the evaluation_status of this NluDomainVersion.
+        The evaluation status of the NLU domain version.
+
+        :return: The evaluation_status of this NluDomainVersion.
+        :rtype: str
+        """
+        return self._evaluation_status
+
+    @evaluation_status.setter
+    def evaluation_status(self, evaluation_status):
+        """
+        Sets the evaluation_status of this NluDomainVersion.
+        The evaluation status of the NLU domain version.
+
+        :param evaluation_status: The evaluation_status of this NluDomainVersion.
+        :type: str
+        """
+        allowed_values = ["Unevaluated", "Evaluating", "Evaluated", "Error"]
+        if evaluation_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for evaluation_status -> " + evaluation_status
+            self._evaluation_status = "outdated_sdk_version"
+        else:
+            self._evaluation_status = evaluation_status
 
     @property
     def intents(self):

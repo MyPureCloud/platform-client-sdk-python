@@ -466,6 +466,9 @@ class RecordingApi(object):
         :param str conversation_id: Conversation ID (required)
         :param str recording_id: Recording ID (required)
         :param str format_id: The desired media format.
+        :param str email_format_id: The desired media format when downloading an email recording.
+        :param str chat_format_id: The desired media format when downloading a chat recording.
+        :param str message_format_id: The desired media format when downloading a message recording.
         :param bool download: requesting a download format of the recording
         :param str file_name: the name of the downloaded fileName
         :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
@@ -474,7 +477,7 @@ class RecordingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'recording_id', 'format_id', 'download', 'file_name', 'locale']
+        all_params = ['conversation_id', 'recording_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale']
         all_params.append('callback')
 
         params = locals()
@@ -505,6 +508,12 @@ class RecordingApi(object):
         query_params = {}
         if 'format_id' in params:
             query_params['formatId'] = params['format_id']
+        if 'email_format_id' in params:
+            query_params['emailFormatId'] = params['email_format_id']
+        if 'chat_format_id' in params:
+            query_params['chatFormatId'] = params['chat_format_id']
+        if 'message_format_id' in params:
+            query_params['messageFormatId'] = params['message_format_id']
         if 'download' in params:
             query_params['download'] = params['download']
         if 'file_name' in params:
@@ -1059,6 +1068,9 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str orphan_id: Orphan ID (required)
         :param str format_id: The desired media format.
+        :param str email_format_id: The desired media format when downloading an email recording.
+        :param str chat_format_id: The desired media format when downloading a chat recording.
+        :param str message_format_id: The desired media format when downloading a message recording.
         :param bool download: requesting a download format of the recording
         :param str file_name: the name of the downloaded fileName
         :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
@@ -1067,7 +1079,7 @@ class RecordingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['orphan_id', 'format_id', 'download', 'file_name', 'locale']
+        all_params = ['orphan_id', 'format_id', 'email_format_id', 'chat_format_id', 'message_format_id', 'download', 'file_name', 'locale']
         all_params.append('callback')
 
         params = locals()
@@ -1093,6 +1105,12 @@ class RecordingApi(object):
         query_params = {}
         if 'format_id' in params:
             query_params['formatId'] = params['format_id']
+        if 'email_format_id' in params:
+            query_params['emailFormatId'] = params['email_format_id']
+        if 'chat_format_id' in params:
+            query_params['chatFormatId'] = params['chat_format_id']
+        if 'message_format_id' in params:
+            query_params['messageFormatId'] = params['message_format_id']
         if 'download' in params:
             query_params['download'] = params['download']
         if 'file_name' in params:

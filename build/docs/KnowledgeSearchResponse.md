@@ -7,11 +7,11 @@ title: KnowledgeSearchResponse
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **search_id** | **str** | Search Id | [optional] |
 | **total** | **int** | Total number of records returned | [optional] |
 | **page_count** | **int** | Number of pages returned in the result calculated according to the pageSize and the total | [optional] |
 | **page_size** | **int** | Number of records according to the page size | [optional] |
 | **page_number** | **int** | Current page number for the returned records | [optional] |
-| **search_id** | **str** | ID of the Search Response | [optional] |
 | **results** | [**list[KnowledgeSearchDocument]**](KnowledgeSearchDocument.html) | Results associated to the search response | [optional] |
 {: class="table table-striped"}
 

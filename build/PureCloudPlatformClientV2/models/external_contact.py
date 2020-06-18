@@ -63,6 +63,8 @@ class ExternalContact(object):
             'external_organization': 'ExternalOrganization',
             'survey_opt_out': 'bool',
             'external_system_url': 'str',
+            'schema': 'DataSchema',
+            'custom_fields': 'dict(str, object)',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -91,6 +93,8 @@ class ExternalContact(object):
             'external_organization': 'externalOrganization',
             'survey_opt_out': 'surveyOptOut',
             'external_system_url': 'externalSystemUrl',
+            'schema': 'schema',
+            'custom_fields': 'customFields',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -118,6 +122,8 @@ class ExternalContact(object):
         self._external_organization = None
         self._survey_opt_out = None
         self._external_system_url = None
+        self._schema = None
+        self._custom_fields = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -649,6 +655,52 @@ class ExternalContact(object):
         """
         
         self._external_system_url = external_system_url
+
+    @property
+    def schema(self):
+        """
+        Gets the schema of this ExternalContact.
+        The schema defining custom fields for this contact
+
+        :return: The schema of this ExternalContact.
+        :rtype: DataSchema
+        """
+        return self._schema
+
+    @schema.setter
+    def schema(self, schema):
+        """
+        Sets the schema of this ExternalContact.
+        The schema defining custom fields for this contact
+
+        :param schema: The schema of this ExternalContact.
+        :type: DataSchema
+        """
+        
+        self._schema = schema
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ExternalContact.
+        Custom fields defined in the schema referenced by schemaId and schemaVersion.
+
+        :return: The custom_fields of this ExternalContact.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ExternalContact.
+        Custom fields defined in the schema referenced by schemaId and schemaVersion.
+
+        :param custom_fields: The custom_fields of this ExternalContact.
+        :type: dict(str, object)
+        """
+        
+        self._custom_fields = custom_fields
 
     @property
     def external_data_sources(self):

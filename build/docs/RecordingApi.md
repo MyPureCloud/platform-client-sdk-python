@@ -311,7 +311,7 @@ void (empty response body)
 
 <a name="get_conversation_recording"></a>
 
-## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
+## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
 
 
 
@@ -341,13 +341,16 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 recording_id = 'recording_id_example' # str | Recording ID
 format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
+email_format_id = 'EML' # str | The desired media format when downloading an email recording. (optional) (default to EML)
+chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. (optional) (default to ZIP)
+message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. (optional) (default to ZIP)
 download = false # bool | requesting a download format of the recording (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 
 try:
     # Gets a specific recording.
-    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
+    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_conversation_recording: %s\n" % e
@@ -361,6 +364,9 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **email_format_id** | **str**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
+| **chat_format_id** | **str**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+| **message_format_id** | **str**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
@@ -689,7 +695,7 @@ except ApiException as e:
 
 <a name="get_orphanrecording_media"></a>
 
-## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
+## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
 
 
 
@@ -718,13 +724,16 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 orphan_id = 'orphan_id_example' # str | Orphan ID
 format_id = 'WEBM' # str | The desired media format. (optional) (default to WEBM)
+email_format_id = 'EML' # str | The desired media format when downloading an email recording. (optional) (default to EML)
+chat_format_id = 'ZIP' # str | The desired media format when downloading a chat recording. (optional) (default to ZIP)
+message_format_id = 'ZIP' # str | The desired media format when downloading a message recording. (optional) (default to ZIP)
 download = false # bool | requesting a download format of the recording (optional) (default to false)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
 locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
 
 try:
     # Gets the media of a single orphan recording
-    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, download=download, file_name=file_name, locale=locale)
+    api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e
@@ -737,6 +746,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **orphan_id** | **str**| Orphan ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **email_format_id** | **str**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
+| **chat_format_id** | **str**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+| **message_format_id** | **str**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to false] |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |

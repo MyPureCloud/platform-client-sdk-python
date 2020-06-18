@@ -8,10 +8,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_audits_query_servicemapping**](AuditApi.html#get_audits_query_servicemapping) | Get service mapping information used in audits.|
 |[**get_audits_query_transaction_id**](AuditApi.html#get_audits_query_transaction_id) | Get status of audit query execution|
 |[**get_audits_query_transaction_id_results**](AuditApi.html#get_audits_query_transaction_id_results) | Get results of audit query|
 |[**post_audits_query**](AuditApi.html#post_audits_query) | Create audit query execution|
 {: class="table table-striped"}
+
+<a name="get_audits_query_servicemapping"></a>
+
+## [**AuditQueryServiceMapping**](AuditQueryServiceMapping.html) get_audits_query_servicemapping()
+
+
+
+Get service mapping information used in audits.
+
+
+
+Wraps GET /api/v2/audits/query/servicemapping 
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuditApi()
+
+try:
+    # Get service mapping information used in audits.
+    api_response = api_instance.get_audits_query_servicemapping()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuditApi->get_audits_query_servicemapping: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**AuditQueryServiceMapping**](AuditQueryServiceMapping.html)
 
 <a name="get_audits_query_transaction_id"></a>
 

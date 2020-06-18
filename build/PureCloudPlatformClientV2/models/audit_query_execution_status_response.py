@@ -45,7 +45,8 @@ class AuditQueryExecutionStatusResponse(object):
             'start_date': 'datetime',
             'interval': 'str',
             'service_name': 'str',
-            'filters': 'list[AuditQueryFilter]'
+            'filters': 'list[AuditQueryFilter]',
+            'sort': 'list[AuditQuerySort]'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class AuditQueryExecutionStatusResponse(object):
             'start_date': 'startDate',
             'interval': 'interval',
             'service_name': 'serviceName',
-            'filters': 'filters'
+            'filters': 'filters',
+            'sort': 'sort'
         }
 
         self._id = None
@@ -63,6 +65,7 @@ class AuditQueryExecutionStatusResponse(object):
         self._interval = None
         self._service_name = None
         self._filters = None
+        self._sort = None
 
     @property
     def id(self):
@@ -209,6 +212,29 @@ class AuditQueryExecutionStatusResponse(object):
         """
         
         self._filters = filters
+
+    @property
+    def sort(self):
+        """
+        Gets the sort of this AuditQueryExecutionStatusResponse.
+        Sort parameter for the audit query.
+
+        :return: The sort of this AuditQueryExecutionStatusResponse.
+        :rtype: list[AuditQuerySort]
+        """
+        return self._sort
+
+    @sort.setter
+    def sort(self, sort):
+        """
+        Sets the sort of this AuditQueryExecutionStatusResponse.
+        Sort parameter for the audit query.
+
+        :param sort: The sort of this AuditQueryExecutionStatusResponse.
+        :type: list[AuditQuerySort]
+        """
+        
+        self._sort = sort
 
     def to_dict(self):
         """

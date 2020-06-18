@@ -67,6 +67,9 @@ from .analytics_user_details_query_response import AnalyticsUserDetailsQueryResp
 from .analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .annotation import Annotation
 from .answer_option import AnswerOption
+from .api_usage_query import ApiUsageQuery
+from .api_usage_query_result import ApiUsageQueryResult
+from .api_usage_row import ApiUsageRow
 from .architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
 from .architect_dependency_tracking_build_notification_dependency_tracking_build_notification import ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification
 from .architect_dependency_tracking_build_notification_home_organization import ArchitectDependencyTrackingBuildNotificationHomeOrganization
@@ -118,11 +121,15 @@ from .audit_facet import AuditFacet
 from .audit_filter import AuditFilter
 from .audit_log_message import AuditLogMessage
 from .audit_message import AuditMessage
+from .audit_query_entity import AuditQueryEntity
 from .audit_query_execution_results_response import AuditQueryExecutionResultsResponse
 from .audit_query_execution_status_response import AuditQueryExecutionStatusResponse
 from .audit_query_filter import AuditQueryFilter
 from .audit_query_request import AuditQueryRequest
 from .audit_query_response import AuditQueryResponse
+from .audit_query_service import AuditQueryService
+from .audit_query_service_mapping import AuditQueryServiceMapping
+from .audit_query_sort import AuditQuerySort
 from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
 from .authz_division import AuthzDivision
@@ -863,6 +870,8 @@ from .flow_diagnostic_info import FlowDiagnosticInfo
 from .flow_division_view import FlowDivisionView
 from .flow_division_view_entity_listing import FlowDivisionViewEntityListing
 from .flow_entity_listing import FlowEntityListing
+from .flow_execution_launch_request import FlowExecutionLaunchRequest
+from .flow_execution_launch_response import FlowExecutionLaunchResponse
 from .flow_observation_data_container import FlowObservationDataContainer
 from .flow_observation_query import FlowObservationQuery
 from .flow_observation_query_clause import FlowObservationQueryClause
@@ -871,6 +880,7 @@ from .flow_observation_query_predicate import FlowObservationQueryPredicate
 from .flow_observation_query_response import FlowObservationQueryResponse
 from .flow_outcome import FlowOutcome
 from .flow_outcome_listing import FlowOutcomeListing
+from .flow_runtime_execution import FlowRuntimeExecution
 from .flow_version import FlowVersion
 from .flow_version_entity_listing import FlowVersionEntityListing
 from .forecast_abandon_rate_response import ForecastAbandonRateResponse
@@ -893,6 +903,7 @@ from .gkn_documentation_search_request import GKNDocumentationSearchRequest
 from .gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .g_suite import GSuite
 from .generate_bu_forecast_request import GenerateBuForecastRequest
+from .generic_saml import GenericSAML
 from .geolocation import Geolocation
 from .geolocation_event_geolocation import GeolocationEventGeolocation
 from .geolocation_settings import GeolocationSettings
@@ -953,6 +964,7 @@ from .interaction_stats_rule import InteractionStatsRule
 from .interaction_stats_rule_container import InteractionStatsRuleContainer
 from .intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .intraday_planning_group_request import IntradayPlanningGroupRequest
+from .ip_address_authentication import IpAddressAuthentication
 from .ip_address_range import IpAddressRange
 from .ip_address_range_listing import IpAddressRangeListing
 from .item_validation_limits import ItemValidationLimits
@@ -1773,6 +1785,7 @@ from .update_user import UpdateUser
 from .upload_url_request import UploadUrlRequest
 from .upload_url_response import UploadUrlResponse
 from .usage import Usage
+from .usage_execution_result import UsageExecutionResult
 from .usage_item import UsageItem
 from .user import User
 from .user_action_category import UserActionCategory

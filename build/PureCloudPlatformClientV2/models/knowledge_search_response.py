@@ -40,29 +40,52 @@ class KnowledgeSearchResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'search_id': 'str',
             'total': 'int',
             'page_count': 'int',
             'page_size': 'int',
             'page_number': 'int',
-            'search_id': 'str',
             'results': 'list[KnowledgeSearchDocument]'
         }
 
         self.attribute_map = {
+            'search_id': 'searchId',
             'total': 'total',
             'page_count': 'pageCount',
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
-            'search_id': 'searchId',
             'results': 'results'
         }
 
+        self._search_id = None
         self._total = None
         self._page_count = None
         self._page_size = None
         self._page_number = None
-        self._search_id = None
         self._results = None
+
+    @property
+    def search_id(self):
+        """
+        Gets the search_id of this KnowledgeSearchResponse.
+        Search Id
+
+        :return: The search_id of this KnowledgeSearchResponse.
+        :rtype: str
+        """
+        return self._search_id
+
+    @search_id.setter
+    def search_id(self, search_id):
+        """
+        Sets the search_id of this KnowledgeSearchResponse.
+        Search Id
+
+        :param search_id: The search_id of this KnowledgeSearchResponse.
+        :type: str
+        """
+        
+        self._search_id = search_id
 
     @property
     def total(self):
@@ -155,29 +178,6 @@ class KnowledgeSearchResponse(object):
         """
         
         self._page_number = page_number
-
-    @property
-    def search_id(self):
-        """
-        Gets the search_id of this KnowledgeSearchResponse.
-        ID of the Search Response
-
-        :return: The search_id of this KnowledgeSearchResponse.
-        :rtype: str
-        """
-        return self._search_id
-
-    @search_id.setter
-    def search_id(self, search_id):
-        """
-        Sets the search_id of this KnowledgeSearchResponse.
-        ID of the Search Response
-
-        :param search_id: The search_id of this KnowledgeSearchResponse.
-        :type: str
-        """
-        
-        self._search_id = search_id
 
     @property
     def results(self):

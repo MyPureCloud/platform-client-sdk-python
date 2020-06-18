@@ -42,18 +42,21 @@ class UploadUrlRequest(object):
         self.swagger_types = {
             'file_name': 'str',
             'content_md5': 'str',
-            'signed_url_timeout_seconds': 'int'
+            'signed_url_timeout_seconds': 'int',
+            'server_side_encryption': 'str'
         }
 
         self.attribute_map = {
             'file_name': 'fileName',
             'content_md5': 'contentMd5',
-            'signed_url_timeout_seconds': 'signedUrlTimeoutSeconds'
+            'signed_url_timeout_seconds': 'signedUrlTimeoutSeconds',
+            'server_side_encryption': 'serverSideEncryption'
         }
 
         self._file_name = None
         self._content_md5 = None
         self._signed_url_timeout_seconds = None
+        self._server_side_encryption = None
 
     @property
     def file_name(self):
@@ -123,6 +126,33 @@ class UploadUrlRequest(object):
         """
         
         self._signed_url_timeout_seconds = signed_url_timeout_seconds
+
+    @property
+    def server_side_encryption(self):
+        """
+        Gets the server_side_encryption of this UploadUrlRequest.
+
+
+        :return: The server_side_encryption of this UploadUrlRequest.
+        :rtype: str
+        """
+        return self._server_side_encryption
+
+    @server_side_encryption.setter
+    def server_side_encryption(self, server_side_encryption):
+        """
+        Sets the server_side_encryption of this UploadUrlRequest.
+
+
+        :param server_side_encryption: The server_side_encryption of this UploadUrlRequest.
+        :type: str
+        """
+        allowed_values = ["AES256"]
+        if server_side_encryption.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for server_side_encryption -> " + server_side_encryption
+            self._server_side_encryption = "outdated_sdk_version"
+        else:
+            self._server_side_encryption = server_side_encryption
 
     def to_dict(self):
         """

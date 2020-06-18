@@ -4792,6 +4792,84 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_execution(self, flow_execution_id, **kwargs):
+        """
+        Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_execution(flow_execution_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_execution_id: flow execution ID (required)
+        :return: FlowRuntimeExecution
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_execution_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_execution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_execution_id' is set
+        if ('flow_execution_id' not in params) or (params['flow_execution_id'] is None):
+            raise ValueError("Missing the required parameter `flow_execution_id` when calling `get_flows_execution`")
+
+
+        resource_path = '/api/v2/flows/executions/{flowExecutionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_execution_id' in params:
+            path_params['flowExecutionId'] = params['flow_execution_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowRuntimeExecution',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_flows_outcome(self, flow_outcome_id, **kwargs):
         """
         Get a flow outcome
@@ -6705,6 +6783,84 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataTable',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_flows_executions(self, flow_launch_request, **kwargs):
+        """
+        Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
+        The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_executions(flow_launch_request, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param FlowExecutionLaunchRequest flow_launch_request:  (required)
+        :return: FlowExecutionLaunchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_launch_request']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_executions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_launch_request' is set
+        if ('flow_launch_request' not in params) or (params['flow_launch_request'] is None):
+            raise ValueError("Missing the required parameter `flow_launch_request` when calling `post_flows_executions`")
+
+
+        resource_path = '/api/v2/flows/executions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'flow_launch_request' in params:
+            body_params = params['flow_launch_request']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowExecutionLaunchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

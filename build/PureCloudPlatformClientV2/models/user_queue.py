@@ -50,6 +50,7 @@ class UserQueue(object):
             'created_by': 'str',
             'member_count': 'int',
             'media_settings': 'dict(str, MediaSetting)',
+            'routing_rules': 'list[RoutingRule]',
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
@@ -75,6 +76,7 @@ class UserQueue(object):
             'created_by': 'createdBy',
             'member_count': 'memberCount',
             'media_settings': 'mediaSettings',
+            'routing_rules': 'routingRules',
             'bullseye': 'bullseye',
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
@@ -99,6 +101,7 @@ class UserQueue(object):
         self._created_by = None
         self._member_count = None
         self._media_settings = None
+        self._routing_rules = None
         self._bullseye = None
         self._acw_settings = None
         self._skill_evaluation_method = None
@@ -341,6 +344,29 @@ class UserQueue(object):
         """
         
         self._media_settings = media_settings
+
+    @property
+    def routing_rules(self):
+        """
+        Gets the routing_rules of this UserQueue.
+        The routing rules for the queue, used for routing to known or preferred agents.
+
+        :return: The routing_rules of this UserQueue.
+        :rtype: list[RoutingRule]
+        """
+        return self._routing_rules
+
+    @routing_rules.setter
+    def routing_rules(self, routing_rules):
+        """
+        Sets the routing_rules of this UserQueue.
+        The routing rules for the queue, used for routing to known or preferred agents.
+
+        :param routing_rules: The routing_rules of this UserQueue.
+        :type: list[RoutingRule]
+        """
+        
+        self._routing_rules = routing_rules
 
     @property
     def bullseye(self):

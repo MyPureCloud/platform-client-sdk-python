@@ -46,6 +46,7 @@ from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi
 from .tokens_api import TokensApi
 from .uploads_api import UploadsApi
+from .usage_api import UsageApi
 from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
 from .utilities_api import UtilitiesApi
