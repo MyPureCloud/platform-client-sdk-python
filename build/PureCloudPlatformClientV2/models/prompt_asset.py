@@ -266,8 +266,12 @@ class PromptAsset(object):
         :param upload_status: The upload_status of this PromptAsset.
         :type: str
         """
-        
-        self._upload_status = upload_status
+        allowed_values = ["created", "uploaded", "transcoded", "transcodeFailed"]
+        if upload_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for upload_status -> " + upload_status
+            self._upload_status = "outdated_sdk_version"
+        else:
+            self._upload_status = upload_status
 
     @property
     def upload_uri(self):

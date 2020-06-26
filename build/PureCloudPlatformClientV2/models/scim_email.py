@@ -59,7 +59,7 @@ class ScimEmail(object):
     def value(self):
         """
         Gets the value of this ScimEmail.
-        The email address.
+        The email address. Note value for type 'other'is immutable.
 
         :return: The value of this ScimEmail.
         :rtype: str
@@ -70,7 +70,7 @@ class ScimEmail(object):
     def value(self, value):
         """
         Sets the value of this ScimEmail.
-        The email address.
+        The email address. Note value for type 'other'is immutable.
 
         :param value: The value of this ScimEmail.
         :type: str

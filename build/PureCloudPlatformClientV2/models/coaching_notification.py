@@ -268,7 +268,7 @@ class CoachingNotification(object):
         :param status: The status of this CoachingNotification.
         :type: str
         """
-        allowed_values = ["Scheduled", "InProgress", "Completed"]
+        allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"

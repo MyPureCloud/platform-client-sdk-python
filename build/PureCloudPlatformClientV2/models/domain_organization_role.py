@@ -49,8 +49,8 @@ class DomainOrganizationRole(object):
             'permission_policies': 'list[DomainPermissionPolicy]',
             'user_count': 'int',
             'role_needs_update': 'bool',
-            'default': 'bool',
             'base': 'bool',
+            'default': 'bool',
             'self_uri': 'str'
         }
 
@@ -64,8 +64,8 @@ class DomainOrganizationRole(object):
             'permission_policies': 'permissionPolicies',
             'user_count': 'userCount',
             'role_needs_update': 'roleNeedsUpdate',
-            'default': 'default',
             'base': 'base',
+            'default': 'default',
             'self_uri': 'selfUri'
         }
 
@@ -78,8 +78,8 @@ class DomainOrganizationRole(object):
         self._permission_policies = None
         self._user_count = None
         self._role_needs_update = None
-        self._default = None
         self._base = None
+        self._default = None
         self._self_uri = None
 
     @property
@@ -290,29 +290,6 @@ class DomainOrganizationRole(object):
         self._role_needs_update = role_needs_update
 
     @property
-    def default(self):
-        """
-        Gets the default of this DomainOrganizationRole.
-
-
-        :return: The default of this DomainOrganizationRole.
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """
-        Sets the default of this DomainOrganizationRole.
-
-
-        :param default: The default of this DomainOrganizationRole.
-        :type: bool
-        """
-        
-        self._default = default
-
-    @property
     def base(self):
         """
         Gets the base of this DomainOrganizationRole.
@@ -334,6 +311,29 @@ class DomainOrganizationRole(object):
         """
         
         self._base = base
+
+    @property
+    def default(self):
+        """
+        Gets the default of this DomainOrganizationRole.
+
+
+        :return: The default of this DomainOrganizationRole.
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        """
+        Sets the default of this DomainOrganizationRole.
+
+
+        :param default: The default of this DomainOrganizationRole.
+        :type: bool
+        """
+        
+        self._default = default
 
     @property
     def self_uri(self):

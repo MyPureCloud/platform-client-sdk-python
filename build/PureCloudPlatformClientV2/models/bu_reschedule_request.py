@@ -77,7 +77,7 @@ class BuRescheduleRequest(object):
     def start_date(self):
         """
         Gets the start_date of this BuRescheduleRequest.
-        The start of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The start_date of this BuRescheduleRequest.
         :rtype: datetime
@@ -88,7 +88,7 @@ class BuRescheduleRequest(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this BuRescheduleRequest.
-        The start of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param start_date: The start_date of this BuRescheduleRequest.
         :type: datetime
@@ -100,7 +100,7 @@ class BuRescheduleRequest(object):
     def end_date(self):
         """
         Gets the end_date of this BuRescheduleRequest.
-        The end of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :return: The end_date of this BuRescheduleRequest.
         :rtype: datetime
@@ -111,7 +111,7 @@ class BuRescheduleRequest(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this BuRescheduleRequest.
-        The end of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
         :param end_date: The end_date of this BuRescheduleRequest.
         :type: datetime

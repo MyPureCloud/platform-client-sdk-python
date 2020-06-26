@@ -338,11 +338,11 @@ except ApiException as e:
 
 ## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id, fields=fields)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get group profile
 
-
+This api is deprecated. Use /api/v2/groups instead
 
 Wraps GET /api/v2/groups/{groupId}/profile 
 
@@ -500,11 +500,11 @@ except ApiException as e:
 
 ## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get group profile listing
 
-
+This api is deprecated. Use /api/v2/groups instead.
 
 Wraps GET /api/v2/profiles/groups 
 

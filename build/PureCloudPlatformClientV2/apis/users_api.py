@@ -1342,7 +1342,7 @@ class UsersApi(object):
     def get_profiles_users(self, **kwargs):
         """
         Get a user profile listing
-        
+        This api is deprecated. User /api/v2/users
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2086,7 +2086,7 @@ class UsersApi(object):
     def get_user_profile(self, user_id, **kwargs):
         """
         Get user profile
-        
+        This api has been deprecated. Use api/v2/users instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

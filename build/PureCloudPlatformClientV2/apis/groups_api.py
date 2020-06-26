@@ -535,7 +535,7 @@ class GroupsApi(object):
     def get_group_profile(self, group_id, **kwargs):
         """
         Get group profile
-        
+        This api is deprecated. Use /api/v2/groups instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -784,7 +784,7 @@ class GroupsApi(object):
     def get_profiles_groups(self, **kwargs):
         """
         Get group profile listing
-        
+        This api is deprecated. Use /api/v2/groups instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
