@@ -45,7 +45,9 @@ class BuAgentScheduleActivity(object):
             'description': 'str',
             'activity_code_id': 'str',
             'paid': 'bool',
-            'time_off_request_id': 'str'
+            'time_off_request_id': 'str',
+            'external_activity_id': 'str',
+            'external_activity_type': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +56,9 @@ class BuAgentScheduleActivity(object):
             'description': 'description',
             'activity_code_id': 'activityCodeId',
             'paid': 'paid',
-            'time_off_request_id': 'timeOffRequestId'
+            'time_off_request_id': 'timeOffRequestId',
+            'external_activity_id': 'externalActivityId',
+            'external_activity_type': 'externalActivityType'
         }
 
         self._start_date = None
@@ -63,6 +67,8 @@ class BuAgentScheduleActivity(object):
         self._activity_code_id = None
         self._paid = None
         self._time_off_request_id = None
+        self._external_activity_id = None
+        self._external_activity_type = None
 
     @property
     def start_date(self):
@@ -201,6 +207,56 @@ class BuAgentScheduleActivity(object):
         """
         
         self._time_off_request_id = time_off_request_id
+
+    @property
+    def external_activity_id(self):
+        """
+        Gets the external_activity_id of this BuAgentScheduleActivity.
+        The ID of the external activity associated with this activity, if applicable
+
+        :return: The external_activity_id of this BuAgentScheduleActivity.
+        :rtype: str
+        """
+        return self._external_activity_id
+
+    @external_activity_id.setter
+    def external_activity_id(self, external_activity_id):
+        """
+        Sets the external_activity_id of this BuAgentScheduleActivity.
+        The ID of the external activity associated with this activity, if applicable
+
+        :param external_activity_id: The external_activity_id of this BuAgentScheduleActivity.
+        :type: str
+        """
+        
+        self._external_activity_id = external_activity_id
+
+    @property
+    def external_activity_type(self):
+        """
+        Gets the external_activity_type of this BuAgentScheduleActivity.
+        The type of the external activity associated with this activity, if applicable
+
+        :return: The external_activity_type of this BuAgentScheduleActivity.
+        :rtype: str
+        """
+        return self._external_activity_type
+
+    @external_activity_type.setter
+    def external_activity_type(self, external_activity_type):
+        """
+        Sets the external_activity_type of this BuAgentScheduleActivity.
+        The type of the external activity associated with this activity, if applicable
+
+        :param external_activity_type: The external_activity_type of this BuAgentScheduleActivity.
+        :type: str
+        """
+        allowed_values = ["Coaching"]
+        if external_activity_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for external_activity_type -> " + external_activity_type
+            self._external_activity_type = "outdated_sdk_version"
+        else:
+            self._external_activity_type = external_activity_type
 
     def to_dict(self):
         """

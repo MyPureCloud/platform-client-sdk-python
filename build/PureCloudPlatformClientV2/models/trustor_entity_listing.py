@@ -45,8 +45,8 @@ class TrustorEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
-            'next_uri': 'str',
             'self_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'previous_uri': 'str',
             'page_count': 'int'
@@ -58,8 +58,8 @@ class TrustorEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
             'self_uri': 'selfUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'previous_uri': 'previousUri',
             'page_count': 'pageCount'
@@ -70,8 +70,8 @@ class TrustorEntityListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
-        self._next_uri = None
         self._self_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._previous_uri = None
         self._page_count = None
@@ -192,29 +192,6 @@ class TrustorEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self):
-        """
-        Gets the next_uri of this TrustorEntityListing.
-
-
-        :return: The next_uri of this TrustorEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri):
-        """
-        Sets the next_uri of this TrustorEntityListing.
-
-
-        :param next_uri: The next_uri of this TrustorEntityListing.
-        :type: str
-        """
-        
-        self._next_uri = next_uri
-
-    @property
     def self_uri(self):
         """
         Gets the self_uri of this TrustorEntityListing.
@@ -236,6 +213,29 @@ class TrustorEntityListing(object):
         """
         
         self._self_uri = self_uri
+
+    @property
+    def next_uri(self):
+        """
+        Gets the next_uri of this TrustorEntityListing.
+
+
+        :return: The next_uri of this TrustorEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri):
+        """
+        Sets the next_uri of this TrustorEntityListing.
+
+
+        :param next_uri: The next_uri of this TrustorEntityListing.
+        :type: str
+        """
+        
+        self._next_uri = next_uri
 
     @property
     def last_uri(self):

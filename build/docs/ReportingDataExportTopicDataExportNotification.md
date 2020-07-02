@@ -18,6 +18,7 @@ title: ReportingDataExportTopicDataExportNotification
 | **created_date_time** | **datetime** |  | [optional] |
 | **modified_date_time** | **datetime** |  | [optional] |
 | **percentage_complete** | **float** |  | [optional] |
+| **email_statuses** | **dict(str, str)** |  | [optional] |
 {: class="table table-striped"}
 
 

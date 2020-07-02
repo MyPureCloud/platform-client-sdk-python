@@ -85,6 +85,8 @@ title: ViewFilter
 | **location_ids** | **list[str]** | The location Ids used to filter the view | [optional] |
 | **flow_out_types** | **list[str]** | A list of flow out types | [optional] |
 | **provider_list** | **list[str]** | A list of providers | [optional] |
+| **callback_number_list** | **list[str]** | A list of callback numbers or substrings of numbers (ex: [\&quot;317\&quot;, \&quot;13172222222\&quot;]) | [optional] |
+| **callback_interval** | **str** | An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] |
 {: class="table table-striped"}
 
 

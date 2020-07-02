@@ -50,7 +50,8 @@ class ReportingDataExportTopicDataExportNotification(object):
             'read': 'bool',
             'created_date_time': 'datetime',
             'modified_date_time': 'datetime',
-            'percentage_complete': 'float'
+            'percentage_complete': 'float',
+            'email_statuses': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class ReportingDataExportTopicDataExportNotification(object):
             'read': 'read',
             'created_date_time': 'createdDateTime',
             'modified_date_time': 'modifiedDateTime',
-            'percentage_complete': 'percentageComplete'
+            'percentage_complete': 'percentageComplete',
+            'email_statuses': 'emailStatuses'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         self._created_date_time = None
         self._modified_date_time = None
         self._percentage_complete = None
+        self._email_statuses = None
 
     @property
     def id(self):
@@ -347,6 +350,29 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         
         self._percentage_complete = percentage_complete
+
+    @property
+    def email_statuses(self):
+        """
+        Gets the email_statuses of this ReportingDataExportTopicDataExportNotification.
+
+
+        :return: The email_statuses of this ReportingDataExportTopicDataExportNotification.
+        :rtype: dict(str, str)
+        """
+        return self._email_statuses
+
+    @email_statuses.setter
+    def email_statuses(self, email_statuses):
+        """
+        Sets the email_statuses of this ReportingDataExportTopicDataExportNotification.
+
+
+        :param email_statuses: The email_statuses of this ReportingDataExportTopicDataExportNotification.
+        :type: dict(str, str)
+        """
+        
+        self._email_statuses = email_statuses
 
     def to_dict(self):
         """

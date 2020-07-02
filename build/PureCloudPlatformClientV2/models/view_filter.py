@@ -117,7 +117,9 @@ class ViewFilter(object):
             'reports_tos': 'list[str]',
             'location_ids': 'list[str]',
             'flow_out_types': 'list[str]',
-            'provider_list': 'list[str]'
+            'provider_list': 'list[str]',
+            'callback_number_list': 'list[str]',
+            'callback_interval': 'str'
         }
 
         self.attribute_map = {
@@ -198,7 +200,9 @@ class ViewFilter(object):
             'reports_tos': 'reportsTos',
             'location_ids': 'locationIds',
             'flow_out_types': 'flowOutTypes',
-            'provider_list': 'providerList'
+            'provider_list': 'providerList',
+            'callback_number_list': 'callbackNumberList',
+            'callback_interval': 'callbackInterval'
         }
 
         self._media_types = None
@@ -279,6 +283,8 @@ class ViewFilter(object):
         self._location_ids = None
         self._flow_out_types = None
         self._provider_list = None
+        self._callback_number_list = None
+        self._callback_interval = None
 
     @property
     def media_types(self):
@@ -2073,6 +2079,52 @@ class ViewFilter(object):
         """
         
         self._provider_list = provider_list
+
+    @property
+    def callback_number_list(self):
+        """
+        Gets the callback_number_list of this ViewFilter.
+        A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"])
+
+        :return: The callback_number_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._callback_number_list
+
+    @callback_number_list.setter
+    def callback_number_list(self, callback_number_list):
+        """
+        Sets the callback_number_list of this ViewFilter.
+        A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"])
+
+        :param callback_number_list: The callback_number_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._callback_number_list = callback_number_list
+
+    @property
+    def callback_interval(self):
+        """
+        Gets the callback_interval of this ViewFilter.
+        An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :return: The callback_interval of this ViewFilter.
+        :rtype: str
+        """
+        return self._callback_interval
+
+    @callback_interval.setter
+    def callback_interval(self, callback_interval):
+        """
+        Sets the callback_interval of this ViewFilter.
+        An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :param callback_interval: The callback_interval of this ViewFilter.
+        :type: str
+        """
+        
+        self._callback_interval = callback_interval
 
     def to_dict(self):
         """

@@ -51,7 +51,9 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'action': 'str',
             'note': 'str',
             'deleted': 'bool',
-            'modified_by_user_id': 'str'
+            'modified_by_user_id': 'str',
+            'copied_to': 'list[VoicemailMessagesTopicVoicemailCopyRecord]',
+            'copied_from': 'VoicemailMessagesTopicVoicemailCopyRecord'
         }
 
         self.attribute_map = {
@@ -66,7 +68,9 @@ class VoicemailMessagesTopicVoicemailMessage(object):
             'action': 'action',
             'note': 'note',
             'deleted': 'deleted',
-            'modified_by_user_id': 'modifiedByUserId'
+            'modified_by_user_id': 'modifiedByUserId',
+            'copied_to': 'copiedTo',
+            'copied_from': 'copiedFrom'
         }
 
         self._id = None
@@ -81,6 +85,8 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         self._note = None
         self._deleted = None
         self._modified_by_user_id = None
+        self._copied_to = None
+        self._copied_from = None
 
     @property
     def id(self):
@@ -357,6 +363,52 @@ class VoicemailMessagesTopicVoicemailMessage(object):
         """
         
         self._modified_by_user_id = modified_by_user_id
+
+    @property
+    def copied_to(self):
+        """
+        Gets the copied_to of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :return: The copied_to of this VoicemailMessagesTopicVoicemailMessage.
+        :rtype: list[VoicemailMessagesTopicVoicemailCopyRecord]
+        """
+        return self._copied_to
+
+    @copied_to.setter
+    def copied_to(self, copied_to):
+        """
+        Sets the copied_to of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :param copied_to: The copied_to of this VoicemailMessagesTopicVoicemailMessage.
+        :type: list[VoicemailMessagesTopicVoicemailCopyRecord]
+        """
+        
+        self._copied_to = copied_to
+
+    @property
+    def copied_from(self):
+        """
+        Gets the copied_from of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :return: The copied_from of this VoicemailMessagesTopicVoicemailMessage.
+        :rtype: VoicemailMessagesTopicVoicemailCopyRecord
+        """
+        return self._copied_from
+
+    @copied_from.setter
+    def copied_from(self, copied_from):
+        """
+        Sets the copied_from of this VoicemailMessagesTopicVoicemailMessage.
+
+
+        :param copied_from: The copied_from of this VoicemailMessagesTopicVoicemailMessage.
+        :type: VoicemailMessagesTopicVoicemailCopyRecord
+        """
+        
+        self._copied_from = copied_from
 
     def to_dict(self):
         """

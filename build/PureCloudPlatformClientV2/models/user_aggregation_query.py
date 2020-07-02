@@ -123,7 +123,7 @@ class UserAggregationQuery(object):
     def time_zone(self):
         """
         Gets the time_zone of this UserAggregationQuery.
-        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+        Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone of this UserAggregationQuery.
         :rtype: str
@@ -134,7 +134,7 @@ class UserAggregationQuery(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this UserAggregationQuery.
-        Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+        Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone: The time_zone of this UserAggregationQuery.
         :type: str
