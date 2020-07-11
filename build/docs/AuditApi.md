@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_audits_query_transaction_id**](AuditApi.html#get_audits_query_transaction_id) | Get status of audit query execution|
 |[**get_audits_query_transaction_id_results**](AuditApi.html#get_audits_query_transaction_id_results) | Get results of audit query|
 |[**post_audits_query**](AuditApi.html#post_audits_query) | Create audit query execution|
+|[**post_audits_query_realtime**](AuditApi.html#post_audits_query_realtime) | This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.|
 {: class="table table-striped"}
 
 <a name="get_audits_query_servicemapping"></a>
@@ -219,4 +220,57 @@ except ApiException as e:
 ### Return type
 
 [**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse.html)
+
+<a name="post_audits_query_realtime"></a>
+
+## [**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse.html) post_audits_query_realtime(body, expand=expand)
+
+
+
+This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+
+
+
+Wraps POST /api/v2/audits/query/realtime 
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuditApi()
+body = PureCloudPlatformClientV2.AuditRealtimeQueryRequest() # AuditRealtimeQueryRequest | query
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+    api_response = api_instance.post_audits_query_realtime(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuditApi->post_audits_query_realtime: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AuditRealtimeQueryRequest**](AuditRealtimeQueryRequest.html)| query |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse.html)
 

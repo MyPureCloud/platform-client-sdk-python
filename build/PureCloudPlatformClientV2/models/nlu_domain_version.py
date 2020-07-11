@@ -44,6 +44,7 @@ class NluDomainVersion(object):
             'domain': 'NluDomain',
             'description': 'str',
             'language': 'str',
+            'published': 'bool',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'date_trained': 'datetime',
@@ -60,6 +61,7 @@ class NluDomainVersion(object):
             'domain': 'domain',
             'description': 'description',
             'language': 'language',
+            'published': 'published',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'date_trained': 'dateTrained',
@@ -75,6 +77,7 @@ class NluDomainVersion(object):
         self._domain = None
         self._description = None
         self._language = None
+        self._published = None
         self._date_created = None
         self._date_modified = None
         self._date_trained = None
@@ -176,6 +179,29 @@ class NluDomainVersion(object):
         """
         
         self._language = language
+
+    @property
+    def published(self):
+        """
+        Gets the published of this NluDomainVersion.
+        Whether this NLU domain version has been published.
+
+        :return: The published of this NluDomainVersion.
+        :rtype: bool
+        """
+        return self._published
+
+    @published.setter
+    def published(self, published):
+        """
+        Sets the published of this NluDomainVersion.
+        Whether this NLU domain version has been published.
+
+        :param published: The published of this NluDomainVersion.
+        :type: bool
+        """
+        
+        self._published = published
 
     @property
     def date_created(self):

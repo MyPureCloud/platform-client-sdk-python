@@ -208,6 +208,90 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_languageunderstanding_domain_version(self, domain_id, domain_version_id, **kwargs):
+        """
+        Delete an NLU Domain Version
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_languageunderstanding_domain_version(domain_id, domain_version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_id: ID of the NLU domain. (required)
+        :param str domain_version_id: ID of the NLU domain version. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_id', 'domain_version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_languageunderstanding_domain_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_id' is set
+        if ('domain_id' not in params) or (params['domain_id'] is None):
+            raise ValueError("Missing the required parameter `domain_id` when calling `delete_languageunderstanding_domain_version`")
+        # verify the required parameter 'domain_version_id' is set
+        if ('domain_version_id' not in params) or (params['domain_version_id'] is None):
+            raise ValueError("Missing the required parameter `domain_version_id` when calling `delete_languageunderstanding_domain_version`")
+
+
+        resource_path = '/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_id' in params:
+            path_params['domainId'] = params['domain_id']
+        if 'domain_version_id' in params:
+            path_params['domainVersionId'] = params['domain_version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_languageunderstanding_domain(self, domain_id, **kwargs):
         """
         Find an NLU Domain.
@@ -811,7 +895,7 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_languageunderstanding_domain(self, domain_id, **kwargs):
+    def patch_languageunderstanding_domain(self, domain_id, body, **kwargs):
         """
         Update an NLU Domain.
         
@@ -822,12 +906,12 @@ class LanguageUnderstandingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_languageunderstanding_domain(domain_id, callback=callback_function)
+        >>> thread = api.patch_languageunderstanding_domain(domain_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: ID of the NLU domain. (required)
-        :param NluDomain body: 
+        :param NluDomain body: The updated NLU Domain. (required)
         :return: NluDomain
                  If the method is called asynchronously,
                  returns the request thread.
@@ -849,6 +933,9 @@ class LanguageUnderstandingApi(object):
         # verify the required parameter 'domain_id' is set
         if ('domain_id' not in params) or (params['domain_id'] is None):
             raise ValueError("Missing the required parameter `domain_id` when calling `patch_languageunderstanding_domain`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_languageunderstanding_domain`")
 
 
         resource_path = '/api/v2/languageunderstanding/domains/{domainId}'.replace('{format}', 'json')
@@ -892,7 +979,7 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_languageunderstanding_domain_feedback(self, domain_id, **kwargs):
+    def post_languageunderstanding_domain_feedback(self, domain_id, body, **kwargs):
         """
         Create feedback for the NLU Domain Version.
         
@@ -903,12 +990,12 @@ class LanguageUnderstandingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_languageunderstanding_domain_feedback(domain_id, callback=callback_function)
+        >>> thread = api.post_languageunderstanding_domain_feedback(domain_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: ID of the NLU domain. (required)
-        :param NluFeedbackRequest body: 
+        :param NluFeedbackRequest body: The Feedback to create. (required)
         :return: NluFeedbackResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -930,6 +1017,9 @@ class LanguageUnderstandingApi(object):
         # verify the required parameter 'domain_id' is set
         if ('domain_id' not in params) or (params['domain_id'] is None):
             raise ValueError("Missing the required parameter `domain_id` when calling `post_languageunderstanding_domain_feedback`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_domain_feedback`")
 
 
         resource_path = '/api/v2/languageunderstanding/domains/{domainId}/feedback'.replace('{format}', 'json')
@@ -973,7 +1063,7 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_languageunderstanding_domain_version_detect(self, domain_id, domain_version_id, **kwargs):
+    def post_languageunderstanding_domain_version_detect(self, domain_id, domain_version_id, body, **kwargs):
         """
         Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
         
@@ -984,13 +1074,13 @@ class LanguageUnderstandingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, callback=callback_function)
+        >>> thread = api.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: ID of the NLU domain. (required)
         :param str domain_version_id: ID of the NLU domain version. (required)
-        :param NluDetectionRequest body: 
+        :param NluDetectionRequest body: The input data to perform detection on. (required)
         :return: NluDetectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1015,6 +1105,9 @@ class LanguageUnderstandingApi(object):
         # verify the required parameter 'domain_version_id' is set
         if ('domain_version_id' not in params) or (params['domain_version_id'] is None):
             raise ValueError("Missing the required parameter `domain_version_id` when calling `post_languageunderstanding_domain_version_detect`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_domain_version_detect`")
 
 
         resource_path = '/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect'.replace('{format}', 'json')
@@ -1228,7 +1321,91 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_languageunderstanding_domains(self, **kwargs):
+    def post_languageunderstanding_domain_versions(self, domain_id, body, **kwargs):
+        """
+        Create an NLU Domain Version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_domain_versions(domain_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_id: ID of the NLU domain. (required)
+        :param NluDomainVersion body: The NLU Domain Version to create. (required)
+        :return: NluDomainVersion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_domain_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_id' is set
+        if ('domain_id' not in params) or (params['domain_id'] is None):
+            raise ValueError("Missing the required parameter `domain_id` when calling `post_languageunderstanding_domain_versions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_domain_versions`")
+
+
+        resource_path = '/api/v2/languageunderstanding/domains/{domainId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_id' in params:
+            path_params['domainId'] = params['domain_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='NluDomainVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_domains(self, body, **kwargs):
         """
         Create an NLU Domain.
         
@@ -1239,11 +1416,11 @@ class LanguageUnderstandingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_languageunderstanding_domains(callback=callback_function)
+        >>> thread = api.post_languageunderstanding_domains(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param NluDomain body: 
+        :param NluDomain body: The NLU Domain to create. (required)
         :return: NluDomain
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1262,6 +1439,9 @@ class LanguageUnderstandingApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_domains`")
 
 
         resource_path = '/api/v2/languageunderstanding/domains'.replace('{format}', 'json')
@@ -1303,7 +1483,7 @@ class LanguageUnderstandingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_languageunderstanding_domain_version(self, domain_id, domain_version_id, **kwargs):
+    def put_languageunderstanding_domain_version(self, domain_id, domain_version_id, body, **kwargs):
         """
         Update an NLU Domain Version.
         
@@ -1314,13 +1494,13 @@ class LanguageUnderstandingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_languageunderstanding_domain_version(domain_id, domain_version_id, callback=callback_function)
+        >>> thread = api.put_languageunderstanding_domain_version(domain_id, domain_version_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: ID of the NLU domain. (required)
         :param str domain_version_id: ID of the NLU domain version. (required)
-        :param NluDomainVersion body: 
+        :param NluDomainVersion body: The updated NLU Domain Version. (required)
         :return: NluDomainVersion
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1345,6 +1525,9 @@ class LanguageUnderstandingApi(object):
         # verify the required parameter 'domain_version_id' is set
         if ('domain_version_id' not in params) or (params['domain_version_id'] is None):
             raise ValueError("Missing the required parameter `domain_version_id` when calling `put_languageunderstanding_domain_version`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_languageunderstanding_domain_version`")
 
 
         resource_path = '/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}'.replace('{format}', 'json')

@@ -52,6 +52,7 @@ class EdgeGroup(object):
             'modified_by_app': 'str',
             'created_by_app': 'str',
             'managed': 'bool',
+            'hybrid': 'bool',
             'edge_trunk_base_assignment': 'TrunkBaseAssignment',
             'phone_trunk_bases': 'list[TrunkBase]',
             'self_uri': 'str'
@@ -70,6 +71,7 @@ class EdgeGroup(object):
             'modified_by_app': 'modifiedByApp',
             'created_by_app': 'createdByApp',
             'managed': 'managed',
+            'hybrid': 'hybrid',
             'edge_trunk_base_assignment': 'edgeTrunkBaseAssignment',
             'phone_trunk_bases': 'phoneTrunkBases',
             'self_uri': 'selfUri'
@@ -87,6 +89,7 @@ class EdgeGroup(object):
         self._modified_by_app = None
         self._created_by_app = None
         self._managed = None
+        self._hybrid = None
         self._edge_trunk_base_assignment = None
         self._phone_trunk_bases = None
         self._self_uri = None
@@ -370,6 +373,29 @@ class EdgeGroup(object):
         """
         
         self._managed = managed
+
+    @property
+    def hybrid(self):
+        """
+        Gets the hybrid of this EdgeGroup.
+        Is this edge group hybrid.
+
+        :return: The hybrid of this EdgeGroup.
+        :rtype: bool
+        """
+        return self._hybrid
+
+    @hybrid.setter
+    def hybrid(self, hybrid):
+        """
+        Sets the hybrid of this EdgeGroup.
+        Is this edge group hybrid.
+
+        :param hybrid: The hybrid of this EdgeGroup.
+        :type: bool
+        """
+        
+        self._hybrid = hybrid
 
     @property
     def edge_trunk_base_assignment(self):

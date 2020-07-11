@@ -44,6 +44,7 @@ from .stations_api import StationsApi
 from .suggest_api import SuggestApi
 from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi
+from .textbots_api import TextbotsApi
 from .tokens_api import TokensApi
 from .uploads_api import UploadsApi
 from .usage_api import UsageApi

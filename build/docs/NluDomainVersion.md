@@ -10,7 +10,8 @@ title: NluDomainVersion
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **domain** | [**NluDomain**](NluDomain.html) | The NLU domain of the version. | [optional] |
 | **description** | **str** | The description of the NLU domain version. | [optional] |
-| **language** | **str** | The language that the NLU domain version supports. | [optional] |
+| **language** | **str** | The language that the NLU domain version supports. | |
+| **published** | **bool** | Whether this NLU domain version has been published. | [optional] |
 | **date_created** | **datetime** | The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_modified** | **datetime** | The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 | **date_trained** | **datetime** | The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |

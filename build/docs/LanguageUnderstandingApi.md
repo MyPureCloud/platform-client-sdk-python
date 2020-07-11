@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_languageunderstanding_domain**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain) | Delete an NLU Domain.|
 |[**delete_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_feedback_feedback_id) | Delete the feedback on the NLU Domain Version.|
+|[**delete_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_version) | Delete an NLU Domain Version|
 |[**get_languageunderstanding_domain**](LanguageUnderstandingApi.html#get_languageunderstanding_domain) | Find an NLU Domain.|
 |[**get_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback) | Get all feedback in the given NLU Domain Version.|
 |[**get_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback_feedback_id) | Find a Feedback|
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_languageunderstanding_domain_version_detect**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_detect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.|
 |[**post_languageunderstanding_domain_version_publish**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_publish) | Publish the draft NLU Domain Version.|
 |[**post_languageunderstanding_domain_version_train**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_train) | Train the draft NLU Domain Version.|
+|[**post_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
 |[**post_languageunderstanding_domains**](LanguageUnderstandingApi.html#post_languageunderstanding_domains) | Create an NLU Domain.|
 |[**put_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#put_languageunderstanding_domain_version) | Update an NLU Domain Version.|
 {: class="table table-striped"}
@@ -124,6 +126,59 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **feedback_id** | **str**| ID of the Feedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_languageunderstanding_domain_version"></a>
+
+##  delete_languageunderstanding_domain_version(domain_id, domain_version_id)
+
+
+
+Delete an NLU Domain Version
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} 
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:delete
+* dialog:botVersion:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+domain_id = 'domain_id_example' # str | ID of the NLU domain.
+domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
+
+try:
+    # Delete an NLU Domain Version
+    api_instance.delete_languageunderstanding_domain_version(domain_id, domain_version_id)
+except ApiException as e:
+    print "Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain_version: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| ID of the NLU domain. |  |
+| **domain_version_id** | **str**| ID of the NLU domain version. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -530,7 +585,7 @@ except ApiException as e:
 
 <a name="patch_languageunderstanding_domain"></a>
 
-## [**NluDomain**](NluDomain.html) patch_languageunderstanding_domain(domain_id, body=body)
+## [**NluDomain**](NluDomain.html) patch_languageunderstanding_domain(domain_id, body)
 
 
 
@@ -559,11 +614,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
-body = PureCloudPlatformClientV2.NluDomain() # NluDomain |  (optional)
+body = PureCloudPlatformClientV2.NluDomain() # NluDomain | The updated NLU Domain.
 
 try:
     # Update an NLU Domain.
-    api_response = api_instance.patch_languageunderstanding_domain(domain_id, body=body)
+    api_response = api_instance.patch_languageunderstanding_domain(domain_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguageUnderstandingApi->patch_languageunderstanding_domain: %s\n" % e
@@ -575,7 +630,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-| **body** | [**NluDomain**](NluDomain.html)|  | [optional]  |
+| **body** | [**NluDomain**](NluDomain.html)| The updated NLU Domain. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -584,7 +639,7 @@ except ApiException as e:
 
 <a name="post_languageunderstanding_domain_feedback"></a>
 
-## [**NluFeedbackResponse**](NluFeedbackResponse.html) post_languageunderstanding_domain_feedback(domain_id, body=body)
+## [**NluFeedbackResponse**](NluFeedbackResponse.html) post_languageunderstanding_domain_feedback(domain_id, body)
 
 
 
@@ -613,11 +668,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
-body = PureCloudPlatformClientV2.NluFeedbackRequest() # NluFeedbackRequest |  (optional)
+body = PureCloudPlatformClientV2.NluFeedbackRequest() # NluFeedbackRequest | The Feedback to create.
 
 try:
     # Create feedback for the NLU Domain Version.
-    api_response = api_instance.post_languageunderstanding_domain_feedback(domain_id, body=body)
+    api_response = api_instance.post_languageunderstanding_domain_feedback(domain_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_feedback: %s\n" % e
@@ -629,7 +684,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-| **body** | [**NluFeedbackRequest**](NluFeedbackRequest.html)|  | [optional]  |
+| **body** | [**NluFeedbackRequest**](NluFeedbackRequest.html)| The Feedback to create. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -638,7 +693,7 @@ except ApiException as e:
 
 <a name="post_languageunderstanding_domain_version_detect"></a>
 
-## [**NluDetectionResponse**](NluDetectionResponse.html) post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body=body)
+## [**NluDetectionResponse**](NluDetectionResponse.html) post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
 
 
 
@@ -668,11 +723,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
 domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
-body = PureCloudPlatformClientV2.NluDetectionRequest() # NluDetectionRequest |  (optional)
+body = PureCloudPlatformClientV2.NluDetectionRequest() # NluDetectionRequest | The input data to perform detection on.
 
 try:
     # Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
-    api_response = api_instance.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body=body)
+    api_response = api_instance.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_detect: %s\n" % e
@@ -685,7 +740,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-| **body** | [**NluDetectionRequest**](NluDetectionRequest.html)|  | [optional]  |
+| **body** | [**NluDetectionRequest**](NluDetectionRequest.html)| The input data to perform detection on. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -800,9 +855,63 @@ except ApiException as e:
 
 [**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse.html)
 
+<a name="post_languageunderstanding_domain_versions"></a>
+
+## [**NluDomainVersion**](NluDomainVersion.html) post_languageunderstanding_domain_versions(domain_id, body)
+
+
+
+Create an NLU Domain Version.
+
+
+
+Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions 
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:add
+* dialog:botVersion:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+domain_id = 'domain_id_example' # str | ID of the NLU domain.
+body = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion | The NLU Domain Version to create.
+
+try:
+    # Create an NLU Domain Version.
+    api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_versions: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| ID of the NLU domain. |  |
+| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The NLU Domain Version to create. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**NluDomainVersion**](NluDomainVersion.html)
+
 <a name="post_languageunderstanding_domains"></a>
 
-## [**NluDomain**](NluDomain.html) post_languageunderstanding_domains(body=body)
+## [**NluDomain**](NluDomain.html) post_languageunderstanding_domains(body)
 
 
 
@@ -830,11 +939,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
-body = PureCloudPlatformClientV2.NluDomain() # NluDomain |  (optional)
+body = PureCloudPlatformClientV2.NluDomain() # NluDomain | The NLU Domain to create.
 
 try:
     # Create an NLU Domain.
-    api_response = api_instance.post_languageunderstanding_domains(body=body)
+    api_response = api_instance.post_languageunderstanding_domains(body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domains: %s\n" % e
@@ -845,7 +954,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**NluDomain**](NluDomain.html)|  | [optional]  |
+| **body** | [**NluDomain**](NluDomain.html)| The NLU Domain to create. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -854,7 +963,7 @@ except ApiException as e:
 
 <a name="put_languageunderstanding_domain_version"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) put_languageunderstanding_domain_version(domain_id, domain_version_id, body=body)
+## [**NluDomainVersion**](NluDomainVersion.html) put_languageunderstanding_domain_version(domain_id, domain_version_id, body)
 
 
 
@@ -884,11 +993,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
 domain_id = 'domain_id_example' # str | ID of the NLU domain.
 domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
-body = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion |  (optional)
+body = PureCloudPlatformClientV2.NluDomainVersion() # NluDomainVersion | The updated NLU Domain Version.
 
 try:
     # Update an NLU Domain Version.
-    api_response = api_instance.put_languageunderstanding_domain_version(domain_id, domain_version_id, body=body)
+    api_response = api_instance.put_languageunderstanding_domain_version(domain_id, domain_version_id, body)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling LanguageUnderstandingApi->put_languageunderstanding_domain_version: %s\n" % e
@@ -901,7 +1010,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-| **body** | [**NluDomainVersion**](NluDomainVersion.html)|  | [optional]  |
+| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The updated NLU Domain Version. |  |
 {: class="table table-striped"}
 
 ### Return type

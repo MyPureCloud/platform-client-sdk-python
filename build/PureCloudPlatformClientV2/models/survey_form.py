@@ -47,8 +47,6 @@ class SurveyForm(object):
             'disabled': 'bool',
             'context_id': 'str',
             'language': 'str',
-            'header_image_id': 'str',
-            'header_image_url': 'str',
             'header': 'str',
             'footer': 'str',
             'question_groups': 'list[SurveyQuestionGroup]',
@@ -64,8 +62,6 @@ class SurveyForm(object):
             'disabled': 'disabled',
             'context_id': 'contextId',
             'language': 'language',
-            'header_image_id': 'headerImageId',
-            'header_image_url': 'headerImageUrl',
             'header': 'header',
             'footer': 'footer',
             'question_groups': 'questionGroups',
@@ -80,8 +76,6 @@ class SurveyForm(object):
         self._disabled = None
         self._context_id = None
         self._language = None
-        self._header_image_id = None
-        self._header_image_url = None
         self._header = None
         self._footer = None
         self._question_groups = None
@@ -248,52 +242,6 @@ class SurveyForm(object):
         """
         
         self._language = language
-
-    @property
-    def header_image_id(self):
-        """
-        Gets the header_image_id of this SurveyForm.
-        Id of the header image appearing at the top of the form.
-
-        :return: The header_image_id of this SurveyForm.
-        :rtype: str
-        """
-        return self._header_image_id
-
-    @header_image_id.setter
-    def header_image_id(self, header_image_id):
-        """
-        Sets the header_image_id of this SurveyForm.
-        Id of the header image appearing at the top of the form.
-
-        :param header_image_id: The header_image_id of this SurveyForm.
-        :type: str
-        """
-        
-        self._header_image_id = header_image_id
-
-    @property
-    def header_image_url(self):
-        """
-        Gets the header_image_url of this SurveyForm.
-        Temporary URL for accessing header image
-
-        :return: The header_image_url of this SurveyForm.
-        :rtype: str
-        """
-        return self._header_image_url
-
-    @header_image_url.setter
-    def header_image_url(self, header_image_url):
-        """
-        Sets the header_image_url of this SurveyForm.
-        Temporary URL for accessing header image
-
-        :param header_image_url: The header_image_url of this SurveyForm.
-        :type: str
-        """
-        
-        self._header_image_url = header_image_url
 
     @property
     def header(self):
