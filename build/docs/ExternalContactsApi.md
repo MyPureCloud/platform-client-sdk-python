@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_contact**](ExternalContactsApi.html#put_externalcontacts_contact) | Update an external contact|
 |[**put_externalcontacts_contact_note**](ExternalContactsApi.html#put_externalcontacts_contact_note) | Update a note for an external contact|
 |[**put_externalcontacts_contacts_schema**](ExternalContactsApi.html#put_externalcontacts_contacts_schema) | Update a schema|
-|[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate an external contact with a conversation|
+|[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
 |[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
 |[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
@@ -2035,9 +2035,9 @@ except ApiException as e:
 
 
 
-Associate an external contact with a conversation
+Associate/disassociate an external contact with a conversation
 
-
+To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId} 
 
@@ -2062,7 +2062,7 @@ conversation_id = 'conversation_id_example' # str | Conversation ID
 body = PureCloudPlatformClientV2.ConversationAssociation() # ConversationAssociation | ConversationAssociation
 
 try:
-    # Associate an external contact with a conversation
+    # Associate/disassociate an external contact with a conversation
     api_instance.put_externalcontacts_conversation(conversation_id, body)
 except ApiException as e:
     print "Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e

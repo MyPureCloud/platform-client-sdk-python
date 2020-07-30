@@ -48,7 +48,7 @@ class SCIMApi(object):
 
     def delete_scim_group(self, group_id, **kwargs):
         """
-        Delete a group.
+        Delete a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -61,8 +61,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
-        :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups. (required)
+        :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -210,7 +210,7 @@ class SCIMApi(object):
 
     def delete_scim_v2_group(self, group_id, **kwargs):
         """
-        Delete a group.
+        Delete a group
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -223,8 +223,8 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
-        :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+        :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups. (required)
+        :param str if_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -386,8 +386,8 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: The ID of a group. Returned with GET /api/v2/scim/groups. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Always returns the \"id\", \"active\", and \"meta\" attributes. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2Group
                  If the method is called asynchronously,
@@ -473,10 +473,10 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
-        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
-        :param str filter: Filters results.
+        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\". Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Always returns the \"id\", \"active\", and \"meta\" attributes. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
+        :param str filter: Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\".
         :return: ScimGroupListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -696,7 +696,7 @@ class SCIMApi(object):
 
     def get_scim_schema(self, schema_id, **kwargs):
         """
-        Get the SCIM schema by id
+        Get a SCIM schema
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -709,7 +709,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str schema_id: The ID of a schema. (required)
+        :param str schema_id: The ID of a schema. Returned with GET /api/v2/scim/schemas. (required)
         :return: ScimConfigResourceType
                  If the method is called asynchronously,
                  returns the request thread.
@@ -774,7 +774,7 @@ class SCIMApi(object):
 
     def get_scim_schemas(self, **kwargs):
         """
-        Get the SCIM schemas
+        Get a list of SCIM schemas
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -787,7 +787,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: Filtered results are invalid and will result in a 403 (Unauthorized) return.
+        :param str filter: Filtered results are invalid and return 403 Unauthorized.
         :return: ScimConfigResourceTypesListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -938,8 +938,8 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
@@ -1012,7 +1012,7 @@ class SCIMApi(object):
     def get_scim_users(self, **kwargs):
         """
         Get a list of users
-        To return all active users, do not use a filter parameter. To return inactive users, set \"filter\" to \"active eq false\". By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \"attributes\" to \"id,active\" or \"excludeAttributes\" to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
+        To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1025,9 +1025,9 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
-        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
+        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\". Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,
@@ -1112,9 +1112,9 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
-        :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Always returns the \"id\", \"active\", and \"meta\" attributes. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
+        :param str if_none_match: TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1198,11 +1198,11 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: Filters results. (required)
+        :param str filter: Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\". (required)
         :param int start_index: The 1-based index of the first query result.
-        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
+        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\". Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Always returns the \"id\", \"active\", and \"meta\" attributes. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :return: ScimGroupListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1425,7 +1425,7 @@ class SCIMApi(object):
 
     def get_scim_v2_schema(self, schema_id, **kwargs):
         """
-        Get the SCIM schema by id
+        Get a SCIM schema
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1438,7 +1438,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str schema_id: The ID of a schema. (required)
+        :param str schema_id: The ID of a schema. Returned with GET /api/v2/scim/v2/schemas. (required)
         :return: ScimV2SchemaDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1503,7 +1503,7 @@ class SCIMApi(object):
 
     def get_scim_v2_schemas(self, **kwargs):
         """
-        Get the SCIM schemas
+        Get a list of SCIM schemas
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1516,7 +1516,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str filter: Filtered results are invalid and will result in a 403 (Unauthorized) return.
+        :param str filter: Filtered results are invalid and return 403 Unauthorized.
         :return: ScimV2SchemaListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1667,8 +1667,8 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :param str if_none_match: The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
         :return: ScimV2User
                  If the method is called asynchronously,
@@ -1741,7 +1741,7 @@ class SCIMApi(object):
     def get_scim_v2_users(self, **kwargs):
         """
         Get a list of users
-        To return all active users, do not use a filter parameter. To return inactive users, set \"filter\" to \"active eq false\". By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \"attributes\" to \"id,active\" or \"excludeAttributes\" to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
+        To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1754,9 +1754,9 @@ class SCIMApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int start_index: The 1-based index of the first query result.
-        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\".
-        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
+        :param int count: The requested number of items per page. A value of 0 returns \"totalResults\". Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills)
+        :param list[str] attributes: Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive additional calls for the default attributes.
+        :param list[str] excluded_attributes: Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive additional calls for the default attributes.
         :param str filter: Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
         :return: ScimUserListResponse
                  If the method is called asynchronously,
@@ -2175,8 +2175,8 @@ class SCIMApi(object):
 
     def post_scim_groups(self, body, **kwargs):
         """
-        The information used to create a group.
-        PureCloud group will be created as \"Official\" group with visibility set \"Public\", and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+        Creates a group
+        Creates a Genesys Cloud group with group visibility set to \"public\" and rules visibility set to \"true\". Auto-creates an \"externalId\". \"externalId\" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2331,8 +2331,8 @@ class SCIMApi(object):
 
     def post_scim_v2_groups(self, body, **kwargs):
         """
-        The information used to create a group.
-        PureCloud group will be created as \"Official\" group with visibility set \"Public\", and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+        Create a group
+        Creates an \"official\" Genesys Cloud group with group visibility set to \"public\" and rules visibility set to \"true\". Auto-creates an \"externalId\". \"externalId\" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2344,7 +2344,7 @@ class SCIMApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ScimV2Group body: The information used to create a group. (required)
+        :param ScimV2Group body: Creates a group. (required)
         :return: ScimV2Group
                  If the method is called asynchronously,
                  returns the request thread.

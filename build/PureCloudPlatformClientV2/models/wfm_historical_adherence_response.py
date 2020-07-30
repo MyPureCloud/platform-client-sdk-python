@@ -42,6 +42,7 @@ class WfmHistoricalAdherenceResponse(object):
         self.swagger_types = {
             'id': 'str',
             'download_url': 'str',
+            'download_result': 'WfmHistoricalAdherenceResultWrapper',
             'download_urls': 'list[str]',
             'query_state': 'str'
         }
@@ -49,12 +50,14 @@ class WfmHistoricalAdherenceResponse(object):
         self.attribute_map = {
             'id': 'id',
             'download_url': 'downloadUrl',
+            'download_result': 'downloadResult',
             'download_urls': 'downloadUrls',
             'query_state': 'queryState'
         }
 
         self._id = None
         self._download_url = None
+        self._download_result = None
         self._download_urls = None
         self._query_state = None
 
@@ -103,6 +106,29 @@ class WfmHistoricalAdherenceResponse(object):
         """
         
         self._download_url = download_url
+
+    @property
+    def download_result(self):
+        """
+        Gets the download_result of this WfmHistoricalAdherenceResponse.
+        Result will always come via downloadUrls; however the schema is included for documentation
+
+        :return: The download_result of this WfmHistoricalAdherenceResponse.
+        :rtype: WfmHistoricalAdherenceResultWrapper
+        """
+        return self._download_result
+
+    @download_result.setter
+    def download_result(self, download_result):
+        """
+        Sets the download_result of this WfmHistoricalAdherenceResponse.
+        Result will always come via downloadUrls; however the schema is included for documentation
+
+        :param download_result: The download_result of this WfmHistoricalAdherenceResponse.
+        :type: WfmHistoricalAdherenceResultWrapper
+        """
+        
+        self._download_result = download_result
 
     @property
     def download_urls(self):

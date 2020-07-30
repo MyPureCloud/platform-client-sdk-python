@@ -109,7 +109,7 @@ class ScimV2SchemaAttribute(object):
     def type(self):
         """
         Gets the type of this ScimV2SchemaAttribute.
-        The attribute's data type.  Valid values are \"string\", \"boolean\", \"decimal\", \"integer\", \"dateTime\", \"reference\", and \"complex\".
+        The data type of the attribute.
 
         :return: The type of this ScimV2SchemaAttribute.
         :rtype: str
@@ -120,7 +120,7 @@ class ScimV2SchemaAttribute(object):
     def type(self, type):
         """
         Sets the type of this ScimV2SchemaAttribute.
-        The attribute's data type.  Valid values are \"string\", \"boolean\", \"decimal\", \"integer\", \"dateTime\", \"reference\", and \"complex\".
+        The data type of the attribute.
 
         :param type: The type of this ScimV2SchemaAttribute.
         :type: str
@@ -136,7 +136,7 @@ class ScimV2SchemaAttribute(object):
     def sub_attributes(self):
         """
         Gets the sub_attributes of this ScimV2SchemaAttribute.
-        When an attribute is of type \"complex\", \"subAttributes\" defines a set of sub-attributes. \"subAttributes\" has the same schema sub-attributes as \"attributes\"
+        The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".
 
         :return: The sub_attributes of this ScimV2SchemaAttribute.
         :rtype: list[ScimV2SchemaAttribute]
@@ -147,7 +147,7 @@ class ScimV2SchemaAttribute(object):
     def sub_attributes(self, sub_attributes):
         """
         Sets the sub_attributes of this ScimV2SchemaAttribute.
-        When an attribute is of type \"complex\", \"subAttributes\" defines a set of sub-attributes. \"subAttributes\" has the same schema sub-attributes as \"attributes\"
+        The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".
 
         :param sub_attributes: The sub_attributes of this ScimV2SchemaAttribute.
         :type: list[ScimV2SchemaAttribute]
@@ -159,7 +159,7 @@ class ScimV2SchemaAttribute(object):
     def multi_valued(self):
         """
         Gets the multi_valued of this ScimV2SchemaAttribute.
-        A Boolean value indicating the attribute's plurality.
+        Indicates whether an attribute contains multiple values.
 
         :return: The multi_valued of this ScimV2SchemaAttribute.
         :rtype: bool
@@ -170,7 +170,7 @@ class ScimV2SchemaAttribute(object):
     def multi_valued(self, multi_valued):
         """
         Sets the multi_valued of this ScimV2SchemaAttribute.
-        A Boolean value indicating the attribute's plurality.
+        Indicates whether an attribute contains multiple values.
 
         :param multi_valued: The multi_valued of this ScimV2SchemaAttribute.
         :type: bool
@@ -182,7 +182,7 @@ class ScimV2SchemaAttribute(object):
     def description(self):
         """
         Gets the description of this ScimV2SchemaAttribute.
-        The attribute's human-readable description.
+        The description of the attribute.
 
         :return: The description of this ScimV2SchemaAttribute.
         :rtype: str
@@ -193,7 +193,7 @@ class ScimV2SchemaAttribute(object):
     def description(self, description):
         """
         Sets the description of this ScimV2SchemaAttribute.
-        The attribute's human-readable description.
+        The description of the attribute.
 
         :param description: The description of this ScimV2SchemaAttribute.
         :type: str
@@ -205,7 +205,7 @@ class ScimV2SchemaAttribute(object):
     def required(self):
         """
         Gets the required of this ScimV2SchemaAttribute.
-        A Boolean value that specifies whether or not the attribute is required.
+        Indicates whether an attribute is required.
 
         :return: The required of this ScimV2SchemaAttribute.
         :rtype: bool
@@ -216,7 +216,7 @@ class ScimV2SchemaAttribute(object):
     def required(self, required):
         """
         Sets the required of this ScimV2SchemaAttribute.
-        A Boolean value that specifies whether or not the attribute is required.
+        Indicates whether an attribute is required.
 
         :param required: The required of this ScimV2SchemaAttribute.
         :type: bool
@@ -228,7 +228,7 @@ class ScimV2SchemaAttribute(object):
     def canonical_values(self):
         """
         Gets the canonical_values of this ScimV2SchemaAttribute.
-        A collection of suggested canonical values that MAY be used (e.g., \"work\" and \"home\").  In some cases, service providers MAY choose to ignore unsupported values.  OPTIONAL.
+        The list of standard values that service providers may use. Service providers may ignore unsupported values.
 
         :return: The canonical_values of this ScimV2SchemaAttribute.
         :rtype: list[str]
@@ -239,7 +239,7 @@ class ScimV2SchemaAttribute(object):
     def canonical_values(self, canonical_values):
         """
         Sets the canonical_values of this ScimV2SchemaAttribute.
-        A collection of suggested canonical values that MAY be used (e.g., \"work\" and \"home\").  In some cases, service providers MAY choose to ignore unsupported values.  OPTIONAL.
+        The list of standard values that service providers may use. Service providers may ignore unsupported values.
 
         :param canonical_values: The canonical_values of this ScimV2SchemaAttribute.
         :type: list[str]
@@ -251,7 +251,7 @@ class ScimV2SchemaAttribute(object):
     def case_exact(self):
         """
         Gets the case_exact of this ScimV2SchemaAttribute.
-        A Boolean value that specifies whether or not a string attribute is case sensitive.  The server SHALL use case sensitivity when evaluating filters.  For attributes that are case exact, the server SHALL preserve case for any value submitted.  If the attribute is case insensitive, the server MAY alter case for a submitted value.  Case sensitivity also impacts how attribute values MAY be compared against filter values (see Section 3.4.2.2 of [RFC7644])
+        Indicates whether a string attribute is case-sensitive. If set to \"true\", the server preserves case sensitivity. If set to \"false\", the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \"Filtering\" in RFC 7644 for details.
 
         :return: The case_exact of this ScimV2SchemaAttribute.
         :rtype: bool
@@ -262,7 +262,7 @@ class ScimV2SchemaAttribute(object):
     def case_exact(self, case_exact):
         """
         Sets the case_exact of this ScimV2SchemaAttribute.
-        A Boolean value that specifies whether or not a string attribute is case sensitive.  The server SHALL use case sensitivity when evaluating filters.  For attributes that are case exact, the server SHALL preserve case for any value submitted.  If the attribute is case insensitive, the server MAY alter case for a submitted value.  Case sensitivity also impacts how attribute values MAY be compared against filter values (see Section 3.4.2.2 of [RFC7644])
+        Indicates whether a string attribute is case-sensitive. If set to \"true\", the server preserves case sensitivity. If set to \"false\", the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \"Filtering\" in RFC 7644 for details.
 
         :param case_exact: The case_exact of this ScimV2SchemaAttribute.
         :type: bool
@@ -274,7 +274,7 @@ class ScimV2SchemaAttribute(object):
     def mutability(self):
         """
         Gets the mutability of this ScimV2SchemaAttribute.
-        A single keyword indicating the circumstances under which the value of the attribute can be (re)defined. Value are readOnly, readWrite, immutable, writeOnly
+        The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
 
         :return: The mutability of this ScimV2SchemaAttribute.
         :rtype: str
@@ -285,7 +285,7 @@ class ScimV2SchemaAttribute(object):
     def mutability(self, mutability):
         """
         Sets the mutability of this ScimV2SchemaAttribute.
-        A single keyword indicating the circumstances under which the value of the attribute can be (re)defined. Value are readOnly, readWrite, immutable, writeOnly
+        The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
 
         :param mutability: The mutability of this ScimV2SchemaAttribute.
         :type: str
@@ -301,7 +301,7 @@ class ScimV2SchemaAttribute(object):
     def returned(self):
         """
         Gets the returned of this ScimV2SchemaAttribute.
-        A single keyword that indicates when an attribute and associated values are returned in response to a GET request, or in response to a PUT, POST, or PATCH request.  Valid keywords are as follows: always, never, default, request
+        The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
 
         :return: The returned of this ScimV2SchemaAttribute.
         :rtype: str
@@ -312,7 +312,7 @@ class ScimV2SchemaAttribute(object):
     def returned(self, returned):
         """
         Sets the returned of this ScimV2SchemaAttribute.
-        A single keyword that indicates when an attribute and associated values are returned in response to a GET request, or in response to a PUT, POST, or PATCH request.  Valid keywords are as follows: always, never, default, request
+        The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
 
         :param returned: The returned of this ScimV2SchemaAttribute.
         :type: str
@@ -328,7 +328,7 @@ class ScimV2SchemaAttribute(object):
     def uniqueness(self):
         """
         Gets the uniqueness of this ScimV2SchemaAttribute.
-        A single keyword value that specifies how the service provider enforces uniqueness of attribute values.  A server MAY reject an invalid value based on uniqueness by returning HTTP response code 400 (Bad Request).  A client MAY enforce uniqueness on the client side to a greater degree than the service provider enforces.  For example, a client could make a value unique while the server has uniqueness of \"none\".  Valid keywords are as follows: none, server, global
+        The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
 
         :return: The uniqueness of this ScimV2SchemaAttribute.
         :rtype: str
@@ -339,7 +339,7 @@ class ScimV2SchemaAttribute(object):
     def uniqueness(self, uniqueness):
         """
         Sets the uniqueness of this ScimV2SchemaAttribute.
-        A single keyword value that specifies how the service provider enforces uniqueness of attribute values.  A server MAY reject an invalid value based on uniqueness by returning HTTP response code 400 (Bad Request).  A client MAY enforce uniqueness on the client side to a greater degree than the service provider enforces.  For example, a client could make a value unique while the server has uniqueness of \"none\".  Valid keywords are as follows: none, server, global
+        The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
 
         :param uniqueness: The uniqueness of this ScimV2SchemaAttribute.
         :type: str
@@ -355,7 +355,7 @@ class ScimV2SchemaAttribute(object):
     def reference_types(self):
         """
         Gets the reference_types of this ScimV2SchemaAttribute.
-        A multi-valued array of JSON strings that indicate the SCIM resource types that may be referenced. Values include User, Group, external and uri.
+        The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".
 
         :return: The reference_types of this ScimV2SchemaAttribute.
         :rtype: list[str]
@@ -366,7 +366,7 @@ class ScimV2SchemaAttribute(object):
     def reference_types(self, reference_types):
         """
         Sets the reference_types of this ScimV2SchemaAttribute.
-        A multi-valued array of JSON strings that indicate the SCIM resource types that may be referenced. Values include User, Group, external and uri.
+        The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".
 
         :param reference_types: The reference_types of this ScimV2SchemaAttribute.
         :type: list[str]

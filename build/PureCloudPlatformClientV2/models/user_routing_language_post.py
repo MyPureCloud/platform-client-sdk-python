@@ -108,7 +108,7 @@ class UserRoutingLanguagePost(object):
     def language_uri(self):
         """
         Gets the language_uri of this UserRoutingLanguagePost.
-        URI to the organization language used by this user langauge.
+        URI to the organization language used by this user language.
 
         :return: The language_uri of this UserRoutingLanguagePost.
         :rtype: str
@@ -119,7 +119,7 @@ class UserRoutingLanguagePost(object):
     def language_uri(self, language_uri):
         """
         Sets the language_uri of this UserRoutingLanguagePost.
-        URI to the organization language used by this user langauge.
+        URI to the organization language used by this user language.
 
         :param language_uri: The language_uri of this UserRoutingLanguagePost.
         :type: str

@@ -60,6 +60,10 @@ title: AnalyticsSession
 | **remote** | **str** | Name, phone number, or email address of the remote party. | [optional] |
 | **media_count** | **int** | Count of any media (images, files, etc) included in this session | [optional] |
 | **flow_out_type** | **str** | Type of flow out that occurred, e.g. voicemail, callback, or acd | [optional] |
+| **requested_routings** | **list[str]** | All routing types for requested/attempted routing methods. | [optional] |
+| **used_routing** | **str** | Complete routing method | [optional] |
+| **selected_agent_id** | **str** | Selected agent id | [optional] |
+| **selected_agent_rank** | **int** | Selected agent GPR rank | [optional] |
 {: class="table table-striped"}
 
 

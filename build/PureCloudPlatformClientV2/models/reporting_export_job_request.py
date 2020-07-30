@@ -51,6 +51,8 @@ class ReportingExportJobRequest(object):
             'locale': 'str',
             'has_format_durations': 'bool',
             'has_split_filters': 'bool',
+            'exclude_empty_rows': 'bool',
+            'has_split_by_media': 'bool',
             'selected_columns': 'list[SelectedColumns]',
             'has_custom_participant_attributes': 'bool',
             'recipient_emails': 'list[str]'
@@ -68,6 +70,8 @@ class ReportingExportJobRequest(object):
             'locale': 'locale',
             'has_format_durations': 'hasFormatDurations',
             'has_split_filters': 'hasSplitFilters',
+            'exclude_empty_rows': 'excludeEmptyRows',
+            'has_split_by_media': 'hasSplitByMedia',
             'selected_columns': 'selectedColumns',
             'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
             'recipient_emails': 'recipientEmails'
@@ -84,6 +88,8 @@ class ReportingExportJobRequest(object):
         self._locale = None
         self._has_format_durations = None
         self._has_split_filters = None
+        self._exclude_empty_rows = None
+        self._has_split_by_media = None
         self._selected_columns = None
         self._has_custom_participant_attributes = None
         self._recipient_emails = None
@@ -348,6 +354,52 @@ class ReportingExportJobRequest(object):
         """
         
         self._has_split_filters = has_split_filters
+
+    @property
+    def exclude_empty_rows(self):
+        """
+        Gets the exclude_empty_rows of this ReportingExportJobRequest.
+        Excludes empty rows from the exports
+
+        :return: The exclude_empty_rows of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._exclude_empty_rows
+
+    @exclude_empty_rows.setter
+    def exclude_empty_rows(self, exclude_empty_rows):
+        """
+        Sets the exclude_empty_rows of this ReportingExportJobRequest.
+        Excludes empty rows from the exports
+
+        :param exclude_empty_rows: The exclude_empty_rows of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._exclude_empty_rows = exclude_empty_rows
+
+    @property
+    def has_split_by_media(self):
+        """
+        Gets the has_split_by_media of this ReportingExportJobRequest.
+        Indicates if media type will be split in aggregate detail exports
+
+        :return: The has_split_by_media of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._has_split_by_media
+
+    @has_split_by_media.setter
+    def has_split_by_media(self, has_split_by_media):
+        """
+        Sets the has_split_by_media of this ReportingExportJobRequest.
+        Indicates if media type will be split in aggregate detail exports
+
+        :param has_split_by_media: The has_split_by_media of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._has_split_by_media = has_split_by_media
 
     @property
     def selected_columns(self):

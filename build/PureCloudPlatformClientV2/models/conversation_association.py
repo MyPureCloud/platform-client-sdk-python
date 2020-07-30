@@ -62,7 +62,7 @@ class ConversationAssociation(object):
     def external_contact_id(self):
         """
         Gets the external_contact_id of this ConversationAssociation.
-        External Contact ID
+        An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.
 
         :return: The external_contact_id of this ConversationAssociation.
         :rtype: str
@@ -73,7 +73,7 @@ class ConversationAssociation(object):
     def external_contact_id(self, external_contact_id):
         """
         Sets the external_contact_id of this ConversationAssociation.
-        External Contact ID
+        An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.
 
         :param external_contact_id: The external_contact_id of this ConversationAssociation.
         :type: str

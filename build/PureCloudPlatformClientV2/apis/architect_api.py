@@ -2841,12 +2841,13 @@ class ArchitectApi(object):
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :param str name: Name of the Schedule Group to filter by.
+        :param str schedule_ids: A comma-delimited list of Schedule IDs to filter by.
         :return: ScheduleGroupEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'schedule_ids']
         all_params.append('callback')
 
         params = locals()
@@ -2875,6 +2876,8 @@ class ArchitectApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'schedule_ids' in params:
+            query_params['scheduleIds'] = params['schedule_ids']
 
         header_params = {}
 

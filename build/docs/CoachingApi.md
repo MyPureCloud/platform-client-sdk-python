@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="delete_coaching_appointment"></a>
 
-##  delete_coaching_appointment(appointment_id)
+## [**CoachingAppointmentReference**](CoachingAppointmentReference.html) delete_coaching_appointment(appointment_id)
 
 
 
@@ -59,7 +59,8 @@ appointment_id = 'appointment_id_example' # str | The ID of the coaching appoint
 
 try:
     # Delete an existing appointment
-    api_instance.delete_coaching_appointment(appointment_id)
+    api_response = api_instance.delete_coaching_appointment(appointment_id)
+    pprint(api_response)
 except ApiException as e:
     print "Exception when calling CoachingApi->delete_coaching_appointment: %s\n" % e
 ```
@@ -74,7 +75,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**CoachingAppointmentReference**](CoachingAppointmentReference.html)
 
 <a name="delete_coaching_appointment_annotation"></a>
 
@@ -375,7 +376,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
 user_ids = ['user_ids_example'] # list[str] | The user IDs for which to retrieve appointments
-interval = 'interval_example' # str | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' (optional)
+interval = 'interval_example' # str | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
@@ -396,7 +397,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_ids** | [**list[str]**](str.html)| The user IDs for which to retrieve appointments |  |
-| **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+| **interval** | **str**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
@@ -436,7 +437,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
-interval = 'interval_example' # str | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' (optional)
+interval = 'interval_example' # str | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
@@ -456,7 +457,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+| **interval** | **str**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed |

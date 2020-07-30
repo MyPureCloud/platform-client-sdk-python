@@ -62,7 +62,7 @@ class CoachingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str appointment_id: The ID of the coaching appointment. (required)
-        :return: None
+        :return: CoachingAppointmentReference
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class CoachingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='CoachingAppointmentReference',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -554,7 +554,7 @@ class CoachingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] user_ids: The user IDs for which to retrieve appointments (required)
-        :param str interval: Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+        :param str interval: Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param int page_number: Page number
         :param int page_size: Page size
         :param list[str] statuses: Appointment Statuses to filter by
@@ -649,7 +649,7 @@ class CoachingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str interval: Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+        :param str interval: Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param int page_number: Page number
         :param int page_size: Page size
         :param list[str] statuses: Appointment Statuses to filter by

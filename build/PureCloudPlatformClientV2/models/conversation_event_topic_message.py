@@ -43,6 +43,7 @@ class ConversationEventTopicMessage(object):
             'id': 'str',
             'state': 'str',
             'held': 'bool',
+            'error_info': 'ConversationEventTopicErrorDetails',
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
@@ -65,6 +66,7 @@ class ConversationEventTopicMessage(object):
             'id': 'id',
             'state': 'state',
             'held': 'held',
+            'error_info': 'errorInfo',
             'provider': 'provider',
             'script_id': 'scriptId',
             'peer_id': 'peerId',
@@ -86,6 +88,7 @@ class ConversationEventTopicMessage(object):
         self._id = None
         self._state = None
         self._held = None
+        self._error_info = None
         self._provider = None
         self._script_id = None
         self._peer_id = None
@@ -175,6 +178,29 @@ class ConversationEventTopicMessage(object):
         """
         
         self._held = held
+
+    @property
+    def error_info(self):
+        """
+        Gets the error_info of this ConversationEventTopicMessage.
+
+
+        :return: The error_info of this ConversationEventTopicMessage.
+        :rtype: ConversationEventTopicErrorDetails
+        """
+        return self._error_info
+
+    @error_info.setter
+    def error_info(self, error_info):
+        """
+        Sets the error_info of this ConversationEventTopicMessage.
+
+
+        :param error_info: The error_info of this ConversationEventTopicMessage.
+        :type: ConversationEventTopicErrorDetails
+        """
+        
+        self._error_info = error_info
 
     @property
     def provider(self):

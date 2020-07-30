@@ -994,6 +994,84 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_outbound_messagingcampaign(self, messaging_campaign_id, **kwargs):
+        """
+        Delete an Outbound Messaging Campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_messagingcampaign(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: The Messaging Campaign ID (required)
+        :return: MessagingCampaign
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `delete_outbound_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaign',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_outbound_ruleset(self, rule_set_id, **kwargs):
         """
         Delete a Rule set.
@@ -1401,6 +1479,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -1410,7 +1489,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1433,6 +1512,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -1569,6 +1650,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -1578,7 +1660,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1601,6 +1683,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -1737,6 +1821,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -1746,7 +1831,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1769,6 +1854,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -2295,6 +2382,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -2304,7 +2392,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2327,6 +2415,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -2475,6 +2565,192 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CampaignEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_campaigns_all(self, **kwargs):
+        """
+        Query across all types of campaigns by division
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_campaigns_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param list[str] id: Campaign ID(s)
+        :param str name: Campaign name(s)
+        :param list[str] division_id: Division ID(s)
+        :param list[str] media_type: Media type(s)
+        :param str sort_order: Sort order
+        :return: CommonCampaignEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'id', 'name', 'division_id', 'media_type', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_campaigns_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/campaigns/all'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'media_type' in params:
+            query_params['mediaType'] = params['media_type']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CommonCampaignEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_campaigns_all_divisionviews(self, **kwargs):
+        """
+        Query across all types of campaigns
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_campaigns_all_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param list[str] id: Campaign ID(s)
+        :param str name: Campaign name(s)
+        :param list[str] division_id: Division ID(s)
+        :param list[str] media_type: Media type(s)
+        :param str sort_order: Sort order
+        :return: CommonCampaignDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'id', 'name', 'division_id', 'media_type', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_campaigns_all_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/campaigns/all/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'media_type' in params:
+            query_params['mediaType'] = params['media_type']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CommonCampaignDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3150,6 +3426,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -3160,7 +3437,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order', 'contact_list_id']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order', 'contact_list_id']
         all_params.append('callback')
 
         params = locals()
@@ -3183,6 +3460,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -3245,6 +3524,7 @@ class OutboundApi(object):
         :param bool include_size: Include size
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param list[str] id: id
@@ -3256,7 +3536,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'id', 'division_id', 'sort_by', 'sort_order']
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'id', 'division_id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -3283,6 +3563,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -3773,6 +4055,7 @@ class OutboundApi(object):
         :param bool include_size: Include size
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str dnc_source_type: DncSourceType
@@ -3784,7 +4067,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'filter_type', 'name', 'dnc_source_type', 'division_id', 'sort_by', 'sort_order']
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'dnc_source_type', 'division_id', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -3811,6 +4094,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -4210,6 +4495,432 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_outbound_messagingcampaign(self, messaging_campaign_id, **kwargs):
+        """
+        Get an Outbound Messaging Campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_messagingcampaign(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: The Messaging Campaign ID (required)
+        :return: MessagingCampaign
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `get_outbound_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaign',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_messagingcampaign_progress(self, messaging_campaign_id, **kwargs):
+        """
+        Get messaging campaign's progress
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_messagingcampaign_progress(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: The Messaging Campaign ID (required)
+        :return: CampaignProgress
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_messagingcampaign_progress" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `get_outbound_messagingcampaign_progress`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CampaignProgress',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_messagingcampaigns(self, **kwargs):
+        """
+        Query a list of Messaging Campaigns
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_messagingcampaigns(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size. The max that will be returned is 100.
+        :param int page_number: Page number
+        :param str sort_by: The field to sort by
+        :param str sort_order: The direction to sort
+        :param str name: Name
+        :param str contact_list_id: Contact List ID
+        :param list[str] division_id: Division ID(s)
+        :param str type: Campaign Type
+        :param str sender_sms_phone_number: Sender SMS Phone Number
+        :param list[str] id: A list of messaging campaign ids to bulk fetch
+        :return: MessagingCampaignEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'contact_list_id', 'division_id', 'type', 'sender_sms_phone_number', 'id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_messagingcampaigns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'contact_list_id' in params:
+            query_params['contactListId'] = params['contact_list_id']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'type' in params:
+            query_params['type'] = params['type']
+        if 'sender_sms_phone_number' in params:
+            query_params['senderSmsPhoneNumber'] = params['sender_sms_phone_number']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_messagingcampaigns_divisionview(self, messaging_campaign_id, **kwargs):
+        """
+        Get a basic Messaging Campaign information object
+        This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_messagingcampaigns_divisionview(messaging_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: The Messaging Campaign ID (required)
+        :return: MessagingCampaignDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_messagingcampaigns_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `get_outbound_messagingcampaigns_divisionview`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_messagingcampaigns_divisionviews(self, **kwargs):
+        """
+        Query a list of basic Messaging Campaign information objects
+        This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_messagingcampaigns_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size. The max that will be returned is 100.
+        :param int page_number: Page number
+        :param str sort_order: The direction to sort
+        :param str name: Name
+        :param list[str] id: id
+        :param str sender_sms_phone_number: Sender SMS Phone Number
+        :return: MessagingCampaignDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'id', 'sender_sms_phone_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_messagingcampaigns_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'sender_sms_phone_number' in params:
+            query_params['senderSmsPhoneNumber'] = params['sender_sms_phone_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaignDivisionViewEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_outbound_ruleset(self, rule_set_id, **kwargs):
         """
         Get a Rule Set by ID.
@@ -4305,6 +5016,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -4314,7 +5026,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4337,6 +5049,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -4773,6 +5487,7 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
         :param str sort_by: Sort by
@@ -4782,7 +5497,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -4805,6 +5520,8 @@ class OutboundApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
         if 'filter_type' in params:
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
@@ -6598,6 +7315,162 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_outbound_messagingcampaigns(self, body, **kwargs):
+        """
+        Create a Messaging Campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_messagingcampaigns(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param MessagingCampaign body: Messaging Campaign (required)
+        :return: MessagingCampaign
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_messagingcampaigns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_messagingcampaigns`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaign',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_messagingcampaigns_progress(self, body, **kwargs):
+        """
+        Get progress for a list of messaging campaigns
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_messagingcampaigns_progress(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] body: Messaging Campaign IDs (required)
+        :return: list[CampaignProgress]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_messagingcampaigns_progress" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_messagingcampaigns_progress`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/progress'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[CampaignProgress]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_outbound_rulesets(self, body, **kwargs):
         """
         Create a Dialer Call Analysis Response Set.
@@ -7602,6 +8475,90 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DncList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_messagingcampaign(self, messaging_campaign_id, body, **kwargs):
+        """
+        Update an Outbound Messaging Campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_messagingcampaign(messaging_campaign_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str messaging_campaign_id: The Messaging Campaign ID (required)
+        :param MessagingCampaign body: MessagingCampaign (required)
+        :return: MessagingCampaign
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['messaging_campaign_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_messagingcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'messaging_campaign_id' is set
+        if ('messaging_campaign_id' not in params) or (params['messaging_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `messaging_campaign_id` when calling `put_outbound_messagingcampaign`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_messagingcampaign`")
+
+
+        resource_path = '/api/v2/outbound/messagingcampaigns/{messagingCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'messaging_campaign_id' in params:
+            path_params['messagingCampaignId'] = params['messaging_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingCampaign',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

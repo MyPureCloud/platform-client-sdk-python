@@ -95,7 +95,7 @@ class ScimV2User(object):
     def id(self):
         """
         Gets the id of this ScimV2User.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :return: The id of this ScimV2User.
         :rtype: str
@@ -106,7 +106,7 @@ class ScimV2User(object):
     def id(self, id):
         """
         Sets the id of this ScimV2User.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :param id: The id of this ScimV2User.
         :type: str
@@ -164,7 +164,7 @@ class ScimV2User(object):
     def user_name(self):
         """
         Gets the user_name of this ScimV2User.
-        The user's PureCloud email address. Must be unique.
+        The user's Genesys Cloud email address. Must be unique.
 
         :return: The user_name of this ScimV2User.
         :rtype: str
@@ -175,7 +175,7 @@ class ScimV2User(object):
     def user_name(self, user_name):
         """
         Sets the user_name of this ScimV2User.
-        The user's PureCloud email address. Must be unique.
+        The user's Genesys Cloud email address. Must be unique.
 
         :param user_name: The user_name of this ScimV2User.
         :type: str
@@ -210,7 +210,7 @@ class ScimV2User(object):
     def password(self):
         """
         Gets the password of this ScimV2User.
-        The new password for the PureCloud user. Does not return an existing password.
+        The new password for the Genesys Cloud user. Does not return an existing password.
 
         :return: The password of this ScimV2User.
         :rtype: str
@@ -221,7 +221,7 @@ class ScimV2User(object):
     def password(self, password):
         """
         Sets the password of this ScimV2User.
-        The new password for the PureCloud user. Does not return an existing password.
+        The new password for the Genesys Cloud user. Does not return an existing password.
 
         :param password: The password of this ScimV2User.
         :type: str
@@ -394,7 +394,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self):
         """
         Gets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
-
+        The URI of the schema for the Genesys Cloud user.
 
         :return: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
         :rtype: ScimUserExtensions
@@ -405,7 +405,7 @@ class ScimV2User(object):
     def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self, urnietfparamsscimschemasextensiongenesyspurecloud2_0_user):
         """
         Sets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
-
+        The URI of the schema for the Genesys Cloud user.
 
         :param urnietfparamsscimschemasextensiongenesyspurecloud2_0_user: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2User.
         :type: ScimUserExtensions

@@ -134,7 +134,7 @@ class ScimV2SchemaListResponse(object):
     def resources(self):
         """
         Gets the resources of this ScimV2SchemaListResponse.
-        Resources
+        The list of requested resources.
 
         :return: The resources of this ScimV2SchemaListResponse.
         :rtype: list[ScimV2SchemaDefinition]
@@ -145,7 +145,7 @@ class ScimV2SchemaListResponse(object):
     def resources(self, resources):
         """
         Sets the resources of this ScimV2SchemaListResponse.
-        Resources
+        The list of requested resources.
 
         :param resources: The resources of this ScimV2SchemaListResponse.
         :type: list[ScimV2SchemaDefinition]

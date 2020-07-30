@@ -53,7 +53,7 @@ class ScimUserRole(object):
     def value(self):
         """
         Gets the value of this ScimUserRole.
-        Purecloud user role name
+        The role of the Genesys Cloud user.
 
         :return: The value of this ScimUserRole.
         :rtype: str
@@ -64,7 +64,7 @@ class ScimUserRole(object):
     def value(self, value):
         """
         Sets the value of this ScimUserRole.
-        Purecloud user role name
+        The role of the Genesys Cloud user.
 
         :param value: The value of this ScimUserRole.
         :type: str

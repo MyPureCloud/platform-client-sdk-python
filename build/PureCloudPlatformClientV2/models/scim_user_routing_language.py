@@ -56,7 +56,7 @@ class ScimUserRoutingLanguage(object):
     def name(self):
         """
         Gets the name of this ScimUserRoutingLanguage.
-        Case-sensitive name identifying a language configured in routing languages.
+        The case-sensitive name of a routing language configured in Genesys Cloud.
 
         :return: The name of this ScimUserRoutingLanguage.
         :rtype: str
@@ -67,7 +67,7 @@ class ScimUserRoutingLanguage(object):
     def name(self, name):
         """
         Sets the name of this ScimUserRoutingLanguage.
-        Case-sensitive name identifying a language configured in routing languages.
+        The case-sensitive name of a routing language configured in Genesys Cloud.
 
         :param name: The name of this ScimUserRoutingLanguage.
         :type: str
@@ -79,7 +79,7 @@ class ScimUserRoutingLanguage(object):
     def proficiency(self):
         """
         Gets the proficiency of this ScimUserRoutingLanguage.
-        Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+        A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
 
         :return: The proficiency of this ScimUserRoutingLanguage.
         :rtype: float
@@ -90,7 +90,7 @@ class ScimUserRoutingLanguage(object):
     def proficiency(self, proficiency):
         """
         Sets the proficiency of this ScimUserRoutingLanguage.
-        Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+        A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
 
         :param proficiency: The proficiency of this ScimUserRoutingLanguage.
         :type: float

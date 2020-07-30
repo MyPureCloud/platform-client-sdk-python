@@ -3090,8 +3090,8 @@ class ExternalContactsApi(object):
 
     def put_externalcontacts_conversation(self, conversation_id, body, **kwargs):
         """
-        Associate an external contact with a conversation
-        
+        Associate/disassociate an external contact with a conversation
+        To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

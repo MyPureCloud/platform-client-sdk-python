@@ -114,7 +114,7 @@ class UserRoutingLanguage(object):
     def proficiency(self):
         """
         Gets the proficiency of this UserRoutingLanguage.
-        Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+        A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
 
         :return: The proficiency of this UserRoutingLanguage.
         :rtype: float
@@ -125,7 +125,7 @@ class UserRoutingLanguage(object):
     def proficiency(self, proficiency):
         """
         Sets the proficiency of this UserRoutingLanguage.
-        Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+        A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
 
         :param proficiency: The proficiency of this UserRoutingLanguage.
         :type: float
@@ -137,7 +137,7 @@ class UserRoutingLanguage(object):
     def state(self):
         """
         Gets the state of this UserRoutingLanguage.
-        Activate or deactivate this routing langauge.
+        Activate or deactivate this routing language.
 
         :return: The state of this UserRoutingLanguage.
         :rtype: str
@@ -148,7 +148,7 @@ class UserRoutingLanguage(object):
     def state(self, state):
         """
         Sets the state of this UserRoutingLanguage.
-        Activate or deactivate this routing langauge.
+        Activate or deactivate this routing language.
 
         :param state: The state of this UserRoutingLanguage.
         :type: str
@@ -164,7 +164,7 @@ class UserRoutingLanguage(object):
     def language_uri(self):
         """
         Gets the language_uri of this UserRoutingLanguage.
-        URI to the organization language used by this user langauge.
+        URI to the organization language used by this user language.
 
         :return: The language_uri of this UserRoutingLanguage.
         :rtype: str
@@ -175,7 +175,7 @@ class UserRoutingLanguage(object):
     def language_uri(self, language_uri):
         """
         Sets the language_uri of this UserRoutingLanguage.
-        URI to the organization language used by this user langauge.
+        URI to the organization language used by this user language.
 
         :param language_uri: The language_uri of this UserRoutingLanguage.
         :type: str

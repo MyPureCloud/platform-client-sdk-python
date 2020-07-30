@@ -200,7 +200,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :param status: The status of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
         :type: str
         """
-        allowed_values = ["Scheduled", "InProgress", "Completed"]
+        allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for status -> " + status
             self._status = "outdated_sdk_version"
@@ -411,7 +411,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         :param change_type: The change_type of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
         :type: str
         """
-        allowed_values = ["Create", "Update", "Delete"]
+        allowed_values = ["Create", "Update", "Delete", "Invalidate"]
         if change_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for change_type -> " + change_type
             self._change_type = "outdated_sdk_version"

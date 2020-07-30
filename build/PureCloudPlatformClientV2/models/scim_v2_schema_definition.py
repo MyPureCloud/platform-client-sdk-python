@@ -65,7 +65,7 @@ class ScimV2SchemaDefinition(object):
     def id(self):
         """
         Gets the id of this ScimV2SchemaDefinition.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :return: The id of this ScimV2SchemaDefinition.
         :rtype: str
@@ -76,7 +76,7 @@ class ScimV2SchemaDefinition(object):
     def id(self, id):
         """
         Sets the id of this ScimV2SchemaDefinition.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :param id: The id of this ScimV2SchemaDefinition.
         :type: str
@@ -88,7 +88,7 @@ class ScimV2SchemaDefinition(object):
     def name(self):
         """
         Gets the name of this ScimV2SchemaDefinition.
-        Schema name.
+        The name of the schema.
 
         :return: The name of this ScimV2SchemaDefinition.
         :rtype: str
@@ -99,7 +99,7 @@ class ScimV2SchemaDefinition(object):
     def name(self, name):
         """
         Sets the name of this ScimV2SchemaDefinition.
-        Schema name.
+        The name of the schema.
 
         :param name: The name of this ScimV2SchemaDefinition.
         :type: str
@@ -111,7 +111,7 @@ class ScimV2SchemaDefinition(object):
     def description(self):
         """
         Gets the description of this ScimV2SchemaDefinition.
-        Schema description.
+        The description of the schema.
 
         :return: The description of this ScimV2SchemaDefinition.
         :rtype: str
@@ -122,7 +122,7 @@ class ScimV2SchemaDefinition(object):
     def description(self, description):
         """
         Sets the description of this ScimV2SchemaDefinition.
-        Schema description.
+        The description of the schema.
 
         :param description: The description of this ScimV2SchemaDefinition.
         :type: str
@@ -134,7 +134,7 @@ class ScimV2SchemaDefinition(object):
     def attributes(self):
         """
         Gets the attributes of this ScimV2SchemaDefinition.
-        A complex type that defines service provider attributes and their qualities.
+        The list of service provider attributes.
 
         :return: The attributes of this ScimV2SchemaDefinition.
         :rtype: list[ScimV2SchemaAttribute]
@@ -145,7 +145,7 @@ class ScimV2SchemaDefinition(object):
     def attributes(self, attributes):
         """
         Sets the attributes of this ScimV2SchemaDefinition.
-        A complex type that defines service provider attributes and their qualities.
+        The list of service provider attributes.
 
         :param attributes: The attributes of this ScimV2SchemaDefinition.
         :type: list[ScimV2SchemaAttribute]

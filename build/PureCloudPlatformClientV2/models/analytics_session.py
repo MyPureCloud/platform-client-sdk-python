@@ -92,7 +92,11 @@ class AnalyticsSession(object):
             'provider': 'str',
             'remote': 'str',
             'media_count': 'int',
-            'flow_out_type': 'str'
+            'flow_out_type': 'str',
+            'requested_routings': 'list[str]',
+            'used_routing': 'str',
+            'selected_agent_id': 'str',
+            'selected_agent_rank': 'int'
         }
 
         self.attribute_map = {
@@ -148,7 +152,11 @@ class AnalyticsSession(object):
             'provider': 'provider',
             'remote': 'remote',
             'media_count': 'mediaCount',
-            'flow_out_type': 'flowOutType'
+            'flow_out_type': 'flowOutType',
+            'requested_routings': 'requestedRoutings',
+            'used_routing': 'usedRouting',
+            'selected_agent_id': 'selectedAgentId',
+            'selected_agent_rank': 'selectedAgentRank'
         }
 
         self._media_type = None
@@ -204,6 +212,10 @@ class AnalyticsSession(object):
         self._remote = None
         self._media_count = None
         self._flow_out_type = None
+        self._requested_routings = None
+        self._used_routing = None
+        self._selected_agent_id = None
+        self._selected_agent_rank = None
 
     @property
     def media_type(self):
@@ -1435,6 +1447,102 @@ class AnalyticsSession(object):
         """
         
         self._flow_out_type = flow_out_type
+
+    @property
+    def requested_routings(self):
+        """
+        Gets the requested_routings of this AnalyticsSession.
+        All routing types for requested/attempted routing methods.
+
+        :return: The requested_routings of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._requested_routings
+
+    @requested_routings.setter
+    def requested_routings(self, requested_routings):
+        """
+        Sets the requested_routings of this AnalyticsSession.
+        All routing types for requested/attempted routing methods.
+
+        :param requested_routings: The requested_routings of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+        self._requested_routings = requested_routings
+
+    @property
+    def used_routing(self):
+        """
+        Gets the used_routing of this AnalyticsSession.
+        Complete routing method
+
+        :return: The used_routing of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._used_routing
+
+    @used_routing.setter
+    def used_routing(self, used_routing):
+        """
+        Sets the used_routing of this AnalyticsSession.
+        Complete routing method
+
+        :param used_routing: The used_routing of this AnalyticsSession.
+        :type: str
+        """
+        allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
+        if used_routing.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for used_routing -> " + used_routing
+            self._used_routing = "outdated_sdk_version"
+        else:
+            self._used_routing = used_routing
+
+    @property
+    def selected_agent_id(self):
+        """
+        Gets the selected_agent_id of this AnalyticsSession.
+        Selected agent id
+
+        :return: The selected_agent_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._selected_agent_id
+
+    @selected_agent_id.setter
+    def selected_agent_id(self, selected_agent_id):
+        """
+        Sets the selected_agent_id of this AnalyticsSession.
+        Selected agent id
+
+        :param selected_agent_id: The selected_agent_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._selected_agent_id = selected_agent_id
+
+    @property
+    def selected_agent_rank(self):
+        """
+        Gets the selected_agent_rank of this AnalyticsSession.
+        Selected agent GPR rank
+
+        :return: The selected_agent_rank of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._selected_agent_rank
+
+    @selected_agent_rank.setter
+    def selected_agent_rank(self, selected_agent_rank):
+        """
+        Sets the selected_agent_rank of this AnalyticsSession.
+        Selected agent GPR rank
+
+        :param selected_agent_rank: The selected_agent_rank of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._selected_agent_rank = selected_agent_rank
 
     def to_dict(self):
         """

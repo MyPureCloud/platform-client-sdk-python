@@ -56,6 +56,8 @@ class ObservationValue(object):
             'ani': 'str',
             'dnis': 'str',
             'team_id': 'str',
+            'requested_routings': 'list[str]',
+            'used_routing': 'str',
             'scored_agents': 'list[AnalyticsScoredAgent]'
         }
 
@@ -76,6 +78,8 @@ class ObservationValue(object):
             'ani': 'ani',
             'dnis': 'dnis',
             'team_id': 'teamId',
+            'requested_routings': 'requestedRoutings',
+            'used_routing': 'usedRouting',
             'scored_agents': 'scoredAgents'
         }
 
@@ -95,6 +99,8 @@ class ObservationValue(object):
         self._ani = None
         self._dnis = None
         self._team_id = None
+        self._requested_routings = None
+        self._used_routing = None
         self._scored_agents = None
 
     @property
@@ -450,7 +456,7 @@ class ObservationValue(object):
     def team_id(self):
         """
         Gets the team_id of this ObservationValue.
-        The team Id the user is a member of
+        The team id the user is a member of
 
         :return: The team_id of this ObservationValue.
         :rtype: str
@@ -461,13 +467,63 @@ class ObservationValue(object):
     def team_id(self, team_id):
         """
         Sets the team_id of this ObservationValue.
-        The team Id the user is a member of
+        The team id the user is a member of
 
         :param team_id: The team_id of this ObservationValue.
         :type: str
         """
         
         self._team_id = team_id
+
+    @property
+    def requested_routings(self):
+        """
+        Gets the requested_routings of this ObservationValue.
+        All routing types for requested/attempted routing methods
+
+        :return: The requested_routings of this ObservationValue.
+        :rtype: list[str]
+        """
+        return self._requested_routings
+
+    @requested_routings.setter
+    def requested_routings(self, requested_routings):
+        """
+        Sets the requested_routings of this ObservationValue.
+        All routing types for requested/attempted routing methods
+
+        :param requested_routings: The requested_routings of this ObservationValue.
+        :type: list[str]
+        """
+        
+        self._requested_routings = requested_routings
+
+    @property
+    def used_routing(self):
+        """
+        Gets the used_routing of this ObservationValue.
+        Complete routing method
+
+        :return: The used_routing of this ObservationValue.
+        :rtype: str
+        """
+        return self._used_routing
+
+    @used_routing.setter
+    def used_routing(self, used_routing):
+        """
+        Sets the used_routing of this ObservationValue.
+        Complete routing method
+
+        :param used_routing: The used_routing of this ObservationValue.
+        :type: str
+        """
+        allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
+        if used_routing.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for used_routing -> " + used_routing
+            self._used_routing = "outdated_sdk_version"
+        else:
+            self._used_routing = used_routing
 
     @property
     def scored_agents(self):

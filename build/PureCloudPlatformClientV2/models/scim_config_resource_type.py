@@ -74,7 +74,7 @@ class ScimConfigResourceType(object):
     def id(self):
         """
         Gets the id of this ScimConfigResourceType.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :return: The id of this ScimConfigResourceType.
         :rtype: str
@@ -85,7 +85,7 @@ class ScimConfigResourceType(object):
     def id(self, id):
         """
         Sets the id of this ScimConfigResourceType.
-        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".
+        The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".
 
         :param id: The id of this ScimConfigResourceType.
         :type: str

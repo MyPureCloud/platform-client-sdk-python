@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlistfilter**](OutboundApi.html#delete_outbound_contactlistfilter) | Delete Contact List Filter|
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
+|[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule set.|
 |[**delete_outbound_schedules_campaign**](OutboundApi.html#delete_outbound_schedules_campaign) | Delete a dialer campaign schedule.|
 |[**delete_outbound_schedules_sequence**](OutboundApi.html#delete_outbound_schedules_sequence) | Delete a dialer sequence schedule.|
@@ -38,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaignrule**](OutboundApi.html#get_outbound_campaignrule) | Get Campaign Rule|
 |[**get_outbound_campaignrules**](OutboundApi.html#get_outbound_campaignrules) | Query Campaign Rule list|
 |[**get_outbound_campaigns**](OutboundApi.html#get_outbound_campaigns) | Query a list of dialer campaigns.|
+|[**get_outbound_campaigns_all**](OutboundApi.html#get_outbound_campaigns_all) | Query across all types of campaigns by division|
+|[**get_outbound_campaigns_all_divisionviews**](OutboundApi.html#get_outbound_campaigns_all_divisionviews) | Query across all types of campaigns|
 |[**get_outbound_campaigns_divisionview**](OutboundApi.html#get_outbound_campaigns_divisionview) | Get a basic Campaign information object|
 |[**get_outbound_campaigns_divisionviews**](OutboundApi.html#get_outbound_campaigns_divisionviews) | Query a list of basic Campaign information objects|
 |[**get_outbound_contactlist**](OutboundApi.html#get_outbound_contactlist) | Get a dialer contact list.|
@@ -58,6 +61,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_dnclists_divisionviews**](OutboundApi.html#get_outbound_dnclists_divisionviews) | Query a list of simplified dnc list objects.|
 |[**get_outbound_event**](OutboundApi.html#get_outbound_event) | Get Dialer Event|
 |[**get_outbound_events**](OutboundApi.html#get_outbound_events) | Query Event Logs|
+|[**get_outbound_messagingcampaign**](OutboundApi.html#get_outbound_messagingcampaign) | Get an Outbound Messaging Campaign|
+|[**get_outbound_messagingcampaign_progress**](OutboundApi.html#get_outbound_messagingcampaign_progress) | Get messaging campaign&#39;s progress|
+|[**get_outbound_messagingcampaigns**](OutboundApi.html#get_outbound_messagingcampaigns) | Query a list of Messaging Campaigns|
+|[**get_outbound_messagingcampaigns_divisionview**](OutboundApi.html#get_outbound_messagingcampaigns_divisionview) | Get a basic Messaging Campaign information object|
+|[**get_outbound_messagingcampaigns_divisionviews**](OutboundApi.html#get_outbound_messagingcampaigns_divisionviews) | Query a list of basic Messaging Campaign information objects|
 |[**get_outbound_ruleset**](OutboundApi.html#get_outbound_ruleset) | Get a Rule Set by ID.|
 |[**get_outbound_rulesets**](OutboundApi.html#get_outbound_rulesets) | Query a list of Rule Sets.|
 |[**get_outbound_schedules_campaign**](OutboundApi.html#get_outbound_schedules_campaign) | Get a dialer campaign schedule.|
@@ -88,6 +96,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
+|[**post_outbound_messagingcampaigns**](OutboundApi.html#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
+|[**post_outbound_messagingcampaigns_progress**](OutboundApi.html#post_outbound_messagingcampaigns_progress) | Get progress for a list of messaging campaigns|
 |[**post_outbound_rulesets**](OutboundApi.html#post_outbound_rulesets) | Create a Dialer Call Analysis Response Set.|
 |[**post_outbound_sequences**](OutboundApi.html#post_outbound_sequences) | Create a new campaign sequence.|
 |[**put_outbound_attemptlimit**](OutboundApi.html#put_outbound_attemptlimit) | Update attempt limits|
@@ -100,6 +110,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_contactlist_contact**](OutboundApi.html#put_outbound_contactlist_contact) | Update a contact.|
 |[**put_outbound_contactlistfilter**](OutboundApi.html#put_outbound_contactlistfilter) | Update Contact List Filter|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
+|[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a RuleSet.|
 |[**put_outbound_schedules_campaign**](OutboundApi.html#put_outbound_schedules_campaign) | Update a new campaign schedule.|
 |[**put_outbound_schedules_sequence**](OutboundApi.html#put_outbound_schedules_sequence) | Update a new sequence schedule.|
@@ -712,6 +723,57 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_outbound_messagingcampaign"></a>
+
+## [**MessagingCampaign**](MessagingCampaign.html) delete_outbound_messagingcampaign(messaging_campaign_id)
+
+
+
+Delete an Outbound Messaging Campaign
+
+
+
+Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:campaign:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Delete an Outbound Messaging Campaign
+    api_response = api_instance.delete_outbound_messagingcampaign(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->delete_outbound_messagingcampaign: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
 <a name="delete_outbound_ruleset"></a>
 
 ##  delete_outbound_ruleset(rule_set_id)
@@ -965,7 +1027,7 @@ except ApiException as e:
 
 <a name="get_outbound_attemptlimits"></a>
 
-## [**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html) get_outbound_attemptlimits(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html) get_outbound_attemptlimits(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -994,6 +1056,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -1001,7 +1064,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query attempt limits list
-    api_response = api_instance.get_outbound_attemptlimits(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_attemptlimits(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_attemptlimits: %s\n" % e
@@ -1014,6 +1077,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -1077,7 +1141,7 @@ except ApiException as e:
 
 <a name="get_outbound_callabletimesets"></a>
 
-## [**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html) get_outbound_callabletimesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html) get_outbound_callabletimesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1106,6 +1170,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -1113,7 +1178,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query callable time set list
-    api_response = api_instance.get_outbound_callabletimesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_callabletimesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callabletimesets: %s\n" % e
@@ -1126,6 +1191,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -1189,7 +1255,7 @@ except ApiException as e:
 
 <a name="get_outbound_callanalysisresponsesets"></a>
 
-## [**ResponseSetEntityListing**](ResponseSetEntityListing.html) get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**ResponseSetEntityListing**](ResponseSetEntityListing.html) get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1218,6 +1284,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -1225,7 +1292,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of dialer call analysis response sets.
-    api_response = api_instance.get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_callanalysisresponsesets: %s\n" % e
@@ -1238,6 +1305,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -1556,7 +1624,7 @@ except ApiException as e:
 
 <a name="get_outbound_campaignrules"></a>
 
-## [**CampaignRuleEntityListing**](CampaignRuleEntityListing.html) get_outbound_campaignrules(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**CampaignRuleEntityListing**](CampaignRuleEntityListing.html) get_outbound_campaignrules(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1585,6 +1653,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -1592,7 +1661,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query Campaign Rule list
-    api_response = api_instance.get_outbound_campaignrules(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_campaignrules(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_campaignrules: %s\n" % e
@@ -1605,6 +1674,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -1689,6 +1759,134 @@ except ApiException as e:
 ### Return type
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
+
+<a name="get_outbound_campaigns_all"></a>
+
+## [**CommonCampaignEntityListing**](CommonCampaignEntityListing.html) get_outbound_campaigns_all(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
+
+
+
+Query across all types of campaigns by division
+
+
+
+Wraps GET /api/v2/outbound/campaigns/all 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+id = ['id_example'] # list[str] | Campaign ID(s) (optional)
+name = 'name_example' # str | Campaign name(s) (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+media_type = ['media_type_example'] # list[str] | Media type(s) (optional)
+sort_order = 'a' # str | Sort order (optional) (default to a)
+
+try:
+    # Query across all types of campaigns by division
+    api_response = api_instance.get_outbound_campaigns_all(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_campaigns_all: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
+| **name** | **str**| Campaign name(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: sms, voice |
+| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**CommonCampaignEntityListing**](CommonCampaignEntityListing.html)
+
+<a name="get_outbound_campaigns_all_divisionviews"></a>
+
+## [**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing.html) get_outbound_campaigns_all_divisionviews(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
+
+
+
+Query across all types of campaigns
+
+
+
+Wraps GET /api/v2/outbound/campaigns/all/divisionviews 
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+id = ['id_example'] # list[str] | Campaign ID(s) (optional)
+name = 'name_example' # str | Campaign name(s) (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+media_type = ['media_type_example'] # list[str] | Media type(s) (optional)
+sort_order = 'a' # str | Sort order (optional) (default to a)
+
+try:
+    # Query across all types of campaigns
+    api_response = api_instance.get_outbound_campaigns_all_divisionviews(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_campaigns_all_divisionviews: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
+| **name** | **str**| Campaign name(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: sms, voice |
+| **sort_order** | **str**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing.html)
 
 <a name="get_outbound_campaigns_divisionview"></a>
 
@@ -2121,7 +2319,7 @@ except ApiException as e:
 
 <a name="get_outbound_contactlistfilters"></a>
 
-## [**ContactListFilterEntityListing**](ContactListFilterEntityListing.html) get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
+## [**ContactListFilterEntityListing**](ContactListFilterEntityListing.html) get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
 
 
 
@@ -2150,6 +2348,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -2158,7 +2357,7 @@ contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
 
 try:
     # Query Contact list filters
-    api_response = api_instance.get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
+    api_response = api_instance.get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlistfilters: %s\n" % e
@@ -2171,6 +2370,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -2184,7 +2384,7 @@ except ApiException as e:
 
 <a name="get_outbound_contactlists"></a>
 
-## [**ContactListEntityListing**](ContactListEntityListing.html) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+## [**ContactListEntityListing**](ContactListEntityListing.html) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2215,6 +2415,7 @@ include_import_status = false # bool | Include import status (optional) (default
 include_size = false # bool | Include size (optional) (default to false)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
@@ -2224,7 +2425,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of contact lists.
-    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e
@@ -2239,6 +2440,7 @@ except ApiException as e:
 | **include_size** | **bool**| Include size | [optional] [default to false] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str.html)| id | [optional]  |
@@ -2535,7 +2737,7 @@ except ApiException as e:
 
 <a name="get_outbound_dnclists"></a>
 
-## [**DncListEntityListing**](DncListEntityListing.html) get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+## [**DncListEntityListing**](DncListEntityListing.html) get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2566,6 +2768,7 @@ include_import_status = false # bool | Import status (optional) (default to fals
 include_size = false # bool | Include size (optional) (default to false)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 dnc_source_type = 'dnc_source_type_example' # str | DncSourceType (optional)
@@ -2575,7 +2778,7 @@ sort_order = 'sort_order_example' # str | Sort order (optional)
 
 try:
     # Query dialer DNC lists
-    api_response = api_instance.get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_dnclists: %s\n" % e
@@ -2590,6 +2793,7 @@ except ApiException as e:
 | **include_size** | **bool**| Include size | [optional] [default to false] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
@@ -2838,6 +3042,289 @@ except ApiException as e:
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
 
+<a name="get_outbound_messagingcampaign"></a>
+
+## [**MessagingCampaign**](MessagingCampaign.html) get_outbound_messagingcampaign(messaging_campaign_id)
+
+
+
+Get an Outbound Messaging Campaign
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Get an Outbound Messaging Campaign
+    api_response = api_instance.get_outbound_messagingcampaign(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_messagingcampaign: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="get_outbound_messagingcampaign_progress"></a>
+
+## [**CampaignProgress**](CampaignProgress.html) get_outbound_messagingcampaign_progress(messaging_campaign_id)
+
+
+
+Get messaging campaign's progress
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Get messaging campaign's progress
+    api_response = api_instance.get_outbound_messagingcampaign_progress(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_messagingcampaign_progress: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignProgress**](CampaignProgress.html)
+
+<a name="get_outbound_messagingcampaigns"></a>
+
+## [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing.html) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
+
+
+
+Query a list of Messaging Campaigns
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'name' # str | The field to sort by (optional) (default to name)
+sort_order = 'ascending' # str | The direction to sort (optional) (default to ascending)
+name = 'name_example' # str | Name (optional)
+contact_list_id = 'contact_list_id_example' # str | Contact List ID (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+type = 'type_example' # str | Campaign Type (optional)
+sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
+id = ['id_example'] # list[str] | A list of messaging campaign ids to bulk fetch (optional)
+
+try:
+    # Query a list of Messaging Campaigns
+    api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_by** | **str**| The field to sort by | [optional] [default to name]<br />**Values**: campaignStatus, name, type |
+| **sort_order** | **str**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **name** | **str**| Name | [optional]  |
+| **contact_list_id** | **str**| Contact List ID | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **type** | **str**| Campaign Type | [optional] <br />**Values**: SMS |
+| **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
+| **id** | [**list[str]**](str.html)| A list of messaging campaign ids to bulk fetch | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing.html)
+
+<a name="get_outbound_messagingcampaigns_divisionview"></a>
+
+## [**MessagingCampaignDivisionView**](MessagingCampaignDivisionView.html) get_outbound_messagingcampaigns_divisionview(messaging_campaign_id)
+
+
+
+Get a basic Messaging Campaign information object
+
+This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+
+Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} 
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Get a basic Messaging Campaign information object
+    api_response = api_instance.get_outbound_messagingcampaigns_divisionview(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionview: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView.html)
+
+<a name="get_outbound_messagingcampaigns_divisionviews"></a>
+
+## [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id, sender_sms_phone_number=sender_sms_phone_number)
+
+
+
+Query a list of basic Messaging Campaign information objects
+
+This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+
+Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews 
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'a' # str | The direction to sort (optional) (default to a)
+name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | id (optional)
+sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
+
+try:
+    # Query a list of basic Messaging Campaign information objects
+    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id, sender_sms_phone_number=sender_sms_phone_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
+| **name** | **str**| Name | [optional]  |
+| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html)
+
 <a name="get_outbound_ruleset"></a>
 
 ## [**RuleSet**](RuleSet.html) get_outbound_ruleset(rule_set_id)
@@ -2891,7 +3378,7 @@ except ApiException as e:
 
 <a name="get_outbound_rulesets"></a>
 
-## [**RuleSetEntityListing**](RuleSetEntityListing.html) get_outbound_rulesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**RuleSetEntityListing**](RuleSetEntityListing.html) get_outbound_rulesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -2920,6 +3407,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -2927,7 +3415,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of Rule Sets.
-    api_response = api_instance.get_outbound_rulesets(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_rulesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_rulesets: %s\n" % e
@@ -2940,6 +3428,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -3199,7 +3688,7 @@ except ApiException as e:
 
 <a name="get_outbound_sequences"></a>
 
-## [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html) get_outbound_sequences(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+## [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html) get_outbound_sequences(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -3228,6 +3717,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = false # bool | Whether to return an empty page when there are no results for that page (optional) (default to false)
 filter_type = 'Prefix' # str | Filter type (optional) (default to Prefix)
 name = 'name_example' # str | Name (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
@@ -3235,7 +3725,7 @@ sort_order = 'a' # str | Sort order (optional) (default to a)
 
 try:
     # Query a list of dialer campaign sequences.
-    api_response = api_instance.get_outbound_sequences(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_sequences(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling OutboundApi->get_outbound_sequences: %s\n" % e
@@ -3248,6 +3738,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to false] |
 | **filter_type** | **str**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
@@ -4393,6 +4884,108 @@ except ApiException as e:
 
 [**DncList**](DncList.html)
 
+<a name="post_outbound_messagingcampaigns"></a>
+
+## [**MessagingCampaign**](MessagingCampaign.html) post_outbound_messagingcampaigns(body)
+
+
+
+Create a Messaging Campaign
+
+
+
+Wraps POST /api/v2/outbound/messagingcampaigns 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.MessagingCampaign() # MessagingCampaign | Messaging Campaign
+
+try:
+    # Create a Messaging Campaign
+    api_response = api_instance.post_outbound_messagingcampaigns(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_messagingcampaigns: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MessagingCampaign**](MessagingCampaign.html)| Messaging Campaign |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="post_outbound_messagingcampaigns_progress"></a>
+
+## [**list[CampaignProgress]**](CampaignProgress.html) post_outbound_messagingcampaigns_progress(body)
+
+
+
+Get progress for a list of messaging campaigns
+
+
+
+Wraps POST /api/v2/outbound/messagingcampaigns/progress 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = [PureCloudPlatformClientV2.list[str]()] # list[str] | Messaging Campaign IDs
+
+try:
+    # Get progress for a list of messaging campaigns
+    api_response = api_instance.post_outbound_messagingcampaigns_progress(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->post_outbound_messagingcampaigns_progress: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **list[str]**| Messaging Campaign IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[CampaignProgress]**](CampaignProgress.html)
+
 <a name="post_outbound_rulesets"></a>
 
 ## [**RuleSet**](RuleSet.html) post_outbound_rulesets(body)
@@ -5027,6 +5620,59 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="put_outbound_messagingcampaign"></a>
+
+## [**MessagingCampaign**](MessagingCampaign.html) put_outbound_messagingcampaign(messaging_campaign_id, body)
+
+
+
+Update an Outbound Messaging Campaign
+
+
+
+Wraps PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+body = PureCloudPlatformClientV2.MessagingCampaign() # MessagingCampaign | MessagingCampaign
+
+try:
+    # Update an Outbound Messaging Campaign
+    api_response = api_instance.put_outbound_messagingcampaign(messaging_campaign_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling OutboundApi->put_outbound_messagingcampaign: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+| **body** | [**MessagingCampaign**](MessagingCampaign.html)| MessagingCampaign |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
 
 <a name="put_outbound_ruleset"></a>
 

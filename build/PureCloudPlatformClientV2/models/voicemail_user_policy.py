@@ -43,20 +43,23 @@ class VoicemailUserPolicy(object):
             'enabled': 'bool',
             'alert_timeout_seconds': 'int',
             'pin': 'str',
-            'modified_date': 'datetime'
+            'modified_date': 'datetime',
+            'send_email_notifications': 'bool'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
             'alert_timeout_seconds': 'alertTimeoutSeconds',
             'pin': 'pin',
-            'modified_date': 'modifiedDate'
+            'modified_date': 'modifiedDate',
+            'send_email_notifications': 'sendEmailNotifications'
         }
 
         self._enabled = None
         self._alert_timeout_seconds = None
         self._pin = None
         self._modified_date = None
+        self._send_email_notifications = None
 
     @property
     def enabled(self):
@@ -149,6 +152,29 @@ class VoicemailUserPolicy(object):
         """
         
         self._modified_date = modified_date
+
+    @property
+    def send_email_notifications(self):
+        """
+        Gets the send_email_notifications of this VoicemailUserPolicy.
+        Whether email notifications are sent to the user when a new voicemail is received
+
+        :return: The send_email_notifications of this VoicemailUserPolicy.
+        :rtype: bool
+        """
+        return self._send_email_notifications
+
+    @send_email_notifications.setter
+    def send_email_notifications(self, send_email_notifications):
+        """
+        Sets the send_email_notifications of this VoicemailUserPolicy.
+        Whether email notifications are sent to the user when a new voicemail is received
+
+        :param send_email_notifications: The send_email_notifications of this VoicemailUserPolicy.
+        :type: bool
+        """
+        
+        self._send_email_notifications = send_email_notifications
 
     def to_dict(self):
         """

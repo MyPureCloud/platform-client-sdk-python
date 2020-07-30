@@ -135,7 +135,7 @@ class ScimV2CreateUser(object):
     def user_name(self):
         """
         Gets the user_name of this ScimV2CreateUser.
-        The user's PureCloud email address. Must be unique.
+        The user's Genesys Cloud email address. Must be unique.
 
         :return: The user_name of this ScimV2CreateUser.
         :rtype: str
@@ -146,7 +146,7 @@ class ScimV2CreateUser(object):
     def user_name(self, user_name):
         """
         Sets the user_name of this ScimV2CreateUser.
-        The user's PureCloud email address. Must be unique.
+        The user's Genesys Cloud email address. Must be unique.
 
         :param user_name: The user_name of this ScimV2CreateUser.
         :type: str
@@ -181,7 +181,7 @@ class ScimV2CreateUser(object):
     def password(self):
         """
         Gets the password of this ScimV2CreateUser.
-        The new password for the PureCloud user. Does not return an existing password.
+        The new password for the Genesys Cloud user. Does not return an existing password.
 
         :return: The password of this ScimV2CreateUser.
         :rtype: str
@@ -192,7 +192,7 @@ class ScimV2CreateUser(object):
     def password(self, password):
         """
         Sets the password of this ScimV2CreateUser.
-        The new password for the PureCloud user. Does not return an existing password.
+        The new password for the Genesys Cloud user. Does not return an existing password.
 
         :param password: The password of this ScimV2CreateUser.
         :type: str
@@ -365,7 +365,7 @@ class ScimV2CreateUser(object):
     def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self):
         """
         Gets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
-
+        The URI of the schema for the Genesys Cloud user.
 
         :return: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
         :rtype: ScimUserExtensions
@@ -376,7 +376,7 @@ class ScimV2CreateUser(object):
     def urnietfparamsscimschemasextensiongenesyspurecloud2_0_user(self, urnietfparamsscimschemasextensiongenesyspurecloud2_0_user):
         """
         Sets the urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
-
+        The URI of the schema for the Genesys Cloud user.
 
         :param urnietfparamsscimschemasextensiongenesyspurecloud2_0_user: The urnietfparamsscimschemasextensiongenesyspurecloud2_0_user of this ScimV2CreateUser.
         :type: ScimUserExtensions
