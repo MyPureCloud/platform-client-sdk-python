@@ -43,23 +43,20 @@ class ScimV2SchemaDefinition(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'attributes': 'list[ScimV2SchemaAttribute]',
-            'meta': 'ScimMetadata'
+            'attributes': 'list[ScimV2SchemaAttribute]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'attributes': 'attributes',
-            'meta': 'meta'
+            'attributes': 'attributes'
         }
 
         self._id = None
         self._name = None
         self._description = None
         self._attributes = None
-        self._meta = None
 
     @property
     def id(self):
@@ -152,29 +149,6 @@ class ScimV2SchemaDefinition(object):
         """
         
         self._attributes = attributes
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2SchemaDefinition.
-        The metadata of the SCIM resource.
-
-        :return: The meta of this ScimV2SchemaDefinition.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2SchemaDefinition.
-        The metadata of the SCIM resource.
-
-        :param meta: The meta of this ScimV2SchemaDefinition.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     def to_dict(self):
         """

@@ -56,6 +56,7 @@ class QueueConversationEventTopicCobrowse(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'wrapup': 'QueueConversationEventTopicWrapup',
+            'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -76,6 +77,7 @@ class QueueConversationEventTopicCobrowse(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -95,6 +97,7 @@ class QueueConversationEventTopicCobrowse(object):
         self._connected_time = None
         self._disconnected_time = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -472,6 +475,29 @@ class QueueConversationEventTopicCobrowse(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationEventTopicCobrowse.
+
+
+        :return: The after_call_work of this QueueConversationEventTopicCobrowse.
+        :rtype: QueueConversationEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationEventTopicCobrowse.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationEventTopicCobrowse.
+        :type: QueueConversationEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

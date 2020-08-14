@@ -20,6 +20,7 @@ title: OAuthClientListing
 | **modified_by** | [**DomainEntityRef**](DomainEntityRef.html) | User that last modified this client | [optional] |
 | **scope** | **list[str]** | The scope requested by this client. Scopes only apply to clients not using the client_credential grant | [optional] |
 | **role_divisions** | [**list[RoleDivision]**](RoleDivision.html) | Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant | [optional] |
+| **state** | **str** | The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

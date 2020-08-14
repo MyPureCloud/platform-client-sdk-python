@@ -57,7 +57,8 @@ class ConversationChat(object):
             'peer_id': 'str',
             'avatar_image_url': 'str',
             'journey_context': 'JourneyContext',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -78,7 +79,8 @@ class ConversationChat(object):
             'peer_id': 'peerId',
             'avatar_image_url': 'avatarImageUrl',
             'journey_context': 'journeyContext',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -99,6 +101,7 @@ class ConversationChat(object):
         self._avatar_image_url = None
         self._journey_context = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -525,6 +528,29 @@ class ConversationChat(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this ConversationChat.
+        After-call work for the communication.
+
+        :return: The after_call_work of this ConversationChat.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this ConversationChat.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this ConversationChat.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

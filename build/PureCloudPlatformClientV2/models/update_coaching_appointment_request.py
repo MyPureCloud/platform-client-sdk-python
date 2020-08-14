@@ -45,7 +45,8 @@ class UpdateCoachingAppointmentRequest(object):
             'date_start': 'datetime',
             'length_in_minutes': 'int',
             'conversation_ids': 'list[str]',
-            'document_ids': 'list[str]'
+            'document_ids': 'list[str]',
+            'status': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class UpdateCoachingAppointmentRequest(object):
             'date_start': 'dateStart',
             'length_in_minutes': 'lengthInMinutes',
             'conversation_ids': 'conversationIds',
-            'document_ids': 'documentIds'
+            'document_ids': 'documentIds',
+            'status': 'status'
         }
 
         self._name = None
@@ -63,6 +65,7 @@ class UpdateCoachingAppointmentRequest(object):
         self._length_in_minutes = None
         self._conversation_ids = None
         self._document_ids = None
+        self._status = None
 
     @property
     def name(self):
@@ -201,6 +204,33 @@ class UpdateCoachingAppointmentRequest(object):
         """
         
         self._document_ids = document_ids
+
+    @property
+    def status(self):
+        """
+        Gets the status of this UpdateCoachingAppointmentRequest.
+        The status of the coaching appointment.
+
+        :return: The status of this UpdateCoachingAppointmentRequest.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this UpdateCoachingAppointmentRequest.
+        The status of the coaching appointment.
+
+        :param status: The status of this UpdateCoachingAppointmentRequest.
+        :type: str
+        """
+        allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for status -> " + status
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     def to_dict(self):
         """

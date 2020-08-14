@@ -65,7 +65,8 @@ class CallBasic(object):
             'uui_data': 'str',
             'pcSelf': 'Address',
             'other': 'Address',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -94,7 +95,8 @@ class CallBasic(object):
             'uui_data': 'uuiData',
             'pcSelf': 'self',
             'other': 'other',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -123,6 +125,7 @@ class CallBasic(object):
         self._pcSelf = None
         self._other = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -737,6 +740,29 @@ class CallBasic(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this CallBasic.
+        After-call work for the communication.
+
+        :return: The after_call_work of this CallBasic.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this CallBasic.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this CallBasic.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

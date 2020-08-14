@@ -47,7 +47,8 @@ class OAuthClientRequest(object):
             'role_ids': 'list[str]',
             'authorized_grant_type': 'str',
             'scope': 'list[str]',
-            'role_divisions': 'list[RoleDivision]'
+            'role_divisions': 'list[RoleDivision]',
+            'state': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class OAuthClientRequest(object):
             'role_ids': 'roleIds',
             'authorized_grant_type': 'authorizedGrantType',
             'scope': 'scope',
-            'role_divisions': 'roleDivisions'
+            'role_divisions': 'roleDivisions',
+            'state': 'state'
         }
 
         self._name = None
@@ -69,6 +71,7 @@ class OAuthClientRequest(object):
         self._authorized_grant_type = None
         self._scope = None
         self._role_divisions = None
+        self._state = None
 
     @property
     def name(self):
@@ -257,6 +260,33 @@ class OAuthClientRequest(object):
         """
         
         self._role_divisions = role_divisions
+
+    @property
+    def state(self):
+        """
+        Gets the state of this OAuthClientRequest.
+        The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
+
+        :return: The state of this OAuthClientRequest.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this OAuthClientRequest.
+        The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
+
+        :param state: The state of this OAuthClientRequest.
+        :type: str
+        """
+        allowed_values = ["active", "disabled", "inactive"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for state -> " + state
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
 
     def to_dict(self):
         """

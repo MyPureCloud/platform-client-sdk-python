@@ -20,6 +20,7 @@ title: Screenshare
 | **peer_id** | **str** | The id of the peer communication corresponding to a matching leg for this communication. | [optional] |
 | **segments** | [**list[Segment]**](Segment.html) | The time line of the participant&#39;s call, divided into activity segments. | [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Call wrap up or disposition data. | [optional] |
+| **after_call_work** | [**AfterCallWork**](AfterCallWork.html) | After-call work for the communication. | [optional] |
 {: class="table table-striped"}
 
 

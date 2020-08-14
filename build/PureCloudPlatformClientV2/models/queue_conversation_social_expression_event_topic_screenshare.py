@@ -52,6 +52,7 @@ class QueueConversationSocialExpressionEventTopicScreenshare(object):
             'connected_time': 'datetime',
             'disconnected_time': 'datetime',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
+            'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -68,6 +69,7 @@ class QueueConversationSocialExpressionEventTopicScreenshare(object):
             'connected_time': 'connectedTime',
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -83,6 +85,7 @@ class QueueConversationSocialExpressionEventTopicScreenshare(object):
         self._connected_time = None
         self._disconnected_time = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -368,6 +371,29 @@ class QueueConversationSocialExpressionEventTopicScreenshare(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationSocialExpressionEventTopicScreenshare.
+
+
+        :return: The after_call_work of this QueueConversationSocialExpressionEventTopicScreenshare.
+        :rtype: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationSocialExpressionEventTopicScreenshare.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationSocialExpressionEventTopicScreenshare.
+        :type: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

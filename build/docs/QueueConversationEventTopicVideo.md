@@ -22,6 +22,7 @@ title: QueueConversationEventTopicVideo
 | **disconnected_time** | **datetime** |  | [optional] |
 | **msids** | **list[str]** |  | [optional] |
 | **wrapup** | [**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html) |  | [optional] |
+| **after_call_work** | [**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

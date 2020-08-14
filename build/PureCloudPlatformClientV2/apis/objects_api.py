@@ -226,11 +226,11 @@ class ObjectsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param bool object_count: Include the count of objects contained in the division
-        :param list[str] id: Optionally request specific divisions by their IDs
+        :param list[object] id: Optionally request specific divisions by their IDs
         :param str name: Search term to filter by division name
         :return: AuthzDivisionEntityListing
                  If the method is called asynchronously,

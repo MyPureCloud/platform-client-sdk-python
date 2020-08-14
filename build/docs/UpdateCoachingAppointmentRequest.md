@@ -13,6 +13,7 @@ title: UpdateCoachingAppointmentRequest
 | **length_in_minutes** | **int** | The duration of coaching appointment in minutes. | [optional] |
 | **conversation_ids** | **list[str]** | IDs of conversations associated with this coaching appointment. | [optional] |
 | **document_ids** | **list[str]** | IDs of documents associated with this coaching appointment. | [optional] |
+| **status** | **str** | The status of the coaching appointment. | [optional] |
 {: class="table table-striped"}
 
 

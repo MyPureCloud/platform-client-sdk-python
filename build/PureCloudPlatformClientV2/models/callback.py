@@ -62,7 +62,8 @@ class Callback(object):
             'automated_callback_config_id': 'str',
             'provider': 'str',
             'peer_id': 'str',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -88,7 +89,8 @@ class Callback(object):
             'automated_callback_config_id': 'automatedCallbackConfigId',
             'provider': 'provider',
             'peer_id': 'peerId',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -114,6 +116,7 @@ class Callback(object):
         self._provider = None
         self._peer_id = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -655,6 +658,29 @@ class Callback(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this Callback.
+        After-call work for the communication.
+
+        :return: The after_call_work of this Callback.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this Callback.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this Callback.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

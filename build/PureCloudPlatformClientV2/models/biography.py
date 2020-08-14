@@ -43,20 +43,23 @@ class Biography(object):
             'biography': 'str',
             'interests': 'list[str]',
             'hobbies': 'list[str]',
-            'spouse': 'str'
+            'spouse': 'str',
+            'education': 'list[Education]'
         }
 
         self.attribute_map = {
             'biography': 'biography',
             'interests': 'interests',
             'hobbies': 'hobbies',
-            'spouse': 'spouse'
+            'spouse': 'spouse',
+            'education': 'education'
         }
 
         self._biography = None
         self._interests = None
         self._hobbies = None
         self._spouse = None
+        self._education = None
 
     @property
     def biography(self):
@@ -149,6 +152,29 @@ class Biography(object):
         """
         
         self._spouse = spouse
+
+    @property
+    def education(self):
+        """
+        Gets the education of this Biography.
+        User education details
+
+        :return: The education of this Biography.
+        :rtype: list[Education]
+        """
+        return self._education
+
+    @education.setter
+    def education(self, education):
+        """
+        Sets the education of this Biography.
+        User education details
+
+        :param education: The education of this Biography.
+        :type: list[Education]
+        """
+        
+        self._education = education
 
     def to_dict(self):
         """

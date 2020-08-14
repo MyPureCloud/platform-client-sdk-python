@@ -28,6 +28,7 @@ title: QueueConversationVideoEventTopicCallback
 | **callback_scheduled_time** | **datetime** |  | [optional] |
 | **automated_callback_config_id** | **str** |  | [optional] |
 | **wrapup** | [**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup.html) |  | [optional] |
+| **after_call_work** | [**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

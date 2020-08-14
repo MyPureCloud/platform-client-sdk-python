@@ -377,7 +377,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: Integration
@@ -550,7 +550,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: IntegrationEntityListing
@@ -1325,7 +1325,7 @@ class IntegrationsApi(object):
         :param int page_number: The page number requested
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param str sort_by: Root level field name to sort on.
+        :param str sort_by: Root level field name to sort on.  Only 'name' is supported on this endpoint.
         :param str sort_order: Direction to sort 'sortBy' field.
         :param str secure: Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
         :return: CategoryEntityListing
@@ -1519,7 +1519,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: ClientAppEntityListing
@@ -2980,7 +2980,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: IntegrationTypeEntityListing
@@ -3070,7 +3070,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str app_host: The type of UserApp to filter by
@@ -3165,7 +3165,7 @@ class IntegrationsApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :return: Integration

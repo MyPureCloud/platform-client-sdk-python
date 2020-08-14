@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_evaluations_aggregates_query**](AnalyticsApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_analytics_flows_aggregates_query**](AnalyticsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
 |[**post_analytics_flows_observations_query**](AnalyticsApi.html#post_analytics_flows_observations_query) | Query for flow observations|
+|[**post_analytics_journeys_aggregates_query**](AnalyticsApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
@@ -1427,6 +1428,57 @@ except ApiException as e:
 
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 
+<a name="post_analytics_journeys_aggregates_query"></a>
+
+## [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html) post_analytics_journeys_aggregates_query(body)
+
+
+
+Query for journey aggregates
+
+
+
+Wraps POST /api/v2/analytics/journeys/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.JourneyAggregationQuery() # JourneyAggregationQuery | query
+
+try:
+    # Query for journey aggregates
+    api_response = api_instance.post_analytics_journeys_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->post_analytics_journeys_aggregates_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+
 <a name="post_analytics_queues_observations_query"></a>
 
 ## [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html) post_analytics_queues_observations_query(body)
@@ -1486,7 +1538,7 @@ except ApiException as e:
 
 Generate a view export request
 
-
+This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 
 Wraps POST /api/v2/analytics/reporting/exports 
 

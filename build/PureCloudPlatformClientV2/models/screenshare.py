@@ -52,7 +52,8 @@ class Screenshare(object):
             'provider': 'str',
             'peer_id': 'str',
             'segments': 'list[Segment]',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class Screenshare(object):
             'provider': 'provider',
             'peer_id': 'peerId',
             'segments': 'segments',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -84,6 +86,7 @@ class Screenshare(object):
         self._peer_id = None
         self._segments = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -391,6 +394,29 @@ class Screenshare(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this Screenshare.
+        After-call work for the communication.
+
+        :return: The after_call_work of this Screenshare.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this Screenshare.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this Screenshare.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

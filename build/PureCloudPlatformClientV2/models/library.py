@@ -202,7 +202,7 @@ class Library(object):
         :param response_type: The response_type of this Library.
         :type: str
         """
-        allowed_values = ["MessagingTemplate"]
+        allowed_values = ["MessagingTemplate", "CampaignSmsTemplate"]
         if response_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for response_type -> " + response_type
             self._response_type = "outdated_sdk_version"

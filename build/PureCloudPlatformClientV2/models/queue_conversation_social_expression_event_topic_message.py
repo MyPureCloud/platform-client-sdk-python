@@ -59,6 +59,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'recipient_country': 'str',
             'recipient_type': 'str',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
+            'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -82,6 +83,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -104,6 +106,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         self._recipient_country = None
         self._recipient_type = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -554,6 +557,29 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationSocialExpressionEventTopicMessage.
+
+
+        :return: The after_call_work of this QueueConversationSocialExpressionEventTopicMessage.
+        :rtype: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationSocialExpressionEventTopicMessage.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationSocialExpressionEventTopicMessage.
+        :type: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

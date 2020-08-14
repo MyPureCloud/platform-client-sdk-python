@@ -55,6 +55,7 @@ class QueueConversationEventTopicVideo(object):
             'disconnected_time': 'datetime',
             'msids': 'list[str]',
             'wrapup': 'QueueConversationEventTopicWrapup',
+            'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -74,6 +75,7 @@ class QueueConversationEventTopicVideo(object):
             'disconnected_time': 'disconnectedTime',
             'msids': 'msids',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -92,6 +94,7 @@ class QueueConversationEventTopicVideo(object):
         self._disconnected_time = None
         self._msids = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -446,6 +449,29 @@ class QueueConversationEventTopicVideo(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationEventTopicVideo.
+
+
+        :return: The after_call_work of this QueueConversationEventTopicVideo.
+        :rtype: QueueConversationEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationEventTopicVideo.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationEventTopicVideo.
+        :type: QueueConversationEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

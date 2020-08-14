@@ -41,16 +41,19 @@ class ScimUserExtensions(object):
         """
         self.swagger_types = {
             'routing_skills': 'list[ScimUserRoutingSkill]',
-            'routing_languages': 'list[ScimUserRoutingLanguage]'
+            'routing_languages': 'list[ScimUserRoutingLanguage]',
+            'external_ids': 'list[ScimGenesysUserExternalId]'
         }
 
         self.attribute_map = {
             'routing_skills': 'routingSkills',
-            'routing_languages': 'routingLanguages'
+            'routing_languages': 'routingLanguages',
+            'external_ids': 'externalIds'
         }
 
         self._routing_skills = None
         self._routing_languages = None
+        self._external_ids = None
 
     @property
     def routing_skills(self):
@@ -97,6 +100,29 @@ class ScimUserExtensions(object):
         """
         
         self._routing_languages = routing_languages
+
+    @property
+    def external_ids(self):
+        """
+        Gets the external_ids of this ScimUserExtensions.
+        External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+
+        :return: The external_ids of this ScimUserExtensions.
+        :rtype: list[ScimGenesysUserExternalId]
+        """
+        return self._external_ids
+
+    @external_ids.setter
+    def external_ids(self, external_ids):
+        """
+        Sets the external_ids of this ScimUserExtensions.
+        External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+
+        :param external_ids: The external_ids of this ScimUserExtensions.
+        :type: list[ScimGenesysUserExternalId]
+        """
+        
+        self._external_ids = external_ids
 
     def to_dict(self):
         """

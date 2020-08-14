@@ -59,6 +59,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'draft_attachments': 'list[QueueConversationVideoEventTopicAttachment]',
             'spam': 'bool',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
+            'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -82,6 +83,7 @@ class QueueConversationVideoEventTopicEmail(object):
             'draft_attachments': 'draftAttachments',
             'spam': 'spam',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -104,6 +106,7 @@ class QueueConversationVideoEventTopicEmail(object):
         self._draft_attachments = None
         self._spam = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -554,6 +557,29 @@ class QueueConversationVideoEventTopicEmail(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationVideoEventTopicEmail.
+
+
+        :return: The after_call_work of this QueueConversationVideoEventTopicEmail.
+        :rtype: QueueConversationVideoEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationVideoEventTopicEmail.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationVideoEventTopicEmail.
+        :type: QueueConversationVideoEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

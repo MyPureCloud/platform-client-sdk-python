@@ -40,7 +40,7 @@ Wraps DELETE /api/v2/coaching/appointments/{appointmentId}
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENT:DELETE
+* coaching:appointment:delete
 
 ### Example
 
@@ -91,8 +91,8 @@ Wraps DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotati
 
 Requires ANY permissions: 
 
-* COACHING:ANNOTATION:DELETE
-* COACHING:PRIVATEANNOTATION:DELETE
+* coaching:annotation:delete
+* coaching:privateAnnotation:delete
 
 ### Example
 
@@ -144,7 +144,7 @@ Wraps GET /api/v2/coaching/appointments/{appointmentId}
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENT:VIEW
+* coaching:appointment:view
 
 ### Example
 
@@ -195,8 +195,8 @@ Wraps GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationI
 
 Requires ANY permissions: 
 
-* COACHING:ANNOTATION:VIEW
-* COACHING:PRIVATEANNOTATION:VIEW
+* coaching:annotation:view
+* coaching:privateAnnotation:view
 
 ### Example
 
@@ -249,8 +249,8 @@ Wraps GET /api/v2/coaching/appointments/{appointmentId}/annotations
 
 Requires ANY permissions: 
 
-* COACHING:ANNOTATION:VIEW
-* COACHING:PRIVATEANNOTATION:VIEW
+* coaching:annotation:view
+* coaching:privateAnnotation:view
 
 ### Example
 
@@ -305,7 +305,7 @@ Wraps GET /api/v2/coaching/appointments/{appointmentId}/statuses
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENTSTATUS:VIEW
+* coaching:appointmentStatus:view
 
 ### Example
 
@@ -360,7 +360,7 @@ Wraps GET /api/v2/coaching/appointments
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENT:VIEW
+* coaching:appointment:view
 
 ### Example
 
@@ -483,7 +483,7 @@ Wraps GET /api/v2/coaching/notifications/{notificationId}
 
 Requires ANY permissions: 
 
-* COACHING:NOTIFICATION:VIEW
+* coaching:notification:view
 
 ### Example
 
@@ -586,7 +586,7 @@ Wraps PATCH /api/v2/coaching/appointments/{appointmentId}
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENT:EDIT
+* coaching:appointment:edit
 
 ### Example
 
@@ -639,8 +639,8 @@ Wraps PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotatio
 
 Requires ANY permissions: 
 
-* COACHING:ANNOTATION:EDIT
-* COACHING:PRIVATEANNOTATION:EDIT
+* coaching:annotation:edit
+* coaching:privateAnnotation:edit
 
 ### Example
 
@@ -695,7 +695,7 @@ Wraps PATCH /api/v2/coaching/appointments/{appointmentId}/status
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENTSTATUS:EDIT
+* coaching:appointmentStatus:edit
 
 ### Example
 
@@ -800,8 +800,8 @@ Wraps POST /api/v2/coaching/appointments/{appointmentId}/annotations
 
 Requires ANY permissions: 
 
-* COACHING:ANNOTATION:ADD
-* COACHING:PRIVATEANNOTATION:ADD
+* coaching:annotation:add
+* coaching:privateAnnotation:add
 
 ### Example
 
@@ -854,7 +854,7 @@ Wraps POST /api/v2/coaching/appointments
 
 Requires ANY permissions: 
 
-* COACHING:APPOINTMENT:ADD
+* coaching:appointment:add
 
 ### Example
 

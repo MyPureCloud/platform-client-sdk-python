@@ -46,8 +46,7 @@ class ScimConfigResourceType(object):
             'description': 'str',
             'schema': 'str',
             'schema_extensions': 'list[ScimConfigResourceTypeSchemaExtension]',
-            'endpoint': 'str',
-            'meta': 'ScimMetadata'
+            'endpoint': 'str'
         }
 
         self.attribute_map = {
@@ -57,8 +56,7 @@ class ScimConfigResourceType(object):
             'description': 'description',
             'schema': 'schema',
             'schema_extensions': 'schemaExtensions',
-            'endpoint': 'endpoint',
-            'meta': 'meta'
+            'endpoint': 'endpoint'
         }
 
         self._id = None
@@ -68,7 +66,6 @@ class ScimConfigResourceType(object):
         self._schema = None
         self._schema_extensions = None
         self._endpoint = None
-        self._meta = None
 
     @property
     def id(self):
@@ -230,29 +227,6 @@ class ScimConfigResourceType(object):
         """
         
         self._endpoint = endpoint
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimConfigResourceType.
-        The metadata of the SCIM resource.
-
-        :return: The meta of this ScimConfigResourceType.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimConfigResourceType.
-        The metadata of the SCIM resource.
-
-        :param meta: The meta of this ScimConfigResourceType.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     def to_dict(self):
         """

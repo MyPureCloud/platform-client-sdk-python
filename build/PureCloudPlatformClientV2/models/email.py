@@ -61,7 +61,8 @@ class Email(object):
             'message_id': 'str',
             'draft_attachments': 'list[Attachment]',
             'spam': 'bool',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -86,7 +87,8 @@ class Email(object):
             'message_id': 'messageId',
             'draft_attachments': 'draftAttachments',
             'spam': 'spam',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -111,6 +113,7 @@ class Email(object):
         self._draft_attachments = None
         self._spam = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -629,6 +632,29 @@ class Email(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this Email.
+        After-call work for the communication.
+
+        :return: The after_call_work of this Email.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this Email.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this Email.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

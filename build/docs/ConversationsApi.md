@@ -98,6 +98,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_message_participant**](ConversationsApi.html#patch_conversations_message_participant) | Update conversation participant|
 |[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_message_participant_communication**](ConversationsApi.html#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Activate a WhatsApp messaging integration.|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
@@ -4825,6 +4826,59 @@ except ApiException as e:
 ### Return type
 
 [**Empty**](Empty.html)
+
+<a name="patch_conversations_messaging_integrations_facebook_integration_id"></a>
+
+## [**FacebookIntegration**](FacebookIntegration.html) patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
+
+
+
+Update Facebook messaging integration
+
+
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.FacebookIntegrationUpdateRequest() # FacebookIntegrationUpdateRequest | FacebookIntegrationUpdateRequest
+
+try:
+    # Update Facebook messaging integration
+    api_response = api_instance.patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->patch_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**FacebookIntegrationUpdateRequest**](FacebookIntegrationUpdateRequest.html)| FacebookIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FacebookIntegration**](FacebookIntegration.html)
 
 <a name="patch_conversations_messaging_integrations_whatsapp_integration_id"></a>
 

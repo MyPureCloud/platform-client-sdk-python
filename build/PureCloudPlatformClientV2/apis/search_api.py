@@ -549,12 +549,13 @@ class SearchApi(object):
             for asynchronous request. (optional)
         :param str q64: q64 (required)
         :param list[str] expand: expand
+        :param str integration_presence_source: integrationPresenceSource
         :return: UsersSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['q64', 'expand']
+        all_params = ['q64', 'expand', 'integration_presence_source']
         all_params.append('callback')
 
         params = locals()
@@ -580,6 +581,8 @@ class SearchApi(object):
             query_params['q64'] = params['q64']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
 
         header_params = {}
 

@@ -28,6 +28,7 @@ title: ConversationEventTopicCallback
 | **callback_scheduled_time** | **datetime** |  | [optional] |
 | **automated_callback_config_id** | **str** |  | [optional] |
 | **wrapup** | [**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html) |  | [optional] |
+| **after_call_work** | [**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html) |  | [optional] |
 | **additional_properties** | **object** |  | [optional] |
 {: class="table table-striped"}
 

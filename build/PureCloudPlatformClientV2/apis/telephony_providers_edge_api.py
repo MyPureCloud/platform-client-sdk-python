@@ -3391,12 +3391,13 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_by: Sort by
+        :param list[str] id: Filter by a specific list of ID's
         :return: DIDPoolEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by']
+        all_params = ['page_size', 'page_number', 'sort_by', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -3421,6 +3422,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 
@@ -3476,12 +3479,13 @@ class TelephonyProvidersEdgeApi(object):
         :param str phone_number: Filter by phoneNumber
         :param str owner_id: Filter by the owner of a phone number
         :param str did_pool_id: Filter by the DID Pool assignment
+        :param list[str] id: Filter by a specific list of ID's
         :return: DIDEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'phone_number', 'owner_id', 'did_pool_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'phone_number', 'owner_id', 'did_pool_id', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -3514,6 +3518,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['owner.id'] = params['owner_id']
         if 'did_pool_id' in params:
             query_params['didPool.id'] = params['did_pool_id']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 

@@ -44,8 +44,7 @@ class ScimV2Group(object):
             'schemas': 'list[str]',
             'display_name': 'str',
             'external_id': 'str',
-            'members': 'list[ScimV2MemberReference]',
-            'meta': 'ScimMetadata'
+            'members': 'list[ScimV2MemberReference]'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class ScimV2Group(object):
             'schemas': 'schemas',
             'display_name': 'displayName',
             'external_id': 'externalId',
-            'members': 'members',
-            'meta': 'meta'
+            'members': 'members'
         }
 
         self._id = None
@@ -62,7 +60,6 @@ class ScimV2Group(object):
         self._display_name = None
         self._external_id = None
         self._members = None
-        self._meta = None
 
     @property
     def id(self):
@@ -178,29 +175,6 @@ class ScimV2Group(object):
         """
         
         self._members = members
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimV2Group.
-        The metadata of the SCIM resource.
-
-        :return: The meta of this ScimV2Group.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimV2Group.
-        The metadata of the SCIM resource.
-
-        :param meta: The meta of this ScimV2Group.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     def to_dict(self):
         """

@@ -2273,7 +2273,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_didpools"></a>
 
-## [**DIDPoolEntityListing**](DIDPoolEntityListing.html) get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
+## [**DIDPoolEntityListing**](DIDPoolEntityListing.html) get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by, id=id)
 
 
 
@@ -2303,10 +2303,11 @@ api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'number' # str | Sort by (optional) (default to number)
+id = ['id_example'] # list[str] | Filter by a specific list of ID's (optional)
 
 try:
     # Get a listing of DID Pools
-    api_response = api_instance.get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by)
+    api_response = api_instance.get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by, id=id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools: %s\n" % e
@@ -2320,6 +2321,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to number] |
+| **id** | [**list[str]**](str.html)| Filter by a specific list of ID&#39;s | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2328,7 +2330,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_dids"></a>
 
-## [**DIDEntityListing**](DIDEntityListing.html) get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id)
+## [**DIDEntityListing**](DIDEntityListing.html) get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id, id=id)
 
 
 
@@ -2362,10 +2364,11 @@ sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
 phone_number = 'phone_number_example' # str | Filter by phoneNumber (optional)
 owner_id = 'owner_id_example' # str | Filter by the owner of a phone number (optional)
 did_pool_id = 'did_pool_id_example' # str | Filter by the DID Pool assignment (optional)
+id = ['id_example'] # list[str] | Filter by a specific list of ID's (optional)
 
 try:
     # Get a listing of DIDs
-    api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id)
+    api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id, id=id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e
@@ -2383,6 +2386,7 @@ except ApiException as e:
 | **phone_number** | **str**| Filter by phoneNumber | [optional]  |
 | **owner_id** | **str**| Filter by the owner of a phone number | [optional]  |
 | **did_pool_id** | **str**| Filter by the DID Pool assignment | [optional]  |
+| **id** | [**list[str]**](str.html)| Filter by a specific list of ID&#39;s | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -1168,7 +1168,7 @@ class RecordingApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param bool has_conversation: Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
@@ -1660,7 +1660,7 @@ class RecordingApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str name: the policy name - used for filtering results in searches.

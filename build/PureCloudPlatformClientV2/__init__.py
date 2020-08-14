@@ -27,6 +27,7 @@ from .models.adhoc_recording_topic_user_data import AdhocRecordingTopicUserData
 from .models.adhoc_recording_topic_workspace_data import AdhocRecordingTopicWorkspaceData
 from .models.adjacents import Adjacents
 from .models.admin_time_off_request_patch import AdminTimeOffRequestPatch
+from .models.after_call_work import AfterCallWork
 from .models.agent import Agent
 from .models.agent_activity import AgentActivity
 from .models.agent_activity_changed_topic_agent_activity import AgentActivityChangedTopicAgentActivity
@@ -459,6 +460,7 @@ from .models.conversation_email_event_topic_uri_reference import ConversationEma
 from .models.conversation_email_event_topic_wrapup import ConversationEmailEventTopicWrapup
 from .models.conversation_entity_listing import ConversationEntityListing
 from .models.conversation_event_topic_address import ConversationEventTopicAddress
+from .models.conversation_event_topic_after_call_work import ConversationEventTopicAfterCallWork
 from .models.conversation_event_topic_attachment import ConversationEventTopicAttachment
 from .models.conversation_event_topic_call import ConversationEventTopicCall
 from .models.conversation_event_topic_callback import ConversationEventTopicCallback
@@ -593,6 +595,10 @@ from .models.credential_specification import CredentialSpecification
 from .models.credential_type import CredentialType
 from .models.credential_type_listing import CredentialTypeListing
 from .models.current_user_schedule_request_body import CurrentUserScheduleRequestBody
+from .models.cursor_contact_listing import CursorContactListing
+from .models.cursor_note_listing import CursorNoteListing
+from .models.cursor_organization_listing import CursorOrganizationListing
+from .models.cursor_relationship_listing import CursorRelationshipListing
 from .models.cursors import Cursors
 from .models.customer_interaction_center import CustomerInteractionCenter
 from .models.did import DID
@@ -777,6 +783,7 @@ from .models.edge_service_state_request import EdgeServiceStateRequest
 from .models.edge_trunk_base import EdgeTrunkBase
 from .models.edge_version_information import EdgeVersionInformation
 from .models.edge_version_report import EdgeVersionReport
+from .models.education import Education
 from .models.effective_configuration import EffectiveConfiguration
 from .models.email import Email
 from .models.email_address import EmailAddress
@@ -849,6 +856,7 @@ from .models.facebook_id import FacebookId
 from .models.facebook_integration import FacebookIntegration
 from .models.facebook_integration_entity_listing import FacebookIntegrationEntityListing
 from .models.facebook_integration_request import FacebookIntegrationRequest
+from .models.facebook_integration_update_request import FacebookIntegrationUpdateRequest
 from .models.facebook_scoped_id import FacebookScopedId
 from .models.facet import Facet
 from .models.facet_entry import FacetEntry
@@ -991,6 +999,13 @@ from .models.item_validation_limits import ItemValidationLimits
 from .models.items import Items
 from .models.journey_action import JourneyAction
 from .models.journey_action_map import JourneyActionMap
+from .models.journey_aggregate_data_container import JourneyAggregateDataContainer
+from .models.journey_aggregate_query_clause import JourneyAggregateQueryClause
+from .models.journey_aggregate_query_filter import JourneyAggregateQueryFilter
+from .models.journey_aggregate_query_predicate import JourneyAggregateQueryPredicate
+from .models.journey_aggregate_query_response import JourneyAggregateQueryResponse
+from .models.journey_aggregation_query import JourneyAggregationQuery
+from .models.journey_aggregation_view import JourneyAggregationView
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
@@ -1256,6 +1271,7 @@ from .models.presence_detail_query_filter import PresenceDetailQueryFilter
 from .models.presence_detail_query_predicate import PresenceDetailQueryPredicate
 from .models.presence_event_organization_presence import PresenceEventOrganizationPresence
 from .models.presence_event_user_presence import PresenceEventUserPresence
+from .models.presence_expand import PresenceExpand
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -1348,6 +1364,7 @@ from .models.queue_conversation_email_event_topic_scored_agent import QueueConve
 from .models.queue_conversation_email_event_topic_uri_reference import QueueConversationEmailEventTopicUriReference
 from .models.queue_conversation_email_event_topic_wrapup import QueueConversationEmailEventTopicWrapup
 from .models.queue_conversation_event_topic_address import QueueConversationEventTopicAddress
+from .models.queue_conversation_event_topic_after_call_work import QueueConversationEventTopicAfterCallWork
 from .models.queue_conversation_event_topic_attachment import QueueConversationEventTopicAttachment
 from .models.queue_conversation_event_topic_call import QueueConversationEventTopicCall
 from .models.queue_conversation_event_topic_callback import QueueConversationEventTopicCallback
@@ -1408,6 +1425,7 @@ from .models.queue_conversation_screen_share_event_topic_screen_share_media_part
 from .models.queue_conversation_screen_share_event_topic_uri_reference import QueueConversationScreenShareEventTopicUriReference
 from .models.queue_conversation_screen_share_event_topic_wrapup import QueueConversationScreenShareEventTopicWrapup
 from .models.queue_conversation_social_expression_event_topic_address import QueueConversationSocialExpressionEventTopicAddress
+from .models.queue_conversation_social_expression_event_topic_after_call_work import QueueConversationSocialExpressionEventTopicAfterCallWork
 from .models.queue_conversation_social_expression_event_topic_attachment import QueueConversationSocialExpressionEventTopicAttachment
 from .models.queue_conversation_social_expression_event_topic_call import QueueConversationSocialExpressionEventTopicCall
 from .models.queue_conversation_social_expression_event_topic_callback import QueueConversationSocialExpressionEventTopicCallback
@@ -1439,6 +1457,7 @@ from .models.queue_conversation_social_expression_event_topic_video import Queue
 from .models.queue_conversation_social_expression_event_topic_voicemail import QueueConversationSocialExpressionEventTopicVoicemail
 from .models.queue_conversation_social_expression_event_topic_wrapup import QueueConversationSocialExpressionEventTopicWrapup
 from .models.queue_conversation_video_event_topic_address import QueueConversationVideoEventTopicAddress
+from .models.queue_conversation_video_event_topic_after_call_work import QueueConversationVideoEventTopicAfterCallWork
 from .models.queue_conversation_video_event_topic_attachment import QueueConversationVideoEventTopicAttachment
 from .models.queue_conversation_video_event_topic_call import QueueConversationVideoEventTopicCall
 from .models.queue_conversation_video_event_topic_callback import QueueConversationVideoEventTopicCallback
@@ -1583,8 +1602,8 @@ from .models.scim_config_resource_type_schema_extension import ScimConfigResourc
 from .models.scim_config_resource_types_list_response import ScimConfigResourceTypesListResponse
 from .models.scim_email import ScimEmail
 from .models.scim_error import ScimError
+from .models.scim_genesys_user_external_id import ScimGenesysUserExternalId
 from .models.scim_group_list_response import ScimGroupListResponse
-from .models.scim_metadata import ScimMetadata
 from .models.scim_phone_number import ScimPhoneNumber
 from .models.scim_service_provider_config import ScimServiceProviderConfig
 from .models.scim_service_provider_config_authentication_scheme import ScimServiceProviderConfigAuthenticationScheme
@@ -2010,6 +2029,7 @@ from .models.wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .models.wfm_historical_adherence_query_for_users import WfmHistoricalAdherenceQueryForUsers
 from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .models.wfm_historical_adherence_result_wrapper import WfmHistoricalAdherenceResultWrapper
+from .models.wfm_historical_data_upload_purge_request_status_topic_historical_data_upload_purge_request_update import WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate
 from .models.wfm_historical_data_upload_request_status_topic_date_time import WfmHistoricalDataUploadRequestStatusTopicDateTime
 from .models.wfm_historical_data_upload_request_status_topic_historical_data_upload_request_update import WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
 from .models.wfm_intraday_data_update_topic_intraday_data_group import WfmIntradayDataUpdateTopicIntradayDataGroup
@@ -2101,6 +2121,7 @@ from .apis.greetings_api import GreetingsApi
 from .apis.groups_api import GroupsApi
 from .apis.identity_provider_api import IdentityProviderApi
 from .apis.integrations_api import IntegrationsApi
+from .apis.journey_api import JourneyApi
 from .apis.knowledge_api import KnowledgeApi
 from .apis.language_understanding_api import LanguageUnderstandingApi
 from .apis.languages_api import LanguagesApi

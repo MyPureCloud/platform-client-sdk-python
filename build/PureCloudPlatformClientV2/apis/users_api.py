@@ -1360,12 +1360,13 @@ class UsersApi(object):
         :param list[str] jid: jid
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand
+        :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\".
         :return: UserProfileEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'jid', 'sort_order', 'expand']
+        all_params = ['page_size', 'page_number', 'id', 'jid', 'sort_order', 'expand', 'integration_presence_source']
         all_params.append('callback')
 
         params = locals()
@@ -1396,6 +1397,8 @@ class UsersApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
 
         header_params = {}
 
@@ -1524,13 +1527,14 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
         :param list[str] expand: Which fields, if any, to expand
+        :param str integration_presence_source: Gets an integration presence for a user instead of their default.
         :param str state: Search for a user with this state
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'expand', 'state']
+        all_params = ['user_id', 'expand', 'integration_presence_source', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -1556,6 +1560,8 @@ class UsersApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
         if 'state' in params:
             query_params['state'] = params['state']
 
@@ -2100,12 +2106,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str user_id: userId (required)
         :param list[str] expand: Which fields, if any, to expand
+        :param str integration_presence_source: Gets an integration presence for a user instead of their default.
         :return: UserProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'expand']
+        all_params = ['user_id', 'expand', 'integration_presence_source']
         all_params.append('callback')
 
         params = locals()
@@ -2131,6 +2138,8 @@ class UsersApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
 
         header_params = {}
 
@@ -2926,13 +2935,14 @@ class UsersApi(object):
         :param list[str] jabber_id: A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand
+        :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
         :param str state: Only list users of this state
         :return: UserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order', 'expand', 'state']
+        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order', 'expand', 'integration_presence_source', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -2963,6 +2973,8 @@ class UsersApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
         if 'state' in params:
             query_params['state'] = params['state']
 
@@ -3014,12 +3026,13 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] expand: Which fields, if any, to expand.
+        :param str integration_presence_source: Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
         :return: UserMe
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['expand']
+        all_params = ['expand', 'integration_presence_source']
         all_params.append('callback')
 
         params = locals()
@@ -3040,6 +3053,8 @@ class UsersApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
 
         header_params = {}
 
@@ -3090,12 +3105,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str q64: q64 (required)
         :param list[str] expand: expand
+        :param str integration_presence_source: integrationPresenceSource
         :return: UsersSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['q64', 'expand']
+        all_params = ['q64', 'expand', 'integration_presence_source']
         all_params.append('callback')
 
         params = locals()
@@ -3121,6 +3137,8 @@ class UsersApi(object):
             query_params['q64'] = params['q64']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
 
         header_params = {}
 

@@ -47,7 +47,8 @@ class PhoneCapabilities(object):
             'allow_reboot': 'bool',
             'no_rebalance': 'bool',
             'no_cloud_provisioning': 'bool',
-            'media_codecs': 'list[str]'
+            'media_codecs': 'list[str]',
+            'cdm': 'bool'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class PhoneCapabilities(object):
             'allow_reboot': 'allowReboot',
             'no_rebalance': 'noRebalance',
             'no_cloud_provisioning': 'noCloudProvisioning',
-            'media_codecs': 'mediaCodecs'
+            'media_codecs': 'mediaCodecs',
+            'cdm': 'cdm'
         }
 
         self._provisions = None
@@ -69,6 +71,7 @@ class PhoneCapabilities(object):
         self._no_rebalance = None
         self._no_cloud_provisioning = None
         self._media_codecs = None
+        self._cdm = None
 
     @property
     def provisions(self):
@@ -253,6 +256,29 @@ class PhoneCapabilities(object):
         """
         
         self._media_codecs = media_codecs
+
+    @property
+    def cdm(self):
+        """
+        Gets the cdm of this PhoneCapabilities.
+
+
+        :return: The cdm of this PhoneCapabilities.
+        :rtype: bool
+        """
+        return self._cdm
+
+    @cdm.setter
+    def cdm(self, cdm):
+        """
+        Sets the cdm of this PhoneCapabilities.
+
+
+        :param cdm: The cdm of this PhoneCapabilities.
+        :type: bool
+        """
+        
+        self._cdm = cdm
 
     def to_dict(self):
         """

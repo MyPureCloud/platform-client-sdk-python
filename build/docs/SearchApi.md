@@ -335,7 +335,7 @@ except ApiException as e:
 
 <a name="get_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
+## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
 
 
 
@@ -363,10 +363,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SearchApi()
 q64 = 'q64_example' # str | q64
 expand = ['expand_example'] # list[str] | expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | integrationPresenceSource (optional)
 
 try:
     # Search users using the q64 value returned from a previous search
-    api_response = api_instance.get_users_search(q64, expand=expand)
+    api_response = api_instance.get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SearchApi->get_users_search: %s\n" % e
@@ -379,6 +380,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type

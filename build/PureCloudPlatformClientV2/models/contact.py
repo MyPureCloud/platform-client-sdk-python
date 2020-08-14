@@ -44,7 +44,8 @@ class Contact(object):
             'display': 'str',
             'media_type': 'str',
             'type': 'str',
-            'extension': 'str'
+            'extension': 'str',
+            'country_code': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class Contact(object):
             'display': 'display',
             'media_type': 'mediaType',
             'type': 'type',
-            'extension': 'extension'
+            'extension': 'extension',
+            'country_code': 'countryCode'
         }
 
         self._address = None
@@ -60,6 +62,7 @@ class Contact(object):
         self._media_type = None
         self._type = None
         self._extension = None
+        self._country_code = None
 
     @property
     def address(self):
@@ -183,6 +186,29 @@ class Contact(object):
         """
         
         self._extension = extension
+
+    @property
+    def country_code(self):
+        """
+        Gets the country_code of this Contact.
+
+
+        :return: The country_code of this Contact.
+        :rtype: str
+        """
+        return self._country_code
+
+    @country_code.setter
+    def country_code(self, country_code):
+        """
+        Sets the country_code of this Contact.
+
+
+        :param country_code: The country_code of this Contact.
+        :type: str
+        """
+        
+        self._country_code = country_code
 
     def to_dict(self):
         """

@@ -908,7 +908,7 @@ except ApiException as e:
 
 <a name="get_profiles_users"></a>
 
-## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand)
+## [**UserProfileEntityListing**](UserProfileEntityListing.html) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -940,10 +940,11 @@ id = ['id_example'] # list[str] | id (optional)
 jid = ['jid_example'] # list[str] | jid (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". (optional)
 
 try:
     # Get a user profile listing
-    api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand)
+    api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_profiles_users: %s\n" % e
@@ -960,6 +961,7 @@ except ApiException as e:
 | **jid** | [**list[str]**](str.html)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -1020,7 +1022,7 @@ except ApiException as e:
 
 <a name="get_user"></a>
 
-## [**User**](User.html) get_user(user_id, expand=expand, state=state)
+## [**User**](User.html) get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
 
 
 
@@ -1048,11 +1050,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
 state = 'active' # str | Search for a user with this state (optional) (default to active)
 
 try:
     # Get user.
-    api_response = api_instance.get_user(user_id, expand=expand, state=state)
+    api_response = api_instance.get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user: %s\n" % e
@@ -1065,6 +1068,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 | **state** | **str**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -1388,7 +1392,7 @@ except ApiException as e:
 
 <a name="get_user_profile"></a>
 
-## [**UserProfile**](UserProfile.html) get_user_profile(user_id, expand=expand)
+## [**UserProfile**](UserProfile.html) get_user_profile(user_id, expand=expand, integration_presence_source=integration_presence_source)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1416,10 +1420,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | userId
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
 
 try:
     # Get user profile
-    api_response = api_instance.get_user_profile(user_id, expand=expand)
+    api_response = api_instance.get_user_profile(user_id, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_user_profile: %s\n" % e
@@ -1432,6 +1437,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -1921,7 +1927,7 @@ except ApiException as e:
 
 <a name="get_users"></a>
 
-## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, state=state)
+## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
 
 
 
@@ -1953,11 +1959,12 @@ id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
 jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
 sort_order = 'ASC' # str | Ascending or descending sort order (optional) (default to ASC)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10. (optional)
 state = 'active' # str | Only list users of this state (optional) (default to active)
 
 try:
     # Get the list of available users.
-    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, state=state)
+    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users: %s\n" % e
@@ -1974,6 +1981,7 @@ except ApiException as e:
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 | **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -1983,7 +1991,7 @@ except ApiException as e:
 
 <a name="get_users_me"></a>
 
-## [**UserMe**](UserMe.html) get_users_me(expand=expand)
+## [**UserMe**](UserMe.html) get_users_me(expand=expand, integration_presence_source=integration_presence_source)
 
 
 
@@ -2010,10 +2018,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\". (optional)
 
 try:
     # Get current user details.
-    api_response = api_instance.get_users_me(expand=expand)
+    api_response = api_instance.get_users_me(expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users_me: %s\n" % e
@@ -2025,6 +2034,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2033,7 +2043,7 @@ except ApiException as e:
 
 <a name="get_users_search"></a>
 
-## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand)
+## [**UsersSearchResponse**](UsersSearchResponse.html) get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
 
 
 
@@ -2061,10 +2071,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 q64 = 'q64_example' # str | q64
 expand = ['expand_example'] # list[str] | expand (optional)
+integration_presence_source = 'integration_presence_source_example' # str | integrationPresenceSource (optional)
 
 try:
     # Search users using the q64 value returned from a previous search
-    api_response = api_instance.get_users_search(q64, expand=expand)
+    api_response = api_instance.get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling UsersApi->get_users_search: %s\n" % e
@@ -2077,6 +2088,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type

@@ -61,7 +61,8 @@ class Message(object):
             'to_address': 'Address',
             'from_address': 'Address',
             'messages': 'list[MessageDetails]',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -86,7 +87,8 @@ class Message(object):
             'to_address': 'toAddress',
             'from_address': 'fromAddress',
             'messages': 'messages',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -111,6 +113,7 @@ class Message(object):
         self._from_address = None
         self._messages = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -633,6 +636,29 @@ class Message(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this Message.
+        After-call work for the communication.
+
+        :return: The after_call_work of this Message.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this Message.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this Message.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

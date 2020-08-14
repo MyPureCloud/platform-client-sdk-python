@@ -13,7 +13,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_presencedefinitions**](PresenceApi.html#get_presencedefinitions) | Get an Organization&#39;s list of Presence Definitions|
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
 |[**get_user_presence**](PresenceApi.html#get_user_presence) | Get a user&#39;s Presence|
+|[**get_user_presences_microsoftteams**](PresenceApi.html#get_user_presences_microsoftteams) | Get a user&#39;s Microsoft Teams presence.|
+|[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s GenesysCloud presence.|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
+|[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a GenesysCloud user&#39;s presence|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
 |[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
@@ -231,7 +234,7 @@ This endpoint does not need any parameter.
 
 Get a user's Presence
 
-
+Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
 Wraps GET /api/v2/users/{userId}/presences/{sourceId} 
 
@@ -252,7 +255,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
 user_id = 'user_id_example' # str | user Id
-source_id = 'source_id_example' # str | Source
+source_id = 'source_id_example' # str | Presence source ID
 
 try:
     # Get a user's Presence
@@ -268,7 +271,109 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
-| **source_id** | **str**| Source |  |
+| **source_id** | **str**| Presence source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserPresence**](UserPresence.html)
+
+<a name="get_user_presences_microsoftteams"></a>
+
+## [**PresenceExpand**](PresenceExpand.html) get_user_presences_microsoftteams(user_id)
+
+
+
+Get a user's Microsoft Teams presence.
+
+Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+
+Wraps GET /api/v2/users/{userId}/presences/microsoftteams 
+
+Requires ANY permissions: 
+
+* integration:microsoftTeams:view
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+user_id = 'user_id_example' # str | user Id
+
+try:
+    # Get a user's Microsoft Teams presence.
+    api_response = api_instance.get_user_presences_microsoftteams(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PresenceApi->get_user_presences_microsoftteams: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PresenceExpand**](PresenceExpand.html)
+
+<a name="get_user_presences_purecloud"></a>
+
+## [**UserPresence**](UserPresence.html) get_user_presences_purecloud(user_id)
+
+
+
+Get a user's GenesysCloud presence.
+
+Get the default GenesysCloud user presence source PURECLOUD
+
+Wraps GET /api/v2/users/{userId}/presences/purecloud 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+user_id = 'user_id_example' # str | user Id
+
+try:
+    # Get a user's GenesysCloud presence.
+    api_response = api_instance.get_user_presences_purecloud(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PresenceApi->get_user_presences_purecloud: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -283,7 +388,7 @@ except ApiException as e:
 
 Patch a user's Presence
 
-The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId} 
 
@@ -304,7 +409,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
 user_id = 'user_id_example' # str | user Id
-source_id = 'source_id_example' # str | Source
+source_id = 'source_id_example' # str | Presence source ID
 body = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence
 
 try:
@@ -321,7 +426,59 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
-| **source_id** | **str**| Source |  |
+| **source_id** | **str**| Presence source ID |  |
+| **body** | [**UserPresence**](UserPresence.html)| User presence |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserPresence**](UserPresence.html)
+
+<a name="patch_user_presences_purecloud"></a>
+
+## [**UserPresence**](UserPresence.html) patch_user_presences_purecloud(user_id, body)
+
+
+
+Patch a GenesysCloud user's presence
+
+The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+
+Wraps PATCH /api/v2/users/{userId}/presences/purecloud 
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+user_id = 'user_id_example' # str | user Id
+body = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence
+
+try:
+    # Patch a GenesysCloud user's presence
+    api_response = api_instance.patch_user_presences_purecloud(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PresenceApi->patch_user_presences_purecloud: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user Id |  |
 | **body** | [**UserPresence**](UserPresence.html)| User presence |  |
 {: class="table table-striped"}
 

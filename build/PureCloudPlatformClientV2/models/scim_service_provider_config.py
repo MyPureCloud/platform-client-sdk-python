@@ -48,8 +48,7 @@ class ScimServiceProviderConfig(object):
             'sort': 'ScimServiceProviderConfigSimpleFeature',
             'bulk': 'ScimServiceProviderConfigBulkFeature',
             'change_password': 'ScimServiceProviderConfigSimpleFeature',
-            'authentication_schemes': 'list[ScimServiceProviderConfigAuthenticationScheme]',
-            'meta': 'ScimMetadata'
+            'authentication_schemes': 'list[ScimServiceProviderConfigAuthenticationScheme]'
         }
 
         self.attribute_map = {
@@ -61,8 +60,7 @@ class ScimServiceProviderConfig(object):
             'sort': 'sort',
             'bulk': 'bulk',
             'change_password': 'changePassword',
-            'authentication_schemes': 'authenticationSchemes',
-            'meta': 'meta'
+            'authentication_schemes': 'authenticationSchemes'
         }
 
         self._schemas = None
@@ -74,7 +72,6 @@ class ScimServiceProviderConfig(object):
         self._bulk = None
         self._change_password = None
         self._authentication_schemes = None
-        self._meta = None
 
     @property
     def schemas(self):
@@ -282,29 +279,6 @@ class ScimServiceProviderConfig(object):
         """
         
         self._authentication_schemes = authentication_schemes
-
-    @property
-    def meta(self):
-        """
-        Gets the meta of this ScimServiceProviderConfig.
-        The metadata of the SCIM resource.
-
-        :return: The meta of this ScimServiceProviderConfig.
-        :rtype: ScimMetadata
-        """
-        return self._meta
-
-    @meta.setter
-    def meta(self, meta):
-        """
-        Sets the meta of this ScimServiceProviderConfig.
-        The metadata of the SCIM resource.
-
-        :param meta: The meta of this ScimServiceProviderConfig.
-        :type: ScimMetadata
-        """
-        
-        self._meta = meta
 
     def to_dict(self):
         """

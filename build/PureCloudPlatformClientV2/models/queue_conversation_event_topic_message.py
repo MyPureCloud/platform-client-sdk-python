@@ -59,6 +59,7 @@ class QueueConversationEventTopicMessage(object):
             'recipient_country': 'str',
             'recipient_type': 'str',
             'wrapup': 'QueueConversationEventTopicWrapup',
+            'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -82,6 +83,7 @@ class QueueConversationEventTopicMessage(object):
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -104,6 +106,7 @@ class QueueConversationEventTopicMessage(object):
         self._recipient_country = None
         self._recipient_type = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -554,6 +557,29 @@ class QueueConversationEventTopicMessage(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationEventTopicMessage.
+
+
+        :return: The after_call_work of this QueueConversationEventTopicMessage.
+        :rtype: QueueConversationEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationEventTopicMessage.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationEventTopicMessage.
+        :type: QueueConversationEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

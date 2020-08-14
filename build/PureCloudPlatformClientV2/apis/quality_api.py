@@ -625,12 +625,12 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param datetime start_time: Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
         :param datetime end_time: End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-        :param list[str] agent_user_id: user id of agent requested
+        :param list[object] agent_user_id: user id of agent requested
         :param str evaluator_user_id: user id of the evaluator
         :param str name: name
         :param str group: group id
@@ -818,7 +818,7 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str conversation_id: conversation id
@@ -923,7 +923,7 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str recording_id: id of the recording
@@ -1189,7 +1189,7 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str conversation_id: conversationId specified
@@ -1198,7 +1198,7 @@ class QualityApi(object):
         :param str queue_id: queue id
         :param str start_time: start time of the evaluation query
         :param str end_time: end time of the evaluation query
-        :param list[str] evaluation_state: 
+        :param list[object] evaluation_state: 
         :param bool is_released: the evaluation has been released
         :param bool agent_has_read: agent has the evaluation
         :param bool expand_answer_total_scores: get the total scores for evaluations
@@ -1315,13 +1315,13 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param datetime start_time: The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
         :param datetime end_time: The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
         :param str name: Evaluator name
-        :param list[str] permission: permission strings
+        :param list[object] permission: permission strings
         :param str group: group id
         :return: EvaluatorActivityEntityListing
                  If the method is called asynchronously,
@@ -2431,7 +2431,7 @@ class QualityApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
+        :param list[object] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str name: the keyword set name - used for filtering results in searches.

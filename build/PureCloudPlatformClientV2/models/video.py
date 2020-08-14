@@ -55,7 +55,8 @@ class Video(object):
             'peer_id': 'str',
             'msids': 'list[str]',
             'pcSelf': 'Address',
-            'wrapup': 'Wrapup'
+            'wrapup': 'Wrapup',
+            'after_call_work': 'AfterCallWork'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class Video(object):
             'peer_id': 'peerId',
             'msids': 'msids',
             'pcSelf': 'self',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork'
         }
 
         self._state = None
@@ -93,6 +95,7 @@ class Video(object):
         self._msids = None
         self._pcSelf = None
         self._wrapup = None
+        self._after_call_work = None
 
     @property
     def state(self):
@@ -469,6 +472,29 @@ class Video(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this Video.
+        After-call work for the communication.
+
+        :return: The after_call_work of this Video.
+        :rtype: AfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this Video.
+        After-call work for the communication.
+
+        :param after_call_work: The after_call_work of this Video.
+        :type: AfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     def to_dict(self):
         """

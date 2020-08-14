@@ -63,6 +63,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'fax_status': 'QueueConversationSocialExpressionEventTopicFaxStatus',
             'uui_data': 'str',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
+            'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'additional_properties': 'object'
         }
 
@@ -90,6 +91,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'fax_status': 'faxStatus',
             'uui_data': 'uuiData',
             'wrapup': 'wrapup',
+            'after_call_work': 'afterCallWork',
             'additional_properties': 'additionalProperties'
         }
 
@@ -116,6 +118,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         self._fax_status = None
         self._uui_data = None
         self._wrapup = None
+        self._after_call_work = None
         self._additional_properties = None
 
     @property
@@ -662,6 +665,29 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         """
         
         self._wrapup = wrapup
+
+    @property
+    def after_call_work(self):
+        """
+        Gets the after_call_work of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :return: The after_call_work of this QueueConversationSocialExpressionEventTopicCall.
+        :rtype: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        return self._after_call_work
+
+    @after_call_work.setter
+    def after_call_work(self, after_call_work):
+        """
+        Sets the after_call_work of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :param after_call_work: The after_call_work of this QueueConversationSocialExpressionEventTopicCall.
+        :type: QueueConversationSocialExpressionEventTopicAfterCallWork
+        """
+        
+        self._after_call_work = after_call_work
 
     @property
     def additional_properties(self):

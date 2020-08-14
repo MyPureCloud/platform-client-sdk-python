@@ -46,7 +46,8 @@ class UserSearchRequest(object):
             'page_number': 'int',
             'sort': 'list[SearchSort]',
             'expand': 'list[str]',
-            'query': 'list[UserSearchCriteria]'
+            'query': 'list[UserSearchCriteria]',
+            'integration_presence_source': 'str'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class UserSearchRequest(object):
             'page_number': 'pageNumber',
             'sort': 'sort',
             'expand': 'expand',
-            'query': 'query'
+            'query': 'query',
+            'integration_presence_source': 'integrationPresenceSource'
         }
 
         self._sort_order = None
@@ -66,6 +68,7 @@ class UserSearchRequest(object):
         self._sort = None
         self._expand = None
         self._query = None
+        self._integration_presence_source = None
 
     @property
     def sort_order(self):
@@ -231,6 +234,33 @@ class UserSearchRequest(object):
         """
         
         self._query = query
+
+    @property
+    def integration_presence_source(self):
+        """
+        Gets the integration_presence_source of this UserSearchRequest.
+        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+
+        :return: The integration_presence_source of this UserSearchRequest.
+        :rtype: str
+        """
+        return self._integration_presence_source
+
+    @integration_presence_source.setter
+    def integration_presence_source(self, integration_presence_source):
+        """
+        Sets the integration_presence_source of this UserSearchRequest.
+        Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+
+        :param integration_presence_source: The integration_presence_source of this UserSearchRequest.
+        :type: str
+        """
+        allowed_values = ["MicrosoftTeams", "ZoomPhone"]
+        if integration_presence_source.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for integration_presence_source -> " + integration_presence_source
+            self._integration_presence_source = "outdated_sdk_version"
+        else:
+            self._integration_presence_source = integration_presence_source
 
     def to_dict(self):
         """
