@@ -743,7 +743,7 @@ class RecordingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
-        :return: list[Recording]
+        :return: list[RecordingMetadata]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -800,7 +800,7 @@ class RecordingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Recording]',
+                                            response_type='list[RecordingMetadata]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1168,7 +1168,7 @@ class RecordingApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param bool has_conversation: Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
@@ -1660,7 +1660,7 @@ class RecordingApi(object):
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
         :param str sort_by: variable name requested to sort by
-        :param list[object] expand: variable name requested by expand list
+        :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str name: the policy name - used for filtering results in searches.

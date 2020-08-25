@@ -1604,6 +1604,7 @@ from .scim_email import ScimEmail
 from .scim_error import ScimError
 from .scim_genesys_user_external_id import ScimGenesysUserExternalId
 from .scim_group_list_response import ScimGroupListResponse
+from .scim_metadata import ScimMetadata
 from .scim_phone_number import ScimPhoneNumber
 from .scim_service_provider_config import ScimServiceProviderConfig
 from .scim_service_provider_config_authentication_scheme import ScimServiceProviderConfigAuthenticationScheme
@@ -1777,6 +1778,7 @@ from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
 from .training_listing import TrainingListing
+from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings
 from .transfer_request import TransferRequest
 from .trunk import Trunk

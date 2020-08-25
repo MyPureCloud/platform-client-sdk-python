@@ -147,7 +147,7 @@ class IntentFeedback(object):
         :param assessment: The assessment of this IntentFeedback.
         :type: str
         """
-        allowed_values = ["Incorrect", "Correct", "Unknown"]
+        allowed_values = ["Incorrect", "Correct", "Unknown", "Disabled"]
         if assessment.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for assessment -> " + assessment
             self._assessment = "outdated_sdk_version"

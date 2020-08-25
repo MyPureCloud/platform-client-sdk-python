@@ -53,7 +53,8 @@ class ScimV2User(object):
             'groups': 'list[ScimV2GroupReference]',
             'roles': 'list[ScimUserRole]',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'ScimV2EnterpriseUser',
-            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'ScimUserExtensions'
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'ScimUserExtensions',
+            'meta': 'ScimMetadata'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class ScimV2User(object):
             'groups': 'groups',
             'roles': 'roles',
             'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
-            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User'
+            'urnietfparamsscimschemasextensiongenesyspurecloud2_0_user': 'urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User',
+            'meta': 'meta'
         }
 
         self._id = None
@@ -87,6 +89,7 @@ class ScimV2User(object):
         self._roles = None
         self._urnietfparamsscimschemasextensionenterprise2_0_user = None
         self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = None
+        self._meta = None
 
     @property
     def id(self):
@@ -409,6 +412,29 @@ class ScimV2User(object):
         """
         
         self._urnietfparamsscimschemasextensiongenesyspurecloud2_0_user = urnietfparamsscimschemasextensiongenesyspurecloud2_0_user
+
+    @property
+    def meta(self):
+        """
+        Gets the meta of this ScimV2User.
+        The metadata of the SCIM resource.
+
+        :return: The meta of this ScimV2User.
+        :rtype: ScimMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """
+        Sets the meta of this ScimV2User.
+        The metadata of the SCIM resource.
+
+        :param meta: The meta of this ScimV2User.
+        :type: ScimMetadata
+        """
+        
+        self._meta = meta
 
     def to_dict(self):
         """

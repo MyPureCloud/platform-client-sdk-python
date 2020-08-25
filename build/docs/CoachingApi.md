@@ -471,7 +471,7 @@ except ApiException as e:
 
 <a name="get_coaching_notification"></a>
 
-## [**CoachingNotification**](CoachingNotification.html) get_coaching_notification(notification_id)
+## [**CoachingNotification**](CoachingNotification.html) get_coaching_notification(notification_id, expand=expand)
 
 
 
@@ -499,10 +499,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
 notification_id = 'notification_id_example' # str | The ID of the notification.
+expand = ['expand_example'] # list[str] | Indicates a field in the response which should be expanded. (optional)
 
 try:
     # Get an existing notification
-    api_response = api_instance.get_coaching_notification(notification_id)
+    api_response = api_instance.get_coaching_notification(notification_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CoachingApi->get_coaching_notification: %s\n" % e
@@ -514,6 +515,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **notification_id** | **str**| The ID of the notification. |  |
+| **expand** | [**list[str]**](str.html)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 {: class="table table-striped"}
 
 ### Return type
@@ -522,7 +524,7 @@ except ApiException as e:
 
 <a name="get_coaching_notifications"></a>
 
-## [**CoachingNotificationList**](CoachingNotificationList.html) get_coaching_notifications(page_number=page_number, page_size=page_size)
+## [**CoachingNotificationList**](CoachingNotificationList.html) get_coaching_notifications(page_number=page_number, page_size=page_size, expand=expand)
 
 
 
@@ -550,10 +552,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.CoachingApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
+expand = ['expand_example'] # list[str] | Indicates a field in the response which should be expanded. (optional)
 
 try:
     # Retrieve the list of your notifications.
-    api_response = api_instance.get_coaching_notifications(page_number=page_number, page_size=page_size)
+    api_response = api_instance.get_coaching_notifications(page_number=page_number, page_size=page_size, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CoachingApi->get_coaching_notifications: %s\n" % e
@@ -566,6 +569,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
+| **expand** | [**list[str]**](str.html)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 {: class="table table-striped"}
 
 ### Return type

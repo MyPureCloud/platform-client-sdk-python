@@ -14,9 +14,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
 |[**get_user_presence**](PresenceApi.html#get_user_presence) | Get a user&#39;s Presence|
 |[**get_user_presences_microsoftteams**](PresenceApi.html#get_user_presences_microsoftteams) | Get a user&#39;s Microsoft Teams presence.|
-|[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s GenesysCloud presence.|
+|[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
-|[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a GenesysCloud user&#39;s presence|
+|[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
 |[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
@@ -286,7 +286,7 @@ except ApiException as e:
 
 Get a user's Microsoft Teams presence.
 
-Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
 
 Wraps GET /api/v2/users/{userId}/presences/microsoftteams 
 
@@ -336,9 +336,9 @@ except ApiException as e:
 
 
 
-Get a user's GenesysCloud presence.
+Get a user's Genesys Cloud presence.
 
-Get the default GenesysCloud user presence source PURECLOUD
+Get the default Genesys Cloud user presence source PURECLOUD
 
 Wraps GET /api/v2/users/{userId}/presences/purecloud 
 
@@ -361,7 +361,7 @@ api_instance = PureCloudPlatformClientV2.PresenceApi()
 user_id = 'user_id_example' # str | user Id
 
 try:
-    # Get a user's GenesysCloud presence.
+    # Get a user's Genesys Cloud presence.
     api_response = api_instance.get_user_presences_purecloud(user_id)
     pprint(api_response)
 except ApiException as e:
@@ -440,7 +440,7 @@ except ApiException as e:
 
 
 
-Patch a GenesysCloud user's presence
+Patch a Genesys Cloud user's presence
 
 The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
@@ -466,7 +466,7 @@ user_id = 'user_id_example' # str | user Id
 body = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence
 
 try:
-    # Patch a GenesysCloud user's presence
+    # Patch a Genesys Cloud user's presence
     api_response = api_instance.patch_user_presences_purecloud(user_id, body)
     pprint(api_response)
 except ApiException as e:

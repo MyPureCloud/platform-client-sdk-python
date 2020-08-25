@@ -740,12 +740,13 @@ class CoachingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str notification_id: The ID of the notification. (required)
+        :param list[str] expand: Indicates a field in the response which should be expanded.
         :return: CoachingNotification
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['notification_id']
+        all_params = ['notification_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -769,6 +770,8 @@ class CoachingApi(object):
             path_params['notificationId'] = params['notification_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -819,12 +822,13 @@ class CoachingApi(object):
             for asynchronous request. (optional)
         :param int page_number: Page number
         :param int page_size: Page size
+        :param list[str] expand: Indicates a field in the response which should be expanded.
         :return: CoachingNotificationList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size']
+        all_params = ['page_number', 'page_size', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -847,6 +851,8 @@ class CoachingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

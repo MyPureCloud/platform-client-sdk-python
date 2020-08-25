@@ -153,11 +153,11 @@ api_instance = PureCloudPlatformClientV2.ObjectsApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 object_count = false # bool | Include the count of objects contained in the division (optional) (default to false)
-id = NULL # list[object] | Optionally request specific divisions by their IDs (optional)
+id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
@@ -176,11 +176,11 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to false] |
-| **id** | [**list[object]**](object.html)| Optionally request specific divisions by their IDs | [optional]  |
+| **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
 

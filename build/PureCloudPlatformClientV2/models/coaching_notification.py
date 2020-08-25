@@ -49,7 +49,7 @@ class CoachingNotification(object):
             'length_in_minutes': 'int',
             'status': 'str',
             'user': 'UserReference',
-            'appointment': 'CoachingAppointmentReference',
+            'appointment': 'CoachingAppointmentResponse',
             'self_uri': 'str'
         }
 
@@ -305,7 +305,7 @@ class CoachingNotification(object):
         The appointment
 
         :return: The appointment of this CoachingNotification.
-        :rtype: CoachingAppointmentReference
+        :rtype: CoachingAppointmentResponse
         """
         return self._appointment
 
@@ -316,7 +316,7 @@ class CoachingNotification(object):
         The appointment
 
         :param appointment: The appointment of this CoachingNotification.
-        :type: CoachingAppointmentReference
+        :type: CoachingAppointmentResponse
         """
         
         self._appointment = appointment

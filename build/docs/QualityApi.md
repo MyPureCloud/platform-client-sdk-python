@@ -458,12 +458,12 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 start_time = '2013-10-20T19:20:30+01:00' # datetime | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
 end_time = '2013-10-20T19:20:30+01:00' # datetime | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
-agent_user_id = NULL # list[object] | user id of agent requested (optional)
+agent_user_id = ['agent_user_id_example'] # list[str] | user id of agent requested (optional)
 evaluator_user_id = 'evaluator_user_id_example' # str | user id of the evaluator (optional)
 name = 'name_example' # str | name (optional)
 group = 'group_example' # str | group id (optional)
@@ -484,12 +484,12 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **start_time** | **datetime**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
 | **end_time** | **datetime**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
-| **agent_user_id** | [**list[object]**](object.html)| user id of agent requested | [optional]  |
+| **agent_user_id** | [**list[str]**](str.html)| user id of agent requested | [optional]  |
 | **evaluator_user_id** | **str**| user id of the evaluator | [optional]  |
 | **name** | **str**| name | [optional]  |
 | **group** | **str**| group id | [optional]  |
@@ -587,7 +587,7 @@ calibrator_id = 'calibrator_id_example' # str | user id of calibrator
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversation id (optional)
@@ -611,7 +611,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversation id | [optional]  |
@@ -661,7 +661,7 @@ conversation_id = 'conversation_id_example' # str | Conversation ID
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 recording_id = 'recording_id_example' # str | id of the recording (optional)
@@ -684,7 +684,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **recording_id** | **str**| id of the recording | [optional]  |
@@ -833,7 +833,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
@@ -842,7 +842,7 @@ evaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optio
 queue_id = 'queue_id_example' # str | queue id (optional)
 start_time = 'start_time_example' # str | start time of the evaluation query (optional)
 end_time = 'end_time_example' # str | end time of the evaluation query (optional)
-evaluation_state = NULL # list[object] |  (optional)
+evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
 is_released = true # bool | the evaluation has been released (optional)
 agent_has_read = true # bool | agent has the evaluation (optional)
 expand_answer_total_scores = true # bool | get the total scores for evaluations (optional)
@@ -865,7 +865,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversationId specified | [optional]  |
@@ -874,7 +874,7 @@ except ApiException as e:
 | **queue_id** | **str**| queue id | [optional]  |
 | **start_time** | **str**| start time of the evaluation query | [optional]  |
 | **end_time** | **str**| end time of the evaluation query | [optional]  |
-| **evaluation_state** | [**list[object]**](object.html)|  | [optional]  |
+| **evaluation_state** | [**list[str]**](str.html)|  | [optional]  |
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |
@@ -918,13 +918,13 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 start_time = '2013-10-20T19:20:30+01:00' # datetime | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
 end_time = '2013-10-20T19:20:30+01:00' # datetime | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
 name = 'name_example' # str | Evaluator name (optional)
-permission = NULL # list[object] | permission strings (optional)
+permission = ['permission_example'] # list[str] | permission strings (optional)
 group = 'group_example' # str | group id (optional)
 
 try:
@@ -943,13 +943,13 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **start_time** | **datetime**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
 | **end_time** | **datetime**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
 | **name** | **str**| Evaluator name | [optional]  |
-| **permission** | [**list[object]**](object.html)| permission strings | [optional]  |
+| **permission** | [**list[str]**](str.html)| permission strings | [optional]  |
 | **group** | **str**| group id | [optional]  |
 {: class="table table-striped"}
 
@@ -1657,7 +1657,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
 sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
-expand = NULL # list[object] | variable name requested by expand list (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 name = 'name_example' # str | the keyword set name - used for filtering results in searches. (optional)
@@ -1681,7 +1681,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[object]**](object.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the keyword set name - used for filtering results in searches. | [optional]  |

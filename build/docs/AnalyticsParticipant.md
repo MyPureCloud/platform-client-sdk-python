@@ -15,7 +15,6 @@ title: AnalyticsParticipant
 | **external_organization_id** | **str** | External Organization Identifier | [optional] |
 | **flagged_reason** | **str** | Reason for which participant flagged conversation | [optional] |
 | **team_id** | **str** | The team id the user is a member of | [optional] |
-| **agent_assistant_ids** | **list[str]** | Unique identifiers of the active virtual agent assistants | [optional] |
 | **sessions** | [**list[AnalyticsSession]**](AnalyticsSession.html) | List of sessions associated to this participant | [optional] |
 | **attributes** | **dict(str, str)** | List of attributes associated to this participant | [optional] |
 {: class="table table-striped"}

@@ -448,7 +448,7 @@ class PresenceApi(object):
     def get_user_presences_microsoftteams(self, user_id, **kwargs):
         """
         Get a user's Microsoft Teams presence.
-        Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+        Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -525,8 +525,8 @@ class PresenceApi(object):
 
     def get_user_presences_purecloud(self, user_id, **kwargs):
         """
-        Get a user's GenesysCloud presence.
-        Get the default GenesysCloud user presence source PURECLOUD
+        Get a user's Genesys Cloud presence.
+        Get the default Genesys Cloud user presence source PURECLOUD
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -693,7 +693,7 @@ class PresenceApi(object):
 
     def patch_user_presences_purecloud(self, user_id, body, **kwargs):
         """
-        Patch a GenesysCloud user's presence
+        Patch a Genesys Cloud user's presence
         The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
         This method makes a synchronous HTTP request by default. To make an

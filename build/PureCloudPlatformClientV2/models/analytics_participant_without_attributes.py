@@ -48,7 +48,6 @@ class AnalyticsParticipantWithoutAttributes(object):
             'external_organization_id': 'str',
             'flagged_reason': 'str',
             'team_id': 'str',
-            'agent_assistant_ids': 'list[str]',
             'sessions': 'list[AnalyticsSession]'
         }
 
@@ -61,7 +60,6 @@ class AnalyticsParticipantWithoutAttributes(object):
             'external_organization_id': 'externalOrganizationId',
             'flagged_reason': 'flaggedReason',
             'team_id': 'teamId',
-            'agent_assistant_ids': 'agentAssistantIds',
             'sessions': 'sessions'
         }
 
@@ -73,7 +71,6 @@ class AnalyticsParticipantWithoutAttributes(object):
         self._external_organization_id = None
         self._flagged_reason = None
         self._team_id = None
-        self._agent_assistant_ids = None
         self._sessions = None
 
     @property
@@ -267,29 +264,6 @@ class AnalyticsParticipantWithoutAttributes(object):
         """
         
         self._team_id = team_id
-
-    @property
-    def agent_assistant_ids(self):
-        """
-        Gets the agent_assistant_ids of this AnalyticsParticipantWithoutAttributes.
-        Unique identifiers of the active virtual agent assistants
-
-        :return: The agent_assistant_ids of this AnalyticsParticipantWithoutAttributes.
-        :rtype: list[str]
-        """
-        return self._agent_assistant_ids
-
-    @agent_assistant_ids.setter
-    def agent_assistant_ids(self, agent_assistant_ids):
-        """
-        Sets the agent_assistant_ids of this AnalyticsParticipantWithoutAttributes.
-        Unique identifiers of the active virtual agent assistants
-
-        :param agent_assistant_ids: The agent_assistant_ids of this AnalyticsParticipantWithoutAttributes.
-        :type: list[str]
-        """
-        
-        self._agent_assistant_ids = agent_assistant_ids
 
     @property
     def sessions(self):

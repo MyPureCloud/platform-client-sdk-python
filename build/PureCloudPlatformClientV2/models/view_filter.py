@@ -119,7 +119,9 @@ class ViewFilter(object):
             'flow_out_types': 'list[str]',
             'provider_list': 'list[str]',
             'callback_number_list': 'list[str]',
-            'callback_interval': 'str'
+            'callback_interval': 'str',
+            'used_routing_types': 'list[str]',
+            'requested_routing_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -202,7 +204,9 @@ class ViewFilter(object):
             'flow_out_types': 'flowOutTypes',
             'provider_list': 'providerList',
             'callback_number_list': 'callbackNumberList',
-            'callback_interval': 'callbackInterval'
+            'callback_interval': 'callbackInterval',
+            'used_routing_types': 'usedRoutingTypes',
+            'requested_routing_types': 'requestedRoutingTypes'
         }
 
         self._media_types = None
@@ -285,6 +289,8 @@ class ViewFilter(object):
         self._provider_list = None
         self._callback_number_list = None
         self._callback_interval = None
+        self._used_routing_types = None
+        self._requested_routing_types = None
 
     @property
     def media_types(self):
@@ -2125,6 +2131,52 @@ class ViewFilter(object):
         """
         
         self._callback_interval = callback_interval
+
+    @property
+    def used_routing_types(self):
+        """
+        Gets the used_routing_types of this ViewFilter.
+        A list of routing types used
+
+        :return: The used_routing_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._used_routing_types
+
+    @used_routing_types.setter
+    def used_routing_types(self, used_routing_types):
+        """
+        Sets the used_routing_types of this ViewFilter.
+        A list of routing types used
+
+        :param used_routing_types: The used_routing_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._used_routing_types = used_routing_types
+
+    @property
+    def requested_routing_types(self):
+        """
+        Gets the requested_routing_types of this ViewFilter.
+        A list of routing types requested
+
+        :return: The requested_routing_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._requested_routing_types
+
+    @requested_routing_types.setter
+    def requested_routing_types(self, requested_routing_types):
+        """
+        Sets the requested_routing_types of this ViewFilter.
+        A list of routing types requested
+
+        :param requested_routing_types: The requested_routing_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._requested_routing_types = requested_routing_types
 
     def to_dict(self):
         """

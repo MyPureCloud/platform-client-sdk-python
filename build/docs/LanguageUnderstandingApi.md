@@ -292,7 +292,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **intent_name** | **str**| The top intent name to retrieve feedback for. | [optional]  |
-| **assessment** | **str**| The top assessment to retrieve feedback for. | [optional] <br />**Values**: Incorrect, Correct, Unknown |
+| **assessment** | **str**| The top assessment to retrieve feedback for. | [optional] <br />**Values**: Incorrect, Correct, Unknown, Disabled |
 | **date_start** | **date**| Begin of time window as ISO-8601 date. | [optional]  |
 | **date_end** | **date**| End of time window as ISO-8601 date. | [optional]  |
 | **include_deleted** | **bool**| Whether to include soft-deleted items in the result. | [optional]  |

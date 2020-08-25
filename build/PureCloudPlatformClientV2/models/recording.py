@@ -67,6 +67,7 @@ class Recording(object):
             'remaining_restorations_allowed_for_org': 'int',
             'session_id': 'str',
             'users': 'list[User]',
+            'recording_file_role': 'str',
             'self_uri': 'str'
         }
 
@@ -98,6 +99,7 @@ class Recording(object):
             'remaining_restorations_allowed_for_org': 'remainingRestorationsAllowedForOrg',
             'session_id': 'sessionId',
             'users': 'users',
+            'recording_file_role': 'recordingFileRole',
             'self_uri': 'selfUri'
         }
 
@@ -128,6 +130,7 @@ class Recording(object):
         self._remaining_restorations_allowed_for_org = None
         self._session_id = None
         self._users = None
+        self._recording_file_role = None
         self._self_uri = None
 
     @property
@@ -758,6 +761,33 @@ class Recording(object):
         """
         
         self._users = users
+
+    @property
+    def recording_file_role(self):
+        """
+        Gets the recording_file_role of this Recording.
+        Role of the file recording. It can be either customer_experience or adhoc.
+
+        :return: The recording_file_role of this Recording.
+        :rtype: str
+        """
+        return self._recording_file_role
+
+    @recording_file_role.setter
+    def recording_file_role(self, recording_file_role):
+        """
+        Sets the recording_file_role of this Recording.
+        Role of the file recording. It can be either customer_experience or adhoc.
+
+        :param recording_file_role: The recording_file_role of this Recording.
+        :type: str
+        """
+        allowed_values = ["CUSTOMER_EXPERIENCE", "ADHOC"]
+        if recording_file_role.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for recording_file_role -> " + recording_file_role
+            self._recording_file_role = "outdated_sdk_version"
+        else:
+            self._recording_file_role = recording_file_role
 
     @property
     def self_uri(self):

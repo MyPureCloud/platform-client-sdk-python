@@ -60,7 +60,7 @@ print usersApi.get_users_me()
 If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the new base path before constructing any API classes. The new base path should be the base path to the Platform API for your environment.
 
 ```{"language":"python"}
-region = PureCloudRegionHosts.us_east_1
+region = PureCloudPlatformClientV2.PureCloudRegionHosts.us_east_1
 PureCloudPlatformClientV2.configuration.host = region.get_api_host()
 ```
 

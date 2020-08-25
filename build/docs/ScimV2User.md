@@ -21,6 +21,7 @@ title: ScimV2User
 | **roles** | [**list[ScimUserRole]**](ScimUserRole.html) | The list of roles assigned to the user. | [optional] |
 | **urnietfparamsscimschemasextensionenterprise2_0_user** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) | The URI of the schema for the enterprise user. | [optional] |
 | **urnietfparamsscimschemasextensiongenesyspurecloud2_0_user** | [**ScimUserExtensions**](ScimUserExtensions.html) | The URI of the schema for the Genesys Cloud user. | [optional] |
+| **meta** | [**ScimMetadata**](ScimMetadata.html) | The metadata of the SCIM resource. | [optional] |
 {: class="table table-striped"}
 
 

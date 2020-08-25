@@ -45,7 +45,8 @@ class AvailableTopic(object):
             'requires_permissions': 'list[str]',
             'schema': 'dict(str, object)',
             'requires_current_user': 'bool',
-            'requires_current_user_or_permission': 'bool'
+            'requires_current_user_or_permission': 'bool',
+            'transports': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +55,8 @@ class AvailableTopic(object):
             'requires_permissions': 'requiresPermissions',
             'schema': 'schema',
             'requires_current_user': 'requiresCurrentUser',
-            'requires_current_user_or_permission': 'requiresCurrentUserOrPermission'
+            'requires_current_user_or_permission': 'requiresCurrentUserOrPermission',
+            'transports': 'transports'
         }
 
         self._description = None
@@ -63,6 +65,7 @@ class AvailableTopic(object):
         self._schema = None
         self._requires_current_user = None
         self._requires_current_user_or_permission = None
+        self._transports = None
 
     @property
     def description(self):
@@ -201,6 +204,29 @@ class AvailableTopic(object):
         """
         
         self._requires_current_user_or_permission = requires_current_user_or_permission
+
+    @property
+    def transports(self):
+        """
+        Gets the transports of this AvailableTopic.
+        Transports that support events for the topic
+
+        :return: The transports of this AvailableTopic.
+        :rtype: list[str]
+        """
+        return self._transports
+
+    @transports.setter
+    def transports(self, transports):
+        """
+        Sets the transports of this AvailableTopic.
+        Transports that support events for the topic
+
+        :param transports: The transports of this AvailableTopic.
+        :type: list[str]
+        """
+        
+        self._transports = transports
 
     def to_dict(self):
         """

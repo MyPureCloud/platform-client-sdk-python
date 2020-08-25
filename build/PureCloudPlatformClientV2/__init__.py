@@ -1604,6 +1604,7 @@ from .models.scim_email import ScimEmail
 from .models.scim_error import ScimError
 from .models.scim_genesys_user_external_id import ScimGenesysUserExternalId
 from .models.scim_group_list_response import ScimGroupListResponse
+from .models.scim_metadata import ScimMetadata
 from .models.scim_phone_number import ScimPhoneNumber
 from .models.scim_service_provider_config import ScimServiceProviderConfig
 from .models.scim_service_provider_config_authentication_scheme import ScimServiceProviderConfigAuthenticationScheme
@@ -1777,6 +1778,7 @@ from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token_info import TokenInfo
 from .models.training_listing import TrainingListing
+from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
@@ -2142,6 +2144,7 @@ from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
+from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
 from .apis.telephony_api import TelephonyApi
