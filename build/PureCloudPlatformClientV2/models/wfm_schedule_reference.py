@@ -62,7 +62,7 @@ class WfmScheduleReference(object):
     def id(self):
         """
         Gets the id of this WfmScheduleReference.
-        The globally unique identifier for the object.
+        The ID of the WFM schedule
 
         :return: The id of this WfmScheduleReference.
         :rtype: str
@@ -73,7 +73,7 @@ class WfmScheduleReference(object):
     def id(self, id):
         """
         Sets the id of this WfmScheduleReference.
-        The globally unique identifier for the object.
+        The ID of the WFM schedule
 
         :param id: The id of this WfmScheduleReference.
         :type: str

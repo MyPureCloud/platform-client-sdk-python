@@ -560,12 +560,15 @@ class CoachingApi(object):
         :param list[str] statuses: Appointment Statuses to filter by
         :param list[str] facilitator_ids: The facilitator IDs for which to retrieve appointments
         :param str sort_order: Sort (by due date) either Asc or Desc
+        :param list[str] relationships: Relationships to filter by
+        :param str completion_interval: Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str overdue: Overdue status to filter by
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_ids', 'interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order']
+        all_params = ['user_ids', 'interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue']
         all_params.append('callback')
 
         params = locals()
@@ -601,6 +604,12 @@ class CoachingApi(object):
             query_params['facilitatorIds'] = params['facilitator_ids']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'relationships' in params:
+            query_params['relationships'] = params['relationships']
+        if 'completion_interval' in params:
+            query_params['completionInterval'] = params['completion_interval']
+        if 'overdue' in params:
+            query_params['overdue'] = params['overdue']
 
         header_params = {}
 
@@ -655,12 +664,15 @@ class CoachingApi(object):
         :param list[str] statuses: Appointment Statuses to filter by
         :param list[str] facilitator_ids: The facilitator IDs for which to retrieve appointments
         :param str sort_order: Sort (by due date) either Asc or Desc
+        :param list[str] relationships: Relationships to filter by
+        :param str completion_interval: Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str overdue: Overdue status to filter by
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order']
+        all_params = ['interval', 'page_number', 'page_size', 'statuses', 'facilitator_ids', 'sort_order', 'relationships', 'completion_interval', 'overdue']
         all_params.append('callback')
 
         params = locals()
@@ -691,6 +703,12 @@ class CoachingApi(object):
             query_params['facilitatorIds'] = params['facilitator_ids']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'relationships' in params:
+            query_params['relationships'] = params['relationships']
+        if 'completion_interval' in params:
+            query_params['completionInterval'] = params['completion_interval']
+        if 'overdue' in params:
+            query_params['overdue'] = params['overdue']
 
         header_params = {}
 
@@ -1386,6 +1404,84 @@ class CoachingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CoachingAppointmentResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_coaching_appointments_aggregates_query(self, body, **kwargs):
+        """
+        Retrieve aggregated appointment data
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_coaching_appointments_aggregates_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CoachingAppointmentAggregateRequest body: Aggregate Request (required)
+        :return: CoachingAppointmentAggregateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_coaching_appointments_aggregates_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_coaching_appointments_aggregates_query`")
+
+
+        resource_path = '/api/v2/coaching/appointments/aggregates/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CoachingAppointmentAggregateResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

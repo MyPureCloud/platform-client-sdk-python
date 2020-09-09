@@ -72,7 +72,7 @@ class AcwSettings(object):
         :param wrapup_prompt: The wrapup_prompt of this AcwSettings.
         :type: str
         """
-        allowed_values = ["MANDATORY", "OPTIONAL", "MANDATORY_TIMEOUT", "MANDATORY_FORCED_TIMEOUT"]
+        allowed_values = ["MANDATORY", "OPTIONAL", "MANDATORY_TIMEOUT", "MANDATORY_FORCED_TIMEOUT", "AGENT_REQUESTED"]
         if wrapup_prompt.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for wrapup_prompt -> " + wrapup_prompt
             self._wrapup_prompt = "outdated_sdk_version"

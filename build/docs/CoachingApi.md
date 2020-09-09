@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_coaching_notification**](CoachingApi.html#patch_coaching_notification) | Update an existing notification.|
 |[**post_coaching_appointment_annotations**](CoachingApi.html#post_coaching_appointment_annotations) | Create a new annotation.|
 |[**post_coaching_appointments**](CoachingApi.html#post_coaching_appointments) | Create a new appointment|
+|[**post_coaching_appointments_aggregates_query**](CoachingApi.html#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
 {: class="table table-striped"}
 
 <a name="delete_coaching_appointment"></a>
@@ -348,7 +349,7 @@ except ApiException as e:
 
 <a name="get_coaching_appointments"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order)
+## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
 
 
 
@@ -382,10 +383,13 @@ page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
 facilitator_ids = ['facilitator_ids_example'] # list[str] | The facilitator IDs for which to retrieve appointments (optional)
 sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc (optional)
+relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
+completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+overdue = 'overdue_example' # str | Overdue status to filter by (optional)
 
 try:
     # Get appointments for users and optional date range
-    api_response = api_instance.get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order)
+    api_response = api_instance.get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CoachingApi->get_coaching_appointments: %s\n" % e
@@ -403,6 +407,9 @@ except ApiException as e:
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
 | **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
+| **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **completion_interval** | **str**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 
 ### Return type
@@ -411,7 +418,7 @@ except ApiException as e:
 
 <a name="get_coaching_appointments_me"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order)
+## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
 
 
 
@@ -443,10 +450,13 @@ page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
 facilitator_ids = ['facilitator_ids_example'] # list[str] | The facilitator IDs for which to retrieve appointments (optional)
 sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc (optional)
+relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
+completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+overdue = 'overdue_example' # str | Overdue status to filter by (optional)
 
 try:
     # Get my appointments for a given date range
-    api_response = api_instance.get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order)
+    api_response = api_instance.get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CoachingApi->get_coaching_appointments_me: %s\n" % e
@@ -463,6 +473,9 @@ except ApiException as e:
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed |
 | **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
+| **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **completion_interval** | **str**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 
 ### Return type
@@ -894,4 +907,55 @@ except ApiException as e:
 ### Return type
 
 [**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+
+<a name="post_coaching_appointments_aggregates_query"></a>
+
+## [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html) post_coaching_appointments_aggregates_query(body)
+
+
+
+Retrieve aggregated appointment data
+
+
+
+Wraps POST /api/v2/coaching/appointments/aggregates/query 
+
+Requires ANY permissions: 
+
+* coaching:appointment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi()
+body = PureCloudPlatformClientV2.CoachingAppointmentAggregateRequest() # CoachingAppointmentAggregateRequest | Aggregate Request
+
+try:
+    # Retrieve aggregated appointment data
+    api_response = api_instance.post_coaching_appointments_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CoachingApi->post_coaching_appointments_aggregates_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest.html)| Aggregate Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
 

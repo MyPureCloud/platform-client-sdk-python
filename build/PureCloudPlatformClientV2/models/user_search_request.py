@@ -47,7 +47,8 @@ class UserSearchRequest(object):
             'sort': 'list[SearchSort]',
             'expand': 'list[str]',
             'query': 'list[UserSearchCriteria]',
-            'integration_presence_source': 'str'
+            'integration_presence_source': 'str',
+            'enforce_permissions': 'bool'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class UserSearchRequest(object):
             'sort': 'sort',
             'expand': 'expand',
             'query': 'query',
-            'integration_presence_source': 'integrationPresenceSource'
+            'integration_presence_source': 'integrationPresenceSource',
+            'enforce_permissions': 'enforcePermissions'
         }
 
         self._sort_order = None
@@ -69,6 +71,7 @@ class UserSearchRequest(object):
         self._expand = None
         self._query = None
         self._integration_presence_source = None
+        self._enforce_permissions = None
 
     @property
     def sort_order(self):
@@ -261,6 +264,29 @@ class UserSearchRequest(object):
             self._integration_presence_source = "outdated_sdk_version"
         else:
             self._integration_presence_source = integration_presence_source
+
+    @property
+    def enforce_permissions(self):
+        """
+        Gets the enforce_permissions of this UserSearchRequest.
+        Enforce view permission on request
+
+        :return: The enforce_permissions of this UserSearchRequest.
+        :rtype: bool
+        """
+        return self._enforce_permissions
+
+    @enforce_permissions.setter
+    def enforce_permissions(self, enforce_permissions):
+        """
+        Sets the enforce_permissions of this UserSearchRequest.
+        Enforce view permission on request
+
+        :param enforce_permissions: The enforce_permissions of this UserSearchRequest.
+        :type: bool
+        """
+        
+        self._enforce_permissions = enforce_permissions
 
     def to_dict(self):
         """

@@ -40,14 +40,17 @@ class BuAgentSchedulesQueryResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'agent_schedules': 'list[BuAgentScheduleQueryResponse]'
+            'agent_schedules': 'list[BuAgentScheduleQueryResponse]',
+            'business_unit_time_zone': 'str'
         }
 
         self.attribute_map = {
-            'agent_schedules': 'agentSchedules'
+            'agent_schedules': 'agentSchedules',
+            'business_unit_time_zone': 'businessUnitTimeZone'
         }
 
         self._agent_schedules = None
+        self._business_unit_time_zone = None
 
     @property
     def agent_schedules(self):
@@ -71,6 +74,29 @@ class BuAgentSchedulesQueryResponse(object):
         """
         
         self._agent_schedules = agent_schedules
+
+    @property
+    def business_unit_time_zone(self):
+        """
+        Gets the business_unit_time_zone of this BuAgentSchedulesQueryResponse.
+        The time zone configured for the business unit to which these schedules apply
+
+        :return: The business_unit_time_zone of this BuAgentSchedulesQueryResponse.
+        :rtype: str
+        """
+        return self._business_unit_time_zone
+
+    @business_unit_time_zone.setter
+    def business_unit_time_zone(self, business_unit_time_zone):
+        """
+        Sets the business_unit_time_zone of this BuAgentSchedulesQueryResponse.
+        The time zone configured for the business unit to which these schedules apply
+
+        :param business_unit_time_zone: The business_unit_time_zone of this BuAgentSchedulesQueryResponse.
+        :type: str
+        """
+        
+        self._business_unit_time_zone = business_unit_time_zone
 
     def to_dict(self):
         """

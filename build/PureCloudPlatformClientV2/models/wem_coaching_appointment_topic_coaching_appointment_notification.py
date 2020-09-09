@@ -53,7 +53,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
             'date_modified': 'datetime',
             'conversations': 'list[WemCoachingAppointmentTopicCoachingAppointmentConversation]',
             'documents': 'list[WemCoachingAppointmentTopicCoachingAppointmentDocument]',
-            'change_type': 'str'
+            'change_type': 'str',
+            'date_completed': 'datetime'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
             'date_modified': 'dateModified',
             'conversations': 'conversations',
             'documents': 'documents',
-            'change_type': 'changeType'
+            'change_type': 'changeType',
+            'date_completed': 'dateCompleted'
         }
 
         self._id = None
@@ -87,6 +89,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         self._conversations = None
         self._documents = None
         self._change_type = None
+        self._date_completed = None
 
     @property
     def id(self):
@@ -417,6 +420,29 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
             self._change_type = "outdated_sdk_version"
         else:
             self._change_type = change_type
+
+    @property
+    def date_completed(self):
+        """
+        Gets the date_completed of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+
+
+        :return: The date_completed of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+        :rtype: datetime
+        """
+        return self._date_completed
+
+    @date_completed.setter
+    def date_completed(self, date_completed):
+        """
+        Sets the date_completed of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+
+
+        :param date_completed: The date_completed of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+        :type: datetime
+        """
+        
+        self._date_completed = date_completed
 
     def to_dict(self):
         """

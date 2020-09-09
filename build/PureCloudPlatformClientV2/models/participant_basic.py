@@ -704,7 +704,7 @@ class ParticipantBasic(object):
         :param wrapup_prompt: The wrapup_prompt of this ParticipantBasic.
         :type: str
         """
-        allowed_values = ["mandatory", "optional", "timeout", "forcedTimeout"]
+        allowed_values = ["mandatory", "optional", "agentRequested", "timeout", "forcedTimeout"]
         if wrapup_prompt.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for wrapup_prompt -> " + wrapup_prompt
             self._wrapup_prompt = "outdated_sdk_version"

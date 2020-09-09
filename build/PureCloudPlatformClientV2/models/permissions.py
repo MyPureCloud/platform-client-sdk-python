@@ -40,66 +40,14 @@ class Permissions(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
             'ids': 'list[str]'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
             'ids': 'ids'
         }
 
-        self._id = None
-        self._name = None
         self._ids = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this Permissions.
-        The globally unique identifier for the object.
-
-        :return: The id of this Permissions.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this Permissions.
-        The globally unique identifier for the object.
-
-        :param id: The id of this Permissions.
-        :type: str
-        """
-        
-        self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this Permissions.
-
-
-        :return: The name of this Permissions.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this Permissions.
-
-
-        :param name: The name of this Permissions.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def ids(self):

@@ -8,8 +8,60 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_speechandtextanalytics_conversation**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation) | Get Speech and Text Analytics for a specific conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 {: class="table table-striped"}
+
+<a name="get_speechandtextanalytics_conversation"></a>
+
+## [**ConversationMetrics**](ConversationMetrics.html) get_speechandtextanalytics_conversation(conversation_id)
+
+
+
+Get Speech and Text Analytics for a specific conversation
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* recording:recording:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+conversation_id = 'conversation_id_example' # str | Conversation Id
+
+try:
+    # Get Speech and Text Analytics for a specific conversation
+    api_response = api_instance.get_speechandtextanalytics_conversation(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationMetrics**](ConversationMetrics.html)
 
 <a name="get_speechandtextanalytics_conversation_communication_transcripturl"></a>
 

@@ -48,7 +48,8 @@ class OAuthClientRequest(object):
             'authorized_grant_type': 'str',
             'scope': 'list[str]',
             'role_divisions': 'list[RoleDivision]',
-            'state': 'str'
+            'state': 'str',
+            'date_to_delete': 'datetime'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class OAuthClientRequest(object):
             'authorized_grant_type': 'authorizedGrantType',
             'scope': 'scope',
             'role_divisions': 'roleDivisions',
-            'state': 'state'
+            'state': 'state',
+            'date_to_delete': 'dateToDelete'
         }
 
         self._name = None
@@ -72,6 +74,7 @@ class OAuthClientRequest(object):
         self._scope = None
         self._role_divisions = None
         self._state = None
+        self._date_to_delete = None
 
     @property
     def name(self):
@@ -287,6 +290,29 @@ class OAuthClientRequest(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def date_to_delete(self):
+        """
+        Gets the date_to_delete of this OAuthClientRequest.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_to_delete of this OAuthClientRequest.
+        :rtype: datetime
+        """
+        return self._date_to_delete
+
+    @date_to_delete.setter
+    def date_to_delete(self, date_to_delete):
+        """
+        Sets the date_to_delete of this OAuthClientRequest.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_to_delete: The date_to_delete of this OAuthClientRequest.
+        :type: datetime
+        """
+        
+        self._date_to_delete = date_to_delete
 
     def to_dict(self):
         """

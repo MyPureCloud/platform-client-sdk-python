@@ -50,6 +50,7 @@ class OrgOAuthClient(object):
             'scope': 'list[str]',
             'role_divisions': 'list[RoleDivision]',
             'state': 'str',
+            'date_to_delete': 'datetime',
             'organization': 'NamedEntity'
         }
 
@@ -64,6 +65,7 @@ class OrgOAuthClient(object):
             'scope': 'scope',
             'role_divisions': 'roleDivisions',
             'state': 'state',
+            'date_to_delete': 'dateToDelete',
             'organization': 'organization'
         }
 
@@ -77,6 +79,7 @@ class OrgOAuthClient(object):
         self._scope = None
         self._role_divisions = None
         self._state = None
+        self._date_to_delete = None
         self._organization = None
 
     @property
@@ -316,6 +319,29 @@ class OrgOAuthClient(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def date_to_delete(self):
+        """
+        Gets the date_to_delete of this OrgOAuthClient.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_to_delete of this OrgOAuthClient.
+        :rtype: datetime
+        """
+        return self._date_to_delete
+
+    @date_to_delete.setter
+    def date_to_delete(self, date_to_delete):
+        """
+        Sets the date_to_delete of this OrgOAuthClient.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_to_delete: The date_to_delete of this OrgOAuthClient.
+        :type: datetime
+        """
+        
+        self._date_to_delete = date_to_delete
 
     @property
     def organization(self):

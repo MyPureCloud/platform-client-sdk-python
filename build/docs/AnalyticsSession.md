@@ -64,6 +64,8 @@ title: AnalyticsSession
 | **used_routing** | **str** | Complete routing method | [optional] |
 | **selected_agent_id** | **str** | Selected agent id | [optional] |
 | **selected_agent_rank** | **int** | Selected agent GPR rank | [optional] |
+| **agent_assistant_id** | **str** | Unique identifier of the active virtual agent assistant | [optional] |
+| **proposed_agents** | [**list[AnalyticsProposedAgent]**](AnalyticsProposedAgent.html) | Proposed agents | [optional] |
 {: class="table table-striped"}
 
 

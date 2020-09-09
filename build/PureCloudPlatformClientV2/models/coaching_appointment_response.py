@@ -54,6 +54,7 @@ class CoachingAppointmentResponse(object):
             'date_modified': 'datetime',
             'conversations': 'list[ConversationReference]',
             'documents': 'list[DocumentReference]',
+            'is_overdue': 'bool',
             'self_uri': 'str'
         }
 
@@ -72,6 +73,7 @@ class CoachingAppointmentResponse(object):
             'date_modified': 'dateModified',
             'conversations': 'conversations',
             'documents': 'documents',
+            'is_overdue': 'isOverdue',
             'self_uri': 'selfUri'
         }
 
@@ -89,6 +91,7 @@ class CoachingAppointmentResponse(object):
         self._date_modified = None
         self._conversations = None
         self._documents = None
+        self._is_overdue = None
         self._self_uri = None
 
     @property
@@ -416,6 +419,29 @@ class CoachingAppointmentResponse(object):
         """
         
         self._documents = documents
+
+    @property
+    def is_overdue(self):
+        """
+        Gets the is_overdue of this CoachingAppointmentResponse.
+        Whether the appointment is overdue.
+
+        :return: The is_overdue of this CoachingAppointmentResponse.
+        :rtype: bool
+        """
+        return self._is_overdue
+
+    @is_overdue.setter
+    def is_overdue(self, is_overdue):
+        """
+        Sets the is_overdue of this CoachingAppointmentResponse.
+        Whether the appointment is overdue.
+
+        :param is_overdue: The is_overdue of this CoachingAppointmentResponse.
+        :type: bool
+        """
+        
+        self._is_overdue = is_overdue
 
     @property
     def self_uri(self):

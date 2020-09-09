@@ -802,8 +802,9 @@ Search users
 
 Wraps POST /api/v2/users/search 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:view
 
 ### Example
 

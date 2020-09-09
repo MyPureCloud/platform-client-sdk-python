@@ -56,7 +56,7 @@ class WfmBusinessUnitReference(object):
     def id(self):
         """
         Gets the id of this WfmBusinessUnitReference.
-        The globally unique identifier for the object.
+        The ID of the business unit
 
         :return: The id of this WfmBusinessUnitReference.
         :rtype: str
@@ -67,7 +67,7 @@ class WfmBusinessUnitReference(object):
     def id(self, id):
         """
         Sets the id of this WfmBusinessUnitReference.
-        The globally unique identifier for the object.
+        The ID of the business unit
 
         :param id: The id of this WfmBusinessUnitReference.
         :type: str

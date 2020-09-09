@@ -96,7 +96,9 @@ class AnalyticsSession(object):
             'requested_routings': 'list[str]',
             'used_routing': 'str',
             'selected_agent_id': 'str',
-            'selected_agent_rank': 'int'
+            'selected_agent_rank': 'int',
+            'agent_assistant_id': 'str',
+            'proposed_agents': 'list[AnalyticsProposedAgent]'
         }
 
         self.attribute_map = {
@@ -156,7 +158,9 @@ class AnalyticsSession(object):
             'requested_routings': 'requestedRoutings',
             'used_routing': 'usedRouting',
             'selected_agent_id': 'selectedAgentId',
-            'selected_agent_rank': 'selectedAgentRank'
+            'selected_agent_rank': 'selectedAgentRank',
+            'agent_assistant_id': 'agentAssistantId',
+            'proposed_agents': 'proposedAgents'
         }
 
         self._media_type = None
@@ -216,6 +220,8 @@ class AnalyticsSession(object):
         self._used_routing = None
         self._selected_agent_id = None
         self._selected_agent_rank = None
+        self._agent_assistant_id = None
+        self._proposed_agents = None
 
     @property
     def media_type(self):
@@ -1543,6 +1549,52 @@ class AnalyticsSession(object):
         """
         
         self._selected_agent_rank = selected_agent_rank
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this AnalyticsSession.
+        Unique identifier of the active virtual agent assistant
+
+        :return: The agent_assistant_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this AnalyticsSession.
+        Unique identifier of the active virtual agent assistant
+
+        :param agent_assistant_id: The agent_assistant_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def proposed_agents(self):
+        """
+        Gets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :return: The proposed_agents of this AnalyticsSession.
+        :rtype: list[AnalyticsProposedAgent]
+        """
+        return self._proposed_agents
+
+    @proposed_agents.setter
+    def proposed_agents(self, proposed_agents):
+        """
+        Sets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :param proposed_agents: The proposed_agents of this AnalyticsSession.
+        :type: list[AnalyticsProposedAgent]
+        """
+        
+        self._proposed_agents = proposed_agents
 
     def to_dict(self):
         """

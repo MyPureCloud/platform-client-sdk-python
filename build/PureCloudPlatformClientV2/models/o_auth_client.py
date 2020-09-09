@@ -55,6 +55,7 @@ class OAuthClient(object):
             'scope': 'list[str]',
             'role_divisions': 'list[RoleDivision]',
             'state': 'str',
+            'date_to_delete': 'datetime',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class OAuthClient(object):
             'scope': 'scope',
             'role_divisions': 'roleDivisions',
             'state': 'state',
+            'date_to_delete': 'dateToDelete',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +94,7 @@ class OAuthClient(object):
         self._scope = None
         self._role_divisions = None
         self._state = None
+        self._date_to_delete = None
         self._self_uri = None
 
     @property
@@ -446,6 +449,29 @@ class OAuthClient(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def date_to_delete(self):
+        """
+        Gets the date_to_delete of this OAuthClient.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :return: The date_to_delete of this OAuthClient.
+        :rtype: datetime
+        """
+        return self._date_to_delete
+
+    @date_to_delete.setter
+    def date_to_delete(self, date_to_delete):
+        """
+        Sets the date_to_delete of this OAuthClient.
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+
+        :param date_to_delete: The date_to_delete of this OAuthClient.
+        :type: datetime
+        """
+        
+        self._date_to_delete = date_to_delete
 
     @property
     def self_uri(self):

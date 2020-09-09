@@ -41,6 +41,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'run_id': 'str',
             'name': 'str',
             'status': 'str',
             'export_format': 'str',
@@ -56,6 +57,7 @@ class ReportingDataExportTopicDataExportNotification(object):
 
         self.attribute_map = {
             'id': 'id',
+            'run_id': 'runId',
             'name': 'name',
             'status': 'status',
             'export_format': 'exportFormat',
@@ -70,6 +72,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         }
 
         self._id = None
+        self._run_id = None
         self._name = None
         self._status = None
         self._export_format = None
@@ -104,6 +107,29 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         
         self._id = id
+
+    @property
+    def run_id(self):
+        """
+        Gets the run_id of this ReportingDataExportTopicDataExportNotification.
+
+
+        :return: The run_id of this ReportingDataExportTopicDataExportNotification.
+        :rtype: str
+        """
+        return self._run_id
+
+    @run_id.setter
+    def run_id(self, run_id):
+        """
+        Sets the run_id of this ReportingDataExportTopicDataExportNotification.
+
+
+        :param run_id: The run_id of this ReportingDataExportTopicDataExportNotification.
+        :type: str
+        """
+        
+        self._run_id = run_id
 
     @property
     def name(self):

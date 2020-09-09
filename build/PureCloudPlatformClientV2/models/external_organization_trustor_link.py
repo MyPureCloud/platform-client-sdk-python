@@ -40,49 +40,23 @@ class ExternalOrganizationTrustorLink(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'external_organization_id': 'str',
             'trustor_org_id': 'str',
             'date_created': 'datetime',
-            'self_uri': 'str'
+            'external_organization_uri': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'external_organization_id': 'externalOrganizationId',
             'trustor_org_id': 'trustorOrgId',
             'date_created': 'dateCreated',
-            'self_uri': 'selfUri'
+            'external_organization_uri': 'externalOrganizationUri'
         }
 
-        self._id = None
         self._external_organization_id = None
         self._trustor_org_id = None
         self._date_created = None
-        self._self_uri = None
-
-    @property
-    def id(self):
-        """
-        Gets the id of this ExternalOrganizationTrustorLink.
-        The globally unique identifier for the object.
-
-        :return: The id of this ExternalOrganizationTrustorLink.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this ExternalOrganizationTrustorLink.
-        The globally unique identifier for the object.
-
-        :param id: The id of this ExternalOrganizationTrustorLink.
-        :type: str
-        """
-        
-        self._id = id
+        self._external_organization_uri = None
 
     @property
     def external_organization_id(self):
@@ -154,27 +128,27 @@ class ExternalOrganizationTrustorLink(object):
         self._date_created = date_created
 
     @property
-    def self_uri(self):
+    def external_organization_uri(self):
         """
-        Gets the self_uri of this ExternalOrganizationTrustorLink.
-        The URI for this object
+        Gets the external_organization_uri of this ExternalOrganizationTrustorLink.
+        The URI for the External Organization that is linked to the trustor org
 
-        :return: The self_uri of this ExternalOrganizationTrustorLink.
+        :return: The external_organization_uri of this ExternalOrganizationTrustorLink.
         :rtype: str
         """
-        return self._self_uri
+        return self._external_organization_uri
 
-    @self_uri.setter
-    def self_uri(self, self_uri):
+    @external_organization_uri.setter
+    def external_organization_uri(self, external_organization_uri):
         """
-        Sets the self_uri of this ExternalOrganizationTrustorLink.
-        The URI for this object
+        Sets the external_organization_uri of this ExternalOrganizationTrustorLink.
+        The URI for the External Organization that is linked to the trustor org
 
-        :param self_uri: The self_uri of this ExternalOrganizationTrustorLink.
+        :param external_organization_uri: The external_organization_uri of this ExternalOrganizationTrustorLink.
         :type: str
         """
         
-        self._self_uri = self_uri
+        self._external_organization_uri = external_organization_uri
 
     def to_dict(self):
         """

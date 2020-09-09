@@ -42,6 +42,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         self.swagger_types = {
             'user': 'WfmUserScheduleAdherenceUpdatedMuTopicUserReference',
             'management_unit_id': 'str',
+            'team': 'WfmUserScheduleAdherenceUpdatedMuTopicUriReference',
             'scheduled_activity_category': 'str',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
@@ -60,6 +61,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         self.attribute_map = {
             'user': 'user',
             'management_unit_id': 'managementUnitId',
+            'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
             'system_presence': 'systemPresence',
             'organization_secondary_presence_id': 'organizationSecondaryPresenceId',
@@ -77,6 +79,7 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
 
         self._user = None
         self._management_unit_id = None
+        self._team = None
         self._scheduled_activity_category = None
         self._system_presence = None
         self._organization_secondary_presence_id = None
@@ -136,6 +139,29 @@ class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate(object):
         """
         
         self._management_unit_id = management_unit_id
+
+    @property
+    def team(self):
+        """
+        Gets the team of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The team of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :rtype: WfmUserScheduleAdherenceUpdatedMuTopicUriReference
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+
+
+        :param team: The team of this WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.
+        :type: WfmUserScheduleAdherenceUpdatedMuTopicUriReference
+        """
+        
+        self._team = team
 
     @property
     def scheduled_activity_category(self):

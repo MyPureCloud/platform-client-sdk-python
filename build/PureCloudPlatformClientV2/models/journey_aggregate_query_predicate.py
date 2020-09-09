@@ -108,7 +108,7 @@ class JourneyAggregateQueryPredicate(object):
         :param dimension: The dimension of this JourneyAggregateQueryPredicate.
         :type: str
         """
-        allowed_values = ["journeyActionId", "journeyActionMapId", "journeyActionMapVersion", "journeyActionMediaType", "journeyActionTemplateId", "journeyCustomerId", "journeyCustomerIdType", "journeyDeviceCategory", "journeyDeviceType", "journeyOutcomeId", "journeySegmentId", "journeySessionType", "journeySegmentScope"]
+        allowed_values = ["journeyActionId", "journeyActionMapId", "journeyActionMapVersion", "journeyActionMediaType", "journeyActionTemplateId", "journeyCustomerId", "journeyCustomerIdType", "journeyDeviceCategory", "journeyDeviceType", "journeyOutcomeId", "journeySegmentId", "journeySegmentScope", "journeySessionType"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for dimension -> " + dimension
             self._dimension = "outdated_sdk_version"

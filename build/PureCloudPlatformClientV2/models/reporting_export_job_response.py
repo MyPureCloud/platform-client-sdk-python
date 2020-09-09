@@ -42,6 +42,7 @@ class ReportingExportJobResponse(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'run_id': 'str',
             'status': 'str',
             'time_zone': 'str',
             'export_format': 'str',
@@ -71,6 +72,7 @@ class ReportingExportJobResponse(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'run_id': 'runId',
             'status': 'status',
             'time_zone': 'timeZone',
             'export_format': 'exportFormat',
@@ -99,6 +101,7 @@ class ReportingExportJobResponse(object):
 
         self._id = None
         self._name = None
+        self._run_id = None
         self._status = None
         self._time_zone = None
         self._export_format = None
@@ -169,6 +172,29 @@ class ReportingExportJobResponse(object):
         """
         
         self._name = name
+
+    @property
+    def run_id(self):
+        """
+        Gets the run_id of this ReportingExportJobResponse.
+        The unique run id of the export schedule execute
+
+        :return: The run_id of this ReportingExportJobResponse.
+        :rtype: str
+        """
+        return self._run_id
+
+    @run_id.setter
+    def run_id(self, run_id):
+        """
+        Sets the run_id of this ReportingExportJobResponse.
+        The unique run id of the export schedule execute
+
+        :param run_id: The run_id of this ReportingExportJobResponse.
+        :type: str
+        """
+        
+        self._run_id = run_id
 
     @property
     def status(self):

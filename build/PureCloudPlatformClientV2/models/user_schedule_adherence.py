@@ -44,6 +44,7 @@ class UserScheduleAdherence(object):
             'name': 'str',
             'user': 'UserReference',
             'management_unit': 'ManagementUnit',
+            'team': 'Team',
             'scheduled_activity_category': 'str',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
@@ -65,6 +66,7 @@ class UserScheduleAdherence(object):
             'name': 'name',
             'user': 'user',
             'management_unit': 'managementUnit',
+            'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
             'system_presence': 'systemPresence',
             'organization_secondary_presence_id': 'organizationSecondaryPresenceId',
@@ -85,6 +87,7 @@ class UserScheduleAdherence(object):
         self._name = None
         self._user = None
         self._management_unit = None
+        self._team = None
         self._scheduled_activity_category = None
         self._system_presence = None
         self._organization_secondary_presence_id = None
@@ -191,6 +194,29 @@ class UserScheduleAdherence(object):
         """
         
         self._management_unit = management_unit
+
+    @property
+    def team(self):
+        """
+        Gets the team of this UserScheduleAdherence.
+        The team to which this user belongs
+
+        :return: The team of this UserScheduleAdherence.
+        :rtype: Team
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """
+        Sets the team of this UserScheduleAdherence.
+        The team to which this user belongs
+
+        :param team: The team of this UserScheduleAdherence.
+        :type: Team
+        """
+        
+        self._team = team
 
     @property
     def scheduled_activity_category(self):
