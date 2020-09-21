@@ -62,6 +62,7 @@ class QueueConversationVideoEventTopicCallback(object):
             'automated_callback_config_id': 'str',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
+            'after_call_work_required': 'bool',
             'additional_properties': 'object'
         }
 
@@ -88,6 +89,7 @@ class QueueConversationVideoEventTopicCallback(object):
             'automated_callback_config_id': 'automatedCallbackConfigId',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
             'additional_properties': 'additionalProperties'
         }
 
@@ -113,6 +115,7 @@ class QueueConversationVideoEventTopicCallback(object):
         self._automated_callback_config_id = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
         self._additional_properties = None
 
     @property
@@ -632,6 +635,29 @@ class QueueConversationVideoEventTopicCallback(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this QueueConversationVideoEventTopicCallback.
+
+
+        :return: The after_call_work_required of this QueueConversationVideoEventTopicCallback.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this QueueConversationVideoEventTopicCallback.
+
+
+        :param after_call_work_required: The after_call_work_required of this QueueConversationVideoEventTopicCallback.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     @property
     def additional_properties(self):

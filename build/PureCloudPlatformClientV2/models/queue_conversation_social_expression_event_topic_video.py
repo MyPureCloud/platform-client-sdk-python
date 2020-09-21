@@ -56,6 +56,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'msids': 'list[str]',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
+            'after_call_work_required': 'bool',
             'additional_properties': 'object'
         }
 
@@ -76,6 +77,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
             'msids': 'msids',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
             'additional_properties': 'additionalProperties'
         }
 
@@ -95,6 +97,7 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
         self._msids = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
         self._additional_properties = None
 
     @property
@@ -472,6 +475,29 @@ class QueueConversationSocialExpressionEventTopicVideo(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
+
+
+        :return: The after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
+
+
+        :param after_call_work_required: The after_call_work_required of this QueueConversationSocialExpressionEventTopicVideo.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     @property
     def additional_properties(self):

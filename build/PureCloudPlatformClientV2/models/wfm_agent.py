@@ -43,13 +43,13 @@ class WfmAgent(object):
             'id': 'str',
             'user': 'UserReference',
             'work_plan': 'WorkPlanReference',
-            'time_zone': 'WfmTimeZone',
+            'work_plan_rotation': 'WorkPlanRotationReference',
             'accept_direct_shift_trades': 'bool',
-            'metadata': 'WfmVersionedEntityMetadata',
             'queues': 'list[QueueReference]',
             'languages': 'list[LanguageReference]',
             'skills': 'list[RoutingSkillReference]',
             'schedulable': 'bool',
+            'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
 
@@ -57,26 +57,26 @@ class WfmAgent(object):
             'id': 'id',
             'user': 'user',
             'work_plan': 'workPlan',
-            'time_zone': 'timeZone',
+            'work_plan_rotation': 'workPlanRotation',
             'accept_direct_shift_trades': 'acceptDirectShiftTrades',
-            'metadata': 'metadata',
             'queues': 'queues',
             'languages': 'languages',
             'skills': 'skills',
             'schedulable': 'schedulable',
+            'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._user = None
         self._work_plan = None
-        self._time_zone = None
+        self._work_plan_rotation = None
         self._accept_direct_shift_trades = None
-        self._metadata = None
         self._queues = None
         self._languages = None
         self._skills = None
         self._schedulable = None
+        self._metadata = None
         self._self_uri = None
 
     @property
@@ -129,7 +129,7 @@ class WfmAgent(object):
     def work_plan(self):
         """
         Gets the work_plan of this WfmAgent.
-        The work plan associated with this agent
+        The work plan associated with this agent, if applicable
 
         :return: The work_plan of this WfmAgent.
         :rtype: WorkPlanReference
@@ -140,7 +140,7 @@ class WfmAgent(object):
     def work_plan(self, work_plan):
         """
         Sets the work_plan of this WfmAgent.
-        The work plan associated with this agent
+        The work plan associated with this agent, if applicable
 
         :param work_plan: The work_plan of this WfmAgent.
         :type: WorkPlanReference
@@ -149,27 +149,27 @@ class WfmAgent(object):
         self._work_plan = work_plan
 
     @property
-    def time_zone(self):
+    def work_plan_rotation(self):
         """
-        Gets the time_zone of this WfmAgent.
-        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+        Gets the work_plan_rotation of this WfmAgent.
+        The work plan rotation associated with this agent, if applicable
 
-        :return: The time_zone of this WfmAgent.
-        :rtype: WfmTimeZone
+        :return: The work_plan_rotation of this WfmAgent.
+        :rtype: WorkPlanRotationReference
         """
-        return self._time_zone
+        return self._work_plan_rotation
 
-    @time_zone.setter
-    def time_zone(self, time_zone):
+    @work_plan_rotation.setter
+    def work_plan_rotation(self, work_plan_rotation):
         """
-        Sets the time_zone of this WfmAgent.
-        The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+        Sets the work_plan_rotation of this WfmAgent.
+        The work plan rotation associated with this agent, if applicable
 
-        :param time_zone: The time_zone of this WfmAgent.
-        :type: WfmTimeZone
+        :param work_plan_rotation: The work_plan_rotation of this WfmAgent.
+        :type: WorkPlanRotationReference
         """
         
-        self._time_zone = time_zone
+        self._work_plan_rotation = work_plan_rotation
 
     @property
     def accept_direct_shift_trades(self):
@@ -195,33 +195,10 @@ class WfmAgent(object):
         self._accept_direct_shift_trades = accept_direct_shift_trades
 
     @property
-    def metadata(self):
-        """
-        Gets the metadata of this WfmAgent.
-        Metadata for this agent
-
-        :return: The metadata of this WfmAgent.
-        :rtype: WfmVersionedEntityMetadata
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """
-        Sets the metadata of this WfmAgent.
-        Metadata for this agent
-
-        :param metadata: The metadata of this WfmAgent.
-        :type: WfmVersionedEntityMetadata
-        """
-        
-        self._metadata = metadata
-
-    @property
     def queues(self):
         """
         Gets the queues of this WfmAgent.
-        List of queues to which the agent belongs and which are defined in the service goal groups in this management unit
+        List of queues to which this agent is capable of handling
 
         :return: The queues of this WfmAgent.
         :rtype: list[QueueReference]
@@ -232,7 +209,7 @@ class WfmAgent(object):
     def queues(self, queues):
         """
         Sets the queues of this WfmAgent.
-        List of queues to which the agent belongs and which are defined in the service goal groups in this management unit
+        List of queues to which this agent is capable of handling
 
         :param queues: The queues of this WfmAgent.
         :type: list[QueueReference]
@@ -244,7 +221,7 @@ class WfmAgent(object):
     def languages(self):
         """
         Gets the languages of this WfmAgent.
-        The list of languages
+        The list of languages this agent is capable of handling
 
         :return: The languages of this WfmAgent.
         :rtype: list[LanguageReference]
@@ -255,7 +232,7 @@ class WfmAgent(object):
     def languages(self, languages):
         """
         Sets the languages of this WfmAgent.
-        The list of languages
+        The list of languages this agent is capable of handling
 
         :param languages: The languages of this WfmAgent.
         :type: list[LanguageReference]
@@ -267,7 +244,7 @@ class WfmAgent(object):
     def skills(self):
         """
         Gets the skills of this WfmAgent.
-        The list of skills
+        The list of skills this agent is capable of handling
 
         :return: The skills of this WfmAgent.
         :rtype: list[RoutingSkillReference]
@@ -278,7 +255,7 @@ class WfmAgent(object):
     def skills(self, skills):
         """
         Sets the skills of this WfmAgent.
-        The list of skills
+        The list of skills this agent is capable of handling
 
         :param skills: The skills of this WfmAgent.
         :type: list[RoutingSkillReference]
@@ -308,6 +285,29 @@ class WfmAgent(object):
         """
         
         self._schedulable = schedulable
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this WfmAgent.
+        Metadata for this agent
+
+        :return: The metadata of this WfmAgent.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this WfmAgent.
+        Metadata for this agent
+
+        :param metadata: The metadata of this WfmAgent.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+        self._metadata = metadata
 
     @property
     def self_uri(self):

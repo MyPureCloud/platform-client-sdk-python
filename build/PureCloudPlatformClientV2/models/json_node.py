@@ -45,8 +45,11 @@ class JsonNode(object):
             'number': 'bool',
             'boolean': 'bool',
             'object': 'bool',
-            'floating_point_number': 'bool',
+            'value_node': 'bool',
             'pojo': 'bool',
+            'container_node': 'bool',
+            'missing_node': 'bool',
+            'floating_point_number': 'bool',
             'integral_number': 'bool',
             'short': 'bool',
             'int': 'bool',
@@ -56,9 +59,6 @@ class JsonNode(object):
             'big_integer': 'bool',
             'textual': 'bool',
             'binary': 'bool',
-            'value_node': 'bool',
-            'container_node': 'bool',
-            'missing_node': 'bool',
             'array': 'bool',
             'null': 'bool'
         }
@@ -69,8 +69,11 @@ class JsonNode(object):
             'number': 'number',
             'boolean': 'boolean',
             'object': 'object',
-            'floating_point_number': 'floatingPointNumber',
+            'value_node': 'valueNode',
             'pojo': 'pojo',
+            'container_node': 'containerNode',
+            'missing_node': 'missingNode',
+            'floating_point_number': 'floatingPointNumber',
             'integral_number': 'integralNumber',
             'short': 'short',
             'int': 'int',
@@ -80,9 +83,6 @@ class JsonNode(object):
             'big_integer': 'bigInteger',
             'textual': 'textual',
             'binary': 'binary',
-            'value_node': 'valueNode',
-            'container_node': 'containerNode',
-            'missing_node': 'missingNode',
             'array': 'array',
             'null': 'null'
         }
@@ -92,8 +92,11 @@ class JsonNode(object):
         self._number = None
         self._boolean = None
         self._object = None
-        self._floating_point_number = None
+        self._value_node = None
         self._pojo = None
+        self._container_node = None
+        self._missing_node = None
+        self._floating_point_number = None
         self._integral_number = None
         self._short = None
         self._int = None
@@ -103,9 +106,6 @@ class JsonNode(object):
         self._big_integer = None
         self._textual = None
         self._binary = None
-        self._value_node = None
-        self._container_node = None
-        self._missing_node = None
         self._array = None
         self._null = None
 
@@ -229,27 +229,27 @@ class JsonNode(object):
         self._object = object
 
     @property
-    def floating_point_number(self):
+    def value_node(self):
         """
-        Gets the floating_point_number of this JsonNode.
+        Gets the value_node of this JsonNode.
 
 
-        :return: The floating_point_number of this JsonNode.
+        :return: The value_node of this JsonNode.
         :rtype: bool
         """
-        return self._floating_point_number
+        return self._value_node
 
-    @floating_point_number.setter
-    def floating_point_number(self, floating_point_number):
+    @value_node.setter
+    def value_node(self, value_node):
         """
-        Sets the floating_point_number of this JsonNode.
+        Sets the value_node of this JsonNode.
 
 
-        :param floating_point_number: The floating_point_number of this JsonNode.
+        :param value_node: The value_node of this JsonNode.
         :type: bool
         """
         
-        self._floating_point_number = floating_point_number
+        self._value_node = value_node
 
     @property
     def pojo(self):
@@ -273,6 +273,75 @@ class JsonNode(object):
         """
         
         self._pojo = pojo
+
+    @property
+    def container_node(self):
+        """
+        Gets the container_node of this JsonNode.
+
+
+        :return: The container_node of this JsonNode.
+        :rtype: bool
+        """
+        return self._container_node
+
+    @container_node.setter
+    def container_node(self, container_node):
+        """
+        Sets the container_node of this JsonNode.
+
+
+        :param container_node: The container_node of this JsonNode.
+        :type: bool
+        """
+        
+        self._container_node = container_node
+
+    @property
+    def missing_node(self):
+        """
+        Gets the missing_node of this JsonNode.
+
+
+        :return: The missing_node of this JsonNode.
+        :rtype: bool
+        """
+        return self._missing_node
+
+    @missing_node.setter
+    def missing_node(self, missing_node):
+        """
+        Sets the missing_node of this JsonNode.
+
+
+        :param missing_node: The missing_node of this JsonNode.
+        :type: bool
+        """
+        
+        self._missing_node = missing_node
+
+    @property
+    def floating_point_number(self):
+        """
+        Gets the floating_point_number of this JsonNode.
+
+
+        :return: The floating_point_number of this JsonNode.
+        :rtype: bool
+        """
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        """
+        Sets the floating_point_number of this JsonNode.
+
+
+        :param floating_point_number: The floating_point_number of this JsonNode.
+        :type: bool
+        """
+        
+        self._floating_point_number = floating_point_number
 
     @property
     def integral_number(self):
@@ -480,75 +549,6 @@ class JsonNode(object):
         """
         
         self._binary = binary
-
-    @property
-    def value_node(self):
-        """
-        Gets the value_node of this JsonNode.
-
-
-        :return: The value_node of this JsonNode.
-        :rtype: bool
-        """
-        return self._value_node
-
-    @value_node.setter
-    def value_node(self, value_node):
-        """
-        Sets the value_node of this JsonNode.
-
-
-        :param value_node: The value_node of this JsonNode.
-        :type: bool
-        """
-        
-        self._value_node = value_node
-
-    @property
-    def container_node(self):
-        """
-        Gets the container_node of this JsonNode.
-
-
-        :return: The container_node of this JsonNode.
-        :rtype: bool
-        """
-        return self._container_node
-
-    @container_node.setter
-    def container_node(self, container_node):
-        """
-        Sets the container_node of this JsonNode.
-
-
-        :param container_node: The container_node of this JsonNode.
-        :type: bool
-        """
-        
-        self._container_node = container_node
-
-    @property
-    def missing_node(self):
-        """
-        Gets the missing_node of this JsonNode.
-
-
-        :return: The missing_node of this JsonNode.
-        :rtype: bool
-        """
-        return self._missing_node
-
-    @missing_node.setter
-    def missing_node(self, missing_node):
-        """
-        Sets the missing_node of this JsonNode.
-
-
-        :param missing_node: The missing_node of this JsonNode.
-        :type: bool
-        """
-        
-        self._missing_node = missing_node
 
     @property
     def array(self):

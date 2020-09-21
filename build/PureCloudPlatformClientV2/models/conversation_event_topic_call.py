@@ -64,6 +64,8 @@ class ConversationEventTopicCall(object):
             'uui_data': 'str',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
+            'after_call_work_required': 'bool',
+            'agent_assistant_id': 'str',
             'additional_properties': 'object'
         }
 
@@ -92,6 +94,8 @@ class ConversationEventTopicCall(object):
             'uui_data': 'uuiData',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
+            'agent_assistant_id': 'agentAssistantId',
             'additional_properties': 'additionalProperties'
         }
 
@@ -119,6 +123,8 @@ class ConversationEventTopicCall(object):
         self._uui_data = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
+        self._agent_assistant_id = None
         self._additional_properties = None
 
     @property
@@ -688,6 +694,52 @@ class ConversationEventTopicCall(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this ConversationEventTopicCall.
+
+
+        :return: The after_call_work_required of this ConversationEventTopicCall.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this ConversationEventTopicCall.
+
+
+        :param after_call_work_required: The after_call_work_required of this ConversationEventTopicCall.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this ConversationEventTopicCall.
+
+
+        :return: The agent_assistant_id of this ConversationEventTopicCall.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this ConversationEventTopicCall.
+
+
+        :param agent_assistant_id: The agent_assistant_id of this ConversationEventTopicCall.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
 
     @property
     def additional_properties(self):

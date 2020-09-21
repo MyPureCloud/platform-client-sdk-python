@@ -53,6 +53,7 @@ class QueueConversationEventTopicScreenshare(object):
             'disconnected_time': 'datetime',
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
+            'after_call_work_required': 'bool',
             'additional_properties': 'object'
         }
 
@@ -70,6 +71,7 @@ class QueueConversationEventTopicScreenshare(object):
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
             'additional_properties': 'additionalProperties'
         }
 
@@ -86,6 +88,7 @@ class QueueConversationEventTopicScreenshare(object):
         self._disconnected_time = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
         self._additional_properties = None
 
     @property
@@ -394,6 +397,29 @@ class QueueConversationEventTopicScreenshare(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this QueueConversationEventTopicScreenshare.
+
+
+        :return: The after_call_work_required of this QueueConversationEventTopicScreenshare.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this QueueConversationEventTopicScreenshare.
+
+
+        :param after_call_work_required: The after_call_work_required of this QueueConversationEventTopicScreenshare.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     @property
     def additional_properties(self):

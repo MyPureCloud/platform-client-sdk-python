@@ -66,7 +66,9 @@ class CallBasic(object):
             'pcSelf': 'Address',
             'other': 'Address',
             'wrapup': 'Wrapup',
-            'after_call_work': 'AfterCallWork'
+            'after_call_work': 'AfterCallWork',
+            'after_call_work_required': 'bool',
+            'agent_assistant_id': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +98,9 @@ class CallBasic(object):
             'pcSelf': 'self',
             'other': 'other',
             'wrapup': 'wrapup',
-            'after_call_work': 'afterCallWork'
+            'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
+            'agent_assistant_id': 'agentAssistantId'
         }
 
         self._state = None
@@ -126,6 +130,8 @@ class CallBasic(object):
         self._other = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
+        self._agent_assistant_id = None
 
     @property
     def state(self):
@@ -763,6 +769,52 @@ class CallBasic(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this CallBasic.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :return: The after_call_work_required of this CallBasic.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this CallBasic.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :param after_call_work_required: The after_call_work_required of this CallBasic.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
+
+    @property
+    def agent_assistant_id(self):
+        """
+        Gets the agent_assistant_id of this CallBasic.
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+
+        :return: The agent_assistant_id of this CallBasic.
+        :rtype: str
+        """
+        return self._agent_assistant_id
+
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
+        """
+        Sets the agent_assistant_id of this CallBasic.
+        UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+
+        :param agent_assistant_id: The agent_assistant_id of this CallBasic.
+        :type: str
+        """
+        
+        self._agent_assistant_id = agent_assistant_id
 
     def to_dict(self):
         """

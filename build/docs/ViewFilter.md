@@ -89,6 +89,7 @@ title: ViewFilter
 | **callback_interval** | **str** | An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] |
 | **used_routing_types** | **list[str]** | A list of routing types used | [optional] |
 | **requested_routing_types** | **list[str]** | A list of routing types requested | [optional] |
+| **has_agent_assist_id** | **bool** | Indicates filtering for agent assist id | [optional] |
 {: class="table table-striped"}
 
 

@@ -63,7 +63,8 @@ class CallbackBasic(object):
             'provider': 'str',
             'peer_id': 'str',
             'wrapup': 'Wrapup',
-            'after_call_work': 'AfterCallWork'
+            'after_call_work': 'AfterCallWork',
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -90,7 +91,8 @@ class CallbackBasic(object):
             'provider': 'provider',
             'peer_id': 'peerId',
             'wrapup': 'wrapup',
-            'after_call_work': 'afterCallWork'
+            'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -117,6 +119,7 @@ class CallbackBasic(object):
         self._peer_id = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
 
     @property
     def state(self):
@@ -681,6 +684,29 @@ class CallbackBasic(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this CallbackBasic.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :return: The after_call_work_required of this CallbackBasic.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this CallbackBasic.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :param after_call_work_required: The after_call_work_required of this CallbackBasic.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     def to_dict(self):
         """

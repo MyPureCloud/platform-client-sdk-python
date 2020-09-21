@@ -1032,6 +1032,12 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+* coaching:appointment:add
+* coaching:appointment:edit
 
 ### Example
 
@@ -1318,7 +1324,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
@@ -2259,7 +2265,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
@@ -2383,6 +2389,10 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
 
 ### Example
 
@@ -2619,7 +2629,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_agent"></a>
 
-## [**WfmAgent**](WfmAgent.html) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id)
+## [**WfmAgent**](WfmAgent.html) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities)
 
 
 
@@ -2648,10 +2658,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The id of the management unit, or 'mine' for the management unit of the logged-in user.
 agent_id = 'agent_id_example' # str | The agent id
+exclude_capabilities = true # bool | Excludes all capabilities of the agent such as queues, languages, and skills (optional)
 
 try:
     # Get data for agent in the management unit
-    api_response = api_instance.get_workforcemanagement_managementunit_agent(management_unit_id, agent_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent: %s\n" % e
@@ -2664,6 +2675,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **agent_id** | **str**| The agent id |  |
+| **exclude_capabilities** | **bool**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3306,6 +3318,7 @@ Requires ANY permissions:
 * wfm:realtimeAdherence:view
 * wfm:schedule:view
 * wfm:timeOffRequest:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 ### Example
@@ -3690,6 +3703,7 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workpla
 
 Requires ANY permissions: 
 
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 * wfm:schedule:edit
 
@@ -3747,6 +3761,7 @@ Requires ANY permissions:
 * wfm:agent:view
 * wfm:publishedSchedule:view
 * wfm:schedule:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 ### Example
@@ -3836,7 +3851,7 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional]  |
 | **page_number** | **int**|  | [optional]  |
 | **expand** | **str**|  | [optional] <br />**Values**: details |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 

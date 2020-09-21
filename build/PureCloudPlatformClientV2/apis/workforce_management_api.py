@@ -3693,12 +3693,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The id of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str agent_id: The agent id (required)
+        :param bool exclude_capabilities: Excludes all capabilities of the agent such as queues, languages, and skills
         :return: WfmAgent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'agent_id']
+        all_params = ['management_unit_id', 'agent_id', 'exclude_capabilities']
         all_params.append('callback')
 
         params = locals()
@@ -3727,6 +3728,8 @@ class WorkforceManagementApi(object):
             path_params['agentId'] = params['agent_id']
 
         query_params = {}
+        if 'exclude_capabilities' in params:
+            query_params['excludeCapabilities'] = params['exclude_capabilities']
 
         header_params = {}
 

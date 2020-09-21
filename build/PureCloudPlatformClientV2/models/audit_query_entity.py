@@ -72,7 +72,7 @@ class AuditQueryEntity(object):
         :param name: The name of this AuditQueryEntity.
         :type: str
         """
-        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "ClickstreamSettings", "Schedule", "Trigger"]
+        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "Trigger", "Response"]
         if name.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for name -> " + name
             self._name = "outdated_sdk_version"

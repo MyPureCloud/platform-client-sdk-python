@@ -57,6 +57,8 @@ class Queue(object):
             'queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
             'auto_answer_only': 'bool',
+            'enable_transcription': 'bool',
+            'enable_manual_assignment': 'bool',
             'calling_party_name': 'str',
             'calling_party_number': 'str',
             'default_scripts': 'dict(str, Script)',
@@ -83,6 +85,8 @@ class Queue(object):
             'queue_flow': 'queueFlow',
             'whisper_prompt': 'whisperPrompt',
             'auto_answer_only': 'autoAnswerOnly',
+            'enable_transcription': 'enableTranscription',
+            'enable_manual_assignment': 'enableManualAssignment',
             'calling_party_name': 'callingPartyName',
             'calling_party_number': 'callingPartyNumber',
             'default_scripts': 'defaultScripts',
@@ -108,6 +112,8 @@ class Queue(object):
         self._queue_flow = None
         self._whisper_prompt = None
         self._auto_answer_only = None
+        self._enable_transcription = None
+        self._enable_manual_assignment = None
         self._calling_party_name = None
         self._calling_party_number = None
         self._default_scripts = None
@@ -509,6 +515,52 @@ class Queue(object):
         """
         
         self._auto_answer_only = auto_answer_only
+
+    @property
+    def enable_transcription(self):
+        """
+        Gets the enable_transcription of this Queue.
+        Indicates whether voice transcription is enabled for this queue.
+
+        :return: The enable_transcription of this Queue.
+        :rtype: bool
+        """
+        return self._enable_transcription
+
+    @enable_transcription.setter
+    def enable_transcription(self, enable_transcription):
+        """
+        Sets the enable_transcription of this Queue.
+        Indicates whether voice transcription is enabled for this queue.
+
+        :param enable_transcription: The enable_transcription of this Queue.
+        :type: bool
+        """
+        
+        self._enable_transcription = enable_transcription
+
+    @property
+    def enable_manual_assignment(self):
+        """
+        Gets the enable_manual_assignment of this Queue.
+        Indicates whether manual assignment is enabled for this queue.
+
+        :return: The enable_manual_assignment of this Queue.
+        :rtype: bool
+        """
+        return self._enable_manual_assignment
+
+    @enable_manual_assignment.setter
+    def enable_manual_assignment(self, enable_manual_assignment):
+        """
+        Sets the enable_manual_assignment of this Queue.
+        Indicates whether manual assignment is enabled for this queue.
+
+        :param enable_manual_assignment: The enable_manual_assignment of this Queue.
+        :type: bool
+        """
+        
+        self._enable_manual_assignment = enable_manual_assignment
 
     @property
     def calling_party_name(self):

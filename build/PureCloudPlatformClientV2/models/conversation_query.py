@@ -40,7 +40,6 @@ class ConversationQuery(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'interval': 'str',
             'conversation_filters': 'list[ConversationDetailQueryFilter]',
             'segment_filters': 'list[SegmentDetailQueryFilter]',
             'evaluation_filters': 'list[EvaluationDetailQueryFilter]',
@@ -48,12 +47,12 @@ class ConversationQuery(object):
             'survey_filters': 'list[SurveyDetailQueryFilter]',
             'order': 'str',
             'order_by': 'str',
+            'interval': 'str',
             'aggregations': 'list[AnalyticsQueryAggregation]',
             'paging': 'PagingSpec'
         }
 
         self.attribute_map = {
-            'interval': 'interval',
             'conversation_filters': 'conversationFilters',
             'segment_filters': 'segmentFilters',
             'evaluation_filters': 'evaluationFilters',
@@ -61,11 +60,11 @@ class ConversationQuery(object):
             'survey_filters': 'surveyFilters',
             'order': 'order',
             'order_by': 'orderBy',
+            'interval': 'interval',
             'aggregations': 'aggregations',
             'paging': 'paging'
         }
 
-        self._interval = None
         self._conversation_filters = None
         self._segment_filters = None
         self._evaluation_filters = None
@@ -73,31 +72,9 @@ class ConversationQuery(object):
         self._survey_filters = None
         self._order = None
         self._order_by = None
+        self._interval = None
         self._aggregations = None
         self._paging = None
-
-    @property
-    def interval(self):
-        """
-        Gets the interval of this ConversationQuery.
-        Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-
-        :return: The interval of this ConversationQuery.
-        :rtype: str
-        """
-        return self._interval
-
-    @interval.setter
-    def interval(self, interval):
-        """
-        Sets the interval of this ConversationQuery.
-        Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-
-        :param interval: The interval of this ConversationQuery.
-        :type: str
-        """
-        
-        self._interval = interval
 
     @property
     def conversation_filters(self):
@@ -267,6 +244,29 @@ class ConversationQuery(object):
             self._order_by = "outdated_sdk_version"
         else:
             self._order_by = order_by
+
+    @property
+    def interval(self):
+        """
+        Gets the interval of this ConversationQuery.
+        Specifies the date and time range of data being queried. Results will only include conversations that started on a day touched by the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :return: The interval of this ConversationQuery.
+        :rtype: str
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval):
+        """
+        Sets the interval of this ConversationQuery.
+        Specifies the date and time range of data being queried. Results will only include conversations that started on a day touched by the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :param interval: The interval of this ConversationQuery.
+        :type: str
+        """
+        
+        self._interval = interval
 
     @property
     def aggregations(self):

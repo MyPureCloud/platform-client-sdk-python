@@ -62,7 +62,8 @@ class Email(object):
             'draft_attachments': 'list[Attachment]',
             'spam': 'bool',
             'wrapup': 'Wrapup',
-            'after_call_work': 'AfterCallWork'
+            'after_call_work': 'AfterCallWork',
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -88,7 +89,8 @@ class Email(object):
             'draft_attachments': 'draftAttachments',
             'spam': 'spam',
             'wrapup': 'wrapup',
-            'after_call_work': 'afterCallWork'
+            'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -114,6 +116,7 @@ class Email(object):
         self._spam = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
 
     @property
     def state(self):
@@ -655,6 +658,29 @@ class Email(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this Email.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :return: The after_call_work_required of this Email.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this Email.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :param after_call_work_required: The after_call_work_required of this Email.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     def to_dict(self):
         """

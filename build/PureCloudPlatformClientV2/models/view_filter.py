@@ -121,7 +121,8 @@ class ViewFilter(object):
             'callback_number_list': 'list[str]',
             'callback_interval': 'str',
             'used_routing_types': 'list[str]',
-            'requested_routing_types': 'list[str]'
+            'requested_routing_types': 'list[str]',
+            'has_agent_assist_id': 'bool'
         }
 
         self.attribute_map = {
@@ -206,7 +207,8 @@ class ViewFilter(object):
             'callback_number_list': 'callbackNumberList',
             'callback_interval': 'callbackInterval',
             'used_routing_types': 'usedRoutingTypes',
-            'requested_routing_types': 'requestedRoutingTypes'
+            'requested_routing_types': 'requestedRoutingTypes',
+            'has_agent_assist_id': 'hasAgentAssistId'
         }
 
         self._media_types = None
@@ -291,6 +293,7 @@ class ViewFilter(object):
         self._callback_interval = None
         self._used_routing_types = None
         self._requested_routing_types = None
+        self._has_agent_assist_id = None
 
     @property
     def media_types(self):
@@ -2177,6 +2180,29 @@ class ViewFilter(object):
         """
         
         self._requested_routing_types = requested_routing_types
+
+    @property
+    def has_agent_assist_id(self):
+        """
+        Gets the has_agent_assist_id of this ViewFilter.
+        Indicates filtering for agent assist id
+
+        :return: The has_agent_assist_id of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_agent_assist_id
+
+    @has_agent_assist_id.setter
+    def has_agent_assist_id(self, has_agent_assist_id):
+        """
+        Sets the has_agent_assist_id of this ViewFilter.
+        Indicates filtering for agent assist id
+
+        :param has_agent_assist_id: The has_agent_assist_id of this ViewFilter.
+        :type: bool
+        """
+        
+        self._has_agent_assist_id = has_agent_assist_id
 
     def to_dict(self):
         """

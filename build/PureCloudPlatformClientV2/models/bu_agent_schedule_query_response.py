@@ -44,6 +44,7 @@ class BuAgentScheduleQueryResponse(object):
             'shifts': 'list[BuAgentScheduleShift]',
             'full_day_time_off_markers': 'list[BuFullDayTimeOffMarker]',
             'work_plan': 'WorkPlanReference',
+            'work_plans_per_week': 'list[WorkPlanReference]',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -52,6 +53,7 @@ class BuAgentScheduleQueryResponse(object):
             'shifts': 'shifts',
             'full_day_time_off_markers': 'fullDayTimeOffMarkers',
             'work_plan': 'workPlan',
+            'work_plans_per_week': 'workPlansPerWeek',
             'metadata': 'metadata'
         }
 
@@ -59,6 +61,7 @@ class BuAgentScheduleQueryResponse(object):
         self._shifts = None
         self._full_day_time_off_markers = None
         self._work_plan = None
+        self._work_plans_per_week = None
         self._metadata = None
 
     @property
@@ -152,6 +155,29 @@ class BuAgentScheduleQueryResponse(object):
         """
         
         self._work_plan = work_plan
+
+    @property
+    def work_plans_per_week(self):
+        """
+        Gets the work_plans_per_week of this BuAgentScheduleQueryResponse.
+        The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+
+        :return: The work_plans_per_week of this BuAgentScheduleQueryResponse.
+        :rtype: list[WorkPlanReference]
+        """
+        return self._work_plans_per_week
+
+    @work_plans_per_week.setter
+    def work_plans_per_week(self, work_plans_per_week):
+        """
+        Sets the work_plans_per_week of this BuAgentScheduleQueryResponse.
+        The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+
+        :param work_plans_per_week: The work_plans_per_week of this BuAgentScheduleQueryResponse.
+        :type: list[WorkPlanReference]
+        """
+        
+        self._work_plans_per_week = work_plans_per_week
 
     @property
     def metadata(self):

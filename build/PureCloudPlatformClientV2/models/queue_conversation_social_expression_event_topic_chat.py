@@ -55,6 +55,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'journey_context': 'QueueConversationSocialExpressionEventTopicJourneyContext',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
+            'after_call_work_required': 'bool',
             'additional_properties': 'object'
         }
 
@@ -74,6 +75,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired',
             'additional_properties': 'additionalProperties'
         }
 
@@ -92,6 +94,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         self._journey_context = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
         self._additional_properties = None
 
     @property
@@ -446,6 +449,29 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :return: The after_call_work_required of this QueueConversationSocialExpressionEventTopicChat.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this QueueConversationSocialExpressionEventTopicChat.
+
+
+        :param after_call_work_required: The after_call_work_required of this QueueConversationSocialExpressionEventTopicChat.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     @property
     def additional_properties(self):

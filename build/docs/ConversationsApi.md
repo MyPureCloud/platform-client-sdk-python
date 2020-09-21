@@ -104,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
+|[**post_conversation_assign**](ConversationsApi.html#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.|
 |[**post_conversation_disconnect**](ConversationsApi.html#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
@@ -5138,6 +5139,68 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+
+<a name="post_conversation_assign"></a>
+
+## str** post_conversation_assign(conversation_id, body)
+
+
+
+Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+
+
+
+Wraps POST /api/v2/conversations/{conversationId}/assign 
+
+Requires ANY permissions: 
+
+* conversation:call:pull
+* conversation:call:assign
+* conversation:callback:pull
+* conversation:callback:assign
+* conversation:webchat:pull
+* conversation:webchat:assign
+* conversation:email:pull
+* conversation:email:assign
+* conversation:message:pull
+* conversation:message:assign
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationUser() # ConversationUser | Targeted user
+
+try:
+    # Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+    api_response = api_instance.post_conversation_assign(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->post_conversation_assign: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationUser**](ConversationUser.html)| Targeted user |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 
 <a name="post_conversation_disconnect"></a>
 

@@ -58,7 +58,8 @@ class ConversationChat(object):
             'avatar_image_url': 'str',
             'journey_context': 'JourneyContext',
             'wrapup': 'Wrapup',
-            'after_call_work': 'AfterCallWork'
+            'after_call_work': 'AfterCallWork',
+            'after_call_work_required': 'bool'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class ConversationChat(object):
             'avatar_image_url': 'avatarImageUrl',
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
-            'after_call_work': 'afterCallWork'
+            'after_call_work': 'afterCallWork',
+            'after_call_work_required': 'afterCallWorkRequired'
         }
 
         self._state = None
@@ -102,6 +104,7 @@ class ConversationChat(object):
         self._journey_context = None
         self._wrapup = None
         self._after_call_work = None
+        self._after_call_work_required = None
 
     @property
     def state(self):
@@ -551,6 +554,29 @@ class ConversationChat(object):
         """
         
         self._after_call_work = after_call_work
+
+    @property
+    def after_call_work_required(self):
+        """
+        Gets the after_call_work_required of this ConversationChat.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :return: The after_call_work_required of this ConversationChat.
+        :rtype: bool
+        """
+        return self._after_call_work_required
+
+    @after_call_work_required.setter
+    def after_call_work_required(self, after_call_work_required):
+        """
+        Sets the after_call_work_required of this ConversationChat.
+        Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+
+        :param after_call_work_required: The after_call_work_required of this ConversationChat.
+        :type: bool
+        """
+        
+        self._after_call_work_required = after_call_work_required
 
     def to_dict(self):
         """
