@@ -130,7 +130,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -185,7 +185,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -293,7 +293,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -352,7 +352,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -407,7 +407,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -465,7 +465,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -524,7 +524,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -582,7 +582,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -752,7 +752,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -809,7 +809,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -864,7 +864,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **body** | [**list[KnowledgeDocumentBulkRequest]**](KnowledgeDocumentBulkRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -919,7 +919,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -974,7 +974,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
 {: class="table table-striped"}
 
@@ -1029,7 +1029,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 | **training_id** | **str**| Training ID |  |
 {: class="table table-striped"}
 
@@ -1083,7 +1083,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type

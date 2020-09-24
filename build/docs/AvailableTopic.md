@@ -14,6 +14,7 @@ title: AvailableTopic
 | **requires_current_user** | **bool** | True if the topic user ID is required to match the subscribing user ID | [optional] |
 | **requires_current_user_or_permission** | **bool** | True if permissions are only required when the topic user ID does not match the subscribing user ID | [optional] |
 | **transports** | **list[str]** | Transports that support events for the topic | [optional] |
+| **public_api_template_uri_paths** | **list[str]** |  | [optional] |
 {: class="table table-striped"}
 
 

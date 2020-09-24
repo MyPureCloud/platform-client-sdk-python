@@ -52,7 +52,9 @@ class ReportingDataExportTopicDataExportNotification(object):
             'created_date_time': 'datetime',
             'modified_date_time': 'datetime',
             'percentage_complete': 'float',
-            'email_statuses': 'dict(str, str)'
+            'email_statuses': 'dict(str, str)',
+            'email_error_description': 'str',
+            'schedule_expression': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +70,9 @@ class ReportingDataExportTopicDataExportNotification(object):
             'created_date_time': 'createdDateTime',
             'modified_date_time': 'modifiedDateTime',
             'percentage_complete': 'percentageComplete',
-            'email_statuses': 'emailStatuses'
+            'email_statuses': 'emailStatuses',
+            'email_error_description': 'emailErrorDescription',
+            'schedule_expression': 'scheduleExpression'
         }
 
         self._id = None
@@ -84,6 +88,8 @@ class ReportingDataExportTopicDataExportNotification(object):
         self._modified_date_time = None
         self._percentage_complete = None
         self._email_statuses = None
+        self._email_error_description = None
+        self._schedule_expression = None
 
     @property
     def id(self):
@@ -399,6 +405,52 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         
         self._email_statuses = email_statuses
+
+    @property
+    def email_error_description(self):
+        """
+        Gets the email_error_description of this ReportingDataExportTopicDataExportNotification.
+
+
+        :return: The email_error_description of this ReportingDataExportTopicDataExportNotification.
+        :rtype: str
+        """
+        return self._email_error_description
+
+    @email_error_description.setter
+    def email_error_description(self, email_error_description):
+        """
+        Sets the email_error_description of this ReportingDataExportTopicDataExportNotification.
+
+
+        :param email_error_description: The email_error_description of this ReportingDataExportTopicDataExportNotification.
+        :type: str
+        """
+        
+        self._email_error_description = email_error_description
+
+    @property
+    def schedule_expression(self):
+        """
+        Gets the schedule_expression of this ReportingDataExportTopicDataExportNotification.
+
+
+        :return: The schedule_expression of this ReportingDataExportTopicDataExportNotification.
+        :rtype: str
+        """
+        return self._schedule_expression
+
+    @schedule_expression.setter
+    def schedule_expression(self, schedule_expression):
+        """
+        Sets the schedule_expression of this ReportingDataExportTopicDataExportNotification.
+
+
+        :param schedule_expression: The schedule_expression of this ReportingDataExportTopicDataExportNotification.
+        :type: str
+        """
+        
+        self._schedule_expression = schedule_expression
 
     def to_dict(self):
         """

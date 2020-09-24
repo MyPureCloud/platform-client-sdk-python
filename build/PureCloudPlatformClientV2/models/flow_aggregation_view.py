@@ -78,7 +78,7 @@ class FlowAggregationView(object):
         :param target: The target of this FlowAggregationView.
         :type: str
         """
-        allowed_values = ["nFlow", "nFlowOutcome", "nFlowOutcomeFailed", "oFlow", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOutcome"]
+        allowed_values = ["nFlow", "nFlowMilestone", "nFlowOutcome", "nFlowOutcomeFailed", "oFlow", "oFlowMilestone", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOutcome"]
         if target.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for target -> " + target
             self._target = "outdated_sdk_version"

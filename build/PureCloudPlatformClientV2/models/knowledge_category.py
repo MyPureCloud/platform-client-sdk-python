@@ -182,7 +182,7 @@ class KnowledgeCategory(object):
         :param language_code: The language_code of this KnowledgeCategory.
         :type: str
         """
-        allowed_values = ["en-US"]
+        allowed_values = ["en-US", "de-DE"]
         if language_code.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for language_code -> " + language_code
             self._language_code = "outdated_sdk_version"

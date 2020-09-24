@@ -46,7 +46,8 @@ class AvailableTopic(object):
             'schema': 'dict(str, object)',
             'requires_current_user': 'bool',
             'requires_current_user_or_permission': 'bool',
-            'transports': 'list[str]'
+            'transports': 'list[str]',
+            'public_api_template_uri_paths': 'list[str]'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class AvailableTopic(object):
             'schema': 'schema',
             'requires_current_user': 'requiresCurrentUser',
             'requires_current_user_or_permission': 'requiresCurrentUserOrPermission',
-            'transports': 'transports'
+            'transports': 'transports',
+            'public_api_template_uri_paths': 'publicApiTemplateUriPaths'
         }
 
         self._description = None
@@ -66,6 +68,7 @@ class AvailableTopic(object):
         self._requires_current_user = None
         self._requires_current_user_or_permission = None
         self._transports = None
+        self._public_api_template_uri_paths = None
 
     @property
     def description(self):
@@ -227,6 +230,29 @@ class AvailableTopic(object):
         """
         
         self._transports = transports
+
+    @property
+    def public_api_template_uri_paths(self):
+        """
+        Gets the public_api_template_uri_paths of this AvailableTopic.
+
+
+        :return: The public_api_template_uri_paths of this AvailableTopic.
+        :rtype: list[str]
+        """
+        return self._public_api_template_uri_paths
+
+    @public_api_template_uri_paths.setter
+    def public_api_template_uri_paths(self, public_api_template_uri_paths):
+        """
+        Sets the public_api_template_uri_paths of this AvailableTopic.
+
+
+        :param public_api_template_uri_paths: The public_api_template_uri_paths of this AvailableTopic.
+        :type: list[str]
+        """
+        
+        self._public_api_template_uri_paths = public_api_template_uri_paths
 
     def to_dict(self):
         """

@@ -42,21 +42,21 @@ class WfmHistoricalDataUploadRequestStatusTopicDateTime(object):
         self.swagger_types = {
             'i_millis': 'int',
             'before_now': 'bool',
-            'equal_now': 'bool',
-            'after_now': 'bool'
+            'after_now': 'bool',
+            'equal_now': 'bool'
         }
 
         self.attribute_map = {
             'i_millis': 'iMillis',
             'before_now': 'beforeNow',
-            'equal_now': 'equalNow',
-            'after_now': 'afterNow'
+            'after_now': 'afterNow',
+            'equal_now': 'equalNow'
         }
 
         self._i_millis = None
         self._before_now = None
-        self._equal_now = None
         self._after_now = None
+        self._equal_now = None
 
     @property
     def i_millis(self):
@@ -105,29 +105,6 @@ class WfmHistoricalDataUploadRequestStatusTopicDateTime(object):
         self._before_now = before_now
 
     @property
-    def equal_now(self):
-        """
-        Gets the equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
-
-
-        :return: The equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
-        :rtype: bool
-        """
-        return self._equal_now
-
-    @equal_now.setter
-    def equal_now(self, equal_now):
-        """
-        Sets the equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
-
-
-        :param equal_now: The equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
-        :type: bool
-        """
-        
-        self._equal_now = equal_now
-
-    @property
     def after_now(self):
         """
         Gets the after_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
@@ -149,6 +126,29 @@ class WfmHistoricalDataUploadRequestStatusTopicDateTime(object):
         """
         
         self._after_now = after_now
+
+    @property
+    def equal_now(self):
+        """
+        Gets the equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
+
+
+        :return: The equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
+        :rtype: bool
+        """
+        return self._equal_now
+
+    @equal_now.setter
+    def equal_now(self, equal_now):
+        """
+        Sets the equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
+
+
+        :param equal_now: The equal_now of this WfmHistoricalDataUploadRequestStatusTopicDateTime.
+        :type: bool
+        """
+        
+        self._equal_now = equal_now
 
     def to_dict(self):
         """

@@ -156,7 +156,7 @@ class KnowledgeBase(object):
         :param core_language: The core_language of this KnowledgeBase.
         :type: str
         """
-        allowed_values = ["en-US"]
+        allowed_values = ["en-US", "de-DE"]
         if core_language.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for core_language -> " + core_language
             self._core_language = "outdated_sdk_version"

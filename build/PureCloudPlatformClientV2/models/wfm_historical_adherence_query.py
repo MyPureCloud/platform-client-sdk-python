@@ -44,6 +44,7 @@ class WfmHistoricalAdherenceQuery(object):
             'end_date': 'datetime',
             'time_zone': 'str',
             'user_ids': 'list[str]',
+            'team_ids': 'list[str]',
             'include_exceptions': 'bool'
         }
 
@@ -52,6 +53,7 @@ class WfmHistoricalAdherenceQuery(object):
             'end_date': 'endDate',
             'time_zone': 'timeZone',
             'user_ids': 'userIds',
+            'team_ids': 'teamIds',
             'include_exceptions': 'includeExceptions'
         }
 
@@ -59,6 +61,7 @@ class WfmHistoricalAdherenceQuery(object):
         self._end_date = None
         self._time_zone = None
         self._user_ids = None
+        self._team_ids = None
         self._include_exceptions = None
 
     @property
@@ -111,7 +114,7 @@ class WfmHistoricalAdherenceQuery(object):
     def time_zone(self):
         """
         Gets the time_zone of this WfmHistoricalAdherenceQuery.
-        The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
+        The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
 
         :return: The time_zone of this WfmHistoricalAdherenceQuery.
         :rtype: str
@@ -122,7 +125,7 @@ class WfmHistoricalAdherenceQuery(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this WfmHistoricalAdherenceQuery.
-        The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
+        The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
 
         :param time_zone: The time_zone of this WfmHistoricalAdherenceQuery.
         :type: str
@@ -134,7 +137,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self):
         """
         Gets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
 
         :return: The user_ids of this WfmHistoricalAdherenceQuery.
         :rtype: list[str]
@@ -145,13 +148,36 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
 
         :param user_ids: The user_ids of this WfmHistoricalAdherenceQuery.
         :type: list[str]
         """
         
         self._user_ids = user_ids
+
+    @property
+    def team_ids(self):
+        """
+        Gets the team_ids of this WfmHistoricalAdherenceQuery.
+        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+
+        :return: The team_ids of this WfmHistoricalAdherenceQuery.
+        :rtype: list[str]
+        """
+        return self._team_ids
+
+    @team_ids.setter
+    def team_ids(self, team_ids):
+        """
+        Sets the team_ids of this WfmHistoricalAdherenceQuery.
+        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+
+        :param team_ids: The team_ids of this WfmHistoricalAdherenceQuery.
+        :type: list[str]
+        """
+        
+        self._team_ids = team_ids
 
     @property
     def include_exceptions(self):
