@@ -4081,7 +4081,6 @@ Wraps PUT /api/v2/routing/settings/transcription
 
 Requires ANY permissions: 
 
-* routing:transcriptionSettings:add
 * routing:transcriptionSettings:edit
 
 ### Example

@@ -240,7 +240,7 @@ class DevelopmentActivity(object):
         :param type: The type of this DevelopmentActivity.
         :type: str
         """
-        allowed_values = ["Informational", "AssessedContent", "Questionnaire", "Coaching"]
+        allowed_values = ["Informational", "Coaching"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

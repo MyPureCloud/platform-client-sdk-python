@@ -20,6 +20,8 @@ title: ReportingExportJobRequest
 | **has_split_filters** | **bool** | Indicates if filters will be split in aggregate detail exports | [optional] |
 | **exclude_empty_rows** | **bool** | Excludes empty rows from the exports | [optional] |
 | **has_split_by_media** | **bool** | Indicates if media type will be split in aggregate detail exports | [optional] |
+| **has_summary_row** | **bool** | Indicates if summary row needs to be present in exports | [optional] |
+| **csv_delimiter** | **str** | The user supplied csv delimiter string value either of type &#39;comma&#39; or &#39;semicolon&#39; permitted for the export request | [optional] |
 | **selected_columns** | [**list[SelectedColumns]**](SelectedColumns.html) | The list of ordered selected columns from the export view by the user | [optional] |
 | **has_custom_participant_attributes** | **bool** | Indicates if custom participant attributes will be exported | [optional] |
 | **recipient_emails** | **list[str]** | The list of email recipients for the exports | [optional] |

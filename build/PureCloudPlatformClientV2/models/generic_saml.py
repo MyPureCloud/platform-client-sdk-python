@@ -43,8 +43,8 @@ class GenericSAML(object):
             'id': 'str',
             'name': 'str',
             'logo_image_data': 'str',
-            'endpoint_compression': 'bool',
             'relying_party_identifier': 'str',
+            'endpoint_compression': 'bool',
             'certificate': 'str',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
@@ -56,8 +56,8 @@ class GenericSAML(object):
             'id': 'id',
             'name': 'name',
             'logo_image_data': 'logoImageData',
-            'endpoint_compression': 'endpointCompression',
             'relying_party_identifier': 'relyingPartyIdentifier',
+            'endpoint_compression': 'endpointCompression',
             'certificate': 'certificate',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
@@ -68,8 +68,8 @@ class GenericSAML(object):
         self._id = None
         self._name = None
         self._logo_image_data = None
-        self._endpoint_compression = None
         self._relying_party_identifier = None
+        self._endpoint_compression = None
         self._certificate = None
         self._issuer_uri = None
         self._sso_target_uri = None
@@ -146,29 +146,6 @@ class GenericSAML(object):
         self._logo_image_data = logo_image_data
 
     @property
-    def endpoint_compression(self):
-        """
-        Gets the endpoint_compression of this GenericSAML.
-
-
-        :return: The endpoint_compression of this GenericSAML.
-        :rtype: bool
-        """
-        return self._endpoint_compression
-
-    @endpoint_compression.setter
-    def endpoint_compression(self, endpoint_compression):
-        """
-        Sets the endpoint_compression of this GenericSAML.
-
-
-        :param endpoint_compression: The endpoint_compression of this GenericSAML.
-        :type: bool
-        """
-        
-        self._endpoint_compression = endpoint_compression
-
-    @property
     def relying_party_identifier(self):
         """
         Gets the relying_party_identifier of this GenericSAML.
@@ -190,6 +167,29 @@ class GenericSAML(object):
         """
         
         self._relying_party_identifier = relying_party_identifier
+
+    @property
+    def endpoint_compression(self):
+        """
+        Gets the endpoint_compression of this GenericSAML.
+
+
+        :return: The endpoint_compression of this GenericSAML.
+        :rtype: bool
+        """
+        return self._endpoint_compression
+
+    @endpoint_compression.setter
+    def endpoint_compression(self, endpoint_compression):
+        """
+        Sets the endpoint_compression of this GenericSAML.
+
+
+        :param endpoint_compression: The endpoint_compression of this GenericSAML.
+        :type: bool
+        """
+        
+        self._endpoint_compression = endpoint_compression
 
     @property
     def certificate(self):

@@ -9,6 +9,8 @@ from .models.action_contract_input import ActionContractInput
 from .models.action_entity_listing import ActionEntityListing
 from .models.action_input import ActionInput
 from .models.action_output import ActionOutput
+from .models.action_target import ActionTarget
+from .models.action_target_listing import ActionTargetListing
 from .models.actions import Actions
 from .models.active_alert_count import ActiveAlertCount
 from .models.activity_code import ActivityCode
@@ -104,6 +106,7 @@ from .models.architect_system_prompt_resource_notification_system_prompt_resourc
 from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
 from .models.assigned_wrapup_code import AssignedWrapupCode
+from .models.assignment_group import AssignmentGroup
 from .models.async_conversation_query import AsyncConversationQuery
 from .models.async_forecast_operation_result import AsyncForecastOperationResult
 from .models.async_intraday_response import AsyncIntradayResponse
@@ -139,6 +142,7 @@ from .models.audit_search_result import AuditSearchResult
 from .models.audit_user import AuditUser
 from .models.authz_division import AuthzDivision
 from .models.authz_division_entity_listing import AuthzDivisionEntityListing
+from .models.authz_division_grant_entity_listing import AuthzDivisionGrantEntityListing
 from .models.authz_grant import AuthzGrant
 from .models.authz_grant_policy import AuthzGrantPolicy
 from .models.authz_grant_role import AuthzGrantRole
@@ -328,6 +332,7 @@ from .models.common_campaign_division_view_entity_listing import CommonCampaignD
 from .models.common_campaign_entity_listing import CommonCampaignEntityListing
 from .models.condition import Condition
 from .models.connect_rate import ConnectRate
+from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
 from .models.consult_transfer_response import ConsultTransferResponse
 from .models.consult_transfer_update import ConsultTransferUpdate
@@ -611,6 +616,7 @@ from .models.did_entity_listing import DIDEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
 from .models.data_action_condition_predicate import DataActionConditionPredicate
+from .models.data_availability_response import DataAvailabilityResponse
 from .models.data_schema import DataSchema
 from .models.data_schema_listing import DataSchemaListing
 from .models.data_table import DataTable
@@ -821,6 +827,7 @@ from .models.empty import Empty
 from .models.encryption_key import EncryptionKey
 from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
+from .models.entity import Entity
 from .models.entity_listing import EntityListing
 from .models.entry import Entry
 from .models.error_body import ErrorBody
@@ -1031,6 +1038,7 @@ from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
 from .models.key_rotation_schedule import KeyRotationSchedule
+from .models.key_value import KeyValue
 from .models.keyword import Keyword
 from .models.keyword_set import KeywordSet
 from .models.keyword_set_entity_listing import KeywordSetEntityListing
@@ -1244,6 +1252,7 @@ from .models.parsed_certificate import ParsedCertificate
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
 from .models.participant_basic import ParticipantBasic
+from .models.patch_action_target import PatchActionTarget
 from .models.patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .models.patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .models.patch_bu_schedule_run_request import PatchBuScheduleRunRequest
@@ -1811,7 +1820,15 @@ from .models.time_slot import TimeSlot
 from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token_info import TokenInfo
+from .models.token_info_cloned_user import TokenInfoClonedUser
 from .models.training_listing import TrainingListing
+from .models.transcript_aggregate_data_container import TranscriptAggregateDataContainer
+from .models.transcript_aggregate_query_clause import TranscriptAggregateQueryClause
+from .models.transcript_aggregate_query_filter import TranscriptAggregateQueryFilter
+from .models.transcript_aggregate_query_predicate import TranscriptAggregateQueryPredicate
+from .models.transcript_aggregate_query_response import TranscriptAggregateQueryResponse
+from .models.transcript_aggregation_query import TranscriptAggregationQuery
+from .models.transcript_aggregation_view import TranscriptAggregationView
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
 from .models.transfer_request import TransferRequest
@@ -1956,6 +1973,8 @@ from .models.users_search_response import UsersSearchResponse
 from .models.utilization import Utilization
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
+from .models.validate_work_plan_messages import ValidateWorkPlanMessages
+from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_limits import ValidationLimits
 from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
@@ -2123,11 +2142,16 @@ from .models.widget_deployment import WidgetDeployment
 from .models.widget_deployment_entity_listing import WidgetDeploymentEntityListing
 from .models.work_plan import WorkPlan
 from .models.work_plan_activity import WorkPlanActivity
+from .models.work_plan_configuration_violation_message import WorkPlanConfigurationViolationMessage
+from .models.work_plan_constraint_conflict_message import WorkPlanConstraintConflictMessage
+from .models.work_plan_constraint_message import WorkPlanConstraintMessage
 from .models.work_plan_list_item_response import WorkPlanListItemResponse
 from .models.work_plan_list_response import WorkPlanListResponse
 from .models.work_plan_reference import WorkPlanReference
 from .models.work_plan_rotation_reference import WorkPlanRotationReference
 from .models.work_plan_shift import WorkPlanShift
+from .models.work_plan_validation_message_argument import WorkPlanValidationMessageArgument
+from .models.work_plan_validation_request import WorkPlanValidationRequest
 from .models.workspace import Workspace
 from .models.workspace_create import WorkspaceCreate
 from .models.workspace_entity_listing import WorkspaceEntityListing

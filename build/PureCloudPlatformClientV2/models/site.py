@@ -62,6 +62,7 @@ class Site(object):
             'location': 'LocationDefinition',
             'managed': 'bool',
             'ntp_settings': 'NTPSettings',
+            'core_site': 'bool',
             'self_uri': 'str'
         }
 
@@ -88,6 +89,7 @@ class Site(object):
             'location': 'location',
             'managed': 'managed',
             'ntp_settings': 'ntpSettings',
+            'core_site': 'coreSite',
             'self_uri': 'selfUri'
         }
 
@@ -113,6 +115,7 @@ class Site(object):
         self._location = None
         self._managed = None
         self._ntp_settings = None
+        self._core_site = None
         self._self_uri = None
 
     @property
@@ -624,6 +627,29 @@ class Site(object):
         """
         
         self._ntp_settings = ntp_settings
+
+    @property
+    def core_site(self):
+        """
+        Gets the core_site of this Site.
+        The core site
+
+        :return: The core_site of this Site.
+        :rtype: bool
+        """
+        return self._core_site
+
+    @core_site.setter
+    def core_site(self, core_site):
+        """
+        Sets the core_site of this Site.
+        The core site
+
+        :param core_site: The core_site of this Site.
+        :type: bool
+        """
+        
+        self._core_site = core_site
 
     @property
     def self_uri(self):

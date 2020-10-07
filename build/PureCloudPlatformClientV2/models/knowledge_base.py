@@ -46,6 +46,7 @@ class KnowledgeBase(object):
             'core_language': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'faq_count': 'int',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class KnowledgeBase(object):
             'core_language': 'coreLanguage',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'faq_count': 'faqCount',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class KnowledgeBase(object):
         self._core_language = None
         self._date_created = None
         self._date_modified = None
+        self._faq_count = None
         self._self_uri = None
 
     @property
@@ -208,6 +211,29 @@ class KnowledgeBase(object):
         """
         
         self._date_modified = date_modified
+
+    @property
+    def faq_count(self):
+        """
+        Gets the faq_count of this KnowledgeBase.
+        The count representing the number of documents of type FAQ per KnowledgeBase
+
+        :return: The faq_count of this KnowledgeBase.
+        :rtype: int
+        """
+        return self._faq_count
+
+    @faq_count.setter
+    def faq_count(self, faq_count):
+        """
+        Sets the faq_count of this KnowledgeBase.
+        The count representing the number of documents of type FAQ per KnowledgeBase
+
+        :param faq_count: The faq_count of this KnowledgeBase.
+        :type: int
+        """
+        
+        self._faq_count = faq_count
 
     @property
     def self_uri(self):

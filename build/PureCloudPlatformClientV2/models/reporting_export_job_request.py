@@ -53,6 +53,8 @@ class ReportingExportJobRequest(object):
             'has_split_filters': 'bool',
             'exclude_empty_rows': 'bool',
             'has_split_by_media': 'bool',
+            'has_summary_row': 'bool',
+            'csv_delimiter': 'str',
             'selected_columns': 'list[SelectedColumns]',
             'has_custom_participant_attributes': 'bool',
             'recipient_emails': 'list[str]'
@@ -72,6 +74,8 @@ class ReportingExportJobRequest(object):
             'has_split_filters': 'hasSplitFilters',
             'exclude_empty_rows': 'excludeEmptyRows',
             'has_split_by_media': 'hasSplitByMedia',
+            'has_summary_row': 'hasSummaryRow',
+            'csv_delimiter': 'csvDelimiter',
             'selected_columns': 'selectedColumns',
             'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
             'recipient_emails': 'recipientEmails'
@@ -90,6 +94,8 @@ class ReportingExportJobRequest(object):
         self._has_split_filters = None
         self._exclude_empty_rows = None
         self._has_split_by_media = None
+        self._has_summary_row = None
+        self._csv_delimiter = None
         self._selected_columns = None
         self._has_custom_participant_attributes = None
         self._recipient_emails = None
@@ -400,6 +406,56 @@ class ReportingExportJobRequest(object):
         """
         
         self._has_split_by_media = has_split_by_media
+
+    @property
+    def has_summary_row(self):
+        """
+        Gets the has_summary_row of this ReportingExportJobRequest.
+        Indicates if summary row needs to be present in exports
+
+        :return: The has_summary_row of this ReportingExportJobRequest.
+        :rtype: bool
+        """
+        return self._has_summary_row
+
+    @has_summary_row.setter
+    def has_summary_row(self, has_summary_row):
+        """
+        Sets the has_summary_row of this ReportingExportJobRequest.
+        Indicates if summary row needs to be present in exports
+
+        :param has_summary_row: The has_summary_row of this ReportingExportJobRequest.
+        :type: bool
+        """
+        
+        self._has_summary_row = has_summary_row
+
+    @property
+    def csv_delimiter(self):
+        """
+        Gets the csv_delimiter of this ReportingExportJobRequest.
+        The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
+
+        :return: The csv_delimiter of this ReportingExportJobRequest.
+        :rtype: str
+        """
+        return self._csv_delimiter
+
+    @csv_delimiter.setter
+    def csv_delimiter(self, csv_delimiter):
+        """
+        Sets the csv_delimiter of this ReportingExportJobRequest.
+        The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
+
+        :param csv_delimiter: The csv_delimiter of this ReportingExportJobRequest.
+        :type: str
+        """
+        allowed_values = ["SEMICOLON", "COMMA"]
+        if csv_delimiter.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for csv_delimiter -> " + csv_delimiter
+            self._csv_delimiter = "outdated_sdk_version"
+        else:
+            self._csv_delimiter = csv_delimiter
 
     @property
     def selected_columns(self):

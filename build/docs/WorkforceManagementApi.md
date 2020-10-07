@@ -134,6 +134,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shorttermforecasts_generate) | Gone. Use equivalent business unit resource instead|
 |[**post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shorttermforecasts_partialupload) | Gone. Use equivalent business unit resource instead|
 |[**post_workforcemanagement_managementunit_workplan_copy**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplan_copy) | Create a copy of work plan|
+|[**post_workforcemanagement_managementunit_workplan_validate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplan_validate) | Validate Work Plan|
 |[**post_workforcemanagement_managementunit_workplans**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplans) | Create a new work plan|
 |[**post_workforcemanagement_managementunits**](WorkforceManagementApi.html#post_workforcemanagement_managementunits) | Add a management unit|
 |[**post_workforcemanagement_notifications_update**](WorkforceManagementApi.html#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
@@ -1713,7 +1714,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_week_schedule"></a>
 
-## [**BuScheduleMetadata**](BuScheduleMetadata.html) get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+## [**BuScheduleMetadata**](BuScheduleMetadata.html) get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id, expand=expand)
 
 
 
@@ -1744,10 +1745,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 schedule_id = 'schedule_id_example' # str | The ID of the schedule
+expand = 'expand_example' # str | expand (optional)
 
 try:
     # Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
-    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule: %s\n" % e
@@ -1761,6 +1763,7 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
+| **expand** | **str**| expand | [optional] <br />**Values**: managementUnits.agents |
 {: class="table table-striped"}
 
 ### Return type
@@ -7060,6 +7063,64 @@ except ApiException as e:
 ### Return type
 
 [**WorkPlan**](WorkPlan.html)
+
+<a name="post_workforcemanagement_managementunit_workplan_validate"></a>
+
+## [**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html) post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body=body, expand=expand)
+
+
+
+Validate Work Plan
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate 
+
+Requires ANY permissions: 
+
+* wfm:workPlan:add
+* wfm:workPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+body = PureCloudPlatformClientV2.WorkPlanValidationRequest() # WorkPlanValidationRequest | body (optional)
+expand = ['expand_example'] # list[str] |  (optional)
+
+try:
+    # Validate Work Plan
+    api_response = api_instance.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body=body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_validate: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **work_plan_id** | **str**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. |  |
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional]  |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: messages |
+{: class="table table-striped"}
+
+### Return type
+
+[**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html)
 
 <a name="post_workforcemanagement_managementunit_workplans"></a>
 

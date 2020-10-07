@@ -46,8 +46,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UserDevelopmentApi()
 user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. (optional)
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)
-interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'Any' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to Any)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
@@ -71,8 +71,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. | [optional]  |
 | **module_id** | **str**| Specifies the ID of the learning module. | [optional]  |
-| **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
@@ -115,8 +115,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UserDevelopmentApi()
 module_id = 'module_id_example' # str | Specifies the ID of the learning module. (optional)
-interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+interval = 'interval_example' # str | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+completion_interval = 'completion_interval_example' # str | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'Any' # str | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional) (default to Any)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
@@ -139,8 +139,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| Specifies the ID of the learning module. | [optional]  |
-| **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
-| **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
@@ -201,7 +201,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, AssessedContent, Questionnaire, Coaching |
+| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching |
 {: class="table table-striped"}
 
 ### Return type

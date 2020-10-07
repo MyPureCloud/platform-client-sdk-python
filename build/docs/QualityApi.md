@@ -47,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_quality_forms_survey**](QualityApi.html#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
 |[**post_analytics_evaluations_aggregates_query**](QualityApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_analytics_surveys_aggregates_query**](QualityApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
+|[**post_analytics_transcripts_aggregates_query**](QualityApi.html#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
 |[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
 |[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
 |[**post_quality_evaluations_scoring**](QualityApi.html#post_quality_evaluations_scoring) | Score evaluation|
@@ -2270,6 +2271,57 @@ except ApiException as e:
 ### Return type
 
 [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
+
+<a name="post_analytics_transcripts_aggregates_query"></a>
+
+## [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html) post_analytics_transcripts_aggregates_query(body)
+
+
+
+Query for transcript aggregates
+
+
+
+Wraps POST /api/v2/analytics/transcripts/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.TranscriptAggregationQuery() # TranscriptAggregationQuery | query
+
+try:
+    # Query for transcript aggregates
+    api_response = api_instance.post_analytics_transcripts_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling QualityApi->post_analytics_transcripts_aggregates_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
 
 <a name="post_quality_calibrations"></a>
 

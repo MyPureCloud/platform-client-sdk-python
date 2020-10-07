@@ -40,14 +40,23 @@ class GoogleDialogflowCustomSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'environment': 'str'
+            'environment': 'str',
+            'event_name': 'str',
+            'webhook_query_parameters': 'dict(str, str)',
+            'event_input_parameters': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'environment': 'environment'
+            'environment': 'environment',
+            'event_name': 'eventName',
+            'webhook_query_parameters': 'webhookQueryParameters',
+            'event_input_parameters': 'eventInputParameters'
         }
 
         self._environment = None
+        self._event_name = None
+        self._webhook_query_parameters = None
+        self._event_input_parameters = None
 
     @property
     def environment(self):
@@ -71,6 +80,75 @@ class GoogleDialogflowCustomSettings(object):
         """
         
         self._environment = environment
+
+    @property
+    def event_name(self):
+        """
+        Gets the event_name of this GoogleDialogflowCustomSettings.
+        If set this eventName will be used to initiate the dialogflow bot rather than language processing on the input text.  See https://cloud.google.com/dialogflow/es/docs/events-overview
+
+        :return: The event_name of this GoogleDialogflowCustomSettings.
+        :rtype: str
+        """
+        return self._event_name
+
+    @event_name.setter
+    def event_name(self, event_name):
+        """
+        Sets the event_name of this GoogleDialogflowCustomSettings.
+        If set this eventName will be used to initiate the dialogflow bot rather than language processing on the input text.  See https://cloud.google.com/dialogflow/es/docs/events-overview
+
+        :param event_name: The event_name of this GoogleDialogflowCustomSettings.
+        :type: str
+        """
+        
+        self._event_name = event_name
+
+    @property
+    def webhook_query_parameters(self):
+        """
+        Gets the webhook_query_parameters of this GoogleDialogflowCustomSettings.
+        Parameters passed to the fulfillment webhook of the bot (if any).
+
+        :return: The webhook_query_parameters of this GoogleDialogflowCustomSettings.
+        :rtype: dict(str, str)
+        """
+        return self._webhook_query_parameters
+
+    @webhook_query_parameters.setter
+    def webhook_query_parameters(self, webhook_query_parameters):
+        """
+        Sets the webhook_query_parameters of this GoogleDialogflowCustomSettings.
+        Parameters passed to the fulfillment webhook of the bot (if any).
+
+        :param webhook_query_parameters: The webhook_query_parameters of this GoogleDialogflowCustomSettings.
+        :type: dict(str, str)
+        """
+        
+        self._webhook_query_parameters = webhook_query_parameters
+
+    @property
+    def event_input_parameters(self):
+        """
+        Gets the event_input_parameters of this GoogleDialogflowCustomSettings.
+        Parameters passed to the event input of the bot.
+
+        :return: The event_input_parameters of this GoogleDialogflowCustomSettings.
+        :rtype: dict(str, str)
+        """
+        return self._event_input_parameters
+
+    @event_input_parameters.setter
+    def event_input_parameters(self, event_input_parameters):
+        """
+        Sets the event_input_parameters of this GoogleDialogflowCustomSettings.
+        Parameters passed to the event input of the bot.
+
+        :param event_input_parameters: The event_input_parameters of this GoogleDialogflowCustomSettings.
+        :type: dict(str, str)
+        """
+        
+        self._event_input_parameters = event_input_parameters
 
     def to_dict(self):
         """

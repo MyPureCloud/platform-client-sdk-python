@@ -49,6 +49,7 @@ class PostTextRequest(object):
             'bot_session_timeout_minutes': 'int',
             'bot_channels': 'list[str]',
             'bot_correlation_id': 'str',
+            'messaging_platform_type': 'str',
             'amazon_lex_request': 'AmazonLexRequest',
             'google_dialogflow': 'GoogleDialogflowCustomSettings'
         }
@@ -63,6 +64,7 @@ class PostTextRequest(object):
             'bot_session_timeout_minutes': 'botSessionTimeoutMinutes',
             'bot_channels': 'botChannels',
             'bot_correlation_id': 'botCorrelationId',
+            'messaging_platform_type': 'messagingPlatformType',
             'amazon_lex_request': 'amazonLexRequest',
             'google_dialogflow': 'googleDialogflow'
         }
@@ -76,6 +78,7 @@ class PostTextRequest(object):
         self._bot_session_timeout_minutes = None
         self._bot_channels = None
         self._bot_correlation_id = None
+        self._messaging_platform_type = None
         self._amazon_lex_request = None
         self._google_dialogflow = None
 
@@ -285,6 +288,33 @@ class PostTextRequest(object):
         """
         
         self._bot_correlation_id = bot_correlation_id
+
+    @property
+    def messaging_platform_type(self):
+        """
+        Gets the messaging_platform_type of this PostTextRequest.
+        If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
+
+        :return: The messaging_platform_type of this PostTextRequest.
+        :rtype: str
+        """
+        return self._messaging_platform_type
+
+    @messaging_platform_type.setter
+    def messaging_platform_type(self, messaging_platform_type):
+        """
+        Sets the messaging_platform_type of this PostTextRequest.
+        If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
+
+        :param messaging_platform_type: The messaging_platform_type of this PostTextRequest.
+        :type: str
+        """
+        allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Other", "Unknown"]
+        if messaging_platform_type.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for messaging_platform_type -> " + messaging_platform_type
+            self._messaging_platform_type = "outdated_sdk_version"
+        else:
+            self._messaging_platform_type = messaging_platform_type
 
     @property
     def amazon_lex_request(self):

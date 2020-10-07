@@ -391,7 +391,7 @@ class Organization(object):
         :param product_platform: The product_platform of this Organization.
         :type: str
         """
-        allowed_values = ["PureCloud", "PureEngage", "PureEngageCloud", "PureConnect", "PureConnectCloud", "Unknown"]
+        allowed_values = ["GenesysCloud", "PureCloud", "PureEngage", "PureEngageCloud", "PureConnect", "PureConnectCloud", "Unknown"]
         if product_platform.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for product_platform -> " + product_platform
             self._product_platform = "outdated_sdk_version"

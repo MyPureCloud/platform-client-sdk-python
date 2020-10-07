@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
 |[**get_analytics_users_details_job**](UsersApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](UsersApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_users_details_jobs_availability**](UsersApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_authorization_divisionspermitted_me**](UsersApi.html#get_authorization_divisionspermitted_me) | Returns which divisions the current user has the given permission in.|
 |[**get_authorization_divisionspermitted_paged_me**](UsersApi.html#get_authorization_divisionspermitted_paged_me) | Returns which divisions the current user has the given permission in.|
 |[**get_authorization_divisionspermitted_paged_subject_id**](UsersApi.html#get_authorization_divisionspermitted_paged_subject_id) | Returns which divisions the specified user has the given permission in.|
@@ -596,6 +597,53 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
+
+<a name="get_analytics_users_details_jobs_availability"></a>
+
+## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_users_details_jobs_availability()
+
+
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/availability 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Lookup the datalake availability date and time
+    api_response = api_instance.get_analytics_users_details_jobs_availability()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling UsersApi->get_analytics_users_details_jobs_availability: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="get_authorization_divisionspermitted_me"></a>
 

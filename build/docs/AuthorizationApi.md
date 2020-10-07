@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_authorization_role**](AuthorizationApi.html#delete_authorization_role) | Delete an organization role.|
 |[**delete_authorization_subject_division_role**](AuthorizationApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**get_authorization_division**](AuthorizationApi.html#get_authorization_division) | Returns an authorization division.|
+|[**get_authorization_division_grants**](AuthorizationApi.html#get_authorization_division_grants) | Gets all grants for a given division.|
 |[**get_authorization_divisions**](AuthorizationApi.html#get_authorization_divisions) | Retrieve a list of all divisions defined for the organization|
 |[**get_authorization_divisions_home**](AuthorizationApi.html#get_authorization_divisions_home) | Retrieve the home division for the organization.|
 |[**get_authorization_divisions_limit**](AuthorizationApi.html#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
@@ -254,6 +255,61 @@ except ApiException as e:
 ### Return type
 
 [**AuthzDivision**](AuthzDivision.html)
+
+<a name="get_authorization_division_grants"></a>
+
+## [**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing.html) get_authorization_division_grants(division_id, page_number=page_number, page_size=page_size)
+
+
+
+Gets all grants for a given division.
+
+
+
+Wraps GET /api/v2/authorization/divisions/{divisionId}/grants 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+division_id = 'division_id_example' # str | Division ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Gets all grants for a given division.
+    api_response = api_instance.get_authorization_division_grants(division_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AuthorizationApi->get_authorization_division_grants: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| Division ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing.html)
 
 <a name="get_authorization_divisions"></a>
 

@@ -29,6 +29,7 @@ title: Site
 | **location** | [**LocationDefinition**](LocationDefinition.html) | Location | |
 | **managed** | **bool** |  | [optional] |
 | **ntp_settings** | [**NTPSettings**](NTPSettings.html) | Network Time Protocol settings for the site | [optional] |
+| **core_site** | **bool** | The core site | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

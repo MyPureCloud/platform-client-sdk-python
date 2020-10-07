@@ -18,6 +18,7 @@ title: OrphanRecording
 | **provider_endpoint** | [**Endpoint**](Endpoint.html) |  | [optional] |
 | **recording** | [**Recording**](Recording.html) |  | [optional] |
 | **orphan_status** | **str** | The status of the orphaned recording&#39;s conversation. | [optional] |
+| **source_orphaning_id** | **str** | An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

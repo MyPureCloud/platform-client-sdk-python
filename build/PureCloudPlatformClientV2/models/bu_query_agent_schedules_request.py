@@ -41,16 +41,19 @@ class BuQueryAgentSchedulesRequest(object):
         """
         self.swagger_types = {
             'management_unit_id': 'str',
-            'user_ids': 'list[str]'
+            'user_ids': 'list[str]',
+            'team_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'management_unit_id': 'managementUnitId',
-            'user_ids': 'userIds'
+            'user_ids': 'userIds',
+            'team_ids': 'teamIds'
         }
 
         self._management_unit_id = None
         self._user_ids = None
+        self._team_ids = None
 
     @property
     def management_unit_id(self):
@@ -79,7 +82,7 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self):
         """
         Gets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested
 
         :return: The user_ids of this BuQueryAgentSchedulesRequest.
         :rtype: list[str]
@@ -90,13 +93,36 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested
 
         :param user_ids: The user_ids of this BuQueryAgentSchedulesRequest.
         :type: list[str]
         """
         
         self._user_ids = user_ids
+
+    @property
+    def team_ids(self):
+        """
+        Gets the team_ids of this BuQueryAgentSchedulesRequest.
+        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+
+        :return: The team_ids of this BuQueryAgentSchedulesRequest.
+        :rtype: list[str]
+        """
+        return self._team_ids
+
+    @team_ids.setter
+    def team_ids(self, team_ids):
+        """
+        Sets the team_ids of this BuQueryAgentSchedulesRequest.
+        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+
+        :param team_ids: The team_ids of this BuQueryAgentSchedulesRequest.
+        :type: list[str]
+        """
+        
+        self._team_ids = team_ids
 
     def to_dict(self):
         """

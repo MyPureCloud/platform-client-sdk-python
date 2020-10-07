@@ -126,7 +126,7 @@ Wraps PATCH /api/v2/geolocations/settings
 
 Requires ANY permissions: 
 
-* telephony:plugin:all
+* geolocation:settings:edit
 
 ### Example
 

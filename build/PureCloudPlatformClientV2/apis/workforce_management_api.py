@@ -2401,12 +2401,13 @@ class WorkforceManagementApi(object):
         :param str business_unit_id: The ID of the business unit (required)
         :param date week_id: First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str schedule_id: The ID of the schedule (required)
+        :param str expand: expand
         :return: BuScheduleMetadata
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'week_id', 'schedule_id']
+        all_params = ['business_unit_id', 'week_id', 'schedule_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2440,6 +2441,8 @@ class WorkforceManagementApi(object):
             path_params['scheduleId'] = params['schedule_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -10695,6 +10698,96 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WorkPlan',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_workplan_validate(self, management_unit_id, work_plan_id, **kwargs):
+        """
+        Validate Work Plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str work_plan_id: The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
+        :param WorkPlanValidationRequest body: body
+        :param list[str] expand: 
+        :return: ValidateWorkPlanResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'work_plan_id', 'body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_workplan_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_workplan_validate`")
+        # verify the required parameter 'work_plan_id' is set
+        if ('work_plan_id' not in params) or (params['work_plan_id'] is None):
+            raise ValueError("Missing the required parameter `work_plan_id` when calling `post_workforcemanagement_managementunit_workplan_validate`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+        if 'work_plan_id' in params:
+            path_params['workPlanId'] = params['work_plan_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ValidateWorkPlanResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

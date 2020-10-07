@@ -51,6 +51,7 @@ class OrphanRecording(object):
             'provider_endpoint': 'Endpoint',
             'recording': 'Recording',
             'orphan_status': 'str',
+            'source_orphaning_id': 'str',
             'self_uri': 'str'
         }
 
@@ -66,6 +67,7 @@ class OrphanRecording(object):
             'provider_endpoint': 'providerEndpoint',
             'recording': 'recording',
             'orphan_status': 'orphanStatus',
+            'source_orphaning_id': 'sourceOrphaningId',
             'self_uri': 'selfUri'
         }
 
@@ -80,6 +82,7 @@ class OrphanRecording(object):
         self._provider_endpoint = None
         self._recording = None
         self._orphan_status = None
+        self._source_orphaning_id = None
         self._self_uri = None
 
     @property
@@ -350,6 +353,29 @@ class OrphanRecording(object):
             self._orphan_status = "outdated_sdk_version"
         else:
             self._orphan_status = orphan_status
+
+    @property
+    def source_orphaning_id(self):
+        """
+        Gets the source_orphaning_id of this OrphanRecording.
+        An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with
+
+        :return: The source_orphaning_id of this OrphanRecording.
+        :rtype: str
+        """
+        return self._source_orphaning_id
+
+    @source_orphaning_id.setter
+    def source_orphaning_id(self, source_orphaning_id):
+        """
+        Sets the source_orphaning_id of this OrphanRecording.
+        An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with
+
+        :param source_orphaning_id: The source_orphaning_id of this OrphanRecording.
+        :type: str
+        """
+        
+        self._source_orphaning_id = source_orphaning_id
 
     @property
     def self_uri(self):

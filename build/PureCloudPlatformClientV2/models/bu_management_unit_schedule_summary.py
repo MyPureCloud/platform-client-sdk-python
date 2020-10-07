@@ -157,7 +157,7 @@ class BuManagementUnitScheduleSummary(object):
     def agents(self):
         """
         Gets the agents of this BuManagementUnitScheduleSummary.
-        The changed agents in the management unit. Only populated in schedule update notifications
+        The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
 
         :return: The agents of this BuManagementUnitScheduleSummary.
         :rtype: list[UserReference]
@@ -168,7 +168,7 @@ class BuManagementUnitScheduleSummary(object):
     def agents(self, agents):
         """
         Sets the agents of this BuManagementUnitScheduleSummary.
-        The changed agents in the management unit. Only populated in schedule update notifications
+        The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
 
         :param agents: The agents of this BuManagementUnitScheduleSummary.
         :type: list[UserReference]

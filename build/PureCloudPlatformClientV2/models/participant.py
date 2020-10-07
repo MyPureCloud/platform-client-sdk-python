@@ -69,6 +69,7 @@ class Participant(object):
             'conversation_routing_data': 'ConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
+            'coached_participant_id': 'str',
             'attributes': 'dict(str, str)',
             'calls': 'list[Call]',
             'callbacks': 'list[Callback]',
@@ -116,6 +117,7 @@ class Participant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
+            'coached_participant_id': 'coachedParticipantId',
             'attributes': 'attributes',
             'calls': 'calls',
             'callbacks': 'callbacks',
@@ -162,6 +164,7 @@ class Participant(object):
         self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
+        self._coached_participant_id = None
         self._attributes = None
         self._calls = None
         self._callbacks = None
@@ -848,6 +851,29 @@ class Participant(object):
         """
         
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def coached_participant_id(self):
+        """
+        Gets the coached_participant_id of this Participant.
+        If this participant is a coach, then this will be the id of the participant that is being coached.
+
+        :return: The coached_participant_id of this Participant.
+        :rtype: str
+        """
+        return self._coached_participant_id
+
+    @coached_participant_id.setter
+    def coached_participant_id(self, coached_participant_id):
+        """
+        Sets the coached_participant_id of this Participant.
+        If this participant is a coach, then this will be the id of the participant that is being coached.
+
+        :param coached_participant_id: The coached_participant_id of this Participant.
+        :type: str
+        """
+        
+        self._coached_participant_id = coached_participant_id
 
     @property
     def attributes(self):

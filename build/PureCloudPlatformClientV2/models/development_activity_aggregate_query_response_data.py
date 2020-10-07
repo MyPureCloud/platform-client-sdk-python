@@ -56,7 +56,7 @@ class DevelopmentActivityAggregateQueryResponseData(object):
     def interval(self):
         """
         Gets the interval of this DevelopmentActivityAggregateQueryResponseData.
-        Specifies the range of due dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The interval of this DevelopmentActivityAggregateQueryResponseData.
         :rtype: str
@@ -67,7 +67,7 @@ class DevelopmentActivityAggregateQueryResponseData(object):
     def interval(self, interval):
         """
         Sets the interval of this DevelopmentActivityAggregateQueryResponseData.
-        Specifies the range of due dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param interval: The interval of this DevelopmentActivityAggregateQueryResponseData.
         :type: str

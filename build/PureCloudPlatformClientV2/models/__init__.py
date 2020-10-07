@@ -9,6 +9,8 @@ from .action_contract_input import ActionContractInput
 from .action_entity_listing import ActionEntityListing
 from .action_input import ActionInput
 from .action_output import ActionOutput
+from .action_target import ActionTarget
+from .action_target_listing import ActionTargetListing
 from .actions import Actions
 from .active_alert_count import ActiveAlertCount
 from .activity_code import ActivityCode
@@ -104,6 +106,7 @@ from .architect_system_prompt_resource_notification_system_prompt_resource_notif
 from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
 from .assigned_wrapup_code import AssignedWrapupCode
+from .assignment_group import AssignmentGroup
 from .async_conversation_query import AsyncConversationQuery
 from .async_forecast_operation_result import AsyncForecastOperationResult
 from .async_intraday_response import AsyncIntradayResponse
@@ -139,6 +142,7 @@ from .audit_search_result import AuditSearchResult
 from .audit_user import AuditUser
 from .authz_division import AuthzDivision
 from .authz_division_entity_listing import AuthzDivisionEntityListing
+from .authz_division_grant_entity_listing import AuthzDivisionGrantEntityListing
 from .authz_grant import AuthzGrant
 from .authz_grant_policy import AuthzGrantPolicy
 from .authz_grant_role import AuthzGrantRole
@@ -328,6 +332,7 @@ from .common_campaign_division_view_entity_listing import CommonCampaignDivision
 from .common_campaign_entity_listing import CommonCampaignEntityListing
 from .condition import Condition
 from .connect_rate import ConnectRate
+from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
 from .consult_transfer_response import ConsultTransferResponse
 from .consult_transfer_update import ConsultTransferUpdate
@@ -611,6 +616,7 @@ from .did_entity_listing import DIDEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
 from .data_action_condition_predicate import DataActionConditionPredicate
+from .data_availability_response import DataAvailabilityResponse
 from .data_schema import DataSchema
 from .data_schema_listing import DataSchemaListing
 from .data_table import DataTable
@@ -821,6 +827,7 @@ from .empty import Empty
 from .encryption_key import EncryptionKey
 from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
+from .entity import Entity
 from .entity_listing import EntityListing
 from .entry import Entry
 from .error_body import ErrorBody
@@ -1031,6 +1038,7 @@ from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
 from .key_rotation_schedule import KeyRotationSchedule
+from .key_value import KeyValue
 from .keyword import Keyword
 from .keyword_set import KeywordSet
 from .keyword_set_entity_listing import KeywordSetEntityListing
@@ -1244,6 +1252,7 @@ from .parsed_certificate import ParsedCertificate
 from .participant import Participant
 from .participant_attributes import ParticipantAttributes
 from .participant_basic import ParticipantBasic
+from .patch_action_target import PatchActionTarget
 from .patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .patch_bu_schedule_run_request import PatchBuScheduleRunRequest
@@ -1811,7 +1820,15 @@ from .time_slot import TimeSlot
 from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
+from .token_info_cloned_user import TokenInfoClonedUser
 from .training_listing import TrainingListing
+from .transcript_aggregate_data_container import TranscriptAggregateDataContainer
+from .transcript_aggregate_query_clause import TranscriptAggregateQueryClause
+from .transcript_aggregate_query_filter import TranscriptAggregateQueryFilter
+from .transcript_aggregate_query_predicate import TranscriptAggregateQueryPredicate
+from .transcript_aggregate_query_response import TranscriptAggregateQueryResponse
+from .transcript_aggregation_query import TranscriptAggregationQuery
+from .transcript_aggregation_view import TranscriptAggregationView
 from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings
 from .transfer_request import TransferRequest
@@ -1956,6 +1973,8 @@ from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
+from .validate_work_plan_messages import ValidateWorkPlanMessages
+from .validate_work_plan_response import ValidateWorkPlanResponse
 from .validation_limits import ValidationLimits
 from .value_wrapper_date import ValueWrapperDate
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
@@ -2123,11 +2142,16 @@ from .widget_deployment import WidgetDeployment
 from .widget_deployment_entity_listing import WidgetDeploymentEntityListing
 from .work_plan import WorkPlan
 from .work_plan_activity import WorkPlanActivity
+from .work_plan_configuration_violation_message import WorkPlanConfigurationViolationMessage
+from .work_plan_constraint_conflict_message import WorkPlanConstraintConflictMessage
+from .work_plan_constraint_message import WorkPlanConstraintMessage
 from .work_plan_list_item_response import WorkPlanListItemResponse
 from .work_plan_list_response import WorkPlanListResponse
 from .work_plan_reference import WorkPlanReference
 from .work_plan_rotation_reference import WorkPlanRotationReference
 from .work_plan_shift import WorkPlanShift
+from .work_plan_validation_message_argument import WorkPlanValidationMessageArgument
+from .work_plan_validation_request import WorkPlanValidationRequest
 from .workspace import Workspace
 from .workspace_create import WorkspaceCreate
 from .workspace_entity_listing import WorkspaceEntityListing

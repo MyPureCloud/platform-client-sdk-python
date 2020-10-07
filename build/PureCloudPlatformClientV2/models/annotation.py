@@ -346,7 +346,7 @@ class Annotation(object):
     def description(self):
         """
         Gets the description of this Annotation.
-        Text of annotation.
+        Text of annotation. Maximum character limit is 300.
 
         :return: The description of this Annotation.
         :rtype: str
@@ -357,7 +357,7 @@ class Annotation(object):
     def description(self, description):
         """
         Sets the description of this Annotation.
-        Text of annotation.
+        Text of annotation. Maximum character limit is 300.
 
         :param description: The description of this Annotation.
         :type: str

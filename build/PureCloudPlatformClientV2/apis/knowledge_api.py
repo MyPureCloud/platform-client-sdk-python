@@ -962,12 +962,13 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str limit: Number of entities to return. Maximum of 200.
         :param str page_size: Number of entities to return. Maximum of 200.
+        :param str name: Name of the KnowledgeBase to filter.
         :return: KnowledgeBaseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size']
+        all_params = ['before', 'after', 'limit', 'page_size', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -994,6 +995,8 @@ class KnowledgeApi(object):
             query_params['limit'] = params['limit']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 

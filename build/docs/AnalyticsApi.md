@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_conversations_details_jobs_availability**](AnalyticsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
@@ -28,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_timeperiods**](AnalyticsApi.html#get_analytics_reporting_timeperiods) | Get a list of report time periods.|
 |[**get_analytics_users_details_job**](AnalyticsApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](AnalyticsApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_users_details_jobs_availability**](AnalyticsApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](AnalyticsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
@@ -41,6 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
 |[**post_analytics_reporting_schedules**](AnalyticsApi.html#post_analytics_reporting_schedules) | Create a scheduled report job|
 |[**post_analytics_surveys_aggregates_query**](AnalyticsApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
+|[**post_analytics_transcripts_aggregates_query**](AnalyticsApi.html#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
 |[**post_analytics_users_aggregates_query**](AnalyticsApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_jobs**](AnalyticsApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
 |[**post_analytics_users_details_query**](AnalyticsApi.html#post_analytics_users_details_query) | Query for user details|
@@ -404,6 +407,53 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+
+<a name="get_analytics_conversations_details_jobs_availability"></a>
+
+## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_conversations_details_jobs_availability()
+
+
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/availability 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+
+try:
+    # Lookup the datalake availability date and time
+    api_response = api_instance.get_analytics_conversations_details_jobs_availability()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="get_analytics_reporting_exports"></a>
 
@@ -1069,6 +1119,53 @@ except ApiException as e:
 
 [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
 
+<a name="get_analytics_users_details_jobs_availability"></a>
+
+## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_users_details_jobs_availability()
+
+
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/availability 
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+
+try:
+    # Lookup the datalake availability date and time
+    api_response = api_instance.get_analytics_users_details_jobs_availability()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->get_analytics_users_details_jobs_availability: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+
 <a name="post_analytics_conversation_details_properties"></a>
 
 ## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
@@ -1732,6 +1829,57 @@ except ApiException as e:
 ### Return type
 
 [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
+
+<a name="post_analytics_transcripts_aggregates_query"></a>
+
+## [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html) post_analytics_transcripts_aggregates_query(body)
+
+
+
+Query for transcript aggregates
+
+
+
+Wraps POST /api/v2/analytics/transcripts/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TranscriptAggregationQuery() # TranscriptAggregationQuery | query
+
+try:
+    # Query for transcript aggregates
+    api_response = api_instance.post_analytics_transcripts_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->post_analytics_transcripts_aggregates_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
 
 <a name="post_analytics_users_aggregates_query"></a>
 

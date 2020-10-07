@@ -56,7 +56,7 @@ class ServiceLevel(object):
     def percentage(self):
         """
         Gets the percentage of this ServiceLevel.
-
+        The desired Service Level. A value between 0 and 1.
 
         :return: The percentage of this ServiceLevel.
         :rtype: float
@@ -67,7 +67,7 @@ class ServiceLevel(object):
     def percentage(self, percentage):
         """
         Sets the percentage of this ServiceLevel.
-
+        The desired Service Level. A value between 0 and 1.
 
         :param percentage: The percentage of this ServiceLevel.
         :type: float
@@ -79,7 +79,7 @@ class ServiceLevel(object):
     def duration_ms(self):
         """
         Gets the duration_ms of this ServiceLevel.
-
+        Service Level target in milliseconds.
 
         :return: The duration_ms of this ServiceLevel.
         :rtype: int
@@ -90,7 +90,7 @@ class ServiceLevel(object):
     def duration_ms(self, duration_ms):
         """
         Sets the duration_ms of this ServiceLevel.
-
+        Service Level target in milliseconds.
 
         :param duration_ms: The duration_ms of this ServiceLevel.
         :type: int

@@ -43,6 +43,7 @@ class TokenInfo(object):
             'organization': 'NamedEntity',
             'home_organization': 'NamedEntity',
             'authorized_scope': 'list[str]',
+            'cloned_user': 'TokenInfoClonedUser',
             'o_auth_client': 'OrgOAuthClient'
         }
 
@@ -50,12 +51,14 @@ class TokenInfo(object):
             'organization': 'organization',
             'home_organization': 'homeOrganization',
             'authorized_scope': 'authorizedScope',
+            'cloned_user': 'clonedUser',
             'o_auth_client': 'OAuthClient'
         }
 
         self._organization = None
         self._home_organization = None
         self._authorized_scope = None
+        self._cloned_user = None
         self._o_auth_client = None
 
     @property
@@ -126,6 +129,29 @@ class TokenInfo(object):
         """
         
         self._authorized_scope = authorized_scope
+
+    @property
+    def cloned_user(self):
+        """
+        Gets the cloned_user of this TokenInfo.
+        Only present when a user is a clone of trustee user in the trustor org.
+
+        :return: The cloned_user of this TokenInfo.
+        :rtype: TokenInfoClonedUser
+        """
+        return self._cloned_user
+
+    @cloned_user.setter
+    def cloned_user(self, cloned_user):
+        """
+        Sets the cloned_user of this TokenInfo.
+        Only present when a user is a clone of trustee user in the trustor org.
+
+        :param cloned_user: The cloned_user of this TokenInfo.
+        :type: TokenInfoClonedUser
+        """
+        
+        self._cloned_user = cloned_user
 
     @property
     def o_auth_client(self):

@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](ConversationsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](ConversationsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_conversations_details_jobs_availability**](ConversationsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
 |[**get_conversation_participant_secureivrsession**](ConversationsApi.html#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
 |[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
@@ -809,6 +810,53 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+
+<a name="get_analytics_conversations_details_jobs_availability"></a>
+
+## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_conversations_details_jobs_availability()
+
+
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/availability 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Lookup the datalake availability date and time
+    api_response = api_instance.get_analytics_conversations_details_jobs_availability()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ConversationsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="get_conversation"></a>
 
