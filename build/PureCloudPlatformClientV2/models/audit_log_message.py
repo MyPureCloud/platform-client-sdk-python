@@ -48,7 +48,7 @@ class AuditLogMessage(object):
             'event_date': 'datetime',
             'message': 'MessageInfo',
             'action': 'str',
-            'entity': 'AddressableEntityRef',
+            'entity': 'DomainEntityRef',
             'entity_type': 'str',
             'property_changes': 'list[PropertyChange]',
             'context': 'dict(str, str)'
@@ -281,7 +281,7 @@ class AuditLogMessage(object):
         Entity that was impacted.
 
         :return: The entity of this AuditLogMessage.
-        :rtype: AddressableEntityRef
+        :rtype: DomainEntityRef
         """
         return self._entity
 
@@ -292,7 +292,7 @@ class AuditLogMessage(object):
         Entity that was impacted.
 
         :param entity: The entity of this AuditLogMessage.
-        :type: AddressableEntityRef
+        :type: DomainEntityRef
         """
         
         self._entity = entity

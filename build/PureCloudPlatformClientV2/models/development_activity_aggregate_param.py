@@ -62,7 +62,7 @@ class DevelopmentActivityAggregateParam(object):
     def interval(self):
         """
         Gets the interval of this DevelopmentActivityAggregateParam.
-        Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The interval of this DevelopmentActivityAggregateParam.
         :rtype: str
@@ -73,7 +73,7 @@ class DevelopmentActivityAggregateParam(object):
     def interval(self, interval):
         """
         Sets the interval of this DevelopmentActivityAggregateParam.
-        Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param interval: The interval of this DevelopmentActivityAggregateParam.
         :type: str

@@ -1829,6 +1829,8 @@ from .models.transcript_aggregate_query_predicate import TranscriptAggregateQuer
 from .models.transcript_aggregate_query_response import TranscriptAggregateQueryResponse
 from .models.transcript_aggregation_query import TranscriptAggregationQuery
 from .models.transcript_aggregation_view import TranscriptAggregationView
+from .models.transcript_conversation_detail_search_criteria import TranscriptConversationDetailSearchCriteria
+from .models.transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
 from .models.transfer_request import TransferRequest

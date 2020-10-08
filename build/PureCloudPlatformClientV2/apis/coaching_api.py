@@ -554,14 +554,14 @@ class CoachingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] user_ids: The user IDs for which to retrieve appointments (required)
-        :param str interval: Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str interval: Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param int page_number: Page number
         :param int page_size: Page size
         :param list[str] statuses: Appointment Statuses to filter by
         :param list[str] facilitator_ids: The facilitator IDs for which to retrieve appointments
         :param str sort_order: Sort (by due date) either Asc or Desc
         :param list[str] relationships: Relationships to filter by
-        :param str completion_interval: Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str completion_interval: Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Overdue status to filter by
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,
@@ -658,14 +658,14 @@ class CoachingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str interval: Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str interval: Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param int page_number: Page number
         :param int page_size: Page size
         :param list[str] statuses: Appointment Statuses to filter by
         :param list[str] facilitator_ids: The facilitator IDs for which to retrieve appointments
         :param str sort_order: Sort (by due date) either Asc or Desc
         :param list[str] relationships: Relationships to filter by
-        :param str completion_interval: Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str completion_interval: Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Overdue status to filter by
         :return: CoachingAppointmentResponseList
                  If the method is called asynchronously,

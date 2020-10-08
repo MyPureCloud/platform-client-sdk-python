@@ -62,7 +62,7 @@ class CoachingAppointmentAggregateRequest(object):
     def interval(self):
         """
         Gets the interval of this CoachingAppointmentAggregateRequest.
-        Interval to aggregate across. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The interval of this CoachingAppointmentAggregateRequest.
         :rtype: str
@@ -73,7 +73,7 @@ class CoachingAppointmentAggregateRequest(object):
     def interval(self, interval):
         """
         Sets the interval of this CoachingAppointmentAggregateRequest.
-        Interval to aggregate across. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param interval: The interval of this CoachingAppointmentAggregateRequest.
         :type: str

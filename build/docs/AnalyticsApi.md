@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](AnalyticsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](AnalyticsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
+|[**post_analytics_conversations_transcripts_query**](AnalyticsApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
 |[**post_analytics_evaluations_aggregates_query**](AnalyticsApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_analytics_flows_aggregates_query**](AnalyticsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
 |[**post_analytics_flows_observations_query**](AnalyticsApi.html#post_analytics_flows_observations_query) | Query for flow observations|
@@ -1371,6 +1372,57 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+
+<a name="post_analytics_conversations_transcripts_query"></a>
+
+## [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html) post_analytics_conversations_transcripts_query(body)
+
+
+
+Search resources.
+
+
+
+Wraps POST /api/v2/analytics/conversations/transcripts/query 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TranscriptConversationDetailSearchRequest() # TranscriptConversationDetailSearchRequest | Search request options
+
+try:
+    # Search resources.
+    api_response = api_instance.post_analytics_conversations_transcripts_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AnalyticsApi->post_analytics_conversations_transcripts_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
 <a name="post_analytics_evaluations_aggregates_query"></a>
 

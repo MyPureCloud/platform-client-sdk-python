@@ -377,14 +377,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
 user_ids = ['user_ids_example'] # list[str] | The user IDs for which to retrieve appointments
-interval = 'interval_example' # str | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+interval = 'interval_example' # str | Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
 facilitator_ids = ['facilitator_ids_example'] # list[str] | The facilitator IDs for which to retrieve appointments (optional)
 sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc (optional)
 relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
-completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'overdue_example' # str | Overdue status to filter by (optional)
 
 try:
@@ -401,14 +401,14 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_ids** | [**list[str]**](str.html)| The user IDs for which to retrieve appointments |  |
-| **interval** | **str**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **interval** | **str**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
 | **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
 | **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-| **completion_interval** | **str**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 
@@ -444,14 +444,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
-interval = 'interval_example' # str | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+interval = 'interval_example' # str | Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 statuses = ['statuses_example'] # list[str] | Appointment Statuses to filter by (optional)
 facilitator_ids = ['facilitator_ids_example'] # list[str] | The facilitator IDs for which to retrieve appointments (optional)
 sort_order = 'sort_order_example' # str | Sort (by due date) either Asc or Desc (optional)
 relationships = ['relationships_example'] # list[str] | Relationships to filter by (optional)
-completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+completion_interval = 'completion_interval_example' # str | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 overdue = 'overdue_example' # str | Overdue status to filter by (optional)
 
 try:
@@ -467,14 +467,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **interval** | **str**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **interval** | **str**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed |
 | **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
 | **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-| **completion_interval** | **str**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 

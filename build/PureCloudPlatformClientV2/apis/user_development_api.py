@@ -63,8 +63,8 @@ class UserDevelopmentApi(object):
             for asynchronous request. (optional)
         :param list[str] user_id: Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
         :param str module_id: Specifies the ID of the learning module.
-        :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-        :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
         :param int page_size: Page size
         :param int page_number: Page number
@@ -167,8 +167,8 @@ class UserDevelopmentApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str module_id: Specifies the ID of the learning module.
-        :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-        :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str interval: Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str completion_interval: Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str overdue: Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
         :param int page_size: Page size
         :param int page_number: Page number

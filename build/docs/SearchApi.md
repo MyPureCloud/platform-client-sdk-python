@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_search_suggest**](SearchApi.html#get_search_suggest) | Suggest resources using the q64 value returned from a previous suggest query.|
 |[**get_users_search**](SearchApi.html#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_voicemail_search**](SearchApi.html#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
+|[**post_analytics_conversations_transcripts_query**](SearchApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
 |[**post_documentation_gkn_search**](SearchApi.html#post_documentation_gkn_search) | Search gkn documentation|
 |[**post_documentation_search**](SearchApi.html#post_documentation_search) | Search documentation|
 |[**post_groups_search**](SearchApi.html#post_groups_search) | Search groups|
@@ -438,6 +439,57 @@ except ApiException as e:
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+
+<a name="post_analytics_conversations_transcripts_query"></a>
+
+## [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html) post_analytics_conversations_transcripts_query(body)
+
+
+
+Search resources.
+
+
+
+Wraps POST /api/v2/analytics/conversations/transcripts/query 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.TranscriptConversationDetailSearchRequest() # TranscriptConversationDetailSearchRequest | Search request options
+
+try:
+    # Search resources.
+    api_response = api_instance.post_analytics_conversations_transcripts_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SearchApi->post_analytics_conversations_transcripts_query: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
 <a name="post_documentation_gkn_search"></a>
 
