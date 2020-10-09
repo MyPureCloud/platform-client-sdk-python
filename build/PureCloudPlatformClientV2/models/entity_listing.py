@@ -40,14 +40,26 @@ class EntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[object]'
+            'entities': 'list[DataTableImportJob]',
+            'page_size': 'int',
+            'page_number': 'int',
+            'total': 'int',
+            'page_count': 'int'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'page_size': 'pageSize',
+            'page_number': 'pageNumber',
+            'total': 'total',
+            'page_count': 'pageCount'
         }
 
         self._entities = None
+        self._page_size = None
+        self._page_number = None
+        self._total = None
+        self._page_count = None
 
     @property
     def entities(self):
@@ -56,7 +68,7 @@ class EntityListing(object):
 
 
         :return: The entities of this EntityListing.
-        :rtype: list[object]
+        :rtype: list[DataTableImportJob]
         """
         return self._entities
 
@@ -67,10 +79,102 @@ class EntityListing(object):
 
 
         :param entities: The entities of this EntityListing.
-        :type: list[object]
+        :type: list[DataTableImportJob]
         """
         
         self._entities = entities
+
+    @property
+    def page_size(self):
+        """
+        Gets the page_size of this EntityListing.
+
+
+        :return: The page_size of this EntityListing.
+        :rtype: int
+        """
+        return self._page_size
+
+    @page_size.setter
+    def page_size(self, page_size):
+        """
+        Sets the page_size of this EntityListing.
+
+
+        :param page_size: The page_size of this EntityListing.
+        :type: int
+        """
+        
+        self._page_size = page_size
+
+    @property
+    def page_number(self):
+        """
+        Gets the page_number of this EntityListing.
+
+
+        :return: The page_number of this EntityListing.
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """
+        Sets the page_number of this EntityListing.
+
+
+        :param page_number: The page_number of this EntityListing.
+        :type: int
+        """
+        
+        self._page_number = page_number
+
+    @property
+    def total(self):
+        """
+        Gets the total of this EntityListing.
+
+
+        :return: The total of this EntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this EntityListing.
+
+
+        :param total: The total of this EntityListing.
+        :type: int
+        """
+        
+        self._total = total
+
+    @property
+    def page_count(self):
+        """
+        Gets the page_count of this EntityListing.
+
+
+        :return: The page_count of this EntityListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """
+        Sets the page_count of this EntityListing.
+
+
+        :param page_count: The page_count of this EntityListing.
+        :type: int
+        """
+        
+        self._page_count = page_count
 
     def to_dict(self):
         """
