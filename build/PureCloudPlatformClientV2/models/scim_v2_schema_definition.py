@@ -157,7 +157,7 @@ class ScimV2SchemaDefinition(object):
     def meta(self):
         """
         Gets the meta of this ScimV2SchemaDefinition.
-        The metadata of the SCIM resource. Only location and resourceType are set for Schema resources.
+        The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.
 
         :return: The meta of this ScimV2SchemaDefinition.
         :rtype: ScimMetadata
@@ -168,7 +168,7 @@ class ScimV2SchemaDefinition(object):
     def meta(self, meta):
         """
         Sets the meta of this ScimV2SchemaDefinition.
-        The metadata of the SCIM resource. Only location and resourceType are set for Schema resources.
+        The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.
 
         :param meta: The meta of this ScimV2SchemaDefinition.
         :type: ScimMetadata

@@ -251,7 +251,7 @@ class CampaignInteraction(object):
     def last_active_preview_wrapup_time(self):
         """
         Gets the last_active_preview_wrapup_time of this CampaignInteraction.
-        The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The last_active_preview_wrapup_time of this CampaignInteraction.
         :rtype: datetime
@@ -262,7 +262,7 @@ class CampaignInteraction(object):
     def last_active_preview_wrapup_time(self, last_active_preview_wrapup_time):
         """
         Sets the last_active_preview_wrapup_time of this CampaignInteraction.
-        The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param last_active_preview_wrapup_time: The last_active_preview_wrapup_time of this CampaignInteraction.
         :type: datetime
@@ -274,7 +274,7 @@ class CampaignInteraction(object):
     def creation_time(self):
         """
         Gets the creation_time of this CampaignInteraction.
-        The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The creation_time of this CampaignInteraction.
         :rtype: datetime
@@ -285,7 +285,7 @@ class CampaignInteraction(object):
     def creation_time(self, creation_time):
         """
         Sets the creation_time of this CampaignInteraction.
-        The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param creation_time: The creation_time of this CampaignInteraction.
         :type: datetime
@@ -297,7 +297,7 @@ class CampaignInteraction(object):
     def call_placed_time(self):
         """
         Gets the call_placed_time of this CampaignInteraction.
-        The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The call_placed_time of this CampaignInteraction.
         :rtype: datetime
@@ -308,7 +308,7 @@ class CampaignInteraction(object):
     def call_placed_time(self, call_placed_time):
         """
         Sets the call_placed_time of this CampaignInteraction.
-        The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param call_placed_time: The call_placed_time of this CampaignInteraction.
         :type: datetime
@@ -320,7 +320,7 @@ class CampaignInteraction(object):
     def call_routed_time(self):
         """
         Gets the call_routed_time of this CampaignInteraction.
-        The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The call_routed_time of this CampaignInteraction.
         :rtype: datetime
@@ -331,7 +331,7 @@ class CampaignInteraction(object):
     def call_routed_time(self, call_routed_time):
         """
         Sets the call_routed_time of this CampaignInteraction.
-        The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param call_routed_time: The call_routed_time of this CampaignInteraction.
         :type: datetime
@@ -343,7 +343,7 @@ class CampaignInteraction(object):
     def preview_connected_time(self):
         """
         Gets the preview_connected_time of this CampaignInteraction.
-        The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The preview_connected_time of this CampaignInteraction.
         :rtype: datetime
@@ -354,7 +354,7 @@ class CampaignInteraction(object):
     def preview_connected_time(self, preview_connected_time):
         """
         Sets the preview_connected_time of this CampaignInteraction.
-        The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param preview_connected_time: The preview_connected_time of this CampaignInteraction.
         :type: datetime
@@ -485,7 +485,7 @@ class CampaignInteraction(object):
     def preview_pop_delivered_time(self):
         """
         Gets the preview_pop_delivered_time of this CampaignInteraction.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The preview_pop_delivered_time of this CampaignInteraction.
         :rtype: datetime
@@ -496,7 +496,7 @@ class CampaignInteraction(object):
     def preview_pop_delivered_time(self, preview_pop_delivered_time):
         """
         Sets the preview_pop_delivered_time of this CampaignInteraction.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param preview_pop_delivered_time: The preview_pop_delivered_time of this CampaignInteraction.
         :type: datetime

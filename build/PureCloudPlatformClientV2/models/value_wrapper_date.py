@@ -53,7 +53,7 @@ class ValueWrapperDate(object):
     def value(self):
         """
         Gets the value of this ValueWrapperDate.
-        The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The value of this ValueWrapperDate.
         :rtype: datetime
@@ -64,7 +64,7 @@ class ValueWrapperDate(object):
     def value(self, value):
         """
         Sets the value of this ValueWrapperDate.
-        The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param value: The value of this ValueWrapperDate.
         :type: datetime

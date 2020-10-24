@@ -53,7 +53,7 @@ class ServerDate(object):
     def current_date(self):
         """
         Gets the current_date of this ServerDate.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The current_date of this ServerDate.
         :rtype: datetime
@@ -64,7 +64,7 @@ class ServerDate(object):
     def current_date(self, current_date):
         """
         Sets the current_date of this ServerDate.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param current_date: The current_date of this ServerDate.
         :type: datetime

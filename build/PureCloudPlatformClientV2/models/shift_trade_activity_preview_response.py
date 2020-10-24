@@ -62,7 +62,7 @@ class ShiftTradeActivityPreviewResponse(object):
     def start_date(self):
         """
         Gets the start_date of this ShiftTradeActivityPreviewResponse.
-        The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this ShiftTradeActivityPreviewResponse.
         :rtype: datetime
@@ -73,7 +73,7 @@ class ShiftTradeActivityPreviewResponse(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this ShiftTradeActivityPreviewResponse.
-        The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this ShiftTradeActivityPreviewResponse.
         :type: datetime

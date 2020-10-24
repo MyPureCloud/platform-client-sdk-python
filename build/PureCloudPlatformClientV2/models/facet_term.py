@@ -183,7 +183,7 @@ class FacetTerm(object):
     def time(self):
         """
         Gets the time of this FacetTerm.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The time of this FacetTerm.
         :rtype: datetime
@@ -194,7 +194,7 @@ class FacetTerm(object):
     def time(self, time):
         """
         Sets the time of this FacetTerm.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param time: The time of this FacetTerm.
         :type: datetime

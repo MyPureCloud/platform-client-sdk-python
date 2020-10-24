@@ -57,8 +57,8 @@ class HistoryListing(object):
             'completed': 'datetime',
             'entities': 'list[HistoryEntry]',
             'total': 'int',
-            'page_size': 'int',
             'page_number': 'int',
+            'page_size': 'int',
             'page_count': 'int'
         }
 
@@ -80,8 +80,8 @@ class HistoryListing(object):
             'completed': 'completed',
             'entities': 'entities',
             'total': 'total',
-            'page_size': 'pageSize',
             'page_number': 'pageNumber',
+            'page_size': 'pageSize',
             'page_count': 'pageCount'
         }
 
@@ -102,8 +102,8 @@ class HistoryListing(object):
         self._completed = None
         self._entities = None
         self._total = None
-        self._page_size = None
         self._page_number = None
+        self._page_size = None
         self._page_count = None
 
     @property
@@ -417,7 +417,7 @@ class HistoryListing(object):
     def started(self):
         """
         Gets the started of this HistoryListing.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The started of this HistoryListing.
         :rtype: datetime
@@ -428,7 +428,7 @@ class HistoryListing(object):
     def started(self, started):
         """
         Sets the started of this HistoryListing.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param started: The started of this HistoryListing.
         :type: datetime
@@ -440,7 +440,7 @@ class HistoryListing(object):
     def completed(self):
         """
         Gets the completed of this HistoryListing.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The completed of this HistoryListing.
         :rtype: datetime
@@ -451,7 +451,7 @@ class HistoryListing(object):
     def completed(self, completed):
         """
         Sets the completed of this HistoryListing.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param completed: The completed of this HistoryListing.
         :type: datetime
@@ -506,29 +506,6 @@ class HistoryListing(object):
         self._total = total
 
     @property
-    def page_size(self):
-        """
-        Gets the page_size of this HistoryListing.
-
-
-        :return: The page_size of this HistoryListing.
-        :rtype: int
-        """
-        return self._page_size
-
-    @page_size.setter
-    def page_size(self, page_size):
-        """
-        Sets the page_size of this HistoryListing.
-
-
-        :param page_size: The page_size of this HistoryListing.
-        :type: int
-        """
-        
-        self._page_size = page_size
-
-    @property
     def page_number(self):
         """
         Gets the page_number of this HistoryListing.
@@ -550,6 +527,29 @@ class HistoryListing(object):
         """
         
         self._page_number = page_number
+
+    @property
+    def page_size(self):
+        """
+        Gets the page_size of this HistoryListing.
+
+
+        :return: The page_size of this HistoryListing.
+        :rtype: int
+        """
+        return self._page_size
+
+    @page_size.setter
+    def page_size(self, page_size):
+        """
+        Sets the page_size of this HistoryListing.
+
+
+        :param page_size: The page_size of this HistoryListing.
+        :type: int
+        """
+        
+        self._page_size = page_size
 
     @property
     def page_count(self):

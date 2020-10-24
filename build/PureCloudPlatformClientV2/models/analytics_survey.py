@@ -175,7 +175,7 @@ class AnalyticsSurvey(object):
     def event_time(self):
         """
         Gets the event_time of this AnalyticsSurvey.
-        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The event_time of this AnalyticsSurvey.
         :rtype: datetime
@@ -186,7 +186,7 @@ class AnalyticsSurvey(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this AnalyticsSurvey.
-        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param event_time: The event_time of this AnalyticsSurvey.
         :type: datetime
@@ -290,7 +290,7 @@ class AnalyticsSurvey(object):
     def survey_completed_date(self):
         """
         Gets the survey_completed_date of this AnalyticsSurvey.
-        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The survey_completed_date of this AnalyticsSurvey.
         :rtype: datetime
@@ -301,7 +301,7 @@ class AnalyticsSurvey(object):
     def survey_completed_date(self, survey_completed_date):
         """
         Sets the survey_completed_date of this AnalyticsSurvey.
-        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param survey_completed_date: The survey_completed_date of this AnalyticsSurvey.
         :type: datetime

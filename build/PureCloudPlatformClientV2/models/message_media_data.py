@@ -143,7 +143,7 @@ class MessageMediaData(object):
     def media_type(self):
         """
         Gets the media_type of this MessageMediaData.
-        The optional internet media type of the the media object.  If null then the media type should be dictated by the url.
+        The detected internet media type of the the media object.  If null then the media type should be dictated by the url.
 
         :return: The media_type of this MessageMediaData.
         :rtype: str
@@ -154,17 +154,13 @@ class MessageMediaData(object):
     def media_type(self, media_type):
         """
         Sets the media_type of this MessageMediaData.
-        The optional internet media type of the the media object.  If null then the media type should be dictated by the url.
+        The detected internet media type of the the media object.  If null then the media type should be dictated by the url.
 
         :param media_type: The media_type of this MessageMediaData.
         :type: str
         """
-        allowed_values = ["image/png", "image/jpeg", "image/gif"]
-        if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
-            self._media_type = "outdated_sdk_version"
-        else:
-            self._media_type = media_type
+        
+        self._media_type = media_type
 
     @property
     def content_length_bytes(self):

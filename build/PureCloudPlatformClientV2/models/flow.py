@@ -58,6 +58,7 @@ class Flow(object):
             'debug_version': 'FlowVersion',
             'published_by': 'User',
             'current_operation': 'Operation',
+            'nlu_info': 'NluInfo',
             'self_uri': 'str'
         }
 
@@ -80,6 +81,7 @@ class Flow(object):
             'debug_version': 'debugVersion',
             'published_by': 'publishedBy',
             'current_operation': 'currentOperation',
+            'nlu_info': 'nluInfo',
             'self_uri': 'selfUri'
         }
 
@@ -101,6 +103,7 @@ class Flow(object):
         self._debug_version = None
         self._published_by = None
         self._current_operation = None
+        self._nlu_info = None
         self._self_uri = None
 
     @property
@@ -520,6 +523,29 @@ class Flow(object):
         """
         
         self._current_operation = current_operation
+
+    @property
+    def nlu_info(self):
+        """
+        Gets the nlu_info of this Flow.
+        Information about the NLU domain version for the flow
+
+        :return: The nlu_info of this Flow.
+        :rtype: NluInfo
+        """
+        return self._nlu_info
+
+    @nlu_info.setter
+    def nlu_info(self, nlu_info):
+        """
+        Sets the nlu_info of this Flow.
+        Information about the NLU domain version for the flow
+
+        :param nlu_info: The nlu_info of this Flow.
+        :type: NluInfo
+        """
+        
+        self._nlu_info = nlu_info
 
     @property
     def self_uri(self):

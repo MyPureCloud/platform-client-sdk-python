@@ -243,7 +243,7 @@ class TrusteeBillingOverview(object):
     def ramp_period_start_date(self):
         """
         Gets the ramp_period_start_date of this TrusteeBillingOverview.
-        Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The ramp_period_start_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -254,7 +254,7 @@ class TrusteeBillingOverview(object):
     def ramp_period_start_date(self, ramp_period_start_date):
         """
         Sets the ramp_period_start_date of this TrusteeBillingOverview.
-        Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param ramp_period_start_date: The ramp_period_start_date of this TrusteeBillingOverview.
         :type: datetime
@@ -266,7 +266,7 @@ class TrusteeBillingOverview(object):
     def ramp_period_end_date(self):
         """
         Gets the ramp_period_end_date of this TrusteeBillingOverview.
-        Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The ramp_period_end_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -277,7 +277,7 @@ class TrusteeBillingOverview(object):
     def ramp_period_end_date(self, ramp_period_end_date):
         """
         Sets the ramp_period_end_date of this TrusteeBillingOverview.
-        Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param ramp_period_end_date: The ramp_period_end_date of this TrusteeBillingOverview.
         :type: datetime
@@ -289,7 +289,7 @@ class TrusteeBillingOverview(object):
     def billing_period_start_date(self):
         """
         Gets the billing_period_start_date of this TrusteeBillingOverview.
-        Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The billing_period_start_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -300,7 +300,7 @@ class TrusteeBillingOverview(object):
     def billing_period_start_date(self, billing_period_start_date):
         """
         Sets the billing_period_start_date of this TrusteeBillingOverview.
-        Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param billing_period_start_date: The billing_period_start_date of this TrusteeBillingOverview.
         :type: datetime
@@ -312,7 +312,7 @@ class TrusteeBillingOverview(object):
     def billing_period_end_date(self):
         """
         Gets the billing_period_end_date of this TrusteeBillingOverview.
-        Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The billing_period_end_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -323,7 +323,7 @@ class TrusteeBillingOverview(object):
     def billing_period_end_date(self, billing_period_end_date):
         """
         Sets the billing_period_end_date of this TrusteeBillingOverview.
-        Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param billing_period_end_date: The billing_period_end_date of this TrusteeBillingOverview.
         :type: datetime
@@ -358,7 +358,7 @@ class TrusteeBillingOverview(object):
     def contract_amendment_date(self):
         """
         Gets the contract_amendment_date of this TrusteeBillingOverview.
-        Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The contract_amendment_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -369,7 +369,7 @@ class TrusteeBillingOverview(object):
     def contract_amendment_date(self, contract_amendment_date):
         """
         Sets the contract_amendment_date of this TrusteeBillingOverview.
-        Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param contract_amendment_date: The contract_amendment_date of this TrusteeBillingOverview.
         :type: datetime
@@ -381,7 +381,7 @@ class TrusteeBillingOverview(object):
     def contract_effective_date(self):
         """
         Gets the contract_effective_date of this TrusteeBillingOverview.
-        Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The contract_effective_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -392,7 +392,7 @@ class TrusteeBillingOverview(object):
     def contract_effective_date(self, contract_effective_date):
         """
         Sets the contract_effective_date of this TrusteeBillingOverview.
-        Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param contract_effective_date: The contract_effective_date of this TrusteeBillingOverview.
         :type: datetime
@@ -404,7 +404,7 @@ class TrusteeBillingOverview(object):
     def contract_end_date(self):
         """
         Gets the contract_end_date of this TrusteeBillingOverview.
-        Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The contract_end_date of this TrusteeBillingOverview.
         :rtype: datetime
@@ -415,7 +415,7 @@ class TrusteeBillingOverview(object):
     def contract_end_date(self, contract_end_date):
         """
         Sets the contract_end_date of this TrusteeBillingOverview.
-        Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param contract_end_date: The contract_end_date of this TrusteeBillingOverview.
         :type: datetime

@@ -206,7 +206,7 @@ class CoachingNotification(object):
     def date_start(self):
         """
         Gets the date_start of this CoachingNotification.
-        The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_start of this CoachingNotification.
         :rtype: datetime
@@ -217,7 +217,7 @@ class CoachingNotification(object):
     def date_start(self, date_start):
         """
         Sets the date_start of this CoachingNotification.
-        The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_start: The date_start of this CoachingNotification.
         :type: datetime

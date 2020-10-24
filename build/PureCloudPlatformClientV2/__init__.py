@@ -451,6 +451,8 @@ from .models.conversation_deletion_protection_query import ConversationDeletionP
 from .models.conversation_detail_query_clause import ConversationDetailQueryClause
 from .models.conversation_detail_query_filter import ConversationDetailQueryFilter
 from .models.conversation_detail_query_predicate import ConversationDetailQueryPredicate
+from .models.conversation_details_datalake_availability_topic_data_availability_change_notification import ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
+from .models.conversation_details_datalake_availability_topic_date_time import ConversationDetailsDatalakeAvailabilityTopicDateTime
 from .models.conversation_division_membership import ConversationDivisionMembership
 from .models.conversation_email_event_topic_attachment import ConversationEmailEventTopicAttachment
 from .models.conversation_email_event_topic_conversation_routing_data import ConversationEmailEventTopicConversationRoutingData
@@ -1009,6 +1011,7 @@ from .models.integration_export import IntegrationExport
 from .models.integration_status_info import IntegrationStatusInfo
 from .models.integration_type import IntegrationType
 from .models.integration_type_entity_listing import IntegrationTypeEntityListing
+from .models.intent import Intent
 from .models.intent_definition import IntentDefinition
 from .models.intent_feedback import IntentFeedback
 from .models.interaction_stats_alert import InteractionStatsAlert
@@ -1192,6 +1195,7 @@ from .models.nlu_domain_version_training_response import NluDomainVersionTrainin
 from .models.nlu_feedback_listing import NluFeedbackListing
 from .models.nlu_feedback_request import NluFeedbackRequest
 from .models.nlu_feedback_response import NluFeedbackResponse
+from .models.nlu_info import NluInfo
 from .models.nlu_quality_report_summary import NluQualityReportSummary
 from .models.nlu_quality_report_summary_metric import NluQualityReportSummaryMetric
 from .models.nlu_utterance import NluUtterance
@@ -1544,13 +1548,19 @@ from .models.recipient import Recipient
 from .models.recipient_listing import RecipientListing
 from .models.record import Record
 from .models.recording import Recording
+from .models.recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
+from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
 from .models.recording_email_message import RecordingEmailMessage
+from .models.recording_event_media_result import RecordingEventMediaResult
+from .models.recording_event_recording import RecordingEventRecording
 from .models.recording_job import RecordingJob
 from .models.recording_job_entity_listing import RecordingJobEntityListing
 from .models.recording_jobs_query import RecordingJobsQuery
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_metadata import RecordingMetadata
 from .models.recording_settings import RecordingSettings
+from .models.recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
+from .models.recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
 from .models.region_time_zone import RegionTimeZone
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
@@ -1888,7 +1898,6 @@ from .models.update_notification_response import UpdateNotificationResponse
 from .models.update_notifications_request import UpdateNotificationsRequest
 from .models.update_notifications_response import UpdateNotificationsResponse
 from .models.update_planning_group_request import UpdatePlanningGroupRequest
-from .models.update_scheduling_run_request import UpdateSchedulingRunRequest
 from .models.update_service_goal_template import UpdateServiceGoalTemplate
 from .models.update_user import UpdateUser
 from .models.upload_url_request import UploadUrlRequest
@@ -1918,6 +1927,8 @@ from .models.user_conversations_event_user_conversation_summary import UserConve
 from .models.user_detail_query_clause import UserDetailQueryClause
 from .models.user_detail_query_filter import UserDetailQueryFilter
 from .models.user_detail_query_predicate import UserDetailQueryPredicate
+from .models.user_details_datalake_availability_topic_data_availability_change_notification import UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
+from .models.user_details_datalake_availability_topic_date_time import UserDetailsDatalakeAvailabilityTopicDateTime
 from .models.user_details_query import UserDetailsQuery
 from .models.user_device import UserDevice
 from .models.user_entity_listing import UserEntityListing
@@ -2219,7 +2230,6 @@ from .apis.textbots_api import TextbotsApi
 from .apis.tokens_api import TokensApi
 from .apis.uploads_api import UploadsApi
 from .apis.usage_api import UsageApi
-from .apis.user_development_api import UserDevelopmentApi
 from .apis.user_recordings_api import UserRecordingsApi
 from .apis.users_api import UsersApi
 from .apis.utilities_api import UtilitiesApi

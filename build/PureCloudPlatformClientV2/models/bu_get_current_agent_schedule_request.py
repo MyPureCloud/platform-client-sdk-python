@@ -56,7 +56,7 @@ class BuGetCurrentAgentScheduleRequest(object):
     def start_date(self):
         """
         Gets the start_date of this BuGetCurrentAgentScheduleRequest.
-        Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this BuGetCurrentAgentScheduleRequest.
         :rtype: datetime
@@ -67,7 +67,7 @@ class BuGetCurrentAgentScheduleRequest(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this BuGetCurrentAgentScheduleRequest.
-        Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this BuGetCurrentAgentScheduleRequest.
         :type: datetime
@@ -79,7 +79,7 @@ class BuGetCurrentAgentScheduleRequest(object):
     def end_date(self):
         """
         Gets the end_date of this BuGetCurrentAgentScheduleRequest.
-        End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_date of this BuGetCurrentAgentScheduleRequest.
         :rtype: datetime
@@ -90,7 +90,7 @@ class BuGetCurrentAgentScheduleRequest(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this BuGetCurrentAgentScheduleRequest.
-        End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_date: The end_date of this BuGetCurrentAgentScheduleRequest.
         :type: datetime

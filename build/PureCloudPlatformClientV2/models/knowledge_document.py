@@ -206,7 +206,7 @@ class KnowledgeDocument(object):
     def date_created(self):
         """
         Gets the date_created of this KnowledgeDocument.
-        Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this KnowledgeDocument.
         :rtype: datetime
@@ -217,7 +217,7 @@ class KnowledgeDocument(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this KnowledgeDocument.
-        Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this KnowledgeDocument.
         :type: datetime
@@ -229,7 +229,7 @@ class KnowledgeDocument(object):
     def date_modified(self):
         """
         Gets the date_modified of this KnowledgeDocument.
-        Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this KnowledgeDocument.
         :rtype: datetime
@@ -240,7 +240,7 @@ class KnowledgeDocument(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this KnowledgeDocument.
-        Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this KnowledgeDocument.
         :type: datetime

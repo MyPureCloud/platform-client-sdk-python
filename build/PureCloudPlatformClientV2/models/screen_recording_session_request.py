@@ -86,7 +86,7 @@ class ScreenRecordingSessionRequest(object):
     def archive_date(self):
         """
         Gets the archive_date of this ScreenRecordingSessionRequest.
-        The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The archive_date of this ScreenRecordingSessionRequest.
         :rtype: datetime
@@ -97,7 +97,7 @@ class ScreenRecordingSessionRequest(object):
     def archive_date(self, archive_date):
         """
         Sets the archive_date of this ScreenRecordingSessionRequest.
-        The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param archive_date: The archive_date of this ScreenRecordingSessionRequest.
         :type: datetime
@@ -109,7 +109,7 @@ class ScreenRecordingSessionRequest(object):
     def delete_date(self):
         """
         Gets the delete_date of this ScreenRecordingSessionRequest.
-        The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The delete_date of this ScreenRecordingSessionRequest.
         :rtype: datetime
@@ -120,7 +120,7 @@ class ScreenRecordingSessionRequest(object):
     def delete_date(self, delete_date):
         """
         Sets the delete_date of this ScreenRecordingSessionRequest.
-        The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param delete_date: The delete_date of this ScreenRecordingSessionRequest.
         :type: datetime

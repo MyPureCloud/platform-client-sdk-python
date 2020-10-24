@@ -195,7 +195,7 @@ class DependencyStatus(object):
     def date_started(self):
         """
         Gets the date_started of this DependencyStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_started of this DependencyStatus.
         :rtype: datetime
@@ -206,7 +206,7 @@ class DependencyStatus(object):
     def date_started(self, date_started):
         """
         Sets the date_started of this DependencyStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_started: The date_started of this DependencyStatus.
         :type: datetime
@@ -218,7 +218,7 @@ class DependencyStatus(object):
     def date_completed(self):
         """
         Gets the date_completed of this DependencyStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_completed of this DependencyStatus.
         :rtype: datetime
@@ -229,7 +229,7 @@ class DependencyStatus(object):
     def date_completed(self, date_completed):
         """
         Sets the date_completed of this DependencyStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_completed: The date_completed of this DependencyStatus.
         :type: datetime

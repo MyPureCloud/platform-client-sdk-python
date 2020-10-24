@@ -121,7 +121,7 @@ class HistoryEntry(object):
     def timestamp(self):
         """
         Gets the timestamp of this HistoryEntry.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this HistoryEntry.
         :rtype: datetime
@@ -132,7 +132,7 @@ class HistoryEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this HistoryEntry.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this HistoryEntry.
         :type: datetime

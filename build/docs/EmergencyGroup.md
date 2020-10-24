@@ -11,8 +11,8 @@ title: EmergencyGroup
 | **name** | **str** | The name of the entity. | |
 | **description** | **str** | The resource&#39;s description. | [optional] |
 | **version** | **int** | The current version of the resource. | [optional] |
-| **date_created** | **datetime** | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **date_modified** | **datetime** | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_created** | **datetime** | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **date_modified** | **datetime** | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **modified_by** | **str** | The ID of the user that last modified the resource. | [optional] |
 | **created_by** | **str** | The ID of the user that created the resource. | [optional] |
 | **state** | **str** | Indicates if the resource is active, inactive, or deleted. | [optional] |

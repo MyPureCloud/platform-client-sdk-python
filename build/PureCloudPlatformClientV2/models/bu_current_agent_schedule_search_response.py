@@ -137,7 +137,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
     def start_date(self):
         """
         Gets the start_date of this BuCurrentAgentScheduleSearchResponse.
-        The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this BuCurrentAgentScheduleSearchResponse.
         :rtype: datetime
@@ -148,7 +148,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this BuCurrentAgentScheduleSearchResponse.
-        The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this BuCurrentAgentScheduleSearchResponse.
         :type: datetime
@@ -160,7 +160,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
     def end_date(self):
         """
         Gets the end_date of this BuCurrentAgentScheduleSearchResponse.
-        The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_date of this BuCurrentAgentScheduleSearchResponse.
         :rtype: datetime
@@ -171,7 +171,7 @@ class BuCurrentAgentScheduleSearchResponse(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this BuCurrentAgentScheduleSearchResponse.
-        The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_date: The end_date of this BuCurrentAgentScheduleSearchResponse.
         :type: datetime

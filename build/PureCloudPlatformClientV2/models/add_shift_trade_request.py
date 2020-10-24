@@ -134,7 +134,7 @@ class AddShiftTradeRequest(object):
     def expiration(self):
         """
         Gets the expiration of this AddShiftTradeRequest.
-        When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expiration of this AddShiftTradeRequest.
         :rtype: datetime
@@ -145,7 +145,7 @@ class AddShiftTradeRequest(object):
     def expiration(self, expiration):
         """
         Sets the expiration of this AddShiftTradeRequest.
-        When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expiration: The expiration of this AddShiftTradeRequest.
         :type: datetime

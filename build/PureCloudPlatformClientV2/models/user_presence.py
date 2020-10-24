@@ -212,7 +212,7 @@ class UserPresence(object):
     def modified_date(self):
         """
         Gets the modified_date of this UserPresence.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this UserPresence.
         :rtype: datetime
@@ -223,7 +223,7 @@ class UserPresence(object):
     def modified_date(self, modified_date):
         """
         Sets the modified_date of this UserPresence.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this UserPresence.
         :type: datetime

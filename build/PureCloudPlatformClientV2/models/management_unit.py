@@ -271,7 +271,7 @@ class ManagementUnit(object):
     def date_modified(self):
         """
         Gets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this ManagementUnit.
         :rtype: datetime
@@ -282,7 +282,7 @@ class ManagementUnit(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ManagementUnit.
-        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this ManagementUnit.
         :type: datetime

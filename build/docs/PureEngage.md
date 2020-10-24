@@ -11,8 +11,8 @@ title: PureEngage
 | **name** | **str** |  | [optional] |
 | **auto_provision_users** | **bool** |  | [optional] |
 | **certificate** | **str** |  | [optional] |
-| **issuer_uri** | **str** |  | [optional] |
 | **sso_target_uri** | **str** |  | [optional] |
+| **issuer_uri** | **str** |  | [optional] |
 | **disabled** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

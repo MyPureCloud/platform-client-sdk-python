@@ -129,7 +129,7 @@ class OutboundSettings(object):
     def date_created(self):
         """
         Gets the date_created of this OutboundSettings.
-        Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this OutboundSettings.
         :rtype: datetime
@@ -140,7 +140,7 @@ class OutboundSettings(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this OutboundSettings.
-        Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this OutboundSettings.
         :type: datetime
@@ -152,7 +152,7 @@ class OutboundSettings(object):
     def date_modified(self):
         """
         Gets the date_modified of this OutboundSettings.
-        Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this OutboundSettings.
         :rtype: datetime
@@ -163,7 +163,7 @@ class OutboundSettings(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this OutboundSettings.
-        Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this OutboundSettings.
         :type: datetime

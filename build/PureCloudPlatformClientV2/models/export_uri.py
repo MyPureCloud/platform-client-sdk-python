@@ -79,7 +79,7 @@ class ExportUri(object):
     def export_timestamp(self):
         """
         Gets the export_timestamp of this ExportUri.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The export_timestamp of this ExportUri.
         :rtype: datetime
@@ -90,7 +90,7 @@ class ExportUri(object):
     def export_timestamp(self, export_timestamp):
         """
         Sets the export_timestamp of this ExportUri.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param export_timestamp: The export_timestamp of this ExportUri.
         :type: datetime

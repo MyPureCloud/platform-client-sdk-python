@@ -117,7 +117,7 @@ class TrustRequest(object):
     def date_created(self):
         """
         Gets the date_created of this TrustRequest.
-        Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this TrustRequest.
         :rtype: datetime
@@ -128,7 +128,7 @@ class TrustRequest(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this TrustRequest.
-        Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this TrustRequest.
         :type: datetime

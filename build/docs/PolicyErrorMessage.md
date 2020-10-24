@@ -13,7 +13,7 @@ title: PolicyErrorMessage
 | **error_code** | **str** |  | [optional] |
 | **correlation_id** | **str** |  | [optional] |
 | **user_params** | [**list[UserParam]**](UserParam.html) |  | [optional] |
-| **insert_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **insert_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 {: class="table table-striped"}
 
 

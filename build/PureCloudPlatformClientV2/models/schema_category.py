@@ -178,7 +178,7 @@ class SchemaCategory(object):
     def date_created(self):
         """
         Gets the date_created of this SchemaCategory.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this SchemaCategory.
         :rtype: datetime
@@ -189,7 +189,7 @@ class SchemaCategory(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this SchemaCategory.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this SchemaCategory.
         :type: datetime
@@ -201,7 +201,7 @@ class SchemaCategory(object):
     def date_modified(self):
         """
         Gets the date_modified of this SchemaCategory.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this SchemaCategory.
         :rtype: datetime
@@ -212,7 +212,7 @@ class SchemaCategory(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this SchemaCategory.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this SchemaCategory.
         :type: datetime

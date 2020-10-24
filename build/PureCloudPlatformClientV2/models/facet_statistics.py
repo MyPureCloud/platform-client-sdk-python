@@ -186,7 +186,7 @@ class FacetStatistics(object):
     def date_min(self):
         """
         Gets the date_min of this FacetStatistics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_min of this FacetStatistics.
         :rtype: datetime
@@ -197,7 +197,7 @@ class FacetStatistics(object):
     def date_min(self, date_min):
         """
         Sets the date_min of this FacetStatistics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_min: The date_min of this FacetStatistics.
         :type: datetime
@@ -209,7 +209,7 @@ class FacetStatistics(object):
     def date_max(self):
         """
         Gets the date_max of this FacetStatistics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_max of this FacetStatistics.
         :rtype: datetime
@@ -220,7 +220,7 @@ class FacetStatistics(object):
     def date_max(self, date_max):
         """
         Sets the date_max of this FacetStatistics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_max: The date_max of this FacetStatistics.
         :type: datetime

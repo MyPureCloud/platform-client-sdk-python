@@ -258,9 +258,10 @@ Delete queue member
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/users/{memberId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 ### Example
 
@@ -1385,9 +1386,10 @@ Get the members of this queue
 
 Wraps GET /api/v2/routing/queues/{queueId}/users 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:view
+* routing:queueMember:manage
 
 ### Example
 
@@ -2486,6 +2488,7 @@ Requires ANY permissions:
 
 * routing:queue:view
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -2707,9 +2710,10 @@ Update the ring number OR joined status for a User in a Queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users/{memberId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 ### Example
 
@@ -2762,9 +2766,10 @@ Join or unjoin a set of users for a queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 ### Example
 
@@ -2865,9 +2870,10 @@ Join or unjoin a queue for a user
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -2923,6 +2929,7 @@ Wraps PATCH /api/v2/users/{userId}/queues
 Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -3397,9 +3404,10 @@ Bulk add or delete up to 100 queue members
 
 Wraps POST /api/v2/routing/queues/{queueId}/users 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 ### Example
 

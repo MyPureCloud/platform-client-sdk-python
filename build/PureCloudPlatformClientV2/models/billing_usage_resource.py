@@ -79,7 +79,7 @@ class BillingUsageResource(object):
     def date(self):
         """
         Gets the date of this BillingUsageResource.
-        The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date of this BillingUsageResource.
         :rtype: datetime
@@ -90,7 +90,7 @@ class BillingUsageResource(object):
     def date(self, date):
         """
         Sets the date of this BillingUsageResource.
-        The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date: The date of this BillingUsageResource.
         :type: datetime

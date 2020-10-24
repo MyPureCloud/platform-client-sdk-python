@@ -105,7 +105,7 @@ class AnalyticsSessionMetric(object):
     def emit_date(self):
         """
         Gets the emit_date of this AnalyticsSessionMetric.
-        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The emit_date of this AnalyticsSessionMetric.
         :rtype: datetime
@@ -116,7 +116,7 @@ class AnalyticsSessionMetric(object):
     def emit_date(self, emit_date):
         """
         Sets the emit_date of this AnalyticsSessionMetric.
-        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param emit_date: The emit_date of this AnalyticsSessionMetric.
         :type: datetime

@@ -172,7 +172,7 @@ class EventLog(object):
     def timestamp(self):
         """
         Gets the timestamp of this EventLog.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this EventLog.
         :rtype: datetime
@@ -183,7 +183,7 @@ class EventLog(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this EventLog.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this EventLog.
         :type: datetime

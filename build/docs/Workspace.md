@@ -13,8 +13,8 @@ title: Workspace
 | **is_current_user_workspace** | **bool** |  | [optional] |
 | **user** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **bucket** | **str** |  | [optional] |
-| **date_created** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **date_modified** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_created** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **date_modified** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **summary** | [**WorkspaceSummary**](WorkspaceSummary.html) |  | [optional] |
 | **acl** | **list[str]** |  | [optional] |
 | **description** | **str** |  | [optional] |

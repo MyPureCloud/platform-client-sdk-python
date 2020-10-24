@@ -176,7 +176,7 @@ class CallHistoryParticipant(object):
     def start_time(self):
         """
         Gets the start_time of this CallHistoryParticipant.
-        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this CallHistoryParticipant.
         :rtype: datetime
@@ -187,7 +187,7 @@ class CallHistoryParticipant(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this CallHistoryParticipant.
-        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this CallHistoryParticipant.
         :type: datetime
@@ -199,7 +199,7 @@ class CallHistoryParticipant(object):
     def end_time(self):
         """
         Gets the end_time of this CallHistoryParticipant.
-        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this CallHistoryParticipant.
         :rtype: datetime
@@ -210,7 +210,7 @@ class CallHistoryParticipant(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this CallHistoryParticipant.
-        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this CallHistoryParticipant.
         :type: datetime

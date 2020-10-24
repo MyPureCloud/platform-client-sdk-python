@@ -125,7 +125,7 @@ class AnalyticsConversationSegment(object):
     def segment_start(self):
         """
         Gets the segment_start of this AnalyticsConversationSegment.
-        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The segment_start of this AnalyticsConversationSegment.
         :rtype: datetime
@@ -136,7 +136,7 @@ class AnalyticsConversationSegment(object):
     def segment_start(self, segment_start):
         """
         Sets the segment_start of this AnalyticsConversationSegment.
-        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param segment_start: The segment_start of this AnalyticsConversationSegment.
         :type: datetime
@@ -148,7 +148,7 @@ class AnalyticsConversationSegment(object):
     def segment_end(self):
         """
         Gets the segment_end of this AnalyticsConversationSegment.
-        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The segment_end of this AnalyticsConversationSegment.
         :rtype: datetime
@@ -159,7 +159,7 @@ class AnalyticsConversationSegment(object):
     def segment_end(self, segment_end):
         """
         Sets the segment_end of this AnalyticsConversationSegment.
-        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param segment_end: The segment_end of this AnalyticsConversationSegment.
         :type: datetime

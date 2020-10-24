@@ -10,7 +10,7 @@ title: MessageData
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **provider_message_id** | **str** | The unique identifier of the message from provider | [optional] |
-| **timestamp** | **datetime** | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | |
+| **timestamp** | **datetime** | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **from_address** | **str** | The sender of the text message. | [optional] |
 | **to_address** | **str** | The recipient of the text message. | [optional] |
 | **direction** | **str** | The direction of the message. | [optional] |

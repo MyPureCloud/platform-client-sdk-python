@@ -193,7 +193,7 @@ class ShiftTradeNotification(object):
     def initiating_shift_date(self):
         """
         Gets the initiating_shift_date of this ShiftTradeNotification.
-        The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The initiating_shift_date of this ShiftTradeNotification.
         :rtype: datetime
@@ -204,7 +204,7 @@ class ShiftTradeNotification(object):
     def initiating_shift_date(self, initiating_shift_date):
         """
         Sets the initiating_shift_date of this ShiftTradeNotification.
-        The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param initiating_shift_date: The initiating_shift_date of this ShiftTradeNotification.
         :type: datetime
@@ -239,7 +239,7 @@ class ShiftTradeNotification(object):
     def receiving_shift_date(self):
         """
         Gets the receiving_shift_date of this ShiftTradeNotification.
-        The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The receiving_shift_date of this ShiftTradeNotification.
         :rtype: datetime
@@ -250,7 +250,7 @@ class ShiftTradeNotification(object):
     def receiving_shift_date(self, receiving_shift_date):
         """
         Sets the receiving_shift_date of this ShiftTradeNotification.
-        The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param receiving_shift_date: The receiving_shift_date of this ShiftTradeNotification.
         :type: datetime

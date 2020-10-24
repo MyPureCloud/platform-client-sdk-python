@@ -192,7 +192,7 @@ class JourneyAggregationQuery(object):
     def metrics(self):
         """
         Gets the metrics of this JourneyAggregationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :return: The metrics of this JourneyAggregationQuery.
         :rtype: list[str]
@@ -203,7 +203,7 @@ class JourneyAggregationQuery(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this JourneyAggregationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :param metrics: The metrics of this JourneyAggregationQuery.
         :type: list[str]

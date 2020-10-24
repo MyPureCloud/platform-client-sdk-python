@@ -141,7 +141,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
     def reviewed_date(self):
         """
         Gets the reviewed_date of this BulkUpdateShiftTradeStateResultItem.
-        The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reviewed_date of this BulkUpdateShiftTradeStateResultItem.
         :rtype: datetime
@@ -152,7 +152,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
     def reviewed_date(self, reviewed_date):
         """
         Sets the reviewed_date of this BulkUpdateShiftTradeStateResultItem.
-        The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reviewed_date: The reviewed_date of this BulkUpdateShiftTradeStateResultItem.
         :type: datetime

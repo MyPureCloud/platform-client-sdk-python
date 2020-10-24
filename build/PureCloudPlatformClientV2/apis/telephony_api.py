@@ -61,8 +61,8 @@ class TelephonyApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param datetime date_start: Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
-        :param datetime date_end: End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
+        :param datetime date_start: Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
+        :param datetime date_end: End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
         :param str call_id: unique identification of the placed call
         :param str to_user: User to who the call was placed
         :param str from_user: user who placed the call

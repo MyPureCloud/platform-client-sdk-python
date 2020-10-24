@@ -361,7 +361,7 @@ class TimeOffRequestResponse(object):
     def submitted_date(self):
         """
         Gets the submitted_date of this TimeOffRequestResponse.
-        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The submitted_date of this TimeOffRequestResponse.
         :rtype: datetime
@@ -372,7 +372,7 @@ class TimeOffRequestResponse(object):
     def submitted_date(self, submitted_date):
         """
         Sets the submitted_date of this TimeOffRequestResponse.
-        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param submitted_date: The submitted_date of this TimeOffRequestResponse.
         :type: datetime
@@ -407,7 +407,7 @@ class TimeOffRequestResponse(object):
     def reviewed_date(self):
         """
         Gets the reviewed_date of this TimeOffRequestResponse.
-        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reviewed_date of this TimeOffRequestResponse.
         :rtype: datetime
@@ -418,7 +418,7 @@ class TimeOffRequestResponse(object):
     def reviewed_date(self, reviewed_date):
         """
         Sets the reviewed_date of this TimeOffRequestResponse.
-        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reviewed_date: The reviewed_date of this TimeOffRequestResponse.
         :type: datetime
@@ -453,7 +453,7 @@ class TimeOffRequestResponse(object):
     def modified_date(self):
         """
         Gets the modified_date of this TimeOffRequestResponse.
-        The timestamp when this request was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this TimeOffRequestResponse.
         :rtype: datetime
@@ -464,7 +464,7 @@ class TimeOffRequestResponse(object):
     def modified_date(self, modified_date):
         """
         Sets the modified_date of this TimeOffRequestResponse.
-        The timestamp when this request was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this TimeOffRequestResponse.
         :type: datetime

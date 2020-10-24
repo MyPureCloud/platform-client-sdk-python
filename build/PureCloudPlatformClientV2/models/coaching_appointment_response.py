@@ -167,7 +167,7 @@ class CoachingAppointmentResponse(object):
     def date_start(self):
         """
         Gets the date_start of this CoachingAppointmentResponse.
-        The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_start of this CoachingAppointmentResponse.
         :rtype: datetime
@@ -178,7 +178,7 @@ class CoachingAppointmentResponse(object):
     def date_start(self, date_start):
         """
         Sets the date_start of this CoachingAppointmentResponse.
-        The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_start: The date_start of this CoachingAppointmentResponse.
         :type: datetime
@@ -309,7 +309,7 @@ class CoachingAppointmentResponse(object):
     def date_created(self):
         """
         Gets the date_created of this CoachingAppointmentResponse.
-        The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this CoachingAppointmentResponse.
         :rtype: datetime
@@ -320,7 +320,7 @@ class CoachingAppointmentResponse(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this CoachingAppointmentResponse.
-        The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this CoachingAppointmentResponse.
         :type: datetime
@@ -355,7 +355,7 @@ class CoachingAppointmentResponse(object):
     def date_modified(self):
         """
         Gets the date_modified of this CoachingAppointmentResponse.
-        The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this CoachingAppointmentResponse.
         :rtype: datetime
@@ -366,7 +366,7 @@ class CoachingAppointmentResponse(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this CoachingAppointmentResponse.
-        The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this CoachingAppointmentResponse.
         :type: datetime

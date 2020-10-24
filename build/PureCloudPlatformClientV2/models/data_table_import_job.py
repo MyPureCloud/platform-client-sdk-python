@@ -185,7 +185,7 @@ class DataTableImportJob(object):
     def date_created(self):
         """
         Gets the date_created of this DataTableImportJob.
-        The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this DataTableImportJob.
         :rtype: datetime
@@ -196,7 +196,7 @@ class DataTableImportJob(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this DataTableImportJob.
-        The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this DataTableImportJob.
         :type: datetime
@@ -208,7 +208,7 @@ class DataTableImportJob(object):
     def date_completed(self):
         """
         Gets the date_completed of this DataTableImportJob.
-        The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_completed of this DataTableImportJob.
         :rtype: datetime
@@ -219,7 +219,7 @@ class DataTableImportJob(object):
     def date_completed(self, date_completed):
         """
         Sets the date_completed of this DataTableImportJob.
-        The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_completed: The date_completed of this DataTableImportJob.
         :type: datetime

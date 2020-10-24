@@ -271,7 +271,7 @@ class Survey(object):
     def completed_date(self):
         """
         Gets the completed_date of this Survey.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The completed_date of this Survey.
         :rtype: datetime
@@ -282,7 +282,7 @@ class Survey(object):
     def completed_date(self, completed_date):
         """
         Sets the completed_date of this Survey.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param completed_date: The completed_date of this Survey.
         :type: datetime

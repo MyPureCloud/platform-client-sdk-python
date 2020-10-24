@@ -132,7 +132,7 @@ class OrgOAuthClient(object):
     def date_created(self):
         """
         Gets the date_created of this OrgOAuthClient.
-        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this OrgOAuthClient.
         :rtype: datetime
@@ -143,7 +143,7 @@ class OrgOAuthClient(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this OrgOAuthClient.
-        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this OrgOAuthClient.
         :type: datetime
@@ -155,7 +155,7 @@ class OrgOAuthClient(object):
     def date_modified(self):
         """
         Gets the date_modified of this OrgOAuthClient.
-        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this OrgOAuthClient.
         :rtype: datetime
@@ -166,7 +166,7 @@ class OrgOAuthClient(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this OrgOAuthClient.
-        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this OrgOAuthClient.
         :type: datetime
@@ -324,7 +324,7 @@ class OrgOAuthClient(object):
     def date_to_delete(self):
         """
         Gets the date_to_delete of this OrgOAuthClient.
-        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_to_delete of this OrgOAuthClient.
         :rtype: datetime
@@ -335,7 +335,7 @@ class OrgOAuthClient(object):
     def date_to_delete(self, date_to_delete):
         """
         Sets the date_to_delete of this OrgOAuthClient.
-        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_to_delete: The date_to_delete of this OrgOAuthClient.
         :type: datetime

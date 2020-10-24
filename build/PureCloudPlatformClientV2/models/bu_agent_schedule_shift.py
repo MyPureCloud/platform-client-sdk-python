@@ -91,7 +91,7 @@ class BuAgentScheduleShift(object):
     def start_date(self):
         """
         Gets the start_date of this BuAgentScheduleShift.
-        The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this BuAgentScheduleShift.
         :rtype: datetime
@@ -102,7 +102,7 @@ class BuAgentScheduleShift(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this BuAgentScheduleShift.
-        The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this BuAgentScheduleShift.
         :type: datetime

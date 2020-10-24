@@ -126,7 +126,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def download_start_time(self):
         """
         Gets the download_start_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The download_start_time of this DomainEdgeSoftwareUpdateDto.
         :rtype: datetime
@@ -137,7 +137,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def download_start_time(self, download_start_time):
         """
         Sets the download_start_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param download_start_time: The download_start_time of this DomainEdgeSoftwareUpdateDto.
         :type: datetime
@@ -149,7 +149,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def execute_start_time(self):
         """
         Gets the execute_start_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The execute_start_time of this DomainEdgeSoftwareUpdateDto.
         :rtype: datetime
@@ -160,7 +160,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def execute_start_time(self, execute_start_time):
         """
         Sets the execute_start_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param execute_start_time: The execute_start_time of this DomainEdgeSoftwareUpdateDto.
         :type: datetime
@@ -172,7 +172,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def execute_stop_time(self):
         """
         Gets the execute_stop_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The execute_stop_time of this DomainEdgeSoftwareUpdateDto.
         :rtype: datetime
@@ -183,7 +183,7 @@ class DomainEdgeSoftwareUpdateDto(object):
     def execute_stop_time(self, execute_stop_time):
         """
         Sets the execute_stop_time of this DomainEdgeSoftwareUpdateDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param execute_stop_time: The execute_stop_time of this DomainEdgeSoftwareUpdateDto.
         :type: datetime

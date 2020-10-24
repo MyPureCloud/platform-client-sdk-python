@@ -184,7 +184,7 @@ class ExtensionPool(object):
     def date_created(self):
         """
         Gets the date_created of this ExtensionPool.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this ExtensionPool.
         :rtype: datetime
@@ -195,7 +195,7 @@ class ExtensionPool(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this ExtensionPool.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this ExtensionPool.
         :type: datetime
@@ -207,7 +207,7 @@ class ExtensionPool(object):
     def date_modified(self):
         """
         Gets the date_modified of this ExtensionPool.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this ExtensionPool.
         :rtype: datetime
@@ -218,7 +218,7 @@ class ExtensionPool(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ExtensionPool.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this ExtensionPool.
         :type: datetime

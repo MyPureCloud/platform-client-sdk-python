@@ -129,7 +129,7 @@ class KnowledgeTraining(object):
     def date_triggered(self):
         """
         Gets the date_triggered of this KnowledgeTraining.
-        Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_triggered of this KnowledgeTraining.
         :rtype: datetime
@@ -140,7 +140,7 @@ class KnowledgeTraining(object):
     def date_triggered(self, date_triggered):
         """
         Sets the date_triggered of this KnowledgeTraining.
-        Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_triggered: The date_triggered of this KnowledgeTraining.
         :type: datetime
@@ -152,7 +152,7 @@ class KnowledgeTraining(object):
     def date_completed(self):
         """
         Gets the date_completed of this KnowledgeTraining.
-        Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_completed of this KnowledgeTraining.
         :rtype: datetime
@@ -163,7 +163,7 @@ class KnowledgeTraining(object):
     def date_completed(self, date_completed):
         """
         Sets the date_completed of this KnowledgeTraining.
-        Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_completed: The date_completed of this KnowledgeTraining.
         :type: datetime
@@ -298,7 +298,7 @@ class KnowledgeTraining(object):
     def date_promoted(self):
         """
         Gets the date_promoted of this KnowledgeTraining.
-        Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_promoted of this KnowledgeTraining.
         :rtype: datetime
@@ -309,7 +309,7 @@ class KnowledgeTraining(object):
     def date_promoted(self, date_promoted):
         """
         Sets the date_promoted of this KnowledgeTraining.
-        Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_promoted: The date_promoted of this KnowledgeTraining.
         :type: datetime

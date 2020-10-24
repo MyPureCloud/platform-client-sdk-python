@@ -170,7 +170,7 @@ class ReportSchedule(object):
     def next_fire_time(self):
         """
         Gets the next_fire_time of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The next_fire_time of this ReportSchedule.
         :rtype: datetime
@@ -181,7 +181,7 @@ class ReportSchedule(object):
     def next_fire_time(self, next_fire_time):
         """
         Sets the next_fire_time of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param next_fire_time: The next_fire_time of this ReportSchedule.
         :type: datetime
@@ -193,7 +193,7 @@ class ReportSchedule(object):
     def date_created(self):
         """
         Gets the date_created of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this ReportSchedule.
         :rtype: datetime
@@ -204,7 +204,7 @@ class ReportSchedule(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this ReportSchedule.
         :type: datetime
@@ -216,7 +216,7 @@ class ReportSchedule(object):
     def date_modified(self):
         """
         Gets the date_modified of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this ReportSchedule.
         :rtype: datetime
@@ -227,7 +227,7 @@ class ReportSchedule(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this ReportSchedule.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this ReportSchedule.
         :type: datetime

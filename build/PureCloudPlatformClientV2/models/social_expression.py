@@ -348,7 +348,7 @@ class SocialExpression(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this SocialExpression.
-        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_hold_time of this SocialExpression.
         :rtype: datetime
@@ -359,7 +359,7 @@ class SocialExpression(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this SocialExpression.
-        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_hold_time: The start_hold_time of this SocialExpression.
         :type: datetime
@@ -371,7 +371,7 @@ class SocialExpression(object):
     def start_alerting_time(self):
         """
         Gets the start_alerting_time of this SocialExpression.
-        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_alerting_time of this SocialExpression.
         :rtype: datetime
@@ -382,7 +382,7 @@ class SocialExpression(object):
     def start_alerting_time(self, start_alerting_time):
         """
         Sets the start_alerting_time of this SocialExpression.
-        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_alerting_time: The start_alerting_time of this SocialExpression.
         :type: datetime
@@ -394,7 +394,7 @@ class SocialExpression(object):
     def connected_time(self):
         """
         Gets the connected_time of this SocialExpression.
-        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The connected_time of this SocialExpression.
         :rtype: datetime
@@ -405,7 +405,7 @@ class SocialExpression(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this SocialExpression.
-        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param connected_time: The connected_time of this SocialExpression.
         :type: datetime
@@ -417,7 +417,7 @@ class SocialExpression(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this SocialExpression.
-        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The disconnected_time of this SocialExpression.
         :rtype: datetime
@@ -428,7 +428,7 @@ class SocialExpression(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this SocialExpression.
-        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param disconnected_time: The disconnected_time of this SocialExpression.
         :type: datetime

@@ -13,7 +13,7 @@ title: VoicemailOrganizationPolicy
 | **voicemail_extension** | **str** | The extension for voicemail retrieval.  The default value is *86. | [optional] |
 | **pin_required** | **bool** | If this is true, a PIN is required when accessing a user&#39;s voicemail from a phone. | [optional] |
 | **send_email_notifications** | **bool** | Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting. | [optional] |
-| **modified_date** | **datetime** | The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **modified_date** | **datetime** | The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 {: class="table table-striped"}
 
 

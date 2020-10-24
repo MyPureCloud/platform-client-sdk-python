@@ -628,8 +628,8 @@ class QualityApi(object):
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param datetime start_time: Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-        :param datetime end_time: End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        :param datetime start_time: Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime end_time: End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         :param list[str] agent_user_id: user id of agent requested
         :param str evaluator_user_id: user id of the evaluator
         :param str name: name
@@ -822,8 +822,8 @@ class QualityApi(object):
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param str conversation_id: conversation id
-        :param datetime start_time: Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-        :param datetime end_time: end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        :param datetime start_time: Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime end_time: end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         :return: CalibrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1318,8 +1318,8 @@ class QualityApi(object):
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param datetime start_time: The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-        :param datetime end_time: The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        :param datetime start_time: The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime end_time: The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         :param str name: Evaluator name
         :param list[str] permission: permission strings
         :param str group: group id

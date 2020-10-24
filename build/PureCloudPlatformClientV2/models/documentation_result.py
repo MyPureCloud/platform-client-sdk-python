@@ -248,7 +248,7 @@ class DocumentationResult(object):
     def modified(self):
         """
         Gets the modified of this DocumentationResult.
-        The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified of this DocumentationResult.
         :rtype: datetime
@@ -259,7 +259,7 @@ class DocumentationResult(object):
     def modified(self, modified):
         """
         Sets the modified of this DocumentationResult.
-        The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified: The modified of this DocumentationResult.
         :type: datetime

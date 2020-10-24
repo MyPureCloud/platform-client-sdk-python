@@ -152,7 +152,7 @@ class FlowRuntimeExecution(object):
     def date_launched(self):
         """
         Gets the date_launched of this FlowRuntimeExecution.
-        The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_launched of this FlowRuntimeExecution.
         :rtype: datetime
@@ -163,7 +163,7 @@ class FlowRuntimeExecution(object):
     def date_launched(self, date_launched):
         """
         Sets the date_launched of this FlowRuntimeExecution.
-        The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_launched: The date_launched of this FlowRuntimeExecution.
         :type: datetime
@@ -202,7 +202,7 @@ class FlowRuntimeExecution(object):
     def date_completed(self):
         """
         Gets the date_completed of this FlowRuntimeExecution.
-        The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_completed of this FlowRuntimeExecution.
         :rtype: datetime
@@ -213,7 +213,7 @@ class FlowRuntimeExecution(object):
     def date_completed(self, date_completed):
         """
         Sets the date_completed of this FlowRuntimeExecution.
-        The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_completed: The date_completed of this FlowRuntimeExecution.
         :type: datetime

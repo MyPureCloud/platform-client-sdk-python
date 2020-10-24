@@ -65,7 +65,7 @@ class TrunkMetrics(object):
     def event_time(self):
         """
         Gets the event_time of this TrunkMetrics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The event_time of this TrunkMetrics.
         :rtype: datetime
@@ -76,7 +76,7 @@ class TrunkMetrics(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this TrunkMetrics.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param event_time: The event_time of this TrunkMetrics.
         :type: datetime

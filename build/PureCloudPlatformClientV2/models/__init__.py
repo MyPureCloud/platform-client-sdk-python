@@ -451,6 +451,8 @@ from .conversation_deletion_protection_query import ConversationDeletionProtecti
 from .conversation_detail_query_clause import ConversationDetailQueryClause
 from .conversation_detail_query_filter import ConversationDetailQueryFilter
 from .conversation_detail_query_predicate import ConversationDetailQueryPredicate
+from .conversation_details_datalake_availability_topic_data_availability_change_notification import ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
+from .conversation_details_datalake_availability_topic_date_time import ConversationDetailsDatalakeAvailabilityTopicDateTime
 from .conversation_division_membership import ConversationDivisionMembership
 from .conversation_email_event_topic_attachment import ConversationEmailEventTopicAttachment
 from .conversation_email_event_topic_conversation_routing_data import ConversationEmailEventTopicConversationRoutingData
@@ -1009,6 +1011,7 @@ from .integration_export import IntegrationExport
 from .integration_status_info import IntegrationStatusInfo
 from .integration_type import IntegrationType
 from .integration_type_entity_listing import IntegrationTypeEntityListing
+from .intent import Intent
 from .intent_definition import IntentDefinition
 from .intent_feedback import IntentFeedback
 from .interaction_stats_alert import InteractionStatsAlert
@@ -1192,6 +1195,7 @@ from .nlu_domain_version_training_response import NluDomainVersionTrainingRespon
 from .nlu_feedback_listing import NluFeedbackListing
 from .nlu_feedback_request import NluFeedbackRequest
 from .nlu_feedback_response import NluFeedbackResponse
+from .nlu_info import NluInfo
 from .nlu_quality_report_summary import NluQualityReportSummary
 from .nlu_quality_report_summary_metric import NluQualityReportSummaryMetric
 from .nlu_utterance import NluUtterance
@@ -1544,13 +1548,19 @@ from .recipient import Recipient
 from .recipient_listing import RecipientListing
 from .record import Record
 from .recording import Recording
+from .recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
+from .recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
 from .recording_email_message import RecordingEmailMessage
+from .recording_event_media_result import RecordingEventMediaResult
+from .recording_event_recording import RecordingEventRecording
 from .recording_job import RecordingJob
 from .recording_job_entity_listing import RecordingJobEntityListing
 from .recording_jobs_query import RecordingJobsQuery
 from .recording_messaging_message import RecordingMessagingMessage
 from .recording_metadata import RecordingMetadata
 from .recording_settings import RecordingSettings
+from .recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
+from .recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
 from .region_time_zone import RegionTimeZone
 from .relationship import Relationship
 from .relationship_listing import RelationshipListing
@@ -1888,7 +1898,6 @@ from .update_notification_response import UpdateNotificationResponse
 from .update_notifications_request import UpdateNotificationsRequest
 from .update_notifications_response import UpdateNotificationsResponse
 from .update_planning_group_request import UpdatePlanningGroupRequest
-from .update_scheduling_run_request import UpdateSchedulingRunRequest
 from .update_service_goal_template import UpdateServiceGoalTemplate
 from .update_user import UpdateUser
 from .upload_url_request import UploadUrlRequest
@@ -1918,6 +1927,8 @@ from .user_conversations_event_user_conversation_summary import UserConversation
 from .user_detail_query_clause import UserDetailQueryClause
 from .user_detail_query_filter import UserDetailQueryFilter
 from .user_detail_query_predicate import UserDetailQueryPredicate
+from .user_details_datalake_availability_topic_data_availability_change_notification import UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
+from .user_details_datalake_availability_topic_date_time import UserDetailsDatalakeAvailabilityTopicDateTime
 from .user_details_query import UserDetailsQuery
 from .user_device import UserDevice
 from .user_entity_listing import UserEntityListing

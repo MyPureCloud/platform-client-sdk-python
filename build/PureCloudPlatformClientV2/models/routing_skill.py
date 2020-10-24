@@ -114,7 +114,7 @@ class RoutingSkill(object):
     def date_modified(self):
         """
         Gets the date_modified of this RoutingSkill.
-        Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this RoutingSkill.
         :rtype: datetime
@@ -125,7 +125,7 @@ class RoutingSkill(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this RoutingSkill.
-        Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this RoutingSkill.
         :type: datetime

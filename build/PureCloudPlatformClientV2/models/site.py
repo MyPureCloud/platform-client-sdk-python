@@ -62,6 +62,7 @@ class Site(object):
             'location': 'LocationDefinition',
             'managed': 'bool',
             'ntp_settings': 'NTPSettings',
+            'media_model': 'str',
             'core_site': 'bool',
             'self_uri': 'str'
         }
@@ -89,6 +90,7 @@ class Site(object):
             'location': 'location',
             'managed': 'managed',
             'ntp_settings': 'ntpSettings',
+            'media_model': 'mediaModel',
             'core_site': 'coreSite',
             'self_uri': 'selfUri'
         }
@@ -115,6 +117,7 @@ class Site(object):
         self._location = None
         self._managed = None
         self._ntp_settings = None
+        self._media_model = None
         self._core_site = None
         self._self_uri = None
 
@@ -214,7 +217,7 @@ class Site(object):
     def date_created(self):
         """
         Gets the date_created of this Site.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Site.
         :rtype: datetime
@@ -225,7 +228,7 @@ class Site(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Site.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Site.
         :type: datetime
@@ -237,7 +240,7 @@ class Site(object):
     def date_modified(self):
         """
         Gets the date_modified of this Site.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this Site.
         :rtype: datetime
@@ -248,7 +251,7 @@ class Site(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this Site.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this Site.
         :type: datetime
@@ -627,6 +630,33 @@ class Site(object):
         """
         
         self._ntp_settings = ntp_settings
+
+    @property
+    def media_model(self):
+        """
+        Gets the media_model of this Site.
+        Media model for the site
+
+        :return: The media_model of this Site.
+        :rtype: str
+        """
+        return self._media_model
+
+    @media_model.setter
+    def media_model(self, media_model):
+        """
+        Sets the media_model of this Site.
+        Media model for the site
+
+        :param media_model: The media_model of this Site.
+        :type: str
+        """
+        allowed_values = ["Premises", "Cloud"]
+        if media_model.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for media_model -> " + media_model
+            self._media_model = "outdated_sdk_version"
+        else:
+            self._media_model = media_model
 
     @property
     def core_site(self):

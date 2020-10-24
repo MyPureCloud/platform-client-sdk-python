@@ -208,7 +208,7 @@ class ParticipantBasic(object):
     def start_time(self):
         """
         Gets the start_time of this ParticipantBasic.
-        The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this ParticipantBasic.
         :rtype: datetime
@@ -219,7 +219,7 @@ class ParticipantBasic(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this ParticipantBasic.
-        The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this ParticipantBasic.
         :type: datetime
@@ -231,7 +231,7 @@ class ParticipantBasic(object):
     def end_time(self):
         """
         Gets the end_time of this ParticipantBasic.
-        The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this ParticipantBasic.
         :rtype: datetime
@@ -242,7 +242,7 @@ class ParticipantBasic(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this ParticipantBasic.
-        The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this ParticipantBasic.
         :type: datetime
@@ -254,7 +254,7 @@ class ParticipantBasic(object):
     def connected_time(self):
         """
         Gets the connected_time of this ParticipantBasic.
-        The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The connected_time of this ParticipantBasic.
         :rtype: datetime
@@ -265,7 +265,7 @@ class ParticipantBasic(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this ParticipantBasic.
-        The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param connected_time: The connected_time of this ParticipantBasic.
         :type: datetime
@@ -1186,7 +1186,7 @@ class ParticipantBasic(object):
     def start_acw_time(self):
         """
         Gets the start_acw_time of this ParticipantBasic.
-        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_acw_time of this ParticipantBasic.
         :rtype: datetime
@@ -1197,7 +1197,7 @@ class ParticipantBasic(object):
     def start_acw_time(self, start_acw_time):
         """
         Sets the start_acw_time of this ParticipantBasic.
-        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_acw_time: The start_acw_time of this ParticipantBasic.
         :type: datetime
@@ -1209,7 +1209,7 @@ class ParticipantBasic(object):
     def end_acw_time(self):
         """
         Gets the end_acw_time of this ParticipantBasic.
-        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_acw_time of this ParticipantBasic.
         :rtype: datetime
@@ -1220,7 +1220,7 @@ class ParticipantBasic(object):
     def end_acw_time(self, end_acw_time):
         """
         Sets the end_acw_time of this ParticipantBasic.
-        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_acw_time: The end_acw_time of this ParticipantBasic.
         :type: datetime

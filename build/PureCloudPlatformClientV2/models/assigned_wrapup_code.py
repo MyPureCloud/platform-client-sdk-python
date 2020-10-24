@@ -157,7 +157,7 @@ class AssignedWrapupCode(object):
     def end_time(self):
         """
         Gets the end_time of this AssignedWrapupCode.
-        The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this AssignedWrapupCode.
         :rtype: datetime
@@ -168,7 +168,7 @@ class AssignedWrapupCode(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this AssignedWrapupCode.
-        The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this AssignedWrapupCode.
         :type: datetime

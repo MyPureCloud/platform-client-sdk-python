@@ -163,7 +163,7 @@ class Library(object):
     def date_created(self):
         """
         Gets the date_created of this Library.
-        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Library.
         :rtype: datetime
@@ -174,7 +174,7 @@ class Library(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Library.
-        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Library.
         :type: datetime

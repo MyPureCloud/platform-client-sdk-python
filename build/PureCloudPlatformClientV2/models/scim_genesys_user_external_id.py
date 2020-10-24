@@ -56,7 +56,7 @@ class ScimGenesysUserExternalId(object):
     def authority(self):
         """
         Gets the authority of this ScimGenesysUserExternalId.
-        Authority, or scope, of the external id.  Allows multiple external ids to be defined and should represent the source of the external identifier
+        Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.
 
         :return: The authority of this ScimGenesysUserExternalId.
         :rtype: str
@@ -67,7 +67,7 @@ class ScimGenesysUserExternalId(object):
     def authority(self, authority):
         """
         Sets the authority of this ScimGenesysUserExternalId.
-        Authority, or scope, of the external id.  Allows multiple external ids to be defined and should represent the source of the external identifier
+        Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.
 
         :param authority: The authority of this ScimGenesysUserExternalId.
         :type: str

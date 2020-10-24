@@ -302,7 +302,7 @@ class SmsPhoneNumber(object):
     def date_created(self):
         """
         Gets the date_created of this SmsPhoneNumber.
-        Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this SmsPhoneNumber.
         :rtype: datetime
@@ -313,7 +313,7 @@ class SmsPhoneNumber(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this SmsPhoneNumber.
-        Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this SmsPhoneNumber.
         :type: datetime
@@ -325,7 +325,7 @@ class SmsPhoneNumber(object):
     def date_modified(self):
         """
         Gets the date_modified of this SmsPhoneNumber.
-        Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this SmsPhoneNumber.
         :rtype: datetime
@@ -336,7 +336,7 @@ class SmsPhoneNumber(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this SmsPhoneNumber.
-        Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this SmsPhoneNumber.
         :type: datetime
@@ -417,7 +417,7 @@ class SmsPhoneNumber(object):
     def purchase_date(self):
         """
         Gets the purchase_date of this SmsPhoneNumber.
-        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The purchase_date of this SmsPhoneNumber.
         :rtype: datetime
@@ -428,7 +428,7 @@ class SmsPhoneNumber(object):
     def purchase_date(self, purchase_date):
         """
         Sets the purchase_date of this SmsPhoneNumber.
-        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param purchase_date: The purchase_date of this SmsPhoneNumber.
         :type: datetime
@@ -440,7 +440,7 @@ class SmsPhoneNumber(object):
     def cancellation_date(self):
         """
         Gets the cancellation_date of this SmsPhoneNumber.
-        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The cancellation_date of this SmsPhoneNumber.
         :rtype: datetime
@@ -451,7 +451,7 @@ class SmsPhoneNumber(object):
     def cancellation_date(self, cancellation_date):
         """
         Sets the cancellation_date of this SmsPhoneNumber.
-        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param cancellation_date: The cancellation_date of this SmsPhoneNumber.
         :type: datetime
@@ -463,7 +463,7 @@ class SmsPhoneNumber(object):
     def renewal_date(self):
         """
         Gets the renewal_date of this SmsPhoneNumber.
-        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The renewal_date of this SmsPhoneNumber.
         :rtype: datetime
@@ -474,7 +474,7 @@ class SmsPhoneNumber(object):
     def renewal_date(self, renewal_date):
         """
         Sets the renewal_date of this SmsPhoneNumber.
-        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param renewal_date: The renewal_date of this SmsPhoneNumber.
         :type: datetime

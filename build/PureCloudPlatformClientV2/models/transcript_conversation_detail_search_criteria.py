@@ -255,7 +255,7 @@ class TranscriptConversationDetailSearchCriteria(object):
         :param type: The type of this TranscriptConversationDetailSearchCriteria.
         :type: str
         """
-        allowed_values = ["EXACT", "EXACT_PHRASE", "PHRASE"]
+        allowed_values = ["EXACT", "EXACT_PHRASE", "PHRASE", "DATE_RANGE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"

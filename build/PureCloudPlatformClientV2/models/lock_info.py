@@ -85,7 +85,7 @@ class LockInfo(object):
     def date_created(self):
         """
         Gets the date_created of this LockInfo.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this LockInfo.
         :rtype: datetime
@@ -96,7 +96,7 @@ class LockInfo(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this LockInfo.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this LockInfo.
         :type: datetime
@@ -108,7 +108,7 @@ class LockInfo(object):
     def date_expires(self):
         """
         Gets the date_expires of this LockInfo.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_expires of this LockInfo.
         :rtype: datetime
@@ -119,7 +119,7 @@ class LockInfo(object):
     def date_expires(self, date_expires):
         """
         Sets the date_expires of this LockInfo.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_expires: The date_expires of this LockInfo.
         :type: datetime

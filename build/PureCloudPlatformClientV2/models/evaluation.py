@@ -356,7 +356,7 @@ class Evaluation(object):
     def release_date(self):
         """
         Gets the release_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The release_date of this Evaluation.
         :rtype: datetime
@@ -367,7 +367,7 @@ class Evaluation(object):
     def release_date(self, release_date):
         """
         Sets the release_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param release_date: The release_date of this Evaluation.
         :type: datetime
@@ -379,7 +379,7 @@ class Evaluation(object):
     def assigned_date(self):
         """
         Gets the assigned_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The assigned_date of this Evaluation.
         :rtype: datetime
@@ -390,7 +390,7 @@ class Evaluation(object):
     def assigned_date(self, assigned_date):
         """
         Sets the assigned_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param assigned_date: The assigned_date of this Evaluation.
         :type: datetime
@@ -402,7 +402,7 @@ class Evaluation(object):
     def changed_date(self):
         """
         Gets the changed_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The changed_date of this Evaluation.
         :rtype: datetime
@@ -413,7 +413,7 @@ class Evaluation(object):
     def changed_date(self, changed_date):
         """
         Sets the changed_date of this Evaluation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param changed_date: The changed_date of this Evaluation.
         :type: datetime
@@ -494,7 +494,7 @@ class Evaluation(object):
     def conversation_date(self):
         """
         Gets the conversation_date of this Evaluation.
-        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_date of this Evaluation.
         :rtype: datetime
@@ -505,7 +505,7 @@ class Evaluation(object):
     def conversation_date(self, conversation_date):
         """
         Sets the conversation_date of this Evaluation.
-        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_date: The conversation_date of this Evaluation.
         :type: datetime
@@ -517,7 +517,7 @@ class Evaluation(object):
     def conversation_end_date(self):
         """
         Gets the conversation_end_date of this Evaluation.
-        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_end_date of this Evaluation.
         :rtype: datetime
@@ -528,7 +528,7 @@ class Evaluation(object):
     def conversation_end_date(self, conversation_end_date):
         """
         Sets the conversation_end_date of this Evaluation.
-        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_end_date: The conversation_end_date of this Evaluation.
         :type: datetime

@@ -241,7 +241,7 @@ class SIPSearchPublicRequest(object):
     def date_start(self):
         """
         Gets the date_start of this SIPSearchPublicRequest.
-        Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_start of this SIPSearchPublicRequest.
         :rtype: datetime
@@ -252,7 +252,7 @@ class SIPSearchPublicRequest(object):
     def date_start(self, date_start):
         """
         Sets the date_start of this SIPSearchPublicRequest.
-        Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_start: The date_start of this SIPSearchPublicRequest.
         :type: datetime
@@ -264,7 +264,7 @@ class SIPSearchPublicRequest(object):
     def date_end(self):
         """
         Gets the date_end of this SIPSearchPublicRequest.
-        End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_end of this SIPSearchPublicRequest.
         :rtype: datetime
@@ -275,7 +275,7 @@ class SIPSearchPublicRequest(object):
     def date_end(self, date_end):
         """
         Sets the date_end of this SIPSearchPublicRequest.
-        End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_end: The date_end of this SIPSearchPublicRequest.
         :type: datetime

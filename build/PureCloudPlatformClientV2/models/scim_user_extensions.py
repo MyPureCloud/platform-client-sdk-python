@@ -105,7 +105,7 @@ class ScimUserExtensions(object):
     def external_ids(self):
         """
         Gets the external_ids of this ScimUserExtensions.
-        External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+        The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".
 
         :return: The external_ids of this ScimUserExtensions.
         :rtype: list[ScimGenesysUserExternalId]
@@ -116,7 +116,7 @@ class ScimUserExtensions(object):
     def external_ids(self, external_ids):
         """
         Sets the external_ids of this ScimUserExtensions.
-        External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+        The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".
 
         :param external_ids: The external_ids of this ScimUserExtensions.
         :type: list[ScimGenesysUserExternalId]

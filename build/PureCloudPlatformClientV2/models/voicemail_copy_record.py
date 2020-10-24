@@ -105,7 +105,7 @@ class VoicemailCopyRecord(object):
     def date(self):
         """
         Gets the date of this VoicemailCopyRecord.
-        The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date of this VoicemailCopyRecord.
         :rtype: datetime
@@ -116,7 +116,7 @@ class VoicemailCopyRecord(object):
     def date(self, date):
         """
         Sets the date of this VoicemailCopyRecord.
-        The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date: The date of this VoicemailCopyRecord.
         :type: datetime

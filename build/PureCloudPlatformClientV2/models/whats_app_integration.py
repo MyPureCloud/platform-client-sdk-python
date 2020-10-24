@@ -52,6 +52,8 @@ class WhatsAppIntegration(object):
             'version': 'int',
             'activation_status_code': 'str',
             'activation_error_info': 'ErrorBody',
+            'create_status': 'str',
+            'create_error': 'ErrorBody',
             'self_uri': 'str'
         }
 
@@ -68,6 +70,8 @@ class WhatsAppIntegration(object):
             'version': 'version',
             'activation_status_code': 'activationStatusCode',
             'activation_error_info': 'activationErrorInfo',
+            'create_status': 'createStatus',
+            'create_error': 'createError',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +87,8 @@ class WhatsAppIntegration(object):
         self._version = None
         self._activation_status_code = None
         self._activation_error_info = None
+        self._create_status = None
+        self._create_error = None
         self._self_uri = None
 
     @property
@@ -208,7 +214,7 @@ class WhatsAppIntegration(object):
     def date_created(self):
         """
         Gets the date_created of this WhatsAppIntegration.
-        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this WhatsAppIntegration.
         :rtype: datetime
@@ -219,7 +225,7 @@ class WhatsAppIntegration(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this WhatsAppIntegration.
-        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this WhatsAppIntegration.
         :type: datetime
@@ -231,7 +237,7 @@ class WhatsAppIntegration(object):
     def date_modified(self):
         """
         Gets the date_modified of this WhatsAppIntegration.
-        Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this WhatsAppIntegration.
         :rtype: datetime
@@ -242,7 +248,7 @@ class WhatsAppIntegration(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this WhatsAppIntegration.
-        Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this WhatsAppIntegration.
         :type: datetime
@@ -368,6 +374,56 @@ class WhatsAppIntegration(object):
         """
         
         self._activation_error_info = activation_error_info
+
+    @property
+    def create_status(self):
+        """
+        Gets the create_status of this WhatsAppIntegration.
+        Status of asynchronous create operation
+
+        :return: The create_status of this WhatsAppIntegration.
+        :rtype: str
+        """
+        return self._create_status
+
+    @create_status.setter
+    def create_status(self, create_status):
+        """
+        Sets the create_status of this WhatsAppIntegration.
+        Status of asynchronous create operation
+
+        :param create_status: The create_status of this WhatsAppIntegration.
+        :type: str
+        """
+        allowed_values = ["Initiated", "Completed", "Error"]
+        if create_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for create_status -> " + create_status
+            self._create_status = "outdated_sdk_version"
+        else:
+            self._create_status = create_status
+
+    @property
+    def create_error(self):
+        """
+        Gets the create_error of this WhatsAppIntegration.
+        Error information returned, if createStatus is set to Error
+
+        :return: The create_error of this WhatsAppIntegration.
+        :rtype: ErrorBody
+        """
+        return self._create_error
+
+    @create_error.setter
+    def create_error(self, create_error):
+        """
+        Sets the create_error of this WhatsAppIntegration.
+        Error information returned, if createStatus is set to Error
+
+        :param create_error: The create_error of this WhatsAppIntegration.
+        :type: ErrorBody
+        """
+        
+        self._create_error = create_error
 
     @property
     def self_uri(self):

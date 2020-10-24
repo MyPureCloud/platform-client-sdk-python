@@ -121,7 +121,7 @@ class AuditQueryExecutionStatusResponse(object):
     def start_date(self):
         """
         Gets the start_date of this AuditQueryExecutionStatusResponse.
-        Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this AuditQueryExecutionStatusResponse.
         :rtype: datetime
@@ -132,7 +132,7 @@ class AuditQueryExecutionStatusResponse(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this AuditQueryExecutionStatusResponse.
-        Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this AuditQueryExecutionStatusResponse.
         :type: datetime

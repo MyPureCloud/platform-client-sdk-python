@@ -131,7 +131,7 @@ class ScimV2EnterpriseUser(object):
     def employee_number(self):
         """
         Gets the employee_number of this ScimV2EnterpriseUser.
-        The users employee number.
+        The user's employee number.
 
         :return: The employee_number of this ScimV2EnterpriseUser.
         :rtype: str
@@ -142,7 +142,7 @@ class ScimV2EnterpriseUser(object):
     def employee_number(self, employee_number):
         """
         Sets the employee_number of this ScimV2EnterpriseUser.
-        The users employee number.
+        The user's employee number.
 
         :param employee_number: The employee_number of this ScimV2EnterpriseUser.
         :type: str

@@ -131,7 +131,7 @@ class AuthzGrant(object):
     def grant_made_at(self):
         """
         Gets the grant_made_at of this AuthzGrant.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The grant_made_at of this AuthzGrant.
         :rtype: datetime
@@ -142,7 +142,7 @@ class AuthzGrant(object):
     def grant_made_at(self, grant_made_at):
         """
         Sets the grant_made_at of this AuthzGrant.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param grant_made_at: The grant_made_at of this AuthzGrant.
         :type: datetime

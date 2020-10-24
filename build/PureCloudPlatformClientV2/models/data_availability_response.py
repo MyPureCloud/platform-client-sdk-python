@@ -53,7 +53,7 @@ class DataAvailabilityResponse(object):
     def data_availability_date(self):
         """
         Gets the data_availability_date of this DataAvailabilityResponse.
-        Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The data_availability_date of this DataAvailabilityResponse.
         :rtype: datetime
@@ -64,7 +64,7 @@ class DataAvailabilityResponse(object):
     def data_availability_date(self, data_availability_date):
         """
         Sets the data_availability_date of this DataAvailabilityResponse.
-        Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param data_availability_date: The data_availability_date of this DataAvailabilityResponse.
         :type: datetime

@@ -134,7 +134,7 @@ class VoicemailUserPolicy(object):
     def modified_date(self):
         """
         Gets the modified_date of this VoicemailUserPolicy.
-        The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this VoicemailUserPolicy.
         :rtype: datetime
@@ -145,7 +145,7 @@ class VoicemailUserPolicy(object):
     def modified_date(self, modified_date):
         """
         Sets the modified_date of this VoicemailUserPolicy.
-        The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this VoicemailUserPolicy.
         :type: datetime

@@ -158,7 +158,7 @@ class AnalyticsEvaluation(object):
     def event_time(self):
         """
         Gets the event_time of this AnalyticsEvaluation.
-        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The event_time of this AnalyticsEvaluation.
         :rtype: datetime
@@ -169,7 +169,7 @@ class AnalyticsEvaluation(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this AnalyticsEvaluation.
-        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param event_time: The event_time of this AnalyticsEvaluation.
         :type: datetime

@@ -205,7 +205,7 @@ class AuditLogMessage(object):
     def event_date(self):
         """
         Gets the event_date of this AuditLogMessage.
-        Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The event_date of this AuditLogMessage.
         :rtype: datetime
@@ -216,7 +216,7 @@ class AuditLogMessage(object):
     def event_date(self, event_date):
         """
         Sets the event_date of this AuditLogMessage.
-        Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param event_date: The event_date of this AuditLogMessage.
         :type: datetime

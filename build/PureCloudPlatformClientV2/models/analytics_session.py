@@ -92,6 +92,7 @@ class AnalyticsSession(object):
             'provider': 'str',
             'remote': 'str',
             'media_count': 'int',
+            'flow_in_type': 'str',
             'flow_out_type': 'str',
             'requested_routings': 'list[str]',
             'used_routing': 'str',
@@ -154,6 +155,7 @@ class AnalyticsSession(object):
             'provider': 'provider',
             'remote': 'remote',
             'media_count': 'mediaCount',
+            'flow_in_type': 'flowInType',
             'flow_out_type': 'flowOutType',
             'requested_routings': 'requestedRoutings',
             'used_routing': 'usedRouting',
@@ -215,6 +217,7 @@ class AnalyticsSession(object):
         self._provider = None
         self._remote = None
         self._media_count = None
+        self._flow_in_type = None
         self._flow_out_type = None
         self._requested_routings = None
         self._used_routing = None
@@ -768,7 +771,7 @@ class AnalyticsSession(object):
     def callback_scheduled_time(self):
         """
         Gets the callback_scheduled_time of this AnalyticsSession.
-        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The callback_scheduled_time of this AnalyticsSession.
         :rtype: datetime
@@ -779,7 +782,7 @@ class AnalyticsSession(object):
     def callback_scheduled_time(self, callback_scheduled_time):
         """
         Sets the callback_scheduled_time of this AnalyticsSession.
-        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param callback_scheduled_time: The callback_scheduled_time of this AnalyticsSession.
         :type: datetime
@@ -1430,6 +1433,29 @@ class AnalyticsSession(object):
         """
         
         self._media_count = media_count
+
+    @property
+    def flow_in_type(self):
+        """
+        Gets the flow_in_type of this AnalyticsSession.
+        Type of flow in that occurred, e.g. acd, ivr, etc.
+
+        :return: The flow_in_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._flow_in_type
+
+    @flow_in_type.setter
+    def flow_in_type(self, flow_in_type):
+        """
+        Sets the flow_in_type of this AnalyticsSession.
+        Type of flow in that occurred, e.g. acd, ivr, etc.
+
+        :param flow_in_type: The flow_in_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._flow_in_type = flow_in_type
 
     @property
     def flow_out_type(self):

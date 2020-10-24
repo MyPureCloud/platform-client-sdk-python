@@ -7,7 +7,7 @@ title: ObservationValue
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **observation_date** | **datetime** | The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | |
+| **observation_date** | **datetime** | The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **conversation_id** | **str** | Unique identifier for the conversation | [optional] |
 | **session_id** | **str** | The unique identifier of this session | [optional] |
 | **requested_routing_skill_ids** | **list[str]** | Unique identifier for a skill requested for an interaction | [optional] |

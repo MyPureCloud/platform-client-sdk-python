@@ -135,7 +135,7 @@ class IntegrationStatusInfo(object):
     def last_updated(self):
         """
         Gets the last_updated of this IntegrationStatusInfo.
-        Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The last_updated of this IntegrationStatusInfo.
         :rtype: datetime
@@ -146,7 +146,7 @@ class IntegrationStatusInfo(object):
     def last_updated(self, last_updated):
         """
         Sets the last_updated of this IntegrationStatusInfo.
-        Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param last_updated: The last_updated of this IntegrationStatusInfo.
         :type: datetime

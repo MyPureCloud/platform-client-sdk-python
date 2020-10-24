@@ -161,7 +161,7 @@ class Group(object):
     def date_modified(self):
         """
         Gets the date_modified of this Group.
-        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this Group.
         :rtype: datetime
@@ -172,7 +172,7 @@ class Group(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this Group.
-        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this Group.
         :type: datetime

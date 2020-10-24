@@ -109,7 +109,7 @@ class DevelopmentActivity(object):
     def date_completed(self):
         """
         Gets the date_completed of this DevelopmentActivity.
-        Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_completed of this DevelopmentActivity.
         :rtype: datetime
@@ -120,7 +120,7 @@ class DevelopmentActivity(object):
     def date_completed(self, date_completed):
         """
         Sets the date_completed of this DevelopmentActivity.
-        Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_completed: The date_completed of this DevelopmentActivity.
         :type: datetime
@@ -155,7 +155,7 @@ class DevelopmentActivity(object):
     def date_created(self):
         """
         Gets the date_created of this DevelopmentActivity.
-        Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this DevelopmentActivity.
         :rtype: datetime
@@ -166,7 +166,7 @@ class DevelopmentActivity(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this DevelopmentActivity.
-        Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this DevelopmentActivity.
         :type: datetime
@@ -278,7 +278,7 @@ class DevelopmentActivity(object):
     def date_due(self):
         """
         Gets the date_due of this DevelopmentActivity.
-        Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_due of this DevelopmentActivity.
         :rtype: datetime
@@ -289,7 +289,7 @@ class DevelopmentActivity(object):
     def date_due(self, date_due):
         """
         Sets the date_due of this DevelopmentActivity.
-        Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_due: The date_due of this DevelopmentActivity.
         :type: datetime

@@ -249,7 +249,7 @@ class HomerRecord(object):
     def date(self):
         """
         Gets the date of this HomerRecord.
-        metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date of this HomerRecord.
         :rtype: datetime
@@ -260,7 +260,7 @@ class HomerRecord(object):
     def date(self, date):
         """
         Sets the date of this HomerRecord.
-        metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date: The date of this HomerRecord.
         :type: datetime

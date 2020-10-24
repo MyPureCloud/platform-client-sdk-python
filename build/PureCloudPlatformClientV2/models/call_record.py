@@ -56,7 +56,7 @@ class CallRecord(object):
     def last_attempt(self):
         """
         Gets the last_attempt of this CallRecord.
-        Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The last_attempt of this CallRecord.
         :rtype: datetime
@@ -67,7 +67,7 @@ class CallRecord(object):
     def last_attempt(self, last_attempt):
         """
         Sets the last_attempt of this CallRecord.
-        Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param last_attempt: The last_attempt of this CallRecord.
         :type: datetime

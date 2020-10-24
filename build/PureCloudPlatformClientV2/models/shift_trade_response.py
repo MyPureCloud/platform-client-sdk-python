@@ -246,7 +246,7 @@ class ShiftTradeResponse(object):
     def initiating_shift_start(self):
         """
         Gets the initiating_shift_start of this ShiftTradeResponse.
-        The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The initiating_shift_start of this ShiftTradeResponse.
         :rtype: datetime
@@ -257,7 +257,7 @@ class ShiftTradeResponse(object):
     def initiating_shift_start(self, initiating_shift_start):
         """
         Sets the initiating_shift_start of this ShiftTradeResponse.
-        The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param initiating_shift_start: The initiating_shift_start of this ShiftTradeResponse.
         :type: datetime
@@ -269,7 +269,7 @@ class ShiftTradeResponse(object):
     def initiating_shift_end(self):
         """
         Gets the initiating_shift_end of this ShiftTradeResponse.
-        The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The initiating_shift_end of this ShiftTradeResponse.
         :rtype: datetime
@@ -280,7 +280,7 @@ class ShiftTradeResponse(object):
     def initiating_shift_end(self, initiating_shift_end):
         """
         Sets the initiating_shift_end of this ShiftTradeResponse.
-        The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param initiating_shift_end: The initiating_shift_end of this ShiftTradeResponse.
         :type: datetime
@@ -338,7 +338,7 @@ class ShiftTradeResponse(object):
     def receiving_shift_start(self):
         """
         Gets the receiving_shift_start of this ShiftTradeResponse.
-        The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The receiving_shift_start of this ShiftTradeResponse.
         :rtype: datetime
@@ -349,7 +349,7 @@ class ShiftTradeResponse(object):
     def receiving_shift_start(self, receiving_shift_start):
         """
         Sets the receiving_shift_start of this ShiftTradeResponse.
-        The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param receiving_shift_start: The receiving_shift_start of this ShiftTradeResponse.
         :type: datetime
@@ -361,7 +361,7 @@ class ShiftTradeResponse(object):
     def receiving_shift_end(self):
         """
         Gets the receiving_shift_end of this ShiftTradeResponse.
-        The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The receiving_shift_end of this ShiftTradeResponse.
         :rtype: datetime
@@ -372,7 +372,7 @@ class ShiftTradeResponse(object):
     def receiving_shift_end(self, receiving_shift_end):
         """
         Sets the receiving_shift_end of this ShiftTradeResponse.
-        The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param receiving_shift_end: The receiving_shift_end of this ShiftTradeResponse.
         :type: datetime
@@ -384,7 +384,7 @@ class ShiftTradeResponse(object):
     def expiration(self):
         """
         Gets the expiration of this ShiftTradeResponse.
-        When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expiration of this ShiftTradeResponse.
         :rtype: datetime
@@ -395,7 +395,7 @@ class ShiftTradeResponse(object):
     def expiration(self, expiration):
         """
         Sets the expiration of this ShiftTradeResponse.
-        When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expiration: The expiration of this ShiftTradeResponse.
         :type: datetime
@@ -476,7 +476,7 @@ class ShiftTradeResponse(object):
     def reviewed_date(self):
         """
         Gets the reviewed_date of this ShiftTradeResponse.
-        The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reviewed_date of this ShiftTradeResponse.
         :rtype: datetime
@@ -487,7 +487,7 @@ class ShiftTradeResponse(object):
     def reviewed_date(self, reviewed_date):
         """
         Sets the reviewed_date of this ShiftTradeResponse.
-        The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reviewed_date: The reviewed_date of this ShiftTradeResponse.
         :type: datetime

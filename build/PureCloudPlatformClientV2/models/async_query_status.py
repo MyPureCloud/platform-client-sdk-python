@@ -115,7 +115,7 @@ class AsyncQueryStatus(object):
     def expiration_date(self):
         """
         Gets the expiration_date of this AsyncQueryStatus.
-        The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expiration_date of this AsyncQueryStatus.
         :rtype: datetime
@@ -126,7 +126,7 @@ class AsyncQueryStatus(object):
     def expiration_date(self, expiration_date):
         """
         Sets the expiration_date of this AsyncQueryStatus.
-        The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expiration_date: The expiration_date of this AsyncQueryStatus.
         :type: datetime
@@ -138,7 +138,7 @@ class AsyncQueryStatus(object):
     def submission_date(self):
         """
         Gets the submission_date of this AsyncQueryStatus.
-        The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The submission_date of this AsyncQueryStatus.
         :rtype: datetime
@@ -149,7 +149,7 @@ class AsyncQueryStatus(object):
     def submission_date(self, submission_date):
         """
         Sets the submission_date of this AsyncQueryStatus.
-        The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param submission_date: The submission_date of this AsyncQueryStatus.
         :type: datetime
@@ -161,7 +161,7 @@ class AsyncQueryStatus(object):
     def completion_date(self):
         """
         Gets the completion_date of this AsyncQueryStatus.
-        The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The completion_date of this AsyncQueryStatus.
         :rtype: datetime
@@ -172,7 +172,7 @@ class AsyncQueryStatus(object):
     def completion_date(self, completion_date):
         """
         Sets the completion_date of this AsyncQueryStatus.
-        The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param completion_date: The completion_date of this AsyncQueryStatus.
         :type: datetime

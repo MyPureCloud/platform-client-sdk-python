@@ -14,7 +14,7 @@ title: BuShortTermForecast
 | **description** | **str** | The description of this forecast | [optional] |
 | **legacy** | **bool** | Whether this forecast contains modifications on legacy metrics | [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Metadata for this forecast | [optional] |
-| **reference_start_date** | **datetime** | The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **reference_start_date** | **datetime** | The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **source_days** | [**list[ForecastSourceDayPointer]**](ForecastSourceDayPointer.html) | The source day pointers for this forecast | [optional] |
 | **modifications** | [**list[BuForecastModification]**](BuForecastModification.html) | Any manual modifications applied to this forecast | [optional] |
 | **generation_results** | [**BuForecastGenerationResult**](BuForecastGenerationResult.html) | Generation result metadata | [optional] |

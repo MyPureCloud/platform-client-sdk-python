@@ -53,7 +53,7 @@ class OAuthLastTokenIssued(object):
     def date_issued(self):
         """
         Gets the date_issued of this OAuthLastTokenIssued.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_issued of this OAuthLastTokenIssued.
         :rtype: datetime
@@ -64,7 +64,7 @@ class OAuthLastTokenIssued(object):
     def date_issued(self, date_issued):
         """
         Sets the date_issued of this OAuthLastTokenIssued.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_issued: The date_issued of this OAuthLastTokenIssued.
         :type: datetime

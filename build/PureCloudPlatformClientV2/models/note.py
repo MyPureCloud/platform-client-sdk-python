@@ -143,7 +143,7 @@ class Note(object):
     def modify_date(self):
         """
         Gets the modify_date of this Note.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modify_date of this Note.
         :rtype: datetime
@@ -154,7 +154,7 @@ class Note(object):
     def modify_date(self, modify_date):
         """
         Sets the modify_date of this Note.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modify_date: The modify_date of this Note.
         :type: datetime
@@ -166,7 +166,7 @@ class Note(object):
     def create_date(self):
         """
         Gets the create_date of this Note.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The create_date of this Note.
         :rtype: datetime
@@ -177,7 +177,7 @@ class Note(object):
     def create_date(self, create_date):
         """
         Sets the create_date of this Note.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param create_date: The create_date of this Note.
         :type: datetime

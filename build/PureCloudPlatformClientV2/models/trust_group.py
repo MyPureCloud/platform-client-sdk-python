@@ -164,7 +164,7 @@ class TrustGroup(object):
     def date_modified(self):
         """
         Gets the date_modified of this TrustGroup.
-        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this TrustGroup.
         :rtype: datetime
@@ -175,7 +175,7 @@ class TrustGroup(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this TrustGroup.
-        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this TrustGroup.
         :type: datetime
@@ -406,7 +406,7 @@ class TrustGroup(object):
     def date_created(self):
         """
         Gets the date_created of this TrustGroup.
-        The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this TrustGroup.
         :rtype: datetime
@@ -417,7 +417,7 @@ class TrustGroup(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this TrustGroup.
-        The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this TrustGroup.
         :type: datetime

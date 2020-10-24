@@ -123,7 +123,7 @@ class WfmUserNotification(object):
     def timestamp(self):
         """
         Gets the timestamp of this WfmUserNotification.
-        The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this WfmUserNotification.
         :rtype: datetime
@@ -134,7 +134,7 @@ class WfmUserNotification(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WfmUserNotification.
-        The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this WfmUserNotification.
         :type: datetime

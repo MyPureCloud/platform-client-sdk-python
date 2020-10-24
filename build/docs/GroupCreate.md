@@ -10,7 +10,7 @@ title: GroupCreate
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The group name. | |
 | **description** | **str** |  | [optional] |
-| **date_modified** | **datetime** | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_modified** | **datetime** | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **member_count** | **int** | Number of members. | [optional] |
 | **state** | **str** | Active, inactive, or deleted state. | [optional] |
 | **version** | **int** | Current version for this resource. | [optional] |

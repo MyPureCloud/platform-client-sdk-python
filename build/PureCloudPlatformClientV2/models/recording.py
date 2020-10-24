@@ -417,7 +417,7 @@ class Recording(object):
     def restore_expiration_time(self):
         """
         Gets the restore_expiration_time of this Recording.
-        The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The restore_expiration_time of this Recording.
         :rtype: datetime
@@ -428,7 +428,7 @@ class Recording(object):
     def restore_expiration_time(self, restore_expiration_time):
         """
         Sets the restore_expiration_time of this Recording.
-        The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param restore_expiration_time: The restore_expiration_time of this Recording.
         :type: datetime
@@ -509,7 +509,7 @@ class Recording(object):
     def archive_date(self):
         """
         Gets the archive_date of this Recording.
-        The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The archive_date of this Recording.
         :rtype: datetime
@@ -520,7 +520,7 @@ class Recording(object):
     def archive_date(self, archive_date):
         """
         Sets the archive_date of this Recording.
-        The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param archive_date: The archive_date of this Recording.
         :type: datetime
@@ -559,7 +559,7 @@ class Recording(object):
     def delete_date(self):
         """
         Gets the delete_date of this Recording.
-        The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The delete_date of this Recording.
         :rtype: datetime
@@ -570,7 +570,7 @@ class Recording(object):
     def delete_date(self, delete_date):
         """
         Sets the delete_date of this Recording.
-        The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param delete_date: The delete_date of this Recording.
         :type: datetime
@@ -582,7 +582,7 @@ class Recording(object):
     def export_date(self):
         """
         Gets the export_date of this Recording.
-        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The export_date of this Recording.
         :rtype: datetime
@@ -593,7 +593,7 @@ class Recording(object):
     def export_date(self, export_date):
         """
         Sets the export_date of this Recording.
-        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param export_date: The export_date of this Recording.
         :type: datetime
@@ -605,7 +605,7 @@ class Recording(object):
     def exported_date(self):
         """
         Gets the exported_date of this Recording.
-        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The exported_date of this Recording.
         :rtype: datetime
@@ -616,7 +616,7 @@ class Recording(object):
     def exported_date(self, exported_date):
         """
         Sets the exported_date of this Recording.
-        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param exported_date: The exported_date of this Recording.
         :type: datetime

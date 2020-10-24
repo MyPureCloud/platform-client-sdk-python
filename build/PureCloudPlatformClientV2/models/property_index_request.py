@@ -82,7 +82,7 @@ class PropertyIndexRequest(object):
     def target_date(self):
         """
         Gets the target_date of this PropertyIndexRequest.
-        Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The target_date of this PropertyIndexRequest.
         :rtype: datetime
@@ -93,7 +93,7 @@ class PropertyIndexRequest(object):
     def target_date(self, target_date):
         """
         Sets the target_date of this PropertyIndexRequest.
-        Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param target_date: The target_date of this PropertyIndexRequest.
         :type: datetime

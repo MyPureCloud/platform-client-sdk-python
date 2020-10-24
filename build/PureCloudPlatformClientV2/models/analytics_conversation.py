@@ -103,7 +103,7 @@ class AnalyticsConversation(object):
     def conversation_start(self):
         """
         Gets the conversation_start of this AnalyticsConversation.
-        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_start of this AnalyticsConversation.
         :rtype: datetime
@@ -114,7 +114,7 @@ class AnalyticsConversation(object):
     def conversation_start(self, conversation_start):
         """
         Sets the conversation_start of this AnalyticsConversation.
-        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_start: The conversation_start of this AnalyticsConversation.
         :type: datetime
@@ -126,7 +126,7 @@ class AnalyticsConversation(object):
     def conversation_end(self):
         """
         Gets the conversation_end of this AnalyticsConversation.
-        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_end of this AnalyticsConversation.
         :rtype: datetime
@@ -137,7 +137,7 @@ class AnalyticsConversation(object):
     def conversation_end(self, conversation_end):
         """
         Sets the conversation_end of this AnalyticsConversation.
-        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_end: The conversation_end of this AnalyticsConversation.
         :type: datetime

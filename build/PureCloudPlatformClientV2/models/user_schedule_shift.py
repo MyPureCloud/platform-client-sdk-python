@@ -117,7 +117,7 @@ class UserScheduleShift(object):
     def start_date(self):
         """
         Gets the start_date of this UserScheduleShift.
-        Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this UserScheduleShift.
         :rtype: datetime
@@ -128,7 +128,7 @@ class UserScheduleShift(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this UserScheduleShift.
-        Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this UserScheduleShift.
         :type: datetime

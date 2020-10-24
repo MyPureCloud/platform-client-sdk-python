@@ -79,7 +79,7 @@ class TrunkConnectedStatus(object):
     def connected_state_time(self):
         """
         Gets the connected_state_time of this TrunkConnectedStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The connected_state_time of this TrunkConnectedStatus.
         :rtype: datetime
@@ -90,7 +90,7 @@ class TrunkConnectedStatus(object):
     def connected_state_time(self, connected_state_time):
         """
         Sets the connected_state_time of this TrunkConnectedStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param connected_state_time: The connected_state_time of this TrunkConnectedStatus.
         :type: datetime

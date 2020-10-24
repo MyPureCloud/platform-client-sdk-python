@@ -108,7 +108,7 @@ class CoachingAppointmentStatusDto(object):
     def date_created(self):
         """
         Gets the date_created of this CoachingAppointmentStatusDto.
-        Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this CoachingAppointmentStatusDto.
         :rtype: datetime
@@ -119,7 +119,7 @@ class CoachingAppointmentStatusDto(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this CoachingAppointmentStatusDto.
-        Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this CoachingAppointmentStatusDto.
         :type: datetime

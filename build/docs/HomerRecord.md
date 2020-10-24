@@ -9,7 +9,7 @@ title: HomerRecord
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
-| **date** | **datetime** | metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date** | **datetime** | metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **milli_ts** | **str** | metadata associated to the SIP calls | [optional] |
 | **micro_ts** | **str** | metadata associated to the SIP calls | [optional] |
 | **method** | **str** | metadata associated to the SIP calls | [optional] |

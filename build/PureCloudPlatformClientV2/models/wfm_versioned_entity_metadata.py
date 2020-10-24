@@ -105,7 +105,7 @@ class WfmVersionedEntityMetadata(object):
     def date_modified(self):
         """
         Gets the date_modified of this WfmVersionedEntityMetadata.
-        The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this WfmVersionedEntityMetadata.
         :rtype: datetime
@@ -116,7 +116,7 @@ class WfmVersionedEntityMetadata(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this WfmVersionedEntityMetadata.
-        The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this WfmVersionedEntityMetadata.
         :type: datetime

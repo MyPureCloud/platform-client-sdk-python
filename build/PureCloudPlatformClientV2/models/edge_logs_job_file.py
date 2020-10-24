@@ -196,7 +196,7 @@ class EdgeLogsJobFile(object):
     def date_created(self):
         """
         Gets the date_created of this EdgeLogsJobFile.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this EdgeLogsJobFile.
         :rtype: datetime
@@ -207,7 +207,7 @@ class EdgeLogsJobFile(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this EdgeLogsJobFile.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this EdgeLogsJobFile.
         :type: datetime
@@ -219,7 +219,7 @@ class EdgeLogsJobFile(object):
     def date_modified(self):
         """
         Gets the date_modified of this EdgeLogsJobFile.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this EdgeLogsJobFile.
         :rtype: datetime
@@ -230,7 +230,7 @@ class EdgeLogsJobFile(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this EdgeLogsJobFile.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this EdgeLogsJobFile.
         :type: datetime
@@ -361,7 +361,7 @@ class EdgeLogsJobFile(object):
     def time_created(self):
         """
         Gets the time_created of this EdgeLogsJobFile.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The time_created of this EdgeLogsJobFile.
         :rtype: datetime
@@ -372,7 +372,7 @@ class EdgeLogsJobFile(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this EdgeLogsJobFile.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param time_created: The time_created of this EdgeLogsJobFile.
         :type: datetime
@@ -384,7 +384,7 @@ class EdgeLogsJobFile(object):
     def time_modified(self):
         """
         Gets the time_modified of this EdgeLogsJobFile.
-        The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The time_modified of this EdgeLogsJobFile.
         :rtype: datetime
@@ -395,7 +395,7 @@ class EdgeLogsJobFile(object):
     def time_modified(self, time_modified):
         """
         Sets the time_modified of this EdgeLogsJobFile.
-        The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param time_modified: The time_modified of this EdgeLogsJobFile.
         :type: datetime

@@ -163,7 +163,7 @@ class UserStation(object):
     def associated_date(self):
         """
         Gets the associated_date of this UserStation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The associated_date of this UserStation.
         :rtype: datetime
@@ -174,7 +174,7 @@ class UserStation(object):
     def associated_date(self, associated_date):
         """
         Sets the associated_date of this UserStation.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param associated_date: The associated_date of this UserStation.
         :type: datetime

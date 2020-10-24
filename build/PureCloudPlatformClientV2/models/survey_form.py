@@ -132,7 +132,7 @@ class SurveyForm(object):
     def modified_date(self):
         """
         Gets the modified_date of this SurveyForm.
-        Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this SurveyForm.
         :rtype: datetime
@@ -143,7 +143,7 @@ class SurveyForm(object):
     def modified_date(self, modified_date):
         """
         Sets the modified_date of this SurveyForm.
-        Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this SurveyForm.
         :type: datetime

@@ -56,7 +56,7 @@ class TrustUserDetails(object):
     def date_created(self):
         """
         Gets the date_created of this TrustUserDetails.
-        Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this TrustUserDetails.
         :rtype: datetime
@@ -67,7 +67,7 @@ class TrustUserDetails(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this TrustUserDetails.
-        Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this TrustUserDetails.
         :type: datetime

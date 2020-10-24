@@ -262,7 +262,7 @@ class DomainLogicalInterface(object):
     def date_created(self):
         """
         Gets the date_created of this DomainLogicalInterface.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this DomainLogicalInterface.
         :rtype: datetime
@@ -273,7 +273,7 @@ class DomainLogicalInterface(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this DomainLogicalInterface.
-        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this DomainLogicalInterface.
         :type: datetime
@@ -285,7 +285,7 @@ class DomainLogicalInterface(object):
     def date_modified(self):
         """
         Gets the date_modified of this DomainLogicalInterface.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this DomainLogicalInterface.
         :rtype: datetime
@@ -296,7 +296,7 @@ class DomainLogicalInterface(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this DomainLogicalInterface.
-        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this DomainLogicalInterface.
         :type: datetime
@@ -1033,7 +1033,7 @@ class DomainLogicalInterface(object):
     def start_date(self):
         """
         Gets the start_date of this DomainLogicalInterface.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this DomainLogicalInterface.
         :rtype: datetime
@@ -1044,7 +1044,7 @@ class DomainLogicalInterface(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this DomainLogicalInterface.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this DomainLogicalInterface.
         :type: datetime
@@ -1056,7 +1056,7 @@ class DomainLogicalInterface(object):
     def end_date(self):
         """
         Gets the end_date of this DomainLogicalInterface.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_date of this DomainLogicalInterface.
         :rtype: datetime
@@ -1067,7 +1067,7 @@ class DomainLogicalInterface(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this DomainLogicalInterface.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_date: The end_date of this DomainLogicalInterface.
         :type: datetime

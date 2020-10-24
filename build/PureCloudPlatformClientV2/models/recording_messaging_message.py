@@ -169,7 +169,7 @@ class RecordingMessagingMessage(object):
     def timestamp(self):
         """
         Gets the timestamp of this RecordingMessagingMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this RecordingMessagingMessage.
         :rtype: datetime
@@ -180,7 +180,7 @@ class RecordingMessagingMessage(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this RecordingMessagingMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this RecordingMessagingMessage.
         :type: datetime

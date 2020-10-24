@@ -231,7 +231,7 @@ class CallHistoryConversation(object):
     def start_time(self):
         """
         Gets the start_time of this CallHistoryConversation.
-        The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this CallHistoryConversation.
         :rtype: datetime
@@ -242,7 +242,7 @@ class CallHistoryConversation(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this CallHistoryConversation.
-        The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this CallHistoryConversation.
         :type: datetime

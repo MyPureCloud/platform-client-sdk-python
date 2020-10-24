@@ -10,7 +10,7 @@ title: DomainEdgeSoftwareVersionDto
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **edge_version** | **str** |  | [optional] |
-| **publish_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **publish_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **edge_uri** | **str** |  | [optional] |
 | **latest_release** | **bool** |  | [optional] |
 | **current** | **bool** |  | [optional] |

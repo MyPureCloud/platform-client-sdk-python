@@ -51,6 +51,8 @@ class LineIntegration(object):
             'created_by': 'DomainEntityRef',
             'modified_by': 'DomainEntityRef',
             'version': 'int',
+            'create_status': 'str',
+            'create_error': 'ErrorBody',
             'self_uri': 'str'
         }
 
@@ -66,6 +68,8 @@ class LineIntegration(object):
             'created_by': 'createdBy',
             'modified_by': 'modifiedBy',
             'version': 'version',
+            'create_status': 'createStatus',
+            'create_error': 'createError',
             'self_uri': 'selfUri'
         }
 
@@ -80,6 +84,8 @@ class LineIntegration(object):
         self._created_by = None
         self._modified_by = None
         self._version = None
+        self._create_status = None
+        self._create_error = None
         self._self_uri = None
 
     @property
@@ -224,7 +230,7 @@ class LineIntegration(object):
     def date_created(self):
         """
         Gets the date_created of this LineIntegration.
-        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this LineIntegration.
         :rtype: datetime
@@ -235,7 +241,7 @@ class LineIntegration(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this LineIntegration.
-        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this LineIntegration.
         :type: datetime
@@ -247,7 +253,7 @@ class LineIntegration(object):
     def date_modified(self):
         """
         Gets the date_modified of this LineIntegration.
-        Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this LineIntegration.
         :rtype: datetime
@@ -258,7 +264,7 @@ class LineIntegration(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this LineIntegration.
-        Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this LineIntegration.
         :type: datetime
@@ -334,6 +340,56 @@ class LineIntegration(object):
         """
         
         self._version = version
+
+    @property
+    def create_status(self):
+        """
+        Gets the create_status of this LineIntegration.
+        Status of asynchronous create operation
+
+        :return: The create_status of this LineIntegration.
+        :rtype: str
+        """
+        return self._create_status
+
+    @create_status.setter
+    def create_status(self, create_status):
+        """
+        Sets the create_status of this LineIntegration.
+        Status of asynchronous create operation
+
+        :param create_status: The create_status of this LineIntegration.
+        :type: str
+        """
+        allowed_values = ["Initiated", "Completed", "Error"]
+        if create_status.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for create_status -> " + create_status
+            self._create_status = "outdated_sdk_version"
+        else:
+            self._create_status = create_status
+
+    @property
+    def create_error(self):
+        """
+        Gets the create_error of this LineIntegration.
+        Error information returned, if createStatus is set to Error
+
+        :return: The create_error of this LineIntegration.
+        :rtype: ErrorBody
+        """
+        return self._create_error
+
+    @create_error.setter
+    def create_error(self, create_error):
+        """
+        Sets the create_error of this LineIntegration.
+        Error information returned, if createStatus is set to Error
+
+        :param create_error: The create_error of this LineIntegration.
+        :type: ErrorBody
+        """
+        
+        self._create_error = create_error
 
     @property
     def self_uri(self):

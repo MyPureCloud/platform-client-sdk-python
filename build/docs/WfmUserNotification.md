@@ -9,7 +9,7 @@ title: WfmUserNotification
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The immutable globally unique identifier for the object. | |
 | **mutable_group_id** | **str** | The group ID of the notification (mutable, may change  on update) | |
-| **timestamp** | **datetime** | The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **timestamp** | **datetime** | The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **type** | **str** | The type of this notification | [optional] |
 | **shift_trade** | [**ShiftTradeNotification**](ShiftTradeNotification.html) | A shift trade notification.  Only set if type == ShiftTrade | [optional] |
 | **time_off_request** | [**TimeOffRequestNotification**](TimeOffRequestNotification.html) | A time off request notification.  Only set if type == TimeOffRequest | [optional] |

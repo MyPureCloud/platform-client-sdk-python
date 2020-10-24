@@ -134,7 +134,7 @@ class AnalyticsFlowOutcome(object):
     def flow_outcome_start_timestamp(self):
         """
         Gets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
         :rtype: datetime
@@ -145,7 +145,7 @@ class AnalyticsFlowOutcome(object):
     def flow_outcome_start_timestamp(self, flow_outcome_start_timestamp):
         """
         Sets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param flow_outcome_start_timestamp: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
         :type: datetime
@@ -157,7 +157,7 @@ class AnalyticsFlowOutcome(object):
     def flow_outcome_end_timestamp(self):
         """
         Gets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
         :rtype: datetime
@@ -168,7 +168,7 @@ class AnalyticsFlowOutcome(object):
     def flow_outcome_end_timestamp(self, flow_outcome_end_timestamp):
         """
         Sets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param flow_outcome_end_timestamp: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
         :type: datetime

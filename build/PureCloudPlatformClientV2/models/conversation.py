@@ -132,7 +132,7 @@ class Conversation(object):
     def start_time(self):
         """
         Gets the start_time of this Conversation.
-        The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this Conversation.
         :rtype: datetime
@@ -143,7 +143,7 @@ class Conversation(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this Conversation.
-        The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this Conversation.
         :type: datetime
@@ -155,7 +155,7 @@ class Conversation(object):
     def end_time(self):
         """
         Gets the end_time of this Conversation.
-        The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this Conversation.
         :rtype: datetime
@@ -166,7 +166,7 @@ class Conversation(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this Conversation.
-        The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this Conversation.
         :type: datetime

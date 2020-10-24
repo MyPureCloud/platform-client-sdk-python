@@ -12,7 +12,7 @@ title: EvaluationAggregationQuery
 | **time_zone** | **str** | Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London | [optional] |
 | **group_by** | **list[str]** | Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group. | [optional] |
 | **filter** | [**EvaluationAggregateQueryFilter**](EvaluationAggregateQueryFilter.html) | Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters | [optional] |
-| **metrics** | **list[str]** | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). | [optional] |
+| **metrics** | **list[str]** | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. | |
 | **flatten_multivalued_dimensions** | **bool** | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) | [optional] |
 | **views** | [**list[EvaluationAggregationView]**](EvaluationAggregationView.html) | Custom derived metric views | [optional] |
 | **alternate_time_dimension** | **str** | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. | [optional] |

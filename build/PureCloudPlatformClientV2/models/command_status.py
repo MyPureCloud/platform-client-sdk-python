@@ -120,7 +120,7 @@ class CommandStatus(object):
     def expiration(self):
         """
         Gets the expiration of this CommandStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expiration of this CommandStatus.
         :rtype: datetime
@@ -131,7 +131,7 @@ class CommandStatus(object):
     def expiration(self, expiration):
         """
         Sets the expiration of this CommandStatus.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expiration: The expiration of this CommandStatus.
         :type: datetime

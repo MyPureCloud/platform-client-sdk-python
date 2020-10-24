@@ -107,7 +107,7 @@ class ObservationValue(object):
     def observation_date(self):
         """
         Gets the observation_date of this ObservationValue.
-        The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The observation_date of this ObservationValue.
         :rtype: datetime
@@ -118,7 +118,7 @@ class ObservationValue(object):
     def observation_date(self, observation_date):
         """
         Sets the observation_date of this ObservationValue.
-        The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param observation_date: The observation_date of this ObservationValue.
         :type: datetime

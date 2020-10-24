@@ -53,7 +53,7 @@ class FacebookAppCredentials(object):
     def id(self):
         """
         Gets the id of this FacebookAppCredentials.
-        Genesys Facebook App Id
+        Genesys Cloud Facebook App Id
 
         :return: The id of this FacebookAppCredentials.
         :rtype: str
@@ -64,7 +64,7 @@ class FacebookAppCredentials(object):
     def id(self, id):
         """
         Sets the id of this FacebookAppCredentials.
-        Genesys Facebook App Id
+        Genesys Cloud Facebook App Id
 
         :param id: The id of this FacebookAppCredentials.
         :type: str

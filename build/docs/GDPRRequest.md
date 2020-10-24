@@ -12,7 +12,7 @@ title: GDPRRequest
 | **created_by** | [**DomainEntityRef**](DomainEntityRef.html) | The user that created this request | |
 | **replacement_terms** | [**list[ReplacementTerm]**](ReplacementTerm.html) | The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request | [optional] |
 | **request_type** | **str** | The type of GDPR request | |
-| **created_date** | **datetime** | When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | |
+| **created_date** | **datetime** | When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **status** | **str** | The status of the request | |
 | **subject** | [**GDPRSubject**](GDPRSubject.html) | The subject of the GDPR request | |
 | **results_url** | **str** | The location where the results of the request can be retrieved | [optional] |

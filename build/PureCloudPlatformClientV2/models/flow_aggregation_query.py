@@ -192,7 +192,7 @@ class FlowAggregationQuery(object):
     def metrics(self):
         """
         Gets the metrics of this FlowAggregationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :return: The metrics of this FlowAggregationQuery.
         :rtype: list[str]
@@ -203,7 +203,7 @@ class FlowAggregationQuery(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this FlowAggregationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :param metrics: The metrics of this FlowAggregationQuery.
         :type: list[str]

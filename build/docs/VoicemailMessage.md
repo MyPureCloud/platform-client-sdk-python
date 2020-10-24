@@ -12,9 +12,9 @@ title: VoicemailMessage
 | **read** | **bool** | Whether the voicemail message is marked as read | [optional] |
 | **audio_recording_duration_seconds** | **int** | The voicemail message&#39;s audio recording duration in seconds | [optional] |
 | **audio_recording_size_bytes** | **int** | The voicemail message&#39;s audio recording size in bytes | [optional] |
-| **created_date** | **datetime** | The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **modified_date** | **datetime** | The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **deleted_date** | **datetime** | The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **created_date** | **datetime** | The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **modified_date** | **datetime** | The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **deleted_date** | **datetime** | The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **caller_address** | **str** | The caller address | [optional] |
 | **caller_name** | **str** | Optionally the name of the caller that left the voicemail message if the caller was a known user | [optional] |
 | **caller_user** | [**User**](User.html) | Optionally the user that left the voicemail message if the caller was a known user | [optional] |

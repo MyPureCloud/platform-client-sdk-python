@@ -11,7 +11,7 @@ title: EventLog
 | **name** | **str** |  | [optional] |
 | **error_entity** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
 | **related_entity** | [**DomainEntityRef**](DomainEntityRef.html) |  | [optional] |
-| **timestamp** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **timestamp** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **level** | **str** |  | [optional] |
 | **category** | **str** |  | [optional] |
 | **correlation_id** | **str** |  | [optional] |

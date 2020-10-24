@@ -161,7 +161,7 @@ class MessageData(object):
     def timestamp(self):
         """
         Gets the timestamp of this MessageData.
-        The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The timestamp of this MessageData.
         :rtype: datetime
@@ -172,7 +172,7 @@ class MessageData(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this MessageData.
-        The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param timestamp: The timestamp of this MessageData.
         :type: datetime

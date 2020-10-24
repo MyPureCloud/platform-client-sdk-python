@@ -143,7 +143,7 @@ class DomainEdgeSoftwareVersionDto(object):
     def publish_date(self):
         """
         Gets the publish_date of this DomainEdgeSoftwareVersionDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The publish_date of this DomainEdgeSoftwareVersionDto.
         :rtype: datetime
@@ -154,7 +154,7 @@ class DomainEdgeSoftwareVersionDto(object):
     def publish_date(self, publish_date):
         """
         Sets the publish_date of this DomainEdgeSoftwareVersionDto.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param publish_date: The publish_date of this DomainEdgeSoftwareVersionDto.
         :type: datetime

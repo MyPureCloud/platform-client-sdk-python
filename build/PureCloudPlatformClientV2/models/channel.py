@@ -105,7 +105,7 @@ class Channel(object):
     def expires(self):
         """
         Gets the expires of this Channel.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expires of this Channel.
         :rtype: datetime
@@ -116,7 +116,7 @@ class Channel(object):
     def expires(self, expires):
         """
         Sets the expires of this Channel.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expires: The expires of this Channel.
         :type: datetime

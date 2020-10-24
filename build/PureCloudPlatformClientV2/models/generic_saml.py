@@ -43,11 +43,12 @@ class GenericSAML(object):
             'id': 'str',
             'name': 'str',
             'logo_image_data': 'str',
-            'endpoint_compression': 'bool',
             'relying_party_identifier': 'str',
+            'endpoint_compression': 'bool',
+            'name_identifier_format': 'str',
             'certificate': 'str',
-            'issuer_uri': 'str',
             'sso_target_uri': 'str',
+            'issuer_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
         }
@@ -56,11 +57,12 @@ class GenericSAML(object):
             'id': 'id',
             'name': 'name',
             'logo_image_data': 'logoImageData',
-            'endpoint_compression': 'endpointCompression',
             'relying_party_identifier': 'relyingPartyIdentifier',
+            'endpoint_compression': 'endpointCompression',
+            'name_identifier_format': 'nameIdentifierFormat',
             'certificate': 'certificate',
-            'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
+            'issuer_uri': 'issuerURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
         }
@@ -68,11 +70,12 @@ class GenericSAML(object):
         self._id = None
         self._name = None
         self._logo_image_data = None
-        self._endpoint_compression = None
         self._relying_party_identifier = None
+        self._endpoint_compression = None
+        self._name_identifier_format = None
         self._certificate = None
-        self._issuer_uri = None
         self._sso_target_uri = None
+        self._issuer_uri = None
         self._disabled = None
         self._self_uri = None
 
@@ -146,6 +149,29 @@ class GenericSAML(object):
         self._logo_image_data = logo_image_data
 
     @property
+    def relying_party_identifier(self):
+        """
+        Gets the relying_party_identifier of this GenericSAML.
+
+
+        :return: The relying_party_identifier of this GenericSAML.
+        :rtype: str
+        """
+        return self._relying_party_identifier
+
+    @relying_party_identifier.setter
+    def relying_party_identifier(self, relying_party_identifier):
+        """
+        Sets the relying_party_identifier of this GenericSAML.
+
+
+        :param relying_party_identifier: The relying_party_identifier of this GenericSAML.
+        :type: str
+        """
+        
+        self._relying_party_identifier = relying_party_identifier
+
+    @property
     def endpoint_compression(self):
         """
         Gets the endpoint_compression of this GenericSAML.
@@ -169,27 +195,31 @@ class GenericSAML(object):
         self._endpoint_compression = endpoint_compression
 
     @property
-    def relying_party_identifier(self):
+    def name_identifier_format(self):
         """
-        Gets the relying_party_identifier of this GenericSAML.
+        Gets the name_identifier_format of this GenericSAML.
 
 
-        :return: The relying_party_identifier of this GenericSAML.
+        :return: The name_identifier_format of this GenericSAML.
         :rtype: str
         """
-        return self._relying_party_identifier
+        return self._name_identifier_format
 
-    @relying_party_identifier.setter
-    def relying_party_identifier(self, relying_party_identifier):
+    @name_identifier_format.setter
+    def name_identifier_format(self, name_identifier_format):
         """
-        Sets the relying_party_identifier of this GenericSAML.
+        Sets the name_identifier_format of this GenericSAML.
 
 
-        :param relying_party_identifier: The relying_party_identifier of this GenericSAML.
+        :param name_identifier_format: The name_identifier_format of this GenericSAML.
         :type: str
         """
-        
-        self._relying_party_identifier = relying_party_identifier
+        allowed_values = ["urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified", "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress", "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName", "urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName", "urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos", "urn:oasis:names:tc:SAML:2.0:nameid-format:entity", "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent", "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"]
+        if name_identifier_format.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for name_identifier_format -> " + name_identifier_format
+            self._name_identifier_format = "outdated_sdk_version"
+        else:
+            self._name_identifier_format = name_identifier_format
 
     @property
     def certificate(self):
@@ -215,29 +245,6 @@ class GenericSAML(object):
         self._certificate = certificate
 
     @property
-    def issuer_uri(self):
-        """
-        Gets the issuer_uri of this GenericSAML.
-
-
-        :return: The issuer_uri of this GenericSAML.
-        :rtype: str
-        """
-        return self._issuer_uri
-
-    @issuer_uri.setter
-    def issuer_uri(self, issuer_uri):
-        """
-        Sets the issuer_uri of this GenericSAML.
-
-
-        :param issuer_uri: The issuer_uri of this GenericSAML.
-        :type: str
-        """
-        
-        self._issuer_uri = issuer_uri
-
-    @property
     def sso_target_uri(self):
         """
         Gets the sso_target_uri of this GenericSAML.
@@ -259,6 +266,29 @@ class GenericSAML(object):
         """
         
         self._sso_target_uri = sso_target_uri
+
+    @property
+    def issuer_uri(self):
+        """
+        Gets the issuer_uri of this GenericSAML.
+
+
+        :return: The issuer_uri of this GenericSAML.
+        :rtype: str
+        """
+        return self._issuer_uri
+
+    @issuer_uri.setter
+    def issuer_uri(self, issuer_uri):
+        """
+        Sets the issuer_uri of this GenericSAML.
+
+
+        :param issuer_uri: The issuer_uri of this GenericSAML.
+        :type: str
+        """
+        
+        self._issuer_uri = issuer_uri
 
     @property
     def disabled(self):

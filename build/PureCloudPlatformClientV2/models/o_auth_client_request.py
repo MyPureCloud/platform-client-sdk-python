@@ -295,7 +295,7 @@ class OAuthClientRequest(object):
     def date_to_delete(self):
         """
         Gets the date_to_delete of this OAuthClientRequest.
-        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_to_delete of this OAuthClientRequest.
         :rtype: datetime
@@ -306,7 +306,7 @@ class OAuthClientRequest(object):
     def date_to_delete(self, date_to_delete):
         """
         Sets the date_to_delete of this OAuthClientRequest.
-        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_to_delete: The date_to_delete of this OAuthClientRequest.
         :type: datetime

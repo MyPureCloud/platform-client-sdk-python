@@ -143,7 +143,7 @@ class OutOfOffice(object):
     def start_date(self):
         """
         Gets the start_date of this OutOfOffice.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_date of this OutOfOffice.
         :rtype: datetime
@@ -154,7 +154,7 @@ class OutOfOffice(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this OutOfOffice.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_date: The start_date of this OutOfOffice.
         :type: datetime
@@ -166,7 +166,7 @@ class OutOfOffice(object):
     def end_date(self):
         """
         Gets the end_date of this OutOfOffice.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_date of this OutOfOffice.
         :rtype: datetime
@@ -177,7 +177,7 @@ class OutOfOffice(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this OutOfOffice.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_date: The end_date of this OutOfOffice.
         :type: datetime

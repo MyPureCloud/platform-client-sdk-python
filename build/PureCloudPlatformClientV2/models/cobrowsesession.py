@@ -296,7 +296,7 @@ class Cobrowsesession(object):
     def provider_event_time(self):
         """
         Gets the provider_event_time of this Cobrowsesession.
-        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The provider_event_time of this Cobrowsesession.
         :rtype: datetime
@@ -307,7 +307,7 @@ class Cobrowsesession(object):
     def provider_event_time(self, provider_event_time):
         """
         Sets the provider_event_time of this Cobrowsesession.
-        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param provider_event_time: The provider_event_time of this Cobrowsesession.
         :type: datetime
@@ -319,7 +319,7 @@ class Cobrowsesession(object):
     def start_alerting_time(self):
         """
         Gets the start_alerting_time of this Cobrowsesession.
-        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_alerting_time of this Cobrowsesession.
         :rtype: datetime
@@ -330,7 +330,7 @@ class Cobrowsesession(object):
     def start_alerting_time(self, start_alerting_time):
         """
         Sets the start_alerting_time of this Cobrowsesession.
-        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_alerting_time: The start_alerting_time of this Cobrowsesession.
         :type: datetime
@@ -342,7 +342,7 @@ class Cobrowsesession(object):
     def connected_time(self):
         """
         Gets the connected_time of this Cobrowsesession.
-        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The connected_time of this Cobrowsesession.
         :rtype: datetime
@@ -353,7 +353,7 @@ class Cobrowsesession(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this Cobrowsesession.
-        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param connected_time: The connected_time of this Cobrowsesession.
         :type: datetime
@@ -365,7 +365,7 @@ class Cobrowsesession(object):
     def disconnected_time(self):
         """
         Gets the disconnected_time of this Cobrowsesession.
-        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The disconnected_time of this Cobrowsesession.
         :rtype: datetime
@@ -376,7 +376,7 @@ class Cobrowsesession(object):
     def disconnected_time(self, disconnected_time):
         """
         Sets the disconnected_time of this Cobrowsesession.
-        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param disconnected_time: The disconnected_time of this Cobrowsesession.
         :type: datetime

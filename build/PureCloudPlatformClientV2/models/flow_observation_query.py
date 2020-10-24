@@ -82,7 +82,7 @@ class FlowObservationQuery(object):
     def metrics(self):
         """
         Gets the metrics of this FlowObservationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :return: The metrics of this FlowObservationQuery.
         :rtype: list[str]
@@ -93,7 +93,7 @@ class FlowObservationQuery(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this FlowObservationQuery.
-        Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+        Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
 
         :param metrics: The metrics of this FlowObservationQuery.
         :type: list[str]

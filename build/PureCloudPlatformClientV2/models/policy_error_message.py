@@ -209,7 +209,7 @@ class PolicyErrorMessage(object):
     def insert_date(self):
         """
         Gets the insert_date of this PolicyErrorMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The insert_date of this PolicyErrorMessage.
         :rtype: datetime
@@ -220,7 +220,7 @@ class PolicyErrorMessage(object):
     def insert_date(self, insert_date):
         """
         Sets the insert_date of this PolicyErrorMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param insert_date: The insert_date of this PolicyErrorMessage.
         :type: datetime

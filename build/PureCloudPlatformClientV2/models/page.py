@@ -143,7 +143,7 @@ class Page(object):
     def created_date(self):
         """
         Gets the created_date of this Page.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date of this Page.
         :rtype: datetime
@@ -154,7 +154,7 @@ class Page(object):
     def created_date(self, created_date):
         """
         Sets the created_date of this Page.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date: The created_date of this Page.
         :type: datetime
@@ -166,7 +166,7 @@ class Page(object):
     def modified_date(self):
         """
         Gets the modified_date of this Page.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this Page.
         :rtype: datetime
@@ -177,7 +177,7 @@ class Page(object):
     def modified_date(self, modified_date):
         """
         Sets the modified_date of this Page.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this Page.
         :type: datetime

@@ -16,7 +16,7 @@ title: DocumentAudit
 | **application** | **str** |  | [optional] |
 | **service_name** | **str** |  | [optional] |
 | **level** | **str** |  | [optional] |
-| **timestamp** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **timestamp** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **status** | **str** |  | [optional] |
 | **action_context** | **str** |  | [optional] |
 | **action** | **str** |  | [optional] |

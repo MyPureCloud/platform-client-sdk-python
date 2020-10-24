@@ -19,15 +19,15 @@ title: Recording
 | **email_transcript** | [**list[RecordingEmailMessage]**](RecordingEmailMessage.html) | Represents an email transcript | [optional] |
 | **messaging_transcript** | [**list[RecordingMessagingMessage]**](RecordingMessagingMessage.html) | Represents a messaging transcript | [optional] |
 | **file_state** | **str** | Represents the current file state for a recording. Examples: Uploading, Archived, etc | [optional] |
-| **restore_expiration_time** | **datetime** | The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **restore_expiration_time** | **datetime** | The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **media_uris** | [**dict(str, MediaResult)**](MediaResult.html) | The different mediaUris for the recording. Null when there is no playable media. | [optional] |
 | **estimated_transcode_time_ms** | **int** |  | [optional] |
 | **actual_transcode_time_ms** | **int** |  | [optional] |
-| **archive_date** | **datetime** | The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **archive_date** | **datetime** | The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **archive_medium** | **str** | The type of archive medium used. Example: CloudArchive | [optional] |
-| **delete_date** | **datetime** | The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **export_date** | **datetime** | The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **exported_date** | **datetime** | The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **delete_date** | **datetime** | The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **export_date** | **datetime** | The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **exported_date** | **datetime** | The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **output_duration_ms** | **int** | Duration of transcoded media in milliseconds | [optional] |
 | **output_size_in_bytes** | **int** | Size of transcoded media in bytes. 0 if there is no transcoded media. | [optional] |
 | **max_allowed_restorations_for_org** | **int** | How many archive restorations the organization is allowed to have. | [optional] |

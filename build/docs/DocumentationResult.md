@@ -13,7 +13,7 @@ title: DocumentationResult
 | **content** | **str** | The text or html content for the documentation entity. Will be returned in responses for certain entities. | [optional] |
 | **excerpt** | **str** | The excerpt of the documentation entity. Will be returned in responses for certain entities. | [optional] |
 | **link** | **str** | URL link for the documentation entity. Will be returned in responses for certain entities. | [optional] |
-| **modified** | **datetime** | The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **modified** | **datetime** | The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **name** | **str** | The name of the documentation entity. Will be returned in responses for certain entities. | [optional] |
 | **service** | **list[int]** | The service of the documentation entity. Will be returned in responses for certain entities. | [optional] |
 | **slug** | **str** | The slug of the documentation entity. Will be returned in responses for certain entities. | [optional] |

@@ -312,7 +312,7 @@ class BuScheduleRun(object):
     def scheduling_start_time(self):
         """
         Gets the scheduling_start_time of this BuScheduleRun.
-        When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The scheduling_start_time of this BuScheduleRun.
         :rtype: datetime
@@ -323,7 +323,7 @@ class BuScheduleRun(object):
     def scheduling_start_time(self, scheduling_start_time):
         """
         Sets the scheduling_start_time of this BuScheduleRun.
-        When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param scheduling_start_time: The scheduling_start_time of this BuScheduleRun.
         :type: datetime
@@ -381,7 +381,7 @@ class BuScheduleRun(object):
     def scheduling_completed_time(self):
         """
         Gets the scheduling_completed_time of this BuScheduleRun.
-        When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The scheduling_completed_time of this BuScheduleRun.
         :rtype: datetime
@@ -392,7 +392,7 @@ class BuScheduleRun(object):
     def scheduling_completed_time(self, scheduling_completed_time):
         """
         Sets the scheduling_completed_time of this BuScheduleRun.
-        When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param scheduling_completed_time: The scheduling_completed_time of this BuScheduleRun.
         :type: datetime
@@ -450,7 +450,7 @@ class BuScheduleRun(object):
     def rescheduling_result_expiration(self):
         """
         Gets the rescheduling_result_expiration of this BuScheduleRun.
-        When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The rescheduling_result_expiration of this BuScheduleRun.
         :rtype: datetime
@@ -461,7 +461,7 @@ class BuScheduleRun(object):
     def rescheduling_result_expiration(self, rescheduling_result_expiration):
         """
         Sets the rescheduling_result_expiration of this BuScheduleRun.
-        When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param rescheduling_result_expiration: The rescheduling_result_expiration of this BuScheduleRun.
         :type: datetime

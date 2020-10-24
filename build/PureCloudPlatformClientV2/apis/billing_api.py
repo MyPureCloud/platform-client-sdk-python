@@ -61,8 +61,8 @@ class BillingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param datetime start_date: The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
-        :param datetime end_date: The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
+        :param datetime start_date: The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
+        :param datetime end_date: The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
         :return: BillingUsageReport
                  If the method is called asynchronously,
                  returns the request thread.

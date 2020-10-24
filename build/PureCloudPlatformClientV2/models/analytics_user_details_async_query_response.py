@@ -105,7 +105,7 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
     def data_availability_date(self):
         """
         Gets the data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
-        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
         :rtype: datetime
@@ -116,7 +116,7 @@ class AnalyticsUserDetailsAsyncQueryResponse(object):
     def data_availability_date(self, data_availability_date):
         """
         Sets the data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
-        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param data_availability_date: The data_availability_date of this AnalyticsUserDetailsAsyncQueryResponse.
         :type: datetime

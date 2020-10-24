@@ -9,8 +9,8 @@ title: CampaignRule
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the CampaignRule. | |
-| **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 | **campaign_rule_entities** | [**CampaignRuleEntities**](CampaignRuleEntities.html) | The list of entities that this CampaignRule monitors. | |
 | **campaign_rule_conditions** | [**list[CampaignRuleCondition]**](CampaignRuleCondition.html) | The list of conditions that are evaluated on the entities. | |

@@ -355,7 +355,7 @@ class TimeOffRequest(object):
     def submitted_date(self):
         """
         Gets the submitted_date of this TimeOffRequest.
-        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The submitted_date of this TimeOffRequest.
         :rtype: datetime
@@ -366,7 +366,7 @@ class TimeOffRequest(object):
     def submitted_date(self, submitted_date):
         """
         Sets the submitted_date of this TimeOffRequest.
-        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param submitted_date: The submitted_date of this TimeOffRequest.
         :type: datetime
@@ -401,7 +401,7 @@ class TimeOffRequest(object):
     def reviewed_date(self):
         """
         Gets the reviewed_date of this TimeOffRequest.
-        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reviewed_date of this TimeOffRequest.
         :rtype: datetime
@@ -412,7 +412,7 @@ class TimeOffRequest(object):
     def reviewed_date(self, reviewed_date):
         """
         Sets the reviewed_date of this TimeOffRequest.
-        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reviewed_date: The reviewed_date of this TimeOffRequest.
         :type: datetime

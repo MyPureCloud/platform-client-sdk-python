@@ -277,7 +277,7 @@ class WebChatMemberInfo(object):
     def join_date(self):
         """
         Gets the join_date of this WebChatMemberInfo.
-        The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The join_date of this WebChatMemberInfo.
         :rtype: datetime
@@ -288,7 +288,7 @@ class WebChatMemberInfo(object):
     def join_date(self, join_date):
         """
         Sets the join_date of this WebChatMemberInfo.
-        The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param join_date: The join_date of this WebChatMemberInfo.
         :type: datetime
@@ -300,7 +300,7 @@ class WebChatMemberInfo(object):
     def leave_date(self):
         """
         Gets the leave_date of this WebChatMemberInfo.
-        The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The leave_date of this WebChatMemberInfo.
         :rtype: datetime
@@ -311,7 +311,7 @@ class WebChatMemberInfo(object):
     def leave_date(self, leave_date):
         """
         Sets the leave_date of this WebChatMemberInfo.
-        The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param leave_date: The leave_date of this WebChatMemberInfo.
         :type: datetime

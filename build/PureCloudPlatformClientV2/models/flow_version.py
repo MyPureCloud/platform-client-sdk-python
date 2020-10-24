@@ -55,6 +55,7 @@ class FlowVersion(object):
             'publish_result_uri': 'str',
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
+            'nlu_info': 'NluInfo',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class FlowVersion(object):
             'publish_result_uri': 'publishResultUri',
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
+            'nlu_info': 'nluInfo',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +94,7 @@ class FlowVersion(object):
         self._publish_result_uri = None
         self._input_schema = None
         self._output_schema = None
+        self._nlu_info = None
         self._self_uri = None
 
     @property
@@ -442,6 +445,29 @@ class FlowVersion(object):
         """
         
         self._output_schema = output_schema
+
+    @property
+    def nlu_info(self):
+        """
+        Gets the nlu_info of this FlowVersion.
+        Information about the NLU domain version for the flow version
+
+        :return: The nlu_info of this FlowVersion.
+        :rtype: NluInfo
+        """
+        return self._nlu_info
+
+    @nlu_info.setter
+    def nlu_info(self, nlu_info):
+        """
+        Sets the nlu_info of this FlowVersion.
+        Information about the NLU domain version for the flow version
+
+        :param nlu_info: The nlu_info of this FlowVersion.
+        :type: NluInfo
+        """
+        
+        self._nlu_info = nlu_info
 
     @property
     def self_uri(self):

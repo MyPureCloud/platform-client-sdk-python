@@ -287,7 +287,7 @@ class RecordingEmailMessage(object):
     def time(self):
         """
         Gets the time of this RecordingEmailMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The time of this RecordingEmailMessage.
         :rtype: datetime
@@ -298,7 +298,7 @@ class RecordingEmailMessage(object):
     def time(self, time):
         """
         Sets the time of this RecordingEmailMessage.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param time: The time of this RecordingEmailMessage.
         :type: datetime

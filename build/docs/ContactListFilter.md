@@ -9,8 +9,8 @@ title: ContactListFilter
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the list. | |
-| **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **date_created** | **datetime** | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **date_modified** | **datetime** | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **version** | **int** | Required for updates, must match the version number of the most recent update | [optional] |
 | **contact_list** | [**DomainEntityRef**](DomainEntityRef.html) | The contact list the filter is based on. | |
 | **clauses** | [**list[ContactListFilterClause]**](ContactListFilterClause.html) | Groups of conditions to filter the contacts by. | [optional] |

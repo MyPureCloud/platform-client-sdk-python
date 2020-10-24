@@ -89,7 +89,7 @@ class LocationAddressVerificationDetails(object):
     def date_finished(self):
         """
         Gets the date_finished of this LocationAddressVerificationDetails.
-        Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_finished of this LocationAddressVerificationDetails.
         :rtype: datetime
@@ -100,7 +100,7 @@ class LocationAddressVerificationDetails(object):
     def date_finished(self, date_finished):
         """
         Sets the date_finished of this LocationAddressVerificationDetails.
-        Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_finished: The date_finished of this LocationAddressVerificationDetails.
         :type: datetime
@@ -112,7 +112,7 @@ class LocationAddressVerificationDetails(object):
     def date_started(self):
         """
         Gets the date_started of this LocationAddressVerificationDetails.
-        Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_started of this LocationAddressVerificationDetails.
         :rtype: datetime
@@ -123,7 +123,7 @@ class LocationAddressVerificationDetails(object):
     def date_started(self, date_started):
         """
         Sets the date_started of this LocationAddressVerificationDetails.
-        Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_started: The date_started of this LocationAddressVerificationDetails.
         :type: datetime

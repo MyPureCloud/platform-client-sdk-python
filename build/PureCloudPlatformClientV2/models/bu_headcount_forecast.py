@@ -79,7 +79,7 @@ class BuHeadcountForecast(object):
     def reference_start_date(self):
         """
         Gets the reference_start_date of this BuHeadcountForecast.
-        Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reference_start_date of this BuHeadcountForecast.
         :rtype: datetime
@@ -90,7 +90,7 @@ class BuHeadcountForecast(object):
     def reference_start_date(self, reference_start_date):
         """
         Sets the reference_start_date of this BuHeadcountForecast.
-        Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reference_start_date: The reference_start_date of this BuHeadcountForecast.
         :type: datetime

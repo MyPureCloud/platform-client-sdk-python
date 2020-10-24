@@ -86,7 +86,7 @@ class ScimV2SchemaAttribute(object):
     def name(self):
         """
         Gets the name of this ScimV2SchemaAttribute.
-        The attribute's name
+        The name of the attribute.
 
         :return: The name of this ScimV2SchemaAttribute.
         :rtype: str
@@ -97,7 +97,7 @@ class ScimV2SchemaAttribute(object):
     def name(self, name):
         """
         Sets the name of this ScimV2SchemaAttribute.
-        The attribute's name
+        The name of the attribute.
 
         :param name: The name of this ScimV2SchemaAttribute.
         :type: str

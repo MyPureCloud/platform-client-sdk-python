@@ -8,8 +8,8 @@ title: ReschedulingOptionsRunResponse
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **existing_schedule** | [**BuScheduleReference**](BuScheduleReference.html) | The existing schedule to which this reschedule run applies | [optional] |
-| **start_date** | **datetime** | The start date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **end_date** | **datetime** | The end date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **start_date** | **datetime** | The start date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **end_date** | **datetime** | The end date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **management_units** | [**list[ReschedulingManagementUnitResponse]**](ReschedulingManagementUnitResponse.html) | Per-management unit rescheduling options | [optional] |
 | **agent_count** | **int** | The number of agents to be considered in the reschedule | [optional] |
 | **activity_code_ids** | **list[str]** | The IDs of the activity codes being considered for reschedule | [optional] |

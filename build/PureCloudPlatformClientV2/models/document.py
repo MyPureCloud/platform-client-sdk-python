@@ -212,7 +212,7 @@ class Document(object):
     def date_created(self):
         """
         Gets the date_created of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Document.
         :rtype: datetime
@@ -223,7 +223,7 @@ class Document(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Document.
         :type: datetime
@@ -235,7 +235,7 @@ class Document(object):
     def date_modified(self):
         """
         Gets the date_modified of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this Document.
         :rtype: datetime
@@ -246,7 +246,7 @@ class Document(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this Document.
         :type: datetime
@@ -258,7 +258,7 @@ class Document(object):
     def date_uploaded(self):
         """
         Gets the date_uploaded of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_uploaded of this Document.
         :rtype: datetime
@@ -269,7 +269,7 @@ class Document(object):
     def date_uploaded(self, date_uploaded):
         """
         Sets the date_uploaded of this Document.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_uploaded: The date_uploaded of this Document.
         :type: datetime

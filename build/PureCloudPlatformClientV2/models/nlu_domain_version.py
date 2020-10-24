@@ -207,7 +207,7 @@ class NluDomainVersion(object):
     def date_created(self):
         """
         Gets the date_created of this NluDomainVersion.
-        The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this NluDomainVersion.
         :rtype: datetime
@@ -218,7 +218,7 @@ class NluDomainVersion(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this NluDomainVersion.
-        The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this NluDomainVersion.
         :type: datetime
@@ -230,7 +230,7 @@ class NluDomainVersion(object):
     def date_modified(self):
         """
         Gets the date_modified of this NluDomainVersion.
-        The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this NluDomainVersion.
         :rtype: datetime
@@ -241,7 +241,7 @@ class NluDomainVersion(object):
     def date_modified(self, date_modified):
         """
         Sets the date_modified of this NluDomainVersion.
-        The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this NluDomainVersion.
         :type: datetime
@@ -253,7 +253,7 @@ class NluDomainVersion(object):
     def date_trained(self):
         """
         Gets the date_trained of this NluDomainVersion.
-        The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_trained of this NluDomainVersion.
         :rtype: datetime
@@ -264,7 +264,7 @@ class NluDomainVersion(object):
     def date_trained(self, date_trained):
         """
         Sets the date_trained of this NluDomainVersion.
-        The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_trained: The date_trained of this NluDomainVersion.
         :type: datetime
@@ -276,7 +276,7 @@ class NluDomainVersion(object):
     def date_published(self):
         """
         Gets the date_published of this NluDomainVersion.
-        The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_published of this NluDomainVersion.
         :rtype: datetime
@@ -287,7 +287,7 @@ class NluDomainVersion(object):
     def date_published(self, date_published):
         """
         Sets the date_published of this NluDomainVersion.
-        The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_published: The date_published of this NluDomainVersion.
         :type: datetime

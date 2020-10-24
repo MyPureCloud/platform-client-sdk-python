@@ -328,7 +328,7 @@ class CalibrationCreate(object):
     def created_date(self):
         """
         Gets the created_date of this CalibrationCreate.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date of this CalibrationCreate.
         :rtype: datetime
@@ -339,7 +339,7 @@ class CalibrationCreate(object):
     def created_date(self, created_date):
         """
         Sets the created_date of this CalibrationCreate.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date: The created_date of this CalibrationCreate.
         :type: datetime

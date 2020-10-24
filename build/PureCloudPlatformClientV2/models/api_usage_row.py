@@ -365,7 +365,7 @@ class ApiUsageRow(object):
     def date(self):
         """
         Gets the date of this ApiUsageRow.
-        Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date of this ApiUsageRow.
         :rtype: datetime
@@ -376,7 +376,7 @@ class ApiUsageRow(object):
     def date(self, date):
         """
         Sets the date of this ApiUsageRow.
-        Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date: The date of this ApiUsageRow.
         :type: datetime

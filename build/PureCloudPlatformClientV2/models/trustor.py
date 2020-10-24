@@ -117,7 +117,7 @@ class Trustor(object):
     def date_created(self):
         """
         Gets the date_created of this Trustor.
-        Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Trustor.
         :rtype: datetime
@@ -128,7 +128,7 @@ class Trustor(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Trustor.
-        Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Trustor.
         :type: datetime

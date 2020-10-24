@@ -152,7 +152,7 @@ class ReportRunEntry(object):
     def run_time(self):
         """
         Gets the run_time of this ReportRunEntry.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The run_time of this ReportRunEntry.
         :rtype: datetime
@@ -163,7 +163,7 @@ class ReportRunEntry(object):
     def run_time(self, run_time):
         """
         Sets the run_time of this ReportRunEntry.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param run_time: The run_time of this ReportRunEntry.
         :type: datetime

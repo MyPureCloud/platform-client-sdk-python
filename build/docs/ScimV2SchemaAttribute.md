@@ -7,7 +7,7 @@ title: ScimV2SchemaAttribute
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | The attribute&#39;s name | [optional] |
+| **name** | **str** | The name of the attribute. | [optional] |
 | **type** | **str** | The data type of the attribute. | [optional] |
 | **sub_attributes** | [**list[ScimV2SchemaAttribute]**](ScimV2SchemaAttribute.html) | The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;. | [optional] |
 | **multi_valued** | **bool** | Indicates whether an attribute contains multiple values. | [optional] |

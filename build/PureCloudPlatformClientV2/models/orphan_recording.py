@@ -135,7 +135,7 @@ class OrphanRecording(object):
     def created_time(self):
         """
         Gets the created_time of this OrphanRecording.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_time of this OrphanRecording.
         :rtype: datetime
@@ -146,7 +146,7 @@ class OrphanRecording(object):
     def created_time(self, created_time):
         """
         Sets the created_time of this OrphanRecording.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_time: The created_time of this OrphanRecording.
         :type: datetime
@@ -158,7 +158,7 @@ class OrphanRecording(object):
     def recovered_time(self):
         """
         Gets the recovered_time of this OrphanRecording.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The recovered_time of this OrphanRecording.
         :rtype: datetime
@@ -169,7 +169,7 @@ class OrphanRecording(object):
     def recovered_time(self, recovered_time):
         """
         Sets the recovered_time of this OrphanRecording.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param recovered_time: The recovered_time of this OrphanRecording.
         :type: datetime

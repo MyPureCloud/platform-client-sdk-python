@@ -11,7 +11,7 @@ title: UserStation
 | **name** | **str** |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **associated_user** | [**User**](User.html) |  | [optional] |
-| **associated_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **associated_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **default_user** | [**User**](User.html) |  | [optional] |
 | **provider_info** | **dict(str, str)** | Provider-specific info for this station, e.g. { \&quot;edgeGroupId\&quot;: \&quot;ffe7b15c-a9cc-4f4c-88f5-781327819a49\&quot; } | [optional] |
 {: class="table table-striped"}

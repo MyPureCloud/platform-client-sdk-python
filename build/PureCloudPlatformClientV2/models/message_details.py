@@ -167,7 +167,7 @@ class MessageDetails(object):
     def message_time(self):
         """
         Gets the message_time of this MessageDetails.
-        The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The message_time of this MessageDetails.
         :rtype: datetime
@@ -178,7 +178,7 @@ class MessageDetails(object):
     def message_time(self, message_time):
         """
         Sets the message_time of this MessageDetails.
-        The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param message_time: The message_time of this MessageDetails.
         :type: datetime

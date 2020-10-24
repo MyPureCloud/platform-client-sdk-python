@@ -62,7 +62,7 @@ class AnalyticsUserPresenceRecord(object):
     def start_time(self):
         """
         Gets the start_time of this AnalyticsUserPresenceRecord.
-        The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this AnalyticsUserPresenceRecord.
         :rtype: datetime
@@ -73,7 +73,7 @@ class AnalyticsUserPresenceRecord(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this AnalyticsUserPresenceRecord.
-        The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this AnalyticsUserPresenceRecord.
         :type: datetime
@@ -85,7 +85,7 @@ class AnalyticsUserPresenceRecord(object):
     def end_time(self):
         """
         Gets the end_time of this AnalyticsUserPresenceRecord.
-        The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this AnalyticsUserPresenceRecord.
         :rtype: datetime
@@ -96,7 +96,7 @@ class AnalyticsUserPresenceRecord(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this AnalyticsUserPresenceRecord.
-        The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this AnalyticsUserPresenceRecord.
         :type: datetime

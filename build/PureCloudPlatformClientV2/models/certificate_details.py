@@ -117,7 +117,7 @@ class CertificateDetails(object):
     def expiration_date(self):
         """
         Gets the expiration_date of this CertificateDetails.
-        The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The expiration_date of this CertificateDetails.
         :rtype: datetime
@@ -128,7 +128,7 @@ class CertificateDetails(object):
     def expiration_date(self, expiration_date):
         """
         Sets the expiration_date of this CertificateDetails.
-        The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param expiration_date: The expiration_date of this CertificateDetails.
         :type: datetime
@@ -140,7 +140,7 @@ class CertificateDetails(object):
     def issue_date(self):
         """
         Gets the issue_date of this CertificateDetails.
-        The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The issue_date of this CertificateDetails.
         :rtype: datetime
@@ -151,7 +151,7 @@ class CertificateDetails(object):
     def issue_date(self, issue_date):
         """
         Sets the issue_date of this CertificateDetails.
-        The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param issue_date: The issue_date of this CertificateDetails.
         :type: datetime

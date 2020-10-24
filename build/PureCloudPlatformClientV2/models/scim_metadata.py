@@ -89,7 +89,7 @@ class ScimMetadata(object):
     def last_modified(self):
         """
         Gets the last_modified of this ScimMetadata.
-        The last time that the resource was modified. Date time is represented as an ISO-8601 string, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not present on Schema and ResourceType resource.
+        The last time that the resource was modified. Date time is represented as an \"ISO-8601 string\", for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \"Schema\" and \"ResourceType\" resources.
 
         :return: The last_modified of this ScimMetadata.
         :rtype: datetime
@@ -100,7 +100,7 @@ class ScimMetadata(object):
     def last_modified(self, last_modified):
         """
         Sets the last_modified of this ScimMetadata.
-        The last time that the resource was modified. Date time is represented as an ISO-8601 string, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not present on Schema and ResourceType resource.
+        The last time that the resource was modified. Date time is represented as an \"ISO-8601 string\", for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \"Schema\" and \"ResourceType\" resources.
 
         :param last_modified: The last_modified of this ScimMetadata.
         :type: datetime
@@ -135,7 +135,7 @@ class ScimMetadata(object):
     def version(self):
         """
         Gets the version of this ScimMetadata.
-        The version of the resource. Matches the ETag HTTP response header. Not present on Schema and ResourceType resources.
+        The version of the resource. Matches the ETag HTTP response header. Not included with \"Schema\" and \"ResourceType\" resources.
 
         :return: The version of this ScimMetadata.
         :rtype: str
@@ -146,7 +146,7 @@ class ScimMetadata(object):
     def version(self, version):
         """
         Sets the version of this ScimMetadata.
-        The version of the resource. Matches the ETag HTTP response header. Not present on Schema and ResourceType resources.
+        The version of the resource. Matches the ETag HTTP response header. Not included with \"Schema\" and \"ResourceType\" resources.
 
         :param version: The version of this ScimMetadata.
         :type: str

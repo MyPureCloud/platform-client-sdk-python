@@ -260,7 +260,7 @@ class BuShortTermForecast(object):
     def reference_start_date(self):
         """
         Gets the reference_start_date of this BuShortTermForecast.
-        The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reference_start_date of this BuShortTermForecast.
         :rtype: datetime
@@ -271,7 +271,7 @@ class BuShortTermForecast(object):
     def reference_start_date(self, reference_start_date):
         """
         Sets the reference_start_date of this BuShortTermForecast.
-        The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reference_start_date: The reference_start_date of this BuShortTermForecast.
         :type: datetime

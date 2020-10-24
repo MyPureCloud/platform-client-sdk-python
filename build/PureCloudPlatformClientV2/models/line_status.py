@@ -157,7 +157,7 @@ class LineStatus(object):
     def reachable_state_time(self):
         """
         Gets the reachable_state_time of this LineStatus.
-        The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The reachable_state_time of this LineStatus.
         :rtype: datetime
@@ -168,7 +168,7 @@ class LineStatus(object):
     def reachable_state_time(self, reachable_state_time):
         """
         Sets the reachable_state_time of this LineStatus.
-        The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param reachable_state_time: The reachable_state_time of this LineStatus.
         :type: datetime

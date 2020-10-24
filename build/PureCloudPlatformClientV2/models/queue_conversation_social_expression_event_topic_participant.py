@@ -63,6 +63,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'conversation_routing_data': 'QueueConversationSocialExpressionEventTopicConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
+            'coached_participant_id': 'str',
             'screen_recording_state': 'str',
             'flagged_reason': 'str',
             'attributes': 'dict(str, str)',
@@ -102,6 +103,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
+            'coached_participant_id': 'coachedParticipantId',
             'screen_recording_state': 'screenRecordingState',
             'flagged_reason': 'flaggedReason',
             'attributes': 'attributes',
@@ -140,6 +142,7 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
+        self._coached_participant_id = None
         self._screen_recording_state = None
         self._flagged_reason = None
         self._attributes = None
@@ -682,6 +685,29 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         """
         
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def coached_participant_id(self):
+        """
+        Gets the coached_participant_id of this QueueConversationSocialExpressionEventTopicParticipant.
+
+
+        :return: The coached_participant_id of this QueueConversationSocialExpressionEventTopicParticipant.
+        :rtype: str
+        """
+        return self._coached_participant_id
+
+    @coached_participant_id.setter
+    def coached_participant_id(self, coached_participant_id):
+        """
+        Sets the coached_participant_id of this QueueConversationSocialExpressionEventTopicParticipant.
+
+
+        :param coached_participant_id: The coached_participant_id of this QueueConversationSocialExpressionEventTopicParticipant.
+        :type: str
+        """
+        
+        self._coached_participant_id = coached_participant_id
 
     @property
     def screen_recording_state(self):

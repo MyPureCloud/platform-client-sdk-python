@@ -455,7 +455,7 @@ class ReportingExportJobResponse(object):
     def created_date_time(self):
         """
         Gets the created_date_time of this ReportingExportJobResponse.
-        The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date_time of this ReportingExportJobResponse.
         :rtype: datetime
@@ -466,7 +466,7 @@ class ReportingExportJobResponse(object):
     def created_date_time(self, created_date_time):
         """
         Sets the created_date_time of this ReportingExportJobResponse.
-        The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date_time: The created_date_time of this ReportingExportJobResponse.
         :type: datetime
@@ -478,7 +478,7 @@ class ReportingExportJobResponse(object):
     def modified_date_time(self):
         """
         Gets the modified_date_time of this ReportingExportJobResponse.
-        The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date_time of this ReportingExportJobResponse.
         :rtype: datetime
@@ -489,7 +489,7 @@ class ReportingExportJobResponse(object):
     def modified_date_time(self, modified_date_time):
         """
         Sets the modified_date_time of this ReportingExportJobResponse.
-        The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date_time: The modified_date_time of this ReportingExportJobResponse.
         :type: datetime

@@ -59,7 +59,7 @@ class ProvisionInfo(object):
     def time(self):
         """
         Gets the time of this ProvisionInfo.
-        The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The time of this ProvisionInfo.
         :rtype: datetime
@@ -70,7 +70,7 @@ class ProvisionInfo(object):
     def time(self, time):
         """
         Sets the time of this ProvisionInfo.
-        The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param time: The time of this ProvisionInfo.
         :type: datetime

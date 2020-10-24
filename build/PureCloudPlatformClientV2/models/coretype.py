@@ -152,7 +152,7 @@ class Coretype(object):
     def date_created(self):
         """
         Gets the date_created of this Coretype.
-        The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Coretype.
         :rtype: datetime
@@ -163,7 +163,7 @@ class Coretype(object):
     def date_created(self, date_created):
         """
         Sets the date_created of this Coretype.
-        The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Coretype.
         :type: datetime

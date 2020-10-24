@@ -117,7 +117,7 @@ class UpdateCoachingAppointmentRequest(object):
     def date_start(self):
         """
         Gets the date_start of this UpdateCoachingAppointmentRequest.
-        The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_start of this UpdateCoachingAppointmentRequest.
         :rtype: datetime
@@ -128,7 +128,7 @@ class UpdateCoachingAppointmentRequest(object):
     def date_start(self, date_start):
         """
         Sets the date_start of this UpdateCoachingAppointmentRequest.
-        The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_start: The date_start of this UpdateCoachingAppointmentRequest.
         :type: datetime

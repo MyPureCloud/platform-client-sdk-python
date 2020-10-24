@@ -233,7 +233,7 @@ class CobrowseMediaParticipant(object):
     def start_time(self):
         """
         Gets the start_time of this CobrowseMediaParticipant.
-        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -244,7 +244,7 @@ class CobrowseMediaParticipant(object):
     def start_time(self, start_time):
         """
         Sets the start_time of this CobrowseMediaParticipant.
-        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_time: The start_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -256,7 +256,7 @@ class CobrowseMediaParticipant(object):
     def connected_time(self):
         """
         Gets the connected_time of this CobrowseMediaParticipant.
-        The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The connected_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -267,7 +267,7 @@ class CobrowseMediaParticipant(object):
     def connected_time(self, connected_time):
         """
         Sets the connected_time of this CobrowseMediaParticipant.
-        The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param connected_time: The connected_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -279,7 +279,7 @@ class CobrowseMediaParticipant(object):
     def end_time(self):
         """
         Gets the end_time of this CobrowseMediaParticipant.
-        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -290,7 +290,7 @@ class CobrowseMediaParticipant(object):
     def end_time(self, end_time):
         """
         Sets the end_time of this CobrowseMediaParticipant.
-        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_time: The end_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -302,7 +302,7 @@ class CobrowseMediaParticipant(object):
     def start_hold_time(self):
         """
         Gets the start_hold_time of this CobrowseMediaParticipant.
-        The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_hold_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -313,7 +313,7 @@ class CobrowseMediaParticipant(object):
     def start_hold_time(self, start_hold_time):
         """
         Sets the start_hold_time of this CobrowseMediaParticipant.
-        The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_hold_time: The start_hold_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -893,7 +893,7 @@ class CobrowseMediaParticipant(object):
     def start_acw_time(self):
         """
         Gets the start_acw_time of this CobrowseMediaParticipant.
-        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The start_acw_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -904,7 +904,7 @@ class CobrowseMediaParticipant(object):
     def start_acw_time(self, start_acw_time):
         """
         Sets the start_acw_time of this CobrowseMediaParticipant.
-        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param start_acw_time: The start_acw_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -916,7 +916,7 @@ class CobrowseMediaParticipant(object):
     def end_acw_time(self):
         """
         Gets the end_acw_time of this CobrowseMediaParticipant.
-        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The end_acw_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -927,7 +927,7 @@ class CobrowseMediaParticipant(object):
     def end_acw_time(self, end_acw_time):
         """
         Sets the end_acw_time of this CobrowseMediaParticipant.
-        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param end_acw_time: The end_acw_time of this CobrowseMediaParticipant.
         :type: datetime
@@ -1031,7 +1031,7 @@ class CobrowseMediaParticipant(object):
     def provider_event_time(self):
         """
         Gets the provider_event_time of this CobrowseMediaParticipant.
-        The time when the provider event which triggered this conversation update happened in the corrected provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The provider_event_time of this CobrowseMediaParticipant.
         :rtype: datetime
@@ -1042,7 +1042,7 @@ class CobrowseMediaParticipant(object):
     def provider_event_time(self, provider_event_time):
         """
         Sets the provider_event_time of this CobrowseMediaParticipant.
-        The time when the provider event which triggered this conversation update happened in the corrected provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+        The time when the provider event which triggered this conversation update happened in the corrected provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param provider_event_time: The provider_event_time of this CobrowseMediaParticipant.
         :type: datetime
