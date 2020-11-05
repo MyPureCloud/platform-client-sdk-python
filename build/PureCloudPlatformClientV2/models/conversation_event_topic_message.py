@@ -58,6 +58,7 @@ class ConversationEventTopicMessage(object):
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
+            'journey_context': 'ConversationEventTopicJourneyContext',
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
@@ -83,6 +84,7 @@ class ConversationEventTopicMessage(object):
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
+            'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
@@ -107,6 +109,7 @@ class ConversationEventTopicMessage(object):
         self._type = None
         self._recipient_country = None
         self._recipient_type = None
+        self._journey_context = None
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
@@ -537,6 +540,29 @@ class ConversationEventTopicMessage(object):
         """
         
         self._recipient_type = recipient_type
+
+    @property
+    def journey_context(self):
+        """
+        Gets the journey_context of this ConversationEventTopicMessage.
+
+
+        :return: The journey_context of this ConversationEventTopicMessage.
+        :rtype: ConversationEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context):
+        """
+        Sets the journey_context of this ConversationEventTopicMessage.
+
+
+        :param journey_context: The journey_context of this ConversationEventTopicMessage.
+        :type: ConversationEventTopicJourneyContext
+        """
+        
+        self._journey_context = journey_context
 
     @property
     def wrapup(self):

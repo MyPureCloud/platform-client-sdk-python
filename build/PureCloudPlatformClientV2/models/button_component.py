@@ -85,7 +85,7 @@ class ButtonComponent(object):
     def text(self):
         """
         Gets the text of this ButtonComponent.
-        Text to show inside the button
+        Deprecated - Use title instead
 
         :return: The text of this ButtonComponent.
         :rtype: str
@@ -96,7 +96,7 @@ class ButtonComponent(object):
     def text(self, text):
         """
         Sets the text of this ButtonComponent.
-        Text to show inside the button
+        Deprecated - Use title instead
 
         :param text: The text of this ButtonComponent.
         :type: str
@@ -108,7 +108,7 @@ class ButtonComponent(object):
     def title(self):
         """
         Gets the title of this ButtonComponent.
-        Tooltip text to show when hovering over the button
+        Text to show inside the button
 
         :return: The title of this ButtonComponent.
         :rtype: str
@@ -119,7 +119,7 @@ class ButtonComponent(object):
     def title(self, title):
         """
         Sets the title of this ButtonComponent.
-        Tooltip text to show when hovering over the button
+        Text to show inside the button
 
         :param title: The title of this ButtonComponent.
         :type: str

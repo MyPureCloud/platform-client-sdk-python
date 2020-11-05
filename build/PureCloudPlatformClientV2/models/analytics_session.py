@@ -99,7 +99,9 @@ class AnalyticsSession(object):
             'selected_agent_id': 'str',
             'selected_agent_rank': 'int',
             'agent_assistant_id': 'str',
-            'proposed_agents': 'list[AnalyticsProposedAgent]'
+            'proposed_agents': 'list[AnalyticsProposedAgent]',
+            'assigner_id': 'str',
+            'acw_skipped': 'bool'
         }
 
         self.attribute_map = {
@@ -162,7 +164,9 @@ class AnalyticsSession(object):
             'selected_agent_id': 'selectedAgentId',
             'selected_agent_rank': 'selectedAgentRank',
             'agent_assistant_id': 'agentAssistantId',
-            'proposed_agents': 'proposedAgents'
+            'proposed_agents': 'proposedAgents',
+            'assigner_id': 'assignerId',
+            'acw_skipped': 'acwSkipped'
         }
 
         self._media_type = None
@@ -225,6 +229,8 @@ class AnalyticsSession(object):
         self._selected_agent_rank = None
         self._agent_assistant_id = None
         self._proposed_agents = None
+        self._assigner_id = None
+        self._acw_skipped = None
 
     @property
     def media_type(self):
@@ -1621,6 +1627,52 @@ class AnalyticsSession(object):
         """
         
         self._proposed_agents = proposed_agents
+
+    @property
+    def assigner_id(self):
+        """
+        Gets the assigner_id of this AnalyticsSession.
+        ID of the user that manually assigned a conversation
+
+        :return: The assigner_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._assigner_id
+
+    @assigner_id.setter
+    def assigner_id(self, assigner_id):
+        """
+        Sets the assigner_id of this AnalyticsSession.
+        ID of the user that manually assigned a conversation
+
+        :param assigner_id: The assigner_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._assigner_id = assigner_id
+
+    @property
+    def acw_skipped(self):
+        """
+        Gets the acw_skipped of this AnalyticsSession.
+        Marker for an agent that skipped after call work
+
+        :return: The acw_skipped of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._acw_skipped
+
+    @acw_skipped.setter
+    def acw_skipped(self, acw_skipped):
+        """
+        Sets the acw_skipped of this AnalyticsSession.
+        Marker for an agent that skipped after call work
+
+        :param acw_skipped: The acw_skipped of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._acw_skipped = acw_skipped
 
     def to_dict(self):
         """

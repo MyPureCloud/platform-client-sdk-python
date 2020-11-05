@@ -849,7 +849,7 @@ class KnowledgeApi(object):
 
     def get_knowledge_knowledgebase_language_trainings(self, knowledge_base_id, language_code, **kwargs):
         """
-        Get All trainings information for a knowledgebase
+        Get all trainings information for a knowledgebase
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -868,12 +868,13 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str limit: Number of entities to return. Maximum of 200.
         :param str page_size: Number of entities to return. Maximum of 200.
+        :param str knowledge_documents_state: Return the training with the specified state of the trained documents.
         :return: TrainingListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size']
+        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size', 'knowledge_documents_state']
         all_params.append('callback')
 
         params = locals()
@@ -910,6 +911,8 @@ class KnowledgeApi(object):
             query_params['limit'] = params['limit']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'knowledge_documents_state' in params:
+            query_params['knowledgeDocumentsState'] = params['knowledge_documents_state']
 
         header_params = {}
 

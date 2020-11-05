@@ -14,6 +14,7 @@ title: SuggestSearchCriteria
 | **value** | **str** | A value for the search to match against | [optional] |
 | **operator** | **str** | How to apply this search criteria against other criteria | [optional] |
 | **group** | [**list[SuggestSearchCriteria]**](SuggestSearchCriteria.html) | Groups multiple conditions | [optional] |
+| **date_format** | **str** | Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX. | [optional] |
 {: class="table table-striped"}
 
 

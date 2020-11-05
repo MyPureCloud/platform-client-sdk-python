@@ -42,6 +42,7 @@ class NluDomain(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'language': 'str',
             'draft_version': 'NluDomainVersion',
             'last_published_version': 'NluDomainVersion',
             'date_created': 'datetime',
@@ -52,6 +53,7 @@ class NluDomain(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'language': 'language',
             'draft_version': 'draftVersion',
             'last_published_version': 'lastPublishedVersion',
             'date_created': 'dateCreated',
@@ -61,6 +63,7 @@ class NluDomain(object):
 
         self._id = None
         self._name = None
+        self._language = None
         self._draft_version = None
         self._last_published_version = None
         self._date_created = None
@@ -112,6 +115,29 @@ class NluDomain(object):
         """
         
         self._name = name
+
+    @property
+    def language(self):
+        """
+        Gets the language of this NluDomain.
+        The ISO 639-1 language code of the NLU domain, e.g. `en`.
+
+        :return: The language of this NluDomain.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this NluDomain.
+        The ISO 639-1 language code of the NLU domain, e.g. `en`.
+
+        :param language: The language of this NluDomain.
+        :type: str
+        """
+        
+        self._language = language
 
     @property
     def draft_version(self):

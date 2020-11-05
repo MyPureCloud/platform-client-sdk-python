@@ -975,12 +975,14 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str query_type: Query filter type
+        :param str query: Comma-separated list of permissions or domains to query
         :return: PermissionCollectionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number']
+        all_params = ['page_size', 'page_number', 'query_type', 'query']
         all_params.append('callback')
 
         params = locals()
@@ -1003,6 +1005,10 @@ class AuthorizationApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'query_type' in params:
+            query_params['queryType'] = params['query_type']
+        if 'query' in params:
+            query_params['query'] = params['query']
 
         header_params = {}
 

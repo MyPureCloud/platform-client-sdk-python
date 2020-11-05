@@ -46,7 +46,8 @@ class SuggestSearchCriteria(object):
             'fields': 'list[str]',
             'value': 'str',
             'operator': 'str',
-            'group': 'list[SuggestSearchCriteria]'
+            'group': 'list[SuggestSearchCriteria]',
+            'date_format': 'str'
         }
 
         self.attribute_map = {
@@ -56,7 +57,8 @@ class SuggestSearchCriteria(object):
             'fields': 'fields',
             'value': 'value',
             'operator': 'operator',
-            'group': 'group'
+            'group': 'group',
+            'date_format': 'dateFormat'
         }
 
         self._end_value = None
@@ -66,6 +68,7 @@ class SuggestSearchCriteria(object):
         self._value = None
         self._operator = None
         self._group = None
+        self._date_format = None
 
     @property
     def end_value(self):
@@ -231,6 +234,29 @@ class SuggestSearchCriteria(object):
         """
         
         self._group = group
+
+    @property
+    def date_format(self):
+        """
+        Gets the date_format of this SuggestSearchCriteria.
+        Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
+
+        :return: The date_format of this SuggestSearchCriteria.
+        :rtype: str
+        """
+        return self._date_format
+
+    @date_format.setter
+    def date_format(self, date_format):
+        """
+        Sets the date_format of this SuggestSearchCriteria.
+        Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
+
+        :param date_format: The date_format of this SuggestSearchCriteria.
+        :type: str
+        """
+        
+        self._date_format = date_format
 
     def to_dict(self):
         """

@@ -633,7 +633,7 @@ except ApiException as e:
 
 <a name="get_authorization_permissions"></a>
 
-## [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html) get_authorization_permissions(page_size=page_size, page_number=page_number)
+## [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html) get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
 
 
 
@@ -661,10 +661,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+query_type = 'query_type_example' # str | Query filter type (optional)
+query = 'query_example' # str | Comma-separated list of permissions or domains to query (optional)
 
 try:
     # Get all permissions.
-    api_response = api_instance.get_authorization_permissions(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AuthorizationApi->get_authorization_permissions: %s\n" % e
@@ -677,6 +679,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **query_type** | **str**| Query filter type | [optional] <br />**Values**: domain, permission |
+| **query** | **str**| Comma-separated list of permissions or domains to query | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

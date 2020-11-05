@@ -44,8 +44,8 @@ class IdentityNow(object):
             'name': 'str',
             'relying_party_identifier': 'str',
             'certificate': 'str',
-            'sso_target_uri': 'str',
             'issuer_uri': 'str',
+            'sso_target_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
         }
@@ -55,8 +55,8 @@ class IdentityNow(object):
             'name': 'name',
             'relying_party_identifier': 'relyingPartyIdentifier',
             'certificate': 'certificate',
-            'sso_target_uri': 'ssoTargetURI',
             'issuer_uri': 'issuerURI',
+            'sso_target_uri': 'ssoTargetURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
         }
@@ -65,8 +65,8 @@ class IdentityNow(object):
         self._name = None
         self._relying_party_identifier = None
         self._certificate = None
-        self._sso_target_uri = None
         self._issuer_uri = None
+        self._sso_target_uri = None
         self._disabled = None
         self._self_uri = None
 
@@ -163,29 +163,6 @@ class IdentityNow(object):
         self._certificate = certificate
 
     @property
-    def sso_target_uri(self):
-        """
-        Gets the sso_target_uri of this IdentityNow.
-
-
-        :return: The sso_target_uri of this IdentityNow.
-        :rtype: str
-        """
-        return self._sso_target_uri
-
-    @sso_target_uri.setter
-    def sso_target_uri(self, sso_target_uri):
-        """
-        Sets the sso_target_uri of this IdentityNow.
-
-
-        :param sso_target_uri: The sso_target_uri of this IdentityNow.
-        :type: str
-        """
-        
-        self._sso_target_uri = sso_target_uri
-
-    @property
     def issuer_uri(self):
         """
         Gets the issuer_uri of this IdentityNow.
@@ -207,6 +184,29 @@ class IdentityNow(object):
         """
         
         self._issuer_uri = issuer_uri
+
+    @property
+    def sso_target_uri(self):
+        """
+        Gets the sso_target_uri of this IdentityNow.
+
+
+        :return: The sso_target_uri of this IdentityNow.
+        :rtype: str
+        """
+        return self._sso_target_uri
+
+    @sso_target_uri.setter
+    def sso_target_uri(self, sso_target_uri):
+        """
+        Sets the sso_target_uri of this IdentityNow.
+
+
+        :param sso_target_uri: The sso_target_uri of this IdentityNow.
+        :type: str
+        """
+        
+        self._sso_target_uri = sso_target_uri
 
     @property
     def disabled(self):

@@ -47,6 +47,7 @@ class KnowledgeBase(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'faq_count': 'int',
+            'date_document_last_modified': 'datetime',
             'self_uri': 'str'
         }
 
@@ -58,6 +59,7 @@ class KnowledgeBase(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'faq_count': 'faqCount',
+            'date_document_last_modified': 'dateDocumentLastModified',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +70,7 @@ class KnowledgeBase(object):
         self._date_created = None
         self._date_modified = None
         self._faq_count = None
+        self._date_document_last_modified = None
         self._self_uri = None
 
     @property
@@ -234,6 +237,29 @@ class KnowledgeBase(object):
         """
         
         self._faq_count = faq_count
+
+    @property
+    def date_document_last_modified(self):
+        """
+        Gets the date_document_last_modified of this KnowledgeBase.
+        The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_document_last_modified of this KnowledgeBase.
+        :rtype: datetime
+        """
+        return self._date_document_last_modified
+
+    @date_document_last_modified.setter
+    def date_document_last_modified(self, date_document_last_modified):
+        """
+        Sets the date_document_last_modified of this KnowledgeBase.
+        The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_document_last_modified: The date_document_last_modified of this KnowledgeBase.
+        :type: datetime
+        """
+        
+        self._date_document_last_modified = date_document_last_modified
 
     @property
     def self_uri(self):

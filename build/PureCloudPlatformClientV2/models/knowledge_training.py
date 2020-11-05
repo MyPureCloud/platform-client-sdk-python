@@ -41,7 +41,6 @@ class KnowledgeTraining(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'date_triggered': 'datetime',
             'date_completed': 'datetime',
             'status': 'str',
@@ -55,7 +54,6 @@ class KnowledgeTraining(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'date_triggered': 'dateTriggered',
             'date_completed': 'dateCompleted',
             'status': 'status',
@@ -68,7 +66,6 @@ class KnowledgeTraining(object):
         }
 
         self._id = None
-        self._name = None
         self._date_triggered = None
         self._date_completed = None
         self._status = None
@@ -101,29 +98,6 @@ class KnowledgeTraining(object):
         """
         
         self._id = id
-
-    @property
-    def name(self):
-        """
-        Gets the name of this KnowledgeTraining.
-
-
-        :return: The name of this KnowledgeTraining.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this KnowledgeTraining.
-
-
-        :param name: The name of this KnowledgeTraining.
-        :type: str
-        """
-        
-        self._name = name
 
     @property
     def date_triggered(self):
@@ -175,7 +149,7 @@ class KnowledgeTraining(object):
     def status(self):
         """
         Gets the status of this KnowledgeTraining.
-        Training status
+        Training status.
 
         :return: The status of this KnowledgeTraining.
         :rtype: str
@@ -186,7 +160,7 @@ class KnowledgeTraining(object):
     def status(self, status):
         """
         Sets the status of this KnowledgeTraining.
-        Training status
+        Training status.
 
         :param status: The status of this KnowledgeTraining.
         :type: str
@@ -202,7 +176,7 @@ class KnowledgeTraining(object):
     def language_code(self):
         """
         Gets the language_code of this KnowledgeTraining.
-        Actual language of the Training
+        Language of the documents that are trained.
 
         :return: The language_code of this KnowledgeTraining.
         :rtype: str
@@ -213,7 +187,7 @@ class KnowledgeTraining(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this KnowledgeTraining.
-        Actual language of the Training
+        Language of the documents that are trained.
 
         :param language_code: The language_code of this KnowledgeTraining.
         :type: str
@@ -225,7 +199,7 @@ class KnowledgeTraining(object):
     def knowledge_base(self):
         """
         Gets the knowledge_base of this KnowledgeTraining.
-        Knowledge base which Training does belong to
+        Knowledge Base that the training belongs to.
 
         :return: The knowledge_base of this KnowledgeTraining.
         :rtype: KnowledgeBase
@@ -236,7 +210,7 @@ class KnowledgeTraining(object):
     def knowledge_base(self, knowledge_base):
         """
         Sets the knowledge_base of this KnowledgeTraining.
-        Knowledge base which Training does belong to
+        Knowledge Base that the training belongs to.
 
         :param knowledge_base: The knowledge_base of this KnowledgeTraining.
         :type: KnowledgeBase

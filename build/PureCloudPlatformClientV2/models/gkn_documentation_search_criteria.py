@@ -47,6 +47,7 @@ class GKNDocumentationSearchCriteria(object):
             'value': 'str',
             'operator': 'str',
             'group': 'list[GKNDocumentationSearchCriteria]',
+            'date_format': 'str',
             'type': 'str'
         }
 
@@ -58,6 +59,7 @@ class GKNDocumentationSearchCriteria(object):
             'value': 'value',
             'operator': 'operator',
             'group': 'group',
+            'date_format': 'dateFormat',
             'type': 'type'
         }
 
@@ -68,6 +70,7 @@ class GKNDocumentationSearchCriteria(object):
         self._value = None
         self._operator = None
         self._group = None
+        self._date_format = None
         self._type = None
 
     @property
@@ -234,6 +237,29 @@ class GKNDocumentationSearchCriteria(object):
         """
         
         self._group = group
+
+    @property
+    def date_format(self):
+        """
+        Gets the date_format of this GKNDocumentationSearchCriteria.
+        Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
+
+        :return: The date_format of this GKNDocumentationSearchCriteria.
+        :rtype: str
+        """
+        return self._date_format
+
+    @date_format.setter
+    def date_format(self, date_format):
+        """
+        Sets the date_format of this GKNDocumentationSearchCriteria.
+        Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
+
+        :param date_format: The date_format of this GKNDocumentationSearchCriteria.
+        :type: str
+        """
+        
+        self._date_format = date_format
 
     @property
     def type(self):

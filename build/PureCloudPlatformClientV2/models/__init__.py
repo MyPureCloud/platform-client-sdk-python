@@ -17,6 +17,8 @@ from .activity_code import ActivityCode
 from .activity_code_container import ActivityCodeContainer
 from .acw_settings import AcwSettings
 from .add_shift_trade_request import AddShiftTradeRequest
+from .add_work_plan_rotation_agent_request import AddWorkPlanRotationAgentRequest
+from .add_work_plan_rotation_request import AddWorkPlanRotationRequest
 from .additional_message import AdditionalMessage
 from .address import Address
 from .addressable_entity_ref import AddressableEntityRef
@@ -566,6 +568,7 @@ from .copy_attachments_request import CopyAttachmentsRequest
 from .copy_bu_forecast_request import CopyBuForecastRequest
 from .copy_voicemail_message import CopyVoicemailMessage
 from .copy_work_plan import CopyWorkPlan
+from .copy_work_plan_rotation_request import CopyWorkPlanRotationRequest
 from .coretype import Coretype
 from .coretype_listing import CoretypeListing
 from .cover_sheet import CoverSheet
@@ -627,6 +630,7 @@ from .data_table_import_job import DataTableImportJob
 from .data_table_row_entity_listing import DataTableRowEntityListing
 from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .date_range import DateRange
+from .date_range_with_optional_end import DateRangeWithOptionalEnd
 from .default_greeting_list import DefaultGreetingList
 from .deletable_user_reference import DeletableUserReference
 from .delete_retention import DeleteRetention
@@ -1692,6 +1696,11 @@ from .secure_session_entity_listing import SecureSessionEntityListing
 from .security_profile import SecurityProfile
 from .security_profile_entity_listing import SecurityProfileEntityListing
 from .segment import Segment
+from .segment_assignment import SegmentAssignment
+from .segment_assignment_listing import SegmentAssignmentListing
+from .segment_assignment_segment import SegmentAssignmentSegment
+from .segment_assignment_session import SegmentAssignmentSession
+from .segment_assignments_update import SegmentAssignmentsUpdate
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
@@ -1900,6 +1909,8 @@ from .update_notifications_response import UpdateNotificationsResponse
 from .update_planning_group_request import UpdatePlanningGroupRequest
 from .update_service_goal_template import UpdateServiceGoalTemplate
 from .update_user import UpdateUser
+from .update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
+from .update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
 from .upload_url_request import UploadUrlRequest
 from .upload_url_response import UploadUrlResponse
 from .usage import Usage
@@ -2160,8 +2171,13 @@ from .work_plan_constraint_conflict_message import WorkPlanConstraintConflictMes
 from .work_plan_constraint_message import WorkPlanConstraintMessage
 from .work_plan_list_item_response import WorkPlanListItemResponse
 from .work_plan_list_response import WorkPlanListResponse
+from .work_plan_pattern_request import WorkPlanPatternRequest
+from .work_plan_pattern_response import WorkPlanPatternResponse
 from .work_plan_reference import WorkPlanReference
+from .work_plan_rotation_agent_response import WorkPlanRotationAgentResponse
+from .work_plan_rotation_list_response import WorkPlanRotationListResponse
 from .work_plan_rotation_reference import WorkPlanRotationReference
+from .work_plan_rotation_response import WorkPlanRotationResponse
 from .work_plan_shift import WorkPlanShift
 from .work_plan_validation_message_argument import WorkPlanValidationMessageArgument
 from .work_plan_validation_request import WorkPlanValidationRequest

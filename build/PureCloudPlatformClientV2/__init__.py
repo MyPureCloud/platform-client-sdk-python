@@ -17,6 +17,8 @@ from .models.activity_code import ActivityCode
 from .models.activity_code_container import ActivityCodeContainer
 from .models.acw_settings import AcwSettings
 from .models.add_shift_trade_request import AddShiftTradeRequest
+from .models.add_work_plan_rotation_agent_request import AddWorkPlanRotationAgentRequest
+from .models.add_work_plan_rotation_request import AddWorkPlanRotationRequest
 from .models.additional_message import AdditionalMessage
 from .models.address import Address
 from .models.addressable_entity_ref import AddressableEntityRef
@@ -566,6 +568,7 @@ from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.copy_work_plan import CopyWorkPlan
+from .models.copy_work_plan_rotation_request import CopyWorkPlanRotationRequest
 from .models.coretype import Coretype
 from .models.coretype_listing import CoretypeListing
 from .models.cover_sheet import CoverSheet
@@ -627,6 +630,7 @@ from .models.data_table_import_job import DataTableImportJob
 from .models.data_table_row_entity_listing import DataTableRowEntityListing
 from .models.data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .models.date_range import DateRange
+from .models.date_range_with_optional_end import DateRangeWithOptionalEnd
 from .models.default_greeting_list import DefaultGreetingList
 from .models.deletable_user_reference import DeletableUserReference
 from .models.delete_retention import DeleteRetention
@@ -1692,6 +1696,11 @@ from .models.secure_session_entity_listing import SecureSessionEntityListing
 from .models.security_profile import SecurityProfile
 from .models.security_profile_entity_listing import SecurityProfileEntityListing
 from .models.segment import Segment
+from .models.segment_assignment import SegmentAssignment
+from .models.segment_assignment_listing import SegmentAssignmentListing
+from .models.segment_assignment_segment import SegmentAssignmentSegment
+from .models.segment_assignment_session import SegmentAssignmentSession
+from .models.segment_assignments_update import SegmentAssignmentsUpdate
 from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
@@ -1900,6 +1909,8 @@ from .models.update_notifications_response import UpdateNotificationsResponse
 from .models.update_planning_group_request import UpdatePlanningGroupRequest
 from .models.update_service_goal_template import UpdateServiceGoalTemplate
 from .models.update_user import UpdateUser
+from .models.update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
+from .models.update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
 from .models.upload_url_request import UploadUrlRequest
 from .models.upload_url_response import UploadUrlResponse
 from .models.usage import Usage
@@ -2160,8 +2171,13 @@ from .models.work_plan_constraint_conflict_message import WorkPlanConstraintConf
 from .models.work_plan_constraint_message import WorkPlanConstraintMessage
 from .models.work_plan_list_item_response import WorkPlanListItemResponse
 from .models.work_plan_list_response import WorkPlanListResponse
+from .models.work_plan_pattern_request import WorkPlanPatternRequest
+from .models.work_plan_pattern_response import WorkPlanPatternResponse
 from .models.work_plan_reference import WorkPlanReference
+from .models.work_plan_rotation_agent_response import WorkPlanRotationAgentResponse
+from .models.work_plan_rotation_list_response import WorkPlanRotationListResponse
 from .models.work_plan_rotation_reference import WorkPlanRotationReference
+from .models.work_plan_rotation_response import WorkPlanRotationResponse
 from .models.work_plan_shift import WorkPlanShift
 from .models.work_plan_validation_message_argument import WorkPlanValidationMessageArgument
 from .models.work_plan_validation_request import WorkPlanValidationRequest

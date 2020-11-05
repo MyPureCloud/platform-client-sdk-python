@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_shorttermforecast) | Delete a short term forecast|
 |[**delete_workforcemanagement_managementunit**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit) | Delete management unit|
 |[**delete_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
+|[**delete_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
 |[**get_workforcemanagement_adherence**](WorkforceManagementApi.html#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
 |[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
 |[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
@@ -56,6 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunit_week_schedules**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_schedules) | Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit|
 |[**get_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_week_shifttrades) | Gets all the shift trades for a given week|
 |[**get_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplan) | Get a work plan|
+|[**get_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplanrotation) | Get a work plan rotation|
+|[**get_workforcemanagement_managementunit_workplanrotations**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplanrotations) | Get work plan rotations|
 |[**get_workforcemanagement_managementunit_workplans**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_workplans) | Get work plans|
 |[**get_workforcemanagement_managementunits**](WorkforceManagementApi.html#get_workforcemanagement_managementunits) | Get management units|
 |[**get_workforcemanagement_managementunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_managementunits_divisionviews) | Get management units across divisions|
@@ -73,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_user_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_user_timeoffrequest) | Update a time off request|
 |[**patch_workforcemanagement_managementunit_week_shifttrade**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_week_shifttrade) | Updates a shift trade. This route can only be called by the initiating agent|
 |[**patch_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
+|[**patch_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplanrotation) | Update a work plan rotation|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
@@ -101,6 +105,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_week_shifttrades_state_bulk**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_state_bulk) | Updates the state of a batch of shift trades|
 |[**post_workforcemanagement_managementunit_workplan_copy**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplan_copy) | Create a copy of work plan|
 |[**post_workforcemanagement_managementunit_workplan_validate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplan_validate) | Validate Work Plan|
+|[**post_workforcemanagement_managementunit_workplanrotation_copy**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplanrotation_copy) | Create a copy of work plan rotation|
+|[**post_workforcemanagement_managementunit_workplanrotations**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplanrotations) | Create a new work plan rotation|
 |[**post_workforcemanagement_managementunit_workplans**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_workplans) | Create a new work plan|
 |[**post_workforcemanagement_managementunits**](WorkforceManagementApi.html#post_workforcemanagement_managementunits) | Add a management unit|
 |[**post_workforcemanagement_notifications_update**](WorkforceManagementApi.html#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
@@ -571,6 +577,58 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_managementunit_workplanrotation"></a>
+
+##  delete_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
+
+
+
+Delete a work plan rotation
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanRotation:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_rotation_id = 'work_plan_rotation_id_example' # str | The ID of the work plan rotation to be deleted
+
+try:
+    # Delete a work plan rotation
+    api_instance.delete_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **work_plan_rotation_id** | **str**| The ID of the work plan rotation to be deleted |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2895,6 +2953,113 @@ except ApiException as e:
 
 [**WorkPlan**](WorkPlan.html)
 
+<a name="get_workforcemanagement_managementunit_workplanrotation"></a>
+
+## [**WorkPlanRotationResponse**](WorkPlanRotationResponse.html) get_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
+
+
+
+Get a work plan rotation
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanRotation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_rotation_id = 'work_plan_rotation_id_example' # str | The ID of the work plan rotation to fetch
+
+try:
+    # Get a work plan rotation
+    api_response = api_instance.get_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **work_plan_rotation_id** | **str**| The ID of the work plan rotation to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+
+<a name="get_workforcemanagement_managementunit_workplanrotations"></a>
+
+## [**WorkPlanRotationListResponse**](WorkPlanRotationListResponse.html) get_workforcemanagement_managementunit_workplanrotations(management_unit_id, expand=expand)
+
+
+
+Get work plan rotations
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations 
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+* wfm:workPlanRotation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+expand = ['expand_example'] # list[str] |  (optional)
+
+try:
+    # Get work plan rotations
+    api_response = api_instance.get_workforcemanagement_managementunit_workplanrotations(management_unit_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotations: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: agents |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanRotationListResponse**](WorkPlanRotationListResponse.html)
+
 <a name="get_workforcemanagement_managementunit_workplans"></a>
 
 ## [**WorkPlanListResponse**](WorkPlanListResponse.html) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)
@@ -3804,6 +3969,61 @@ except ApiException as e:
 ### Return type
 
 [**WorkPlan**](WorkPlan.html)
+
+<a name="patch_workforcemanagement_managementunit_workplanrotation"></a>
+
+## [**WorkPlanRotationResponse**](WorkPlanRotationResponse.html) patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, body=body)
+
+
+
+Update a work plan rotation
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanRotation:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_rotation_id = 'work_plan_rotation_id_example' # str | The ID of the work plan rotation to update
+body = PureCloudPlatformClientV2.UpdateWorkPlanRotationRequest() # UpdateWorkPlanRotationRequest | body (optional)
+
+try:
+    # Update a work plan rotation
+    api_response = api_instance.patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **work_plan_rotation_id** | **str**| The ID of the work plan rotation to update |  |
+| **body** | [**UpdateWorkPlanRotationRequest**](UpdateWorkPlanRotationRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
 
 <a name="patch_workforcemanagement_timeoffrequest"></a>
 
@@ -5346,6 +5566,114 @@ except ApiException as e:
 ### Return type
 
 [**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html)
+
+<a name="post_workforcemanagement_managementunit_workplanrotation_copy"></a>
+
+## [**WorkPlanRotationResponse**](WorkPlanRotationResponse.html) post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, body=body)
+
+
+
+Create a copy of work plan rotation
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:workPlanRotation:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_rotation_id = 'work_plan_rotation_id_example' # str | The ID of the work plan rotation to create a copy
+body = PureCloudPlatformClientV2.CopyWorkPlanRotationRequest() # CopyWorkPlanRotationRequest | body (optional)
+
+try:
+    # Create a copy of work plan rotation
+    api_response = api_instance.post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotation_copy: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **work_plan_rotation_id** | **str**| The ID of the work plan rotation to create a copy |  |
+| **body** | [**CopyWorkPlanRotationRequest**](CopyWorkPlanRotationRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+
+<a name="post_workforcemanagement_managementunit_workplanrotations"></a>
+
+## [**WorkPlanRotationResponse**](WorkPlanRotationResponse.html) post_workforcemanagement_managementunit_workplanrotations(management_unit_id, body=body)
+
+
+
+Create a new work plan rotation
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations 
+
+Requires ANY permissions: 
+
+* wfm:workPlanRotation:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.AddWorkPlanRotationRequest() # AddWorkPlanRotationRequest | body (optional)
+
+try:
+    # Create a new work plan rotation
+    api_response = api_instance.post_workforcemanagement_managementunit_workplanrotations(management_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotations: %s\n" % e
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **body** | [**AddWorkPlanRotationRequest**](AddWorkPlanRotationRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
 
 <a name="post_workforcemanagement_managementunit_workplans"></a>
 

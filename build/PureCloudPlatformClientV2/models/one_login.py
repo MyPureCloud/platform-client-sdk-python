@@ -43,8 +43,8 @@ class OneLogin(object):
             'id': 'str',
             'name': 'str',
             'certificate': 'str',
-            'sso_target_uri': 'str',
             'issuer_uri': 'str',
+            'sso_target_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
         }
@@ -53,8 +53,8 @@ class OneLogin(object):
             'id': 'id',
             'name': 'name',
             'certificate': 'certificate',
-            'sso_target_uri': 'ssoTargetURI',
             'issuer_uri': 'issuerURI',
+            'sso_target_uri': 'ssoTargetURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
         }
@@ -62,8 +62,8 @@ class OneLogin(object):
         self._id = None
         self._name = None
         self._certificate = None
-        self._sso_target_uri = None
         self._issuer_uri = None
+        self._sso_target_uri = None
         self._disabled = None
         self._self_uri = None
 
@@ -137,29 +137,6 @@ class OneLogin(object):
         self._certificate = certificate
 
     @property
-    def sso_target_uri(self):
-        """
-        Gets the sso_target_uri of this OneLogin.
-
-
-        :return: The sso_target_uri of this OneLogin.
-        :rtype: str
-        """
-        return self._sso_target_uri
-
-    @sso_target_uri.setter
-    def sso_target_uri(self, sso_target_uri):
-        """
-        Sets the sso_target_uri of this OneLogin.
-
-
-        :param sso_target_uri: The sso_target_uri of this OneLogin.
-        :type: str
-        """
-        
-        self._sso_target_uri = sso_target_uri
-
-    @property
     def issuer_uri(self):
         """
         Gets the issuer_uri of this OneLogin.
@@ -181,6 +158,29 @@ class OneLogin(object):
         """
         
         self._issuer_uri = issuer_uri
+
+    @property
+    def sso_target_uri(self):
+        """
+        Gets the sso_target_uri of this OneLogin.
+
+
+        :return: The sso_target_uri of this OneLogin.
+        :rtype: str
+        """
+        return self._sso_target_uri
+
+    @sso_target_uri.setter
+    def sso_target_uri(self, sso_target_uri):
+        """
+        Sets the sso_target_uri of this OneLogin.
+
+
+        :param sso_target_uri: The sso_target_uri of this OneLogin.
+        :type: str
+        """
+        
+        self._sso_target_uri = sso_target_uri
 
     @property
     def disabled(self):

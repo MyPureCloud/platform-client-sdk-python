@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_language_document**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document) | Get document|
 |[**get_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents) | Get documents|
 |[**get_knowledge_knowledgebase_language_training**](KnowledgeApi.html#get_knowledge_knowledgebase_language_training) | Get training detail|
-|[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get All trainings information for a knowledgebase|
+|[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
 |[**get_knowledge_knowledgebases**](KnowledgeApi.html#get_knowledge_knowledgebases) | Get knowledge bases|
 |[**patch_knowledge_knowledgebase**](KnowledgeApi.html#patch_knowledge_knowledgebase) | Update knowledge base|
 |[**patch_knowledge_knowledgebase_language_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_category) | Update category|
@@ -534,11 +534,11 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_language_trainings"></a>
 
-## [**TrainingListing**](TrainingListing.html) get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size)
+## [**TrainingListing**](TrainingListing.html) get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
 
 
 
-Get All trainings information for a knowledgebase
+Get all trainings information for a knowledgebase
 
 
 
@@ -567,10 +567,11 @@ before = 'before_example' # str | The cursor that points to the start of the set
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 limit = 'limit_example' # str | Number of entities to return. Maximum of 200. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+knowledge_documents_state = 'knowledge_documents_state_example' # str | Return the training with the specified state of the trained documents. (optional)
 
 try:
-    # Get All trainings information for a knowledgebase
-    api_response = api_instance.get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size)
+    # Get all trainings information for a knowledgebase
+    api_response = api_instance.get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_trainings: %s\n" % e
@@ -587,6 +588,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **knowledge_documents_state** | **str**| Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
 {: class="table table-striped"}
 
 ### Return type
