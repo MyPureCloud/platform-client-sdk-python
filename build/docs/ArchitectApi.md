@@ -120,10 +120,8 @@ Deletes a emergency group by ID
 
 Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:delete
 
 ### Example
 
@@ -171,10 +169,8 @@ Delete an IVR Config.
 
 Wraps DELETE /api/v2/architect/ivrs/{ivrId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:delete
 
 ### Example
 
@@ -429,10 +425,8 @@ Delete a schedule by id
 
 Wraps DELETE /api/v2/architect/schedules/{scheduleId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:delete
 
 ### Example
 
@@ -480,10 +474,8 @@ Deletes a schedule group by ID
 
 Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:delete
 
 ### Example
 
@@ -1368,10 +1360,8 @@ Gets a emergency group by ID
 
 Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:view
 
 ### Example
 
@@ -1420,10 +1410,8 @@ Get a list of emergency groups.
 
 Wraps GET /api/v2/architect/emergencygroups 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:view
 
 ### Example
 
@@ -1480,10 +1468,8 @@ Get an IVR config.
 
 Wraps GET /api/v2/architect/ivrs/{ivrId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:view
 
 ### Example
 
@@ -1532,10 +1518,8 @@ Get IVR configs.
 
 Wraps GET /api/v2/architect/ivrs 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:view
 
 ### Example
 
@@ -1877,10 +1861,8 @@ Get a schedule by ID
 
 Wraps GET /api/v2/architect/schedules/{scheduleId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:view
 
 ### Example
 
@@ -1929,10 +1911,8 @@ Gets a schedule group by ID
 
 Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:view
 
 ### Example
 
@@ -1981,10 +1961,8 @@ Get a list of schedule groups.
 
 Wraps GET /api/v2/architect/schedulegroups 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:view
 
 ### Example
 
@@ -2043,10 +2021,8 @@ Get a list of schedules.
 
 Wraps GET /api/v2/architect/schedules 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:view
 
 ### Example
 
@@ -3602,10 +3578,8 @@ Creates a new emergency group
 
 Wraps POST /api/v2/architect/emergencygroups 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:add
 
 ### Example
 
@@ -3654,10 +3628,8 @@ Create IVR config.
 
 Wraps POST /api/v2/architect/ivrs 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:add
 
 ### Example
 
@@ -3861,10 +3833,8 @@ Creates a new schedule group
 
 Wraps POST /api/v2/architect/schedulegroups 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:add
 
 ### Example
 
@@ -3913,10 +3883,8 @@ Create a new schedule.
 
 Wraps POST /api/v2/architect/schedules 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:add
 
 ### Example
 
@@ -4844,10 +4812,8 @@ Updates a emergency group by ID
 
 Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:edit
 
 ### Example
 
@@ -4898,10 +4864,8 @@ Update an IVR Config.
 
 Wraps PUT /api/v2/architect/ivrs/{ivrId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:edit
 
 ### Example
 
@@ -5060,10 +5024,8 @@ Update schedule by ID
 
 Wraps PUT /api/v2/architect/schedules/{scheduleId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:edit
 
 ### Example
 
@@ -5114,10 +5076,8 @@ Updates a schedule group by ID
 
 Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:edit
 
 ### Example
 

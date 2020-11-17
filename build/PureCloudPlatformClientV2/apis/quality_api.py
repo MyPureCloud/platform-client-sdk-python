@@ -1756,12 +1756,13 @@ class QualityApi(object):
         :param str form_id: Form ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str sort_order: Sort order
         :return: EvaluationFormEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['form_id', 'page_size', 'page_number']
+        all_params = ['form_id', 'page_size', 'page_number', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1789,6 +1790,8 @@ class QualityApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 

@@ -377,8 +377,10 @@ from .models.content_management_workspace_documents_topic_lock_data import Conte
 from .models.content_management_workspace_documents_topic_user_data import ContentManagementWorkspaceDocumentsTopicUserData
 from .models.content_management_workspace_documents_topic_workspace_data import ContentManagementWorkspaceDocumentsTopicWorkspaceData
 from .models.content_notification_template import ContentNotificationTemplate
+from .models.content_postback import ContentPostback
 from .models.content_query_request import ContentQueryRequest
 from .models.content_quick_reply import ContentQuickReply
+from .models.content_reaction import ContentReaction
 from .models.content_sort_item import ContentSortItem
 from .models.context_entity import ContextEntity
 from .models.context_intent import ContextIntent
@@ -1162,6 +1164,7 @@ from .models.messaging_campaign_division_view_entity_listing import MessagingCam
 from .models.messaging_campaign_entity_listing import MessagingCampaignEntityListing
 from .models.messaging_integration import MessagingIntegration
 from .models.messaging_integration_entity_listing import MessagingIntegrationEntityListing
+from .models.messaging_recipient import MessagingRecipient
 from .models.messaging_sticker import MessagingSticker
 from .models.messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .models.messaging_template import MessagingTemplate
@@ -1696,11 +1699,6 @@ from .models.secure_session_entity_listing import SecureSessionEntityListing
 from .models.security_profile import SecurityProfile
 from .models.security_profile_entity_listing import SecurityProfileEntityListing
 from .models.segment import Segment
-from .models.segment_assignment import SegmentAssignment
-from .models.segment_assignment_listing import SegmentAssignmentListing
-from .models.segment_assignment_segment import SegmentAssignmentSegment
-from .models.segment_assignment_session import SegmentAssignmentSession
-from .models.segment_assignments_update import SegmentAssignmentsUpdate
 from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
@@ -1788,6 +1786,7 @@ from .models.subscriber_response import SubscriberResponse
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.supported_language import SupportedLanguage
 from .models.survey import Survey
 from .models.survey_aggregate_data_container import SurveyAggregateDataContainer
 from .models.survey_aggregate_query_clause import SurveyAggregateQueryClause

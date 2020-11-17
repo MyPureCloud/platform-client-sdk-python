@@ -377,8 +377,10 @@ from .content_management_workspace_documents_topic_lock_data import ContentManag
 from .content_management_workspace_documents_topic_user_data import ContentManagementWorkspaceDocumentsTopicUserData
 from .content_management_workspace_documents_topic_workspace_data import ContentManagementWorkspaceDocumentsTopicWorkspaceData
 from .content_notification_template import ContentNotificationTemplate
+from .content_postback import ContentPostback
 from .content_query_request import ContentQueryRequest
 from .content_quick_reply import ContentQuickReply
+from .content_reaction import ContentReaction
 from .content_sort_item import ContentSortItem
 from .context_entity import ContextEntity
 from .context_intent import ContextIntent
@@ -1162,6 +1164,7 @@ from .messaging_campaign_division_view_entity_listing import MessagingCampaignDi
 from .messaging_campaign_entity_listing import MessagingCampaignEntityListing
 from .messaging_integration import MessagingIntegration
 from .messaging_integration_entity_listing import MessagingIntegrationEntityListing
+from .messaging_recipient import MessagingRecipient
 from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .messaging_template import MessagingTemplate
@@ -1696,11 +1699,6 @@ from .secure_session_entity_listing import SecureSessionEntityListing
 from .security_profile import SecurityProfile
 from .security_profile_entity_listing import SecurityProfileEntityListing
 from .segment import Segment
-from .segment_assignment import SegmentAssignment
-from .segment_assignment_listing import SegmentAssignmentListing
-from .segment_assignment_segment import SegmentAssignmentSegment
-from .segment_assignment_session import SegmentAssignmentSession
-from .segment_assignments_update import SegmentAssignmentsUpdate
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
@@ -1788,6 +1786,7 @@ from .subscriber_response import SubscriberResponse
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .supported_language import SupportedLanguage
 from .survey import Survey
 from .survey_aggregate_data_container import SurveyAggregateDataContainer
 from .survey_aggregate_query_clause import SurveyAggregateQueryClause

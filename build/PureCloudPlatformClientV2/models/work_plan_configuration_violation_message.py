@@ -41,16 +41,19 @@ class WorkPlanConfigurationViolationMessage(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'arguments': 'list[WorkPlanValidationMessageArgument]'
+            'arguments': 'list[WorkPlanValidationMessageArgument]',
+            'severity': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'arguments': 'arguments'
+            'arguments': 'arguments',
+            'severity': 'severity'
         }
 
         self._type = None
         self._arguments = None
+        self._severity = None
 
     @property
     def type(self):
@@ -72,7 +75,7 @@ class WorkPlanConfigurationViolationMessage(object):
         :param type: The type of this WorkPlanConfigurationViolationMessage.
         :type: str
         """
-        allowed_values = ["DailyExactPaidMinutes", "DailyShiftMaximumPossibilitiesViolated", "MaxShifts", "NoShifts", "WeeklyExactPaidMinutes"]
+        allowed_values = ["ActivitiesOverlap", "ActivityEndGreaterThanShiftStop", "ActivityPaidTimeGreaterThanShiftPaidTime", "ActivityStartBeforeShiftStart", "ActivityStartGreaterThanEqualToShiftStop", "ActivityStartIncrementMinutesNotDivisibleByScheduleIntervalMinutes", "DailyExactPaidMinutes", "DailyMaxTotalLessThanWeeklyMin", "DailyMaxTotalLessThanWeeklyMinWithOptional", "DailyMaxTotalLessThanWeeklyMinWithoutOptional", "DailyMinTotalGreaterThanWeeklyMax", "DailyMinTotalGreaterThanWeeklyMaxWithOptional", "DailyMinTotalGreaterThanWeeklyMaxWithoutOptional", "DailyRequiredDaysGreaterThanWeeklyMaxDays", "DailyShiftHasNoDaysSelected", "DailyShiftMaxPossibilitiesViolated", "EarliestShiftStopIsTooLate", "ExactPaidTimeNotDivisibleByGranularity", "MaxConsecutiveWorkingDaysNoMoreThanDoubleMaxWorkingDaysPerWeek", "MaxDaysOffPerPlanningPeriodNotCorrect", "MaxPaidTimeIsMoreThanShiftLength", "MaxPaidTimeNotDivisibleByGranularity", "MaxPaidTimePerPlanningPeriod", "MaxShifts", "MinPaidTimeNotDivisibleByGranularity", "MinPaidTimePerPlanningPeriod", "NoShifts", "PaidTimeGreaterThanMaxWorkTime", "PaidTimeLessThanMinWorkTime", "PaidTimeNotMetByShiftStartStop", "ShiftDaysSelectMoreThanMinWorkingDays", "ShiftStopEarlierThanStart", "ShiftVarianceCannotBeMet", "WeeklyExactPaidMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for type -> " + type
             self._type = "outdated_sdk_version"
@@ -101,6 +104,33 @@ class WorkPlanConfigurationViolationMessage(object):
         """
         
         self._arguments = arguments
+
+    @property
+    def severity(self):
+        """
+        Gets the severity of this WorkPlanConfigurationViolationMessage.
+        Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
+
+        :return: The severity of this WorkPlanConfigurationViolationMessage.
+        :rtype: str
+        """
+        return self._severity
+
+    @severity.setter
+    def severity(self, severity):
+        """
+        Sets the severity of this WorkPlanConfigurationViolationMessage.
+        Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
+
+        :param severity: The severity of this WorkPlanConfigurationViolationMessage.
+        :type: str
+        """
+        allowed_values = ["Information", "Warning", "Error"]
+        if severity.lower() not in map(str.lower, allowed_values):
+            # print "Invalid value for severity -> " + severity
+            self._severity = "outdated_sdk_version"
+        else:
+            self._severity = severity
 
     def to_dict(self):
         """

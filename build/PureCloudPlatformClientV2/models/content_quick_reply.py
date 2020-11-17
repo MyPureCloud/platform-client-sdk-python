@@ -42,24 +42,24 @@ class ContentQuickReply(object):
         self.swagger_types = {
             'id': 'str',
             'text': 'str',
+            'payload': 'str',
             'image': 'str',
-            'action': 'str',
-            'payload': 'str'
+            'action': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'text': 'text',
+            'payload': 'payload',
             'image': 'image',
-            'action': 'action',
-            'payload': 'payload'
+            'action': 'action'
         }
 
         self._id = None
         self._text = None
+        self._payload = None
         self._image = None
         self._action = None
-        self._payload = None
 
     @property
     def id(self):
@@ -106,6 +106,29 @@ class ContentQuickReply(object):
         """
         
         self._text = text
+
+    @property
+    def payload(self):
+        """
+        Gets the payload of this ContentQuickReply.
+        Content of the textback payload after clicking a quick reply
+
+        :return: The payload of this ContentQuickReply.
+        :rtype: str
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload):
+        """
+        Sets the payload of this ContentQuickReply.
+        Content of the textback payload after clicking a quick reply
+
+        :param payload: The payload of this ContentQuickReply.
+        :type: str
+        """
+        
+        self._payload = payload
 
     @property
     def image(self):
@@ -156,29 +179,6 @@ class ContentQuickReply(object):
             self._action = "outdated_sdk_version"
         else:
             self._action = action
-
-    @property
-    def payload(self):
-        """
-        Gets the payload of this ContentQuickReply.
-        Payload content for the quick reply.
-
-        :return: The payload of this ContentQuickReply.
-        :rtype: str
-        """
-        return self._payload
-
-    @payload.setter
-    def payload(self, payload):
-        """
-        Sets the payload of this ContentQuickReply.
-        Payload content for the quick reply.
-
-        :param payload: The payload of this ContentQuickReply.
-        :type: str
-        """
-        
-        self._payload = payload
 
     def to_dict(self):
         """

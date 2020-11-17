@@ -5689,12 +5689,13 @@ class WorkforceManagementApi(object):
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to update (required)
         :param WorkPlan body: body
+        :param str validation_mode: Allows to update work plan even if validation result is invalid
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'work_plan_id', 'body']
+        all_params = ['management_unit_id', 'work_plan_id', 'body', 'validation_mode']
         all_params.append('callback')
 
         params = locals()
@@ -5723,6 +5724,8 @@ class WorkforceManagementApi(object):
             path_params['workPlanId'] = params['work_plan_id']
 
         query_params = {}
+        if 'validation_mode' in params:
+            query_params['validationMode'] = params['validation_mode']
 
         header_params = {}
 
@@ -8454,12 +8457,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param CreateWorkPlan body: body
+        :param str validation_mode: Allows to create work plan even if the validation result is invalid
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'body']
+        all_params = ['management_unit_id', 'body', 'validation_mode']
         all_params.append('callback')
 
         params = locals()
@@ -8483,6 +8487,8 @@ class WorkforceManagementApi(object):
             path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
+        if 'validation_mode' in params:
+            query_params['validationMode'] = params['validation_mode']
 
         header_params = {}
 

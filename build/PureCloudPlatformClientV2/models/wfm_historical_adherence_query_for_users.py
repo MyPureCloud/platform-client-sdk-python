@@ -44,7 +44,6 @@ class WfmHistoricalAdherenceQueryForUsers(object):
             'end_date': 'datetime',
             'time_zone': 'str',
             'user_ids': 'list[str]',
-            'team_ids': 'list[str]',
             'include_exceptions': 'bool'
         }
 
@@ -53,7 +52,6 @@ class WfmHistoricalAdherenceQueryForUsers(object):
             'end_date': 'endDate',
             'time_zone': 'timeZone',
             'user_ids': 'userIds',
-            'team_ids': 'teamIds',
             'include_exceptions': 'includeExceptions'
         }
 
@@ -61,7 +59,6 @@ class WfmHistoricalAdherenceQueryForUsers(object):
         self._end_date = None
         self._time_zone = None
         self._user_ids = None
-        self._team_ids = None
         self._include_exceptions = None
 
     @property
@@ -137,7 +134,7 @@ class WfmHistoricalAdherenceQueryForUsers(object):
     def user_ids(self):
         """
         Gets the user_ids of this WfmHistoricalAdherenceQueryForUsers.
-        The userIds to report on. Note: Only one of [teamIds, userIds] can be requested
+        The userIds to report on
 
         :return: The user_ids of this WfmHistoricalAdherenceQueryForUsers.
         :rtype: list[str]
@@ -148,36 +145,13 @@ class WfmHistoricalAdherenceQueryForUsers(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this WfmHistoricalAdherenceQueryForUsers.
-        The userIds to report on. Note: Only one of [teamIds, userIds] can be requested
+        The userIds to report on
 
         :param user_ids: The user_ids of this WfmHistoricalAdherenceQueryForUsers.
         :type: list[str]
         """
         
         self._user_ids = user_ids
-
-    @property
-    def team_ids(self):
-        """
-        Gets the team_ids of this WfmHistoricalAdherenceQueryForUsers.
-        The teamIds to report on. Note: Only one of [teamIds, userIds] can be requested
-
-        :return: The team_ids of this WfmHistoricalAdherenceQueryForUsers.
-        :rtype: list[str]
-        """
-        return self._team_ids
-
-    @team_ids.setter
-    def team_ids(self, team_ids):
-        """
-        Sets the team_ids of this WfmHistoricalAdherenceQueryForUsers.
-        The teamIds to report on. Note: Only one of [teamIds, userIds] can be requested
-
-        :param team_ids: The team_ids of this WfmHistoricalAdherenceQueryForUsers.
-        :type: list[str]
-        """
-        
-        self._team_ids = team_ids
 
     @property
     def include_exceptions(self):

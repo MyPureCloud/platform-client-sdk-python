@@ -56,6 +56,7 @@ class FlowVersion(object):
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
             'nlu_info': 'NluInfo',
+            'supported_languages': 'list[SupportedLanguage]',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class FlowVersion(object):
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
             'nlu_info': 'nluInfo',
+            'supported_languages': 'supportedLanguages',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class FlowVersion(object):
         self._input_schema = None
         self._output_schema = None
         self._nlu_info = None
+        self._supported_languages = None
         self._self_uri = None
 
     @property
@@ -450,7 +453,7 @@ class FlowVersion(object):
     def nlu_info(self):
         """
         Gets the nlu_info of this FlowVersion.
-        Information about the NLU domain version for the flow version
+        Information about the natural language understanding configuration for the flow version
 
         :return: The nlu_info of this FlowVersion.
         :rtype: NluInfo
@@ -461,13 +464,36 @@ class FlowVersion(object):
     def nlu_info(self, nlu_info):
         """
         Sets the nlu_info of this FlowVersion.
-        Information about the NLU domain version for the flow version
+        Information about the natural language understanding configuration for the flow version
 
         :param nlu_info: The nlu_info of this FlowVersion.
         :type: NluInfo
         """
         
         self._nlu_info = nlu_info
+
+    @property
+    def supported_languages(self):
+        """
+        Gets the supported_languages of this FlowVersion.
+        List of supported languages for this version of the flow
+
+        :return: The supported_languages of this FlowVersion.
+        :rtype: list[SupportedLanguage]
+        """
+        return self._supported_languages
+
+    @supported_languages.setter
+    def supported_languages(self, supported_languages):
+        """
+        Sets the supported_languages of this FlowVersion.
+        List of supported languages for this version of the flow
+
+        :param supported_languages: The supported_languages of this FlowVersion.
+        :type: list[SupportedLanguage]
+        """
+        
+        self._supported_languages = supported_languages
 
     @property
     def self_uri(self):

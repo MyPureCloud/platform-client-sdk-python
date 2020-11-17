@@ -194,7 +194,7 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups"]
+        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for service_name -> " + service_name
             self._service_name = "outdated_sdk_version"
@@ -317,7 +317,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team"]
+        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for entity_type -> " + entity_type
             self._entity_type = "outdated_sdk_version"

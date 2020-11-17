@@ -3917,7 +3917,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit_workplan"></a>
 
-## [**WorkPlan**](WorkPlan.html) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body)
+## [**WorkPlan**](WorkPlan.html) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body, validation_mode=validation_mode)
 
 
 
@@ -3947,10 +3947,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to update
 body = PureCloudPlatformClientV2.WorkPlan() # WorkPlan | body (optional)
+validation_mode = 'validation_mode_example' # str | Allows to update work plan even if validation result is invalid (optional)
 
 try:
     # Update a work plan
-    api_response = api_instance.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body)
+    api_response = api_instance.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body, validation_mode=validation_mode)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplan: %s\n" % e
@@ -3964,6 +3965,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to update |  |
 | **body** | [**WorkPlan**](WorkPlan.html)| body | [optional]  |
+| **validation_mode** | **str**| Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
 {: class="table table-striped"}
 
 ### Return type
@@ -5677,7 +5679,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_workplans"></a>
 
-## [**WorkPlan**](WorkPlan.html) post_workforcemanagement_managementunit_workplans(management_unit_id, body=body)
+## [**WorkPlan**](WorkPlan.html) post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
 
 
 
@@ -5706,10 +5708,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.CreateWorkPlan() # CreateWorkPlan | body (optional)
+validation_mode = 'validation_mode_example' # str | Allows to create work plan even if the validation result is invalid (optional)
 
 try:
     # Create a new work plan
-    api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplans: %s\n" % e
@@ -5722,6 +5725,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional]  |
+| **validation_mode** | **str**| Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
 {: class="table table-striped"}
 
 ### Return type

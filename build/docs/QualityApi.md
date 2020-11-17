@@ -1182,7 +1182,7 @@ except ApiException as e:
 
 <a name="get_quality_forms_evaluation_versions"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number)
+## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 
@@ -1212,10 +1212,11 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 form_id = 'form_id_example' # str | Form ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
 
 try:
     # Gets all the revisions for a specific evaluation.
-    api_response = api_instance.get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling QualityApi->get_quality_forms_evaluation_versions: %s\n" % e
@@ -1229,6 +1230,7 @@ except ApiException as e:
 | **form_id** | **str**| Form ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type

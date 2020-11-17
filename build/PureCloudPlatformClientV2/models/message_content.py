@@ -46,7 +46,10 @@ class MessageContent(object):
             'quick_reply': 'ContentQuickReply',
             'generic': 'ContentGeneric',
             'list': 'ContentList',
-            'template': 'ContentNotificationTemplate'
+            'template': 'ContentNotificationTemplate',
+            'reactions': 'list[ContentReaction]',
+            'mention': 'MessagingRecipient',
+            'postback': 'ContentPostback'
         }
 
         self.attribute_map = {
@@ -56,7 +59,10 @@ class MessageContent(object):
             'quick_reply': 'quickReply',
             'generic': 'generic',
             'list': 'list',
-            'template': 'template'
+            'template': 'template',
+            'reactions': 'reactions',
+            'mention': 'mention',
+            'postback': 'postback'
         }
 
         self._content_type = None
@@ -66,6 +72,9 @@ class MessageContent(object):
         self._generic = None
         self._list = None
         self._template = None
+        self._reactions = None
+        self._mention = None
+        self._postback = None
 
     @property
     def content_type(self):
@@ -87,7 +96,7 @@ class MessageContent(object):
         :param content_type: The content_type of this MessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print "Invalid value for content_type -> " + content_type
             self._content_type = "outdated_sdk_version"
@@ -231,6 +240,75 @@ class MessageContent(object):
         """
         
         self._template = template
+
+    @property
+    def reactions(self):
+        """
+        Gets the reactions of this MessageContent.
+        A list of reactions
+
+        :return: The reactions of this MessageContent.
+        :rtype: list[ContentReaction]
+        """
+        return self._reactions
+
+    @reactions.setter
+    def reactions(self, reactions):
+        """
+        Sets the reactions of this MessageContent.
+        A list of reactions
+
+        :param reactions: The reactions of this MessageContent.
+        :type: list[ContentReaction]
+        """
+        
+        self._reactions = reactions
+
+    @property
+    def mention(self):
+        """
+        Gets the mention of this MessageContent.
+        This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+
+        :return: The mention of this MessageContent.
+        :rtype: MessagingRecipient
+        """
+        return self._mention
+
+    @mention.setter
+    def mention(self, mention):
+        """
+        Sets the mention of this MessageContent.
+        This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+
+        :param mention: The mention of this MessageContent.
+        :type: MessagingRecipient
+        """
+        
+        self._mention = mention
+
+    @property
+    def postback(self):
+        """
+        Gets the postback of this MessageContent.
+        The postback object result of a user clicking in a button
+
+        :return: The postback of this MessageContent.
+        :rtype: ContentPostback
+        """
+        return self._postback
+
+    @postback.setter
+    def postback(self, postback):
+        """
+        Sets the postback of this MessageContent.
+        The postback object result of a user clicking in a button
+
+        :param postback: The postback of this MessageContent.
+        :type: ContentPostback
+        """
+        
+        self._postback = postback
 
     def to_dict(self):
         """

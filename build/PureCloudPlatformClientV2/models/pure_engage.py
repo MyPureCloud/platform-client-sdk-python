@@ -43,8 +43,8 @@ class PureEngage(object):
             'id': 'str',
             'name': 'str',
             'auto_provision_users': 'bool',
-            'certificate': 'str',
             'issuer_uri': 'str',
+            'certificate': 'str',
             'sso_target_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
@@ -54,8 +54,8 @@ class PureEngage(object):
             'id': 'id',
             'name': 'name',
             'auto_provision_users': 'autoProvisionUsers',
-            'certificate': 'certificate',
             'issuer_uri': 'issuerURI',
+            'certificate': 'certificate',
             'sso_target_uri': 'ssoTargetURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
@@ -64,8 +64,8 @@ class PureEngage(object):
         self._id = None
         self._name = None
         self._auto_provision_users = None
-        self._certificate = None
         self._issuer_uri = None
+        self._certificate = None
         self._sso_target_uri = None
         self._disabled = None
         self._self_uri = None
@@ -140,29 +140,6 @@ class PureEngage(object):
         self._auto_provision_users = auto_provision_users
 
     @property
-    def certificate(self):
-        """
-        Gets the certificate of this PureEngage.
-
-
-        :return: The certificate of this PureEngage.
-        :rtype: str
-        """
-        return self._certificate
-
-    @certificate.setter
-    def certificate(self, certificate):
-        """
-        Sets the certificate of this PureEngage.
-
-
-        :param certificate: The certificate of this PureEngage.
-        :type: str
-        """
-        
-        self._certificate = certificate
-
-    @property
     def issuer_uri(self):
         """
         Gets the issuer_uri of this PureEngage.
@@ -184,6 +161,29 @@ class PureEngage(object):
         """
         
         self._issuer_uri = issuer_uri
+
+    @property
+    def certificate(self):
+        """
+        Gets the certificate of this PureEngage.
+
+
+        :return: The certificate of this PureEngage.
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """
+        Sets the certificate of this PureEngage.
+
+
+        :param certificate: The certificate of this PureEngage.
+        :type: str
+        """
+        
+        self._certificate = certificate
 
     @property
     def sso_target_uri(self):

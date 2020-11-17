@@ -43,8 +43,8 @@ class ADFS(object):
             'id': 'str',
             'name': 'str',
             'relying_party_identifier': 'str',
-            'certificate': 'str',
             'issuer_uri': 'str',
+            'certificate': 'str',
             'sso_target_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
@@ -54,8 +54,8 @@ class ADFS(object):
             'id': 'id',
             'name': 'name',
             'relying_party_identifier': 'relyingPartyIdentifier',
-            'certificate': 'certificate',
             'issuer_uri': 'issuerURI',
+            'certificate': 'certificate',
             'sso_target_uri': 'ssoTargetURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
@@ -64,8 +64,8 @@ class ADFS(object):
         self._id = None
         self._name = None
         self._relying_party_identifier = None
-        self._certificate = None
         self._issuer_uri = None
+        self._certificate = None
         self._sso_target_uri = None
         self._disabled = None
         self._self_uri = None
@@ -140,29 +140,6 @@ class ADFS(object):
         self._relying_party_identifier = relying_party_identifier
 
     @property
-    def certificate(self):
-        """
-        Gets the certificate of this ADFS.
-
-
-        :return: The certificate of this ADFS.
-        :rtype: str
-        """
-        return self._certificate
-
-    @certificate.setter
-    def certificate(self, certificate):
-        """
-        Sets the certificate of this ADFS.
-
-
-        :param certificate: The certificate of this ADFS.
-        :type: str
-        """
-        
-        self._certificate = certificate
-
-    @property
     def issuer_uri(self):
         """
         Gets the issuer_uri of this ADFS.
@@ -184,6 +161,29 @@ class ADFS(object):
         """
         
         self._issuer_uri = issuer_uri
+
+    @property
+    def certificate(self):
+        """
+        Gets the certificate of this ADFS.
+
+
+        :return: The certificate of this ADFS.
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """
+        Sets the certificate of this ADFS.
+
+
+        :param certificate: The certificate of this ADFS.
+        :type: str
+        """
+        
+        self._certificate = certificate
 
     @property
     def sso_target_uri(self):
