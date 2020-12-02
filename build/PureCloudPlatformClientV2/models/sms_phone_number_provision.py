@@ -158,7 +158,7 @@ class SmsPhoneNumberProvision(object):
         """
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for phone_number_type -> " + phone_number_type
+            # print("Invalid value for phone_number_type -> " + phone_number_type)
             self._phone_number_type = "outdated_sdk_version"
         else:
             self._phone_number_type = phone_number_type

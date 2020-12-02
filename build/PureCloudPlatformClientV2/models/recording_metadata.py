@@ -309,7 +309,7 @@ class RecordingMetadata(object):
         """
         allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING", "ERROR"]
         if file_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for file_state -> " + file_state
+            # print("Invalid value for file_state -> " + file_state)
             self._file_state = "outdated_sdk_version"
         else:
             self._file_state = file_state
@@ -382,7 +382,7 @@ class RecordingMetadata(object):
         """
         allowed_values = ["CLOUDARCHIVE"]
         if archive_medium.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for archive_medium -> " + archive_medium
+            # print("Invalid value for archive_medium -> " + archive_medium)
             self._archive_medium = "outdated_sdk_version"
         else:
             self._archive_medium = archive_medium

@@ -74,7 +74,7 @@ class AuditQuerySort(object):
         """
         allowed_values = ["Timestamp"]
         if name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for name -> " + name
+            # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"
         else:
             self._name = name
@@ -101,7 +101,7 @@ class AuditQuerySort(object):
         """
         allowed_values = ["ascending", "descending"]
         if sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for sort_order -> " + sort_order
+            # print("Invalid value for sort_order -> " + sort_order)
             self._sort_order = "outdated_sdk_version"
         else:
             self._sort_order = sort_order

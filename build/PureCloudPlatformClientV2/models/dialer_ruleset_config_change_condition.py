@@ -211,7 +211,7 @@ class DialerRulesetConfigChangeCondition(object):
         """
         allowed_values = ["STRING", "NUMERIC", "DATETIME", "PERIOD"]
         if value_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for value_type -> " + value_type
+            # print("Invalid value for value_type -> " + value_type)
             self._value_type = "outdated_sdk_version"
         else:
             self._value_type = value_type
@@ -238,7 +238,7 @@ class DialerRulesetConfigChangeCondition(object):
         """
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator
@@ -288,7 +288,7 @@ class DialerRulesetConfigChangeCondition(object):
         """
         allowed_values = ["LAST_ATTEMPT_BY_COLUMN", "LAST_ATTEMPT_OVERALL", "LAST_RESULT_BY_COLUMN", "LAST_RESULT_OVERALL"]
         if property_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for property_type -> " + property_type
+            # print("Invalid value for property_type -> " + property_type)
             self._property_type = "outdated_sdk_version"
         else:
             self._property_type = property_type

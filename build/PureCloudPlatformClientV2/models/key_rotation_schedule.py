@@ -126,7 +126,7 @@ class KeyRotationSchedule(object):
         """
         allowed_values = ["DISABLED", "DAILY", "WEEKLY", "MONTHLY", "YEARLY"]
         if period.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for period -> " + period
+            # print("Invalid value for period -> " + period)
             self._period = "outdated_sdk_version"
         else:
             self._period = period

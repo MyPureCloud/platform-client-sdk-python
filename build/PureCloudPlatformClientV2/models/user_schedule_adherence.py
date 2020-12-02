@@ -240,7 +240,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if scheduled_activity_category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for scheduled_activity_category -> " + scheduled_activity_category
+            # print("Invalid value for scheduled_activity_category -> " + scheduled_activity_category)
             self._scheduled_activity_category = "outdated_sdk_version"
         else:
             self._scheduled_activity_category = scheduled_activity_category
@@ -267,7 +267,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["Available", "Away", "Busy", "Offline", "Idle", "OnQueue", "Meal", "Training", "Meeting", "Break"]
         if system_presence.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for system_presence -> " + system_presence
+            # print("Invalid value for system_presence -> " + system_presence)
             self._system_presence = "outdated_sdk_version"
         else:
             self._system_presence = system_presence
@@ -317,7 +317,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
         if routing_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for routing_status -> " + routing_status
+            # print("Invalid value for routing_status -> " + routing_status)
             self._routing_status = "outdated_sdk_version"
         else:
             self._routing_status = routing_status
@@ -344,7 +344,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if actual_activity_category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for actual_activity_category -> " + actual_activity_category
+            # print("Invalid value for actual_activity_category -> " + actual_activity_category)
             self._actual_activity_category = "outdated_sdk_version"
         else:
             self._actual_activity_category = actual_activity_category
@@ -394,7 +394,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored"]
         if adherence_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for adherence_state -> " + adherence_state
+            # print("Invalid value for adherence_state -> " + adherence_state)
             self._adherence_state = "outdated_sdk_version"
         else:
             self._adherence_state = adherence_state
@@ -421,7 +421,7 @@ class UserScheduleAdherence(object):
         """
         allowed_values = ["Positive", "Negative", "Neutral", "Unknown"]
         if impact.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for impact -> " + impact
+            # print("Invalid value for impact -> " + impact)
             self._impact = "outdated_sdk_version"
         else:
             self._impact = impact

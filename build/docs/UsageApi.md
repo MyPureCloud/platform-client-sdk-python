@@ -48,7 +48,7 @@ try:
     api_response = api_instance.get_usage_query_execution_id_results(execution_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsageApi->get_usage_query_execution_id_results: %s\n" % e
+    print("Exception when calling UsageApi->get_usage_query_execution_id_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +99,7 @@ try:
     api_response = api_instance.post_usage_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsageApi->post_usage_query: %s\n" % e
+    print("Exception when calling UsageApi->post_usage_query: %s\n" % e)
 ```
 
 ### Parameters

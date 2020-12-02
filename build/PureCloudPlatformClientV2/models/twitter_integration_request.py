@@ -233,7 +233,7 @@ class TwitterIntegrationRequest(object):
         """
         allowed_values = ["premium", "enterprise"]
         if tier.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for tier -> " + tier
+            # print("Invalid value for tier -> " + tier)
             self._tier = "outdated_sdk_version"
         else:
             self._tier = tier

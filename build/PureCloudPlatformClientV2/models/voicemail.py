@@ -97,7 +97,7 @@ class Voicemail(object):
         """
         allowed_values = ["pending", "complete", "failed", "timeout", "none"]
         if upload_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for upload_status -> " + upload_status
+            # print("Invalid value for upload_status -> " + upload_status)
             self._upload_status = "outdated_sdk_version"
         else:
             self._upload_status = upload_status

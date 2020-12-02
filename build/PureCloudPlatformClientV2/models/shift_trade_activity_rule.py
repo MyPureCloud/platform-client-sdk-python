@@ -77,7 +77,7 @@ class ShiftTradeActivityRule(object):
         """
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if activity_category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for activity_category -> " + activity_category
+            # print("Invalid value for activity_category -> " + activity_category)
             self._activity_category = "outdated_sdk_version"
         else:
             self._activity_category = activity_category
@@ -104,7 +104,7 @@ class ShiftTradeActivityRule(object):
         """
         allowed_values = ["Replace", "DoNotAllowTrade", "KeepWithSchedule"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action

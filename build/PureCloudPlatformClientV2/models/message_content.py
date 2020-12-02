@@ -98,7 +98,7 @@ class MessageContent(object):
         """
         allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention"]
         if content_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for content_type -> " + content_type
+            # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type

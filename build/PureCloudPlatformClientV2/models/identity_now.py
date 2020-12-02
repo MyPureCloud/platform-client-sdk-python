@@ -43,9 +43,9 @@ class IdentityNow(object):
             'id': 'str',
             'name': 'str',
             'relying_party_identifier': 'str',
-            'issuer_uri': 'str',
             'certificate': 'str',
             'sso_target_uri': 'str',
+            'issuer_uri': 'str',
             'disabled': 'bool',
             'self_uri': 'str'
         }
@@ -54,9 +54,9 @@ class IdentityNow(object):
             'id': 'id',
             'name': 'name',
             'relying_party_identifier': 'relyingPartyIdentifier',
-            'issuer_uri': 'issuerURI',
             'certificate': 'certificate',
             'sso_target_uri': 'ssoTargetURI',
+            'issuer_uri': 'issuerURI',
             'disabled': 'disabled',
             'self_uri': 'selfUri'
         }
@@ -64,9 +64,9 @@ class IdentityNow(object):
         self._id = None
         self._name = None
         self._relying_party_identifier = None
-        self._issuer_uri = None
         self._certificate = None
         self._sso_target_uri = None
+        self._issuer_uri = None
         self._disabled = None
         self._self_uri = None
 
@@ -140,29 +140,6 @@ class IdentityNow(object):
         self._relying_party_identifier = relying_party_identifier
 
     @property
-    def issuer_uri(self):
-        """
-        Gets the issuer_uri of this IdentityNow.
-
-
-        :return: The issuer_uri of this IdentityNow.
-        :rtype: str
-        """
-        return self._issuer_uri
-
-    @issuer_uri.setter
-    def issuer_uri(self, issuer_uri):
-        """
-        Sets the issuer_uri of this IdentityNow.
-
-
-        :param issuer_uri: The issuer_uri of this IdentityNow.
-        :type: str
-        """
-        
-        self._issuer_uri = issuer_uri
-
-    @property
     def certificate(self):
         """
         Gets the certificate of this IdentityNow.
@@ -207,6 +184,29 @@ class IdentityNow(object):
         """
         
         self._sso_target_uri = sso_target_uri
+
+    @property
+    def issuer_uri(self):
+        """
+        Gets the issuer_uri of this IdentityNow.
+
+
+        :return: The issuer_uri of this IdentityNow.
+        :rtype: str
+        """
+        return self._issuer_uri
+
+    @issuer_uri.setter
+    def issuer_uri(self, issuer_uri):
+        """
+        Sets the issuer_uri of this IdentityNow.
+
+
+        :param issuer_uri: The issuer_uri of this IdentityNow.
+        :type: str
+        """
+        
+        self._issuer_uri = issuer_uri
 
     @property
     def disabled(self):

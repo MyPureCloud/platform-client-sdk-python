@@ -173,7 +173,7 @@ try:
     # Delete a edge.
     api_instance.delete_telephony_providers_edge(edge_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,7 +224,7 @@ try:
     # Delete an edge logical interface
     api_instance.delete_telephony_providers_edge_logicalinterface(edge_id, interface_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_logicalinterface: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_logicalinterface: %s\n" % e)
 ```
 
 ### Parameters
@@ -274,7 +274,7 @@ try:
     # Cancels any in-progress update for this edge.
     api_instance.delete_telephony_providers_edge_softwareupdate(edge_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_softwareupdate: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edge_softwareupdate: %s\n" % e)
 ```
 
 ### Parameters
@@ -324,7 +324,7 @@ try:
     # Delete a certificate authority.
     api_instance.delete_telephony_providers_edges_certificateauthority(certificate_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_certificateauthority: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_certificateauthority: %s\n" % e)
 ```
 
 ### Parameters
@@ -374,7 +374,7 @@ try:
     # Delete a DID Pool by ID.
     api_instance.delete_telephony_providers_edges_didpool(did_pool_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_didpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_didpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -424,7 +424,7 @@ try:
     # Delete an edge group.
     api_instance.delete_telephony_providers_edges_edgegroup(edge_group_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_edgegroup: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_edgegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -474,7 +474,7 @@ try:
     # Delete an extension pool by ID
     api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -524,7 +524,7 @@ try:
     # Delete Outbound Route
     api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -574,7 +574,7 @@ try:
     # Delete a Phone by ID
     api_instance.delete_telephony_providers_edges_phone(phone_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phone: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phone: %s\n" % e)
 ```
 
 ### Parameters
@@ -624,7 +624,7 @@ try:
     # Delete a Phone Base Settings by ID
     api_instance.delete_telephony_providers_edges_phonebasesetting(phone_base_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phonebasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_phonebasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -674,7 +674,7 @@ try:
     # Delete a Site by ID
     api_instance.delete_telephony_providers_edges_site(site_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site: %s\n" % e)
 ```
 
 ### Parameters
@@ -725,7 +725,7 @@ try:
     # Delete Outbound Route
     api_instance.delete_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_site_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -776,7 +776,7 @@ try:
     # Delete a Trunk Base Settings object by ID
     api_instance.delete_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_trunkbasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -827,7 +827,7 @@ try:
     api_response = api_instance.get_configuration_schemas_edges_vnext(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext: %s\n" % e)
 ```
 
 ### Parameters
@@ -880,7 +880,7 @@ try:
     api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category(schema_category, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -935,7 +935,7 @@ try:
     api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type(schema_category, schema_type, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -990,7 +990,7 @@ try:
     api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id(schema_category, schema_type, schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1047,7 +1047,7 @@ try:
     api_response = api_instance.get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id(schema_category, schema_type, schema_id, extension_type, metadata_id, type=type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_configuration_schemas_edges_vnext_schema_category_schema_type_schema_id_extension_type_metadata_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1104,7 +1104,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge(edge_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge: %s\n" % e)
 ```
 
 ### Parameters
@@ -1156,7 +1156,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_diagnostic_nslookup(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_nslookup: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_nslookup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1207,7 +1207,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_diagnostic_ping(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_ping: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_ping: %s\n" % e)
 ```
 
 ### Parameters
@@ -1258,7 +1258,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_diagnostic_route(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_route: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_route: %s\n" % e)
 ```
 
 ### Parameters
@@ -1309,7 +1309,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_diagnostic_tracepath(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_tracepath: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_diagnostic_tracepath: %s\n" % e)
 ```
 
 ### Parameters
@@ -1361,7 +1361,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_line(edge_id, line_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_line: %s\n" % e)
 ```
 
 ### Parameters
@@ -1415,7 +1415,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_lines: %s\n" % e)
 ```
 
 ### Parameters
@@ -1470,7 +1470,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_logicalinterface(edge_id, interface_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterface: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterface: %s\n" % e)
 ```
 
 ### Parameters
@@ -1524,7 +1524,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_logicalinterfaces(edge_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterfaces: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logicalinterfaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -1577,7 +1577,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_logs_job(edge_id, job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logs_job: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_logs_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -1629,7 +1629,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_metrics(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_metrics: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -1681,7 +1681,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_physicalinterface(edge_id, interface_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterface: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterface: %s\n" % e)
 ```
 
 ### Parameters
@@ -1733,7 +1733,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_physicalinterfaces(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterfaces: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_physicalinterfaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -1784,7 +1784,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_setuppackage(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_setuppackage: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_setuppackage: %s\n" % e)
 ```
 
 ### Parameters
@@ -1834,7 +1834,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_softwareupdate(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareupdate: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareupdate: %s\n" % e)
 ```
 
 ### Parameters
@@ -1884,7 +1884,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_softwareversions(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareversions: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_softwareversions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1941,7 +1941,7 @@ try:
     api_response = api_instance.get_telephony_providers_edge_trunks(edge_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_trunks: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edge_trunks: %s\n" % e)
 ```
 
 ### Parameters
@@ -2004,7 +2004,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges(page_size=page_size, page_number=page_number, name=name, site_id=site_id, edge_group_id=edge_group_id, sort_by=sort_by, managed=managed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges: %s\n" % e)
 ```
 
 ### Parameters
@@ -2059,7 +2059,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_availablelanguages()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_availablelanguages: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_availablelanguages: %s\n" % e)
 ```
 
 ### Parameters
@@ -2106,7 +2106,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_certificateauthorities()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthorities: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthorities: %s\n" % e)
 ```
 
 ### Parameters
@@ -2154,7 +2154,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_certificateauthority(certificate_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthority: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_certificateauthority: %s\n" % e)
 ```
 
 ### Parameters
@@ -2205,7 +2205,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_did(did_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_did: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_did: %s\n" % e)
 ```
 
 ### Parameters
@@ -2256,7 +2256,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_didpool(did_pool_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2310,7 +2310,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_didpools(page_size=page_size, page_number=page_number, sort_by=sort_by, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools: %s\n" % e)
 ```
 
 ### Parameters
@@ -2371,7 +2371,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_dids(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, phone_number=phone_number, owner_id=owner_id, did_pool_id=did_pool_id, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_dids: %s\n" % e)
 ```
 
 ### Parameters
@@ -2430,7 +2430,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_edgegroup(edge_group_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -2483,7 +2483,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e)
 ```
 
 ### Parameters
@@ -2539,7 +2539,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_edgegroups(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, managed=managed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroups: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgegroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -2592,7 +2592,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_edgeversionreport()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgeversionreport: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_edgeversionreport: %s\n" % e)
 ```
 
 ### Parameters
@@ -2640,7 +2640,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_extension(extension_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extension: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extension: %s\n" % e)
 ```
 
 ### Parameters
@@ -2691,7 +2691,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_extensionpool(extension_pool_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2745,7 +2745,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools: %s\n" % e)
 ```
 
 ### Parameters
@@ -2803,7 +2803,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_extensions(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, number=number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensions: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2858,7 +2858,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_line(line_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_line: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_line: %s\n" % e)
 ```
 
 ### Parameters
@@ -2909,7 +2909,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_linebasesetting(line_base_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -2963,7 +2963,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_linebasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesettings: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_linebasesettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -3021,7 +3021,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_lines(page_size=page_size, page_number=page_number, name=name, sort_by=sort_by, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines: %s\n" % e)
 ```
 
 ### Parameters
@@ -3076,7 +3076,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_lines_template(line_base_settings_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines_template: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_lines_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -3128,7 +3128,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_logicalinterfaces: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_logicalinterfaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -3180,7 +3180,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_metrics(edge_ids)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_metrics: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -3231,7 +3231,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_outboundroute(outbound_route_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -3287,7 +3287,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_outboundroutes(page_size=page_size, page_number=page_number, name=name, site_id=site_id, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroutes: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroutes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3343,7 +3343,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phone(phone_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phone: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phone: %s\n" % e)
 ```
 
 ### Parameters
@@ -3394,7 +3394,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phonebasesetting(phone_base_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -3450,7 +3450,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phonebasesettings(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -3507,7 +3507,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phonebasesettings_availablemetabases(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_availablemetabases: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_availablemetabases: %s\n" % e)
 ```
 
 ### Parameters
@@ -3559,7 +3559,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phonebasesettings_template(phone_metabase_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_template: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phonebasesettings_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -3624,7 +3624,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, expand=expand, fields=fields)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones: %s\n" % e)
 ```
 
 ### Parameters
@@ -3689,7 +3689,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_phones_template(phone_base_settings_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones_template: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -3740,7 +3740,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_physicalinterfaces(edge_ids)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_physicalinterfaces: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_physicalinterfaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -3792,7 +3792,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site(site_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site: %s\n" % e)
 ```
 
 ### Parameters
@@ -3844,7 +3844,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site_numberplan(site_id, number_plan_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplan: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplan: %s\n" % e)
 ```
 
 ### Parameters
@@ -3896,7 +3896,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site_numberplans(site_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans: %s\n" % e)
 ```
 
 ### Parameters
@@ -3948,7 +3948,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site_numberplans_classifications(site_id, classification=classification)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans_classifications: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_numberplans_classifications: %s\n" % e)
 ```
 
 ### Parameters
@@ -4001,7 +4001,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -4058,7 +4058,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_site_outboundroutes(site_id, page_size=page_size, page_number=page_number, name=name, external_trunk_bases_ids=external_trunk_bases_ids, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroutes: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_outboundroutes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4119,7 +4119,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites: %s\n" % e)
 ```
 
 ### Parameters
@@ -4176,7 +4176,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_timezones: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_timezones: %s\n" % e)
 ```
 
 ### Parameters
@@ -4228,7 +4228,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunk(trunk_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk: %s\n" % e)
 ```
 
 ### Parameters
@@ -4279,7 +4279,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunk_metrics(trunk_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk_metrics: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunk_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -4331,7 +4331,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, ignore_hidden=ignore_hidden)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -4391,7 +4391,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunkbasesettings(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, recording_enabled=recording_enabled, ignore_hidden=ignore_hidden, managed=managed, expand=expand, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -4452,7 +4452,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunkbasesettings_availablemetabases(type=type, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_availablemetabases: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_availablemetabases: %s\n" % e)
 ```
 
 ### Parameters
@@ -4505,7 +4505,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_template: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -4562,7 +4562,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunks(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, edge_id=edge_id, trunk_base_id=trunk_base_id, trunk_type=trunk_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks: %s\n" % e)
 ```
 
 ### Parameters
@@ -4619,7 +4619,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunks_metrics(trunk_ids)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks_metrics: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunks_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -4671,7 +4671,7 @@ try:
     api_response = api_instance.get_telephony_providers_edges_trunkswithrecording(trunk_type=trunk_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkswithrecording: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkswithrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -4723,7 +4723,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_diagnostic_nslookup(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_nslookup: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_nslookup: %s\n" % e)
 ```
 
 ### Parameters
@@ -4776,7 +4776,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_diagnostic_ping(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_ping: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_ping: %s\n" % e)
 ```
 
 ### Parameters
@@ -4829,7 +4829,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_diagnostic_route(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_route: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_route: %s\n" % e)
 ```
 
 ### Parameters
@@ -4882,7 +4882,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_diagnostic_tracepath(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_tracepath: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_diagnostic_tracepath: %s\n" % e)
 ```
 
 ### Parameters
@@ -4935,7 +4935,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_logicalinterfaces(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logicalinterfaces: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logicalinterfaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -4988,7 +4988,7 @@ try:
     # Request that the specified fileIds be uploaded from the Edge.
     api_instance.post_telephony_providers_edge_logs_job_upload(edge_id, job_id, body)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_job_upload: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_job_upload: %s\n" % e)
 ```
 
 ### Parameters
@@ -5042,7 +5042,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_logs_jobs(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_jobs: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_logs_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -5095,7 +5095,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_reboot(edge_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_reboot: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_reboot: %s\n" % e)
 ```
 
 ### Parameters
@@ -5147,7 +5147,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_softwareupdate(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_softwareupdate: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_softwareupdate: %s\n" % e)
 ```
 
 ### Parameters
@@ -5200,7 +5200,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_statuscode(edge_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_statuscode: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_statuscode: %s\n" % e)
 ```
 
 ### Parameters
@@ -5252,7 +5252,7 @@ try:
     api_response = api_instance.post_telephony_providers_edge_unpair(edge_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_unpair: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_unpair: %s\n" % e)
 ```
 
 ### Parameters
@@ -5303,7 +5303,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges: %s\n" % e)
 ```
 
 ### Parameters
@@ -5353,7 +5353,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_addressvalidation(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_addressvalidation: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_addressvalidation: %s\n" % e)
 ```
 
 ### Parameters
@@ -5404,7 +5404,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_certificateauthorities(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_certificateauthorities: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_certificateauthorities: %s\n" % e)
 ```
 
 ### Parameters
@@ -5455,7 +5455,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_didpools(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_didpools: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_didpools: %s\n" % e)
 ```
 
 ### Parameters
@@ -5506,7 +5506,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_edgegroups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_edgegroups: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_edgegroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -5557,7 +5557,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_extensionpools(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_extensionpools: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_extensionpools: %s\n" % e)
 ```
 
 ### Parameters
@@ -5608,7 +5608,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_outboundroutes(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\n" % e)
 ```
 
 ### Parameters
@@ -5658,7 +5658,7 @@ try:
     # Reboot a Phone
     api_instance.post_telephony_providers_edges_phone_reboot(phone_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phone_reboot: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phone_reboot: %s\n" % e)
 ```
 
 ### Parameters
@@ -5709,7 +5709,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_phonebasesettings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phonebasesettings: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phonebasesettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -5760,7 +5760,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_phones(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones: %s\n" % e)
 ```
 
 ### Parameters
@@ -5810,7 +5810,7 @@ try:
     # Reboot Multiple Phones
     api_instance.post_telephony_providers_edges_phones_reboot(body)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones_reboot: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_phones_reboot: %s\n" % e)
 ```
 
 ### Parameters
@@ -5862,7 +5862,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_site_outboundroutes(site_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_outboundroutes: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_outboundroutes: %s\n" % e)
 ```
 
 ### Parameters
@@ -5913,7 +5913,7 @@ try:
     # Triggers the rebalance operation.
     api_instance.post_telephony_providers_edges_site_rebalance(site_id)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_rebalance: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_site_rebalance: %s\n" % e)
 ```
 
 ### Parameters
@@ -5964,7 +5964,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_sites(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_sites: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_sites: %s\n" % e)
 ```
 
 ### Parameters
@@ -6015,7 +6015,7 @@ try:
     api_response = api_instance.post_telephony_providers_edges_trunkbasesettings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunkbasesettings: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunkbasesettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -6067,7 +6067,7 @@ try:
     api_response = api_instance.put_telephony_providers_edge(edge_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge: %s\n" % e)
 ```
 
 ### Parameters
@@ -6121,7 +6121,7 @@ try:
     api_response = api_instance.put_telephony_providers_edge_line(edge_id, line_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_line: %s\n" % e)
 ```
 
 ### Parameters
@@ -6176,7 +6176,7 @@ try:
     api_response = api_instance.put_telephony_providers_edge_logicalinterface(edge_id, interface_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_logicalinterface: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edge_logicalinterface: %s\n" % e)
 ```
 
 ### Parameters
@@ -6230,7 +6230,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_certificateauthority(certificate_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_certificateauthority: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_certificateauthority: %s\n" % e)
 ```
 
 ### Parameters
@@ -6283,7 +6283,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_did(did_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_did: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_did: %s\n" % e)
 ```
 
 ### Parameters
@@ -6336,7 +6336,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_didpool(did_pool_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_didpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_didpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -6389,7 +6389,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_edgegroup(edge_group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -6443,7 +6443,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_edgegroup_edgetrunkbase(edgegroup_id, edgetrunkbase_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_edgegroup_edgetrunkbase: %s\n" % e)
 ```
 
 ### Parameters
@@ -6497,7 +6497,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_extension(extension_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extension: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extension: %s\n" % e)
 ```
 
 ### Parameters
@@ -6550,7 +6550,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_extensionpool(extension_pool_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extensionpool: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extensionpool: %s\n" % e)
 ```
 
 ### Parameters
@@ -6603,7 +6603,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_outboundroute(outbound_route_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -6656,7 +6656,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_phone(phone_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phone: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phone: %s\n" % e)
 ```
 
 ### Parameters
@@ -6709,7 +6709,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_phonebasesetting(phone_base_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phonebasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_phonebasesetting: %s\n" % e)
 ```
 
 ### Parameters
@@ -6762,7 +6762,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_site(site_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site: %s\n" % e)
 ```
 
 ### Parameters
@@ -6815,7 +6815,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_site_numberplans(site_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_numberplans: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_numberplans: %s\n" % e)
 ```
 
 ### Parameters
@@ -6869,7 +6869,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_site_outboundroute(site_id, outbound_route_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_outboundroute: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_outboundroute: %s\n" % e)
 ```
 
 ### Parameters
@@ -6923,7 +6923,7 @@ try:
     api_response = api_instance.put_telephony_providers_edges_trunkbasesetting(trunk_base_settings_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_trunkbasesetting: %s\n" % e
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_trunkbasesetting: %s\n" % e)
 ```
 
 ### Parameters

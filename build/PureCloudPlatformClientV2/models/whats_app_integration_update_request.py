@@ -132,7 +132,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         """
         allowed_values = ["Activate", "Confirm"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action
@@ -159,7 +159,7 @@ class WhatsAppIntegrationUpdateRequest(object):
         """
         allowed_values = ["Sms", "Voice"]
         if authentication_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for authentication_method -> " + authentication_method
+            # print("Invalid value for authentication_method -> " + authentication_method)
             self._authentication_method = "outdated_sdk_version"
         else:
             self._authentication_method = authentication_method

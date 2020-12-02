@@ -207,7 +207,7 @@ class WebChatMessage(object):
         """
         allowed_values = ["standard", "notice", "member-join", "member-leave", "media-request"]
         if body_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for body_type -> " + body_type
+            # print("Invalid value for body_type -> " + body_type)
             self._body_type = "outdated_sdk_version"
         else:
             self._body_type = body_type

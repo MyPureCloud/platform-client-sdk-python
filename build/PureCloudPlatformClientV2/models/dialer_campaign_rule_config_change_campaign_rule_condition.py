@@ -126,7 +126,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         """
         allowed_values = ["CAMPAIGN_PROGRESS", "CAMPAIGN_AGENTS"]
         if condition_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for condition_type -> " + condition_type
+            # print("Invalid value for condition_type -> " + condition_type)
             self._condition_type = "outdated_sdk_version"
         else:
             self._condition_type = condition_type

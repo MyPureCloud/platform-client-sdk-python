@@ -121,7 +121,7 @@ try:
     # Delete/cancel an async request
     api_instance.delete_analytics_users_details_job(job_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_analytics_users_details_job: %s\n" % e
+    print("Exception when calling UsersApi->delete_analytics_users_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -173,7 +173,7 @@ try:
     # Delete a grant of a role in a division
     api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_authorization_subject_division_role: %s\n" % e
+    print("Exception when calling UsersApi->delete_authorization_subject_division_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -225,7 +225,7 @@ try:
     # Delete the user's max utilization settings and revert to the organization-wide default.
     api_instance.delete_routing_user_utilization(user_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_routing_user_utilization: %s\n" % e
+    print("Exception when calling UsersApi->delete_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -276,7 +276,7 @@ try:
     api_response = api_instance.delete_user(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_user: %s\n" % e
+    print("Exception when calling UsersApi->delete_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -328,7 +328,7 @@ try:
     # Remove routing language from user
     api_instance.delete_user_routinglanguage(user_id, language_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_user_routinglanguage: %s\n" % e
+    print("Exception when calling UsersApi->delete_user_routinglanguage: %s\n" % e)
 ```
 
 ### Parameters
@@ -380,7 +380,7 @@ try:
     # Remove routing skill from user
     api_instance.delete_user_routingskill(user_id, skill_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_user_routingskill: %s\n" % e
+    print("Exception when calling UsersApi->delete_user_routingskill: %s\n" % e)
 ```
 
 ### Parameters
@@ -430,7 +430,7 @@ try:
     # Clear associated station
     api_instance.delete_user_station_associatedstation(user_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_user_station_associatedstation: %s\n" % e
+    print("Exception when calling UsersApi->delete_user_station_associatedstation: %s\n" % e)
 ```
 
 ### Parameters
@@ -481,7 +481,7 @@ try:
     # Clear default station
     api_instance.delete_user_station_defaultstation(user_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->delete_user_station_defaultstation: %s\n" % e
+    print("Exception when calling UsersApi->delete_user_station_defaultstation: %s\n" % e)
 ```
 
 ### Parameters
@@ -532,7 +532,7 @@ try:
     api_response = api_instance.get_analytics_users_details_job(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_analytics_users_details_job: %s\n" % e
+    print("Exception when calling UsersApi->get_analytics_users_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -585,7 +585,7 @@ try:
     api_response = api_instance.get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_analytics_users_details_job_results: %s\n" % e
+    print("Exception when calling UsersApi->get_analytics_users_details_job_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -637,7 +637,7 @@ try:
     api_response = api_instance.get_analytics_users_details_jobs_availability()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_analytics_users_details_jobs_availability: %s\n" % e
+    print("Exception when calling UsersApi->get_analytics_users_details_jobs_availability: %s\n" % e)
 ```
 
 ### Parameters
@@ -685,7 +685,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_authorization_divisionspermitted_me: %s\n" % e
+    print("Exception when calling UsersApi->get_authorization_divisionspermitted_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -738,7 +738,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_authorization_divisionspermitted_paged_me: %s\n" % e
+    print("Exception when calling UsersApi->get_authorization_divisionspermitted_paged_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -793,7 +793,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e
+    print("Exception when calling UsersApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -847,7 +847,7 @@ try:
     api_response = api_instance.get_authorization_subject(subject_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_authorization_subject: %s\n" % e
+    print("Exception when calling UsersApi->get_authorization_subject: %s\n" % e)
 ```
 
 ### Parameters
@@ -896,7 +896,7 @@ try:
     api_response = api_instance.get_authorization_subjects_me()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e
+    print("Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -943,7 +943,7 @@ try:
     api_response = api_instance.get_fieldconfig(type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_fieldconfig: %s\n" % e
+    print("Exception when calling UsersApi->get_fieldconfig: %s\n" % e)
 ```
 
 ### Parameters
@@ -999,7 +999,7 @@ try:
     api_response = api_instance.get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_profiles_users: %s\n" % e
+    print("Exception when calling UsersApi->get_profiles_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1013,7 +1013,7 @@ except ApiException as e:
 | **jid** | [**list[str]**](str.html)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
 
 ### Return type
@@ -1057,7 +1057,7 @@ try:
     api_response = api_instance.get_routing_user_utilization(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_routing_user_utilization: %s\n" % e
+    print("Exception when calling UsersApi->get_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -1110,7 +1110,7 @@ try:
     api_response = api_instance.get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user: %s\n" % e
+    print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -1120,7 +1120,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 | **state** | **str**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -1164,7 +1164,7 @@ try:
     api_response = api_instance.get_user_adjacents(user_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_adjacents: %s\n" % e
+    print("Exception when calling UsersApi->get_user_adjacents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1215,7 +1215,7 @@ try:
     api_response = api_instance.get_user_callforwarding(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_callforwarding: %s\n" % e
+    print("Exception when calling UsersApi->get_user_callforwarding: %s\n" % e)
 ```
 
 ### Parameters
@@ -1266,7 +1266,7 @@ try:
     api_response = api_instance.get_user_directreports(user_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_directreports: %s\n" % e
+    print("Exception when calling UsersApi->get_user_directreports: %s\n" % e)
 ```
 
 ### Parameters
@@ -1321,7 +1321,7 @@ try:
     api_response = api_instance.get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_favorites: %s\n" % e
+    print("Exception when calling UsersApi->get_user_favorites: %s\n" % e)
 ```
 
 ### Parameters
@@ -1376,7 +1376,7 @@ try:
     api_response = api_instance.get_user_geolocation(user_id, client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_geolocation: %s\n" % e
+    print("Exception when calling UsersApi->get_user_geolocation: %s\n" % e)
 ```
 
 ### Parameters
@@ -1427,7 +1427,7 @@ try:
     api_response = api_instance.get_user_outofoffice(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_outofoffice: %s\n" % e
+    print("Exception when calling UsersApi->get_user_outofoffice: %s\n" % e)
 ```
 
 ### Parameters
@@ -1479,7 +1479,7 @@ try:
     api_response = api_instance.get_user_profile(user_id, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_profile: %s\n" % e
+    print("Exception when calling UsersApi->get_user_profile: %s\n" % e)
 ```
 
 ### Parameters
@@ -1489,7 +1489,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
 
 ### Return type
@@ -1532,7 +1532,7 @@ try:
     api_response = api_instance.get_user_profileskills(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_profileskills: %s\n" % e
+    print("Exception when calling UsersApi->get_user_profileskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -1589,7 +1589,7 @@ try:
     api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_queues: %s\n" % e
+    print("Exception when calling UsersApi->get_user_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -1644,7 +1644,7 @@ try:
     api_response = api_instance.get_user_roles(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_roles: %s\n" % e
+    print("Exception when calling UsersApi->get_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -1697,7 +1697,7 @@ try:
     api_response = api_instance.get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_routinglanguages: %s\n" % e
+    print("Exception when calling UsersApi->get_user_routinglanguages: %s\n" % e)
 ```
 
 ### Parameters
@@ -1753,7 +1753,7 @@ try:
     api_response = api_instance.get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_routingskills: %s\n" % e
+    print("Exception when calling UsersApi->get_user_routingskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -1806,7 +1806,7 @@ try:
     api_response = api_instance.get_user_routingstatus(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_routingstatus: %s\n" % e
+    print("Exception when calling UsersApi->get_user_routingstatus: %s\n" % e)
 ```
 
 ### Parameters
@@ -1856,7 +1856,7 @@ try:
     api_response = api_instance.get_user_station(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_station: %s\n" % e
+    print("Exception when calling UsersApi->get_user_station: %s\n" % e)
 ```
 
 ### Parameters
@@ -1907,7 +1907,7 @@ try:
     api_response = api_instance.get_user_superiors(user_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_superiors: %s\n" % e
+    print("Exception when calling UsersApi->get_user_superiors: %s\n" % e)
 ```
 
 ### Parameters
@@ -1961,7 +1961,7 @@ try:
     api_response = api_instance.get_user_trustors(user_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_user_trustors: %s\n" % e
+    print("Exception when calling UsersApi->get_user_trustors: %s\n" % e)
 ```
 
 ### Parameters
@@ -2020,7 +2020,7 @@ try:
     api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users: %s\n" % e
+    print("Exception when calling UsersApi->get_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -2034,7 +2034,7 @@ except ApiException as e:
 | **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 | **state** | **str**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2089,7 +2089,7 @@ try:
     api_response = api_instance.get_users_development_activities(user_id=user_id, module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users_development_activities: %s\n" % e
+    print("Exception when calling UsersApi->get_users_development_activities: %s\n" % e)
 ```
 
 ### Parameters
@@ -2158,7 +2158,7 @@ try:
     api_response = api_instance.get_users_development_activities_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users_development_activities_me: %s\n" % e
+    print("Exception when calling UsersApi->get_users_development_activities_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -2190,7 +2190,7 @@ except ApiException as e:
 
 Get a Development Activity
 
-
+Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 
 Wraps GET /api/v2/users/development/activities/{activityId} 
 
@@ -2220,7 +2220,7 @@ try:
     api_response = api_instance.get_users_development_activity(activity_id, type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users_development_activity: %s\n" % e
+    print("Exception when calling UsersApi->get_users_development_activity: %s\n" % e)
 ```
 
 ### Parameters
@@ -2272,7 +2272,7 @@ try:
     api_response = api_instance.get_users_me(expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users_me: %s\n" % e
+    print("Exception when calling UsersApi->get_users_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -2281,7 +2281,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
-| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
 
 ### Return type
@@ -2325,7 +2325,7 @@ try:
     api_response = api_instance.get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->get_users_search: %s\n" % e
+    print("Exception when calling UsersApi->get_users_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -2335,7 +2335,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| expand | [optional]  |
-| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
 
 ### Return type
@@ -2379,7 +2379,7 @@ try:
     api_response = api_instance.patch_user(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user: %s\n" % e
+    print("Exception when calling UsersApi->patch_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -2431,7 +2431,7 @@ try:
     api_response = api_instance.patch_user_callforwarding(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_callforwarding: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_callforwarding: %s\n" % e)
 ```
 
 ### Parameters
@@ -2484,7 +2484,7 @@ try:
     api_response = api_instance.patch_user_geolocation(user_id, client_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_geolocation: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_geolocation: %s\n" % e)
 ```
 
 ### Parameters
@@ -2540,7 +2540,7 @@ try:
     api_response = api_instance.patch_user_queue(queue_id, user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_queue: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_queue: %s\n" % e)
 ```
 
 ### Parameters
@@ -2596,7 +2596,7 @@ try:
     api_response = api_instance.patch_user_queues(user_id, body, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_queues: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -2652,7 +2652,7 @@ try:
     api_response = api_instance.patch_user_routinglanguage(user_id, language_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_routinglanguage: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_routinglanguage: %s\n" % e)
 ```
 
 ### Parameters
@@ -2707,7 +2707,7 @@ try:
     api_response = api_instance.patch_user_routinglanguages_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_routinglanguages_bulk: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_routinglanguages_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -2760,7 +2760,7 @@ try:
     api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_user_routingskills_bulk: %s\n" % e
+    print("Exception when calling UsersApi->patch_user_routingskills_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -2813,7 +2813,7 @@ try:
     api_response = api_instance.patch_users_bulk(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->patch_users_bulk: %s\n" % e
+    print("Exception when calling UsersApi->patch_users_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -2864,7 +2864,7 @@ try:
     api_response = api_instance.post_analytics_users_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_analytics_users_aggregates_query: %s\n" % e
+    print("Exception when calling UsersApi->post_analytics_users_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -2915,7 +2915,7 @@ try:
     api_response = api_instance.post_analytics_users_details_jobs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_analytics_users_details_jobs: %s\n" % e
+    print("Exception when calling UsersApi->post_analytics_users_details_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -2966,7 +2966,7 @@ try:
     api_response = api_instance.post_analytics_users_details_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_analytics_users_details_query: %s\n" % e
+    print("Exception when calling UsersApi->post_analytics_users_details_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -3017,7 +3017,7 @@ try:
     api_response = api_instance.post_analytics_users_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_analytics_users_observations_query: %s\n" % e
+    print("Exception when calling UsersApi->post_analytics_users_observations_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -3069,7 +3069,7 @@ try:
     # Bulk-grant roles and divisions to a subject.
     api_instance.post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_authorization_subject_bulkadd: %s\n" % e
+    print("Exception when calling UsersApi->post_authorization_subject_bulkadd: %s\n" % e)
 ```
 
 ### Parameters
@@ -3122,7 +3122,7 @@ try:
     # Bulk-remove grants from a subject.
     api_instance.post_authorization_subject_bulkremove(subject_id, body)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_authorization_subject_bulkremove: %s\n" % e
+    print("Exception when calling UsersApi->post_authorization_subject_bulkremove: %s\n" % e)
 ```
 
 ### Parameters
@@ -3176,7 +3176,7 @@ try:
     # Make a grant of a role in a division
     api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_authorization_subject_division_role: %s\n" % e
+    print("Exception when calling UsersApi->post_authorization_subject_division_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -3230,7 +3230,7 @@ try:
     # Send an activation email to the user
     api_instance.post_user_invite(user_id, force=force)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_user_invite: %s\n" % e
+    print("Exception when calling UsersApi->post_user_invite: %s\n" % e)
 ```
 
 ### Parameters
@@ -3282,7 +3282,7 @@ try:
     # Change a users password
     api_instance.post_user_password(user_id, body)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_user_password: %s\n" % e
+    print("Exception when calling UsersApi->post_user_password: %s\n" % e)
 ```
 
 ### Parameters
@@ -3336,7 +3336,7 @@ try:
     api_response = api_instance.post_user_routinglanguages(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_user_routinglanguages: %s\n" % e
+    print("Exception when calling UsersApi->post_user_routinglanguages: %s\n" % e)
 ```
 
 ### Parameters
@@ -3389,7 +3389,7 @@ try:
     api_response = api_instance.post_user_routingskills(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_user_routingskills: %s\n" % e
+    print("Exception when calling UsersApi->post_user_routingskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -3441,7 +3441,7 @@ try:
     api_response = api_instance.post_users(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_users: %s\n" % e
+    print("Exception when calling UsersApi->post_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -3493,7 +3493,7 @@ try:
     api_response = api_instance.post_users_development_activities_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_users_development_activities_aggregates_query: %s\n" % e
+    print("Exception when calling UsersApi->post_users_development_activities_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -3542,7 +3542,7 @@ try:
     # Change your password
     api_instance.post_users_me_password(body)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_users_me_password: %s\n" % e
+    print("Exception when calling UsersApi->post_users_me_password: %s\n" % e)
 ```
 
 ### Parameters
@@ -3593,7 +3593,7 @@ try:
     api_response = api_instance.post_users_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->post_users_search: %s\n" % e
+    print("Exception when calling UsersApi->post_users_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -3645,7 +3645,7 @@ try:
     api_response = api_instance.put_routing_user_utilization(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_routing_user_utilization: %s\n" % e
+    print("Exception when calling UsersApi->put_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -3697,7 +3697,7 @@ try:
     api_response = api_instance.put_user_callforwarding(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_callforwarding: %s\n" % e
+    print("Exception when calling UsersApi->put_user_callforwarding: %s\n" % e)
 ```
 
 ### Parameters
@@ -3749,7 +3749,7 @@ try:
     api_response = api_instance.put_user_outofoffice(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_outofoffice: %s\n" % e
+    print("Exception when calling UsersApi->put_user_outofoffice: %s\n" % e)
 ```
 
 ### Parameters
@@ -3802,7 +3802,7 @@ try:
     api_response = api_instance.put_user_profileskills(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_profileskills: %s\n" % e
+    print("Exception when calling UsersApi->put_user_profileskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -3855,7 +3855,7 @@ try:
     api_response = api_instance.put_user_roles(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_roles: %s\n" % e
+    print("Exception when calling UsersApi->put_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -3909,7 +3909,7 @@ try:
     api_response = api_instance.put_user_routingskill(user_id, skill_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_routingskill: %s\n" % e
+    print("Exception when calling UsersApi->put_user_routingskill: %s\n" % e)
 ```
 
 ### Parameters
@@ -3963,7 +3963,7 @@ try:
     api_response = api_instance.put_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_routingskills_bulk: %s\n" % e
+    print("Exception when calling UsersApi->put_user_routingskills_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -4015,7 +4015,7 @@ try:
     api_response = api_instance.put_user_routingstatus(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_routingstatus: %s\n" % e
+    print("Exception when calling UsersApi->put_user_routingstatus: %s\n" % e)
 ```
 
 ### Parameters
@@ -4066,7 +4066,7 @@ try:
     # Set associated station
     api_instance.put_user_station_associatedstation_station_id(user_id, station_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_station_associatedstation_station_id: %s\n" % e
+    print("Exception when calling UsersApi->put_user_station_associatedstation_station_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -4119,7 +4119,7 @@ try:
     # Set default station
     api_instance.put_user_station_defaultstation_station_id(user_id, station_id)
 except ApiException as e:
-    print "Exception when calling UsersApi->put_user_station_defaultstation_station_id: %s\n" % e
+    print("Exception when calling UsersApi->put_user_station_defaultstation_station_id: %s\n" % e)
 ```
 
 ### Parameters

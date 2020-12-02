@@ -127,7 +127,7 @@ try:
     # Delete a domain
     api_instance.delete_routing_email_domain(domain_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_email_domain: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_email_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -178,7 +178,7 @@ try:
     # Delete a route
     api_instance.delete_routing_email_domain_route(domain_name, route_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_email_domain_route: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_email_domain_route: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,7 +230,7 @@ try:
     # Delete a queue
     api_instance.delete_routing_queue(queue_id, force_delete=force_delete)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_queue: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_queue: %s\n" % e)
 ```
 
 ### Parameters
@@ -283,7 +283,7 @@ try:
     # Delete queue member
     api_instance.delete_routing_queue_user(queue_id, member_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_queue_user: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_queue_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -335,7 +335,7 @@ try:
     # Delete a wrap-up code from a queue
     api_instance.delete_routing_queue_wrapupcode(queue_id, code_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_queue_wrapupcode: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_queue_wrapupcode: %s\n" % e)
 ```
 
 ### Parameters
@@ -385,7 +385,7 @@ try:
     # Delete an organization's routing settings
     api_instance.delete_routing_settings()
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_settings: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -432,7 +432,7 @@ try:
     # Delete Routing Skill
     api_instance.delete_routing_skill(skill_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_skill: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_skill: %s\n" % e)
 ```
 
 ### Parameters
@@ -482,7 +482,7 @@ try:
     # Delete an Address by Id for SMS
     api_instance.delete_routing_sms_address(address_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_sms_address: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_sms_address: %s\n" % e)
 ```
 
 ### Parameters
@@ -532,7 +532,7 @@ try:
     # Delete a phone number provisioned for SMS.
     api_instance.delete_routing_sms_phonenumber(address_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\n" % e)
 ```
 
 ### Parameters
@@ -582,7 +582,7 @@ try:
     # Delete the user's max utilization settings and revert to the organization-wide default.
     api_instance.delete_routing_user_utilization(user_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_user_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -631,7 +631,7 @@ try:
     # Delete the organization-wide max utilization settings and revert to the system default.
     api_instance.delete_routing_utilization()
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -678,7 +678,7 @@ try:
     # Delete wrap-up code
     api_instance.delete_routing_wrapupcode(code_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_routing_wrapupcode: %s\n" % e
+    print("Exception when calling RoutingApi->delete_routing_wrapupcode: %s\n" % e)
 ```
 
 ### Parameters
@@ -730,7 +730,7 @@ try:
     # Remove routing language from user
     api_instance.delete_user_routinglanguage(user_id, language_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_user_routinglanguage: %s\n" % e
+    print("Exception when calling RoutingApi->delete_user_routinglanguage: %s\n" % e)
 ```
 
 ### Parameters
@@ -782,7 +782,7 @@ try:
     # Remove routing skill from user
     api_instance.delete_user_routingskill(user_id, skill_id)
 except ApiException as e:
-    print "Exception when calling RoutingApi->delete_user_routingskill: %s\n" % e
+    print("Exception when calling RoutingApi->delete_user_routingskill: %s\n" % e)
 ```
 
 ### Parameters
@@ -834,7 +834,7 @@ try:
     api_response = api_instance.get_routing_email_domain(domain_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_email_domain: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_email_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -886,7 +886,7 @@ try:
     api_response = api_instance.get_routing_email_domain_route(domain_name, route_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_email_domain_route: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_email_domain_route: %s\n" % e)
 ```
 
 ### Parameters
@@ -941,7 +941,7 @@ try:
     api_response = api_instance.get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_email_domain_routes: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_email_domain_routes: %s\n" % e)
 ```
 
 ### Parameters
@@ -994,7 +994,7 @@ try:
     api_response = api_instance.get_routing_email_domains()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_email_domains: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_email_domains: %s\n" % e)
 ```
 
 ### Parameters
@@ -1041,7 +1041,7 @@ try:
     api_response = api_instance.get_routing_email_setup()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_email_setup: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_email_setup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1092,7 +1092,7 @@ try:
     api_response = api_instance.get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_languages: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_languages: %s\n" % e)
 ```
 
 ### Parameters
@@ -1147,7 +1147,7 @@ try:
     api_response = api_instance.get_routing_message_recipient(recipient_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_message_recipient: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_message_recipient: %s\n" % e)
 ```
 
 ### Parameters
@@ -1200,7 +1200,7 @@ try:
     api_response = api_instance.get_routing_message_recipients(messenger_type=messenger_type, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_message_recipients: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_message_recipients: %s\n" % e)
 ```
 
 ### Parameters
@@ -1253,7 +1253,7 @@ try:
     api_response = api_instance.get_routing_queue(queue_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queue: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queue: %s\n" % e)
 ```
 
 ### Parameters
@@ -1305,7 +1305,7 @@ try:
     api_response = api_instance.get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queue_estimatedwaittime: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queue_estimatedwaittime: %s\n" % e)
 ```
 
 ### Parameters
@@ -1358,7 +1358,7 @@ try:
     api_response = api_instance.get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queue_mediatype_estimatedwaittime: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queue_mediatype_estimatedwaittime: %s\n" % e)
 ```
 
 ### Parameters
@@ -1422,7 +1422,7 @@ try:
     api_response = api_instance.get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queue_users: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queue_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1486,7 +1486,7 @@ try:
     api_response = api_instance.get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queue_wrapupcodes: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queue_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1544,7 +1544,7 @@ try:
     api_response = api_instance.get_routing_queues(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queues: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -1606,7 +1606,7 @@ try:
     api_response = api_instance.get_routing_queues_divisionviews(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queues_divisionviews: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queues_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -1666,7 +1666,7 @@ try:
     api_response = api_instance.get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queues_divisionviews_all: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queues_divisionviews_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -1723,7 +1723,7 @@ try:
     api_response = api_instance.get_routing_queues_me(joined=joined, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_queues_me: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_queues_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -1776,7 +1776,7 @@ try:
     api_response = api_instance.get_routing_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_settings: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1822,7 +1822,7 @@ try:
     api_response = api_instance.get_routing_settings_contactcenter()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_settings_contactcenter: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_settings_contactcenter: %s\n" % e)
 ```
 
 ### Parameters
@@ -1869,7 +1869,7 @@ try:
     api_response = api_instance.get_routing_settings_transcription()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_settings_transcription: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_settings_transcription: %s\n" % e)
 ```
 
 ### Parameters
@@ -1916,7 +1916,7 @@ try:
     api_response = api_instance.get_routing_skill(skill_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_skill: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_skill: %s\n" % e)
 ```
 
 ### Parameters
@@ -1969,7 +1969,7 @@ try:
     api_response = api_instance.get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_skills: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_skills: %s\n" % e)
 ```
 
 ### Parameters
@@ -2023,7 +2023,7 @@ try:
     api_response = api_instance.get_routing_sms_address(address_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_sms_address: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_sms_address: %s\n" % e)
 ```
 
 ### Parameters
@@ -2075,7 +2075,7 @@ try:
     api_response = api_instance.get_routing_sms_addresses(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_sms_addresses: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_sms_addresses: %s\n" % e)
 ```
 
 ### Parameters
@@ -2133,7 +2133,7 @@ try:
     api_response = api_instance.get_routing_sms_availablephonenumbers(country_code, phone_number_type, region=region, city=city, area_code=area_code, pattern=pattern, address_requirement=address_requirement)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_sms_availablephonenumbers: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_sms_availablephonenumbers: %s\n" % e)
 ```
 
 ### Parameters
@@ -2190,7 +2190,7 @@ try:
     api_response = api_instance.get_routing_sms_phonenumber(address_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_sms_phonenumber: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_sms_phonenumber: %s\n" % e)
 ```
 
 ### Parameters
@@ -2245,7 +2245,7 @@ try:
     api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e)
 ```
 
 ### Parameters
@@ -2301,7 +2301,7 @@ try:
     api_response = api_instance.get_routing_user_utilization(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_user_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -2352,7 +2352,7 @@ try:
     api_response = api_instance.get_routing_utilization()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -2400,7 +2400,7 @@ try:
     api_response = api_instance.get_routing_wrapupcode(code_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_wrapupcode: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_wrapupcode: %s\n" % e)
 ```
 
 ### Parameters
@@ -2417,7 +2417,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
 
 
 
@@ -2447,14 +2447,15 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
 name = 'name_example' # str | Name (optional)
 
 try:
     # Get list of wrapup codes.
-    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name)
+    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e
+    print("Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -2465,6 +2466,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 {: class="table table-striped"}
 
@@ -2514,7 +2516,7 @@ try:
     api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_user_queues: %s\n" % e
+    print("Exception when calling RoutingApi->get_user_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -2571,7 +2573,7 @@ try:
     api_response = api_instance.get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_user_routinglanguages: %s\n" % e
+    print("Exception when calling RoutingApi->get_user_routinglanguages: %s\n" % e)
 ```
 
 ### Parameters
@@ -2627,7 +2629,7 @@ try:
     api_response = api_instance.get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->get_user_routingskills: %s\n" % e
+    print("Exception when calling RoutingApi->get_user_routingskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -2682,7 +2684,7 @@ try:
     api_response = api_instance.patch_routing_email_domain(domain_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_routing_email_domain: %s\n" % e
+    print("Exception when calling RoutingApi->patch_routing_email_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -2737,7 +2739,7 @@ try:
     api_response = api_instance.patch_routing_queue_user(queue_id, member_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_routing_queue_user: %s\n" % e
+    print("Exception when calling RoutingApi->patch_routing_queue_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -2792,7 +2794,7 @@ try:
     api_response = api_instance.patch_routing_queue_users(queue_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_routing_queue_users: %s\n" % e
+    print("Exception when calling RoutingApi->patch_routing_queue_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -2843,7 +2845,7 @@ try:
     # Update Contact Center Settings
     api_instance.patch_routing_settings_contactcenter(body)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_routing_settings_contactcenter: %s\n" % e
+    print("Exception when calling RoutingApi->patch_routing_settings_contactcenter: %s\n" % e)
 ```
 
 ### Parameters
@@ -2897,7 +2899,7 @@ try:
     api_response = api_instance.patch_user_queue(queue_id, user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_user_queue: %s\n" % e
+    print("Exception when calling RoutingApi->patch_user_queue: %s\n" % e)
 ```
 
 ### Parameters
@@ -2953,7 +2955,7 @@ try:
     api_response = api_instance.patch_user_queues(user_id, body, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_user_queues: %s\n" % e
+    print("Exception when calling RoutingApi->patch_user_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -3009,7 +3011,7 @@ try:
     api_response = api_instance.patch_user_routinglanguage(user_id, language_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_user_routinglanguage: %s\n" % e
+    print("Exception when calling RoutingApi->patch_user_routinglanguage: %s\n" % e)
 ```
 
 ### Parameters
@@ -3064,7 +3066,7 @@ try:
     api_response = api_instance.patch_user_routinglanguages_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_user_routinglanguages_bulk: %s\n" % e
+    print("Exception when calling RoutingApi->patch_user_routinglanguages_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -3117,7 +3119,7 @@ try:
     api_response = api_instance.patch_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->patch_user_routingskills_bulk: %s\n" % e
+    print("Exception when calling RoutingApi->patch_user_routingskills_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -3169,7 +3171,7 @@ try:
     api_response = api_instance.post_analytics_queues_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_analytics_queues_observations_query: %s\n" % e
+    print("Exception when calling RoutingApi->post_analytics_queues_observations_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -3221,7 +3223,7 @@ try:
     api_response = api_instance.post_routing_email_domain_routes(domain_name, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_email_domain_routes: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_email_domain_routes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3274,7 +3276,7 @@ try:
     api_response = api_instance.post_routing_email_domain_testconnection(domain_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_email_domain_testconnection: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_email_domain_testconnection: %s\n" % e)
 ```
 
 ### Parameters
@@ -3326,7 +3328,7 @@ try:
     api_response = api_instance.post_routing_email_domains(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_email_domains: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_email_domains: %s\n" % e)
 ```
 
 ### Parameters
@@ -3377,7 +3379,7 @@ try:
     api_response = api_instance.post_routing_languages(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_languages: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_languages: %s\n" % e)
 ```
 
 ### Parameters
@@ -3431,7 +3433,7 @@ try:
     api_response = api_instance.post_routing_queue_users(queue_id, body, delete=delete)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_queue_users: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_queue_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -3485,7 +3487,7 @@ try:
     api_response = api_instance.post_routing_queue_wrapupcodes(queue_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_queue_wrapupcodes: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_queue_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3537,7 +3539,7 @@ try:
     api_response = api_instance.post_routing_queues(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_queues: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_queues: %s\n" % e)
 ```
 
 ### Parameters
@@ -3588,7 +3590,7 @@ try:
     api_response = api_instance.post_routing_skills(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_skills: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_skills: %s\n" % e)
 ```
 
 ### Parameters
@@ -3639,7 +3641,7 @@ try:
     api_response = api_instance.post_routing_sms_addresses(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_sms_addresses: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_sms_addresses: %s\n" % e)
 ```
 
 ### Parameters
@@ -3690,7 +3692,7 @@ try:
     api_response = api_instance.post_routing_sms_phonenumbers(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_sms_phonenumbers: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_sms_phonenumbers: %s\n" % e)
 ```
 
 ### Parameters
@@ -3741,7 +3743,7 @@ try:
     api_response = api_instance.post_routing_wrapupcodes(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_routing_wrapupcodes: %s\n" % e
+    print("Exception when calling RoutingApi->post_routing_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3794,7 +3796,7 @@ try:
     api_response = api_instance.post_user_routinglanguages(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_user_routinglanguages: %s\n" % e
+    print("Exception when calling RoutingApi->post_user_routinglanguages: %s\n" % e)
 ```
 
 ### Parameters
@@ -3847,7 +3849,7 @@ try:
     api_response = api_instance.post_user_routingskills(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->post_user_routingskills: %s\n" % e
+    print("Exception when calling RoutingApi->post_user_routingskills: %s\n" % e)
 ```
 
 ### Parameters
@@ -3901,7 +3903,7 @@ try:
     api_response = api_instance.put_routing_email_domain_route(domain_name, route_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_email_domain_route: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_email_domain_route: %s\n" % e)
 ```
 
 ### Parameters
@@ -3955,7 +3957,7 @@ try:
     api_response = api_instance.put_routing_message_recipient(recipient_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_message_recipient: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_message_recipient: %s\n" % e)
 ```
 
 ### Parameters
@@ -4008,7 +4010,7 @@ try:
     api_response = api_instance.put_routing_queue(queue_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_queue: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_queue: %s\n" % e)
 ```
 
 ### Parameters
@@ -4060,7 +4062,7 @@ try:
     api_response = api_instance.put_routing_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_settings: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -4111,7 +4113,7 @@ try:
     api_response = api_instance.put_routing_settings_transcription(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_settings_transcription: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_settings_transcription: %s\n" % e)
 ```
 
 ### Parameters
@@ -4163,7 +4165,7 @@ try:
     api_response = api_instance.put_routing_sms_phonenumber(address_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e)
 ```
 
 ### Parameters
@@ -4216,7 +4218,7 @@ try:
     api_response = api_instance.put_routing_user_utilization(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_user_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_user_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -4268,7 +4270,7 @@ try:
     api_response = api_instance.put_routing_utilization(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_utilization: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_utilization: %s\n" % e)
 ```
 
 ### Parameters
@@ -4320,7 +4322,7 @@ try:
     api_response = api_instance.put_routing_wrapupcode(code_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_routing_wrapupcode: %s\n" % e
+    print("Exception when calling RoutingApi->put_routing_wrapupcode: %s\n" % e)
 ```
 
 ### Parameters
@@ -4374,7 +4376,7 @@ try:
     api_response = api_instance.put_user_routingskill(user_id, skill_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_user_routingskill: %s\n" % e
+    print("Exception when calling RoutingApi->put_user_routingskill: %s\n" % e)
 ```
 
 ### Parameters
@@ -4428,7 +4430,7 @@ try:
     api_response = api_instance.put_user_routingskills_bulk(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RoutingApi->put_user_routingskills_bulk: %s\n" % e
+    print("Exception when calling RoutingApi->put_user_routingskills_bulk: %s\n" % e)
 ```
 
 ### Parameters

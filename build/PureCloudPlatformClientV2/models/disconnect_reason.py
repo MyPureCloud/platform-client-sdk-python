@@ -77,7 +77,7 @@ class DisconnectReason(object):
         """
         allowed_values = ["q850", "sip"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

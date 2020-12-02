@@ -103,7 +103,7 @@ class ScimError(object):
         """
         allowed_values = ["invalidFilter", "tooMany", "uniqueness", "mutability", "invalidSyntax", "invalidPath", "noTarget", "invalidValue", "invalidVers", "sensitive"]
         if scim_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for scim_type -> " + scim_type
+            # print("Invalid value for scim_type -> " + scim_type)
             self._scim_type = "outdated_sdk_version"
         else:
             self._scim_type = scim_type

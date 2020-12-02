@@ -1,13 +1,13 @@
 ---
-title: CoachingAppointmentStatusDtoList
+title: CoachingAppointmentStatusResponseList
 ---
-## CoachingAppointmentStatusDtoList
+## CoachingAppointmentStatusResponseList
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[CoachingAppointmentStatusDto]**](CoachingAppointmentStatusDto.html) |  | [optional] |
+| **entities** | [**list[CoachingAppointmentStatusResponse]**](CoachingAppointmentStatusResponse.html) |  | [optional] |
 | **page_size** | **int** |  | [optional] |
 | **page_number** | **int** |  | [optional] |
 | **total** | **int** |  | [optional] |

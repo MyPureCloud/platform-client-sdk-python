@@ -430,7 +430,7 @@ class CampaignInteraction(object):
         """
         allowed_values = ["DISCONNECT", "LIVE_VOICE", "BUSY", "MACHINE", "NO_ANSWER", "SIT_CALLABLE", "SIT_UNCALLABLE", "FAX"]
         if disposition.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disposition -> " + disposition
+            # print("Invalid value for disposition -> " + disposition)
             self._disposition = "outdated_sdk_version"
         else:
             self._disposition = disposition

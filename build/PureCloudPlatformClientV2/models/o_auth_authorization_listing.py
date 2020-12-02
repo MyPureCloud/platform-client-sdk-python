@@ -40,17 +40,43 @@ class OAuthAuthorizationListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'total': 'int',
             'entities': 'list[OAuthAuthorization]',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'total': 'total',
             'entities': 'entities',
             'self_uri': 'selfUri'
         }
 
+        self._total = None
         self._entities = None
         self._self_uri = None
+
+    @property
+    def total(self):
+        """
+        Gets the total of this OAuthAuthorizationListing.
+
+
+        :return: The total of this OAuthAuthorizationListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this OAuthAuthorizationListing.
+
+
+        :param total: The total of this OAuthAuthorizationListing.
+        :type: int
+        """
+        
+        self._total = total
 
     @property
     def entities(self):

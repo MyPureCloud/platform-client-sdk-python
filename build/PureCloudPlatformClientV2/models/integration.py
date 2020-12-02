@@ -187,7 +187,7 @@ class Integration(object):
         """
         allowed_values = ["ENABLED", "DISABLED", "DELETED"]
         if intended_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for intended_state -> " + intended_state
+            # print("Invalid value for intended_state -> " + intended_state)
             self._intended_state = "outdated_sdk_version"
         else:
             self._intended_state = intended_state

@@ -363,7 +363,7 @@ class FacebookIntegration(object):
         """
         allowed_values = ["Initiated", "Completed", "Error"]
         if create_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for create_status -> " + create_status
+            # print("Invalid value for create_status -> " + create_status)
             self._create_status = "outdated_sdk_version"
         else:
             self._create_status = create_status

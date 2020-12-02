@@ -74,7 +74,7 @@ class WidgetClientConfigV1Http(object):
         """
         allowed_values = ["basic", "modern-caret-skin"]
         if web_chat_skin.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for web_chat_skin -> " + web_chat_skin
+            # print("Invalid value for web_chat_skin -> " + web_chat_skin)
             self._web_chat_skin = "outdated_sdk_version"
         else:
             self._web_chat_skin = web_chat_skin

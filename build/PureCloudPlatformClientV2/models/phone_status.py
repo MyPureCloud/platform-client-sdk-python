@@ -144,7 +144,7 @@ class PhoneStatus(object):
         """
         allowed_values = ["OPERATIONAL", "DEGRADED", "OFFLINE"]
         if operational_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operational_status -> " + operational_status
+            # print("Invalid value for operational_status -> " + operational_status)
             self._operational_status = "outdated_sdk_version"
         else:
             self._operational_status = operational_status
@@ -171,7 +171,7 @@ class PhoneStatus(object):
         """
         allowed_values = ["IN_SERVICE", "MIXED_SERVICE", "OUT_OF_SERVICE", "NO_EDGES"]
         if edges_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for edges_status -> " + edges_status
+            # print("Invalid value for edges_status -> " + edges_status)
             self._edges_status = "outdated_sdk_version"
         else:
             self._edges_status = edges_status
@@ -267,7 +267,7 @@ class PhoneStatus(object):
         """
         allowed_values = ["PRIMARY", "SECONDARY"]
         if phone_assignment_to_edge_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for phone_assignment_to_edge_type -> " + phone_assignment_to_edge_type
+            # print("Invalid value for phone_assignment_to_edge_type -> " + phone_assignment_to_edge_type)
             self._phone_assignment_to_edge_type = "outdated_sdk_version"
         else:
             self._phone_assignment_to_edge_type = phone_assignment_to_edge_type

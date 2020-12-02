@@ -77,7 +77,7 @@ class HistoricalAdherenceActuals(object):
         """
         allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
         if actual_activity_category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for actual_activity_category -> " + actual_activity_category
+            # print("Invalid value for actual_activity_category -> " + actual_activity_category)
             self._actual_activity_category = "outdated_sdk_version"
         else:
             self._actual_activity_category = actual_activity_category

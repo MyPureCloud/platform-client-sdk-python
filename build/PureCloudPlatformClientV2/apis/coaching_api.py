@@ -472,7 +472,7 @@ class CoachingApi(object):
         :param str appointment_id: The ID of the coaching appointment. (required)
         :param int page_number: Page number
         :param int page_size: Page size
-        :return: CoachingAppointmentStatusDtoList
+        :return: CoachingAppointmentStatusResponseList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -533,7 +533,7 @@ class CoachingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='CoachingAppointmentStatusDtoList',
+                                            response_type='CoachingAppointmentStatusResponseList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1094,8 +1094,8 @@ class CoachingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str appointment_id: The ID of the coaching appointment. (required)
-        :param CoachingAppointmentStatusDto body: Updated status of the coaching appointment (required)
-        :return: CoachingAppointmentStatusDto
+        :param CoachingAppointmentStatusRequest body: Updated status of the coaching appointment (required)
+        :return: CoachingAppointmentStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1157,7 +1157,7 @@ class CoachingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='CoachingAppointmentStatusDto',
+                                            response_type='CoachingAppointmentStatusResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

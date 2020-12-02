@@ -372,7 +372,7 @@ class DomainLogicalInterface(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -606,7 +606,7 @@ class DomainLogicalInterface(object):
         """
         allowed_values = ["DIAGNOSTIC", "SYSTEM"]
         if interface_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for interface_type -> " + interface_type
+            # print("Invalid value for interface_type -> " + interface_type)
             self._interface_type = "outdated_sdk_version"
         else:
             self._interface_type = interface_type
@@ -771,7 +771,7 @@ class DomainLogicalInterface(object):
         """
         allowed_values = ["INIT", "CREATING", "UPDATING", "OK", "EXCEPTION", "DELETING"]
         if current_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for current_state -> " + current_state
+            # print("Invalid value for current_state -> " + current_state)
             self._current_state = "outdated_sdk_version"
         else:
             self._current_state = current_state

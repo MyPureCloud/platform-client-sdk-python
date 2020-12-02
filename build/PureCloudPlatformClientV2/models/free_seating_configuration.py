@@ -74,7 +74,7 @@ class FreeSeatingConfiguration(object):
         """
         allowed_values = ["ON", "OFF", "PARTIAL"]
         if free_seating_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for free_seating_state -> " + free_seating_state
+            # print("Invalid value for free_seating_state -> " + free_seating_state)
             self._free_seating_state = "outdated_sdk_version"
         else:
             self._free_seating_state = free_seating_state

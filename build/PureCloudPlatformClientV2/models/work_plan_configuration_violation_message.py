@@ -77,7 +77,7 @@ class WorkPlanConfigurationViolationMessage(object):
         """
         allowed_values = ["ActivitiesOverlap", "ActivityEndGreaterThanShiftStop", "ActivityPaidTimeGreaterThanShiftPaidTime", "ActivityStartBeforeShiftStart", "ActivityStartGreaterThanEqualToShiftStop", "ActivityStartIncrementMinutesNotDivisibleByScheduleIntervalMinutes", "DailyExactPaidMinutes", "DailyMaxTotalLessThanWeeklyMin", "DailyMaxTotalLessThanWeeklyMinWithOptional", "DailyMaxTotalLessThanWeeklyMinWithoutOptional", "DailyMinTotalGreaterThanWeeklyMax", "DailyMinTotalGreaterThanWeeklyMaxWithOptional", "DailyMinTotalGreaterThanWeeklyMaxWithoutOptional", "DailyRequiredDaysGreaterThanWeeklyMaxDays", "DailyShiftHasNoDaysSelected", "DailyShiftMaxPossibilitiesViolated", "EarliestShiftStopIsTooLate", "ExactPaidTimeNotDivisibleByGranularity", "MaxConsecutiveWorkingDaysNoMoreThanDoubleMaxWorkingDaysPerWeek", "MaxDaysOffPerPlanningPeriodNotCorrect", "MaxPaidTimeIsMoreThanShiftLength", "MaxPaidTimeNotDivisibleByGranularity", "MaxPaidTimePerPlanningPeriod", "MaxShifts", "MinPaidTimeNotDivisibleByGranularity", "MinPaidTimePerPlanningPeriod", "NoShifts", "PaidTimeGreaterThanMaxWorkTime", "PaidTimeLessThanMinWorkTime", "PaidTimeNotMetByShiftStartStop", "ShiftDaysSelectMoreThanMinWorkingDays", "ShiftStopEarlierThanStart", "ShiftVarianceCannotBeMet", "WeeklyExactPaidMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -127,7 +127,7 @@ class WorkPlanConfigurationViolationMessage(object):
         """
         allowed_values = ["Information", "Warning", "Error"]
         if severity.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for severity -> " + severity
+            # print("Invalid value for severity -> " + severity)
             self._severity = "outdated_sdk_version"
         else:
             self._severity = severity

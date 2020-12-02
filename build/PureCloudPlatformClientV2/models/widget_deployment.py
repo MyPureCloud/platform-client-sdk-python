@@ -259,7 +259,7 @@ class WidgetDeployment(object):
         """
         allowed_values = ["v1", "v2", "v1-http", "third-party"]
         if client_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for client_type -> " + client_type
+            # print("Invalid value for client_type -> " + client_type)
             self._client_type = "outdated_sdk_version"
         else:
             self._client_type = client_type

@@ -197,7 +197,7 @@ class SmsPhoneNumber(object):
         """
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for phone_number_type -> " + phone_number_type
+            # print("Invalid value for phone_number_type -> " + phone_number_type)
             self._phone_number_type = "outdated_sdk_version"
         else:
             self._phone_number_type = phone_number_type
@@ -247,7 +247,7 @@ class SmsPhoneNumber(object):
         """
         allowed_values = ["INVALID", "ACTIVE", "PORTING", "PENDING", "PENDING_CANCELLATION"]
         if phone_number_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for phone_number_status -> " + phone_number_status
+            # print("Invalid value for phone_number_status -> " + phone_number_status)
             self._phone_number_status = "outdated_sdk_version"
         else:
             self._phone_number_status = phone_number_status
@@ -504,7 +504,7 @@ class SmsPhoneNumber(object):
         """
         allowed_values = ["Quarterly"]
         if auto_renewable.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for auto_renewable -> " + auto_renewable
+            # print("Invalid value for auto_renewable -> " + auto_renewable)
             self._auto_renewable = "outdated_sdk_version"
         else:
             self._auto_renewable = auto_renewable
@@ -554,7 +554,7 @@ class SmsPhoneNumber(object):
         """
         allowed_values = ["Basic", "Vanity"]
         if short_code_billing_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for short_code_billing_type -> " + short_code_billing_type
+            # print("Invalid value for short_code_billing_type -> " + short_code_billing_type)
             self._short_code_billing_type = "outdated_sdk_version"
         else:
             self._short_code_billing_type = short_code_billing_type

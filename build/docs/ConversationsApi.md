@@ -181,7 +181,7 @@ try:
     # Delete/cancel an async request
     api_instance.delete_analytics_conversations_details_job(job_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_analytics_conversations_details_job: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_analytics_conversations_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -232,7 +232,7 @@ try:
     # Delete a code used to add a communication to this participant
     api_instance.delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversation_participant_code: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversation_participant_code: %s\n" % e)
 ```
 
 ### Parameters
@@ -284,7 +284,7 @@ try:
     # Remove flagged reason from conversation participant.
     api_instance.delete_conversation_participant_flaggedreason(conversation_id, participant_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversation_participant_flaggedreason: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversation_participant_flaggedreason: %s\n" % e)
 ```
 
 ### Parameters
@@ -335,7 +335,7 @@ try:
     # Cancel the transfer
     api_instance.delete_conversations_call_participant_consult(conversation_id, participant_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_call_participant_consult: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_call_participant_consult: %s\n" % e)
 ```
 
 ### Parameters
@@ -386,7 +386,7 @@ try:
     # Delete attachment from draft
     api_instance.delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_email_messages_draft_attachment: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_email_messages_draft_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -437,7 +437,7 @@ try:
     # Delete a Facebook messaging integration
     api_instance.delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_facebook_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -487,7 +487,7 @@ try:
     # Delete a LINE messenger integration
     api_instance.delete_conversations_messaging_integrations_line_integration_id(integration_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_line_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_line_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -537,7 +537,7 @@ try:
     # Delete a Twitter messaging integration
     api_instance.delete_conversations_messaging_integrations_twitter_integration_id(integration_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_twitter_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -588,7 +588,7 @@ try:
     api_response = api_instance.delete_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->delete_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -639,7 +639,7 @@ try:
     api_response = api_instance.get_analytics_conversation_details(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_analytics_conversation_details: %s\n" % e
+    print("Exception when calling ConversationsApi->get_analytics_conversation_details: %s\n" % e)
 ```
 
 ### Parameters
@@ -690,7 +690,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details(id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_analytics_conversations_details: %s\n" % e
+    print("Exception when calling ConversationsApi->get_analytics_conversations_details: %s\n" % e)
 ```
 
 ### Parameters
@@ -741,7 +741,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_job(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_analytics_conversations_details_job: %s\n" % e
+    print("Exception when calling ConversationsApi->get_analytics_conversations_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -794,7 +794,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_analytics_conversations_details_job_results: %s\n" % e
+    print("Exception when calling ConversationsApi->get_analytics_conversations_details_job_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -846,7 +846,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_jobs_availability()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e
+    print("Exception when calling ConversationsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e)
 ```
 
 ### Parameters
@@ -894,7 +894,7 @@ try:
     api_response = api_instance.get_conversation(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversation: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversation: %s\n" % e)
 ```
 
 ### Parameters
@@ -946,7 +946,7 @@ try:
     api_response = api_instance.get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversation_participant_secureivrsession: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversation_participant_secureivrsession: %s\n" % e)
 ```
 
 ### Parameters
@@ -999,7 +999,7 @@ try:
     api_response = api_instance.get_conversation_participant_secureivrsessions(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversation_participant_secureivrsessions: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversation_participant_secureivrsessions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1052,7 +1052,7 @@ try:
     api_response = api_instance.get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversation_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversation_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1105,7 +1105,7 @@ try:
     api_response = api_instance.get_conversation_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversation_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversation_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1156,7 +1156,7 @@ try:
     api_response = api_instance.get_conversations(communication_type=communication_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations: %s\n" % e)
 ```
 
 ### Parameters
@@ -1206,7 +1206,7 @@ try:
     api_response = api_instance.get_conversations_call(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_call: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_call: %s\n" % e)
 ```
 
 ### Parameters
@@ -1258,7 +1258,7 @@ try:
     api_response = api_instance.get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_call_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_call_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1311,7 +1311,7 @@ try:
     api_response = api_instance.get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_call_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_call_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1362,7 +1362,7 @@ try:
     api_response = api_instance.get_conversations_callback(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_callback: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_callback: %s\n" % e)
 ```
 
 ### Parameters
@@ -1414,7 +1414,7 @@ try:
     api_response = api_instance.get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_callback_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_callback_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1467,7 +1467,7 @@ try:
     api_response = api_instance.get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_callback_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_callback_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1517,7 +1517,7 @@ try:
     api_response = api_instance.get_conversations_callbacks()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_callbacks: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_callbacks: %s\n" % e)
 ```
 
 ### Parameters
@@ -1563,7 +1563,7 @@ try:
     api_response = api_instance.get_conversations_calls()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_calls: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_calls: %s\n" % e)
 ```
 
 ### Parameters
@@ -1613,7 +1613,7 @@ try:
     api_response = api_instance.get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_calls_history: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_calls_history: %s\n" % e)
 ```
 
 ### Parameters
@@ -1665,7 +1665,7 @@ try:
     api_response = api_instance.get_conversations_calls_maximumconferenceparties()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_calls_maximumconferenceparties: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_calls_maximumconferenceparties: %s\n" % e)
 ```
 
 ### Parameters
@@ -1712,7 +1712,7 @@ try:
     api_response = api_instance.get_conversations_chat(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chat: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chat: %s\n" % e)
 ```
 
 ### Parameters
@@ -1763,7 +1763,7 @@ try:
     api_response = api_instance.get_conversations_chat_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chat_message: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chat_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -1818,7 +1818,7 @@ try:
     api_response = api_instance.get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chat_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chat_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -1874,7 +1874,7 @@ try:
     api_response = api_instance.get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chat_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chat_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1927,7 +1927,7 @@ try:
     api_response = api_instance.get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chat_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chat_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1977,7 +1977,7 @@ try:
     api_response = api_instance.get_conversations_chats()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_chats: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_chats: %s\n" % e)
 ```
 
 ### Parameters
@@ -2024,7 +2024,7 @@ try:
     api_response = api_instance.get_conversations_cobrowsesession(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_cobrowsesession: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_cobrowsesession: %s\n" % e)
 ```
 
 ### Parameters
@@ -2076,7 +2076,7 @@ try:
     api_response = api_instance.get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -2129,7 +2129,7 @@ try:
     api_response = api_instance.get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_cobrowsesession_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -2179,7 +2179,7 @@ try:
     api_response = api_instance.get_conversations_cobrowsesessions()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_cobrowsesessions: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_cobrowsesessions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2226,7 +2226,7 @@ try:
     api_response = api_instance.get_conversations_email(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email: %s\n" % e)
 ```
 
 ### Parameters
@@ -2277,7 +2277,7 @@ try:
     api_response = api_instance.get_conversations_email_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email_message: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -2328,7 +2328,7 @@ try:
     api_response = api_instance.get_conversations_email_messages(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -2378,7 +2378,7 @@ try:
     api_response = api_instance.get_conversations_email_messages_draft(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email_messages_draft: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email_messages_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -2430,7 +2430,7 @@ try:
     api_response = api_instance.get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -2483,7 +2483,7 @@ try:
     api_response = api_instance.get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_email_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_email_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -2533,7 +2533,7 @@ try:
     api_response = api_instance.get_conversations_emails()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_emails: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_emails: %s\n" % e)
 ```
 
 ### Parameters
@@ -2580,7 +2580,7 @@ try:
     api_response = api_instance.get_conversations_message(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_message: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -2633,7 +2633,7 @@ try:
     api_response = api_instance.get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_message_communication_messages_media_media_id: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_message_communication_messages_media_media_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -2687,7 +2687,7 @@ try:
     api_response = api_instance.get_conversations_message_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_message_message: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_message_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -2740,7 +2740,7 @@ try:
     api_response = api_instance.get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_message_participant_wrapup: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_message_participant_wrapup: %s\n" % e)
 ```
 
 ### Parameters
@@ -2793,7 +2793,7 @@ try:
     api_response = api_instance.get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_message_participant_wrapupcodes: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_message_participant_wrapupcodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -2843,7 +2843,7 @@ try:
     api_response = api_instance.get_conversations_messages()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -2890,7 +2890,7 @@ try:
     api_response = api_instance.get_conversations_messaging_facebook_app()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_facebook_app: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_facebook_app: %s\n" % e)
 ```
 
 ### Parameters
@@ -2939,7 +2939,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations: %s\n" % e)
 ```
 
 ### Parameters
@@ -2992,7 +2992,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook: %s\n" % e)
 ```
 
 ### Parameters
@@ -3044,7 +3044,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_facebook_integration_id(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -3096,7 +3096,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_line: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_line: %s\n" % e)
 ```
 
 ### Parameters
@@ -3148,7 +3148,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_line_integration_id(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_line_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_line_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -3200,7 +3200,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e)
 ```
 
 ### Parameters
@@ -3252,7 +3252,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_twitter_integration_id(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -3304,7 +3304,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp: %s\n" % e)
 ```
 
 ### Parameters
@@ -3356,7 +3356,7 @@ try:
     api_response = api_instance.get_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -3409,7 +3409,7 @@ try:
     api_response = api_instance.get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->get_conversations_messaging_sticker: %s\n" % e
+    print("Exception when calling ConversationsApi->get_conversations_messaging_sticker: %s\n" % e)
 ```
 
 ### Parameters
@@ -3462,7 +3462,7 @@ try:
     # Update a participant.
     api_instance.patch_conversation_participant(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversation_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversation_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -3515,7 +3515,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversation_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversation_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversation_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3569,7 +3569,7 @@ try:
     api_response = api_instance.patch_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_call: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_call: %s\n" % e)
 ```
 
 ### Parameters
@@ -3621,7 +3621,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_call_participant(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_call_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_call_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -3674,7 +3674,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_call_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_call_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3729,7 +3729,7 @@ try:
     api_response = api_instance.patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_call_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_call_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -3784,7 +3784,7 @@ try:
     api_response = api_instance.patch_conversations_call_participant_consult(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_call_participant_consult: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_call_participant_consult: %s\n" % e)
 ```
 
 ### Parameters
@@ -3838,7 +3838,7 @@ try:
     api_response = api_instance.patch_conversations_callback(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_callback: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_callback: %s\n" % e)
 ```
 
 ### Parameters
@@ -3890,7 +3890,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_callback_participant(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_callback_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_callback_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -3943,7 +3943,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_callback_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_callback_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3998,7 +3998,7 @@ try:
     api_response = api_instance.patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_callback_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_callback_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -4053,7 +4053,7 @@ try:
     api_response = api_instance.patch_conversations_chat(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_chat: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_chat: %s\n" % e)
 ```
 
 ### Parameters
@@ -4105,7 +4105,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_chat_participant(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_chat_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_chat_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -4158,7 +4158,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_chat_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_chat_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4213,7 +4213,7 @@ try:
     api_response = api_instance.patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_chat_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_chat_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -4268,7 +4268,7 @@ try:
     api_response = api_instance.patch_conversations_cobrowsesession(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_cobrowsesession: %s\n" % e)
 ```
 
 ### Parameters
@@ -4320,7 +4320,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -4373,7 +4373,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4428,7 +4428,7 @@ try:
     api_response = api_instance.patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -4483,7 +4483,7 @@ try:
     api_response = api_instance.patch_conversations_email(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_email: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_email: %s\n" % e)
 ```
 
 ### Parameters
@@ -4535,7 +4535,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_email_participant(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_email_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_email_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -4588,7 +4588,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_email_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_email_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4643,7 +4643,7 @@ try:
     api_response = api_instance.patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_email_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_email_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -4698,7 +4698,7 @@ try:
     api_response = api_instance.patch_conversations_message(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_message: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -4750,7 +4750,7 @@ try:
     # Update conversation participant
     api_instance.patch_conversations_message_participant(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_message_participant: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_message_participant: %s\n" % e)
 ```
 
 ### Parameters
@@ -4803,7 +4803,7 @@ try:
     # Update the attributes on a conversation participant.
     api_instance.patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_message_participant_attributes: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_message_participant_attributes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4858,7 +4858,7 @@ try:
     api_response = api_instance.patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_message_participant_communication: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_message_participant_communication: %s\n" % e)
 ```
 
 ### Parameters
@@ -4913,7 +4913,7 @@ try:
     api_response = api_instance.patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_messaging_integrations_facebook_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_facebook_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -4966,7 +4966,7 @@ try:
     api_response = api_instance.patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->patch_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -5019,7 +5019,7 @@ try:
     api_response = api_instance.post_analytics_conversation_details_properties(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_analytics_conversation_details_properties: %s\n" % e
+    print("Exception when calling ConversationsApi->post_analytics_conversation_details_properties: %s\n" % e)
 ```
 
 ### Parameters
@@ -5071,7 +5071,7 @@ try:
     api_response = api_instance.post_analytics_conversations_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_analytics_conversations_aggregates_query: %s\n" % e
+    print("Exception when calling ConversationsApi->post_analytics_conversations_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -5122,7 +5122,7 @@ try:
     api_response = api_instance.post_analytics_conversations_details_jobs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_analytics_conversations_details_jobs: %s\n" % e
+    print("Exception when calling ConversationsApi->post_analytics_conversations_details_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -5173,7 +5173,7 @@ try:
     api_response = api_instance.post_analytics_conversations_details_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_analytics_conversations_details_query: %s\n" % e
+    print("Exception when calling ConversationsApi->post_analytics_conversations_details_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -5234,7 +5234,7 @@ try:
     api_response = api_instance.post_conversation_assign(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_assign: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_assign: %s\n" % e)
 ```
 
 ### Parameters
@@ -5286,7 +5286,7 @@ try:
     api_response = api_instance.post_conversation_disconnect(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_disconnect: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_disconnect: %s\n" % e)
 ```
 
 ### Parameters
@@ -5338,7 +5338,7 @@ try:
     # Create a new callback for the specified participant on the conversation.
     api_instance.post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_participant_callbacks: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_participant_callbacks: %s\n" % e)
 ```
 
 ### Parameters
@@ -5391,7 +5391,7 @@ try:
     # Sends DTMF to the participant
     api_instance.post_conversation_participant_digits(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_participant_digits: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_participant_digits: %s\n" % e)
 ```
 
 ### Parameters
@@ -5444,7 +5444,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversation_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -5498,7 +5498,7 @@ try:
     api_response = api_instance.post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversation_participant_secureivrsessions: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversation_participant_secureivrsessions: %s\n" % e)
 ```
 
 ### Parameters
@@ -5551,7 +5551,7 @@ try:
     api_response = api_instance.post_conversations_call(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_call: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_call: %s\n" % e)
 ```
 
 ### Parameters
@@ -5604,7 +5604,7 @@ try:
     api_response = api_instance.post_conversations_call_participant_consult(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_call_participant_consult: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_consult: %s\n" % e)
 ```
 
 ### Parameters
@@ -5657,7 +5657,7 @@ try:
     # Listen in on the conversation from the point of view of a given participant.
     api_instance.post_conversations_call_participant_monitor(conversation_id, participant_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_call_participant_monitor: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_monitor: %s\n" % e)
 ```
 
 ### Parameters
@@ -5709,7 +5709,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_call_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_call_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -5762,7 +5762,7 @@ try:
     api_response = api_instance.post_conversations_call_participants(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_call_participants: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_call_participants: %s\n" % e)
 ```
 
 ### Parameters
@@ -5814,7 +5814,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_callback_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_callback_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -5867,7 +5867,7 @@ try:
     api_response = api_instance.post_conversations_callbacks(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_callbacks: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_callbacks: %s\n" % e)
 ```
 
 ### Parameters
@@ -5918,7 +5918,7 @@ try:
     api_response = api_instance.post_conversations_calls(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_calls: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_calls: %s\n" % e)
 ```
 
 ### Parameters
@@ -5970,7 +5970,7 @@ try:
     api_response = api_instance.post_conversations_chat_communication_messages(conversation_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_chat_communication_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_chat_communication_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -6023,7 +6023,7 @@ try:
     api_response = api_instance.post_conversations_chat_communication_typing(conversation_id, communication_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_chat_communication_typing: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_chat_communication_typing: %s\n" % e)
 ```
 
 ### Parameters
@@ -6075,7 +6075,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_chat_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_chat_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -6128,7 +6128,7 @@ try:
     api_response = api_instance.post_conversations_chats(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_chats: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_chats: %s\n" % e)
 ```
 
 ### Parameters
@@ -6179,7 +6179,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_cobrowsesession_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_cobrowsesession_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -6232,7 +6232,7 @@ try:
     api_response = api_instance.post_conversations_email_inboundmessages(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_email_inboundmessages: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_email_inboundmessages: %s\n" % e)
 ```
 
 ### Parameters
@@ -6284,7 +6284,7 @@ try:
     api_response = api_instance.post_conversations_email_messages(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_email_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_email_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -6336,7 +6336,7 @@ try:
     api_response = api_instance.post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_email_messages_draft_attachments_copy: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_email_messages_draft_attachments_copy: %s\n" % e)
 ```
 
 ### Parameters
@@ -6388,7 +6388,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_email_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_email_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_email_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -6441,7 +6441,7 @@ try:
     api_response = api_instance.post_conversations_emails(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_emails: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_emails: %s\n" % e)
 ```
 
 ### Parameters
@@ -6491,7 +6491,7 @@ try:
     api_response = api_instance.post_conversations_faxes(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_faxes: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_faxes: %s\n" % e)
 ```
 
 ### Parameters
@@ -6544,7 +6544,7 @@ try:
     api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_message_communication_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -6598,7 +6598,7 @@ try:
     api_response = api_instance.post_conversations_message_communication_messages_media(conversation_id, communication_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_message_communication_messages_media: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_messages_media: %s\n" % e)
 ```
 
 ### Parameters
@@ -6651,7 +6651,7 @@ try:
     api_response = api_instance.post_conversations_message_messages_bulk(conversation_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_message_messages_bulk: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_message_messages_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -6703,7 +6703,7 @@ try:
     # Replace this participant with the specified user and/or address
     api_instance.post_conversations_message_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_message_participant_replace: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_message_participant_replace: %s\n" % e)
 ```
 
 ### Parameters
@@ -6756,7 +6756,7 @@ try:
     api_response = api_instance.post_conversations_messages(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messages: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -6807,7 +6807,7 @@ try:
     api_response = api_instance.post_conversations_messages_agentless(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messages_agentless: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messages_agentless: %s\n" % e)
 ```
 
 ### Parameters
@@ -6859,7 +6859,7 @@ try:
     api_response = api_instance.post_conversations_messaging_integrations_facebook(body, async=async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_facebook: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_facebook: %s\n" % e)
 ```
 
 ### Parameters
@@ -6912,7 +6912,7 @@ try:
     api_response = api_instance.post_conversations_messaging_integrations_line(body, async=async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_line: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_line: %s\n" % e)
 ```
 
 ### Parameters
@@ -6965,7 +6965,7 @@ try:
     api_response = api_instance.post_conversations_messaging_integrations_twitter(body, async=async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_twitter: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_twitter: %s\n" % e)
 ```
 
 ### Parameters
@@ -7018,7 +7018,7 @@ try:
     api_response = api_instance.post_conversations_messaging_integrations_whatsapp(body, async=async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->post_conversations_messaging_integrations_whatsapp: %s\n" % e
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_whatsapp: %s\n" % e)
 ```
 
 ### Parameters
@@ -7069,7 +7069,7 @@ try:
     # Set flagged reason on conversation participant to indicate bad conversation quality.
     api_instance.put_conversation_participant_flaggedreason(conversation_id, participant_id)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->put_conversation_participant_flaggedreason: %s\n" % e
+    print("Exception when calling ConversationsApi->put_conversation_participant_flaggedreason: %s\n" % e)
 ```
 
 ### Parameters
@@ -7123,7 +7123,7 @@ try:
     api_response = api_instance.put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->put_conversations_call_participant_communication_uuidata: %s\n" % e
+    print("Exception when calling ConversationsApi->put_conversations_call_participant_communication_uuidata: %s\n" % e)
 ```
 
 ### Parameters
@@ -7177,7 +7177,7 @@ try:
     api_response = api_instance.put_conversations_email_messages_draft(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->put_conversations_email_messages_draft: %s\n" % e
+    print("Exception when calling ConversationsApi->put_conversations_email_messages_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -7230,7 +7230,7 @@ try:
     api_response = api_instance.put_conversations_messaging_integrations_line_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ConversationsApi->put_conversations_messaging_integrations_line_integration_id: %s\n" % e
+    print("Exception when calling ConversationsApi->put_conversations_messaging_integrations_line_integration_id: %s\n" % e)
 ```
 
 ### Parameters

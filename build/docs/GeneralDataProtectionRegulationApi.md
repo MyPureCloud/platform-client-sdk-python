@@ -50,7 +50,7 @@ try:
     api_response = api_instance.get_gdpr_request(request_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_request: %s\n" % e
+    print("Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_request: %s\n" % e)
 ```
 
 ### Parameters
@@ -102,7 +102,7 @@ try:
     api_response = api_instance.get_gdpr_requests(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_requests: %s\n" % e
+    print("Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_requests: %s\n" % e)
 ```
 
 ### Parameters
@@ -155,7 +155,7 @@ try:
     api_response = api_instance.get_gdpr_subjects(search_type, search_value)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_subjects: %s\n" % e
+    print("Exception when calling GeneralDataProtectionRegulationApi->get_gdpr_subjects: %s\n" % e)
 ```
 
 ### Parameters
@@ -208,7 +208,7 @@ try:
     api_response = api_instance.post_gdpr_requests(body, delete_confirmed=delete_confirmed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeneralDataProtectionRegulationApi->post_gdpr_requests: %s\n" % e
+    print("Exception when calling GeneralDataProtectionRegulationApi->post_gdpr_requests: %s\n" % e)
 ```
 
 ### Parameters

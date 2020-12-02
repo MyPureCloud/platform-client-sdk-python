@@ -127,7 +127,7 @@ class ScimV2SchemaAttribute(object):
         """
         allowed_values = ["STRING", "BOOLEAN", "DECIMAL", "INTEGER", "DATE_TIME", "REFERENCE", "COMPLEX"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -292,7 +292,7 @@ class ScimV2SchemaAttribute(object):
         """
         allowed_values = ["readWrite", "readOnly", "immutable", "writeOnly"]
         if mutability.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for mutability -> " + mutability
+            # print("Invalid value for mutability -> " + mutability)
             self._mutability = "outdated_sdk_version"
         else:
             self._mutability = mutability
@@ -319,7 +319,7 @@ class ScimV2SchemaAttribute(object):
         """
         allowed_values = ["ALWAYS", "NEVER", "DEFAULT", "REQUEST"]
         if returned.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for returned -> " + returned
+            # print("Invalid value for returned -> " + returned)
             self._returned = "outdated_sdk_version"
         else:
             self._returned = returned
@@ -346,7 +346,7 @@ class ScimV2SchemaAttribute(object):
         """
         allowed_values = ["NONE", "SERVER", "GLOBAL"]
         if uniqueness.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for uniqueness -> " + uniqueness
+            # print("Invalid value for uniqueness -> " + uniqueness)
             self._uniqueness = "outdated_sdk_version"
         else:
             self._uniqueness = uniqueness

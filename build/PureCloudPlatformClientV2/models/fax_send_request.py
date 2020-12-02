@@ -187,7 +187,7 @@ class FaxSendRequest(object):
         """
         allowed_values = ["application/pdf", "image/tiff", "application/msword", "application/vnd.oasis.opendocument.text", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
         if content_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for content_type -> " + content_type
+            # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type

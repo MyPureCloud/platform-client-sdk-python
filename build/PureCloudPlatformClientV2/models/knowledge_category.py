@@ -184,7 +184,7 @@ class KnowledgeCategory(object):
         """
         allowed_values = ["en-US", "de-DE"]
         if language_code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for language_code -> " + language_code
+            # print("Invalid value for language_code -> " + language_code)
             self._language_code = "outdated_sdk_version"
         else:
             self._language_code = language_code

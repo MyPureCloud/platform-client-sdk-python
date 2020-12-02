@@ -306,7 +306,7 @@ class EdgeLogsJobFile(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -448,7 +448,7 @@ class EdgeLogsJobFile(object):
         """
         allowed_values = ["UPLOADING", "NOT_UPLOADED", "UPLOADED", "ERROR_ON_UPLOAD"]
         if upload_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for upload_status -> " + upload_status
+            # print("Invalid value for upload_status -> " + upload_status)
             self._upload_status = "outdated_sdk_version"
         else:
             self._upload_status = upload_status

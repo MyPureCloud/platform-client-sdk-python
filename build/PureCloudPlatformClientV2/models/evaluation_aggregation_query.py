@@ -279,7 +279,7 @@ class EvaluationAggregationQuery(object):
         """
         allowed_values = ["evaluationCreatedDate", "eventTime"]
         if alternate_time_dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for alternate_time_dimension -> " + alternate_time_dimension
+            # print("Invalid value for alternate_time_dimension -> " + alternate_time_dimension)
             self._alternate_time_dimension = "outdated_sdk_version"
         else:
             self._alternate_time_dimension = alternate_time_dimension

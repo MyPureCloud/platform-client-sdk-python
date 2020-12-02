@@ -210,7 +210,7 @@ class HistoricalAdherenceQueryResult(object):
         """
         allowed_values = ["Positive", "Negative", "Neutral", "Unknown"]
         if impact.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for impact -> " + impact
+            # print("Invalid value for impact -> " + impact)
             self._impact = "outdated_sdk_version"
         else:
             self._impact = impact

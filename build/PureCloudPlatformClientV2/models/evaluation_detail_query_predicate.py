@@ -86,7 +86,7 @@ class EvaluationDetailQueryPredicate(object):
         """
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -113,7 +113,7 @@ class EvaluationDetailQueryPredicate(object):
         """
         allowed_values = ["calibrationId", "contextId", "deleted", "evaluationId", "evaluatorId", "eventTime", "formId", "formName", "queueId", "rescored", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -140,7 +140,7 @@ class EvaluationDetailQueryPredicate(object):
         """
         allowed_values = ["oTotalCriticalScore", "oTotalScore"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -167,7 +167,7 @@ class EvaluationDetailQueryPredicate(object):
         """
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

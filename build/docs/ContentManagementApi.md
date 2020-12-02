@@ -83,7 +83,7 @@ try:
     # Delete a document.
     api_instance.delete_contentmanagement_document(document_id, override=override)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_document: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -133,7 +133,7 @@ try:
     # Deletes an existing share.
     api_instance.delete_contentmanagement_share(share_id)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_share: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -182,7 +182,7 @@ try:
     # Cancel the command for this status
     api_instance.delete_contentmanagement_status_status_id(status_id)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_status_status_id: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_status_status_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -232,7 +232,7 @@ try:
     # Delete a workspace
     api_instance.delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_workspace: %s\n" % e)
 ```
 
 ### Parameters
@@ -283,7 +283,7 @@ try:
     # Delete a member from a workspace
     api_instance.delete_contentmanagement_workspace_member(workspace_id, member_id)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace_member: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_workspace_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -334,7 +334,7 @@ try:
     # Delete workspace tag
     api_instance.delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->delete_contentmanagement_workspace_tagvalue: %s\n" % e
+    print("Exception when calling ContentManagementApi->delete_contentmanagement_workspace_tagvalue: %s\n" % e)
 ```
 
 ### Parameters
@@ -386,7 +386,7 @@ try:
     api_response = api_instance.get_contentmanagement_document(document_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_document: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -443,7 +443,7 @@ try:
     api_response = api_instance.get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_document_audits: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_document_audits: %s\n" % e)
 ```
 
 ### Parameters
@@ -501,7 +501,7 @@ try:
     api_response = api_instance.get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_document_content: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_document_content: %s\n" % e)
 ```
 
 ### Parameters
@@ -559,7 +559,7 @@ try:
     api_response = api_instance.get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_documents: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -620,7 +620,7 @@ try:
     api_response = api_instance.get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_query: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -675,7 +675,7 @@ try:
     api_response = api_instance.get_contentmanagement_securityprofile(security_profile_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_securityprofile: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_securityprofile: %s\n" % e)
 ```
 
 ### Parameters
@@ -724,7 +724,7 @@ try:
     api_response = api_instance.get_contentmanagement_securityprofiles()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_securityprofiles: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_securityprofiles: %s\n" % e)
 ```
 
 ### Parameters
@@ -772,7 +772,7 @@ try:
     api_response = api_instance.get_contentmanagement_share(share_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_share: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -827,7 +827,7 @@ try:
     api_response = api_instance.get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_shared_shared_id: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_shared_shared_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -884,7 +884,7 @@ try:
     api_response = api_instance.get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_shares: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_shares: %s\n" % e)
 ```
 
 ### Parameters
@@ -938,7 +938,7 @@ try:
     api_response = api_instance.get_contentmanagement_status(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_status: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_status: %s\n" % e)
 ```
 
 ### Parameters
@@ -989,7 +989,7 @@ try:
     api_response = api_instance.get_contentmanagement_status_status_id(status_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_status_status_id: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_status_status_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1038,7 +1038,7 @@ try:
     api_response = api_instance.get_contentmanagement_usage()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_usage: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_usage: %s\n" % e)
 ```
 
 ### Parameters
@@ -1086,7 +1086,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace(workspace_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace: %s\n" % e)
 ```
 
 ### Parameters
@@ -1142,7 +1142,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_documents: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1199,7 +1199,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_member: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -1254,7 +1254,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_members: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -1309,7 +1309,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalue: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalue: %s\n" % e)
 ```
 
 ### Parameters
@@ -1365,7 +1365,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalues: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_tagvalues: %s\n" % e)
 ```
 
 ### Parameters
@@ -1422,7 +1422,7 @@ try:
     api_response = api_instance.get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->get_contentmanagement_workspaces: %s\n" % e
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -1475,7 +1475,7 @@ try:
     api_response = api_instance.post_contentmanagement_auditquery(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_auditquery: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_auditquery: %s\n" % e)
 ```
 
 ### Parameters
@@ -1528,7 +1528,7 @@ try:
     api_response = api_instance.post_contentmanagement_document(document_id, body, expand=expand, override=override)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_document: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -1583,7 +1583,7 @@ try:
     api_response = api_instance.post_contentmanagement_document_content(document_id, body, override=override)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_document_content: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_document_content: %s\n" % e)
 ```
 
 ### Parameters
@@ -1638,7 +1638,7 @@ try:
     api_response = api_instance.post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_documents: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1692,7 +1692,7 @@ try:
     api_response = api_instance.post_contentmanagement_query(body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_query: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1743,7 +1743,7 @@ try:
     api_response = api_instance.post_contentmanagement_shares(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_shares: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_shares: %s\n" % e)
 ```
 
 ### Parameters
@@ -1794,7 +1794,7 @@ try:
     api_response = api_instance.post_contentmanagement_workspace_tagvalues(workspace_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues: %s\n" % e)
 ```
 
 ### Parameters
@@ -1847,7 +1847,7 @@ try:
     api_response = api_instance.post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues_query: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_workspace_tagvalues_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1899,7 +1899,7 @@ try:
     api_response = api_instance.post_contentmanagement_workspaces(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->post_contentmanagement_workspaces: %s\n" % e
+    print("Exception when calling ContentManagementApi->post_contentmanagement_workspaces: %s\n" % e)
 ```
 
 ### Parameters
@@ -1950,7 +1950,7 @@ try:
     api_response = api_instance.put_contentmanagement_workspace(workspace_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->put_contentmanagement_workspace: %s\n" % e
+    print("Exception when calling ContentManagementApi->put_contentmanagement_workspace: %s\n" % e)
 ```
 
 ### Parameters
@@ -2003,7 +2003,7 @@ try:
     api_response = api_instance.put_contentmanagement_workspace_member(workspace_id, member_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->put_contentmanagement_workspace_member: %s\n" % e
+    print("Exception when calling ContentManagementApi->put_contentmanagement_workspace_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -2057,7 +2057,7 @@ try:
     api_response = api_instance.put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContentManagementApi->put_contentmanagement_workspace_tagvalue: %s\n" % e
+    print("Exception when calling ContentManagementApi->put_contentmanagement_workspace_tagvalue: %s\n" % e)
 ```
 
 ### Parameters

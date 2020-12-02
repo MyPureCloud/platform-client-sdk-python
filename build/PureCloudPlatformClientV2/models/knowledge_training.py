@@ -167,7 +167,7 @@ class KnowledgeTraining(object):
         """
         allowed_values = ["Queued", "InProgress", "Succeeded", "Failed"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -263,7 +263,7 @@ class KnowledgeTraining(object):
         """
         allowed_values = ["Draft", "Active", "Discarded", "Archived"]
         if knowledge_documents_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for knowledge_documents_state -> " + knowledge_documents_state
+            # print("Invalid value for knowledge_documents_state -> " + knowledge_documents_state)
             self._knowledge_documents_state = "outdated_sdk_version"
         else:
             self._knowledge_documents_state = knowledge_documents_state

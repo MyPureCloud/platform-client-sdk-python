@@ -74,7 +74,7 @@ class ExternalDataSource(object):
         """
         allowed_values = ["SALESFORCE"]
         if platform.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for platform -> " + platform
+            # print("Invalid value for platform -> " + platform)
             self._platform = "outdated_sdk_version"
         else:
             self._platform = platform

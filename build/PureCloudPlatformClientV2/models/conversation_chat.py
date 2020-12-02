@@ -128,7 +128,7 @@ class ConversationChat(object):
         """
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -270,7 +270,7 @@ class ConversationChat(object):
         """
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
@@ -297,7 +297,7 @@ class ConversationChat(object):
         """
         allowed_values = ["endpoint", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "error", "peer", "other", "uncallable", "timeout"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disconnect_type -> " + disconnect_type
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
         else:
             self._disconnect_type = disconnect_type

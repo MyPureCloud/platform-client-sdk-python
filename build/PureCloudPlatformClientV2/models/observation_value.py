@@ -309,7 +309,7 @@ class ObservationValue(object):
         """
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
@@ -520,7 +520,7 @@ class ObservationValue(object):
         """
         allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
         if used_routing.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for used_routing -> " + used_routing
+            # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"
         else:
             self._used_routing = used_routing

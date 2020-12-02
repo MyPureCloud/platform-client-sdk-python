@@ -123,7 +123,7 @@ class AnalyticsRoutingStatusRecord(object):
         """
         allowed_values = ["OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
         if routing_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for routing_status -> " + routing_status
+            # print("Invalid value for routing_status -> " + routing_status)
             self._routing_status = "outdated_sdk_version"
         else:
             self._routing_status = routing_status

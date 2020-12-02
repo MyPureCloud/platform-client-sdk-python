@@ -50,7 +50,7 @@ try:
     # Delete a user recording.
     api_instance.delete_userrecording(recording_id)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->delete_userrecording: %s\n" % e
+    print("Exception when calling UserRecordingsApi->delete_userrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -101,7 +101,7 @@ try:
     api_response = api_instance.get_userrecording(recording_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->get_userrecording: %s\n" % e
+    print("Exception when calling UserRecordingsApi->get_userrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,7 +153,7 @@ try:
     api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->get_userrecording_media: %s\n" % e
+    print("Exception when calling UserRecordingsApi->get_userrecording_media: %s\n" % e)
 ```
 
 ### Parameters
@@ -206,7 +206,7 @@ try:
     api_response = api_instance.get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->get_userrecordings: %s\n" % e
+    print("Exception when calling UserRecordingsApi->get_userrecordings: %s\n" % e)
 ```
 
 ### Parameters
@@ -257,7 +257,7 @@ try:
     api_response = api_instance.get_userrecordings_summary()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->get_userrecordings_summary: %s\n" % e
+    print("Exception when calling UserRecordingsApi->get_userrecordings_summary: %s\n" % e)
 ```
 
 ### Parameters
@@ -306,7 +306,7 @@ try:
     api_response = api_instance.put_userrecording(recording_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UserRecordingsApi->put_userrecording: %s\n" % e
+    print("Exception when calling UserRecordingsApi->put_userrecording: %s\n" % e)
 ```
 
 ### Parameters

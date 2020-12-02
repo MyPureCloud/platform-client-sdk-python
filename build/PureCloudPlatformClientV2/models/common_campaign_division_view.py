@@ -152,7 +152,7 @@ class CommonCampaignDivisionView(object):
         """
         allowed_values = ["sms", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
+            # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type

@@ -74,7 +74,7 @@ class ContentReaction(object):
         """
         allowed_values = ["None", "Like", "Love", "Wow", "Haha", "Sad", "Angry", "Thankful", "Pride", "Care"]
         if reaction_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for reaction_type -> " + reaction_type
+            # print("Invalid value for reaction_type -> " + reaction_type)
             self._reaction_type = "outdated_sdk_version"
         else:
             self._reaction_type = reaction_type

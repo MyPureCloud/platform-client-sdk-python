@@ -184,7 +184,7 @@ class CommandStatus(object):
         """
         allowed_values = ["INPROGRESS", "COMPLETE", "ERROR", "CANCELING", "CANCELED"]
         if status_code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status_code -> " + status_code
+            # print("Invalid value for status_code -> " + status_code)
             self._status_code = "outdated_sdk_version"
         else:
             self._status_code = status_code
@@ -211,7 +211,7 @@ class CommandStatus(object):
         """
         allowed_values = ["UPLOAD", "COPYDOCUMENT", "MOVEDOCUMENT", "DELETEWORKSPACE", "DELETEDOCUMENT", "DELETETAG", "UPDATETAG", "REINDEX", "CLEANUP", "REPLACEDOCUMENT"]
         if command_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for command_type -> " + command_type
+            # print("Invalid value for command_type -> " + command_type)
             self._command_type = "outdated_sdk_version"
         else:
             self._command_type = command_type

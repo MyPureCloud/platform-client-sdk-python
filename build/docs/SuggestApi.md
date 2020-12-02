@@ -51,7 +51,7 @@ try:
     api_response = api_instance.get_search(q64, expand=expand, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SuggestApi->get_search: %s\n" % e
+    print("Exception when calling SuggestApi->get_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -105,7 +105,7 @@ try:
     api_response = api_instance.get_search_suggest(q64, expand=expand, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SuggestApi->get_search_suggest: %s\n" % e
+    print("Exception when calling SuggestApi->get_search_suggest: %s\n" % e)
 ```
 
 ### Parameters
@@ -158,7 +158,7 @@ try:
     api_response = api_instance.post_search(body, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SuggestApi->post_search: %s\n" % e
+    print("Exception when calling SuggestApi->post_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -210,7 +210,7 @@ try:
     api_response = api_instance.post_search_suggest(body, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SuggestApi->post_search_suggest: %s\n" % e
+    print("Exception when calling SuggestApi->post_search_suggest: %s\n" % e)
 ```
 
 ### Parameters

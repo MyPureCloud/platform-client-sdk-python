@@ -147,7 +147,7 @@ class Share(object):
         """
         allowed_values = ["DOCUMENT"]
         if shared_entity_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for shared_entity_type -> " + shared_entity_type
+            # print("Invalid value for shared_entity_type -> " + shared_entity_type)
             self._shared_entity_type = "outdated_sdk_version"
         else:
             self._shared_entity_type = shared_entity_type
@@ -197,7 +197,7 @@ class Share(object):
         """
         allowed_values = ["USER", "GROUP", "PUBLIC"]
         if member_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for member_type -> " + member_type
+            # print("Invalid value for member_type -> " + member_type)
             self._member_type = "outdated_sdk_version"
         else:
             self._member_type = member_type

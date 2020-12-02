@@ -74,7 +74,7 @@ class QueryRequestPredicate(object):
         """
         allowed_values = ["attendeeId", "facilitatorId", "status"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension

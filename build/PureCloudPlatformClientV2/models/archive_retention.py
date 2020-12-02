@@ -97,7 +97,7 @@ class ArchiveRetention(object):
         """
         allowed_values = ["CLOUDARCHIVE"]
         if storage_medium.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for storage_medium -> " + storage_medium
+            # print("Invalid value for storage_medium -> " + storage_medium)
             self._storage_medium = "outdated_sdk_version"
         else:
             self._storage_medium = storage_medium

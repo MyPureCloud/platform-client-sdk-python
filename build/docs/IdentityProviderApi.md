@@ -79,7 +79,7 @@ try:
     api_response = api_instance.delete_identityproviders_adfs()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_adfs: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_adfs: %s\n" % e)
 ```
 
 ### Parameters
@@ -126,7 +126,7 @@ try:
     api_response = api_instance.delete_identityproviders_cic()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_cic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_cic: %s\n" % e)
 ```
 
 ### Parameters
@@ -173,7 +173,7 @@ try:
     api_response = api_instance.delete_identityproviders_generic()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_generic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_generic: %s\n" % e)
 ```
 
 ### Parameters
@@ -220,7 +220,7 @@ try:
     api_response = api_instance.delete_identityproviders_gsuite()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_gsuite: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_gsuite: %s\n" % e)
 ```
 
 ### Parameters
@@ -267,7 +267,7 @@ try:
     api_response = api_instance.delete_identityproviders_identitynow()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_identitynow: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_identitynow: %s\n" % e)
 ```
 
 ### Parameters
@@ -314,7 +314,7 @@ try:
     api_response = api_instance.delete_identityproviders_okta()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_okta: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_okta: %s\n" % e)
 ```
 
 ### Parameters
@@ -361,7 +361,7 @@ try:
     api_response = api_instance.delete_identityproviders_onelogin()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_onelogin: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_onelogin: %s\n" % e)
 ```
 
 ### Parameters
@@ -408,7 +408,7 @@ try:
     api_response = api_instance.delete_identityproviders_ping()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_ping: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_ping: %s\n" % e)
 ```
 
 ### Parameters
@@ -455,7 +455,7 @@ try:
     api_response = api_instance.delete_identityproviders_purecloud()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_purecloud: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_purecloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -502,7 +502,7 @@ try:
     api_response = api_instance.delete_identityproviders_pureengage()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_pureengage: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_pureengage: %s\n" % e)
 ```
 
 ### Parameters
@@ -549,7 +549,7 @@ try:
     api_response = api_instance.delete_identityproviders_salesforce()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->delete_identityproviders_salesforce: %s\n" % e
+    print("Exception when calling IdentityProviderApi->delete_identityproviders_salesforce: %s\n" % e)
 ```
 
 ### Parameters
@@ -596,7 +596,7 @@ try:
     api_response = api_instance.get_identityproviders()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders: %s\n" % e)
 ```
 
 ### Parameters
@@ -643,7 +643,7 @@ try:
     api_response = api_instance.get_identityproviders_adfs()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_adfs: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_adfs: %s\n" % e)
 ```
 
 ### Parameters
@@ -690,7 +690,7 @@ try:
     api_response = api_instance.get_identityproviders_cic()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_cic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_cic: %s\n" % e)
 ```
 
 ### Parameters
@@ -737,7 +737,7 @@ try:
     api_response = api_instance.get_identityproviders_generic()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_generic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_generic: %s\n" % e)
 ```
 
 ### Parameters
@@ -784,7 +784,7 @@ try:
     api_response = api_instance.get_identityproviders_gsuite()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_gsuite: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_gsuite: %s\n" % e)
 ```
 
 ### Parameters
@@ -831,7 +831,7 @@ try:
     api_response = api_instance.get_identityproviders_identitynow()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_identitynow: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_identitynow: %s\n" % e)
 ```
 
 ### Parameters
@@ -878,7 +878,7 @@ try:
     api_response = api_instance.get_identityproviders_okta()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_okta: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_okta: %s\n" % e)
 ```
 
 ### Parameters
@@ -925,7 +925,7 @@ try:
     api_response = api_instance.get_identityproviders_onelogin()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_onelogin: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_onelogin: %s\n" % e)
 ```
 
 ### Parameters
@@ -972,7 +972,7 @@ try:
     api_response = api_instance.get_identityproviders_ping()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_ping: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_ping: %s\n" % e)
 ```
 
 ### Parameters
@@ -1019,7 +1019,7 @@ try:
     api_response = api_instance.get_identityproviders_purecloud()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_purecloud: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_purecloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -1066,7 +1066,7 @@ try:
     api_response = api_instance.get_identityproviders_pureengage()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_pureengage: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_pureengage: %s\n" % e)
 ```
 
 ### Parameters
@@ -1113,7 +1113,7 @@ try:
     api_response = api_instance.get_identityproviders_salesforce()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->get_identityproviders_salesforce: %s\n" % e
+    print("Exception when calling IdentityProviderApi->get_identityproviders_salesforce: %s\n" % e)
 ```
 
 ### Parameters
@@ -1162,7 +1162,7 @@ try:
     api_response = api_instance.put_identityproviders_adfs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_adfs: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_adfs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1214,7 +1214,7 @@ try:
     api_response = api_instance.put_identityproviders_cic(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_cic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_cic: %s\n" % e)
 ```
 
 ### Parameters
@@ -1266,7 +1266,7 @@ try:
     api_response = api_instance.put_identityproviders_generic(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_generic: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_generic: %s\n" % e)
 ```
 
 ### Parameters
@@ -1318,7 +1318,7 @@ try:
     api_response = api_instance.put_identityproviders_gsuite(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_gsuite: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_gsuite: %s\n" % e)
 ```
 
 ### Parameters
@@ -1370,7 +1370,7 @@ try:
     api_response = api_instance.put_identityproviders_identitynow(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_identitynow: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_identitynow: %s\n" % e)
 ```
 
 ### Parameters
@@ -1422,7 +1422,7 @@ try:
     api_response = api_instance.put_identityproviders_okta(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_okta: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_okta: %s\n" % e)
 ```
 
 ### Parameters
@@ -1474,7 +1474,7 @@ try:
     api_response = api_instance.put_identityproviders_onelogin(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_onelogin: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_onelogin: %s\n" % e)
 ```
 
 ### Parameters
@@ -1526,7 +1526,7 @@ try:
     api_response = api_instance.put_identityproviders_ping(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_ping: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_ping: %s\n" % e)
 ```
 
 ### Parameters
@@ -1578,7 +1578,7 @@ try:
     api_response = api_instance.put_identityproviders_purecloud(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_purecloud: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_purecloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -1630,7 +1630,7 @@ try:
     api_response = api_instance.put_identityproviders_pureengage(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_pureengage: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_pureengage: %s\n" % e)
 ```
 
 ### Parameters
@@ -1682,7 +1682,7 @@ try:
     api_response = api_instance.put_identityproviders_salesforce(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IdentityProviderApi->put_identityproviders_salesforce: %s\n" % e
+    print("Exception when calling IdentityProviderApi->put_identityproviders_salesforce: %s\n" % e)
 ```
 
 ### Parameters

@@ -201,7 +201,7 @@ class ReplaceResponse(object):
         """
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for upload_method -> " + upload_method
+            # print("Invalid value for upload_method -> " + upload_method)
             self._upload_method = "outdated_sdk_version"
         else:
             self._upload_method = upload_method

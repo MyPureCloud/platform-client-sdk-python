@@ -77,7 +77,7 @@ class ScimV2PatchOperation(object):
         """
         allowed_values = ["add", "replace", "remove"]
         if op.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for op -> " + op
+            # print("Invalid value for op -> " + op)
             self._op = "outdated_sdk_version"
         else:
             self._op = op

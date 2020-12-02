@@ -3634,13 +3634,14 @@ class RoutingApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_by: Sort by
+        :param str sort_order: Sort order
         :param str name: Name
         :return: WrapupCodeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -3665,6 +3666,8 @@ class RoutingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
         if 'name' in params:
             query_params['name'] = params['name']
 

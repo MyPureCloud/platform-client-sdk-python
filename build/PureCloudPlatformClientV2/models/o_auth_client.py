@@ -372,7 +372,7 @@ class OAuthClient(object):
         """
         allowed_values = ["CODE", "TOKEN", "SAML2BEARER", "PASSWORD", "CLIENT_CREDENTIALS"]
         if authorized_grant_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for authorized_grant_type -> " + authorized_grant_type
+            # print("Invalid value for authorized_grant_type -> " + authorized_grant_type)
             self._authorized_grant_type = "outdated_sdk_version"
         else:
             self._authorized_grant_type = authorized_grant_type
@@ -445,7 +445,7 @@ class OAuthClient(object):
         """
         allowed_values = ["active", "disabled", "inactive"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state

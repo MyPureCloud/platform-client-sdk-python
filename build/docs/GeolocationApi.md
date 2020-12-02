@@ -48,7 +48,7 @@ try:
     api_response = api_instance.get_geolocations_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeolocationApi->get_geolocations_settings: %s\n" % e
+    print("Exception when calling GeolocationApi->get_geolocations_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -96,7 +96,7 @@ try:
     api_response = api_instance.get_user_geolocation(user_id, client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeolocationApi->get_user_geolocation: %s\n" % e
+    print("Exception when calling GeolocationApi->get_user_geolocation: %s\n" % e)
 ```
 
 ### Parameters
@@ -148,7 +148,7 @@ try:
     api_response = api_instance.patch_geolocations_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeolocationApi->patch_geolocations_settings: %s\n" % e
+    print("Exception when calling GeolocationApi->patch_geolocations_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -200,7 +200,7 @@ try:
     api_response = api_instance.patch_user_geolocation(user_id, client_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GeolocationApi->patch_user_geolocation: %s\n" % e
+    print("Exception when calling GeolocationApi->patch_user_geolocation: %s\n" % e)
 ```
 
 ### Parameters

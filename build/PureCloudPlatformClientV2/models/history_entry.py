@@ -89,7 +89,7 @@ class HistoryEntry(object):
         """
         allowed_values = ["CHECKIN", "CHECKOUT", "CREATE", "DEACTIVATE", "DEBUG", "DELETE", "PUBLISH", "REVERT", "SAVE", "TRANSCODE", "UPDATE", "UPLOAD"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action

@@ -60,7 +60,7 @@ try:
     # Deletes a Greeting with the given GreetingId
     api_instance.delete_greeting(greeting_id)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->delete_greeting: %s\n" % e
+    print("Exception when calling GreetingsApi->delete_greeting: %s\n" % e)
 ```
 
 ### Parameters
@@ -110,7 +110,7 @@ try:
     api_response = api_instance.get_greeting(greeting_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_greeting: %s\n" % e
+    print("Exception when calling GreetingsApi->get_greeting: %s\n" % e)
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ try:
     api_response = api_instance.get_greeting_media(greeting_id, format_id=format_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_greeting_media: %s\n" % e
+    print("Exception when calling GreetingsApi->get_greeting_media: %s\n" % e)
 ```
 
 ### Parameters
@@ -213,7 +213,7 @@ try:
     api_response = api_instance.get_greetings(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->get_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -263,7 +263,7 @@ try:
     api_response = api_instance.get_greetings_defaults()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->get_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters
@@ -312,7 +312,7 @@ try:
     api_response = api_instance.get_group_greetings(group_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_group_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->get_group_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -364,7 +364,7 @@ try:
     api_response = api_instance.get_group_greetings_defaults(group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_group_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->get_group_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters
@@ -416,7 +416,7 @@ try:
     api_response = api_instance.get_user_greetings(user_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_user_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->get_user_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -468,7 +468,7 @@ try:
     api_response = api_instance.get_user_greetings_defaults(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->get_user_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->get_user_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters
@@ -518,7 +518,7 @@ try:
     api_response = api_instance.post_greetings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->post_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->post_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -569,7 +569,7 @@ try:
     api_response = api_instance.post_group_greetings(group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->post_group_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->post_group_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -621,7 +621,7 @@ try:
     api_response = api_instance.post_user_greetings(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->post_user_greetings: %s\n" % e
+    print("Exception when calling GreetingsApi->post_user_greetings: %s\n" % e)
 ```
 
 ### Parameters
@@ -673,7 +673,7 @@ try:
     api_response = api_instance.put_greeting(greeting_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->put_greeting: %s\n" % e
+    print("Exception when calling GreetingsApi->put_greeting: %s\n" % e)
 ```
 
 ### Parameters
@@ -724,7 +724,7 @@ try:
     api_response = api_instance.put_greetings_defaults(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->put_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->put_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters
@@ -775,7 +775,7 @@ try:
     api_response = api_instance.put_group_greetings_defaults(group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->put_group_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->put_group_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters
@@ -827,7 +827,7 @@ try:
     api_response = api_instance.put_user_greetings_defaults(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GreetingsApi->put_user_greetings_defaults: %s\n" % e
+    print("Exception when calling GreetingsApi->put_user_greetings_defaults: %s\n" % e)
 ```
 
 ### Parameters

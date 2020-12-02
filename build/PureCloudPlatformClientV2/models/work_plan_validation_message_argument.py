@@ -74,7 +74,7 @@ class WorkPlanValidationMessageArgument(object):
         """
         allowed_values = ["ActivityId", "ActivityId2", "ActivityPaidTimeMinutes", "ActivityStartTimeMinutes", "ActivityValidationId", "ActivityValidationId2", "ApplicableDays", "Count", "DailyPaidTimeMinutes", "MaximumDays", "MaxShiftCount", "Minutes", "PaidTimeGranularityMinutes", "RequiredDays", "ShiftId", "ShiftPaidTimeMinutes", "ShiftStartTimeMinutes", "ShiftStopTimeMinutes", "ShiftValidationId", "WeeklyPaidTimeMinutes", "Weeks", "WorkTimeMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

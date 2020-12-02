@@ -48,7 +48,7 @@ try:
     api_response = api_instance.post_analytics_flows_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FlowsApi->post_analytics_flows_aggregates_query: %s\n" % e
+    print("Exception when calling FlowsApi->post_analytics_flows_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +99,7 @@ try:
     api_response = api_instance.post_analytics_flows_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FlowsApi->post_analytics_flows_observations_query: %s\n" % e
+    print("Exception when calling FlowsApi->post_analytics_flows_observations_query: %s\n" % e)
 ```
 
 ### Parameters

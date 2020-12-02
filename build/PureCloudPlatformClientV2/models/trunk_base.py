@@ -300,7 +300,7 @@ class TrunkBase(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -419,7 +419,7 @@ class TrunkBase(object):
         """
         allowed_values = ["EXTERNAL", "PHONE", "EDGE"]
         if trunk_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for trunk_type -> " + trunk_type
+            # print("Invalid value for trunk_type -> " + trunk_type)
             self._trunk_type = "outdated_sdk_version"
         else:
             self._trunk_type = trunk_type

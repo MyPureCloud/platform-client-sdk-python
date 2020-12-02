@@ -199,7 +199,7 @@ class ShiftTradeSettings(object):
         """
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if unequal_paid.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for unequal_paid -> " + unequal_paid
+            # print("Invalid value for unequal_paid -> " + unequal_paid)
             self._unequal_paid = "outdated_sdk_version"
         else:
             self._unequal_paid = unequal_paid
@@ -226,7 +226,7 @@ class ShiftTradeSettings(object):
         """
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if one_sided.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for one_sided -> " + one_sided
+            # print("Invalid value for one_sided -> " + one_sided)
             self._one_sided = "outdated_sdk_version"
         else:
             self._one_sided = one_sided
@@ -253,7 +253,7 @@ class ShiftTradeSettings(object):
         """
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if weekly_min_paid_violations.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for weekly_min_paid_violations -> " + weekly_min_paid_violations
+            # print("Invalid value for weekly_min_paid_violations -> " + weekly_min_paid_violations)
             self._weekly_min_paid_violations = "outdated_sdk_version"
         else:
             self._weekly_min_paid_violations = weekly_min_paid_violations
@@ -280,7 +280,7 @@ class ShiftTradeSettings(object):
         """
         allowed_values = ["Allow", "Disallow", "AdminReview"]
         if weekly_max_paid_violations.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for weekly_max_paid_violations -> " + weekly_max_paid_violations
+            # print("Invalid value for weekly_max_paid_violations -> " + weekly_max_paid_violations)
             self._weekly_max_paid_violations = "outdated_sdk_version"
         else:
             self._weekly_max_paid_violations = weekly_max_paid_violations

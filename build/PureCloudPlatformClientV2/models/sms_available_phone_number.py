@@ -259,7 +259,7 @@ class SmsAvailablePhoneNumber(object):
         """
         allowed_values = ["local", "mobile", "tollfree", "shortcode"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for phone_number_type -> " + phone_number_type
+            # print("Invalid value for phone_number_type -> " + phone_number_type)
             self._phone_number_type = "outdated_sdk_version"
         else:
             self._phone_number_type = phone_number_type
@@ -286,7 +286,7 @@ class SmsAvailablePhoneNumber(object):
         """
         allowed_values = ["none", "any", "local", "foreign"]
         if address_requirement.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for address_requirement -> " + address_requirement
+            # print("Invalid value for address_requirement -> " + address_requirement)
             self._address_requirement = "outdated_sdk_version"
         else:
             self._address_requirement = address_requirement

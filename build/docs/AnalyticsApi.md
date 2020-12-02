@@ -87,7 +87,7 @@ try:
     # Delete/cancel an async request
     api_instance.delete_analytics_conversations_details_job(job_id)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->delete_analytics_conversations_details_job: %s\n" % e
+    print("Exception when calling AnalyticsApi->delete_analytics_conversations_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -136,7 +136,7 @@ try:
     # Delete a scheduled report job.
     api_instance.delete_analytics_reporting_schedule(schedule_id)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->delete_analytics_reporting_schedule: %s\n" % e
+    print("Exception when calling AnalyticsApi->delete_analytics_reporting_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -186,7 +186,7 @@ try:
     # Delete/cancel an async request
     api_instance.delete_analytics_users_details_job(job_id)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->delete_analytics_users_details_job: %s\n" % e
+    print("Exception when calling AnalyticsApi->delete_analytics_users_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -237,7 +237,7 @@ try:
     api_response = api_instance.get_analytics_conversation_details(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_conversation_details: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_conversation_details: %s\n" % e)
 ```
 
 ### Parameters
@@ -288,7 +288,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details(id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_conversations_details: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_details: %s\n" % e)
 ```
 
 ### Parameters
@@ -339,7 +339,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_job(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_conversations_details_job: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -392,7 +392,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_conversations_details_job_results: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_details_job_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -444,7 +444,7 @@ try:
     api_response = api_instance.get_analytics_conversations_details_jobs_availability()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_details_jobs_availability: %s\n" % e)
 ```
 
 ### Parameters
@@ -493,7 +493,7 @@ try:
     api_response = api_instance.get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_exports: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_exports: %s\n" % e)
 ```
 
 ### Parameters
@@ -544,7 +544,7 @@ try:
     api_response = api_instance.get_analytics_reporting_exports_metadata()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_exports_metadata: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_exports_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -594,7 +594,7 @@ try:
     api_response = api_instance.get_analytics_reporting_metadata(page_number=page_number, page_size=page_size, locale=locale)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_metadata: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -648,7 +648,7 @@ try:
     api_response = api_instance.get_analytics_reporting_report_id_metadata(report_id, locale=locale)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_report_id_metadata: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_report_id_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -698,7 +698,7 @@ try:
     api_response = api_instance.get_analytics_reporting_reportformats()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_reportformats: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_reportformats: %s\n" % e)
 ```
 
 ### Parameters
@@ -745,7 +745,7 @@ try:
     api_response = api_instance.get_analytics_reporting_schedule(schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -797,7 +797,7 @@ try:
     api_response = api_instance.get_analytics_reporting_schedule_history(schedule_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history: %s\n" % e)
 ```
 
 ### Parameters
@@ -849,7 +849,7 @@ try:
     api_response = api_instance.get_analytics_reporting_schedule_history_latest(schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_latest: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_latest: %s\n" % e)
 ```
 
 ### Parameters
@@ -900,7 +900,7 @@ try:
     api_response = api_instance.get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_run_id: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_run_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -952,7 +952,7 @@ try:
     api_response = api_instance.get_analytics_reporting_schedules(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_schedules: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -1002,7 +1002,7 @@ try:
     api_response = api_instance.get_analytics_reporting_timeperiods()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_reporting_timeperiods: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_timeperiods: %s\n" % e)
 ```
 
 ### Parameters
@@ -1050,7 +1050,7 @@ try:
     api_response = api_instance.get_analytics_users_details_job(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_users_details_job: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_users_details_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -1103,7 +1103,7 @@ try:
     api_response = api_instance.get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_users_details_job_results: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_users_details_job_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -1155,7 +1155,7 @@ try:
     api_response = api_instance.get_analytics_users_details_jobs_availability()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->get_analytics_users_details_jobs_availability: %s\n" % e
+    print("Exception when calling AnalyticsApi->get_analytics_users_details_jobs_availability: %s\n" % e)
 ```
 
 ### Parameters
@@ -1204,7 +1204,7 @@ try:
     api_response = api_instance.post_analytics_conversation_details_properties(conversation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_conversation_details_properties: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_conversation_details_properties: %s\n" % e)
 ```
 
 ### Parameters
@@ -1256,7 +1256,7 @@ try:
     api_response = api_instance.post_analytics_conversations_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_conversations_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1307,7 +1307,7 @@ try:
     api_response = api_instance.post_analytics_conversations_details_jobs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_conversations_details_jobs: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_details_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1358,7 +1358,7 @@ try:
     api_response = api_instance.post_analytics_conversations_details_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_conversations_details_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_details_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1409,7 +1409,7 @@ try:
     api_response = api_instance.post_analytics_conversations_transcripts_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_conversations_transcripts_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_transcripts_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1460,7 +1460,7 @@ try:
     api_response = api_instance.post_analytics_evaluations_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_evaluations_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_evaluations_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1511,7 +1511,7 @@ try:
     api_response = api_instance.post_analytics_flows_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_flows_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_flows_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1562,7 +1562,7 @@ try:
     api_response = api_instance.post_analytics_flows_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_flows_observations_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_flows_observations_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1613,7 +1613,7 @@ try:
     api_response = api_instance.post_analytics_journeys_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_journeys_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_journeys_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1664,7 +1664,7 @@ try:
     api_response = api_instance.post_analytics_queues_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_queues_observations_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_queues_observations_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1715,7 +1715,7 @@ try:
     api_response = api_instance.post_analytics_reporting_exports(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_reporting_exports: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_exports: %s\n" % e)
 ```
 
 ### Parameters
@@ -1765,7 +1765,7 @@ try:
     api_response = api_instance.post_analytics_reporting_schedule_runreport(schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_reporting_schedule_runreport: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_schedule_runreport: %s\n" % e)
 ```
 
 ### Parameters
@@ -1816,7 +1816,7 @@ try:
     api_response = api_instance.post_analytics_reporting_schedules(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_reporting_schedules: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -1867,7 +1867,7 @@ try:
     api_response = api_instance.post_analytics_surveys_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_surveys_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_surveys_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1918,7 +1918,7 @@ try:
     api_response = api_instance.post_analytics_transcripts_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_transcripts_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_transcripts_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -1969,7 +1969,7 @@ try:
     api_response = api_instance.post_analytics_users_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_users_aggregates_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_users_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -2020,7 +2020,7 @@ try:
     api_response = api_instance.post_analytics_users_details_jobs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_users_details_jobs: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_users_details_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -2071,7 +2071,7 @@ try:
     api_response = api_instance.post_analytics_users_details_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_users_details_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_users_details_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -2122,7 +2122,7 @@ try:
     api_response = api_instance.post_analytics_users_observations_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->post_analytics_users_observations_query: %s\n" % e
+    print("Exception when calling AnalyticsApi->post_analytics_users_observations_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -2174,7 +2174,7 @@ try:
     api_response = api_instance.put_analytics_reporting_schedule(schedule_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AnalyticsApi->put_analytics_reporting_schedule: %s\n" % e
+    print("Exception when calling AnalyticsApi->put_analytics_reporting_schedule: %s\n" % e)
 ```
 
 ### Parameters

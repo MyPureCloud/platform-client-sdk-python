@@ -71,7 +71,7 @@ class ConsultTransferUpdate(object):
         """
         allowed_values = ["DESTINATION", "OBJECT", "BOTH"]
         if speak_to.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for speak_to -> " + speak_to
+            # print("Invalid value for speak_to -> " + speak_to)
             self._speak_to = "outdated_sdk_version"
         else:
             self._speak_to = speak_to

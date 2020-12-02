@@ -175,7 +175,7 @@ class WfmHistoricalAdherenceResponse(object):
         """
         allowed_values = ["Processing", "Complete", "Error"]
         if query_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for query_state -> " + query_state
+            # print("Invalid value for query_state -> " + query_state)
             self._query_state = "outdated_sdk_version"
         else:
             self._query_state = query_state

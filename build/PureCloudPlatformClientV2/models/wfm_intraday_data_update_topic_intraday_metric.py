@@ -74,7 +74,7 @@ class WfmIntradayDataUpdateTopicIntradayMetric(object):
         """
         allowed_values = ["HistoricalQueueData", "HistoricalAgentData", "ForecastData", "ScheduleData", "PerformancePredictionAgentData", "PerformancePredictionQueueData"]
         if category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for category -> " + category
+            # print("Invalid value for category -> " + category)
             self._category = "outdated_sdk_version"
         else:
             self._category = category

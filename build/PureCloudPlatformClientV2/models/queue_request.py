@@ -442,7 +442,7 @@ class QueueRequest(object):
         """
         allowed_values = ["NONE", "BEST", "ALL"]
         if skill_evaluation_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for skill_evaluation_method -> " + skill_evaluation_method
+            # print("Invalid value for skill_evaluation_method -> " + skill_evaluation_method)
             self._skill_evaluation_method = "outdated_sdk_version"
         else:
             self._skill_evaluation_method = skill_evaluation_method

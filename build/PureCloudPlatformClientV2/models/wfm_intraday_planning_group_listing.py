@@ -97,7 +97,7 @@ class WfmIntradayPlanningGroupListing(object):
         """
         allowed_values = ["NoPublishedSchedule", "NoSourceForecast"]
         if no_data_reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for no_data_reason -> " + no_data_reason
+            # print("Invalid value for no_data_reason -> " + no_data_reason)
             self._no_data_reason = "outdated_sdk_version"
         else:
             self._no_data_reason = no_data_reason

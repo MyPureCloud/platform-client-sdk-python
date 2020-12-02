@@ -74,7 +74,7 @@ class AuditQueryFilter(object):
         """
         allowed_values = ["UserId", "TrusteeOrganizationId", "ClientId", "Action", "EntityType", "EntityId"]
         if pcProperty.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for pcProperty -> " + pcProperty
+            # print("Invalid value for pcProperty -> " + pcProperty)
             self._pcProperty = "outdated_sdk_version"
         else:
             self._pcProperty = pcProperty

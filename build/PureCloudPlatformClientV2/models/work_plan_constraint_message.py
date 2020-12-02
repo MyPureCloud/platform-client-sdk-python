@@ -74,7 +74,7 @@ class WorkPlanConstraintMessage(object):
         """
         allowed_values = ["ActivityEarliestStartTimeMinutesFromMidnight", "ActivityEarliestStartTimeMinutesFromShiftStart", "ActivityLatestStartTimeMinutesFromMidnight", "ActivityLatestStartTimeMinutesFromShiftStart", "ActivityMinimumLengthFromShiftEndMinutes", "ActivityMinimumLengthFromShiftStartMinutes", "ActivityStartTimeIncrementInMinutes", "PlanningPeriodMaximumDaysOff", "PlanningPeriodMaximumPaidTimeMinutes", "PlanningPeriodMinimumDaysOff", "PlanningPeriodMinimumPaidTimeMinutes", "ShiftDayOffRule", "ShiftEarliestStartTimeMinutesFromMidnight", "ShiftEarliestStopTimeMinutesFromMidnight", "ShiftLatestStartTimeMinutesFromMidnight", "ShiftLatestStopTimeMinutesFromMidnight", "ShiftMaximumContiguousTimeMinutes", "ShiftMaximumPaidTimeMinutes", "ShiftMinimumContiguousTimeMinutes", "ShiftMinimumPaidTimeMinutes", "ShiftStartTimeIncrementInMinutes", "ShiftStartVarianceMaximumVarianceMinutes", "ShiftStartVariancePaidDuration", "WorkPlanMaximumConsecutiveWorkingDays", "WorkPlanMaximumConsecutiveWorkingWeekends", "WorkPlanMaximumWeeklyPaidTimeMinutes", "WorkPlanMaximumWorkingDaysPerWeek", "WorkPlanMinimumConsecutiveNonWorkingTimePerWeekMinutes", "WorkPlanMinimumInterShiftTimeMinutes", "WorkPlanMinimumShiftStartDistanceMinutes", "WorkPlanMinimumWeeklyPaidTimeMinutes", "WorkPlanMinimumWorkingDaysPerWeek", "WorkPlanOptionalDays", "WorkPlanPaidTimeGranularityMinutes"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

@@ -80,7 +80,7 @@ try:
     # Delete a group
     api_instance.delete_scim_group(group_id, if_match=if_match)
 except ApiException as e:
-    print "Exception when calling SCIMApi->delete_scim_group: %s\n" % e
+    print("Exception when calling SCIMApi->delete_scim_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -133,7 +133,7 @@ try:
     api_response = api_instance.delete_scim_user(user_id, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->delete_scim_user: %s\n" % e
+    print("Exception when calling SCIMApi->delete_scim_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -185,7 +185,7 @@ try:
     # Delete a group
     api_instance.delete_scim_v2_group(group_id, if_match=if_match)
 except ApiException as e:
-    print "Exception when calling SCIMApi->delete_scim_v2_group: %s\n" % e
+    print("Exception when calling SCIMApi->delete_scim_v2_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,7 +238,7 @@ try:
     api_response = api_instance.delete_scim_v2_user(user_id, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->delete_scim_v2_user: %s\n" % e
+    print("Exception when calling SCIMApi->delete_scim_v2_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -293,7 +293,7 @@ try:
     api_response = api_instance.get_scim_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_group: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -351,7 +351,7 @@ try:
     api_response = api_instance.get_scim_groups(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_groups: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -405,7 +405,7 @@ try:
     api_response = api_instance.get_scim_resourcetype(resource_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_resourcetype: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_resourcetype: %s\n" % e)
 ```
 
 ### Parameters
@@ -454,7 +454,7 @@ try:
     api_response = api_instance.get_scim_resourcetypes()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_resourcetypes: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_resourcetypes: %s\n" % e)
 ```
 
 ### Parameters
@@ -501,7 +501,7 @@ try:
     api_response = api_instance.get_scim_schema(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_schema: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -551,7 +551,7 @@ try:
     api_response = api_instance.get_scim_schemas(filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_schemas: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -601,7 +601,7 @@ try:
     api_response = api_instance.get_scim_serviceproviderconfig(if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_serviceproviderconfig: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_serviceproviderconfig: %s\n" % e)
 ```
 
 ### Parameters
@@ -654,7 +654,7 @@ try:
     api_response = api_instance.get_scim_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_user: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -711,7 +711,7 @@ try:
     api_response = api_instance.get_scim_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_users: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -769,7 +769,7 @@ try:
     api_response = api_instance.get_scim_v2_group(group_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_group: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -827,7 +827,7 @@ try:
     api_response = api_instance.get_scim_v2_groups(filter, start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_groups: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -881,7 +881,7 @@ try:
     api_response = api_instance.get_scim_v2_resourcetype(resource_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_resourcetype: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_resourcetype: %s\n" % e)
 ```
 
 ### Parameters
@@ -930,7 +930,7 @@ try:
     api_response = api_instance.get_scim_v2_resourcetypes()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_resourcetypes: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_resourcetypes: %s\n" % e)
 ```
 
 ### Parameters
@@ -977,7 +977,7 @@ try:
     api_response = api_instance.get_scim_v2_schema(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_schema: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -1027,7 +1027,7 @@ try:
     api_response = api_instance.get_scim_v2_schemas(filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_schemas: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1077,7 +1077,7 @@ try:
     api_response = api_instance.get_scim_v2_serviceproviderconfig(if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_serviceproviderconfig: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_serviceproviderconfig: %s\n" % e)
 ```
 
 ### Parameters
@@ -1130,7 +1130,7 @@ try:
     api_response = api_instance.get_scim_v2_user(user_id, attributes=attributes, excluded_attributes=excluded_attributes, if_none_match=if_none_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_user: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -1187,7 +1187,7 @@ try:
     api_response = api_instance.get_scim_v2_users(start_index=start_index, count=count, attributes=attributes, excluded_attributes=excluded_attributes, filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->get_scim_v2_users: %s\n" % e
+    print("Exception when calling SCIMApi->get_scim_v2_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1244,7 +1244,7 @@ try:
     api_response = api_instance.patch_scim_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->patch_scim_group: %s\n" % e
+    print("Exception when calling SCIMApi->patch_scim_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -1304,7 +1304,7 @@ try:
     api_response = api_instance.patch_scim_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->patch_scim_user: %s\n" % e
+    print("Exception when calling SCIMApi->patch_scim_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -1359,7 +1359,7 @@ try:
     api_response = api_instance.patch_scim_v2_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->patch_scim_v2_group: %s\n" % e
+    print("Exception when calling SCIMApi->patch_scim_v2_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -1419,7 +1419,7 @@ try:
     api_response = api_instance.patch_scim_v2_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->patch_scim_v2_user: %s\n" % e
+    print("Exception when calling SCIMApi->patch_scim_v2_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -1472,7 +1472,7 @@ try:
     api_response = api_instance.post_scim_groups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->post_scim_groups: %s\n" % e
+    print("Exception when calling SCIMApi->post_scim_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1527,7 +1527,7 @@ try:
     api_response = api_instance.post_scim_users(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->post_scim_users: %s\n" % e
+    print("Exception when calling SCIMApi->post_scim_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1578,7 +1578,7 @@ try:
     api_response = api_instance.post_scim_v2_groups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->post_scim_v2_groups: %s\n" % e
+    print("Exception when calling SCIMApi->post_scim_v2_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1633,7 +1633,7 @@ try:
     api_response = api_instance.post_scim_v2_users(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->post_scim_v2_users: %s\n" % e
+    print("Exception when calling SCIMApi->post_scim_v2_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1686,7 +1686,7 @@ try:
     api_response = api_instance.put_scim_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->put_scim_group: %s\n" % e
+    print("Exception when calling SCIMApi->put_scim_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -1746,7 +1746,7 @@ try:
     api_response = api_instance.put_scim_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->put_scim_user: %s\n" % e
+    print("Exception when calling SCIMApi->put_scim_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -1801,7 +1801,7 @@ try:
     api_response = api_instance.put_scim_v2_group(group_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->put_scim_v2_group: %s\n" % e
+    print("Exception when calling SCIMApi->put_scim_v2_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -1861,7 +1861,7 @@ try:
     api_response = api_instance.put_scim_v2_user(user_id, body, if_match=if_match)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SCIMApi->put_scim_v2_user: %s\n" % e
+    print("Exception when calling SCIMApi->put_scim_v2_user: %s\n" % e)
 ```
 
 ### Parameters

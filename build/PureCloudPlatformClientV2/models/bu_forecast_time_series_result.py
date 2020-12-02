@@ -74,7 +74,7 @@ class BuForecastTimeSeriesResult(object):
         """
         allowed_values = ["Offered", "AverageHandleTimeSeconds"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -101,7 +101,7 @@ class BuForecastTimeSeriesResult(object):
         """
         allowed_values = ["AutoRegressiveIntegratedMovingAverage", "MovingAverage", "SingleExponentialSmoothing", "RandomWalk", "DecompositionUsingAdditiveSeasonality", "DecompositionUsingMultiplicativeSeasonality", "HoltWintersAdditiveSeasonality", "HoltWintersAdditiveSeasonalityWithDampedTrend", "HoltWintersMultiplicativeSeasonality", "HoltWintersMultiplicativeSeasonalityWithDampedTrend", "DampedLinearExponentialSmoothing", "DoubleExponentialSmoothing", "DoubleMovingAverage", "LinearExponentialSmoothing", "LinearWeightedMovingAverage", "PointEstimateUsingDampedLinearExponentialSmoothing", "PointEstimateUsingDoubleExponentialSmoothing", "PointEstimateUsingLatestWeek", "PointEstimateUsingLinearExponentialSmoothing", "PointEstimateUsingWeightedAverage", "CurveFit", "MultiLinearRegression", "DynamicHarmonicRegression", "Other"]
         if forecasting_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for forecasting_method -> " + forecasting_method
+            # print("Invalid value for forecasting_method -> " + forecasting_method)
             self._forecasting_method = "outdated_sdk_version"
         else:
             self._forecasting_method = forecasting_method

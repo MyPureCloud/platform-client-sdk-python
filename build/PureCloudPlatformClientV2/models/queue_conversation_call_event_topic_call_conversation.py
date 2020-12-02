@@ -178,7 +178,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         """
         allowed_values = ["none", "active", "paused"]
         if recording_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for recording_state -> " + recording_state
+            # print("Invalid value for recording_state -> " + recording_state)
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state

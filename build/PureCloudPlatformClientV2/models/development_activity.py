@@ -242,7 +242,7 @@ class DevelopmentActivity(object):
         """
         allowed_values = ["Informational", "Coaching"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -269,7 +269,7 @@ class DevelopmentActivity(object):
         """
         allowed_values = ["Planned", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

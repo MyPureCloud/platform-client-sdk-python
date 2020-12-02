@@ -55,7 +55,7 @@ try:
     # Delete Language (Deprecated)
     api_instance.delete_language(language_id)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->delete_language: %s\n" % e
+    print("Exception when calling LanguagesApi->delete_language: %s\n" % e)
 ```
 
 ### Parameters
@@ -105,7 +105,7 @@ try:
     # Delete Language
     api_instance.delete_routing_language(language_id)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->delete_routing_language: %s\n" % e
+    print("Exception when calling LanguagesApi->delete_routing_language: %s\n" % e)
 ```
 
 ### Parameters
@@ -156,7 +156,7 @@ try:
     api_response = api_instance.get_language(language_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_language: %s\n" % e
+    print("Exception when calling LanguagesApi->get_language: %s\n" % e)
 ```
 
 ### Parameters
@@ -210,7 +210,7 @@ try:
     api_response = api_instance.get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_languages: %s\n" % e
+    print("Exception when calling LanguagesApi->get_languages: %s\n" % e)
 ```
 
 ### Parameters
@@ -262,7 +262,7 @@ try:
     api_response = api_instance.get_languages_translations()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_languages_translations: %s\n" % e
+    print("Exception when calling LanguagesApi->get_languages_translations: %s\n" % e)
 ```
 
 ### Parameters
@@ -309,7 +309,7 @@ try:
     api_response = api_instance.get_languages_translations_builtin(language)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_languages_translations_builtin: %s\n" % e
+    print("Exception when calling LanguagesApi->get_languages_translations_builtin: %s\n" % e)
 ```
 
 ### Parameters
@@ -359,7 +359,7 @@ try:
     api_response = api_instance.get_languages_translations_organization(language)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_languages_translations_organization: %s\n" % e
+    print("Exception when calling LanguagesApi->get_languages_translations_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -409,7 +409,7 @@ try:
     api_response = api_instance.get_languages_translations_user(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_languages_translations_user: %s\n" % e
+    print("Exception when calling LanguagesApi->get_languages_translations_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -459,7 +459,7 @@ try:
     api_response = api_instance.get_routing_language(language_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->get_routing_language: %s\n" % e
+    print("Exception when calling LanguagesApi->get_routing_language: %s\n" % e)
 ```
 
 ### Parameters
@@ -510,7 +510,7 @@ try:
     api_response = api_instance.post_languages(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguagesApi->post_languages: %s\n" % e
+    print("Exception when calling LanguagesApi->post_languages: %s\n" % e)
 ```
 
 ### Parameters

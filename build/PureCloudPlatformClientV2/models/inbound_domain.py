@@ -135,7 +135,7 @@ class InboundDomain(object):
         """
         allowed_values = ["VALID", "INVALID", "NOT_AVAILABLE"]
         if mx_record_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for mx_record_status -> " + mx_record_status
+            # print("Invalid value for mx_record_status -> " + mx_record_status)
             self._mx_record_status = "outdated_sdk_version"
         else:
             self._mx_record_status = mx_record_status

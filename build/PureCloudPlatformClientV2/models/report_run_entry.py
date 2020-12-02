@@ -193,7 +193,7 @@ class ReportRunEntry(object):
         """
         allowed_values = ["RUNNING", "COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "FAILED_TIMEOUT", "FAILED_DATALIMIT", "UNABLE_TO_COMPLETE"]
         if run_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for run_status -> " + run_status
+            # print("Invalid value for run_status -> " + run_status)
             self._run_status = "outdated_sdk_version"
         else:
             self._run_status = run_status

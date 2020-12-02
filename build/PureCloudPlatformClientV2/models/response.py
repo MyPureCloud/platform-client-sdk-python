@@ -268,7 +268,7 @@ class Response(object):
         """
         allowed_values = ["chat", "email", "twitter"]
         if interaction_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for interaction_type -> " + interaction_type
+            # print("Invalid value for interaction_type -> " + interaction_type)
             self._interaction_type = "outdated_sdk_version"
         else:
             self._interaction_type = interaction_type
@@ -341,7 +341,7 @@ class Response(object):
         """
         allowed_values = ["MessagingTemplate", "CampaignSmsTemplate"]
         if response_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for response_type -> " + response_type
+            # print("Invalid value for response_type -> " + response_type)
             self._response_type = "outdated_sdk_version"
         else:
             self._response_type = response_type

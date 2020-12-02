@@ -74,7 +74,7 @@ class ModelingProcessingError(object):
         """
         allowed_values = ["ModelInputMissing", "ModelInputInvalid", "ModelFailed"]
         if internal_error_code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for internal_error_code -> " + internal_error_code
+            # print("Invalid value for internal_error_code -> " + internal_error_code)
             self._internal_error_code = "outdated_sdk_version"
         else:
             self._internal_error_code = internal_error_code

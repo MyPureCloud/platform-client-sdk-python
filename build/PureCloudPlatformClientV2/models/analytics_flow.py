@@ -179,7 +179,7 @@ class AnalyticsFlow(object):
         """
         allowed_values = ["BOT", "COMMONMODULE", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "WORKFLOW"]
         if flow_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for flow_type -> " + flow_type
+            # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"
         else:
             self._flow_type = flow_type
@@ -252,7 +252,7 @@ class AnalyticsFlow(object):
         """
         allowed_values = ["dnis", "direct", "flow", "agent", "outbound"]
         if entry_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for entry_type -> " + entry_type
+            # print("Invalid value for entry_type -> " + entry_type)
             self._entry_type = "outdated_sdk_version"
         else:
             self._entry_type = entry_type

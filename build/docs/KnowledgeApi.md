@@ -67,7 +67,7 @@ try:
     api_response = api_instance.delete_knowledge_knowledgebase(knowledge_base_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->delete_knowledge_knowledgebase: %s\n" % e
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase: %s\n" % e)
 ```
 
 ### Parameters
@@ -120,7 +120,7 @@ try:
     api_response = api_instance.delete_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_language_category: %s\n" % e
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_language_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -175,7 +175,7 @@ try:
     api_response = api_instance.delete_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_language_document: %s\n" % e
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_language_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -228,7 +228,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase(knowledge_base_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase: %s\n" % e)
 ```
 
 ### Parameters
@@ -245,7 +245,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_language_categories"></a>
 
-## [**CategoryListing**](CategoryListing.html) get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size)
+## [**CategoryListing**](CategoryListing.html) get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, name=name)
 
 
 
@@ -278,13 +278,14 @@ before = 'before_example' # str | The cursor that points to the start of the set
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 limit = 'limit_example' # str | Number of entities to return. Maximum of 200. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+name = 'name_example' # str | Filter to return the categories that starts with the given category name. (optional)
 
 try:
     # Get categories
-    api_response = api_instance.get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size)
+    api_response = api_instance.get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_categories: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_categories: %s\n" % e)
 ```
 
 ### Parameters
@@ -298,6 +299,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **name** | **str**| Filter to return the categories that starts with the given category name. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -342,7 +344,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_category: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -397,7 +399,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_document: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -457,7 +459,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_documents: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -517,7 +519,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase_language_training(knowledge_base_id, language_code, training_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_training: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_training: %s\n" % e)
 ```
 
 ### Parameters
@@ -576,7 +578,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_trainings: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_trainings: %s\n" % e)
 ```
 
 ### Parameters
@@ -637,7 +639,7 @@ try:
     api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\n" % e
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\n" % e)
 ```
 
 ### Parameters
@@ -693,7 +695,7 @@ try:
     api_response = api_instance.patch_knowledge_knowledgebase(knowledge_base_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->patch_knowledge_knowledgebase: %s\n" % e
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase: %s\n" % e)
 ```
 
 ### Parameters
@@ -748,7 +750,7 @@ try:
     api_response = api_instance.patch_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_category: %s\n" % e
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -805,7 +807,7 @@ try:
     api_response = api_instance.patch_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_document: %s\n" % e
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -861,7 +863,7 @@ try:
     api_response = api_instance.patch_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_documents: %s\n" % e
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_language_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -916,7 +918,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_categories: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_categories: %s\n" % e)
 ```
 
 ### Parameters
@@ -971,7 +973,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_documents: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1026,7 +1028,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_language_training_promote(knowledge_base_id, language_code, training_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_training_promote: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_training_promote: %s\n" % e)
 ```
 
 ### Parameters
@@ -1080,7 +1082,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_trainings: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_trainings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1133,7 +1135,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebase_search: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -1185,7 +1187,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebases(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling KnowledgeApi->post_knowledge_knowledgebases: %s\n" % e
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebases: %s\n" % e)
 ```
 
 ### Parameters

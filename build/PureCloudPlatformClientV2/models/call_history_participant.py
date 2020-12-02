@@ -263,7 +263,7 @@ class CallHistoryParticipant(object):
         """
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
@@ -405,7 +405,7 @@ class CallHistoryParticipant(object):
         """
         allowed_values = ["endpoint", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disconnect_type -> " + disconnect_type
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
         else:
             self._disconnect_type = disconnect_type
@@ -524,7 +524,7 @@ class CallHistoryParticipant(object):
         """
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for flagged_reason -> " + flagged_reason
+            # print("Invalid value for flagged_reason -> " + flagged_reason)
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason

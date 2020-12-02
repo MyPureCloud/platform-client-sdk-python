@@ -233,7 +233,7 @@ class CallForwarding(object):
         """
         allowed_values = ["PURECLOUD", "LASTCALL", "NONE"]
         if voicemail.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for voicemail -> " + voicemail
+            # print("Invalid value for voicemail -> " + voicemail)
             self._voicemail = "outdated_sdk_version"
         else:
             self._voicemail = voicemail

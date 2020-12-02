@@ -83,7 +83,7 @@ class ConversationAggregateQueryPredicate(object):
         """
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -110,7 +110,7 @@ class ConversationAggregateQueryPredicate(object):
         """
         allowed_values = ["addressFrom", "addressTo", "agentAssistantId", "agentRank", "agentScore", "ani", "assignerId", "conversationId", "convertedFrom", "convertedTo", "direction", "disconnectType", "divisionId", "dnis", "edgeId", "externalContactId", "externalMediaCount", "externalOrganizationId", "firstQueue", "flaggedReason", "flowInType", "flowOutType", "groupId", "interactionType", "journeyActionId", "journeyActionMapId", "journeyActionMapVersion", "journeyCustomerId", "journeyCustomerIdType", "journeyCustomerSessionId", "journeyCustomerSessionIdType", "mediaCount", "mediaType", "messageType", "originatingDirection", "outboundCampaignId", "outboundContactId", "outboundContactListId", "participantName", "peerId", "proposedAgentId", "provider", "purpose", "queueId", "remote", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "roomId", "routingPriority", "scoredAgentId", "selectedAgentId", "selectedAgentRank", "sessionDnis", "sessionId", "stationId", "teamId", "usedRouting", "userId", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -137,7 +137,7 @@ class ConversationAggregateQueryPredicate(object):
         """
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

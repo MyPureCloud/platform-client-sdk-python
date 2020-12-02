@@ -300,7 +300,7 @@ class DID(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -442,7 +442,7 @@ class DID(object):
         """
         allowed_values = ["USER", "PHONE", "IVR_CONFIG", "GROUP"]
         if owner_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for owner_type -> " + owner_type
+            # print("Invalid value for owner_type -> " + owner_type)
             self._owner_type = "outdated_sdk_version"
         else:
             self._owner_type = owner_type

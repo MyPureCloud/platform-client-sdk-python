@@ -74,7 +74,7 @@ class VoicemailRetentionPolicy(object):
         """
         allowed_values = ["RETAIN_INDEFINITELY", "RETAIN_WITH_TTL", "IMMEDIATE_DELETE"]
         if voicemail_retention_policy_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for voicemail_retention_policy_type -> " + voicemail_retention_policy_type
+            # print("Invalid value for voicemail_retention_policy_type -> " + voicemail_retention_policy_type)
             self._voicemail_retention_policy_type = "outdated_sdk_version"
         else:
             self._voicemail_retention_policy_type = voicemail_retention_policy_type

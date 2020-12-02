@@ -437,7 +437,7 @@ class Document(object):
         """
         allowed_values = ["DOCUMENT", "FAX", "RECORDING"]
         if system_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for system_type -> " + system_type
+            # print("Invalid value for system_type -> " + system_type)
             self._system_type = "outdated_sdk_version"
         else:
             self._system_type = system_type
@@ -717,7 +717,7 @@ class Document(object):
         """
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for upload_method -> " + upload_method
+            # print("Invalid value for upload_method -> " + upload_method)
             self._upload_method = "outdated_sdk_version"
         else:
             self._upload_method = upload_method
@@ -790,7 +790,7 @@ class Document(object):
         """
         allowed_values = ["NONE", "LIMITED", "PUBLIC"]
         if sharing_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for sharing_status -> " + sharing_status
+            # print("Invalid value for sharing_status -> " + sharing_status)
             self._sharing_status = "outdated_sdk_version"
         else:
             self._sharing_status = sharing_status

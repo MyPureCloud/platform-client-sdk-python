@@ -109,7 +109,7 @@ class DialerRulesetConfigChangeDataActionConditionPredicate(object):
         """
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER"]
         if output_operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for output_operator -> " + output_operator
+            # print("Invalid value for output_operator -> " + output_operator)
             self._output_operator = "outdated_sdk_version"
         else:
             self._output_operator = output_operator

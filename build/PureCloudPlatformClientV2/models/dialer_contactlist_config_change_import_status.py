@@ -86,7 +86,7 @@ class DialerContactlistConfigChangeImportStatus(object):
         """
         allowed_values = ["IN_PROGRESS", "FAILED"]
         if import_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for import_state -> " + import_state
+            # print("Invalid value for import_state -> " + import_state)
             self._import_state = "outdated_sdk_version"
         else:
             self._import_state = import_state

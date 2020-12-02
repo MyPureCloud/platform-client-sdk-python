@@ -51,7 +51,7 @@ try:
     # Remove all subscriptions
     api_instance.delete_notifications_channel_subscriptions(channel_id)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->delete_notifications_channel_subscriptions: %s\n" % e
+    print("Exception when calling NotificationsApi->delete_notifications_channel_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
@@ -101,7 +101,7 @@ try:
     api_response = api_instance.get_notifications_availabletopics(expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->get_notifications_availabletopics: %s\n" % e
+    print("Exception when calling NotificationsApi->get_notifications_availabletopics: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,7 +151,7 @@ try:
     api_response = api_instance.get_notifications_channel_subscriptions(channel_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->get_notifications_channel_subscriptions: %s\n" % e
+    print("Exception when calling NotificationsApi->get_notifications_channel_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
@@ -201,7 +201,7 @@ try:
     api_response = api_instance.get_notifications_channels(includechannels=includechannels)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->get_notifications_channels: %s\n" % e
+    print("Exception when calling NotificationsApi->get_notifications_channels: %s\n" % e)
 ```
 
 ### Parameters
@@ -252,7 +252,7 @@ try:
     api_response = api_instance.post_notifications_channel_subscriptions(channel_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->post_notifications_channel_subscriptions: %s\n" % e
+    print("Exception when calling NotificationsApi->post_notifications_channel_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
@@ -302,7 +302,7 @@ try:
     api_response = api_instance.post_notifications_channels()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->post_notifications_channels: %s\n" % e
+    print("Exception when calling NotificationsApi->post_notifications_channels: %s\n" % e)
 ```
 
 ### Parameters
@@ -350,7 +350,7 @@ try:
     api_response = api_instance.put_notifications_channel_subscriptions(channel_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling NotificationsApi->put_notifications_channel_subscriptions: %s\n" % e
+    print("Exception when calling NotificationsApi->put_notifications_channel_subscriptions: %s\n" % e)
 ```
 
 ### Parameters

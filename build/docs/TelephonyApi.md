@@ -54,7 +54,7 @@ try:
     api_response = api_instance.get_telephony_siptraces(date_start, date_end, call_id=call_id, to_user=to_user, from_user=from_user, conversation_id=conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyApi->get_telephony_siptraces: %s\n" % e
+    print("Exception when calling TelephonyApi->get_telephony_siptraces: %s\n" % e)
 ```
 
 ### Parameters
@@ -110,7 +110,7 @@ try:
     api_response = api_instance.get_telephony_siptraces_download_download_id(download_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyApi->get_telephony_siptraces_download_download_id: %s\n" % e
+    print("Exception when calling TelephonyApi->get_telephony_siptraces_download_download_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ try:
     api_response = api_instance.post_telephony_siptraces_download(sip_search_public_request)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TelephonyApi->post_telephony_siptraces_download: %s\n" % e
+    print("Exception when calling TelephonyApi->post_telephony_siptraces_download: %s\n" % e)
 ```
 
 ### Parameters

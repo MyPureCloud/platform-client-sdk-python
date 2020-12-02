@@ -80,7 +80,7 @@ class DialerAction(object):
         """
         allowed_values = ["Action", "modifyContactAttribute"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -107,7 +107,7 @@ class DialerAction(object):
         """
         allowed_values = ["DO_NOT_DIAL", "MODIFY_CONTACT_ATTRIBUTE", "SWITCH_TO_PREVIEW", "APPEND_NUMBER_TO_DNC_LIST", "SCHEDULE_CALLBACK", "CONTACT_UNCALLABLE", "NUMBER_UNCALLABLE", "SET_CALLER_ID", "SET_SKILLS"]
         if action_type_name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_type_name -> " + action_type_name
+            # print("Invalid value for action_type_name -> " + action_type_name)
             self._action_type_name = "outdated_sdk_version"
         else:
             self._action_type_name = action_type_name
@@ -134,7 +134,7 @@ class DialerAction(object):
         """
         allowed_values = ["SET", "INCREMENT", "DECREMENT", "CURRENT_TIME"]
         if update_option.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for update_option -> " + update_option
+            # print("Invalid value for update_option -> " + update_option)
             self._update_option = "outdated_sdk_version"
         else:
             self._update_option = update_option

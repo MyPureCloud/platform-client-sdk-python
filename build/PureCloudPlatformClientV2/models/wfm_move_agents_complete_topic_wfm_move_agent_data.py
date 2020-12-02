@@ -97,7 +97,7 @@ class WfmMoveAgentsCompleteTopicWfmMoveAgentData(object):
         """
         allowed_values = ["AlreadyMoved", "DestinationBusinessUnitAgentLimitExceeded", "DestinationManagementUnitAgentLimitExceeded", "DestinationManagementUnitDoesNotExist", "MoveSuccessful", "MovingToDifferentManagementUnit", "NothingToDo", "SourceManagementUnitNotAuthorized"]
         if result.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for result -> " + result
+            # print("Invalid value for result -> " + result)
             self._result = "outdated_sdk_version"
         else:
             self._result = result

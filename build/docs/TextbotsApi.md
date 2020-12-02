@@ -47,7 +47,7 @@ try:
     api_response = api_instance.post_textbots_bots_execute(post_text_request)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TextbotsApi->post_textbots_bots_execute: %s\n" % e
+    print("Exception when calling TextbotsApi->post_textbots_bots_execute: %s\n" % e)
 ```
 
 ### Parameters

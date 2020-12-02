@@ -83,7 +83,7 @@ class WebChatRoutingTarget(object):
         """
         allowed_values = ["QUEUE"]
         if target_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for target_type -> " + target_type
+            # print("Invalid value for target_type -> " + target_type)
             self._target_type = "outdated_sdk_version"
         else:
             self._target_type = target_type

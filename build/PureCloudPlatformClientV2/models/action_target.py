@@ -47,6 +47,7 @@ class ActionTarget(object):
             'state': 'str',
             'description': 'str',
             'service_level': 'ServiceLevel',
+            'short_abandon_threshold': 'int',
             'self_uri': 'str',
             'created_date': 'datetime',
             'modified_date': 'datetime'
@@ -60,6 +61,7 @@ class ActionTarget(object):
             'state': 'state',
             'description': 'description',
             'service_level': 'serviceLevel',
+            'short_abandon_threshold': 'shortAbandonThreshold',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate'
@@ -72,6 +74,7 @@ class ActionTarget(object):
         self._state = None
         self._description = None
         self._service_level = None
+        self._short_abandon_threshold = None
         self._self_uri = None
         self._created_date = None
         self._modified_date = None
@@ -190,7 +193,7 @@ class ActionTarget(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -240,6 +243,29 @@ class ActionTarget(object):
         """
         
         self._service_level = service_level
+
+    @property
+    def short_abandon_threshold(self):
+        """
+        Gets the short_abandon_threshold of this ActionTarget.
+        Indicates the non-default short abandon threshold
+
+        :return: The short_abandon_threshold of this ActionTarget.
+        :rtype: int
+        """
+        return self._short_abandon_threshold
+
+    @short_abandon_threshold.setter
+    def short_abandon_threshold(self, short_abandon_threshold):
+        """
+        Sets the short_abandon_threshold of this ActionTarget.
+        Indicates the non-default short abandon threshold
+
+        :param short_abandon_threshold: The short_abandon_threshold of this ActionTarget.
+        :type: int
+        """
+        
+        self._short_abandon_threshold = short_abandon_threshold
 
     @property
     def self_uri(self):

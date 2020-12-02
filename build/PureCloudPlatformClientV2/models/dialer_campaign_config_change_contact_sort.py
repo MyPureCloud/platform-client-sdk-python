@@ -103,7 +103,7 @@ class DialerCampaignConfigChangeContactSort(object):
         """
         allowed_values = ["ASC", "DESC"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction

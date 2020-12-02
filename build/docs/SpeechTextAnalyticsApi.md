@@ -48,7 +48,7 @@ try:
     api_response = api_instance.get_speechandtextanalytics_conversation(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation: %s\n" % e
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation: %s\n" % e)
 ```
 
 ### Parameters
@@ -100,7 +100,7 @@ try:
     api_response = api_instance.get_speechandtextanalytics_conversation_communication_transcripturl(conversation_id, communication_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_communication_transcripturl: %s\n" % e
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_communication_transcripturl: %s\n" % e)
 ```
 
 ### Parameters

@@ -74,7 +74,7 @@ class AuditQueryEntity(object):
         """
         allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site"]
         if name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for name -> " + name
+            # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"
         else:
             self._name = name

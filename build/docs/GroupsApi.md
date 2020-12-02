@@ -59,7 +59,7 @@ try:
     # Delete group
     api_instance.delete_group(group_id)
 except ApiException as e:
-    print "Exception when calling GroupsApi->delete_group: %s\n" % e
+    print("Exception when calling GroupsApi->delete_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -110,7 +110,7 @@ try:
     api_response = api_instance.delete_group_members(group_id, ids)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->delete_group_members: %s\n" % e
+    print("Exception when calling GroupsApi->delete_group_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ try:
     api_response = api_instance.get_fieldconfig(type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_fieldconfig: %s\n" % e
+    print("Exception when calling GroupsApi->get_fieldconfig: %s\n" % e)
 ```
 
 ### Parameters
@@ -211,7 +211,7 @@ try:
     api_response = api_instance.get_group(group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_group: %s\n" % e
+    print("Exception when calling GroupsApi->get_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -261,7 +261,7 @@ try:
     api_response = api_instance.get_group_individuals(group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_group_individuals: %s\n" % e
+    print("Exception when calling GroupsApi->get_group_individuals: %s\n" % e)
 ```
 
 ### Parameters
@@ -315,7 +315,7 @@ try:
     api_response = api_instance.get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_group_members: %s\n" % e
+    print("Exception when calling GroupsApi->get_group_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -370,7 +370,7 @@ try:
     api_response = api_instance.get_group_profile(group_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_group_profile: %s\n" % e
+    print("Exception when calling GroupsApi->get_group_profile: %s\n" % e)
 ```
 
 ### Parameters
@@ -425,7 +425,7 @@ try:
     api_response = api_instance.get_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_groups: %s\n" % e
+    print("Exception when calling GroupsApi->get_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -480,7 +480,7 @@ try:
     api_response = api_instance.get_groups_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_groups_search: %s\n" % e
+    print("Exception when calling GroupsApi->get_groups_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -534,7 +534,7 @@ try:
     api_response = api_instance.get_profiles_groups(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->get_profiles_groups: %s\n" % e
+    print("Exception when calling GroupsApi->get_profiles_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -588,7 +588,7 @@ try:
     api_response = api_instance.post_group_members(group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->post_group_members: %s\n" % e
+    print("Exception when calling GroupsApi->post_group_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -640,7 +640,7 @@ try:
     api_response = api_instance.post_groups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->post_groups: %s\n" % e
+    print("Exception when calling GroupsApi->post_groups: %s\n" % e)
 ```
 
 ### Parameters
@@ -690,7 +690,7 @@ try:
     api_response = api_instance.post_groups_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->post_groups_search: %s\n" % e
+    print("Exception when calling GroupsApi->post_groups_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -742,7 +742,7 @@ try:
     api_response = api_instance.put_group(group_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling GroupsApi->put_group: %s\n" % e
+    print("Exception when calling GroupsApi->put_group: %s\n" % e)
 ```
 
 ### Parameters

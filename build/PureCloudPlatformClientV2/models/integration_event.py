@@ -193,7 +193,7 @@ class IntegrationEvent(object):
         """
         allowed_values = ["INFO", "WARN", "ERROR", "CRITICAL"]
         if level.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for level -> " + level
+            # print("Invalid value for level -> " + level)
             self._level = "outdated_sdk_version"
         else:
             self._level = level

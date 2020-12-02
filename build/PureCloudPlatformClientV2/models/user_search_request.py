@@ -95,7 +95,7 @@ class UserSearchRequest(object):
         """
         allowed_values = ["ASC", "DESC", "SCORE"]
         if sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for sort_order -> " + sort_order
+            # print("Invalid value for sort_order -> " + sort_order)
             self._sort_order = "outdated_sdk_version"
         else:
             self._sort_order = sort_order
@@ -258,9 +258,9 @@ class UserSearchRequest(object):
         :param integration_presence_source: The integration_presence_source of this UserSearchRequest.
         :type: str
         """
-        allowed_values = ["MicrosoftTeams", "ZoomPhone"]
+        allowed_values = ["MicrosoftTeams", "ZoomPhone", "RingCentral"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for integration_presence_source -> " + integration_presence_source
+            # print("Invalid value for integration_presence_source -> " + integration_presence_source)
             self._integration_presence_source = "outdated_sdk_version"
         else:
             self._integration_presence_source = integration_presence_source

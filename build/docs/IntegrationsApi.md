@@ -98,7 +98,7 @@ try:
     api_response = api_instance.delete_integration(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->delete_integration: %s\n" % e
+    print("Exception when calling IntegrationsApi->delete_integration: %s\n" % e)
 ```
 
 ### Parameters
@@ -148,7 +148,7 @@ try:
     # Delete an Action
     api_instance.delete_integrations_action(action_id)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->delete_integrations_action: %s\n" % e
+    print("Exception when calling IntegrationsApi->delete_integrations_action: %s\n" % e)
 ```
 
 ### Parameters
@@ -198,7 +198,7 @@ try:
     # Delete a Draft
     api_instance.delete_integrations_action_draft(action_id)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->delete_integrations_action_draft: %s\n" % e
+    print("Exception when calling IntegrationsApi->delete_integrations_action_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -247,7 +247,7 @@ try:
     # Delete a set of credentials
     api_instance.delete_integrations_credential(credential_id)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->delete_integrations_credential: %s\n" % e
+    print("Exception when calling IntegrationsApi->delete_integrations_credential: %s\n" % e)
 ```
 
 ### Parameters
@@ -303,7 +303,7 @@ try:
     api_response = api_instance.get_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integration: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integration: %s\n" % e)
 ```
 
 ### Parameters
@@ -359,7 +359,7 @@ try:
     api_response = api_instance.get_integration_config_current(integration_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integration_config_current: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integration_config_current: %s\n" % e)
 ```
 
 ### Parameters
@@ -414,7 +414,7 @@ try:
     api_response = api_instance.get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations: %s\n" % e)
 ```
 
 ### Parameters
@@ -473,7 +473,7 @@ try:
     api_response = api_instance.get_integrations_action(action_id, expand=expand, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action: %s\n" % e)
 ```
 
 ### Parameters
@@ -529,7 +529,7 @@ try:
     api_response = api_instance.get_integrations_action_draft(action_id, expand=expand, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_draft: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -584,7 +584,7 @@ try:
     api_response = api_instance.get_integrations_action_draft_schema(action_id, file_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_draft_schema: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_draft_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -638,7 +638,7 @@ try:
     api_response = api_instance.get_integrations_action_draft_template(action_id, file_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_draft_template: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_draft_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -690,7 +690,7 @@ try:
     api_response = api_instance.get_integrations_action_draft_validation(action_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_draft_validation: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_draft_validation: %s\n" % e)
 ```
 
 ### Parameters
@@ -743,7 +743,7 @@ try:
     api_response = api_instance.get_integrations_action_schema(action_id, file_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_schema: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -797,7 +797,7 @@ try:
     api_response = api_instance.get_integrations_action_template(action_id, file_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_action_template: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_action_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -859,7 +859,7 @@ try:
     api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e)
 ```
 
 ### Parameters
@@ -926,7 +926,7 @@ try:
     api_response = api_instance.get_integrations_actions_categories(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, secure=secure)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_actions_categories: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_actions_categories: %s\n" % e)
 ```
 
 ### Parameters
@@ -993,7 +993,7 @@ try:
     api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, secure=secure, include_auth_actions=include_auth_actions)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1057,7 +1057,7 @@ try:
     api_response = api_instance.get_integrations_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_clientapps: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_clientapps: %s\n" % e)
 ```
 
 ### Parameters
@@ -1112,7 +1112,7 @@ try:
     api_response = api_instance.get_integrations_credential(credential_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_credential: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_credential: %s\n" % e)
 ```
 
 ### Parameters
@@ -1163,7 +1163,7 @@ try:
     api_response = api_instance.get_integrations_credentials(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_credentials: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_credentials: %s\n" % e)
 ```
 
 ### Parameters
@@ -1213,7 +1213,7 @@ try:
     api_response = api_instance.get_integrations_credentials_types()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_credentials_types: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_credentials_types: %s\n" % e)
 ```
 
 ### Parameters
@@ -1266,7 +1266,7 @@ try:
     api_response = api_instance.get_integrations_eventlog(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, entity_id=entity_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_eventlog: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_eventlog: %s\n" % e)
 ```
 
 ### Parameters
@@ -1322,7 +1322,7 @@ try:
     api_response = api_instance.get_integrations_eventlog_event_id(event_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_eventlog_event_id: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_eventlog_event_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1373,7 +1373,7 @@ try:
     api_response = api_instance.get_integrations_speech_dialogflow_agent(agent_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agent: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -1426,7 +1426,7 @@ try:
     api_response = api_instance.get_integrations_speech_dialogflow_agents(page_number=page_number, page_size=page_size, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agents: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1479,7 +1479,7 @@ try:
     api_response = api_instance.get_integrations_speech_lex_bot_alias(alias_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_alias: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_alias: %s\n" % e)
 ```
 
 ### Parameters
@@ -1534,7 +1534,7 @@ try:
     api_response = api_instance.get_integrations_speech_lex_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_bot_id_aliases: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lex_bot_bot_id_aliases: %s\n" % e)
 ```
 
 ### Parameters
@@ -1591,7 +1591,7 @@ try:
     api_response = api_instance.get_integrations_speech_lex_bots(page_number=page_number, page_size=page_size, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_lex_bots: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lex_bots: %s\n" % e)
 ```
 
 ### Parameters
@@ -1645,7 +1645,7 @@ try:
     api_response = api_instance.get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_engine: %s\n" % e)
 ```
 
 ### Parameters
@@ -1698,7 +1698,7 @@ try:
     api_response = api_instance.get_integrations_speech_tts_engine_voice(engine_id, voice_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voice: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voice: %s\n" % e)
 ```
 
 ### Parameters
@@ -1752,7 +1752,7 @@ try:
     api_response = api_instance.get_integrations_speech_tts_engine_voices(engine_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voices: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_engine_voices: %s\n" % e)
 ```
 
 ### Parameters
@@ -1809,7 +1809,7 @@ try:
     api_response = api_instance.get_integrations_speech_tts_engines(page_number=page_number, page_size=page_size, include_voices=include_voices, name=name, language=language)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_engines: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_engines: %s\n" % e)
 ```
 
 ### Parameters
@@ -1863,7 +1863,7 @@ try:
     api_response = api_instance.get_integrations_speech_tts_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_speech_tts_settings: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1910,7 +1910,7 @@ try:
     api_response = api_instance.get_integrations_type(type_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_type: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -1961,7 +1961,7 @@ try:
     api_response = api_instance.get_integrations_type_configschema(type_id, config_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_type_configschema: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_type_configschema: %s\n" % e)
 ```
 
 ### Parameters
@@ -2017,7 +2017,7 @@ try:
     api_response = api_instance.get_integrations_types(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_types: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_types: %s\n" % e)
 ```
 
 ### Parameters
@@ -2078,7 +2078,7 @@ try:
     api_response = api_instance.get_integrations_userapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, app_host=app_host)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->get_integrations_userapps: %s\n" % e
+    print("Exception when calling IntegrationsApi->get_integrations_userapps: %s\n" % e)
 ```
 
 ### Parameters
@@ -2141,7 +2141,7 @@ try:
     api_response = api_instance.patch_integration(integration_id, body=body, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->patch_integration: %s\n" % e
+    print("Exception when calling IntegrationsApi->patch_integration: %s\n" % e)
 ```
 
 ### Parameters
@@ -2200,7 +2200,7 @@ try:
     api_response = api_instance.patch_integrations_action(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->patch_integrations_action: %s\n" % e
+    print("Exception when calling IntegrationsApi->patch_integrations_action: %s\n" % e)
 ```
 
 ### Parameters
@@ -2253,7 +2253,7 @@ try:
     api_response = api_instance.patch_integrations_action_draft(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->patch_integrations_action_draft: %s\n" % e
+    print("Exception when calling IntegrationsApi->patch_integrations_action_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -2304,7 +2304,7 @@ try:
     api_response = api_instance.post_integrations(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations: %s\n" % e)
 ```
 
 ### Parameters
@@ -2355,7 +2355,7 @@ try:
     api_response = api_instance.post_integrations_action_draft(action_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_action_draft: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_action_draft: %s\n" % e)
 ```
 
 ### Parameters
@@ -2407,7 +2407,7 @@ try:
     api_response = api_instance.post_integrations_action_draft_publish(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_action_draft_publish: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_action_draft_publish: %s\n" % e)
 ```
 
 ### Parameters
@@ -2460,7 +2460,7 @@ try:
     api_response = api_instance.post_integrations_action_draft_test(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_action_draft_test: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_action_draft_test: %s\n" % e)
 ```
 
 ### Parameters
@@ -2514,7 +2514,7 @@ try:
     api_response = api_instance.post_integrations_action_execute(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_action_execute: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_action_execute: %s\n" % e)
 ```
 
 ### Parameters
@@ -2568,7 +2568,7 @@ try:
     api_response = api_instance.post_integrations_action_test(action_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_action_test: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_action_test: %s\n" % e)
 ```
 
 ### Parameters
@@ -2620,7 +2620,7 @@ try:
     api_response = api_instance.post_integrations_actions(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_actions: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_actions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2671,7 +2671,7 @@ try:
     api_response = api_instance.post_integrations_actions_drafts(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_actions_drafts: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_actions_drafts: %s\n" % e)
 ```
 
 ### Parameters
@@ -2721,7 +2721,7 @@ try:
     api_response = api_instance.post_integrations_credentials(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_credentials: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_credentials: %s\n" % e)
 ```
 
 ### Parameters
@@ -2771,7 +2771,7 @@ try:
     api_response = api_instance.post_integrations_workforcemanagement_vendorconnection(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->post_integrations_workforcemanagement_vendorconnection: %s\n" % e
+    print("Exception when calling IntegrationsApi->post_integrations_workforcemanagement_vendorconnection: %s\n" % e)
 ```
 
 ### Parameters
@@ -2822,7 +2822,7 @@ try:
     api_response = api_instance.put_integration_config_current(integration_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->put_integration_config_current: %s\n" % e
+    print("Exception when calling IntegrationsApi->put_integration_config_current: %s\n" % e)
 ```
 
 ### Parameters
@@ -2874,7 +2874,7 @@ try:
     api_response = api_instance.put_integrations_credential(credential_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->put_integrations_credential: %s\n" % e
+    print("Exception when calling IntegrationsApi->put_integrations_credential: %s\n" % e)
 ```
 
 ### Parameters
@@ -2926,7 +2926,7 @@ try:
     api_response = api_instance.put_integrations_speech_tts_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling IntegrationsApi->put_integrations_speech_tts_settings: %s\n" % e
+    print("Exception when calling IntegrationsApi->put_integrations_speech_tts_settings: %s\n" % e)
 ```
 
 ### Parameters

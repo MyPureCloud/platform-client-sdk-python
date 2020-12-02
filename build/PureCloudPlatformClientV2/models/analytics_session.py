@@ -254,7 +254,7 @@ class AnalyticsSession(object):
         """
         allowed_values = ["voice", "chat", "email", "callback", "cobrowse", "video", "screenshare", "message"]
         if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
+            # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
@@ -396,7 +396,7 @@ class AnalyticsSession(object):
         """
         allowed_values = ["sms", "facebook", "twitter", "line"]
         if message_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for message_type -> " + message_type
+            # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"
         else:
             self._message_type = message_type
@@ -446,7 +446,7 @@ class AnalyticsSession(object):
         """
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
@@ -1531,7 +1531,7 @@ class AnalyticsSession(object):
         """
         allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
         if used_routing.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for used_routing -> " + used_routing
+            # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"
         else:
             self._used_routing = used_routing

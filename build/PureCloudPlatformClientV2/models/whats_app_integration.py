@@ -182,7 +182,7 @@ class WhatsAppIntegration(object):
         """
         allowed_values = ["Active", "Inactive", "Error", "Starting", "Incomplete", "Deleting", "DeletionFailed"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -347,7 +347,7 @@ class WhatsAppIntegration(object):
         """
         allowed_values = ["CodeSent", "WaitRequired", "ActivationFailed", "CodeConfirmed", "ConfirmationFailed", "ResendCode"]
         if activation_status_code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for activation_status_code -> " + activation_status_code
+            # print("Invalid value for activation_status_code -> " + activation_status_code)
             self._activation_status_code = "outdated_sdk_version"
         else:
             self._activation_status_code = activation_status_code
@@ -397,7 +397,7 @@ class WhatsAppIntegration(object):
         """
         allowed_values = ["Initiated", "Completed", "Error"]
         if create_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for create_status -> " + create_status
+            # print("Invalid value for create_status -> " + create_status)
             self._create_status = "outdated_sdk_version"
         else:
             self._create_status = create_status

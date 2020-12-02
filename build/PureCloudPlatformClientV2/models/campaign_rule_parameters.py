@@ -80,7 +80,7 @@ class CampaignRuleParameters(object):
         """
         allowed_values = ["equals", "greaterThan", "greaterThanEqualTo", "lessThan", "lessThanEqualTo"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator
@@ -130,7 +130,7 @@ class CampaignRuleParameters(object):
         """
         allowed_values = ["1", "2", "3", "4", "5"]
         if priority.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for priority -> " + priority
+            # print("Invalid value for priority -> " + priority)
             self._priority = "outdated_sdk_version"
         else:
             self._priority = priority
@@ -157,7 +157,7 @@ class CampaignRuleParameters(object):
         """
         allowed_values = ["agentless", "preview", "power", "predictive", "progressive", "external"]
         if dialing_mode.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dialing_mode -> " + dialing_mode
+            # print("Invalid value for dialing_mode -> " + dialing_mode)
             self._dialing_mode = "outdated_sdk_version"
         else:
             self._dialing_mode = dialing_mode

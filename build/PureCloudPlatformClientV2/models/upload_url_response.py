@@ -41,22 +41,25 @@ class UploadUrlResponse(object):
         """
         self.swagger_types = {
             'url': 'str',
+            'upload_key': 'str',
             'headers': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'url': 'url',
+            'upload_key': 'uploadKey',
             'headers': 'headers'
         }
 
         self._url = None
+        self._upload_key = None
         self._headers = None
 
     @property
     def url(self):
         """
         Gets the url of this UploadUrlResponse.
-        Presigned url to PUT the file to
+        Presigned URL to PUT the file to
 
         :return: The url of this UploadUrlResponse.
         :rtype: str
@@ -67,13 +70,36 @@ class UploadUrlResponse(object):
     def url(self, url):
         """
         Sets the url of this UploadUrlResponse.
-        Presigned url to PUT the file to
+        Presigned URL to PUT the file to
 
         :param url: The url of this UploadUrlResponse.
         :type: str
         """
         
         self._url = url
+
+    @property
+    def upload_key(self):
+        """
+        Gets the upload_key of this UploadUrlResponse.
+        Key that identifies the file in the storage including the file name
+
+        :return: The upload_key of this UploadUrlResponse.
+        :rtype: str
+        """
+        return self._upload_key
+
+    @upload_key.setter
+    def upload_key(self, upload_key):
+        """
+        Sets the upload_key of this UploadUrlResponse.
+        Key that identifies the file in the storage including the file name
+
+        :param upload_key: The upload_key of this UploadUrlResponse.
+        :type: str
+        """
+        
+        self._upload_key = upload_key
 
     @property
     def headers(self):

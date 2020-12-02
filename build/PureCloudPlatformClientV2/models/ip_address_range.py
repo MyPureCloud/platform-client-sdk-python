@@ -100,7 +100,7 @@ class IpAddressRange(object):
         """
         allowed_values = ["data-actions", "smtp"]
         if service.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for service -> " + service
+            # print("Invalid value for service -> " + service)
             self._service = "outdated_sdk_version"
         else:
             self._service = service

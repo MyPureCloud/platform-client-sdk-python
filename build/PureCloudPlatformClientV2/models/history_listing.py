@@ -312,7 +312,7 @@ class HistoryListing(object):
         """
         allowed_values = ["CREATE", "CHECKIN", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "STATE_CHANGE", "UPDATE", "VALIDATE"]
         if action_name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_name -> " + action_name
+            # print("Invalid value for action_name -> " + action_name)
             self._action_name = "outdated_sdk_version"
         else:
             self._action_name = action_name
@@ -339,7 +339,7 @@ class HistoryListing(object):
         """
         allowed_values = ["LOCKED", "UNLOCKED", "STARTED", "PENDING_GENERATION", "PENDING_BACKEND_NOTIFICATION", "SUCCESS", "FAILURE"]
         if action_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_status -> " + action_status
+            # print("Invalid value for action_status -> " + action_status)
             self._action_status = "outdated_sdk_version"
         else:
             self._action_status = action_status

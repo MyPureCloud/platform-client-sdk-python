@@ -175,7 +175,7 @@ class DomainNetworkRoute(object):
         """
         allowed_values = ["2", "23"]
         if family.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for family -> " + family
+            # print("Invalid value for family -> " + family)
             self._family = "outdated_sdk_version"
         else:
             self._family = family

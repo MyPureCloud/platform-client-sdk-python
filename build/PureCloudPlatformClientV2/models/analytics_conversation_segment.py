@@ -304,7 +304,7 @@ class AnalyticsConversationSegment(object):
         """
         allowed_values = ["endpoint", "client", "system", "transfer", "error", "peer", "other", "spam", "transportFailure", "conferenceTransfer", "consultTransfer", "forwardTransfer", "timeout", "noAnswerTransfer", "notAvailableTransfer", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disconnect_type -> " + disconnect_type
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
         else:
             self._disconnect_type = disconnect_type
@@ -331,7 +331,7 @@ class AnalyticsConversationSegment(object):
         """
         allowed_values = ["unknown", "alert", "system", "delay", "hold", "interact", "ivr", "dialing", "wrapup", "voicemail", "scheduled", "contacting", "transmitting", "converting", "uploading", "sharing"]
         if segment_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for segment_type -> " + segment_type
+            # print("Invalid value for segment_type -> " + segment_type)
             self._segment_type = "outdated_sdk_version"
         else:
             self._segment_type = segment_type

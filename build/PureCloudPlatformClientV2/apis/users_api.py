@@ -3292,7 +3292,7 @@ class UsersApi(object):
     def get_users_development_activity(self, activity_id, type, **kwargs):
         """
         Get a Development Activity
-        
+        Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

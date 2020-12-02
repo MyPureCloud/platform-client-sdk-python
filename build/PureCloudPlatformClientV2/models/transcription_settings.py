@@ -77,7 +77,7 @@ class TranscriptionSettings(object):
         """
         allowed_values = ["Disabled", "EnabledGlobally", "EnabledQueueFlow"]
         if transcription.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for transcription -> " + transcription
+            # print("Invalid value for transcription -> " + transcription)
             self._transcription = "outdated_sdk_version"
         else:
             self._transcription = transcription

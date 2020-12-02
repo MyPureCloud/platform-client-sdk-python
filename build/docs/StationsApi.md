@@ -49,7 +49,7 @@ try:
     # Unassigns the user assigned to this station
     api_instance.delete_station_associateduser(station_id)
 except ApiException as e:
-    print "Exception when calling StationsApi->delete_station_associateduser: %s\n" % e
+    print("Exception when calling StationsApi->delete_station_associateduser: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +99,7 @@ try:
     api_response = api_instance.get_station(station_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling StationsApi->get_station: %s\n" % e
+    print("Exception when calling StationsApi->get_station: %s\n" % e)
 ```
 
 ### Parameters
@@ -156,7 +156,7 @@ try:
     api_response = api_instance.get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling StationsApi->get_stations: %s\n" % e
+    print("Exception when calling StationsApi->get_stations: %s\n" % e)
 ```
 
 ### Parameters
@@ -212,7 +212,7 @@ try:
     api_response = api_instance.get_stations_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling StationsApi->get_stations_settings: %s\n" % e
+    print("Exception when calling StationsApi->get_stations_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -260,7 +260,7 @@ try:
     api_response = api_instance.patch_stations_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling StationsApi->patch_stations_settings: %s\n" % e
+    print("Exception when calling StationsApi->patch_stations_settings: %s\n" % e)
 ```
 
 ### Parameters

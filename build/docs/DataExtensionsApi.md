@@ -49,7 +49,7 @@ try:
     api_response = api_instance.get_dataextensions_coretype(coretype_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling DataExtensionsApi->get_dataextensions_coretype: %s\n" % e
+    print("Exception when calling DataExtensionsApi->get_dataextensions_coretype: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +99,7 @@ try:
     api_response = api_instance.get_dataextensions_coretypes()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling DataExtensionsApi->get_dataextensions_coretypes: %s\n" % e
+    print("Exception when calling DataExtensionsApi->get_dataextensions_coretypes: %s\n" % e)
 ```
 
 ### Parameters
@@ -146,7 +146,7 @@ try:
     api_response = api_instance.get_dataextensions_limits()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling DataExtensionsApi->get_dataextensions_limits: %s\n" % e
+    print("Exception when calling DataExtensionsApi->get_dataextensions_limits: %s\n" % e)
 ```
 
 ### Parameters

@@ -68,7 +68,7 @@ try:
     # Delete a voicemail message.
     api_instance.delete_voicemail_message(message_id)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->delete_voicemail_message: %s\n" % e
+    print("Exception when calling VoicemailApi->delete_voicemail_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -116,7 +116,7 @@ try:
     # Delete all voicemail messages
     api_instance.delete_voicemail_messages()
 except ApiException as e:
-    print "Exception when calling VoicemailApi->delete_voicemail_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->delete_voicemail_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -163,7 +163,7 @@ try:
     api_response = api_instance.get_voicemail_group_mailbox(group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_group_mailbox: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_group_mailbox: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,7 +215,7 @@ try:
     api_response = api_instance.get_voicemail_group_messages(group_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_group_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_group_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -269,7 +269,7 @@ try:
     api_response = api_instance.get_voicemail_group_policy(group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_group_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_group_policy: %s\n" % e)
 ```
 
 ### Parameters
@@ -318,7 +318,7 @@ try:
     api_response = api_instance.get_voicemail_mailbox()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_mailbox: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_mailbox: %s\n" % e)
 ```
 
 ### Parameters
@@ -364,7 +364,7 @@ try:
     api_response = api_instance.get_voicemail_me_mailbox()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_me_mailbox: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_me_mailbox: %s\n" % e)
 ```
 
 ### Parameters
@@ -412,7 +412,7 @@ try:
     api_response = api_instance.get_voicemail_me_messages(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_me_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_me_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -462,7 +462,7 @@ try:
     api_response = api_instance.get_voicemail_me_policy()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_me_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_me_policy: %s\n" % e)
 ```
 
 ### Parameters
@@ -510,7 +510,7 @@ try:
     api_response = api_instance.get_voicemail_message(message_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_message: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -562,7 +562,7 @@ try:
     api_response = api_instance.get_voicemail_message_media(message_id, format_id=format_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_message_media: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_message_media: %s\n" % e)
 ```
 
 ### Parameters
@@ -614,7 +614,7 @@ try:
     api_response = api_instance.get_voicemail_messages(ids=ids, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -665,7 +665,7 @@ try:
     api_response = api_instance.get_voicemail_policy()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_policy: %s\n" % e)
 ```
 
 ### Parameters
@@ -715,7 +715,7 @@ try:
     api_response = api_instance.get_voicemail_queue_messages(queue_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_queue_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_queue_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -768,7 +768,7 @@ try:
     api_response = api_instance.get_voicemail_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_search: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -819,7 +819,7 @@ try:
     api_response = api_instance.get_voicemail_userpolicy(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->get_voicemail_userpolicy: %s\n" % e
+    print("Exception when calling VoicemailApi->get_voicemail_userpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -872,7 +872,7 @@ try:
     api_response = api_instance.patch_voicemail_group_policy(group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->patch_voicemail_group_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->patch_voicemail_group_policy: %s\n" % e)
 ```
 
 ### Parameters
@@ -923,7 +923,7 @@ try:
     api_response = api_instance.patch_voicemail_me_policy(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->patch_voicemail_me_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->patch_voicemail_me_policy: %s\n" % e)
 ```
 
 ### Parameters
@@ -974,7 +974,7 @@ try:
     api_response = api_instance.patch_voicemail_message(message_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->patch_voicemail_message: %s\n" % e
+    print("Exception when calling VoicemailApi->patch_voicemail_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -1026,7 +1026,7 @@ try:
     api_response = api_instance.patch_voicemail_userpolicy(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->patch_voicemail_userpolicy: %s\n" % e
+    print("Exception when calling VoicemailApi->patch_voicemail_userpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -1077,7 +1077,7 @@ try:
     api_response = api_instance.post_voicemail_messages(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->post_voicemail_messages: %s\n" % e
+    print("Exception when calling VoicemailApi->post_voicemail_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -1127,7 +1127,7 @@ try:
     api_response = api_instance.post_voicemail_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->post_voicemail_search: %s\n" % e
+    print("Exception when calling VoicemailApi->post_voicemail_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -1178,7 +1178,7 @@ try:
     api_response = api_instance.put_voicemail_message(message_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->put_voicemail_message: %s\n" % e
+    print("Exception when calling VoicemailApi->put_voicemail_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -1230,7 +1230,7 @@ try:
     api_response = api_instance.put_voicemail_policy(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VoicemailApi->put_voicemail_policy: %s\n" % e
+    print("Exception when calling VoicemailApi->put_voicemail_policy: %s\n" % e)
 ```
 
 ### Parameters

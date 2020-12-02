@@ -48,7 +48,7 @@ try:
     api_response = api_instance.get_date()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UtilitiesApi->get_date: %s\n" % e
+    print("Exception when calling UtilitiesApi->get_date: %s\n" % e)
 ```
 
 ### Parameters
@@ -94,7 +94,7 @@ try:
     api_response = api_instance.get_ipranges()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UtilitiesApi->get_ipranges: %s\n" % e
+    print("Exception when calling UtilitiesApi->get_ipranges: %s\n" % e)
 ```
 
 ### Parameters
@@ -142,7 +142,7 @@ try:
     api_response = api_instance.get_timezones(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UtilitiesApi->get_timezones: %s\n" % e
+    print("Exception when calling UtilitiesApi->get_timezones: %s\n" % e)
 ```
 
 ### Parameters
@@ -193,7 +193,7 @@ try:
     api_response = api_instance.post_certificate_details(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UtilitiesApi->post_certificate_details: %s\n" % e
+    print("Exception when calling UtilitiesApi->post_certificate_details: %s\n" % e)
 ```
 
 ### Parameters

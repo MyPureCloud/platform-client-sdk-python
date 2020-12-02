@@ -150,7 +150,7 @@ class Greeting(object):
         """
         allowed_values = ["STATION", "VOICEMAIL", "NAME"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -177,7 +177,7 @@ class Greeting(object):
         """
         allowed_values = ["USER", "ORGANIZATION", "GROUP"]
         if owner_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for owner_type -> " + owner_type
+            # print("Invalid value for owner_type -> " + owner_type)
             self._owner_type = "outdated_sdk_version"
         else:
             self._owner_type = owner_type

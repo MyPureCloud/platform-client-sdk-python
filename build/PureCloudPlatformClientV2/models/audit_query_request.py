@@ -103,7 +103,7 @@ class AuditQueryRequest(object):
         """
         allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
         if service_name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for service_name -> " + service_name
+            # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
         else:
             self._service_name = service_name

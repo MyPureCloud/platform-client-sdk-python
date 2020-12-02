@@ -336,7 +336,7 @@ class Trunk(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -409,7 +409,7 @@ class Trunk(object):
         """
         allowed_values = ["EXTERNAL", "PHONE", "EDGE"]
         if trunk_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for trunk_type -> " + trunk_type
+            # print("Invalid value for trunk_type -> " + trunk_type)
             self._trunk_type = "outdated_sdk_version"
         else:
             self._trunk_type = trunk_type
@@ -689,7 +689,7 @@ class Trunk(object):
         """
         allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
         if options_enabled_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for options_enabled_status -> " + options_enabled_status
+            # print("Invalid value for options_enabled_status -> " + options_enabled_status)
             self._options_enabled_status = "outdated_sdk_version"
         else:
             self._options_enabled_status = options_enabled_status
@@ -716,7 +716,7 @@ class Trunk(object):
         """
         allowed_values = ["ENABLED", "DISABLED", "NOT_SUPPORTED"]
         if registers_enabled_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for registers_enabled_status -> " + registers_enabled_status
+            # print("Invalid value for registers_enabled_status -> " + registers_enabled_status)
             self._registers_enabled_status = "outdated_sdk_version"
         else:
             self._registers_enabled_status = registers_enabled_status

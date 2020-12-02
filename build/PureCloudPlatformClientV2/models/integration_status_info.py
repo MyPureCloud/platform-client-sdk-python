@@ -80,7 +80,7 @@ class IntegrationStatusInfo(object):
         """
         allowed_values = ["ACTIVE", "ACTIVATING", "INACTIVE", "DEACTIVATING", "ERROR"]
         if code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for code -> " + code
+            # print("Invalid value for code -> " + code)
             self._code = "outdated_sdk_version"
         else:
             self._code = code

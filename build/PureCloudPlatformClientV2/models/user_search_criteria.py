@@ -210,7 +210,7 @@ class UserSearchCriteria(object):
         """
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator
@@ -283,7 +283,7 @@ class UserSearchCriteria(object):
         """
         allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL", "QUERY_STRING"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

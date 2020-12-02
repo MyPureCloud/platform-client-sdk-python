@@ -199,7 +199,7 @@ class OrphanRecording(object):
         """
         allowed_values = ["EDGE", "CHAT", "EMAIL", "SCREEN_RECORDING"]
         if provider_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for provider_type -> " + provider_type
+            # print("Invalid value for provider_type -> " + provider_type)
             self._provider_type = "outdated_sdk_version"
         else:
             self._provider_type = provider_type
@@ -249,7 +249,7 @@ class OrphanRecording(object):
         """
         allowed_values = ["CALL", "CHAT", "EMAIL", "SCREEN"]
         if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
+            # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
@@ -276,7 +276,7 @@ class OrphanRecording(object):
         """
         allowed_values = ["ARCHIVED", "AVAILABLE", "DELETED", "RESTORED", "RESTORING", "UPLOADING"]
         if file_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for file_state -> " + file_state
+            # print("Invalid value for file_state -> " + file_state)
             self._file_state = "outdated_sdk_version"
         else:
             self._file_state = file_state
@@ -349,7 +349,7 @@ class OrphanRecording(object):
         """
         allowed_values = ["NO_CONVERSATION", "UNKNOWN_CONVERSATION", "CONVERSATION_NOT_COMPLETE", "CONVERSATION_NOT_EVALUATED", "EVALUATED"]
         if orphan_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for orphan_status -> " + orphan_status
+            # print("Invalid value for orphan_status -> " + orphan_status)
             self._orphan_status = "outdated_sdk_version"
         else:
             self._orphan_status = orphan_status

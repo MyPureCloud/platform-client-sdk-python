@@ -50,7 +50,7 @@ try:
     api_response = api_instance.get_journey_actiontarget(action_target_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling JourneyApi->get_journey_actiontarget: %s\n" % e
+    print("Exception when calling JourneyApi->get_journey_actiontarget: %s\n" % e)
 ```
 
 ### Parameters
@@ -102,7 +102,7 @@ try:
     api_response = api_instance.get_journey_actiontargets(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling JourneyApi->get_journey_actiontargets: %s\n" % e
+    print("Exception when calling JourneyApi->get_journey_actiontargets: %s\n" % e)
 ```
 
 ### Parameters
@@ -155,7 +155,7 @@ try:
     api_response = api_instance.patch_journey_actiontarget(action_target_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling JourneyApi->patch_journey_actiontarget: %s\n" % e
+    print("Exception when calling JourneyApi->patch_journey_actiontarget: %s\n" % e)
 ```
 
 ### Parameters
@@ -207,7 +207,7 @@ try:
     api_response = api_instance.post_analytics_journeys_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling JourneyApi->post_analytics_journeys_aggregates_query: %s\n" % e
+    print("Exception when calling JourneyApi->post_analytics_journeys_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters

@@ -47,7 +47,7 @@ try:
     api_response = api_instance.post_uploads_publicassets_images(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling UploadsApi->post_uploads_publicassets_images: %s\n" % e
+    print("Exception when calling UploadsApi->post_uploads_publicassets_images: %s\n" % e)
 ```
 
 ### Parameters

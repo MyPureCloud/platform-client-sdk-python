@@ -93,7 +93,7 @@ try:
     api_response = api_instance.delete_externalcontacts_contact(contact_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -145,7 +145,7 @@ try:
     api_response = api_instance.delete_externalcontacts_contact_note(contact_id, note_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_contact_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_contact_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -196,7 +196,7 @@ try:
     # Delete a schema
     api_instance.delete_externalcontacts_contacts_schema(schema_id)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_contacts_schema: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_contacts_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -248,7 +248,7 @@ try:
     api_response = api_instance.delete_externalcontacts_organization(external_organization_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -300,7 +300,7 @@ try:
     api_response = api_instance.delete_externalcontacts_organization_note(external_organization_id, note_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_organization_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -351,7 +351,7 @@ try:
     # Unlink the Trustor for this External Organization
     api_instance.delete_externalcontacts_organization_trustor(external_organization_id)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_organization_trustor: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_organization_trustor: %s\n" % e)
 ```
 
 ### Parameters
@@ -402,7 +402,7 @@ try:
     api_response = api_instance.delete_externalcontacts_relationship(relationship_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->delete_externalcontacts_relationship: %s\n" % e
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_relationship: %s\n" % e)
 ```
 
 ### Parameters
@@ -454,7 +454,7 @@ try:
     api_response = api_instance.get_externalcontacts_contact(contact_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contact: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -508,7 +508,7 @@ try:
     api_response = api_instance.get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contact_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -565,7 +565,7 @@ try:
     api_response = api_instance.get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contact_notes: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_notes: %s\n" % e)
 ```
 
 ### Parameters
@@ -624,7 +624,7 @@ try:
     api_response = api_instance.get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -679,7 +679,7 @@ try:
     api_response = api_instance.get_externalcontacts_contacts_schema(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -731,7 +731,7 @@ try:
     api_response = api_instance.get_externalcontacts_contacts_schema_version(schema_id, version_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema_version: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema_version: %s\n" % e)
 ```
 
 ### Parameters
@@ -783,7 +783,7 @@ try:
     api_response = api_instance.get_externalcontacts_contacts_schema_versions(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema_versions: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schema_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -833,7 +833,7 @@ try:
     api_response = api_instance.get_externalcontacts_contacts_schemas()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schemas: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -884,7 +884,7 @@ try:
     api_response = api_instance.get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organization: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -942,7 +942,7 @@ try:
     api_response = api_instance.get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_contacts: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1000,7 +1000,7 @@ try:
     api_response = api_instance.get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -1058,7 +1058,7 @@ try:
     api_response = api_instance.get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_notes: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization_notes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1118,7 +1118,7 @@ try:
     api_response = api_instance.get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organization_relationships: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization_relationships: %s\n" % e)
 ```
 
 ### Parameters
@@ -1180,7 +1180,7 @@ try:
     api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e)
 ```
 
 ### Parameters
@@ -1237,7 +1237,7 @@ try:
     api_response = api_instance.get_externalcontacts_organizations_schema(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -1289,7 +1289,7 @@ try:
     api_response = api_instance.get_externalcontacts_organizations_schema_version(schema_id, version_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema_version: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema_version: %s\n" % e)
 ```
 
 ### Parameters
@@ -1341,7 +1341,7 @@ try:
     api_response = api_instance.get_externalcontacts_organizations_schema_versions(schema_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema_versions: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schema_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1391,7 +1391,7 @@ try:
     api_response = api_instance.get_externalcontacts_organizations_schemas()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schemas: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1440,7 +1440,7 @@ try:
     api_response = api_instance.get_externalcontacts_relationship(relationship_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_relationship: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_relationship: %s\n" % e)
 ```
 
 ### Parameters
@@ -1493,7 +1493,7 @@ try:
     api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_reversewhitepageslookup: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_reversewhitepageslookup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1546,7 +1546,7 @@ try:
     api_response = api_instance.get_externalcontacts_scan_contacts(limit=limit, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_scan_contacts: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1599,7 +1599,7 @@ try:
     api_response = api_instance.get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_scan_notes: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_notes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1652,7 +1652,7 @@ try:
     api_response = api_instance.get_externalcontacts_scan_organizations(limit=limit, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_scan_organizations: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_organizations: %s\n" % e)
 ```
 
 ### Parameters
@@ -1705,7 +1705,7 @@ try:
     api_response = api_instance.get_externalcontacts_scan_relationships(limit=limit, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->get_externalcontacts_scan_relationships: %s\n" % e
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_relationships: %s\n" % e)
 ```
 
 ### Parameters
@@ -1758,7 +1758,7 @@ try:
     api_response = api_instance.post_externalcontacts_contact_notes(contact_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_contact_notes: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contact_notes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1810,7 +1810,7 @@ try:
     api_response = api_instance.post_externalcontacts_contacts(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_contacts: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1861,7 +1861,7 @@ try:
     api_response = api_instance.post_externalcontacts_contacts_schemas(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_contacts_schemas: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contacts_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1914,7 +1914,7 @@ try:
     api_response = api_instance.post_externalcontacts_organization_notes(external_organization_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_organization_notes: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organization_notes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1967,7 +1967,7 @@ try:
     api_response = api_instance.post_externalcontacts_organizations(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_organizations: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organizations: %s\n" % e)
 ```
 
 ### Parameters
@@ -2018,7 +2018,7 @@ try:
     api_response = api_instance.post_externalcontacts_organizations_schemas(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_organizations_schemas: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organizations_schemas: %s\n" % e)
 ```
 
 ### Parameters
@@ -2069,7 +2069,7 @@ try:
     api_response = api_instance.post_externalcontacts_relationships(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->post_externalcontacts_relationships: %s\n" % e
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_relationships: %s\n" % e)
 ```
 
 ### Parameters
@@ -2121,7 +2121,7 @@ try:
     api_response = api_instance.put_externalcontacts_contact(contact_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_contact: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -2175,7 +2175,7 @@ try:
     api_response = api_instance.put_externalcontacts_contact_note(contact_id, note_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_contact_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_contact_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -2229,7 +2229,7 @@ try:
     api_response = api_instance.put_externalcontacts_contacts_schema(schema_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_contacts_schema: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_contacts_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -2281,7 +2281,7 @@ try:
     # Associate/disassociate an external contact with a conversation
     api_instance.put_externalcontacts_conversation(body, conversation_id)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_conversation: %s\n" % e)
 ```
 
 ### Parameters
@@ -2335,7 +2335,7 @@ try:
     api_response = api_instance.put_externalcontacts_organization(external_organization_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_organization: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -2389,7 +2389,7 @@ try:
     api_response = api_instance.put_externalcontacts_organization_note(external_organization_id, note_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_note: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_organization_note: %s\n" % e)
 ```
 
 ### Parameters
@@ -2443,7 +2443,7 @@ try:
     api_response = api_instance.put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_organization_trustor_trustor_id: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_organization_trustor_trustor_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -2496,7 +2496,7 @@ try:
     api_response = api_instance.put_externalcontacts_organizations_schema(schema_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_organizations_schema: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_organizations_schema: %s\n" % e)
 ```
 
 ### Parameters
@@ -2549,7 +2549,7 @@ try:
     api_response = api_instance.put_externalcontacts_relationship(relationship_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExternalContactsApi->put_externalcontacts_relationship: %s\n" % e
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_relationship: %s\n" % e)
 ```
 
 ### Parameters

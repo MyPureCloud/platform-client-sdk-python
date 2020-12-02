@@ -132,7 +132,7 @@ class Contact(object):
         """
         allowed_values = ["PHONE", "EMAIL", "SMS"]
         if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
+            # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
@@ -159,7 +159,7 @@ class Contact(object):
         """
         allowed_values = ["PRIMARY", "WORK", "WORK2", "WORK3", "WORK4", "HOME", "MOBILE", "MAIN"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

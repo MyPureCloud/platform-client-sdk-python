@@ -164,7 +164,7 @@ class KnowledgeBase(object):
         """
         allowed_values = ["en-US", "de-DE"]
         if core_language.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for core_language -> " + core_language
+            # print("Invalid value for core_language -> " + core_language)
             self._core_language = "outdated_sdk_version"
         else:
             self._core_language = core_language

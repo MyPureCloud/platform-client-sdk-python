@@ -190,7 +190,7 @@ class GDPRRequest(object):
         """
         allowed_values = ["GDPR_EXPORT", "GDPR_UPDATE", "GDPR_DELETE"]
         if request_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for request_type -> " + request_type
+            # print("Invalid value for request_type -> " + request_type)
             self._request_type = "outdated_sdk_version"
         else:
             self._request_type = request_type
@@ -240,7 +240,7 @@ class GDPRRequest(object):
         """
         allowed_values = ["INITIATED", "SEARCHING", "UPDATING", "DELETING", "COMPLETED", "ERROR", "FINALIZING"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

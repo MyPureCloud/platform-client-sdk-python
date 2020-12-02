@@ -74,7 +74,7 @@ class VisibilityCondition(object):
         """
         allowed_values = ["AND", "OR"]
         if combining_operation.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for combining_operation -> " + combining_operation
+            # print("Invalid value for combining_operation -> " + combining_operation)
             self._combining_operation = "outdated_sdk_version"
         else:
             self._combining_operation = combining_operation

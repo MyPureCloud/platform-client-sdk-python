@@ -57,7 +57,7 @@ try:
     # Delete a Presence Definition
     api_instance.delete_presencedefinition(presence_id)
 except ApiException as e:
-    print "Exception when calling PresenceApi->delete_presencedefinition: %s\n" % e
+    print("Exception when calling PresenceApi->delete_presencedefinition: %s\n" % e)
 ```
 
 ### Parameters
@@ -108,7 +108,7 @@ try:
     api_response = api_instance.get_presencedefinition(presence_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_presencedefinition: %s\n" % e
+    print("Exception when calling PresenceApi->get_presencedefinition: %s\n" % e)
 ```
 
 ### Parameters
@@ -162,7 +162,7 @@ try:
     api_response = api_instance.get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_presencedefinitions: %s\n" % e
+    print("Exception when calling PresenceApi->get_presencedefinitions: %s\n" % e)
 ```
 
 ### Parameters
@@ -214,7 +214,7 @@ try:
     api_response = api_instance.get_systempresences()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_systempresences: %s\n" % e
+    print("Exception when calling PresenceApi->get_systempresences: %s\n" % e)
 ```
 
 ### Parameters
@@ -262,7 +262,7 @@ try:
     api_response = api_instance.get_user_presence(user_id, source_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_user_presence: %s\n" % e
+    print("Exception when calling PresenceApi->get_user_presence: %s\n" % e)
 ```
 
 ### Parameters
@@ -290,7 +290,7 @@ Gets the presence for a Microsoft Teams user.  This will return the Microsoft Te
 
 Wraps GET /api/v2/users/{userId}/presences/microsoftteams 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * integration:microsoftTeams:view
 * integrations:integration:view
@@ -315,7 +315,7 @@ try:
     api_response = api_instance.get_user_presences_microsoftteams(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_user_presences_microsoftteams: %s\n" % e
+    print("Exception when calling PresenceApi->get_user_presences_microsoftteams: %s\n" % e)
 ```
 
 ### Parameters
@@ -365,7 +365,7 @@ try:
     api_response = api_instance.get_user_presences_purecloud(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->get_user_presences_purecloud: %s\n" % e
+    print("Exception when calling PresenceApi->get_user_presences_purecloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -417,7 +417,7 @@ try:
     api_response = api_instance.patch_user_presence(user_id, source_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->patch_user_presence: %s\n" % e
+    print("Exception when calling PresenceApi->patch_user_presence: %s\n" % e)
 ```
 
 ### Parameters
@@ -470,7 +470,7 @@ try:
     api_response = api_instance.patch_user_presences_purecloud(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->patch_user_presences_purecloud: %s\n" % e
+    print("Exception when calling PresenceApi->patch_user_presences_purecloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -522,7 +522,7 @@ try:
     api_response = api_instance.post_presencedefinitions(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->post_presencedefinitions: %s\n" % e
+    print("Exception when calling PresenceApi->post_presencedefinitions: %s\n" % e)
 ```
 
 ### Parameters
@@ -574,7 +574,7 @@ try:
     api_response = api_instance.put_presencedefinition(presence_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->put_presencedefinition: %s\n" % e
+    print("Exception when calling PresenceApi->put_presencedefinition: %s\n" % e)
 ```
 
 ### Parameters
@@ -626,7 +626,7 @@ try:
     api_response = api_instance.put_users_presences_bulk(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PresenceApi->put_users_presences_bulk: %s\n" % e
+    print("Exception when calling PresenceApi->put_users_presences_bulk: %s\n" % e)
 ```
 
 ### Parameters

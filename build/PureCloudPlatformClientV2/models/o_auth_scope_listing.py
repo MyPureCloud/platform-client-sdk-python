@@ -40,17 +40,43 @@ class OAuthScopeListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'total': 'int',
             'entities': 'list[OAuthScope]',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'total': 'total',
             'entities': 'entities',
             'self_uri': 'selfUri'
         }
 
+        self._total = None
         self._entities = None
         self._self_uri = None
+
+    @property
+    def total(self):
+        """
+        Gets the total of this OAuthScopeListing.
+
+
+        :return: The total of this OAuthScopeListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this OAuthScopeListing.
+
+
+        :param total: The total of this OAuthScopeListing.
+        :type: int
+        """
+        
+        self._total = total
 
     @property
     def entities(self):

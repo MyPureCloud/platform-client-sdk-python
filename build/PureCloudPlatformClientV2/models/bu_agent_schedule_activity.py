@@ -253,7 +253,7 @@ class BuAgentScheduleActivity(object):
         """
         allowed_values = ["Coaching"]
         if external_activity_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for external_activity_type -> " + external_activity_type
+            # print("Invalid value for external_activity_type -> " + external_activity_type)
             self._external_activity_type = "outdated_sdk_version"
         else:
             self._external_activity_type = external_activity_type

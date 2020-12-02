@@ -77,7 +77,7 @@ class AnalyticsProperty(object):
         """
         allowed_values = ["bool", "integer", "real", "date", "string", "uuid"]
         if property_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for property_type -> " + property_type
+            # print("Invalid value for property_type -> " + property_type)
             self._property_type = "outdated_sdk_version"
         else:
             self._property_type = property_type

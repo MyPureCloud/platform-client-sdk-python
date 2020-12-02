@@ -152,7 +152,7 @@ class FaxSendResponse(object):
         """
         allowed_values = ["SINGLE_PUT", "MULTIPART_POST"]
         if upload_method_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for upload_method_type -> " + upload_method_type
+            # print("Invalid value for upload_method_type -> " + upload_method_type)
             self._upload_method_type = "outdated_sdk_version"
         else:
             self._upload_method_type = upload_method_type

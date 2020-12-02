@@ -48,7 +48,7 @@ try:
     # Delete all auth tokens for the specified user.
     api_instance.delete_token(user_id)
 except ApiException as e:
-    print "Exception when calling TokensApi->delete_token: %s\n" % e
+    print("Exception when calling TokensApi->delete_token: %s\n" % e)
 ```
 
 ### Parameters
@@ -96,7 +96,7 @@ try:
     # Delete  auth token used to make the request.
     api_instance.delete_tokens_me()
 except ApiException as e:
-    print "Exception when calling TokensApi->delete_tokens_me: %s\n" % e
+    print("Exception when calling TokensApi->delete_tokens_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -142,7 +142,7 @@ try:
     api_response = api_instance.get_tokens_me()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TokensApi->get_tokens_me: %s\n" % e
+    print("Exception when calling TokensApi->get_tokens_me: %s\n" % e)
 ```
 
 ### Parameters

@@ -50,7 +50,7 @@ try:
     # Delete a fax document.
     api_instance.delete_fax_document(document_id)
 except ApiException as e:
-    print "Exception when calling FaxApi->delete_fax_document: %s\n" % e
+    print("Exception when calling FaxApi->delete_fax_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -100,7 +100,7 @@ try:
     api_response = api_instance.get_fax_document(document_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FaxApi->get_fax_document: %s\n" % e
+    print("Exception when calling FaxApi->get_fax_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,7 +150,7 @@ try:
     api_response = api_instance.get_fax_document_content(document_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FaxApi->get_fax_document_content: %s\n" % e
+    print("Exception when calling FaxApi->get_fax_document_content: %s\n" % e)
 ```
 
 ### Parameters
@@ -201,7 +201,7 @@ try:
     api_response = api_instance.get_fax_documents(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FaxApi->get_fax_documents: %s\n" % e
+    print("Exception when calling FaxApi->get_fax_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -251,7 +251,7 @@ try:
     api_response = api_instance.get_fax_summary()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FaxApi->get_fax_summary: %s\n" % e
+    print("Exception when calling FaxApi->get_fax_summary: %s\n" % e)
 ```
 
 ### Parameters
@@ -299,7 +299,7 @@ try:
     api_response = api_instance.put_fax_document(document_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling FaxApi->put_fax_document: %s\n" % e
+    print("Exception when calling FaxApi->put_fax_document: %s\n" % e)
 ```
 
 ### Parameters

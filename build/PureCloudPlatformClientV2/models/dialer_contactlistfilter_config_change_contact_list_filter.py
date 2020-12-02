@@ -282,7 +282,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         """
         allowed_values = ["AND", "OR"]
         if filter_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for filter_type -> " + filter_type
+            # print("Invalid value for filter_type -> " + filter_type)
             self._filter_type = "outdated_sdk_version"
         else:
             self._filter_type = filter_type

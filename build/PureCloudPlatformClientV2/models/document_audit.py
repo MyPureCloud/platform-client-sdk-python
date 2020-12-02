@@ -300,7 +300,7 @@ class DocumentAudit(object):
         """
         allowed_values = ["USER", "SYSTEM"]
         if level.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for level -> " + level
+            # print("Invalid value for level -> " + level)
             self._level = "outdated_sdk_version"
         else:
             self._level = level
@@ -350,7 +350,7 @@ class DocumentAudit(object):
         """
         allowed_values = ["SUCCESS", "FAILURE", "WARNING"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -377,7 +377,7 @@ class DocumentAudit(object):
         """
         allowed_values = ["CREATE", "READ", "UPDATE", "DELETE", "DOWNLOAD", "VIEW", "UPLOAD", "SAVE", "MOVE", "COPY", "ADD", "REMOVE", "RECEIVE", "CONVERT", "FAX", "CREATE_COVERPAGE", "USER_ADD", "USER_REMOVE", "MEMBER_ADD", "MEMBER_REMOVE", "MEMBER_UPDATE", "TAG_ADD", "TAG_REMOVE", "TAG_UPDATE", "ATTRIBUTE_ADD", "ATTRIBUTE_REMOVE", "ATTRIBUTE_UPDATE", "ATTRIBUTE_GROUP_INSTANCE_ADD", "ATTRIBUTE_GROUP_INSTANCE_REMOVE", "ATTRIBUTE_GROUP_INSTANCE_UPDATE", "INDEX_SAVE", "INDEX_DELETE", "INDEX_CREATE", "FILE_SAVE", "FILE_DELETE", "FILE_READ", "THUMBNAIL_CREATE", "TEXT_EXTRACT", "SHARE_ADD", "SHARE_REMOVE", "VERSION_CREATE"]
         if action_context.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_context -> " + action_context
+            # print("Invalid value for action_context -> " + action_context)
             self._action_context = "outdated_sdk_version"
         else:
             self._action_context = action_context
@@ -404,7 +404,7 @@ class DocumentAudit(object):
         """
         allowed_values = ["CREATE", "READ", "UPDATE", "DELETE", "DOWNLOAD", "VIEW", "UPLOAD", "SAVE", "MOVE", "COPY", "ADD", "REMOVE", "RECEIVE", "CONVERT", "FAX", "CREATE_COVERPAGE", "USER_ADD", "USER_REMOVE", "MEMBER_ADD", "MEMBER_REMOVE", "MEMBER_UPDATE", "TAG_ADD", "TAG_REMOVE", "TAG_UPDATE", "ATTRIBUTE_ADD", "ATTRIBUTE_REMOVE", "ATTRIBUTE_UPDATE", "ATTRIBUTE_GROUP_INSTANCE_ADD", "ATTRIBUTE_GROUP_INSTANCE_REMOVE", "ATTRIBUTE_GROUP_INSTANCE_UPDATE", "INDEX_SAVE", "INDEX_DELETE", "INDEX_CREATE", "FILE_SAVE", "FILE_DELETE", "FILE_READ", "THUMBNAIL_CREATE", "TEXT_EXTRACT", "SHARE_ADD", "SHARE_REMOVE", "VERSION_CREATE"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action

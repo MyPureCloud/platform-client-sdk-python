@@ -207,7 +207,7 @@ class SuggestSearchCriteria(object):
         """
         allowed_values = ["AND", "OR", "NOT"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

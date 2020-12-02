@@ -155,7 +155,7 @@ class DialerRule(object):
         """
         allowed_values = ["DIALER_PRECALL", "DIALER_WRAPUP"]
         if category.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for category -> " + category
+            # print("Invalid value for category -> " + category)
             self._category = "outdated_sdk_version"
         else:
             self._category = category

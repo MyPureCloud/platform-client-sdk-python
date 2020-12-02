@@ -64,7 +64,7 @@ try:
     # Delete a WebChat deployment
     api_instance.delete_webchat_deployment(deployment_id)
 except ApiException as e:
-    print "Exception when calling WebChatApi->delete_webchat_deployment: %s\n" % e
+    print("Exception when calling WebChatApi->delete_webchat_deployment: %s\n" % e)
 ```
 
 ### Parameters
@@ -116,7 +116,7 @@ try:
     # Remove a member from a chat conversation
     api_instance.delete_webchat_guest_conversation_member(conversation_id, member_id)
 except ApiException as e:
-    print "Exception when calling WebChatApi->delete_webchat_guest_conversation_member: %s\n" % e
+    print("Exception when calling WebChatApi->delete_webchat_guest_conversation_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -166,7 +166,7 @@ try:
     # Remove WebChat deployment settings
     api_instance.delete_webchat_settings()
 except ApiException as e:
-    print "Exception when calling WebChatApi->delete_webchat_settings: %s\n" % e
+    print("Exception when calling WebChatApi->delete_webchat_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -214,7 +214,7 @@ try:
     api_response = api_instance.get_webchat_deployment(deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_deployment: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_deployment: %s\n" % e)
 ```
 
 ### Parameters
@@ -264,7 +264,7 @@ try:
     api_response = api_instance.get_webchat_deployments()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_deployments: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_deployments: %s\n" % e)
 ```
 
 ### Parameters
@@ -314,7 +314,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_mediarequest(conversation_id, media_request_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_mediarequest: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_mediarequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -367,7 +367,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_mediarequests(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_mediarequests: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_mediarequests: %s\n" % e)
 ```
 
 ### Parameters
@@ -420,7 +420,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_member(conversation_id, member_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_member: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -476,7 +476,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_members(conversation_id, page_size=page_size, page_number=page_number, exclude_disconnected_members=exclude_disconnected_members)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_members: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -532,7 +532,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_message: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_message: %s\n" % e)
 ```
 
 ### Parameters
@@ -589,7 +589,7 @@ try:
     api_response = api_instance.get_webchat_guest_conversation_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_guest_conversation_messages: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -643,7 +643,7 @@ try:
     api_response = api_instance.get_webchat_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->get_webchat_settings: %s\n" % e
+    print("Exception when calling WebChatApi->get_webchat_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -694,7 +694,7 @@ try:
     api_response = api_instance.patch_webchat_guest_conversation_mediarequest(conversation_id, media_request_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->patch_webchat_guest_conversation_mediarequest: %s\n" % e
+    print("Exception when calling WebChatApi->patch_webchat_guest_conversation_mediarequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -747,7 +747,7 @@ try:
     api_response = api_instance.post_webchat_deployments(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->post_webchat_deployments: %s\n" % e
+    print("Exception when calling WebChatApi->post_webchat_deployments: %s\n" % e)
 ```
 
 ### Parameters
@@ -801,7 +801,7 @@ try:
     api_response = api_instance.post_webchat_guest_conversation_member_messages(conversation_id, member_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->post_webchat_guest_conversation_member_messages: %s\n" % e
+    print("Exception when calling WebChatApi->post_webchat_guest_conversation_member_messages: %s\n" % e)
 ```
 
 ### Parameters
@@ -856,7 +856,7 @@ try:
     api_response = api_instance.post_webchat_guest_conversation_member_typing(conversation_id, member_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->post_webchat_guest_conversation_member_typing: %s\n" % e
+    print("Exception when calling WebChatApi->post_webchat_guest_conversation_member_typing: %s\n" % e)
 ```
 
 ### Parameters
@@ -904,7 +904,7 @@ try:
     api_response = api_instance.post_webchat_guest_conversations(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->post_webchat_guest_conversations: %s\n" % e
+    print("Exception when calling WebChatApi->post_webchat_guest_conversations: %s\n" % e)
 ```
 
 ### Parameters
@@ -956,7 +956,7 @@ try:
     api_response = api_instance.put_webchat_deployment(deployment_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->put_webchat_deployment: %s\n" % e
+    print("Exception when calling WebChatApi->put_webchat_deployment: %s\n" % e)
 ```
 
 ### Parameters
@@ -1008,7 +1008,7 @@ try:
     api_response = api_instance.put_webchat_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WebChatApi->put_webchat_settings: %s\n" % e
+    print("Exception when calling WebChatApi->put_webchat_settings: %s\n" % e)
 ```
 
 ### Parameters

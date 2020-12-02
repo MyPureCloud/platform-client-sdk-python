@@ -149,7 +149,7 @@ class IntentFeedback(object):
         """
         allowed_values = ["Incorrect", "Correct", "Unknown", "Disabled"]
         if assessment.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for assessment -> " + assessment
+            # print("Invalid value for assessment -> " + assessment)
             self._assessment = "outdated_sdk_version"
         else:
             self._assessment = assessment

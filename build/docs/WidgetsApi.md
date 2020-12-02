@@ -51,7 +51,7 @@ try:
     # Delete a Widget deployment
     api_instance.delete_widgets_deployment(deployment_id)
 except ApiException as e:
-    print "Exception when calling WidgetsApi->delete_widgets_deployment: %s\n" % e
+    print("Exception when calling WidgetsApi->delete_widgets_deployment: %s\n" % e)
 ```
 
 ### Parameters
@@ -103,7 +103,7 @@ try:
     api_response = api_instance.get_widgets_deployment(deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WidgetsApi->get_widgets_deployment: %s\n" % e
+    print("Exception when calling WidgetsApi->get_widgets_deployment: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,7 +154,7 @@ try:
     api_response = api_instance.get_widgets_deployments()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WidgetsApi->get_widgets_deployments: %s\n" % e
+    print("Exception when calling WidgetsApi->get_widgets_deployments: %s\n" % e)
 ```
 
 ### Parameters
@@ -203,7 +203,7 @@ try:
     api_response = api_instance.post_widgets_deployments(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WidgetsApi->post_widgets_deployments: %s\n" % e
+    print("Exception when calling WidgetsApi->post_widgets_deployments: %s\n" % e)
 ```
 
 ### Parameters
@@ -256,7 +256,7 @@ try:
     api_response = api_instance.put_widgets_deployment(deployment_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WidgetsApi->put_widgets_deployment: %s\n" % e
+    print("Exception when calling WidgetsApi->put_widgets_deployment: %s\n" % e)
 ```
 
 ### Parameters

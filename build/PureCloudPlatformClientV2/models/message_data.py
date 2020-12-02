@@ -248,7 +248,7 @@ class MessageData(object):
         """
         allowed_values = ["inbound", "outbound"]
         if direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for direction -> " + direction
+            # print("Invalid value for direction -> " + direction)
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
@@ -275,7 +275,7 @@ class MessageData(object):
         """
         allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "webmessaging"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for messenger_type -> " + messenger_type
+            # print("Invalid value for messenger_type -> " + messenger_type)
             self._messenger_type = "outdated_sdk_version"
         else:
             self._messenger_type = messenger_type
@@ -325,7 +325,7 @@ class MessageData(object):
         """
         allowed_values = ["queued", "sent", "failed", "received", "delivery-success", "delivery-failed", "read"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

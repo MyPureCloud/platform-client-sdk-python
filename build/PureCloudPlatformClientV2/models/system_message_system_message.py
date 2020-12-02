@@ -118,7 +118,7 @@ class SystemMessageSystemMessage(object):
         """
         allowed_values = ["no_longer_subscribed", "subscription_changed", "token_revoked"]
         if system_topic_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for system_topic_type -> " + system_topic_type
+            # print("Invalid value for system_topic_type -> " + system_topic_type)
             self._system_topic_type = "outdated_sdk_version"
         else:
             self._system_topic_type = system_topic_type
@@ -237,7 +237,7 @@ class SystemMessageSystemMessage(object):
         """
         allowed_values = ["another_channel_subscribed", "user_tokens_revoked"]
         if reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for reason -> " + reason
+            # print("Invalid value for reason -> " + reason)
             self._reason = "outdated_sdk_version"
         else:
             self._reason = reason

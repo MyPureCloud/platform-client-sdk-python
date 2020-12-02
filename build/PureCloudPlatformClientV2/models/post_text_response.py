@@ -92,7 +92,7 @@ class PostTextResponse(object):
         """
         allowed_values = ["Complete", "Failed", "MoreData"]
         if bot_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for bot_state -> " + bot_state
+            # print("Invalid value for bot_state -> " + bot_state)
             self._bot_state = "outdated_sdk_version"
         else:
             self._bot_state = bot_state

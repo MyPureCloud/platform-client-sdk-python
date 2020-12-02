@@ -317,7 +317,7 @@ class NluDomainVersion(object):
         """
         allowed_values = ["Untrained", "Training", "Trained", "Error", "Unknown"]
         if training_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for training_status -> " + training_status
+            # print("Invalid value for training_status -> " + training_status)
             self._training_status = "outdated_sdk_version"
         else:
             self._training_status = training_status
@@ -344,7 +344,7 @@ class NluDomainVersion(object):
         """
         allowed_values = ["Unevaluated", "Evaluating", "Evaluated", "Error"]
         if evaluation_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for evaluation_status -> " + evaluation_status
+            # print("Invalid value for evaluation_status -> " + evaluation_status)
             self._evaluation_status = "outdated_sdk_version"
         else:
             self._evaluation_status = evaluation_status

@@ -103,7 +103,7 @@ class Parameter(object):
         """
         allowed_values = ["UUID", "STRING", "UUIDLIST", "STRINGLIST"]
         if parameter_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for parameter_type -> " + parameter_type
+            # print("Invalid value for parameter_type -> " + parameter_type)
             self._parameter_type = "outdated_sdk_version"
         else:
             self._parameter_type = parameter_type
@@ -130,7 +130,7 @@ class Parameter(object):
         """
         allowed_values = ["USERID", "QUEUEID", "MEDIATYPE", "DIALERCAMPAIGNID", "QMEVALFORMID", "UNKNOWN"]
         if domain.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for domain -> " + domain
+            # print("Invalid value for domain -> " + domain)
             self._domain = "outdated_sdk_version"
         else:
             self._domain = domain

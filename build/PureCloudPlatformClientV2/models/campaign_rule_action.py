@@ -126,7 +126,7 @@ class CampaignRuleAction(object):
         """
         allowed_values = ["turnOnCampaign", "turnOffCampaign", "turnOnSequence", "turnOffSequence", "setCampaignPriority", "recycleCampaign", "setCampaignDialingMode"]
         if action_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_type -> " + action_type
+            # print("Invalid value for action_type -> " + action_type)
             self._action_type = "outdated_sdk_version"
         else:
             self._action_type = action_type

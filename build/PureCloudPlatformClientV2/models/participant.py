@@ -709,7 +709,7 @@ class Participant(object):
         """
         allowed_values = ["mandatory", "optional", "agentRequested", "timeout", "forcedTimeout"]
         if wrapup_prompt.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for wrapup_prompt -> " + wrapup_prompt
+            # print("Invalid value for wrapup_prompt -> " + wrapup_prompt)
             self._wrapup_prompt = "outdated_sdk_version"
         else:
             self._wrapup_prompt = wrapup_prompt
@@ -1150,7 +1150,7 @@ class Participant(object):
         """
         allowed_values = ["requested", "active", "paused", "stopped", "error", "timeout"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for screen_recording_state -> " + screen_recording_state
+            # print("Invalid value for screen_recording_state -> " + screen_recording_state)
             self._screen_recording_state = "outdated_sdk_version"
         else:
             self._screen_recording_state = screen_recording_state
@@ -1177,7 +1177,7 @@ class Participant(object):
         """
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for flagged_reason -> " + flagged_reason
+            # print("Invalid value for flagged_reason -> " + flagged_reason)
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason

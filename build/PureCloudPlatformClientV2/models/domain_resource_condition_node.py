@@ -106,7 +106,7 @@ class DomainResourceConditionNode(object):
         """
         allowed_values = ["EQ", "IN", "GE", "GT", "LE", "LT"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator
@@ -156,7 +156,7 @@ class DomainResourceConditionNode(object):
         """
         allowed_values = ["AND", "OR"]
         if conjunction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for conjunction -> " + conjunction
+            # print("Invalid value for conjunction -> " + conjunction)
             self._conjunction = "outdated_sdk_version"
         else:
             self._conjunction = conjunction

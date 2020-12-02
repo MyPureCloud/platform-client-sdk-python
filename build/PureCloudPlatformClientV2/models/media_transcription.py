@@ -100,7 +100,7 @@ class MediaTranscription(object):
         """
         allowed_values = ["VOCI", "CALLJOURNEY"]
         if transcription_provider.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for transcription_provider -> " + transcription_provider
+            # print("Invalid value for transcription_provider -> " + transcription_provider)
             self._transcription_provider = "outdated_sdk_version"
         else:
             self._transcription_provider = transcription_provider

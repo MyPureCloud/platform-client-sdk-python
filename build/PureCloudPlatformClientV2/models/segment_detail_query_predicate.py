@@ -92,7 +92,7 @@ class SegmentDetailQueryPredicate(object):
         """
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -119,7 +119,7 @@ class SegmentDetailQueryPredicate(object):
         """
         allowed_values = ["addressFrom", "addressOther", "addressSelf", "addressTo", "agentAssistantId", "agentRank", "agentScore", "ani", "audioMuted", "callbackNumber", "callbackScheduledTime", "callbackUserName", "cobrowseRole", "cobrowseRoomId", "conference", "destinationConversationId", "destinationSessionId", "direction", "disconnectType", "dispositionAnalyzer", "dispositionName", "dnis", "edgeId", "endingLanguage", "entryReason", "entryType", "errorCode", "exitReason", "externalContactId", "externalOrganizationId", "flaggedReason", "flowId", "flowName", "flowOutType", "flowOutcome", "flowOutcomeEndTimestamp", "flowOutcomeId", "flowOutcomeStartTimestamp", "flowOutcomeValue", "flowType", "flowVersion", "groupId", "issuedCallback", "journeyActionId", "journeyActionMapId", "journeyActionMapVersion", "journeyCustomerId", "journeyCustomerIdType", "journeyCustomerSessionId", "journeyCustomerSessionIdType", "journeySegmentScope", "mediaBridgeId", "mediaCount", "mediaType", "messageType", "monitoredParticipantId", "outboundCampaignId", "outboundContactId", "outboundContactListId", "participantId", "participantName", "peerId", "proposedAgentId", "protocolCallId", "provider", "purpose", "q850ResponseCode", "queueId", "recording", "remote", "remoteNameDisplayable", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "requestedRoutingUserId", "roomId", "scoredAgentId", "screenShareAddressSelf", "screenShareRoomId", "scriptId", "segmentEnd", "segmentType", "selectedAgentId", "selectedAgentRank", "sessionDnis", "sessionId", "sharingScreen", "sipResponseCode", "skipEnabled", "sourceConversationId", "sourceSessionId", "startingLanguage", "subject", "teamId", "timeoutSeconds", "transferTargetAddress", "transferTargetName", "transferType", "usedRouting", "userId", "videoAddressSelf", "videoMuted", "videoRoomId", "wrapUpCode", "wrapUpNote", "wrapUpTag"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -146,7 +146,7 @@ class SegmentDetailQueryPredicate(object):
         """
         allowed_values = ["bool", "integer", "real", "date", "string", "uuid"]
         if property_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for property_type -> " + property_type
+            # print("Invalid value for property_type -> " + property_type)
             self._property_type = "outdated_sdk_version"
         else:
             self._property_type = property_type
@@ -196,7 +196,7 @@ class SegmentDetailQueryPredicate(object):
         """
         allowed_values = ["tSegmentDuration"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -223,7 +223,7 @@ class SegmentDetailQueryPredicate(object):
         """
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

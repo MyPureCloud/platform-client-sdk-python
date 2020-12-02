@@ -268,7 +268,7 @@ class DncList(object):
         """
         allowed_values = ["rds", "dnc.com", "gryphon"]
         if dnc_source_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dnc_source_type -> " + dnc_source_type
+            # print("Invalid value for dnc_source_type -> " + dnc_source_type)
             self._dnc_source_type = "outdated_sdk_version"
         else:
             self._dnc_source_type = dnc_source_type

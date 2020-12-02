@@ -213,7 +213,7 @@ class AnalyticsConversationWithoutAttributes(object):
         """
         allowed_values = ["inbound", "outbound"]
         if originating_direction.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for originating_direction -> " + originating_direction
+            # print("Invalid value for originating_direction -> " + originating_direction)
             self._originating_direction = "outdated_sdk_version"
         else:
             self._originating_direction = originating_direction

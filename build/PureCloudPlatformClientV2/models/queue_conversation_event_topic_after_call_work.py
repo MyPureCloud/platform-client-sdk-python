@@ -77,7 +77,7 @@ class QueueConversationEventTopicAfterCallWork(object):
         """
         allowed_values = ["UNKNOWN", "SKIPPED", "PENDING", "COMPLETE", "NOT_APPLICABLE"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state

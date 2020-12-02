@@ -254,7 +254,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         """
         allowed_values = ["__EMPTY__", "OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING", "OFFLINE"]
         if routing_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for routing_status -> " + routing_status
+            # print("Invalid value for routing_status -> " + routing_status)
             self._routing_status = "outdated_sdk_version"
         else:
             self._routing_status = routing_status
@@ -327,7 +327,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         """
         allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored"]
         if adherence_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for adherence_state -> " + adherence_state
+            # print("Invalid value for adherence_state -> " + adherence_state)
             self._adherence_state = "outdated_sdk_version"
         else:
             self._adherence_state = adherence_state

@@ -74,7 +74,7 @@ class DevelopmentActivityAggregateQueryResponseMetric(object):
         """
         allowed_values = ["nActivities", "nPlannedActivities", "nInProgressActivities", "nCompleteActivities", "nOverdueActivities", "nInvalidScheduleActivities"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric

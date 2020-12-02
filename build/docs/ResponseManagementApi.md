@@ -55,7 +55,7 @@ try:
     # Delete an existing response library.
     api_instance.delete_responsemanagement_library(library_id)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->delete_responsemanagement_library: %s\n" % e
+    print("Exception when calling ResponseManagementApi->delete_responsemanagement_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -104,7 +104,7 @@ try:
     # Delete an existing response.
     api_instance.delete_responsemanagement_response(response_id)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->delete_responsemanagement_response: %s\n" % e
+    print("Exception when calling ResponseManagementApi->delete_responsemanagement_response: %s\n" % e)
 ```
 
 ### Parameters
@@ -156,7 +156,7 @@ try:
     api_response = api_instance.get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->get_responsemanagement_libraries: %s\n" % e
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_libraries: %s\n" % e)
 ```
 
 ### Parameters
@@ -208,7 +208,7 @@ try:
     api_response = api_instance.get_responsemanagement_library(library_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->get_responsemanagement_library: %s\n" % e
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -259,7 +259,7 @@ try:
     api_response = api_instance.get_responsemanagement_response(response_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->get_responsemanagement_response: %s\n" % e
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_response: %s\n" % e)
 ```
 
 ### Parameters
@@ -313,7 +313,7 @@ try:
     api_response = api_instance.get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->get_responsemanagement_responses: %s\n" % e
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_responses: %s\n" % e)
 ```
 
 ### Parameters
@@ -366,7 +366,7 @@ try:
     api_response = api_instance.post_responsemanagement_libraries(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->post_responsemanagement_libraries: %s\n" % e
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_libraries: %s\n" % e)
 ```
 
 ### Parameters
@@ -417,7 +417,7 @@ try:
     api_response = api_instance.post_responsemanagement_responses(body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->post_responsemanagement_responses: %s\n" % e
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responses: %s\n" % e)
 ```
 
 ### Parameters
@@ -468,7 +468,7 @@ try:
     api_response = api_instance.post_responsemanagement_responses_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->post_responsemanagement_responses_query: %s\n" % e
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responses_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -519,7 +519,7 @@ try:
     api_response = api_instance.put_responsemanagement_library(library_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->put_responsemanagement_library: %s\n" % e
+    print("Exception when calling ResponseManagementApi->put_responsemanagement_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -572,7 +572,7 @@ try:
     api_response = api_instance.put_responsemanagement_response(response_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ResponseManagementApi->put_responsemanagement_response: %s\n" % e
+    print("Exception when calling ResponseManagementApi->put_responsemanagement_response: %s\n" % e)
 ```
 
 ### Parameters

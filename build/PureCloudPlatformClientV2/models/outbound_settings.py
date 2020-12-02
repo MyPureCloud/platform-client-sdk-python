@@ -308,7 +308,7 @@ class OutboundSettings(object):
         """
         allowed_values = ["ALL_CALLS", "CALLS_THAT_REACHED_QUEUE"]
         if compliance_abandon_rate_denominator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for compliance_abandon_rate_denominator -> " + compliance_abandon_rate_denominator
+            # print("Invalid value for compliance_abandon_rate_denominator -> " + compliance_abandon_rate_denominator)
             self._compliance_abandon_rate_denominator = "outdated_sdk_version"
         else:
             self._compliance_abandon_rate_denominator = compliance_abandon_rate_denominator

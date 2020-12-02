@@ -149,7 +149,7 @@ class LockInfo(object):
         """
         allowed_values = ["UPDATE", "DELETE", "COPY", "MOVE", "REPLACE", "THUMBNAIL", "TEXT_EXTRACTION"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action

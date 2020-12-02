@@ -60,7 +60,7 @@ try:
     api_response = api_instance.get_documentation_gkn_search(q64)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_documentation_gkn_search: %s\n" % e
+    print("Exception when calling SearchApi->get_documentation_gkn_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -107,7 +107,7 @@ try:
     api_response = api_instance.get_documentation_search(q64)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_documentation_search: %s\n" % e
+    print("Exception when calling SearchApi->get_documentation_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -158,7 +158,7 @@ try:
     api_response = api_instance.get_groups_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_groups_search: %s\n" % e
+    print("Exception when calling SearchApi->get_groups_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -210,7 +210,7 @@ try:
     api_response = api_instance.get_locations_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_locations_search: %s\n" % e
+    print("Exception when calling SearchApi->get_locations_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -263,7 +263,7 @@ try:
     api_response = api_instance.get_search(q64, expand=expand, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_search: %s\n" % e
+    print("Exception when calling SearchApi->get_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -317,7 +317,7 @@ try:
     api_response = api_instance.get_search_suggest(q64, expand=expand, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_search_suggest: %s\n" % e
+    print("Exception when calling SearchApi->get_search_suggest: %s\n" % e)
 ```
 
 ### Parameters
@@ -371,7 +371,7 @@ try:
     api_response = api_instance.get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_users_search: %s\n" % e
+    print("Exception when calling SearchApi->get_users_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -381,7 +381,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str.html)| expand | [optional]  |
-| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
 {: class="table table-striped"}
 
 ### Return type
@@ -424,7 +424,7 @@ try:
     api_response = api_instance.get_voicemail_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->get_voicemail_search: %s\n" % e
+    print("Exception when calling SearchApi->get_voicemail_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -476,7 +476,7 @@ try:
     api_response = api_instance.post_analytics_conversations_transcripts_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_analytics_conversations_transcripts_query: %s\n" % e
+    print("Exception when calling SearchApi->post_analytics_conversations_transcripts_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -523,7 +523,7 @@ try:
     api_response = api_instance.post_documentation_gkn_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_documentation_gkn_search: %s\n" % e
+    print("Exception when calling SearchApi->post_documentation_gkn_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -570,7 +570,7 @@ try:
     api_response = api_instance.post_documentation_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_documentation_search: %s\n" % e
+    print("Exception when calling SearchApi->post_documentation_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -620,7 +620,7 @@ try:
     api_response = api_instance.post_groups_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_groups_search: %s\n" % e
+    print("Exception when calling SearchApi->post_groups_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -672,7 +672,7 @@ try:
     api_response = api_instance.post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_knowledge_knowledgebase_search: %s\n" % e
+    print("Exception when calling SearchApi->post_knowledge_knowledgebase_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -723,7 +723,7 @@ try:
     api_response = api_instance.post_locations_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_locations_search: %s\n" % e
+    print("Exception when calling SearchApi->post_locations_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -774,7 +774,7 @@ try:
     api_response = api_instance.post_search(body, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_search: %s\n" % e
+    print("Exception when calling SearchApi->post_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -826,7 +826,7 @@ try:
     api_response = api_instance.post_search_suggest(body, profile=profile)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_search_suggest: %s\n" % e
+    print("Exception when calling SearchApi->post_search_suggest: %s\n" % e)
 ```
 
 ### Parameters
@@ -878,7 +878,7 @@ try:
     api_response = api_instance.post_users_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_users_search: %s\n" % e
+    print("Exception when calling SearchApi->post_users_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -928,7 +928,7 @@ try:
     api_response = api_instance.post_voicemail_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SearchApi->post_voicemail_search: %s\n" % e
+    print("Exception when calling SearchApi->post_voicemail_search: %s\n" % e)
 ```
 
 ### Parameters

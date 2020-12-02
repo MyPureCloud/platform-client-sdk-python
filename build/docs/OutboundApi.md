@@ -153,7 +153,7 @@ try:
     # Delete attempt limits
     api_instance.delete_outbound_attemptlimit(attempt_limits_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_attemptlimit: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_attemptlimit: %s\n" % e)
 ```
 
 ### Parameters
@@ -203,7 +203,7 @@ try:
     # Delete callable time set
     api_instance.delete_outbound_callabletimeset(callable_time_set_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_callabletimeset: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_callabletimeset: %s\n" % e)
 ```
 
 ### Parameters
@@ -253,7 +253,7 @@ try:
     # Delete a dialer call analysis response set.
     api_instance.delete_outbound_callanalysisresponseset(call_analysis_set_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_callanalysisresponseset: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_callanalysisresponseset: %s\n" % e)
 ```
 
 ### Parameters
@@ -304,7 +304,7 @@ try:
     api_response = api_instance.delete_outbound_campaign(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -354,7 +354,7 @@ try:
     # Reset campaign progress and recycle the campaign
     api_instance.delete_outbound_campaign_progress(campaign_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_campaign_progress: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_campaign_progress: %s\n" % e)
 ```
 
 ### Parameters
@@ -404,7 +404,7 @@ try:
     # Delete Campaign Rule
     api_instance.delete_outbound_campaignrule(campaign_rule_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_campaignrule: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_campaignrule: %s\n" % e)
 ```
 
 ### Parameters
@@ -454,7 +454,7 @@ try:
     # Delete a contact list.
     api_instance.delete_outbound_contactlist(contact_list_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_contactlist: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_contactlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -505,7 +505,7 @@ try:
     # Delete a contact.
     api_instance.delete_outbound_contactlist_contact(contact_list_id, contact_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_contactlist_contact: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_contactlist_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -557,7 +557,7 @@ try:
     # Delete contacts from a contact list.
     api_instance.delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_contactlist_contacts: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_contactlist_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -608,7 +608,7 @@ try:
     # Delete Contact List Filter
     api_instance.delete_outbound_contactlistfilter(contact_list_filter_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_contactlistfilter: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_contactlistfilter: %s\n" % e)
 ```
 
 ### Parameters
@@ -658,7 +658,7 @@ try:
     # Delete multiple contact lists.
     api_instance.delete_outbound_contactlists(id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_contactlists: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_contactlists: %s\n" % e)
 ```
 
 ### Parameters
@@ -708,7 +708,7 @@ try:
     # Delete dialer DNC list
     api_instance.delete_outbound_dnclist(dnc_list_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_dnclist: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_dnclist: %s\n" % e)
 ```
 
 ### Parameters
@@ -759,7 +759,7 @@ try:
     api_response = api_instance.delete_outbound_messagingcampaign(messaging_campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_messagingcampaign: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_messagingcampaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -809,7 +809,7 @@ try:
     # Delete a Rule set.
     api_instance.delete_outbound_ruleset(rule_set_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_ruleset: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_ruleset: %s\n" % e)
 ```
 
 ### Parameters
@@ -859,7 +859,7 @@ try:
     # Delete a dialer campaign schedule.
     api_instance.delete_outbound_schedules_campaign(campaign_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_schedules_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_schedules_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -909,7 +909,7 @@ try:
     # Delete a dialer sequence schedule.
     api_instance.delete_outbound_schedules_sequence(sequence_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_schedules_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_schedules_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -959,7 +959,7 @@ try:
     # Delete a dialer campaign sequence.
     api_instance.delete_outbound_sequence(sequence_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->delete_outbound_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->delete_outbound_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -1010,7 +1010,7 @@ try:
     api_response = api_instance.get_outbound_attemptlimit(attempt_limits_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_attemptlimit: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_attemptlimit: %s\n" % e)
 ```
 
 ### Parameters
@@ -1067,7 +1067,7 @@ try:
     api_response = api_instance.get_outbound_attemptlimits(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_attemptlimits: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_attemptlimits: %s\n" % e)
 ```
 
 ### Parameters
@@ -1124,7 +1124,7 @@ try:
     api_response = api_instance.get_outbound_callabletimeset(callable_time_set_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_callabletimeset: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_callabletimeset: %s\n" % e)
 ```
 
 ### Parameters
@@ -1181,7 +1181,7 @@ try:
     api_response = api_instance.get_outbound_callabletimesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_callabletimesets: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_callabletimesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -1238,7 +1238,7 @@ try:
     api_response = api_instance.get_outbound_callanalysisresponseset(call_analysis_set_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_callanalysisresponseset: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_callanalysisresponseset: %s\n" % e)
 ```
 
 ### Parameters
@@ -1295,7 +1295,7 @@ try:
     api_response = api_instance.get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_callanalysisresponsesets: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_callanalysisresponsesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -1352,7 +1352,7 @@ try:
     api_response = api_instance.get_outbound_campaign(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -1403,7 +1403,7 @@ try:
     api_response = api_instance.get_outbound_campaign_diagnostics(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaign_diagnostics: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaign_diagnostics: %s\n" % e)
 ```
 
 ### Parameters
@@ -1454,7 +1454,7 @@ try:
     api_response = api_instance.get_outbound_campaign_interactions(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaign_interactions: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaign_interactions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1505,7 +1505,7 @@ try:
     api_response = api_instance.get_outbound_campaign_progress(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaign_progress: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaign_progress: %s\n" % e)
 ```
 
 ### Parameters
@@ -1556,7 +1556,7 @@ try:
     api_response = api_instance.get_outbound_campaign_stats(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaign_stats: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaign_stats: %s\n" % e)
 ```
 
 ### Parameters
@@ -1607,7 +1607,7 @@ try:
     api_response = api_instance.get_outbound_campaignrule(campaign_rule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaignrule: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaignrule: %s\n" % e)
 ```
 
 ### Parameters
@@ -1664,7 +1664,7 @@ try:
     api_response = api_instance.get_outbound_campaignrules(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaignrules: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaignrules: %s\n" % e)
 ```
 
 ### Parameters
@@ -1733,7 +1733,7 @@ try:
     api_response = api_instance.get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_ids=dnc_list_ids, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaigns: %s\n" % e)
 ```
 
 ### Parameters
@@ -1803,7 +1803,7 @@ try:
     api_response = api_instance.get_outbound_campaigns_all(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns_all: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaigns_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -1867,7 +1867,7 @@ try:
     api_response = api_instance.get_outbound_campaigns_all_divisionviews(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns_all_divisionviews: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaigns_all_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -1924,7 +1924,7 @@ try:
     api_response = api_instance.get_outbound_campaigns_divisionview(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns_divisionview: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaigns_divisionview: %s\n" % e)
 ```
 
 ### Parameters
@@ -1981,7 +1981,7 @@ try:
     api_response = api_instance.get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_campaigns_divisionviews: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_campaigns_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -2040,7 +2040,7 @@ try:
     api_response = api_instance.get_outbound_contactlist(contact_list_id, include_import_status=include_import_status, include_size=include_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlist: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -2094,7 +2094,7 @@ try:
     api_response = api_instance.get_outbound_contactlist_contact(contact_list_id, contact_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlist_contact: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlist_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -2148,7 +2148,7 @@ try:
     api_response = api_instance.get_outbound_contactlist_export(contact_list_id, download=download)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlist_export: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlist_export: %s\n" % e)
 ```
 
 ### Parameters
@@ -2200,7 +2200,7 @@ try:
     api_response = api_instance.get_outbound_contactlist_importstatus(contact_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlist_importstatus: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlist_importstatus: %s\n" % e)
 ```
 
 ### Parameters
@@ -2251,7 +2251,7 @@ try:
     api_response = api_instance.get_outbound_contactlist_timezonemappingpreview(contact_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlist_timezonemappingpreview: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlist_timezonemappingpreview: %s\n" % e)
 ```
 
 ### Parameters
@@ -2302,7 +2302,7 @@ try:
     api_response = api_instance.get_outbound_contactlistfilter(contact_list_filter_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlistfilter: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlistfilter: %s\n" % e)
 ```
 
 ### Parameters
@@ -2360,7 +2360,7 @@ try:
     api_response = api_instance.get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlistfilters: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlistfilters: %s\n" % e)
 ```
 
 ### Parameters
@@ -2428,7 +2428,7 @@ try:
     api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e)
 ```
 
 ### Parameters
@@ -2491,7 +2491,7 @@ try:
     api_response = api_instance.get_outbound_contactlists_divisionview(contact_list_id, include_import_status=include_import_status, include_size=include_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlists_divisionview: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlists_divisionview: %s\n" % e)
 ```
 
 ### Parameters
@@ -2552,7 +2552,7 @@ try:
     api_response = api_instance.get_outbound_contactlists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_contactlists_divisionviews: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_contactlists_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -2613,7 +2613,7 @@ try:
     api_response = api_instance.get_outbound_dnclist(dnc_list_id, include_import_status=include_import_status, include_size=include_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclist: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclist: %s\n" % e)
 ```
 
 ### Parameters
@@ -2668,7 +2668,7 @@ try:
     api_response = api_instance.get_outbound_dnclist_export(dnc_list_id, download=download)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclist_export: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclist_export: %s\n" % e)
 ```
 
 ### Parameters
@@ -2720,7 +2720,7 @@ try:
     api_response = api_instance.get_outbound_dnclist_importstatus(dnc_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclist_importstatus: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclist_importstatus: %s\n" % e)
 ```
 
 ### Parameters
@@ -2781,7 +2781,7 @@ try:
     api_response = api_instance.get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclists: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclists: %s\n" % e)
 ```
 
 ### Parameters
@@ -2844,7 +2844,7 @@ try:
     api_response = api_instance.get_outbound_dnclists_divisionview(dnc_list_id, include_import_status=include_import_status, include_size=include_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclists_divisionview: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclists_divisionview: %s\n" % e)
 ```
 
 ### Parameters
@@ -2905,7 +2905,7 @@ try:
     api_response = api_instance.get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_dnclists_divisionviews: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_dnclists_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -2964,7 +2964,7 @@ try:
     api_response = api_instance.get_outbound_event(event_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_event: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_event: %s\n" % e)
 ```
 
 ### Parameters
@@ -3021,7 +3021,7 @@ try:
     api_response = api_instance.get_outbound_events(page_size=page_size, page_number=page_number, filter_type=filter_type, category=category, level=level, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_events: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_events: %s\n" % e)
 ```
 
 ### Parameters
@@ -3078,7 +3078,7 @@ try:
     api_response = api_instance.get_outbound_messagingcampaign(messaging_campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_messagingcampaign: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -3129,7 +3129,7 @@ try:
     api_response = api_instance.get_outbound_messagingcampaign_progress(messaging_campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_messagingcampaign_progress: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaign_progress: %s\n" % e)
 ```
 
 ### Parameters
@@ -3189,7 +3189,7 @@ try:
     api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaigns: %s\n" % e)
 ```
 
 ### Parameters
@@ -3249,7 +3249,7 @@ try:
     api_response = api_instance.get_outbound_messagingcampaigns_divisionview(messaging_campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionview: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionview: %s\n" % e)
 ```
 
 ### Parameters
@@ -3305,7 +3305,7 @@ try:
     api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id, sender_sms_phone_number=sender_sms_phone_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -3361,7 +3361,7 @@ try:
     api_response = api_instance.get_outbound_ruleset(rule_set_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_ruleset: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_ruleset: %s\n" % e)
 ```
 
 ### Parameters
@@ -3418,7 +3418,7 @@ try:
     api_response = api_instance.get_outbound_rulesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_rulesets: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_rulesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -3475,7 +3475,7 @@ try:
     api_response = api_instance.get_outbound_schedules_campaign(campaign_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_schedules_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_schedules_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -3525,7 +3525,7 @@ try:
     api_response = api_instance.get_outbound_schedules_campaigns()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_schedules_campaigns: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_schedules_campaigns: %s\n" % e)
 ```
 
 ### Parameters
@@ -3573,7 +3573,7 @@ try:
     api_response = api_instance.get_outbound_schedules_sequence(sequence_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_schedules_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_schedules_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -3623,7 +3623,7 @@ try:
     api_response = api_instance.get_outbound_schedules_sequences()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_schedules_sequences: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_schedules_sequences: %s\n" % e)
 ```
 
 ### Parameters
@@ -3671,7 +3671,7 @@ try:
     api_response = api_instance.get_outbound_sequence(sequence_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -3728,7 +3728,7 @@ try:
     api_response = api_instance.get_outbound_sequences(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_sequences: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_sequences: %s\n" % e)
 ```
 
 ### Parameters
@@ -3784,7 +3784,7 @@ try:
     api_response = api_instance.get_outbound_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_settings: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -3831,7 +3831,7 @@ try:
     api_response = api_instance.get_outbound_wrapupcodemappings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->get_outbound_wrapupcodemappings: %s\n" % e
+    print("Exception when calling OutboundApi->get_outbound_wrapupcodemappings: %s\n" % e)
 ```
 
 ### Parameters
@@ -3878,7 +3878,7 @@ try:
     # Update the outbound settings for this organization
     api_instance.patch_outbound_settings(body)
 except ApiException as e:
-    print "Exception when calling OutboundApi->patch_outbound_settings: %s\n" % e
+    print("Exception when calling OutboundApi->patch_outbound_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -3929,7 +3929,7 @@ try:
     api_response = api_instance.post_outbound_attemptlimits(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_attemptlimits: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_attemptlimits: %s\n" % e)
 ```
 
 ### Parameters
@@ -3985,7 +3985,7 @@ try:
     api_response = api_instance.post_outbound_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, facets_only=facets_only)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_audits: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_audits: %s\n" % e)
 ```
 
 ### Parameters
@@ -4041,7 +4041,7 @@ try:
     api_response = api_instance.post_outbound_callabletimesets(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_callabletimesets: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_callabletimesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -4092,7 +4092,7 @@ try:
     api_response = api_instance.post_outbound_callanalysisresponsesets(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_callanalysisresponsesets: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_callanalysisresponsesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -4143,7 +4143,7 @@ try:
     api_response = api_instance.post_outbound_campaign_callback_schedule(campaign_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_campaign_callback_schedule: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_campaign_callback_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -4195,7 +4195,7 @@ try:
     api_response = api_instance.post_outbound_campaignrules(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_campaignrules: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_campaignrules: %s\n" % e)
 ```
 
 ### Parameters
@@ -4246,7 +4246,7 @@ try:
     api_response = api_instance.post_outbound_campaigns(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_campaigns: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_campaigns: %s\n" % e)
 ```
 
 ### Parameters
@@ -4297,7 +4297,7 @@ try:
     api_response = api_instance.post_outbound_campaigns_progress(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_campaigns_progress: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_campaigns_progress: %s\n" % e)
 ```
 
 ### Parameters
@@ -4347,7 +4347,7 @@ try:
     # Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
     api_instance.post_outbound_contactlist_clear(contact_list_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e)
 ```
 
 ### Parameters
@@ -4402,7 +4402,7 @@ try:
     api_response = api_instance.post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data, do_not_queue=do_not_queue)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlist_contacts: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts: %s\n" % e)
 ```
 
 ### Parameters
@@ -4458,7 +4458,7 @@ try:
     api_response = api_instance.post_outbound_contactlist_contacts_bulk(contact_list_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -4511,7 +4511,7 @@ try:
     api_response = api_instance.post_outbound_contactlist_export(contact_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlist_export: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlist_export: %s\n" % e)
 ```
 
 ### Parameters
@@ -4562,7 +4562,7 @@ try:
     api_response = api_instance.post_outbound_contactlistfilters(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlistfilters: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlistfilters: %s\n" % e)
 ```
 
 ### Parameters
@@ -4613,7 +4613,7 @@ try:
     api_response = api_instance.post_outbound_contactlistfilters_preview(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlistfilters_preview: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlistfilters_preview: %s\n" % e)
 ```
 
 ### Parameters
@@ -4664,7 +4664,7 @@ try:
     api_response = api_instance.post_outbound_contactlists(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_contactlists: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_contactlists: %s\n" % e)
 ```
 
 ### Parameters
@@ -4714,7 +4714,7 @@ try:
     # Add phone numbers to a Dialer DNC list.
     api_instance.post_outbound_conversation_dnc(conversation_id)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_conversation_dnc: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_conversation_dnc: %s\n" % e)
 ```
 
 ### Parameters
@@ -4766,7 +4766,7 @@ try:
     api_response = api_instance.post_outbound_dnclist_export(dnc_list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_dnclist_export: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_dnclist_export: %s\n" % e)
 ```
 
 ### Parameters
@@ -4817,7 +4817,7 @@ try:
     # Add phone numbers to a Dialer DNC list.
     api_instance.post_outbound_dnclist_phonenumbers(dnc_list_id, body)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_dnclist_phonenumbers: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_dnclist_phonenumbers: %s\n" % e)
 ```
 
 ### Parameters
@@ -4869,7 +4869,7 @@ try:
     api_response = api_instance.post_outbound_dnclists(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_dnclists: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_dnclists: %s\n" % e)
 ```
 
 ### Parameters
@@ -4920,7 +4920,7 @@ try:
     api_response = api_instance.post_outbound_messagingcampaigns(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_messagingcampaigns: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_messagingcampaigns: %s\n" % e)
 ```
 
 ### Parameters
@@ -4971,7 +4971,7 @@ try:
     api_response = api_instance.post_outbound_messagingcampaigns_progress(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_messagingcampaigns_progress: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_messagingcampaigns_progress: %s\n" % e)
 ```
 
 ### Parameters
@@ -5022,7 +5022,7 @@ try:
     api_response = api_instance.post_outbound_rulesets(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_rulesets: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_rulesets: %s\n" % e)
 ```
 
 ### Parameters
@@ -5073,7 +5073,7 @@ try:
     api_response = api_instance.post_outbound_sequences(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->post_outbound_sequences: %s\n" % e
+    print("Exception when calling OutboundApi->post_outbound_sequences: %s\n" % e)
 ```
 
 ### Parameters
@@ -5125,7 +5125,7 @@ try:
     api_response = api_instance.put_outbound_attemptlimit(attempt_limits_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_attemptlimit: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_attemptlimit: %s\n" % e)
 ```
 
 ### Parameters
@@ -5178,7 +5178,7 @@ try:
     api_response = api_instance.put_outbound_callabletimeset(callable_time_set_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_callabletimeset: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_callabletimeset: %s\n" % e)
 ```
 
 ### Parameters
@@ -5231,7 +5231,7 @@ try:
     api_response = api_instance.put_outbound_callanalysisresponseset(call_analysis_set_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_callanalysisresponseset: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_callanalysisresponseset: %s\n" % e)
 ```
 
 ### Parameters
@@ -5284,7 +5284,7 @@ try:
     api_response = api_instance.put_outbound_campaign(campaign_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -5337,7 +5337,7 @@ try:
     api_response = api_instance.put_outbound_campaign_agent(campaign_id, user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_campaign_agent: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_campaign_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -5391,7 +5391,7 @@ try:
     api_response = api_instance.put_outbound_campaignrule(campaign_rule_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_campaignrule: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_campaignrule: %s\n" % e)
 ```
 
 ### Parameters
@@ -5444,7 +5444,7 @@ try:
     api_response = api_instance.put_outbound_contactlist(contact_list_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_contactlist: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_contactlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -5498,7 +5498,7 @@ try:
     api_response = api_instance.put_outbound_contactlist_contact(contact_list_id, contact_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_contactlist_contact: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_contactlist_contact: %s\n" % e)
 ```
 
 ### Parameters
@@ -5552,7 +5552,7 @@ try:
     api_response = api_instance.put_outbound_contactlistfilter(contact_list_filter_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_contactlistfilter: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_contactlistfilter: %s\n" % e)
 ```
 
 ### Parameters
@@ -5605,7 +5605,7 @@ try:
     api_response = api_instance.put_outbound_dnclist(dnc_list_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_dnclist: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_dnclist: %s\n" % e)
 ```
 
 ### Parameters
@@ -5658,7 +5658,7 @@ try:
     api_response = api_instance.put_outbound_messagingcampaign(messaging_campaign_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_messagingcampaign: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_messagingcampaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -5711,7 +5711,7 @@ try:
     api_response = api_instance.put_outbound_ruleset(rule_set_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_ruleset: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_ruleset: %s\n" % e)
 ```
 
 ### Parameters
@@ -5764,7 +5764,7 @@ try:
     api_response = api_instance.put_outbound_schedules_campaign(campaign_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_schedules_campaign: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_schedules_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -5817,7 +5817,7 @@ try:
     api_response = api_instance.put_outbound_schedules_sequence(sequence_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_schedules_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_schedules_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -5870,7 +5870,7 @@ try:
     api_response = api_instance.put_outbound_sequence(sequence_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_sequence: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_sequence: %s\n" % e)
 ```
 
 ### Parameters
@@ -5922,7 +5922,7 @@ try:
     api_response = api_instance.put_outbound_wrapupcodemappings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OutboundApi->put_outbound_wrapupcodemappings: %s\n" % e
+    print("Exception when calling OutboundApi->put_outbound_wrapupcodemappings: %s\n" % e)
 ```
 
 ### Parameters

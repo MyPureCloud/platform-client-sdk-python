@@ -164,7 +164,7 @@ class WorkspaceMember(object):
         """
         allowed_values = ["USER", "GROUP"]
         if member_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for member_type -> " + member_type
+            # print("Invalid value for member_type -> " + member_type)
             self._member_type = "outdated_sdk_version"
         else:
             self._member_type = member_type

@@ -185,7 +185,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         """
         allowed_values = ["queueId", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -258,7 +258,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         """
         allowed_values = ["tAbandon", "tAnswered", "tTalk", "nOffered", "tHandle", "nTransferred", "oServiceLevel", "tWait", "tHeld", "tAcw"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -285,7 +285,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         """
         allowed_values = ["voice", "chat", "email", "callback", "message"]
         if media_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for media_type -> " + media_type
+            # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
@@ -312,7 +312,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         """
         allowed_values = ["gt", "gte", "lt", "lte", "eq", "ne"]
         if numeric_range.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for numeric_range -> " + numeric_range
+            # print("Invalid value for numeric_range -> " + numeric_range)
             self._numeric_range = "outdated_sdk_version"
         else:
             self._numeric_range = numeric_range
@@ -339,7 +339,7 @@ class KlaxonInteractionStatsAlertsTopicInteractionStatAlert(object):
         """
         allowed_values = ["count", "min", "ratio", "max"]
         if statistic.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for statistic -> " + statistic
+            # print("Invalid value for statistic -> " + statistic)
             self._statistic = "outdated_sdk_version"
         else:
             self._statistic = statistic

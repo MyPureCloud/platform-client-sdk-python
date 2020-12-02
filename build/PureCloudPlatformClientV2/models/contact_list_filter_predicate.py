@@ -109,7 +109,7 @@ class ContactListFilterPredicate(object):
         """
         allowed_values = ["numeric", "alphabetic"]
         if column_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for column_type -> " + column_type
+            # print("Invalid value for column_type -> " + column_type)
             self._column_type = "outdated_sdk_version"
         else:
             self._column_type = column_type
@@ -136,7 +136,7 @@ class ContactListFilterPredicate(object):
         """
         allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "BETWEEN", "IN"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

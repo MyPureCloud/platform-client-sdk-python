@@ -170,7 +170,7 @@ class CoachingNotification(object):
         """
         allowed_values = ["Create", "Update", "Delete", "StatusChange"]
         if action_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_type -> " + action_type
+            # print("Invalid value for action_type -> " + action_type)
             self._action_type = "outdated_sdk_version"
         else:
             self._action_type = action_type
@@ -197,7 +197,7 @@ class CoachingNotification(object):
         """
         allowed_values = ["Attendee", "Creator", "Facilitator"]
         if relationship.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for relationship -> " + relationship
+            # print("Invalid value for relationship -> " + relationship)
             self._relationship = "outdated_sdk_version"
         else:
             self._relationship = relationship
@@ -270,7 +270,7 @@ class CoachingNotification(object):
         """
         allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

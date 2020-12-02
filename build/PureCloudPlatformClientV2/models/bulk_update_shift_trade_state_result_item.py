@@ -109,7 +109,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         """
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -182,7 +182,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         """
         allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftHasExternalActivities", "InitiatingAgentShiftNotFound", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftHasExternalActivities", "ReceivingAgentShiftNotFound", "ScheduleNotPublished", "TransitionNotAllowed"]
         if failure_reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for failure_reason -> " + failure_reason
+            # print("Invalid value for failure_reason -> " + failure_reason)
             self._failure_reason = "outdated_sdk_version"
         else:
             self._failure_reason = failure_reason

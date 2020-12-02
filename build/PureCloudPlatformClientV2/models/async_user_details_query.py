@@ -178,7 +178,7 @@ class AsyncUserDetailsQuery(object):
         """
         allowed_values = ["asc", "desc"]
         if order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for order -> " + order
+            # print("Invalid value for order -> " + order)
             self._order = "outdated_sdk_version"
         else:
             self._order = order

@@ -64,7 +64,7 @@ try:
     # Delete an NLU Domain.
     api_instance.delete_languageunderstanding_domain(domain_id)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -116,7 +116,7 @@ try:
     # Delete the feedback on the NLU Domain Version.
     api_instance.delete_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain_feedback_feedback_id: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain_feedback_feedback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -169,7 +169,7 @@ try:
     # Delete an NLU Domain Version
     api_instance.delete_languageunderstanding_domain_version(domain_id, domain_version_id)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain_version: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->delete_languageunderstanding_domain_version: %s\n" % e)
 ```
 
 ### Parameters
@@ -222,7 +222,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain(domain_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -282,7 +282,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, page_number=page_number, page_size=page_size, fields=fields)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback: %s\n" % e)
 ```
 
 ### Parameters
@@ -344,7 +344,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback_feedback_id: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_feedback_feedback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -400,7 +400,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain_version(domain_id, domain_version_id, include_utterances=include_utterances)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_version: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_version: %s\n" % e)
 ```
 
 ### Parameters
@@ -455,7 +455,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain_version_report(domain_id, domain_version_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_version_report: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_version_report: %s\n" % e)
 ```
 
 ### Parameters
@@ -511,7 +511,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domain_versions(domain_id, include_utterances=include_utterances, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_versions: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domain_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -567,7 +567,7 @@ try:
     api_response = api_instance.get_languageunderstanding_domains(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domains: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_domains: %s\n" % e)
 ```
 
 ### Parameters
@@ -621,7 +621,7 @@ try:
     api_response = api_instance.patch_languageunderstanding_domain(domain_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->patch_languageunderstanding_domain: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->patch_languageunderstanding_domain: %s\n" % e)
 ```
 
 ### Parameters
@@ -675,7 +675,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domain_feedback(domain_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_feedback: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_feedback: %s\n" % e)
 ```
 
 ### Parameters
@@ -730,7 +730,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_detect: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_detect: %s\n" % e)
 ```
 
 ### Parameters
@@ -785,7 +785,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domain_version_publish(domain_id, domain_version_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_publish: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_publish: %s\n" % e)
 ```
 
 ### Parameters
@@ -839,7 +839,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domain_version_train(domain_id, domain_version_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_train: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_train: %s\n" % e)
 ```
 
 ### Parameters
@@ -893,7 +893,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domain_versions(domain_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_versions: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -946,7 +946,7 @@ try:
     api_response = api_instance.post_languageunderstanding_domains(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domains: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domains: %s\n" % e)
 ```
 
 ### Parameters
@@ -1000,7 +1000,7 @@ try:
     api_response = api_instance.put_languageunderstanding_domain_version(domain_id, domain_version_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LanguageUnderstandingApi->put_languageunderstanding_domain_version: %s\n" % e
+    print("Exception when calling LanguageUnderstandingApi->put_languageunderstanding_domain_version: %s\n" % e)
 ```
 
 ### Parameters

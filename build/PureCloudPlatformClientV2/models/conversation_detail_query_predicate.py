@@ -86,7 +86,7 @@ class ConversationDetailQueryPredicate(object):
         """
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -113,7 +113,7 @@ class ConversationDetailQueryPredicate(object):
         """
         allowed_values = ["conversationEnd", "conversationId", "divisionId", "mediaStatsMinConversationMos", "mediaStatsMinConversationRFactor", "originatingDirection"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -140,7 +140,7 @@ class ConversationDetailQueryPredicate(object):
         """
         allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nFlow", "nFlowMilestone", "nFlowOutcome", "nFlowOutcomeFailed", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nStateTransitionError", "nTransferred", "oExternalMediaCount", "oFlowMilestone", "oMediaCount", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tConversationDuration", "tDialing", "tFlow", "tFlowDisconnect", "tFlowExit", "tFlowOut", "tFlowOutcome", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tNotResponding", "tShortAbandon", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -167,7 +167,7 @@ class ConversationDetailQueryPredicate(object):
         """
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

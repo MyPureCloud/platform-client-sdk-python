@@ -230,7 +230,7 @@ class FacetEntry(object):
         """
         allowed_values = ["TERM", "NUMBERRANGE", "NUMBERHISTOGRAM", "DATERANGE", "DATEHISTOGRAM", "ID"]
         if term_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for term_type -> " + term_type
+            # print("Invalid value for term_type -> " + term_type)
             self._term_type = "outdated_sdk_version"
         else:
             self._term_type = term_type

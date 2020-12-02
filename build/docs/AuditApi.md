@@ -51,7 +51,7 @@ try:
     api_response = api_instance.get_audits_query_realtime_servicemapping()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->get_audits_query_realtime_servicemapping: %s\n" % e
+    print("Exception when calling AuditApi->get_audits_query_realtime_servicemapping: %s\n" % e)
 ```
 
 ### Parameters
@@ -98,7 +98,7 @@ try:
     api_response = api_instance.get_audits_query_servicemapping()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->get_audits_query_servicemapping: %s\n" % e
+    print("Exception when calling AuditApi->get_audits_query_servicemapping: %s\n" % e)
 ```
 
 ### Parameters
@@ -146,7 +146,7 @@ try:
     api_response = api_instance.get_audits_query_transaction_id(transaction_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->get_audits_query_transaction_id: %s\n" % e
+    print("Exception when calling AuditApi->get_audits_query_transaction_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -200,7 +200,7 @@ try:
     api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\n" % e
+    print("Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\n" % e)
 ```
 
 ### Parameters
@@ -254,7 +254,7 @@ try:
     api_response = api_instance.post_audits_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->post_audits_query: %s\n" % e
+    print("Exception when calling AuditApi->post_audits_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -306,7 +306,7 @@ try:
     api_response = api_instance.post_audits_query_realtime(body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuditApi->post_audits_query_realtime: %s\n" % e
+    print("Exception when calling AuditApi->post_audits_query_realtime: %s\n" % e)
 ```
 
 ### Parameters

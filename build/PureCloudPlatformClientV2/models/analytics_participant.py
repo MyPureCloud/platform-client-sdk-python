@@ -167,7 +167,7 @@ class AnalyticsParticipant(object):
         """
         allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external", "fax", "workflow", "campaign", "api"]
         if purpose.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for purpose -> " + purpose
+            # print("Invalid value for purpose -> " + purpose)
             self._purpose = "outdated_sdk_version"
         else:
             self._purpose = purpose
@@ -240,7 +240,7 @@ class AnalyticsParticipant(object):
         """
         allowed_values = ["general"]
         if flagged_reason.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for flagged_reason -> " + flagged_reason
+            # print("Invalid value for flagged_reason -> " + flagged_reason)
             self._flagged_reason = "outdated_sdk_version"
         else:
             self._flagged_reason = flagged_reason

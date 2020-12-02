@@ -176,7 +176,7 @@ class DataTableImportJob(object):
         """
         allowed_values = ["WaitingForUpload", "Processing", "Failed", "Succeeded"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -272,7 +272,7 @@ class DataTableImportJob(object):
         """
         allowed_values = ["ReplaceAll", "Append"]
         if import_mode.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for import_mode -> " + import_mode
+            # print("Invalid value for import_mode -> " + import_mode)
             self._import_mode = "outdated_sdk_version"
         else:
             self._import_mode = import_mode

@@ -187,7 +187,7 @@ class LexBotAlias(object):
         """
         allowed_values = ["BUILDING", "READY", "FAILED", "NOT_BUILT"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -237,7 +237,7 @@ class LexBotAlias(object):
         """
         allowed_values = ["en-US"]
         if language.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for language -> " + language
+            # print("Invalid value for language -> " + language)
             self._language = "outdated_sdk_version"
         else:
             self._language = language

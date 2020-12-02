@@ -74,7 +74,7 @@ class ShiftTradeMatchViolation(object):
         """
         allowed_values = ["AgentCapabilityMismatch", "CannotTradeWithYourself", "DirectTradeForOtherUser", "InitiatingAgentScheduleDoesNotExist", "InitiatingShiftDisallowedActivityCategory", "InitiatingShiftDoesNotExist", "InitiatingShiftHasExternalActivities", "InitiatingShiftOverlapsExisting", "InitiatingShiftStartTooClose", "InitiatingShiftTimesChanged", "InitiatingWeeklyMaxPaidTime", "InitiatingWeeklyMinPaidTime", "InvalidState", "OneSidedTradeCreation", "ReceivingAgentScheduleDoesNotExist", "ReceivingShiftDisallowedActivityCategory", "ReceivingShiftDoesNotExist", "ReceivingShiftForOneSidedTrade", "ReceivingShiftHasExternalActivities", "ReceivingShiftMissingForTwoSidedTrade", "ReceivingShiftOutsideAcceptableIntervals", "ReceivingShiftOverlapsExisting", "ReceivingShiftStartTooClose", "ReceivingShiftTimesChanged", "ReceivingWeeklyMaxPaidTime", "ReceivingWeeklyMinPaidTime", "ShiftTradingNotEnabled", "UnequalPaidTime", "WeekScheduleDifferent", "WeekScheduleDoesNotExist", "WeekScheduleUnpublished"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

@@ -112,7 +112,7 @@ class ContentList(object):
         """
         allowed_values = ["Selection", "Vertical"]
         if list_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for list_type -> " + list_type
+            # print("Invalid value for list_type -> " + list_type)
             self._list_type = "outdated_sdk_version"
         else:
             self._list_type = list_type

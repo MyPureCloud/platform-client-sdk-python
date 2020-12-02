@@ -234,7 +234,7 @@ class TrusteeBillingOverview(object):
         """
         allowed_values = ["ININ", "MONTH_TO_MONTH", "FREE_TRIAL_MONTH_TO_MONTH", "PREPAY_MONTHLY_COMMITMENT", "PREPAY", "DEV_ORG_MONTH_TO_MONTH", "DEV_ORG_PREPAY_MONTHLY_COMMITMENT", "DEV_ORG_PREPAY"]
         if subscription_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for subscription_type -> " + subscription_type
+            # print("Invalid value for subscription_type -> " + subscription_type)
             self._subscription_type = "outdated_sdk_version"
         else:
             self._subscription_type = subscription_type

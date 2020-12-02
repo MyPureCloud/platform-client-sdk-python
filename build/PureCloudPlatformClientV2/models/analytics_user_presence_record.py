@@ -126,7 +126,7 @@ class AnalyticsUserPresenceRecord(object):
         """
         allowed_values = ["AVAILABLE", "AWAY", "BUSY", "OFFLINE", "IDLE", "ON_QUEUE", "MEAL", "TRAINING", "MEETING", "BREAK"]
         if system_presence.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for system_presence -> " + system_presence
+            # print("Invalid value for system_presence -> " + system_presence)
             self._system_presence = "outdated_sdk_version"
         else:
             self._system_presence = system_presence

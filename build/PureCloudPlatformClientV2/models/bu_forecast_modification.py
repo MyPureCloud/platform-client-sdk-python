@@ -101,7 +101,7 @@ class BuForecastModification(object):
         """
         allowed_values = ["MinimumPerInterval", "MaximumPerInterval", "SetValuePerInterval", "ChangeValuePerInterval", "ChangePercentPerInterval", "SetValueOverRange", "ChangeValueOverRange", "SetValuesForIntervalSet"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -174,7 +174,7 @@ class BuForecastModification(object):
         """
         allowed_values = ["Offered", "AverageHandleTimeSeconds"]
         if metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for metric -> " + metric
+            # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
@@ -201,7 +201,7 @@ class BuForecastModification(object):
         """
         allowed_values = ["AverageAfterCallWorkTimeSeconds", "AverageHandleTimeSeconds", "AverageTalkTimeSeconds", "Offered"]
         if legacy_metric.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for legacy_metric -> " + legacy_metric
+            # print("Invalid value for legacy_metric -> " + legacy_metric)
             self._legacy_metric = "outdated_sdk_version"
         else:
             self._legacy_metric = legacy_metric

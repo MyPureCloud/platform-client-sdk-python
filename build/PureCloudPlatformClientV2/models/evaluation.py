@@ -301,7 +301,7 @@ class Evaluation(object):
         """
         allowed_values = ["PENDING", "INPROGRESS", "FINISHED"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -604,7 +604,7 @@ class Evaluation(object):
         """
         allowed_values = ["EMAIL"]
         if resource_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for resource_type -> " + resource_type
+            # print("Invalid value for resource_type -> " + resource_type)
             self._resource_type = "outdated_sdk_version"
         else:
             self._resource_type = resource_type

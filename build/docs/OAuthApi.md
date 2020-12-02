@@ -58,7 +58,7 @@ try:
     # Delete OAuth Client
     api_instance.delete_oauth_client(client_id)
 except ApiException as e:
-    print "Exception when calling OAuthApi->delete_oauth_client: %s\n" % e
+    print("Exception when calling OAuthApi->delete_oauth_client: %s\n" % e)
 ```
 
 ### Parameters
@@ -109,7 +109,7 @@ try:
     api_response = api_instance.get_oauth_authorization(client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_authorization: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_authorization: %s\n" % e)
 ```
 
 ### Parameters
@@ -159,7 +159,7 @@ try:
     api_response = api_instance.get_oauth_authorizations()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_authorizations: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_authorizations: %s\n" % e)
 ```
 
 ### Parameters
@@ -207,7 +207,7 @@ try:
     api_response = api_instance.get_oauth_client(client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_client: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_client: %s\n" % e)
 ```
 
 ### Parameters
@@ -259,7 +259,7 @@ try:
     api_response = api_instance.get_oauth_client_usage_query_result(execution_id, client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_client_usage_query_result: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_client_usage_query_result: %s\n" % e)
 ```
 
 ### Parameters
@@ -312,7 +312,7 @@ try:
     api_response = api_instance.get_oauth_client_usage_summary(client_id, days=days)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_client_usage_summary: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_client_usage_summary: %s\n" % e)
 ```
 
 ### Parameters
@@ -363,7 +363,7 @@ try:
     api_response = api_instance.get_oauth_clients()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_clients: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_clients: %s\n" % e)
 ```
 
 ### Parameters
@@ -411,7 +411,7 @@ try:
     api_response = api_instance.get_oauth_scope(scope_id, accept_language=accept_language)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_scope: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_scope: %s\n" % e)
 ```
 
 ### Parameters
@@ -462,7 +462,7 @@ try:
     api_response = api_instance.get_oauth_scopes(accept_language=accept_language)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->get_oauth_scopes: %s\n" % e
+    print("Exception when calling OAuthApi->get_oauth_scopes: %s\n" % e)
 ```
 
 ### Parameters
@@ -513,7 +513,7 @@ try:
     api_response = api_instance.post_oauth_client_secret(client_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->post_oauth_client_secret: %s\n" % e
+    print("Exception when calling OAuthApi->post_oauth_client_secret: %s\n" % e)
 ```
 
 ### Parameters
@@ -565,7 +565,7 @@ try:
     api_response = api_instance.post_oauth_client_usage_query(client_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->post_oauth_client_usage_query: %s\n" % e
+    print("Exception when calling OAuthApi->post_oauth_client_usage_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -617,7 +617,7 @@ try:
     api_response = api_instance.post_oauth_clients(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->post_oauth_clients: %s\n" % e
+    print("Exception when calling OAuthApi->post_oauth_clients: %s\n" % e)
 ```
 
 ### Parameters
@@ -669,7 +669,7 @@ try:
     api_response = api_instance.put_oauth_client(client_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OAuthApi->put_oauth_client: %s\n" % e
+    print("Exception when calling OAuthApi->put_oauth_client: %s\n" % e)
 ```
 
 ### Parameters

@@ -225,9 +225,9 @@ class UpdateCoachingAppointmentRequest(object):
         :param status: The status of this UpdateCoachingAppointmentRequest.
         :type: str
         """
-        allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
+        allowed_values = ["Scheduled", "InProgress", "Completed"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

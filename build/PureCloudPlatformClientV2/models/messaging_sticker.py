@@ -213,7 +213,7 @@ class MessagingSticker(object):
         """
         allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "webmessaging"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for messenger_type -> " + messenger_type
+            # print("Invalid value for messenger_type -> " + messenger_type)
             self._messenger_type = "outdated_sdk_version"
         else:
             self._messenger_type = messenger_type
@@ -240,7 +240,7 @@ class MessagingSticker(object):
         """
         allowed_values = ["standard", "free", "paid"]
         if sticker_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for sticker_type -> " + sticker_type
+            # print("Invalid value for sticker_type -> " + sticker_type)
             self._sticker_type = "outdated_sdk_version"
         else:
             self._sticker_type = sticker_type

@@ -83,7 +83,7 @@ class SurveyAggregateQueryPredicate(object):
         """
         allowed_values = ["dimension", "property", "metric"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
@@ -110,7 +110,7 @@ class SurveyAggregateQueryPredicate(object):
         """
         allowed_values = ["conversationId", "divisionId", "externalContactId", "mediaType", "queueId", "requestedLanguageId", "requestedRoutingSkillId", "surveyAnswerId", "surveyCreatedDate", "surveyErrorReason", "surveyFormContextId", "surveyFormId", "surveyFormName", "surveyId", "surveyPreviousStatus", "surveyPromoterScore", "surveyQuestionGroupId", "surveyQuestionId", "surveyStatus", "teamId", "userId", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for dimension -> " + dimension
+            # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"
         else:
             self._dimension = dimension
@@ -137,7 +137,7 @@ class SurveyAggregateQueryPredicate(object):
         """
         allowed_values = ["matches", "exists", "notExists"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

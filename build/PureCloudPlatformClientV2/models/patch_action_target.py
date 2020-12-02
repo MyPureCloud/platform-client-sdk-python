@@ -43,6 +43,7 @@ class PatchActionTarget(object):
             'id': 'str',
             'name': 'str',
             'service_level': 'ServiceLevel',
+            'short_abandon_threshold': 'int',
             'self_uri': 'str'
         }
 
@@ -50,12 +51,14 @@ class PatchActionTarget(object):
             'id': 'id',
             'name': 'name',
             'service_level': 'serviceLevel',
+            'short_abandon_threshold': 'shortAbandonThreshold',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._service_level = None
+        self._short_abandon_threshold = None
         self._self_uri = None
 
     @property
@@ -126,6 +129,29 @@ class PatchActionTarget(object):
         """
         
         self._service_level = service_level
+
+    @property
+    def short_abandon_threshold(self):
+        """
+        Gets the short_abandon_threshold of this PatchActionTarget.
+        Indicates the non-default short abandon threshold
+
+        :return: The short_abandon_threshold of this PatchActionTarget.
+        :rtype: int
+        """
+        return self._short_abandon_threshold
+
+    @short_abandon_threshold.setter
+    def short_abandon_threshold(self, short_abandon_threshold):
+        """
+        Sets the short_abandon_threshold of this PatchActionTarget.
+        Indicates the non-default short abandon threshold
+
+        :param short_abandon_threshold: The short_abandon_threshold of this PatchActionTarget.
+        :type: int
+        """
+        
+        self._short_abandon_threshold = short_abandon_threshold
 
     @property
     def self_uri(self):

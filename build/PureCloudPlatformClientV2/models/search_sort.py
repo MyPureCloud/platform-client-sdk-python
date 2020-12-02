@@ -74,7 +74,7 @@ class SearchSort(object):
         """
         allowed_values = ["ASC", "DESC", "SCORE"]
         if sort_order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for sort_order -> " + sort_order
+            # print("Invalid value for sort_order -> " + sort_order)
             self._sort_order = "outdated_sdk_version"
         else:
             self._sort_order = sort_order

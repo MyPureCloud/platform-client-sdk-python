@@ -256,7 +256,7 @@ class CoachingAnnotation(object):
         """
         allowed_values = ["Public", "Private"]
         if access_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for access_type -> " + access_type
+            # print("Invalid value for access_type -> " + access_type)
             self._access_type = "outdated_sdk_version"
         else:
             self._access_type = access_type

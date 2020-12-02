@@ -80,7 +80,7 @@ class SurveyAggregationView(object):
         """
         allowed_values = ["nSurveyErrors", "nSurveyNpsDetractors", "nSurveyNpsPromoters", "nSurveyNpsResponses", "nSurveyQuestionGroupResponses", "nSurveyQuestionResponses", "nSurveyResponses", "nSurveysAbandoned", "nSurveysDeleted", "nSurveysExpired", "nSurveysSent", "nSurveysStarted", "oSurveyQuestionGroupScore", "oSurveyQuestionScore", "oSurveyTotalScore"]
         if target.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for target -> " + target
+            # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"
         else:
             self._target = target
@@ -130,7 +130,7 @@ class SurveyAggregationView(object):
         """
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for function -> " + function
+            # print("Invalid value for function -> " + function)
             self._function = "outdated_sdk_version"
         else:
             self._function = function

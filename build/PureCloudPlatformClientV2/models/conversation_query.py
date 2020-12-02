@@ -213,7 +213,7 @@ class ConversationQuery(object):
         """
         allowed_values = ["asc", "desc"]
         if order.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for order -> " + order
+            # print("Invalid value for order -> " + order)
             self._order = "outdated_sdk_version"
         else:
             self._order = order
@@ -240,7 +240,7 @@ class ConversationQuery(object):
         """
         allowed_values = ["conversationStart", "conversationEnd", "segmentStart", "segmentEnd"]
         if order_by.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for order_by -> " + order_by
+            # print("Invalid value for order_by -> " + order_by)
             self._order_by = "outdated_sdk_version"
         else:
             self._order_by = order_by

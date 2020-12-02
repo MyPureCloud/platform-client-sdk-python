@@ -103,7 +103,7 @@ class ApiUsageQuery(object):
         """
         allowed_values = ["Day", "Week", "Month"]
         if granularity.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for granularity -> " + granularity
+            # print("Invalid value for granularity -> " + granularity)
             self._granularity = "outdated_sdk_version"
         else:
             self._granularity = granularity

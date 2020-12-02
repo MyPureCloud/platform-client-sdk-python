@@ -120,7 +120,7 @@ class NluDomain(object):
     def language(self):
         """
         Gets the language of this NluDomain.
-        The ISO 639-1 language code of the NLU domain, e.g. `en`.
+        The language culture of the NLU domain, e.g. `en-us`, `de-de`.
 
         :return: The language of this NluDomain.
         :rtype: str
@@ -131,7 +131,7 @@ class NluDomain(object):
     def language(self, language):
         """
         Sets the language of this NluDomain.
-        The ISO 639-1 language code of the NLU domain, e.g. `en`.
+        The language culture of the NLU domain, e.g. `en-us`, `de-de`.
 
         :param language: The language of this NluDomain.
         :type: str

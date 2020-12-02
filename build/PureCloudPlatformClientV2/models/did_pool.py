@@ -300,7 +300,7 @@ class DIDPool(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -442,7 +442,7 @@ class DIDPool(object):
         """
         allowed_values = ["PURE_CLOUD", "PURE_CLOUD_VOICE"]
         if provider.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for provider -> " + provider
+            # print("Invalid value for provider -> " + provider)
             self._provider = "outdated_sdk_version"
         else:
             self._provider = provider

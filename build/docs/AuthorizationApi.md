@@ -84,7 +84,7 @@ try:
     # Delete a division.
     api_instance.delete_authorization_division(division_id, force=force)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->delete_authorization_division: %s\n" % e
+    print("Exception when calling AuthorizationApi->delete_authorization_division: %s\n" % e)
 ```
 
 ### Parameters
@@ -135,7 +135,7 @@ try:
     # Delete an organization role.
     api_instance.delete_authorization_role(role_id)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->delete_authorization_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->delete_authorization_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -187,7 +187,7 @@ try:
     # Delete a grant of a role in a division
     api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->delete_authorization_subject_division_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->delete_authorization_subject_division_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -240,7 +240,7 @@ try:
     api_response = api_instance.get_authorization_division(division_id, object_count=object_count)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_division: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_division: %s\n" % e)
 ```
 
 ### Parameters
@@ -294,7 +294,7 @@ try:
     api_response = api_instance.get_authorization_division_grants(division_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_division_grants: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_division_grants: %s\n" % e)
 ```
 
 ### Parameters
@@ -354,7 +354,7 @@ try:
     api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisions: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisions: %s\n" % e)
 ```
 
 ### Parameters
@@ -411,7 +411,7 @@ try:
     api_response = api_instance.get_authorization_divisions_home()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisions_home: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisions_home: %s\n" % e)
 ```
 
 ### Parameters
@@ -457,7 +457,7 @@ try:
     api_response = api_instance.get_authorization_divisions_limit()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisions_limit: %s\n" % e)
 ```
 
 ### Parameters
@@ -505,7 +505,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_me(permission, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_me: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisionspermitted_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -558,7 +558,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_me: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -613,7 +613,7 @@ try:
     api_response = api_instance.get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_divisionspermitted_paged_subject_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -669,7 +669,7 @@ try:
     api_response = api_instance.get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_permissions: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -721,7 +721,7 @@ try:
     api_response = api_instance.get_authorization_products()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_products: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_products: %s\n" % e)
 ```
 
 ### Parameters
@@ -770,7 +770,7 @@ try:
     api_response = api_instance.get_authorization_role(role_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -823,7 +823,7 @@ try:
     api_response = api_instance.get_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_role_comparedefault_right_role_id: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_role_comparedefault_right_role_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -881,7 +881,7 @@ try:
     api_response = api_instance.get_authorization_role_subjectgrants(role_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_role_subjectgrants: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_role_subjectgrants: %s\n" % e)
 ```
 
 ### Parameters
@@ -939,7 +939,7 @@ try:
     api_response = api_instance.get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_role_users: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_role_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -1002,7 +1002,7 @@ try:
     api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_roles: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -1063,7 +1063,7 @@ try:
     api_response = api_instance.get_authorization_subject(subject_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_subject: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_subject: %s\n" % e)
 ```
 
 ### Parameters
@@ -1112,7 +1112,7 @@ try:
     api_response = api_instance.get_authorization_subjects_me()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_subjects_me: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_subjects_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -1160,7 +1160,7 @@ try:
     api_response = api_instance.get_authorization_subjects_rolecounts(id=id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_authorization_subjects_rolecounts: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_authorization_subjects_rolecounts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1211,7 +1211,7 @@ try:
     api_response = api_instance.get_user_roles(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->get_user_roles: %s\n" % e
+    print("Exception when calling AuthorizationApi->get_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -1263,7 +1263,7 @@ try:
     api_response = api_instance.patch_authorization_role(role_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->patch_authorization_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->patch_authorization_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1315,7 +1315,7 @@ try:
     # Assign a list of objects to a division
     api_instance.post_authorization_division_object(division_id, object_type, body)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_division_object: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_division_object: %s\n" % e)
 ```
 
 ### Parameters
@@ -1369,7 +1369,7 @@ try:
     api_response = api_instance.post_authorization_divisions(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_divisions: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_divisions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1421,7 +1421,7 @@ try:
     # Bulk-grant subjects and divisions with an organization role.
     api_instance.post_authorization_role(role_id, body, subject_type=subject_type)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1476,7 +1476,7 @@ try:
     api_response = api_instance.post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_role_comparedefault_right_role_id: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_role_comparedefault_right_role_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1529,7 +1529,7 @@ try:
     api_response = api_instance.post_authorization_roles(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_roles: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -1580,7 +1580,7 @@ try:
     api_response = api_instance.post_authorization_roles_default(force=force)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_roles_default: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_roles_default: %s\n" % e)
 ```
 
 ### Parameters
@@ -1632,7 +1632,7 @@ try:
     # Bulk-grant roles and divisions to a subject.
     api_instance.post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_subject_bulkadd: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_subject_bulkadd: %s\n" % e)
 ```
 
 ### Parameters
@@ -1685,7 +1685,7 @@ try:
     # Bulk-remove grants from a subject.
     api_instance.post_authorization_subject_bulkremove(subject_id, body)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_subject_bulkremove: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_subject_bulkremove: %s\n" % e)
 ```
 
 ### Parameters
@@ -1739,7 +1739,7 @@ try:
     # Make a grant of a role in a division
     api_instance.post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->post_authorization_subject_division_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->post_authorization_subject_division_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1794,7 +1794,7 @@ try:
     api_response = api_instance.put_authorization_division(division_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_authorization_division: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_authorization_division: %s\n" % e)
 ```
 
 ### Parameters
@@ -1847,7 +1847,7 @@ try:
     api_response = api_instance.put_authorization_role(role_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_authorization_role: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_authorization_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1900,7 +1900,7 @@ try:
     api_response = api_instance.put_authorization_role_users_add(role_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_authorization_role_users_add: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_authorization_role_users_add: %s\n" % e)
 ```
 
 ### Parameters
@@ -1953,7 +1953,7 @@ try:
     api_response = api_instance.put_authorization_role_users_remove(role_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_authorization_role_users_remove: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_authorization_role_users_remove: %s\n" % e)
 ```
 
 ### Parameters
@@ -2005,7 +2005,7 @@ try:
     api_response = api_instance.put_authorization_roles_default(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_authorization_roles_default: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_authorization_roles_default: %s\n" % e)
 ```
 
 ### Parameters
@@ -2057,7 +2057,7 @@ try:
     api_response = api_instance.put_user_roles(user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AuthorizationApi->put_user_roles: %s\n" % e
+    print("Exception when calling AuthorizationApi->put_user_roles: %s\n" % e)
 ```
 
 ### Parameters

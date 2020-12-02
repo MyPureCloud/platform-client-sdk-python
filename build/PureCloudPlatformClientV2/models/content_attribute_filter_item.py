@@ -100,7 +100,7 @@ class ContentAttributeFilterItem(object):
         """
         allowed_values = ["IN", "RANGE", "EQUALS", "NOTEQUALS", "LESSTHAN", "LESSTHANEQUALS", "GREATERTHAN", "GREATERTHANEQUALS", "CONTAINS"]
         if operator.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for operator -> " + operator
+            # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator

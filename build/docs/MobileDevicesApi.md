@@ -49,7 +49,7 @@ try:
     # Delete device
     api_instance.delete_mobiledevice(device_id)
 except ApiException as e:
-    print "Exception when calling MobileDevicesApi->delete_mobiledevice: %s\n" % e
+    print("Exception when calling MobileDevicesApi->delete_mobiledevice: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +99,7 @@ try:
     api_response = api_instance.get_mobiledevice(device_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling MobileDevicesApi->get_mobiledevice: %s\n" % e
+    print("Exception when calling MobileDevicesApi->get_mobiledevice: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,7 +151,7 @@ try:
     api_response = api_instance.get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling MobileDevicesApi->get_mobiledevices: %s\n" % e
+    print("Exception when calling MobileDevicesApi->get_mobiledevices: %s\n" % e)
 ```
 
 ### Parameters
@@ -203,7 +203,7 @@ try:
     api_response = api_instance.post_mobiledevices(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling MobileDevicesApi->post_mobiledevices: %s\n" % e
+    print("Exception when calling MobileDevicesApi->post_mobiledevices: %s\n" % e)
 ```
 
 ### Parameters
@@ -254,7 +254,7 @@ try:
     api_response = api_instance.put_mobiledevice(device_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling MobileDevicesApi->put_mobiledevice: %s\n" % e
+    print("Exception when calling MobileDevicesApi->put_mobiledevice: %s\n" % e)
 ```
 
 ### Parameters

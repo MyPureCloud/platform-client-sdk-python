@@ -55,7 +55,7 @@ try:
     api_response = api_instance.get_fieldconfig(type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->get_fieldconfig: %s\n" % e
+    print("Exception when calling OrganizationApi->get_fieldconfig: %s\n" % e)
 ```
 
 ### Parameters
@@ -104,7 +104,7 @@ try:
     api_response = api_instance.get_organizations_embeddedintegration()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->get_organizations_embeddedintegration: %s\n" % e
+    print("Exception when calling OrganizationApi->get_organizations_embeddedintegration: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,7 +151,7 @@ try:
     api_response = api_instance.get_organizations_ipaddressauthentication()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->get_organizations_ipaddressauthentication: %s\n" % e
+    print("Exception when calling OrganizationApi->get_organizations_ipaddressauthentication: %s\n" % e)
 ```
 
 ### Parameters
@@ -197,7 +197,7 @@ try:
     api_response = api_instance.get_organizations_me()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->get_organizations_me: %s\n" % e
+    print("Exception when calling OrganizationApi->get_organizations_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -243,7 +243,7 @@ try:
     api_response = api_instance.get_organizations_whitelist()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->get_organizations_whitelist: %s\n" % e
+    print("Exception when calling OrganizationApi->get_organizations_whitelist: %s\n" % e)
 ```
 
 ### Parameters
@@ -292,7 +292,7 @@ try:
     api_response = api_instance.patch_organizations_feature(feature_name, enabled)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->patch_organizations_feature: %s\n" % e
+    print("Exception when calling OrganizationApi->patch_organizations_feature: %s\n" % e)
 ```
 
 ### Parameters
@@ -344,7 +344,7 @@ try:
     api_response = api_instance.put_organizations_embeddedintegration(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->put_organizations_embeddedintegration: %s\n" % e
+    print("Exception when calling OrganizationApi->put_organizations_embeddedintegration: %s\n" % e)
 ```
 
 ### Parameters
@@ -395,7 +395,7 @@ try:
     api_response = api_instance.put_organizations_ipaddressauthentication(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->put_organizations_ipaddressauthentication: %s\n" % e
+    print("Exception when calling OrganizationApi->put_organizations_ipaddressauthentication: %s\n" % e)
 ```
 
 ### Parameters
@@ -446,7 +446,7 @@ try:
     api_response = api_instance.put_organizations_me(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->put_organizations_me: %s\n" % e
+    print("Exception when calling OrganizationApi->put_organizations_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -497,7 +497,7 @@ try:
     api_response = api_instance.put_organizations_whitelist(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationApi->put_organizations_whitelist: %s\n" % e
+    print("Exception when calling OrganizationApi->put_organizations_whitelist: %s\n" % e)
 ```
 
 ### Parameters

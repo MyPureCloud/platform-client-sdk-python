@@ -149,7 +149,7 @@ class UploadUrlRequest(object):
         """
         allowed_values = ["AES256"]
         if server_side_encryption.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for server_side_encryption -> " + server_side_encryption
+            # print("Invalid value for server_side_encryption -> " + server_side_encryption)
             self._server_side_encryption = "outdated_sdk_version"
         else:
             self._server_side_encryption = server_side_encryption

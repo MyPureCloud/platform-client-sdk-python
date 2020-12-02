@@ -77,7 +77,7 @@ class DurationCondition(object):
         """
         allowed_values = ["DURATION", "DURATION_RANGE"]
         if duration_target.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for duration_target -> " + duration_target
+            # print("Invalid value for duration_target -> " + duration_target)
             self._duration_target = "outdated_sdk_version"
         else:
             self._duration_target = duration_target

@@ -97,7 +97,7 @@ class ContactColumnTimeZone(object):
         """
         allowed_values = ["PHONE", "ZIP"]
         if column_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for column_type -> " + column_type
+            # print("Invalid value for column_type -> " + column_type)
             self._column_type = "outdated_sdk_version"
         else:
             self._column_type = column_type

@@ -91,7 +91,7 @@ try:
     # Delete annotation
     api_instance.delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 except ApiException as e:
-    print "Exception when calling RecordingApi->delete_conversation_recording_annotation: %s\n" % e
+    print("Exception when calling RecordingApi->delete_conversation_recording_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -144,7 +144,7 @@ try:
     api_response = api_instance.delete_orphanrecording(orphan_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->delete_orphanrecording: %s\n" % e
+    print("Exception when calling RecordingApi->delete_orphanrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -194,7 +194,7 @@ try:
     # Delete the recording bulk job
     api_instance.delete_recording_job(job_id)
 except ApiException as e:
-    print "Exception when calling RecordingApi->delete_recording_job: %s\n" % e
+    print("Exception when calling RecordingApi->delete_recording_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -244,7 +244,7 @@ try:
     # Delete media retention policies
     api_instance.delete_recording_mediaretentionpolicies(ids)
 except ApiException as e:
-    print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicies: %s\n" % e
+    print("Exception when calling RecordingApi->delete_recording_mediaretentionpolicies: %s\n" % e)
 ```
 
 ### Parameters
@@ -294,7 +294,7 @@ try:
     # Delete a media retention policy
     api_instance.delete_recording_mediaretentionpolicy(policy_id)
 except ApiException as e:
-    print "Exception when calling RecordingApi->delete_recording_mediaretentionpolicy: %s\n" % e
+    print("Exception when calling RecordingApi->delete_recording_mediaretentionpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -353,7 +353,7 @@ try:
     api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recording: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recording: %s\n" % e)
 ```
 
 ### Parameters
@@ -414,7 +414,7 @@ try:
     api_response = api_instance.get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recording_annotation: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recording_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -468,7 +468,7 @@ try:
     api_response = api_instance.get_conversation_recording_annotations(conversation_id, recording_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recording_annotations: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recording_annotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -519,7 +519,7 @@ try:
     api_response = api_instance.get_conversation_recordingmetadata(conversation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -571,7 +571,7 @@ try:
     api_response = api_instance.get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recordingmetadata_recording_id: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recordingmetadata_recording_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -625,7 +625,7 @@ try:
     api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e
+    print("Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e)
 ```
 
 ### Parameters
@@ -678,7 +678,7 @@ try:
     api_response = api_instance.get_orphanrecording(orphan_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_orphanrecording: %s\n" % e
+    print("Exception when calling RecordingApi->get_orphanrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -736,7 +736,7 @@ try:
     api_response = api_instance.get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e
+    print("Exception when calling RecordingApi->get_orphanrecording_media: %s\n" % e)
 ```
 
 ### Parameters
@@ -801,7 +801,7 @@ try:
     api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_orphanrecordings: %s\n" % e
+    print("Exception when calling RecordingApi->get_orphanrecordings: %s\n" % e)
 ```
 
 ### Parameters
@@ -858,7 +858,7 @@ try:
     api_response = api_instance.get_recording_batchrequest(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_batchrequest: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_batchrequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -909,7 +909,7 @@ try:
     api_response = api_instance.get_recording_job(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_job: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -965,7 +965,7 @@ try:
     api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_jobs: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1021,7 +1021,7 @@ try:
     api_response = api_instance.get_recording_localkeys_setting(settings_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_localkeys_setting: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_localkeys_setting: %s\n" % e)
 ```
 
 ### Parameters
@@ -1071,7 +1071,7 @@ try:
     api_response = api_instance.get_recording_localkeys_settings()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_localkeys_settings: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_localkeys_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1128,7 +1128,7 @@ try:
     api_response = api_instance.get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_mediaretentionpolicies: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_mediaretentionpolicies: %s\n" % e)
 ```
 
 ### Parameters
@@ -1188,7 +1188,7 @@ try:
     api_response = api_instance.get_recording_mediaretentionpolicy(policy_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_mediaretentionpolicy: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_mediaretentionpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -1240,7 +1240,7 @@ try:
     api_response = api_instance.get_recording_recordingkeys(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_recordingkeys: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_recordingkeys: %s\n" % e)
 ```
 
 ### Parameters
@@ -1291,7 +1291,7 @@ try:
     api_response = api_instance.get_recording_recordingkeys_rotationschedule()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_recordingkeys_rotationschedule: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_recordingkeys_rotationschedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -1340,7 +1340,7 @@ try:
     api_response = api_instance.get_recording_settings(create_default=create_default)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recording_settings: %s\n" % e
+    print("Exception when calling RecordingApi->get_recording_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1392,7 +1392,7 @@ try:
     api_response = api_instance.get_recordings_screensessions(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->get_recordings_screensessions: %s\n" % e
+    print("Exception when calling RecordingApi->get_recordings_screensessions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1445,7 +1445,7 @@ try:
     api_response = api_instance.patch_recording_mediaretentionpolicy(policy_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->patch_recording_mediaretentionpolicy: %s\n" % e
+    print("Exception when calling RecordingApi->patch_recording_mediaretentionpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -1497,7 +1497,7 @@ try:
     # Update a screen recording session
     api_instance.patch_recordings_screensession(recording_session_id, body=body)
 except ApiException as e:
-    print "Exception when calling RecordingApi->patch_recordings_screensession: %s\n" % e
+    print("Exception when calling RecordingApi->patch_recordings_screensession: %s\n" % e)
 ```
 
 ### Parameters
@@ -1551,7 +1551,7 @@ try:
     api_response = api_instance.post_conversation_recording_annotations(conversation_id, recording_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_conversation_recording_annotations: %s\n" % e
+    print("Exception when calling RecordingApi->post_conversation_recording_annotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -1603,7 +1603,7 @@ try:
     api_response = api_instance.post_recording_batchrequests(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_batchrequests: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_batchrequests: %s\n" % e)
 ```
 
 ### Parameters
@@ -1654,7 +1654,7 @@ try:
     api_response = api_instance.post_recording_jobs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_jobs: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1705,7 +1705,7 @@ try:
     api_response = api_instance.post_recording_localkeys(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_localkeys: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_localkeys: %s\n" % e)
 ```
 
 ### Parameters
@@ -1756,7 +1756,7 @@ try:
     api_response = api_instance.post_recording_localkeys_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_localkeys_settings: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_localkeys_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -1807,7 +1807,7 @@ try:
     api_response = api_instance.post_recording_mediaretentionpolicies(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_mediaretentionpolicies: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_mediaretentionpolicies: %s\n" % e)
 ```
 
 ### Parameters
@@ -1857,7 +1857,7 @@ try:
     api_response = api_instance.post_recording_recordingkeys()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recording_recordingkeys: %s\n" % e
+    print("Exception when calling RecordingApi->post_recording_recordingkeys: %s\n" % e)
 ```
 
 ### Parameters
@@ -1904,7 +1904,7 @@ try:
     api_response = api_instance.post_recordings_deletionprotection(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->post_recordings_deletionprotection: %s\n" % e
+    print("Exception when calling RecordingApi->post_recordings_deletionprotection: %s\n" % e)
 ```
 
 ### Parameters
@@ -1959,7 +1959,7 @@ try:
     api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_conversation_recording: %s\n" % e
+    print("Exception when calling RecordingApi->put_conversation_recording: %s\n" % e)
 ```
 
 ### Parameters
@@ -2015,7 +2015,7 @@ try:
     api_response = api_instance.put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_conversation_recording_annotation: %s\n" % e
+    print("Exception when calling RecordingApi->put_conversation_recording_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -2070,7 +2070,7 @@ try:
     api_response = api_instance.put_orphanrecording(orphan_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_orphanrecording: %s\n" % e
+    print("Exception when calling RecordingApi->put_orphanrecording: %s\n" % e)
 ```
 
 ### Parameters
@@ -2125,7 +2125,7 @@ try:
     api_response = api_instance.put_recording_job(job_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recording_job: %s\n" % e
+    print("Exception when calling RecordingApi->put_recording_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -2178,7 +2178,7 @@ try:
     api_response = api_instance.put_recording_localkeys_setting(settings_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recording_localkeys_setting: %s\n" % e
+    print("Exception when calling RecordingApi->put_recording_localkeys_setting: %s\n" % e)
 ```
 
 ### Parameters
@@ -2231,7 +2231,7 @@ try:
     api_response = api_instance.put_recording_mediaretentionpolicy(policy_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recording_mediaretentionpolicy: %s\n" % e
+    print("Exception when calling RecordingApi->put_recording_mediaretentionpolicy: %s\n" % e)
 ```
 
 ### Parameters
@@ -2283,7 +2283,7 @@ try:
     api_response = api_instance.put_recording_recordingkeys_rotationschedule(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recording_recordingkeys_rotationschedule: %s\n" % e
+    print("Exception when calling RecordingApi->put_recording_recordingkeys_rotationschedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -2334,7 +2334,7 @@ try:
     api_response = api_instance.put_recording_settings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recording_settings: %s\n" % e
+    print("Exception when calling RecordingApi->put_recording_settings: %s\n" % e)
 ```
 
 ### Parameters
@@ -2386,7 +2386,7 @@ try:
     # Apply or revoke recording protection for conversations
     api_instance.put_recordings_deletionprotection(protect=protect, body=body)
 except ApiException as e:
-    print "Exception when calling RecordingApi->put_recordings_deletionprotection: %s\n" % e
+    print("Exception when calling RecordingApi->put_recordings_deletionprotection: %s\n" % e)
 ```
 
 ### Parameters

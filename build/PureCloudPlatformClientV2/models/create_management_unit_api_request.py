@@ -132,7 +132,7 @@ class CreateManagementUnitApiRequest(object):
         """
         allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
         if start_day_of_week.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for start_day_of_week -> " + start_day_of_week
+            # print("Invalid value for start_day_of_week -> " + start_day_of_week)
             self._start_day_of_week = "outdated_sdk_version"
         else:
             self._start_day_of_week = start_day_of_week

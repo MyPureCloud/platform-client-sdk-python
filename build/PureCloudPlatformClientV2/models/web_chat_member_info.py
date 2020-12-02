@@ -268,7 +268,7 @@ class WebChatMemberInfo(object):
         """
         allowed_values = ["AGENT", "CUSTOMER", "WORKFLOW", "ACD"]
         if role.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for role -> " + role
+            # print("Invalid value for role -> " + role)
             self._role = "outdated_sdk_version"
         else:
             self._role = role
@@ -387,7 +387,7 @@ class WebChatMemberInfo(object):
         """
         allowed_values = ["CONNECTED", "DISCONNECTED", "ALERTING"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state

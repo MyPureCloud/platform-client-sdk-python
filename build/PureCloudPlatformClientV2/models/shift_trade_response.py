@@ -191,7 +191,7 @@ class ShiftTradeResponse(object):
         """
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state

@@ -205,7 +205,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         """
         allowed_values = ["Scheduled", "InProgress", "Completed", "InvalidSchedule"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -416,7 +416,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         """
         allowed_values = ["Create", "Update", "Delete", "Invalidate"]
         if change_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for change_type -> " + change_type
+            # print("Invalid value for change_type -> " + change_type)
             self._change_type = "outdated_sdk_version"
         else:
             self._change_type = change_type

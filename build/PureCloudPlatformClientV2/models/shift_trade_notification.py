@@ -161,7 +161,7 @@ class ShiftTradeNotification(object):
         """
         allowed_values = ["Unmatched", "Matched", "Approved", "Denied", "Expired", "Canceled"]
         if new_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for new_state -> " + new_state
+            # print("Invalid value for new_state -> " + new_state)
             self._new_state = "outdated_sdk_version"
         else:
             self._new_state = new_state

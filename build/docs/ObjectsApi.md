@@ -54,7 +54,7 @@ try:
     # Delete a division.
     api_instance.delete_authorization_division(division_id, force=force)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->delete_authorization_division: %s\n" % e
+    print("Exception when calling ObjectsApi->delete_authorization_division: %s\n" % e)
 ```
 
 ### Parameters
@@ -106,7 +106,7 @@ try:
     api_response = api_instance.get_authorization_division(division_id, object_count=object_count)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->get_authorization_division: %s\n" % e
+    print("Exception when calling ObjectsApi->get_authorization_division: %s\n" % e)
 ```
 
 ### Parameters
@@ -165,7 +165,7 @@ try:
     api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->get_authorization_divisions: %s\n" % e
+    print("Exception when calling ObjectsApi->get_authorization_divisions: %s\n" % e)
 ```
 
 ### Parameters
@@ -222,7 +222,7 @@ try:
     api_response = api_instance.get_authorization_divisions_home()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->get_authorization_divisions_home: %s\n" % e
+    print("Exception when calling ObjectsApi->get_authorization_divisions_home: %s\n" % e)
 ```
 
 ### Parameters
@@ -268,7 +268,7 @@ try:
     api_response = api_instance.get_authorization_divisions_limit()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->get_authorization_divisions_limit: %s\n" % e
+    print("Exception when calling ObjectsApi->get_authorization_divisions_limit: %s\n" % e)
 ```
 
 ### Parameters
@@ -316,7 +316,7 @@ try:
     # Assign a list of objects to a division
     api_instance.post_authorization_division_object(division_id, object_type, body)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->post_authorization_division_object: %s\n" % e
+    print("Exception when calling ObjectsApi->post_authorization_division_object: %s\n" % e)
 ```
 
 ### Parameters
@@ -370,7 +370,7 @@ try:
     api_response = api_instance.post_authorization_divisions(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->post_authorization_divisions: %s\n" % e
+    print("Exception when calling ObjectsApi->post_authorization_divisions: %s\n" % e)
 ```
 
 ### Parameters
@@ -422,7 +422,7 @@ try:
     api_response = api_instance.put_authorization_division(division_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ObjectsApi->put_authorization_division: %s\n" % e
+    print("Exception when calling ObjectsApi->put_authorization_division: %s\n" % e)
 ```
 
 ### Parameters

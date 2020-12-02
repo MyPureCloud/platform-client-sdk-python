@@ -253,7 +253,7 @@ class VoicemailGroupPolicy(object):
         """
         allowed_values = ["RANDOM", "ROUND_ROBIN", "SEQUENTIAL"]
         if group_alert_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for group_alert_type -> " + group_alert_type
+            # print("Invalid value for group_alert_type -> " + group_alert_type)
             self._group_alert_type = "outdated_sdk_version"
         else:
             self._group_alert_type = group_alert_type

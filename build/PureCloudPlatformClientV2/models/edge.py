@@ -375,7 +375,7 @@ class Edge(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -793,7 +793,7 @@ class Edge(object):
         """
         allowed_values = ["NEW", "AWAITING_CONNECTION", "AWAITING_FINGERPRINT", "AWAITING_FINGERPRINT_VERIFICATION", "FINGERPRINT_VERIFIED", "AWAITING_BOOTSTRAP", "ACTIVE", "INACTIVE", "RMA", "UNPAIRING", "UNPAIRED", "INITIALIZING"]
         if status_code.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status_code -> " + status_code
+            # print("Invalid value for status_code -> " + status_code)
             self._status_code = "outdated_sdk_version"
         else:
             self._status_code = status_code
@@ -889,7 +889,7 @@ class Edge(object):
         """
         allowed_values = ["ONLINE", "OFFLINE"]
         if online_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for online_status -> " + online_status
+            # print("Invalid value for online_status -> " + online_status)
             self._online_status = "outdated_sdk_version"
         else:
             self._online_status = online_status
@@ -985,7 +985,7 @@ class Edge(object):
         """
         allowed_values = ["HARDWARE", "LDM", "CDM", "INVALID"]
         if edge_deployment_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for edge_deployment_type -> " + edge_deployment_type
+            # print("Invalid value for edge_deployment_type -> " + edge_deployment_type)
             self._edge_deployment_type = "outdated_sdk_version"
         else:
             self._edge_deployment_type = edge_deployment_type
@@ -1012,7 +1012,7 @@ class Edge(object):
         """
         allowed_values = ["NONE", "WAIT", "WAIT_TIMEOUT", "TERMINATE", "COMPLETE"]
         if call_draining_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for call_draining_state -> " + call_draining_state
+            # print("Invalid value for call_draining_state -> " + call_draining_state)
             self._call_draining_state = "outdated_sdk_version"
         else:
             self._call_draining_state = call_draining_state

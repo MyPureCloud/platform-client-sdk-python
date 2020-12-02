@@ -55,7 +55,7 @@ try:
     api_response = api_instance.get_license_definition(license_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_definition: %s\n" % e
+    print("Exception when calling LicenseApi->get_license_definition: %s\n" % e)
 ```
 
 ### Parameters
@@ -105,7 +105,7 @@ try:
     api_response = api_instance.get_license_definitions()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_definitions: %s\n" % e
+    print("Exception when calling LicenseApi->get_license_definitions: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,7 +153,7 @@ try:
     api_response = api_instance.get_license_toggle(feature_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_toggle: %s\n" % e
+    print("Exception when calling LicenseApi->get_license_toggle: %s\n" % e)
 ```
 
 ### Parameters
@@ -204,7 +204,7 @@ try:
     api_response = api_instance.get_license_user(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_user: %s\n" % e
+    print("Exception when calling LicenseApi->get_license_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -255,7 +255,7 @@ try:
     api_response = api_instance.get_license_users(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->get_license_users: %s\n" % e
+    print("Exception when calling LicenseApi->get_license_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -306,7 +306,7 @@ try:
     api_response = api_instance.post_license_infer(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->post_license_infer: %s\n" % e
+    print("Exception when calling LicenseApi->post_license_infer: %s\n" % e)
 ```
 
 ### Parameters
@@ -357,7 +357,7 @@ try:
     api_response = api_instance.post_license_organization(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->post_license_organization: %s\n" % e
+    print("Exception when calling LicenseApi->post_license_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -408,7 +408,7 @@ try:
     api_response = api_instance.post_license_toggle(feature_name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->post_license_toggle: %s\n" % e
+    print("Exception when calling LicenseApi->post_license_toggle: %s\n" % e)
 ```
 
 ### Parameters
@@ -458,7 +458,7 @@ try:
     api_response = api_instance.post_license_users(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LicenseApi->post_license_users: %s\n" % e
+    print("Exception when calling LicenseApi->post_license_users: %s\n" % e)
 ```
 
 ### Parameters

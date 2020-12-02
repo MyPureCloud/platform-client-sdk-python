@@ -80,7 +80,7 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         """
         allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -130,7 +130,7 @@ class WfmBuScheduleTopicBuScheduleNotification(object):
         """
         allowed_values = ["Update", "Import", "Copy", "Delete"]
         if event_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for event_type -> " + event_type
+            # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
         else:
             self._event_type = event_type

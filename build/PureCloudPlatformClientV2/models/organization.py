@@ -297,7 +297,7 @@ class Organization(object):
         """
         allowed_values = ["active", "inactive", "deleted"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -393,7 +393,7 @@ class Organization(object):
         """
         allowed_values = ["GenesysCloud", "PureCloud", "PureEngage", "PureEngageCloud", "PureConnect", "PureConnectCloud", "Unknown"]
         if product_platform.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for product_platform -> " + product_platform
+            # print("Invalid value for product_platform -> " + product_platform)
             self._product_platform = "outdated_sdk_version"
         else:
             self._product_platform = product_platform

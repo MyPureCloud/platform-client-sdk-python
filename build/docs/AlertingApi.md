@@ -56,7 +56,7 @@ try:
     # Delete an interaction stats alert
     api_instance.delete_alerting_interactionstats_alert(alert_id)
 except ApiException as e:
-    print "Exception when calling AlertingApi->delete_alerting_interactionstats_alert: %s\n" % e
+    print("Exception when calling AlertingApi->delete_alerting_interactionstats_alert: %s\n" % e)
 ```
 
 ### Parameters
@@ -106,7 +106,7 @@ try:
     # Delete an interaction stats rule.
     api_instance.delete_alerting_interactionstats_rule(rule_id)
 except ApiException as e:
-    print "Exception when calling AlertingApi->delete_alerting_interactionstats_rule: %s\n" % e
+    print("Exception when calling AlertingApi->delete_alerting_interactionstats_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -155,7 +155,7 @@ try:
     api_response = api_instance.get_alerting_alerts_active()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_alerts_active: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_alerts_active: %s\n" % e)
 ```
 
 ### Parameters
@@ -204,7 +204,7 @@ try:
     api_response = api_instance.get_alerting_interactionstats_alert(alert_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_interactionstats_alert: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_interactionstats_alert: %s\n" % e)
 ```
 
 ### Parameters
@@ -256,7 +256,7 @@ try:
     api_response = api_instance.get_alerting_interactionstats_alerts(expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_interactionstats_alerts: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_interactionstats_alerts: %s\n" % e)
 ```
 
 ### Parameters
@@ -305,7 +305,7 @@ try:
     api_response = api_instance.get_alerting_interactionstats_alerts_unread()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_interactionstats_alerts_unread: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_interactionstats_alerts_unread: %s\n" % e)
 ```
 
 ### Parameters
@@ -354,7 +354,7 @@ try:
     api_response = api_instance.get_alerting_interactionstats_rule(rule_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_interactionstats_rule: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_interactionstats_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -406,7 +406,7 @@ try:
     api_response = api_instance.get_alerting_interactionstats_rules(expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->get_alerting_interactionstats_rules: %s\n" % e
+    print("Exception when calling AlertingApi->get_alerting_interactionstats_rules: %s\n" % e)
 ```
 
 ### Parameters
@@ -458,7 +458,7 @@ try:
     api_response = api_instance.post_alerting_interactionstats_rules(body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->post_alerting_interactionstats_rules: %s\n" % e
+    print("Exception when calling AlertingApi->post_alerting_interactionstats_rules: %s\n" % e)
 ```
 
 ### Parameters
@@ -512,7 +512,7 @@ try:
     api_response = api_instance.put_alerting_interactionstats_alert(alert_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->put_alerting_interactionstats_alert: %s\n" % e
+    print("Exception when calling AlertingApi->put_alerting_interactionstats_alert: %s\n" % e)
 ```
 
 ### Parameters
@@ -567,7 +567,7 @@ try:
     api_response = api_instance.put_alerting_interactionstats_rule(rule_id, body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AlertingApi->put_alerting_interactionstats_rule: %s\n" % e
+    print("Exception when calling AlertingApi->put_alerting_interactionstats_rule: %s\n" % e)
 ```
 
 ### Parameters

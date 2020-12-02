@@ -80,7 +80,7 @@ class ConversationAggregationView(object):
         """
         allowed_values = ["nBlindTransferred", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nStateTransitionError", "nTransferred", "oExternalMediaCount", "oInteracting", "oMediaCount", "oServiceLevel", "oServiceTarget", "oWaiting", "tAbandon", "tAcd", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tContacting", "tDialing", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tNotResponding", "tShortAbandon", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail", "tWait"]
         if target.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for target -> " + target
+            # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"
         else:
             self._target = target
@@ -130,7 +130,7 @@ class ConversationAggregationView(object):
         """
         allowed_values = ["rangeBound"]
         if function.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for function -> " + function
+            # print("Invalid value for function -> " + function)
             self._function = "outdated_sdk_version"
         else:
             self._function = function

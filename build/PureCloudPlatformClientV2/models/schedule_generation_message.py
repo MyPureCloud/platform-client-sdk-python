@@ -74,7 +74,7 @@ class ScheduleGenerationMessage(object):
         """
         allowed_values = ["AgentNotFound", "AgentNotInSelectedManagementUnit", "AgentNotLicensed", "AgentWithoutWorkPlan", "WorkPlanNotEnabled", "WorkPlanNotFound", "AgentWithoutCapability", "NoNeedDays", "UnableToProduceAgentSchedule", "UnableToScheduleMaxConsecutiveWorkingDays", "UnableToScheduleMaxConsecutiveWorkingWeekends", "UnableToScheduleMaxWeeklyPaidTime", "UnableToScheduleMaxWeeklyWorkDays", "UnableToScheduleMaxWorkDayPaidTime", "UnableToScheduleMinConsecutiveNonWorkingTimePerWeek", "UnableToScheduleMinIntershiftTime", "UnableToScheduleMinShiftStartDistance", "UnableToScheduleMinWeeklyPaidTime", "UnableToScheduleMinWeeklyWorkDays", "UnableToScheduleMinWorkDayPaidTime", "UnableToSchedulePlanningPeriodMaxDaysOff", "UnableToSchedulePlanningPeriodMaxPaidTime", "UnableToSchedulePlanningPeriodMinDaysOff", "UnableToSchedulePlanningPeriodMinPaidTime", "UnableToScheduleShiftVariance", "UnableToScheduleWorkDay"]
         if type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for type -> " + type
+            # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type

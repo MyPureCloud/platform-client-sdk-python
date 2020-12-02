@@ -196,7 +196,7 @@ class AuditLogMessage(object):
         """
         allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
         if service_name.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for service_name -> " + service_name
+            # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
         else:
             self._service_name = service_name
@@ -269,7 +269,7 @@ class AuditLogMessage(object):
         """
         allowed_values = ["Create", "View", "Update", "Delete", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword"]
         if action.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action -> " + action
+            # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
         else:
             self._action = action
@@ -319,7 +319,7 @@ class AuditLogMessage(object):
         """
         allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site"]
         if entity_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for entity_type -> " + entity_type
+            # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"
         else:
             self._entity_type = entity_type

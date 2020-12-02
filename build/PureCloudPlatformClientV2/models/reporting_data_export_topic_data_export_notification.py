@@ -182,7 +182,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         allowed_values = ["SUBMITTED", "RUNNING", "CANCELLING", "CANCELLED", "COMPLETED", "COMPLETED_WITH_PARTIAL_RESULTS", "FAILED"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -209,7 +209,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         allowed_values = ["CSV", "PDF"]
         if export_format.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for export_format -> " + export_format
+            # print("Invalid value for export_format -> " + export_format)
             self._export_format = "outdated_sdk_version"
         else:
             self._export_format = export_format
@@ -259,7 +259,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         allowed_values = ["QUEUE_PERFORMANCE_SUMMARY_VIEW", "QUEUE_PERFORMANCE_DETAIL_VIEW", "INTERACTION_SEARCH_VIEW", "AGENT_PERFORMANCE_SUMMARY_VIEW", "AGENT_PERFORMANCE_DETAIL_VIEW", "AGENT_STATUS_SUMMARY_VIEW", "AGENT_STATUS_DETAIL_VIEW", "AGENT_EVALUATION_SUMMARY_VIEW", "AGENT_EVALUATION_DETAIL_VIEW", "AGENT_QUEUE_DETAIL_VIEW", "AGENT_INTERACTION_DETAIL_VIEW", "ABANDON_INSIGHTS_VIEW", "SKILLS_PERFORMANCE_VIEW", "SURVEY_FORM_PERFORMANCE_SUMMARY_VIEW", "SURVEY_FORM_PERFORMANCE_DETAIL_VIEW", "DNIS_PERFORMANCE_SUMMARY_VIEW", "DNIS_PERFORMANCE_DETAIL_VIEW", "WRAP_UP_PERFORMANCE_SUMMARY_VIEW", "AGENT_WRAP_UP_PERFORMANCE_DETAIL_VIEW", "QUEUE_ACTIVITY_SUMMARY_VIEW", "QUEUE_ACTIVITY_DETAIL_VIEW", "AGENT_QUEUE_ACTIVITY_SUMMARY_VIEW", "QUEUE_AGENT_DETAIL_VIEW", "QUEUE_INTERACTION_DETAIL_VIEW", "AGENT_SCHEDULE_DETAIL_VIEW", "IVR_PERFORMANCE_SUMMARY_VIEW", "IVR_PERFORMANCE_DETAIL_VIEW", "ANSWER_INSIGHTS_VIEW", "HANDLE_INSIGHTS_VIEW", "TALK_INSIGHTS_VIEW", "HOLD_INSIGHTS_VIEW", "ACW_INSIGHTS_VIEW", "WAIT_INSIGHTS_VIEW", "AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW", "FLOW_OUTCOME_SUMMARY_VIEW", "FLOW_OUTCOME_PERFORMANCE_DETAIL_VIEW", "FLOW_OUTCOME_PERFORMANCE_INTERVAL_DETAIL_VIEW", "FLOW_DESTINATION_SUMMARY_VIEW", "FLOW_DESTINATION_DETAIL_VIEW", "SCHEDULED_CALLBACKS_VIEW"]
         if view_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for view_type -> " + view_type
+            # print("Invalid value for view_type -> " + view_type)
             self._view_type = "outdated_sdk_version"
         else:
             self._view_type = view_type
@@ -286,7 +286,7 @@ class ReportingDataExportTopicDataExportNotification(object):
         """
         allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "EXPORT_TYPE_NOT_IMPLEMENTED", "REACHED_MAXIMUM_ATTEMPT_OF_RETRY", "FAILED_LONG_RUNNING_EXPORT", "TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION"]
         if export_error_messages_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for export_error_messages_type -> " + export_error_messages_type
+            # print("Invalid value for export_error_messages_type -> " + export_error_messages_type)
             self._export_error_messages_type = "outdated_sdk_version"
         else:
             self._export_error_messages_type = export_error_messages_type

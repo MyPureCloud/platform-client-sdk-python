@@ -57,7 +57,7 @@ try:
     api_response = api_instance.get_script(script_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_script: %s\n" % e
+    print("Exception when calling ScriptsApi->get_script: %s\n" % e)
 ```
 
 ### Parameters
@@ -110,7 +110,7 @@ try:
     api_response = api_instance.get_script_page(script_id, page_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_script_page: %s\n" % e
+    print("Exception when calling ScriptsApi->get_script_page: %s\n" % e)
 ```
 
 ### Parameters
@@ -164,7 +164,7 @@ try:
     api_response = api_instance.get_script_pages(script_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_script_pages: %s\n" % e
+    print("Exception when calling ScriptsApi->get_script_pages: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,7 +224,7 @@ try:
     api_response = api_instance.get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts: %s\n" % e)
 ```
 
 ### Parameters
@@ -289,7 +289,7 @@ try:
     api_response = api_instance.get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_published: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_published: %s\n" % e)
 ```
 
 ### Parameters
@@ -347,7 +347,7 @@ try:
     api_response = api_instance.get_scripts_published_script_id(script_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_published_script_id: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_published_script_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -401,7 +401,7 @@ try:
     api_response = api_instance.get_scripts_published_script_id_page(script_id, page_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_published_script_id_page: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_published_script_id_page: %s\n" % e)
 ```
 
 ### Parameters
@@ -455,7 +455,7 @@ try:
     api_response = api_instance.get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_published_script_id_pages: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_published_script_id_pages: %s\n" % e)
 ```
 
 ### Parameters
@@ -511,7 +511,7 @@ try:
     api_response = api_instance.get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_published_script_id_variables: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_published_script_id_variables: %s\n" % e)
 ```
 
 ### Parameters
@@ -567,7 +567,7 @@ try:
     api_response = api_instance.get_scripts_upload_status(upload_id, long_poll=long_poll)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->get_scripts_upload_status: %s\n" % e
+    print("Exception when calling ScriptsApi->get_scripts_upload_status: %s\n" % e)
 ```
 
 ### Parameters
@@ -620,7 +620,7 @@ try:
     api_response = api_instance.post_script_export(script_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ScriptsApi->post_script_export: %s\n" % e
+    print("Exception when calling ScriptsApi->post_script_export: %s\n" % e)
 ```
 
 ### Parameters

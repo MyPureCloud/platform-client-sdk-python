@@ -74,7 +74,7 @@ class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate(object):
         """
         allowed_values = ["Added", "Edited", "Deleted"]
         if update_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for update_type -> " + update_type
+            # print("Invalid value for update_type -> " + update_type)
             self._update_type = "outdated_sdk_version"
         else:
             self._update_type = update_type

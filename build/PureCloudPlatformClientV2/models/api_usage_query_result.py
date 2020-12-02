@@ -97,7 +97,7 @@ class ApiUsageQueryResult(object):
         """
         allowed_values = ["Complete", "Failed", "Running"]
         if query_status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for query_status -> " + query_status
+            # print("Invalid value for query_status -> " + query_status)
             self._query_status = "outdated_sdk_version"
         else:
             self._query_status = query_status

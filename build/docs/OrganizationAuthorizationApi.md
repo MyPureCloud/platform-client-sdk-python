@@ -69,7 +69,7 @@ try:
     # Delete Org Trust
     api_instance.delete_orgauthorization_trustee(trustee_org_id)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee: %s\n" % e)
 ```
 
 ### Parameters
@@ -120,7 +120,7 @@ try:
     # Delete Trustee User
     api_instance.delete_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -172,7 +172,7 @@ try:
     # Delete Trustee User Roles
     api_instance.delete_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user_roles: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustee_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -223,7 +223,7 @@ try:
     # Delete Org Trust
     api_instance.delete_orgauthorization_trustor(trustor_org_id)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor: %s\n" % e)
 ```
 
 ### Parameters
@@ -274,7 +274,7 @@ try:
     # Delete Trustee User
     api_instance.delete_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor_user: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustor_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -327,7 +327,7 @@ try:
     api_response = api_instance.get_orgauthorization_pairing(pairing_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_pairing: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_pairing: %s\n" % e)
 ```
 
 ### Parameters
@@ -378,7 +378,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustee(trustee_org_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee: %s\n" % e)
 ```
 
 ### Parameters
@@ -430,7 +430,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -483,7 +483,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user_roles: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -537,7 +537,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustee_users(trustee_org_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_users: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustee_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -591,7 +591,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustees(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustees: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustees: %s\n" % e)
 ```
 
 ### Parameters
@@ -643,7 +643,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustor(trustor_org_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor: %s\n" % e)
 ```
 
 ### Parameters
@@ -695,7 +695,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_user: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -749,7 +749,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustor_users(trustor_org_id, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_users: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustor_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -803,7 +803,7 @@ try:
     api_response = api_instance.get_orgauthorization_trustors(page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustors: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustors: %s\n" % e)
 ```
 
 ### Parameters
@@ -855,7 +855,7 @@ try:
     api_response = api_instance.post_orgauthorization_pairings(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_pairings: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_pairings: %s\n" % e)
 ```
 
 ### Parameters
@@ -907,7 +907,7 @@ try:
     api_response = api_instance.post_orgauthorization_trustee_users(trustee_org_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustee_users: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustee_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -960,7 +960,7 @@ try:
     api_response = api_instance.post_orgauthorization_trustees(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees: %s\n" % e)
 ```
 
 ### Parameters
@@ -1015,7 +1015,7 @@ try:
     api_response = api_instance.post_orgauthorization_trustees_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_audits: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_audits: %s\n" % e)
 ```
 
 ### Parameters
@@ -1074,7 +1074,7 @@ try:
     api_response = api_instance.post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustor_audits: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustor_audits: %s\n" % e)
 ```
 
 ### Parameters
@@ -1130,7 +1130,7 @@ try:
     api_response = api_instance.put_orgauthorization_trustee(trustee_org_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee: %s\n" % e)
 ```
 
 ### Parameters
@@ -1184,7 +1184,7 @@ try:
     api_response = api_instance.put_orgauthorization_trustee_user_roledivisions(trustee_org_id, trustee_user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roledivisions: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roledivisions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1239,7 +1239,7 @@ try:
     api_response = api_instance.put_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roles: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustee_user_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -1293,7 +1293,7 @@ try:
     api_response = api_instance.put_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustor_user: %s\n" % e
+    print("Exception when calling OrganizationAuthorizationApi->put_orgauthorization_trustor_user: %s\n" % e)
 ```
 
 ### Parameters

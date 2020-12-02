@@ -3,6 +3,7 @@ title: Platform API Client SDK - Python
 ---
 
 [![PyPI version](https://badge.fury.io/py/PureCloudPlatformClientV2.svg)](https://badge.fury.io/py/PureCloudPlatformClientV2)
+[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](releaseNotes.md)
 
 Documentation can be found at [https://developer.mypurecloud.com/api/rest/client-libraries/python/](https://developer.mypurecloud.com/api/rest/client-libraries/python/)
 
@@ -37,7 +38,7 @@ For headless and non-user applications, the [Client Credentials Grant](http://de
 ```{"language":"python"}
 apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_client_credentials_token("7de3af06-c0b3-4f9b-af45-72f4a14037cc", "qLh-825gtjPrIY2kcWKAkmlaSgi6Z1Ws2BAyixWbTrs")
 authApi = PureCloudPlatformClientV2.AuthorizationApi(apiclient)
-print authApi.get_authorization_permissions()
+print(authApi.get_authorization_permissions())
 ```
 
 #### OAuth2 SAML2 Bearer Grant
@@ -49,7 +50,7 @@ print authApi.get_authorization_permissions()
 ```{"language":"python"}
 apiclient = PureCloudPlatformClientV2.api_client.ApiClient().get_saml2bearer_token("565c3091-4107-4675-b606-b1fead2d15a4", "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8", orgName ,encodedsamlassertion)
 usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
-print usersApi.get_users_me()
+print(usersApi.get_users_me())
 
 ```
 
@@ -92,7 +93,7 @@ Example of getting the authenticated user's information:
 
 ```{"language":"python"}
 usersApi = PureCloudPlatformClientV2.UsersApi()
-print usersApi.get_users_me()
+print(usersApi.get_users_me())
 ```
 
 ### Transform response object to JSON
@@ -100,7 +101,7 @@ print usersApi.get_users_me()
 You can use `to_json()` method on the model to get a raw JSON string of the model.
 
 ```{"language":"python"}
-print usersApi.get_users_me().to_json()
+print(usersApi.get_users_me().to_json())
 ```
 
 ## SDK Source Code Generation

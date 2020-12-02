@@ -138,7 +138,7 @@ class FieldConfig(object):
         """
         allowed_values = ["person", "group", "org", "externalContact"]
         if entity_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for entity_type -> " + entity_type
+            # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"
         else:
             self._entity_type = entity_type

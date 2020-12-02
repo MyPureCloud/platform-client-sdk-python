@@ -731,7 +731,7 @@ class ConversationEventTopicParticipant(object):
         """
         allowed_values = ["REQUESTED", "ACTIVE", "PAUSED", "STOPPED", "ERROR", "TIMEOUT"]
         if screen_recording_state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for screen_recording_state -> " + screen_recording_state
+            # print("Invalid value for screen_recording_state -> " + screen_recording_state)
             self._screen_recording_state = "outdated_sdk_version"
         else:
             self._screen_recording_state = screen_recording_state

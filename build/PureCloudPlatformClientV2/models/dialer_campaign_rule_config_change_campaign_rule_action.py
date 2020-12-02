@@ -129,7 +129,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         """
         allowed_values = ["TURN_ON_CAMPAIGN", "TURN_OFF_CAMPAIGN", "TURN_ON_SEQUENCE", "TURN_OFF_SEQUENCE", "SET_CAMPAIGN_PRIORITY", "RECYCLE_CAMPAIGN"]
         if action_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for action_type -> " + action_type
+            # print("Invalid value for action_type -> " + action_type)
             self._action_type = "outdated_sdk_version"
         else:
             self._action_type = action_type

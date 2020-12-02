@@ -142,7 +142,7 @@ try:
     # Deletes a emergency group by ID
     api_instance.delete_architect_emergencygroup(emergency_group_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_emergencygroup: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_emergencygroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -191,7 +191,7 @@ try:
     # Delete an IVR Config.
     api_instance.delete_architect_ivr(ivr_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_ivr: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_ivr: %s\n" % e)
 ```
 
 ### Parameters
@@ -242,7 +242,7 @@ try:
     # Delete specified user prompt
     api_instance.delete_architect_prompt(prompt_id, all_resources=all_resources)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_prompt: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_prompt: %s\n" % e)
 ```
 
 ### Parameters
@@ -294,7 +294,7 @@ try:
     # Delete specified user prompt resource
     api_instance.delete_architect_prompt_resource(prompt_id, language_code)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_prompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_prompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -346,7 +346,7 @@ try:
     # Delete specified user prompt resource audio
     api_instance.delete_architect_prompt_resource_audio(prompt_id, language_code)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_prompt_resource_audio: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_prompt_resource_audio: %s\n" % e)
 ```
 
 ### Parameters
@@ -398,7 +398,7 @@ try:
     api_response = api_instance.delete_architect_prompts(id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_prompts: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_prompts: %s\n" % e)
 ```
 
 ### Parameters
@@ -447,7 +447,7 @@ try:
     # Delete a schedule by id
     api_instance.delete_architect_schedule(schedule_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_schedule: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -496,7 +496,7 @@ try:
     # Deletes a schedule group by ID
     api_instance.delete_architect_schedulegroup(schedule_group_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_schedulegroup: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_schedulegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -547,7 +547,7 @@ try:
     # Delete a system prompt resource override.
     api_instance.delete_architect_systemprompt_resource(prompt_id, language_code)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_architect_systemprompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_architect_systemprompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -598,7 +598,7 @@ try:
     # Delete flow
     api_instance.delete_flow(flow_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_flow: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_flow: %s\n" % e)
 ```
 
 ### Parameters
@@ -649,7 +649,7 @@ try:
     api_response = api_instance.delete_flows(id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_flows: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_flows: %s\n" % e)
 ```
 
 ### Parameters
@@ -700,7 +700,7 @@ try:
     # deletes a specific datatable by id
     api_instance.delete_flows_datatable(datatable_id, force=force)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_flows_datatable: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_flows_datatable: %s\n" % e)
 ```
 
 ### Parameters
@@ -752,7 +752,7 @@ try:
     # Delete a row entry
     api_instance.delete_flows_datatable_row(datatable_id, row_id)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_flows_datatable_row: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_flows_datatable_row: %s\n" % e)
 ```
 
 ### Parameters
@@ -804,7 +804,7 @@ try:
     api_response = api_instance.delete_flows_milestone(milestone_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->delete_flows_milestone: %s\n" % e
+    print("Exception when calling ArchitectApi->delete_flows_milestone: %s\n" % e)
 ```
 
 ### Parameters
@@ -862,7 +862,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking(name, page_number=page_number, page_size=page_size, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking: %s\n" % e)
 ```
 
 ### Parameters
@@ -919,7 +919,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_build()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_build: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_build: %s\n" % e)
 ```
 
 ### Parameters
@@ -972,7 +972,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_consumedresources(id, version, object_type, resource_type=resource_type, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_consumedresources: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_consumedresources: %s\n" % e)
 ```
 
 ### Parameters
@@ -1034,7 +1034,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_consumingresources(id, object_type, resource_type=resource_type, version=version, page_number=page_number, page_size=page_size, flow_filter=flow_filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_consumingresources: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_consumingresources: %s\n" % e)
 ```
 
 ### Parameters
@@ -1097,7 +1097,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_deletedresourceconsumers(name=name, object_type=object_type, flow_filter=flow_filter, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_deletedresourceconsumers: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_deletedresourceconsumers: %s\n" % e)
 ```
 
 ### Parameters
@@ -1161,7 +1161,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_object(id, version=version, object_type=object_type, consumed_resources=consumed_resources, consuming_resources=consuming_resources, consumed_resource_type=consumed_resource_type, consuming_resource_type=consuming_resource_type, consumed_resource_request=consumed_resource_request)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_object: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_object: %s\n" % e)
 ```
 
 ### Parameters
@@ -1219,7 +1219,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_type(type_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_type: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -1271,7 +1271,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_types(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_types: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_types: %s\n" % e)
 ```
 
 ### Parameters
@@ -1328,7 +1328,7 @@ try:
     api_response = api_instance.get_architect_dependencytracking_updatedresourceconsumers(name=name, object_type=object_type, consumed_resources=consumed_resources, consumed_resource_type=consumed_resource_type, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_dependencytracking_updatedresourceconsumers: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_dependencytracking_updatedresourceconsumers: %s\n" % e)
 ```
 
 ### Parameters
@@ -1383,7 +1383,7 @@ try:
     api_response = api_instance.get_architect_emergencygroup(emergency_group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_emergencygroup: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_emergencygroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1437,7 +1437,7 @@ try:
     api_response = api_instance.get_architect_emergencygroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_emergencygroups: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_emergencygroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1491,7 +1491,7 @@ try:
     api_response = api_instance.get_architect_ivr(ivr_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_ivr: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_ivr: %s\n" % e)
 ```
 
 ### Parameters
@@ -1545,7 +1545,7 @@ try:
     api_response = api_instance.get_architect_ivrs(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_ivrs: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_ivrs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1600,7 +1600,7 @@ try:
     api_response = api_instance.get_architect_prompt(prompt_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_prompt: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_prompt: %s\n" % e)
 ```
 
 ### Parameters
@@ -1657,7 +1657,7 @@ try:
     api_response = api_instance.get_architect_prompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_prompt_history_history_id: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_prompt_history_history_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1715,7 +1715,7 @@ try:
     api_response = api_instance.get_architect_prompt_resource(prompt_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_prompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_prompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -1769,7 +1769,7 @@ try:
     api_response = api_instance.get_architect_prompt_resources(prompt_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_prompt_resources: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_prompt_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -1828,7 +1828,7 @@ try:
     api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1884,7 +1884,7 @@ try:
     api_response = api_instance.get_architect_schedule(schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_schedule: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -1934,7 +1934,7 @@ try:
     api_response = api_instance.get_architect_schedulegroup(schedule_group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_schedulegroup: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_schedulegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1989,7 +1989,7 @@ try:
     api_response = api_instance.get_architect_schedulegroups(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, schedule_ids=schedule_ids)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_schedulegroups: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_schedulegroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -2048,7 +2048,7 @@ try:
     api_response = api_instance.get_architect_schedules(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_schedules: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -2103,7 +2103,7 @@ try:
     api_response = api_instance.get_architect_systemprompt(prompt_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_systemprompt: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_systemprompt: %s\n" % e)
 ```
 
 ### Parameters
@@ -2160,7 +2160,7 @@ try:
     api_response = api_instance.get_architect_systemprompt_history_history_id(prompt_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_systemprompt_history_history_id: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_systemprompt_history_history_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -2218,7 +2218,7 @@ try:
     api_response = api_instance.get_architect_systemprompt_resource(prompt_id, language_code)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_systemprompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_systemprompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -2274,7 +2274,7 @@ try:
     api_response = api_instance.get_architect_systemprompt_resources(prompt_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_systemprompt_resources: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_systemprompt_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -2335,7 +2335,7 @@ try:
     api_response = api_instance.get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_architect_systemprompts: %s\n" % e
+    print("Exception when calling ArchitectApi->get_architect_systemprompts: %s\n" % e)
 ```
 
 ### Parameters
@@ -2393,7 +2393,7 @@ try:
     api_response = api_instance.get_flow(flow_id, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow: %s\n" % e)
 ```
 
 ### Parameters
@@ -2451,7 +2451,7 @@ try:
     api_response = api_instance.get_flow_history_history_id(flow_id, history_id, page_number=page_number, page_size=page_size, sort_order=sort_order, sort_by=sort_by, action=action)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow_history_history_id: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow_history_history_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -2509,7 +2509,7 @@ try:
     api_response = api_instance.get_flow_latestconfiguration(flow_id, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow_latestconfiguration: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow_latestconfiguration: %s\n" % e)
 ```
 
 ### Parameters
@@ -2563,7 +2563,7 @@ try:
     api_response = api_instance.get_flow_version(flow_id, version_id, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow_version: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow_version: %s\n" % e)
 ```
 
 ### Parameters
@@ -2618,7 +2618,7 @@ try:
     api_response = api_instance.get_flow_version_configuration(flow_id, version_id, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow_version_configuration: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow_version_configuration: %s\n" % e)
 ```
 
 ### Parameters
@@ -2674,7 +2674,7 @@ try:
     api_response = api_instance.get_flow_versions(flow_id, page_number=page_number, page_size=page_size, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flow_versions: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flow_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2746,7 +2746,7 @@ try:
     api_response = api_instance.get_flows(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, locked_by_client_id=locked_by_client_id, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows: %s\n" % e)
 ```
 
 ### Parameters
@@ -2816,7 +2816,7 @@ try:
     api_response = api_instance.get_flows_datatable(datatable_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable: %s\n" % e)
 ```
 
 ### Parameters
@@ -2869,7 +2869,7 @@ try:
     api_response = api_instance.get_flows_datatable_export_job(datatable_id, export_job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable_export_job: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable_export_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -2922,7 +2922,7 @@ try:
     api_response = api_instance.get_flows_datatable_import_job(datatable_id, import_job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable_import_job: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable_import_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -2976,7 +2976,7 @@ try:
     api_response = api_instance.get_flows_datatable_import_jobs(datatable_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable_import_jobs: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable_import_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -3031,7 +3031,7 @@ try:
     api_response = api_instance.get_flows_datatable_row(datatable_id, row_id, showbrief=showbrief)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable_row: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable_row: %s\n" % e)
 ```
 
 ### Parameters
@@ -3087,7 +3087,7 @@ try:
     api_response = api_instance.get_flows_datatable_rows(datatable_id, page_number=page_number, page_size=page_size, showbrief=showbrief)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatable_rows: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatable_rows: %s\n" % e)
 ```
 
 ### Parameters
@@ -3145,7 +3145,7 @@ try:
     api_response = api_instance.get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e)
 ```
 
 ### Parameters
@@ -3211,7 +3211,7 @@ try:
     api_response = api_instance.get_flows_divisionviews(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, publish_version_id=publish_version_id, published_after=published_after, published_before=published_before, division_id=division_id, include_schemas=include_schemas)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -3273,7 +3273,7 @@ try:
     api_response = api_instance.get_flows_execution(flow_execution_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_execution: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -3324,7 +3324,7 @@ try:
     api_response = api_instance.get_flows_milestone(milestone_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_milestone: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_milestone: %s\n" % e)
 ```
 
 ### Parameters
@@ -3382,7 +3382,7 @@ try:
     api_response = api_instance.get_flows_milestones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_milestones: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_milestones: %s\n" % e)
 ```
 
 ### Parameters
@@ -3440,7 +3440,7 @@ try:
     api_response = api_instance.get_flows_outcome(flow_outcome_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_outcome: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_outcome: %s\n" % e)
 ```
 
 ### Parameters
@@ -3498,7 +3498,7 @@ try:
     api_response = api_instance.get_flows_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->get_flows_outcomes: %s\n" % e
+    print("Exception when calling ArchitectApi->get_flows_outcomes: %s\n" % e)
 ```
 
 ### Parameters
@@ -3554,7 +3554,7 @@ try:
     # Rebuild Dependency Tracking data for an organization
     api_instance.post_architect_dependencytracking_build()
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_dependencytracking_build: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_dependencytracking_build: %s\n" % e)
 ```
 
 ### Parameters
@@ -3601,7 +3601,7 @@ try:
     api_response = api_instance.post_architect_emergencygroups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_emergencygroups: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_emergencygroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -3651,7 +3651,7 @@ try:
     api_response = api_instance.post_architect_ivrs(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_ivrs: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_ivrs: %s\n" % e)
 ```
 
 ### Parameters
@@ -3702,7 +3702,7 @@ try:
     api_response = api_instance.post_architect_prompt_history(prompt_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_prompt_history: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_prompt_history: %s\n" % e)
 ```
 
 ### Parameters
@@ -3754,7 +3754,7 @@ try:
     api_response = api_instance.post_architect_prompt_resources(prompt_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_prompt_resources: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_prompt_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -3806,7 +3806,7 @@ try:
     api_response = api_instance.post_architect_prompts(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_prompts: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_prompts: %s\n" % e)
 ```
 
 ### Parameters
@@ -3856,7 +3856,7 @@ try:
     api_response = api_instance.post_architect_schedulegroups(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_schedulegroups: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_schedulegroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -3906,7 +3906,7 @@ try:
     api_response = api_instance.post_architect_schedules(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_schedules: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -3957,7 +3957,7 @@ try:
     api_response = api_instance.post_architect_systemprompt_history(prompt_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_systemprompt_history: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_systemprompt_history: %s\n" % e)
 ```
 
 ### Parameters
@@ -4009,7 +4009,7 @@ try:
     api_response = api_instance.post_architect_systemprompt_resources(prompt_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_architect_systemprompt_resources: %s\n" % e
+    print("Exception when calling ArchitectApi->post_architect_systemprompt_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -4062,7 +4062,7 @@ try:
     api_response = api_instance.post_flow_versions(flow_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flow_versions: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flow_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -4114,7 +4114,7 @@ try:
     api_response = api_instance.post_flows(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows: %s\n" % e)
 ```
 
 ### Parameters
@@ -4166,7 +4166,7 @@ try:
     api_response = api_instance.post_flows_actions_checkin(flow)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_checkin: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_checkin: %s\n" % e)
 ```
 
 ### Parameters
@@ -4217,7 +4217,7 @@ try:
     api_response = api_instance.post_flows_actions_checkout(flow)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_checkout: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_checkout: %s\n" % e)
 ```
 
 ### Parameters
@@ -4268,7 +4268,7 @@ try:
     api_response = api_instance.post_flows_actions_deactivate(flow)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_deactivate: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_deactivate: %s\n" % e)
 ```
 
 ### Parameters
@@ -4321,7 +4321,7 @@ try:
     api_response = api_instance.post_flows_actions_publish(flow, version=version)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_publish: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_publish: %s\n" % e)
 ```
 
 ### Parameters
@@ -4373,7 +4373,7 @@ try:
     api_response = api_instance.post_flows_actions_revert(flow)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_revert: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_revert: %s\n" % e)
 ```
 
 ### Parameters
@@ -4424,7 +4424,7 @@ try:
     api_response = api_instance.post_flows_actions_unlock(flow)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_actions_unlock: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_actions_unlock: %s\n" % e)
 ```
 
 ### Parameters
@@ -4475,7 +4475,7 @@ try:
     api_response = api_instance.post_flows_datatable_export_jobs(datatable_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_datatable_export_jobs: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_datatable_export_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -4527,7 +4527,7 @@ try:
     api_response = api_instance.post_flows_datatable_import_jobs(datatable_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_datatable_import_jobs: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_datatable_import_jobs: %s\n" % e)
 ```
 
 ### Parameters
@@ -4580,7 +4580,7 @@ try:
     api_response = api_instance.post_flows_datatable_rows(datatable_id, data_table_row)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_datatable_rows: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_datatable_rows: %s\n" % e)
 ```
 
 ### Parameters
@@ -4632,7 +4632,7 @@ try:
     api_response = api_instance.post_flows_datatables(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_datatables: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_datatables: %s\n" % e)
 ```
 
 ### Parameters
@@ -4683,7 +4683,7 @@ try:
     api_response = api_instance.post_flows_executions(flow_launch_request)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_executions: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_executions: %s\n" % e)
 ```
 
 ### Parameters
@@ -4734,7 +4734,7 @@ try:
     api_response = api_instance.post_flows_milestones(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_milestones: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_milestones: %s\n" % e)
 ```
 
 ### Parameters
@@ -4785,7 +4785,7 @@ try:
     api_response = api_instance.post_flows_outcomes(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->post_flows_outcomes: %s\n" % e
+    print("Exception when calling ArchitectApi->post_flows_outcomes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4836,7 +4836,7 @@ try:
     api_response = api_instance.put_architect_emergencygroup(emergency_group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_emergencygroup: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_emergencygroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -4888,7 +4888,7 @@ try:
     api_response = api_instance.put_architect_ivr(ivr_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_ivr: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_ivr: %s\n" % e)
 ```
 
 ### Parameters
@@ -4941,7 +4941,7 @@ try:
     api_response = api_instance.put_architect_prompt(prompt_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_prompt: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_prompt: %s\n" % e)
 ```
 
 ### Parameters
@@ -4995,7 +4995,7 @@ try:
     api_response = api_instance.put_architect_prompt_resource(prompt_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_prompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_prompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -5048,7 +5048,7 @@ try:
     api_response = api_instance.put_architect_schedule(schedule_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_schedule: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -5100,7 +5100,7 @@ try:
     api_response = api_instance.put_architect_schedulegroup(schedule_group_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_schedulegroup: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_schedulegroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -5154,7 +5154,7 @@ try:
     api_response = api_instance.put_architect_systemprompt_resource(prompt_id, language_code, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_architect_systemprompt_resource: %s\n" % e
+    print("Exception when calling ArchitectApi->put_architect_systemprompt_resource: %s\n" % e)
 ```
 
 ### Parameters
@@ -5208,7 +5208,7 @@ try:
     api_response = api_instance.put_flow(flow_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_flow: %s\n" % e
+    print("Exception when calling ArchitectApi->put_flow: %s\n" % e)
 ```
 
 ### Parameters
@@ -5262,7 +5262,7 @@ try:
     api_response = api_instance.put_flows_datatable(datatable_id, expand=expand, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_flows_datatable: %s\n" % e
+    print("Exception when calling ArchitectApi->put_flows_datatable: %s\n" % e)
 ```
 
 ### Parameters
@@ -5317,7 +5317,7 @@ try:
     api_response = api_instance.put_flows_datatable_row(datatable_id, row_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_flows_datatable_row: %s\n" % e
+    print("Exception when calling ArchitectApi->put_flows_datatable_row: %s\n" % e)
 ```
 
 ### Parameters
@@ -5371,7 +5371,7 @@ try:
     api_response = api_instance.put_flows_milestone(milestone_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_flows_milestone: %s\n" % e
+    print("Exception when calling ArchitectApi->put_flows_milestone: %s\n" % e)
 ```
 
 ### Parameters
@@ -5424,7 +5424,7 @@ try:
     api_response = api_instance.put_flows_outcome(flow_outcome_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ArchitectApi->put_flows_outcome: %s\n" % e
+    print("Exception when calling ArchitectApi->put_flows_outcome: %s\n" % e)
 ```
 
 ### Parameters

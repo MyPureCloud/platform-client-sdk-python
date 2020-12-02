@@ -80,7 +80,7 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         """
         allowed_values = ["Processing", "Complete", "Canceled", "Error"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status

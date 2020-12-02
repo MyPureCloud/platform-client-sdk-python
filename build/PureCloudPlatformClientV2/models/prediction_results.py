@@ -77,7 +77,7 @@ class PredictionResults(object):
         """
         allowed_values = ["ALL", "CALL", "CALLBACK", "CHAT", "EMAIL", "SOCIALEXPRESSION", "VIDEOCOMM", "MESSAGE"]
         if intent.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for intent -> " + intent
+            # print("Invalid value for intent -> " + intent)
             self._intent = "outdated_sdk_version"
         else:
             self._intent = intent
@@ -104,7 +104,7 @@ class PredictionResults(object):
         """
         allowed_values = ["BEST", "SIMPLE", "ABANDON", "PATIENCE_ABANDON"]
         if formula.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for formula -> " + formula
+            # print("Invalid value for formula -> " + formula)
             self._formula = "outdated_sdk_version"
         else:
             self._formula = formula

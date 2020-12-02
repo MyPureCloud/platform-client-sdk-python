@@ -80,7 +80,7 @@ class ScimMetadata(object):
         """
         allowed_values = ["User", "Group", "ServiceProviderConfig", "ResourceType", "Schema"]
         if resource_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for resource_type -> " + resource_type
+            # print("Invalid value for resource_type -> " + resource_type)
             self._resource_type = "outdated_sdk_version"
         else:
             self._resource_type = resource_type

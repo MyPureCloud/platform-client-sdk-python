@@ -182,7 +182,7 @@ class BuShortTermForecast(object):
         """
         allowed_values = ["Import", "ImportedHistoricalWeightedAverage", "HistoricalWeightedAverage", "Advanced"]
         if creation_method.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for creation_method -> " + creation_method
+            # print("Invalid value for creation_method -> " + creation_method)
             self._creation_method = "outdated_sdk_version"
         else:
             self._creation_method = creation_method

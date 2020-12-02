@@ -149,7 +149,7 @@ try:
     # Delete business unit
     api_instance.delete_workforcemanagement_businessunit(business_unit_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -200,7 +200,7 @@ try:
     # Deletes an activity code
     api_instance.delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_activitycode: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_activitycode: %s\n" % e)
 ```
 
 ### Parameters
@@ -252,7 +252,7 @@ try:
     # Deletes the planning group
     api_instance.delete_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_planninggroup: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_planninggroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -304,7 +304,7 @@ try:
     # Cancel a scheduling run
     api_instance.delete_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_scheduling_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -356,7 +356,7 @@ try:
     # Delete a service goal template
     api_instance.delete_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)
 ```
 
 ### Parameters
@@ -410,7 +410,7 @@ try:
     api_response = api_instance.delete_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_schedule: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -464,7 +464,7 @@ try:
     # Delete a short term forecast
     api_instance.delete_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e)
 ```
 
 ### Parameters
@@ -516,7 +516,7 @@ try:
     # Delete management unit
     api_instance.delete_workforcemanagement_managementunit(mu_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -567,7 +567,7 @@ try:
     # Delete a work plan
     api_instance.delete_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplan: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplan: %s\n" % e)
 ```
 
 ### Parameters
@@ -619,7 +619,7 @@ try:
     # Delete a work plan rotation
     api_instance.delete_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit_workplanrotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -671,7 +671,7 @@ try:
     api_response = api_instance.get_workforcemanagement_adherence(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence: %s\n" % e)
 ```
 
 ### Parameters
@@ -722,7 +722,7 @@ try:
     api_response = api_instance.get_workforcemanagement_adhocmodelingjob(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_adhocmodelingjob: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adhocmodelingjob: %s\n" % e)
 ```
 
 ### Parameters
@@ -826,7 +826,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -879,7 +879,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycode: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycode: %s\n" % e)
 ```
 
 ### Parameters
@@ -976,7 +976,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(bu_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycodes: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -1028,7 +1028,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_intraday_planninggroups: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_intraday_planninggroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1081,7 +1081,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_managementunits(business_unit_id, feature=feature, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_managementunits: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_managementunits: %s\n" % e)
 ```
 
 ### Parameters
@@ -1135,7 +1135,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroup: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -1192,7 +1192,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_planninggroups(business_unit_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroups: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1245,7 +1245,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -1301,7 +1301,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run_result(business_unit_id, run_id, management_unit_ids, expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run_result: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run_result: %s\n" % e)
 ```
 
 ### Parameters
@@ -1356,7 +1356,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_scheduling_runs(business_unit_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_runs: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_runs: %s\n" % e)
 ```
 
 ### Parameters
@@ -1408,7 +1408,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)
 ```
 
 ### Parameters
@@ -1462,7 +1462,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e)
 ```
 
 ### Parameters
@@ -1517,7 +1517,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -1574,7 +1574,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_generationresults(business_unit_id, week_id, schedule_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_generationresults: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_generationresults: %s\n" % e)
 ```
 
 ### Parameters
@@ -1631,7 +1631,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_headcountforecast(business_unit_id, week_id, schedule_id, force_download=force_download)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_headcountforecast: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_headcountforecast: %s\n" % e)
 ```
 
 ### Parameters
@@ -1689,7 +1689,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedules: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -1746,7 +1746,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast: %s\n" % e)
 ```
 
 ### Parameters
@@ -1804,7 +1804,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_data(business_unit_id, week_date_id, forecast_id, week_number=week_number, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_data: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_data: %s\n" % e)
 ```
 
 ### Parameters
@@ -1861,7 +1861,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_generationresults(business_unit_id, week_date_id, forecast_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_generationresults: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_generationresults: %s\n" % e)
 ```
 
 ### Parameters
@@ -1918,7 +1918,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(business_unit_id, week_date_id, forecast_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -1973,7 +1973,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecasts(business_unit_id, week_date_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecasts: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecasts: %s\n" % e)
 ```
 
 ### Parameters
@@ -2025,7 +2025,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunits(feature=feature, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits: %s\n" % e)
 ```
 
 ### Parameters
@@ -2077,7 +2077,7 @@ try:
     api_response = api_instance.get_workforcemanagement_businessunits_divisionviews(division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits_divisionviews: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunits_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -2183,7 +2183,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit(mu_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -2274,7 +2274,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_activitycodes(mu_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_activitycodes: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_activitycodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -2326,7 +2326,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_adherence(management_unit_id, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_adherence: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_adherence: %s\n" % e)
 ```
 
 ### Parameters
@@ -2380,7 +2380,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -2435,7 +2435,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_agent_shifttrades(management_unit_id, agent_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent_shifttrades: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent_shifttrades: %s\n" % e)
 ```
 
 ### Parameters
@@ -2488,7 +2488,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_matched(mu_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_matched: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_matched: %s\n" % e)
 ```
 
 ### Parameters
@@ -2539,7 +2539,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_users(mu_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_users: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -2592,7 +2592,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -2647,7 +2647,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\n" % e)
 ```
 
 ### Parameters
@@ -2707,7 +2707,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_users(mu_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_users: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -2763,7 +2763,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id, expand=expand, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedule: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -2823,7 +2823,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedules: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -2881,7 +2881,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shifttrades: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shifttrades: %s\n" % e)
 ```
 
 ### Parameters
@@ -2937,7 +2937,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplan: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplan: %s\n" % e)
 ```
 
 ### Parameters
@@ -2990,7 +2990,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -3044,7 +3044,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_workplanrotations(management_unit_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotations: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplanrotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -3101,7 +3101,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\n" % e)
 ```
 
 ### Parameters
@@ -3156,7 +3156,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand, feature=feature, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits: %s\n" % e)
 ```
 
 ### Parameters
@@ -3211,7 +3211,7 @@ try:
     api_response = api_instance.get_workforcemanagement_managementunits_divisionviews(division_id=division_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits_divisionviews: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunits_divisionviews: %s\n" % e)
 ```
 
 ### Parameters
@@ -3260,7 +3260,7 @@ try:
     api_response = api_instance.get_workforcemanagement_notifications()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_notifications: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_notifications: %s\n" % e)
 ```
 
 ### Parameters
@@ -3308,7 +3308,7 @@ try:
     api_response = api_instance.get_workforcemanagement_schedulingjob(job_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulingjob: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulingjob: %s\n" % e)
 ```
 
 ### Parameters
@@ -3360,7 +3360,7 @@ try:
     api_response = api_instance.get_workforcemanagement_shifttrades()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrades: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrades: %s\n" % e)
 ```
 
 ### Parameters
@@ -3409,7 +3409,7 @@ try:
     api_response = api_instance.get_workforcemanagement_timeoffrequest(time_off_request_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequest: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -3461,7 +3461,7 @@ try:
     api_response = api_instance.get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\n" % e)
 ```
 
 ### Parameters
@@ -3513,7 +3513,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_businessunit(business_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -3567,7 +3567,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activitycode: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activitycode: %s\n" % e)
 ```
 
 ### Parameters
@@ -3622,7 +3622,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_planninggroup: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_planninggroup: %s\n" % e)
 ```
 
 ### Parameters
@@ -3676,7 +3676,7 @@ try:
     # Mark a schedule run as applied
     api_instance.patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body=body)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_scheduling_run: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_scheduling_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -3731,7 +3731,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)
 ```
 
 ### Parameters
@@ -3785,7 +3785,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_managementunit(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit: %s\n" % e)
 ```
 
 ### Parameters
@@ -3840,7 +3840,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -3897,7 +3897,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, body, trade_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_shifttrade: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_shifttrade: %s\n" % e)
 ```
 
 ### Parameters
@@ -3954,7 +3954,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body=body, validation_mode=validation_mode)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplan: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplan: %s\n" % e)
 ```
 
 ### Parameters
@@ -4010,7 +4010,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplanrotation: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_workplanrotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -4064,7 +4064,7 @@ try:
     api_response = api_instance.patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->patch_workforcemanagement_timeoffrequest: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_timeoffrequest: %s\n" % e)
 ```
 
 ### Parameters
@@ -4116,7 +4116,7 @@ try:
     api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\n" % e)
 ```
 
 ### Parameters
@@ -4167,7 +4167,7 @@ try:
     api_response = api_instance.post_workforcemanagement_agentschedules_mine(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_agentschedules_mine: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agentschedules_mine: %s\n" % e)
 ```
 
 ### Parameters
@@ -4219,7 +4219,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_activitycodes(bu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activitycodes: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activitycodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -4275,7 +4275,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_agentschedules_search: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_agentschedules_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -4331,7 +4331,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_intraday(business_unit_id, force_async=force_async, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_intraday: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_intraday: %s\n" % e)
 ```
 
 ### Parameters
@@ -4385,7 +4385,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_planninggroups(business_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_planninggroups: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_planninggroups: %s\n" % e)
 ```
 
 ### Parameters
@@ -4438,7 +4438,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e)
 ```
 
 ### Parameters
@@ -4496,7 +4496,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_agentschedules_query(business_unit_id, week_id, schedule_id, body, force_async=force_async, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_agentschedules_query: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_agentschedules_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -4555,7 +4555,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_copy(business_unit_id, week_id, schedule_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_copy: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_copy: %s\n" % e)
 ```
 
 ### Parameters
@@ -4612,7 +4612,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_reschedule(business_unit_id, week_id, schedule_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_reschedule: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_reschedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -4668,7 +4668,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -4723,7 +4723,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules_generate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedules_generate: %s\n" % e)
 ```
 
 ### Parameters
@@ -4780,7 +4780,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecast_copy(business_unit_id, week_date_id, forecast_id, body, force_async=force_async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecast_copy: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecast_copy: %s\n" % e)
 ```
 
 ### Parameters
@@ -4838,7 +4838,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\n" % e)
 ```
 
 ### Parameters
@@ -4892,7 +4892,7 @@ try:
     api_response = api_instance.post_workforcemanagement_businessunits(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunits: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunits: %s\n" % e)
 ```
 
 ### Parameters
@@ -4947,7 +4947,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -5002,7 +5002,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_historicaladherencequery(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_historicaladherencequery: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_historicaladherencequery: %s\n" % e)
 ```
 
 ### Parameters
@@ -5055,7 +5055,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_move(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_move: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_move: %s\n" % e)
 ```
 
 ### Parameters
@@ -5109,7 +5109,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_schedules_search: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_schedules_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -5162,7 +5162,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests: %s\n" % e)
 ```
 
 ### Parameters
@@ -5215,7 +5215,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(mu_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_query: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_query: %s\n" % e)
 ```
 
 ### Parameters
@@ -5270,7 +5270,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, body, trade_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrade_match: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrade_match: %s\n" % e)
 ```
 
 ### Parameters
@@ -5326,7 +5326,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades: %s\n" % e)
 ```
 
 ### Parameters
@@ -5381,7 +5381,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_search: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -5438,7 +5438,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_state_bulk(management_unit_id, week_date_id, body, force_async=force_async)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_state_bulk: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_state_bulk: %s\n" % e)
 ```
 
 ### Parameters
@@ -5494,7 +5494,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_workplan_copy(management_unit_id, work_plan_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_copy: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_copy: %s\n" % e)
 ```
 
 ### Parameters
@@ -5551,7 +5551,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body=body, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_validate: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplan_validate: %s\n" % e)
 ```
 
 ### Parameters
@@ -5607,7 +5607,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotation_copy: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotation_copy: %s\n" % e)
 ```
 
 ### Parameters
@@ -5661,7 +5661,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_workplanrotations(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotations: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplanrotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -5715,7 +5715,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunit_workplans(management_unit_id, body=body, validation_mode=validation_mode)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplans: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_workplans: %s\n" % e)
 ```
 
 ### Parameters
@@ -5768,7 +5768,7 @@ try:
     api_response = api_instance.post_workforcemanagement_managementunits(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunits: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunits: %s\n" % e)
 ```
 
 ### Parameters
@@ -5818,7 +5818,7 @@ try:
     api_response = api_instance.post_workforcemanagement_notifications_update(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_notifications_update: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_notifications_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -5869,7 +5869,7 @@ try:
     api_response = api_instance.post_workforcemanagement_schedules(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_schedules: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -5920,7 +5920,7 @@ try:
     api_response = api_instance.post_workforcemanagement_timeoffrequests(body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests: %s\n" % e
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests: %s\n" % e)
 ```
 
 ### Parameters

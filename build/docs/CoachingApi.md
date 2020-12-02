@@ -63,7 +63,7 @@ try:
     api_response = api_instance.delete_coaching_appointment(appointment_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->delete_coaching_appointment: %s\n" % e
+    print("Exception when calling CoachingApi->delete_coaching_appointment: %s\n" % e)
 ```
 
 ### Parameters
@@ -115,7 +115,7 @@ try:
     # Delete an existing annotation
     api_instance.delete_coaching_appointment_annotation(appointment_id, annotation_id)
 except ApiException as e:
-    print "Exception when calling CoachingApi->delete_coaching_appointment_annotation: %s\n" % e
+    print("Exception when calling CoachingApi->delete_coaching_appointment_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -167,7 +167,7 @@ try:
     api_response = api_instance.get_coaching_appointment(appointment_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointment: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointment: %s\n" % e)
 ```
 
 ### Parameters
@@ -220,7 +220,7 @@ try:
     api_response = api_instance.get_coaching_appointment_annotation(appointment_id, annotation_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointment_annotation: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointment_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -275,7 +275,7 @@ try:
     api_response = api_instance.get_coaching_appointment_annotations(appointment_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointment_annotations: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointment_annotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -294,7 +294,7 @@ except ApiException as e:
 
 <a name="get_coaching_appointment_statuses"></a>
 
-## [**CoachingAppointmentStatusDtoList**](CoachingAppointmentStatusDtoList.html) get_coaching_appointment_statuses(appointment_id, page_number=page_number, page_size=page_size)
+## [**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html) get_coaching_appointment_statuses(appointment_id, page_number=page_number, page_size=page_size)
 
 
 
@@ -330,7 +330,7 @@ try:
     api_response = api_instance.get_coaching_appointment_statuses(appointment_id, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointment_statuses: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointment_statuses: %s\n" % e)
 ```
 
 ### Parameters
@@ -345,7 +345,7 @@ except ApiException as e:
 
 ### Return type
 
-[**CoachingAppointmentStatusDtoList**](CoachingAppointmentStatusDtoList.html)
+[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html)
 
 <a name="get_coaching_appointments"></a>
 
@@ -392,7 +392,7 @@ try:
     api_response = api_instance.get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointments: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointments: %s\n" % e)
 ```
 
 ### Parameters
@@ -459,7 +459,7 @@ try:
     api_response = api_instance.get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_appointments_me: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_appointments_me: %s\n" % e)
 ```
 
 ### Parameters
@@ -519,7 +519,7 @@ try:
     api_response = api_instance.get_coaching_notification(notification_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_notification: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_notification: %s\n" % e)
 ```
 
 ### Parameters
@@ -572,7 +572,7 @@ try:
     api_response = api_instance.get_coaching_notifications(page_number=page_number, page_size=page_size, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->get_coaching_notifications: %s\n" % e
+    print("Exception when calling CoachingApi->get_coaching_notifications: %s\n" % e)
 ```
 
 ### Parameters
@@ -626,7 +626,7 @@ try:
     api_response = api_instance.patch_coaching_appointment(appointment_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->patch_coaching_appointment: %s\n" % e
+    print("Exception when calling CoachingApi->patch_coaching_appointment: %s\n" % e)
 ```
 
 ### Parameters
@@ -681,7 +681,7 @@ try:
     api_response = api_instance.patch_coaching_appointment_annotation(appointment_id, annotation_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->patch_coaching_appointment_annotation: %s\n" % e
+    print("Exception when calling CoachingApi->patch_coaching_appointment_annotation: %s\n" % e)
 ```
 
 ### Parameters
@@ -700,7 +700,7 @@ except ApiException as e:
 
 <a name="patch_coaching_appointment_status"></a>
 
-## [**CoachingAppointmentStatusDto**](CoachingAppointmentStatusDto.html) patch_coaching_appointment_status(appointment_id, body)
+## [**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html) patch_coaching_appointment_status(appointment_id, body)
 
 
 
@@ -728,14 +728,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CoachingApi()
 appointment_id = 'appointment_id_example' # str | The ID of the coaching appointment.
-body = PureCloudPlatformClientV2.CoachingAppointmentStatusDto() # CoachingAppointmentStatusDto | Updated status of the coaching appointment
+body = PureCloudPlatformClientV2.CoachingAppointmentStatusRequest() # CoachingAppointmentStatusRequest | Updated status of the coaching appointment
 
 try:
     # Update the status of a coaching appointment
     api_response = api_instance.patch_coaching_appointment_status(appointment_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->patch_coaching_appointment_status: %s\n" % e
+    print("Exception when calling CoachingApi->patch_coaching_appointment_status: %s\n" % e)
 ```
 
 ### Parameters
@@ -744,12 +744,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-| **body** | [**CoachingAppointmentStatusDto**](CoachingAppointmentStatusDto.html)| Updated status of the coaching appointment |  |
+| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest.html)| Updated status of the coaching appointment |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentStatusDto**](CoachingAppointmentStatusDto.html)
+[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html)
 
 <a name="patch_coaching_notification"></a>
 
@@ -787,7 +787,7 @@ try:
     api_response = api_instance.patch_coaching_notification(notification_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->patch_coaching_notification: %s\n" % e
+    print("Exception when calling CoachingApi->patch_coaching_notification: %s\n" % e)
 ```
 
 ### Parameters
@@ -841,7 +841,7 @@ try:
     api_response = api_instance.post_coaching_appointment_annotations(appointment_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->post_coaching_appointment_annotations: %s\n" % e
+    print("Exception when calling CoachingApi->post_coaching_appointment_annotations: %s\n" % e)
 ```
 
 ### Parameters
@@ -893,7 +893,7 @@ try:
     api_response = api_instance.post_coaching_appointments(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->post_coaching_appointments: %s\n" % e
+    print("Exception when calling CoachingApi->post_coaching_appointments: %s\n" % e)
 ```
 
 ### Parameters
@@ -944,7 +944,7 @@ try:
     api_response = api_instance.post_coaching_appointments_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CoachingApi->post_coaching_appointments_aggregates_query: %s\n" % e
+    print("Exception when calling CoachingApi->post_coaching_appointments_aggregates_query: %s\n" % e)
 ```
 
 ### Parameters

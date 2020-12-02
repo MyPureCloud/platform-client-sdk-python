@@ -113,7 +113,7 @@ class Screenshare(object):
         """
         allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "none"]
         if state.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for state -> " + state
+            # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
@@ -232,7 +232,7 @@ class Screenshare(object):
         """
         allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for disconnect_type -> " + disconnect_type
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
         else:
             self._disconnect_type = disconnect_type

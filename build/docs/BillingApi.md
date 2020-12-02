@@ -50,7 +50,7 @@ try:
     api_response = api_instance.get_billing_reports_billableusage(start_date, end_date)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BillingApi->get_billing_reports_billableusage: %s\n" % e
+    print("Exception when calling BillingApi->get_billing_reports_billableusage: %s\n" % e)
 ```
 
 ### Parameters
@@ -103,7 +103,7 @@ try:
     api_response = api_instance.get_billing_trusteebillingoverview_trustor_org_id(trustor_org_id, billing_period_index=billing_period_index)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BillingApi->get_billing_trusteebillingoverview_trustor_org_id: %s\n" % e
+    print("Exception when calling BillingApi->get_billing_trusteebillingoverview_trustor_org_id: %s\n" % e)
 ```
 
 ### Parameters

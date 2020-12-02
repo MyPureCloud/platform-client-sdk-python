@@ -147,7 +147,7 @@ class MessagingIntegration(object):
         """
         allowed_values = ["Active", "Inactive", "Error", "Starting", "Incomplete", "Deleting", "DeletionFailed"]
         if status.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for status -> " + status
+            # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
@@ -174,7 +174,7 @@ class MessagingIntegration(object):
         """
         allowed_values = ["sms", "facebook", "twitter", "line", "whatsapp", "webmessaging"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for messenger_type -> " + messenger_type
+            # print("Invalid value for messenger_type -> " + messenger_type)
             self._messenger_type = "outdated_sdk_version"
         else:
             self._messenger_type = messenger_type

@@ -53,7 +53,7 @@ try:
     # Delete a location
     api_instance.delete_location(location_id)
 except ApiException as e:
-    print "Exception when calling LocationsApi->delete_location: %s\n" % e
+    print("Exception when calling LocationsApi->delete_location: %s\n" % e)
 ```
 
 ### Parameters
@@ -104,7 +104,7 @@ try:
     api_response = api_instance.get_location(location_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->get_location: %s\n" % e
+    print("Exception when calling LocationsApi->get_location: %s\n" % e)
 ```
 
 ### Parameters
@@ -155,7 +155,7 @@ try:
     api_response = api_instance.get_location_sublocations(location_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->get_location_sublocations: %s\n" % e
+    print("Exception when calling LocationsApi->get_location_sublocations: %s\n" % e)
 ```
 
 ### Parameters
@@ -208,7 +208,7 @@ try:
     api_response = api_instance.get_locations(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->get_locations: %s\n" % e
+    print("Exception when calling LocationsApi->get_locations: %s\n" % e)
 ```
 
 ### Parameters
@@ -262,7 +262,7 @@ try:
     api_response = api_instance.get_locations_search(q64, expand=expand)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->get_locations_search: %s\n" % e
+    print("Exception when calling LocationsApi->get_locations_search: %s\n" % e)
 ```
 
 ### Parameters
@@ -315,7 +315,7 @@ try:
     api_response = api_instance.patch_location(location_id, body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->patch_location: %s\n" % e
+    print("Exception when calling LocationsApi->patch_location: %s\n" % e)
 ```
 
 ### Parameters
@@ -367,7 +367,7 @@ try:
     api_response = api_instance.post_locations(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->post_locations: %s\n" % e
+    print("Exception when calling LocationsApi->post_locations: %s\n" % e)
 ```
 
 ### Parameters
@@ -417,7 +417,7 @@ try:
     api_response = api_instance.post_locations_search(body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling LocationsApi->post_locations_search: %s\n" % e
+    print("Exception when calling LocationsApi->post_locations_search: %s\n" % e)
 ```
 
 ### Parameters

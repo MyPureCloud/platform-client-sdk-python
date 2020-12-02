@@ -83,7 +83,7 @@ class ForecastSourceDayPointer(object):
         """
         allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "EighthDay"]
         if day_of_week.lower() not in map(str.lower, allowed_values):
-            # print "Invalid value for day_of_week -> " + day_of_week
+            # print("Invalid value for day_of_week -> " + day_of_week)
             self._day_of_week = "outdated_sdk_version"
         else:
             self._day_of_week = day_of_week
