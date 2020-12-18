@@ -379,7 +379,7 @@ class AuthorizationApi(object):
     def get_authorization_division_grants(self, division_id, **kwargs):
         """
         Gets all grants for a given division.
-        
+        Returns all grants assigned to a given division. Maximum page size is 500.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

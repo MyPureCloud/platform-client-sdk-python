@@ -122,7 +122,13 @@ class ViewFilter(object):
             'callback_interval': 'str',
             'used_routing_types': 'list[str]',
             'requested_routing_types': 'list[str]',
-            'has_agent_assist_id': 'bool'
+            'has_agent_assist_id': 'bool',
+            'transcripts': 'list[Transcripts]',
+            'transcript_languages': 'list[str]',
+            'participant_purposes': 'list[str]',
+            'show_first_queue': 'bool',
+            'team_ids': 'list[str]',
+            'filter_users_by_team_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -208,7 +214,13 @@ class ViewFilter(object):
             'callback_interval': 'callbackInterval',
             'used_routing_types': 'usedRoutingTypes',
             'requested_routing_types': 'requestedRoutingTypes',
-            'has_agent_assist_id': 'hasAgentAssistId'
+            'has_agent_assist_id': 'hasAgentAssistId',
+            'transcripts': 'transcripts',
+            'transcript_languages': 'transcriptLanguages',
+            'participant_purposes': 'participantPurposes',
+            'show_first_queue': 'showFirstQueue',
+            'team_ids': 'teamIds',
+            'filter_users_by_team_ids': 'filterUsersByTeamIds'
         }
 
         self._media_types = None
@@ -294,6 +306,12 @@ class ViewFilter(object):
         self._used_routing_types = None
         self._requested_routing_types = None
         self._has_agent_assist_id = None
+        self._transcripts = None
+        self._transcript_languages = None
+        self._participant_purposes = None
+        self._show_first_queue = None
+        self._team_ids = None
+        self._filter_users_by_team_ids = None
 
     @property
     def media_types(self):
@@ -2203,6 +2221,144 @@ class ViewFilter(object):
         """
         
         self._has_agent_assist_id = has_agent_assist_id
+
+    @property
+    def transcripts(self):
+        """
+        Gets the transcripts of this ViewFilter.
+        A list of transcript contents requested
+
+        :return: The transcripts of this ViewFilter.
+        :rtype: list[Transcripts]
+        """
+        return self._transcripts
+
+    @transcripts.setter
+    def transcripts(self, transcripts):
+        """
+        Sets the transcripts of this ViewFilter.
+        A list of transcript contents requested
+
+        :param transcripts: The transcripts of this ViewFilter.
+        :type: list[Transcripts]
+        """
+        
+        self._transcripts = transcripts
+
+    @property
+    def transcript_languages(self):
+        """
+        Gets the transcript_languages of this ViewFilter.
+        A list of transcript languages requested
+
+        :return: The transcript_languages of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._transcript_languages
+
+    @transcript_languages.setter
+    def transcript_languages(self, transcript_languages):
+        """
+        Sets the transcript_languages of this ViewFilter.
+        A list of transcript languages requested
+
+        :param transcript_languages: The transcript_languages of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._transcript_languages = transcript_languages
+
+    @property
+    def participant_purposes(self):
+        """
+        Gets the participant_purposes of this ViewFilter.
+        A list of participant purpose requested
+
+        :return: The participant_purposes of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._participant_purposes
+
+    @participant_purposes.setter
+    def participant_purposes(self, participant_purposes):
+        """
+        Sets the participant_purposes of this ViewFilter.
+        A list of participant purpose requested
+
+        :param participant_purposes: The participant_purposes of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._participant_purposes = participant_purposes
+
+    @property
+    def show_first_queue(self):
+        """
+        Gets the show_first_queue of this ViewFilter.
+        Indicates filtering for first queue data
+
+        :return: The show_first_queue of this ViewFilter.
+        :rtype: bool
+        """
+        return self._show_first_queue
+
+    @show_first_queue.setter
+    def show_first_queue(self, show_first_queue):
+        """
+        Sets the show_first_queue of this ViewFilter.
+        Indicates filtering for first queue data
+
+        :param show_first_queue: The show_first_queue of this ViewFilter.
+        :type: bool
+        """
+        
+        self._show_first_queue = show_first_queue
+
+    @property
+    def team_ids(self):
+        """
+        Gets the team_ids of this ViewFilter.
+        The team ids used to filter the view data
+
+        :return: The team_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._team_ids
+
+    @team_ids.setter
+    def team_ids(self, team_ids):
+        """
+        Sets the team_ids of this ViewFilter.
+        The team ids used to filter the view data
+
+        :param team_ids: The team_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._team_ids = team_ids
+
+    @property
+    def filter_users_by_team_ids(self):
+        """
+        Gets the filter_users_by_team_ids of this ViewFilter.
+        The team ids are used to fetch associated users for the view
+
+        :return: The filter_users_by_team_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._filter_users_by_team_ids
+
+    @filter_users_by_team_ids.setter
+    def filter_users_by_team_ids(self, filter_users_by_team_ids):
+        """
+        Sets the filter_users_by_team_ids of this ViewFilter.
+        The team ids are used to fetch associated users for the view
+
+        :param filter_users_by_team_ids: The filter_users_by_team_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._filter_users_by_team_ids = filter_users_by_team_ids
 
     def to_dict(self):
         """

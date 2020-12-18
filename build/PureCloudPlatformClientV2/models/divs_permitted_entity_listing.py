@@ -48,8 +48,8 @@ class DivsPermittedEntityListing(object):
             'first_uri': 'str',
             'self_uri': 'str',
             'previous_uri': 'str',
-            'last_uri': 'str',
             'next_uri': 'str',
+            'last_uri': 'str',
             'page_count': 'int'
         }
 
@@ -62,8 +62,8 @@ class DivsPermittedEntityListing(object):
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'previous_uri': 'previousUri',
-            'last_uri': 'lastUri',
             'next_uri': 'nextUri',
+            'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
 
@@ -75,8 +75,8 @@ class DivsPermittedEntityListing(object):
         self._first_uri = None
         self._self_uri = None
         self._previous_uri = None
-        self._last_uri = None
         self._next_uri = None
+        self._last_uri = None
         self._page_count = None
 
     @property
@@ -264,29 +264,6 @@ class DivsPermittedEntityListing(object):
         self._previous_uri = previous_uri
 
     @property
-    def last_uri(self):
-        """
-        Gets the last_uri of this DivsPermittedEntityListing.
-
-
-        :return: The last_uri of this DivsPermittedEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri):
-        """
-        Sets the last_uri of this DivsPermittedEntityListing.
-
-
-        :param last_uri: The last_uri of this DivsPermittedEntityListing.
-        :type: str
-        """
-        
-        self._last_uri = last_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this DivsPermittedEntityListing.
@@ -308,6 +285,29 @@ class DivsPermittedEntityListing(object):
         """
         
         self._next_uri = next_uri
+
+    @property
+    def last_uri(self):
+        """
+        Gets the last_uri of this DivsPermittedEntityListing.
+
+
+        :return: The last_uri of this DivsPermittedEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri):
+        """
+        Sets the last_uri of this DivsPermittedEntityListing.
+
+
+        :param last_uri: The last_uri of this DivsPermittedEntityListing.
+        :type: str
+        """
+        
+        self._last_uri = last_uri
 
     @property
     def page_count(self):

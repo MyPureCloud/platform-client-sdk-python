@@ -43,6 +43,8 @@ class StatisticalSummary(object):
             'max': 'float',
             'min': 'float',
             'count': 'int',
+            'count_negative': 'int',
+            'count_positive': 'int',
             'sum': 'float',
             'current': 'float',
             'ratio': 'float',
@@ -55,6 +57,8 @@ class StatisticalSummary(object):
             'max': 'max',
             'min': 'min',
             'count': 'count',
+            'count_negative': 'countNegative',
+            'count_positive': 'countPositive',
             'sum': 'sum',
             'current': 'current',
             'ratio': 'ratio',
@@ -66,6 +70,8 @@ class StatisticalSummary(object):
         self._max = None
         self._min = None
         self._count = None
+        self._count_negative = None
+        self._count_positive = None
         self._sum = None
         self._current = None
         self._ratio = None
@@ -141,6 +147,52 @@ class StatisticalSummary(object):
         """
         
         self._count = count
+
+    @property
+    def count_negative(self):
+        """
+        Gets the count_negative of this StatisticalSummary.
+
+
+        :return: The count_negative of this StatisticalSummary.
+        :rtype: int
+        """
+        return self._count_negative
+
+    @count_negative.setter
+    def count_negative(self, count_negative):
+        """
+        Sets the count_negative of this StatisticalSummary.
+
+
+        :param count_negative: The count_negative of this StatisticalSummary.
+        :type: int
+        """
+        
+        self._count_negative = count_negative
+
+    @property
+    def count_positive(self):
+        """
+        Gets the count_positive of this StatisticalSummary.
+
+
+        :return: The count_positive of this StatisticalSummary.
+        :rtype: int
+        """
+        return self._count_positive
+
+    @count_positive.setter
+    def count_positive(self, count_positive):
+        """
+        Sets the count_positive of this StatisticalSummary.
+
+
+        :param count_positive: The count_positive of this StatisticalSummary.
+        :type: int
+        """
+        
+        self._count_positive = count_positive
 
     @property
     def sum(self):

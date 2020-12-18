@@ -612,6 +612,14 @@ from .credential_info_listing import CredentialInfoListing
 from .credential_specification import CredentialSpecification
 from .credential_type import CredentialType
 from .credential_type_listing import CredentialTypeListing
+from .cross_platform_call_media_policy import CrossPlatformCallMediaPolicy
+from .cross_platform_chat_media_policy import CrossPlatformChatMediaPolicy
+from .cross_platform_email_media_policy import CrossPlatformEmailMediaPolicy
+from .cross_platform_media_policies import CrossPlatformMediaPolicies
+from .cross_platform_message_media_policy import CrossPlatformMessageMediaPolicy
+from .cross_platform_policy import CrossPlatformPolicy
+from .cross_platform_policy_actions import CrossPlatformPolicyActions
+from .cross_platform_policy_create import CrossPlatformPolicyCreate
 from .current_user_schedule_request_body import CurrentUserScheduleRequestBody
 from .cursor_contact_listing import CursorContactListing
 from .cursor_note_listing import CursorNoteListing
@@ -1141,6 +1149,9 @@ from .media_setting import MediaSetting
 from .media_summary import MediaSummary
 from .media_summary_detail import MediaSummaryDetail
 from .media_transcription import MediaTranscription
+from .media_type import MediaType
+from .media_type_access import MediaTypeAccess
+from .media_types import MediaTypes
 from .media_utilization import MediaUtilization
 from .member_entity import MemberEntity
 from .message import Message
@@ -1787,6 +1798,7 @@ from .subscriber_response import SubscriberResponse
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .supported_content import SupportedContent
 from .supported_language import SupportedLanguage
 from .survey import Survey
 from .survey_aggregate_data_container import SurveyAggregateDataContainer
@@ -1852,6 +1864,7 @@ from .transcript_conversation_detail_search_criteria import TranscriptConversati
 from .transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .transcript_url import TranscriptUrl
 from .transcription_settings import TranscriptionSettings
+from .transcripts import Transcripts
 from .transfer_request import TransferRequest
 from .trunk import Trunk
 from .trunk_base import TrunkBase

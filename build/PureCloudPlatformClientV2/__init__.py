@@ -612,6 +612,14 @@ from .models.credential_info_listing import CredentialInfoListing
 from .models.credential_specification import CredentialSpecification
 from .models.credential_type import CredentialType
 from .models.credential_type_listing import CredentialTypeListing
+from .models.cross_platform_call_media_policy import CrossPlatformCallMediaPolicy
+from .models.cross_platform_chat_media_policy import CrossPlatformChatMediaPolicy
+from .models.cross_platform_email_media_policy import CrossPlatformEmailMediaPolicy
+from .models.cross_platform_media_policies import CrossPlatformMediaPolicies
+from .models.cross_platform_message_media_policy import CrossPlatformMessageMediaPolicy
+from .models.cross_platform_policy import CrossPlatformPolicy
+from .models.cross_platform_policy_actions import CrossPlatformPolicyActions
+from .models.cross_platform_policy_create import CrossPlatformPolicyCreate
 from .models.current_user_schedule_request_body import CurrentUserScheduleRequestBody
 from .models.cursor_contact_listing import CursorContactListing
 from .models.cursor_note_listing import CursorNoteListing
@@ -1141,6 +1149,9 @@ from .models.media_setting import MediaSetting
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
 from .models.media_transcription import MediaTranscription
+from .models.media_type import MediaType
+from .models.media_type_access import MediaTypeAccess
+from .models.media_types import MediaTypes
 from .models.media_utilization import MediaUtilization
 from .models.member_entity import MemberEntity
 from .models.message import Message
@@ -1787,6 +1798,7 @@ from .models.subscriber_response import SubscriberResponse
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.supported_content import SupportedContent
 from .models.supported_language import SupportedLanguage
 from .models.survey import Survey
 from .models.survey_aggregate_data_container import SurveyAggregateDataContainer
@@ -1852,6 +1864,7 @@ from .models.transcript_conversation_detail_search_criteria import TranscriptCon
 from .models.transcript_conversation_detail_search_request import TranscriptConversationDetailSearchRequest
 from .models.transcript_url import TranscriptUrl
 from .models.transcription_settings import TranscriptionSettings
+from .models.transcripts import Transcripts
 from .models.transfer_request import TransferRequest
 from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase

@@ -214,6 +214,162 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_recording_crossplatform_mediaretentionpolicies(self, ids, **kwargs):
+        """
+        Delete media retention policies
+        Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_recording_crossplatform_mediaretentionpolicies(ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str ids:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_recording_crossplatform_mediaretentionpolicies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'ids' is set
+        if ('ids' not in params) or (params['ids'] is None):
+            raise ValueError("Missing the required parameter `ids` when calling `delete_recording_crossplatform_mediaretentionpolicies`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_recording_crossplatform_mediaretentionpolicy(self, policy_id, **kwargs):
+        """
+        Delete a media retention policy
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_recording_crossplatform_mediaretentionpolicy(policy_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: Policy ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_recording_crossplatform_mediaretentionpolicy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `delete_recording_crossplatform_mediaretentionpolicy`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_recording_job(self, job_id, **kwargs):
         """
         Delete the recording bulk job
@@ -1324,6 +1480,186 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_recording_crossplatform_mediaretentionpolicies(self, **kwargs):
+        """
+        Gets media retention policy list with query options to filter on name and enabled.
+        for a less verbose response, add summary=true to this endpoint
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_recording_crossplatform_mediaretentionpolicies(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :param str name: the policy name - used for filtering results in searches.
+        :param bool enabled: checks to see if policy is enabled - use enabled = true or enabled = false
+        :param bool summary: provides a less verbose response of policy lists.
+        :param bool has_errors: provides a way to fetch all policies with errors or policies that do not have errors
+        :return: PolicyEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'name', 'enabled', 'summary', 'has_errors']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_recording_crossplatform_mediaretentionpolicies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'enabled' in params:
+            query_params['enabled'] = params['enabled']
+        if 'summary' in params:
+            query_params['summary'] = params['summary']
+        if 'has_errors' in params:
+            query_params['hasErrors'] = params['has_errors']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PolicyEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_recording_crossplatform_mediaretentionpolicy(self, policy_id, **kwargs):
+        """
+        Get a media retention policy
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_recording_crossplatform_mediaretentionpolicy(policy_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: Policy ID (required)
+        :return: CrossPlatformPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_recording_crossplatform_mediaretentionpolicy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `get_recording_crossplatform_mediaretentionpolicy`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CrossPlatformPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_recording_job(self, job_id, **kwargs):
         """
         Get the status of the job associated with the job id.
@@ -2125,6 +2461,90 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_recording_crossplatform_mediaretentionpolicy(self, policy_id, body, **kwargs):
+        """
+        Patch a media retention policy
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_recording_crossplatform_mediaretentionpolicy(policy_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: Policy ID (required)
+        :param CrossPlatformPolicy body: Policy (required)
+        :return: CrossPlatformPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_recording_crossplatform_mediaretentionpolicy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `patch_recording_crossplatform_mediaretentionpolicy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_recording_crossplatform_mediaretentionpolicy`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CrossPlatformPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_recording_mediaretentionpolicy(self, policy_id, body, **kwargs):
         """
         Patch a media retention policy
@@ -2454,6 +2874,84 @@ class RecordingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BatchDownloadJobSubmissionResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_recording_crossplatform_mediaretentionpolicies(self, body, **kwargs):
+        """
+        Create media retention policy
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_recording_crossplatform_mediaretentionpolicies(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CrossPlatformPolicyCreate body: Policy (required)
+        :return: CrossPlatformPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_recording_crossplatform_mediaretentionpolicies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_recording_crossplatform_mediaretentionpolicies`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CrossPlatformPolicy',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3183,6 +3681,90 @@ class RecordingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Recording',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_recording_crossplatform_mediaretentionpolicy(self, policy_id, body, **kwargs):
+        """
+        Update a media retention policy
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_recording_crossplatform_mediaretentionpolicy(policy_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: Policy ID (required)
+        :param CrossPlatformPolicy body: Policy (required)
+        :return: CrossPlatformPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_recording_crossplatform_mediaretentionpolicy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `put_recording_crossplatform_mediaretentionpolicy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_recording_crossplatform_mediaretentionpolicy`")
+
+
+        resource_path = '/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CrossPlatformPolicy',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

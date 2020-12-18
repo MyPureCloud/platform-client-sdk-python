@@ -14,8 +14,8 @@ title: GenericSAML
 | **endpoint_compression** | **bool** |  | [optional] |
 | **name_identifier_format** | **str** |  | [optional] |
 | **certificate** | **str** |  | [optional] |
-| **sso_target_uri** | **str** |  | [optional] |
 | **issuer_uri** | **str** |  | [optional] |
+| **sso_target_uri** | **str** |  | [optional] |
 | **disabled** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

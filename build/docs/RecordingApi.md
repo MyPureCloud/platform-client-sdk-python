@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_conversation_recording_annotation**](RecordingApi.html#delete_conversation_recording_annotation) | Delete annotation|
 |[**delete_orphanrecording**](RecordingApi.html#delete_orphanrecording) | Deletes a single orphan recording|
+|[**delete_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#delete_recording_crossplatform_mediaretentionpolicies) | Delete media retention policies|
+|[**delete_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#delete_recording_crossplatform_mediaretentionpolicy) | Delete a media retention policy|
 |[**delete_recording_job**](RecordingApi.html#delete_recording_job) | Delete the recording bulk job|
 |[**delete_recording_mediaretentionpolicies**](RecordingApi.html#delete_recording_mediaretentionpolicies) | Delete media retention policies|
 |[**delete_recording_mediaretentionpolicy**](RecordingApi.html#delete_recording_mediaretentionpolicy) | Delete a media retention policy|
@@ -23,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
 |[**get_orphanrecordings**](RecordingApi.html#get_orphanrecordings) | Gets all orphan recordings|
 |[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results|
+|[**get_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
+|[**get_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
 |[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
 |[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
 |[**get_recording_localkeys_setting**](RecordingApi.html#get_recording_localkeys_setting) | Get the local encryption settings|
@@ -33,10 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_recordingkeys_rotationschedule**](RecordingApi.html#get_recording_recordingkeys_rotationschedule) | Get key rotation schedule|
 |[**get_recording_settings**](RecordingApi.html#get_recording_settings) | Get the Recording Settings for the Organization|
 |[**get_recordings_screensessions**](RecordingApi.html#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
+|[**patch_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recording_mediaretentionpolicy**](RecordingApi.html#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recordings_screensession**](RecordingApi.html#patch_recordings_screensession) | Update a screen recording session|
 |[**post_conversation_recording_annotations**](RecordingApi.html#post_conversation_recording_annotations) | Create annotation|
 |[**post_recording_batchrequests**](RecordingApi.html#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
+|[**post_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#post_recording_crossplatform_mediaretentionpolicies) | Create media retention policy|
 |[**post_recording_jobs**](RecordingApi.html#post_recording_jobs) | Create a recording bulk job|
 |[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local recording key|
 |[**post_recording_localkeys_settings**](RecordingApi.html#post_recording_localkeys_settings) | create settings for local key creation|
@@ -46,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
 |[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
 |[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
+|[**put_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#put_recording_crossplatform_mediaretentionpolicy) | Update a media retention policy|
 |[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job.|
 |[**put_recording_localkeys_setting**](RecordingApi.html#put_recording_localkeys_setting) | Update the local encryption settings|
 |[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
@@ -158,6 +165,106 @@ except ApiException as e:
 ### Return type
 
 [**OrphanRecording**](OrphanRecording.html)
+
+<a name="delete_recording_crossplatform_mediaretentionpolicies"></a>
+
+##  delete_recording_crossplatform_mediaretentionpolicies(ids)
+
+
+
+Delete media retention policies
+
+Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+
+Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+ids = 'ids_example' # str | 
+
+try:
+    # Delete media retention policies
+    api_instance.delete_recording_crossplatform_mediaretentionpolicies(ids)
+except ApiException as e:
+    print("Exception when calling RecordingApi->delete_recording_crossplatform_mediaretentionpolicies: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ids** | **str**|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_recording_crossplatform_mediaretentionpolicy"></a>
+
+##  delete_recording_crossplatform_mediaretentionpolicy(policy_id)
+
+
+
+Delete a media retention policy
+
+
+
+Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+policy_id = 'policy_id_example' # str | Policy ID
+
+try:
+    # Delete a media retention policy
+    api_instance.delete_recording_crossplatform_mediaretentionpolicy(policy_id)
+except ApiException as e:
+    print("Exception when calling RecordingApi->delete_recording_crossplatform_mediaretentionpolicy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| Policy ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_recording_job"></a>
 
@@ -873,6 +980,126 @@ except ApiException as e:
 
 [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
 
+<a name="get_recording_crossplatform_mediaretentionpolicies"></a>
+
+## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+
+
+
+Gets media retention policy list with query options to filter on name and enabled.
+
+for a less verbose response, add summary=true to this endpoint
+
+Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+name = 'name_example' # str | the policy name - used for filtering results in searches. (optional)
+enabled = true # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+summary = false # bool | provides a less verbose response of policy lists. (optional) (default to false)
+has_errors = true # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+
+try:
+    # Gets media retention policy list with query options to filter on name and enabled.
+    api_response = api_instance.get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_crossplatform_mediaretentionpolicies: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+| **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
+| **enabled** | **bool**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
+| **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to false] |
+| **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PolicyEntityListing**](PolicyEntityListing.html)
+
+<a name="get_recording_crossplatform_mediaretentionpolicy"></a>
+
+## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) get_recording_crossplatform_mediaretentionpolicy(policy_id)
+
+
+
+Get a media retention policy
+
+
+
+Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+policy_id = 'policy_id_example' # str | Policy ID
+
+try:
+    # Get a media retention policy
+    api_response = api_instance.get_recording_crossplatform_mediaretentionpolicy(policy_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_crossplatform_mediaretentionpolicy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| Policy ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+
 <a name="get_recording_job"></a>
 
 ## [**RecordingJob**](RecordingJob.html) get_recording_job(job_id)
@@ -1408,6 +1635,59 @@ except ApiException as e:
 
 [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
 
+<a name="patch_recording_crossplatform_mediaretentionpolicy"></a>
+
+## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) patch_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+
+
+
+Patch a media retention policy
+
+
+
+Wraps PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+policy_id = 'policy_id_example' # str | Policy ID
+body = PureCloudPlatformClientV2.CrossPlatformPolicy() # CrossPlatformPolicy | Policy
+
+try:
+    # Patch a media retention policy
+    api_response = api_instance.patch_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->patch_recording_crossplatform_mediaretentionpolicy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| Policy ID |  |
+| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+
 <a name="patch_recording_mediaretentionpolicy"></a>
 
 ## [**Policy**](Policy.html) patch_recording_mediaretentionpolicy(policy_id, body)
@@ -1617,6 +1897,57 @@ except ApiException as e:
 ### Return type
 
 [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
+
+<a name="post_recording_crossplatform_mediaretentionpolicies"></a>
+
+## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) post_recording_crossplatform_mediaretentionpolicies(body)
+
+
+
+Create media retention policy
+
+
+
+Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+body = PureCloudPlatformClientV2.CrossPlatformPolicyCreate() # CrossPlatformPolicyCreate | Policy
+
+try:
+    # Create media retention policy
+    api_response = api_instance.post_recording_crossplatform_mediaretentionpolicies(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->post_recording_crossplatform_mediaretentionpolicies: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CrossPlatformPolicyCreate**](CrossPlatformPolicyCreate.html)| Policy |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
 
 <a name="post_recording_jobs"></a>
 
@@ -2085,6 +2416,59 @@ except ApiException as e:
 ### Return type
 
 [**Recording**](Recording.html)
+
+<a name="put_recording_crossplatform_mediaretentionpolicy"></a>
+
+## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) put_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+
+
+
+Update a media retention policy
+
+
+
+Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+policy_id = 'policy_id_example' # str | Policy ID
+body = PureCloudPlatformClientV2.CrossPlatformPolicy() # CrossPlatformPolicy | Policy
+
+try:
+    # Update a media retention policy
+    api_response = api_instance.put_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->put_recording_crossplatform_mediaretentionpolicy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| Policy ID |  |
+| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
 
 <a name="put_recording_job"></a>
 

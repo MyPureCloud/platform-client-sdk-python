@@ -41,6 +41,7 @@ class AuditLogMessage(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'user_home_org_id': 'str',
             'user': 'DomainEntityRef',
             'client': 'AddressableEntityRef',
             'remote_ip': 'list[str]',
@@ -56,6 +57,7 @@ class AuditLogMessage(object):
 
         self.attribute_map = {
             'id': 'id',
+            'user_home_org_id': 'userHomeOrgId',
             'user': 'user',
             'client': 'client',
             'remote_ip': 'remoteIp',
@@ -70,6 +72,7 @@ class AuditLogMessage(object):
         }
 
         self._id = None
+        self._user_home_org_id = None
         self._user = None
         self._client = None
         self._remote_ip = None
@@ -104,6 +107,29 @@ class AuditLogMessage(object):
         """
         
         self._id = id
+
+    @property
+    def user_home_org_id(self):
+        """
+        Gets the user_home_org_id of this AuditLogMessage.
+        Home Organization Id associated with this audit message.
+
+        :return: The user_home_org_id of this AuditLogMessage.
+        :rtype: str
+        """
+        return self._user_home_org_id
+
+    @user_home_org_id.setter
+    def user_home_org_id(self, user_home_org_id):
+        """
+        Sets the user_home_org_id of this AuditLogMessage.
+        Home Organization Id associated with this audit message.
+
+        :param user_home_org_id: The user_home_org_id of this AuditLogMessage.
+        :type: str
+        """
+        
+        self._user_home_org_id = user_home_org_id
 
     @property
     def user(self):
@@ -194,7 +220,7 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
+        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Presence", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
@@ -267,7 +293,7 @@ class AuditLogMessage(object):
         :param action: The action of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Create", "View", "Update", "Delete", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword"]
+        allowed_values = ["Create", "View", "Update", "Delete", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "Read", "ApplyProtection", "RevokeProtection", "UpdateRetention", "ReadAll", "Execute", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
@@ -317,7 +343,7 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "WrapupCode", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site"]
+        allowed_values = ["Document", "Queue", "Recording", "Role", "VoicemailUserPolicy", "UserPresence", "WrapupCode", "MaxOrgRoutingUtilizationCapacity", "AccessToken", "OAuthClient", "OAuthClientAuthorization", "AuthOrganization", "AuthUser", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "BulkActions", "Feedback", "Topic", "Program", "Segment", "Outcome", "SessionType", "EventType", "ClickstreamSettings", "Schedule", "ScheduleGroup", "EmergencyGroup", "IVR", "Trigger", "Response", "DependencyTrackingBuild", "Flow", "Prompt", "PromptResource", "FlowOutcome", "FlowMilestone", "Team", "Edge", "EdgeGroup", "Trunk", "TrunkBase", "DID", "DIDPool", "Extension", "ExtensionPool", "Phone", "PhoneBase", "Line", "LineBase", "OutboundRoute", "NumberPlan", "Site"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"

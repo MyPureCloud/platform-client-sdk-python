@@ -3635,7 +3635,7 @@ class RoutingApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str sort_order: Sort order
-        :param str name: Name
+        :param str name: Wrapup code's name ('Sort by' param is ignored unless this field is provided)
         :return: WrapupCodeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

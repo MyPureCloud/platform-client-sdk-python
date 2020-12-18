@@ -188,7 +188,7 @@ class WemLearningAssignmentTopicLearningAssignmentNotification(object):
         :param state: The state of this WemLearningAssignmentTopicLearningAssignmentNotification.
         :type: str
         """
-        allowed_values = ["Assigned", "InProgress", "Completed"]
+        allowed_values = ["Assigned", "InProgress", "Completed", "Deleted"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"

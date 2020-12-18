@@ -40,17 +40,72 @@ class FacebookIntegrationUpdateRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
+            'name': 'str',
             'page_access_token': 'str',
-            'user_access_token': 'str'
+            'user_access_token': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
+            'name': 'name',
             'page_access_token': 'pageAccessToken',
-            'user_access_token': 'userAccessToken'
+            'user_access_token': 'userAccessToken',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
+        self._name = None
         self._page_access_token = None
         self._user_access_token = None
+        self._self_uri = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this FacebookIntegrationUpdateRequest.
+        The globally unique identifier for the object.
+
+        :return: The id of this FacebookIntegrationUpdateRequest.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this FacebookIntegrationUpdateRequest.
+        The globally unique identifier for the object.
+
+        :param id: The id of this FacebookIntegrationUpdateRequest.
+        :type: str
+        """
+        
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this FacebookIntegrationUpdateRequest.
+        The name of the Facebook Integration
+
+        :return: The name of this FacebookIntegrationUpdateRequest.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this FacebookIntegrationUpdateRequest.
+        The name of the Facebook Integration
+
+        :param name: The name of this FacebookIntegrationUpdateRequest.
+        :type: str
+        """
+        
+        self._name = name
 
     @property
     def page_access_token(self):
@@ -97,6 +152,29 @@ class FacebookIntegrationUpdateRequest(object):
         """
         
         self._user_access_token = user_access_token
+
+    @property
+    def self_uri(self):
+        """
+        Gets the self_uri of this FacebookIntegrationUpdateRequest.
+        The URI for this object
+
+        :return: The self_uri of this FacebookIntegrationUpdateRequest.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri):
+        """
+        Sets the self_uri of this FacebookIntegrationUpdateRequest.
+        The URI for this object
+
+        :param self_uri: The self_uri of this FacebookIntegrationUpdateRequest.
+        :type: str
+        """
+        
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

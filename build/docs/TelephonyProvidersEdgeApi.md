@@ -1328,7 +1328,7 @@ except ApiException as e:
 
 ## [**EdgeLine**](EdgeLine.html) get_telephony_providers_edge_line(edge_id, line_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get line
 
@@ -1381,7 +1381,7 @@ except ApiException as e:
 
 ## [**EdgeLineEntityListing**](EdgeLineEntityListing.html) get_telephony_providers_edge_lines(edge_id, page_size=page_size, page_number=page_number)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the list of lines.
 
@@ -6087,7 +6087,7 @@ except ApiException as e:
 
 ## [**EdgeLine**](EdgeLine.html) put_telephony_providers_edge_line(edge_id, line_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update a line.
 
@@ -6250,7 +6250,7 @@ except ApiException as e:
 
 ## [**DID**](DID.html) put_telephony_providers_edges_did(did_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update a DID by ID.
 
@@ -6464,7 +6464,7 @@ except ApiException as e:
 
 ## [**Extension**](Extension.html) put_telephony_providers_edges_extension(extension_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update an extension by ID.
 

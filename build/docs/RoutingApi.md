@@ -2448,7 +2448,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
-name = 'name_example' # str | Name (optional)
+name = 'name_example' # str | Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
 
 try:
     # Get list of wrapup codes.
@@ -2467,7 +2467,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name]<br />**Values**: name, id |
 | **sort_order** | **str**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
-| **name** | **str**| Name | [optional]  |
+| **name** | **str**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
