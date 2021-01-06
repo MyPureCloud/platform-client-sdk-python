@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_coaching_appointment_status**](CoachingApi.html#patch_coaching_appointment_status) | Update the status of a coaching appointment|
 |[**patch_coaching_notification**](CoachingApi.html#patch_coaching_notification) | Update an existing notification.|
 |[**post_coaching_appointment_annotations**](CoachingApi.html#post_coaching_appointment_annotations) | Create a new annotation.|
+|[**post_coaching_appointment_conversations**](CoachingApi.html#post_coaching_appointment_conversations) | Add a conversation to an appointment|
 |[**post_coaching_appointments**](CoachingApi.html#post_coaching_appointments) | Create a new appointment|
 |[**post_coaching_appointments_aggregates_query**](CoachingApi.html#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
 {: class="table table-striped"}
@@ -856,6 +857,60 @@ except ApiException as e:
 ### Return type
 
 [**CoachingAnnotation**](CoachingAnnotation.html)
+
+<a name="post_coaching_appointment_conversations"></a>
+
+## [**AddConversationResponse**](AddConversationResponse.html) post_coaching_appointment_conversations(appointment_id, body)
+
+
+
+Add a conversation to an appointment
+
+Permission not required if you are the creator or facilitator of the appointment
+
+Wraps POST /api/v2/coaching/appointments/{appointmentId}/conversations 
+
+Requires ANY permissions: 
+
+* coaching:appointment:edit
+* coaching:appointmentConversation:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi()
+appointment_id = 'appointment_id_example' # str | The ID of the coaching appointment.
+body = PureCloudPlatformClientV2.AddConversationRequest() # AddConversationRequest | body
+
+try:
+    # Add a conversation to an appointment
+    api_response = api_instance.post_coaching_appointment_conversations(appointment_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoachingApi->post_coaching_appointment_conversations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **appointment_id** | **str**| The ID of the coaching appointment. |  |
+| **body** | [**AddConversationRequest**](AddConversationRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AddConversationResponse**](AddConversationResponse.html)
 
 <a name="post_coaching_appointments"></a>
 

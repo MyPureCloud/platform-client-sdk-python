@@ -16,6 +16,8 @@ from .models.active_alert_count import ActiveAlertCount
 from .models.activity_code import ActivityCode
 from .models.activity_code_container import ActivityCodeContainer
 from .models.acw_settings import AcwSettings
+from .models.add_conversation_request import AddConversationRequest
+from .models.add_conversation_response import AddConversationResponse
 from .models.add_shift_trade_request import AddShiftTradeRequest
 from .models.add_work_plan_rotation_agent_request import AddWorkPlanRotationAgentRequest
 from .models.add_work_plan_rotation_request import AddWorkPlanRotationRequest

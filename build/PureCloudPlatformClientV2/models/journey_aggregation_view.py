@@ -78,7 +78,7 @@ class JourneyAggregationView(object):
         :param target: The target of this JourneyAggregationView.
         :type: str
         """
-        allowed_values = ["nJourneyOutcomesAchieved", "nJourneyOutcomesAttributed", "nJourneySegmentsAssigned", "nJourneySessions", "nWebActionsAbandoned", "nWebActionsAccepted", "nWebActionsEngaged", "nWebActionsErrored", "nWebActionsIgnored", "nWebActionsOffered", "nWebActionsQualified", "nWebActionsQualifiedOutsideSchedule", "nWebActionsRejected", "nWebActionsStarted", "nWebActionsTimedout", "nWebActionsFrequencyCapReached"]
+        allowed_values = ["nJourneyOutcomesAchieved", "nJourneyOutcomesAttributed", "nJourneySegmentsAssigned", "nJourneySessions", "nWebActionsAbandoned", "nWebActionsAccepted", "nWebActionsEngaged", "nWebActionsErrored", "nWebActionsIgnored", "nWebActionsOffered", "nWebActionsQualified", "nWebActionsQualifiedOutsideSchedule", "nWebActionsRejected", "nWebActionsStarted", "nWebActionsTimedout", "nWebActionsFrequencyCapReached", "nWebActionsOfferedOutsideSchedule"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

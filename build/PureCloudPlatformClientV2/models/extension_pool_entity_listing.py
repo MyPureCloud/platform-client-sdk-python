@@ -46,9 +46,9 @@ class ExtensionPoolEntityListing(object):
             'total': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
-            'previous_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
+            'previous_uri': 'str',
             'page_count': 'int'
         }
 
@@ -59,9 +59,9 @@ class ExtensionPoolEntityListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
+            'previous_uri': 'previousUri',
             'page_count': 'pageCount'
         }
 
@@ -71,9 +71,9 @@ class ExtensionPoolEntityListing(object):
         self._total = None
         self._first_uri = None
         self._self_uri = None
-        self._previous_uri = None
         self._next_uri = None
         self._last_uri = None
+        self._previous_uri = None
         self._page_count = None
 
     @property
@@ -215,29 +215,6 @@ class ExtensionPoolEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def previous_uri(self):
-        """
-        Gets the previous_uri of this ExtensionPoolEntityListing.
-
-
-        :return: The previous_uri of this ExtensionPoolEntityListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
-        """
-        Sets the previous_uri of this ExtensionPoolEntityListing.
-
-
-        :param previous_uri: The previous_uri of this ExtensionPoolEntityListing.
-        :type: str
-        """
-        
-        self._previous_uri = previous_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this ExtensionPoolEntityListing.
@@ -282,6 +259,29 @@ class ExtensionPoolEntityListing(object):
         """
         
         self._last_uri = last_uri
+
+    @property
+    def previous_uri(self):
+        """
+        Gets the previous_uri of this ExtensionPoolEntityListing.
+
+
+        :return: The previous_uri of this ExtensionPoolEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
+        """
+        Sets the previous_uri of this ExtensionPoolEntityListing.
+
+
+        :param previous_uri: The previous_uri of this ExtensionPoolEntityListing.
+        :type: str
+        """
+        
+        self._previous_uri = previous_uri
 
     @property
     def page_count(self):

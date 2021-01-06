@@ -290,7 +290,7 @@ Gets the presence for a Microsoft Teams user.  This will return the Microsoft Te
 
 Wraps GET /api/v2/users/{userId}/presences/microsoftteams 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * integration:microsoftTeams:view
 * integrations:integration:view

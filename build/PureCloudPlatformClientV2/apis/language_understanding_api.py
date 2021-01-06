@@ -393,13 +393,15 @@ class LanguageUnderstandingApi(object):
         :param bool include_deleted: Whether to include soft-deleted items in the result.
         :param int page_number: Page number
         :param int page_size: Page size
+        :param bool enable_cursor_pagination: Enable Cursor Pagination
+        :param str after: The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
         :param list[str] fields: Fields and properties to get, comma-separated
         :return: NluFeedbackListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain_id', 'intent_name', 'assessment', 'date_start', 'date_end', 'include_deleted', 'page_number', 'page_size', 'fields']
+        all_params = ['domain_id', 'intent_name', 'assessment', 'date_start', 'date_end', 'include_deleted', 'page_number', 'page_size', 'enable_cursor_pagination', 'after', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -437,6 +439,10 @@ class LanguageUnderstandingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'enable_cursor_pagination' in params:
+            query_params['enableCursorPagination'] = params['enable_cursor_pagination']
+        if 'after' in params:
+            query_params['after'] = params['after']
         if 'fields' in params:
             query_params['fields'] = params['fields']
 
