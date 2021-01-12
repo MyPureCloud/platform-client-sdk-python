@@ -113,6 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
+|[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
 |[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](ConversationsApi.html#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
@@ -5620,6 +5621,58 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="post_conversations_call_participant_coach"></a>
+
+##  post_conversations_call_participant_coach(conversation_id, participant_id)
+
+
+
+Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+
+
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach 
+
+Requires ANY permissions: 
+
+* conversation:call:coach
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+
+try:
+    # Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+    api_instance.post_conversations_call_participant_coach(conversation_id, participant_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_coach: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversations_call_participant_consult"></a>
 

@@ -3536,7 +3536,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
-        :param bool deleted: Include deleted flows
+        :param bool deleted: Deleted flows
         :return: Flow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3716,7 +3716,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
-        :param bool deleted: Include deleted flows
+        :param bool deleted: Deleted flows
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3798,7 +3798,7 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
         :param str version_id: Version ID (required)
-        :param str deleted: Include deleted flows
+        :param str deleted: Deleted flows
         :return: FlowVersion
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3885,7 +3885,7 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param str flow_id: Flow ID (required)
         :param str version_id: Version ID (required)
-        :param str deleted: Include deleted flows
+        :param str deleted: Deleted flows
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3973,7 +3973,7 @@ class ArchitectApi(object):
         :param str flow_id: Flow ID (required)
         :param int page_number: Page number
         :param int page_size: Page size
-        :param bool deleted: Include deleted flows
+        :param bool deleted: Include Deleted flows
         :return: FlowVersionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

@@ -183,7 +183,7 @@ class AuditQueryExecutionStatusResponse(object):
         :param service_name: The service_name of this AuditQueryExecutionStatusResponse.
         :type: str
         """
-        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Presence", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony"]
+        allowed_values = ["Architect", "ContactCenter", "ContentManagement", "PeoplePermissions", "Presence", "Quality", "LanguageUnderstanding", "TopicsDefinitions", "PredictiveEngagement", "WorkforceManagement", "Triggers", "ResponseManagement", "Groups", "Telephony", "Outbound"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"

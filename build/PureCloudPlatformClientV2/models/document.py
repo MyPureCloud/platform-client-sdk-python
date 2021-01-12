@@ -68,8 +68,8 @@ class Document(object):
             'lock_info': 'LockInfo',
             'acl': 'list[str]',
             'sharing_status': 'str',
-            'download_sharing_uri': 'str',
             'sharing_uri': 'str',
+            'download_sharing_uri': 'str',
             'self_uri': 'str'
         }
 
@@ -102,8 +102,8 @@ class Document(object):
             'lock_info': 'lockInfo',
             'acl': 'acl',
             'sharing_status': 'sharingStatus',
-            'download_sharing_uri': 'downloadSharingUri',
             'sharing_uri': 'sharingUri',
+            'download_sharing_uri': 'downloadSharingUri',
             'self_uri': 'selfUri'
         }
 
@@ -135,8 +135,8 @@ class Document(object):
         self._lock_info = None
         self._acl = None
         self._sharing_status = None
-        self._download_sharing_uri = None
         self._sharing_uri = None
+        self._download_sharing_uri = None
         self._self_uri = None
 
     @property
@@ -796,29 +796,6 @@ class Document(object):
             self._sharing_status = sharing_status
 
     @property
-    def download_sharing_uri(self):
-        """
-        Gets the download_sharing_uri of this Document.
-
-
-        :return: The download_sharing_uri of this Document.
-        :rtype: str
-        """
-        return self._download_sharing_uri
-
-    @download_sharing_uri.setter
-    def download_sharing_uri(self, download_sharing_uri):
-        """
-        Sets the download_sharing_uri of this Document.
-
-
-        :param download_sharing_uri: The download_sharing_uri of this Document.
-        :type: str
-        """
-        
-        self._download_sharing_uri = download_sharing_uri
-
-    @property
     def sharing_uri(self):
         """
         Gets the sharing_uri of this Document.
@@ -840,6 +817,29 @@ class Document(object):
         """
         
         self._sharing_uri = sharing_uri
+
+    @property
+    def download_sharing_uri(self):
+        """
+        Gets the download_sharing_uri of this Document.
+
+
+        :return: The download_sharing_uri of this Document.
+        :rtype: str
+        """
+        return self._download_sharing_uri
+
+    @download_sharing_uri.setter
+    def download_sharing_uri(self, download_sharing_uri):
+        """
+        Sets the download_sharing_uri of this Document.
+
+
+        :param download_sharing_uri: The download_sharing_uri of this Document.
+        :type: str
+        """
+        
+        self._download_sharing_uri = download_sharing_uri
 
     @property
     def self_uri(self):

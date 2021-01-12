@@ -2398,7 +2398,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
-deleted = false # bool | Include deleted flows (optional) (default to false)
+deleted = false # bool | Deleted flows (optional) (default to false)
 
 try:
     # Get flow
@@ -2414,7 +2414,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **deleted** | **bool**| Include deleted flows | [optional] [default to false] |
+| **deleted** | **bool**| Deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2514,7 +2514,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
-deleted = false # bool | Include deleted flows (optional) (default to false)
+deleted = false # bool | Deleted flows (optional) (default to false)
 
 try:
     # Get the latest configuration for flow
@@ -2530,7 +2530,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
-| **deleted** | **bool**| Include deleted flows | [optional] [default to false] |
+| **deleted** | **bool**| Deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2568,7 +2568,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
 version_id = 'version_id_example' # str | Version ID
-deleted = 'deleted_example' # str | Include deleted flows (optional)
+deleted = 'deleted_example' # str | Deleted flows (optional)
 
 try:
     # Get flow version
@@ -2585,7 +2585,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
 | **version_id** | **str**| Version ID |  |
-| **deleted** | **str**| Include deleted flows | [optional]  |
+| **deleted** | **str**| Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2623,7 +2623,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
 version_id = 'version_id_example' # str | Version ID
-deleted = 'deleted_example' # str | Include deleted flows (optional)
+deleted = 'deleted_example' # str | Deleted flows (optional)
 
 try:
     # Create flow version configuration
@@ -2640,7 +2640,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **flow_id** | **str**| Flow ID |  |
 | **version_id** | **str**| Version ID |  |
-| **deleted** | **str**| Include deleted flows | [optional]  |
+| **deleted** | **str**| Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2679,7 +2679,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 flow_id = 'flow_id_example' # str | Flow ID
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-deleted = true # bool | Include deleted flows (optional)
+deleted = true # bool | Include Deleted flows (optional)
 
 try:
     # Get flow version list
@@ -2697,7 +2697,7 @@ except ApiException as e:
 | **flow_id** | **str**| Flow ID |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **deleted** | **bool**| Include deleted flows | [optional]  |
+| **deleted** | **bool**| Include Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

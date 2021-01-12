@@ -181,7 +181,7 @@ class ScimV2CreateUser(object):
     def password(self):
         """
         Gets the password of this ScimV2CreateUser.
-        The new password for the Genesys Cloud user. Does not return an existing password. When creating a user if a password is not supplied a password will be randomly generated which is 40 characters in length and will contain five characters from each of the password policy groups.
+        The new password for the Genesys Cloud user. Does not return an existing password. When creating a user, if a password is not supplied, then a password will be randomly generated that is 40 characters in length and contains five characters from each of the password policy groups.
 
         :return: The password of this ScimV2CreateUser.
         :rtype: str
@@ -192,7 +192,7 @@ class ScimV2CreateUser(object):
     def password(self, password):
         """
         Sets the password of this ScimV2CreateUser.
-        The new password for the Genesys Cloud user. Does not return an existing password. When creating a user if a password is not supplied a password will be randomly generated which is 40 characters in length and will contain five characters from each of the password policy groups.
+        The new password for the Genesys Cloud user. Does not return an existing password. When creating a user, if a password is not supplied, then a password will be randomly generated that is 40 characters in length and contains five characters from each of the password policy groups.
 
         :param password: The password of this ScimV2CreateUser.
         :type: str
