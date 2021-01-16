@@ -34,7 +34,6 @@ import tempfile
 import threading
 import base64
 import json
-import time
 
 
 from datetime import datetime
@@ -87,17 +86,8 @@ class ApiClient(object):
         # Set default User-Agent.
         self.user_agent = 'PureCloud SDK/python'
 
-        # store clientId and clientSecret to request new access token for OAuth (Code Authorization)
-        self.client_id = ""
-        self.client_secret = ""
         # access token for OAuth
         self.access_token = ""
-        # refresh token for OAuth (Code Authorization)
-        self.refresh_token = ""
-        # lock object used to ensure 1 thread tries to request a new access token
-        self.refresh_token_lock = threading.Lock()
-        # flag indicating a token refresh is being carried out
-        self.refresh_in_progress = False
 
 
 
@@ -166,83 +156,6 @@ class ApiClient(object):
         self.access_token = data[0]["access_token"]
         return self;  
 
-    def get_code_authorization_token(self,client_id,client_secret,auth_code,redirect_uri):
-        """:param client_id: Client Id to authenticate with
-         :param client_secret: Client Secret to authenticate with
-         :param auth_code: Authorization code
-         :param redirect_uri: Authorized redirect URI for your Code Authorization client
-         :return:
-         """
-
-        self.client_id = client_id
-        self.client_secret = client_secret
-
-        query_params = {}
-        body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
-
-        post_params = {'grant_type': 'authorization_code',
-                       'code': auth_code,
-                       'redirect_uri': redirect_uri
-                       }
-
-        auth_string = 'Basic ' + base64.b64encode(bytes((client_id + ':' + client_secret).encode('ascii'))).decode(
-            'ascii')
-
-        header_params = {
-            "Authorization": auth_string,
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-        header_params = self.sanitize_for_serialization(header_params)
-        post_params = self.sanitize_for_serialization(post_params)
-
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body)
-        data = json.loads('[' + response.data + ']')
-
-        self.access_token = data[0]["access_token"]
-        self.refresh_token = data[0]["refresh_token"]
-
-        return self, data[0]
-
-    def refresh_code_authorization_token(self,client_id,client_secret,refresh_token):
-        """:param client_id: Client Id to authenticate with
-         :param client_secret: Client Secret to authenticate with
-         :param refresh_token: Refresh token used to request a new access token
-         :return:
-         """
-
-        query_params = {}
-        body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
-
-        post_params = {'grant_type': 'refresh_token',
-                       'refresh_token': refresh_token
-                       }
-
-        auth_string = 'Basic ' + base64.b64encode(bytes((client_id + ':' + client_secret).encode('ascii'))).decode(
-            'ascii')
-
-        header_params = {
-            "Authorization": auth_string,
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-        header_params = self.sanitize_for_serialization(header_params)
-        post_params = self.sanitize_for_serialization(post_params)
-
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body)
-        data = json.loads('[' + response.data + ']')
-
-        self.access_token = data[0]["access_token"]
-        self.refresh_token = data[0]["refresh_token"]
-
-        return self, data[0]
-
     @property
     def user_agent(self):
         """
@@ -260,34 +173,11 @@ class ApiClient(object):
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
-    def handle_expired_access_token(self):
-        if self.refresh_token_lock.acquire(False):
-            try:
-                self.refresh_in_progress = True
-                self.refresh_code_authorization_token(self.client_id, self.client_secret, self.refresh_token)
-            finally:
-                self.refresh_in_progress = False
-                self.refresh_token_lock.release()
-        else:
-            start_time = time.time()
-            sleep_duration = 0.200
-            # Wait maximum of refresh_token_wait_time seconds for other thread to complete refresh
-            # It would be ideal to use refresh_token_lock.acquire with a timeout value here but that was added in python 3.2 and we have to support older versions
-            while time.time() - start_time < Configuration().refresh_token_wait_time:
-                time.sleep(sleep_duration)
-                if not self.refresh_in_progress:
-                    return
-            # Abort with error if we have waited refresh_token_wait_time seconds and refresh still isn't complete
-            raise ApiException(
-                status=500,
-                reason="Token refresh took longer than `{0}` seconds"
-                .format(str(Configuration().refresh_token_wait_time))
-            )
-
     def __call_api(self, resource_path, method,
                    path_params=None, query_params=None, header_params=None,
                    body=None, post_params=None, files=None,
                    response_type=None, auth_settings=None, callback=None):
+
         # headers parameters
         header_params = header_params or {}
         header_params.update(self.default_headers)
@@ -295,7 +185,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '107.0.0'
+        header_params['purecloud-sdk'] = '108.0.0'
 
         # path parameters
         if path_params:
@@ -326,20 +216,11 @@ class ApiClient(object):
         # request url
         url = self.host + resource_path
 
-        response_data = None
-
-        try:
-            # perform request and return response
-            response_data = self.request(method, url, query_params=query_params,
-                                        headers=header_params, post_params=post_params, body=body)
-        except ApiException as e:
-            if Configuration().should_refresh_access_token and e.status == 401 and self.refresh_token != "":
-                self.handle_expired_access_token()
-                return self.__call_api(resource_path, method, path_params,
-                            query_params, header_params, body, post_params,
-                            files, response_type, auth_settings, callback)
-            else:
-                raise
+        # perform request and return response
+        response_data = self.request(method, url,
+                                     query_params=query_params,
+                                     headers=header_params,
+                                     post_params=post_params, body=body)
 
         self.last_response = response_data
 

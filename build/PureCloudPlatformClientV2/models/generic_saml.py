@@ -42,10 +42,10 @@ class GenericSAML(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'logo_image_data': 'str',
             'relying_party_identifier': 'str',
             'endpoint_compression': 'bool',
             'name_identifier_format': 'str',
-            'logo_image_data': 'str',
             'certificate': 'str',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
@@ -56,10 +56,10 @@ class GenericSAML(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'logo_image_data': 'logoImageData',
             'relying_party_identifier': 'relyingPartyIdentifier',
             'endpoint_compression': 'endpointCompression',
             'name_identifier_format': 'nameIdentifierFormat',
-            'logo_image_data': 'logoImageData',
             'certificate': 'certificate',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
@@ -69,10 +69,10 @@ class GenericSAML(object):
 
         self._id = None
         self._name = None
+        self._logo_image_data = None
         self._relying_party_identifier = None
         self._endpoint_compression = None
         self._name_identifier_format = None
-        self._logo_image_data = None
         self._certificate = None
         self._issuer_uri = None
         self._sso_target_uri = None
@@ -124,6 +124,29 @@ class GenericSAML(object):
         """
         
         self._name = name
+
+    @property
+    def logo_image_data(self):
+        """
+        Gets the logo_image_data of this GenericSAML.
+
+
+        :return: The logo_image_data of this GenericSAML.
+        :rtype: str
+        """
+        return self._logo_image_data
+
+    @logo_image_data.setter
+    def logo_image_data(self, logo_image_data):
+        """
+        Sets the logo_image_data of this GenericSAML.
+
+
+        :param logo_image_data: The logo_image_data of this GenericSAML.
+        :type: str
+        """
+        
+        self._logo_image_data = logo_image_data
 
     @property
     def relying_party_identifier(self):
@@ -197,29 +220,6 @@ class GenericSAML(object):
             self._name_identifier_format = "outdated_sdk_version"
         else:
             self._name_identifier_format = name_identifier_format
-
-    @property
-    def logo_image_data(self):
-        """
-        Gets the logo_image_data of this GenericSAML.
-
-
-        :return: The logo_image_data of this GenericSAML.
-        :rtype: str
-        """
-        return self._logo_image_data
-
-    @logo_image_data.setter
-    def logo_image_data(self, logo_image_data):
-        """
-        Sets the logo_image_data of this GenericSAML.
-
-
-        :param logo_image_data: The logo_image_data of this GenericSAML.
-        :type: str
-        """
-        
-        self._logo_image_data = logo_image_data
 
     @property
     def certificate(self):

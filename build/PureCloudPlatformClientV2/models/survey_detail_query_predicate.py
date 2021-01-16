@@ -111,7 +111,7 @@ class SurveyDetailQueryPredicate(object):
         :param dimension: The dimension of this SurveyDetailQueryPredicate.
         :type: str
         """
-        allowed_values = ["eventTime", "queueId", "surveyCompletedDate", "surveyFormContextId", "surveyFormId", "surveyFormName", "surveyId", "surveyPromoterScore", "surveyStatus", "userId"]
+        allowed_values = ["eventTime", "queueId", "surveyCompletedDate", "surveyFormContextId", "surveyFormId", "surveyId", "surveyPromoterScore", "surveyStatus", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

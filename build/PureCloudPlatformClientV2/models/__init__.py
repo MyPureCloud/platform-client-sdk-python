@@ -167,6 +167,11 @@ from .billing_usage_resource import BillingUsageResource
 from .biography import Biography
 from .bu_abandon_rate import BuAbandonRate
 from .bu_agent_schedule_activity import BuAgentScheduleActivity
+from .bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
+from .bu_agent_schedule_history_change_metadata import BuAgentScheduleHistoryChangeMetadata
+from .bu_agent_schedule_history_deleted_change import BuAgentScheduleHistoryDeletedChange
+from .bu_agent_schedule_history_dropped_change import BuAgentScheduleHistoryDroppedChange
+from .bu_agent_schedule_history_response import BuAgentScheduleHistoryResponse
 from .bu_agent_schedule_published_schedule_reference import BuAgentSchedulePublishedScheduleReference
 from .bu_agent_schedule_query_response import BuAgentScheduleQueryResponse
 from .bu_agent_schedule_reschedule_response import BuAgentScheduleRescheduleResponse
@@ -385,8 +390,10 @@ from .content_query_request import ContentQueryRequest
 from .content_quick_reply import ContentQuickReply
 from .content_reaction import ContentReaction
 from .content_sort_item import ContentSortItem
+from .context import Context
 from .context_entity import ContextEntity
 from .context_intent import ContextIntent
+from .context_pattern import ContextPattern
 from .conversation import Conversation
 from .conversation_aggregate_data_container import ConversationAggregateDataContainer
 from .conversation_aggregate_query_clause import ConversationAggregateQueryClause
@@ -614,6 +621,7 @@ from .credential_info_listing import CredentialInfoListing
 from .credential_specification import CredentialSpecification
 from .credential_type import CredentialType
 from .credential_type_listing import CredentialTypeListing
+from .criteria import Criteria
 from .cross_platform_call_media_policy import CrossPlatformCallMediaPolicy
 from .cross_platform_chat_media_policy import CrossPlatformChatMediaPolicy
 from .cross_platform_email_media_policy import CrossPlatformEmailMediaPolicy
@@ -848,6 +856,7 @@ from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .endpoint import Endpoint
 from .entity import Entity
 from .entity_listing import EntityListing
+from .entity_type_criteria import EntityTypeCriteria
 from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
@@ -1042,6 +1051,7 @@ from .ip_address_range import IpAddressRange
 from .ip_address_range_listing import IpAddressRangeListing
 from .item_validation_limits import ItemValidationLimits
 from .items import Items
+from .journey import Journey
 from .journey_action import JourneyAction
 from .journey_action_map import JourneyActionMap
 from .journey_aggregate_data_container import JourneyAggregateDataContainer
@@ -1054,6 +1064,8 @@ from .journey_aggregation_view import JourneyAggregationView
 from .journey_context import JourneyContext
 from .journey_customer import JourneyCustomer
 from .journey_customer_session import JourneyCustomerSession
+from .journey_pattern import JourneyPattern
+from .journey_segment import JourneySegment
 from .json_node import JsonNode
 from .json_node_search_response import JsonNodeSearchResponse
 from .json_schema_document import JsonSchemaDocument
@@ -1282,6 +1294,7 @@ from .patch_action_target import PatchActionTarget
 from .patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .patch_bu_schedule_run_request import PatchBuScheduleRunRequest
+from .patch_segment import PatchSegment
 from .patch_shift_trade_request import PatchShiftTradeRequest
 from .patch_user import PatchUser
 from .permission_collection_entity_listing import PermissionCollectionEntityListing
@@ -1717,6 +1730,7 @@ from .segment import Segment
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter
 from .segment_detail_query_predicate import SegmentDetailQueryPredicate
+from .segment_listing import SegmentListing
 from .selected_columns import SelectedColumns
 from .send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse

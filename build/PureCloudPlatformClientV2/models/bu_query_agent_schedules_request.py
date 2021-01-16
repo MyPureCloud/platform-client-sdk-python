@@ -82,7 +82,7 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self):
         """
         Gets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
 
         :return: The user_ids of this BuQueryAgentSchedulesRequest.
         :rtype: list[str]
@@ -93,7 +93,7 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
 
         :param user_ids: The user_ids of this BuQueryAgentSchedulesRequest.
         :type: list[str]
@@ -105,7 +105,7 @@ class BuQueryAgentSchedulesRequest(object):
     def team_ids(self):
         """
         Gets the team_ids of this BuQueryAgentSchedulesRequest.
-        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
 
         :return: The team_ids of this BuQueryAgentSchedulesRequest.
         :rtype: list[str]
@@ -116,7 +116,7 @@ class BuQueryAgentSchedulesRequest(object):
     def team_ids(self, team_ids):
         """
         Sets the team_ids of this BuQueryAgentSchedulesRequest.
-        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
 
         :param team_ids: The team_ids of this BuQueryAgentSchedulesRequest.
         :type: list[str]

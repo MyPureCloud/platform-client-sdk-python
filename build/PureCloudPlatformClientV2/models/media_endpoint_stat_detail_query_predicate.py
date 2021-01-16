@@ -108,7 +108,7 @@ class MediaEndpointStatDetailQueryPredicate(object):
         :param dimension: The dimension of this MediaEndpointStatDetailQueryPredicate.
         :type: str
         """
-        allowed_values = ["codec", "discardedPackets", "duplicatePackets", "eventTime", "invalidPackets", "maxLatencyMs", "minMos", "minRFactor", "overrunPackets", "receivedPackets", "underrunPackets"]
+        allowed_values = ["codec", "discardedPackets", "duplicatePackets", "eventTime", "invalidPackets", "maxLatencyMs", "overrunPackets", "receivedPackets", "underrunPackets"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

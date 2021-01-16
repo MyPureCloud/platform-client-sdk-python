@@ -167,6 +167,11 @@ from .models.billing_usage_resource import BillingUsageResource
 from .models.biography import Biography
 from .models.bu_abandon_rate import BuAbandonRate
 from .models.bu_agent_schedule_activity import BuAgentScheduleActivity
+from .models.bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
+from .models.bu_agent_schedule_history_change_metadata import BuAgentScheduleHistoryChangeMetadata
+from .models.bu_agent_schedule_history_deleted_change import BuAgentScheduleHistoryDeletedChange
+from .models.bu_agent_schedule_history_dropped_change import BuAgentScheduleHistoryDroppedChange
+from .models.bu_agent_schedule_history_response import BuAgentScheduleHistoryResponse
 from .models.bu_agent_schedule_published_schedule_reference import BuAgentSchedulePublishedScheduleReference
 from .models.bu_agent_schedule_query_response import BuAgentScheduleQueryResponse
 from .models.bu_agent_schedule_reschedule_response import BuAgentScheduleRescheduleResponse
@@ -385,8 +390,10 @@ from .models.content_query_request import ContentQueryRequest
 from .models.content_quick_reply import ContentQuickReply
 from .models.content_reaction import ContentReaction
 from .models.content_sort_item import ContentSortItem
+from .models.context import Context
 from .models.context_entity import ContextEntity
 from .models.context_intent import ContextIntent
+from .models.context_pattern import ContextPattern
 from .models.conversation import Conversation
 from .models.conversation_aggregate_data_container import ConversationAggregateDataContainer
 from .models.conversation_aggregate_query_clause import ConversationAggregateQueryClause
@@ -614,6 +621,7 @@ from .models.credential_info_listing import CredentialInfoListing
 from .models.credential_specification import CredentialSpecification
 from .models.credential_type import CredentialType
 from .models.credential_type_listing import CredentialTypeListing
+from .models.criteria import Criteria
 from .models.cross_platform_call_media_policy import CrossPlatformCallMediaPolicy
 from .models.cross_platform_chat_media_policy import CrossPlatformChatMediaPolicy
 from .models.cross_platform_email_media_policy import CrossPlatformEmailMediaPolicy
@@ -848,6 +856,7 @@ from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.endpoint import Endpoint
 from .models.entity import Entity
 from .models.entity_listing import EntityListing
+from .models.entity_type_criteria import EntityTypeCriteria
 from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails
@@ -1042,6 +1051,7 @@ from .models.ip_address_range import IpAddressRange
 from .models.ip_address_range_listing import IpAddressRangeListing
 from .models.item_validation_limits import ItemValidationLimits
 from .models.items import Items
+from .models.journey import Journey
 from .models.journey_action import JourneyAction
 from .models.journey_action_map import JourneyActionMap
 from .models.journey_aggregate_data_container import JourneyAggregateDataContainer
@@ -1054,6 +1064,8 @@ from .models.journey_aggregation_view import JourneyAggregationView
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
+from .models.journey_pattern import JourneyPattern
+from .models.journey_segment import JourneySegment
 from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
@@ -1282,6 +1294,7 @@ from .models.patch_action_target import PatchActionTarget
 from .models.patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .models.patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .models.patch_bu_schedule_run_request import PatchBuScheduleRunRequest
+from .models.patch_segment import PatchSegment
 from .models.patch_shift_trade_request import PatchShiftTradeRequest
 from .models.patch_user import PatchUser
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
@@ -1717,6 +1730,7 @@ from .models.segment import Segment
 from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter
 from .models.segment_detail_query_predicate import SegmentDetailQueryPredicate
+from .models.segment_listing import SegmentListing
 from .models.selected_columns import SelectedColumns
 from .models.send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .models.send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse

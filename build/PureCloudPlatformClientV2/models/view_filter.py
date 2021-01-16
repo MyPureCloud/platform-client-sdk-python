@@ -128,7 +128,11 @@ class ViewFilter(object):
             'participant_purposes': 'list[str]',
             'show_first_queue': 'bool',
             'team_ids': 'list[str]',
-            'filter_users_by_team_ids': 'list[str]'
+            'filter_users_by_team_ids': 'list[str]',
+            'journey_action_map_ids': 'list[str]',
+            'journey_outcome_ids': 'list[str]',
+            'journey_segment_ids': 'list[str]',
+            'journey_action_map_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -220,7 +224,11 @@ class ViewFilter(object):
             'participant_purposes': 'participantPurposes',
             'show_first_queue': 'showFirstQueue',
             'team_ids': 'teamIds',
-            'filter_users_by_team_ids': 'filterUsersByTeamIds'
+            'filter_users_by_team_ids': 'filterUsersByTeamIds',
+            'journey_action_map_ids': 'journeyActionMapIds',
+            'journey_outcome_ids': 'journeyOutcomeIds',
+            'journey_segment_ids': 'journeySegmentIds',
+            'journey_action_map_types': 'journeyActionMapTypes'
         }
 
         self._media_types = None
@@ -312,6 +320,10 @@ class ViewFilter(object):
         self._show_first_queue = None
         self._team_ids = None
         self._filter_users_by_team_ids = None
+        self._journey_action_map_ids = None
+        self._journey_outcome_ids = None
+        self._journey_segment_ids = None
+        self._journey_action_map_types = None
 
     @property
     def media_types(self):
@@ -2359,6 +2371,98 @@ class ViewFilter(object):
         """
         
         self._filter_users_by_team_ids = filter_users_by_team_ids
+
+    @property
+    def journey_action_map_ids(self):
+        """
+        Gets the journey_action_map_ids of this ViewFilter.
+        The journey action map ids are used to fetch action maps for the associated view
+
+        :return: The journey_action_map_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_action_map_ids
+
+    @journey_action_map_ids.setter
+    def journey_action_map_ids(self, journey_action_map_ids):
+        """
+        Sets the journey_action_map_ids of this ViewFilter.
+        The journey action map ids are used to fetch action maps for the associated view
+
+        :param journey_action_map_ids: The journey_action_map_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_action_map_ids = journey_action_map_ids
+
+    @property
+    def journey_outcome_ids(self):
+        """
+        Gets the journey_outcome_ids of this ViewFilter.
+        The journey outcome ids are used to fetch outcomes for the associated view
+
+        :return: The journey_outcome_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_outcome_ids
+
+    @journey_outcome_ids.setter
+    def journey_outcome_ids(self, journey_outcome_ids):
+        """
+        Sets the journey_outcome_ids of this ViewFilter.
+        The journey outcome ids are used to fetch outcomes for the associated view
+
+        :param journey_outcome_ids: The journey_outcome_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_outcome_ids = journey_outcome_ids
+
+    @property
+    def journey_segment_ids(self):
+        """
+        Gets the journey_segment_ids of this ViewFilter.
+        The journey segment ids are used to fetch segments for the associated view
+
+        :return: The journey_segment_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_segment_ids
+
+    @journey_segment_ids.setter
+    def journey_segment_ids(self, journey_segment_ids):
+        """
+        Sets the journey_segment_ids of this ViewFilter.
+        The journey segment ids are used to fetch segments for the associated view
+
+        :param journey_segment_ids: The journey_segment_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_segment_ids = journey_segment_ids
+
+    @property
+    def journey_action_map_types(self):
+        """
+        Gets the journey_action_map_types of this ViewFilter.
+        The journey action map types are used to filter action map data for the associated view
+
+        :return: The journey_action_map_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._journey_action_map_types
+
+    @journey_action_map_types.setter
+    def journey_action_map_types(self, journey_action_map_types):
+        """
+        Sets the journey_action_map_types of this ViewFilter.
+        The journey action map types are used to filter action map data for the associated view
+
+        :param journey_action_map_types: The journey_action_map_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._journey_action_map_types = journey_action_map_types
 
     def to_dict(self):
         """

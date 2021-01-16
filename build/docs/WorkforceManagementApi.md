@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route|
 |[**get_workforcemanagement_businessunit_week_schedule_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_generationresults) | Get the generation results for a generated schedule|
 |[**get_workforcemanagement_businessunit_week_schedule_headcountforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_headcountforecast) | Get the headcount forecast by planning group for the schedule|
+|[**get_workforcemanagement_businessunit_week_schedule_history_agent**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_history_agent) | Loads agent&#39;s schedule history.|
 |[**get_workforcemanagement_businessunit_week_schedules**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedules) | Get the list of week schedules for the specified week|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast) | Get a short term forecast|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_data**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_data) | Get the result of a short term forecast calculation|
@@ -1648,6 +1649,63 @@ except ApiException as e:
 ### Return type
 
 [**BuHeadcountForecastResponse**](BuHeadcountForecastResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedule_history_agent"></a>
+
+## [**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse.html) get_workforcemanagement_businessunit_week_schedule_history_agent(business_unit_id, week_id, schedule_id, agent_id)
+
+
+
+Loads agent's schedule history.
+
+
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+week_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+schedule_id = 'schedule_id_example' # str | The ID of the schedule
+agent_id = 'agent_id_example' # str | THe ID of the agent
+
+try:
+    # Loads agent's schedule history.
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_history_agent(business_unit_id, week_id, schedule_id, agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_history_agent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **schedule_id** | **str**| The ID of the schedule |  |
+| **agent_id** | **str**| THe ID of the agent |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse.html)
 
 <a name="get_workforcemanagement_businessunit_week_schedules"></a>
 

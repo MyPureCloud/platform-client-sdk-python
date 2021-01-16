@@ -46,9 +46,9 @@ class ManagementUnitListing(object):
             'total': 'int',
             'first_uri': 'str',
             'last_uri': 'str',
-            'previous_uri': 'str',
             'next_uri': 'str',
             'page_count': 'int',
+            'previous_uri': 'str',
             'self_uri': 'str'
         }
 
@@ -59,9 +59,9 @@ class ManagementUnitListing(object):
             'total': 'total',
             'first_uri': 'firstUri',
             'last_uri': 'lastUri',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'page_count': 'pageCount',
+            'previous_uri': 'previousUri',
             'self_uri': 'selfUri'
         }
 
@@ -71,9 +71,9 @@ class ManagementUnitListing(object):
         self._total = None
         self._first_uri = None
         self._last_uri = None
-        self._previous_uri = None
         self._next_uri = None
         self._page_count = None
+        self._previous_uri = None
         self._self_uri = None
 
     @property
@@ -215,29 +215,6 @@ class ManagementUnitListing(object):
         self._last_uri = last_uri
 
     @property
-    def previous_uri(self):
-        """
-        Gets the previous_uri of this ManagementUnitListing.
-
-
-        :return: The previous_uri of this ManagementUnitListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri):
-        """
-        Sets the previous_uri of this ManagementUnitListing.
-
-
-        :param previous_uri: The previous_uri of this ManagementUnitListing.
-        :type: str
-        """
-        
-        self._previous_uri = previous_uri
-
-    @property
     def next_uri(self):
         """
         Gets the next_uri of this ManagementUnitListing.
@@ -282,6 +259,29 @@ class ManagementUnitListing(object):
         """
         
         self._page_count = page_count
+
+    @property
+    def previous_uri(self):
+        """
+        Gets the previous_uri of this ManagementUnitListing.
+
+
+        :return: The previous_uri of this ManagementUnitListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri):
+        """
+        Sets the previous_uri of this ManagementUnitListing.
+
+
+        :param previous_uri: The previous_uri of this ManagementUnitListing.
+        :type: str
+        """
+        
+        self._previous_uri = previous_uri
 
     @property
     def self_uri(self):

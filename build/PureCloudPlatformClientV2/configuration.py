@@ -74,10 +74,6 @@ class Configuration(object):
 
         # access token for OAuth
         self.access_token = ""
-        # used to determine if access token should be refresh transparently when using Code Authorization
-        self.should_refresh_access_token = True
-        # maximum amount of time other threads will wait for a thread to request a new access token when it expires
-        self.refresh_token_wait_time = 10
 
 
         # Logging Settings
@@ -259,5 +255,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 107.0.0".\
+               "SDK Package Version: 108.0.0".\
                format(env=sys.platform, pyversion=sys.version)

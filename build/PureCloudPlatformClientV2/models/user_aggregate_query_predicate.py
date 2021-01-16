@@ -108,7 +108,7 @@ class UserAggregateQueryPredicate(object):
         :param dimension: The dimension of this UserAggregateQueryPredicate.
         :type: str
         """
-        allowed_values = ["organizationPresenceId", "routingStatus", "systemPresence", "userId"]
+        allowed_values = ["userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -137,7 +137,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self):
         """
         Gets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds
 
         :return: The user_ids of this WfmHistoricalAdherenceQuery.
         :rtype: list[str]
@@ -148,7 +148,7 @@ class WfmHistoricalAdherenceQuery(object):
     def user_ids(self, user_ids):
         """
         Sets the user_ids of this WfmHistoricalAdherenceQuery.
-        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
+        The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds
 
         :param user_ids: The user_ids of this WfmHistoricalAdherenceQuery.
         :type: list[str]
@@ -183,7 +183,7 @@ class WfmHistoricalAdherenceQuery(object):
     def team_ids(self):
         """
         Gets the team_ids of this WfmHistoricalAdherenceQuery.
-        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
 
         :return: The team_ids of this WfmHistoricalAdherenceQuery.
         :rtype: list[str]
@@ -194,7 +194,7 @@ class WfmHistoricalAdherenceQuery(object):
     def team_ids(self, team_ids):
         """
         Sets the team_ids of this WfmHistoricalAdherenceQuery.
-        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
 
         :param team_ids: The team_ids of this WfmHistoricalAdherenceQuery.
         :type: list[str]
