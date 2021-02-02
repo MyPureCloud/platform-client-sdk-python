@@ -124,7 +124,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_workforcemanagement_businessunit_activitycode(self, bu_id, ac_id, **kwargs):
+    def delete_workforcemanagement_businessunit_activitycode(self, business_unit_id, activity_code_id, **kwargs):
         """
         Deletes an activity code
         
@@ -135,18 +135,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id, callback=callback_function)
+        >>> thread = api.delete_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str bu_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param str ac_id: The ID of the activity code to delete (required)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param str activity_code_id: The ID of the activity code to delete (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bu_id', 'ac_id']
+        all_params = ['business_unit_id', 'activity_code_id']
         all_params.append('callback')
 
         params = locals()
@@ -159,20 +159,20 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'bu_id' is set
-        if ('bu_id' not in params) or (params['bu_id'] is None):
-            raise ValueError("Missing the required parameter `bu_id` when calling `delete_workforcemanagement_businessunit_activitycode`")
-        # verify the required parameter 'ac_id' is set
-        if ('ac_id' not in params) or (params['ac_id'] is None):
-            raise ValueError("Missing the required parameter `ac_id` when calling `delete_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'activity_code_id' is set
+        if ('activity_code_id' not in params) or (params['activity_code_id'] is None):
+            raise ValueError("Missing the required parameter `activity_code_id` when calling `delete_workforcemanagement_businessunit_activitycode`")
 
 
-        resource_path = '/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}'.replace('{format}', 'json')
         path_params = {}
-        if 'bu_id' in params:
-            path_params['buId'] = params['bu_id']
-        if 'ac_id' in params:
-            path_params['acId'] = params['ac_id']
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_code_id' in params:
+            path_params['activityCodeId'] = params['activity_code_id']
 
         query_params = {}
 
@@ -640,7 +640,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_workforcemanagement_managementunit(self, mu_id, **kwargs):
+    def delete_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
         """
         Delete management unit
         
@@ -651,17 +651,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_workforcemanagement_managementunit(mu_id, callback=callback_function)
+        >>> thread = api.delete_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -674,15 +674,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `delete_workforcemanagement_managementunit`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `delete_workforcemanagement_managementunit`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -1123,7 +1123,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_businessunit_activitycode(self, bu_id, ac_id, **kwargs):
+    def get_workforcemanagement_businessunit_activitycode(self, business_unit_id, activity_code_id, **kwargs):
         """
         Get an activity code
         
@@ -1134,18 +1134,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_businessunit_activitycode(bu_id, ac_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str bu_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param str ac_id: The ID of the activity code to fetch (required)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param str activity_code_id: The ID of the activity code to fetch (required)
         :return: BusinessUnitActivityCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bu_id', 'ac_id']
+        all_params = ['business_unit_id', 'activity_code_id']
         all_params.append('callback')
 
         params = locals()
@@ -1158,20 +1158,20 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'bu_id' is set
-        if ('bu_id' not in params) or (params['bu_id'] is None):
-            raise ValueError("Missing the required parameter `bu_id` when calling `get_workforcemanagement_businessunit_activitycode`")
-        # verify the required parameter 'ac_id' is set
-        if ('ac_id' not in params) or (params['ac_id'] is None):
-            raise ValueError("Missing the required parameter `ac_id` when calling `get_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'activity_code_id' is set
+        if ('activity_code_id' not in params) or (params['activity_code_id'] is None):
+            raise ValueError("Missing the required parameter `activity_code_id` when calling `get_workforcemanagement_businessunit_activitycode`")
 
 
-        resource_path = '/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}'.replace('{format}', 'json')
         path_params = {}
-        if 'bu_id' in params:
-            path_params['buId'] = params['bu_id']
-        if 'ac_id' in params:
-            path_params['acId'] = params['ac_id']
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_code_id' in params:
+            path_params['activityCodeId'] = params['activity_code_id']
 
         query_params = {}
 
@@ -1207,7 +1207,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_businessunit_activitycodes(self, bu_id, **kwargs):
+    def get_workforcemanagement_businessunit_activitycodes(self, business_unit_id, **kwargs):
         """
         Get activity codes
         
@@ -1218,17 +1218,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_businessunit_activitycodes(bu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_businessunit_activitycodes(business_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str bu_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
         :return: BusinessUnitActivityCodeListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bu_id']
+        all_params = ['business_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -1241,15 +1241,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'bu_id' is set
-        if ('bu_id' not in params) or (params['bu_id'] is None):
-            raise ValueError("Missing the required parameter `bu_id` when calling `get_workforcemanagement_businessunit_activitycodes`")
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activitycodes`")
 
 
-        resource_path = '/api/v2/workforcemanagement/businessunits/{buId}/activitycodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes'.replace('{format}', 'json')
         path_params = {}
-        if 'bu_id' in params:
-            path_params['buId'] = params['bu_id']
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
 
         query_params = {}
 
@@ -3103,7 +3103,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit(self, mu_id, **kwargs):
+    def get_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
         """
         Get management unit
         
@@ -3114,18 +3114,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit(mu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param list[str] expand: 
         :return: ManagementUnit
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'expand']
+        all_params = ['management_unit_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -3138,15 +3138,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
         if 'expand' in params:
@@ -3184,7 +3184,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_activitycodes(self, mu_id, **kwargs):
+    def get_workforcemanagement_managementunit_activitycodes(self, management_unit_id, **kwargs):
         """
         Get activity codes
         
@@ -3195,17 +3195,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_activitycodes(mu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_activitycodes(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: ActivityCodeContainer
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -3218,15 +3218,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_activitycodes`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_activitycodes`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/activitycodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -3514,7 +3514,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_shifttrades_matched(self, mu_id, **kwargs):
+    def get_workforcemanagement_managementunit_shifttrades_matched(self, management_unit_id, **kwargs):
         """
         Gets a summary of all shift trades in the matched state
         
@@ -3525,17 +3525,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_shifttrades_matched(mu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_shifttrades_matched(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: ShiftTradeMatchesSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -3548,15 +3548,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_shifttrades_matched`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_shifttrades_matched`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -3592,7 +3592,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_shifttrades_users(self, mu_id, **kwargs):
+    def get_workforcemanagement_managementunit_shifttrades_users(self, management_unit_id, **kwargs):
         """
         Gets list of users available for whom you can send direct shift trade requests
         
@@ -3603,17 +3603,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_shifttrades_users(mu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_shifttrades_users(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: WfmUserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -3626,15 +3626,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_shifttrades_users`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_shifttrades_users`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -3670,7 +3670,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_user_timeoffrequest(self, mu_id, user_id, time_off_request_id, **kwargs):
+    def get_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id, user_id, time_off_request_id, **kwargs):
         """
         Get a time off request
         
@@ -3681,11 +3681,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param str time_off_request_id: Time Off Request Id (required)
         :return: TimeOffRequestResponse
@@ -3693,7 +3693,7 @@ class WorkforceManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'user_id', 'time_off_request_id']
+        all_params = ['management_unit_id', 'user_id', 'time_off_request_id']
         all_params.append('callback')
 
         params = locals()
@@ -3706,9 +3706,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequest`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequest`")
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequest`")
@@ -3717,10 +3717,10 @@ class WorkforceManagementApi(object):
             raise ValueError("Missing the required parameter `time_off_request_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequest`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
         if 'user_id' in params:
             path_params['userId'] = params['user_id']
         if 'time_off_request_id' in params:
@@ -3760,7 +3760,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_user_timeoffrequests(self, mu_id, user_id, **kwargs):
+    def get_workforcemanagement_managementunit_user_timeoffrequests(self, management_unit_id, user_id, **kwargs):
         """
         Get a list of time off requests for a given user
         
@@ -3771,11 +3771,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
         :param bool recently_reviewed: Limit results to requests that have been reviewed within the preceding 30 days
         :return: TimeOffRequestList
@@ -3783,7 +3783,7 @@ class WorkforceManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'user_id', 'recently_reviewed']
+        all_params = ['management_unit_id', 'user_id', 'recently_reviewed']
         all_params.append('callback')
 
         params = locals()
@@ -3796,18 +3796,18 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequests`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequests`")
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `get_workforcemanagement_managementunit_user_timeoffrequests`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
         if 'user_id' in params:
             path_params['userId'] = params['user_id']
 
@@ -3847,7 +3847,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit_users(self, mu_id, **kwargs):
+    def get_workforcemanagement_managementunit_users(self, management_unit_id, **kwargs):
         """
         Get users in the management unit
         
@@ -3858,17 +3858,17 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit_users(mu_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_managementunit_users(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :return: WfmUserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id']
+        all_params = ['management_unit_id']
         all_params.append('callback')
 
         params = locals()
@@ -3881,15 +3881,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `get_workforcemanagement_managementunit_users`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_users`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/users'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -5149,7 +5149,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_activitycode(self, bu_id, ac_id, **kwargs):
+    def patch_workforcemanagement_businessunit_activitycode(self, business_unit_id, activity_code_id, **kwargs):
         """
         Update an activity code
         
@@ -5160,19 +5160,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str bu_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param str ac_id: The ID of the activity code to update (required)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param str activity_code_id: The ID of the activity code to update (required)
         :param UpdateActivityCodeRequest body: body
         :return: BusinessUnitActivityCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bu_id', 'ac_id', 'body']
+        all_params = ['business_unit_id', 'activity_code_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5185,20 +5185,20 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'bu_id' is set
-        if ('bu_id' not in params) or (params['bu_id'] is None):
-            raise ValueError("Missing the required parameter `bu_id` when calling `patch_workforcemanagement_businessunit_activitycode`")
-        # verify the required parameter 'ac_id' is set
-        if ('ac_id' not in params) or (params['ac_id'] is None):
-            raise ValueError("Missing the required parameter `ac_id` when calling `patch_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'activity_code_id' is set
+        if ('activity_code_id' not in params) or (params['activity_code_id'] is None):
+            raise ValueError("Missing the required parameter `activity_code_id` when calling `patch_workforcemanagement_businessunit_activitycode`")
 
 
-        resource_path = '/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}'.replace('{format}', 'json')
         path_params = {}
-        if 'bu_id' in params:
-            path_params['buId'] = params['bu_id']
-        if 'ac_id' in params:
-            path_params['acId'] = params['ac_id']
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_code_id' in params:
+            path_params['activityCodeId'] = params['activity_code_id']
 
         query_params = {}
 
@@ -5497,7 +5497,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit(self, mu_id, **kwargs):
+    def patch_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
         """
         Update the requested management unit
         
@@ -5508,18 +5508,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit(mu_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param UpdateManagementUnitRequest body: body
         :return: ManagementUnit
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5532,15 +5532,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `patch_workforcemanagement_managementunit`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -5578,7 +5578,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_user_timeoffrequest(self, mu_id, user_id, time_off_request_id, **kwargs):
+    def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id, user_id, time_off_request_id, **kwargs):
         """
         Update a time off request
         
@@ -5589,11 +5589,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The id of the user the requested time off request belongs to (required)
         :param str time_off_request_id: The id of the time off request to update (required)
         :param AdminTimeOffRequestPatch body: body
@@ -5602,7 +5602,7 @@ class WorkforceManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'user_id', 'time_off_request_id', 'body']
+        all_params = ['management_unit_id', 'user_id', 'time_off_request_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -5615,9 +5615,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
@@ -5626,10 +5626,10 @@ class WorkforceManagementApi(object):
             raise ValueError("Missing the required parameter `time_off_request_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
         if 'user_id' in params:
             path_params['userId'] = params['user_id']
         if 'time_off_request_id' in params:
@@ -6175,7 +6175,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_activitycodes(self, bu_id, **kwargs):
+    def post_workforcemanagement_businessunit_activitycodes(self, business_unit_id, **kwargs):
         """
         Create a new activity code
         
@@ -6186,18 +6186,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_activitycodes(bu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_activitycodes(business_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str bu_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
         :param CreateActivityCodeRequest body: body
         :return: BusinessUnitActivityCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bu_id', 'body']
+        all_params = ['business_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -6210,15 +6210,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'bu_id' is set
-        if ('bu_id' not in params) or (params['bu_id'] is None):
-            raise ValueError("Missing the required parameter `bu_id` when calling `post_workforcemanagement_businessunit_activitycodes`")
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activitycodes`")
 
 
-        resource_path = '/api/v2/workforcemanagement/businessunits/{buId}/activitycodes'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes'.replace('{format}', 'json')
         path_params = {}
-        if 'bu_id' in params:
-            path_params['buId'] = params['bu_id']
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
 
         query_params = {}
 
@@ -7330,7 +7330,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_agentschedules_search(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_agentschedules_search(self, management_unit_id, **kwargs):
         """
         Query published schedules for given given time range for set of users
         
@@ -7341,11 +7341,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_agentschedules_search(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param BuSearchAgentSchedulesRequest body: body
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service.  For testing/app development purposes
@@ -7354,7 +7354,7 @@ class WorkforceManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body', 'force_async', 'force_download_service']
+        all_params = ['management_unit_id', 'body', 'force_async', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -7367,15 +7367,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_agentschedules_search`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_agentschedules_search`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
         if 'force_async' in params:
@@ -7417,7 +7417,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_historicaladherencequery(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_historicaladherencequery(self, management_unit_id, **kwargs):
         """
         Request a historical adherence report
         The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
@@ -7428,18 +7428,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_historicaladherencequery(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit (required)
+        :param str management_unit_id: The management unit ID of the management unit (required)
         :param WfmHistoricalAdherenceQuery body: body
         :return: WfmHistoricalAdherenceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7452,15 +7452,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_historicaladherencequery`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_historicaladherencequery`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -7498,7 +7498,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_move(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_move(self, management_unit_id, **kwargs):
         """
         Move the requested management unit to a new business unit
         Returns status 200 if the management unit is already in the requested business unit
@@ -7509,18 +7509,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_move(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_move(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param MoveManagementUnitRequest body: body
         :return: MoveManagementUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7533,15 +7533,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_move`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_move`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/move'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/move'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -7579,7 +7579,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_schedules_search(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_schedules_search(self, management_unit_id, **kwargs):
         """
         Query published schedules for given given time range for set of users
         
@@ -7590,18 +7590,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_schedules_search(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_schedules_search(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param UserListScheduleRequestBody body: body
         :return: UserScheduleContainer
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7614,15 +7614,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_schedules_search`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_schedules_search`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/schedules/search'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -7660,7 +7660,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_timeoffrequests(self, management_unit_id, **kwargs):
         """
         Create a new time off request
         
@@ -7671,18 +7671,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param CreateAdminTimeOffRequest body: body
         :return: TimeOffRequestList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7695,15 +7695,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_timeoffrequests`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 
@@ -7741,7 +7741,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests_query(self, mu_id, **kwargs):
+    def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id, **kwargs):
         """
         Gets the lookup ids to fetch the specified set of requests
         
@@ -7752,18 +7752,18 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_query(mu_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str mu_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param str management_unit_id: The muId of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param TimeOffRequestQueryBody body: body
         :return: TimeOffRequestListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['mu_id', 'body']
+        all_params = ['management_unit_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -7776,15 +7776,15 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'mu_id' is set
-        if ('mu_id' not in params) or (params['mu_id'] is None):
-            raise ValueError("Missing the required parameter `mu_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_query`")
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_query`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query'.replace('{format}', 'json')
         path_params = {}
-        if 'mu_id' in params:
-            path_params['muId'] = params['mu_id']
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
 

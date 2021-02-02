@@ -7,6 +7,7 @@ from .architect_api import ArchitectApi
 from .audit_api import AuditApi
 from .authorization_api import AuthorizationApi
 from .billing_api import BillingApi
+from .chat_api import ChatApi
 from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi

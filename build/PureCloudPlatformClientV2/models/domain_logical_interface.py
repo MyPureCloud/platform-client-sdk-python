@@ -74,6 +74,7 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'bool',
             'use_for_indirect_edge_communication': 'bool',
             'use_for_cloud_proxy_edge_communication': 'bool',
+            'use_for_wan_interface': 'bool',
             'external_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'phone_trunk_base_assignments': 'list[TrunkBaseAssignment]',
             'trace_enabled': 'bool',
@@ -117,6 +118,7 @@ class DomainLogicalInterface(object):
             'use_for_internal_edge_communication': 'useForInternalEdgeCommunication',
             'use_for_indirect_edge_communication': 'useForIndirectEdgeCommunication',
             'use_for_cloud_proxy_edge_communication': 'useForCloudProxyEdgeCommunication',
+            'use_for_wan_interface': 'useForWanInterface',
             'external_trunk_base_assignments': 'externalTrunkBaseAssignments',
             'phone_trunk_base_assignments': 'phoneTrunkBaseAssignments',
             'trace_enabled': 'traceEnabled',
@@ -159,6 +161,7 @@ class DomainLogicalInterface(object):
         self._use_for_internal_edge_communication = None
         self._use_for_indirect_edge_communication = None
         self._use_for_cloud_proxy_edge_communication = None
+        self._use_for_wan_interface = None
         self._external_trunk_base_assignments = None
         self._phone_trunk_base_assignments = None
         self._trace_enabled = None
@@ -959,6 +962,29 @@ class DomainLogicalInterface(object):
         """
         
         self._use_for_cloud_proxy_edge_communication = use_for_cloud_proxy_edge_communication
+
+    @property
+    def use_for_wan_interface(self):
+        """
+        Gets the use_for_wan_interface of this DomainLogicalInterface.
+        This interface will be used for all communication with the internet.
+
+        :return: The use_for_wan_interface of this DomainLogicalInterface.
+        :rtype: bool
+        """
+        return self._use_for_wan_interface
+
+    @use_for_wan_interface.setter
+    def use_for_wan_interface(self, use_for_wan_interface):
+        """
+        Sets the use_for_wan_interface of this DomainLogicalInterface.
+        This interface will be used for all communication with the internet.
+
+        :param use_for_wan_interface: The use_for_wan_interface of this DomainLogicalInterface.
+        :type: bool
+        """
+        
+        self._use_for_wan_interface = use_for_wan_interface
 
     @property
     def external_trunk_base_assignments(self):

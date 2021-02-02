@@ -42,29 +42,32 @@ class Okta(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'certificate': 'str',
+            'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
-            'disabled': 'bool',
+            'certificate': 'str',
+            'certificates': 'list[str]',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'certificate': 'certificate',
+            'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
-            'disabled': 'disabled',
+            'certificate': 'certificate',
+            'certificates': 'certificates',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._certificate = None
+        self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
-        self._disabled = None
+        self._certificate = None
+        self._certificates = None
         self._self_uri = None
 
     @property
@@ -114,27 +117,27 @@ class Okta(object):
         self._name = name
 
     @property
-    def certificate(self):
+    def disabled(self):
         """
-        Gets the certificate of this Okta.
+        Gets the disabled of this Okta.
 
 
-        :return: The certificate of this Okta.
-        :rtype: str
+        :return: The disabled of this Okta.
+        :rtype: bool
         """
-        return self._certificate
+        return self._disabled
 
-    @certificate.setter
-    def certificate(self, certificate):
+    @disabled.setter
+    def disabled(self, disabled):
         """
-        Sets the certificate of this Okta.
+        Sets the disabled of this Okta.
 
 
-        :param certificate: The certificate of this Okta.
-        :type: str
+        :param disabled: The disabled of this Okta.
+        :type: bool
         """
         
-        self._certificate = certificate
+        self._disabled = disabled
 
     @property
     def issuer_uri(self):
@@ -183,27 +186,50 @@ class Okta(object):
         self._sso_target_uri = sso_target_uri
 
     @property
-    def disabled(self):
+    def certificate(self):
         """
-        Gets the disabled of this Okta.
+        Gets the certificate of this Okta.
 
 
-        :return: The disabled of this Okta.
-        :rtype: bool
+        :return: The certificate of this Okta.
+        :rtype: str
         """
-        return self._disabled
+        return self._certificate
 
-    @disabled.setter
-    def disabled(self, disabled):
+    @certificate.setter
+    def certificate(self, certificate):
         """
-        Sets the disabled of this Okta.
+        Sets the certificate of this Okta.
 
 
-        :param disabled: The disabled of this Okta.
-        :type: bool
+        :param certificate: The certificate of this Okta.
+        :type: str
         """
         
-        self._disabled = disabled
+        self._certificate = certificate
+
+    @property
+    def certificates(self):
+        """
+        Gets the certificates of this Okta.
+
+
+        :return: The certificates of this Okta.
+        :rtype: list[str]
+        """
+        return self._certificates
+
+    @certificates.setter
+    def certificates(self, certificates):
+        """
+        Sets the certificates of this Okta.
+
+
+        :param certificates: The certificates of this Okta.
+        :type: list[str]
+        """
+        
+        self._certificates = certificates
 
     @property
     def self_uri(self):

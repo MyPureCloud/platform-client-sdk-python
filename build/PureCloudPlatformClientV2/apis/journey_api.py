@@ -377,12 +377,13 @@ class JourneyApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param bool is_active: Determines whether or not to show only active segments.
+        :param list[str] segment_ids: IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
         :return: SegmentListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['sort_by', 'page_size', 'page_number', 'is_active']
+        all_params = ['sort_by', 'page_size', 'page_number', 'is_active', 'segment_ids']
         all_params.append('callback')
 
         params = locals()
@@ -409,6 +410,8 @@ class JourneyApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'is_active' in params:
             query_params['isActive'] = params['is_active']
+        if 'segment_ids' in params:
+            query_params['segmentIds'] = params['segment_ids']
 
         header_params = {}
 

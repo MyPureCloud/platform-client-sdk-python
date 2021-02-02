@@ -213,7 +213,7 @@ class UpdateActivityCodeRequest(object):
     def metadata(self):
         """
         Gets the metadata of this UpdateActivityCodeRequest.
-        Version metadata for the associated management unit's list of activity codes
+        Version metadata for the associated business unit's list of activity codes
 
         :return: The metadata of this UpdateActivityCodeRequest.
         :rtype: WfmVersionedEntityMetadata
@@ -224,7 +224,7 @@ class UpdateActivityCodeRequest(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this UpdateActivityCodeRequest.
-        Version metadata for the associated management unit's list of activity codes
+        Version metadata for the associated business unit's list of activity codes
 
         :param metadata: The metadata of this UpdateActivityCodeRequest.
         :type: WfmVersionedEntityMetadata

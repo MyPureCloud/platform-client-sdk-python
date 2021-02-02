@@ -226,7 +226,7 @@ except ApiException as e:
 
 <a name="get_journey_segments"></a>
 
-## [**SegmentListing**](SegmentListing.html) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active)
+## [**SegmentListing**](SegmentListing.html) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids)
 
 
 
@@ -257,10 +257,11 @@ sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sor
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 is_active = true # bool | Determines whether or not to show only active segments. (optional)
+segment_ids = ['segment_ids_example'] # list[str] | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
 
 try:
     # Retrieve all segments.
-    api_response = api_instance.get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active)
+    api_response = api_instance.get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_segments: %s\n" % e)
@@ -275,6 +276,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **is_active** | **bool**| Determines whether or not to show only active segments. | [optional]  |
+| **segment_ids** | [**list[str]**](str.html)| IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

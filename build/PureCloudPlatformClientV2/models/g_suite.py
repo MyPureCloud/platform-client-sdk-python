@@ -42,32 +42,35 @@ class GSuite(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'relying_party_identifier': 'str',
-            'certificate': 'str',
+            'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
-            'disabled': 'bool',
+            'certificate': 'str',
+            'certificates': 'list[str]',
+            'relying_party_identifier': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'relying_party_identifier': 'relyingPartyIdentifier',
-            'certificate': 'certificate',
+            'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
-            'disabled': 'disabled',
+            'certificate': 'certificate',
+            'certificates': 'certificates',
+            'relying_party_identifier': 'relyingPartyIdentifier',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._relying_party_identifier = None
-        self._certificate = None
+        self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
-        self._disabled = None
+        self._certificate = None
+        self._certificates = None
+        self._relying_party_identifier = None
         self._self_uri = None
 
     @property
@@ -117,50 +120,27 @@ class GSuite(object):
         self._name = name
 
     @property
-    def relying_party_identifier(self):
+    def disabled(self):
         """
-        Gets the relying_party_identifier of this GSuite.
+        Gets the disabled of this GSuite.
 
 
-        :return: The relying_party_identifier of this GSuite.
-        :rtype: str
+        :return: The disabled of this GSuite.
+        :rtype: bool
         """
-        return self._relying_party_identifier
+        return self._disabled
 
-    @relying_party_identifier.setter
-    def relying_party_identifier(self, relying_party_identifier):
+    @disabled.setter
+    def disabled(self, disabled):
         """
-        Sets the relying_party_identifier of this GSuite.
+        Sets the disabled of this GSuite.
 
 
-        :param relying_party_identifier: The relying_party_identifier of this GSuite.
-        :type: str
-        """
-        
-        self._relying_party_identifier = relying_party_identifier
-
-    @property
-    def certificate(self):
-        """
-        Gets the certificate of this GSuite.
-
-
-        :return: The certificate of this GSuite.
-        :rtype: str
-        """
-        return self._certificate
-
-    @certificate.setter
-    def certificate(self, certificate):
-        """
-        Sets the certificate of this GSuite.
-
-
-        :param certificate: The certificate of this GSuite.
-        :type: str
+        :param disabled: The disabled of this GSuite.
+        :type: bool
         """
         
-        self._certificate = certificate
+        self._disabled = disabled
 
     @property
     def issuer_uri(self):
@@ -209,27 +189,73 @@ class GSuite(object):
         self._sso_target_uri = sso_target_uri
 
     @property
-    def disabled(self):
+    def certificate(self):
         """
-        Gets the disabled of this GSuite.
+        Gets the certificate of this GSuite.
 
 
-        :return: The disabled of this GSuite.
-        :rtype: bool
+        :return: The certificate of this GSuite.
+        :rtype: str
         """
-        return self._disabled
+        return self._certificate
 
-    @disabled.setter
-    def disabled(self, disabled):
+    @certificate.setter
+    def certificate(self, certificate):
         """
-        Sets the disabled of this GSuite.
+        Sets the certificate of this GSuite.
 
 
-        :param disabled: The disabled of this GSuite.
-        :type: bool
+        :param certificate: The certificate of this GSuite.
+        :type: str
         """
         
-        self._disabled = disabled
+        self._certificate = certificate
+
+    @property
+    def certificates(self):
+        """
+        Gets the certificates of this GSuite.
+
+
+        :return: The certificates of this GSuite.
+        :rtype: list[str]
+        """
+        return self._certificates
+
+    @certificates.setter
+    def certificates(self, certificates):
+        """
+        Sets the certificates of this GSuite.
+
+
+        :param certificates: The certificates of this GSuite.
+        :type: list[str]
+        """
+        
+        self._certificates = certificates
+
+    @property
+    def relying_party_identifier(self):
+        """
+        Gets the relying_party_identifier of this GSuite.
+
+
+        :return: The relying_party_identifier of this GSuite.
+        :rtype: str
+        """
+        return self._relying_party_identifier
+
+    @relying_party_identifier.setter
+    def relying_party_identifier(self, relying_party_identifier):
+        """
+        Sets the relying_party_identifier of this GSuite.
+
+
+        :param relying_party_identifier: The relying_party_identifier of this GSuite.
+        :type: str
+        """
+        
+        self._relying_party_identifier = relying_party_identifier
 
     @property
     def self_uri(self):

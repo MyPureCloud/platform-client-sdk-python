@@ -12,6 +12,7 @@ title: ConversationQuery
 | **evaluation_filters** | [**list[EvaluationDetailQueryFilter]**](EvaluationDetailQueryFilter.html) | Filters that target evaluations | [optional] |
 | **media_endpoint_stat_filters** | [**list[MediaEndpointStatDetailQueryFilter]**](MediaEndpointStatDetailQueryFilter.html) | Filters that target mediaEndpointStats | [optional] |
 | **survey_filters** | [**list[SurveyDetailQueryFilter]**](SurveyDetailQueryFilter.html) | Filters that target surveys | [optional] |
+| **resolution_filters** | [**list[ResolutionDetailQueryFilter]**](ResolutionDetailQueryFilter.html) | Filters that target resolutions | [optional] |
 | **order** | **str** | Sort the result set in ascending/descending order. Default is ascending | [optional] |
 | **order_by** | **str** | Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart | [optional] |
 | **interval** | **str** | Specifies the date and time range of data being queried. Results will only include conversations that started on a day touched by the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | |

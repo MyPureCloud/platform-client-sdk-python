@@ -45,6 +45,7 @@ class AsyncConversationQuery(object):
             'evaluation_filters': 'list[EvaluationDetailQueryFilter]',
             'media_endpoint_stat_filters': 'list[MediaEndpointStatDetailQueryFilter]',
             'survey_filters': 'list[SurveyDetailQueryFilter]',
+            'resolution_filters': 'list[ResolutionDetailQueryFilter]',
             'order': 'str',
             'order_by': 'str',
             'interval': 'str',
@@ -58,6 +59,7 @@ class AsyncConversationQuery(object):
             'evaluation_filters': 'evaluationFilters',
             'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
             'survey_filters': 'surveyFilters',
+            'resolution_filters': 'resolutionFilters',
             'order': 'order',
             'order_by': 'orderBy',
             'interval': 'interval',
@@ -70,6 +72,7 @@ class AsyncConversationQuery(object):
         self._evaluation_filters = None
         self._media_endpoint_stat_filters = None
         self._survey_filters = None
+        self._resolution_filters = None
         self._order = None
         self._order_by = None
         self._interval = None
@@ -190,6 +193,29 @@ class AsyncConversationQuery(object):
         """
         
         self._survey_filters = survey_filters
+
+    @property
+    def resolution_filters(self):
+        """
+        Gets the resolution_filters of this AsyncConversationQuery.
+        Filters that target resolutions
+
+        :return: The resolution_filters of this AsyncConversationQuery.
+        :rtype: list[ResolutionDetailQueryFilter]
+        """
+        return self._resolution_filters
+
+    @resolution_filters.setter
+    def resolution_filters(self, resolution_filters):
+        """
+        Sets the resolution_filters of this AsyncConversationQuery.
+        Filters that target resolutions
+
+        :param resolution_filters: The resolution_filters of this AsyncConversationQuery.
+        :type: list[ResolutionDetailQueryFilter]
+        """
+        
+        self._resolution_filters = resolution_filters
 
     @property
     def order(self):

@@ -42,41 +42,44 @@ class GenericSAML(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'logo_image_data': 'str',
-            'relying_party_identifier': 'str',
-            'endpoint_compression': 'bool',
-            'name_identifier_format': 'str',
-            'certificate': 'str',
+            'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
-            'disabled': 'bool',
+            'certificate': 'str',
+            'certificates': 'list[str]',
+            'relying_party_identifier': 'str',
+            'logo_image_data': 'str',
+            'endpoint_compression': 'bool',
+            'name_identifier_format': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'logo_image_data': 'logoImageData',
-            'relying_party_identifier': 'relyingPartyIdentifier',
-            'endpoint_compression': 'endpointCompression',
-            'name_identifier_format': 'nameIdentifierFormat',
-            'certificate': 'certificate',
+            'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
-            'disabled': 'disabled',
+            'certificate': 'certificate',
+            'certificates': 'certificates',
+            'relying_party_identifier': 'relyingPartyIdentifier',
+            'logo_image_data': 'logoImageData',
+            'endpoint_compression': 'endpointCompression',
+            'name_identifier_format': 'nameIdentifierFormat',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._logo_image_data = None
-        self._relying_party_identifier = None
-        self._endpoint_compression = None
-        self._name_identifier_format = None
-        self._certificate = None
+        self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
-        self._disabled = None
+        self._certificate = None
+        self._certificates = None
+        self._relying_party_identifier = None
+        self._logo_image_data = None
+        self._endpoint_compression = None
+        self._name_identifier_format = None
         self._self_uri = None
 
     @property
@@ -126,27 +129,119 @@ class GenericSAML(object):
         self._name = name
 
     @property
-    def logo_image_data(self):
+    def disabled(self):
         """
-        Gets the logo_image_data of this GenericSAML.
+        Gets the disabled of this GenericSAML.
 
 
-        :return: The logo_image_data of this GenericSAML.
+        :return: The disabled of this GenericSAML.
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """
+        Sets the disabled of this GenericSAML.
+
+
+        :param disabled: The disabled of this GenericSAML.
+        :type: bool
+        """
+        
+        self._disabled = disabled
+
+    @property
+    def issuer_uri(self):
+        """
+        Gets the issuer_uri of this GenericSAML.
+
+
+        :return: The issuer_uri of this GenericSAML.
         :rtype: str
         """
-        return self._logo_image_data
+        return self._issuer_uri
 
-    @logo_image_data.setter
-    def logo_image_data(self, logo_image_data):
+    @issuer_uri.setter
+    def issuer_uri(self, issuer_uri):
         """
-        Sets the logo_image_data of this GenericSAML.
+        Sets the issuer_uri of this GenericSAML.
 
 
-        :param logo_image_data: The logo_image_data of this GenericSAML.
+        :param issuer_uri: The issuer_uri of this GenericSAML.
         :type: str
         """
         
-        self._logo_image_data = logo_image_data
+        self._issuer_uri = issuer_uri
+
+    @property
+    def sso_target_uri(self):
+        """
+        Gets the sso_target_uri of this GenericSAML.
+
+
+        :return: The sso_target_uri of this GenericSAML.
+        :rtype: str
+        """
+        return self._sso_target_uri
+
+    @sso_target_uri.setter
+    def sso_target_uri(self, sso_target_uri):
+        """
+        Sets the sso_target_uri of this GenericSAML.
+
+
+        :param sso_target_uri: The sso_target_uri of this GenericSAML.
+        :type: str
+        """
+        
+        self._sso_target_uri = sso_target_uri
+
+    @property
+    def certificate(self):
+        """
+        Gets the certificate of this GenericSAML.
+
+
+        :return: The certificate of this GenericSAML.
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """
+        Sets the certificate of this GenericSAML.
+
+
+        :param certificate: The certificate of this GenericSAML.
+        :type: str
+        """
+        
+        self._certificate = certificate
+
+    @property
+    def certificates(self):
+        """
+        Gets the certificates of this GenericSAML.
+
+
+        :return: The certificates of this GenericSAML.
+        :rtype: list[str]
+        """
+        return self._certificates
+
+    @certificates.setter
+    def certificates(self, certificates):
+        """
+        Sets the certificates of this GenericSAML.
+
+
+        :param certificates: The certificates of this GenericSAML.
+        :type: list[str]
+        """
+        
+        self._certificates = certificates
 
     @property
     def relying_party_identifier(self):
@@ -170,6 +265,29 @@ class GenericSAML(object):
         """
         
         self._relying_party_identifier = relying_party_identifier
+
+    @property
+    def logo_image_data(self):
+        """
+        Gets the logo_image_data of this GenericSAML.
+
+
+        :return: The logo_image_data of this GenericSAML.
+        :rtype: str
+        """
+        return self._logo_image_data
+
+    @logo_image_data.setter
+    def logo_image_data(self, logo_image_data):
+        """
+        Sets the logo_image_data of this GenericSAML.
+
+
+        :param logo_image_data: The logo_image_data of this GenericSAML.
+        :type: str
+        """
+        
+        self._logo_image_data = logo_image_data
 
     @property
     def endpoint_compression(self):
@@ -220,98 +338,6 @@ class GenericSAML(object):
             self._name_identifier_format = "outdated_sdk_version"
         else:
             self._name_identifier_format = name_identifier_format
-
-    @property
-    def certificate(self):
-        """
-        Gets the certificate of this GenericSAML.
-
-
-        :return: The certificate of this GenericSAML.
-        :rtype: str
-        """
-        return self._certificate
-
-    @certificate.setter
-    def certificate(self, certificate):
-        """
-        Sets the certificate of this GenericSAML.
-
-
-        :param certificate: The certificate of this GenericSAML.
-        :type: str
-        """
-        
-        self._certificate = certificate
-
-    @property
-    def issuer_uri(self):
-        """
-        Gets the issuer_uri of this GenericSAML.
-
-
-        :return: The issuer_uri of this GenericSAML.
-        :rtype: str
-        """
-        return self._issuer_uri
-
-    @issuer_uri.setter
-    def issuer_uri(self, issuer_uri):
-        """
-        Sets the issuer_uri of this GenericSAML.
-
-
-        :param issuer_uri: The issuer_uri of this GenericSAML.
-        :type: str
-        """
-        
-        self._issuer_uri = issuer_uri
-
-    @property
-    def sso_target_uri(self):
-        """
-        Gets the sso_target_uri of this GenericSAML.
-
-
-        :return: The sso_target_uri of this GenericSAML.
-        :rtype: str
-        """
-        return self._sso_target_uri
-
-    @sso_target_uri.setter
-    def sso_target_uri(self, sso_target_uri):
-        """
-        Sets the sso_target_uri of this GenericSAML.
-
-
-        :param sso_target_uri: The sso_target_uri of this GenericSAML.
-        :type: str
-        """
-        
-        self._sso_target_uri = sso_target_uri
-
-    @property
-    def disabled(self):
-        """
-        Gets the disabled of this GenericSAML.
-
-
-        :return: The disabled of this GenericSAML.
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """
-        Sets the disabled of this GenericSAML.
-
-
-        :param disabled: The disabled of this GenericSAML.
-        :type: bool
-        """
-        
-        self._disabled = disabled
 
     @property
     def self_uri(self):

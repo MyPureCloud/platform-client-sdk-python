@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
 |[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
-|[**delete_routing_queue_user**](RoutingApi.html#delete_routing_queue_user) | Delete queue member|
+|[**delete_routing_queue_user**](RoutingApi.html#delete_routing_queue_user) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.|
 |[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
 |[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
@@ -33,7 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
 |[**get_routing_queue_estimatedwaittime**](RoutingApi.html#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
 |[**get_routing_queue_mediatype_estimatedwaittime**](RoutingApi.html#get_routing_queue_mediatype_estimatedwaittime) | Get Estimated Wait Time|
-|[**get_routing_queue_users**](RoutingApi.html#get_routing_queue_users) | Get the members of this queue|
+|[**get_routing_queue_users**](RoutingApi.html#get_routing_queue_users) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.|
 |[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
 |[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
 |[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
@@ -57,8 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
-|[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | Update the ring number OR joined status for a User in a Queue|
-|[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | Join or unjoin a set of users for a queue|
+|[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
+|[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
 |[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
 |[**patch_user_queue**](RoutingApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](RoutingApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
@@ -70,7 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_email_domain_testconnection**](RoutingApi.html#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
 |[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
 |[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
-|[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | Bulk add or delete up to 100 queue members|
+|[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
 |[**post_routing_queue_wrapupcodes**](RoutingApi.html#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
 |[**post_routing_queues**](RoutingApi.html#post_routing_queues) | Create a queue|
 |[**post_routing_skills**](RoutingApi.html#post_routing_skills) | Create Skill|
@@ -252,7 +252,7 @@ void (empty response body)
 
 
 
-Delete queue member
+DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 
 
 
@@ -280,7 +280,7 @@ queue_id = 'queue_id_example' # str | Queue ID
 member_id = 'member_id_example' # str | Member ID
 
 try:
-    # Delete queue member
+    # DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
     api_instance.delete_routing_queue_user(queue_id, member_id)
 except ApiException as e:
     print("Exception when calling RoutingApi->delete_routing_queue_user: %s\n" % e)
@@ -1380,7 +1380,7 @@ except ApiException as e:
 
 
 
-Get the members of this queue
+DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
 
 
@@ -1405,7 +1405,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-page_size = 25 # int | Page size (optional) (default to 25)
+page_size = 25 # int | Page size [max 100] (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'name' # str | Sort by (optional) (default to name)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
@@ -1418,7 +1418,7 @@ routing_status = ['routing_status_example'] # list[str] | Filter by routing stat
 presence = ['presence_example'] # list[str] | Filter by presence (optional)
 
 try:
-    # Get the members of this queue
+    # DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
     api_response = api_instance.get_routing_queue_users(queue_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
     pprint(api_response)
 except ApiException as e:
@@ -1431,7 +1431,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_size** | **int**| Page size [max 100] | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to name] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
@@ -2706,7 +2706,7 @@ except ApiException as e:
 
 
 
-Update the ring number OR joined status for a User in a Queue
+DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 
 
 
@@ -2735,7 +2735,7 @@ member_id = 'member_id_example' # str | Member ID
 body = PureCloudPlatformClientV2.QueueMember() # QueueMember | Queue Member
 
 try:
-    # Update the ring number OR joined status for a User in a Queue
+    # DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
     api_response = api_instance.patch_routing_queue_user(queue_id, member_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -2762,7 +2762,7 @@ except ApiException as e:
 
 
 
-Join or unjoin a set of users for a queue
+DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
 
 
@@ -2790,7 +2790,7 @@ queue_id = 'queue_id_example' # str | Queue ID
 body = [PureCloudPlatformClientV2.QueueMember()] # list[QueueMember] | Queue Members
 
 try:
-    # Join or unjoin a set of users for a queue
+    # DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
     api_response = api_instance.patch_routing_queue_users(queue_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -3400,7 +3400,7 @@ except ApiException as e:
 
 
 
-Bulk add or delete up to 100 queue members
+DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 
 
 
@@ -3429,7 +3429,7 @@ body = [PureCloudPlatformClientV2.WritableEntity()] # list[WritableEntity] | Que
 delete = false # bool | True to delete queue members (optional) (default to false)
 
 try:
-    # Bulk add or delete up to 100 queue members
+    # DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
     api_response = api_instance.post_routing_queue_users(queue_id, body, delete=delete)
     pprint(api_response)
 except ApiException as e:

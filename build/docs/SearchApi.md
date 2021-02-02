@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_locations_search**](SearchApi.html#post_locations_search) | Search locations|
 |[**post_search**](SearchApi.html#post_search) | Search resources.|
 |[**post_search_suggest**](SearchApi.html#post_search_suggest) | Suggest resources.|
+|[**post_speechandtextanalytics_transcripts_search**](SearchApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**post_users_search**](SearchApi.html#post_users_search) | Search users|
 |[**post_voicemail_search**](SearchApi.html#post_voicemail_search) | Search voicemails|
 {: class="table table-striped"}
@@ -841,6 +842,58 @@ except ApiException as e:
 ### Return type
 
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+
+<a name="post_speechandtextanalytics_transcripts_search"></a>
+
+## [**JsonSearchResponse**](JsonSearchResponse.html) post_speechandtextanalytics_transcripts_search(body)
+
+
+
+Search resources.
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/transcripts/search 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+* recording:recording:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.TranscriptSearchRequest() # TranscriptSearchRequest | Search request options
+
+try:
+    # Search resources.
+    api_response = api_instance.post_speechandtextanalytics_transcripts_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_speechandtextanalytics_transcripts_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse.html)
 
 <a name="post_users_search"></a>
 

@@ -48,6 +48,7 @@ class AnalyticsConversation(object):
             'originating_direction': 'str',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
+            'resolutions': 'list[AnalyticsResolution]',
             'division_ids': 'list[str]',
             'participants': 'list[AnalyticsParticipant]'
         }
@@ -61,6 +62,7 @@ class AnalyticsConversation(object):
             'originating_direction': 'originatingDirection',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
+            'resolutions': 'resolutions',
             'division_ids': 'divisionIds',
             'participants': 'participants'
         }
@@ -73,6 +75,7 @@ class AnalyticsConversation(object):
         self._originating_direction = None
         self._evaluations = None
         self._surveys = None
+        self._resolutions = None
         self._division_ids = None
         self._participants = None
 
@@ -263,6 +266,29 @@ class AnalyticsConversation(object):
         """
         
         self._surveys = surveys
+
+    @property
+    def resolutions(self):
+        """
+        Gets the resolutions of this AnalyticsConversation.
+        Resolutions tied to this conversation
+
+        :return: The resolutions of this AnalyticsConversation.
+        :rtype: list[AnalyticsResolution]
+        """
+        return self._resolutions
+
+    @resolutions.setter
+    def resolutions(self, resolutions):
+        """
+        Sets the resolutions of this AnalyticsConversation.
+        Resolutions tied to this conversation
+
+        :param resolutions: The resolutions of this AnalyticsConversation.
+        :type: list[AnalyticsResolution]
+        """
+        
+        self._resolutions = resolutions
 
     @property
     def division_ids(self):

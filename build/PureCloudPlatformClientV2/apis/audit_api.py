@@ -48,7 +48,7 @@ class AuditApi(object):
 
     def get_audits_query_realtime_servicemapping(self, **kwargs):
         """
-        Get service mapping information used in audits.
+        Get service mapping information used in realtime audits.
         
 
         This method makes a synchronous HTTP request by default. To make an

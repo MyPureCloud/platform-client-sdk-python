@@ -15,6 +15,7 @@ title: AnalyticsConversationWithoutAttributes
 | **originating_direction** | **str** | The original direction of the conversation | [optional] |
 | **evaluations** | [**list[AnalyticsEvaluation]**](AnalyticsEvaluation.html) | Evaluations tied to this conversation | [optional] |
 | **surveys** | [**list[AnalyticsSurvey]**](AnalyticsSurvey.html) | Surveys tied to this conversation | [optional] |
+| **resolutions** | [**list[AnalyticsResolution]**](AnalyticsResolution.html) | Resolutions tied to this conversation | [optional] |
 | **division_ids** | **list[str]** | Identifiers of divisions associated with this conversation | [optional] |
 | **participants** | [**list[AnalyticsParticipantWithoutAttributes]**](AnalyticsParticipantWithoutAttributes.html) | Participants in the conversation | [optional] |
 {: class="table table-striped"}

@@ -291,7 +291,7 @@ class RoutingApi(object):
 
     def delete_routing_queue_user(self, queue_id, member_id, **kwargs):
         """
-        Delete queue member
+        DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2043,7 +2043,7 @@ class RoutingApi(object):
 
     def get_routing_queue_users(self, queue_id, **kwargs):
         """
-        Get the members of this queue
+        DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2057,7 +2057,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param int page_size: Page size
+        :param int page_size: Page size [max 100]
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param list[str] expand: Which fields, if any, to expand.
@@ -4053,7 +4053,7 @@ class RoutingApi(object):
 
     def patch_routing_queue_user(self, queue_id, member_id, body, **kwargs):
         """
-        Update the ring number OR joined status for a User in a Queue
+        DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4143,7 +4143,7 @@ class RoutingApi(object):
 
     def patch_routing_queue_users(self, queue_id, body, **kwargs):
         """
-        Join or unjoin a set of users for a queue
+        DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -5139,7 +5139,7 @@ class RoutingApi(object):
 
     def post_routing_queue_users(self, queue_id, body, **kwargs):
         """
-        Bulk add or delete up to 100 queue members
+        DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
         
 
         This method makes a synchronous HTTP request by default. To make an

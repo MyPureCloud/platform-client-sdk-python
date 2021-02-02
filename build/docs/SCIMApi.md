@@ -8,9 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_scim_group**](SCIMApi.html#delete_scim_group) | Delete a group|
 |[**delete_scim_user**](SCIMApi.html#delete_scim_user) | Delete a user|
-|[**delete_scim_v2_group**](SCIMApi.html#delete_scim_v2_group) | Delete a group|
 |[**delete_scim_v2_user**](SCIMApi.html#delete_scim_v2_user) | Delete a user|
 |[**get_scim_group**](SCIMApi.html#get_scim_group) | Get a group|
 |[**get_scim_groups**](SCIMApi.html#get_scim_groups) | Get a list of groups|
@@ -34,67 +32,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_scim_user**](SCIMApi.html#patch_scim_user) | Modify a user|
 |[**patch_scim_v2_group**](SCIMApi.html#patch_scim_v2_group) | Modify a group|
 |[**patch_scim_v2_user**](SCIMApi.html#patch_scim_v2_user) | Modify a user|
-|[**post_scim_groups**](SCIMApi.html#post_scim_groups) | Create a group|
 |[**post_scim_users**](SCIMApi.html#post_scim_users) | Create a user|
-|[**post_scim_v2_groups**](SCIMApi.html#post_scim_v2_groups) | Create a group|
 |[**post_scim_v2_users**](SCIMApi.html#post_scim_v2_users) | Create a user|
 |[**put_scim_group**](SCIMApi.html#put_scim_group) | Replace a group|
 |[**put_scim_user**](SCIMApi.html#put_scim_user) | Replace a user|
 |[**put_scim_v2_group**](SCIMApi.html#put_scim_v2_group) | Replace a group|
 |[**put_scim_v2_user**](SCIMApi.html#put_scim_v2_user) | Replace a user|
 {: class="table table-striped"}
-
-<a name="delete_scim_group"></a>
-
-##  delete_scim_group(group_id, if_match=if_match)
-
-
-
-Delete a group
-
-
-
-Wraps DELETE /api/v2/scim/groups/{groupId} 
-
-Requires ANY permissions: 
-
-* directory:group:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
-
-try:
-    # Delete a group
-    api_instance.delete_scim_group(group_id, if_match=if_match)
-except ApiException as e:
-    print("Exception when calling SCIMApi->delete_scim_group: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups. |  |
-| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="delete_scim_user"></a>
 
@@ -148,58 +92,6 @@ except ApiException as e:
 ### Return type
 
 [**Empty**](Empty.html)
-
-<a name="delete_scim_v2_group"></a>
-
-##  delete_scim_v2_group(group_id, if_match=if_match)
-
-
-
-Delete a group
-
-
-
-Wraps DELETE /api/v2/scim/v2/groups/{groupId} 
-
-Requires ANY permissions: 
-
-* directory:group:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.SCIMApi()
-group_id = 'group_id_example' # str | The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
-
-try:
-    # Delete a group
-    api_instance.delete_scim_v2_group(group_id, if_match=if_match)
-except ApiException as e:
-    print("Exception when calling SCIMApi->delete_scim_v2_group: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **group_id** | **str**| The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups. |  |
-| **if_match** | **str**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
 
 <a name="delete_scim_v2_user"></a>
 
@@ -1436,57 +1328,6 @@ except ApiException as e:
 
 [**ScimV2User**](ScimV2User.html)
 
-<a name="post_scim_groups"></a>
-
-## [**ScimV2Group**](ScimV2Group.html) post_scim_groups(body)
-
-
-
-Create a group
-
-Creates a Genesys Cloud group with group visibility set to \"public\" and rules visibility set to \"true\". Auto-creates an \"externalId\". \"externalId\" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} is allowed.
-
-Wraps POST /api/v2/scim/groups 
-
-Requires ANY permissions: 
-
-* directory:group:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.SCIMApi()
-body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to create a group.
-
-try:
-    # Create a group
-    api_response = api_instance.post_scim_groups(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SCIMApi->post_scim_groups: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to create a group. |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ScimV2Group**](ScimV2Group.html)
-
 <a name="post_scim_users"></a>
 
 ## [**ScimV2User**](ScimV2User.html) post_scim_users(body)
@@ -1541,57 +1382,6 @@ except ApiException as e:
 ### Return type
 
 [**ScimV2User**](ScimV2User.html)
-
-<a name="post_scim_v2_groups"></a>
-
-## [**ScimV2Group**](ScimV2Group.html) post_scim_v2_groups(body)
-
-
-
-Create a group
-
-Creates an \"official\" Genesys Cloud group with group visibility set to \"public\" and rules visibility set to \"true\". Auto-creates an \"externalId\". \"externalId\" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
-
-Wraps POST /api/v2/scim/v2/groups 
-
-Requires ANY permissions: 
-
-* directory:group:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.SCIMApi()
-body = PureCloudPlatformClientV2.ScimV2Group() # ScimV2Group | The information used to create a group.
-
-try:
-    # Create a group
-    api_response = api_instance.post_scim_v2_groups(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SCIMApi->post_scim_v2_groups: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to create a group. |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ScimV2Group**](ScimV2Group.html)
 
 <a name="post_scim_v2_users"></a>
 

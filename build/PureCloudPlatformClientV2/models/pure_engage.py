@@ -42,32 +42,35 @@ class PureEngage(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'auto_provision_users': 'bool',
-            'certificate': 'str',
+            'disabled': 'bool',
             'issuer_uri': 'str',
             'sso_target_uri': 'str',
-            'disabled': 'bool',
+            'certificate': 'str',
+            'certificates': 'list[str]',
+            'auto_provision_users': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'auto_provision_users': 'autoProvisionUsers',
-            'certificate': 'certificate',
+            'disabled': 'disabled',
             'issuer_uri': 'issuerURI',
             'sso_target_uri': 'ssoTargetURI',
-            'disabled': 'disabled',
+            'certificate': 'certificate',
+            'certificates': 'certificates',
+            'auto_provision_users': 'autoProvisionUsers',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._auto_provision_users = None
-        self._certificate = None
+        self._disabled = None
         self._issuer_uri = None
         self._sso_target_uri = None
-        self._disabled = None
+        self._certificate = None
+        self._certificates = None
+        self._auto_provision_users = None
         self._self_uri = None
 
     @property
@@ -117,50 +120,27 @@ class PureEngage(object):
         self._name = name
 
     @property
-    def auto_provision_users(self):
+    def disabled(self):
         """
-        Gets the auto_provision_users of this PureEngage.
+        Gets the disabled of this PureEngage.
 
 
-        :return: The auto_provision_users of this PureEngage.
+        :return: The disabled of this PureEngage.
         :rtype: bool
         """
-        return self._auto_provision_users
+        return self._disabled
 
-    @auto_provision_users.setter
-    def auto_provision_users(self, auto_provision_users):
+    @disabled.setter
+    def disabled(self, disabled):
         """
-        Sets the auto_provision_users of this PureEngage.
+        Sets the disabled of this PureEngage.
 
 
-        :param auto_provision_users: The auto_provision_users of this PureEngage.
+        :param disabled: The disabled of this PureEngage.
         :type: bool
         """
         
-        self._auto_provision_users = auto_provision_users
-
-    @property
-    def certificate(self):
-        """
-        Gets the certificate of this PureEngage.
-
-
-        :return: The certificate of this PureEngage.
-        :rtype: str
-        """
-        return self._certificate
-
-    @certificate.setter
-    def certificate(self, certificate):
-        """
-        Sets the certificate of this PureEngage.
-
-
-        :param certificate: The certificate of this PureEngage.
-        :type: str
-        """
-        
-        self._certificate = certificate
+        self._disabled = disabled
 
     @property
     def issuer_uri(self):
@@ -209,27 +189,73 @@ class PureEngage(object):
         self._sso_target_uri = sso_target_uri
 
     @property
-    def disabled(self):
+    def certificate(self):
         """
-        Gets the disabled of this PureEngage.
+        Gets the certificate of this PureEngage.
 
 
-        :return: The disabled of this PureEngage.
+        :return: The certificate of this PureEngage.
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """
+        Sets the certificate of this PureEngage.
+
+
+        :param certificate: The certificate of this PureEngage.
+        :type: str
+        """
+        
+        self._certificate = certificate
+
+    @property
+    def certificates(self):
+        """
+        Gets the certificates of this PureEngage.
+
+
+        :return: The certificates of this PureEngage.
+        :rtype: list[str]
+        """
+        return self._certificates
+
+    @certificates.setter
+    def certificates(self, certificates):
+        """
+        Sets the certificates of this PureEngage.
+
+
+        :param certificates: The certificates of this PureEngage.
+        :type: list[str]
+        """
+        
+        self._certificates = certificates
+
+    @property
+    def auto_provision_users(self):
+        """
+        Gets the auto_provision_users of this PureEngage.
+
+
+        :return: The auto_provision_users of this PureEngage.
         :rtype: bool
         """
-        return self._disabled
+        return self._auto_provision_users
 
-    @disabled.setter
-    def disabled(self, disabled):
+    @auto_provision_users.setter
+    def auto_provision_users(self, auto_provision_users):
         """
-        Sets the disabled of this PureEngage.
+        Sets the auto_provision_users of this PureEngage.
 
 
-        :param disabled: The disabled of this PureEngage.
+        :param auto_provision_users: The auto_provision_users of this PureEngage.
         :type: bool
         """
         
-        self._disabled = disabled
+        self._auto_provision_users = auto_provision_users
 
     @property
     def self_uri(self):

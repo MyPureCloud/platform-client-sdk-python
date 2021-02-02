@@ -49,6 +49,7 @@ class PatchSegment(object):
             'should_display_to_agent': 'bool',
             'context': 'Context',
             'journey': 'Journey',
+            'assignment_expiration_days': 'int',
             'self_uri': 'str',
             'created_date': 'datetime',
             'modified_date': 'datetime'
@@ -64,6 +65,7 @@ class PatchSegment(object):
             'should_display_to_agent': 'shouldDisplayToAgent',
             'context': 'context',
             'journey': 'journey',
+            'assignment_expiration_days': 'assignmentExpirationDays',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate'
@@ -78,6 +80,7 @@ class PatchSegment(object):
         self._should_display_to_agent = None
         self._context = None
         self._journey = None
+        self._assignment_expiration_days = None
         self._self_uri = None
         self._created_date = None
         self._modified_date = None
@@ -288,6 +291,29 @@ class PatchSegment(object):
         """
         
         self._journey = journey
+
+    @property
+    def assignment_expiration_days(self):
+        """
+        Gets the assignment_expiration_days of this PatchSegment.
+        Time, in days, from when the segment is assigned until it is automatically unassigned.
+
+        :return: The assignment_expiration_days of this PatchSegment.
+        :rtype: int
+        """
+        return self._assignment_expiration_days
+
+    @assignment_expiration_days.setter
+    def assignment_expiration_days(self, assignment_expiration_days):
+        """
+        Sets the assignment_expiration_days of this PatchSegment.
+        Time, in days, from when the segment is assigned until it is automatically unassigned.
+
+        :param assignment_expiration_days: The assignment_expiration_days of this PatchSegment.
+        :type: int
+        """
+        
+        self._assignment_expiration_days = assignment_expiration_days
 
     @property
     def self_uri(self):

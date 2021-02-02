@@ -401,7 +401,7 @@ class KnowledgeApi(object):
         :param str language_code: Language code, format: iso2-LOCALE (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str name: Filter to return the categories that starts with the given category name.
         :return: CategoryListing
@@ -680,7 +680,7 @@ class KnowledgeApi(object):
         :param str language_code: Language code, format: iso2-LOCALE (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str categories: Filter by categories ids, comma separated values expected.
         :param str title: Filter by document title.
@@ -872,7 +872,7 @@ class KnowledgeApi(object):
         :param str language_code: Language code, format: iso2-LOCALE (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str knowledge_documents_state: Return the training with the specified state of the trained documents.
         :return: TrainingListing
@@ -969,7 +969,7 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str limit: Number of entities to return. Maximum of 200.
+        :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str name: Name of the KnowledgeBase to filter.
         :return: KnowledgeBaseListing

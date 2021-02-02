@@ -54,7 +54,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
             'conversations': 'list[WemCoachingAppointmentTopicCoachingAppointmentConversation]',
             'documents': 'list[WemCoachingAppointmentTopicCoachingAppointmentDocument]',
             'change_type': 'str',
-            'date_completed': 'datetime'
+            'date_completed': 'datetime',
+            'external_links': 'list[WemCoachingAppointmentTopicCoachingAppointmentExternalLink]'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
             'conversations': 'conversations',
             'documents': 'documents',
             'change_type': 'changeType',
-            'date_completed': 'dateCompleted'
+            'date_completed': 'dateCompleted',
+            'external_links': 'externalLinks'
         }
 
         self._id = None
@@ -90,6 +92,7 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         self._documents = None
         self._change_type = None
         self._date_completed = None
+        self._external_links = None
 
     @property
     def id(self):
@@ -443,6 +446,29 @@ class WemCoachingAppointmentTopicCoachingAppointmentNotification(object):
         """
         
         self._date_completed = date_completed
+
+    @property
+    def external_links(self):
+        """
+        Gets the external_links of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+
+
+        :return: The external_links of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+        :rtype: list[WemCoachingAppointmentTopicCoachingAppointmentExternalLink]
+        """
+        return self._external_links
+
+    @external_links.setter
+    def external_links(self, external_links):
+        """
+        Sets the external_links of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+
+
+        :param external_links: The external_links of this WemCoachingAppointmentTopicCoachingAppointmentNotification.
+        :type: list[WemCoachingAppointmentTopicCoachingAppointmentExternalLink]
+        """
+        
+        self._external_links = external_links
 
     def to_dict(self):
         """

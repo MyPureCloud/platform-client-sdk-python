@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_audits_query_realtime_servicemapping**](AuditApi.html#get_audits_query_realtime_servicemapping) | Get service mapping information used in audits.|
+|[**get_audits_query_realtime_servicemapping**](AuditApi.html#get_audits_query_realtime_servicemapping) | Get service mapping information used in realtime audits.|
 |[**get_audits_query_servicemapping**](AuditApi.html#get_audits_query_servicemapping) | Get service mapping information used in audits.|
 |[**get_audits_query_transaction_id**](AuditApi.html#get_audits_query_transaction_id) | Get status of audit query execution|
 |[**get_audits_query_transaction_id_results**](AuditApi.html#get_audits_query_transaction_id_results) | Get results of audit query|
@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-Get service mapping information used in audits.
+Get service mapping information used in realtime audits.
 
 
 
@@ -47,7 +47,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuditApi()
 
 try:
-    # Get service mapping information used in audits.
+    # Get service mapping information used in realtime audits.
     api_response = api_instance.get_audits_query_realtime_servicemapping()
     pprint(api_response)
 except ApiException as e:

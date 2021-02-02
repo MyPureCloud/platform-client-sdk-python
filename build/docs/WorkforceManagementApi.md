@@ -167,7 +167,7 @@ void (empty response body)
 
 <a name="delete_workforcemanagement_businessunit_activitycode"></a>
 
-##  delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+##  delete_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
 
 
 
@@ -175,7 +175,7 @@ Deletes an activity code
 
 
 
-Wraps DELETE /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
 Requires ANY permissions: 
 
@@ -194,12 +194,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-ac_id = 'ac_id_example' # str | The ID of the activity code to delete
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+activity_code_id = 'activity_code_id_example' # str | The ID of the activity code to delete
 
 try:
     # Deletes an activity code
-    api_instance.delete_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+    api_instance.delete_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_activitycode: %s\n" % e)
 ```
@@ -209,8 +209,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **ac_id** | **str**| The ID of the activity code to delete |  |
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **activity_code_id** | **str**| The ID of the activity code to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -484,7 +484,7 @@ void (empty response body)
 
 <a name="delete_workforcemanagement_managementunit"></a>
 
-##  delete_workforcemanagement_managementunit(mu_id)
+##  delete_workforcemanagement_managementunit(management_unit_id)
 
 
 
@@ -492,7 +492,7 @@ Delete management unit
 
 
 
-Wraps DELETE /api/v2/workforcemanagement/managementunits/{muId} 
+Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
 Requires ANY permissions: 
 
@@ -511,11 +511,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Delete management unit
-    api_instance.delete_workforcemanagement_managementunit(mu_id)
+    api_instance.delete_workforcemanagement_managementunit(management_unit_id)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_managementunit: %s\n" % e)
 ```
@@ -525,7 +525,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -845,7 +845,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_activitycode"></a>
 
-## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) get_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) get_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
 
 
 
@@ -853,7 +853,7 @@ Get an activity code
 
 
 
-Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
 Requires ANY permissions: 
 
@@ -872,12 +872,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-ac_id = 'ac_id_example' # str | The ID of the activity code to fetch
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+activity_code_id = 'activity_code_id_example' # str | The ID of the activity code to fetch
 
 try:
     # Get an activity code
-    api_response = api_instance.get_workforcemanagement_businessunit_activitycode(bu_id, ac_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycode: %s\n" % e)
@@ -888,8 +888,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **ac_id** | **str**| The ID of the activity code to fetch |  |
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **activity_code_id** | **str**| The ID of the activity code to fetch |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -898,7 +898,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_activitycodes"></a>
 
-## [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html) get_workforcemanagement_businessunit_activitycodes(bu_id)
+## [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html) get_workforcemanagement_businessunit_activitycodes(business_unit_id)
 
 
 
@@ -906,7 +906,7 @@ Get activity codes
 
 
 
-Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes 
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes 
 
 Requires ANY permissions: 
 
@@ -970,11 +970,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 
 try:
     # Get activity codes
-    api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(bu_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(business_unit_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycodes: %s\n" % e)
@@ -985,7 +985,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2152,7 +2152,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit"></a>
 
-## [**ManagementUnit**](ManagementUnit.html) get_workforcemanagement_managementunit(mu_id, expand=expand)
+## [**ManagementUnit**](ManagementUnit.html) get_workforcemanagement_managementunit(management_unit_id, expand=expand)
 
 
 
@@ -2160,7 +2160,7 @@ Get management unit
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId} 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
 Requires ANY permissions: 
 
@@ -2233,12 +2233,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 expand = ['expand_example'] # list[str] |  (optional)
 
 try:
     # Get management unit
-    api_response = api_instance.get_workforcemanagement_managementunit(mu_id, expand=expand)
+    api_response = api_instance.get_workforcemanagement_managementunit(management_unit_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit: %s\n" % e)
@@ -2249,7 +2249,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
 {: class="table table-striped"}
 
@@ -2259,7 +2259,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_activitycodes"></a>
 
-## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(mu_id)
+## [**ActivityCodeContainer**](ActivityCodeContainer.html) get_workforcemanagement_managementunit_activitycodes(management_unit_id)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2267,7 +2267,7 @@ Get activity codes
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes 
 
 Requires ANY permissions: 
 
@@ -2325,11 +2325,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Get activity codes
-    api_response = api_instance.get_workforcemanagement_managementunit_activitycodes(mu_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_activitycodes(management_unit_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_activitycodes: %s\n" % e)
@@ -2340,7 +2340,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2511,7 +2511,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_shifttrades_matched"></a>
 
-## [**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse.html) get_workforcemanagement_managementunit_shifttrades_matched(mu_id)
+## [**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse.html) get_workforcemanagement_managementunit_shifttrades_matched(management_unit_id)
 
 
 
@@ -2519,7 +2519,7 @@ Gets a summary of all shift trades in the matched state
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched 
 
 Requires ANY permissions: 
 
@@ -2539,11 +2539,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Gets a summary of all shift trades in the matched state
-    api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_matched(mu_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_matched(management_unit_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_matched: %s\n" % e)
@@ -2554,7 +2554,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2563,7 +2563,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_shifttrades_users"></a>
 
-## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_shifttrades_users(mu_id)
+## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_shifttrades_users(management_unit_id)
 
 
 
@@ -2571,7 +2571,7 @@ Gets list of users available for whom you can send direct shift trade requests
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users 
 
 Requires ANY permissions: 
 
@@ -2590,11 +2590,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Gets list of users available for whom you can send direct shift trade requests
-    api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_users(mu_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_shifttrades_users(management_unit_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_shifttrades_users: %s\n" % e)
@@ -2605,7 +2605,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2614,7 +2614,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_user_timeoffrequest"></a>
 
-## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
+## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) get_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id)
 
 
 
@@ -2622,7 +2622,7 @@ Get a time off request
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
 
 Requires ANY permissions: 
 
@@ -2641,13 +2641,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 time_off_request_id = 'time_off_request_id_example' # str | Time Off Request Id
 
 try:
     # Get a time off request
-    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e)
@@ -2658,7 +2658,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **time_off_request_id** | **str**| Time Off Request Id |  |
 {: class="table table-striped"}
@@ -2669,7 +2669,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_user_timeoffrequests"></a>
 
-## [**TimeOffRequestList**](TimeOffRequestList.html) get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
+## [**TimeOffRequestList**](TimeOffRequestList.html) get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)
 
 
 
@@ -2677,7 +2677,7 @@ Get a list of time off requests for a given user
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests 
 
 Requires ANY permissions: 
 
@@ -2696,13 +2696,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
 recently_reviewed = false # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to false)
 
 try:
     # Get a list of time off requests for a given user
-    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(mu_id, user_id, recently_reviewed=recently_reviewed)
+    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\n" % e)
@@ -2713,7 +2713,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
 | **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -2724,7 +2724,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_users"></a>
 
-## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_users(mu_id)
+## [**WfmUserEntityListing**](WfmUserEntityListing.html) get_workforcemanagement_managementunit_users(management_unit_id)
 
 
 
@@ -2732,7 +2732,7 @@ Get users in the management unit
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users 
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users 
 
 Requires ANY permissions: 
 
@@ -2758,11 +2758,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
     # Get users in the management unit
-    api_response = api_instance.get_workforcemanagement_managementunit_users(mu_id)
+    api_response = api_instance.get_workforcemanagement_managementunit_users(management_unit_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_users: %s\n" % e)
@@ -2773,7 +2773,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3589,7 +3589,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_businessunit_activitycode"></a>
 
-## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, body=body)
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, body=body)
 
 
 
@@ -3597,7 +3597,7 @@ Update an activity code
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} 
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
 Requires ANY permissions: 
 
@@ -3616,13 +3616,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-ac_id = 'ac_id_example' # str | The ID of the activity code to update
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+activity_code_id = 'activity_code_id_example' # str | The ID of the activity code to update
 body = PureCloudPlatformClientV2.UpdateActivityCodeRequest() # UpdateActivityCodeRequest | body (optional)
 
 try:
     # Update an activity code
-    api_response = api_instance.patch_workforcemanagement_businessunit_activitycode(bu_id, ac_id, body=body)
+    api_response = api_instance.patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activitycode: %s\n" % e)
@@ -3633,8 +3633,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **ac_id** | **str**| The ID of the activity code to update |  |
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **activity_code_id** | **str**| The ID of the activity code to update |  |
 | **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -3808,7 +3808,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit"></a>
 
-## [**ManagementUnit**](ManagementUnit.html) patch_workforcemanagement_managementunit(mu_id, body=body)
+## [**ManagementUnit**](ManagementUnit.html) patch_workforcemanagement_managementunit(management_unit_id, body=body)
 
 
 
@@ -3816,7 +3816,7 @@ Update the requested management unit
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId} 
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
 Requires ANY permissions: 
 
@@ -3835,12 +3835,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.UpdateManagementUnitRequest() # UpdateManagementUnitRequest | body (optional)
 
 try:
     # Update the requested management unit
-    api_response = api_instance.patch_workforcemanagement_managementunit(mu_id, body=body)
+    api_response = api_instance.patch_workforcemanagement_managementunit(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit: %s\n" % e)
@@ -3851,7 +3851,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -3861,7 +3861,7 @@ except ApiException as e:
 
 <a name="patch_workforcemanagement_managementunit_user_timeoffrequest"></a>
 
-## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, body=body)
+## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body=body)
 
 
 
@@ -3869,7 +3869,7 @@ Update a time off request
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
 
 Requires ANY permissions: 
 
@@ -3888,14 +3888,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The id of the user the requested time off request belongs to
 time_off_request_id = 'time_off_request_id_example' # str | The id of the time off request to update
 body = PureCloudPlatformClientV2.AdminTimeOffRequestPatch() # AdminTimeOffRequestPatch | body (optional)
 
 try:
     # Update a time off request
-    api_response = api_instance.patch_workforcemanagement_managementunit_user_timeoffrequest(mu_id, user_id, time_off_request_id, body=body)
+    api_response = api_instance.patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_user_timeoffrequest: %s\n" % e)
@@ -3906,7 +3906,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The id of the user the requested time off request belongs to |  |
 | **time_off_request_id** | **str**| The id of the time off request to update |  |
 | **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional]  |
@@ -4242,7 +4242,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_businessunit_activitycodes"></a>
 
-## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) post_workforcemanagement_businessunit_activitycodes(bu_id, body=body)
+## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) post_workforcemanagement_businessunit_activitycodes(business_unit_id, body=body)
 
 
 
@@ -4250,7 +4250,7 @@ Create a new activity code
 
 
 
-Wraps POST /api/v2/workforcemanagement/businessunits/{buId}/activitycodes 
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes 
 
 Requires ANY permissions: 
 
@@ -4269,12 +4269,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-bu_id = 'bu_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 body = PureCloudPlatformClientV2.CreateActivityCodeRequest() # CreateActivityCodeRequest | body (optional)
 
 try:
     # Create a new activity code
-    api_response = api_instance.post_workforcemanagement_businessunit_activitycodes(bu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_businessunit_activitycodes(business_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activitycodes: %s\n" % e)
@@ -4285,7 +4285,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bu_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -4967,7 +4967,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
 
-## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
+## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
 
 
 
@@ -4975,7 +4975,7 @@ Query published schedules for given given time range for set of users
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search 
 
 Requires ANY permissions: 
 
@@ -4995,14 +4995,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.BuSearchAgentSchedulesRequest() # BuSearchAgentSchedulesRequest | body (optional)
 force_async = true # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 force_download_service = true # bool | Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
 
 try:
     # Query published schedules for given given time range for set of users
-    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(mu_id, body=body, force_async=force_async, force_download_service=force_download_service)
+    api_response = api_instance.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, body=body, force_async=force_async, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agentschedules_search: %s\n" % e)
@@ -5013,7 +5013,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -5025,7 +5025,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_historicaladherencequery"></a>
 
-## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_managementunit_historicaladherencequery(mu_id, body=body)
+## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, body=body)
 
 
 
@@ -5033,7 +5033,7 @@ Request a historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery 
 
 Requires ANY permissions: 
 
@@ -5052,12 +5052,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit
 body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQuery() # WfmHistoricalAdherenceQuery | body (optional)
 
 try:
     # Request a historical adherence report
-    api_response = api_instance.post_workforcemanagement_managementunit_historicaladherencequery(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_historicaladherencequery: %s\n" % e)
@@ -5068,7 +5068,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit |  |
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5078,7 +5078,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_move"></a>
 
-## [**MoveManagementUnitResponse**](MoveManagementUnitResponse.html) post_workforcemanagement_managementunit_move(mu_id, body=body)
+## [**MoveManagementUnitResponse**](MoveManagementUnitResponse.html) post_workforcemanagement_managementunit_move(management_unit_id, body=body)
 
 
 
@@ -5086,7 +5086,7 @@ Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/move 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move 
 
 Requires ANY permissions: 
 
@@ -5105,12 +5105,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.MoveManagementUnitRequest() # MoveManagementUnitRequest | body (optional)
 
 try:
     # Move the requested management unit to a new business unit
-    api_response = api_instance.post_workforcemanagement_managementunit_move(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_move(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_move: %s\n" % e)
@@ -5121,7 +5121,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5131,7 +5131,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_schedules_search"></a>
 
-## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
+## [**UserScheduleContainer**](UserScheduleContainer.html) post_workforcemanagement_managementunit_schedules_search(management_unit_id, body=body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -5139,7 +5139,7 @@ Query published schedules for given given time range for set of users
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search 
 
 Requires ANY permissions: 
 
@@ -5159,12 +5159,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.UserListScheduleRequestBody() # UserListScheduleRequestBody | body (optional)
 
 try:
     # Query published schedules for given given time range for set of users
-    api_response = api_instance.post_workforcemanagement_managementunit_schedules_search(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_schedules_search(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_schedules_search: %s\n" % e)
@@ -5175,7 +5175,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5185,7 +5185,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_timeoffrequests"></a>
 
-## [**TimeOffRequestList**](TimeOffRequestList.html) post_workforcemanagement_managementunit_timeoffrequests(mu_id, body=body)
+## [**TimeOffRequestList**](TimeOffRequestList.html) post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, body=body)
 
 
 
@@ -5193,7 +5193,7 @@ Create a new time off request
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests 
 
 Requires ANY permissions: 
 
@@ -5212,12 +5212,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.CreateAdminTimeOffRequest() # CreateAdminTimeOffRequest | body (optional)
 
 try:
     # Create a new time off request
-    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests: %s\n" % e)
@@ -5228,7 +5228,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -5238,7 +5238,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_timeoffrequests_query"></a>
 
-## [**TimeOffRequestListing**](TimeOffRequestListing.html) post_workforcemanagement_managementunit_timeoffrequests_query(mu_id, body=body)
+## [**TimeOffRequestListing**](TimeOffRequestListing.html) post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
 
 
 
@@ -5246,7 +5246,7 @@ Gets the lookup ids to fetch the specified set of requests
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query 
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query 
 
 Requires ANY permissions: 
 
@@ -5265,12 +5265,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-mu_id = 'mu_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+management_unit_id = 'management_unit_id_example' # str | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 body = PureCloudPlatformClientV2.TimeOffRequestQueryBody() # TimeOffRequestQueryBody | body (optional)
 
 try:
     # Gets the lookup ids to fetch the specified set of requests
-    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(mu_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_query: %s\n" % e)
@@ -5281,7 +5281,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **mu_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **management_unit_id** | **str**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional]  |
 {: class="table table-striped"}
 

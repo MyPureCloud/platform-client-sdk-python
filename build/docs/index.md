@@ -3,7 +3,7 @@ title: Platform API Client SDK - Python
 ---
 
 [![PyPI version](https://badge.fury.io/py/PureCloudPlatformClientV2.svg)](https://badge.fury.io/py/PureCloudPlatformClientV2)
-[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](releaseNotes.md)
+[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-python/blob/master/releaseNotes.md)
 
 Documentation can be found at [https://developer.mypurecloud.com/api/rest/client-libraries/python/](https://developer.mypurecloud.com/api/rest/client-libraries/python/)
 
@@ -54,7 +54,36 @@ print(usersApi.get_users_me())
 
 ```
 
+### Authorization Code Grant
 
+* The app is authenticating as a human, the [Authorization Code Grant](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
+* The app is served via a web server
+* There is server-side code that will be making API requests
+
+```{"language":"python"}
+apiclient, auth_token_info = apiclient.get_code_authorization_token("565c3091-4107-4675-b606-b1fead2d15a4",
+                                                                    "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8",
+                                                                    "fjaXJaIG7Y-gFhgwvxvNZLj-dcqhWS_pm_n-_1MziN8",
+                                                                    "https://redirect-uri.com/oauth/callback")
+usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
+```
+
+By default the SDK will use the refresh token to request a new access token transparently when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _refresh_token_wait_time_ field of the _Configuration_ object.  
+If you wish to implement the refresh logic, set _should_refresh_access_token_ to false and store the refresh token from the auth response. The expires_in value can be used to proactively request a new one before it expires:
+
+```{"language":"python"}
+refresh_token = auth_token_info["refresh_token"]
+expires_in = auth_token_info["expires_in"]
+PureCloudPlatformClientV2.configuration.should_refresh_access_token = False
+```
+
+When the access token expires refresh it using the refresh_code_authorization_token method using the same clientId and clientSecret as used to request it.
+
+```{"language":"python"}
+apiclient, auth_token_info = apiclient.refresh_code_authorization_token("565c3091-4107-4675-b606-b1fead2d15a4",
+                                                                        "9pal483eSr_vCZf0qQomFK298I8htjBZo49FI_lLZQ8",
+                                                                        refresh_token)
+```
 
 ### Setting the Environment
 
