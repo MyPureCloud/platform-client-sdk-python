@@ -51,7 +51,8 @@ class PostTextRequest(object):
             'bot_correlation_id': 'str',
             'messaging_platform_type': 'str',
             'amazon_lex_request': 'AmazonLexRequest',
-            'google_dialogflow': 'GoogleDialogflowCustomSettings'
+            'google_dialogflow': 'GoogleDialogflowCustomSettings',
+            'genesys_bot_connector': 'GenesysBotConnector'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class PostTextRequest(object):
             'bot_correlation_id': 'botCorrelationId',
             'messaging_platform_type': 'messagingPlatformType',
             'amazon_lex_request': 'amazonLexRequest',
-            'google_dialogflow': 'googleDialogflow'
+            'google_dialogflow': 'googleDialogflow',
+            'genesys_bot_connector': 'genesysBotConnector'
         }
 
         self._bot_id = None
@@ -81,6 +83,7 @@ class PostTextRequest(object):
         self._messaging_platform_type = None
         self._amazon_lex_request = None
         self._google_dialogflow = None
+        self._genesys_bot_connector = None
 
     @property
     def bot_id(self):
@@ -361,6 +364,29 @@ class PostTextRequest(object):
         """
         
         self._google_dialogflow = google_dialogflow
+
+    @property
+    def genesys_bot_connector(self):
+        """
+        Gets the genesys_bot_connector of this PostTextRequest.
+
+
+        :return: The genesys_bot_connector of this PostTextRequest.
+        :rtype: GenesysBotConnector
+        """
+        return self._genesys_bot_connector
+
+    @genesys_bot_connector.setter
+    def genesys_bot_connector(self, genesys_bot_connector):
+        """
+        Sets the genesys_bot_connector of this PostTextRequest.
+
+
+        :param genesys_bot_connector: The genesys_bot_connector of this PostTextRequest.
+        :type: GenesysBotConnector
+        """
+        
+        self._genesys_bot_connector = genesys_bot_connector
 
     def to_dict(self):
         """

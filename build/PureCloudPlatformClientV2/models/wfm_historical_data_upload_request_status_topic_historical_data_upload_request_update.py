@@ -205,7 +205,7 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         :param status: The status of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
         :type: str
         """
-        allowed_values = ["Initiated", "InProgress", "Pending", "Success", "Failed", "Cancelled", "Purged"]
+        allowed_values = ["Initiated", "InProgress", "Pending", "Success", "Failed", "Cancelled", "Purged", "PurgePending"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

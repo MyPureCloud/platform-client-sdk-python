@@ -46,6 +46,7 @@ class AgentEvaluatorActivity(object):
             'evaluator': 'User',
             'num_evaluations': 'int',
             'average_evaluation_score': 'int',
+            'num_evaluations_without_view_permission': 'int',
             'self_uri': 'str'
         }
 
@@ -56,6 +57,7 @@ class AgentEvaluatorActivity(object):
             'evaluator': 'evaluator',
             'num_evaluations': 'numEvaluations',
             'average_evaluation_score': 'averageEvaluationScore',
+            'num_evaluations_without_view_permission': 'numEvaluationsWithoutViewPermission',
             'self_uri': 'selfUri'
         }
 
@@ -65,6 +67,7 @@ class AgentEvaluatorActivity(object):
         self._evaluator = None
         self._num_evaluations = None
         self._average_evaluation_score = None
+        self._num_evaluations_without_view_permission = None
         self._self_uri = None
 
     @property
@@ -204,6 +207,29 @@ class AgentEvaluatorActivity(object):
         """
         
         self._average_evaluation_score = average_evaluation_score
+
+    @property
+    def num_evaluations_without_view_permission(self):
+        """
+        Gets the num_evaluations_without_view_permission of this AgentEvaluatorActivity.
+
+
+        :return: The num_evaluations_without_view_permission of this AgentEvaluatorActivity.
+        :rtype: int
+        """
+        return self._num_evaluations_without_view_permission
+
+    @num_evaluations_without_view_permission.setter
+    def num_evaluations_without_view_permission(self, num_evaluations_without_view_permission):
+        """
+        Sets the num_evaluations_without_view_permission of this AgentEvaluatorActivity.
+
+
+        :param num_evaluations_without_view_permission: The num_evaluations_without_view_permission of this AgentEvaluatorActivity.
+        :type: int
+        """
+        
+        self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
     def self_uri(self):

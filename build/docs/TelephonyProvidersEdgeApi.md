@@ -50,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_did) | Get a DID by ID.|
 |[**get_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpool) | Get a DID Pool by ID.|
 |[**get_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpools) | Get a listing of DID Pools|
+|[**get_telephony_providers_edges_didpools_dids**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_didpools_dids) | Get a listing of unassigned and/or assigned numbers in a set of DID Pools.|
 |[**get_telephony_providers_edges_dids**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_dids) | Get a listing of DIDs|
 |[**get_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup) | Get edge group.|
 |[**get_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_edgegroup_edgetrunkbase) | Gets the edge trunk base associated with the edge group|
@@ -2327,6 +2328,67 @@ except ApiException as e:
 ### Return type
 
 [**DIDPoolEntityListing**](DIDPoolEntityListing.html)
+
+<a name="get_telephony_providers_edges_didpools_dids"></a>
+
+## [**DIDNumberEntityListing**](DIDNumberEntityListing.html) get_telephony_providers_edges_didpools_dids(type, id=id, number_match=number_match, page_size=page_size, page_number=page_number, sort_order=sort_order)
+
+
+
+Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/didpools/dids 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+type = 'type_example' # str | The type of numbers to return.
+id = ['id_example'] # list[str] | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned. (optional)
+number_match = 'number_match_example' # str | A number to filter the results by. (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+
+try:
+    # Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+    api_response = api_instance.get_telephony_providers_edges_didpools_dids(type, id=id, number_match=number_match, page_size=page_size, page_number=page_number, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_didpools_dids: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **type** | **str**| The type of numbers to return. | <br />**Values**: ASSIGNED_AND_UNASSIGNED, UNASSIGNED |
+| **id** | [**list[str]**](str.html)| Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned. | [optional]  |
+| **number_match** | **str**| A number to filter the results by. | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DIDNumberEntityListing**](DIDNumberEntityListing.html)
 
 <a name="get_telephony_providers_edges_dids"></a>
 

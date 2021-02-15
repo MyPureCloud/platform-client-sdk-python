@@ -19,6 +19,7 @@ title: PostTextRequest
 | **messaging_platform_type** | **str** | If the channels list contains a &#39;Messaging&#39; item and the messaging platform is known, include it here to get accurate analytics | [optional] |
 | **amazon_lex_request** | [**AmazonLexRequest**](AmazonLexRequest.html) |  | [optional] |
 | **google_dialogflow** | [**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings.html) |  | [optional] |
+| **genesys_bot_connector** | [**GenesysBotConnector**](GenesysBotConnector.html) |  | [optional] |
 {: class="table table-striped"}
 
 

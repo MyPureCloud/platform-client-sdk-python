@@ -140,12 +140,13 @@ class NotificationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] expand: Which fields, if any, to expand
+        :param bool include_preview: Whether or not to include Preview topics
         :return: AvailableTopicEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['expand']
+        all_params = ['expand', 'include_preview']
         all_params.append('callback')
 
         params = locals()
@@ -166,6 +167,8 @@ class NotificationsApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'include_preview' in params:
+            query_params['includePreview'] = params['include_preview']
 
         header_params = {}
 

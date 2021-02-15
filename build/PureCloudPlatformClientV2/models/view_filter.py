@@ -132,7 +132,13 @@ class ViewFilter(object):
             'journey_action_map_ids': 'list[str]',
             'journey_outcome_ids': 'list[str]',
             'journey_segment_ids': 'list[str]',
-            'journey_action_map_types': 'list[str]'
+            'journey_action_map_types': 'list[str]',
+            'development_role_list': 'list[str]',
+            'development_type_list': 'list[str]',
+            'development_status_list': 'list[str]',
+            'development_module_ids': 'list[str]',
+            'development_key_type': 'str',
+            'development_activity_overdue': 'bool'
         }
 
         self.attribute_map = {
@@ -228,7 +234,13 @@ class ViewFilter(object):
             'journey_action_map_ids': 'journeyActionMapIds',
             'journey_outcome_ids': 'journeyOutcomeIds',
             'journey_segment_ids': 'journeySegmentIds',
-            'journey_action_map_types': 'journeyActionMapTypes'
+            'journey_action_map_types': 'journeyActionMapTypes',
+            'development_role_list': 'developmentRoleList',
+            'development_type_list': 'developmentTypeList',
+            'development_status_list': 'developmentStatusList',
+            'development_module_ids': 'developmentModuleIds',
+            'development_key_type': 'developmentKeyType',
+            'development_activity_overdue': 'developmentActivityOverdue'
         }
 
         self._media_types = None
@@ -324,6 +336,12 @@ class ViewFilter(object):
         self._journey_outcome_ids = None
         self._journey_segment_ids = None
         self._journey_action_map_types = None
+        self._development_role_list = None
+        self._development_type_list = None
+        self._development_status_list = None
+        self._development_module_ids = None
+        self._development_key_type = None
+        self._development_activity_overdue = None
 
     @property
     def media_types(self):
@@ -2463,6 +2481,148 @@ class ViewFilter(object):
         """
         
         self._journey_action_map_types = journey_action_map_types
+
+    @property
+    def development_role_list(self):
+        """
+        Gets the development_role_list of this ViewFilter.
+        The list of development roles used to filter agent development view
+
+        :return: The development_role_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._development_role_list
+
+    @development_role_list.setter
+    def development_role_list(self, development_role_list):
+        """
+        Sets the development_role_list of this ViewFilter.
+        The list of development roles used to filter agent development view
+
+        :param development_role_list: The development_role_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._development_role_list = development_role_list
+
+    @property
+    def development_type_list(self):
+        """
+        Gets the development_type_list of this ViewFilter.
+        The list of development types used to filter agent development view
+
+        :return: The development_type_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._development_type_list
+
+    @development_type_list.setter
+    def development_type_list(self, development_type_list):
+        """
+        Sets the development_type_list of this ViewFilter.
+        The list of development types used to filter agent development view
+
+        :param development_type_list: The development_type_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._development_type_list = development_type_list
+
+    @property
+    def development_status_list(self):
+        """
+        Gets the development_status_list of this ViewFilter.
+        The list of development status used to filter agent development view
+
+        :return: The development_status_list of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._development_status_list
+
+    @development_status_list.setter
+    def development_status_list(self, development_status_list):
+        """
+        Sets the development_status_list of this ViewFilter.
+        The list of development status used to filter agent development view
+
+        :param development_status_list: The development_status_list of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._development_status_list = development_status_list
+
+    @property
+    def development_module_ids(self):
+        """
+        Gets the development_module_ids of this ViewFilter.
+        The list of development moduleIds used to filter agent development view
+
+        :return: The development_module_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._development_module_ids
+
+    @development_module_ids.setter
+    def development_module_ids(self, development_module_ids):
+        """
+        Sets the development_module_ids of this ViewFilter.
+        The list of development moduleIds used to filter agent development view
+
+        :param development_module_ids: The development_module_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._development_module_ids = development_module_ids
+
+    @property
+    def development_key_type(self):
+        """
+        Gets the development_key_type of this ViewFilter.
+        Represents due or completed to filter agent development view
+
+        :return: The development_key_type of this ViewFilter.
+        :rtype: str
+        """
+        return self._development_key_type
+
+    @development_key_type.setter
+    def development_key_type(self, development_key_type):
+        """
+        Sets the development_key_type of this ViewFilter.
+        Represents due or completed to filter agent development view
+
+        :param development_key_type: The development_key_type of this ViewFilter.
+        :type: str
+        """
+        allowed_values = ["Due", "Completed"]
+        if development_key_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for development_key_type -> " + development_key_type)
+            self._development_key_type = "outdated_sdk_version"
+        else:
+            self._development_key_type = development_key_type
+
+    @property
+    def development_activity_overdue(self):
+        """
+        Gets the development_activity_overdue of this ViewFilter.
+        Indicates filtering for development activities
+
+        :return: The development_activity_overdue of this ViewFilter.
+        :rtype: bool
+        """
+        return self._development_activity_overdue
+
+    @development_activity_overdue.setter
+    def development_activity_overdue(self, development_activity_overdue):
+        """
+        Sets the development_activity_overdue of this ViewFilter.
+        Indicates filtering for development activities
+
+        :param development_activity_overdue: The development_activity_overdue of this ViewFilter.
+        :type: bool
+        """
+        
+        self._development_activity_overdue = development_activity_overdue
 
     def to_dict(self):
         """

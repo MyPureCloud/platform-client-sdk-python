@@ -49,6 +49,7 @@ class EvaluatorActivity(object):
             'num_calibrations_assigned': 'int',
             'num_calibrations_started': 'int',
             'num_calibrations_completed': 'int',
+            'num_evaluations_without_view_permission': 'int',
             'self_uri': 'str'
         }
 
@@ -62,6 +63,7 @@ class EvaluatorActivity(object):
             'num_calibrations_assigned': 'numCalibrationsAssigned',
             'num_calibrations_started': 'numCalibrationsStarted',
             'num_calibrations_completed': 'numCalibrationsCompleted',
+            'num_evaluations_without_view_permission': 'numEvaluationsWithoutViewPermission',
             'self_uri': 'selfUri'
         }
 
@@ -74,6 +76,7 @@ class EvaluatorActivity(object):
         self._num_calibrations_assigned = None
         self._num_calibrations_started = None
         self._num_calibrations_completed = None
+        self._num_evaluations_without_view_permission = None
         self._self_uri = None
 
     @property
@@ -282,6 +285,29 @@ class EvaluatorActivity(object):
         """
         
         self._num_calibrations_completed = num_calibrations_completed
+
+    @property
+    def num_evaluations_without_view_permission(self):
+        """
+        Gets the num_evaluations_without_view_permission of this EvaluatorActivity.
+
+
+        :return: The num_evaluations_without_view_permission of this EvaluatorActivity.
+        :rtype: int
+        """
+        return self._num_evaluations_without_view_permission
+
+    @num_evaluations_without_view_permission.setter
+    def num_evaluations_without_view_permission(self, num_evaluations_without_view_permission):
+        """
+        Sets the num_evaluations_without_view_permission of this EvaluatorActivity.
+
+
+        :param num_evaluations_without_view_permission: The num_evaluations_without_view_permission of this EvaluatorActivity.
+        :type: int
+        """
+        
+        self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
     def self_uri(self):

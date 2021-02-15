@@ -289,6 +289,90 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_routing_queue_member(self, queue_id, member_id, **kwargs):
+        """
+        Delete a queue member.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_queue_member(queue_id, member_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param str member_id: Member ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'member_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_queue_member" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `delete_routing_queue_member`")
+        # verify the required parameter 'member_id' is set
+        if ('member_id' not in params) or (params['member_id'] is None):
+            raise ValueError("Missing the required parameter `member_id` when calling `delete_routing_queue_member`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/members/{memberId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+        if 'member_id' in params:
+            path_params['memberId'] = params['member_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_routing_queue_user(self, queue_id, member_id, **kwargs):
         """
         DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
@@ -2037,6 +2121,117 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EstimatedWaitTimePredictions',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_queue_members(self, queue_id, **kwargs):
+        """
+        Get the members of this queue.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_queue_members(queue_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param int page_size: Page size [max 100]
+        :param int page_number: Page number
+        :param str sort_by: Sort by
+        :param list[str] expand: Which fields, if any, to expand.
+        :param bool joined: Filter by joined status
+        :param str name: Filter by queue member name
+        :param list[str] profile_skills: Filter by profile skill
+        :param list[str] skills: Filter by skill
+        :param list[str] languages: Filter by language
+        :param list[str] routing_status: Filter by routing status
+        :param list[str] presence: Filter by presence
+        :return: QueueMemberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'page_size', 'page_number', 'sort_by', 'expand', 'joined', 'name', 'profile_skills', 'skills', 'languages', 'routing_status', 'presence']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_queue_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `get_routing_queue_members`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'joined' in params:
+            query_params['joined'] = params['joined']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'profile_skills' in params:
+            query_params['profileSkills'] = params['profile_skills']
+        if 'skills' in params:
+            query_params['skills'] = params['skills']
+        if 'languages' in params:
+            query_params['languages'] = params['languages']
+        if 'routing_status' in params:
+            query_params['routingStatus'] = params['routing_status']
+        if 'presence' in params:
+            query_params['presence'] = params['presence']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueueMemberEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4051,6 +4246,264 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_routing_email_domain_validate(self, domain_id, body, **kwargs):
+        """
+        Validate domain settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_email_domain_validate(domain_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_id: domain ID (required)
+        :param InboundDomainPatchRequest body: Domain settings (required)
+        :return: InboundDomain
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_email_domain_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_id' is set
+        if ('domain_id' not in params) or (params['domain_id'] is None):
+            raise ValueError("Missing the required parameter `domain_id` when calling `patch_routing_email_domain_validate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_email_domain_validate`")
+
+
+        resource_path = '/api/v2/routing/email/domains/{domainId}/validate'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_id' in params:
+            path_params['domainId'] = params['domain_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InboundDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_routing_queue_member(self, queue_id, member_id, body, **kwargs):
+        """
+        Update the ring number OR joined status for a queue member.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_queue_member(queue_id, member_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param str member_id: Member ID (required)
+        :param QueueMember body: Queue Member (required)
+        :return: QueueMember
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'member_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_queue_member" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `patch_routing_queue_member`")
+        # verify the required parameter 'member_id' is set
+        if ('member_id' not in params) or (params['member_id'] is None):
+            raise ValueError("Missing the required parameter `member_id` when calling `patch_routing_queue_member`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_queue_member`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/members/{memberId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+        if 'member_id' in params:
+            path_params['memberId'] = params['member_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueueMember',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_routing_queue_members(self, queue_id, body, **kwargs):
+        """
+        Join or unjoin a set of users for a queue
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_queue_members(queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param list[QueueMember] body: Queue Members (required)
+        :return: QueueMemberEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_queue_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `patch_routing_queue_members`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_queue_members`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueueMemberEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_routing_queue_user(self, queue_id, member_id, body, **kwargs):
         """
         DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
@@ -5133,6 +5586,93 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Language',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_queue_members(self, queue_id, body, **kwargs):
+        """
+        Bulk add or delete up to 100 queue members
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_queue_members(queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param list[WritableEntity] body: Queue Members (required)
+        :param bool delete: True to delete queue members
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'body', 'delete']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_queue_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `post_routing_queue_members`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_queue_members`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/members'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+        if 'delete' in params:
+            query_params['delete'] = params['delete']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

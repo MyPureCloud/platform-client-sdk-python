@@ -40,20 +40,23 @@ class RecordingSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'max_simultaneous_streams': 'int'
+            'max_simultaneous_streams': 'int',
+            'max_configurable_screen_recording_streams': 'int'
         }
 
         self.attribute_map = {
-            'max_simultaneous_streams': 'maxSimultaneousStreams'
+            'max_simultaneous_streams': 'maxSimultaneousStreams',
+            'max_configurable_screen_recording_streams': 'maxConfigurableScreenRecordingStreams'
         }
 
         self._max_simultaneous_streams = None
+        self._max_configurable_screen_recording_streams = None
 
     @property
     def max_simultaneous_streams(self):
         """
         Gets the max_simultaneous_streams of this RecordingSettings.
-
+        Maximum number of simultaneous screen recording streams
 
         :return: The max_simultaneous_streams of this RecordingSettings.
         :rtype: int
@@ -64,13 +67,36 @@ class RecordingSettings(object):
     def max_simultaneous_streams(self, max_simultaneous_streams):
         """
         Sets the max_simultaneous_streams of this RecordingSettings.
-
+        Maximum number of simultaneous screen recording streams
 
         :param max_simultaneous_streams: The max_simultaneous_streams of this RecordingSettings.
         :type: int
         """
         
         self._max_simultaneous_streams = max_simultaneous_streams
+
+    @property
+    def max_configurable_screen_recording_streams(self):
+        """
+        Gets the max_configurable_screen_recording_streams of this RecordingSettings.
+        Upper limit that maxSimultaneousStreams can be configured
+
+        :return: The max_configurable_screen_recording_streams of this RecordingSettings.
+        :rtype: int
+        """
+        return self._max_configurable_screen_recording_streams
+
+    @max_configurable_screen_recording_streams.setter
+    def max_configurable_screen_recording_streams(self, max_configurable_screen_recording_streams):
+        """
+        Sets the max_configurable_screen_recording_streams of this RecordingSettings.
+        Upper limit that maxSimultaneousStreams can be configured
+
+        :param max_configurable_screen_recording_streams: The max_configurable_screen_recording_streams of this RecordingSettings.
+        :type: int
+        """
+        
+        self._max_configurable_screen_recording_streams = max_configurable_screen_recording_streams
 
     def to_dict(self):
         """

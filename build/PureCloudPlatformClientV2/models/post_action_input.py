@@ -68,7 +68,7 @@ class PostActionInput(object):
     def category(self):
         """
         Gets the category of this PostActionInput.
-        Category of action
+        Category of action, Can be up to 256 characters long
 
         :return: The category of this PostActionInput.
         :rtype: str
@@ -79,7 +79,7 @@ class PostActionInput(object):
     def category(self, category):
         """
         Sets the category of this PostActionInput.
-        Category of action
+        Category of action, Can be up to 256 characters long
 
         :param category: The category of this PostActionInput.
         :type: str
@@ -91,7 +91,7 @@ class PostActionInput(object):
     def name(self):
         """
         Gets the name of this PostActionInput.
-        Name of action
+        Name of action, Can be up to 256 characters long
 
         :return: The name of this PostActionInput.
         :rtype: str
@@ -102,7 +102,7 @@ class PostActionInput(object):
     def name(self, name):
         """
         Sets the name of this PostActionInput.
-        Name of action
+        Name of action, Can be up to 256 characters long
 
         :param name: The name of this PostActionInput.
         :type: str

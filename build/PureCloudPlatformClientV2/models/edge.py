@@ -994,7 +994,7 @@ class Edge(object):
     def call_draining_state(self):
         """
         Gets the call_draining_state of this Edge.
-
+        The current state of the Edge's call draining process before it can be safely rebooted or updated.
 
         :return: The call_draining_state of this Edge.
         :rtype: str
@@ -1005,7 +1005,7 @@ class Edge(object):
     def call_draining_state(self, call_draining_state):
         """
         Sets the call_draining_state of this Edge.
-
+        The current state of the Edge's call draining process before it can be safely rebooted or updated.
 
         :param call_draining_state: The call_draining_state of this Edge.
         :type: str
@@ -1021,7 +1021,7 @@ class Edge(object):
     def conversation_count(self):
         """
         Gets the conversation_count of this Edge.
-
+        The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.
 
         :return: The conversation_count of this Edge.
         :rtype: int
@@ -1032,7 +1032,7 @@ class Edge(object):
     def conversation_count(self, conversation_count):
         """
         Sets the conversation_count of this Edge.
-
+        The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.
 
         :param conversation_count: The conversation_count of this Edge.
         :type: int

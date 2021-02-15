@@ -52,6 +52,7 @@ class AgentActivity(object):
             'highest_critical_score': 'float',
             'lowest_critical_score': 'float',
             'agent_evaluator_activity_list': 'list[AgentEvaluatorActivity]',
+            'num_evaluations_without_view_permission': 'int',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class AgentActivity(object):
             'highest_critical_score': 'highestCriticalScore',
             'lowest_critical_score': 'lowestCriticalScore',
             'agent_evaluator_activity_list': 'agentEvaluatorActivityList',
+            'num_evaluations_without_view_permission': 'numEvaluationsWithoutViewPermission',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +85,7 @@ class AgentActivity(object):
         self._highest_critical_score = None
         self._lowest_critical_score = None
         self._agent_evaluator_activity_list = None
+        self._num_evaluations_without_view_permission = None
         self._self_uri = None
 
     @property
@@ -360,6 +363,29 @@ class AgentActivity(object):
         """
         
         self._agent_evaluator_activity_list = agent_evaluator_activity_list
+
+    @property
+    def num_evaluations_without_view_permission(self):
+        """
+        Gets the num_evaluations_without_view_permission of this AgentActivity.
+
+
+        :return: The num_evaluations_without_view_permission of this AgentActivity.
+        :rtype: int
+        """
+        return self._num_evaluations_without_view_permission
+
+    @num_evaluations_without_view_permission.setter
+    def num_evaluations_without_view_permission(self, num_evaluations_without_view_permission):
+        """
+        Sets the num_evaluations_without_view_permission of this AgentActivity.
+
+
+        :param num_evaluations_without_view_permission: The num_evaluations_without_view_permission of this AgentActivity.
+        :type: int
+        """
+        
+        self._num_evaluations_without_view_permission = num_evaluations_without_view_permission
 
     @property
     def self_uri(self):

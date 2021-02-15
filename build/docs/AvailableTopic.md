@@ -10,6 +10,9 @@ title: AvailableTopic
 | **description** | **str** |  | [optional] |
 | **id** | **str** |  | [optional] |
 | **requires_permissions** | **list[str]** | Permissions required to subscribe to the topic | [optional] |
+| **requires_division_permissions** | **bool** | True if the subscribing user must belong to the same division as the topic object ID | [optional] |
+| **enforced** | **bool** | Whether or not the permissions on this topic are enforced | [optional] |
+| **visibility** | **str** | Visibility of this topic (Public or Preview) | [optional] |
 | **schema** | **dict(str, object)** |  | [optional] |
 | **requires_current_user** | **bool** | True if the topic user ID is required to match the subscribing user ID | [optional] |
 | **requires_current_user_or_permission** | **bool** | True if permissions are only required when the topic user ID does not match the subscribing user ID | [optional] |

@@ -62,7 +62,7 @@ class UpdateActionInput(object):
     def category(self):
         """
         Gets the category of this UpdateActionInput.
-        Category of action
+        Category of action, Can be up to 256 characters long
 
         :return: The category of this UpdateActionInput.
         :rtype: str
@@ -73,7 +73,7 @@ class UpdateActionInput(object):
     def category(self, category):
         """
         Sets the category of this UpdateActionInput.
-        Category of action
+        Category of action, Can be up to 256 characters long
 
         :param category: The category of this UpdateActionInput.
         :type: str
@@ -85,7 +85,7 @@ class UpdateActionInput(object):
     def name(self):
         """
         Gets the name of this UpdateActionInput.
-        Name of action
+        Name of action, Can be up to 256 characters long
 
         :return: The name of this UpdateActionInput.
         :rtype: str
@@ -96,7 +96,7 @@ class UpdateActionInput(object):
     def name(self, name):
         """
         Sets the name of this UpdateActionInput.
-        Name of action
+        Name of action, Can be up to 256 characters long
 
         :param name: The name of this UpdateActionInput.
         :type: str

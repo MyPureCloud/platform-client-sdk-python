@@ -46,6 +46,243 @@ class JourneyApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_journey_actionmap(self, action_map_id, **kwargs):
+        """
+        Delete single action map.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_journey_actionmap(action_map_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_map_id: ID of the action map. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_map_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_journey_actionmap" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_map_id' is set
+        if ('action_map_id' not in params) or (params['action_map_id'] is None):
+            raise ValueError("Missing the required parameter `action_map_id` when calling `delete_journey_actionmap`")
+
+
+        resource_path = '/api/v2/journey/actionmaps/{actionMapId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_map_id' in params:
+            path_params['actionMapId'] = params['action_map_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_journey_actiontemplate(self, action_template_id, **kwargs):
+        """
+        Delete a single action template.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_journey_actiontemplate(action_template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_template_id: ID of the action template. (required)
+        :param bool hard_delete: Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_template_id', 'hard_delete']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_journey_actiontemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_template_id' is set
+        if ('action_template_id' not in params) or (params['action_template_id'] is None):
+            raise ValueError("Missing the required parameter `action_template_id` when calling `delete_journey_actiontemplate`")
+
+
+        resource_path = '/api/v2/journey/actiontemplates/{actionTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_template_id' in params:
+            path_params['actionTemplateId'] = params['action_template_id']
+
+        query_params = {}
+        if 'hard_delete' in params:
+            query_params['hardDelete'] = params['hard_delete']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_journey_outcome(self, outcome_id, **kwargs):
+        """
+        Delete an outcome.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_journey_outcome(outcome_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str outcome_id: ID of the outcome. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['outcome_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_journey_outcome" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'outcome_id' is set
+        if ('outcome_id' not in params) or (params['outcome_id'] is None):
+            raise ValueError("Missing the required parameter `outcome_id` when calling `delete_journey_outcome`")
+
+
+        resource_path = '/api/v2/journey/outcomes/{outcomeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'outcome_id' in params:
+            path_params['outcomeId'] = params['outcome_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_journey_segment(self, segment_id, **kwargs):
         """
         Delete a segment.
@@ -120,6 +357,174 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_actionmap(self, action_map_id, **kwargs):
+        """
+        Retrieve a single action map.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_actionmap(action_map_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_map_id: ID of the action map. (required)
+        :return: ActionMap
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_map_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_actionmap" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_map_id' is set
+        if ('action_map_id' not in params) or (params['action_map_id'] is None):
+            raise ValueError("Missing the required parameter `action_map_id` when calling `get_journey_actionmap`")
+
+
+        resource_path = '/api/v2/journey/actionmaps/{actionMapId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_map_id' in params:
+            path_params['actionMapId'] = params['action_map_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionMap',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_actionmaps(self, **kwargs):
+        """
+        Retrieve all action maps.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_actionmaps(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+        :param str filter_field: Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
+        :param str filter_value: Value to filter by. Requires 'filterValue' to also be set.
+        :param list[str] action_map_ids: IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+        :return: ActionMapListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'filter_field', 'filter_value', 'action_map_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_actionmaps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/actionmaps'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'filter_field' in params:
+            query_params['filterField'] = params['filter_field']
+        if 'filter_value' in params:
+            query_params['filterValue'] = params['filter_value']
+        if 'action_map_ids' in params:
+            query_params['actionMapIds'] = params['action_map_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionMapListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -276,6 +681,333 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionTargetListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_actiontemplate(self, action_template_id, **kwargs):
+        """
+        Retrieve a single action template.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_actiontemplate(action_template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_template_id: ID of the action template. (required)
+        :return: ActionTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_template_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_actiontemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_template_id' is set
+        if ('action_template_id' not in params) or (params['action_template_id'] is None):
+            raise ValueError("Missing the required parameter `action_template_id` when calling `get_journey_actiontemplate`")
+
+
+        resource_path = '/api/v2/journey/actiontemplates/{actionTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_template_id' in params:
+            path_params['actionTemplateId'] = params['action_template_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionTemplate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_actiontemplates(self, **kwargs):
+        """
+        Retrieve all action templates.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_actiontemplates(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
+        :param str media_type: Media type
+        :param str state: Action template state
+        :return: ActionTemplateListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'media_type', 'state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_actiontemplates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/actiontemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'media_type' in params:
+            query_params['mediaType'] = params['media_type']
+        if 'state' in params:
+            query_params['state'] = params['state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionTemplateListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_outcome(self, outcome_id, **kwargs):
+        """
+        Retrieve a single outcome.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_outcome(outcome_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str outcome_id: ID of the outcome. (required)
+        :return: Outcome
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['outcome_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_outcome" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'outcome_id' is set
+        if ('outcome_id' not in params) or (params['outcome_id'] is None):
+            raise ValueError("Missing the required parameter `outcome_id` when calling `get_journey_outcome`")
+
+
+        resource_path = '/api/v2/journey/outcomes/{outcomeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'outcome_id' in params:
+            path_params['outcomeId'] = params['outcome_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Outcome',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_outcomes(self, **kwargs):
+        """
+        Retrieve all outcomes.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_outcomes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+        :param list[str] outcome_ids: IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+        :return: OutcomeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'outcome_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_outcomes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/outcomes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'outcome_ids' in params:
+            query_params['outcomeIds'] = params['outcome_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutcomeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -445,6 +1177,87 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_journey_actionmap(self, action_map_id, **kwargs):
+        """
+        Update single action map.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_journey_actionmap(action_map_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_map_id: ID of the action map. (required)
+        :param PatchActionMap body: 
+        :return: ActionMap
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_map_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_journey_actionmap" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_map_id' is set
+        if ('action_map_id' not in params) or (params['action_map_id'] is None):
+            raise ValueError("Missing the required parameter `action_map_id` when calling `patch_journey_actionmap`")
+
+
+        resource_path = '/api/v2/journey/actionmaps/{actionMapId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_map_id' in params:
+            path_params['actionMapId'] = params['action_map_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionMap',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_journey_actiontarget(self, action_target_id, **kwargs):
         """
         Update a single action target.
@@ -522,6 +1335,168 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionTarget',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_journey_actiontemplate(self, action_template_id, **kwargs):
+        """
+        Update a single action template.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_journey_actiontemplate(action_template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_template_id: ID of the action template. (required)
+        :param PatchActionTemplate body: 
+        :return: ActionTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_template_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_journey_actiontemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_template_id' is set
+        if ('action_template_id' not in params) or (params['action_template_id'] is None):
+            raise ValueError("Missing the required parameter `action_template_id` when calling `patch_journey_actiontemplate`")
+
+
+        resource_path = '/api/v2/journey/actiontemplates/{actionTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_template_id' in params:
+            path_params['actionTemplateId'] = params['action_template_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionTemplate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_journey_outcome(self, outcome_id, **kwargs):
+        """
+        Update an outcome.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_journey_outcome(outcome_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str outcome_id: ID of the outcome. (required)
+        :param PatchOutcome body: 
+        :return: Outcome
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['outcome_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_journey_outcome" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'outcome_id' is set
+        if ('outcome_id' not in params) or (params['outcome_id'] is None):
+            raise ValueError("Missing the required parameter `outcome_id` when calling `patch_journey_outcome`")
+
+
+        resource_path = '/api/v2/journey/outcomes/{outcomeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'outcome_id' in params:
+            path_params['outcomeId'] = params['outcome_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Outcome',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -681,6 +1656,231 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_journey_actionmaps(self, **kwargs):
+        """
+        Create an action map.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_actionmaps(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ActionMap body: 
+        :return: ActionMap
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_actionmaps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/actionmaps'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionMap',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_journey_actiontemplates(self, **kwargs):
+        """
+        Create a single action template.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_actiontemplates(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ActionTemplate body: 
+        :return: ActionTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_actiontemplates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/actiontemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionTemplate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_journey_outcomes(self, **kwargs):
+        """
+        Create an outcome.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_outcomes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param Outcome body: 
+        :return: Outcome
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_outcomes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/outcomes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Outcome',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -43,6 +43,9 @@ class AvailableTopic(object):
             'description': 'str',
             'id': 'str',
             'requires_permissions': 'list[str]',
+            'requires_division_permissions': 'bool',
+            'enforced': 'bool',
+            'visibility': 'str',
             'schema': 'dict(str, object)',
             'requires_current_user': 'bool',
             'requires_current_user_or_permission': 'bool',
@@ -54,6 +57,9 @@ class AvailableTopic(object):
             'description': 'description',
             'id': 'id',
             'requires_permissions': 'requiresPermissions',
+            'requires_division_permissions': 'requiresDivisionPermissions',
+            'enforced': 'enforced',
+            'visibility': 'visibility',
             'schema': 'schema',
             'requires_current_user': 'requiresCurrentUser',
             'requires_current_user_or_permission': 'requiresCurrentUserOrPermission',
@@ -64,6 +70,9 @@ class AvailableTopic(object):
         self._description = None
         self._id = None
         self._requires_permissions = None
+        self._requires_division_permissions = None
+        self._enforced = None
+        self._visibility = None
         self._schema = None
         self._requires_current_user = None
         self._requires_current_user_or_permission = None
@@ -138,6 +147,79 @@ class AvailableTopic(object):
         """
         
         self._requires_permissions = requires_permissions
+
+    @property
+    def requires_division_permissions(self):
+        """
+        Gets the requires_division_permissions of this AvailableTopic.
+        True if the subscribing user must belong to the same division as the topic object ID
+
+        :return: The requires_division_permissions of this AvailableTopic.
+        :rtype: bool
+        """
+        return self._requires_division_permissions
+
+    @requires_division_permissions.setter
+    def requires_division_permissions(self, requires_division_permissions):
+        """
+        Sets the requires_division_permissions of this AvailableTopic.
+        True if the subscribing user must belong to the same division as the topic object ID
+
+        :param requires_division_permissions: The requires_division_permissions of this AvailableTopic.
+        :type: bool
+        """
+        
+        self._requires_division_permissions = requires_division_permissions
+
+    @property
+    def enforced(self):
+        """
+        Gets the enforced of this AvailableTopic.
+        Whether or not the permissions on this topic are enforced
+
+        :return: The enforced of this AvailableTopic.
+        :rtype: bool
+        """
+        return self._enforced
+
+    @enforced.setter
+    def enforced(self, enforced):
+        """
+        Sets the enforced of this AvailableTopic.
+        Whether or not the permissions on this topic are enforced
+
+        :param enforced: The enforced of this AvailableTopic.
+        :type: bool
+        """
+        
+        self._enforced = enforced
+
+    @property
+    def visibility(self):
+        """
+        Gets the visibility of this AvailableTopic.
+        Visibility of this topic (Public or Preview)
+
+        :return: The visibility of this AvailableTopic.
+        :rtype: str
+        """
+        return self._visibility
+
+    @visibility.setter
+    def visibility(self, visibility):
+        """
+        Sets the visibility of this AvailableTopic.
+        Visibility of this topic (Public or Preview)
+
+        :param visibility: The visibility of this AvailableTopic.
+        :type: str
+        """
+        allowed_values = ["Public", "Preview"]
+        if visibility.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for visibility -> " + visibility)
+            self._visibility = "outdated_sdk_version"
+        else:
+            self._visibility = visibility
 
     @property
     def schema(self):

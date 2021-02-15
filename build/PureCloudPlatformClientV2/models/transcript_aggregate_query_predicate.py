@@ -108,7 +108,7 @@ class TranscriptAggregateQueryPredicate(object):
         :param dimension: The dimension of this TranscriptAggregateQueryPredicate.
         :type: str
         """
-        allowed_values = ["addressFrom", "addressTo", "ani", "channel", "conversationId", "direction", "divisionId", "dnis", "flowId", "mediaType", "messageType", "queueId", "teamId", "topic", "userId"]
+        allowed_values = ["addressFrom", "addressTo", "ani", "channel", "conversationId", "direction", "divisionId", "dnis", "flowId", "mediaType", "messageType", "queueId", "teamId", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

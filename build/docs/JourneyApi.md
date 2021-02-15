@@ -8,16 +8,183 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_journey_actionmap**](JourneyApi.html#delete_journey_actionmap) | Delete single action map.|
+|[**delete_journey_actiontemplate**](JourneyApi.html#delete_journey_actiontemplate) | Delete a single action template.|
+|[**delete_journey_outcome**](JourneyApi.html#delete_journey_outcome) | Delete an outcome.|
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
+|[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
+|[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
 |[**get_journey_actiontarget**](JourneyApi.html#get_journey_actiontarget) | Retrieve a single action target.|
 |[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
+|[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
+|[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
+|[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
+|[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
 |[**get_journey_segment**](JourneyApi.html#get_journey_segment) | Retrieve a single segment.|
 |[**get_journey_segments**](JourneyApi.html#get_journey_segments) | Retrieve all segments.|
+|[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
+|[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
+|[**patch_journey_outcome**](JourneyApi.html#patch_journey_outcome) | Update an outcome.|
 |[**patch_journey_segment**](JourneyApi.html#patch_journey_segment) | Update a segment.|
 |[**post_analytics_journeys_aggregates_query**](JourneyApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
+|[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
+|[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
+|[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
 {: class="table table-striped"}
+
+<a name="delete_journey_actionmap"></a>
+
+##  delete_journey_actionmap(action_map_id)
+
+
+
+Delete single action map.
+
+
+
+Wraps DELETE /api/v2/journey/actionmaps/{actionMapId} 
+
+Requires ANY permissions: 
+
+* journey:actionmap:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_map_id = 'action_map_id_example' # str | ID of the action map.
+
+try:
+    # Delete single action map.
+    api_instance.delete_journey_actionmap(action_map_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_actionmap: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_map_id** | **str**| ID of the action map. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_journey_actiontemplate"></a>
+
+##  delete_journey_actiontemplate(action_template_id, hard_delete=hard_delete)
+
+
+
+Delete a single action template.
+
+
+
+Wraps DELETE /api/v2/journey/actiontemplates/{actionTemplateId} 
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_template_id = 'action_template_id_example' # str | ID of the action template.
+hard_delete = true # bool | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
+
+try:
+    # Delete a single action template.
+    api_instance.delete_journey_actiontemplate(action_template_id, hard_delete=hard_delete)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_actiontemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_template_id** | **str**| ID of the action template. |  |
+| **hard_delete** | **bool**| Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_journey_outcome"></a>
+
+##  delete_journey_outcome(outcome_id)
+
+
+
+Delete an outcome.
+
+
+
+Wraps DELETE /api/v2/journey/outcomes/{outcomeId} 
+
+Requires ANY permissions: 
+
+* journey:outcome:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+outcome_id = 'outcome_id_example' # str | ID of the outcome.
+
+try:
+    # Delete an outcome.
+    api_instance.delete_journey_outcome(outcome_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_outcome: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outcome_id** | **str**| ID of the outcome. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_journey_segment"></a>
 
@@ -68,6 +235,118 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_journey_actionmap"></a>
+
+## [**ActionMap**](ActionMap.html) get_journey_actionmap(action_map_id)
+
+
+
+Retrieve a single action map.
+
+
+
+Wraps GET /api/v2/journey/actionmaps/{actionMapId} 
+
+Requires ANY permissions: 
+
+* journey:actionmap:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_map_id = 'action_map_id_example' # str | ID of the action map.
+
+try:
+    # Retrieve a single action map.
+    api_response = api_instance.get_journey_actionmap(action_map_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actionmap: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_map_id** | **str**| ID of the action map. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
+<a name="get_journey_actionmaps"></a>
+
+## [**ActionMapListing**](ActionMapListing.html) get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids)
+
+
+
+Retrieve all action maps.
+
+
+
+Wraps GET /api/v2/journey/actionmaps 
+
+Requires ANY permissions: 
+
+* journey:actionmap:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+filter_field = 'filter_field_example' # str | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. (optional)
+filter_value = 'filter_value_example' # str | Value to filter by. Requires 'filterValue' to also be set. (optional)
+action_map_ids = ['action_map_ids_example'] # list[str] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. (optional)
+
+try:
+    # Retrieve all action maps.
+    api_response = api_instance.get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actionmaps: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+| **filter_field** | **str**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
+| **filter_value** | **str**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
+| **action_map_ids** | [**list[str]**](str.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionMapListing**](ActionMapListing.html)
 
 <a name="get_journey_actiontarget"></a>
 
@@ -172,6 +451,224 @@ except ApiException as e:
 ### Return type
 
 [**ActionTargetListing**](ActionTargetListing.html)
+
+<a name="get_journey_actiontemplate"></a>
+
+## [**ActionTemplate**](ActionTemplate.html) get_journey_actiontemplate(action_template_id)
+
+
+
+Retrieve a single action template.
+
+
+
+Wraps GET /api/v2/journey/actiontemplates/{actionTemplateId} 
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_template_id = 'action_template_id_example' # str | ID of the action template.
+
+try:
+    # Retrieve a single action template.
+    api_response = api_instance.get_journey_actiontemplate(action_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actiontemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_template_id** | **str**| ID of the action template. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="get_journey_actiontemplates"></a>
+
+## [**ActionTemplateListing**](ActionTemplateListing.html) get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state)
+
+
+
+Retrieve all action templates.
+
+
+
+Wraps GET /api/v2/journey/actiontemplates 
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). (optional)
+media_type = 'media_type_example' # str | Media type (optional)
+state = 'state_example' # str | Action template state (optional)
+
+try:
+    # Retrieve all action templates.
+    api_response = api_instance.get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actiontemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional]  |
+| **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow |
+| **state** | **str**| Action template state | [optional] <br />**Values**: Active, Inactive, Deleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionTemplateListing**](ActionTemplateListing.html)
+
+<a name="get_journey_outcome"></a>
+
+## [**Outcome**](Outcome.html) get_journey_outcome(outcome_id)
+
+
+
+Retrieve a single outcome.
+
+
+
+Wraps GET /api/v2/journey/outcomes/{outcomeId} 
+
+Requires ANY permissions: 
+
+* journey:outcome:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+outcome_id = 'outcome_id_example' # str | ID of the outcome.
+
+try:
+    # Retrieve a single outcome.
+    api_response = api_instance.get_journey_outcome(outcome_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcome: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outcome_id** | **str**| ID of the outcome. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Outcome**](Outcome.html)
+
+<a name="get_journey_outcomes"></a>
+
+## [**OutcomeListing**](OutcomeListing.html) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids)
+
+
+
+Retrieve all outcomes.
+
+
+
+Wraps GET /api/v2/journey/outcomes 
+
+Requires ANY permissions: 
+
+* journey:outcome:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+outcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. (optional)
+
+try:
+    # Retrieve all outcomes.
+    api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+| **outcome_ids** | [**list[str]**](str.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomeListing**](OutcomeListing.html)
 
 <a name="get_journey_segment"></a>
 
@@ -283,6 +780,59 @@ except ApiException as e:
 
 [**SegmentListing**](SegmentListing.html)
 
+<a name="patch_journey_actionmap"></a>
+
+## [**ActionMap**](ActionMap.html) patch_journey_actionmap(action_map_id, body=body)
+
+
+
+Update single action map.
+
+
+
+Wraps PATCH /api/v2/journey/actionmaps/{actionMapId} 
+
+Requires ANY permissions: 
+
+* journey:actionmap:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_map_id = 'action_map_id_example' # str | ID of the action map.
+body = PureCloudPlatformClientV2.PatchActionMap() # PatchActionMap |  (optional)
+
+try:
+    # Update single action map.
+    api_response = api_instance.patch_journey_actionmap(action_map_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->patch_journey_actionmap: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_map_id** | **str**| ID of the action map. |  |
+| **body** | [**PatchActionMap**](PatchActionMap.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
 <a name="patch_journey_actiontarget"></a>
 
 ## [**ActionTarget**](ActionTarget.html) patch_journey_actiontarget(action_target_id, body=body)
@@ -335,6 +885,112 @@ except ApiException as e:
 ### Return type
 
 [**ActionTarget**](ActionTarget.html)
+
+<a name="patch_journey_actiontemplate"></a>
+
+## [**ActionTemplate**](ActionTemplate.html) patch_journey_actiontemplate(action_template_id, body=body)
+
+
+
+Update a single action template.
+
+
+
+Wraps PATCH /api/v2/journey/actiontemplates/{actionTemplateId} 
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+action_template_id = 'action_template_id_example' # str | ID of the action template.
+body = PureCloudPlatformClientV2.PatchActionTemplate() # PatchActionTemplate |  (optional)
+
+try:
+    # Update a single action template.
+    api_response = api_instance.patch_journey_actiontemplate(action_template_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->patch_journey_actiontemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_template_id** | **str**| ID of the action template. |  |
+| **body** | [**PatchActionTemplate**](PatchActionTemplate.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="patch_journey_outcome"></a>
+
+## [**Outcome**](Outcome.html) patch_journey_outcome(outcome_id, body=body)
+
+
+
+Update an outcome.
+
+
+
+Wraps PATCH /api/v2/journey/outcomes/{outcomeId} 
+
+Requires ANY permissions: 
+
+* journey:outcome:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+outcome_id = 'outcome_id_example' # str | ID of the outcome.
+body = PureCloudPlatformClientV2.PatchOutcome() # PatchOutcome |  (optional)
+
+try:
+    # Update an outcome.
+    api_response = api_instance.patch_journey_outcome(outcome_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->patch_journey_outcome: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **outcome_id** | **str**| ID of the outcome. |  |
+| **body** | [**PatchOutcome**](PatchOutcome.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Outcome**](Outcome.html)
 
 <a name="patch_journey_segment"></a>
 
@@ -439,6 +1095,159 @@ except ApiException as e:
 ### Return type
 
 [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+
+<a name="post_journey_actionmaps"></a>
+
+## [**ActionMap**](ActionMap.html) post_journey_actionmaps(body=body)
+
+
+
+Create an action map.
+
+
+
+Wraps POST /api/v2/journey/actionmaps 
+
+Requires ANY permissions: 
+
+* journey:actionmap:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.ActionMap() # ActionMap |  (optional)
+
+try:
+    # Create an action map.
+    api_response = api_instance.post_journey_actionmaps(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_actionmaps: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ActionMap**](ActionMap.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
+<a name="post_journey_actiontemplates"></a>
+
+## [**ActionTemplate**](ActionTemplate.html) post_journey_actiontemplates(body=body)
+
+
+
+Create a single action template.
+
+
+
+Wraps POST /api/v2/journey/actiontemplates 
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.ActionTemplate() # ActionTemplate |  (optional)
+
+try:
+    # Create a single action template.
+    api_response = api_instance.post_journey_actiontemplates(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_actiontemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ActionTemplate**](ActionTemplate.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="post_journey_outcomes"></a>
+
+## [**Outcome**](Outcome.html) post_journey_outcomes(body=body)
+
+
+
+Create an outcome.
+
+
+
+Wraps POST /api/v2/journey/outcomes 
+
+Requires ANY permissions: 
+
+* journey:outcome:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.Outcome() # Outcome |  (optional)
+
+try:
+    # Create an outcome.
+    api_response = api_instance.post_journey_outcomes(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_outcomes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Outcome**](Outcome.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Outcome**](Outcome.html)
 
 <a name="post_journey_segments"></a>
 

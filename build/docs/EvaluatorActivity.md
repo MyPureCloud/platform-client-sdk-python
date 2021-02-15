@@ -16,6 +16,7 @@ title: EvaluatorActivity
 | **num_calibrations_assigned** | **int** |  | [optional] |
 | **num_calibrations_started** | **int** |  | [optional] |
 | **num_calibrations_completed** | **int** |  | [optional] |
+| **num_evaluations_without_view_permission** | **int** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

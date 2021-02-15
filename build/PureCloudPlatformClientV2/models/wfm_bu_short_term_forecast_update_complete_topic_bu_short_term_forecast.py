@@ -51,7 +51,8 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast(object):
             'time_zone': 'str',
             'planning_groups_version': 'int',
             'week_count': 'int',
-            'metadata': 'WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata'
+            'metadata': 'WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata',
+            'can_use_for_scheduling': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast(object):
             'time_zone': 'timeZone',
             'planning_groups_version': 'planningGroupsVersion',
             'week_count': 'weekCount',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'can_use_for_scheduling': 'canUseForScheduling'
         }
 
         self._id = None
@@ -81,6 +83,7 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast(object):
         self._planning_groups_version = None
         self._week_count = None
         self._metadata = None
+        self._can_use_for_scheduling = None
 
     @property
     def id(self):
@@ -361,6 +364,29 @@ class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast(object):
         """
         
         self._metadata = metadata
+
+    @property
+    def can_use_for_scheduling(self):
+        """
+        Gets the can_use_for_scheduling of this WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.
+
+
+        :return: The can_use_for_scheduling of this WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.
+        :rtype: bool
+        """
+        return self._can_use_for_scheduling
+
+    @can_use_for_scheduling.setter
+    def can_use_for_scheduling(self, can_use_for_scheduling):
+        """
+        Sets the can_use_for_scheduling of this WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.
+
+
+        :param can_use_for_scheduling: The can_use_for_scheduling of this WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.
+        :type: bool
+        """
+        
+        self._can_use_for_scheduling = can_use_for_scheduling
 
     def to_dict(self):
         """

@@ -354,7 +354,7 @@ class OAuthClient(object):
     def authorized_grant_type(self):
         """
         Gets the authorized_grant_type of this OAuthClient.
-        The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
+        The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. PKCE-Enabled Code Authorization grant type - Code grant type which requires PKCE challenge and verifier to create tokens. Used in public clients for increased security. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
 
         :return: The authorized_grant_type of this OAuthClient.
         :rtype: str
@@ -365,12 +365,12 @@ class OAuthClient(object):
     def authorized_grant_type(self, authorized_grant_type):
         """
         Sets the authorized_grant_type of this OAuthClient.
-        The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
+        The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. PKCE-Enabled Code Authorization grant type - Code grant type which requires PKCE challenge and verifier to create tokens. Used in public clients for increased security. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
 
         :param authorized_grant_type: The authorized_grant_type of this OAuthClient.
         :type: str
         """
-        allowed_values = ["CODE", "TOKEN", "SAML2BEARER", "PASSWORD", "CLIENT_CREDENTIALS"]
+        allowed_values = ["CODE", "CODE_PKCE", "TOKEN", "SAML2BEARER", "PASSWORD", "CLIENT_CREDENTIALS"]
         if authorized_grant_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for authorized_grant_type -> " + authorized_grant_type)
             self._authorized_grant_type = "outdated_sdk_version"

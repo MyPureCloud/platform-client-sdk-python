@@ -68,7 +68,7 @@ void (empty response body)
 
 <a name="get_notifications_availabletopics"></a>
 
-## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) get_notifications_availabletopics(expand=expand)
+## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) get_notifications_availabletopics(expand=expand, include_preview=include_preview)
 
 
 
@@ -95,10 +95,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.NotificationsApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+include_preview = true # bool | Whether or not to include Preview topics (optional) (default to true)
 
 try:
     # Get available notification topics.
-    api_response = api_instance.get_notifications_availabletopics(expand=expand)
+    api_response = api_instance.get_notifications_availabletopics(expand=expand, include_preview=include_preview)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling NotificationsApi->get_notifications_availabletopics: %s\n" % e)
@@ -109,7 +110,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema, transports, publicApiTemplateUriPaths |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, enforced, schema, visibility, transports, publicApiTemplateUriPaths |
+| **include_preview** | **bool**| Whether or not to include Preview topics | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

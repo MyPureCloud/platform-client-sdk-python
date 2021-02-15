@@ -197,7 +197,7 @@ class OrphanRecording(object):
         :param provider_type: The provider_type of this OrphanRecording.
         :type: str
         """
-        allowed_values = ["EDGE", "CHAT", "EMAIL", "SCREEN_RECORDING"]
+        allowed_values = ["EDGE", "CHAT", "EMAIL", "SCREEN_RECORDING", "PUREENGAGE", "PURECONNECT"]
         if provider_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for provider_type -> " + provider_type)
             self._provider_type = "outdated_sdk_version"

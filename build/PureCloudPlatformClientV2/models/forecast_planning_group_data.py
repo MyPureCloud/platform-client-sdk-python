@@ -59,7 +59,7 @@ class ForecastPlanningGroupData(object):
     def planning_group_id(self):
         """
         Gets the planning_group_id of this ForecastPlanningGroupData.
-        The id of the planning group to which this data applies
+        The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration
 
         :return: The planning_group_id of this ForecastPlanningGroupData.
         :rtype: str
@@ -70,7 +70,7 @@ class ForecastPlanningGroupData(object):
     def planning_group_id(self, planning_group_id):
         """
         Sets the planning_group_id of this ForecastPlanningGroupData.
-        The id of the planning group to which this data applies
+        The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration
 
         :param planning_group_id: The planning_group_id of this ForecastPlanningGroupData.
         :type: str
