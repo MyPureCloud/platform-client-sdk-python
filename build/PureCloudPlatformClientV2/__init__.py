@@ -169,6 +169,8 @@ from .models.available_language_list import AvailableLanguageList
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.base_program_entity import BaseProgramEntity
+from .models.base_topic_entitiy import BaseTopicEntitiy
 from .models.batch_download_job_result import BatchDownloadJobResult
 from .models.batch_download_job_status_result import BatchDownloadJobStatusResult
 from .models.batch_download_job_submission import BatchDownloadJobSubmission
@@ -946,6 +948,7 @@ from .models.external_data_source import ExternalDataSource
 from .models.external_organization import ExternalOrganization
 from .models.external_organization_listing import ExternalOrganizationListing
 from .models.external_organization_trustor_link import ExternalOrganizationTrustorLink
+from .models.external_segment import ExternalSegment
 from .models.facebook_app_credentials import FacebookAppCredentials
 from .models.facebook_id import FacebookId
 from .models.facebook_integration import FacebookIntegration
@@ -1022,6 +1025,10 @@ from .models.gkn_documentation_search_criteria import GKNDocumentationSearchCrit
 from .models.gkn_documentation_search_request import GKNDocumentationSearchRequest
 from .models.gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .models.g_suite import GSuite
+from .models.general_program_job import GeneralProgramJob
+from .models.general_program_job_request import GeneralProgramJobRequest
+from .models.general_topic import GeneralTopic
+from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
 from .models.generic_saml import GenericSAML
 from .models.genesys_bot_connector import GenesysBotConnector
@@ -1174,6 +1181,8 @@ from .models.line_user_id import LineUserId
 from .models.list_item_component import ListItemComponent
 from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
+from .models.listed_program import ListedProgram
+from .models.listed_topic import ListedTopic
 from .models.local_encryption_configuration import LocalEncryptionConfiguration
 from .models.local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
@@ -1367,6 +1376,7 @@ from .models.patch_content_offer_style_properties import PatchContentOfferStyleP
 from .models.patch_content_offer_styling_configuration import PatchContentOfferStylingConfiguration
 from .models.patch_content_position_properties import PatchContentPositionProperties
 from .models.patch_cta_button_style_properties import PatchCtaButtonStyleProperties
+from .models.patch_external_segment import PatchExternalSegment
 from .models.patch_integration_action import PatchIntegrationAction
 from .models.patch_integration_action_fields import PatchIntegrationActionFields
 from .models.patch_outcome import PatchOutcome
@@ -1376,6 +1386,7 @@ from .models.patch_survey_question import PatchSurveyQuestion
 from .models.patch_text_style_properties import PatchTextStyleProperties
 from .models.patch_user import PatchUser
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
+from .models.permission_details import PermissionDetails
 from .models.permissions import Permissions
 from .models.phone import Phone
 from .models.phone_base import PhoneBase
@@ -1400,6 +1411,7 @@ from .models.phone_number_column import PhoneNumberColumn
 from .models.phone_number_status import PhoneNumberStatus
 from .models.phone_status import PhoneStatus
 from .models.phones_reboot import PhonesReboot
+from .models.phrase import Phrase
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
 from .models.planning_group import PlanningGroup
@@ -1427,6 +1439,11 @@ from .models.presence_detail_query_predicate import PresenceDetailQueryPredicate
 from .models.presence_event_organization_presence import PresenceEventOrganizationPresence
 from .models.presence_event_user_presence import PresenceEventUserPresence
 from .models.presence_expand import PresenceExpand
+from .models.program import Program
+from .models.program_job import ProgramJob
+from .models.program_job_request import ProgramJobRequest
+from .models.program_request import ProgramRequest
+from .models.programs_entity_listing import ProgramsEntityListing
 from .models.prompt import Prompt
 from .models.prompt_asset import PromptAsset
 from .models.prompt_asset_create import PromptAssetCreate
@@ -1912,7 +1929,7 @@ from .models.subscriber_response import SubscriberResponse
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
-from .models.supported_content import SupportedContent
+from .models.supported_content_reference import SupportedContentReference
 from .models.supported_language import SupportedLanguage
 from .models.survey import Survey
 from .models.survey_aggregate_data_container import SurveyAggregateDataContainer
@@ -1967,6 +1984,11 @@ from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
 from .models.token_info import TokenInfo
 from .models.token_info_cloned_user import TokenInfoClonedUser
+from .models.topic import Topic
+from .models.topic_job import TopicJob
+from .models.topic_job_request import TopicJobRequest
+from .models.topic_request import TopicRequest
+from .models.topics_entity_listing import TopicsEntityListing
 from .models.training_listing import TrainingListing
 from .models.transcript_aggregate_data_container import TranscriptAggregateDataContainer
 from .models.transcript_aggregate_query_clause import TranscriptAggregateQueryClause
@@ -2040,6 +2062,7 @@ from .models.twitter_id import TwitterId
 from .models.twitter_integration import TwitterIntegration
 from .models.twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .models.twitter_integration_request import TwitterIntegrationRequest
+from .models.unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus
 from .models.update_action_input import UpdateActionInput

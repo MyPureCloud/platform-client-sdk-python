@@ -6931,7 +6931,7 @@ except ApiException as e:
 
 <a name="post_conversations_messaging_integrations_facebook"></a>
 
-## [**FacebookIntegration**](FacebookIntegration.html) post_conversations_messaging_integrations_facebook(body, async=async)
+## [**FacebookIntegration**](FacebookIntegration.html) post_conversations_messaging_integrations_facebook(body)
 
 
 
@@ -6959,11 +6959,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.FacebookIntegrationRequest() # FacebookIntegrationRequest | FacebookIntegrationRequest
-async = false # bool | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished. (optional) (default to false)
 
 try:
     # Create a Facebook Integration
-    api_response = api_instance.post_conversations_messaging_integrations_facebook(body, async=async)
+    api_response = api_instance.post_conversations_messaging_integrations_facebook(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_facebook: %s\n" % e)
@@ -6975,7 +6974,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest |  |
-| **async** | **bool**| Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -6984,7 +6982,7 @@ except ApiException as e:
 
 <a name="post_conversations_messaging_integrations_line"></a>
 
-## [**LineIntegration**](LineIntegration.html) post_conversations_messaging_integrations_line(body, async=async)
+## [**LineIntegration**](LineIntegration.html) post_conversations_messaging_integrations_line(body)
 
 
 
@@ -7012,11 +7010,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.LineIntegrationRequest() # LineIntegrationRequest | LineIntegrationRequest
-async = false # bool | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished. (optional) (default to false)
 
 try:
     # Create a LINE messenger Integration
-    api_response = api_instance.post_conversations_messaging_integrations_line(body, async=async)
+    api_response = api_instance.post_conversations_messaging_integrations_line(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_line: %s\n" % e)
@@ -7028,7 +7025,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest |  |
-| **async** | **bool**| Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -7037,7 +7033,7 @@ except ApiException as e:
 
 <a name="post_conversations_messaging_integrations_twitter"></a>
 
-## [**TwitterIntegration**](TwitterIntegration.html) post_conversations_messaging_integrations_twitter(body, async=async)
+## [**TwitterIntegration**](TwitterIntegration.html) post_conversations_messaging_integrations_twitter(body)
 
 
 
@@ -7065,11 +7061,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.TwitterIntegrationRequest() # TwitterIntegrationRequest | TwitterIntegrationRequest
-async = false # bool | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished. (optional) (default to false)
 
 try:
     # Create a Twitter Integration
-    api_response = api_instance.post_conversations_messaging_integrations_twitter(body, async=async)
+    api_response = api_instance.post_conversations_messaging_integrations_twitter(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_twitter: %s\n" % e)
@@ -7081,7 +7076,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest |  |
-| **async** | **bool**| Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -7090,7 +7084,7 @@ except ApiException as e:
 
 <a name="post_conversations_messaging_integrations_whatsapp"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) post_conversations_messaging_integrations_whatsapp(body, async=async)
+## [**WhatsAppIntegration**](WhatsAppIntegration.html) post_conversations_messaging_integrations_whatsapp(body)
 
 
 
@@ -7118,11 +7112,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.WhatsAppIntegrationRequest() # WhatsAppIntegrationRequest | WhatsAppIntegrationRequest
-async = false # bool | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished. (optional) (default to false)
 
 try:
     # Create a WhatsApp Integration
-    api_response = api_instance.post_conversations_messaging_integrations_whatsapp(body, async=async)
+    api_response = api_instance.post_conversations_messaging_integrations_whatsapp(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_whatsapp: %s\n" % e)
@@ -7134,7 +7127,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest.html)| WhatsAppIntegrationRequest |  |
-| **async** | **bool**| Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

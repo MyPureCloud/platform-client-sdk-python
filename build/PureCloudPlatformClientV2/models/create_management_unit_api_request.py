@@ -187,7 +187,7 @@ class CreateManagementUnitApiRequest(object):
     def business_unit_id(self):
         """
         Gets the business_unit_id of this CreateManagementUnitApiRequest.
-        The id of the business unit to which this management unit belongs.  Required after business unit launch
+        The id of the business unit to which this management unit belongs
 
         :return: The business_unit_id of this CreateManagementUnitApiRequest.
         :rtype: str
@@ -198,7 +198,7 @@ class CreateManagementUnitApiRequest(object):
     def business_unit_id(self, business_unit_id):
         """
         Sets the business_unit_id of this CreateManagementUnitApiRequest.
-        The id of the business unit to which this management unit belongs.  Required after business unit launch
+        The id of the business unit to which this management unit belongs
 
         :param business_unit_id: The business_unit_id of this CreateManagementUnitApiRequest.
         :type: str

@@ -3106,7 +3106,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
         """
         Get management unit
-        
+        settings.shortTermForecasting is deprecated and now lives on the business unit
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4546,9 +4546,9 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: 
-        :param int page_number: 
-        :param str expand: 
+        :param int page_size: Deprecated, paging is not supported
+        :param int page_number: Deprecated, paging is not supported
+        :param str expand: Deprecated, expand settings on the single MU route
         :param str feature: 
         :param str division_id: 
         :return: ManagementUnitListing

@@ -44,7 +44,8 @@ class RoutingData(object):
             'language_id': 'str',
             'priority': 'int',
             'skill_ids': 'list[str]',
-            'preferred_agent_ids': 'list[str]'
+            'preferred_agent_ids': 'list[str]',
+            'scored_agents': 'list[ScoredAgent]'
         }
 
         self.attribute_map = {
@@ -52,7 +53,8 @@ class RoutingData(object):
             'language_id': 'languageId',
             'priority': 'priority',
             'skill_ids': 'skillIds',
-            'preferred_agent_ids': 'preferredAgentIds'
+            'preferred_agent_ids': 'preferredAgentIds',
+            'scored_agents': 'scoredAgents'
         }
 
         self._queue_id = None
@@ -60,6 +62,7 @@ class RoutingData(object):
         self._priority = None
         self._skill_ids = None
         self._preferred_agent_ids = None
+        self._scored_agents = None
 
     @property
     def queue_id(self):
@@ -175,6 +178,29 @@ class RoutingData(object):
         """
         
         self._preferred_agent_ids = preferred_agent_ids
+
+    @property
+    def scored_agents(self):
+        """
+        Gets the scored_agents of this RoutingData.
+        A list of scored agents for routing decisions
+
+        :return: The scored_agents of this RoutingData.
+        :rtype: list[ScoredAgent]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents):
+        """
+        Sets the scored_agents of this RoutingData.
+        A list of scored agents for routing decisions
+
+        :param scored_agents: The scored_agents of this RoutingData.
+        :type: list[ScoredAgent]
+        """
+        
+        self._scored_agents = scored_agents
 
     def to_dict(self):
         """

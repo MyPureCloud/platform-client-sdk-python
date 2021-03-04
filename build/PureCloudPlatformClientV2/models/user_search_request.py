@@ -269,7 +269,7 @@ class UserSearchRequest(object):
     def enforce_permissions(self):
         """
         Gets the enforce_permissions of this UserSearchRequest.
-        Enforce view permission on request
+        When set to true add additional search criteria to filter users by directory:user:view
 
         :return: The enforce_permissions of this UserSearchRequest.
         :rtype: bool
@@ -280,7 +280,7 @@ class UserSearchRequest(object):
     def enforce_permissions(self, enforce_permissions):
         """
         Sets the enforce_permissions of this UserSearchRequest.
-        Enforce view permission on request
+        When set to true add additional search criteria to filter users by directory:user:view
 
         :param enforce_permissions: The enforce_permissions of this UserSearchRequest.
         :type: bool

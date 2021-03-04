@@ -10898,13 +10898,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param FacebookIntegrationRequest body: FacebookIntegrationRequest (required)
-        :param bool async: Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
         :return: FacebookIntegration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'async']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -10926,8 +10925,6 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 
@@ -10979,13 +10976,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param LineIntegrationRequest body: LineIntegrationRequest (required)
-        :param bool async: Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
         :return: LineIntegration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'async']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -11007,8 +11003,6 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 
@@ -11060,13 +11054,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param TwitterIntegrationRequest body: TwitterIntegrationRequest (required)
-        :param bool async: Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
         :return: TwitterIntegration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'async']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -11088,8 +11081,6 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 
@@ -11141,13 +11132,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param WhatsAppIntegrationRequest body: WhatsAppIntegrationRequest (required)
-        :param bool async: Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
         :return: WhatsAppIntegration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'async']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -11169,8 +11159,6 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'async' in params:
-            query_params['async'] = params['async']
 
         header_params = {}
 

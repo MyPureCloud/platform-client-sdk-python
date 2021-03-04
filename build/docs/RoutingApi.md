@@ -3692,7 +3692,7 @@ except ApiException as e:
 
 <a name="post_routing_queue_members"></a>
 
-## str** post_routing_queue_members(queue_id, body, delete=delete)
+##  post_routing_queue_members(queue_id, body, delete=delete)
 
 
 
@@ -3726,8 +3726,7 @@ delete = false # bool | True to delete queue members (optional) (default to fals
 
 try:
     # Bulk add or delete up to 100 queue members
-    api_response = api_instance.post_routing_queue_members(queue_id, body, delete=delete)
-    pprint(api_response)
+    api_instance.post_routing_queue_members(queue_id, body, delete=delete)
 except ApiException as e:
     print("Exception when calling RoutingApi->post_routing_queue_members: %s\n" % e)
 ```
@@ -3744,11 +3743,11 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="post_routing_queue_users"></a>
 
-## str** post_routing_queue_users(queue_id, body, delete=delete)
+##  post_routing_queue_users(queue_id, body, delete=delete)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -3782,8 +3781,7 @@ delete = false # bool | True to delete queue members (optional) (default to fals
 
 try:
     # DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
-    api_response = api_instance.post_routing_queue_users(queue_id, body, delete=delete)
-    pprint(api_response)
+    api_instance.post_routing_queue_users(queue_id, body, delete=delete)
 except ApiException as e:
     print("Exception when calling RoutingApi->post_routing_queue_users: %s\n" % e)
 ```
@@ -3800,7 +3798,7 @@ except ApiException as e:
 
 ### Return type
 
-**str**
+void (empty response body)
 
 <a name="post_routing_queue_wrapupcodes"></a>
 

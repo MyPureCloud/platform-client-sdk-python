@@ -169,6 +169,8 @@ from .available_language_list import AvailableLanguageList
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .base_program_entity import BaseProgramEntity
+from .base_topic_entitiy import BaseTopicEntitiy
 from .batch_download_job_result import BatchDownloadJobResult
 from .batch_download_job_status_result import BatchDownloadJobStatusResult
 from .batch_download_job_submission import BatchDownloadJobSubmission
@@ -946,6 +948,7 @@ from .external_data_source import ExternalDataSource
 from .external_organization import ExternalOrganization
 from .external_organization_listing import ExternalOrganizationListing
 from .external_organization_trustor_link import ExternalOrganizationTrustorLink
+from .external_segment import ExternalSegment
 from .facebook_app_credentials import FacebookAppCredentials
 from .facebook_id import FacebookId
 from .facebook_integration import FacebookIntegration
@@ -1022,6 +1025,10 @@ from .gkn_documentation_search_criteria import GKNDocumentationSearchCriteria
 from .gkn_documentation_search_request import GKNDocumentationSearchRequest
 from .gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .g_suite import GSuite
+from .general_program_job import GeneralProgramJob
+from .general_program_job_request import GeneralProgramJobRequest
+from .general_topic import GeneralTopic
+from .general_topics_entity_listing import GeneralTopicsEntityListing
 from .generate_bu_forecast_request import GenerateBuForecastRequest
 from .generic_saml import GenericSAML
 from .genesys_bot_connector import GenesysBotConnector
@@ -1174,6 +1181,8 @@ from .line_user_id import LineUserId
 from .list_item_component import ListItemComponent
 from .list_wrapper_interval import ListWrapperInterval
 from .list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
+from .listed_program import ListedProgram
+from .listed_topic import ListedTopic
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_configuration_listing import LocalEncryptionConfigurationListing
 from .local_encryption_key_request import LocalEncryptionKeyRequest
@@ -1367,6 +1376,7 @@ from .patch_content_offer_style_properties import PatchContentOfferStyleProperti
 from .patch_content_offer_styling_configuration import PatchContentOfferStylingConfiguration
 from .patch_content_position_properties import PatchContentPositionProperties
 from .patch_cta_button_style_properties import PatchCtaButtonStyleProperties
+from .patch_external_segment import PatchExternalSegment
 from .patch_integration_action import PatchIntegrationAction
 from .patch_integration_action_fields import PatchIntegrationActionFields
 from .patch_outcome import PatchOutcome
@@ -1376,6 +1386,7 @@ from .patch_survey_question import PatchSurveyQuestion
 from .patch_text_style_properties import PatchTextStyleProperties
 from .patch_user import PatchUser
 from .permission_collection_entity_listing import PermissionCollectionEntityListing
+from .permission_details import PermissionDetails
 from .permissions import Permissions
 from .phone import Phone
 from .phone_base import PhoneBase
@@ -1400,6 +1411,7 @@ from .phone_number_column import PhoneNumberColumn
 from .phone_number_status import PhoneNumberStatus
 from .phone_status import PhoneStatus
 from .phones_reboot import PhonesReboot
+from .phrase import Phrase
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
 from .planning_group import PlanningGroup
@@ -1427,6 +1439,11 @@ from .presence_detail_query_predicate import PresenceDetailQueryPredicate
 from .presence_event_organization_presence import PresenceEventOrganizationPresence
 from .presence_event_user_presence import PresenceEventUserPresence
 from .presence_expand import PresenceExpand
+from .program import Program
+from .program_job import ProgramJob
+from .program_job_request import ProgramJobRequest
+from .program_request import ProgramRequest
+from .programs_entity_listing import ProgramsEntityListing
 from .prompt import Prompt
 from .prompt_asset import PromptAsset
 from .prompt_asset_create import PromptAssetCreate
@@ -1912,7 +1929,7 @@ from .subscriber_response import SubscriberResponse
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
-from .supported_content import SupportedContent
+from .supported_content_reference import SupportedContentReference
 from .supported_language import SupportedLanguage
 from .survey import Survey
 from .survey_aggregate_data_container import SurveyAggregateDataContainer
@@ -1967,6 +1984,11 @@ from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
 from .token_info import TokenInfo
 from .token_info_cloned_user import TokenInfoClonedUser
+from .topic import Topic
+from .topic_job import TopicJob
+from .topic_job_request import TopicJobRequest
+from .topic_request import TopicRequest
+from .topics_entity_listing import TopicsEntityListing
 from .training_listing import TrainingListing
 from .transcript_aggregate_data_container import TranscriptAggregateDataContainer
 from .transcript_aggregate_query_clause import TranscriptAggregateQueryClause
@@ -2040,6 +2062,7 @@ from .twitter_id import TwitterId
 from .twitter_integration import TwitterIntegration
 from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .twitter_integration_request import TwitterIntegrationRequest
+from .unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus
 from .update_action_input import UpdateActionInput

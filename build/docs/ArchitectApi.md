@@ -3119,7 +3119,7 @@ except ApiException as e:
 
 <a name="get_flows_datatables"></a>
 
-## [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html) get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+## [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html) get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id)
 
 
 
@@ -3151,10 +3151,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'id' # str | Sort by (optional) (default to id)
 sort_order = 'ascending' # str | Sort order (optional) (default to ascending)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Retrieve a list of datatables for the org
-    api_response = api_instance.get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_flows_datatables(expand=expand, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_flows_datatables: %s\n" % e)
@@ -3170,6 +3171,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to id]<br />**Values**: id, name |
 | **sort_order** | **str**| Sort order | [optional] [default to ascending] |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

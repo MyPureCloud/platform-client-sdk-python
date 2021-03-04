@@ -49,7 +49,8 @@ class WemLearningAssignmentTopicLearningAssignmentNotification(object):
             'created_by': 'WemLearningAssignmentTopicUserReference',
             'date_created': 'datetime',
             'modified_by': 'WemLearningAssignmentTopicUserReference',
-            'date_modified': 'datetime'
+            'date_modified': 'datetime',
+            'is_overdue': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class WemLearningAssignmentTopicLearningAssignmentNotification(object):
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
-            'date_modified': 'dateModified'
+            'date_modified': 'dateModified',
+            'is_overdue': 'isOverdue'
         }
 
         self._id = None
@@ -75,6 +77,7 @@ class WemLearningAssignmentTopicLearningAssignmentNotification(object):
         self._date_created = None
         self._modified_by = None
         self._date_modified = None
+        self._is_overdue = None
 
     @property
     def id(self):
@@ -309,6 +312,29 @@ class WemLearningAssignmentTopicLearningAssignmentNotification(object):
         """
         
         self._date_modified = date_modified
+
+    @property
+    def is_overdue(self):
+        """
+        Gets the is_overdue of this WemLearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :return: The is_overdue of this WemLearningAssignmentTopicLearningAssignmentNotification.
+        :rtype: bool
+        """
+        return self._is_overdue
+
+    @is_overdue.setter
+    def is_overdue(self, is_overdue):
+        """
+        Sets the is_overdue of this WemLearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :param is_overdue: The is_overdue of this WemLearningAssignmentTopicLearningAssignmentNotification.
+        :type: bool
+        """
+        
+        self._is_overdue = is_overdue
 
     def to_dict(self):
         """

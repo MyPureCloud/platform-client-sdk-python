@@ -12,7 +12,7 @@ title: CreateManagementUnitApiRequest
 | **start_day_of_week** | **str** | The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit | [optional] |
 | **settings** | [**CreateManagementUnitSettingsRequest**](CreateManagementUnitSettingsRequest.html) | The configuration for the management unit.  If omitted, reasonable defaults will be assigned | [optional] |
 | **division_id** | **str** | The id of the division to which this management unit belongs.  Defaults to home division ID | [optional] |
-| **business_unit_id** | **str** | The id of the business unit to which this management unit belongs.  Required after business unit launch | |
+| **business_unit_id** | **str** | The id of the business unit to which this management unit belongs | |
 {: class="table table-striped"}
 
 

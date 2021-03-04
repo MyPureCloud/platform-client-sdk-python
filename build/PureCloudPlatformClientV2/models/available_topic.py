@@ -42,6 +42,7 @@ class AvailableTopic(object):
         self.swagger_types = {
             'description': 'str',
             'id': 'str',
+            'permission_details': 'list[PermissionDetails]',
             'requires_permissions': 'list[str]',
             'requires_division_permissions': 'bool',
             'enforced': 'bool',
@@ -56,6 +57,7 @@ class AvailableTopic(object):
         self.attribute_map = {
             'description': 'description',
             'id': 'id',
+            'permission_details': 'permissionDetails',
             'requires_permissions': 'requiresPermissions',
             'requires_division_permissions': 'requiresDivisionPermissions',
             'enforced': 'enforced',
@@ -69,6 +71,7 @@ class AvailableTopic(object):
 
         self._description = None
         self._id = None
+        self._permission_details = None
         self._requires_permissions = None
         self._requires_division_permissions = None
         self._enforced = None
@@ -124,6 +127,29 @@ class AvailableTopic(object):
         """
         
         self._id = id
+
+    @property
+    def permission_details(self):
+        """
+        Gets the permission_details of this AvailableTopic.
+        Full detailed permissions required to subscribe to the topic
+
+        :return: The permission_details of this AvailableTopic.
+        :rtype: list[PermissionDetails]
+        """
+        return self._permission_details
+
+    @permission_details.setter
+    def permission_details(self, permission_details):
+        """
+        Sets the permission_details of this AvailableTopic.
+        Full detailed permissions required to subscribe to the topic
+
+        :param permission_details: The permission_details of this AvailableTopic.
+        :type: list[PermissionDetails]
+        """
+        
+        self._permission_details = permission_details
 
     @property
     def requires_permissions(self):

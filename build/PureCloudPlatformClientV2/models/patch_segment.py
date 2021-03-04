@@ -49,6 +49,7 @@ class PatchSegment(object):
             'should_display_to_agent': 'bool',
             'context': 'Context',
             'journey': 'Journey',
+            'external_segment': 'PatchExternalSegment',
             'assignment_expiration_days': 'int',
             'self_uri': 'str',
             'created_date': 'datetime',
@@ -65,6 +66,7 @@ class PatchSegment(object):
             'should_display_to_agent': 'shouldDisplayToAgent',
             'context': 'context',
             'journey': 'journey',
+            'external_segment': 'externalSegment',
             'assignment_expiration_days': 'assignmentExpirationDays',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
@@ -80,6 +82,7 @@ class PatchSegment(object):
         self._should_display_to_agent = None
         self._context = None
         self._journey = None
+        self._external_segment = None
         self._assignment_expiration_days = None
         self._self_uri = None
         self._created_date = None
@@ -291,6 +294,29 @@ class PatchSegment(object):
         """
         
         self._journey = journey
+
+    @property
+    def external_segment(self):
+        """
+        Gets the external_segment of this PatchSegment.
+        Details of an entity corresponding to this segment in an external system.
+
+        :return: The external_segment of this PatchSegment.
+        :rtype: PatchExternalSegment
+        """
+        return self._external_segment
+
+    @external_segment.setter
+    def external_segment(self, external_segment):
+        """
+        Sets the external_segment of this PatchSegment.
+        Details of an entity corresponding to this segment in an external system.
+
+        :param external_segment: The external_segment of this PatchSegment.
+        :type: PatchExternalSegment
+        """
+        
+        self._external_segment = external_segment
 
     @property
     def assignment_expiration_days(self):

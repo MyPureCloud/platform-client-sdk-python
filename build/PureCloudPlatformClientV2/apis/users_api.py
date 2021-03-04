@@ -3107,7 +3107,7 @@ class UsersApi(object):
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
         :param list[str] types: Specifies the activity types.
         :param list[str] statuses: Specifies the activity statuses to filter by
-        :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+        :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
         :return: DevelopmentActivityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3211,7 +3211,7 @@ class UsersApi(object):
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
         :param list[str] types: Specifies the activity types.
         :param list[str] statuses: Specifies the activity statuses to filter by
-        :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+        :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
         :return: DevelopmentActivityListing
                  If the method is called asynchronously,
                  returns the request thread.

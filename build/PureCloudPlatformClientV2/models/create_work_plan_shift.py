@@ -49,6 +49,8 @@ class CreateWorkPlanShift(object):
             'constrain_stop_time': 'bool',
             'constrain_latest_stop_time': 'bool',
             'latest_stop_time_minutes_from_midnight': 'int',
+            'constrain_earliest_stop_time': 'bool',
+            'earliest_stop_time_minutes_from_midnight': 'int',
             'start_increment_minutes': 'int',
             'flexible_paid_time': 'bool',
             'exact_paid_time_minutes': 'int',
@@ -70,6 +72,8 @@ class CreateWorkPlanShift(object):
             'constrain_stop_time': 'constrainStopTime',
             'constrain_latest_stop_time': 'constrainLatestStopTime',
             'latest_stop_time_minutes_from_midnight': 'latestStopTimeMinutesFromMidnight',
+            'constrain_earliest_stop_time': 'constrainEarliestStopTime',
+            'earliest_stop_time_minutes_from_midnight': 'earliestStopTimeMinutesFromMidnight',
             'start_increment_minutes': 'startIncrementMinutes',
             'flexible_paid_time': 'flexiblePaidTime',
             'exact_paid_time_minutes': 'exactPaidTimeMinutes',
@@ -90,6 +94,8 @@ class CreateWorkPlanShift(object):
         self._constrain_stop_time = None
         self._constrain_latest_stop_time = None
         self._latest_stop_time_minutes_from_midnight = None
+        self._constrain_earliest_stop_time = None
+        self._earliest_stop_time_minutes_from_midnight = None
         self._start_increment_minutes = None
         self._flexible_paid_time = None
         self._exact_paid_time_minutes = None
@@ -306,6 +312,52 @@ class CreateWorkPlanShift(object):
         """
         
         self._latest_stop_time_minutes_from_midnight = latest_stop_time_minutes_from_midnight
+
+    @property
+    def constrain_earliest_stop_time(self):
+        """
+        Gets the constrain_earliest_stop_time of this CreateWorkPlanShift.
+        Whether the earliest stop time constraint for the shift is enabled
+
+        :return: The constrain_earliest_stop_time of this CreateWorkPlanShift.
+        :rtype: bool
+        """
+        return self._constrain_earliest_stop_time
+
+    @constrain_earliest_stop_time.setter
+    def constrain_earliest_stop_time(self, constrain_earliest_stop_time):
+        """
+        Sets the constrain_earliest_stop_time of this CreateWorkPlanShift.
+        Whether the earliest stop time constraint for the shift is enabled
+
+        :param constrain_earliest_stop_time: The constrain_earliest_stop_time of this CreateWorkPlanShift.
+        :type: bool
+        """
+        
+        self._constrain_earliest_stop_time = constrain_earliest_stop_time
+
+    @property
+    def earliest_stop_time_minutes_from_midnight(self):
+        """
+        Gets the earliest_stop_time_minutes_from_midnight of this CreateWorkPlanShift.
+        This is the earliest time a shift can end
+
+        :return: The earliest_stop_time_minutes_from_midnight of this CreateWorkPlanShift.
+        :rtype: int
+        """
+        return self._earliest_stop_time_minutes_from_midnight
+
+    @earliest_stop_time_minutes_from_midnight.setter
+    def earliest_stop_time_minutes_from_midnight(self, earliest_stop_time_minutes_from_midnight):
+        """
+        Sets the earliest_stop_time_minutes_from_midnight of this CreateWorkPlanShift.
+        This is the earliest time a shift can end
+
+        :param earliest_stop_time_minutes_from_midnight: The earliest_stop_time_minutes_from_midnight of this CreateWorkPlanShift.
+        :type: int
+        """
+        
+        self._earliest_stop_time_minutes_from_midnight = earliest_stop_time_minutes_from_midnight
 
     @property
     def start_increment_minutes(self):

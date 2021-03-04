@@ -42,18 +42,24 @@ class SchedulingSettingsResponse(object):
         self.swagger_types = {
             'max_occupancy_percent_for_deferred_work': 'int',
             'default_shrinkage_percent': 'float',
-            'shrinkage_overrides': 'ShrinkageOverrides'
+            'shrinkage_overrides': 'ShrinkageOverrides',
+            'planning_period': 'PlanningPeriodSettings',
+            'start_day_of_weekend': 'str'
         }
 
         self.attribute_map = {
             'max_occupancy_percent_for_deferred_work': 'maxOccupancyPercentForDeferredWork',
             'default_shrinkage_percent': 'defaultShrinkagePercent',
-            'shrinkage_overrides': 'shrinkageOverrides'
+            'shrinkage_overrides': 'shrinkageOverrides',
+            'planning_period': 'planningPeriod',
+            'start_day_of_weekend': 'startDayOfWeekend'
         }
 
         self._max_occupancy_percent_for_deferred_work = None
         self._default_shrinkage_percent = None
         self._shrinkage_overrides = None
+        self._planning_period = None
+        self._start_day_of_weekend = None
 
     @property
     def max_occupancy_percent_for_deferred_work(self):
@@ -123,6 +129,56 @@ class SchedulingSettingsResponse(object):
         """
         
         self._shrinkage_overrides = shrinkage_overrides
+
+    @property
+    def planning_period(self):
+        """
+        Gets the planning_period of this SchedulingSettingsResponse.
+        Planning period settings for scheduling
+
+        :return: The planning_period of this SchedulingSettingsResponse.
+        :rtype: PlanningPeriodSettings
+        """
+        return self._planning_period
+
+    @planning_period.setter
+    def planning_period(self, planning_period):
+        """
+        Sets the planning_period of this SchedulingSettingsResponse.
+        Planning period settings for scheduling
+
+        :param planning_period: The planning_period of this SchedulingSettingsResponse.
+        :type: PlanningPeriodSettings
+        """
+        
+        self._planning_period = planning_period
+
+    @property
+    def start_day_of_weekend(self):
+        """
+        Gets the start_day_of_weekend of this SchedulingSettingsResponse.
+        Start day of weekend for scheduling
+
+        :return: The start_day_of_weekend of this SchedulingSettingsResponse.
+        :rtype: str
+        """
+        return self._start_day_of_weekend
+
+    @start_day_of_weekend.setter
+    def start_day_of_weekend(self, start_day_of_weekend):
+        """
+        Sets the start_day_of_weekend of this SchedulingSettingsResponse.
+        Start day of weekend for scheduling
+
+        :param start_day_of_weekend: The start_day_of_weekend of this SchedulingSettingsResponse.
+        :type: str
+        """
+        allowed_values = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        if start_day_of_weekend.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for start_day_of_weekend -> " + start_day_of_weekend)
+            self._start_day_of_weekend = "outdated_sdk_version"
+        else:
+            self._start_day_of_weekend = start_day_of_weekend
 
     def to_dict(self):
         """

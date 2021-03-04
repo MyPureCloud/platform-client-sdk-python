@@ -2082,7 +2082,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = 'Desc' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
 types = ['types_example'] # list[str] | Specifies the activity types. (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
-relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
 
 try:
     # Get list of Development Activities
@@ -2107,7 +2107,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
-| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
 ### Return type
@@ -2151,7 +2151,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = 'Desc' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to Desc)
 types = ['types_example'] # list[str] | Specifies the activity types. (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
-relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
 
 try:
     # Get list of Development Activities for current user
@@ -2175,7 +2175,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
-| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
 ### Return type
@@ -3569,9 +3569,8 @@ Search users
 
 Wraps POST /api/v2/users/search 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* directory:user:view
 
 ### Example
 

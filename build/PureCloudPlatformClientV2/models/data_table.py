@@ -42,6 +42,7 @@ class DataTable(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'description': 'str',
             'schema': 'JsonSchemaDocument',
             'self_uri': 'str'
@@ -50,6 +51,7 @@ class DataTable(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'schema': 'schema',
             'self_uri': 'selfUri'
@@ -57,6 +59,7 @@ class DataTable(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._schema = None
         self._self_uri = None
@@ -106,6 +109,29 @@ class DataTable(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this DataTable.
+        The division to which this entity belongs.
+
+        :return: The division of this DataTable.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this DataTable.
+        The division to which this entity belongs.
+
+        :param division: The division of this DataTable.
+        :type: Division
+        """
+        
+        self._division = division
 
     @property
     def description(self):

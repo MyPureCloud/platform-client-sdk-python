@@ -12,6 +12,7 @@ title: RoutingData
 | **priority** | **int** | The priority for routing | [optional] |
 | **skill_ids** | **list[str]** | A list of skill identifiers to be considered in routing | [optional] |
 | **preferred_agent_ids** | **list[str]** | A list of agents to be preferred in routing | [optional] |
+| **scored_agents** | [**list[ScoredAgent]**](ScoredAgent.html) | A list of scored agents for routing decisions | [optional] |
 {: class="table table-striped"}
 
 

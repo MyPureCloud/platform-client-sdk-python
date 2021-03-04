@@ -53,8 +53,19 @@ class WorkPlanValidationRequest(object):
             'constrain_minimum_time_between_shifts': 'bool',
             'minimum_time_between_shifts_minutes': 'int',
             'maximum_days': 'int',
+            'minimum_consecutive_non_working_minutes_per_week': 'int',
+            'constrain_maximum_consecutive_working_weekends': 'bool',
+            'maximum_consecutive_working_weekends': 'int',
             'minimum_working_days_per_week': 'int',
+            'constrain_maximum_consecutive_working_days': 'bool',
+            'maximum_consecutive_working_days': 'int',
+            'minimum_shift_start_distance_minutes': 'int',
+            'minimum_days_off_per_planning_period': 'int',
+            'maximum_days_off_per_planning_period': 'int',
+            'minimum_paid_minutes_per_planning_period': 'int',
+            'maximum_paid_minutes_per_planning_period': 'int',
             'optional_days': 'SetWrapperDayOfWeek',
+            'shift_start_variance_type': 'str',
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[WorkPlanShift]',
             'agents': 'list[DeletableUserReference]',
@@ -75,8 +86,19 @@ class WorkPlanValidationRequest(object):
             'constrain_minimum_time_between_shifts': 'constrainMinimumTimeBetweenShifts',
             'minimum_time_between_shifts_minutes': 'minimumTimeBetweenShiftsMinutes',
             'maximum_days': 'maximumDays',
+            'minimum_consecutive_non_working_minutes_per_week': 'minimumConsecutiveNonWorkingMinutesPerWeek',
+            'constrain_maximum_consecutive_working_weekends': 'constrainMaximumConsecutiveWorkingWeekends',
+            'maximum_consecutive_working_weekends': 'maximumConsecutiveWorkingWeekends',
             'minimum_working_days_per_week': 'minimumWorkingDaysPerWeek',
+            'constrain_maximum_consecutive_working_days': 'constrainMaximumConsecutiveWorkingDays',
+            'maximum_consecutive_working_days': 'maximumConsecutiveWorkingDays',
+            'minimum_shift_start_distance_minutes': 'minimumShiftStartDistanceMinutes',
+            'minimum_days_off_per_planning_period': 'minimumDaysOffPerPlanningPeriod',
+            'maximum_days_off_per_planning_period': 'maximumDaysOffPerPlanningPeriod',
+            'minimum_paid_minutes_per_planning_period': 'minimumPaidMinutesPerPlanningPeriod',
+            'maximum_paid_minutes_per_planning_period': 'maximumPaidMinutesPerPlanningPeriod',
             'optional_days': 'optionalDays',
+            'shift_start_variance_type': 'shiftStartVarianceType',
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
             'agents': 'agents',
@@ -96,8 +118,19 @@ class WorkPlanValidationRequest(object):
         self._constrain_minimum_time_between_shifts = None
         self._minimum_time_between_shifts_minutes = None
         self._maximum_days = None
+        self._minimum_consecutive_non_working_minutes_per_week = None
+        self._constrain_maximum_consecutive_working_weekends = None
+        self._maximum_consecutive_working_weekends = None
         self._minimum_working_days_per_week = None
+        self._constrain_maximum_consecutive_working_days = None
+        self._maximum_consecutive_working_days = None
+        self._minimum_shift_start_distance_minutes = None
+        self._minimum_days_off_per_planning_period = None
+        self._maximum_days_off_per_planning_period = None
+        self._minimum_paid_minutes_per_planning_period = None
+        self._maximum_paid_minutes_per_planning_period = None
         self._optional_days = None
+        self._shift_start_variance_type = None
         self._shift_start_variances = None
         self._shifts = None
         self._agents = None
@@ -291,7 +324,7 @@ class WorkPlanValidationRequest(object):
     def constrain_paid_time_granularity(self):
         """
         Gets the constrain_paid_time_granularity of this WorkPlanValidationRequest.
-        Whether paid time granularity is constrained for this workplan
+        Whether paid time granularity is constrained for this work plan
 
         :return: The constrain_paid_time_granularity of this WorkPlanValidationRequest.
         :rtype: bool
@@ -302,7 +335,7 @@ class WorkPlanValidationRequest(object):
     def constrain_paid_time_granularity(self, constrain_paid_time_granularity):
         """
         Sets the constrain_paid_time_granularity of this WorkPlanValidationRequest.
-        Whether paid time granularity is constrained for this workplan
+        Whether paid time granularity is constrained for this work plan
 
         :param constrain_paid_time_granularity: The constrain_paid_time_granularity of this WorkPlanValidationRequest.
         :type: bool
@@ -403,6 +436,75 @@ class WorkPlanValidationRequest(object):
         self._maximum_days = maximum_days
 
     @property
+    def minimum_consecutive_non_working_minutes_per_week(self):
+        """
+        Gets the minimum_consecutive_non_working_minutes_per_week of this WorkPlanValidationRequest.
+        Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off
+
+        :return: The minimum_consecutive_non_working_minutes_per_week of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._minimum_consecutive_non_working_minutes_per_week
+
+    @minimum_consecutive_non_working_minutes_per_week.setter
+    def minimum_consecutive_non_working_minutes_per_week(self, minimum_consecutive_non_working_minutes_per_week):
+        """
+        Sets the minimum_consecutive_non_working_minutes_per_week of this WorkPlanValidationRequest.
+        Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off
+
+        :param minimum_consecutive_non_working_minutes_per_week: The minimum_consecutive_non_working_minutes_per_week of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._minimum_consecutive_non_working_minutes_per_week = minimum_consecutive_non_working_minutes_per_week
+
+    @property
+    def constrain_maximum_consecutive_working_weekends(self):
+        """
+        Gets the constrain_maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        Whether to constrain the maximum consecutive working weekends
+
+        :return: The constrain_maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        :rtype: bool
+        """
+        return self._constrain_maximum_consecutive_working_weekends
+
+    @constrain_maximum_consecutive_working_weekends.setter
+    def constrain_maximum_consecutive_working_weekends(self, constrain_maximum_consecutive_working_weekends):
+        """
+        Sets the constrain_maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        Whether to constrain the maximum consecutive working weekends
+
+        :param constrain_maximum_consecutive_working_weekends: The constrain_maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        :type: bool
+        """
+        
+        self._constrain_maximum_consecutive_working_weekends = constrain_maximum_consecutive_working_weekends
+
+    @property
+    def maximum_consecutive_working_weekends(self):
+        """
+        Gets the maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
+
+        :return: The maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._maximum_consecutive_working_weekends
+
+    @maximum_consecutive_working_weekends.setter
+    def maximum_consecutive_working_weekends(self, maximum_consecutive_working_weekends):
+        """
+        Sets the maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
+
+        :param maximum_consecutive_working_weekends: The maximum_consecutive_working_weekends of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._maximum_consecutive_working_weekends = maximum_consecutive_working_weekends
+
+    @property
     def minimum_working_days_per_week(self):
         """
         Gets the minimum_working_days_per_week of this WorkPlanValidationRequest.
@@ -426,6 +528,167 @@ class WorkPlanValidationRequest(object):
         self._minimum_working_days_per_week = minimum_working_days_per_week
 
     @property
+    def constrain_maximum_consecutive_working_days(self):
+        """
+        Gets the constrain_maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        Whether to constrain the maximum consecutive working days
+
+        :return: The constrain_maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        :rtype: bool
+        """
+        return self._constrain_maximum_consecutive_working_days
+
+    @constrain_maximum_consecutive_working_days.setter
+    def constrain_maximum_consecutive_working_days(self, constrain_maximum_consecutive_working_days):
+        """
+        Sets the constrain_maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        Whether to constrain the maximum consecutive working days
+
+        :param constrain_maximum_consecutive_working_days: The constrain_maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        :type: bool
+        """
+        
+        self._constrain_maximum_consecutive_working_days = constrain_maximum_consecutive_working_days
+
+    @property
+    def maximum_consecutive_working_days(self):
+        """
+        Gets the maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays == true
+
+        :return: The maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._maximum_consecutive_working_days
+
+    @maximum_consecutive_working_days.setter
+    def maximum_consecutive_working_days(self, maximum_consecutive_working_days):
+        """
+        Sets the maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays == true
+
+        :param maximum_consecutive_working_days: The maximum_consecutive_working_days of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._maximum_consecutive_working_days = maximum_consecutive_working_days
+
+    @property
+    def minimum_shift_start_distance_minutes(self):
+        """
+        Gets the minimum_shift_start_distance_minutes of this WorkPlanValidationRequest.
+        The time period in minutes for the duration between the start times of two consecutive working days
+
+        :return: The minimum_shift_start_distance_minutes of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._minimum_shift_start_distance_minutes
+
+    @minimum_shift_start_distance_minutes.setter
+    def minimum_shift_start_distance_minutes(self, minimum_shift_start_distance_minutes):
+        """
+        Sets the minimum_shift_start_distance_minutes of this WorkPlanValidationRequest.
+        The time period in minutes for the duration between the start times of two consecutive working days
+
+        :param minimum_shift_start_distance_minutes: The minimum_shift_start_distance_minutes of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._minimum_shift_start_distance_minutes = minimum_shift_start_distance_minutes
+
+    @property
+    def minimum_days_off_per_planning_period(self):
+        """
+        Gets the minimum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        Minimum days off in the planning period
+
+        :return: The minimum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._minimum_days_off_per_planning_period
+
+    @minimum_days_off_per_planning_period.setter
+    def minimum_days_off_per_planning_period(self, minimum_days_off_per_planning_period):
+        """
+        Sets the minimum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        Minimum days off in the planning period
+
+        :param minimum_days_off_per_planning_period: The minimum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._minimum_days_off_per_planning_period = minimum_days_off_per_planning_period
+
+    @property
+    def maximum_days_off_per_planning_period(self):
+        """
+        Gets the maximum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        Maximum days off in the planning period
+
+        :return: The maximum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._maximum_days_off_per_planning_period
+
+    @maximum_days_off_per_planning_period.setter
+    def maximum_days_off_per_planning_period(self, maximum_days_off_per_planning_period):
+        """
+        Sets the maximum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        Maximum days off in the planning period
+
+        :param maximum_days_off_per_planning_period: The maximum_days_off_per_planning_period of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._maximum_days_off_per_planning_period = maximum_days_off_per_planning_period
+
+    @property
+    def minimum_paid_minutes_per_planning_period(self):
+        """
+        Gets the minimum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        Minimum paid minutes in the planning period
+
+        :return: The minimum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._minimum_paid_minutes_per_planning_period
+
+    @minimum_paid_minutes_per_planning_period.setter
+    def minimum_paid_minutes_per_planning_period(self, minimum_paid_minutes_per_planning_period):
+        """
+        Sets the minimum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        Minimum paid minutes in the planning period
+
+        :param minimum_paid_minutes_per_planning_period: The minimum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._minimum_paid_minutes_per_planning_period = minimum_paid_minutes_per_planning_period
+
+    @property
+    def maximum_paid_minutes_per_planning_period(self):
+        """
+        Gets the maximum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        Maximum paid minutes in the planning period
+
+        :return: The maximum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        :rtype: int
+        """
+        return self._maximum_paid_minutes_per_planning_period
+
+    @maximum_paid_minutes_per_planning_period.setter
+    def maximum_paid_minutes_per_planning_period(self, maximum_paid_minutes_per_planning_period):
+        """
+        Sets the maximum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        Maximum paid minutes in the planning period
+
+        :param maximum_paid_minutes_per_planning_period: The maximum_paid_minutes_per_planning_period of this WorkPlanValidationRequest.
+        :type: int
+        """
+        
+        self._maximum_paid_minutes_per_planning_period = maximum_paid_minutes_per_planning_period
+
+    @property
     def optional_days(self):
         """
         Gets the optional_days of this WorkPlanValidationRequest.
@@ -447,6 +710,33 @@ class WorkPlanValidationRequest(object):
         """
         
         self._optional_days = optional_days
+
+    @property
+    def shift_start_variance_type(self):
+        """
+        Gets the shift_start_variance_type of this WorkPlanValidationRequest.
+        This constraint ensures that an agent starts each workday within a user-defined time threshold
+
+        :return: The shift_start_variance_type of this WorkPlanValidationRequest.
+        :rtype: str
+        """
+        return self._shift_start_variance_type
+
+    @shift_start_variance_type.setter
+    def shift_start_variance_type(self, shift_start_variance_type):
+        """
+        Sets the shift_start_variance_type of this WorkPlanValidationRequest.
+        This constraint ensures that an agent starts each workday within a user-defined time threshold
+
+        :param shift_start_variance_type: The shift_start_variance_type of this WorkPlanValidationRequest.
+        :type: str
+        """
+        allowed_values = ["ShiftStart", "ShiftStartAndPaidDuration"]
+        if shift_start_variance_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for shift_start_variance_type -> " + shift_start_variance_type)
+            self._shift_start_variance_type = "outdated_sdk_version"
+        else:
+            self._shift_start_variance_type = shift_start_variance_type
 
     @property
     def shift_start_variances(self):

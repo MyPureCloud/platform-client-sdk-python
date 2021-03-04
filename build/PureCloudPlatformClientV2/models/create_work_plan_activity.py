@@ -50,7 +50,9 @@ class CreateWorkPlanActivity(object):
             'exact_start_time_minutes': 'int',
             'start_time_increment_minutes': 'int',
             'counts_as_paid_time': 'bool',
-            'counts_as_contiguous_work_time': 'bool'
+            'counts_as_contiguous_work_time': 'bool',
+            'minimum_length_from_shift_start_minutes': 'int',
+            'minimum_length_from_shift_end_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +66,9 @@ class CreateWorkPlanActivity(object):
             'exact_start_time_minutes': 'exactStartTimeMinutes',
             'start_time_increment_minutes': 'startTimeIncrementMinutes',
             'counts_as_paid_time': 'countsAsPaidTime',
-            'counts_as_contiguous_work_time': 'countsAsContiguousWorkTime'
+            'counts_as_contiguous_work_time': 'countsAsContiguousWorkTime',
+            'minimum_length_from_shift_start_minutes': 'minimumLengthFromShiftStartMinutes',
+            'minimum_length_from_shift_end_minutes': 'minimumLengthFromShiftEndMinutes'
         }
 
         self._activity_code_id = None
@@ -78,6 +82,8 @@ class CreateWorkPlanActivity(object):
         self._start_time_increment_minutes = None
         self._counts_as_paid_time = None
         self._counts_as_contiguous_work_time = None
+        self._minimum_length_from_shift_start_minutes = None
+        self._minimum_length_from_shift_end_minutes = None
 
     @property
     def activity_code_id(self):
@@ -331,6 +337,52 @@ class CreateWorkPlanActivity(object):
         """
         
         self._counts_as_contiguous_work_time = counts_as_contiguous_work_time
+
+    @property
+    def minimum_length_from_shift_start_minutes(self):
+        """
+        Gets the minimum_length_from_shift_start_minutes of this CreateWorkPlanActivity.
+        The minimum duration between shift start and shift item (e.g., break or meal) start in minutes
+
+        :return: The minimum_length_from_shift_start_minutes of this CreateWorkPlanActivity.
+        :rtype: int
+        """
+        return self._minimum_length_from_shift_start_minutes
+
+    @minimum_length_from_shift_start_minutes.setter
+    def minimum_length_from_shift_start_minutes(self, minimum_length_from_shift_start_minutes):
+        """
+        Sets the minimum_length_from_shift_start_minutes of this CreateWorkPlanActivity.
+        The minimum duration between shift start and shift item (e.g., break or meal) start in minutes
+
+        :param minimum_length_from_shift_start_minutes: The minimum_length_from_shift_start_minutes of this CreateWorkPlanActivity.
+        :type: int
+        """
+        
+        self._minimum_length_from_shift_start_minutes = minimum_length_from_shift_start_minutes
+
+    @property
+    def minimum_length_from_shift_end_minutes(self):
+        """
+        Gets the minimum_length_from_shift_end_minutes of this CreateWorkPlanActivity.
+        The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
+
+        :return: The minimum_length_from_shift_end_minutes of this CreateWorkPlanActivity.
+        :rtype: int
+        """
+        return self._minimum_length_from_shift_end_minutes
+
+    @minimum_length_from_shift_end_minutes.setter
+    def minimum_length_from_shift_end_minutes(self, minimum_length_from_shift_end_minutes):
+        """
+        Sets the minimum_length_from_shift_end_minutes of this CreateWorkPlanActivity.
+        The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
+
+        :param minimum_length_from_shift_end_minutes: The minimum_length_from_shift_end_minutes of this CreateWorkPlanActivity.
+        :type: int
+        """
+        
+        self._minimum_length_from_shift_end_minutes = minimum_length_from_shift_end_minutes
 
     def to_dict(self):
         """
