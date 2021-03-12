@@ -78,7 +78,7 @@ class TranscriptAggregationView(object):
         :param target: The target of this TranscriptAggregationView.
         :type: str
         """
-        allowed_values = ["nTopicCommunications", "nTopicSegments", "oCustomerSentiment"]
+        allowed_values = ["nTopicCommunications", "oCustomerSentiment"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

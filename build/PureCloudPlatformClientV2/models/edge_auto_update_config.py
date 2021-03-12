@@ -62,7 +62,7 @@ class EdgeAutoUpdateConfig(object):
     def time_zone(self):
         """
         Gets the time_zone of this EdgeAutoUpdateConfig.
-
+        The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.
 
         :return: The time_zone of this EdgeAutoUpdateConfig.
         :rtype: str
@@ -73,7 +73,7 @@ class EdgeAutoUpdateConfig(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this EdgeAutoUpdateConfig.
-
+        The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.
 
         :param time_zone: The time_zone of this EdgeAutoUpdateConfig.
         :type: str
@@ -85,7 +85,7 @@ class EdgeAutoUpdateConfig(object):
     def rrule(self):
         """
         Gets the rrule of this EdgeAutoUpdateConfig.
-
+        The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.
 
         :return: The rrule of this EdgeAutoUpdateConfig.
         :rtype: str
@@ -96,7 +96,7 @@ class EdgeAutoUpdateConfig(object):
     def rrule(self, rrule):
         """
         Sets the rrule of this EdgeAutoUpdateConfig.
-
+        The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.
 
         :param rrule: The rrule of this EdgeAutoUpdateConfig.
         :type: str

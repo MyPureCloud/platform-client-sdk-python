@@ -1062,7 +1062,7 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: Conversation ID (required)
         :param int max_wait_ms: The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-        :param str format_id: The desired media format. Possible values: NONE, MP3, WAV, or WEBM
+        :param str format_id: The desired media format
         :return: list[Recording]
                  If the method is called asynchronously,
                  returns the request thread.

@@ -7,10 +7,10 @@ title: EdgeAutoUpdateConfig
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **time_zone** | **str** |  | [optional] |
-| **rrule** | **str** |  | [optional] |
-| **start** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | [optional] |
-| **end** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | [optional] |
+| **time_zone** | **str** | The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours. | |
+| **rrule** | **str** | The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported. | |
+| **start** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | |
+| **end** | [**LocalDateTime**](LocalDateTime.html) | Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS | |
 {: class="table table-striped"}
 
 

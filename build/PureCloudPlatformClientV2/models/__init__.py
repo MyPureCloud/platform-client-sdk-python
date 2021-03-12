@@ -60,6 +60,7 @@ from .aggregate_view_data import AggregateViewData
 from .aggregation_range import AggregationRange
 from .aggregation_result import AggregationResult
 from .aggregation_result_entry import AggregationResultEntry
+from .all_time_points import AllTimePoints
 from .amazon_lex_request import AmazonLexRequest
 from .analytics_conversation import AnalyticsConversation
 from .analytics_conversation_async_query_response import AnalyticsConversationAsyncQueryResponse
@@ -133,6 +134,8 @@ from .async_user_details_query import AsyncUserDetailsQuery
 from .attachment import Attachment
 from .attempt_limits import AttemptLimits
 from .attempt_limits_entity_listing import AttemptLimitsEntityListing
+from .attendance_status import AttendanceStatus
+from .attendance_status_listing import AttendanceStatusListing
 from .attribute import Attribute
 from .attribute_filter_item import AttributeFilterItem
 from .atzm_time_slot import AtzmTimeSlot
@@ -180,6 +183,13 @@ from .billing_usage import BillingUsage
 from .billing_usage_report import BillingUsageReport
 from .billing_usage_resource import BillingUsageResource
 from .biography import Biography
+from .bot_aggregate_data_container import BotAggregateDataContainer
+from .bot_aggregate_query_clause import BotAggregateQueryClause
+from .bot_aggregate_query_filter import BotAggregateQueryFilter
+from .bot_aggregate_query_predicate import BotAggregateQueryPredicate
+from .bot_aggregate_query_response import BotAggregateQueryResponse
+from .bot_aggregation_query import BotAggregationQuery
+from .bot_aggregation_view import BotAggregationView
 from .bu_abandon_rate import BuAbandonRate
 from .bu_agent_schedule_activity import BuAgentScheduleActivity
 from .bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -238,6 +248,23 @@ from .bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .bu_short_term_forecast_listing import BuShortTermForecastListing
 from .bu_short_term_forecast_reference import BuShortTermForecastReference
 from .bu_short_term_forecasting_settings import BuShortTermForecastingSettings
+from .bulk_contacts_request import BulkContactsRequest
+from .bulk_contacts_response import BulkContactsResponse
+from .bulk_delete_response import BulkDeleteResponse
+from .bulk_error_detail import BulkErrorDetail
+from .bulk_error_entity import BulkErrorEntity
+from .bulk_error_external_contact import BulkErrorExternalContact
+from .bulk_error_external_organization import BulkErrorExternalOrganization
+from .bulk_fetch_contacts_response import BulkFetchContactsResponse
+from .bulk_fetch_organizations_response import BulkFetchOrganizationsResponse
+from .bulk_ids_request import BulkIdsRequest
+from .bulk_organizations_request import BulkOrganizationsRequest
+from .bulk_organizations_response import BulkOrganizationsResponse
+from .bulk_response_result_external_contact_entity import BulkResponseResultExternalContactEntity
+from .bulk_response_result_external_contact_external_contact import BulkResponseResultExternalContactExternalContact
+from .bulk_response_result_external_organization_entity import BulkResponseResultExternalOrganizationEntity
+from .bulk_response_result_external_organization_external_organization import BulkResponseResultExternalOrganizationExternalOrganization
+from .bulk_response_result_void_entity import BulkResponseResultVoidEntity
 from .bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
 from .bulk_update_shift_trade_state_response import BulkUpdateShiftTradeStateResponse
@@ -678,6 +705,7 @@ from .data_tables_domain_entity_listing import DataTablesDomainEntityListing
 from .date_range import DateRange
 from .date_range_with_optional_end import DateRangeWithOptionalEnd
 from .default_greeting_list import DefaultGreetingList
+from .default_objective import DefaultObjective
 from .deletable_user_reference import DeletableUserReference
 from .delete_retention import DeleteRetention
 from .dependency import Dependency
@@ -1025,6 +1053,7 @@ from .gkn_documentation_search_criteria import GKNDocumentationSearchCriteria
 from .gkn_documentation_search_request import GKNDocumentationSearchRequest
 from .gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .g_suite import GSuite
+from .gamification_status import GamificationStatus
 from .general_program_job import GeneralProgramJob
 from .general_program_job_request import GeneralProgramJobRequest
 from .general_topic import GeneralTopic
@@ -1035,6 +1064,10 @@ from .genesys_bot_connector import GenesysBotConnector
 from .geolocation import Geolocation
 from .geolocation_event_geolocation import GeolocationEventGeolocation
 from .geolocation_settings import GeolocationSettings
+from .get_metric_definitions_response import GetMetricDefinitionsResponse
+from .get_metrics_response import GetMetricsResponse
+from .get_profiles_response import GetProfilesResponse
+from .get_templates_response import GetTemplatesResponse
 from .google_dialogflow_custom_settings import GoogleDialogflowCustomSettings
 from .greeting import Greeting
 from .greeting_audio_file import GreetingAudioFile
@@ -1154,6 +1187,8 @@ from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
 from .language_reference import LanguageReference
+from .leaderboard import Leaderboard
+from .leaderboard_item import LeaderboardItem
 from .lex_bot import LexBot
 from .lex_bot_alias import LexBotAlias
 from .lex_bot_alias_entity_listing import LexBotAliasEntityListing
@@ -1258,6 +1293,9 @@ from .meta_data import MetaData
 from .metabase import Metabase
 from .metered_assignment_by_agent import MeteredAssignmentByAgent
 from .metered_evaluation_assignment import MeteredEvaluationAssignment
+from .metric import Metric
+from .metric_definition import MetricDefinition
+from .metrics import Metrics
 from .min_length import MinLength
 from .modeling_processing_error import ModelingProcessingError
 from .modeling_status_response import ModelingStatusResponse
@@ -1313,6 +1351,9 @@ from .o_auth_provider import OAuthProvider
 from .o_auth_provider_entity_listing import OAuthProviderEntityListing
 from .o_auth_scope import OAuthScope
 from .o_auth_scope_listing import OAuthScopeListing
+from .objective import Objective
+from .objective_template import ObjectiveTemplate
+from .objective_zone import ObjectiveZone
 from .observation_metric_data import ObservationMetricData
 from .observation_value import ObservationValue
 from .okta import Okta
@@ -1350,6 +1391,8 @@ from .outbound_settings import OutboundSettings
 from .outcome import Outcome
 from .outcome_listing import OutcomeListing
 from .outcome_probability_condition import OutcomeProbabilityCondition
+from .overall_best_points import OverallBestPoints
+from .overall_best_points_item import OverallBestPointsItem
 from .pin_configuration import PINConfiguration
 from .page import Page
 from .paging_spec import PagingSpec
@@ -1385,6 +1428,7 @@ from .patch_shift_trade_request import PatchShiftTradeRequest
 from .patch_survey_question import PatchSurveyQuestion
 from .patch_text_style_properties import PatchTextStyleProperties
 from .patch_user import PatchUser
+from .performance_profile import PerformanceProfile
 from .permission_collection_entity_listing import PermissionCollectionEntityListing
 from .permission_details import PermissionDetails
 from .permissions import Permissions
@@ -1457,6 +1501,7 @@ from .publish_form import PublishForm
 from .publish_program_publish_job import PublishProgramPublishJob
 from .publish_topic_publish_job import PublishTopicPublishJob
 from .published_survey_form_reference import PublishedSurveyFormReference
+from .punctuality_event import PunctualityEvent
 from .pure_cloud import PureCloud
 from .pure_engage import PureEngage
 from .quality_audit import QualityAudit
@@ -1752,6 +1797,7 @@ from .role_division_grants import RoleDivisionGrants
 from .role_division_pair import RoleDivisionPair
 from .route_path_request import RoutePathRequest
 from .route_path_response import RoutePathResponse
+from .routing_conversation_attributes import RoutingConversationAttributes
 from .routing_data import RoutingData
 from .routing_rule import RoutingRule
 from .routing_settings import RoutingSettings
@@ -1877,6 +1923,8 @@ from .short_term_forecasting_settings import ShortTermForecastingSettings
 from .shrinkage_override import ShrinkageOverride
 from .shrinkage_overrides import ShrinkageOverrides
 from .signed_url_response import SignedUrlResponse
+from .single_workday_average_points import SingleWorkdayAveragePoints
+from .single_workday_average_values import SingleWorkdayAverageValues
 from .sip_download_response import SipDownloadResponse
 from .sip_search_result import SipSearchResult
 from .site import Site
@@ -2101,6 +2149,8 @@ from .user_app import UserApp
 from .user_app_configuration_info import UserAppConfigurationInfo
 from .user_app_entity_listing import UserAppEntityListing
 from .user_authorization import UserAuthorization
+from .user_best_points import UserBestPoints
+from .user_best_points_item import UserBestPointsItem
 from .user_conversation_summary import UserConversationSummary
 from .user_conversations_event_media_summary import UserConversationsEventMediaSummary
 from .user_conversations_event_media_summary_detail import UserConversationsEventMediaSummaryDetail
@@ -2194,6 +2244,7 @@ from .voicemail_search_criteria import VoicemailSearchCriteria
 from .voicemail_search_request import VoicemailSearchRequest
 from .voicemail_user_policy import VoicemailUserPolicy
 from .voicemails_search_response import VoicemailsSearchResponse
+from .void import Void
 from .web_chat_config import WebChatConfig
 from .web_chat_conversation import WebChatConversation
 from .web_chat_deployment import WebChatDeployment
@@ -2376,6 +2427,13 @@ from .work_plan_rotation_response import WorkPlanRotationResponse
 from .work_plan_shift import WorkPlanShift
 from .work_plan_validation_message_argument import WorkPlanValidationMessageArgument
 from .work_plan_validation_request import WorkPlanValidationRequest
+from .workday_metric import WorkdayMetric
+from .workday_metric_listing import WorkdayMetricListing
+from .workday_points_trend import WorkdayPointsTrend
+from .workday_points_trend_item import WorkdayPointsTrendItem
+from .workday_values_metric_item import WorkdayValuesMetricItem
+from .workday_values_trend import WorkdayValuesTrend
+from .workday_values_trend_item import WorkdayValuesTrendItem
 from .workspace import Workspace
 from .workspace_create import WorkspaceCreate
 from .workspace_entity_listing import WorkspaceEntityListing

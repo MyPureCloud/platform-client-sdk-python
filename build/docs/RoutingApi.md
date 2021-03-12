@@ -58,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
+|[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
 |[**patch_routing_queue_member**](RoutingApi.html#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
@@ -1267,7 +1268,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp |
+| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -2779,6 +2780,59 @@ except ApiException as e:
 ### Return type
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
+
+<a name="patch_routing_conversation"></a>
+
+## [**RoutingConversationAttributes**](RoutingConversationAttributes.html) patch_routing_conversation(conversation_id, body)
+
+
+
+Update attributes of an in-queue conversation
+
+Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+
+Wraps PATCH /api/v2/routing/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* routing:conversation:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+body = PureCloudPlatformClientV2.RoutingConversationAttributes() # RoutingConversationAttributes | Conversation Attributes
+
+try:
+    # Update attributes of an in-queue conversation
+    api_response = api_instance.patch_routing_conversation(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_conversation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **body** | [**RoutingConversationAttributes**](RoutingConversationAttributes.html)| Conversation Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingConversationAttributes**](RoutingConversationAttributes.html)
 
 <a name="patch_routing_email_domain"></a>
 

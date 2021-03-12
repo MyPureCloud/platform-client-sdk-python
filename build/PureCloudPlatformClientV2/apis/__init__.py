@@ -15,6 +15,7 @@ from .data_extensions_api import DataExtensionsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
 from .flows_api import FlowsApi
+from .gamification_api import GamificationApi
 from .general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
 from .geolocation_api import GeolocationApi
 from .greetings_api import GreetingsApi

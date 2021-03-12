@@ -60,6 +60,7 @@ from .models.aggregate_view_data import AggregateViewData
 from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
+from .models.all_time_points import AllTimePoints
 from .models.amazon_lex_request import AmazonLexRequest
 from .models.analytics_conversation import AnalyticsConversation
 from .models.analytics_conversation_async_query_response import AnalyticsConversationAsyncQueryResponse
@@ -133,6 +134,8 @@ from .models.async_user_details_query import AsyncUserDetailsQuery
 from .models.attachment import Attachment
 from .models.attempt_limits import AttemptLimits
 from .models.attempt_limits_entity_listing import AttemptLimitsEntityListing
+from .models.attendance_status import AttendanceStatus
+from .models.attendance_status_listing import AttendanceStatusListing
 from .models.attribute import Attribute
 from .models.attribute_filter_item import AttributeFilterItem
 from .models.atzm_time_slot import AtzmTimeSlot
@@ -180,6 +183,13 @@ from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
 from .models.biography import Biography
+from .models.bot_aggregate_data_container import BotAggregateDataContainer
+from .models.bot_aggregate_query_clause import BotAggregateQueryClause
+from .models.bot_aggregate_query_filter import BotAggregateQueryFilter
+from .models.bot_aggregate_query_predicate import BotAggregateQueryPredicate
+from .models.bot_aggregate_query_response import BotAggregateQueryResponse
+from .models.bot_aggregation_query import BotAggregationQuery
+from .models.bot_aggregation_view import BotAggregationView
 from .models.bu_abandon_rate import BuAbandonRate
 from .models.bu_agent_schedule_activity import BuAgentScheduleActivity
 from .models.bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
@@ -238,6 +248,23 @@ from .models.bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .models.bu_short_term_forecast_listing import BuShortTermForecastListing
 from .models.bu_short_term_forecast_reference import BuShortTermForecastReference
 from .models.bu_short_term_forecasting_settings import BuShortTermForecastingSettings
+from .models.bulk_contacts_request import BulkContactsRequest
+from .models.bulk_contacts_response import BulkContactsResponse
+from .models.bulk_delete_response import BulkDeleteResponse
+from .models.bulk_error_detail import BulkErrorDetail
+from .models.bulk_error_entity import BulkErrorEntity
+from .models.bulk_error_external_contact import BulkErrorExternalContact
+from .models.bulk_error_external_organization import BulkErrorExternalOrganization
+from .models.bulk_fetch_contacts_response import BulkFetchContactsResponse
+from .models.bulk_fetch_organizations_response import BulkFetchOrganizationsResponse
+from .models.bulk_ids_request import BulkIdsRequest
+from .models.bulk_organizations_request import BulkOrganizationsRequest
+from .models.bulk_organizations_response import BulkOrganizationsResponse
+from .models.bulk_response_result_external_contact_entity import BulkResponseResultExternalContactEntity
+from .models.bulk_response_result_external_contact_external_contact import BulkResponseResultExternalContactExternalContact
+from .models.bulk_response_result_external_organization_entity import BulkResponseResultExternalOrganizationEntity
+from .models.bulk_response_result_external_organization_external_organization import BulkResponseResultExternalOrganizationExternalOrganization
+from .models.bulk_response_result_void_entity import BulkResponseResultVoidEntity
 from .models.bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .models.bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
 from .models.bulk_update_shift_trade_state_response import BulkUpdateShiftTradeStateResponse
@@ -678,6 +705,7 @@ from .models.data_tables_domain_entity_listing import DataTablesDomainEntityList
 from .models.date_range import DateRange
 from .models.date_range_with_optional_end import DateRangeWithOptionalEnd
 from .models.default_greeting_list import DefaultGreetingList
+from .models.default_objective import DefaultObjective
 from .models.deletable_user_reference import DeletableUserReference
 from .models.delete_retention import DeleteRetention
 from .models.dependency import Dependency
@@ -1025,6 +1053,7 @@ from .models.gkn_documentation_search_criteria import GKNDocumentationSearchCrit
 from .models.gkn_documentation_search_request import GKNDocumentationSearchRequest
 from .models.gkn_documentation_search_response import GKNDocumentationSearchResponse
 from .models.g_suite import GSuite
+from .models.gamification_status import GamificationStatus
 from .models.general_program_job import GeneralProgramJob
 from .models.general_program_job_request import GeneralProgramJobRequest
 from .models.general_topic import GeneralTopic
@@ -1035,6 +1064,10 @@ from .models.genesys_bot_connector import GenesysBotConnector
 from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
 from .models.geolocation_settings import GeolocationSettings
+from .models.get_metric_definitions_response import GetMetricDefinitionsResponse
+from .models.get_metrics_response import GetMetricsResponse
+from .models.get_profiles_response import GetProfilesResponse
+from .models.get_templates_response import GetTemplatesResponse
 from .models.google_dialogflow_custom_settings import GoogleDialogflowCustomSettings
 from .models.greeting import Greeting
 from .models.greeting_audio_file import GreetingAudioFile
@@ -1154,6 +1187,8 @@ from .models.language import Language
 from .models.language_entity_listing import LanguageEntityListing
 from .models.language_override import LanguageOverride
 from .models.language_reference import LanguageReference
+from .models.leaderboard import Leaderboard
+from .models.leaderboard_item import LeaderboardItem
 from .models.lex_bot import LexBot
 from .models.lex_bot_alias import LexBotAlias
 from .models.lex_bot_alias_entity_listing import LexBotAliasEntityListing
@@ -1258,6 +1293,9 @@ from .models.meta_data import MetaData
 from .models.metabase import Metabase
 from .models.metered_assignment_by_agent import MeteredAssignmentByAgent
 from .models.metered_evaluation_assignment import MeteredEvaluationAssignment
+from .models.metric import Metric
+from .models.metric_definition import MetricDefinition
+from .models.metrics import Metrics
 from .models.min_length import MinLength
 from .models.modeling_processing_error import ModelingProcessingError
 from .models.modeling_status_response import ModelingStatusResponse
@@ -1313,6 +1351,9 @@ from .models.o_auth_provider import OAuthProvider
 from .models.o_auth_provider_entity_listing import OAuthProviderEntityListing
 from .models.o_auth_scope import OAuthScope
 from .models.o_auth_scope_listing import OAuthScopeListing
+from .models.objective import Objective
+from .models.objective_template import ObjectiveTemplate
+from .models.objective_zone import ObjectiveZone
 from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
 from .models.okta import Okta
@@ -1350,6 +1391,8 @@ from .models.outbound_settings import OutboundSettings
 from .models.outcome import Outcome
 from .models.outcome_listing import OutcomeListing
 from .models.outcome_probability_condition import OutcomeProbabilityCondition
+from .models.overall_best_points import OverallBestPoints
+from .models.overall_best_points_item import OverallBestPointsItem
 from .models.pin_configuration import PINConfiguration
 from .models.page import Page
 from .models.paging_spec import PagingSpec
@@ -1385,6 +1428,7 @@ from .models.patch_shift_trade_request import PatchShiftTradeRequest
 from .models.patch_survey_question import PatchSurveyQuestion
 from .models.patch_text_style_properties import PatchTextStyleProperties
 from .models.patch_user import PatchUser
+from .models.performance_profile import PerformanceProfile
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permission_details import PermissionDetails
 from .models.permissions import Permissions
@@ -1457,6 +1501,7 @@ from .models.publish_form import PublishForm
 from .models.publish_program_publish_job import PublishProgramPublishJob
 from .models.publish_topic_publish_job import PublishTopicPublishJob
 from .models.published_survey_form_reference import PublishedSurveyFormReference
+from .models.punctuality_event import PunctualityEvent
 from .models.pure_cloud import PureCloud
 from .models.pure_engage import PureEngage
 from .models.quality_audit import QualityAudit
@@ -1752,6 +1797,7 @@ from .models.role_division_grants import RoleDivisionGrants
 from .models.role_division_pair import RoleDivisionPair
 from .models.route_path_request import RoutePathRequest
 from .models.route_path_response import RoutePathResponse
+from .models.routing_conversation_attributes import RoutingConversationAttributes
 from .models.routing_data import RoutingData
 from .models.routing_rule import RoutingRule
 from .models.routing_settings import RoutingSettings
@@ -1877,6 +1923,8 @@ from .models.short_term_forecasting_settings import ShortTermForecastingSettings
 from .models.shrinkage_override import ShrinkageOverride
 from .models.shrinkage_overrides import ShrinkageOverrides
 from .models.signed_url_response import SignedUrlResponse
+from .models.single_workday_average_points import SingleWorkdayAveragePoints
+from .models.single_workday_average_values import SingleWorkdayAverageValues
 from .models.sip_download_response import SipDownloadResponse
 from .models.sip_search_result import SipSearchResult
 from .models.site import Site
@@ -2101,6 +2149,8 @@ from .models.user_app import UserApp
 from .models.user_app_configuration_info import UserAppConfigurationInfo
 from .models.user_app_entity_listing import UserAppEntityListing
 from .models.user_authorization import UserAuthorization
+from .models.user_best_points import UserBestPoints
+from .models.user_best_points_item import UserBestPointsItem
 from .models.user_conversation_summary import UserConversationSummary
 from .models.user_conversations_event_media_summary import UserConversationsEventMediaSummary
 from .models.user_conversations_event_media_summary_detail import UserConversationsEventMediaSummaryDetail
@@ -2194,6 +2244,7 @@ from .models.voicemail_search_criteria import VoicemailSearchCriteria
 from .models.voicemail_search_request import VoicemailSearchRequest
 from .models.voicemail_user_policy import VoicemailUserPolicy
 from .models.voicemails_search_response import VoicemailsSearchResponse
+from .models.void import Void
 from .models.web_chat_config import WebChatConfig
 from .models.web_chat_conversation import WebChatConversation
 from .models.web_chat_deployment import WebChatDeployment
@@ -2376,6 +2427,13 @@ from .models.work_plan_rotation_response import WorkPlanRotationResponse
 from .models.work_plan_shift import WorkPlanShift
 from .models.work_plan_validation_message_argument import WorkPlanValidationMessageArgument
 from .models.work_plan_validation_request import WorkPlanValidationRequest
+from .models.workday_metric import WorkdayMetric
+from .models.workday_metric_listing import WorkdayMetricListing
+from .models.workday_points_trend import WorkdayPointsTrend
+from .models.workday_points_trend_item import WorkdayPointsTrendItem
+from .models.workday_values_metric_item import WorkdayValuesMetricItem
+from .models.workday_values_trend import WorkdayValuesTrend
+from .models.workday_values_trend_item import WorkdayValuesTrendItem
 from .models.workspace import Workspace
 from .models.workspace_create import WorkspaceCreate
 from .models.workspace_entity_listing import WorkspaceEntityListing
@@ -2406,6 +2464,7 @@ from .apis.data_extensions_api import DataExtensionsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi
 from .apis.flows_api import FlowsApi
+from .apis.gamification_api import GamificationApi
 from .apis.general_data_protection_regulation_api import GeneralDataProtectionRegulationApi
 from .apis.geolocation_api import GeolocationApi
 from .apis.greetings_api import GreetingsApi

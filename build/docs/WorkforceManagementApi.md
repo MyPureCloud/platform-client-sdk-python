@@ -99,7 +99,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_move**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_move) | Move the requested management unit to a new business unit|
 |[**post_workforcemanagement_managementunit_schedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_schedules_search) | Query published schedules for given given time range for set of users|
 |[**post_workforcemanagement_managementunit_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests) | Create a new time off request|
-|[**post_workforcemanagement_managementunit_timeoffrequests_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_query) | Gets the lookup ids to fetch the specified set of requests|
+|[**post_workforcemanagement_managementunit_timeoffrequests_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_query) | Fetches time off requests matching the conditions specified in the request body|
 |[**post_workforcemanagement_managementunit_week_shifttrade_match**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrade_match) | Matches a shift trade. This route can only be called by the receiving agent|
 |[**post_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades) | Adds a shift trade|
 |[**post_workforcemanagement_managementunit_week_shifttrades_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_search) | Searches for potential shift trade matches for the current agent|
@@ -795,6 +795,17 @@ Requires ANY permissions:
 * wfm:timeOffRequest:add
 * wfm:timeOffRequest:edit
 * wfm:timeOffRequest:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
 * wfm:workPlan:add
 * wfm:workPlan:delete
 * wfm:workPlan:edit
@@ -949,6 +960,14 @@ Requires ANY permissions:
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
 * wfm:shortTermForecast:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
 * wfm:timeOffRequest:add
 * wfm:timeOffRequest:edit
 * wfm:timeOffRequest:view
@@ -1091,7 +1110,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
@@ -2091,7 +2110,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
@@ -2204,6 +2223,14 @@ Requires ANY permissions:
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
 * wfm:shortTermForecast:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
 * wfm:timeOffRequest:add
 * wfm:timeOffRequest:edit
 * wfm:timeOffRequest:view
@@ -3217,7 +3244,7 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**|  | [optional]  |
 {: class="table table-striped"}
 
@@ -5234,9 +5261,9 @@ except ApiException as e:
 
 
 
-Gets the lookup ids to fetch the specified set of requests
+Fetches time off requests matching the conditions specified in the request body
 
-
+Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query 
 
@@ -5261,7 +5288,7 @@ management_unit_id = 'management_unit_id_example' # str | The muId of the manage
 body = PureCloudPlatformClientV2.TimeOffRequestQueryBody() # TimeOffRequestQueryBody | body (optional)
 
 try:
-    # Gets the lookup ids to fetch the specified set of requests
+    # Fetches time off requests matching the conditions specified in the request body
     api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
     pprint(api_response)
 except ApiException as e:

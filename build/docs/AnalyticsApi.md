@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_users_details_job**](AnalyticsApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](AnalyticsApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_users_details_jobs_availability**](AnalyticsApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**post_analytics_bots_aggregates_query**](AnalyticsApi.html#post_analytics_bots_aggregates_query) | Query for bot aggregates|
 |[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](AnalyticsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
@@ -1166,6 +1167,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+
+<a name="post_analytics_bots_aggregates_query"></a>
+
+## [**BotAggregateQueryResponse**](BotAggregateQueryResponse.html) post_analytics_bots_aggregates_query(body)
+
+
+
+Query for bot aggregates
+
+
+
+Wraps POST /api/v2/analytics/bots/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.BotAggregationQuery() # BotAggregationQuery | query
+
+try:
+    # Query for bot aggregates
+    api_response = api_instance.post_analytics_bots_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_bots_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BotAggregationQuery**](BotAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotAggregateQueryResponse**](BotAggregateQueryResponse.html)
 
 <a name="post_analytics_conversation_details_properties"></a>
 

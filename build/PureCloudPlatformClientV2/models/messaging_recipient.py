@@ -42,6 +42,7 @@ class MessagingRecipient(object):
         self.swagger_types = {
             'nickname': 'str',
             'id': 'str',
+            'id_type': 'str',
             'image': 'str',
             'first_name': 'str',
             'last_name': 'str',
@@ -51,6 +52,7 @@ class MessagingRecipient(object):
         self.attribute_map = {
             'nickname': 'nickname',
             'id': 'id',
+            'id_type': 'idType',
             'image': 'image',
             'first_name': 'firstName',
             'last_name': 'lastName',
@@ -59,6 +61,7 @@ class MessagingRecipient(object):
 
         self._nickname = None
         self._id = None
+        self._id_type = None
         self._image = None
         self._first_name = None
         self._last_name = None
@@ -109,6 +112,33 @@ class MessagingRecipient(object):
         """
         
         self._id = id
+
+    @property
+    def id_type(self):
+        """
+        Gets the id_type of this MessagingRecipient.
+        The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+
+        :return: The id_type of this MessagingRecipient.
+        :rtype: str
+        """
+        return self._id_type
+
+    @id_type.setter
+    def id_type(self, id_type):
+        """
+        Sets the id_type of this MessagingRecipient.
+        The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+
+        :param id_type: The id_type of this MessagingRecipient.
+        :type: str
+        """
+        allowed_values = ["Email", "Phone", "Opaque"]
+        if id_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for id_type -> " + id_type)
+            self._id_type = "outdated_sdk_version"
+        else:
+            self._id_type = id_type
 
     @property
     def image(self):

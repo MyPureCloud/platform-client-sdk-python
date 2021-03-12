@@ -725,7 +725,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional) (default to 5000)
-format_id = 'WEBM' # str | The desired media format. Possible values: NONE, MP3, WAV, or WEBM (optional) (default to WEBM)
+format_id = 'WEBM' # str | The desired media format (optional) (default to WEBM)
 
 try:
     # Get all of a Conversation's Recordings.
@@ -742,7 +742,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **format_id** | **str**| The desired media format. Possible values: NONE, MP3, WAV, or WEBM | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+| **format_id** | **str**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
