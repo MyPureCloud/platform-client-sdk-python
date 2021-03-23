@@ -3638,7 +3638,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_phones"></a>
 
-## [**PhoneEntityListing**](PhoneEntityListing.html) get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, expand=expand, fields=fields)
+## [**PhoneEntityListing**](PhoneEntityListing.html) get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, status_operational_status=status_operational_status, secondary_status_operational_status=secondary_status_operational_status, expand=expand, fields=fields)
 
 
 
@@ -3667,7 +3667,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
-sort_by = 'name' # str | Value by which to sort (optional) (default to name)
+sort_by = 'name' # str | The field to sort by (optional) (default to name)
 sort_order = 'ASC' # str | Sort order (optional) (default to ASC)
 site_id = 'site_id_example' # str | Filter by site.id (optional)
 web_rtc_user_id = 'web_rtc_user_id_example' # str | Filter by webRtcUser.id (optional)
@@ -3678,12 +3678,14 @@ phone_hardware_id = 'phone_hardware_id_example' # str | Filter by phone_hardware
 lines_id = 'lines_id_example' # str | Filter by lines.id (optional)
 lines_name = 'lines_name_example' # str | Filter by lines.name (optional)
 name = 'name_example' # str | Name of the Phone to filter by (optional)
+status_operational_status = 'status_operational_status_example' # str | The primary status to filter by (optional)
+secondary_status_operational_status = 'secondary_status_operational_status_example' # str | The secondary status to filter by (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 fields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)
 
 try:
     # Get a list of Phone Instances
-    api_response = api_instance.get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, expand=expand, fields=fields)
+    api_response = api_instance.get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, status_operational_status=status_operational_status, secondary_status_operational_status=secondary_status_operational_status, expand=expand, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_phones: %s\n" % e)
@@ -3696,7 +3698,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| Value by which to sort | [optional] [default to name] |
+| **sort_by** | **str**| The field to sort by | [optional] [default to name]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus |
 | **sort_order** | **str**| Sort order | [optional] [default to ASC] |
 | **site_id** | **str**| Filter by site.id | [optional]  |
 | **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional]  |
@@ -3707,6 +3709,8 @@ except ApiException as e:
 | **lines_id** | **str**| Filter by lines.id | [optional]  |
 | **lines_name** | **str**| Filter by lines.name | [optional]  |
 | **name** | **str**| Name of the Phone to filter by | [optional]  |
+| **status_operational_status** | **str**| The primary status to filter by | [optional]  |
+| **secondary_status_operational_status** | **str**| The secondary status to filter by | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
 | **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}

@@ -5448,7 +5448,7 @@ class TelephonyProvidersEdgeApi(object):
             for asynchronous request. (optional)
         :param int page_number: Page number
         :param int page_size: Page size
-        :param str sort_by: Value by which to sort
+        :param str sort_by: The field to sort by
         :param str sort_order: Sort order
         :param str site_id: Filter by site.id
         :param str web_rtc_user_id: Filter by webRtcUser.id
@@ -5459,6 +5459,8 @@ class TelephonyProvidersEdgeApi(object):
         :param str lines_id: Filter by lines.id
         :param str lines_name: Filter by lines.name
         :param str name: Name of the Phone to filter by
+        :param str status_operational_status: The primary status to filter by
+        :param str secondary_status_operational_status: The secondary status to filter by
         :param list[str] expand: Fields to expand in the response, comma-separated
         :param list[str] fields: Fields and properties to get, comma-separated
         :return: PhoneEntityListing
@@ -5466,7 +5468,7 @@ class TelephonyProvidersEdgeApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'site_id', 'web_rtc_user_id', 'phone_base_settings_id', 'lines_logged_in_user_id', 'lines_default_for_user_id', 'phone_hardware_id', 'lines_id', 'lines_name', 'name', 'expand', 'fields']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'site_id', 'web_rtc_user_id', 'phone_base_settings_id', 'lines_logged_in_user_id', 'lines_default_for_user_id', 'phone_hardware_id', 'lines_id', 'lines_name', 'name', 'status_operational_status', 'secondary_status_operational_status', 'expand', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -5511,6 +5513,10 @@ class TelephonyProvidersEdgeApi(object):
             query_params['lines.name'] = params['lines_name']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'status_operational_status' in params:
+            query_params['status.operationalStatus'] = params['status_operational_status']
+        if 'secondary_status_operational_status' in params:
+            query_params['secondaryStatus.operationalStatus'] = params['secondary_status_operational_status']
         if 'expand' in params:
             query_params['expand'] = params['expand']
         if 'fields' in params:

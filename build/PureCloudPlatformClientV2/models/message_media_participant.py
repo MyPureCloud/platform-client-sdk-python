@@ -1027,7 +1027,7 @@ class MessageMediaParticipant(object):
         :param type: The type of this MessageMediaParticipant.
         :type: str
         """
-        allowed_values = ["unknown", "sms", "twitter", "facebook", "line", "whatsapp", "telegram", "kakao", "webmessaging"]
+        allowed_values = ["unknown", "sms", "twitter", "facebook", "line", "whatsapp", "telegram", "kakao", "webmessaging", "open"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

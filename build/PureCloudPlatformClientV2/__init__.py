@@ -386,6 +386,7 @@ from .models.common_campaign_division_view import CommonCampaignDivisionView
 from .models.common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .models.common_campaign_entity_listing import CommonCampaignEntityListing
 from .models.condition import Condition
+from .models.configuration_overrides import ConfigurationOverrides
 from .models.connect_rate import ConnectRate
 from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
@@ -907,6 +908,7 @@ from .models.effective_configuration import EffectiveConfiguration
 from .models.email import Email
 from .models.email_address import EmailAddress
 from .models.email_attachment import EmailAttachment
+from .models.email_column import EmailColumn
 from .models.email_conversation import EmailConversation
 from .models.email_conversation_entity_listing import EmailConversationEntityListing
 from .models.email_media_participant import EmailMediaParticipant
@@ -1247,9 +1249,6 @@ from .models.match_shift_trade_request import MatchShiftTradeRequest
 from .models.match_shift_trade_response import MatchShiftTradeResponse
 from .models.max_length import MaxLength
 from .models.max_participants import MaxParticipants
-from .models.media_endpoint_stat_detail_query_clause import MediaEndpointStatDetailQueryClause
-from .models.media_endpoint_stat_detail_query_filter import MediaEndpointStatDetailQueryFilter
-from .models.media_endpoint_stat_detail_query_predicate import MediaEndpointStatDetailQueryPredicate
 from .models.media_participant_request import MediaParticipantRequest
 from .models.media_policies import MediaPolicies
 from .models.media_result import MediaResult

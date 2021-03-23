@@ -48,6 +48,7 @@ class DialerContact(object):
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
             'contact_column_time_zones': 'dict(str, ContactColumnTimeZone)',
+            'configuration_overrides': 'ConfigurationOverrides',
             'self_uri': 'str'
         }
 
@@ -60,6 +61,7 @@ class DialerContact(object):
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
             'contact_column_time_zones': 'contactColumnTimeZones',
+            'configuration_overrides': 'configurationOverrides',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +73,7 @@ class DialerContact(object):
         self._callable = None
         self._phone_number_status = None
         self._contact_column_time_zones = None
+        self._configuration_overrides = None
         self._self_uri = None
 
     @property
@@ -256,6 +259,29 @@ class DialerContact(object):
         """
         
         self._contact_column_time_zones = contact_column_time_zones
+
+    @property
+    def configuration_overrides(self):
+        """
+        Gets the configuration_overrides of this DialerContact.
+        the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue
+
+        :return: The configuration_overrides of this DialerContact.
+        :rtype: ConfigurationOverrides
+        """
+        return self._configuration_overrides
+
+    @configuration_overrides.setter
+    def configuration_overrides(self, configuration_overrides):
+        """
+        Sets the configuration_overrides of this DialerContact.
+        the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue
+
+        :param configuration_overrides: The configuration_overrides of this DialerContact.
+        :type: ConfigurationOverrides
+        """
+        
+        self._configuration_overrides = configuration_overrides
 
     @property
     def self_uri(self):

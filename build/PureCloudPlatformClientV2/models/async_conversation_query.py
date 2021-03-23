@@ -43,7 +43,6 @@ class AsyncConversationQuery(object):
             'conversation_filters': 'list[ConversationDetailQueryFilter]',
             'segment_filters': 'list[SegmentDetailQueryFilter]',
             'evaluation_filters': 'list[EvaluationDetailQueryFilter]',
-            'media_endpoint_stat_filters': 'list[MediaEndpointStatDetailQueryFilter]',
             'survey_filters': 'list[SurveyDetailQueryFilter]',
             'resolution_filters': 'list[ResolutionDetailQueryFilter]',
             'order': 'str',
@@ -57,7 +56,6 @@ class AsyncConversationQuery(object):
             'conversation_filters': 'conversationFilters',
             'segment_filters': 'segmentFilters',
             'evaluation_filters': 'evaluationFilters',
-            'media_endpoint_stat_filters': 'mediaEndpointStatFilters',
             'survey_filters': 'surveyFilters',
             'resolution_filters': 'resolutionFilters',
             'order': 'order',
@@ -70,7 +68,6 @@ class AsyncConversationQuery(object):
         self._conversation_filters = None
         self._segment_filters = None
         self._evaluation_filters = None
-        self._media_endpoint_stat_filters = None
         self._survey_filters = None
         self._resolution_filters = None
         self._order = None
@@ -147,29 +144,6 @@ class AsyncConversationQuery(object):
         """
         
         self._evaluation_filters = evaluation_filters
-
-    @property
-    def media_endpoint_stat_filters(self):
-        """
-        Gets the media_endpoint_stat_filters of this AsyncConversationQuery.
-        Filters that target mediaEndpointStats
-
-        :return: The media_endpoint_stat_filters of this AsyncConversationQuery.
-        :rtype: list[MediaEndpointStatDetailQueryFilter]
-        """
-        return self._media_endpoint_stat_filters
-
-    @media_endpoint_stat_filters.setter
-    def media_endpoint_stat_filters(self, media_endpoint_stat_filters):
-        """
-        Sets the media_endpoint_stat_filters of this AsyncConversationQuery.
-        Filters that target mediaEndpointStats
-
-        :param media_endpoint_stat_filters: The media_endpoint_stat_filters of this AsyncConversationQuery.
-        :type: list[MediaEndpointStatDetailQueryFilter]
-        """
-        
-        self._media_endpoint_stat_filters = media_endpoint_stat_filters
 
     @property
     def survey_filters(self):

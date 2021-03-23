@@ -386,6 +386,7 @@ from .common_campaign_division_view import CommonCampaignDivisionView
 from .common_campaign_division_view_entity_listing import CommonCampaignDivisionViewEntityListing
 from .common_campaign_entity_listing import CommonCampaignEntityListing
 from .condition import Condition
+from .configuration_overrides import ConfigurationOverrides
 from .connect_rate import ConnectRate
 from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
@@ -907,6 +908,7 @@ from .effective_configuration import EffectiveConfiguration
 from .email import Email
 from .email_address import EmailAddress
 from .email_attachment import EmailAttachment
+from .email_column import EmailColumn
 from .email_conversation import EmailConversation
 from .email_conversation_entity_listing import EmailConversationEntityListing
 from .email_media_participant import EmailMediaParticipant
@@ -1247,9 +1249,6 @@ from .match_shift_trade_request import MatchShiftTradeRequest
 from .match_shift_trade_response import MatchShiftTradeResponse
 from .max_length import MaxLength
 from .max_participants import MaxParticipants
-from .media_endpoint_stat_detail_query_clause import MediaEndpointStatDetailQueryClause
-from .media_endpoint_stat_detail_query_filter import MediaEndpointStatDetailQueryFilter
-from .media_endpoint_stat_detail_query_predicate import MediaEndpointStatDetailQueryPredicate
 from .media_participant_request import MediaParticipantRequest
 from .media_policies import MediaPolicies
 from .media_result import MediaResult

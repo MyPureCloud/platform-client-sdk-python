@@ -10,7 +10,6 @@ title: AsyncConversationQuery
 | **conversation_filters** | [**list[ConversationDetailQueryFilter]**](ConversationDetailQueryFilter.html) | Filters that target conversation-level data | [optional] |
 | **segment_filters** | [**list[SegmentDetailQueryFilter]**](SegmentDetailQueryFilter.html) | Filters that target individual segments within a conversation | [optional] |
 | **evaluation_filters** | [**list[EvaluationDetailQueryFilter]**](EvaluationDetailQueryFilter.html) | Filters that target evaluations | [optional] |
-| **media_endpoint_stat_filters** | [**list[MediaEndpointStatDetailQueryFilter]**](MediaEndpointStatDetailQueryFilter.html) | Filters that target mediaEndpointStats | [optional] |
 | **survey_filters** | [**list[SurveyDetailQueryFilter]**](SurveyDetailQueryFilter.html) | Filters that target surveys | [optional] |
 | **resolution_filters** | [**list[ResolutionDetailQueryFilter]**](ResolutionDetailQueryFilter.html) | Filters that target resolutions | [optional] |
 | **order** | **str** | Sort the result set in ascending/descending order. Default is ascending | [optional] |

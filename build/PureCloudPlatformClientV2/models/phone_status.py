@@ -142,7 +142,7 @@ class PhoneStatus(object):
         :param operational_status: The operational_status of this PhoneStatus.
         :type: str
         """
-        allowed_values = ["OPERATIONAL", "DEGRADED", "OFFLINE"]
+        allowed_values = ["OPERATIONAL", "DEGRADED", "OFFLINE", "UNKNOWN"]
         if operational_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operational_status -> " + operational_status)
             self._operational_status = "outdated_sdk_version"

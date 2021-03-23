@@ -60,6 +60,7 @@ class Flow(object):
             'current_operation': 'Operation',
             'nlu_info': 'NluInfo',
             'supported_languages': 'list[SupportedLanguage]',
+            'compatible_flow_types': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -84,6 +85,7 @@ class Flow(object):
             'current_operation': 'currentOperation',
             'nlu_info': 'nluInfo',
             'supported_languages': 'supportedLanguages',
+            'compatible_flow_types': 'compatibleFlowTypes',
             'self_uri': 'selfUri'
         }
 
@@ -107,6 +109,7 @@ class Flow(object):
         self._current_operation = None
         self._nlu_info = None
         self._supported_languages = None
+        self._compatible_flow_types = None
         self._self_uri = None
 
     @property
@@ -572,6 +575,29 @@ class Flow(object):
         """
         
         self._supported_languages = supported_languages
+
+    @property
+    def compatible_flow_types(self):
+        """
+        Gets the compatible_flow_types of this Flow.
+        Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
+
+        :return: The compatible_flow_types of this Flow.
+        :rtype: list[str]
+        """
+        return self._compatible_flow_types
+
+    @compatible_flow_types.setter
+    def compatible_flow_types(self, compatible_flow_types):
+        """
+        Sets the compatible_flow_types of this Flow.
+        Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
+
+        :param compatible_flow_types: The compatible_flow_types of this Flow.
+        :type: list[str]
+        """
+        
+        self._compatible_flow_types = compatible_flow_types
 
     @property
     def self_uri(self):
