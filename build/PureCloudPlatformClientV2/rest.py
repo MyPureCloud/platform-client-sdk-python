@@ -102,12 +102,15 @@ class RESTClientObject(object):
         proxy_username = Configuration().proxy_username
         proxy_password = Configuration().proxy_password
 
+        retries = urllib3.util.Retry()
+        retries.method_whitelist = {'DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'TRACE'}
         # https pool manager
         if proxy:
             headers = None
             if proxy_username and proxy_password:
                 headers = urllib3.make_headers(proxy_basic_auth=proxy_username + ':' + proxy_password)
             self.pool_manager = urllib3.ProxyManager(
+                retries=retries,
                 num_pools=pools_size,
                 maxsize=max_size,
                 block=True,
@@ -120,6 +123,7 @@ class RESTClientObject(object):
             )
         else:
             self.pool_manager = urllib3.PoolManager(
+                retries=retries,
                 num_pools=pools_size,
                 maxsize=max_size,
                 block=True,

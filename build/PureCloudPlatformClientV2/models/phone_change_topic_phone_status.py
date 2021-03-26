@@ -44,8 +44,7 @@ class PhoneChangeTopicPhoneStatus(object):
             'operational_status': 'str',
             'edge': 'PhoneChangeTopicEdgeReference',
             'provision': 'PhoneChangeTopicProvisionInfo',
-            'line_statuses': 'list[PhoneChangeTopicLineStatus]',
-            'event_creation_time': 'PhoneChangeTopicOffsetDateTime'
+            'line_statuses': 'list[PhoneChangeTopicLineStatus]'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class PhoneChangeTopicPhoneStatus(object):
             'operational_status': 'operationalStatus',
             'edge': 'edge',
             'provision': 'provision',
-            'line_statuses': 'lineStatuses',
-            'event_creation_time': 'eventCreationTime'
+            'line_statuses': 'lineStatuses'
         }
 
         self._id = None
@@ -62,7 +60,6 @@ class PhoneChangeTopicPhoneStatus(object):
         self._edge = None
         self._provision = None
         self._line_statuses = None
-        self._event_creation_time = None
 
     @property
     def id(self):
@@ -182,29 +179,6 @@ class PhoneChangeTopicPhoneStatus(object):
         """
         
         self._line_statuses = line_statuses
-
-    @property
-    def event_creation_time(self):
-        """
-        Gets the event_creation_time of this PhoneChangeTopicPhoneStatus.
-
-
-        :return: The event_creation_time of this PhoneChangeTopicPhoneStatus.
-        :rtype: PhoneChangeTopicOffsetDateTime
-        """
-        return self._event_creation_time
-
-    @event_creation_time.setter
-    def event_creation_time(self, event_creation_time):
-        """
-        Sets the event_creation_time of this PhoneChangeTopicPhoneStatus.
-
-
-        :param event_creation_time: The event_creation_time of this PhoneChangeTopicPhoneStatus.
-        :type: PhoneChangeTopicOffsetDateTime
-        """
-        
-        self._event_creation_time = event_creation_time
 
     def to_dict(self):
         """

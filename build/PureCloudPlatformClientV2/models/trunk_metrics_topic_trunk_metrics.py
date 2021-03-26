@@ -41,20 +41,17 @@ class TrunkMetricsTopicTrunkMetrics(object):
         """
         self.swagger_types = {
             'calls': 'TrunkMetricsTopicTrunkMetricsCalls',
-            'event_time': 'TrunkMetricsTopicOffsetDateTime',
             'qos': 'TrunkMetricsTopicTrunkMetricsQoS',
             'trunk': 'TrunkMetricsTopicUriReference'
         }
 
         self.attribute_map = {
             'calls': 'calls',
-            'event_time': 'eventTime',
             'qos': 'qos',
             'trunk': 'trunk'
         }
 
         self._calls = None
-        self._event_time = None
         self._qos = None
         self._trunk = None
 
@@ -80,29 +77,6 @@ class TrunkMetricsTopicTrunkMetrics(object):
         """
         
         self._calls = calls
-
-    @property
-    def event_time(self):
-        """
-        Gets the event_time of this TrunkMetricsTopicTrunkMetrics.
-
-
-        :return: The event_time of this TrunkMetricsTopicTrunkMetrics.
-        :rtype: TrunkMetricsTopicOffsetDateTime
-        """
-        return self._event_time
-
-    @event_time.setter
-    def event_time(self, event_time):
-        """
-        Sets the event_time of this TrunkMetricsTopicTrunkMetrics.
-
-
-        :param event_time: The event_time of this TrunkMetricsTopicTrunkMetrics.
-        :type: TrunkMetricsTopicOffsetDateTime
-        """
-        
-        self._event_time = event_time
 
     @property
     def qos(self):

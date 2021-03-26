@@ -40,37 +40,13 @@ class UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification(obj
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'data_availability_date': 'UserDetailsDatalakeAvailabilityTopicDateTime'
+            
         }
 
         self.attribute_map = {
-            'data_availability_date': 'dataAvailabilityDate'
+            
         }
 
-        self._data_availability_date = None
-
-    @property
-    def data_availability_date(self):
-        """
-        Gets the data_availability_date of this UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.
-
-
-        :return: The data_availability_date of this UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.
-        :rtype: UserDetailsDatalakeAvailabilityTopicDateTime
-        """
-        return self._data_availability_date
-
-    @data_availability_date.setter
-    def data_availability_date(self, data_availability_date):
-        """
-        Sets the data_availability_date of this UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.
-
-
-        :param data_availability_date: The data_availability_date of this UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.
-        :type: UserDetailsDatalakeAvailabilityTopicDateTime
-        """
-        
-        self._data_availability_date = data_availability_date
 
     def to_dict(self):
         """

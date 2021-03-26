@@ -41,7 +41,6 @@ class EdgeMetricsTopicEdgeMetrics(object):
         """
         self.swagger_types = {
             'edge': 'EdgeMetricsTopicUriReference',
-            'event_time': 'EdgeMetricsTopicOffsetDateTime',
             'up_time_msec': 'int',
             'processors': 'list[EdgeMetricsTopicEdgeMetricProcessor]',
             'memory': 'list[EdgeMetricsTopicEdgeMetricMemory]',
@@ -52,7 +51,6 @@ class EdgeMetricsTopicEdgeMetrics(object):
 
         self.attribute_map = {
             'edge': 'edge',
-            'event_time': 'eventTime',
             'up_time_msec': 'upTimeMsec',
             'processors': 'processors',
             'memory': 'memory',
@@ -62,7 +60,6 @@ class EdgeMetricsTopicEdgeMetrics(object):
         }
 
         self._edge = None
-        self._event_time = None
         self._up_time_msec = None
         self._processors = None
         self._memory = None
@@ -92,29 +89,6 @@ class EdgeMetricsTopicEdgeMetrics(object):
         """
         
         self._edge = edge
-
-    @property
-    def event_time(self):
-        """
-        Gets the event_time of this EdgeMetricsTopicEdgeMetrics.
-
-
-        :return: The event_time of this EdgeMetricsTopicEdgeMetrics.
-        :rtype: EdgeMetricsTopicOffsetDateTime
-        """
-        return self._event_time
-
-    @event_time.setter
-    def event_time(self, event_time):
-        """
-        Sets the event_time of this EdgeMetricsTopicEdgeMetrics.
-
-
-        :param event_time: The event_time of this EdgeMetricsTopicEdgeMetrics.
-        :type: EdgeMetricsTopicOffsetDateTime
-        """
-        
-        self._event_time = event_time
 
     @property
     def up_time_msec(self):

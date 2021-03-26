@@ -12,7 +12,6 @@ title: PhoneChangeTopicPhoneStatus
 | **edge** | [**PhoneChangeTopicEdgeReference**](PhoneChangeTopicEdgeReference.html) |  | [optional] |
 | **provision** | [**PhoneChangeTopicProvisionInfo**](PhoneChangeTopicProvisionInfo.html) |  | [optional] |
 | **line_statuses** | [**list[PhoneChangeTopicLineStatus]**](PhoneChangeTopicLineStatus.html) |  | [optional] |
-| **event_creation_time** | [**PhoneChangeTopicOffsetDateTime**](PhoneChangeTopicOffsetDateTime.html) |  | [optional] |
 {: class="table table-striped"}
 
 

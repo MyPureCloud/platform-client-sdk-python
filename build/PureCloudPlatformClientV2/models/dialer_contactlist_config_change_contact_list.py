@@ -47,6 +47,7 @@ class DialerContactlistConfigChangeContactList(object):
             'version': 'int',
             'column_names': 'list[str]',
             'phone_columns': 'list[DialerContactlistConfigChangeContactPhoneNumberColumn]',
+            'email_columns': 'list[DialerContactlistConfigChangeEmailColumn]',
             'import_status': 'DialerContactlistConfigChangeImportStatus',
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
@@ -66,6 +67,7 @@ class DialerContactlistConfigChangeContactList(object):
             'version': 'version',
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
+            'email_columns': 'emailColumns',
             'import_status': 'importStatus',
             'preview_mode_column_name': 'previewModeColumnName',
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
@@ -84,6 +86,7 @@ class DialerContactlistConfigChangeContactList(object):
         self._version = None
         self._column_names = None
         self._phone_columns = None
+        self._email_columns = None
         self._import_status = None
         self._preview_mode_column_name = None
         self._preview_mode_accepted_values = None
@@ -254,6 +257,29 @@ class DialerContactlistConfigChangeContactList(object):
         """
         
         self._phone_columns = phone_columns
+
+    @property
+    def email_columns(self):
+        """
+        Gets the email_columns of this DialerContactlistConfigChangeContactList.
+
+
+        :return: The email_columns of this DialerContactlistConfigChangeContactList.
+        :rtype: list[DialerContactlistConfigChangeEmailColumn]
+        """
+        return self._email_columns
+
+    @email_columns.setter
+    def email_columns(self, email_columns):
+        """
+        Sets the email_columns of this DialerContactlistConfigChangeContactList.
+
+
+        :param email_columns: The email_columns of this DialerContactlistConfigChangeContactList.
+        :type: list[DialerContactlistConfigChangeEmailColumn]
+        """
+        
+        self._email_columns = email_columns
 
     @property
     def import_status(self):

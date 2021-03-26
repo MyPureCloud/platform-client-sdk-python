@@ -1,13 +1,14 @@
 ---
-title: TrunkMetricsTopicZoneOffset
+title: AuditTopicAddressableEntityRef
 ---
-## TrunkMetricsTopicZoneOffset
+## AuditTopicAddressableEntityRef
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total_seconds** | **int** |  | [optional] |
+| **id** | **str** |  | [optional] |
+| **self_uri** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

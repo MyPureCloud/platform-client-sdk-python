@@ -41,34 +41,25 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         """
         self.swagger_types = {
             'request_id': 'str',
-            'date_import_started': 'WfmHistoricalDataUploadRequestStatusTopicDateTime',
-            'date_import_ended': 'WfmHistoricalDataUploadRequestStatusTopicDateTime',
-            'date_created': 'WfmHistoricalDataUploadRequestStatusTopicDateTime',
-            'date_modified': 'WfmHistoricalDataUploadRequestStatusTopicDateTime',
             'status': 'str',
             'error': 'str',
-            'active': 'bool'
+            'active': 'bool',
+            'type': 'str'
         }
 
         self.attribute_map = {
             'request_id': 'requestId',
-            'date_import_started': 'dateImportStarted',
-            'date_import_ended': 'dateImportEnded',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
             'status': 'status',
             'error': 'error',
-            'active': 'active'
+            'active': 'active',
+            'type': 'type'
         }
 
         self._request_id = None
-        self._date_import_started = None
-        self._date_import_ended = None
-        self._date_created = None
-        self._date_modified = None
         self._status = None
         self._error = None
         self._active = None
+        self._type = None
 
     @property
     def request_id(self):
@@ -92,98 +83,6 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         """
         
         self._request_id = request_id
-
-    @property
-    def date_import_started(self):
-        """
-        Gets the date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :return: The date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :rtype: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        return self._date_import_started
-
-    @date_import_started.setter
-    def date_import_started(self, date_import_started):
-        """
-        Sets the date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :param date_import_started: The date_import_started of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :type: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        
-        self._date_import_started = date_import_started
-
-    @property
-    def date_import_ended(self):
-        """
-        Gets the date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :return: The date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :rtype: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        return self._date_import_ended
-
-    @date_import_ended.setter
-    def date_import_ended(self, date_import_ended):
-        """
-        Sets the date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :param date_import_ended: The date_import_ended of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :type: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        
-        self._date_import_ended = date_import_ended
-
-    @property
-    def date_created(self):
-        """
-        Gets the date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :return: The date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :rtype: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """
-        Sets the date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :param date_created: The date_created of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :type: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        
-        self._date_created = date_created
-
-    @property
-    def date_modified(self):
-        """
-        Gets the date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :return: The date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :rtype: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified):
-        """
-        Sets the date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-
-
-        :param date_modified: The date_modified of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
-        :type: WfmHistoricalDataUploadRequestStatusTopicDateTime
-        """
-        
-        self._date_modified = date_modified
 
     @property
     def status(self):
@@ -257,6 +156,33 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         """
         
         self._active = active
+
+    @property
+    def type(self):
+        """
+        Gets the type of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The type of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param type: The type of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: str
+        """
+        allowed_values = ["Csv", "Json"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     def to_dict(self):
         """

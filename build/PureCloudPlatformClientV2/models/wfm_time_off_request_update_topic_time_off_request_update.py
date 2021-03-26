@@ -45,7 +45,9 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'is_full_day_request': 'bool',
             'marked_as_read': 'bool',
             'activity_code_id': 'str',
+            'paid': 'bool',
             'status': 'str',
+            'substatus': 'str',
             'partial_day_start_date_times': 'list[str]',
             'full_day_management_unit_dates': 'list[str]',
             'daily_duration_minutes': 'int',
@@ -64,7 +66,9 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'is_full_day_request': 'isFullDayRequest',
             'marked_as_read': 'markedAsRead',
             'activity_code_id': 'activityCodeId',
+            'paid': 'paid',
             'status': 'status',
+            'substatus': 'substatus',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'daily_duration_minutes': 'dailyDurationMinutes',
@@ -82,7 +86,9 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         self._is_full_day_request = None
         self._marked_as_read = None
         self._activity_code_id = None
+        self._paid = None
         self._status = None
+        self._substatus = None
         self._partial_day_start_date_times = None
         self._full_day_management_unit_dates = None
         self._daily_duration_minutes = None
@@ -210,6 +216,29 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         self._activity_code_id = activity_code_id
 
     @property
+    def paid(self):
+        """
+        Gets the paid of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The paid of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: bool
+        """
+        return self._paid
+
+    @paid.setter
+    def paid(self, paid):
+        """
+        Sets the paid of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param paid: The paid of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: bool
+        """
+        
+        self._paid = paid
+
+    @property
     def status(self):
         """
         Gets the status of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
@@ -235,6 +264,33 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def substatus(self):
+        """
+        Gets the substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: str
+        """
+        return self._substatus
+
+    @substatus.setter
+    def substatus(self, substatus):
+        """
+        Sets the substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param substatus: The substatus of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: str
+        """
+        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InvalidDailyDuration", "OutsideShift", "Waitlisted"]
+        if substatus.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for substatus -> " + substatus)
+            self._substatus = "outdated_sdk_version"
+        else:
+            self._substatus = substatus
 
     @property
     def partial_day_start_date_times(self):

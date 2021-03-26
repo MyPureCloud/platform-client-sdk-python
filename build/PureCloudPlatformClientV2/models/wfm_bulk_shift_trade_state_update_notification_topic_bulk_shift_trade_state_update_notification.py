@@ -42,21 +42,18 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         self.swagger_types = {
             'status': 'str',
             'operation_id': 'str',
-            'result': 'WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing',
-            'week_date': 'WfmBulkShiftTradeStateUpdateNotificationTopicLocalDate'
+            'result': 'WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing'
         }
 
         self.attribute_map = {
             'status': 'status',
             'operation_id': 'operationId',
-            'result': 'result',
-            'week_date': 'weekDate'
+            'result': 'result'
         }
 
         self._status = None
         self._operation_id = None
         self._result = None
-        self._week_date = None
 
     @property
     def status(self):
@@ -130,29 +127,6 @@ class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNoti
         """
         
         self._result = result
-
-    @property
-    def week_date(self):
-        """
-        Gets the week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
-
-
-        :return: The week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
-        :rtype: WfmBulkShiftTradeStateUpdateNotificationTopicLocalDate
-        """
-        return self._week_date
-
-    @week_date.setter
-    def week_date(self, week_date):
-        """
-        Sets the week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
-
-
-        :param week_date: The week_date of this WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.
-        :type: WfmBulkShiftTradeStateUpdateNotificationTopicLocalDate
-        """
-        
-        self._week_date = week_date
 
     def to_dict(self):
         """
