@@ -43,26 +43,29 @@ class SendAgentlessOutboundMessageRequest(object):
             'from_address': 'str',
             'to_address': 'str',
             'to_address_messenger_type': 'str',
-            'text_body': 'str'
+            'text_body': 'str',
+            'messaging_template': 'MessagingTemplateRequest'
         }
 
         self.attribute_map = {
             'from_address': 'fromAddress',
             'to_address': 'toAddress',
             'to_address_messenger_type': 'toAddressMessengerType',
-            'text_body': 'textBody'
+            'text_body': 'textBody',
+            'messaging_template': 'messagingTemplate'
         }
 
         self._from_address = None
         self._to_address = None
         self._to_address_messenger_type = None
         self._text_body = None
+        self._messaging_template = None
 
     @property
     def from_address(self):
         """
         Gets the from_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
+        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
 
         :return: The from_address of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -73,7 +76,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def from_address(self, from_address):
         """
         Sets the from_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
+        The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
 
         :param from_address: The from_address of this SendAgentlessOutboundMessageRequest.
         :type: str
@@ -108,7 +111,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self):
         """
         Gets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS is the only supported type.
+        The recipient messaging address messenger type. Currently SMS and WhatsApp is the only supported type.
 
         :return: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -119,7 +122,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address_messenger_type(self, to_address_messenger_type):
         """
         Sets the to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
-        The recipient messaging address messenger type. Currently SMS is the only supported type.
+        The recipient messaging address messenger type. Currently SMS and WhatsApp is the only supported type.
 
         :param to_address_messenger_type: The to_address_messenger_type of this SendAgentlessOutboundMessageRequest.
         :type: str
@@ -135,7 +138,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def text_body(self):
         """
         Gets the text_body of this SendAgentlessOutboundMessageRequest.
-        The text of the message to send
+        The text of the message to send. This field is required in the case of SMS messenger type
 
         :return: The text_body of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -146,13 +149,36 @@ class SendAgentlessOutboundMessageRequest(object):
     def text_body(self, text_body):
         """
         Sets the text_body of this SendAgentlessOutboundMessageRequest.
-        The text of the message to send
+        The text of the message to send. This field is required in the case of SMS messenger type
 
         :param text_body: The text_body of this SendAgentlessOutboundMessageRequest.
         :type: str
         """
         
         self._text_body = text_body
+
+    @property
+    def messaging_template(self):
+        """
+        Gets the messaging_template of this SendAgentlessOutboundMessageRequest.
+        The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
+
+        :return: The messaging_template of this SendAgentlessOutboundMessageRequest.
+        :rtype: MessagingTemplateRequest
+        """
+        return self._messaging_template
+
+    @messaging_template.setter
+    def messaging_template(self, messaging_template):
+        """
+        Sets the messaging_template of this SendAgentlessOutboundMessageRequest.
+        The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
+
+        :param messaging_template: The messaging_template of this SendAgentlessOutboundMessageRequest.
+        :type: MessagingTemplateRequest
+        """
+        
+        self._messaging_template = messaging_template
 
     def to_dict(self):
         """

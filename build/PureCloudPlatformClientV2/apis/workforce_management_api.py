@@ -640,84 +640,6 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
-        """
-        Delete management unit
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['management_unit_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_workforcemanagement_managementunit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'management_unit_id' is set
-        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
-            raise ValueError("Missing the required parameter `management_unit_id` when calling `delete_workforcemanagement_managementunit`")
-
-
-        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'management_unit_id' in params:
-            path_params['managementUnitId'] = params['management_unit_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def delete_workforcemanagement_managementunit_workplan(self, management_unit_id, work_plan_id, **kwargs):
         """
         Delete a work plan
@@ -3103,10 +3025,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
+    def get_workforcemanagement_historicaldata_deletejob(self, **kwargs):
         """
-        Get management unit
-        settings.shortTermForecasting is deprecated and now lives on the business unit
+        Retrieves delete job status for historical data imports of the organization
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3114,18 +3036,16 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
+        >>> thread = api.get_workforcemanagement_historicaldata_deletejob(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param list[str] expand: 
-        :return: ManagementUnit
+        :return: HistoricalImportDeleteJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'expand']
+        all_params = []
         all_params.append('callback')
 
         params = locals()
@@ -3133,24 +3053,17 @@ class WorkforceManagementApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_workforcemanagement_managementunit" % key
+                    " to method get_workforcemanagement_historicaldata_deletejob" % key
                 )
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'management_unit_id' is set
-        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
-            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit`")
 
 
-        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/workforcemanagement/historicaldata/deletejob'.replace('{format}', 'json')
         path_params = {}
-        if 'management_unit_id' in params:
-            path_params['managementUnitId'] = params['management_unit_id']
 
         query_params = {}
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -3179,7 +3092,79 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ManagementUnit',
+                                            response_type='HistoricalImportDeleteJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_historicaldata_importstatus(self, **kwargs):
+        """
+        Retrieves status of the historical data imports of the organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_historicaldata_importstatus(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: HistoricalImportStatusListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_historicaldata_importstatus" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/historicaldata/importstatus'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HistoricalImportStatusListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5497,87 +5482,6 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit(self, management_unit_id, **kwargs):
-        """
-        Update the requested management unit
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.patch_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param UpdateManagementUnitRequest body: body
-        :return: ManagementUnit
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['management_unit_id', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method patch_workforcemanagement_managementunit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'management_unit_id' is set
-        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
-            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit`")
-
-
-        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'management_unit_id' in params:
-            path_params['managementUnitId'] = params['management_unit_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'PATCH',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ManagementUnit',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id, user_id, time_off_request_id, **kwargs):
         """
         Update a time off request
@@ -7326,6 +7230,153 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BusinessUnit',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_historicaldata_deletejob(self, **kwargs):
+        """
+        Delete the entries of the historical data imports in the organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_historicaldata_deletejob(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: HistoricalImportDeleteJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_historicaldata_deletejob" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/historicaldata/deletejob'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HistoricalImportDeleteJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_historicaldata_validate(self, **kwargs):
+        """
+        Trigger validation process for historical import
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_historicaldata_validate(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ValidationServiceRequest body: body
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_historicaldata_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/historicaldata/validate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

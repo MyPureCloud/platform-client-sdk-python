@@ -42,6 +42,7 @@ class FlowOutcome(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableDivision',
             'description': 'str',
             'current_operation': 'Operation',
             'self_uri': 'str'
@@ -50,6 +51,7 @@ class FlowOutcome(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'current_operation': 'currentOperation',
             'self_uri': 'selfUri'
@@ -57,6 +59,7 @@ class FlowOutcome(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._current_operation = None
         self._self_uri = None
@@ -106,6 +109,29 @@ class FlowOutcome(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this FlowOutcome.
+        The division to which this entity belongs.
+
+        :return: The division of this FlowOutcome.
+        :rtype: WritableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this FlowOutcome.
+        The division to which this entity belongs.
+
+        :param division: The division of this FlowOutcome.
+        :type: WritableDivision
+        """
+        
+        self._division = division
 
     @property
     def description(self):

@@ -59,7 +59,6 @@ class AnalyticsSession(object):
             'edge_id': 'str',
             'remote_name_displayable': 'str',
             'room_id': 'str',
-            'monitored_session_id': 'str',
             'monitored_participant_id': 'str',
             'callback_user_name': 'str',
             'callback_numbers': 'list[str]',
@@ -101,7 +100,12 @@ class AnalyticsSession(object):
             'agent_assistant_id': 'str',
             'proposed_agents': 'list[AnalyticsProposedAgent]',
             'assigner_id': 'str',
-            'acw_skipped': 'bool'
+            'acw_skipped': 'bool',
+            'bullseye_ring': 'int',
+            'agent_bullseye_ring': 'int',
+            'routing_rule': 'int',
+            'removed_skill_ids': 'list[str]',
+            'active_skill_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -124,7 +128,6 @@ class AnalyticsSession(object):
             'edge_id': 'edgeId',
             'remote_name_displayable': 'remoteNameDisplayable',
             'room_id': 'roomId',
-            'monitored_session_id': 'monitoredSessionId',
             'monitored_participant_id': 'monitoredParticipantId',
             'callback_user_name': 'callbackUserName',
             'callback_numbers': 'callbackNumbers',
@@ -166,7 +169,12 @@ class AnalyticsSession(object):
             'agent_assistant_id': 'agentAssistantId',
             'proposed_agents': 'proposedAgents',
             'assigner_id': 'assignerId',
-            'acw_skipped': 'acwSkipped'
+            'acw_skipped': 'acwSkipped',
+            'bullseye_ring': 'bullseyeRing',
+            'agent_bullseye_ring': 'agentBullseyeRing',
+            'routing_rule': 'routingRule',
+            'removed_skill_ids': 'removedSkillIds',
+            'active_skill_ids': 'activeSkillIds'
         }
 
         self._media_type = None
@@ -188,7 +196,6 @@ class AnalyticsSession(object):
         self._edge_id = None
         self._remote_name_displayable = None
         self._room_id = None
-        self._monitored_session_id = None
         self._monitored_participant_id = None
         self._callback_user_name = None
         self._callback_numbers = None
@@ -231,6 +238,11 @@ class AnalyticsSession(object):
         self._proposed_agents = None
         self._assigner_id = None
         self._acw_skipped = None
+        self._bullseye_ring = None
+        self._agent_bullseye_ring = None
+        self._routing_rule = None
+        self._removed_skill_ids = None
+        self._active_skill_ids = None
 
     @property
     def media_type(self):
@@ -680,29 +692,6 @@ class AnalyticsSession(object):
         """
         
         self._room_id = room_id
-
-    @property
-    def monitored_session_id(self):
-        """
-        Gets the monitored_session_id of this AnalyticsSession.
-        The sessionID being monitored
-
-        :return: The monitored_session_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._monitored_session_id
-
-    @monitored_session_id.setter
-    def monitored_session_id(self, monitored_session_id):
-        """
-        Sets the monitored_session_id of this AnalyticsSession.
-        The sessionID being monitored
-
-        :param monitored_session_id: The monitored_session_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._monitored_session_id = monitored_session_id
 
     @property
     def monitored_participant_id(self):
@@ -1673,6 +1662,121 @@ class AnalyticsSession(object):
         """
         
         self._acw_skipped = acw_skipped
+
+    @property
+    def bullseye_ring(self):
+        """
+        Gets the bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the conversation
+
+        :return: The bullseye_ring of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._bullseye_ring
+
+    @bullseye_ring.setter
+    def bullseye_ring(self, bullseye_ring):
+        """
+        Sets the bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the conversation
+
+        :param bullseye_ring: The bullseye_ring of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._bullseye_ring = bullseye_ring
+
+    @property
+    def agent_bullseye_ring(self):
+        """
+        Gets the agent_bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the targeted agent
+
+        :return: The agent_bullseye_ring of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._agent_bullseye_ring
+
+    @agent_bullseye_ring.setter
+    def agent_bullseye_ring(self, agent_bullseye_ring):
+        """
+        Sets the agent_bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the targeted agent
+
+        :param agent_bullseye_ring: The agent_bullseye_ring of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._agent_bullseye_ring = agent_bullseye_ring
+
+    @property
+    def routing_rule(self):
+        """
+        Gets the routing_rule of this AnalyticsSession.
+        Routing rule the conversation is in for preferred agent routing
+
+        :return: The routing_rule of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._routing_rule
+
+    @routing_rule.setter
+    def routing_rule(self, routing_rule):
+        """
+        Sets the routing_rule of this AnalyticsSession.
+        Routing rule the conversation is in for preferred agent routing
+
+        :param routing_rule: The routing_rule of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._routing_rule = routing_rule
+
+    @property
+    def removed_skill_ids(self):
+        """
+        Gets the removed_skill_ids of this AnalyticsSession.
+        IDs of skills that have been removed by bullseye routing
+
+        :return: The removed_skill_ids of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._removed_skill_ids
+
+    @removed_skill_ids.setter
+    def removed_skill_ids(self, removed_skill_ids):
+        """
+        Sets the removed_skill_ids of this AnalyticsSession.
+        IDs of skills that have been removed by bullseye routing
+
+        :param removed_skill_ids: The removed_skill_ids of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+        self._removed_skill_ids = removed_skill_ids
+
+    @property
+    def active_skill_ids(self):
+        """
+        Gets the active_skill_ids of this AnalyticsSession.
+        IDs of Skills that are active on the conversation
+
+        :return: The active_skill_ids of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._active_skill_ids
+
+    @active_skill_ids.setter
+    def active_skill_ids(self, active_skill_ids):
+        """
+        Sets the active_skill_ids of this AnalyticsSession.
+        IDs of Skills that are active on the conversation
+
+        :param active_skill_ids: The active_skill_ids of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+        self._active_skill_ids = active_skill_ids
 
     def to_dict(self):
         """

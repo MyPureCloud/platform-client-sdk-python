@@ -40,11 +40,11 @@ class ConversationCallEventTopicErrorBody(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'status': 'int',
+            'message': 'str',
             'code': 'str',
+            'status': 'int',
             'entity_id': 'str',
             'entity_name': 'str',
-            'message': 'str',
             'message_with_params': 'str',
             'message_params': 'dict(str, str)',
             'context_id': 'str',
@@ -53,11 +53,11 @@ class ConversationCallEventTopicErrorBody(object):
         }
 
         self.attribute_map = {
-            'status': 'status',
+            'message': 'message',
             'code': 'code',
+            'status': 'status',
             'entity_id': 'entityId',
             'entity_name': 'entityName',
-            'message': 'message',
             'message_with_params': 'messageWithParams',
             'message_params': 'messageParams',
             'context_id': 'contextId',
@@ -65,11 +65,11 @@ class ConversationCallEventTopicErrorBody(object):
             'errors': 'errors'
         }
 
-        self._status = None
+        self._message = None
         self._code = None
+        self._status = None
         self._entity_id = None
         self._entity_name = None
-        self._message = None
         self._message_with_params = None
         self._message_params = None
         self._context_id = None
@@ -77,27 +77,27 @@ class ConversationCallEventTopicErrorBody(object):
         self._errors = None
 
     @property
-    def status(self):
+    def message(self):
         """
-        Gets the status of this ConversationCallEventTopicErrorBody.
+        Gets the message of this ConversationCallEventTopicErrorBody.
 
 
-        :return: The status of this ConversationCallEventTopicErrorBody.
-        :rtype: int
+        :return: The message of this ConversationCallEventTopicErrorBody.
+        :rtype: str
         """
-        return self._status
+        return self._message
 
-    @status.setter
-    def status(self, status):
+    @message.setter
+    def message(self, message):
         """
-        Sets the status of this ConversationCallEventTopicErrorBody.
+        Sets the message of this ConversationCallEventTopicErrorBody.
 
 
-        :param status: The status of this ConversationCallEventTopicErrorBody.
-        :type: int
+        :param message: The message of this ConversationCallEventTopicErrorBody.
+        :type: str
         """
         
-        self._status = status
+        self._message = message
 
     @property
     def code(self):
@@ -121,6 +121,29 @@ class ConversationCallEventTopicErrorBody(object):
         """
         
         self._code = code
+
+    @property
+    def status(self):
+        """
+        Gets the status of this ConversationCallEventTopicErrorBody.
+
+
+        :return: The status of this ConversationCallEventTopicErrorBody.
+        :rtype: int
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this ConversationCallEventTopicErrorBody.
+
+
+        :param status: The status of this ConversationCallEventTopicErrorBody.
+        :type: int
+        """
+        
+        self._status = status
 
     @property
     def entity_id(self):
@@ -167,29 +190,6 @@ class ConversationCallEventTopicErrorBody(object):
         """
         
         self._entity_name = entity_name
-
-    @property
-    def message(self):
-        """
-        Gets the message of this ConversationCallEventTopicErrorBody.
-
-
-        :return: The message of this ConversationCallEventTopicErrorBody.
-        :rtype: str
-        """
-        return self._message
-
-    @message.setter
-    def message(self, message):
-        """
-        Sets the message of this ConversationCallEventTopicErrorBody.
-
-
-        :param message: The message of this ConversationCallEventTopicErrorBody.
-        :type: str
-        """
-        
-        self._message = message
 
     @property
     def message_with_params(self):

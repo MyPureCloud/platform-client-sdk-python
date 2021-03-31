@@ -2400,7 +2400,7 @@ except ApiException as e:
 
 <a name="get_routing_user_utilization"></a>
 
-## [**Utilization**](Utilization.html) get_routing_user_utilization(user_id)
+## [**AgentMaxUtilization**](AgentMaxUtilization.html) get_routing_user_utilization(user_id)
 
 
 
@@ -2448,7 +2448,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="get_routing_utilization"></a>
 
@@ -4587,7 +4587,7 @@ except ApiException as e:
 
 <a name="put_routing_user_utilization"></a>
 
-## [**Utilization**](Utilization.html) put_routing_user_utilization(user_id, body)
+## [**AgentMaxUtilization**](AgentMaxUtilization.html) put_routing_user_utilization(user_id, body)
 
 
 
@@ -4636,7 +4636,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="put_routing_utilization"></a>
 

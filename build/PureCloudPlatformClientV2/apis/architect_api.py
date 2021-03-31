@@ -5055,12 +5055,13 @@ class ArchitectApi(object):
         :param str name: Name
         :param str description: Description
         :param str name_or_description: Name or description
+        :param list[str] division_id: division ID(s)
         :return: FlowMilestoneListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -5095,6 +5096,8 @@ class ArchitectApi(object):
             query_params['description'] = params['description']
         if 'name_or_description' in params:
             query_params['nameOrDescription'] = params['name_or_description']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -5124,6 +5127,99 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FlowMilestoneListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_milestones_divisionviews(self, **kwargs):
+        """
+        Get a pageable list of basic flow milestone information objects filterable by query parameters.
+        This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_milestones_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID
+        :param str name: Name
+        :param list[str] division_id: division ID(s)
+        :return: FlowMilestoneDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_milestones_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/milestones/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowMilestoneDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5229,12 +5325,13 @@ class ArchitectApi(object):
         :param str name: Name
         :param str description: Description
         :param str name_or_description: Name or description
+        :param list[str] division_id: division ID(s)
         :return: FlowOutcomeListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -5269,6 +5366,8 @@ class ArchitectApi(object):
             query_params['description'] = params['description']
         if 'name_or_description' in params:
             query_params['nameOrDescription'] = params['name_or_description']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -5298,6 +5397,99 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FlowOutcomeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_outcomes_divisionviews(self, **kwargs):
+        """
+        Get a pageable list of basic flow outcome information objects filterable by query parameters.
+        This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_outcomes_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID
+        :param str name: Name
+        :param list[str] division_id: division ID(s)
+        :return: FlowOutcomeDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_outcomes_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/outcomes/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowOutcomeDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

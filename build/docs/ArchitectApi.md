@@ -67,8 +67,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_execution**](ArchitectApi.html#get_flows_execution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.|
 |[**get_flows_milestone**](ArchitectApi.html#get_flows_milestone) | Get a flow milestone|
 |[**get_flows_milestones**](ArchitectApi.html#get_flows_milestones) | Get a pageable list of flow milestones, filtered by query parameters|
+|[**get_flows_milestones_divisionviews**](ArchitectApi.html#get_flows_milestones_divisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters.|
 |[**get_flows_outcome**](ArchitectApi.html#get_flows_outcome) | Get a flow outcome|
 |[**get_flows_outcomes**](ArchitectApi.html#get_flows_outcomes) | Get a pageable list of flow outcomes, filtered by query parameters|
+|[**get_flows_outcomes_divisionviews**](ArchitectApi.html#get_flows_outcomes_divisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters.|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
 |[**post_architect_emergencygroups**](ArchitectApi.html#post_architect_emergencygroups) | Creates a new emergency group|
 |[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
@@ -3355,7 +3357,7 @@ except ApiException as e:
 
 <a name="get_flows_milestones"></a>
 
-## [**FlowMilestoneListing**](FlowMilestoneListing.html) get_flows_milestones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
+## [**FlowMilestoneListing**](FlowMilestoneListing.html) get_flows_milestones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, division_id=division_id)
 
 
 
@@ -3390,10 +3392,11 @@ id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of flow milestones, filtered by query parameters
-    api_response = api_instance.get_flows_milestones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
+    api_response = api_instance.get_flows_milestones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_flows_milestones: %s\n" % e)
@@ -3412,11 +3415,75 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 [**FlowMilestoneListing**](FlowMilestoneListing.html)
+
+<a name="get_flows_milestones_divisionviews"></a>
+
+## [**FlowMilestoneDivisionViewEntityListing**](FlowMilestoneDivisionViewEntityListing.html) get_flows_milestones_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic flow milestone information objects filterable by query parameters.
+
+This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/flows/milestones/divisionviews 
+
+Requires ALL permissions: 
+
+* architect:flowMilestone:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'id' # str | Sort by (optional) (default to id)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
+id = ['id_example'] # list[str] | ID (optional)
+name = 'name_example' # str | Name (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
+
+try:
+    # Get a pageable list of basic flow milestone information objects filterable by query parameters.
+    api_response = api_instance.get_flows_milestones_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_milestones_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **id** | [**list[str]**](str.html)| ID | [optional]  |
+| **name** | **str**| Name | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowMilestoneDivisionViewEntityListing**](FlowMilestoneDivisionViewEntityListing.html)
 
 <a name="get_flows_outcome"></a>
 
@@ -3471,7 +3538,7 @@ except ApiException as e:
 
 <a name="get_flows_outcomes"></a>
 
-## [**FlowOutcomeListing**](FlowOutcomeListing.html) get_flows_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
+## [**FlowOutcomeListing**](FlowOutcomeListing.html) get_flows_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, division_id=division_id)
 
 
 
@@ -3506,10 +3573,11 @@ id = ['id_example'] # list[str] | ID (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of flow outcomes, filtered by query parameters
-    api_response = api_instance.get_flows_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description)
+    api_response = api_instance.get_flows_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_flows_outcomes: %s\n" % e)
@@ -3528,11 +3596,75 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 [**FlowOutcomeListing**](FlowOutcomeListing.html)
+
+<a name="get_flows_outcomes_divisionviews"></a>
+
+## [**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html) get_flows_outcomes_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic flow outcome information objects filterable by query parameters.
+
+This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/flows/outcomes/divisionviews 
+
+Requires ALL permissions: 
+
+* architect:flowOutcome:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'id' # str | Sort by (optional) (default to id)
+sort_order = 'asc' # str | Sort order (optional) (default to asc)
+id = ['id_example'] # list[str] | ID (optional)
+name = 'name_example' # str | Name (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
+
+try:
+    # Get a pageable list of basic flow outcome information objects filterable by query parameters.
+    api_response = api_instance.get_flows_outcomes_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_outcomes_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to id] |
+| **sort_order** | **str**| Sort order | [optional] [default to asc] |
+| **id** | [**list[str]**](str.html)| ID | [optional]  |
+| **name** | **str**| Name | [optional]  |
+| **division_id** | [**list[str]**](str.html)| division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html)
 
 <a name="post_architect_dependencytracking_build"></a>
 

@@ -983,7 +983,7 @@ class Edge(object):
         :param edge_deployment_type: The edge_deployment_type of this Edge.
         :type: str
         """
-        allowed_values = ["HARDWARE", "LDM", "CDM", "INVALID"]
+        allowed_values = ["HARDWARE", "LDM", "CDM", "BYOH", "INVALID"]
         if edge_deployment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for edge_deployment_type -> " + edge_deployment_type)
             self._edge_deployment_type = "outdated_sdk_version"

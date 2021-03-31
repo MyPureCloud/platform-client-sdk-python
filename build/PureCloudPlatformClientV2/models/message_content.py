@@ -44,6 +44,7 @@ class MessageContent(object):
             'location': 'ContentLocation',
             'attachment': 'ContentAttachment',
             'quick_reply': 'ContentQuickReply',
+            'button_response': 'ContentButtonResponse',
             'generic': 'ContentGeneric',
             'list': 'ContentList',
             'template': 'ContentNotificationTemplate',
@@ -57,6 +58,7 @@ class MessageContent(object):
             'location': 'location',
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
+            'button_response': 'buttonResponse',
             'generic': 'generic',
             'list': 'list',
             'template': 'template',
@@ -69,6 +71,7 @@ class MessageContent(object):
         self._location = None
         self._attachment = None
         self._quick_reply = None
+        self._button_response = None
         self._generic = None
         self._list = None
         self._template = None
@@ -96,7 +99,7 @@ class MessageContent(object):
         :param content_type: The content_type of this MessageContent.
         :type: str
         """
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "ButtonResponse", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -171,6 +174,29 @@ class MessageContent(object):
         """
         
         self._quick_reply = quick_reply
+
+    @property
+    def button_response(self):
+        """
+        Gets the button_response of this MessageContent.
+        Button response object
+
+        :return: The button_response of this MessageContent.
+        :rtype: ContentButtonResponse
+        """
+        return self._button_response
+
+    @button_response.setter
+    def button_response(self, button_response):
+        """
+        Sets the button_response of this MessageContent.
+        Button response object
+
+        :param button_response: The button_response of this MessageContent.
+        :type: ContentButtonResponse
+        """
+        
+        self._button_response = button_response
 
     @property
     def generic(self):

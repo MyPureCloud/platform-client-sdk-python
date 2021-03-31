@@ -41,16 +41,19 @@ class AnalyticsUserDetailsQueryResponse(object):
         """
         self.swagger_types = {
             'user_details': 'list[AnalyticsUserDetail]',
-            'aggregations': 'list[AggregationResult]'
+            'aggregations': 'list[AggregationResult]',
+            'total_hits': 'int'
         }
 
         self.attribute_map = {
             'user_details': 'userDetails',
-            'aggregations': 'aggregations'
+            'aggregations': 'aggregations',
+            'total_hits': 'totalHits'
         }
 
         self._user_details = None
         self._aggregations = None
+        self._total_hits = None
 
     @property
     def user_details(self):
@@ -97,6 +100,29 @@ class AnalyticsUserDetailsQueryResponse(object):
         """
         
         self._aggregations = aggregations
+
+    @property
+    def total_hits(self):
+        """
+        Gets the total_hits of this AnalyticsUserDetailsQueryResponse.
+
+
+        :return: The total_hits of this AnalyticsUserDetailsQueryResponse.
+        :rtype: int
+        """
+        return self._total_hits
+
+    @total_hits.setter
+    def total_hits(self, total_hits):
+        """
+        Sets the total_hits of this AnalyticsUserDetailsQueryResponse.
+
+
+        :param total_hits: The total_hits of this AnalyticsUserDetailsQueryResponse.
+        :type: int
+        """
+        
+        self._total_hits = total_hits
 
     def to_dict(self):
         """

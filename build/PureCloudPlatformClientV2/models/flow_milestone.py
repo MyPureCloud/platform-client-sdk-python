@@ -42,6 +42,7 @@ class FlowMilestone(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableDivision',
             'description': 'str',
             'self_uri': 'str'
         }
@@ -49,12 +50,14 @@ class FlowMilestone(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._self_uri = None
 
@@ -103,6 +106,29 @@ class FlowMilestone(object):
         """
         
         self._name = name
+
+    @property
+    def division(self):
+        """
+        Gets the division of this FlowMilestone.
+        The division to which this entity belongs.
+
+        :return: The division of this FlowMilestone.
+        :rtype: WritableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this FlowMilestone.
+        The division to which this entity belongs.
+
+        :param division: The division of this FlowMilestone.
+        :type: WritableDivision
+        """
+        
+        self._division = division
 
     @property
     def description(self):

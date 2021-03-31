@@ -2906,7 +2906,7 @@ This endpoint does not need any parameter.
 
 <a name="get_conversations_messaging_integrations"></a>
 
-## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
+## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
 
 
 
@@ -2935,10 +2935,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
 
 try:
     # Get a list of Integrations
-    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations: %s\n" % e)
@@ -2951,6 +2953,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2959,7 +2963,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_facebook"></a>
 
-## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number)
+## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
 
 
 
@@ -2988,10 +2992,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
 
 try:
     # Get a list of Facebook Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook: %s\n" % e)
@@ -3004,6 +3010,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3012,7 +3020,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_facebook_integration_id"></a>
 
-## [**FacebookIntegration**](FacebookIntegration.html) get_conversations_messaging_integrations_facebook_integration_id(integration_id)
+## [**FacebookIntegration**](FacebookIntegration.html) get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand=expand)
 
 
 
@@ -3040,10 +3048,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 
 try:
     # Get a Facebook messaging integration
-    api_response = api_instance.get_conversations_messaging_integrations_facebook_integration_id(integration_id)
+    api_response = api_instance.get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_facebook_integration_id: %s\n" % e)
@@ -3055,6 +3064,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -3063,7 +3073,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_line"></a>
 
-## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number)
+## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
 
 
 
@@ -3092,10 +3102,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
 
 try:
     # Get a list of LINE messenger Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_line: %s\n" % e)
@@ -3108,6 +3120,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3116,7 +3130,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_line_integration_id"></a>
 
-## [**LineIntegration**](LineIntegration.html) get_conversations_messaging_integrations_line_integration_id(integration_id)
+## [**LineIntegration**](LineIntegration.html) get_conversations_messaging_integrations_line_integration_id(integration_id, expand=expand)
 
 
 
@@ -3144,10 +3158,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 
 try:
     # Get a LINE messenger integration
-    api_response = api_instance.get_conversations_messaging_integrations_line_integration_id(integration_id)
+    api_response = api_instance.get_conversations_messaging_integrations_line_integration_id(integration_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_line_integration_id: %s\n" % e)
@@ -3159,6 +3174,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -3167,7 +3183,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_twitter"></a>
 
-## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number)
+## [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
 
 
 
@@ -3196,10 +3212,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
 
 try:
     # Get a list of Twitter Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e)
@@ -3212,6 +3230,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3220,7 +3240,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_twitter_integration_id"></a>
 
-## [**TwitterIntegration**](TwitterIntegration.html) get_conversations_messaging_integrations_twitter_integration_id(integration_id)
+## [**TwitterIntegration**](TwitterIntegration.html) get_conversations_messaging_integrations_twitter_integration_id(integration_id, expand=expand)
 
 
 
@@ -3248,10 +3268,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 
 try:
     # Get a Twitter messaging integration
-    api_response = api_instance.get_conversations_messaging_integrations_twitter_integration_id(integration_id)
+    api_response = api_instance.get_conversations_messaging_integrations_twitter_integration_id(integration_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
@@ -3263,6 +3284,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -3271,7 +3293,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_whatsapp"></a>
 
-## [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number)
+## [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
 
 
 
@@ -3300,10 +3322,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
 
 try:
     # Get a list of WhatsApp Integrations
-    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp: %s\n" % e)
@@ -3316,6 +3340,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3324,7 +3350,7 @@ except ApiException as e:
 
 <a name="get_conversations_messaging_integrations_whatsapp_integration_id"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) get_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
+## [**WhatsAppIntegration**](WhatsAppIntegration.html) get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand=expand)
 
 
 
@@ -3352,10 +3378,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 
 try:
     # Get a WhatsApp messaging integration
-    api_response = api_instance.get_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
+    api_response = api_instance.get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_whatsapp_integration_id: %s\n" % e)
@@ -3367,6 +3394,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type

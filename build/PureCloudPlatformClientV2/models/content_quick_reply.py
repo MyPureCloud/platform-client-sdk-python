@@ -134,7 +134,7 @@ class ContentQuickReply(object):
     def image(self):
         """
         Gets the image of this ContentQuickReply.
-        Image associated with quick reply
+        Path or URI to an image file associated with quick reply
 
         :return: The image of this ContentQuickReply.
         :rtype: str
@@ -145,7 +145,7 @@ class ContentQuickReply(object):
     def image(self, image):
         """
         Sets the image of this ContentQuickReply.
-        Image associated with quick reply
+        Path or URI to an image file associated with quick reply
 
         :param image: The image of this ContentQuickReply.
         :type: str

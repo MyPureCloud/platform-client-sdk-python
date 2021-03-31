@@ -57,8 +57,8 @@ class HistoryListing(object):
             'completed': 'datetime',
             'entities': 'list[HistoryEntry]',
             'total': 'int',
-            'page_number': 'int',
             'page_size': 'int',
+            'page_number': 'int',
             'page_count': 'int'
         }
 
@@ -80,8 +80,8 @@ class HistoryListing(object):
             'completed': 'completed',
             'entities': 'entities',
             'total': 'total',
-            'page_number': 'pageNumber',
             'page_size': 'pageSize',
+            'page_number': 'pageNumber',
             'page_count': 'pageCount'
         }
 
@@ -102,8 +102,8 @@ class HistoryListing(object):
         self._completed = None
         self._entities = None
         self._total = None
-        self._page_number = None
         self._page_size = None
+        self._page_number = None
         self._page_count = None
 
     @property
@@ -506,29 +506,6 @@ class HistoryListing(object):
         self._total = total
 
     @property
-    def page_number(self):
-        """
-        Gets the page_number of this HistoryListing.
-
-
-        :return: The page_number of this HistoryListing.
-        :rtype: int
-        """
-        return self._page_number
-
-    @page_number.setter
-    def page_number(self, page_number):
-        """
-        Sets the page_number of this HistoryListing.
-
-
-        :param page_number: The page_number of this HistoryListing.
-        :type: int
-        """
-        
-        self._page_number = page_number
-
-    @property
     def page_size(self):
         """
         Gets the page_size of this HistoryListing.
@@ -550,6 +527,29 @@ class HistoryListing(object):
         """
         
         self._page_size = page_size
+
+    @property
+    def page_number(self):
+        """
+        Gets the page_number of this HistoryListing.
+
+
+        :return: The page_number of this HistoryListing.
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """
+        Sets the page_number of this HistoryListing.
+
+
+        :param page_number: The page_number of this HistoryListing.
+        :type: int
+        """
+        
+        self._page_number = page_number
 
     @property
     def page_count(self):

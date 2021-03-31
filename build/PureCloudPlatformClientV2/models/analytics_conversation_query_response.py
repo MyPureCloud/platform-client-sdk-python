@@ -41,16 +41,19 @@ class AnalyticsConversationQueryResponse(object):
         """
         self.swagger_types = {
             'aggregations': 'list[AggregationResult]',
-            'conversations': 'list[AnalyticsConversationWithoutAttributes]'
+            'conversations': 'list[AnalyticsConversationWithoutAttributes]',
+            'total_hits': 'int'
         }
 
         self.attribute_map = {
             'aggregations': 'aggregations',
-            'conversations': 'conversations'
+            'conversations': 'conversations',
+            'total_hits': 'totalHits'
         }
 
         self._aggregations = None
         self._conversations = None
+        self._total_hits = None
 
     @property
     def aggregations(self):
@@ -97,6 +100,29 @@ class AnalyticsConversationQueryResponse(object):
         """
         
         self._conversations = conversations
+
+    @property
+    def total_hits(self):
+        """
+        Gets the total_hits of this AnalyticsConversationQueryResponse.
+
+
+        :return: The total_hits of this AnalyticsConversationQueryResponse.
+        :rtype: int
+        """
+        return self._total_hits
+
+    @total_hits.setter
+    def total_hits(self, total_hits):
+        """
+        Sets the total_hits of this AnalyticsConversationQueryResponse.
+
+
+        :param total_hits: The total_hits of this AnalyticsConversationQueryResponse.
+        :type: int
+        """
+        
+        self._total_hits = total_hits
 
     def to_dict(self):
         """

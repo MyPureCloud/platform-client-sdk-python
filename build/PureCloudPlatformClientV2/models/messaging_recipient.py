@@ -144,7 +144,7 @@ class MessagingRecipient(object):
     def image(self):
         """
         Gets the image of this MessagingRecipient.
-        Avatar image
+        Path or URI to an image file containing an avatar
 
         :return: The image of this MessagingRecipient.
         :rtype: str
@@ -155,7 +155,7 @@ class MessagingRecipient(object):
     def image(self, image):
         """
         Sets the image of this MessagingRecipient.
-        Avatar image
+        Path or URI to an image file containing an avatar
 
         :param image: The image of this MessagingRecipient.
         :type: str

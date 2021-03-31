@@ -46,6 +46,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'to_address': 'str',
             'messenger_type': 'str',
             'text_body': 'str',
+            'messaging_template': 'MessagingTemplateRequest',
             'timestamp': 'datetime',
             'self_uri': 'str',
             'user': 'AddressableEntityRef'
@@ -58,6 +59,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'to_address': 'toAddress',
             'messenger_type': 'messengerType',
             'text_body': 'textBody',
+            'messaging_template': 'messagingTemplate',
             'timestamp': 'timestamp',
             'self_uri': 'selfUri',
             'user': 'user'
@@ -69,6 +71,7 @@ class SendAgentlessOutboundMessageResponse(object):
         self._to_address = None
         self._messenger_type = None
         self._text_body = None
+        self._messaging_template = None
         self._timestamp = None
         self._self_uri = None
         self._user = None
@@ -123,7 +126,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def from_address(self):
         """
         Gets the from_address of this SendAgentlessOutboundMessageResponse.
-        The sender of the text message.
+        The sender of the message.
 
         :return: The from_address of this SendAgentlessOutboundMessageResponse.
         :rtype: str
@@ -134,7 +137,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def from_address(self, from_address):
         """
         Sets the from_address of this SendAgentlessOutboundMessageResponse.
-        The sender of the text message.
+        The sender of the message.
 
         :param from_address: The from_address of this SendAgentlessOutboundMessageResponse.
         :type: str
@@ -146,7 +149,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def to_address(self):
         """
         Gets the to_address of this SendAgentlessOutboundMessageResponse.
-        The recipient of the text message.
+        The recipient of the message.
 
         :return: The to_address of this SendAgentlessOutboundMessageResponse.
         :rtype: str
@@ -157,7 +160,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def to_address(self, to_address):
         """
         Sets the to_address of this SendAgentlessOutboundMessageResponse.
-        The recipient of the text message.
+        The recipient of the message.
 
         :param to_address: The to_address of this SendAgentlessOutboundMessageResponse.
         :type: str
@@ -169,7 +172,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def messenger_type(self):
         """
         Gets the messenger_type of this SendAgentlessOutboundMessageResponse.
-        Type of text messenger.
+        Type of messenger.
 
         :return: The messenger_type of this SendAgentlessOutboundMessageResponse.
         :rtype: str
@@ -180,7 +183,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def messenger_type(self, messenger_type):
         """
         Sets the messenger_type of this SendAgentlessOutboundMessageResponse.
-        Type of text messenger.
+        Type of messenger.
 
         :param messenger_type: The messenger_type of this SendAgentlessOutboundMessageResponse.
         :type: str
@@ -214,6 +217,29 @@ class SendAgentlessOutboundMessageResponse(object):
         """
         
         self._text_body = text_body
+
+    @property
+    def messaging_template(self):
+        """
+        Gets the messaging_template of this SendAgentlessOutboundMessageResponse.
+        The messaging template sent
+
+        :return: The messaging_template of this SendAgentlessOutboundMessageResponse.
+        :rtype: MessagingTemplateRequest
+        """
+        return self._messaging_template
+
+    @messaging_template.setter
+    def messaging_template(self, messaging_template):
+        """
+        Sets the messaging_template of this SendAgentlessOutboundMessageResponse.
+        The messaging template sent
+
+        :param messaging_template: The messaging_template of this SendAgentlessOutboundMessageResponse.
+        :type: MessagingTemplateRequest
+        """
+        
+        self._messaging_template = messaging_template
 
     @property
     def timestamp(self):

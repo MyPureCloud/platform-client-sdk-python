@@ -1520,7 +1520,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :return: Utilization
+        :return: AgentMaxUtilization
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1577,7 +1577,7 @@ class UsersApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Utilization',
+                                            response_type='AgentMaxUtilization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5544,7 +5544,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
         :param Utilization body: utilization (required)
-        :return: Utilization
+        :return: AgentMaxUtilization
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5606,7 +5606,7 @@ class UsersApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Utilization',
+                                            response_type='AgentMaxUtilization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
