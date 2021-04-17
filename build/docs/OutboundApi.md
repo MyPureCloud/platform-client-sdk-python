@@ -94,7 +94,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
-|[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a Dialer DNC list.|
+|[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
 |[**post_outbound_messagingcampaigns**](OutboundApi.html#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
 |[**post_outbound_messagingcampaigns_progress**](OutboundApi.html#post_outbound_messagingcampaigns_progress) | Get progress for a list of messaging campaigns|
@@ -4787,7 +4787,7 @@ except ApiException as e:
 
 
 
-Add phone numbers to a Dialer DNC list.
+Add phone numbers to a DNC list.
 
 Only Internal DNC lists may be appended to
 
@@ -4814,7 +4814,7 @@ dnc_list_id = 'dnc_list_id_example' # str | DncList ID
 body = [PureCloudPlatformClientV2.list[str]()] # list[str] | DNC Phone Numbers
 
 try:
-    # Add phone numbers to a Dialer DNC list.
+    # Add phone numbers to a DNC list.
     api_instance.post_outbound_dnclist_phonenumbers(dnc_list_id, body)
 except ApiException as e:
     print("Exception when calling OutboundApi->post_outbound_dnclist_phonenumbers: %s\n" % e)

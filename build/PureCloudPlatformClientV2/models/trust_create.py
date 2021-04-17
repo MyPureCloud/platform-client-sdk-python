@@ -62,7 +62,7 @@ class TrustCreate(object):
     def pairing_id(self):
         """
         Gets the pairing_id of this TrustCreate.
-        The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.
+        The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.
 
         :return: The pairing_id of this TrustCreate.
         :rtype: str
@@ -73,7 +73,7 @@ class TrustCreate(object):
     def pairing_id(self, pairing_id):
         """
         Sets the pairing_id of this TrustCreate.
-        The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.
+        The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.
 
         :param pairing_id: The pairing_id of this TrustCreate.
         :type: str

@@ -42,6 +42,7 @@ class Trustee(object):
         self.swagger_types = {
             'id': 'str',
             'enabled': 'bool',
+            'uses_default_role': 'bool',
             'date_created': 'datetime',
             'created_by': 'OrgUser',
             'organization': 'Organization',
@@ -51,6 +52,7 @@ class Trustee(object):
         self.attribute_map = {
             'id': 'id',
             'enabled': 'enabled',
+            'uses_default_role': 'usesDefaultRole',
             'date_created': 'dateCreated',
             'created_by': 'createdBy',
             'organization': 'organization',
@@ -59,6 +61,7 @@ class Trustee(object):
 
         self._id = None
         self._enabled = None
+        self._uses_default_role = None
         self._date_created = None
         self._created_by = None
         self._organization = None
@@ -109,6 +112,29 @@ class Trustee(object):
         """
         
         self._enabled = enabled
+
+    @property
+    def uses_default_role(self):
+        """
+        Gets the uses_default_role of this Trustee.
+        Denotes if trustee uses admin role by default.
+
+        :return: The uses_default_role of this Trustee.
+        :rtype: bool
+        """
+        return self._uses_default_role
+
+    @uses_default_role.setter
+    def uses_default_role(self, uses_default_role):
+        """
+        Sets the uses_default_role of this Trustee.
+        Denotes if trustee uses admin role by default.
+
+        :param uses_default_role: The uses_default_role of this Trustee.
+        :type: bool
+        """
+        
+        self._uses_default_role = uses_default_role
 
     @property
     def date_created(self):

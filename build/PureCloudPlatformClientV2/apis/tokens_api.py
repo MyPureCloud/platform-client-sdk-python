@@ -126,7 +126,7 @@ class TokensApi(object):
 
     def delete_tokens_me(self, **kwargs):
         """
-        Delete  auth token used to make the request.
+        Delete auth token used to make the request.
         
 
         This method makes a synchronous HTTP request by default. To make an

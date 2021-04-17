@@ -114,7 +114,7 @@ class EvaluationQuestionScore(object):
     def score(self):
         """
         Gets the score of this EvaluationQuestionScore.
-
+        Unweighted score of the question
 
         :return: The score of this EvaluationQuestionScore.
         :rtype: int
@@ -125,7 +125,7 @@ class EvaluationQuestionScore(object):
     def score(self, score):
         """
         Sets the score of this EvaluationQuestionScore.
-
+        Unweighted score of the question
 
         :param score: The score of this EvaluationQuestionScore.
         :type: int
@@ -160,7 +160,7 @@ class EvaluationQuestionScore(object):
     def failed_kill_question(self):
         """
         Gets the failed_kill_question of this EvaluationQuestionScore.
-
+        Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
 
         :return: The failed_kill_question of this EvaluationQuestionScore.
         :rtype: bool
@@ -171,7 +171,7 @@ class EvaluationQuestionScore(object):
     def failed_kill_question(self, failed_kill_question):
         """
         Sets the failed_kill_question of this EvaluationQuestionScore.
-
+        Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
 
         :param failed_kill_question: The failed_kill_question of this EvaluationQuestionScore.
         :type: bool
@@ -183,7 +183,7 @@ class EvaluationQuestionScore(object):
     def comments(self):
         """
         Gets the comments of this EvaluationQuestionScore.
-
+        Comments from the evaluator specific to this question
 
         :return: The comments of this EvaluationQuestionScore.
         :rtype: str
@@ -194,7 +194,7 @@ class EvaluationQuestionScore(object):
     def comments(self, comments):
         """
         Sets the comments of this EvaluationQuestionScore.
-
+        Comments from the evaluator specific to this question
 
         :param comments: The comments of this EvaluationQuestionScore.
         :type: str

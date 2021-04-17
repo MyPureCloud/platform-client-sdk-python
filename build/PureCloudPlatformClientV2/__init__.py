@@ -810,6 +810,7 @@ from .models.digits import Digits
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disconnect_reason import DisconnectReason
 from .models.division import Division
+from .models.division_reference import DivisionReference
 from .models.divs_permitted_entity_listing import DivsPermittedEntityListing
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate

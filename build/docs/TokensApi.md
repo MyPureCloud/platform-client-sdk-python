@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_token**](TokensApi.html#delete_token) | Delete all auth tokens for the specified user.|
-|[**delete_tokens_me**](TokensApi.html#delete_tokens_me) | Delete  auth token used to make the request.|
+|[**delete_tokens_me**](TokensApi.html#delete_tokens_me) | Delete auth token used to make the request.|
 |[**get_tokens_me**](TokensApi.html#get_tokens_me) | Fetch information about the current token|
 {: class="table table-striped"}
 
@@ -69,7 +69,7 @@ void (empty response body)
 
 
 
-Delete  auth token used to make the request.
+Delete auth token used to make the request.
 
 
 
@@ -93,7 +93,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TokensApi()
 
 try:
-    # Delete  auth token used to make the request.
+    # Delete auth token used to make the request.
     api_instance.delete_tokens_me()
 except ApiException as e:
     print("Exception when calling TokensApi->delete_tokens_me: %s\n" % e)

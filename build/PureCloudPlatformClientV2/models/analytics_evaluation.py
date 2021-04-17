@@ -40,50 +40,119 @@ class AnalyticsEvaluation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'calibration_id': 'str',
+            'context_id': 'str',
+            'deleted': 'bool',
             'evaluation_id': 'str',
             'evaluator_id': 'str',
-            'user_id': 'str',
             'event_time': 'datetime',
-            'queue_id': 'str',
             'form_id': 'str',
-            'context_id': 'str',
             'form_name': 'str',
-            'calibration_id': 'str',
+            'queue_id': 'str',
             'rescored': 'bool',
-            'deleted': 'bool',
+            'user_id': 'str',
             'o_total_critical_score': 'int',
             'o_total_score': 'int'
         }
 
         self.attribute_map = {
+            'calibration_id': 'calibrationId',
+            'context_id': 'contextId',
+            'deleted': 'deleted',
             'evaluation_id': 'evaluationId',
             'evaluator_id': 'evaluatorId',
-            'user_id': 'userId',
             'event_time': 'eventTime',
-            'queue_id': 'queueId',
             'form_id': 'formId',
-            'context_id': 'contextId',
             'form_name': 'formName',
-            'calibration_id': 'calibrationId',
+            'queue_id': 'queueId',
             'rescored': 'rescored',
-            'deleted': 'deleted',
+            'user_id': 'userId',
             'o_total_critical_score': 'oTotalCriticalScore',
             'o_total_score': 'oTotalScore'
         }
 
+        self._calibration_id = None
+        self._context_id = None
+        self._deleted = None
         self._evaluation_id = None
         self._evaluator_id = None
-        self._user_id = None
         self._event_time = None
-        self._queue_id = None
         self._form_id = None
-        self._context_id = None
         self._form_name = None
-        self._calibration_id = None
+        self._queue_id = None
         self._rescored = None
-        self._deleted = None
+        self._user_id = None
         self._o_total_critical_score = None
         self._o_total_score = None
+
+    @property
+    def calibration_id(self):
+        """
+        Gets the calibration_id of this AnalyticsEvaluation.
+        The calibration ID used for the purpose of training evaluators
+
+        :return: The calibration_id of this AnalyticsEvaluation.
+        :rtype: str
+        """
+        return self._calibration_id
+
+    @calibration_id.setter
+    def calibration_id(self, calibration_id):
+        """
+        Sets the calibration_id of this AnalyticsEvaluation.
+        The calibration ID used for the purpose of training evaluators
+
+        :param calibration_id: The calibration_id of this AnalyticsEvaluation.
+        :type: str
+        """
+        
+        self._calibration_id = calibration_id
+
+    @property
+    def context_id(self):
+        """
+        Gets the context_id of this AnalyticsEvaluation.
+        A unique identifier for an evaluation form, regardless of version
+
+        :return: The context_id of this AnalyticsEvaluation.
+        :rtype: str
+        """
+        return self._context_id
+
+    @context_id.setter
+    def context_id(self, context_id):
+        """
+        Sets the context_id of this AnalyticsEvaluation.
+        A unique identifier for an evaluation form, regardless of version
+
+        :param context_id: The context_id of this AnalyticsEvaluation.
+        :type: str
+        """
+        
+        self._context_id = context_id
+
+    @property
+    def deleted(self):
+        """
+        Gets the deleted of this AnalyticsEvaluation.
+        Whether the evaluation has been deleted
+
+        :return: The deleted of this AnalyticsEvaluation.
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """
+        Sets the deleted of this AnalyticsEvaluation.
+        Whether the evaluation has been deleted
+
+        :param deleted: The deleted of this AnalyticsEvaluation.
+        :type: bool
+        """
+        
+        self._deleted = deleted
 
     @property
     def evaluation_id(self):
@@ -112,7 +181,7 @@ class AnalyticsEvaluation(object):
     def evaluator_id(self):
         """
         Gets the evaluator_id of this AnalyticsEvaluation.
-        A unique identifier of the PureCloud user who evaluated the interaction
+        A unique identifier of the user who evaluated the interaction
 
         :return: The evaluator_id of this AnalyticsEvaluation.
         :rtype: str
@@ -123,36 +192,13 @@ class AnalyticsEvaluation(object):
     def evaluator_id(self, evaluator_id):
         """
         Sets the evaluator_id of this AnalyticsEvaluation.
-        A unique identifier of the PureCloud user who evaluated the interaction
+        A unique identifier of the user who evaluated the interaction
 
         :param evaluator_id: The evaluator_id of this AnalyticsEvaluation.
         :type: str
         """
         
         self._evaluator_id = evaluator_id
-
-    @property
-    def user_id(self):
-        """
-        Gets the user_id of this AnalyticsEvaluation.
-        Unique identifier for the user being evaluated
-
-        :return: The user_id of this AnalyticsEvaluation.
-        :rtype: str
-        """
-        return self._user_id
-
-    @user_id.setter
-    def user_id(self, user_id):
-        """
-        Sets the user_id of this AnalyticsEvaluation.
-        Unique identifier for the user being evaluated
-
-        :param user_id: The user_id of this AnalyticsEvaluation.
-        :type: str
-        """
-        
-        self._user_id = user_id
 
     @property
     def event_time(self):
@@ -178,33 +224,10 @@ class AnalyticsEvaluation(object):
         self._event_time = event_time
 
     @property
-    def queue_id(self):
-        """
-        Gets the queue_id of this AnalyticsEvaluation.
-        Unique identifier for the queue the conversation was on
-
-        :return: The queue_id of this AnalyticsEvaluation.
-        :rtype: str
-        """
-        return self._queue_id
-
-    @queue_id.setter
-    def queue_id(self, queue_id):
-        """
-        Sets the queue_id of this AnalyticsEvaluation.
-        Unique identifier for the queue the conversation was on
-
-        :param queue_id: The queue_id of this AnalyticsEvaluation.
-        :type: str
-        """
-        
-        self._queue_id = queue_id
-
-    @property
     def form_id(self):
         """
         Gets the form_id of this AnalyticsEvaluation.
-        Unique identifier for the form used to evaluate the conversation/agent
+        ID of the evaluation form used
 
         :return: The form_id of this AnalyticsEvaluation.
         :rtype: str
@@ -215,7 +238,7 @@ class AnalyticsEvaluation(object):
     def form_id(self, form_id):
         """
         Sets the form_id of this AnalyticsEvaluation.
-        Unique identifier for the form used to evaluate the conversation/agent
+        ID of the evaluation form used
 
         :param form_id: The form_id of this AnalyticsEvaluation.
         :type: str
@@ -224,33 +247,10 @@ class AnalyticsEvaluation(object):
         self._form_id = form_id
 
     @property
-    def context_id(self):
-        """
-        Gets the context_id of this AnalyticsEvaluation.
-        A unique identifier for an evaluation form, regardless of version
-
-        :return: The context_id of this AnalyticsEvaluation.
-        :rtype: str
-        """
-        return self._context_id
-
-    @context_id.setter
-    def context_id(self, context_id):
-        """
-        Sets the context_id of this AnalyticsEvaluation.
-        A unique identifier for an evaluation form, regardless of version
-
-        :param context_id: The context_id of this AnalyticsEvaluation.
-        :type: str
-        """
-        
-        self._context_id = context_id
-
-    @property
     def form_name(self):
         """
         Gets the form_name of this AnalyticsEvaluation.
-        Name of the evaluation form
+        Name of the evaluation form used
 
         :return: The form_name of this AnalyticsEvaluation.
         :rtype: str
@@ -261,7 +261,7 @@ class AnalyticsEvaluation(object):
     def form_name(self, form_name):
         """
         Sets the form_name of this AnalyticsEvaluation.
-        Name of the evaluation form
+        Name of the evaluation form used
 
         :param form_name: The form_name of this AnalyticsEvaluation.
         :type: str
@@ -270,33 +270,33 @@ class AnalyticsEvaluation(object):
         self._form_name = form_name
 
     @property
-    def calibration_id(self):
+    def queue_id(self):
         """
-        Gets the calibration_id of this AnalyticsEvaluation.
-        The calibration id used for the purpose of training evaluators
+        Gets the queue_id of this AnalyticsEvaluation.
+        The ID of the associated queue
 
-        :return: The calibration_id of this AnalyticsEvaluation.
+        :return: The queue_id of this AnalyticsEvaluation.
         :rtype: str
         """
-        return self._calibration_id
+        return self._queue_id
 
-    @calibration_id.setter
-    def calibration_id(self, calibration_id):
+    @queue_id.setter
+    def queue_id(self, queue_id):
         """
-        Sets the calibration_id of this AnalyticsEvaluation.
-        The calibration id used for the purpose of training evaluators
+        Sets the queue_id of this AnalyticsEvaluation.
+        The ID of the associated queue
 
-        :param calibration_id: The calibration_id of this AnalyticsEvaluation.
+        :param queue_id: The queue_id of this AnalyticsEvaluation.
         :type: str
         """
         
-        self._calibration_id = calibration_id
+        self._queue_id = queue_id
 
     @property
     def rescored(self):
         """
         Gets the rescored of this AnalyticsEvaluation.
-        Whether this evaluation has ever been rescored
+        Whether the evaluation has been rescored at least once
 
         :return: The rescored of this AnalyticsEvaluation.
         :rtype: bool
@@ -307,7 +307,7 @@ class AnalyticsEvaluation(object):
     def rescored(self, rescored):
         """
         Sets the rescored of this AnalyticsEvaluation.
-        Whether this evaluation has ever been rescored
+        Whether the evaluation has been rescored at least once
 
         :param rescored: The rescored of this AnalyticsEvaluation.
         :type: bool
@@ -316,27 +316,27 @@ class AnalyticsEvaluation(object):
         self._rescored = rescored
 
     @property
-    def deleted(self):
+    def user_id(self):
         """
-        Gets the deleted of this AnalyticsEvaluation.
-        Whether this evaluation has been deleted
+        Gets the user_id of this AnalyticsEvaluation.
+        ID of the agent the evaluation was performed against
 
-        :return: The deleted of this AnalyticsEvaluation.
-        :rtype: bool
+        :return: The user_id of this AnalyticsEvaluation.
+        :rtype: str
         """
-        return self._deleted
+        return self._user_id
 
-    @deleted.setter
-    def deleted(self, deleted):
+    @user_id.setter
+    def user_id(self, user_id):
         """
-        Sets the deleted of this AnalyticsEvaluation.
-        Whether this evaluation has been deleted
+        Sets the user_id of this AnalyticsEvaluation.
+        ID of the agent the evaluation was performed against
 
-        :param deleted: The deleted of this AnalyticsEvaluation.
-        :type: bool
+        :param user_id: The user_id of this AnalyticsEvaluation.
+        :type: str
         """
         
-        self._deleted = deleted
+        self._user_id = user_id
 
     @property
     def o_total_critical_score(self):

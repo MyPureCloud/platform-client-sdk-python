@@ -42,23 +42,23 @@ class BusinessUnit(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
             'settings': 'BusinessUnitSettings',
+            'division': 'DivisionReference',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'division': 'division',
             'settings': 'settings',
+            'division': 'division',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
-        self._division = None
         self._settings = None
+        self._division = None
         self._self_uri = None
 
     @property
@@ -108,29 +108,6 @@ class BusinessUnit(object):
         self._name = name
 
     @property
-    def division(self):
-        """
-        Gets the division of this BusinessUnit.
-        The division to which this entity belongs.
-
-        :return: The division of this BusinessUnit.
-        :rtype: Division
-        """
-        return self._division
-
-    @division.setter
-    def division(self, division):
-        """
-        Sets the division of this BusinessUnit.
-        The division to which this entity belongs.
-
-        :param division: The division of this BusinessUnit.
-        :type: Division
-        """
-        
-        self._division = division
-
-    @property
     def settings(self):
         """
         Gets the settings of this BusinessUnit.
@@ -152,6 +129,29 @@ class BusinessUnit(object):
         """
         
         self._settings = settings
+
+    @property
+    def division(self):
+        """
+        Gets the division of this BusinessUnit.
+        The division to which this entity belongs.
+
+        :return: The division of this BusinessUnit.
+        :rtype: DivisionReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this BusinessUnit.
+        The division to which this entity belongs.
+
+        :param division: The division of this BusinessUnit.
+        :type: DivisionReference
+        """
+        
+        self._division = division
 
     @property
     def self_uri(self):

@@ -4432,7 +4432,7 @@ class RoutingApi(object):
         :param str queue_id: Queue ID (required)
         :param str member_id: Member ID (required)
         :param QueueMember body: Queue Member (required)
-        :return: QueueMember
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4499,7 +4499,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QueueMember',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4606,7 +4606,7 @@ class RoutingApi(object):
         :param str queue_id: Queue ID (required)
         :param str member_id: Member ID (required)
         :param QueueMember body: Queue Member (required)
-        :return: QueueMember
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4673,7 +4673,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='QueueMember',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -684,12 +684,13 @@ class KnowledgeApi(object):
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str categories: Filter by categories ids, comma separated values expected.
         :param str title: Filter by document title.
+        :param list[str] document_ids: Comma-separated list of document identifiers to fetch by.
         :return: DocumentListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size', 'categories', 'title']
+        all_params = ['knowledge_base_id', 'language_code', 'before', 'after', 'limit', 'page_size', 'categories', 'title', 'document_ids']
         all_params.append('callback')
 
         params = locals()
@@ -730,6 +731,8 @@ class KnowledgeApi(object):
             query_params['categories'] = params['categories']
         if 'title' in params:
             query_params['title'] = params['title']
+        if 'document_ids' in params:
+            query_params['documentIds'] = params['document_ids']
 
         header_params = {}
 

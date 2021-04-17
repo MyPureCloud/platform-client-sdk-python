@@ -41,46 +41,49 @@ class AnalyticsMediaEndpointStat(object):
         """
         self.swagger_types = {
             'codecs': 'list[str]',
-            'min_mos': 'float',
-            'min_r_factor': 'float',
-            'max_latency_ms': 'int',
-            'received_packets': 'int',
-            'invalid_packets': 'int',
             'discarded_packets': 'int',
             'duplicate_packets': 'int',
+            'event_time': 'datetime',
+            'invalid_packets': 'int',
+            'max_latency_ms': 'int',
+            'min_mos': 'float',
+            'min_r_factor': 'float',
             'overrun_packets': 'int',
+            'received_packets': 'int',
             'underrun_packets': 'int'
         }
 
         self.attribute_map = {
             'codecs': 'codecs',
-            'min_mos': 'minMos',
-            'min_r_factor': 'minRFactor',
-            'max_latency_ms': 'maxLatencyMs',
-            'received_packets': 'receivedPackets',
-            'invalid_packets': 'invalidPackets',
             'discarded_packets': 'discardedPackets',
             'duplicate_packets': 'duplicatePackets',
+            'event_time': 'eventTime',
+            'invalid_packets': 'invalidPackets',
+            'max_latency_ms': 'maxLatencyMs',
+            'min_mos': 'minMos',
+            'min_r_factor': 'minRFactor',
             'overrun_packets': 'overrunPackets',
+            'received_packets': 'receivedPackets',
             'underrun_packets': 'underrunPackets'
         }
 
         self._codecs = None
-        self._min_mos = None
-        self._min_r_factor = None
-        self._max_latency_ms = None
-        self._received_packets = None
-        self._invalid_packets = None
         self._discarded_packets = None
         self._duplicate_packets = None
+        self._event_time = None
+        self._invalid_packets = None
+        self._max_latency_ms = None
+        self._min_mos = None
+        self._min_r_factor = None
         self._overrun_packets = None
+        self._received_packets = None
         self._underrun_packets = None
 
     @property
     def codecs(self):
         """
         Gets the codecs of this AnalyticsMediaEndpointStat.
-        The MIME types of the audio encodings used by the audio streams belonging to this endpoint
+        The MIME type(s) of the audio encodings used by the audio streams belonging to this endpoint
 
         :return: The codecs of this AnalyticsMediaEndpointStat.
         :rtype: list[str]
@@ -91,128 +94,13 @@ class AnalyticsMediaEndpointStat(object):
     def codecs(self, codecs):
         """
         Sets the codecs of this AnalyticsMediaEndpointStat.
-        The MIME types of the audio encodings used by the audio streams belonging to this endpoint
+        The MIME type(s) of the audio encodings used by the audio streams belonging to this endpoint
 
         :param codecs: The codecs of this AnalyticsMediaEndpointStat.
         :type: list[str]
         """
         
         self._codecs = codecs
-
-    @property
-    def min_mos(self):
-        """
-        Gets the min_mos of this AnalyticsMediaEndpointStat.
-        The lowest estimated average MOS among all the audio streams belonging to this endpoint
-
-        :return: The min_mos of this AnalyticsMediaEndpointStat.
-        :rtype: float
-        """
-        return self._min_mos
-
-    @min_mos.setter
-    def min_mos(self, min_mos):
-        """
-        Sets the min_mos of this AnalyticsMediaEndpointStat.
-        The lowest estimated average MOS among all the audio streams belonging to this endpoint
-
-        :param min_mos: The min_mos of this AnalyticsMediaEndpointStat.
-        :type: float
-        """
-        
-        self._min_mos = min_mos
-
-    @property
-    def min_r_factor(self):
-        """
-        Gets the min_r_factor of this AnalyticsMediaEndpointStat.
-        The lowest R-factor value among all of the audio streams belonging to this endpoint
-
-        :return: The min_r_factor of this AnalyticsMediaEndpointStat.
-        :rtype: float
-        """
-        return self._min_r_factor
-
-    @min_r_factor.setter
-    def min_r_factor(self, min_r_factor):
-        """
-        Sets the min_r_factor of this AnalyticsMediaEndpointStat.
-        The lowest R-factor value among all of the audio streams belonging to this endpoint
-
-        :param min_r_factor: The min_r_factor of this AnalyticsMediaEndpointStat.
-        :type: float
-        """
-        
-        self._min_r_factor = min_r_factor
-
-    @property
-    def max_latency_ms(self):
-        """
-        Gets the max_latency_ms of this AnalyticsMediaEndpointStat.
-        The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
-
-        :return: The max_latency_ms of this AnalyticsMediaEndpointStat.
-        :rtype: int
-        """
-        return self._max_latency_ms
-
-    @max_latency_ms.setter
-    def max_latency_ms(self, max_latency_ms):
-        """
-        Sets the max_latency_ms of this AnalyticsMediaEndpointStat.
-        The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
-
-        :param max_latency_ms: The max_latency_ms of this AnalyticsMediaEndpointStat.
-        :type: int
-        """
-        
-        self._max_latency_ms = max_latency_ms
-
-    @property
-    def received_packets(self):
-        """
-        Gets the received_packets of this AnalyticsMediaEndpointStat.
-        The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
-
-        :return: The received_packets of this AnalyticsMediaEndpointStat.
-        :rtype: int
-        """
-        return self._received_packets
-
-    @received_packets.setter
-    def received_packets(self, received_packets):
-        """
-        Sets the received_packets of this AnalyticsMediaEndpointStat.
-        The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
-
-        :param received_packets: The received_packets of this AnalyticsMediaEndpointStat.
-        :type: int
-        """
-        
-        self._received_packets = received_packets
-
-    @property
-    def invalid_packets(self):
-        """
-        Gets the invalid_packets of this AnalyticsMediaEndpointStat.
-        The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
-
-        :return: The invalid_packets of this AnalyticsMediaEndpointStat.
-        :rtype: int
-        """
-        return self._invalid_packets
-
-    @invalid_packets.setter
-    def invalid_packets(self, invalid_packets):
-        """
-        Sets the invalid_packets of this AnalyticsMediaEndpointStat.
-        The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
-
-        :param invalid_packets: The invalid_packets of this AnalyticsMediaEndpointStat.
-        :type: int
-        """
-        
-        self._invalid_packets = invalid_packets
 
     @property
     def discarded_packets(self):
@@ -261,6 +149,121 @@ class AnalyticsMediaEndpointStat(object):
         self._duplicate_packets = duplicate_packets
 
     @property
+    def event_time(self):
+        """
+        Gets the event_time of this AnalyticsMediaEndpointStat.
+        Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The event_time of this AnalyticsMediaEndpointStat.
+        :rtype: datetime
+        """
+        return self._event_time
+
+    @event_time.setter
+    def event_time(self, event_time):
+        """
+        Sets the event_time of this AnalyticsMediaEndpointStat.
+        Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param event_time: The event_time of this AnalyticsMediaEndpointStat.
+        :type: datetime
+        """
+        
+        self._event_time = event_time
+
+    @property
+    def invalid_packets(self):
+        """
+        Gets the invalid_packets of this AnalyticsMediaEndpointStat.
+        The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
+
+        :return: The invalid_packets of this AnalyticsMediaEndpointStat.
+        :rtype: int
+        """
+        return self._invalid_packets
+
+    @invalid_packets.setter
+    def invalid_packets(self, invalid_packets):
+        """
+        Sets the invalid_packets of this AnalyticsMediaEndpointStat.
+        The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
+
+        :param invalid_packets: The invalid_packets of this AnalyticsMediaEndpointStat.
+        :type: int
+        """
+        
+        self._invalid_packets = invalid_packets
+
+    @property
+    def max_latency_ms(self):
+        """
+        Gets the max_latency_ms of this AnalyticsMediaEndpointStat.
+        The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
+
+        :return: The max_latency_ms of this AnalyticsMediaEndpointStat.
+        :rtype: int
+        """
+        return self._max_latency_ms
+
+    @max_latency_ms.setter
+    def max_latency_ms(self, max_latency_ms):
+        """
+        Sets the max_latency_ms of this AnalyticsMediaEndpointStat.
+        The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
+
+        :param max_latency_ms: The max_latency_ms of this AnalyticsMediaEndpointStat.
+        :type: int
+        """
+        
+        self._max_latency_ms = max_latency_ms
+
+    @property
+    def min_mos(self):
+        """
+        Gets the min_mos of this AnalyticsMediaEndpointStat.
+        The lowest estimated average MOS among all the audio streams belonging to this endpoint
+
+        :return: The min_mos of this AnalyticsMediaEndpointStat.
+        :rtype: float
+        """
+        return self._min_mos
+
+    @min_mos.setter
+    def min_mos(self, min_mos):
+        """
+        Sets the min_mos of this AnalyticsMediaEndpointStat.
+        The lowest estimated average MOS among all the audio streams belonging to this endpoint
+
+        :param min_mos: The min_mos of this AnalyticsMediaEndpointStat.
+        :type: float
+        """
+        
+        self._min_mos = min_mos
+
+    @property
+    def min_r_factor(self):
+        """
+        Gets the min_r_factor of this AnalyticsMediaEndpointStat.
+        The lowest R-factor value among all of the audio streams belonging to this endpoint
+
+        :return: The min_r_factor of this AnalyticsMediaEndpointStat.
+        :rtype: float
+        """
+        return self._min_r_factor
+
+    @min_r_factor.setter
+    def min_r_factor(self, min_r_factor):
+        """
+        Sets the min_r_factor of this AnalyticsMediaEndpointStat.
+        The lowest R-factor value among all of the audio streams belonging to this endpoint
+
+        :param min_r_factor: The min_r_factor of this AnalyticsMediaEndpointStat.
+        :type: float
+        """
+        
+        self._min_r_factor = min_r_factor
+
+    @property
     def overrun_packets(self):
         """
         Gets the overrun_packets of this AnalyticsMediaEndpointStat.
@@ -282,6 +285,29 @@ class AnalyticsMediaEndpointStat(object):
         """
         
         self._overrun_packets = overrun_packets
+
+    @property
+    def received_packets(self):
+        """
+        Gets the received_packets of this AnalyticsMediaEndpointStat.
+        The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
+
+        :return: The received_packets of this AnalyticsMediaEndpointStat.
+        :rtype: int
+        """
+        return self._received_packets
+
+    @received_packets.setter
+    def received_packets(self, received_packets):
+        """
+        Sets the received_packets of this AnalyticsMediaEndpointStat.
+        The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
+
+        :param received_packets: The received_packets of this AnalyticsMediaEndpointStat.
+        :type: int
+        """
+        
+        self._received_packets = received_packets
 
     @property
     def underrun_packets(self):

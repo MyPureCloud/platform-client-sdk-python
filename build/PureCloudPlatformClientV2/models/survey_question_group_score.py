@@ -88,7 +88,7 @@ class SurveyQuestionGroupScore(object):
     def total_score(self):
         """
         Gets the total_score of this SurveyQuestionGroupScore.
-
+        Score of all questions in the group
 
         :return: The total_score of this SurveyQuestionGroupScore.
         :rtype: float
@@ -99,7 +99,7 @@ class SurveyQuestionGroupScore(object):
     def total_score(self, total_score):
         """
         Sets the total_score of this SurveyQuestionGroupScore.
-
+        Score of all questions in the group
 
         :param total_score: The total_score of this SurveyQuestionGroupScore.
         :type: float
@@ -111,7 +111,7 @@ class SurveyQuestionGroupScore(object):
     def max_total_score(self):
         """
         Gets the max_total_score of this SurveyQuestionGroupScore.
-
+        Maximum possible score of all questions in the group
 
         :return: The max_total_score of this SurveyQuestionGroupScore.
         :rtype: float
@@ -122,7 +122,7 @@ class SurveyQuestionGroupScore(object):
     def max_total_score(self, max_total_score):
         """
         Sets the max_total_score of this SurveyQuestionGroupScore.
-
+        Maximum possible score of all questions in the group
 
         :param max_total_score: The max_total_score of this SurveyQuestionGroupScore.
         :type: float

@@ -65,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_observations_query**](UsersApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**post_authorization_subject_bulkadd**](UsersApi.html#post_authorization_subject_bulkadd) | Bulk-grant roles and divisions to a subject.|
 |[**post_authorization_subject_bulkremove**](UsersApi.html#post_authorization_subject_bulkremove) | Bulk-remove grants from a subject.|
+|[**post_authorization_subject_bulkreplace**](UsersApi.html#post_authorization_subject_bulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request.|
 |[**post_authorization_subject_division_role**](UsersApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
 |[**post_user_invite**](UsersApi.html#post_user_invite) | Send an activation email to the user|
 |[**post_user_password**](UsersApi.html#post_user_password) | Change a users password|
@@ -2105,7 +2106,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2173,7 +2174,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2229,7 +2230,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching |
+| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
 {: class="table table-striped"}
 
 ### Return type
@@ -3133,6 +3134,61 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_authorization_subject_bulkreplace"></a>
+
+##  post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
+
+
+
+Replace subject's roles and divisions with the exact list supplied in the request.
+
+This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkreplace 
+
+Requires ALL permissions: 
+
+* authorization:grant:add
+* authorization:grant:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
+subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+
+try:
+    # Replace subject's roles and divisions with the exact list supplied in the request.
+    api_instance.post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_authorization_subject_bulkreplace: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

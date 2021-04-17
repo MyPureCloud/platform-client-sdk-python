@@ -518,7 +518,7 @@ class ObservationValue(object):
         :param used_routing: The used_routing of this ObservationValue.
         :type: str
         """
-        allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
+        allowed_values = ["Bullseye", "Last", "Manual", "Predictive", "Preferred", "Standard"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

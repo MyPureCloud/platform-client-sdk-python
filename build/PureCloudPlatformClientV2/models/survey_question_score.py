@@ -117,7 +117,7 @@ class SurveyQuestionScore(object):
     def score(self):
         """
         Gets the score of this SurveyQuestionScore.
-
+        Unweighted score of the question
 
         :return: The score of this SurveyQuestionScore.
         :rtype: int
@@ -128,7 +128,7 @@ class SurveyQuestionScore(object):
     def score(self, score):
         """
         Sets the score of this SurveyQuestionScore.
-
+        Unweighted score of the question
 
         :param score: The score of this SurveyQuestionScore.
         :type: int

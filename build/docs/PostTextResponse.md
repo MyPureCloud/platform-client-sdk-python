@@ -15,6 +15,7 @@ title: PostTextResponse
 | **amazon_lex** | **dict(str, object)** | Raw data response from AWS (if called) | [optional] |
 | **google_dialog_flow** | **dict(str, object)** | Raw data response from Google Dialogflow (if called) | [optional] |
 | **genesys_dialog_engine** | **dict(str, object)** | Raw data response from Genesys&#39; Dialogengine (if called) | [optional] |
+| **genesys_bot_connector** | **dict(str, object)** | Raw data response from Genesys&#39; BotConnector (if called) | [optional] |
 {: class="table table-striped"}
 
 

@@ -40,40 +40,17 @@ class AnalyticsProposedAgent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'proposed_agent_id': 'str',
-            'agent_rank': 'int'
+            'agent_rank': 'int',
+            'proposed_agent_id': 'str'
         }
 
         self.attribute_map = {
-            'proposed_agent_id': 'proposedAgentId',
-            'agent_rank': 'agentRank'
+            'agent_rank': 'agentRank',
+            'proposed_agent_id': 'proposedAgentId'
         }
 
-        self._proposed_agent_id = None
         self._agent_rank = None
-
-    @property
-    def proposed_agent_id(self):
-        """
-        Gets the proposed_agent_id of this AnalyticsProposedAgent.
-        Unique identifier of an agent that was proposed by predictive routing
-
-        :return: The proposed_agent_id of this AnalyticsProposedAgent.
-        :rtype: str
-        """
-        return self._proposed_agent_id
-
-    @proposed_agent_id.setter
-    def proposed_agent_id(self, proposed_agent_id):
-        """
-        Sets the proposed_agent_id of this AnalyticsProposedAgent.
-        Unique identifier of an agent that was proposed by predictive routing
-
-        :param proposed_agent_id: The proposed_agent_id of this AnalyticsProposedAgent.
-        :type: str
-        """
-        
-        self._proposed_agent_id = proposed_agent_id
+        self._proposed_agent_id = None
 
     @property
     def agent_rank(self):
@@ -97,6 +74,29 @@ class AnalyticsProposedAgent(object):
         """
         
         self._agent_rank = agent_rank
+
+    @property
+    def proposed_agent_id(self):
+        """
+        Gets the proposed_agent_id of this AnalyticsProposedAgent.
+        Unique identifier for the agent that was proposed by predictive routing
+
+        :return: The proposed_agent_id of this AnalyticsProposedAgent.
+        :rtype: str
+        """
+        return self._proposed_agent_id
+
+    @proposed_agent_id.setter
+    def proposed_agent_id(self, proposed_agent_id):
+        """
+        Sets the proposed_agent_id of this AnalyticsProposedAgent.
+        Unique identifier for the agent that was proposed by predictive routing
+
+        :param proposed_agent_id: The proposed_agent_id of this AnalyticsProposedAgent.
+        :type: str
+        """
+        
+        self._proposed_agent_id = proposed_agent_id
 
     def to_dict(self):
         """

@@ -40,53 +40,152 @@ class AnalyticsFlow(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'flow_id': 'str',
-            'flow_name': 'str',
-            'flow_version': 'str',
-            'flow_type': 'str',
-            'exit_reason': 'str',
+            'ending_language': 'str',
             'entry_reason': 'str',
             'entry_type': 'str',
-            'transfer_type': 'str',
-            'transfer_target_name': 'str',
-            'transfer_target_address': 'str',
+            'exit_reason': 'str',
+            'flow_id': 'str',
+            'flow_name': 'str',
+            'flow_type': 'str',
+            'flow_version': 'str',
             'issued_callback': 'bool',
+            'recognition_failure_reason': 'str',
             'starting_language': 'str',
-            'ending_language': 'str',
+            'transfer_target_address': 'str',
+            'transfer_target_name': 'str',
+            'transfer_type': 'str',
             'outcomes': 'list[AnalyticsFlowOutcome]'
         }
 
         self.attribute_map = {
-            'flow_id': 'flowId',
-            'flow_name': 'flowName',
-            'flow_version': 'flowVersion',
-            'flow_type': 'flowType',
-            'exit_reason': 'exitReason',
+            'ending_language': 'endingLanguage',
             'entry_reason': 'entryReason',
             'entry_type': 'entryType',
-            'transfer_type': 'transferType',
-            'transfer_target_name': 'transferTargetName',
-            'transfer_target_address': 'transferTargetAddress',
+            'exit_reason': 'exitReason',
+            'flow_id': 'flowId',
+            'flow_name': 'flowName',
+            'flow_type': 'flowType',
+            'flow_version': 'flowVersion',
             'issued_callback': 'issuedCallback',
+            'recognition_failure_reason': 'recognitionFailureReason',
             'starting_language': 'startingLanguage',
-            'ending_language': 'endingLanguage',
+            'transfer_target_address': 'transferTargetAddress',
+            'transfer_target_name': 'transferTargetName',
+            'transfer_type': 'transferType',
             'outcomes': 'outcomes'
         }
 
-        self._flow_id = None
-        self._flow_name = None
-        self._flow_version = None
-        self._flow_type = None
-        self._exit_reason = None
+        self._ending_language = None
         self._entry_reason = None
         self._entry_type = None
-        self._transfer_type = None
-        self._transfer_target_name = None
-        self._transfer_target_address = None
+        self._exit_reason = None
+        self._flow_id = None
+        self._flow_name = None
+        self._flow_type = None
+        self._flow_version = None
         self._issued_callback = None
+        self._recognition_failure_reason = None
         self._starting_language = None
-        self._ending_language = None
+        self._transfer_target_address = None
+        self._transfer_target_name = None
+        self._transfer_type = None
         self._outcomes = None
+
+    @property
+    def ending_language(self):
+        """
+        Gets the ending_language of this AnalyticsFlow.
+        Flow ending language, e.g. en-us
+
+        :return: The ending_language of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._ending_language
+
+    @ending_language.setter
+    def ending_language(self, ending_language):
+        """
+        Sets the ending_language of this AnalyticsFlow.
+        Flow ending language, e.g. en-us
+
+        :param ending_language: The ending_language of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._ending_language = ending_language
+
+    @property
+    def entry_reason(self):
+        """
+        Gets the entry_reason of this AnalyticsFlow.
+        The particular entry reason for this flow, e.g. an address, userId, or flowId
+
+        :return: The entry_reason of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._entry_reason
+
+    @entry_reason.setter
+    def entry_reason(self, entry_reason):
+        """
+        Sets the entry_reason of this AnalyticsFlow.
+        The particular entry reason for this flow, e.g. an address, userId, or flowId
+
+        :param entry_reason: The entry_reason of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._entry_reason = entry_reason
+
+    @property
+    def entry_type(self):
+        """
+        Gets the entry_type of this AnalyticsFlow.
+        The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
+
+        :return: The entry_type of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._entry_type
+
+    @entry_type.setter
+    def entry_type(self, entry_type):
+        """
+        Sets the entry_type of this AnalyticsFlow.
+        The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
+
+        :param entry_type: The entry_type of this AnalyticsFlow.
+        :type: str
+        """
+        allowed_values = ["agent", "direct", "dnis", "flow", "outbound"]
+        if entry_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for entry_type -> " + entry_type)
+            self._entry_type = "outdated_sdk_version"
+        else:
+            self._entry_type = entry_type
+
+    @property
+    def exit_reason(self):
+        """
+        Gets the exit_reason of this AnalyticsFlow.
+        The exit reason for this flow, e.g. DISCONNECT
+
+        :return: The exit_reason of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._exit_reason
+
+    @exit_reason.setter
+    def exit_reason(self, exit_reason):
+        """
+        Sets the exit_reason of this AnalyticsFlow.
+        The exit reason for this flow, e.g. DISCONNECT
+
+        :param exit_reason: The exit_reason of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._exit_reason = exit_reason
 
     @property
     def flow_id(self):
@@ -115,7 +214,7 @@ class AnalyticsFlow(object):
     def flow_name(self):
         """
         Gets the flow_name of this AnalyticsFlow.
-        The name of this flow
+        The name of this flow at the time of flow execution
 
         :return: The flow_name of this AnalyticsFlow.
         :rtype: str
@@ -126,36 +225,13 @@ class AnalyticsFlow(object):
     def flow_name(self, flow_name):
         """
         Sets the flow_name of this AnalyticsFlow.
-        The name of this flow
+        The name of this flow at the time of flow execution
 
         :param flow_name: The flow_name of this AnalyticsFlow.
         :type: str
         """
         
         self._flow_name = flow_name
-
-    @property
-    def flow_version(self):
-        """
-        Gets the flow_version of this AnalyticsFlow.
-        The version of this flow
-
-        :return: The flow_version of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._flow_version
-
-    @flow_version.setter
-    def flow_version(self, flow_version):
-        """
-        Sets the flow_version of this AnalyticsFlow.
-        The version of this flow
-
-        :param flow_version: The flow_version of this AnalyticsFlow.
-        :type: str
-        """
-        
-        self._flow_version = flow_version
 
     @property
     def flow_type(self):
@@ -185,146 +261,27 @@ class AnalyticsFlow(object):
             self._flow_type = flow_type
 
     @property
-    def exit_reason(self):
+    def flow_version(self):
         """
-        Gets the exit_reason of this AnalyticsFlow.
-        The exit reason for this flow, e.g. DISCONNECT
+        Gets the flow_version of this AnalyticsFlow.
+        The version of this flow
 
-        :return: The exit_reason of this AnalyticsFlow.
+        :return: The flow_version of this AnalyticsFlow.
         :rtype: str
         """
-        return self._exit_reason
+        return self._flow_version
 
-    @exit_reason.setter
-    def exit_reason(self, exit_reason):
+    @flow_version.setter
+    def flow_version(self, flow_version):
         """
-        Sets the exit_reason of this AnalyticsFlow.
-        The exit reason for this flow, e.g. DISCONNECT
+        Sets the flow_version of this AnalyticsFlow.
+        The version of this flow
 
-        :param exit_reason: The exit_reason of this AnalyticsFlow.
+        :param flow_version: The flow_version of this AnalyticsFlow.
         :type: str
         """
         
-        self._exit_reason = exit_reason
-
-    @property
-    def entry_reason(self):
-        """
-        Gets the entry_reason of this AnalyticsFlow.
-        The particular entry reason for this flow, e.g. an address, userId, or flowId
-
-        :return: The entry_reason of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._entry_reason
-
-    @entry_reason.setter
-    def entry_reason(self, entry_reason):
-        """
-        Sets the entry_reason of this AnalyticsFlow.
-        The particular entry reason for this flow, e.g. an address, userId, or flowId
-
-        :param entry_reason: The entry_reason of this AnalyticsFlow.
-        :type: str
-        """
-        
-        self._entry_reason = entry_reason
-
-    @property
-    def entry_type(self):
-        """
-        Gets the entry_type of this AnalyticsFlow.
-        The entry type for this flow
-
-        :return: The entry_type of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._entry_type
-
-    @entry_type.setter
-    def entry_type(self, entry_type):
-        """
-        Sets the entry_type of this AnalyticsFlow.
-        The entry type for this flow
-
-        :param entry_type: The entry_type of this AnalyticsFlow.
-        :type: str
-        """
-        allowed_values = ["dnis", "direct", "flow", "agent", "outbound"]
-        if entry_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for entry_type -> " + entry_type)
-            self._entry_type = "outdated_sdk_version"
-        else:
-            self._entry_type = entry_type
-
-    @property
-    def transfer_type(self):
-        """
-        Gets the transfer_type of this AnalyticsFlow.
-        The type of transfer for flows that ended with a transfer
-
-        :return: The transfer_type of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._transfer_type
-
-    @transfer_type.setter
-    def transfer_type(self, transfer_type):
-        """
-        Sets the transfer_type of this AnalyticsFlow.
-        The type of transfer for flows that ended with a transfer
-
-        :param transfer_type: The transfer_type of this AnalyticsFlow.
-        :type: str
-        """
-        
-        self._transfer_type = transfer_type
-
-    @property
-    def transfer_target_name(self):
-        """
-        Gets the transfer_target_name of this AnalyticsFlow.
-        The name of a transfer target
-
-        :return: The transfer_target_name of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._transfer_target_name
-
-    @transfer_target_name.setter
-    def transfer_target_name(self, transfer_target_name):
-        """
-        Sets the transfer_target_name of this AnalyticsFlow.
-        The name of a transfer target
-
-        :param transfer_target_name: The transfer_target_name of this AnalyticsFlow.
-        :type: str
-        """
-        
-        self._transfer_target_name = transfer_target_name
-
-    @property
-    def transfer_target_address(self):
-        """
-        Gets the transfer_target_address of this AnalyticsFlow.
-        The address of a transfer target
-
-        :return: The transfer_target_address of this AnalyticsFlow.
-        :rtype: str
-        """
-        return self._transfer_target_address
-
-    @transfer_target_address.setter
-    def transfer_target_address(self, transfer_target_address):
-        """
-        Sets the transfer_target_address of this AnalyticsFlow.
-        The address of a transfer target
-
-        :param transfer_target_address: The transfer_target_address of this AnalyticsFlow.
-        :type: str
-        """
-        
-        self._transfer_target_address = transfer_target_address
+        self._flow_version = flow_version
 
     @property
     def issued_callback(self):
@@ -350,6 +307,29 @@ class AnalyticsFlow(object):
         self._issued_callback = issued_callback
 
     @property
+    def recognition_failure_reason(self):
+        """
+        Gets the recognition_failure_reason of this AnalyticsFlow.
+        The recognition failure reason causing to exit/disconnect
+
+        :return: The recognition_failure_reason of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._recognition_failure_reason
+
+    @recognition_failure_reason.setter
+    def recognition_failure_reason(self, recognition_failure_reason):
+        """
+        Sets the recognition_failure_reason of this AnalyticsFlow.
+        The recognition failure reason causing to exit/disconnect
+
+        :param recognition_failure_reason: The recognition_failure_reason of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._recognition_failure_reason = recognition_failure_reason
+
+    @property
     def starting_language(self):
         """
         Gets the starting_language of this AnalyticsFlow.
@@ -373,27 +353,73 @@ class AnalyticsFlow(object):
         self._starting_language = starting_language
 
     @property
-    def ending_language(self):
+    def transfer_target_address(self):
         """
-        Gets the ending_language of this AnalyticsFlow.
-        Flow ending language, e.g. en-us
+        Gets the transfer_target_address of this AnalyticsFlow.
+        The address of a flow transfer target, e.g. a phone number, an email address, or a queueId
 
-        :return: The ending_language of this AnalyticsFlow.
+        :return: The transfer_target_address of this AnalyticsFlow.
         :rtype: str
         """
-        return self._ending_language
+        return self._transfer_target_address
 
-    @ending_language.setter
-    def ending_language(self, ending_language):
+    @transfer_target_address.setter
+    def transfer_target_address(self, transfer_target_address):
         """
-        Sets the ending_language of this AnalyticsFlow.
-        Flow ending language, e.g. en-us
+        Sets the transfer_target_address of this AnalyticsFlow.
+        The address of a flow transfer target, e.g. a phone number, an email address, or a queueId
 
-        :param ending_language: The ending_language of this AnalyticsFlow.
+        :param transfer_target_address: The transfer_target_address of this AnalyticsFlow.
         :type: str
         """
         
-        self._ending_language = ending_language
+        self._transfer_target_address = transfer_target_address
+
+    @property
+    def transfer_target_name(self):
+        """
+        Gets the transfer_target_name of this AnalyticsFlow.
+        The name of a flow transfer target
+
+        :return: The transfer_target_name of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._transfer_target_name
+
+    @transfer_target_name.setter
+    def transfer_target_name(self, transfer_target_name):
+        """
+        Sets the transfer_target_name of this AnalyticsFlow.
+        The name of a flow transfer target
+
+        :param transfer_target_name: The transfer_target_name of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._transfer_target_name = transfer_target_name
+
+    @property
+    def transfer_type(self):
+        """
+        Gets the transfer_type of this AnalyticsFlow.
+        The type of transfer for flows that ended with a transfer
+
+        :return: The transfer_type of this AnalyticsFlow.
+        :rtype: str
+        """
+        return self._transfer_type
+
+    @transfer_type.setter
+    def transfer_type(self, transfer_type):
+        """
+        Sets the transfer_type of this AnalyticsFlow.
+        The type of transfer for flows that ended with a transfer
+
+        :param transfer_type: The transfer_type of this AnalyticsFlow.
+        :type: str
+        """
+        
+        self._transfer_type = transfer_type
 
     @property
     def outcomes(self):

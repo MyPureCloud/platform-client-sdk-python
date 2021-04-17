@@ -2605,7 +2605,7 @@ except ApiException as e:
 
 Get media
 
-
+See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} 
 
@@ -6704,7 +6704,7 @@ except ApiException as e:
 
 Create media
 
-
+See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
 

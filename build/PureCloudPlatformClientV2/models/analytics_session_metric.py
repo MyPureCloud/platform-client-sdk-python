@@ -40,20 +40,43 @@ class AnalyticsSessionMetric(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'emit_date': 'datetime',
             'name': 'str',
-            'value': 'int',
-            'emit_date': 'datetime'
+            'value': 'int'
         }
 
         self.attribute_map = {
+            'emit_date': 'emitDate',
             'name': 'name',
-            'value': 'value',
-            'emit_date': 'emitDate'
+            'value': 'value'
         }
 
+        self._emit_date = None
         self._name = None
         self._value = None
-        self._emit_date = None
+
+    @property
+    def emit_date(self):
+        """
+        Gets the emit_date of this AnalyticsSessionMetric.
+        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The emit_date of this AnalyticsSessionMetric.
+        :rtype: datetime
+        """
+        return self._emit_date
+
+    @emit_date.setter
+    def emit_date(self, emit_date):
+        """
+        Sets the emit_date of this AnalyticsSessionMetric.
+        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param emit_date: The emit_date of this AnalyticsSessionMetric.
+        :type: datetime
+        """
+        
+        self._emit_date = emit_date
 
     @property
     def name(self):
@@ -100,29 +123,6 @@ class AnalyticsSessionMetric(object):
         """
         
         self._value = value
-
-    @property
-    def emit_date(self):
-        """
-        Gets the emit_date of this AnalyticsSessionMetric.
-        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The emit_date of this AnalyticsSessionMetric.
-        :rtype: datetime
-        """
-        return self._emit_date
-
-    @emit_date.setter
-    def emit_date(self, emit_date):
-        """
-        Sets the emit_date of this AnalyticsSessionMetric.
-        Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param emit_date: The emit_date of this AnalyticsSessionMetric.
-        :type: datetime
-        """
-        
-        self._emit_date = emit_date
 
     def to_dict(self):
         """

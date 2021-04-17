@@ -40,32 +40,78 @@ class AnalyticsFlowOutcome(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'flow_outcome_id': 'str',
-            'flow_outcome_value': 'str',
             'flow_outcome': 'str',
+            'flow_outcome_end_timestamp': 'datetime',
+            'flow_outcome_id': 'str',
             'flow_outcome_start_timestamp': 'datetime',
-            'flow_outcome_end_timestamp': 'datetime'
+            'flow_outcome_value': 'str'
         }
 
         self.attribute_map = {
-            'flow_outcome_id': 'flowOutcomeId',
-            'flow_outcome_value': 'flowOutcomeValue',
             'flow_outcome': 'flowOutcome',
+            'flow_outcome_end_timestamp': 'flowOutcomeEndTimestamp',
+            'flow_outcome_id': 'flowOutcomeId',
             'flow_outcome_start_timestamp': 'flowOutcomeStartTimestamp',
-            'flow_outcome_end_timestamp': 'flowOutcomeEndTimestamp'
+            'flow_outcome_value': 'flowOutcomeValue'
         }
 
-        self._flow_outcome_id = None
-        self._flow_outcome_value = None
         self._flow_outcome = None
-        self._flow_outcome_start_timestamp = None
         self._flow_outcome_end_timestamp = None
+        self._flow_outcome_id = None
+        self._flow_outcome_start_timestamp = None
+        self._flow_outcome_value = None
+
+    @property
+    def flow_outcome(self):
+        """
+        Gets the flow_outcome of this AnalyticsFlowOutcome.
+        Combination of unique flow outcome identifier and its value separated by colon
+
+        :return: The flow_outcome of this AnalyticsFlowOutcome.
+        :rtype: str
+        """
+        return self._flow_outcome
+
+    @flow_outcome.setter
+    def flow_outcome(self, flow_outcome):
+        """
+        Sets the flow_outcome of this AnalyticsFlowOutcome.
+        Combination of unique flow outcome identifier and its value separated by colon
+
+        :param flow_outcome: The flow_outcome of this AnalyticsFlowOutcome.
+        :type: str
+        """
+        
+        self._flow_outcome = flow_outcome
+
+    @property
+    def flow_outcome_end_timestamp(self):
+        """
+        Gets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
+        The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.
+
+        :return: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
+        :rtype: datetime
+        """
+        return self._flow_outcome_end_timestamp
+
+    @flow_outcome_end_timestamp.setter
+    def flow_outcome_end_timestamp(self, flow_outcome_end_timestamp):
+        """
+        Sets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
+        The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.
+
+        :param flow_outcome_end_timestamp: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
+        :type: datetime
+        """
+        
+        self._flow_outcome_end_timestamp = flow_outcome_end_timestamp
 
     @property
     def flow_outcome_id(self):
         """
         Gets the flow_outcome_id of this AnalyticsFlowOutcome.
-        Unique identifiers of a flow outcome
+        Unique identifier of a flow outcome
 
         :return: The flow_outcome_id of this AnalyticsFlowOutcome.
         :rtype: str
@@ -76,13 +122,36 @@ class AnalyticsFlowOutcome(object):
     def flow_outcome_id(self, flow_outcome_id):
         """
         Sets the flow_outcome_id of this AnalyticsFlowOutcome.
-        Unique identifiers of a flow outcome
+        Unique identifier of a flow outcome
 
         :param flow_outcome_id: The flow_outcome_id of this AnalyticsFlowOutcome.
         :type: str
         """
         
         self._flow_outcome_id = flow_outcome_id
+
+    @property
+    def flow_outcome_start_timestamp(self):
+        """
+        Gets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
+        The outcome starting timestamp in ISO 8601 format
+
+        :return: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
+        :rtype: datetime
+        """
+        return self._flow_outcome_start_timestamp
+
+    @flow_outcome_start_timestamp.setter
+    def flow_outcome_start_timestamp(self, flow_outcome_start_timestamp):
+        """
+        Sets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
+        The outcome starting timestamp in ISO 8601 format
+
+        :param flow_outcome_start_timestamp: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
+        :type: datetime
+        """
+        
+        self._flow_outcome_start_timestamp = flow_outcome_start_timestamp
 
     @property
     def flow_outcome_value(self):
@@ -106,75 +175,6 @@ class AnalyticsFlowOutcome(object):
         """
         
         self._flow_outcome_value = flow_outcome_value
-
-    @property
-    def flow_outcome(self):
-        """
-        Gets the flow_outcome of this AnalyticsFlowOutcome.
-        Colon-separated combinations of unique flow outcome identifier and value
-
-        :return: The flow_outcome of this AnalyticsFlowOutcome.
-        :rtype: str
-        """
-        return self._flow_outcome
-
-    @flow_outcome.setter
-    def flow_outcome(self, flow_outcome):
-        """
-        Sets the flow_outcome of this AnalyticsFlowOutcome.
-        Colon-separated combinations of unique flow outcome identifier and value
-
-        :param flow_outcome: The flow_outcome of this AnalyticsFlowOutcome.
-        :type: str
-        """
-        
-        self._flow_outcome = flow_outcome
-
-    @property
-    def flow_outcome_start_timestamp(self):
-        """
-        Gets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        :rtype: datetime
-        """
-        return self._flow_outcome_start_timestamp
-
-    @flow_outcome_start_timestamp.setter
-    def flow_outcome_start_timestamp(self, flow_outcome_start_timestamp):
-        """
-        Sets the flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param flow_outcome_start_timestamp: The flow_outcome_start_timestamp of this AnalyticsFlowOutcome.
-        :type: datetime
-        """
-        
-        self._flow_outcome_start_timestamp = flow_outcome_start_timestamp
-
-    @property
-    def flow_outcome_end_timestamp(self):
-        """
-        Gets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        :rtype: datetime
-        """
-        return self._flow_outcome_end_timestamp
-
-    @flow_outcome_end_timestamp.setter
-    def flow_outcome_end_timestamp(self, flow_outcome_end_timestamp):
-        """
-        Sets the flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param flow_outcome_end_timestamp: The flow_outcome_end_timestamp of this AnalyticsFlowOutcome.
-        :type: datetime
-        """
-        
-        self._flow_outcome_end_timestamp = flow_outcome_end_timestamp
 
     def to_dict(self):
         """

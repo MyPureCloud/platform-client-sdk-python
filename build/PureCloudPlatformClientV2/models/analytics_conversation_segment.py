@@ -40,132 +40,274 @@ class AnalyticsConversationSegment(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'segment_start': 'datetime',
-            'segment_end': 'datetime',
+            'audio_muted': 'bool',
+            'conference': 'bool',
+            'destination_conversation_id': 'str',
+            'destination_session_id': 'str',
+            'disconnect_type': 'str',
+            'error_code': 'str',
+            'group_id': 'str',
+            'q850_response_codes': 'list[int]',
             'queue_id': 'str',
+            'requested_language_id': 'str',
+            'requested_routing_skill_ids': 'list[str]',
+            'requested_routing_user_ids': 'list[str]',
+            'segment_end': 'datetime',
+            'segment_start': 'datetime',
+            'segment_type': 'str',
+            'sip_response_codes': 'list[int]',
+            'source_conversation_id': 'str',
+            'source_session_id': 'str',
+            'subject': 'str',
+            'video_muted': 'bool',
             'wrap_up_code': 'str',
             'wrap_up_note': 'str',
             'wrap_up_tags': 'list[str]',
-            'error_code': 'str',
-            'disconnect_type': 'str',
-            'segment_type': 'str',
-            'requested_routing_user_ids': 'list[str]',
-            'requested_routing_skill_ids': 'list[str]',
-            'requested_language_id': 'str',
             'scored_agents': 'list[AnalyticsScoredAgent]',
-            'properties': 'list[AnalyticsProperty]',
-            'source_conversation_id': 'str',
-            'destination_conversation_id': 'str',
-            'source_session_id': 'str',
-            'destination_session_id': 'str',
-            'sip_response_codes': 'list[int]',
-            'q850_response_codes': 'list[int]',
-            'conference': 'bool',
-            'group_id': 'str',
-            'subject': 'str',
-            'audio_muted': 'bool',
-            'video_muted': 'bool'
+            'properties': 'list[AnalyticsProperty]'
         }
 
         self.attribute_map = {
-            'segment_start': 'segmentStart',
-            'segment_end': 'segmentEnd',
+            'audio_muted': 'audioMuted',
+            'conference': 'conference',
+            'destination_conversation_id': 'destinationConversationId',
+            'destination_session_id': 'destinationSessionId',
+            'disconnect_type': 'disconnectType',
+            'error_code': 'errorCode',
+            'group_id': 'groupId',
+            'q850_response_codes': 'q850ResponseCodes',
             'queue_id': 'queueId',
+            'requested_language_id': 'requestedLanguageId',
+            'requested_routing_skill_ids': 'requestedRoutingSkillIds',
+            'requested_routing_user_ids': 'requestedRoutingUserIds',
+            'segment_end': 'segmentEnd',
+            'segment_start': 'segmentStart',
+            'segment_type': 'segmentType',
+            'sip_response_codes': 'sipResponseCodes',
+            'source_conversation_id': 'sourceConversationId',
+            'source_session_id': 'sourceSessionId',
+            'subject': 'subject',
+            'video_muted': 'videoMuted',
             'wrap_up_code': 'wrapUpCode',
             'wrap_up_note': 'wrapUpNote',
             'wrap_up_tags': 'wrapUpTags',
-            'error_code': 'errorCode',
-            'disconnect_type': 'disconnectType',
-            'segment_type': 'segmentType',
-            'requested_routing_user_ids': 'requestedRoutingUserIds',
-            'requested_routing_skill_ids': 'requestedRoutingSkillIds',
-            'requested_language_id': 'requestedLanguageId',
             'scored_agents': 'scoredAgents',
-            'properties': 'properties',
-            'source_conversation_id': 'sourceConversationId',
-            'destination_conversation_id': 'destinationConversationId',
-            'source_session_id': 'sourceSessionId',
-            'destination_session_id': 'destinationSessionId',
-            'sip_response_codes': 'sipResponseCodes',
-            'q850_response_codes': 'q850ResponseCodes',
-            'conference': 'conference',
-            'group_id': 'groupId',
-            'subject': 'subject',
-            'audio_muted': 'audioMuted',
-            'video_muted': 'videoMuted'
+            'properties': 'properties'
         }
 
-        self._segment_start = None
-        self._segment_end = None
+        self._audio_muted = None
+        self._conference = None
+        self._destination_conversation_id = None
+        self._destination_session_id = None
+        self._disconnect_type = None
+        self._error_code = None
+        self._group_id = None
+        self._q850_response_codes = None
         self._queue_id = None
+        self._requested_language_id = None
+        self._requested_routing_skill_ids = None
+        self._requested_routing_user_ids = None
+        self._segment_end = None
+        self._segment_start = None
+        self._segment_type = None
+        self._sip_response_codes = None
+        self._source_conversation_id = None
+        self._source_session_id = None
+        self._subject = None
+        self._video_muted = None
         self._wrap_up_code = None
         self._wrap_up_note = None
         self._wrap_up_tags = None
-        self._error_code = None
-        self._disconnect_type = None
-        self._segment_type = None
-        self._requested_routing_user_ids = None
-        self._requested_routing_skill_ids = None
-        self._requested_language_id = None
         self._scored_agents = None
         self._properties = None
-        self._source_conversation_id = None
-        self._destination_conversation_id = None
-        self._source_session_id = None
-        self._destination_session_id = None
-        self._sip_response_codes = None
-        self._q850_response_codes = None
-        self._conference = None
-        self._group_id = None
-        self._subject = None
-        self._audio_muted = None
-        self._video_muted = None
 
     @property
-    def segment_start(self):
+    def audio_muted(self):
         """
-        Gets the segment_start of this AnalyticsConversationSegment.
-        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Gets the audio_muted of this AnalyticsConversationSegment.
+        Flag indicating if audio is muted or not (true/false)
 
-        :return: The segment_start of this AnalyticsConversationSegment.
-        :rtype: datetime
+        :return: The audio_muted of this AnalyticsConversationSegment.
+        :rtype: bool
         """
-        return self._segment_start
+        return self._audio_muted
 
-    @segment_start.setter
-    def segment_start(self, segment_start):
+    @audio_muted.setter
+    def audio_muted(self, audio_muted):
         """
-        Sets the segment_start of this AnalyticsConversationSegment.
-        The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Sets the audio_muted of this AnalyticsConversationSegment.
+        Flag indicating if audio is muted or not (true/false)
 
-        :param segment_start: The segment_start of this AnalyticsConversationSegment.
-        :type: datetime
+        :param audio_muted: The audio_muted of this AnalyticsConversationSegment.
+        :type: bool
         """
         
-        self._segment_start = segment_start
+        self._audio_muted = audio_muted
 
     @property
-    def segment_end(self):
+    def conference(self):
         """
-        Gets the segment_end of this AnalyticsConversationSegment.
-        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Gets the conference of this AnalyticsConversationSegment.
+        Indicates whether the segment was a conference
 
-        :return: The segment_end of this AnalyticsConversationSegment.
-        :rtype: datetime
+        :return: The conference of this AnalyticsConversationSegment.
+        :rtype: bool
         """
-        return self._segment_end
+        return self._conference
 
-    @segment_end.setter
-    def segment_end(self, segment_end):
+    @conference.setter
+    def conference(self, conference):
         """
-        Sets the segment_end of this AnalyticsConversationSegment.
-        The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Sets the conference of this AnalyticsConversationSegment.
+        Indicates whether the segment was a conference
 
-        :param segment_end: The segment_end of this AnalyticsConversationSegment.
-        :type: datetime
+        :param conference: The conference of this AnalyticsConversationSegment.
+        :type: bool
         """
         
-        self._segment_end = segment_end
+        self._conference = conference
+
+    @property
+    def destination_conversation_id(self):
+        """
+        Gets the destination_conversation_id of this AnalyticsConversationSegment.
+        The unique identifier of a new conversation when a conversation is ended for a conference
+
+        :return: The destination_conversation_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._destination_conversation_id
+
+    @destination_conversation_id.setter
+    def destination_conversation_id(self, destination_conversation_id):
+        """
+        Sets the destination_conversation_id of this AnalyticsConversationSegment.
+        The unique identifier of a new conversation when a conversation is ended for a conference
+
+        :param destination_conversation_id: The destination_conversation_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._destination_conversation_id = destination_conversation_id
+
+    @property
+    def destination_session_id(self):
+        """
+        Gets the destination_session_id of this AnalyticsConversationSegment.
+        The unique identifier of a new session when a session is ended for a conference
+
+        :return: The destination_session_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._destination_session_id
+
+    @destination_session_id.setter
+    def destination_session_id(self, destination_session_id):
+        """
+        Sets the destination_session_id of this AnalyticsConversationSegment.
+        The unique identifier of a new session when a session is ended for a conference
+
+        :param destination_session_id: The destination_session_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._destination_session_id = destination_session_id
+
+    @property
+    def disconnect_type(self):
+        """
+        Gets the disconnect_type of this AnalyticsConversationSegment.
+        The session disconnect type
+
+        :return: The disconnect_type of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._disconnect_type
+
+    @disconnect_type.setter
+    def disconnect_type(self, disconnect_type):
+        """
+        Sets the disconnect_type of this AnalyticsConversationSegment.
+        The session disconnect type
+
+        :param disconnect_type: The disconnect_type of this AnalyticsConversationSegment.
+        :type: str
+        """
+        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
+        if disconnect_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for disconnect_type -> " + disconnect_type)
+            self._disconnect_type = "outdated_sdk_version"
+        else:
+            self._disconnect_type = disconnect_type
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this AnalyticsConversationSegment.
+        A code corresponding to the error that occurred
+
+        :return: The error_code of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this AnalyticsConversationSegment.
+        A code corresponding to the error that occurred
+
+        :param error_code: The error_code of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._error_code = error_code
+
+    @property
+    def group_id(self):
+        """
+        Gets the group_id of this AnalyticsConversationSegment.
+        Unique identifier for a PureCloud group
+
+        :return: The group_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """
+        Sets the group_id of this AnalyticsConversationSegment.
+        Unique identifier for a PureCloud group
+
+        :param group_id: The group_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._group_id = group_id
+
+    @property
+    def q850_response_codes(self):
+        """
+        Gets the q850_response_codes of this AnalyticsConversationSegment.
+        Q.850 response code(s)
+
+        :return: The q850_response_codes of this AnalyticsConversationSegment.
+        :rtype: list[int]
+        """
+        return self._q850_response_codes
+
+    @q850_response_codes.setter
+    def q850_response_codes(self, q850_response_codes):
+        """
+        Sets the q850_response_codes of this AnalyticsConversationSegment.
+        Q.850 response code(s)
+
+        :param q850_response_codes: The q850_response_codes of this AnalyticsConversationSegment.
+        :type: list[int]
+        """
+        
+        self._q850_response_codes = q850_response_codes
 
     @property
     def queue_id(self):
@@ -191,10 +333,267 @@ class AnalyticsConversationSegment(object):
         self._queue_id = queue_id
 
     @property
+    def requested_language_id(self):
+        """
+        Gets the requested_language_id of this AnalyticsConversationSegment.
+        Unique identifier for the language requested for an interaction
+
+        :return: The requested_language_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._requested_language_id
+
+    @requested_language_id.setter
+    def requested_language_id(self, requested_language_id):
+        """
+        Sets the requested_language_id of this AnalyticsConversationSegment.
+        Unique identifier for the language requested for an interaction
+
+        :param requested_language_id: The requested_language_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._requested_language_id = requested_language_id
+
+    @property
+    def requested_routing_skill_ids(self):
+        """
+        Gets the requested_routing_skill_ids of this AnalyticsConversationSegment.
+        Unique identifier(s) for skill(s) requested for an interaction
+
+        :return: The requested_routing_skill_ids of this AnalyticsConversationSegment.
+        :rtype: list[str]
+        """
+        return self._requested_routing_skill_ids
+
+    @requested_routing_skill_ids.setter
+    def requested_routing_skill_ids(self, requested_routing_skill_ids):
+        """
+        Sets the requested_routing_skill_ids of this AnalyticsConversationSegment.
+        Unique identifier(s) for skill(s) requested for an interaction
+
+        :param requested_routing_skill_ids: The requested_routing_skill_ids of this AnalyticsConversationSegment.
+        :type: list[str]
+        """
+        
+        self._requested_routing_skill_ids = requested_routing_skill_ids
+
+    @property
+    def requested_routing_user_ids(self):
+        """
+        Gets the requested_routing_user_ids of this AnalyticsConversationSegment.
+        Unique identifier(s) for agent(s) requested for an interaction
+
+        :return: The requested_routing_user_ids of this AnalyticsConversationSegment.
+        :rtype: list[str]
+        """
+        return self._requested_routing_user_ids
+
+    @requested_routing_user_ids.setter
+    def requested_routing_user_ids(self, requested_routing_user_ids):
+        """
+        Sets the requested_routing_user_ids of this AnalyticsConversationSegment.
+        Unique identifier(s) for agent(s) requested for an interaction
+
+        :param requested_routing_user_ids: The requested_routing_user_ids of this AnalyticsConversationSegment.
+        :type: list[str]
+        """
+        
+        self._requested_routing_user_ids = requested_routing_user_ids
+
+    @property
+    def segment_end(self):
+        """
+        Gets the segment_end of this AnalyticsConversationSegment.
+        The end time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The segment_end of this AnalyticsConversationSegment.
+        :rtype: datetime
+        """
+        return self._segment_end
+
+    @segment_end.setter
+    def segment_end(self, segment_end):
+        """
+        Sets the segment_end of this AnalyticsConversationSegment.
+        The end time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param segment_end: The segment_end of this AnalyticsConversationSegment.
+        :type: datetime
+        """
+        
+        self._segment_end = segment_end
+
+    @property
+    def segment_start(self):
+        """
+        Gets the segment_start of this AnalyticsConversationSegment.
+        The start time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The segment_start of this AnalyticsConversationSegment.
+        :rtype: datetime
+        """
+        return self._segment_start
+
+    @segment_start.setter
+    def segment_start(self, segment_start):
+        """
+        Sets the segment_start of this AnalyticsConversationSegment.
+        The start time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param segment_start: The segment_start of this AnalyticsConversationSegment.
+        :type: datetime
+        """
+        
+        self._segment_start = segment_start
+
+    @property
+    def segment_type(self):
+        """
+        Gets the segment_type of this AnalyticsConversationSegment.
+        The activity that takes place in the segment, such as hold or interact
+
+        :return: The segment_type of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._segment_type
+
+    @segment_type.setter
+    def segment_type(self, segment_type):
+        """
+        Sets the segment_type of this AnalyticsConversationSegment.
+        The activity that takes place in the segment, such as hold or interact
+
+        :param segment_type: The segment_type of this AnalyticsConversationSegment.
+        :type: str
+        """
+        allowed_values = ["alert", "callback", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
+        if segment_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for segment_type -> " + segment_type)
+            self._segment_type = "outdated_sdk_version"
+        else:
+            self._segment_type = segment_type
+
+    @property
+    def sip_response_codes(self):
+        """
+        Gets the sip_response_codes of this AnalyticsConversationSegment.
+        SIP response code(s)
+
+        :return: The sip_response_codes of this AnalyticsConversationSegment.
+        :rtype: list[int]
+        """
+        return self._sip_response_codes
+
+    @sip_response_codes.setter
+    def sip_response_codes(self, sip_response_codes):
+        """
+        Sets the sip_response_codes of this AnalyticsConversationSegment.
+        SIP response code(s)
+
+        :param sip_response_codes: The sip_response_codes of this AnalyticsConversationSegment.
+        :type: list[int]
+        """
+        
+        self._sip_response_codes = sip_response_codes
+
+    @property
+    def source_conversation_id(self):
+        """
+        Gets the source_conversation_id of this AnalyticsConversationSegment.
+        The unique identifier of the previous conversation when a new conversation is created for a conference
+
+        :return: The source_conversation_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._source_conversation_id
+
+    @source_conversation_id.setter
+    def source_conversation_id(self, source_conversation_id):
+        """
+        Sets the source_conversation_id of this AnalyticsConversationSegment.
+        The unique identifier of the previous conversation when a new conversation is created for a conference
+
+        :param source_conversation_id: The source_conversation_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._source_conversation_id = source_conversation_id
+
+    @property
+    def source_session_id(self):
+        """
+        Gets the source_session_id of this AnalyticsConversationSegment.
+        The unique identifier of the previous session when a new session is created for a conference
+
+        :return: The source_session_id of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._source_session_id
+
+    @source_session_id.setter
+    def source_session_id(self, source_session_id):
+        """
+        Sets the source_session_id of this AnalyticsConversationSegment.
+        The unique identifier of the previous session when a new session is created for a conference
+
+        :param source_session_id: The source_session_id of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._source_session_id = source_session_id
+
+    @property
+    def subject(self):
+        """
+        Gets the subject of this AnalyticsConversationSegment.
+        The subject for the initial email that started this conversation
+
+        :return: The subject of this AnalyticsConversationSegment.
+        :rtype: str
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        """
+        Sets the subject of this AnalyticsConversationSegment.
+        The subject for the initial email that started this conversation
+
+        :param subject: The subject of this AnalyticsConversationSegment.
+        :type: str
+        """
+        
+        self._subject = subject
+
+    @property
+    def video_muted(self):
+        """
+        Gets the video_muted of this AnalyticsConversationSegment.
+        Flag indicating if video is muted/paused or not (true/false)
+
+        :return: The video_muted of this AnalyticsConversationSegment.
+        :rtype: bool
+        """
+        return self._video_muted
+
+    @video_muted.setter
+    def video_muted(self, video_muted):
+        """
+        Sets the video_muted of this AnalyticsConversationSegment.
+        Flag indicating if video is muted/paused or not (true/false)
+
+        :param video_muted: The video_muted of this AnalyticsConversationSegment.
+        :type: bool
+        """
+        
+        self._video_muted = video_muted
+
+    @property
     def wrap_up_code(self):
         """
         Gets the wrap_up_code of this AnalyticsConversationSegment.
-        Wrapup Code id
+        Wrap up code
 
         :return: The wrap_up_code of this AnalyticsConversationSegment.
         :rtype: str
@@ -205,7 +604,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_code(self, wrap_up_code):
         """
         Sets the wrap_up_code of this AnalyticsConversationSegment.
-        Wrapup Code id
+        Wrap up code
 
         :param wrap_up_code: The wrap_up_code of this AnalyticsConversationSegment.
         :type: str
@@ -240,7 +639,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_tags(self):
         """
         Gets the wrap_up_tags of this AnalyticsConversationSegment.
-
+        Tag(s) assigned during after-call work
 
         :return: The wrap_up_tags of this AnalyticsConversationSegment.
         :rtype: list[str]
@@ -251,7 +650,7 @@ class AnalyticsConversationSegment(object):
     def wrap_up_tags(self, wrap_up_tags):
         """
         Sets the wrap_up_tags of this AnalyticsConversationSegment.
-
+        Tag(s) assigned during after-call work
 
         :param wrap_up_tags: The wrap_up_tags of this AnalyticsConversationSegment.
         :type: list[str]
@@ -260,156 +659,10 @@ class AnalyticsConversationSegment(object):
         self._wrap_up_tags = wrap_up_tags
 
     @property
-    def error_code(self):
-        """
-        Gets the error_code of this AnalyticsConversationSegment.
-
-
-        :return: The error_code of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._error_code
-
-    @error_code.setter
-    def error_code(self, error_code):
-        """
-        Sets the error_code of this AnalyticsConversationSegment.
-
-
-        :param error_code: The error_code of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._error_code = error_code
-
-    @property
-    def disconnect_type(self):
-        """
-        Gets the disconnect_type of this AnalyticsConversationSegment.
-        A description of the event that disconnected the segment
-
-        :return: The disconnect_type of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._disconnect_type
-
-    @disconnect_type.setter
-    def disconnect_type(self, disconnect_type):
-        """
-        Sets the disconnect_type of this AnalyticsConversationSegment.
-        A description of the event that disconnected the segment
-
-        :param disconnect_type: The disconnect_type of this AnalyticsConversationSegment.
-        :type: str
-        """
-        allowed_values = ["endpoint", "client", "system", "transfer", "error", "peer", "other", "spam", "transportFailure", "conferenceTransfer", "consultTransfer", "forwardTransfer", "timeout", "noAnswerTransfer", "notAvailableTransfer", "uncallable"]
-        if disconnect_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for disconnect_type -> " + disconnect_type)
-            self._disconnect_type = "outdated_sdk_version"
-        else:
-            self._disconnect_type = disconnect_type
-
-    @property
-    def segment_type(self):
-        """
-        Gets the segment_type of this AnalyticsConversationSegment.
-        The activity taking place for the participant in the segment
-
-        :return: The segment_type of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._segment_type
-
-    @segment_type.setter
-    def segment_type(self, segment_type):
-        """
-        Sets the segment_type of this AnalyticsConversationSegment.
-        The activity taking place for the participant in the segment
-
-        :param segment_type: The segment_type of this AnalyticsConversationSegment.
-        :type: str
-        """
-        allowed_values = ["unknown", "alert", "system", "delay", "hold", "interact", "ivr", "dialing", "wrapup", "voicemail", "scheduled", "contacting", "transmitting", "converting", "uploading", "sharing", "callback"]
-        if segment_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for segment_type -> " + segment_type)
-            self._segment_type = "outdated_sdk_version"
-        else:
-            self._segment_type = segment_type
-
-    @property
-    def requested_routing_user_ids(self):
-        """
-        Gets the requested_routing_user_ids of this AnalyticsConversationSegment.
-
-
-        :return: The requested_routing_user_ids of this AnalyticsConversationSegment.
-        :rtype: list[str]
-        """
-        return self._requested_routing_user_ids
-
-    @requested_routing_user_ids.setter
-    def requested_routing_user_ids(self, requested_routing_user_ids):
-        """
-        Sets the requested_routing_user_ids of this AnalyticsConversationSegment.
-
-
-        :param requested_routing_user_ids: The requested_routing_user_ids of this AnalyticsConversationSegment.
-        :type: list[str]
-        """
-        
-        self._requested_routing_user_ids = requested_routing_user_ids
-
-    @property
-    def requested_routing_skill_ids(self):
-        """
-        Gets the requested_routing_skill_ids of this AnalyticsConversationSegment.
-
-
-        :return: The requested_routing_skill_ids of this AnalyticsConversationSegment.
-        :rtype: list[str]
-        """
-        return self._requested_routing_skill_ids
-
-    @requested_routing_skill_ids.setter
-    def requested_routing_skill_ids(self, requested_routing_skill_ids):
-        """
-        Sets the requested_routing_skill_ids of this AnalyticsConversationSegment.
-
-
-        :param requested_routing_skill_ids: The requested_routing_skill_ids of this AnalyticsConversationSegment.
-        :type: list[str]
-        """
-        
-        self._requested_routing_skill_ids = requested_routing_skill_ids
-
-    @property
-    def requested_language_id(self):
-        """
-        Gets the requested_language_id of this AnalyticsConversationSegment.
-        A unique identifier for the language requested for an interaction.
-
-        :return: The requested_language_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._requested_language_id
-
-    @requested_language_id.setter
-    def requested_language_id(self, requested_language_id):
-        """
-        Sets the requested_language_id of this AnalyticsConversationSegment.
-        A unique identifier for the language requested for an interaction.
-
-        :param requested_language_id: The requested_language_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._requested_language_id = requested_language_id
-
-    @property
     def scored_agents(self):
         """
         Gets the scored_agents of this AnalyticsConversationSegment.
-
+        Scored agents
 
         :return: The scored_agents of this AnalyticsConversationSegment.
         :rtype: list[AnalyticsScoredAgent]
@@ -420,7 +673,7 @@ class AnalyticsConversationSegment(object):
     def scored_agents(self, scored_agents):
         """
         Sets the scored_agents of this AnalyticsConversationSegment.
-
+        Scored agents
 
         :param scored_agents: The scored_agents of this AnalyticsConversationSegment.
         :type: list[AnalyticsScoredAgent]
@@ -432,7 +685,7 @@ class AnalyticsConversationSegment(object):
     def properties(self):
         """
         Gets the properties of this AnalyticsConversationSegment.
-
+        Additional segment properties
 
         :return: The properties of this AnalyticsConversationSegment.
         :rtype: list[AnalyticsProperty]
@@ -443,266 +696,13 @@ class AnalyticsConversationSegment(object):
     def properties(self, properties):
         """
         Sets the properties of this AnalyticsConversationSegment.
-
+        Additional segment properties
 
         :param properties: The properties of this AnalyticsConversationSegment.
         :type: list[AnalyticsProperty]
         """
         
         self._properties = properties
-
-    @property
-    def source_conversation_id(self):
-        """
-        Gets the source_conversation_id of this AnalyticsConversationSegment.
-
-
-        :return: The source_conversation_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._source_conversation_id
-
-    @source_conversation_id.setter
-    def source_conversation_id(self, source_conversation_id):
-        """
-        Sets the source_conversation_id of this AnalyticsConversationSegment.
-
-
-        :param source_conversation_id: The source_conversation_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._source_conversation_id = source_conversation_id
-
-    @property
-    def destination_conversation_id(self):
-        """
-        Gets the destination_conversation_id of this AnalyticsConversationSegment.
-
-
-        :return: The destination_conversation_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._destination_conversation_id
-
-    @destination_conversation_id.setter
-    def destination_conversation_id(self, destination_conversation_id):
-        """
-        Sets the destination_conversation_id of this AnalyticsConversationSegment.
-
-
-        :param destination_conversation_id: The destination_conversation_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._destination_conversation_id = destination_conversation_id
-
-    @property
-    def source_session_id(self):
-        """
-        Gets the source_session_id of this AnalyticsConversationSegment.
-
-
-        :return: The source_session_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._source_session_id
-
-    @source_session_id.setter
-    def source_session_id(self, source_session_id):
-        """
-        Sets the source_session_id of this AnalyticsConversationSegment.
-
-
-        :param source_session_id: The source_session_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._source_session_id = source_session_id
-
-    @property
-    def destination_session_id(self):
-        """
-        Gets the destination_session_id of this AnalyticsConversationSegment.
-
-
-        :return: The destination_session_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._destination_session_id
-
-    @destination_session_id.setter
-    def destination_session_id(self, destination_session_id):
-        """
-        Sets the destination_session_id of this AnalyticsConversationSegment.
-
-
-        :param destination_session_id: The destination_session_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._destination_session_id = destination_session_id
-
-    @property
-    def sip_response_codes(self):
-        """
-        Gets the sip_response_codes of this AnalyticsConversationSegment.
-
-
-        :return: The sip_response_codes of this AnalyticsConversationSegment.
-        :rtype: list[int]
-        """
-        return self._sip_response_codes
-
-    @sip_response_codes.setter
-    def sip_response_codes(self, sip_response_codes):
-        """
-        Sets the sip_response_codes of this AnalyticsConversationSegment.
-
-
-        :param sip_response_codes: The sip_response_codes of this AnalyticsConversationSegment.
-        :type: list[int]
-        """
-        
-        self._sip_response_codes = sip_response_codes
-
-    @property
-    def q850_response_codes(self):
-        """
-        Gets the q850_response_codes of this AnalyticsConversationSegment.
-
-
-        :return: The q850_response_codes of this AnalyticsConversationSegment.
-        :rtype: list[int]
-        """
-        return self._q850_response_codes
-
-    @q850_response_codes.setter
-    def q850_response_codes(self, q850_response_codes):
-        """
-        Sets the q850_response_codes of this AnalyticsConversationSegment.
-
-
-        :param q850_response_codes: The q850_response_codes of this AnalyticsConversationSegment.
-        :type: list[int]
-        """
-        
-        self._q850_response_codes = q850_response_codes
-
-    @property
-    def conference(self):
-        """
-        Gets the conference of this AnalyticsConversationSegment.
-        Indicates whether the segment was a conference
-
-        :return: The conference of this AnalyticsConversationSegment.
-        :rtype: bool
-        """
-        return self._conference
-
-    @conference.setter
-    def conference(self, conference):
-        """
-        Sets the conference of this AnalyticsConversationSegment.
-        Indicates whether the segment was a conference
-
-        :param conference: The conference of this AnalyticsConversationSegment.
-        :type: bool
-        """
-        
-        self._conference = conference
-
-    @property
-    def group_id(self):
-        """
-        Gets the group_id of this AnalyticsConversationSegment.
-
-
-        :return: The group_id of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._group_id
-
-    @group_id.setter
-    def group_id(self, group_id):
-        """
-        Sets the group_id of this AnalyticsConversationSegment.
-
-
-        :param group_id: The group_id of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._group_id = group_id
-
-    @property
-    def subject(self):
-        """
-        Gets the subject of this AnalyticsConversationSegment.
-
-
-        :return: The subject of this AnalyticsConversationSegment.
-        :rtype: str
-        """
-        return self._subject
-
-    @subject.setter
-    def subject(self, subject):
-        """
-        Sets the subject of this AnalyticsConversationSegment.
-
-
-        :param subject: The subject of this AnalyticsConversationSegment.
-        :type: str
-        """
-        
-        self._subject = subject
-
-    @property
-    def audio_muted(self):
-        """
-        Gets the audio_muted of this AnalyticsConversationSegment.
-
-
-        :return: The audio_muted of this AnalyticsConversationSegment.
-        :rtype: bool
-        """
-        return self._audio_muted
-
-    @audio_muted.setter
-    def audio_muted(self, audio_muted):
-        """
-        Sets the audio_muted of this AnalyticsConversationSegment.
-
-
-        :param audio_muted: The audio_muted of this AnalyticsConversationSegment.
-        :type: bool
-        """
-        
-        self._audio_muted = audio_muted
-
-    @property
-    def video_muted(self):
-        """
-        Gets the video_muted of this AnalyticsConversationSegment.
-
-
-        :return: The video_muted of this AnalyticsConversationSegment.
-        :rtype: bool
-        """
-        return self._video_muted
-
-    @video_muted.setter
-    def video_muted(self, video_muted):
-        """
-        Sets the video_muted of this AnalyticsConversationSegment.
-
-
-        :param video_muted: The video_muted of this AnalyticsConversationSegment.
-        :type: bool
-        """
-        
-        self._video_muted = video_muted
 
     def to_dict(self):
         """

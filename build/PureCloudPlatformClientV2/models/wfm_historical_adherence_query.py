@@ -44,8 +44,7 @@ class WfmHistoricalAdherenceQuery(object):
             'end_date': 'datetime',
             'time_zone': 'str',
             'user_ids': 'list[str]',
-            'include_exceptions': 'bool',
-            'team_ids': 'list[str]'
+            'include_exceptions': 'bool'
         }
 
         self.attribute_map = {
@@ -53,8 +52,7 @@ class WfmHistoricalAdherenceQuery(object):
             'end_date': 'endDate',
             'time_zone': 'timeZone',
             'user_ids': 'userIds',
-            'include_exceptions': 'includeExceptions',
-            'team_ids': 'teamIds'
+            'include_exceptions': 'includeExceptions'
         }
 
         self._start_date = None
@@ -62,7 +60,6 @@ class WfmHistoricalAdherenceQuery(object):
         self._time_zone = None
         self._user_ids = None
         self._include_exceptions = None
-        self._team_ids = None
 
     @property
     def start_date(self):
@@ -178,29 +175,6 @@ class WfmHistoricalAdherenceQuery(object):
         """
         
         self._include_exceptions = include_exceptions
-
-    @property
-    def team_ids(self):
-        """
-        Gets the team_ids of this WfmHistoricalAdherenceQuery.
-        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
-
-        :return: The team_ids of this WfmHistoricalAdherenceQuery.
-        :rtype: list[str]
-        """
-        return self._team_ids
-
-    @team_ids.setter
-    def team_ids(self, team_ids):
-        """
-        Sets the team_ids of this WfmHistoricalAdherenceQuery.
-        The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
-
-        :param team_ids: The team_ids of this WfmHistoricalAdherenceQuery.
-        :type: list[str]
-        """
-        
-        self._team_ids = team_ids
 
     def to_dict(self):
         """

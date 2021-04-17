@@ -41,7 +41,6 @@ class Relationship(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'user': 'User',
             'external_organization': 'ExternalOrganization',
             'relationship': 'str',
@@ -51,7 +50,6 @@ class Relationship(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'user': 'user',
             'external_organization': 'externalOrganization',
             'relationship': 'relationship',
@@ -60,7 +58,6 @@ class Relationship(object):
         }
 
         self._id = None
-        self._name = None
         self._user = None
         self._external_organization = None
         self._relationship = None
@@ -91,33 +88,10 @@ class Relationship(object):
         self._id = id
 
     @property
-    def name(self):
-        """
-        Gets the name of this Relationship.
-
-
-        :return: The name of this Relationship.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this Relationship.
-
-
-        :param name: The name of this Relationship.
-        :type: str
-        """
-        
-        self._name = name
-
-    @property
     def user(self):
         """
         Gets the user of this Relationship.
-        The user associated with the external organization
+        The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
 
         :return: The user of this Relationship.
         :rtype: User
@@ -128,7 +102,7 @@ class Relationship(object):
     def user(self, user):
         """
         Sets the user of this Relationship.
-        The user associated with the external organization
+        The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
 
         :param user: The user of this Relationship.
         :type: User

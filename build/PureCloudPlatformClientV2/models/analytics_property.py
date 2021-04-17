@@ -40,20 +40,43 @@ class AnalyticsProperty(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'property_type': 'str',
             'pcProperty': 'str',
+            'property_type': 'str',
             'value': 'str'
         }
 
         self.attribute_map = {
-            'property_type': 'propertyType',
             'pcProperty': 'property',
+            'property_type': 'propertyType',
             'value': 'value'
         }
 
-        self._property_type = None
         self._pcProperty = None
+        self._property_type = None
         self._value = None
+
+    @property
+    def pcProperty(self):
+        """
+        Gets the pcProperty of this AnalyticsProperty.
+        User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
+
+        :return: The pcProperty of this AnalyticsProperty.
+        :rtype: str
+        """
+        return self._pcProperty
+
+    @pcProperty.setter
+    def pcProperty(self, pcProperty):
+        """
+        Sets the pcProperty of this AnalyticsProperty.
+        User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
+
+        :param pcProperty: The pcProperty of this AnalyticsProperty.
+        :type: str
+        """
+        
+        self._pcProperty = pcProperty
 
     @property
     def property_type(self):
@@ -81,29 +104,6 @@ class AnalyticsProperty(object):
             self._property_type = "outdated_sdk_version"
         else:
             self._property_type = property_type
-
-    @property
-    def pcProperty(self):
-        """
-        Gets the pcProperty of this AnalyticsProperty.
-        User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
-
-        :return: The pcProperty of this AnalyticsProperty.
-        :rtype: str
-        """
-        return self._pcProperty
-
-    @pcProperty.setter
-    def pcProperty(self, pcProperty):
-        """
-        Sets the pcProperty of this AnalyticsProperty.
-        User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
-
-        :param pcProperty: The pcProperty of this AnalyticsProperty.
-        :type: str
-        """
-        
-        self._pcProperty = pcProperty
 
     @property
     def value(self):

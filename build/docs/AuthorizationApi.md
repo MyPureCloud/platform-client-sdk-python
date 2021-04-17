@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_authorization_roles_default**](AuthorizationApi.html#post_authorization_roles_default) | Restores all default roles|
 |[**post_authorization_subject_bulkadd**](AuthorizationApi.html#post_authorization_subject_bulkadd) | Bulk-grant roles and divisions to a subject.|
 |[**post_authorization_subject_bulkremove**](AuthorizationApi.html#post_authorization_subject_bulkremove) | Bulk-remove grants from a subject.|
+|[**post_authorization_subject_bulkreplace**](AuthorizationApi.html#post_authorization_subject_bulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request.|
 |[**post_authorization_subject_division_role**](AuthorizationApi.html#post_authorization_subject_division_role) | Make a grant of a role in a division|
 |[**put_authorization_division**](AuthorizationApi.html#put_authorization_division) | Update a division.|
 |[**put_authorization_role**](AuthorizationApi.html#put_authorization_role) | Update an organization role.|
@@ -1324,7 +1325,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER, DATATABLES |
+| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, DATATABLES |
 | **body** | **list[str]**| Object Id List |  |
 {: class="table table-striped"}
 
@@ -1695,6 +1696,61 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_authorization_subject_bulkreplace"></a>
+
+##  post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
+
+
+
+Replace subject's roles and divisions with the exact list supplied in the request.
+
+This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkreplace 
+
+Requires ALL permissions: 
+
+* authorization:grant:add
+* authorization:grant:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
+subject_type = 'PC_USER' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to PC_USER)
+
+try:
+    # Replace subject's roles and divisions with the exact list supplied in the request.
+    api_instance.post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_subject_bulkreplace: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| Subject ID (user or group) |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

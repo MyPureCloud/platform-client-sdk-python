@@ -3919,7 +3919,7 @@ class ConversationsApi(object):
     def get_conversations_message_communication_messages_media_media_id(self, conversation_id, communication_id, media_id, **kwargs):
         """
         Get media
-        
+        See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10516,7 +10516,7 @@ class ConversationsApi(object):
     def post_conversations_message_communication_messages_media(self, conversation_id, communication_id, **kwargs):
         """
         Create media
-        
+        See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -85,7 +85,7 @@ class AdditionalMessage(object):
     def media_ids(self):
         """
         Gets the media_ids of this AdditionalMessage.
-        The media ids associated with the text message.
+        The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
         :return: The media_ids of this AdditionalMessage.
         :rtype: list[str]
@@ -96,7 +96,7 @@ class AdditionalMessage(object):
     def media_ids(self, media_ids):
         """
         Sets the media_ids of this AdditionalMessage.
-        The media ids associated with the text message.
+        The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
         :param media_ids: The media_ids of this AdditionalMessage.
         :type: list[str]

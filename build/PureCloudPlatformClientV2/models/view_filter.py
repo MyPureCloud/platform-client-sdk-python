@@ -137,8 +137,11 @@ class ViewFilter(object):
             'development_type_list': 'list[str]',
             'development_status_list': 'list[str]',
             'development_module_ids': 'list[str]',
-            'development_key_type': 'str',
-            'development_activity_overdue': 'bool'
+            'development_activity_overdue': 'bool',
+            'customer_sentiment_score': 'NumericRange',
+            'customer_sentiment_trend': 'NumericRange',
+            'flow_transfer_targets': 'list[str]',
+            'development_name': 'str'
         }
 
         self.attribute_map = {
@@ -239,8 +242,11 @@ class ViewFilter(object):
             'development_type_list': 'developmentTypeList',
             'development_status_list': 'developmentStatusList',
             'development_module_ids': 'developmentModuleIds',
-            'development_key_type': 'developmentKeyType',
-            'development_activity_overdue': 'developmentActivityOverdue'
+            'development_activity_overdue': 'developmentActivityOverdue',
+            'customer_sentiment_score': 'customerSentimentScore',
+            'customer_sentiment_trend': 'customerSentimentTrend',
+            'flow_transfer_targets': 'flowTransferTargets',
+            'development_name': 'developmentName'
         }
 
         self._media_types = None
@@ -340,8 +346,11 @@ class ViewFilter(object):
         self._development_type_list = None
         self._development_status_list = None
         self._development_module_ids = None
-        self._development_key_type = None
         self._development_activity_overdue = None
+        self._customer_sentiment_score = None
+        self._customer_sentiment_trend = None
+        self._flow_transfer_targets = None
+        self._development_name = None
 
     @property
     def media_types(self):
@@ -2575,33 +2584,6 @@ class ViewFilter(object):
         self._development_module_ids = development_module_ids
 
     @property
-    def development_key_type(self):
-        """
-        Gets the development_key_type of this ViewFilter.
-        Represents due or completed to filter agent development view
-
-        :return: The development_key_type of this ViewFilter.
-        :rtype: str
-        """
-        return self._development_key_type
-
-    @development_key_type.setter
-    def development_key_type(self, development_key_type):
-        """
-        Sets the development_key_type of this ViewFilter.
-        Represents due or completed to filter agent development view
-
-        :param development_key_type: The development_key_type of this ViewFilter.
-        :type: str
-        """
-        allowed_values = ["Due", "Completed"]
-        if development_key_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for development_key_type -> " + development_key_type)
-            self._development_key_type = "outdated_sdk_version"
-        else:
-            self._development_key_type = development_key_type
-
-    @property
     def development_activity_overdue(self):
         """
         Gets the development_activity_overdue of this ViewFilter.
@@ -2623,6 +2605,98 @@ class ViewFilter(object):
         """
         
         self._development_activity_overdue = development_activity_overdue
+
+    @property
+    def customer_sentiment_score(self):
+        """
+        Gets the customer_sentiment_score of this ViewFilter.
+        The customer sentiment score used to filter the view
+
+        :return: The customer_sentiment_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._customer_sentiment_score
+
+    @customer_sentiment_score.setter
+    def customer_sentiment_score(self, customer_sentiment_score):
+        """
+        Sets the customer_sentiment_score of this ViewFilter.
+        The customer sentiment score used to filter the view
+
+        :param customer_sentiment_score: The customer_sentiment_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._customer_sentiment_score = customer_sentiment_score
+
+    @property
+    def customer_sentiment_trend(self):
+        """
+        Gets the customer_sentiment_trend of this ViewFilter.
+        The customer sentiment trend used to filter the view
+
+        :return: The customer_sentiment_trend of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._customer_sentiment_trend
+
+    @customer_sentiment_trend.setter
+    def customer_sentiment_trend(self, customer_sentiment_trend):
+        """
+        Sets the customer_sentiment_trend of this ViewFilter.
+        The customer sentiment trend used to filter the view
+
+        :param customer_sentiment_trend: The customer_sentiment_trend of this ViewFilter.
+        :type: NumericRange
+        """
+        
+        self._customer_sentiment_trend = customer_sentiment_trend
+
+    @property
+    def flow_transfer_targets(self):
+        """
+        Gets the flow_transfer_targets of this ViewFilter.
+        The list of transfer targets used to filter flow data
+
+        :return: The flow_transfer_targets of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._flow_transfer_targets
+
+    @flow_transfer_targets.setter
+    def flow_transfer_targets(self, flow_transfer_targets):
+        """
+        Sets the flow_transfer_targets of this ViewFilter.
+        The list of transfer targets used to filter flow data
+
+        :param flow_transfer_targets: The flow_transfer_targets of this ViewFilter.
+        :type: list[str]
+        """
+        
+        self._flow_transfer_targets = flow_transfer_targets
+
+    @property
+    def development_name(self):
+        """
+        Gets the development_name of this ViewFilter.
+        Filter for development name
+
+        :return: The development_name of this ViewFilter.
+        :rtype: str
+        """
+        return self._development_name
+
+    @development_name.setter
+    def development_name(self, development_name):
+        """
+        Sets the development_name of this ViewFilter.
+        Filter for development name
+
+        :param development_name: The development_name of this ViewFilter.
+        :type: str
+        """
+        
+        self._development_name = development_name
 
     def to_dict(self):
         """

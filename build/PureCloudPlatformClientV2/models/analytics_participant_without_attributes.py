@@ -40,38 +40,111 @@ class AnalyticsParticipantWithoutAttributes(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'participant_id': 'str',
-            'participant_name': 'str',
-            'user_id': 'str',
-            'purpose': 'str',
             'external_contact_id': 'str',
             'external_organization_id': 'str',
             'flagged_reason': 'str',
+            'participant_id': 'str',
+            'participant_name': 'str',
+            'purpose': 'str',
             'team_id': 'str',
+            'user_id': 'str',
             'sessions': 'list[AnalyticsSession]'
         }
 
         self.attribute_map = {
-            'participant_id': 'participantId',
-            'participant_name': 'participantName',
-            'user_id': 'userId',
-            'purpose': 'purpose',
             'external_contact_id': 'externalContactId',
             'external_organization_id': 'externalOrganizationId',
             'flagged_reason': 'flaggedReason',
+            'participant_id': 'participantId',
+            'participant_name': 'participantName',
+            'purpose': 'purpose',
             'team_id': 'teamId',
+            'user_id': 'userId',
             'sessions': 'sessions'
         }
 
-        self._participant_id = None
-        self._participant_name = None
-        self._user_id = None
-        self._purpose = None
         self._external_contact_id = None
         self._external_organization_id = None
         self._flagged_reason = None
+        self._participant_id = None
+        self._participant_name = None
+        self._purpose = None
         self._team_id = None
+        self._user_id = None
         self._sessions = None
+
+    @property
+    def external_contact_id(self):
+        """
+        Gets the external_contact_id of this AnalyticsParticipantWithoutAttributes.
+        External contact identifier
+
+        :return: The external_contact_id of this AnalyticsParticipantWithoutAttributes.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id):
+        """
+        Sets the external_contact_id of this AnalyticsParticipantWithoutAttributes.
+        External contact identifier
+
+        :param external_contact_id: The external_contact_id of this AnalyticsParticipantWithoutAttributes.
+        :type: str
+        """
+        
+        self._external_contact_id = external_contact_id
+
+    @property
+    def external_organization_id(self):
+        """
+        Gets the external_organization_id of this AnalyticsParticipantWithoutAttributes.
+        External organization identifier
+
+        :return: The external_organization_id of this AnalyticsParticipantWithoutAttributes.
+        :rtype: str
+        """
+        return self._external_organization_id
+
+    @external_organization_id.setter
+    def external_organization_id(self, external_organization_id):
+        """
+        Sets the external_organization_id of this AnalyticsParticipantWithoutAttributes.
+        External organization identifier
+
+        :param external_organization_id: The external_organization_id of this AnalyticsParticipantWithoutAttributes.
+        :type: str
+        """
+        
+        self._external_organization_id = external_organization_id
+
+    @property
+    def flagged_reason(self):
+        """
+        Gets the flagged_reason of this AnalyticsParticipantWithoutAttributes.
+        Reason for which participant flagged conversation
+
+        :return: The flagged_reason of this AnalyticsParticipantWithoutAttributes.
+        :rtype: str
+        """
+        return self._flagged_reason
+
+    @flagged_reason.setter
+    def flagged_reason(self, flagged_reason):
+        """
+        Sets the flagged_reason of this AnalyticsParticipantWithoutAttributes.
+        Reason for which participant flagged conversation
+
+        :param flagged_reason: The flagged_reason of this AnalyticsParticipantWithoutAttributes.
+        :type: str
+        """
+        allowed_values = ["general"]
+        if flagged_reason.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for flagged_reason -> " + flagged_reason)
+            self._flagged_reason = "outdated_sdk_version"
+        else:
+            self._flagged_reason = flagged_reason
 
     @property
     def participant_id(self):
@@ -120,29 +193,6 @@ class AnalyticsParticipantWithoutAttributes(object):
         self._participant_name = participant_name
 
     @property
-    def user_id(self):
-        """
-        Gets the user_id of this AnalyticsParticipantWithoutAttributes.
-        If a user, then this will be the unique identifier for the user
-
-        :return: The user_id of this AnalyticsParticipantWithoutAttributes.
-        :rtype: str
-        """
-        return self._user_id
-
-    @user_id.setter
-    def user_id(self, user_id):
-        """
-        Sets the user_id of this AnalyticsParticipantWithoutAttributes.
-        If a user, then this will be the unique identifier for the user
-
-        :param user_id: The user_id of this AnalyticsParticipantWithoutAttributes.
-        :type: str
-        """
-        
-        self._user_id = user_id
-
-    @property
     def purpose(self):
         """
         Gets the purpose of this AnalyticsParticipantWithoutAttributes.
@@ -162,7 +212,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         :param purpose: The purpose of this AnalyticsParticipantWithoutAttributes.
         :type: str
         """
-        allowed_values = ["manual", "dialer", "inbound", "acd", "ivr", "voicemail", "outbound", "agent", "user", "station", "group", "customer", "external", "fax", "workflow", "campaign", "api"]
+        allowed_values = ["acd", "agent", "api", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow"]
         if purpose.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for purpose -> " + purpose)
             self._purpose = "outdated_sdk_version"
@@ -170,83 +220,10 @@ class AnalyticsParticipantWithoutAttributes(object):
             self._purpose = purpose
 
     @property
-    def external_contact_id(self):
-        """
-        Gets the external_contact_id of this AnalyticsParticipantWithoutAttributes.
-        External Contact Identifier
-
-        :return: The external_contact_id of this AnalyticsParticipantWithoutAttributes.
-        :rtype: str
-        """
-        return self._external_contact_id
-
-    @external_contact_id.setter
-    def external_contact_id(self, external_contact_id):
-        """
-        Sets the external_contact_id of this AnalyticsParticipantWithoutAttributes.
-        External Contact Identifier
-
-        :param external_contact_id: The external_contact_id of this AnalyticsParticipantWithoutAttributes.
-        :type: str
-        """
-        
-        self._external_contact_id = external_contact_id
-
-    @property
-    def external_organization_id(self):
-        """
-        Gets the external_organization_id of this AnalyticsParticipantWithoutAttributes.
-        External Organization Identifier
-
-        :return: The external_organization_id of this AnalyticsParticipantWithoutAttributes.
-        :rtype: str
-        """
-        return self._external_organization_id
-
-    @external_organization_id.setter
-    def external_organization_id(self, external_organization_id):
-        """
-        Sets the external_organization_id of this AnalyticsParticipantWithoutAttributes.
-        External Organization Identifier
-
-        :param external_organization_id: The external_organization_id of this AnalyticsParticipantWithoutAttributes.
-        :type: str
-        """
-        
-        self._external_organization_id = external_organization_id
-
-    @property
-    def flagged_reason(self):
-        """
-        Gets the flagged_reason of this AnalyticsParticipantWithoutAttributes.
-        Reason for which participant flagged conversation
-
-        :return: The flagged_reason of this AnalyticsParticipantWithoutAttributes.
-        :rtype: str
-        """
-        return self._flagged_reason
-
-    @flagged_reason.setter
-    def flagged_reason(self, flagged_reason):
-        """
-        Sets the flagged_reason of this AnalyticsParticipantWithoutAttributes.
-        Reason for which participant flagged conversation
-
-        :param flagged_reason: The flagged_reason of this AnalyticsParticipantWithoutAttributes.
-        :type: str
-        """
-        allowed_values = ["general"]
-        if flagged_reason.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for flagged_reason -> " + flagged_reason)
-            self._flagged_reason = "outdated_sdk_version"
-        else:
-            self._flagged_reason = flagged_reason
-
-    @property
     def team_id(self):
         """
         Gets the team_id of this AnalyticsParticipantWithoutAttributes.
-        The team id the user is a member of
+        The team ID the user is a member of
 
         :return: The team_id of this AnalyticsParticipantWithoutAttributes.
         :rtype: str
@@ -257,13 +234,36 @@ class AnalyticsParticipantWithoutAttributes(object):
     def team_id(self, team_id):
         """
         Sets the team_id of this AnalyticsParticipantWithoutAttributes.
-        The team id the user is a member of
+        The team ID the user is a member of
 
         :param team_id: The team_id of this AnalyticsParticipantWithoutAttributes.
         :type: str
         """
         
         self._team_id = team_id
+
+    @property
+    def user_id(self):
+        """
+        Gets the user_id of this AnalyticsParticipantWithoutAttributes.
+        Unique identifier for the user
+
+        :return: The user_id of this AnalyticsParticipantWithoutAttributes.
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """
+        Sets the user_id of this AnalyticsParticipantWithoutAttributes.
+        Unique identifier for the user
+
+        :param user_id: The user_id of this AnalyticsParticipantWithoutAttributes.
+        :type: str
+        """
+        
+        self._user_id = user_id
 
     @property
     def sessions(self):

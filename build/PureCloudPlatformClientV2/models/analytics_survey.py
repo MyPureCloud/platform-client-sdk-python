@@ -40,113 +40,113 @@ class AnalyticsSurvey(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'survey_id': 'str',
+            'event_time': 'datetime',
+            'queue_id': 'str',
+            'survey_completed_date': 'datetime',
+            'survey_form_context_id': 'str',
             'survey_form_id': 'str',
             'survey_form_name': 'str',
-            'survey_form_context_id': 'str',
-            'event_time': 'datetime',
-            'user_id': 'str',
-            'queue_id': 'str',
-            'survey_status': 'str',
+            'survey_id': 'str',
             'survey_promoter_score': 'int',
-            'survey_completed_date': 'datetime',
+            'survey_status': 'str',
+            'user_id': 'str',
             'o_survey_total_score': 'int'
         }
 
         self.attribute_map = {
-            'survey_id': 'surveyId',
+            'event_time': 'eventTime',
+            'queue_id': 'queueId',
+            'survey_completed_date': 'surveyCompletedDate',
+            'survey_form_context_id': 'surveyFormContextId',
             'survey_form_id': 'surveyFormId',
             'survey_form_name': 'surveyFormName',
-            'survey_form_context_id': 'surveyFormContextId',
-            'event_time': 'eventTime',
-            'user_id': 'userId',
-            'queue_id': 'queueId',
-            'survey_status': 'surveyStatus',
+            'survey_id': 'surveyId',
             'survey_promoter_score': 'surveyPromoterScore',
-            'survey_completed_date': 'surveyCompletedDate',
+            'survey_status': 'surveyStatus',
+            'user_id': 'userId',
             'o_survey_total_score': 'oSurveyTotalScore'
         }
 
-        self._survey_id = None
+        self._event_time = None
+        self._queue_id = None
+        self._survey_completed_date = None
+        self._survey_form_context_id = None
         self._survey_form_id = None
         self._survey_form_name = None
-        self._survey_form_context_id = None
-        self._event_time = None
-        self._user_id = None
-        self._queue_id = None
-        self._survey_status = None
+        self._survey_id = None
         self._survey_promoter_score = None
-        self._survey_completed_date = None
+        self._survey_status = None
+        self._user_id = None
         self._o_survey_total_score = None
 
     @property
-    def survey_id(self):
+    def event_time(self):
         """
-        Gets the survey_id of this AnalyticsSurvey.
-        Unique identifier for the survey
+        Gets the event_time of this AnalyticsSurvey.
+        Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
-        :return: The survey_id of this AnalyticsSurvey.
-        :rtype: str
+        :return: The event_time of this AnalyticsSurvey.
+        :rtype: datetime
         """
-        return self._survey_id
+        return self._event_time
 
-    @survey_id.setter
-    def survey_id(self, survey_id):
+    @event_time.setter
+    def event_time(self, event_time):
         """
-        Sets the survey_id of this AnalyticsSurvey.
-        Unique identifier for the survey
+        Sets the event_time of this AnalyticsSurvey.
+        Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
-        :param survey_id: The survey_id of this AnalyticsSurvey.
-        :type: str
+        :param event_time: The event_time of this AnalyticsSurvey.
+        :type: datetime
         """
         
-        self._survey_id = survey_id
+        self._event_time = event_time
 
     @property
-    def survey_form_id(self):
+    def queue_id(self):
         """
-        Gets the survey_form_id of this AnalyticsSurvey.
-        Unique identifier for the survey form
+        Gets the queue_id of this AnalyticsSurvey.
+        The ID of the associated queue
 
-        :return: The survey_form_id of this AnalyticsSurvey.
+        :return: The queue_id of this AnalyticsSurvey.
         :rtype: str
         """
-        return self._survey_form_id
+        return self._queue_id
 
-    @survey_form_id.setter
-    def survey_form_id(self, survey_form_id):
+    @queue_id.setter
+    def queue_id(self, queue_id):
         """
-        Sets the survey_form_id of this AnalyticsSurvey.
-        Unique identifier for the survey form
+        Sets the queue_id of this AnalyticsSurvey.
+        The ID of the associated queue
 
-        :param survey_form_id: The survey_form_id of this AnalyticsSurvey.
+        :param queue_id: The queue_id of this AnalyticsSurvey.
         :type: str
         """
         
-        self._survey_form_id = survey_form_id
+        self._queue_id = queue_id
 
     @property
-    def survey_form_name(self):
+    def survey_completed_date(self):
         """
-        Gets the survey_form_name of this AnalyticsSurvey.
-        Name of the survey form
+        Gets the survey_completed_date of this AnalyticsSurvey.
+        Completion datetime of the survey in ISO 8601 format
 
-        :return: The survey_form_name of this AnalyticsSurvey.
-        :rtype: str
+        :return: The survey_completed_date of this AnalyticsSurvey.
+        :rtype: datetime
         """
-        return self._survey_form_name
+        return self._survey_completed_date
 
-    @survey_form_name.setter
-    def survey_form_name(self, survey_form_name):
+    @survey_completed_date.setter
+    def survey_completed_date(self, survey_completed_date):
         """
-        Sets the survey_form_name of this AnalyticsSurvey.
-        Name of the survey form
+        Sets the survey_completed_date of this AnalyticsSurvey.
+        Completion datetime of the survey in ISO 8601 format
 
-        :param survey_form_name: The survey_form_name of this AnalyticsSurvey.
-        :type: str
+        :param survey_completed_date: The survey_completed_date of this AnalyticsSurvey.
+        :type: datetime
         """
         
-        self._survey_form_name = survey_form_name
+        self._survey_completed_date = survey_completed_date
 
     @property
     def survey_form_context_id(self):
@@ -172,102 +172,79 @@ class AnalyticsSurvey(object):
         self._survey_form_context_id = survey_form_context_id
 
     @property
-    def event_time(self):
+    def survey_form_id(self):
         """
-        Gets the event_time of this AnalyticsSurvey.
-        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Gets the survey_form_id of this AnalyticsSurvey.
+        ID of the survey form used
 
-        :return: The event_time of this AnalyticsSurvey.
-        :rtype: datetime
-        """
-        return self._event_time
-
-    @event_time.setter
-    def event_time(self, event_time):
-        """
-        Sets the event_time of this AnalyticsSurvey.
-        Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param event_time: The event_time of this AnalyticsSurvey.
-        :type: datetime
-        """
-        
-        self._event_time = event_time
-
-    @property
-    def user_id(self):
-        """
-        Gets the user_id of this AnalyticsSurvey.
-        A unique identifier of the PureCloud user
-
-        :return: The user_id of this AnalyticsSurvey.
+        :return: The survey_form_id of this AnalyticsSurvey.
         :rtype: str
         """
-        return self._user_id
+        return self._survey_form_id
 
-    @user_id.setter
-    def user_id(self, user_id):
+    @survey_form_id.setter
+    def survey_form_id(self, survey_form_id):
         """
-        Sets the user_id of this AnalyticsSurvey.
-        A unique identifier of the PureCloud user
+        Sets the survey_form_id of this AnalyticsSurvey.
+        ID of the survey form used
 
-        :param user_id: The user_id of this AnalyticsSurvey.
+        :param survey_form_id: The survey_form_id of this AnalyticsSurvey.
         :type: str
         """
         
-        self._user_id = user_id
+        self._survey_form_id = survey_form_id
 
     @property
-    def queue_id(self):
+    def survey_form_name(self):
         """
-        Gets the queue_id of this AnalyticsSurvey.
-        Unique identifier for the queue the conversation was on
+        Gets the survey_form_name of this AnalyticsSurvey.
+        Name of the survey form used
 
-        :return: The queue_id of this AnalyticsSurvey.
+        :return: The survey_form_name of this AnalyticsSurvey.
         :rtype: str
         """
-        return self._queue_id
+        return self._survey_form_name
 
-    @queue_id.setter
-    def queue_id(self, queue_id):
+    @survey_form_name.setter
+    def survey_form_name(self, survey_form_name):
         """
-        Sets the queue_id of this AnalyticsSurvey.
-        Unique identifier for the queue the conversation was on
+        Sets the survey_form_name of this AnalyticsSurvey.
+        Name of the survey form used
 
-        :param queue_id: The queue_id of this AnalyticsSurvey.
+        :param survey_form_name: The survey_form_name of this AnalyticsSurvey.
         :type: str
         """
         
-        self._queue_id = queue_id
+        self._survey_form_name = survey_form_name
 
     @property
-    def survey_status(self):
+    def survey_id(self):
         """
-        Gets the survey_status of this AnalyticsSurvey.
-        Survey status
+        Gets the survey_id of this AnalyticsSurvey.
+        ID of the survey
 
-        :return: The survey_status of this AnalyticsSurvey.
+        :return: The survey_id of this AnalyticsSurvey.
         :rtype: str
         """
-        return self._survey_status
+        return self._survey_id
 
-    @survey_status.setter
-    def survey_status(self, survey_status):
+    @survey_id.setter
+    def survey_id(self, survey_id):
         """
-        Sets the survey_status of this AnalyticsSurvey.
-        Survey status
+        Sets the survey_id of this AnalyticsSurvey.
+        ID of the survey
 
-        :param survey_status: The survey_status of this AnalyticsSurvey.
+        :param survey_id: The survey_id of this AnalyticsSurvey.
         :type: str
         """
         
-        self._survey_status = survey_status
+        self._survey_id = survey_id
 
     @property
     def survey_promoter_score(self):
         """
         Gets the survey_promoter_score of this AnalyticsSurvey.
-        Promoter score of the survey
+        Score of the survey used with NPS
 
         :return: The survey_promoter_score of this AnalyticsSurvey.
         :rtype: int
@@ -278,7 +255,7 @@ class AnalyticsSurvey(object):
     def survey_promoter_score(self, survey_promoter_score):
         """
         Sets the survey_promoter_score of this AnalyticsSurvey.
-        Promoter score of the survey
+        Score of the survey used with NPS
 
         :param survey_promoter_score: The survey_promoter_score of this AnalyticsSurvey.
         :type: int
@@ -287,27 +264,50 @@ class AnalyticsSurvey(object):
         self._survey_promoter_score = survey_promoter_score
 
     @property
-    def survey_completed_date(self):
+    def survey_status(self):
         """
-        Gets the survey_completed_date of this AnalyticsSurvey.
-        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Gets the survey_status of this AnalyticsSurvey.
+        The status of the survey
 
-        :return: The survey_completed_date of this AnalyticsSurvey.
-        :rtype: datetime
+        :return: The survey_status of this AnalyticsSurvey.
+        :rtype: str
         """
-        return self._survey_completed_date
+        return self._survey_status
 
-    @survey_completed_date.setter
-    def survey_completed_date(self, survey_completed_date):
+    @survey_status.setter
+    def survey_status(self, survey_status):
         """
-        Sets the survey_completed_date of this AnalyticsSurvey.
-        Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Sets the survey_status of this AnalyticsSurvey.
+        The status of the survey
 
-        :param survey_completed_date: The survey_completed_date of this AnalyticsSurvey.
-        :type: datetime
+        :param survey_status: The survey_status of this AnalyticsSurvey.
+        :type: str
         """
         
-        self._survey_completed_date = survey_completed_date
+        self._survey_status = survey_status
+
+    @property
+    def user_id(self):
+        """
+        Gets the user_id of this AnalyticsSurvey.
+        ID of the agent the survey was performed against
+
+        :return: The user_id of this AnalyticsSurvey.
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """
+        Sets the user_id of this AnalyticsSurvey.
+        ID of the agent the survey was performed against
+
+        :param user_id: The user_id of this AnalyticsSurvey.
+        :type: str
+        """
+        
+        self._user_id = user_id
 
     @property
     def o_survey_total_score(self):

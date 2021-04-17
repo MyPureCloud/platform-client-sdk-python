@@ -47,7 +47,8 @@ class PostTextResponse(object):
             'bot_correlation_id': 'str',
             'amazon_lex': 'dict(str, object)',
             'google_dialog_flow': 'dict(str, object)',
-            'genesys_dialog_engine': 'dict(str, object)'
+            'genesys_dialog_engine': 'dict(str, object)',
+            'genesys_bot_connector': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -58,7 +59,8 @@ class PostTextResponse(object):
             'bot_correlation_id': 'botCorrelationId',
             'amazon_lex': 'amazonLex',
             'google_dialog_flow': 'googleDialogFlow',
-            'genesys_dialog_engine': 'genesysDialogEngine'
+            'genesys_dialog_engine': 'genesysDialogEngine',
+            'genesys_bot_connector': 'genesysBotConnector'
         }
 
         self._bot_state = None
@@ -69,6 +71,7 @@ class PostTextResponse(object):
         self._amazon_lex = None
         self._google_dialog_flow = None
         self._genesys_dialog_engine = None
+        self._genesys_bot_connector = None
 
     @property
     def bot_state(self):
@@ -257,6 +260,29 @@ class PostTextResponse(object):
         """
         
         self._genesys_dialog_engine = genesys_dialog_engine
+
+    @property
+    def genesys_bot_connector(self):
+        """
+        Gets the genesys_bot_connector of this PostTextResponse.
+        Raw data response from Genesys' BotConnector (if called)
+
+        :return: The genesys_bot_connector of this PostTextResponse.
+        :rtype: dict(str, object)
+        """
+        return self._genesys_bot_connector
+
+    @genesys_bot_connector.setter
+    def genesys_bot_connector(self, genesys_bot_connector):
+        """
+        Sets the genesys_bot_connector of this PostTextResponse.
+        Raw data response from Genesys' BotConnector (if called)
+
+        :param genesys_bot_connector: The genesys_bot_connector of this PostTextResponse.
+        :type: dict(str, object)
+        """
+        
+        self._genesys_bot_connector = genesys_bot_connector
 
     def to_dict(self):
         """

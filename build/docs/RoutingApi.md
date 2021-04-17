@@ -2942,7 +2942,7 @@ except ApiException as e:
 
 <a name="patch_routing_queue_member"></a>
 
-## [**QueueMember**](QueueMember.html) patch_routing_queue_member(queue_id, member_id, body)
+##  patch_routing_queue_member(queue_id, member_id, body)
 
 
 
@@ -2976,8 +2976,7 @@ body = PureCloudPlatformClientV2.QueueMember() # QueueMember | Queue Member
 
 try:
     # Update the ring number OR joined status for a queue member.
-    api_response = api_instance.patch_routing_queue_member(queue_id, member_id, body)
-    pprint(api_response)
+    api_instance.patch_routing_queue_member(queue_id, member_id, body)
 except ApiException as e:
     print("Exception when calling RoutingApi->patch_routing_queue_member: %s\n" % e)
 ```
@@ -2994,7 +2993,7 @@ except ApiException as e:
 
 ### Return type
 
-[**QueueMember**](QueueMember.html)
+void (empty response body)
 
 <a name="patch_routing_queue_members"></a>
 
@@ -3052,7 +3051,7 @@ except ApiException as e:
 
 <a name="patch_routing_queue_user"></a>
 
-## [**QueueMember**](QueueMember.html) patch_routing_queue_user(queue_id, member_id, body)
+##  patch_routing_queue_user(queue_id, member_id, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -3086,8 +3085,7 @@ body = PureCloudPlatformClientV2.QueueMember() # QueueMember | Queue Member
 
 try:
     # DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
-    api_response = api_instance.patch_routing_queue_user(queue_id, member_id, body)
-    pprint(api_response)
+    api_instance.patch_routing_queue_user(queue_id, member_id, body)
 except ApiException as e:
     print("Exception when calling RoutingApi->patch_routing_queue_user: %s\n" % e)
 ```
@@ -3104,7 +3102,7 @@ except ApiException as e:
 
 ### Return type
 
-[**QueueMember**](QueueMember.html)
+void (empty response body)
 
 <a name="patch_routing_queue_users"></a>
 

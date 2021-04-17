@@ -46,6 +46,7 @@ class GDPRSubject(object):
             'dialer_contact_id': 'DialerContactId',
             'journey_customer': 'GDPRJourneyCustomer',
             'social_handle': 'SocialHandle',
+            'external_id': 'str',
             'addresses': 'list[str]',
             'phone_numbers': 'list[str]',
             'email_addresses': 'list[str]'
@@ -58,6 +59,7 @@ class GDPRSubject(object):
             'dialer_contact_id': 'dialerContactId',
             'journey_customer': 'journeyCustomer',
             'social_handle': 'socialHandle',
+            'external_id': 'externalId',
             'addresses': 'addresses',
             'phone_numbers': 'phoneNumbers',
             'email_addresses': 'emailAddresses'
@@ -69,6 +71,7 @@ class GDPRSubject(object):
         self._dialer_contact_id = None
         self._journey_customer = None
         self._social_handle = None
+        self._external_id = None
         self._addresses = None
         self._phone_numbers = None
         self._email_addresses = None
@@ -210,6 +213,29 @@ class GDPRSubject(object):
         """
         
         self._social_handle = social_handle
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this GDPRSubject.
+
+
+        :return: The external_id of this GDPRSubject.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this GDPRSubject.
+
+
+        :param external_id: The external_id of this GDPRSubject.
+        :type: str
+        """
+        
+        self._external_id = external_id
 
     @property
     def addresses(self):

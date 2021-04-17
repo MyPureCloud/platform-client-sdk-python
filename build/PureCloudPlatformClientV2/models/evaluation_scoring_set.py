@@ -71,7 +71,7 @@ class EvaluationScoringSet(object):
     def total_score(self):
         """
         Gets the total_score of this EvaluationScoringSet.
-
+        Score of all questions
 
         :return: The total_score of this EvaluationScoringSet.
         :rtype: float
@@ -82,7 +82,7 @@ class EvaluationScoringSet(object):
     def total_score(self, total_score):
         """
         Sets the total_score of this EvaluationScoringSet.
-
+        Score of all questions
 
         :param total_score: The total_score of this EvaluationScoringSet.
         :type: float
@@ -94,7 +94,7 @@ class EvaluationScoringSet(object):
     def total_critical_score(self):
         """
         Gets the total_critical_score of this EvaluationScoringSet.
-
+        Score of only the critical questions
 
         :return: The total_critical_score of this EvaluationScoringSet.
         :rtype: float
@@ -105,7 +105,7 @@ class EvaluationScoringSet(object):
     def total_critical_score(self, total_critical_score):
         """
         Sets the total_critical_score of this EvaluationScoringSet.
-
+        Score of only the critical questions
 
         :param total_critical_score: The total_critical_score of this EvaluationScoringSet.
         :type: float
@@ -117,7 +117,7 @@ class EvaluationScoringSet(object):
     def total_non_critical_score(self):
         """
         Gets the total_non_critical_score of this EvaluationScoringSet.
-
+        Score of only the non-critical questions
 
         :return: The total_non_critical_score of this EvaluationScoringSet.
         :rtype: float
@@ -128,7 +128,7 @@ class EvaluationScoringSet(object):
     def total_non_critical_score(self, total_non_critical_score):
         """
         Sets the total_non_critical_score of this EvaluationScoringSet.
-
+        Score of only the non-critical questions
 
         :param total_non_critical_score: The total_non_critical_score of this EvaluationScoringSet.
         :type: float
@@ -163,7 +163,7 @@ class EvaluationScoringSet(object):
     def any_failed_kill_questions(self):
         """
         Gets the any_failed_kill_questions of this EvaluationScoringSet.
-
+        Indicates that at least one fatal question was answered without having the highest score available for the question
 
         :return: The any_failed_kill_questions of this EvaluationScoringSet.
         :rtype: bool
@@ -174,7 +174,7 @@ class EvaluationScoringSet(object):
     def any_failed_kill_questions(self, any_failed_kill_questions):
         """
         Sets the any_failed_kill_questions of this EvaluationScoringSet.
-
+        Indicates that at least one fatal question was answered without having the highest score available for the question
 
         :param any_failed_kill_questions: The any_failed_kill_questions of this EvaluationScoringSet.
         :type: bool
@@ -186,7 +186,7 @@ class EvaluationScoringSet(object):
     def comments(self):
         """
         Gets the comments of this EvaluationScoringSet.
-
+        Overall comments from the evaluator
 
         :return: The comments of this EvaluationScoringSet.
         :rtype: str
@@ -197,7 +197,7 @@ class EvaluationScoringSet(object):
     def comments(self, comments):
         """
         Sets the comments of this EvaluationScoringSet.
-
+        Overall comments from the evaluator
 
         :param comments: The comments of this EvaluationScoringSet.
         :type: str
@@ -209,7 +209,7 @@ class EvaluationScoringSet(object):
     def agent_comments(self):
         """
         Gets the agent_comments of this EvaluationScoringSet.
-
+        Comments from the agent while reviewing evaluation results
 
         :return: The agent_comments of this EvaluationScoringSet.
         :rtype: str
@@ -220,7 +220,7 @@ class EvaluationScoringSet(object):
     def agent_comments(self, agent_comments):
         """
         Sets the agent_comments of this EvaluationScoringSet.
-
+        Comments from the agent while reviewing evaluation results
 
         :param agent_comments: The agent_comments of this EvaluationScoringSet.
         :type: str

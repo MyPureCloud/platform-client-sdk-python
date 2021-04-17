@@ -7155,7 +7155,7 @@ class OutboundApi(object):
 
     def post_outbound_dnclist_phonenumbers(self, dnc_list_id, body, **kwargs):
         """
-        Add phone numbers to a Dialer DNC list.
+        Add phone numbers to a DNC list.
         Only Internal DNC lists may be appended to
 
         This method makes a synchronous HTTP request by default. To make an

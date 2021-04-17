@@ -118,7 +118,7 @@ class EvaluationQuestionGroupScore(object):
     def total_score(self):
         """
         Gets the total_score of this EvaluationQuestionGroupScore.
-
+        Score of all questions in the group
 
         :return: The total_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -129,7 +129,7 @@ class EvaluationQuestionGroupScore(object):
     def total_score(self, total_score):
         """
         Sets the total_score of this EvaluationQuestionGroupScore.
-
+        Score of all questions in the group
 
         :param total_score: The total_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -141,7 +141,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_score(self):
         """
         Gets the max_total_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of all questions in the group
 
         :return: The max_total_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -152,7 +152,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_score(self, max_total_score):
         """
         Sets the max_total_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of all questions in the group
 
         :param max_total_score: The max_total_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -187,7 +187,7 @@ class EvaluationQuestionGroupScore(object):
     def total_critical_score(self):
         """
         Gets the total_critical_score of this EvaluationQuestionGroupScore.
-
+        Score of only the critical questions in the group
 
         :return: The total_critical_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -198,7 +198,7 @@ class EvaluationQuestionGroupScore(object):
     def total_critical_score(self, total_critical_score):
         """
         Sets the total_critical_score of this EvaluationQuestionGroupScore.
-
+        Score of only the critical questions in the group
 
         :param total_critical_score: The total_critical_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -210,7 +210,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_critical_score(self):
         """
         Gets the max_total_critical_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of only the critical questions in the group
 
         :return: The max_total_critical_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -221,7 +221,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_critical_score(self, max_total_critical_score):
         """
         Sets the max_total_critical_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of only the critical questions in the group
 
         :param max_total_critical_score: The max_total_critical_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -233,7 +233,7 @@ class EvaluationQuestionGroupScore(object):
     def total_non_critical_score(self):
         """
         Gets the total_non_critical_score of this EvaluationQuestionGroupScore.
-
+        Score of only the non critical questions in the group
 
         :return: The total_non_critical_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -244,7 +244,7 @@ class EvaluationQuestionGroupScore(object):
     def total_non_critical_score(self, total_non_critical_score):
         """
         Sets the total_non_critical_score of this EvaluationQuestionGroupScore.
-
+        Score of only the non critical questions in the group
 
         :param total_non_critical_score: The total_non_critical_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -256,7 +256,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_non_critical_score(self):
         """
         Gets the max_total_non_critical_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of only the non critical questions in the group
 
         :return: The max_total_non_critical_score of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -267,7 +267,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_non_critical_score(self, max_total_non_critical_score):
         """
         Sets the max_total_non_critical_score of this EvaluationQuestionGroupScore.
-
+        Maximum possible score of only the non critical questions in the group
 
         :param max_total_non_critical_score: The max_total_non_critical_score of this EvaluationQuestionGroupScore.
         :type: float
@@ -279,7 +279,7 @@ class EvaluationQuestionGroupScore(object):
     def total_score_unweighted(self):
         """
         Gets the total_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of all questions in the group
 
         :return: The total_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -290,7 +290,7 @@ class EvaluationQuestionGroupScore(object):
     def total_score_unweighted(self, total_score_unweighted):
         """
         Sets the total_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of all questions in the group
 
         :param total_score_unweighted: The total_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float
@@ -302,7 +302,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_score_unweighted(self):
         """
         Gets the max_total_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of all questions in the group
 
         :return: The max_total_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -313,7 +313,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_score_unweighted(self, max_total_score_unweighted):
         """
         Sets the max_total_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of all questions in the group
 
         :param max_total_score_unweighted: The max_total_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float
@@ -325,7 +325,7 @@ class EvaluationQuestionGroupScore(object):
     def total_critical_score_unweighted(self):
         """
         Gets the total_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of only the critical questions in the group
 
         :return: The total_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -336,7 +336,7 @@ class EvaluationQuestionGroupScore(object):
     def total_critical_score_unweighted(self, total_critical_score_unweighted):
         """
         Sets the total_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of only the critical questions in the group
 
         :param total_critical_score_unweighted: The total_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float
@@ -348,7 +348,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_critical_score_unweighted(self):
         """
         Gets the max_total_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of only the critical questions in the group
 
         :return: The max_total_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -359,7 +359,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_critical_score_unweighted(self, max_total_critical_score_unweighted):
         """
         Sets the max_total_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of only the critical questions in the group
 
         :param max_total_critical_score_unweighted: The max_total_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float
@@ -371,7 +371,7 @@ class EvaluationQuestionGroupScore(object):
     def total_non_critical_score_unweighted(self):
         """
         Gets the total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of only the non critical questions in the group
 
         :return: The total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -382,7 +382,7 @@ class EvaluationQuestionGroupScore(object):
     def total_non_critical_score_unweighted(self, total_non_critical_score_unweighted):
         """
         Sets the total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Unweighted score of only the non critical questions in the group
 
         :param total_non_critical_score_unweighted: The total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float
@@ -394,7 +394,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_non_critical_score_unweighted(self):
         """
         Gets the max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of only the non critical questions in the group
 
         :return: The max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :rtype: float
@@ -405,7 +405,7 @@ class EvaluationQuestionGroupScore(object):
     def max_total_non_critical_score_unweighted(self, max_total_non_critical_score_unweighted):
         """
         Sets the max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
-
+        Maximum possible unweighted score of only the non critical questions in the group
 
         :param max_total_non_critical_score_unweighted: The max_total_non_critical_score_unweighted of this EvaluationQuestionGroupScore.
         :type: float

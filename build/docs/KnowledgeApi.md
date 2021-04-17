@@ -418,7 +418,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_language_documents"></a>
 
-## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title)
+## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, document_ids=document_ids)
 
 
 
@@ -453,10 +453,11 @@ limit = 'limit_example' # str | Number of entities to return. Maximum of 200. De
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 categories = 'categories_example' # str | Filter by categories ids, comma separated values expected. (optional)
 title = 'title_example' # str | Filter by document title. (optional)
+document_ids = ['document_ids_example'] # list[str] | Comma-separated list of document identifiers to fetch by. (optional)
 
 try:
     # Get documents
-    api_response = api_instance.get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title)
+    api_response = api_instance.get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, document_ids=document_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_documents: %s\n" % e)
@@ -475,6 +476,7 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **categories** | **str**| Filter by categories ids, comma separated values expected. | [optional]  |
 | **title** | **str**| Filter by document title. | [optional]  |
+| **document_ids** | [**list[str]**](str.html)| Comma-separated list of document identifiers to fetch by. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

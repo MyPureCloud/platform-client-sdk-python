@@ -40,265 +40,284 @@ class AnalyticsSession(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'media_type': 'str',
-            'session_id': 'str',
+            'active_skill_ids': 'list[str]',
+            'acw_skipped': 'bool',
+            'address_from': 'str',
             'address_other': 'str',
             'address_self': 'str',
-            'address_from': 'str',
             'address_to': 'str',
-            'message_type': 'str',
+            'agent_assistant_id': 'str',
+            'agent_bullseye_ring': 'int',
             'ani': 'str',
-            'direction': 'str',
-            'dnis': 'str',
-            'session_dnis': 'str',
-            'outbound_campaign_id': 'str',
-            'outbound_contact_id': 'str',
-            'outbound_contact_list_id': 'str',
-            'disposition_analyzer': 'str',
-            'disposition_name': 'str',
-            'edge_id': 'str',
-            'remote_name_displayable': 'str',
-            'room_id': 'str',
-            'monitored_participant_id': 'str',
-            'callback_user_name': 'str',
+            'assigner_id': 'str',
+            'authenticated': 'bool',
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
-            'script_id': 'str',
-            'peer_id': 'str',
-            'skip_enabled': 'bool',
-            'timeout_seconds': 'int',
+            'callback_user_name': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
-            'media_bridge_id': 'str',
-            'screen_share_address_self': 'str',
-            'sharing_screen': 'bool',
-            'screen_share_room_id': 'str',
-            'video_room_id': 'str',
-            'video_address_self': 'str',
-            'segments': 'list[AnalyticsConversationSegment]',
-            'metrics': 'list[AnalyticsSessionMetric]',
-            'flow': 'AnalyticsFlow',
-            'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
-            'recording': 'bool',
+            'direction': 'str',
+            'disposition_analyzer': 'str',
+            'disposition_name': 'str',
+            'dnis': 'str',
+            'edge_id': 'str',
+            'flow_in_type': 'str',
+            'flow_out_type': 'str',
+            'journey_action_id': 'str',
+            'journey_action_map_id': 'str',
+            'journey_action_map_version': 'int',
             'journey_customer_id': 'str',
             'journey_customer_id_type': 'str',
             'journey_customer_session_id': 'str',
             'journey_customer_session_id_type': 'str',
-            'journey_action_id': 'str',
-            'journey_action_map_id': 'str',
-            'journey_action_map_version': 'str',
+            'media_bridge_id': 'str',
+            'media_count': 'int',
+            'media_type': 'str',
+            'message_type': 'str',
+            'monitored_participant_id': 'str',
+            'outbound_campaign_id': 'str',
+            'outbound_contact_id': 'str',
+            'outbound_contact_list_id': 'str',
+            'peer_id': 'str',
             'protocol_call_id': 'str',
             'provider': 'str',
+            'recording': 'bool',
             'remote': 'str',
-            'media_count': 'int',
-            'flow_in_type': 'str',
-            'flow_out_type': 'str',
+            'remote_name_displayable': 'str',
+            'removed_skill_ids': 'list[str]',
             'requested_routings': 'list[str]',
-            'used_routing': 'str',
+            'room_id': 'str',
+            'routing_ring': 'int',
+            'screen_share_address_self': 'str',
+            'screen_share_room_id': 'str',
+            'script_id': 'str',
             'selected_agent_id': 'str',
             'selected_agent_rank': 'int',
-            'agent_assistant_id': 'str',
+            'session_dnis': 'str',
+            'session_id': 'str',
+            'sharing_screen': 'bool',
+            'skip_enabled': 'bool',
+            'timeout_seconds': 'int',
+            'used_routing': 'str',
+            'video_address_self': 'str',
+            'video_room_id': 'str',
             'proposed_agents': 'list[AnalyticsProposedAgent]',
-            'assigner_id': 'str',
-            'acw_skipped': 'bool',
-            'bullseye_ring': 'int',
-            'agent_bullseye_ring': 'int',
-            'routing_rule': 'int',
-            'removed_skill_ids': 'list[str]',
-            'active_skill_ids': 'list[str]'
+            'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
+            'flow': 'AnalyticsFlow',
+            'metrics': 'list[AnalyticsSessionMetric]',
+            'segments': 'list[AnalyticsConversationSegment]'
         }
 
         self.attribute_map = {
-            'media_type': 'mediaType',
-            'session_id': 'sessionId',
+            'active_skill_ids': 'activeSkillIds',
+            'acw_skipped': 'acwSkipped',
+            'address_from': 'addressFrom',
             'address_other': 'addressOther',
             'address_self': 'addressSelf',
-            'address_from': 'addressFrom',
             'address_to': 'addressTo',
-            'message_type': 'messageType',
+            'agent_assistant_id': 'agentAssistantId',
+            'agent_bullseye_ring': 'agentBullseyeRing',
             'ani': 'ani',
-            'direction': 'direction',
-            'dnis': 'dnis',
-            'session_dnis': 'sessionDnis',
-            'outbound_campaign_id': 'outboundCampaignId',
-            'outbound_contact_id': 'outboundContactId',
-            'outbound_contact_list_id': 'outboundContactListId',
-            'disposition_analyzer': 'dispositionAnalyzer',
-            'disposition_name': 'dispositionName',
-            'edge_id': 'edgeId',
-            'remote_name_displayable': 'remoteNameDisplayable',
-            'room_id': 'roomId',
-            'monitored_participant_id': 'monitoredParticipantId',
-            'callback_user_name': 'callbackUserName',
+            'assigner_id': 'assignerId',
+            'authenticated': 'authenticated',
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
-            'script_id': 'scriptId',
-            'peer_id': 'peerId',
-            'skip_enabled': 'skipEnabled',
-            'timeout_seconds': 'timeoutSeconds',
+            'callback_user_name': 'callbackUserName',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
-            'media_bridge_id': 'mediaBridgeId',
-            'screen_share_address_self': 'screenShareAddressSelf',
-            'sharing_screen': 'sharingScreen',
-            'screen_share_room_id': 'screenShareRoomId',
-            'video_room_id': 'videoRoomId',
-            'video_address_self': 'videoAddressSelf',
-            'segments': 'segments',
-            'metrics': 'metrics',
-            'flow': 'flow',
-            'media_endpoint_stats': 'mediaEndpointStats',
-            'recording': 'recording',
+            'direction': 'direction',
+            'disposition_analyzer': 'dispositionAnalyzer',
+            'disposition_name': 'dispositionName',
+            'dnis': 'dnis',
+            'edge_id': 'edgeId',
+            'flow_in_type': 'flowInType',
+            'flow_out_type': 'flowOutType',
+            'journey_action_id': 'journeyActionId',
+            'journey_action_map_id': 'journeyActionMapId',
+            'journey_action_map_version': 'journeyActionMapVersion',
             'journey_customer_id': 'journeyCustomerId',
             'journey_customer_id_type': 'journeyCustomerIdType',
             'journey_customer_session_id': 'journeyCustomerSessionId',
             'journey_customer_session_id_type': 'journeyCustomerSessionIdType',
-            'journey_action_id': 'journeyActionId',
-            'journey_action_map_id': 'journeyActionMapId',
-            'journey_action_map_version': 'journeyActionMapVersion',
+            'media_bridge_id': 'mediaBridgeId',
+            'media_count': 'mediaCount',
+            'media_type': 'mediaType',
+            'message_type': 'messageType',
+            'monitored_participant_id': 'monitoredParticipantId',
+            'outbound_campaign_id': 'outboundCampaignId',
+            'outbound_contact_id': 'outboundContactId',
+            'outbound_contact_list_id': 'outboundContactListId',
+            'peer_id': 'peerId',
             'protocol_call_id': 'protocolCallId',
             'provider': 'provider',
+            'recording': 'recording',
             'remote': 'remote',
-            'media_count': 'mediaCount',
-            'flow_in_type': 'flowInType',
-            'flow_out_type': 'flowOutType',
+            'remote_name_displayable': 'remoteNameDisplayable',
+            'removed_skill_ids': 'removedSkillIds',
             'requested_routings': 'requestedRoutings',
-            'used_routing': 'usedRouting',
+            'room_id': 'roomId',
+            'routing_ring': 'routingRing',
+            'screen_share_address_self': 'screenShareAddressSelf',
+            'screen_share_room_id': 'screenShareRoomId',
+            'script_id': 'scriptId',
             'selected_agent_id': 'selectedAgentId',
             'selected_agent_rank': 'selectedAgentRank',
-            'agent_assistant_id': 'agentAssistantId',
+            'session_dnis': 'sessionDnis',
+            'session_id': 'sessionId',
+            'sharing_screen': 'sharingScreen',
+            'skip_enabled': 'skipEnabled',
+            'timeout_seconds': 'timeoutSeconds',
+            'used_routing': 'usedRouting',
+            'video_address_self': 'videoAddressSelf',
+            'video_room_id': 'videoRoomId',
             'proposed_agents': 'proposedAgents',
-            'assigner_id': 'assignerId',
-            'acw_skipped': 'acwSkipped',
-            'bullseye_ring': 'bullseyeRing',
-            'agent_bullseye_ring': 'agentBullseyeRing',
-            'routing_rule': 'routingRule',
-            'removed_skill_ids': 'removedSkillIds',
-            'active_skill_ids': 'activeSkillIds'
+            'media_endpoint_stats': 'mediaEndpointStats',
+            'flow': 'flow',
+            'metrics': 'metrics',
+            'segments': 'segments'
         }
 
-        self._media_type = None
-        self._session_id = None
+        self._active_skill_ids = None
+        self._acw_skipped = None
+        self._address_from = None
         self._address_other = None
         self._address_self = None
-        self._address_from = None
         self._address_to = None
-        self._message_type = None
+        self._agent_assistant_id = None
+        self._agent_bullseye_ring = None
         self._ani = None
-        self._direction = None
-        self._dnis = None
-        self._session_dnis = None
-        self._outbound_campaign_id = None
-        self._outbound_contact_id = None
-        self._outbound_contact_list_id = None
-        self._disposition_analyzer = None
-        self._disposition_name = None
-        self._edge_id = None
-        self._remote_name_displayable = None
-        self._room_id = None
-        self._monitored_participant_id = None
-        self._callback_user_name = None
+        self._assigner_id = None
+        self._authenticated = None
         self._callback_numbers = None
         self._callback_scheduled_time = None
-        self._script_id = None
-        self._peer_id = None
-        self._skip_enabled = None
-        self._timeout_seconds = None
+        self._callback_user_name = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
-        self._media_bridge_id = None
-        self._screen_share_address_self = None
-        self._sharing_screen = None
-        self._screen_share_room_id = None
-        self._video_room_id = None
-        self._video_address_self = None
-        self._segments = None
-        self._metrics = None
-        self._flow = None
-        self._media_endpoint_stats = None
-        self._recording = None
+        self._direction = None
+        self._disposition_analyzer = None
+        self._disposition_name = None
+        self._dnis = None
+        self._edge_id = None
+        self._flow_in_type = None
+        self._flow_out_type = None
+        self._journey_action_id = None
+        self._journey_action_map_id = None
+        self._journey_action_map_version = None
         self._journey_customer_id = None
         self._journey_customer_id_type = None
         self._journey_customer_session_id = None
         self._journey_customer_session_id_type = None
-        self._journey_action_id = None
-        self._journey_action_map_id = None
-        self._journey_action_map_version = None
+        self._media_bridge_id = None
+        self._media_count = None
+        self._media_type = None
+        self._message_type = None
+        self._monitored_participant_id = None
+        self._outbound_campaign_id = None
+        self._outbound_contact_id = None
+        self._outbound_contact_list_id = None
+        self._peer_id = None
         self._protocol_call_id = None
         self._provider = None
+        self._recording = None
         self._remote = None
-        self._media_count = None
-        self._flow_in_type = None
-        self._flow_out_type = None
+        self._remote_name_displayable = None
+        self._removed_skill_ids = None
         self._requested_routings = None
-        self._used_routing = None
+        self._room_id = None
+        self._routing_ring = None
+        self._screen_share_address_self = None
+        self._screen_share_room_id = None
+        self._script_id = None
         self._selected_agent_id = None
         self._selected_agent_rank = None
-        self._agent_assistant_id = None
+        self._session_dnis = None
+        self._session_id = None
+        self._sharing_screen = None
+        self._skip_enabled = None
+        self._timeout_seconds = None
+        self._used_routing = None
+        self._video_address_self = None
+        self._video_room_id = None
         self._proposed_agents = None
-        self._assigner_id = None
-        self._acw_skipped = None
-        self._bullseye_ring = None
-        self._agent_bullseye_ring = None
-        self._routing_rule = None
-        self._removed_skill_ids = None
-        self._active_skill_ids = None
+        self._media_endpoint_stats = None
+        self._flow = None
+        self._metrics = None
+        self._segments = None
 
     @property
-    def media_type(self):
+    def active_skill_ids(self):
         """
-        Gets the media_type of this AnalyticsSession.
-        The session media type
+        Gets the active_skill_ids of this AnalyticsSession.
+        ID(s) of Skill(s) that are active on the conversation
 
-        :return: The media_type of this AnalyticsSession.
-        :rtype: str
+        :return: The active_skill_ids of this AnalyticsSession.
+        :rtype: list[str]
         """
-        return self._media_type
+        return self._active_skill_ids
 
-    @media_type.setter
-    def media_type(self, media_type):
+    @active_skill_ids.setter
+    def active_skill_ids(self, active_skill_ids):
         """
-        Sets the media_type of this AnalyticsSession.
-        The session media type
+        Sets the active_skill_ids of this AnalyticsSession.
+        ID(s) of Skill(s) that are active on the conversation
 
-        :param media_type: The media_type of this AnalyticsSession.
-        :type: str
+        :param active_skill_ids: The active_skill_ids of this AnalyticsSession.
+        :type: list[str]
         """
-        allowed_values = ["voice", "chat", "email", "callback", "cobrowse", "video", "screenshare", "message"]
-        if media_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for media_type -> " + media_type)
-            self._media_type = "outdated_sdk_version"
-        else:
-            self._media_type = media_type
+        
+        self._active_skill_ids = active_skill_ids
 
     @property
-    def session_id(self):
+    def acw_skipped(self):
         """
-        Gets the session_id of this AnalyticsSession.
-        The unique identifier of this session
+        Gets the acw_skipped of this AnalyticsSession.
+        Marker for an agent that skipped after call work
 
-        :return: The session_id of this AnalyticsSession.
+        :return: The acw_skipped of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._acw_skipped
+
+    @acw_skipped.setter
+    def acw_skipped(self, acw_skipped):
+        """
+        Sets the acw_skipped of this AnalyticsSession.
+        Marker for an agent that skipped after call work
+
+        :param acw_skipped: The acw_skipped of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._acw_skipped = acw_skipped
+
+    @property
+    def address_from(self):
+        """
+        Gets the address_from of this AnalyticsSession.
+        The address that initiated an action
+
+        :return: The address_from of this AnalyticsSession.
         :rtype: str
         """
-        return self._session_id
+        return self._address_from
 
-    @session_id.setter
-    def session_id(self, session_id):
+    @address_from.setter
+    def address_from(self, address_from):
         """
-        Sets the session_id of this AnalyticsSession.
-        The unique identifier of this session
+        Sets the address_from of this AnalyticsSession.
+        The address that initiated an action
 
-        :param session_id: The session_id of this AnalyticsSession.
+        :param address_from: The address_from of this AnalyticsSession.
         :type: str
         """
         
-        self._session_id = session_id
+        self._address_from = address_from
 
     @property
     def address_other(self):
         """
         Gets the address_other of this AnalyticsSession.
-
+        The email address for the participant on the other side of the email conversation
 
         :return: The address_other of this AnalyticsSession.
         :rtype: str
@@ -309,7 +328,7 @@ class AnalyticsSession(object):
     def address_other(self, address_other):
         """
         Sets the address_other of this AnalyticsSession.
-
+        The email address for the participant on the other side of the email conversation
 
         :param address_other: The address_other of this AnalyticsSession.
         :type: str
@@ -321,7 +340,7 @@ class AnalyticsSession(object):
     def address_self(self):
         """
         Gets the address_self of this AnalyticsSession.
-
+        The email address for the participant on this side of the email conversation
 
         :return: The address_self of this AnalyticsSession.
         :rtype: str
@@ -332,7 +351,7 @@ class AnalyticsSession(object):
     def address_self(self, address_self):
         """
         Sets the address_self of this AnalyticsSession.
-
+        The email address for the participant on this side of the email conversation
 
         :param address_self: The address_self of this AnalyticsSession.
         :type: str
@@ -341,33 +360,10 @@ class AnalyticsSession(object):
         self._address_self = address_self
 
     @property
-    def address_from(self):
-        """
-        Gets the address_from of this AnalyticsSession.
-
-
-        :return: The address_from of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._address_from
-
-    @address_from.setter
-    def address_from(self, address_from):
-        """
-        Sets the address_from of this AnalyticsSession.
-
-
-        :param address_from: The address_from of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._address_from = address_from
-
-    @property
     def address_to(self):
         """
         Gets the address_to of this AnalyticsSession.
-
+        The address receiving an action
 
         :return: The address_to of this AnalyticsSession.
         :rtype: str
@@ -378,7 +374,7 @@ class AnalyticsSession(object):
     def address_to(self, address_to):
         """
         Sets the address_to of this AnalyticsSession.
-
+        The address receiving an action
 
         :param address_to: The address_to of this AnalyticsSession.
         :type: str
@@ -387,31 +383,50 @@ class AnalyticsSession(object):
         self._address_to = address_to
 
     @property
-    def message_type(self):
+    def agent_assistant_id(self):
         """
-        Gets the message_type of this AnalyticsSession.
-        Message type for messaging services such as sms
+        Gets the agent_assistant_id of this AnalyticsSession.
+        Unique identifier of the active virtual agent assistant
 
-        :return: The message_type of this AnalyticsSession.
+        :return: The agent_assistant_id of this AnalyticsSession.
         :rtype: str
         """
-        return self._message_type
+        return self._agent_assistant_id
 
-    @message_type.setter
-    def message_type(self, message_type):
+    @agent_assistant_id.setter
+    def agent_assistant_id(self, agent_assistant_id):
         """
-        Sets the message_type of this AnalyticsSession.
-        Message type for messaging services such as sms
+        Sets the agent_assistant_id of this AnalyticsSession.
+        Unique identifier of the active virtual agent assistant
 
-        :param message_type: The message_type of this AnalyticsSession.
+        :param agent_assistant_id: The agent_assistant_id of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["sms", "facebook", "twitter", "line"]
-        if message_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for message_type -> " + message_type)
-            self._message_type = "outdated_sdk_version"
-        else:
-            self._message_type = message_type
+        
+        self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def agent_bullseye_ring(self):
+        """
+        Gets the agent_bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the targeted agent
+
+        :return: The agent_bullseye_ring of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._agent_bullseye_ring
+
+    @agent_bullseye_ring.setter
+    def agent_bullseye_ring(self, agent_bullseye_ring):
+        """
+        Sets the agent_bullseye_ring of this AnalyticsSession.
+        Bullseye ring of the targeted agent
+
+        :param agent_bullseye_ring: The agent_bullseye_ring of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._agent_bullseye_ring = agent_bullseye_ring
 
     @property
     def ani(self):
@@ -437,10 +452,171 @@ class AnalyticsSession(object):
         self._ani = ani
 
     @property
+    def assigner_id(self):
+        """
+        Gets the assigner_id of this AnalyticsSession.
+        ID of the user that manually assigned a conversation
+
+        :return: The assigner_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._assigner_id
+
+    @assigner_id.setter
+    def assigner_id(self, assigner_id):
+        """
+        Sets the assigner_id of this AnalyticsSession.
+        ID of the user that manually assigned a conversation
+
+        :param assigner_id: The assigner_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._assigner_id = assigner_id
+
+    @property
+    def authenticated(self):
+        """
+        Gets the authenticated of this AnalyticsSession.
+        Flag that indicates that the identity of the customer has been asserted as verified by the provider.
+
+        :return: The authenticated of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._authenticated
+
+    @authenticated.setter
+    def authenticated(self, authenticated):
+        """
+        Sets the authenticated of this AnalyticsSession.
+        Flag that indicates that the identity of the customer has been asserted as verified by the provider.
+
+        :param authenticated: The authenticated of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._authenticated = authenticated
+
+    @property
+    def callback_numbers(self):
+        """
+        Gets the callback_numbers of this AnalyticsSession.
+        Callback phone number(s)
+
+        :return: The callback_numbers of this AnalyticsSession.
+        :rtype: list[str]
+        """
+        return self._callback_numbers
+
+    @callback_numbers.setter
+    def callback_numbers(self, callback_numbers):
+        """
+        Sets the callback_numbers of this AnalyticsSession.
+        Callback phone number(s)
+
+        :param callback_numbers: The callback_numbers of this AnalyticsSession.
+        :type: list[str]
+        """
+        
+        self._callback_numbers = callback_numbers
+
+    @property
+    def callback_scheduled_time(self):
+        """
+        Gets the callback_scheduled_time of this AnalyticsSession.
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The callback_scheduled_time of this AnalyticsSession.
+        :rtype: datetime
+        """
+        return self._callback_scheduled_time
+
+    @callback_scheduled_time.setter
+    def callback_scheduled_time(self, callback_scheduled_time):
+        """
+        Sets the callback_scheduled_time of this AnalyticsSession.
+        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param callback_scheduled_time: The callback_scheduled_time of this AnalyticsSession.
+        :type: datetime
+        """
+        
+        self._callback_scheduled_time = callback_scheduled_time
+
+    @property
+    def callback_user_name(self):
+        """
+        Gets the callback_user_name of this AnalyticsSession.
+        The name of the user requesting a call back
+
+        :return: The callback_user_name of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._callback_user_name
+
+    @callback_user_name.setter
+    def callback_user_name(self, callback_user_name):
+        """
+        Sets the callback_user_name of this AnalyticsSession.
+        The name of the user requesting a call back
+
+        :param callback_user_name: The callback_user_name of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._callback_user_name = callback_user_name
+
+    @property
+    def cobrowse_role(self):
+        """
+        Gets the cobrowse_role of this AnalyticsSession.
+        Describes side of the cobrowse (sharer or viewer)
+
+        :return: The cobrowse_role of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._cobrowse_role
+
+    @cobrowse_role.setter
+    def cobrowse_role(self, cobrowse_role):
+        """
+        Sets the cobrowse_role of this AnalyticsSession.
+        Describes side of the cobrowse (sharer or viewer)
+
+        :param cobrowse_role: The cobrowse_role of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._cobrowse_role = cobrowse_role
+
+    @property
+    def cobrowse_room_id(self):
+        """
+        Gets the cobrowse_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud cobrowse room
+
+        :return: The cobrowse_room_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._cobrowse_room_id
+
+    @cobrowse_room_id.setter
+    def cobrowse_room_id(self, cobrowse_room_id):
+        """
+        Sets the cobrowse_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud cobrowse room
+
+        :param cobrowse_room_id: The cobrowse_room_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._cobrowse_room_id = cobrowse_room_id
+
+    @property
     def direction(self):
         """
         Gets the direction of this AnalyticsSession.
-        Direction
+        The direction of the communication
 
         :return: The direction of this AnalyticsSession.
         :rtype: str
@@ -451,7 +627,7 @@ class AnalyticsSession(object):
     def direction(self, direction):
         """
         Sets the direction of this AnalyticsSession.
-        Direction
+        The direction of the communication
 
         :param direction: The direction of this AnalyticsSession.
         :type: str
@@ -462,6 +638,52 @@ class AnalyticsSession(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def disposition_analyzer(self):
+        """
+        Gets the disposition_analyzer of this AnalyticsSession.
+        (Dialer) Analyzer (for example speech.person)
+
+        :return: The disposition_analyzer of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._disposition_analyzer
+
+    @disposition_analyzer.setter
+    def disposition_analyzer(self, disposition_analyzer):
+        """
+        Sets the disposition_analyzer of this AnalyticsSession.
+        (Dialer) Analyzer (for example speech.person)
+
+        :param disposition_analyzer: The disposition_analyzer of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._disposition_analyzer = disposition_analyzer
+
+    @property
+    def disposition_name(self):
+        """
+        Gets the disposition_name of this AnalyticsSession.
+        (Dialer) Result of the analysis (for example disposition.classification.callable.machine)
+
+        :return: The disposition_name of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._disposition_name
+
+    @disposition_name.setter
+    def disposition_name(self, disposition_name):
+        """
+        Sets the disposition_name of this AnalyticsSession.
+        (Dialer) Result of the analysis (for example disposition.classification.callable.machine)
+
+        :param disposition_name: The disposition_name of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._disposition_name = disposition_name
 
     @property
     def dnis(self):
@@ -487,27 +709,353 @@ class AnalyticsSession(object):
         self._dnis = dnis
 
     @property
-    def session_dnis(self):
+    def edge_id(self):
         """
-        Gets the session_dnis of this AnalyticsSession.
-        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
+        Gets the edge_id of this AnalyticsSession.
+        Unique identifier of the edge device
 
-        :return: The session_dnis of this AnalyticsSession.
+        :return: The edge_id of this AnalyticsSession.
         :rtype: str
         """
-        return self._session_dnis
+        return self._edge_id
 
-    @session_dnis.setter
-    def session_dnis(self, session_dnis):
+    @edge_id.setter
+    def edge_id(self, edge_id):
         """
-        Sets the session_dnis of this AnalyticsSession.
-        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
+        Sets the edge_id of this AnalyticsSession.
+        Unique identifier of the edge device
 
-        :param session_dnis: The session_dnis of this AnalyticsSession.
+        :param edge_id: The edge_id of this AnalyticsSession.
         :type: str
         """
         
-        self._session_dnis = session_dnis
+        self._edge_id = edge_id
+
+    @property
+    def flow_in_type(self):
+        """
+        Gets the flow_in_type of this AnalyticsSession.
+        Type of flow in that occurred when entering ACD.
+
+        :return: The flow_in_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._flow_in_type
+
+    @flow_in_type.setter
+    def flow_in_type(self, flow_in_type):
+        """
+        Sets the flow_in_type of this AnalyticsSession.
+        Type of flow in that occurred when entering ACD.
+
+        :param flow_in_type: The flow_in_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._flow_in_type = flow_in_type
+
+    @property
+    def flow_out_type(self):
+        """
+        Gets the flow_out_type of this AnalyticsSession.
+        Type of flow out that occurred when emitting tFlowOut.
+
+        :return: The flow_out_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._flow_out_type
+
+    @flow_out_type.setter
+    def flow_out_type(self, flow_out_type):
+        """
+        Sets the flow_out_type of this AnalyticsSession.
+        Type of flow out that occurred when emitting tFlowOut.
+
+        :param flow_out_type: The flow_out_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._flow_out_type = flow_out_type
+
+    @property
+    def journey_action_id(self):
+        """
+        Gets the journey_action_id of this AnalyticsSession.
+        Identifier of the journey action.
+
+        :return: The journey_action_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_action_id
+
+    @journey_action_id.setter
+    def journey_action_id(self, journey_action_id):
+        """
+        Sets the journey_action_id of this AnalyticsSession.
+        Identifier of the journey action.
+
+        :param journey_action_id: The journey_action_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_action_id = journey_action_id
+
+    @property
+    def journey_action_map_id(self):
+        """
+        Gets the journey_action_map_id of this AnalyticsSession.
+        Identifier of the journey action map that triggered the action.
+
+        :return: The journey_action_map_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_action_map_id
+
+    @journey_action_map_id.setter
+    def journey_action_map_id(self, journey_action_map_id):
+        """
+        Sets the journey_action_map_id of this AnalyticsSession.
+        Identifier of the journey action map that triggered the action.
+
+        :param journey_action_map_id: The journey_action_map_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_action_map_id = journey_action_map_id
+
+    @property
+    def journey_action_map_version(self):
+        """
+        Gets the journey_action_map_version of this AnalyticsSession.
+        Version of the journey action map that triggered the action.
+
+        :return: The journey_action_map_version of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._journey_action_map_version
+
+    @journey_action_map_version.setter
+    def journey_action_map_version(self, journey_action_map_version):
+        """
+        Sets the journey_action_map_version of this AnalyticsSession.
+        Version of the journey action map that triggered the action.
+
+        :param journey_action_map_version: The journey_action_map_version of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._journey_action_map_version = journey_action_map_version
+
+    @property
+    def journey_customer_id(self):
+        """
+        Gets the journey_customer_id of this AnalyticsSession.
+        Primary identifier of the journey customer in the source where the activities originate from.
+
+        :return: The journey_customer_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_id
+
+    @journey_customer_id.setter
+    def journey_customer_id(self, journey_customer_id):
+        """
+        Sets the journey_customer_id of this AnalyticsSession.
+        Primary identifier of the journey customer in the source where the activities originate from.
+
+        :param journey_customer_id: The journey_customer_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_id = journey_customer_id
+
+    @property
+    def journey_customer_id_type(self):
+        """
+        Gets the journey_customer_id_type of this AnalyticsSession.
+        Type of primary identifier of the journey customer (e.g. cookie).
+
+        :return: The journey_customer_id_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_id_type
+
+    @journey_customer_id_type.setter
+    def journey_customer_id_type(self, journey_customer_id_type):
+        """
+        Sets the journey_customer_id_type of this AnalyticsSession.
+        Type of primary identifier of the journey customer (e.g. cookie).
+
+        :param journey_customer_id_type: The journey_customer_id_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_id_type = journey_customer_id_type
+
+    @property
+    def journey_customer_session_id(self):
+        """
+        Gets the journey_customer_session_id of this AnalyticsSession.
+        Unique identifier of the journey session.
+
+        :return: The journey_customer_session_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_session_id
+
+    @journey_customer_session_id.setter
+    def journey_customer_session_id(self, journey_customer_session_id):
+        """
+        Sets the journey_customer_session_id of this AnalyticsSession.
+        Unique identifier of the journey session.
+
+        :param journey_customer_session_id: The journey_customer_session_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_session_id = journey_customer_session_id
+
+    @property
+    def journey_customer_session_id_type(self):
+        """
+        Gets the journey_customer_session_id_type of this AnalyticsSession.
+        Type or category of journey sessions (e.g. web, ticket, delivery, atm).
+
+        :return: The journey_customer_session_id_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._journey_customer_session_id_type
+
+    @journey_customer_session_id_type.setter
+    def journey_customer_session_id_type(self, journey_customer_session_id_type):
+        """
+        Sets the journey_customer_session_id_type of this AnalyticsSession.
+        Type or category of journey sessions (e.g. web, ticket, delivery, atm).
+
+        :param journey_customer_session_id_type: The journey_customer_session_id_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._journey_customer_session_id_type = journey_customer_session_id_type
+
+    @property
+    def media_bridge_id(self):
+        """
+        Gets the media_bridge_id of this AnalyticsSession.
+        Media bridge ID for the conference session consistent across all participants
+
+        :return: The media_bridge_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._media_bridge_id
+
+    @media_bridge_id.setter
+    def media_bridge_id(self, media_bridge_id):
+        """
+        Sets the media_bridge_id of this AnalyticsSession.
+        Media bridge ID for the conference session consistent across all participants
+
+        :param media_bridge_id: The media_bridge_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._media_bridge_id = media_bridge_id
+
+    @property
+    def media_count(self):
+        """
+        Gets the media_count of this AnalyticsSession.
+        Count of any media (images, files, etc) included in this session
+
+        :return: The media_count of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._media_count
+
+    @media_count.setter
+    def media_count(self, media_count):
+        """
+        Sets the media_count of this AnalyticsSession.
+        Count of any media (images, files, etc) included in this session
+
+        :param media_count: The media_count of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._media_count = media_count
+
+    @property
+    def media_type(self):
+        """
+        Gets the media_type of this AnalyticsSession.
+        The session media type
+
+        :return: The media_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._media_type
+
+    @media_type.setter
+    def media_type(self, media_type):
+        """
+        Sets the media_type of this AnalyticsSession.
+        The session media type
+
+        :param media_type: The media_type of this AnalyticsSession.
+        :type: str
+        """
+        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "video", "voice"]
+        if media_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_type -> " + media_type)
+            self._media_type = "outdated_sdk_version"
+        else:
+            self._media_type = media_type
+
+    @property
+    def message_type(self):
+        """
+        Gets the message_type of this AnalyticsSession.
+        Message type for messaging services. E.g.: sms, facebook, twitter, line
+
+        :return: The message_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type):
+        """
+        Sets the message_type of this AnalyticsSession.
+        Message type for messaging services. E.g.: sms, facebook, twitter, line
+
+        :param message_type: The message_type of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._message_type = message_type
+
+    @property
+    def monitored_participant_id(self):
+        """
+        Gets the monitored_participant_id of this AnalyticsSession.
+        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation)
+
+        :return: The monitored_participant_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._monitored_participant_id
+
+    @monitored_participant_id.setter
+    def monitored_participant_id(self, monitored_participant_id):
+        """
+        Sets the monitored_participant_id of this AnalyticsSession.
+        The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation)
+
+        :param monitored_participant_id: The monitored_participant_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._monitored_participant_id = monitored_participant_id
 
     @property
     def outbound_campaign_id(self):
@@ -579,240 +1127,10 @@ class AnalyticsSession(object):
         self._outbound_contact_list_id = outbound_contact_list_id
 
     @property
-    def disposition_analyzer(self):
-        """
-        Gets the disposition_analyzer of this AnalyticsSession.
-        (Dialer) Unique identifier of the contact list that this contact belongs to
-
-        :return: The disposition_analyzer of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._disposition_analyzer
-
-    @disposition_analyzer.setter
-    def disposition_analyzer(self, disposition_analyzer):
-        """
-        Sets the disposition_analyzer of this AnalyticsSession.
-        (Dialer) Unique identifier of the contact list that this contact belongs to
-
-        :param disposition_analyzer: The disposition_analyzer of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._disposition_analyzer = disposition_analyzer
-
-    @property
-    def disposition_name(self):
-        """
-        Gets the disposition_name of this AnalyticsSession.
-        (Dialer) Result of the analysis
-
-        :return: The disposition_name of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._disposition_name
-
-    @disposition_name.setter
-    def disposition_name(self, disposition_name):
-        """
-        Sets the disposition_name of this AnalyticsSession.
-        (Dialer) Result of the analysis
-
-        :param disposition_name: The disposition_name of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._disposition_name = disposition_name
-
-    @property
-    def edge_id(self):
-        """
-        Gets the edge_id of this AnalyticsSession.
-        Unique identifier of the edge device
-
-        :return: The edge_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._edge_id
-
-    @edge_id.setter
-    def edge_id(self, edge_id):
-        """
-        Sets the edge_id of this AnalyticsSession.
-        Unique identifier of the edge device
-
-        :param edge_id: The edge_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._edge_id = edge_id
-
-    @property
-    def remote_name_displayable(self):
-        """
-        Gets the remote_name_displayable of this AnalyticsSession.
-
-
-        :return: The remote_name_displayable of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._remote_name_displayable
-
-    @remote_name_displayable.setter
-    def remote_name_displayable(self, remote_name_displayable):
-        """
-        Sets the remote_name_displayable of this AnalyticsSession.
-
-
-        :param remote_name_displayable: The remote_name_displayable of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._remote_name_displayable = remote_name_displayable
-
-    @property
-    def room_id(self):
-        """
-        Gets the room_id of this AnalyticsSession.
-        Unique identifier for the room
-
-        :return: The room_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._room_id
-
-    @room_id.setter
-    def room_id(self, room_id):
-        """
-        Sets the room_id of this AnalyticsSession.
-        Unique identifier for the room
-
-        :param room_id: The room_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._room_id = room_id
-
-    @property
-    def monitored_participant_id(self):
-        """
-        Gets the monitored_participant_id of this AnalyticsSession.
-
-
-        :return: The monitored_participant_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._monitored_participant_id
-
-    @monitored_participant_id.setter
-    def monitored_participant_id(self, monitored_participant_id):
-        """
-        Sets the monitored_participant_id of this AnalyticsSession.
-
-
-        :param monitored_participant_id: The monitored_participant_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._monitored_participant_id = monitored_participant_id
-
-    @property
-    def callback_user_name(self):
-        """
-        Gets the callback_user_name of this AnalyticsSession.
-        The name of the user requesting a call back
-
-        :return: The callback_user_name of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._callback_user_name
-
-    @callback_user_name.setter
-    def callback_user_name(self, callback_user_name):
-        """
-        Sets the callback_user_name of this AnalyticsSession.
-        The name of the user requesting a call back
-
-        :param callback_user_name: The callback_user_name of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._callback_user_name = callback_user_name
-
-    @property
-    def callback_numbers(self):
-        """
-        Gets the callback_numbers of this AnalyticsSession.
-        List of numbers to callback
-
-        :return: The callback_numbers of this AnalyticsSession.
-        :rtype: list[str]
-        """
-        return self._callback_numbers
-
-    @callback_numbers.setter
-    def callback_numbers(self, callback_numbers):
-        """
-        Sets the callback_numbers of this AnalyticsSession.
-        List of numbers to callback
-
-        :param callback_numbers: The callback_numbers of this AnalyticsSession.
-        :type: list[str]
-        """
-        
-        self._callback_numbers = callback_numbers
-
-    @property
-    def callback_scheduled_time(self):
-        """
-        Gets the callback_scheduled_time of this AnalyticsSession.
-        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The callback_scheduled_time of this AnalyticsSession.
-        :rtype: datetime
-        """
-        return self._callback_scheduled_time
-
-    @callback_scheduled_time.setter
-    def callback_scheduled_time(self, callback_scheduled_time):
-        """
-        Sets the callback_scheduled_time of this AnalyticsSession.
-        Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param callback_scheduled_time: The callback_scheduled_time of this AnalyticsSession.
-        :type: datetime
-        """
-        
-        self._callback_scheduled_time = callback_scheduled_time
-
-    @property
-    def script_id(self):
-        """
-        Gets the script_id of this AnalyticsSession.
-        A unique identifier for a script
-
-        :return: The script_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._script_id
-
-    @script_id.setter
-    def script_id(self, script_id):
-        """
-        Sets the script_id of this AnalyticsSession.
-        A unique identifier for a script
-
-        :param script_id: The script_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._script_id = script_id
-
-    @property
     def peer_id(self):
         """
         Gets the peer_id of this AnalyticsSession.
-        A unique identifier for a peer
+        This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
 
         :return: The peer_id of this AnalyticsSession.
         :rtype: str
@@ -823,519 +1141,13 @@ class AnalyticsSession(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this AnalyticsSession.
-        A unique identifier for a peer
+        This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
 
         :param peer_id: The peer_id of this AnalyticsSession.
         :type: str
         """
         
         self._peer_id = peer_id
-
-    @property
-    def skip_enabled(self):
-        """
-        Gets the skip_enabled of this AnalyticsSession.
-        (Dialer) Whether the agent can skip the dialer contact
-
-        :return: The skip_enabled of this AnalyticsSession.
-        :rtype: bool
-        """
-        return self._skip_enabled
-
-    @skip_enabled.setter
-    def skip_enabled(self, skip_enabled):
-        """
-        Sets the skip_enabled of this AnalyticsSession.
-        (Dialer) Whether the agent can skip the dialer contact
-
-        :param skip_enabled: The skip_enabled of this AnalyticsSession.
-        :type: bool
-        """
-        
-        self._skip_enabled = skip_enabled
-
-    @property
-    def timeout_seconds(self):
-        """
-        Gets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling
-
-        :return: The timeout_seconds of this AnalyticsSession.
-        :rtype: int
-        """
-        return self._timeout_seconds
-
-    @timeout_seconds.setter
-    def timeout_seconds(self, timeout_seconds):
-        """
-        Sets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling
-
-        :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
-        :type: int
-        """
-        
-        self._timeout_seconds = timeout_seconds
-
-    @property
-    def cobrowse_role(self):
-        """
-        Gets the cobrowse_role of this AnalyticsSession.
-        Describe side of the cobrowse (sharer or viewer)
-
-        :return: The cobrowse_role of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._cobrowse_role
-
-    @cobrowse_role.setter
-    def cobrowse_role(self, cobrowse_role):
-        """
-        Sets the cobrowse_role of this AnalyticsSession.
-        Describe side of the cobrowse (sharer or viewer)
-
-        :param cobrowse_role: The cobrowse_role of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._cobrowse_role = cobrowse_role
-
-    @property
-    def cobrowse_room_id(self):
-        """
-        Gets the cobrowse_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud Cobrowse room.
-
-        :return: The cobrowse_room_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._cobrowse_room_id
-
-    @cobrowse_room_id.setter
-    def cobrowse_room_id(self, cobrowse_room_id):
-        """
-        Sets the cobrowse_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud Cobrowse room.
-
-        :param cobrowse_room_id: The cobrowse_room_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._cobrowse_room_id = cobrowse_room_id
-
-    @property
-    def media_bridge_id(self):
-        """
-        Gets the media_bridge_id of this AnalyticsSession.
-
-
-        :return: The media_bridge_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._media_bridge_id
-
-    @media_bridge_id.setter
-    def media_bridge_id(self, media_bridge_id):
-        """
-        Sets the media_bridge_id of this AnalyticsSession.
-
-
-        :param media_bridge_id: The media_bridge_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._media_bridge_id = media_bridge_id
-
-    @property
-    def screen_share_address_self(self):
-        """
-        Gets the screen_share_address_self of this AnalyticsSession.
-        Direct ScreenShare address
-
-        :return: The screen_share_address_self of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._screen_share_address_self
-
-    @screen_share_address_self.setter
-    def screen_share_address_self(self, screen_share_address_self):
-        """
-        Sets the screen_share_address_self of this AnalyticsSession.
-        Direct ScreenShare address
-
-        :param screen_share_address_self: The screen_share_address_self of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._screen_share_address_self = screen_share_address_self
-
-    @property
-    def sharing_screen(self):
-        """
-        Gets the sharing_screen of this AnalyticsSession.
-        Flag determining if screenShare is started or not (true/false)
-
-        :return: The sharing_screen of this AnalyticsSession.
-        :rtype: bool
-        """
-        return self._sharing_screen
-
-    @sharing_screen.setter
-    def sharing_screen(self, sharing_screen):
-        """
-        Sets the sharing_screen of this AnalyticsSession.
-        Flag determining if screenShare is started or not (true/false)
-
-        :param sharing_screen: The sharing_screen of this AnalyticsSession.
-        :type: bool
-        """
-        
-        self._sharing_screen = sharing_screen
-
-    @property
-    def screen_share_room_id(self):
-        """
-        Gets the screen_share_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud ScreenShare room.
-
-        :return: The screen_share_room_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._screen_share_room_id
-
-    @screen_share_room_id.setter
-    def screen_share_room_id(self, screen_share_room_id):
-        """
-        Sets the screen_share_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud ScreenShare room.
-
-        :param screen_share_room_id: The screen_share_room_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._screen_share_room_id = screen_share_room_id
-
-    @property
-    def video_room_id(self):
-        """
-        Gets the video_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud video room.
-
-        :return: The video_room_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._video_room_id
-
-    @video_room_id.setter
-    def video_room_id(self, video_room_id):
-        """
-        Sets the video_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud video room.
-
-        :param video_room_id: The video_room_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._video_room_id = video_room_id
-
-    @property
-    def video_address_self(self):
-        """
-        Gets the video_address_self of this AnalyticsSession.
-        Direct Video address
-
-        :return: The video_address_self of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._video_address_self
-
-    @video_address_self.setter
-    def video_address_self(self, video_address_self):
-        """
-        Sets the video_address_self of this AnalyticsSession.
-        Direct Video address
-
-        :param video_address_self: The video_address_self of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._video_address_self = video_address_self
-
-    @property
-    def segments(self):
-        """
-        Gets the segments of this AnalyticsSession.
-        List of segments for this session
-
-        :return: The segments of this AnalyticsSession.
-        :rtype: list[AnalyticsConversationSegment]
-        """
-        return self._segments
-
-    @segments.setter
-    def segments(self, segments):
-        """
-        Sets the segments of this AnalyticsSession.
-        List of segments for this session
-
-        :param segments: The segments of this AnalyticsSession.
-        :type: list[AnalyticsConversationSegment]
-        """
-        
-        self._segments = segments
-
-    @property
-    def metrics(self):
-        """
-        Gets the metrics of this AnalyticsSession.
-        List of metrics for this session
-
-        :return: The metrics of this AnalyticsSession.
-        :rtype: list[AnalyticsSessionMetric]
-        """
-        return self._metrics
-
-    @metrics.setter
-    def metrics(self, metrics):
-        """
-        Sets the metrics of this AnalyticsSession.
-        List of metrics for this session
-
-        :param metrics: The metrics of this AnalyticsSession.
-        :type: list[AnalyticsSessionMetric]
-        """
-        
-        self._metrics = metrics
-
-    @property
-    def flow(self):
-        """
-        Gets the flow of this AnalyticsSession.
-        IVR flow execution associated with this session
-
-        :return: The flow of this AnalyticsSession.
-        :rtype: AnalyticsFlow
-        """
-        return self._flow
-
-    @flow.setter
-    def flow(self, flow):
-        """
-        Sets the flow of this AnalyticsSession.
-        IVR flow execution associated with this session
-
-        :param flow: The flow of this AnalyticsSession.
-        :type: AnalyticsFlow
-        """
-        
-        self._flow = flow
-
-    @property
-    def media_endpoint_stats(self):
-        """
-        Gets the media_endpoint_stats of this AnalyticsSession.
-        Media endpoint stats associated with this session
-
-        :return: The media_endpoint_stats of this AnalyticsSession.
-        :rtype: list[AnalyticsMediaEndpointStat]
-        """
-        return self._media_endpoint_stats
-
-    @media_endpoint_stats.setter
-    def media_endpoint_stats(self, media_endpoint_stats):
-        """
-        Sets the media_endpoint_stats of this AnalyticsSession.
-        Media endpoint stats associated with this session
-
-        :param media_endpoint_stats: The media_endpoint_stats of this AnalyticsSession.
-        :type: list[AnalyticsMediaEndpointStat]
-        """
-        
-        self._media_endpoint_stats = media_endpoint_stats
-
-    @property
-    def recording(self):
-        """
-        Gets the recording of this AnalyticsSession.
-        Flag determining if an audio recording was started or not
-
-        :return: The recording of this AnalyticsSession.
-        :rtype: bool
-        """
-        return self._recording
-
-    @recording.setter
-    def recording(self, recording):
-        """
-        Sets the recording of this AnalyticsSession.
-        Flag determining if an audio recording was started or not
-
-        :param recording: The recording of this AnalyticsSession.
-        :type: bool
-        """
-        
-        self._recording = recording
-
-    @property
-    def journey_customer_id(self):
-        """
-        Gets the journey_customer_id of this AnalyticsSession.
-        ID of the journey customer
-
-        :return: The journey_customer_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_customer_id
-
-    @journey_customer_id.setter
-    def journey_customer_id(self, journey_customer_id):
-        """
-        Sets the journey_customer_id of this AnalyticsSession.
-        ID of the journey customer
-
-        :param journey_customer_id: The journey_customer_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_customer_id = journey_customer_id
-
-    @property
-    def journey_customer_id_type(self):
-        """
-        Gets the journey_customer_id_type of this AnalyticsSession.
-        Type of the journey customer ID
-
-        :return: The journey_customer_id_type of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_customer_id_type
-
-    @journey_customer_id_type.setter
-    def journey_customer_id_type(self, journey_customer_id_type):
-        """
-        Sets the journey_customer_id_type of this AnalyticsSession.
-        Type of the journey customer ID
-
-        :param journey_customer_id_type: The journey_customer_id_type of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_customer_id_type = journey_customer_id_type
-
-    @property
-    def journey_customer_session_id(self):
-        """
-        Gets the journey_customer_session_id of this AnalyticsSession.
-        ID of the journey customer session
-
-        :return: The journey_customer_session_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_customer_session_id
-
-    @journey_customer_session_id.setter
-    def journey_customer_session_id(self, journey_customer_session_id):
-        """
-        Sets the journey_customer_session_id of this AnalyticsSession.
-        ID of the journey customer session
-
-        :param journey_customer_session_id: The journey_customer_session_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_customer_session_id = journey_customer_session_id
-
-    @property
-    def journey_customer_session_id_type(self):
-        """
-        Gets the journey_customer_session_id_type of this AnalyticsSession.
-        Type of the journey customer session ID
-
-        :return: The journey_customer_session_id_type of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_customer_session_id_type
-
-    @journey_customer_session_id_type.setter
-    def journey_customer_session_id_type(self, journey_customer_session_id_type):
-        """
-        Sets the journey_customer_session_id_type of this AnalyticsSession.
-        Type of the journey customer session ID
-
-        :param journey_customer_session_id_type: The journey_customer_session_id_type of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_customer_session_id_type = journey_customer_session_id_type
-
-    @property
-    def journey_action_id(self):
-        """
-        Gets the journey_action_id of this AnalyticsSession.
-        Journey action ID
-
-        :return: The journey_action_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_action_id
-
-    @journey_action_id.setter
-    def journey_action_id(self, journey_action_id):
-        """
-        Sets the journey_action_id of this AnalyticsSession.
-        Journey action ID
-
-        :param journey_action_id: The journey_action_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_action_id = journey_action_id
-
-    @property
-    def journey_action_map_id(self):
-        """
-        Gets the journey_action_map_id of this AnalyticsSession.
-        Journey action map ID
-
-        :return: The journey_action_map_id of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_action_map_id
-
-    @journey_action_map_id.setter
-    def journey_action_map_id(self, journey_action_map_id):
-        """
-        Sets the journey_action_map_id of this AnalyticsSession.
-        Journey action map ID
-
-        :param journey_action_map_id: The journey_action_map_id of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_action_map_id = journey_action_map_id
-
-    @property
-    def journey_action_map_version(self):
-        """
-        Gets the journey_action_map_version of this AnalyticsSession.
-        Journey action map version
-
-        :return: The journey_action_map_version of this AnalyticsSession.
-        :rtype: str
-        """
-        return self._journey_action_map_version
-
-    @journey_action_map_version.setter
-    def journey_action_map_version(self, journey_action_map_version):
-        """
-        Sets the journey_action_map_version of this AnalyticsSession.
-        Journey action map version
-
-        :param journey_action_map_version: The journey_action_map_version of this AnalyticsSession.
-        :type: str
-        """
-        
-        self._journey_action_map_version = journey_action_map_version
 
     @property
     def protocol_call_id(self):
@@ -1364,7 +1176,7 @@ class AnalyticsSession(object):
     def provider(self):
         """
         Gets the provider of this AnalyticsSession.
-        The source provider for the communication
+        The source provider for the communication.
 
         :return: The provider of this AnalyticsSession.
         :rtype: str
@@ -1375,13 +1187,36 @@ class AnalyticsSession(object):
     def provider(self, provider):
         """
         Sets the provider of this AnalyticsSession.
-        The source provider for the communication
+        The source provider for the communication.
 
         :param provider: The provider of this AnalyticsSession.
         :type: str
         """
         
         self._provider = provider
+
+    @property
+    def recording(self):
+        """
+        Gets the recording of this AnalyticsSession.
+        Flag determining if an audio recording was started or not
+
+        :return: The recording of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._recording
+
+    @recording.setter
+    def recording(self, recording):
+        """
+        Sets the recording of this AnalyticsSession.
+        Flag determining if an audio recording was started or not
+
+        :param recording: The recording of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._recording = recording
 
     @property
     def remote(self):
@@ -1407,79 +1242,56 @@ class AnalyticsSession(object):
         self._remote = remote
 
     @property
-    def media_count(self):
+    def remote_name_displayable(self):
         """
-        Gets the media_count of this AnalyticsSession.
-        Count of any media (images, files, etc) included in this session
+        Gets the remote_name_displayable of this AnalyticsSession.
+        Unique identifier for the remote party
 
-        :return: The media_count of this AnalyticsSession.
-        :rtype: int
-        """
-        return self._media_count
-
-    @media_count.setter
-    def media_count(self, media_count):
-        """
-        Sets the media_count of this AnalyticsSession.
-        Count of any media (images, files, etc) included in this session
-
-        :param media_count: The media_count of this AnalyticsSession.
-        :type: int
-        """
-        
-        self._media_count = media_count
-
-    @property
-    def flow_in_type(self):
-        """
-        Gets the flow_in_type of this AnalyticsSession.
-        Type of flow in that occurred, e.g. acd, ivr, etc.
-
-        :return: The flow_in_type of this AnalyticsSession.
+        :return: The remote_name_displayable of this AnalyticsSession.
         :rtype: str
         """
-        return self._flow_in_type
+        return self._remote_name_displayable
 
-    @flow_in_type.setter
-    def flow_in_type(self, flow_in_type):
+    @remote_name_displayable.setter
+    def remote_name_displayable(self, remote_name_displayable):
         """
-        Sets the flow_in_type of this AnalyticsSession.
-        Type of flow in that occurred, e.g. acd, ivr, etc.
+        Sets the remote_name_displayable of this AnalyticsSession.
+        Unique identifier for the remote party
 
-        :param flow_in_type: The flow_in_type of this AnalyticsSession.
+        :param remote_name_displayable: The remote_name_displayable of this AnalyticsSession.
         :type: str
         """
         
-        self._flow_in_type = flow_in_type
+        self._remote_name_displayable = remote_name_displayable
 
     @property
-    def flow_out_type(self):
+    def removed_skill_ids(self):
         """
-        Gets the flow_out_type of this AnalyticsSession.
-        Type of flow out that occurred, e.g. voicemail, callback, or acd
+        Gets the removed_skill_ids of this AnalyticsSession.
+        ID(s) of Skill(s) that have been removed by bullseye routing
 
-        :return: The flow_out_type of this AnalyticsSession.
-        :rtype: str
+        :return: The removed_skill_ids of this AnalyticsSession.
+        :rtype: list[str]
         """
-        return self._flow_out_type
+        return self._removed_skill_ids
 
-    @flow_out_type.setter
-    def flow_out_type(self, flow_out_type):
+    @removed_skill_ids.setter
+    def removed_skill_ids(self, removed_skill_ids):
         """
-        Sets the flow_out_type of this AnalyticsSession.
-        Type of flow out that occurred, e.g. voicemail, callback, or acd
+        Sets the removed_skill_ids of this AnalyticsSession.
+        ID(s) of Skill(s) that have been removed by bullseye routing
 
-        :param flow_out_type: The flow_out_type of this AnalyticsSession.
-        :type: str
+        :param removed_skill_ids: The removed_skill_ids of this AnalyticsSession.
+        :type: list[str]
         """
         
-        self._flow_out_type = flow_out_type
+        self._removed_skill_ids = removed_skill_ids
 
     @property
     def requested_routings(self):
         """
         Gets the requested_routings of this AnalyticsSession.
-        All routing types for requested/attempted routing methods.
+        Routing type(s) for requested/attempted routing methods.
 
         :return: The requested_routings of this AnalyticsSession.
         :rtype: list[str]
@@ -1490,7 +1302,7 @@ class AnalyticsSession(object):
     def requested_routings(self, requested_routings):
         """
         Sets the requested_routings of this AnalyticsSession.
-        All routing types for requested/attempted routing methods.
+        Routing type(s) for requested/attempted routing methods.
 
         :param requested_routings: The requested_routings of this AnalyticsSession.
         :type: list[str]
@@ -1499,37 +1311,125 @@ class AnalyticsSession(object):
         self._requested_routings = requested_routings
 
     @property
-    def used_routing(self):
+    def room_id(self):
         """
-        Gets the used_routing of this AnalyticsSession.
-        Complete routing method
+        Gets the room_id of this AnalyticsSession.
+        Unique identifier for the room
 
-        :return: The used_routing of this AnalyticsSession.
+        :return: The room_id of this AnalyticsSession.
         :rtype: str
         """
-        return self._used_routing
+        return self._room_id
 
-    @used_routing.setter
-    def used_routing(self, used_routing):
+    @room_id.setter
+    def room_id(self, room_id):
         """
-        Sets the used_routing of this AnalyticsSession.
-        Complete routing method
+        Sets the room_id of this AnalyticsSession.
+        Unique identifier for the room
 
-        :param used_routing: The used_routing of this AnalyticsSession.
+        :param room_id: The room_id of this AnalyticsSession.
         :type: str
         """
-        allowed_values = ["Predictive", "Preferred", "Manual", "Last", "Bullseye", "Standard"]
-        if used_routing.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for used_routing -> " + used_routing)
-            self._used_routing = "outdated_sdk_version"
-        else:
-            self._used_routing = used_routing
+        
+        self._room_id = room_id
+
+    @property
+    def routing_ring(self):
+        """
+        Gets the routing_ring of this AnalyticsSession.
+        Routing ring for bullseye or preferred agent routing
+
+        :return: The routing_ring of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._routing_ring
+
+    @routing_ring.setter
+    def routing_ring(self, routing_ring):
+        """
+        Sets the routing_ring of this AnalyticsSession.
+        Routing ring for bullseye or preferred agent routing
+
+        :param routing_ring: The routing_ring of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._routing_ring = routing_ring
+
+    @property
+    def screen_share_address_self(self):
+        """
+        Gets the screen_share_address_self of this AnalyticsSession.
+        Direct ScreenShare address
+
+        :return: The screen_share_address_self of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._screen_share_address_self
+
+    @screen_share_address_self.setter
+    def screen_share_address_self(self, screen_share_address_self):
+        """
+        Sets the screen_share_address_self of this AnalyticsSession.
+        Direct ScreenShare address
+
+        :param screen_share_address_self: The screen_share_address_self of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._screen_share_address_self = screen_share_address_self
+
+    @property
+    def screen_share_room_id(self):
+        """
+        Gets the screen_share_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud ScreenShare room
+
+        :return: The screen_share_room_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._screen_share_room_id
+
+    @screen_share_room_id.setter
+    def screen_share_room_id(self, screen_share_room_id):
+        """
+        Sets the screen_share_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud ScreenShare room
+
+        :param screen_share_room_id: The screen_share_room_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._screen_share_room_id = screen_share_room_id
+
+    @property
+    def script_id(self):
+        """
+        Gets the script_id of this AnalyticsSession.
+        A unique identifier for a script
+
+        :return: The script_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this AnalyticsSession.
+        A unique identifier for a script
+
+        :param script_id: The script_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._script_id = script_id
 
     @property
     def selected_agent_id(self):
         """
         Gets the selected_agent_id of this AnalyticsSession.
-        Selected agent id
+        Selected agent ID
 
         :return: The selected_agent_id of this AnalyticsSession.
         :rtype: str
@@ -1540,7 +1440,7 @@ class AnalyticsSession(object):
     def selected_agent_id(self, selected_agent_id):
         """
         Sets the selected_agent_id of this AnalyticsSession.
-        Selected agent id
+        Selected agent ID
 
         :param selected_agent_id: The selected_agent_id of this AnalyticsSession.
         :type: str
@@ -1572,27 +1472,192 @@ class AnalyticsSession(object):
         self._selected_agent_rank = selected_agent_rank
 
     @property
-    def agent_assistant_id(self):
+    def session_dnis(self):
         """
-        Gets the agent_assistant_id of this AnalyticsSession.
-        Unique identifier of the active virtual agent assistant
+        Gets the session_dnis of this AnalyticsSession.
+        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
 
-        :return: The agent_assistant_id of this AnalyticsSession.
+        :return: The session_dnis of this AnalyticsSession.
         :rtype: str
         """
-        return self._agent_assistant_id
+        return self._session_dnis
 
-    @agent_assistant_id.setter
-    def agent_assistant_id(self, agent_assistant_id):
+    @session_dnis.setter
+    def session_dnis(self, session_dnis):
         """
-        Sets the agent_assistant_id of this AnalyticsSession.
-        Unique identifier of the active virtual agent assistant
+        Sets the session_dnis of this AnalyticsSession.
+        Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
 
-        :param agent_assistant_id: The agent_assistant_id of this AnalyticsSession.
+        :param session_dnis: The session_dnis of this AnalyticsSession.
         :type: str
         """
         
-        self._agent_assistant_id = agent_assistant_id
+        self._session_dnis = session_dnis
+
+    @property
+    def session_id(self):
+        """
+        Gets the session_id of this AnalyticsSession.
+        The unique identifier of this session
+
+        :return: The session_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._session_id
+
+    @session_id.setter
+    def session_id(self, session_id):
+        """
+        Sets the session_id of this AnalyticsSession.
+        The unique identifier of this session
+
+        :param session_id: The session_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._session_id = session_id
+
+    @property
+    def sharing_screen(self):
+        """
+        Gets the sharing_screen of this AnalyticsSession.
+        Flag determining if screenShare is started or not (true/false)
+
+        :return: The sharing_screen of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._sharing_screen
+
+    @sharing_screen.setter
+    def sharing_screen(self, sharing_screen):
+        """
+        Sets the sharing_screen of this AnalyticsSession.
+        Flag determining if screenShare is started or not (true/false)
+
+        :param sharing_screen: The sharing_screen of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._sharing_screen = sharing_screen
+
+    @property
+    def skip_enabled(self):
+        """
+        Gets the skip_enabled of this AnalyticsSession.
+        (Dialer) Whether the agent can skip the dialer contact
+
+        :return: The skip_enabled of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._skip_enabled
+
+    @skip_enabled.setter
+    def skip_enabled(self, skip_enabled):
+        """
+        Sets the skip_enabled of this AnalyticsSession.
+        (Dialer) Whether the agent can skip the dialer contact
+
+        :param skip_enabled: The skip_enabled of this AnalyticsSession.
+        :type: bool
+        """
+        
+        self._skip_enabled = skip_enabled
+
+    @property
+    def timeout_seconds(self):
+        """
+        Gets the timeout_seconds of this AnalyticsSession.
+        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+
+        :return: The timeout_seconds of this AnalyticsSession.
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        """
+        Sets the timeout_seconds of this AnalyticsSession.
+        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+
+        :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
+        :type: int
+        """
+        
+        self._timeout_seconds = timeout_seconds
+
+    @property
+    def used_routing(self):
+        """
+        Gets the used_routing of this AnalyticsSession.
+        Complete routing method
+
+        :return: The used_routing of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._used_routing
+
+    @used_routing.setter
+    def used_routing(self, used_routing):
+        """
+        Sets the used_routing of this AnalyticsSession.
+        Complete routing method
+
+        :param used_routing: The used_routing of this AnalyticsSession.
+        :type: str
+        """
+        allowed_values = ["Bullseye", "Last", "Manual", "Predictive", "Preferred", "Standard"]
+        if used_routing.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for used_routing -> " + used_routing)
+            self._used_routing = "outdated_sdk_version"
+        else:
+            self._used_routing = used_routing
+
+    @property
+    def video_address_self(self):
+        """
+        Gets the video_address_self of this AnalyticsSession.
+        Direct Video address
+
+        :return: The video_address_self of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._video_address_self
+
+    @video_address_self.setter
+    def video_address_self(self, video_address_self):
+        """
+        Sets the video_address_self of this AnalyticsSession.
+        Direct Video address
+
+        :param video_address_self: The video_address_self of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._video_address_self = video_address_self
+
+    @property
+    def video_room_id(self):
+        """
+        Gets the video_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud video room
+
+        :return: The video_room_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._video_room_id
+
+    @video_room_id.setter
+    def video_room_id(self, video_room_id):
+        """
+        Sets the video_room_id of this AnalyticsSession.
+        A unique identifier for a PureCloud video room
+
+        :param video_room_id: The video_room_id of this AnalyticsSession.
+        :type: str
+        """
+        
+        self._video_room_id = video_room_id
 
     @property
     def proposed_agents(self):
@@ -1618,165 +1683,96 @@ class AnalyticsSession(object):
         self._proposed_agents = proposed_agents
 
     @property
-    def assigner_id(self):
+    def media_endpoint_stats(self):
         """
-        Gets the assigner_id of this AnalyticsSession.
-        ID of the user that manually assigned a conversation
+        Gets the media_endpoint_stats of this AnalyticsSession.
+        MediaEndpointStats associated with this session
 
-        :return: The assigner_id of this AnalyticsSession.
-        :rtype: str
+        :return: The media_endpoint_stats of this AnalyticsSession.
+        :rtype: list[AnalyticsMediaEndpointStat]
         """
-        return self._assigner_id
+        return self._media_endpoint_stats
 
-    @assigner_id.setter
-    def assigner_id(self, assigner_id):
+    @media_endpoint_stats.setter
+    def media_endpoint_stats(self, media_endpoint_stats):
         """
-        Sets the assigner_id of this AnalyticsSession.
-        ID of the user that manually assigned a conversation
+        Sets the media_endpoint_stats of this AnalyticsSession.
+        MediaEndpointStats associated with this session
 
-        :param assigner_id: The assigner_id of this AnalyticsSession.
-        :type: str
+        :param media_endpoint_stats: The media_endpoint_stats of this AnalyticsSession.
+        :type: list[AnalyticsMediaEndpointStat]
         """
         
-        self._assigner_id = assigner_id
+        self._media_endpoint_stats = media_endpoint_stats
 
     @property
-    def acw_skipped(self):
+    def flow(self):
         """
-        Gets the acw_skipped of this AnalyticsSession.
-        Marker for an agent that skipped after call work
+        Gets the flow of this AnalyticsSession.
+        IVR flow execution associated with this session
 
-        :return: The acw_skipped of this AnalyticsSession.
-        :rtype: bool
+        :return: The flow of this AnalyticsSession.
+        :rtype: AnalyticsFlow
         """
-        return self._acw_skipped
+        return self._flow
 
-    @acw_skipped.setter
-    def acw_skipped(self, acw_skipped):
+    @flow.setter
+    def flow(self, flow):
         """
-        Sets the acw_skipped of this AnalyticsSession.
-        Marker for an agent that skipped after call work
+        Sets the flow of this AnalyticsSession.
+        IVR flow execution associated with this session
 
-        :param acw_skipped: The acw_skipped of this AnalyticsSession.
-        :type: bool
+        :param flow: The flow of this AnalyticsSession.
+        :type: AnalyticsFlow
         """
         
-        self._acw_skipped = acw_skipped
+        self._flow = flow
 
     @property
-    def bullseye_ring(self):
+    def metrics(self):
         """
-        Gets the bullseye_ring of this AnalyticsSession.
-        Bullseye ring of the conversation
+        Gets the metrics of this AnalyticsSession.
+        List of metrics for this session
 
-        :return: The bullseye_ring of this AnalyticsSession.
-        :rtype: int
+        :return: The metrics of this AnalyticsSession.
+        :rtype: list[AnalyticsSessionMetric]
         """
-        return self._bullseye_ring
+        return self._metrics
 
-    @bullseye_ring.setter
-    def bullseye_ring(self, bullseye_ring):
+    @metrics.setter
+    def metrics(self, metrics):
         """
-        Sets the bullseye_ring of this AnalyticsSession.
-        Bullseye ring of the conversation
+        Sets the metrics of this AnalyticsSession.
+        List of metrics for this session
 
-        :param bullseye_ring: The bullseye_ring of this AnalyticsSession.
-        :type: int
+        :param metrics: The metrics of this AnalyticsSession.
+        :type: list[AnalyticsSessionMetric]
         """
         
-        self._bullseye_ring = bullseye_ring
+        self._metrics = metrics
 
     @property
-    def agent_bullseye_ring(self):
+    def segments(self):
         """
-        Gets the agent_bullseye_ring of this AnalyticsSession.
-        Bullseye ring of the targeted agent
+        Gets the segments of this AnalyticsSession.
+        List of segments for this session
 
-        :return: The agent_bullseye_ring of this AnalyticsSession.
-        :rtype: int
+        :return: The segments of this AnalyticsSession.
+        :rtype: list[AnalyticsConversationSegment]
         """
-        return self._agent_bullseye_ring
+        return self._segments
 
-    @agent_bullseye_ring.setter
-    def agent_bullseye_ring(self, agent_bullseye_ring):
+    @segments.setter
+    def segments(self, segments):
         """
-        Sets the agent_bullseye_ring of this AnalyticsSession.
-        Bullseye ring of the targeted agent
+        Sets the segments of this AnalyticsSession.
+        List of segments for this session
 
-        :param agent_bullseye_ring: The agent_bullseye_ring of this AnalyticsSession.
-        :type: int
+        :param segments: The segments of this AnalyticsSession.
+        :type: list[AnalyticsConversationSegment]
         """
         
-        self._agent_bullseye_ring = agent_bullseye_ring
-
-    @property
-    def routing_rule(self):
-        """
-        Gets the routing_rule of this AnalyticsSession.
-        Routing rule the conversation is in for preferred agent routing
-
-        :return: The routing_rule of this AnalyticsSession.
-        :rtype: int
-        """
-        return self._routing_rule
-
-    @routing_rule.setter
-    def routing_rule(self, routing_rule):
-        """
-        Sets the routing_rule of this AnalyticsSession.
-        Routing rule the conversation is in for preferred agent routing
-
-        :param routing_rule: The routing_rule of this AnalyticsSession.
-        :type: int
-        """
-        
-        self._routing_rule = routing_rule
-
-    @property
-    def removed_skill_ids(self):
-        """
-        Gets the removed_skill_ids of this AnalyticsSession.
-        IDs of skills that have been removed by bullseye routing
-
-        :return: The removed_skill_ids of this AnalyticsSession.
-        :rtype: list[str]
-        """
-        return self._removed_skill_ids
-
-    @removed_skill_ids.setter
-    def removed_skill_ids(self, removed_skill_ids):
-        """
-        Sets the removed_skill_ids of this AnalyticsSession.
-        IDs of skills that have been removed by bullseye routing
-
-        :param removed_skill_ids: The removed_skill_ids of this AnalyticsSession.
-        :type: list[str]
-        """
-        
-        self._removed_skill_ids = removed_skill_ids
-
-    @property
-    def active_skill_ids(self):
-        """
-        Gets the active_skill_ids of this AnalyticsSession.
-        IDs of Skills that are active on the conversation
-
-        :return: The active_skill_ids of this AnalyticsSession.
-        :rtype: list[str]
-        """
-        return self._active_skill_ids
-
-    @active_skill_ids.setter
-    def active_skill_ids(self, active_skill_ids):
-        """
-        Sets the active_skill_ids of this AnalyticsSession.
-        IDs of Skills that are active on the conversation
-
-        :param active_skill_ids: The active_skill_ids of this AnalyticsSession.
-        :type: list[str]
-        """
-        
-        self._active_skill_ids = active_skill_ids
+        self._segments = segments
 
     def to_dict(self):
         """

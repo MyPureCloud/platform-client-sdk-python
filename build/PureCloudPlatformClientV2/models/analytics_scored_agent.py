@@ -40,40 +40,17 @@ class AnalyticsScoredAgent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'scored_agent_id': 'str',
-            'agent_score': 'int'
+            'agent_score': 'int',
+            'scored_agent_id': 'str'
         }
 
         self.attribute_map = {
-            'scored_agent_id': 'scoredAgentId',
-            'agent_score': 'agentScore'
+            'agent_score': 'agentScore',
+            'scored_agent_id': 'scoredAgentId'
         }
 
-        self._scored_agent_id = None
         self._agent_score = None
-
-    @property
-    def scored_agent_id(self):
-        """
-        Gets the scored_agent_id of this AnalyticsScoredAgent.
-        Unique identifier of an agent that was scored for this conversation
-
-        :return: The scored_agent_id of this AnalyticsScoredAgent.
-        :rtype: str
-        """
-        return self._scored_agent_id
-
-    @scored_agent_id.setter
-    def scored_agent_id(self, scored_agent_id):
-        """
-        Sets the scored_agent_id of this AnalyticsScoredAgent.
-        Unique identifier of an agent that was scored for this conversation
-
-        :param scored_agent_id: The scored_agent_id of this AnalyticsScoredAgent.
-        :type: str
-        """
-        
-        self._scored_agent_id = scored_agent_id
+        self._scored_agent_id = None
 
     @property
     def agent_score(self):
@@ -97,6 +74,29 @@ class AnalyticsScoredAgent(object):
         """
         
         self._agent_score = agent_score
+
+    @property
+    def scored_agent_id(self):
+        """
+        Gets the scored_agent_id of this AnalyticsScoredAgent.
+        Unique identifier for the agent that was scored for this conversation
+
+        :return: The scored_agent_id of this AnalyticsScoredAgent.
+        :rtype: str
+        """
+        return self._scored_agent_id
+
+    @scored_agent_id.setter
+    def scored_agent_id(self, scored_agent_id):
+        """
+        Sets the scored_agent_id of this AnalyticsScoredAgent.
+        Unique identifier for the agent that was scored for this conversation
+
+        :param scored_agent_id: The scored_agent_id of this AnalyticsScoredAgent.
+        :type: str
+        """
+        
+        self._scored_agent_id = scored_agent_id
 
     def to_dict(self):
         """

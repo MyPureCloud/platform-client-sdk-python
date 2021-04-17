@@ -40,44 +40,70 @@ class AnalyticsConversationWithoutAttributes(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'conversation_end': 'datetime',
             'conversation_id': 'str',
             'conversation_start': 'datetime',
-            'conversation_end': 'datetime',
+            'division_ids': 'list[str]',
+            'external_tag': 'str',
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
             'originating_direction': 'str',
             'evaluations': 'list[AnalyticsEvaluation]',
             'surveys': 'list[AnalyticsSurvey]',
             'resolutions': 'list[AnalyticsResolution]',
-            'division_ids': 'list[str]',
             'participants': 'list[AnalyticsParticipantWithoutAttributes]'
         }
 
         self.attribute_map = {
+            'conversation_end': 'conversationEnd',
             'conversation_id': 'conversationId',
             'conversation_start': 'conversationStart',
-            'conversation_end': 'conversationEnd',
+            'division_ids': 'divisionIds',
+            'external_tag': 'externalTag',
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
             'originating_direction': 'originatingDirection',
             'evaluations': 'evaluations',
             'surveys': 'surveys',
             'resolutions': 'resolutions',
-            'division_ids': 'divisionIds',
             'participants': 'participants'
         }
 
+        self._conversation_end = None
         self._conversation_id = None
         self._conversation_start = None
-        self._conversation_end = None
+        self._division_ids = None
+        self._external_tag = None
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
         self._originating_direction = None
         self._evaluations = None
         self._surveys = None
         self._resolutions = None
-        self._division_ids = None
         self._participants = None
+
+    @property
+    def conversation_end(self):
+        """
+        Gets the conversation_end of this AnalyticsConversationWithoutAttributes.
+        The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The conversation_end of this AnalyticsConversationWithoutAttributes.
+        :rtype: datetime
+        """
+        return self._conversation_end
+
+    @conversation_end.setter
+    def conversation_end(self, conversation_end):
+        """
+        Sets the conversation_end of this AnalyticsConversationWithoutAttributes.
+        The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param conversation_end: The conversation_end of this AnalyticsConversationWithoutAttributes.
+        :type: datetime
+        """
+        
+        self._conversation_end = conversation_end
 
     @property
     def conversation_id(self):
@@ -106,7 +132,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def conversation_start(self):
         """
         Gets the conversation_start of this AnalyticsConversationWithoutAttributes.
-        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_start of this AnalyticsConversationWithoutAttributes.
         :rtype: datetime
@@ -117,7 +143,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def conversation_start(self, conversation_start):
         """
         Sets the conversation_start of this AnalyticsConversationWithoutAttributes.
-        Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_start: The conversation_start of this AnalyticsConversationWithoutAttributes.
         :type: datetime
@@ -126,27 +152,50 @@ class AnalyticsConversationWithoutAttributes(object):
         self._conversation_start = conversation_start
 
     @property
-    def conversation_end(self):
+    def division_ids(self):
         """
-        Gets the conversation_end of this AnalyticsConversationWithoutAttributes.
-        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Gets the division_ids of this AnalyticsConversationWithoutAttributes.
+        Identifier(s) of division(s) associated with a conversation
 
-        :return: The conversation_end of this AnalyticsConversationWithoutAttributes.
-        :rtype: datetime
+        :return: The division_ids of this AnalyticsConversationWithoutAttributes.
+        :rtype: list[str]
         """
-        return self._conversation_end
+        return self._division_ids
 
-    @conversation_end.setter
-    def conversation_end(self, conversation_end):
+    @division_ids.setter
+    def division_ids(self, division_ids):
         """
-        Sets the conversation_end of this AnalyticsConversationWithoutAttributes.
-        Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Sets the division_ids of this AnalyticsConversationWithoutAttributes.
+        Identifier(s) of division(s) associated with a conversation
 
-        :param conversation_end: The conversation_end of this AnalyticsConversationWithoutAttributes.
-        :type: datetime
+        :param division_ids: The division_ids of this AnalyticsConversationWithoutAttributes.
+        :type: list[str]
         """
         
-        self._conversation_end = conversation_end
+        self._division_ids = division_ids
+
+    @property
+    def external_tag(self):
+        """
+        Gets the external_tag of this AnalyticsConversationWithoutAttributes.
+        External tag for the conversation
+
+        :return: The external_tag of this AnalyticsConversationWithoutAttributes.
+        :rtype: str
+        """
+        return self._external_tag
+
+    @external_tag.setter
+    def external_tag(self, external_tag):
+        """
+        Sets the external_tag of this AnalyticsConversationWithoutAttributes.
+        External tag for the conversation
+
+        :param external_tag: The external_tag of this AnalyticsConversationWithoutAttributes.
+        :type: str
+        """
+        
+        self._external_tag = external_tag
 
     @property
     def media_stats_min_conversation_mos(self):
@@ -225,7 +274,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def evaluations(self):
         """
         Gets the evaluations of this AnalyticsConversationWithoutAttributes.
-        Evaluations tied to this conversation
+        Evaluations associated with this conversation
 
         :return: The evaluations of this AnalyticsConversationWithoutAttributes.
         :rtype: list[AnalyticsEvaluation]
@@ -236,7 +285,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def evaluations(self, evaluations):
         """
         Sets the evaluations of this AnalyticsConversationWithoutAttributes.
-        Evaluations tied to this conversation
+        Evaluations associated with this conversation
 
         :param evaluations: The evaluations of this AnalyticsConversationWithoutAttributes.
         :type: list[AnalyticsEvaluation]
@@ -248,7 +297,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def surveys(self):
         """
         Gets the surveys of this AnalyticsConversationWithoutAttributes.
-        Surveys tied to this conversation
+        Surveys associated with this conversation
 
         :return: The surveys of this AnalyticsConversationWithoutAttributes.
         :rtype: list[AnalyticsSurvey]
@@ -259,7 +308,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def surveys(self, surveys):
         """
         Sets the surveys of this AnalyticsConversationWithoutAttributes.
-        Surveys tied to this conversation
+        Surveys associated with this conversation
 
         :param surveys: The surveys of this AnalyticsConversationWithoutAttributes.
         :type: list[AnalyticsSurvey]
@@ -271,7 +320,7 @@ class AnalyticsConversationWithoutAttributes(object):
     def resolutions(self):
         """
         Gets the resolutions of this AnalyticsConversationWithoutAttributes.
-        Resolutions tied to this conversation
+        Resolutions associated with this conversation
 
         :return: The resolutions of this AnalyticsConversationWithoutAttributes.
         :rtype: list[AnalyticsResolution]
@@ -282,36 +331,13 @@ class AnalyticsConversationWithoutAttributes(object):
     def resolutions(self, resolutions):
         """
         Sets the resolutions of this AnalyticsConversationWithoutAttributes.
-        Resolutions tied to this conversation
+        Resolutions associated with this conversation
 
         :param resolutions: The resolutions of this AnalyticsConversationWithoutAttributes.
         :type: list[AnalyticsResolution]
         """
         
         self._resolutions = resolutions
-
-    @property
-    def division_ids(self):
-        """
-        Gets the division_ids of this AnalyticsConversationWithoutAttributes.
-        Identifiers of divisions associated with this conversation
-
-        :return: The division_ids of this AnalyticsConversationWithoutAttributes.
-        :rtype: list[str]
-        """
-        return self._division_ids
-
-    @division_ids.setter
-    def division_ids(self, division_ids):
-        """
-        Sets the division_ids of this AnalyticsConversationWithoutAttributes.
-        Identifiers of divisions associated with this conversation
-
-        :param division_ids: The division_ids of this AnalyticsConversationWithoutAttributes.
-        :type: list[str]
-        """
-        
-        self._division_ids = division_ids
 
     @property
     def participants(self):
